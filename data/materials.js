@@ -1180,7 +1180,7 @@ window.ATLAS_MATERIALS = [
       "11 份主题资料是给 Agent 阅读的写作指导，不是主题 CSS；对应运行时、组件和 11 篇样文见 Reacticle 素材。",
       "原文脚手架安装执行时的最新 reacticle 发布版；本库 Reacticle 样例另行固定提交，不能把二者当作同一次构建。",
       "脚手架的默认标题、正文和封面是占位内容，需要按文章材料完成；单文件 HTML 的构建形式不自动保证外链字体已离线化。",
-      "原文快照保留原语言与相对链接；本条目不下载 README 中作者长文的外部效果图，也不声称复刻这些成品长文。"
+      "原文快照保留原语言与相对链接；外部效果图按 gallery 逐图记录来源，未复刻。"
     ],
     "upstream": {
       "repository": "ConardLi/garden-skills",
@@ -1237,6 +1237,171 @@ window.ATLAS_MATERIALS = [
         "kind": "material",
         "id": "reacticle",
         "note": "skill 的 11 套主题由 Reacticle 实现，11 篇样文就在 Reacticle 的样例里；技能保存写作指导，组件库提供运行时。"
+      }
+    ],
+    "gallery": [
+      {
+        "path": "previews/materials/beautiful-article/tools.webp",
+        "caption": "Agent Tools 设计的最佳实践：Anthropic 工程团队关于 Tools 的五条原则，与一套评测驱动的方法；主题 Freddie · 长文 · 21 分钟",
+        "kind": "work",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/tools.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。"
+      },
+      {
+        "path": "previews/materials/beautiful-article/skill.webp",
+        "caption": "Agent Skill 是如何进化的？：把 Skill 文档当成被训练的对象，而不是被复制粘贴的 prompt；主题 Freddie · 解释文 · 8 分钟",
+        "kind": "work",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/skill.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。"
+      },
+      {
+        "path": "previews/materials/beautiful-article/harness.webp",
+        "caption": "Agent Harness 的解剖图：智能在模型里；让智能变得有用的，是它周围的那套系统；主题 Vignelli · 长文 · 12 分钟",
+        "kind": "work",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/harness.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。"
+      },
+      {
+        "path": "previews/materials/beautiful-article/prompt-cache.webp",
+        "caption": "提示词缓存对 Agent 有多重要？：缓存命中率是 Agent 的 SLO，Claude Code 团队的反直觉经验；主题 Bayer · 长文 · 15 分钟",
+        "kind": "work",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/prompt-cache.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。"
+      },
+      {
+        "path": "previews/materials/beautiful-article/context.webp",
+        "caption": "面向 Agent 的高效上下文工程：本文探讨如何高效地筛选与管理驱动 AI Agent 运转的上下文；主题 Tufte · 长文 · 16 分钟",
+        "kind": "work",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/context.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。"
+      },
+      {
+        "path": "previews/materials/beautiful-article/transformer.webp",
+        "caption": "Attention Is All You Need：一篇重塑现代 AI 的论文，逐层拆给你看；主题 Tufte · 长文 · 30 分钟",
+        "kind": "work",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/transformer.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。"
+      },
+      {
+        "path": "previews/materials/beautiful-article/agent-eval.webp",
+        "caption": "把 AI Agent 的评测讲清楚：让 Agent 有用的那些能力，恰恰让它难以评测 —— 来自 Anthropic 的指南；主题 Tufte · 长文 · 25 分钟",
+        "kind": "work",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/agent-eval.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。"
+      },
+      {
+        "path": "previews/materials/beautiful-article/agent-loop-codex.webp",
+        "caption": "Codex 的 Agent Loop 是怎么做的？：OpenAI 官方分享：在 Responses API 之上，一条对话是如何被反复\"展开\"的；主题 Sottsass · 长文 · 18 分钟",
+        "kind": "work",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/agent-loop-codex.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。"
+      },
+      {
+        "path": "previews/materials/beautiful-article/theam-tufte.webp",
+        "caption": "Tufte · Data-Ink：Edward Tufte 数据墨水，证据优先，发丝级图表与最朴素的版式。",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/theam-tufte.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。",
+        "replicaPage": "demos/materials/reacticle/index.html?demo=caffeine-half-life"
+      },
+      {
+        "path": "previews/materials/beautiful-article/theam-press.webp",
+        "caption": "Press · 书卷：Stripe Press 式书卷长读物：会落定的标题、氧化血红首字母、纯正文之美。",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/theam-press.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。",
+        "replicaPage": "demos/materials/reacticle/index.html?demo=movable-type"
+      },
+      {
+        "path": "previews/materials/beautiful-article/theam-shannon.webp",
+        "caption": "Shannon · 工程暗色：贝尔实验室技术论文血统，暗底黄金信号、回压依赖、夜间作战气质。",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/theam-shannon.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。",
+        "replicaPage": "demos/materials/reacticle/index.html?demo=pool-exhaustion"
+      },
+      {
+        "path": "previews/materials/beautiful-article/theam-vignelli.webp",
+        "caption": "Vignelli · 瑞士：Massimo Vignelli 网格至上、grotesque 字族、瑞士红只承载结构。",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/theam-vignelli.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。",
+        "replicaPage": "demos/materials/reacticle/index.html?demo=orbit-spec"
+      },
+      {
+        "path": "previews/materials/beautiful-article/knuth.png",
+        "caption": "Knuth · 学术：Donald Knuth / Computer Modern，编号小节、命题与证明、arXiv 草稿气质。",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/knuth.png",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。",
+        "replicaPage": "demos/materials/reacticle/index.html?demo=linear-attention"
+      },
+      {
+        "path": "previews/materials/beautiful-article/theam-freddie.webp",
+        "caption": "Freddie · 暖黄：Mailchimp Freddie 黑字荧光，亲和插画 + 不端着的产品上手语气。",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/theam-freddie.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。",
+        "replicaPage": "demos/materials/reacticle/index.html?demo=first-newsletter"
+      },
+      {
+        "path": "previews/materials/beautiful-article/theam-andy.webp",
+        "caption": "Andy · 静谧：柔软圆润、呼吸-神经跷跷板，让人慢下来的练习气质。",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/theam-andy.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。",
+        "replicaPage": "demos/materials/reacticle/index.html?demo=slow-breathing"
+      },
+      {
+        "path": "previews/materials/beautiful-article/theam-bodoni.webp",
+        "caption": "Bodoni · 报刊：高对比 Didone 报刊气质，黑白大报、对折线之上的分量。",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/theam-bodoni.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。",
+        "replicaPage": "demos/materials/reacticle/index.html?demo=front-page"
+      },
+      {
+        "path": "previews/materials/beautiful-article/theam-bayer.webp",
+        "caption": "Bayer · 包豪斯：Herbert Bayer 包豪斯三原色几何，形有性格、色有重量。",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/theam-bayer.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。",
+        "replicaPage": "demos/materials/reacticle/index.html?demo=geometry-of-meaning"
+      },
+      {
+        "path": "previews/materials/beautiful-article/theam-fuller.webp",
+        "caption": "Fuller · 蓝图：Buckminster Fuller 工程蓝图，方格纸拓扑、令牌桶模拟，可照着实现。",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/theam-fuller.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。",
+        "replicaPage": "demos/materials/reacticle/index.html?demo=rate-limiter-spec"
+      },
+      {
+        "path": "previews/materials/beautiful-article/theam-sottsass.webp",
+        "caption": "Sottsass · 孟菲斯：Memphis 80s 撞色，黑描边、硬投影、轻微旋转的不正经语法。",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/theam-sottsass.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。",
+        "replicaPage": "demos/materials/reacticle/index.html?demo=color-clash"
       }
     ],
     "prompt": "先阅读 demos/materials/beautiful-article/SKILL.md，用我提供的材料制作网页文章。抽取材料并记录不确定项，提出编辑规划，逐项确认文章类型与信息保留、主题、宽度、配图和封面。先做首屏与第一节，确认后按节生成完整文章，保持文章阅读形态并使用 Reacticle 主题令牌。审阅和修复后再确认交付形式。主题选择可先打开 Reacticle 素材的 11 篇实际样文比较排版语言；未经确认不替我删减信息或导出 PDF。",
@@ -1571,7 +1736,7 @@ window.ATLAS_MATERIALS = [
       "本条目保存 garden-skills 固定提交中的技能原文、参考配方与宿主元数据，不直接执行技能或提供在线生成服务。",
       "原文要求先核实不稳定事实、读取参考与现有设计；设计系统和可浏览首版分别经用户确认后再继续。",
       "原文只在用户明确要求浏览器验收、响应式检查或同类实测时运行浏览器验收流程；普通开发要求不等于已授权该流程。",
-      "快照包含 25 份具名风格配方；README 中引用的配方画廊页面源码未包含在固定提交中，外部效果图不作为本条目复刻页面。",
+      "快照包含 25 份具名风格配方；README 中引用的配方画廊页面源码未包含在固定提交中，外部效果图按 gallery 逐图记录来源，未复刻。",
       "原文快照保留原语言与相对链接；指向仓库根目录、画廊或外部资源的链接仍须结合上游仓库阅读。"
     ],
     "upstream": {
@@ -1585,7 +1750,7 @@ window.ATLAS_MATERIALS = [
       "name": "MIT",
       "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/LICENSE",
       "scope": "garden-skills 仓库内的技能文本、参考文件与代码；根 LICENSE 原样附在快照目录。",
-      "notes": "保留 MIT 版权与许可文本。README 链接的第三方品牌、字体和外部效果图不因技能的 MIT 许可而获得再分发许可；本条目没有下载这些效果图。预览复用本库星槎案例的实际画面，其字体等来源许可见案例资料。"
+      "notes": "保留 MIT 版权与许可文本。外部效果图按 gallery 逐图记录来源，未复刻。预览复用本库星槎案例的实际画面，其字体等来源许可见案例资料。"
     },
     "sources": [
       {
@@ -1627,6 +1792,208 @@ window.ATLAS_MATERIALS = [
         "kind": "case",
         "id": "mira-host-photography",
         "note": "有 skill 的摄影主页结果；案例按固定提交归档作者公开的页面。"
+      }
+    ],
+    "gallery": [
+      {
+        "path": "previews/materials/web-design-engineer/apple-hig.webp",
+        "caption": "apple-hig：SF Pro Display、慷慨留白、柔和阴影 —— Apple Store 的语气；适合 硬件产品页、设备发布、高端消费电子",
+        "kind": "style",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/apple-hig.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。"
+      },
+      {
+        "path": "previews/materials/web-design-engineer/muji-kenya-hara.webp",
+        "caption": "muji-kenya-hara：空作为画布、灰与纸、器物悬浮在空气中拍摄；适合 器物目录、家居品牌、慢生活店铺",
+        "kind": "style",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/muji-kenya-hara.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。"
+      },
+      {
+        "path": "previews/materials/web-design-engineer/aesop.webp",
+        "caption": "aesop：暖驼黄、鼠尾草 & 琥珀，衬线正文像文学杂志；适合 药剂师产品页、美妆 & 健康、独立零售",
+        "kind": "style",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/aesop.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。"
+      },
+      {
+        "path": "previews/materials/web-design-engineer/dieter-rams-braun.webp",
+        "caption": "dieter-rams-braun：十大设计原则、灰阶网格、技术正投影 —— 功能即形式；适合 工业设计档案、硬件 spec、品牌原则页",
+        "kind": "style",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/dieter-rams-braun.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。"
+      },
+      {
+        "path": "previews/materials/web-design-engineer/monocle-magazine.webp",
+        "caption": "monocle-magazine：世界主义简报、深海蓝与珊瑚色、脚注式好奇心；适合 杂志目录、城市 / 旅行简报、生活方式期刊",
+        "kind": "style",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/monocle-magazine.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。"
+      },
+      {
+        "path": "previews/materials/web-design-engineer/pentagram.webp",
+        "caption": "pentagram：一种大字体即艺术品、网格作骨架、仅墨色与底色；适合 标识样本、字体主导的作品集、画廊公告",
+        "kind": "style",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/pentagram.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。"
+      },
+      {
+        "path": "previews/materials/web-design-engineer/vignelli-swiss-helvetica.webp",
+        "caption": "vignelli-swiss-helvetica：全字号 Helvetica、六种主色、纽约地铁信号图；适合 公共指示 & 交通、公共信息海报、品牌系统样本",
+        "kind": "style",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/vignelli-swiss-helvetica.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。"
+      },
+      {
+        "path": "previews/materials/web-design-engineer/bloomberg-terminal.webp",
+        "caption": "bloomberg-terminal：深海军蓝底上的琥珀色、全等宽、密度高于舒适；适合 交易仪表盘、运维控制台、高密度专业工具",
+        "kind": "style",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/bloomberg-terminal.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。"
+      },
+      {
+        "path": "previews/materials/web-design-engineer/tufte-dataink.webp",
+        "caption": "tufte-dataink：段落内嵌微图、小型多重图、零图表杂质；适合 数据叙事、研究报告、学术长文",
+        "kind": "style",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/tufte-dataink.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。"
+      },
+      {
+        "path": "previews/materials/web-design-engineer/nyt-the-daily.webp",
+        "caption": "nyt-the-daily：Cheltenham 衬线压在 Imperial 之上、日期线居首、宽幅报纸的重量；适合 新闻特稿、播客中枢、长篇深度报道",
+        "kind": "style",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/nyt-the-daily.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。"
+      },
+      {
+        "path": "previews/materials/web-design-engineer/linear.webp",
+        "caption": "linear：暖色调暗夜、发丝边、紫色点缀、键盘快捷键芯片；适合 开发者工具落地页、Issue / 项目 SaaS、API & 基础设施产品",
+        "kind": "style",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/linear.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。"
+      },
+      {
+        "path": "previews/materials/web-design-engineer/vercel-mesh.webp",
+        "caption": "vercel-mesh：纯黑、几何网格渐变、Geist Sans、命令行式清晰；适合 部署 / 运行时工具、框架发布、技术 hero 页",
+        "kind": "style",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/vercel-mesh.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。"
+      },
+      {
+        "path": "previews/materials/web-design-engineer/raycast.webp",
+        "caption": "raycast：红光雾里的玻璃卡片、键盘优先、紧凑列表行；适合 命令面板、launcher 应用、键盘驱动型工具",
+        "kind": "style",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/raycast.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。"
+      },
+      {
+        "path": "previews/materials/web-design-engineer/notion-pre-ai.webp",
+        "caption": "notion-pre-ai：米白页面、拖拽点、随性 emoji 标题、随处可见的提示条；适合 工作区文档、内部 Wiki、友好的生产力应用",
+        "kind": "style",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/notion-pre-ai.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。"
+      },
+      {
+        "path": "previews/materials/web-design-engineer/field-io.webp",
+        "caption": "field-io：粒子系统衬着编辑式字体、代码艺术美学、暗色工作室；适合 创意科技工作室、生成艺术案例、WebGL 作品集",
+        "kind": "style",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/field-io.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。"
+      },
+      {
+        "path": "previews/materials/web-design-engineer/active-theory.webp",
+        "caption": "active-theory：WebGL 野心、全屏字、深黑底上的糖果色；适合 电影感产品发布、战役站、冲奖型微型站点",
+        "kind": "style",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/active-theory.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。"
+      },
+      {
+        "path": "previews/materials/web-design-engineer/resn-storytelling.webp",
+        "caption": "resn-storytelling：超现实、浓郁、每帧都是布景、标题压在噪点纹理上；适合 叙事滚动、娱乐 / IP 站、工作室作品集",
+        "kind": "style",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/resn-storytelling.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。"
+      },
+      {
+        "path": "previews/materials/web-design-engineer/are-na.webp",
+        "caption": "are-na：刻意的系统字体、浏览器默认蓝色链接、诚实的网页；适合 研究型频道、独立社区、反设计内容工具",
+        "kind": "style",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/are-na.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。"
+      },
+      {
+        "path": "previews/materials/web-design-engineer/bloomberg-businessweek-turley.webp",
+        "caption": "bloomberg-businessweek-turley：警示黄 + 黑墨、字体作拼贴、手工剪切式标题；适合 编辑封面、评论文章、战役式海报",
+        "kind": "style",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/bloomberg-businessweek-turley.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。"
+      },
+      {
+        "path": "previews/materials/web-design-engineer/balenciaga-post-2017.webp",
+        "caption": "balenciaga-post-2017：全大写、破碎网格、白底冷面产品、反奢侈的奢侈；适合 时装系列、drop 公告、逆向思考的奢侈品牌",
+        "kind": "style",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/balenciaga-post-2017.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。"
+      },
+      {
+        "path": "previews/materials/web-design-engineer/mailchimp-freddie.webp",
+        "caption": "mailchimp-freddie：Cavendish 黄、手绘涂鸦、对话式文案 —— 小生意的拉拉队长；适合 引导流程、中小企业营销工具、友好的消费类应用",
+        "kind": "style",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/mailchimp-freddie.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。"
+      },
+      {
+        "path": "previews/materials/web-design-engineer/stripe-press.webp",
+        "caption": "stripe-press：奶白纸、GT Super、手工装帧式奢华、思想作器物；适合 书籍详情页、长篇散文、出版社 / 出版品牌站",
+        "kind": "style",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/stripe-press.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。"
+      },
+      {
+        "path": "previews/materials/web-design-engineer/headspace-meditation.webp",
+        "caption": "headspace-meditation：橙色太阳、圆润色团、手绘平静感、每日重置；适合 冥想 & 健康、习惯 / 情绪应用、温馨的消费类卡片",
+        "kind": "style",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/headspace-meditation.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。"
+      },
+      {
+        "path": "previews/materials/web-design-engineer/y2k-retrofuturism.webp",
+        "caption": "y2k-retrofuturism：铬合金倒角、磨砂玻璃、熔岩色块、随处可见的 MSN 蓝；适合 Y2K 怀旧、早期网络门户、Z 世代品牌大型整活",
+        "kind": "style",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/y2k-retrofuturism.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。"
+      },
+      {
+        "path": "previews/materials/web-design-engineer/mid-century-modern.webp",
+        "caption": "mid-century-modern：芥末黄、砖红、青蓝；剪纸式几何；1957 年的乐观主义；适合 海报致敬、文化活动、复古印刷品牌语调",
+        "kind": "style",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/mid-century-modern.webp",
+        "license": "图片托管于 ConardLi/assets，由 garden-skills README 引用；garden-skills 仓库 MIT。"
       }
     ],
     "prompt": "先阅读 demos/materials/web-design-engineer/SKILL.md，依据任务选择现有界面延展、保留式重设计或完整重设计。核实事实并阅读已有代码、品牌素材和参考，明确受众与约束，给出设计判断和视觉校准，再声明设计系统并请用户确认。先展示可浏览首版，确认后完整实现并自查。需要参考结果时阅读星槎与米拉摄影案例，区分同题对照和单个有 skill 结果；不把案例品质推断为每次调用技能的保证。",
