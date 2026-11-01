@@ -1,0 +1,12 @@
+/* Boska */
+@font-face {
+  font-family: 'Boska';
+  src: url('../files/DCZMHDUIIND3BTWZGHAVWGQPO6EB5M4I.woff2') format('woff2'),
+       url('../files/DCZMHDUIIND3BTWZGHAVWGQPO6EB5M4I.woff') format('woff'),
+       url('../files/DCZMHDUIIND3BTWZGHAVWGQPO6EB5M4I.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+

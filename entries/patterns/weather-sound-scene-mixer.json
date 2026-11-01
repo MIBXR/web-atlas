@@ -1,0 +1,73 @@
+{
+  "id": "weather-sound-scene-mixer",
+  "title": "推子同时控制声音与夜景",
+  "category": "交互反馈",
+  "experienceTypes": [
+    "sound",
+    "micro-motion"
+  ],
+  "summary": "用同一组推子让天气画面与声音强度一起变化。",
+  "mechanism": "雨、风和列车共用level与穿越相位，推子同步多个面板；定时器前段保持，后段余弦淡出到静音与结束状态。",
+  "trigger": "调整推子、淡出定时器或Listen/Stop。",
+  "effect": "视觉材料帮助理解混音，启停和结束状态清楚。",
+  "useCases": [
+    "环境声音工具",
+    "具象声音混音与夜景产品"
+  ],
+  "avoid": [
+    "进入页面即播放环境音"
+  ],
+  "constraints": [
+    "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。",
+    "推子、夜景和音频是同一状态的不同读数。"
+  ],
+  "composition": {
+    "role": "foundation",
+    "notes": "推子、夜景和音频是同一状态的不同读数。",
+    "pairsWellWith": [
+      "sound-opt-in",
+      "live-parameter-readout"
+    ],
+    "conflicts": []
+  },
+  "accessibility": {
+    "keyboard": "推子支持方向键、PageUp/Down和Home/End，Listen是原生按钮。",
+    "reducedMotion": "显示静态夜景并即时更新强度，保留用户启停声音。"
+  },
+  "parameters": [
+    {
+      "name": "初值",
+      "value": "雨.6、风.35、列车.15、定时30min",
+      "note": "固定提交源码／首阶段实测：themes/ribbon/night.js 共享状态。"
+    },
+    {
+      "name": "列车",
+      "value": "周期62s，穿越44s",
+      "note": "固定提交源码／首阶段实测：night.js PERIOD/CROSS/trainP。"
+    },
+    {
+      "name": "淡出",
+      "value": "前60%保持，后40%余弦淡出，Stop后900ms挂起",
+      "note": "固定提交源码／首阶段实测：night.js fadeAt/engine.stop。"
+    }
+  ],
+  "prompt": "为目标页面实现「推子同时控制声音与夜景」：雨、风和列车共用level与穿越相位，推子同步多个面板；定时器前段保持，后段余弦淡出到静音与结束状态。触发：调整推子、淡出定时器或Listen/Stop。结果：视觉材料帮助理解混音，启停和结束状态清楚。参数：初值=雨.6、风.35、列车.15、定时30min；列车=周期62s，穿越44s；淡出=前60%保持，后40%余弦淡出，Stop后900ms挂起。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；推子支持方向键、PageUp/Down和Home/End，Listen是原生按钮。显示静态夜景并即时更新强度，保留用户启停声音。",
+  "sources": [
+    {
+      "caseId": "hallmark",
+      "locator": "entries/cases/hallmark.json#interaction/20",
+      "observation": "Ribbon 的雨、风、远处列车和淡出定时器共用控制量，推子同时改变 Web Audio 混音与夜景强度，列车画面和声音共用穿越相位，Listen 启用声音，Stop 淡出后挂起上下文。",
+      "evidence": "observed",
+      "referenceUrl": "https://www.usehallmark.com/",
+      "capturedAt": "2026-11-01"
+    }
+  ],
+  "sourceFiles": [
+    "entries/cases/hallmark.json",
+    "docs/cases/hallmark.md",
+    "demos/cases/hallmark/fidelity.md",
+    "demos/cases/hallmark/themes/ribbon/night.js",
+    "demos/cases/hallmark/themes/ribbon/index.html",
+    "demos/cases/hallmark/themes/ribbon/style.css"
+  ]
+}

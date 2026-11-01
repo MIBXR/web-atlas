@@ -1,0 +1,99 @@
+{
+  "id": "hallmark-skill",
+  "title": "Hallmark · 反 AI 套路的网页设计 skill",
+  "type": "agent-skill",
+  "category": "Agent 工作流",
+  "summary": "用不可破例的底线、可记录破例的惯性检查和 50 套材料主题约束 Agent 做网页，先发主题、按页面用途定结构，再用真实浏览器检查和无上下文审查收尾；也能按名字重新设计或审计已有页面。",
+  "install": "npx skills add nutlope/hallmark -g 全局安装；或把 demos/materials/hallmark-skill/ 复制到 .claude/skills/hallmark/ 或 .agents/skills/hallmark/。在 Claude Code 用 /hallmark <提示词> 调用，在 Codex CLI 用 $hallmark <提示词>。",
+  "tags": [
+    "网页设计",
+    "反 AI 套路",
+    "主题库",
+    "页面审查",
+    "重新设计",
+    "开放授权摄影",
+    "浏览器检查"
+  ],
+  "useCases": [
+    "从零制作落地页与产品页",
+    "用开放授权照片和真实材料搭建品牌页面",
+    "按名字重新设计已有站点并保留内容与接线",
+    "审计现有页面里的生成痕迹"
+  ],
+  "avoid": [
+    "未点名时改动已有设计",
+    "编造指标、证言或客户标识",
+    "按时间线播放的视频与展示台"
+  ],
+  "constraints": [
+    "本条目保存上游固定提交的技能原文、脚本与评测工具，不提供在线生成。",
+    "浏览器检查需要 puppeteer-core 与 Chrome；缺少时只运行静态检查。",
+    "图片生成只在设置 TOGETHER_API_KEY 且用户要求时使用，默认用 scripts/photos.json 登记的 755 张 Wikimedia Commons 开放授权照片，页面逐张署名。",
+    "redesign 和 audit 只在用户点名时运行；audit 只出报告。",
+    "快照 README 的相对链接指向上游仓库结构，需结合固定提交阅读。"
+  ],
+  "upstream": {
+    "repository": "Nutlope/hallmark",
+    "url": "https://github.com/Nutlope/hallmark/tree/4f6a46c6dc325d40ab268c93e25c7b96676ebccd",
+    "commit": "4f6a46c6dc325d40ab268c93e25c7b96676ebccd",
+    "version": "2.0.0",
+    "verifiedAt": "2026-11-01"
+  },
+  "license": {
+    "name": "MIT",
+    "url": "https://github.com/Nutlope/hallmark/blob/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/LICENSE",
+    "scope": "Hallmark 技能文本、参考文件与脚本。",
+    "notes": "photos.json 登记照片地址与署名，照片分别采用 CC0、公有领域、CC BY 或 CC BY-SA 许可。"
+  },
+  "sources": [
+    {
+      "title": "Hallmark 技能原文",
+      "url": "https://github.com/Nutlope/hallmark/blob/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/SKILL.md",
+      "note": "Floor、主题、首屏先行、浏览器检查与新上下文审查的直接流程。",
+      "evidence": "source"
+    },
+    {
+      "title": "宿主与流程分支",
+      "url": "https://github.com/Nutlope/hallmark/blob/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/flow.md",
+      "note": "锁定 design.md、custom、组件／应用范围及 Codex CLI 审查方式。",
+      "evidence": "source"
+    },
+    {
+      "title": "重新设计与审计",
+      "url": "https://github.com/Nutlope/hallmark/blob/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/redesign.md",
+      "note": "full、restyle、polish 深度、--before／--kept 和 audit 报告边界。",
+      "evidence": "source"
+    }
+  ],
+  "snapshotPath": "demos/materials/hallmark-skill/",
+  "snapshotEntry": "SKILL.md",
+  "workflow": [
+    "预检读取项目的字体、配色、框架和锁定的 design.md，并向用户要一次照片、截图和真实数字，不编造内容。",
+    "先按材料与页面用途设计结构；没有锁定 design.md 且未指定主题时，用 theme.mjs deal 发出三个主题并看图选择，选定主题后 draw 抽取结构；custom 按提示词设计专属方向，已有锁定系统时跳过主题发牌。",
+    "用 scaffold 写入 tokens.css 和 base.css，先单独完成首屏，运行 --render --stage hero，再在新上下文审查首屏；Codex CLI 在当前线程完成审查并明说。",
+    "完成其余页面，行动入口放在该品类应有的位置，页面以它结束。",
+    "sloplint --render 在真实浏览器按多种宽度测量折叠线、对比度、焦点和节奏，修掉全部 FAIL，修复或记录破例每条 REFLEX。",
+    "在新上下文审查成品；支持子 Agent 的宿主使用子 Agent，Codex CLI 在当前线程完成审查并明说，CSS 首行保留决策戳；重新设计时额外用 --before 记录、--kept 比对全部链接、字段、处理器和标题。"
+  ],
+  "relatedEntries": [
+    {
+      "kind": "case",
+      "id": "hallmark",
+      "note": "官网、50 个主题示范页和 21 个成品页。"
+    }
+  ],
+  "preview": "previews/materials/hallmark-skill.jpg",
+  "research": "docs/materials/hallmark-skill.md",
+  "sourceFiles": [
+    "demos/materials/hallmark-skill/SKILL.md",
+    "demos/materials/hallmark-skill/README.md",
+    "demos/materials/hallmark-skill/references/gates.md",
+    "demos/materials/hallmark-skill/scripts/sloplint.mjs",
+    "demos/materials/hallmark-skill/scripts/theme.mjs"
+  ],
+  "prompt": "先阅读 demos/materials/hallmark-skill/SKILL.md，按宿主阅读 references/flow.md，明确页面材料、受众、用途和语气。已有 design.md 时遵守锁定系统；否则按指名主题、custom 或 deal 的优先顺序选方向，以材料与页面用途确定结构。scaffold 后先完成首屏并运行相应审查，再完成页面，用 sloplint --render 修掉 Floor FAIL，修复或逐条记录 Reflex 破例，完成新上下文审查并保留 CSS 决策戳。需要重新设计或审计时先阅读 references/redesign.md；用 --before 记录、--kept 保留内容与接线，audit 输出报告。参考结果阅读 hallmark 案例的真实页面与 fidelity.md。",
+  "accessibility": {
+    "keyboard": "原文与关联案例通过真实链接读取；应用技能时以 Floor 的 focus-visible 和八态控件要求完成键盘路径。",
+    "reducedMotion": "本资源为文本、脚本和评测工具快照；制作页面时遵守原文的 prefers-reduced-motion 分支与无脚本内容可见规则。"
+  }
+}

@@ -1,0 +1,72 @@
+{
+  "id": "normalized-long-page-compare",
+  "title": "不等长整页同步读完",
+  "category": "滚动叙事",
+  "experienceTypes": [
+    "page-motion",
+    "structure"
+  ],
+  "summary": "同一段页面滚动同时读完两份不同长度的结果。",
+  "mechanism": "粘性画框保持位置，将外层行程归一化为0–1，再分别乘两图各自的溢出高度；标签改变pair并重新计算行程。",
+  "trigger": "滚动经过比较区域或切换对比标签。",
+  "effect": "长短结果在同一时刻读到尾部，观看者能对照对应进度。",
+  "useCases": [
+    "同题前后结果对比",
+    "不同长度页面的产品证据"
+  ],
+  "avoid": [
+    "两图内容没有共同任务基准"
+  ],
+  "constraints": [
+    "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。",
+    "负责结果证据的共同阅读进度，与分隔线共享画框。"
+  ],
+  "composition": {
+    "role": "foundation",
+    "notes": "负责结果证据的共同阅读进度，与分隔线共享画框。",
+    "pairsWellWith": [
+      "demo-once-then-yield-divider"
+    ],
+    "conflicts": []
+  },
+  "accessibility": {
+    "keyboard": "比较标签和分隔线有键盘路径，外层保留正常滚动。",
+    "reducedMotion": "保留完整页面与手动阅读，停用自动扫线。"
+  },
+  "parameters": [
+    {
+      "name": "外层行程",
+      "value": "clamp(.55×最大溢出高度,.6×视口高,1.6×视口高)",
+      "note": "固定提交源码／首阶段实测：js/compare.js fit。"
+    },
+    {
+      "name": "位移",
+      "value": "-p×max(0,W×原图高/1440-H)",
+      "note": "固定提交源码／首阶段实测：js/compare.js move，各图单独计算。"
+    },
+    {
+      "name": "换组",
+      "value": "先淡出180ms，再等pair与decode",
+      "note": "固定提交源码／首阶段实测：js/compare.js 标签切换。"
+    }
+  ],
+  "prompt": "为目标页面实现「不等长整页同步读完」：粘性画框保持位置，将外层行程归一化为0–1，再分别乘两图各自的溢出高度；标签改变pair并重新计算行程。触发：滚动经过比较区域或切换对比标签。结果：长短结果在同一时刻读到尾部，观看者能对照对应进度。参数：外层行程=clamp(.55×最大溢出高度,.6×视口高,1.6×视口高)；位移=-p×max(0,W×原图高/1440-H)；换组=先淡出180ms，再等pair与decode。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；比较标签和分隔线有键盘路径，外层保留正常滚动。保留完整页面与手动阅读，停用自动扫线。",
+  "sources": [
+    {
+      "caseId": "hallmark",
+      "locator": "entries/cases/hallmark.json#interaction/2",
+      "observation": "比较区以同一归一化滚动进度分别计算两张整页图的溢出高度，使不等长页面同时到达各自底部；三组标签替换整页图、问题数和阅读行程。",
+      "evidence": "observed",
+      "referenceUrl": "https://www.usehallmark.com/",
+      "capturedAt": "2026-11-01"
+    }
+  ],
+  "sourceFiles": [
+    "entries/cases/hallmark.json",
+    "docs/cases/hallmark.md",
+    "demos/cases/hallmark/fidelity.md",
+    "demos/cases/hallmark/js/compare.js",
+    "demos/cases/hallmark/index.html",
+    "demos/cases/hallmark/style.css"
+  ]
+}

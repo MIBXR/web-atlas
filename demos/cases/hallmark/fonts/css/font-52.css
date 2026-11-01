@@ -1,0 +1,12 @@
+/* Cabinet Grotesk */
+@font-face {
+  font-family: 'Cabinet Grotesk';
+  src: url('../files/6QH2ALVTTK7IRVO5MYOQQ3OZNXW5SSS3.woff2') format('woff2'),
+       url('../files/6QH2ALVTTK7IRVO5MYOQQ3OZNXW5SSS3.woff') format('woff'),
+       url('../files/6QH2ALVTTK7IRVO5MYOQQ3OZNXW5SSS3.ttf') format('truetype');
+  font-weight: 800;
+  font-display: swap;
+  font-style: normal;
+}
+
+

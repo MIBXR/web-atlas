@@ -1,0 +1,21 @@
+/* Switzer */
+@font-face {
+  font-family: 'Switzer';
+  src: url('../files/6IN5WOLRCYP4G4MOCOHOMXNON6Q7MDAR.woff2') format('woff2'),
+       url('../files/6IN5WOLRCYP4G4MOCOHOMXNON6Q7MDAR.woff') format('woff'),
+       url('../files/6IN5WOLRCYP4G4MOCOHOMXNON6Q7MDAR.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Switzer';
+  src: url('../files/6XPIMU23OJVRY676OG5YVJMWEHWICATX.woff2') format('woff2'),
+       url('../files/6XPIMU23OJVRY676OG5YVJMWEHWICATX.woff') format('woff'),
+       url('../files/6XPIMU23OJVRY676OG5YVJMWEHWICATX.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+

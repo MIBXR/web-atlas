@@ -1,0 +1,71 @@
+{
+  "id": "digit-odometer-count",
+  "title": "数字逐位滚入",
+  "category": "交互反馈",
+  "experienceTypes": [
+    "micro-motion"
+  ],
+  "summary": "真实数据到达时，让各数位从同一竖列停靠到目标。",
+  "mechanism": "每位创建0–9的纵向列，用目标数字乘行高计算translateY，以位序延迟滚入；非数字字符单独保留。",
+  "trigger": "星标API返回有效数字。",
+  "effect": "数值到达有清楚的轻量反馈，最终文字与实际数据一致。",
+  "useCases": [
+    "实时计数",
+    "数据到达的局部反馈"
+  ],
+  "avoid": [
+    "滚动数字掩饰无来源的指标"
+  ],
+  "constraints": [
+    "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。",
+    "只负责数据到达后的数位表现，按钮仍有真实外链与完整aria名称。"
+  ],
+  "composition": {
+    "role": "accent",
+    "notes": "只负责数据到达后的数位表现，按钮仍有真实外链与完整aria名称。",
+    "pairsWellWith": [
+      "confirmed-command-copy"
+    ],
+    "conflicts": []
+  },
+  "accessibility": {
+    "keyboard": "以完整数值更新aria-label，装饰数位不代替名称。",
+    "reducedMotion": "直接定位最终数位，跳过滚动。"
+  },
+  "parameters": [
+    {
+      "name": "列高",
+      "value": "每位1.2em",
+      "note": "固定提交源码／首阶段实测：js/core.js 星标数位translateY。"
+    },
+    {
+      "name": "交错",
+      "value": "每位90ms",
+      "note": "固定提交源码／首阶段实测：js/core.js 数位transitionDelay。"
+    },
+    {
+      "name": "格式",
+      "value": "千以上显示k，万以上取整数k",
+      "note": "固定提交源码／首阶段实测：js/core.js txt格式化。"
+    }
+  ],
+  "prompt": "为目标页面实现「数字逐位滚入」：每位创建0–9的纵向列，用目标数字乘行高计算translateY，以位序延迟滚入；非数字字符单独保留。触发：星标API返回有效数字。结果：数值到达有清楚的轻量反馈，最终文字与实际数据一致。参数：列高=每位1.2em；交错=每位90ms；格式=千以上显示k，万以上取整数k。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；以完整数值更新aria-label，装饰数位不代替名称。直接定位最终数位，跳过滚动。",
+  "sources": [
+    {
+      "caseId": "hallmark",
+      "locator": "entries/cases/hallmark.json#interaction/7",
+      "observation": "GitHub 星标请求完成后，每位数字以 0–9 的竖列滚到目标数位，位间延迟 90ms，千以上显示 k；减少动态直接定位到最终数字。",
+      "evidence": "observed",
+      "referenceUrl": "https://www.usehallmark.com/",
+      "capturedAt": "2026-11-01"
+    }
+  ],
+  "sourceFiles": [
+    "entries/cases/hallmark.json",
+    "docs/cases/hallmark.md",
+    "demos/cases/hallmark/fidelity.md",
+    "demos/cases/hallmark/js/core.js",
+    "demos/cases/hallmark/style.css",
+    "demos/cases/hallmark/index.html"
+  ]
+}

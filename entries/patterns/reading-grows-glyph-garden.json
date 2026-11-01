@@ -1,0 +1,72 @@
+{
+  "id": "reading-grows-glyph-garden",
+  "title": "顺序朗读长出字形植物",
+  "category": "内容组织",
+  "experienceTypes": [
+    "micro-motion",
+    "structure"
+  ],
+  "summary": "把已读单词一一映射到花园里的植物。",
+  "mechanism": "按当前词序接受点击，越序给出下一词；更新aria-pressed、下一词焦点、植物和种子，时间带定期撕片。",
+  "trigger": "按句子顺序标记已读词或重新开始。",
+  "effect": "阅读进度是具体的生长结果，顺序与下一步清楚。",
+  "useCases": [
+    "阅读练习",
+    "逐项学习与轻量习惯工具"
+  ],
+  "avoid": [
+    "只以动画颜色表达完成状态"
+  ],
+  "constraints": [
+    "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。",
+    "词、植物与下一步焦点共用同一个完成数。"
+  ],
+  "composition": {
+    "role": "foundation",
+    "notes": "词、植物与下一步焦点共用同一个完成数。",
+    "pairsWellWith": [
+      "inline-detail-disclosure"
+    ],
+    "conflicts": []
+  },
+  "accessibility": {
+    "keyboard": "每词使用原生按钮与aria-pressed，读后焦点移向下一词。",
+    "reducedMotion": "显示已读完的静态花园，并保留重读入口。"
+  },
+  "parameters": [
+    {
+      "name": "词与时间",
+      "value": "6词；300s",
+      "note": "固定提交源码／首阶段实测：themes/hum/round.js tiles/TOTAL。"
+    },
+    {
+      "name": "撕片",
+      "value": "每1s减时，每5s撕片",
+      "note": "固定提交源码／首阶段实测：round.js tick/scrap。"
+    },
+    {
+      "name": "听读",
+      "value": "en-GB，rate=.82",
+      "note": "固定提交源码／首阶段实测：round.js SpeechSynthesisUtterance。"
+    }
+  ],
+  "prompt": "为目标页面实现「顺序朗读长出字形植物」：按当前词序接受点击，越序给出下一词；更新aria-pressed、下一词焦点、植物和种子，时间带定期撕片。触发：按句子顺序标记已读词或重新开始。结果：阅读进度是具体的生长结果，顺序与下一步清楚。参数：词与时间=6词；300s；撕片=每1s减时，每5s撕片；听读=en-GB，rate=.82。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；每词使用原生按钮与aria-pressed，读后焦点移向下一词。显示已读完的静态花园，并保留重读入口。",
+  "sources": [
+    {
+      "caseId": "hallmark",
+      "locator": "entries/cases/hallmark.json#interaction/15",
+      "observation": "Hum 按顺序点击句中单词，每个已读词长出一株字形植物；越序点击提示下一词，焦点跟到下一词，五分钟时间带每五秒撕下一片纸屑，完成后可重读。",
+      "evidence": "observed",
+      "referenceUrl": "https://www.usehallmark.com/",
+      "capturedAt": "2026-11-01"
+    }
+  ],
+  "sourceFiles": [
+    "entries/cases/hallmark.json",
+    "docs/cases/hallmark.md",
+    "demos/cases/hallmark/fidelity.md",
+    "demos/cases/hallmark/themes/hum/round.js",
+    "demos/cases/hallmark/themes/hum/index.html",
+    "demos/cases/hallmark/themes/hum/style.css"
+  ]
+}

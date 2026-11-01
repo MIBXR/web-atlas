@@ -53,6 +53,14 @@
       "locator": "entries/cases/shape-morph.json#interaction/1",
       "observation": "间距滑块将单元从连续图案分离为碎片",
       "evidence": "adapted"
+    },
+    {
+      "caseId": "hallmark",
+      "locator": "entries/cases/hallmark.json#interaction/36",
+      "observation": "Specimen 的字号与字重滑块同步写入试排 CSS 变量及带单位读数，Ribbon 的推子同步百分比、aria-valuenow、视觉强度和音量。",
+      "evidence": "observed",
+      "referenceUrl": "https://www.usehallmark.com/",
+      "capturedAt": "2026-11-01"
     }
   ],
   "sourceFiles": [
@@ -66,6 +74,12 @@
     "entries/cases/shape-morph.json",
     "docs/cases/bauhaus-geometry.md",
     "docs/cases/retro-80s.md",
-    "docs/cases/shape-morph.md"
+    "docs/cases/shape-morph.md",
+    "entries/cases/hallmark.json",
+    "docs/cases/hallmark.md",
+    "demos/cases/hallmark/fidelity.md",
+    "demos/cases/hallmark/themes/specimen/page.js",
+    "demos/cases/hallmark/themes/specimen/index.html",
+    "demos/cases/hallmark/themes/ribbon/night.js"
   ]
 }

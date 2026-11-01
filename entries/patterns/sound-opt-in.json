@@ -65,6 +65,14 @@
       "evidence": "adapted",
       "referenceUrl": "https://endfield.hypergryph.com/",
       "capturedAt": "2026-10-09"
+    },
+    {
+      "caseId": "hallmark",
+      "locator": "entries/cases/hallmark.json#interaction/31",
+      "observation": "首页保持无声，Bloom 的 Play 和 Ribbon 的 Listen 只在用户激活后创建或恢复 AudioContext，按钮和 Escape 可停止声音并复位界面，Ribbon 停止后挂起上下文。",
+      "evidence": "observed",
+      "referenceUrl": "https://www.usehallmark.com/",
+      "capturedAt": "2026-11-01"
     }
   ],
   "sourceFiles": [
@@ -90,6 +98,12 @@
     "demos/cases/endfield-industrial/app.js",
     "demos/cases/endfield-industrial/state.css",
     "demos/cases/endfield-industrial/assets-manifest.json",
-    "demos/cases/endfield-industrial/source/source-provenance.json"
+    "demos/cases/endfield-industrial/source/source-provenance.json",
+    "entries/cases/hallmark.json",
+    "docs/cases/hallmark.md",
+    "demos/cases/hallmark/fidelity.md",
+    "demos/cases/hallmark/themes/bloom/page.js",
+    "demos/cases/hallmark/themes/bloom/arrange.js",
+    "demos/cases/hallmark/themes/ribbon/night.js"
   ]
 }

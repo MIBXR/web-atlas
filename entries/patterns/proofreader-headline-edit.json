@@ -1,0 +1,71 @@
+{
+  "id": "proofreader-headline-edit",
+  "title": "校对式改写首屏标题",
+  "category": "加载与媒体",
+  "experienceTypes": [
+    "page-motion"
+  ],
+  "summary": "把主张里的一个词当作校样修改，让品牌的“纠正”动作直接进入标题。",
+  "mechanism": "首入允许动态时，用 ghost 测量旧词与新词的矩形，先画斜线、写小词，再放大落位并用 FLIP 补偿邻词；最后真实文字接管。",
+  "trigger": "页面首入且允许动态。",
+  "effect": "改词过程与最终主张连成一件事，文本仍可读取。",
+  "useCases": [
+    "工具与方法官网",
+    "以纠错表达产品价值的首屏"
+  ],
+  "avoid": [
+    "静态排版不发生标题改词的页面"
+  ],
+  "constraints": [
+    "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。",
+    "与手牌入场共享首屏节拍，标题完成后交还稳定文本。"
+  ],
+  "composition": {
+    "role": "accent",
+    "notes": "与手牌入场共享首屏节拍，标题完成后交还稳定文本。",
+    "pairsWellWith": [
+      "dealt-page-hand"
+    ],
+    "conflicts": []
+  },
+  "accessibility": {
+    "keyboard": "最终标题保留真实文字与 aria-label。",
+    "reducedMotion": "跳过改词过程，直接显示最终标题。"
+  },
+  "parameters": [
+    {
+      "name": "起点",
+      "value": "950ms",
+      "note": "固定提交源码／首阶段实测：js/headline.js:14 START。"
+    },
+    {
+      "name": "校对轴",
+      "value": "划线240ms；写入340ms；落位1540ms；转墨2140ms",
+      "note": "固定提交源码／首阶段实测：js/headline.js:15 T，数值相对校对起点。"
+    },
+    {
+      "name": "接管",
+      "value": "ghost 180ms 淡出；字体等待最多3000ms",
+      "note": "固定提交源码／首阶段实测：js/headline.js finish/start。"
+    }
+  ],
+  "prompt": "为目标页面实现「校对式改写首屏标题」：首入允许动态时，用 ghost 测量旧词与新词的矩形，先画斜线、写小词，再放大落位并用 FLIP 补偿邻词；最后真实文字接管。触发：页面首入且允许动态。结果：改词过程与最终主张连成一件事，文本仍可读取。参数：起点=950ms；校对轴=划线240ms；写入340ms；落位1540ms；转墨2140ms；接管=ghost 180ms 淡出；字体等待最多3000ms。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；最终标题保留真实文字与 aria-label。跳过改词过程，直接显示最终标题。",
+  "sources": [
+    {
+      "caseId": "hallmark",
+      "locator": "entries/cases/hallmark.json#interaction/0",
+      "observation": "首屏标题在允许动态时先显示 A design skill，约 950ms 后以斜线划去 A、写入 The、放大落入行内并转为墨色；邻词用前后实测矩形补偿重排，真实文字接管，减少动态直接显示最终标题。",
+      "evidence": "observed",
+      "referenceUrl": "https://www.usehallmark.com/",
+      "capturedAt": "2026-11-01"
+    }
+  ],
+  "sourceFiles": [
+    "entries/cases/hallmark.json",
+    "docs/cases/hallmark.md",
+    "demos/cases/hallmark/fidelity.md",
+    "demos/cases/hallmark/js/headline.js",
+    "demos/cases/hallmark/index.html",
+    "demos/cases/hallmark/style.css"
+  ]
+}

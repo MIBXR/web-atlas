@@ -48,6 +48,14 @@
       "evidence": "observed",
       "referenceUrl": "https://qoder.cn/",
       "capturedAt": "2026-10-07"
+    },
+    {
+      "caseId": "hallmark",
+      "locator": "entries/cases/hallmark.json#interaction/33",
+      "observation": "Studio 的三套系统在区域可见时每 4200ms 自动切换，悬停或聚焦时暂停，用户主动选项后停止自动切换，标签、board 和 aria 状态共同更新。",
+      "evidence": "observed",
+      "referenceUrl": "https://www.usehallmark.com/",
+      "capturedAt": "2026-11-01"
     }
   ],
   "sourceFiles": [
@@ -56,6 +64,11 @@
     "demos/cases/qoder-platform/journey.js",
     "demos/cases/qoder-platform/script.js",
     "demos/cases/qoder-platform/style.css",
-    "entries/cases/qoder-platform.json"
+    "entries/cases/qoder-platform.json",
+    "entries/cases/hallmark.json",
+    "docs/cases/hallmark.md",
+    "demos/cases/hallmark/fidelity.md",
+    "demos/cases/hallmark/themes/studio/spec.js",
+    "demos/cases/hallmark/themes/studio/index.html"
   ]
 }
