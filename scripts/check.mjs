@@ -1,10 +1,39 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
+import {execFileSync} from 'node:child_process';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const entries=fs.readdirSync(path.join(root,'entries/cases')).filter(x=>x.endsWith('.json')).map(file=>JSON.parse(fs.readFileSync(path.join(root,'entries/cases',file),'utf8')));
+const patterns=fs.readdirSync(path.join(root,'entries/patterns')).filter(x=>x.endsWith('.json')).map(file=>JSON.parse(fs.readFileSync(path.join(root,'entries/patterns',file),'utf8')));
+const patternsById=new Map(patterns.map(pattern=>[pattern.id,pattern]));
 const snapshots=fs.readdirSync(path.join(root,'entries/materials')).filter(name=>name.endsWith('.json')).map(name=>JSON.parse(fs.readFileSync(path.join(root,'entries/materials',name),'utf8')).snapshotPath).filter(Boolean);
 const failures=[];
+const gitFiles=(...args)=>execFileSync('git',['ls-files','-z',...args],{cwd:root,encoding:'utf8'}).split('\0').filter(Boolean);
+for(const record of gitFiles('--eol')){
+  const separator=record.indexOf('\t'),metadata=record.slice(0,separator),file=record.slice(separator+1);
+  if(!/\battr\/-text\b/.test(metadata)&&/\b(?:i|w)\/crlf\b/.test(metadata))failures.push('line endings: '+file+': expected LF; '+metadata.trim().replace(/\s+/g,' '));
+}
+for(const file of gitFiles('-ci','--exclude-standard'))failures.push('ignored file: '+file+': tracked file matches ignore rules');
+// Known exceptions: endfield-industrial keeps the official site's videos byte-for-byte (52–56 MB each).
+const oversizeAllowed=new Set(['20260710-b37e139e9494bd716410c7fa8a7f39ca.mp4','20260901-a92f49a53810d0a162584a10daa9de39.mp4','video-01.1e0eb1.mp4','video-02.9ab299.mp4','video-03.422a72.mp4','video-enter.88cbb6.mp4'].map(name=>'demos/cases/endfield-industrial/assets/'+name));
+const oversizeNotes=[];
+for(const file of new Set(gitFiles('--cached','--others','--exclude-standard'))){
+  const stat=fs.statSync(path.join(root,file),{throwIfNoEntry:false});
+  if(!stat?.isFile()||stat.size<=52428800)continue;
+  const message='file size: '+file+': '+stat.size+' bytes exceeds 50 MiB (52428800 bytes)';
+  if(oversizeAllowed.has(file))oversizeNotes.push(message+' (known exception)');else failures.push(message);
+}
+if(oversizeNotes.length)console.warn(oversizeNotes.join('\n'));
+for(const entry of entries){
+  if(entry.patternIds===undefined)continue;
+  const file='entries/cases/'+entry.id+'.json';
+  for(const id of entry.patternIds){
+    const pattern=patternsById.get(id);
+    if(!pattern)failures.push('entry references: '+file+': patternIds references unknown pattern '+id);
+    else if(!pattern.sources.some(source=>source.caseId===entry.id))failures.push('entry references: '+file+': patternIds '+id+' has no sources[].caseId backlink');
+  }
+  for(const pattern of patterns)if(pattern.sources.some(source=>source.caseId===entry.id)&&!entry.patternIds.includes(pattern.id))failures.push('entry references: '+file+': patternIds is missing source pattern '+pattern.id);
+}
 const local=ref=>ref&&!/^(?:[a-z][a-z\d+.-]*:|\/\/|#)/i.test(ref);
 const resolve=(dir,ref)=>ref.startsWith('/')?path.join(root,ref):path.resolve(dir,ref);
 function checkCSS(label,css,dir){
@@ -37,4 +66,4 @@ function visit(directory,styles=false){
 for(const entry of entries)for(const key of ['demo','research','preview'])if(entry[key]&&!fs.existsSync(path.join(root,entry[key])))failures.push(entry.id+': missing '+entry[key]);
 for(const file of ['index.html','cases.html','patterns.html','materials.html','agent.html','lab.html','docs.html'])checkRefs(file,fs.readFileSync(path.join(root,file),'utf8'),root);
 visit(path.join(root,'demos/cases'));visit(path.join(root,'demos/materials'));visit(path.join(root,'site'),true);visit(path.join(root,'scripts/templates'),true);
-if(failures.length){console.error(failures.join('\n'));process.exitCode=1;}else console.log('PASS: '+entries.length+' entries; case subpages, material demos and site local references resolve.');
+if(failures.length){console.error(failures.join('\n'));process.exitCode=1;}else console.log('PASS: '+entries.length+' entries; case subpages, material demos and site local references resolve; line endings, ignored tracked files, entry references and file sizes pass.');
