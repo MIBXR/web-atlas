@@ -4,6 +4,7 @@
 
 | 素材 | 中文使用说明 |
 | --- | --- |
+| Arc UI | [React 动效组件与源码接入](arc-ui.md) |
 | Material Web | [组件操作与接入](material-web.md) |
 | Wired Elements | [手绘组件与状态联动](wired-elements.md) |
 | 98.css | [桌面控件与业务状态](98-css.md) |

@@ -1,0 +1,504 @@
+{
+  "schemaVersion": 1,
+  "id": "theme-invariant-gradient-panel",
+  "pattern": {
+    "id": "theme-invariant-gradient-panel",
+    "title": "主题切换中的恒定浅色品牌面板",
+    "category": "视觉构成",
+    "experienceTypes": [
+      "visual"
+    ],
+    "summary": "用稳定的浅色品牌面板连接首尾行动。",
+    "mechanism": "正文界面跟随明暗主题，首尾面板固定浅底深字；三处径向色场分布在边角，中心留给主张。",
+    "trigger": "进入页面或切换主题",
+    "effect": "品牌、文案对比与阅读主线保持稳定。",
+    "useCases": [
+      "组件库、开发者工具与产品介绍"
+    ],
+    "avoid": [
+      "让装饰遮住主张或真实操作"
+    ],
+    "constraints": [
+      "使用目标产品的真实文案与可用入口，原站数值只作为本例依据。"
+    ],
+    "composition": {
+      "role": "foundation",
+      "notes": "与页面的信息层级协调；保持正文、操作与当前状态可读。",
+      "pairsWellWith": [
+        "semantic-theme-roles"
+      ],
+      "conflicts": []
+    },
+    "accessibility": {
+      "keyboard": "链接与按钮保留原生键盘路径和可访问名称；标题的装饰分词不重复播报。",
+      "reducedMotion": "移除入场、交错和循环运动，保留所有文字、布局与复制结果。"
+    },
+    "parameters": [
+      {
+        "name": "径向色场",
+        "value": "粉：3% 96%；蓝：95% 5%；黄：50% 110%",
+        "note": "原站发布样式 page_hero 与 page_finalInner。"
+      },
+      {
+        "name": "面板尺度",
+        "value": "桌面 690px / 手机 590px",
+        "note": "原站首屏 min-height；标题与正文独立重排。"
+      }
+    ],
+    "prompt": "为目标页面实现「主题切换中的恒定浅色品牌面板」。正文界面跟随明暗主题，首尾面板固定浅底深字；三处径向色场分布在边角，中心留给主张。触发：进入页面或切换主题。结果：品牌、文案对比与阅读主线保持稳定。。沿用页面既有层级与真实内容；链接、复制按钮和状态提供可访问名称，减少动态直接显示稳定结果。",
+    "sources": [
+      {
+        "caseId": "uiarc-platform",
+        "locator": "entries/cases/uiarc-platform.json#interaction/0",
+        "observation": "主题按钮在系统默认与手动选择之间协调页面表面、文字、边界和导航；首尾两块粉蓝黄渐变面板始终保持浅底深字，产品影片保留原色。",
+        "evidence": "observed",
+        "referenceUrl": "https://uiarc.dev/",
+        "capturedAt": "2026-11-01"
+      }
+    ],
+    "sourceFiles": [
+      "entries/cases/uiarc-platform.json",
+      "docs/cases/uiarc-platform.md",
+      "demos/cases/uiarc-platform/index.html",
+      "demos/cases/uiarc-platform/app.js",
+      "demos/cases/uiarc-platform/style.css",
+      "demos/cases/uiarc-platform/fidelity.md",
+      "demos/cases/uiarc-platform/source/content.json"
+    ]
+  },
+  "sourceCases": [
+    {
+      "id": "uiarc-platform",
+      "title": "Arc UI · 组件平台的产品官网",
+      "paths": {
+        "bundle": "agent/cases/uiarc-platform.json",
+        "demo": "demos/cases/uiarc-platform/index.html"
+      }
+    }
+  ],
+  "documents": [
+    {
+      "path": "prompts/patterns/theme-invariant-gradient-panel.md",
+      "role": "prompt",
+      "content": "# 主题切换中的恒定浅色品牌面板 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/theme-invariant-gradient-panel.json)\n\n为目标页面实现「主题切换中的恒定浅色品牌面板」。正文界面跟随明暗主题，首尾面板固定浅底深字；三处径向色场分布在边角，中心留给主张。触发：进入页面或切换主题。结果：品牌、文案对比与阅读主线保持稳定。。沿用页面既有层级与真实内容；链接、复制按钮和状态提供可访问名称，减少动态直接显示稳定结果。\n\n## 制作约束\n\n- 使用目标产品的真实文案与可用入口，原站数值只作为本例依据。\n"
+    }
+  ],
+  "files": [
+    {
+      "path": "asset-cache-worker.js",
+      "role": "source"
+    },
+    {
+      "path": "data/asset-sources.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/app.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets-manifest.json",
+      "role": "context"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/arc-mark.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/ai-chat.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/ai-chat.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/choropleth-explorer.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/choropleth-explorer.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/command-palette.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/command-palette.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/customer-galaxy.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/customer-galaxy.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/date-picker.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/date-picker.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/dialog.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/dialog.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/dropdown-menu.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/dropdown-menu.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/elastic-slider.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/elastic-slider.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/horizon-chart.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/horizon-chart.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/kanban-board.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/kanban-board.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/morph-select.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/morph-select.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/revenue-globe.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/revenue-globe.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/switch.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/switch.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/tabs.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/tabs.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/toast-stack.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/toast-stack.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/footer-mark.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/0.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/1.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/10.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/11.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/12.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/2.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/3.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/4.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/5.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/6.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/7.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/8.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/9.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/fidelity.md",
+      "role": "context"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/fonts/6c596dfcddeca1e9-s.p.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/fonts/9ff55a8a9670220d-s.p.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/fonts/Geist-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/fonts/Inter-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/LICENSES.md",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/arc-MIT-LICENSE.txt",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/content.json",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/foundation.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/README.md",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/00f047ef6c557b9f.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/0288b3904cc07ec4.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/063c24fc1e24617c.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/13f27d3855b19595.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/1deb81fc96cec2dc.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/2ea2b2731c5ba7bd.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/31bdadfcc9af4fd1.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/44939f48d4440596.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/4ea94117e9b9e540.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/7629db7a71e637c8.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/7b776a5cbbe2b78a.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/7bba85cd9a716746.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/9eedb49febe2cbe3.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/becc961a9b59e177.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/c623e9a67ae414ff.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/dce8d597c26e3056.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/ea73e4e582f921b0.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/f67fa7d19375a705.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/style.css",
+      "role": "source"
+    },
+    {
+      "path": "docs.html",
+      "role": "source"
+    },
+    {
+      "path": "docs/cases/uiarc-platform.md",
+      "role": "context"
+    },
+    {
+      "path": "entries/cases/uiarc-platform.json",
+      "role": "context"
+    },
+    {
+      "path": "entries/patterns/theme-invariant-gradient-panel.json",
+      "role": "context"
+    },
+    {
+      "path": "previews/cases/uiarc-platform-mobile.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/cases/uiarc-platform-reference.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/cases/uiarc-platform.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "prompts/cases/uiarc-platform.md",
+      "role": "context"
+    },
+    {
+      "path": "prompts/patterns/theme-invariant-gradient-panel.md",
+      "role": "context"
+    },
+    {
+      "path": "site/icons/favicon.svg",
+      "role": "asset"
+    },
+    {
+      "path": "site/pages/docs/docs.css",
+      "role": "source"
+    },
+    {
+      "path": "site/pages/docs/docs.js",
+      "role": "source"
+    },
+    {
+      "path": "site/runtime/asset-cache.js",
+      "role": "source"
+    },
+    {
+      "path": "site/runtime/asset-runtime.js",
+      "role": "source"
+    },
+    {
+      "path": "site/runtime/case-loading.css",
+      "role": "source"
+    },
+    {
+      "path": "site/runtime/case-loading.js",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/site-footer.css",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/site-nav.css",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/site-shell.js",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/site-typography.css",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/theme-control.css",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/theme.js",
+      "role": "source"
+    },
+    {
+      "path": "site/vendor/LICENSES.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/vendor/marked.umd.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/vendor/purify.min.js",
+      "role": "vendor"
+    }
+  ]
+}

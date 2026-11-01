@@ -1,0 +1,189 @@
+{
+  "clips": [
+    {
+      "id": "revenue-globe",
+      "href": "https://uiarc.dev/components/blocks/revenue-globe",
+      "title": "Revenue globe",
+      "tier": "Pro",
+      "description": "A dotted globe where live payments arc home to headquarters."
+    },
+    {
+      "id": "customer-galaxy",
+      "href": "https://uiarc.dev/components/blocks/customer-galaxy",
+      "title": "Customer galaxy",
+      "tier": "Pro",
+      "description": "Thousands of accounts as a galaxy that spirals into clusters by plan, region or health."
+    },
+    {
+      "id": "horizon-chart",
+      "href": "https://uiarc.dev/components/blocks/horizon-chart",
+      "title": "Horizon chart",
+      "tier": "Pro",
+      "description": "Fourteen daily series folded into compact rows with a synced crosshair."
+    },
+    {
+      "id": "kanban-board",
+      "href": "https://uiarc.dev/components/blocks/kanban-board",
+      "title": "Kanban board",
+      "tier": "Pro",
+      "description": "Cards lift, tilt and spring into the slot that opens for them."
+    },
+    {
+      "id": "choropleth-explorer",
+      "href": "https://uiarc.dev/components/blocks/choropleth-explorer",
+      "title": "Choropleth explorer",
+      "tier": "Pro",
+      "description": "A map that shades every region by revenue, growth or penetration."
+    },
+    {
+      "id": "ai-chat",
+      "href": "https://uiarc.dev/components/blocks/ai-chat",
+      "title": "AI chat",
+      "tier": "Pro",
+      "description": "A full screen AI chat with streaming answers, reasoning, tools and sources."
+    },
+    {
+      "id": "command-palette",
+      "href": "https://uiarc.dev/components/blocks/command-palette",
+      "title": "Command palette",
+      "tier": "Free",
+      "description": "Keyboard driven search over grouped actions and shortcuts."
+    },
+    {
+      "id": "dropdown-menu",
+      "href": "https://uiarc.dev/components/dropdown-menu",
+      "title": "Dropdown menu",
+      "tier": "Free",
+      "description": "A focused list of actions anchored to its trigger."
+    },
+    {
+      "id": "dialog",
+      "href": "https://uiarc.dev/components/dialog",
+      "title": "Dialog",
+      "tier": "Free",
+      "description": "A focused surface for decisions that need attention."
+    },
+    {
+      "id": "morph-select",
+      "href": "https://uiarc.dev/components/morph-select",
+      "title": "Morph select",
+      "tier": "Free",
+      "description": "A select whose trigger grows into the list, with type-ahead."
+    },
+    {
+      "id": "tabs",
+      "href": "https://uiarc.dev/components/tabs",
+      "title": "Tabs",
+      "tier": "Free",
+      "description": "Switch between related views with a sliding indicator."
+    },
+    {
+      "id": "toast-stack",
+      "href": "https://uiarc.dev/components/toast-stack",
+      "title": "Toast stack",
+      "tier": "Free",
+      "description": "Short results that stack at the edge and fan out on hover."
+    },
+    {
+      "id": "date-picker",
+      "href": "https://uiarc.dev/components/date-picker",
+      "title": "Date picker",
+      "tier": "Free",
+      "description": "Pick a date from a calendar without losing context."
+    },
+    {
+      "id": "elastic-slider",
+      "href": "https://uiarc.dev/components/elastic-slider",
+      "title": "Elastic slider",
+      "tier": "Free",
+      "description": "A slider that stretches like rubber past its ends."
+    },
+    {
+      "id": "switch",
+      "href": "https://uiarc.dev/components/switch",
+      "title": "Switch",
+      "tier": "Free",
+      "description": "A tactile toggle for settings that apply right away."
+    }
+  ],
+  "logos": [
+    {
+      "name": "Boston Consulting Group",
+      "file": "assets/logos/0.svg",
+      "factor": null,
+      "viewBox": "0 0 72.31 29.47"
+    },
+    {
+      "name": "Whop",
+      "file": "assets/logos/1.svg",
+      "factor": null,
+      "viewBox": "0 0 118.03 25.88"
+    },
+    {
+      "name": "A24",
+      "file": "assets/logos/2.svg",
+      "factor": null,
+      "viewBox": "0 0 379.7 155.8"
+    },
+    {
+      "name": "Airtel",
+      "file": "assets/logos/3.svg",
+      "factor": null,
+      "viewBox": "0 0 221.78 56.89"
+    },
+    {
+      "name": "CoinTracker",
+      "file": "assets/logos/4.svg",
+      "factor": null,
+      "viewBox": "0 0 147 20.09"
+    },
+    {
+      "name": "Teamworks",
+      "file": "assets/logos/5.svg",
+      "factor": null,
+      "viewBox": "0 0 148 37"
+    },
+    {
+      "name": "Nearform",
+      "file": "assets/logos/6.svg",
+      "factor": null,
+      "viewBox": "0 0 143.74 25.01"
+    },
+    {
+      "name": "HappyRobot",
+      "file": "assets/logos/7.svg",
+      "factor": null,
+      "viewBox": "0 0 2906 448"
+    },
+    {
+      "name": "Nixtla",
+      "file": "assets/logos/8.svg",
+      "factor": null,
+      "viewBox": "0 0 114.81 16.36"
+    },
+    {
+      "name": "Maximum Effort",
+      "file": "assets/logos/9.svg",
+      "factor": null,
+      "viewBox": "0 0 938 339.7"
+    },
+    {
+      "name": "The Post and Courier",
+      "file": "assets/logos/10.svg",
+      "factor": null,
+      "viewBox": "0 0 3382 406"
+    },
+    {
+      "name": "Rezi",
+      "file": "assets/logos/11.svg",
+      "factor": null,
+      "viewBox": "0 0 51 21"
+    },
+    {
+      "name": "Ordinal",
+      "file": "assets/logos/12.svg",
+      "factor": null,
+      "viewBox": "0 0 110.09 25.15"
+    }
+  ]
+}

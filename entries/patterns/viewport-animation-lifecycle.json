@@ -93,6 +93,14 @@
       "evidence": "observed",
       "referenceUrl": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/demo/web-design-demo/demo1-with-skill.html",
       "capturedAt": "2026-10-27"
+    },
+    {
+      "caseId": "uiarc-platform",
+      "locator": "entries/cases/uiarc-platform.json#interaction/3",
+      "observation": "六张 Pro 卡片与九张免费卡片分别排成桌面两列和三列；卡片原本使用 WebP 海报与静音 WebM，进入视口播放，点击进入原站对应组件页。手机 Pro 为一列、免费组件为两列。",
+      "evidence": "adapted",
+      "referenceUrl": "https://uiarc.dev/",
+      "capturedAt": "2026-11-01"
     }
   ],
   "sourceFiles": [
@@ -155,6 +163,13 @@
     "demos/cases/stellar-museum/index.html",
     "demos/cases/stellar-museum/fidelity.md",
     "entries/cases/stellar-museum.json",
-    "docs/cases/stellar-museum.md"
+    "docs/cases/stellar-museum.md",
+    "entries/cases/uiarc-platform.json",
+    "docs/cases/uiarc-platform.md",
+    "demos/cases/uiarc-platform/index.html",
+    "demos/cases/uiarc-platform/app.js",
+    "demos/cases/uiarc-platform/style.css",
+    "demos/cases/uiarc-platform/fidelity.md",
+    "demos/cases/uiarc-platform/source/content.json"
   ]
 }

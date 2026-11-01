@@ -160,6 +160,11 @@ window.ATLAS_DOCUMENTS = [
     "group": "案例研究"
   },
   {
+    "path": "docs/cases/uiarc-platform.md",
+    "title": "Arc UI · 组件平台的产品官网",
+    "group": "案例研究"
+  },
+  {
     "path": "docs/cases/atlas-sister-sites.md",
     "title": "Atlas 姊妹站 · 参考库界面骨架",
     "group": "案例研究"
@@ -242,6 +247,11 @@ window.ATLAS_DOCUMENTS = [
   {
     "path": "docs/materials/README.md",
     "title": "内容素材使用说明",
+    "group": "素材使用"
+  },
+  {
+    "path": "docs/materials/arc-ui.md",
+    "title": "Arc UI · React 动效组件库",
     "group": "素材使用"
   },
   {
@@ -695,6 +705,11 @@ window.ATLAS_DOCUMENTS = [
     "group": "复用 Prompt"
   },
   {
+    "path": "prompts/patterns/parallel-cli-agent-install.md",
+    "title": "面向开发者与 Agent 的并行安装入口 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
     "path": "prompts/cases/arknights-world.md",
     "title": "明日方舟 · 全屏档案与交互点阵 · 复用 Prompt",
     "group": "复用 Prompt"
@@ -951,7 +966,7 @@ window.ATLAS_DOCUMENTS = [
   },
   {
     "path": "prompts/patterns/moving-tab-selection-bed.md",
-    "title": "选中底板与套餐组联动 · 复用 Prompt",
+    "title": "选中底板与套餐内容联动 · 复用 Prompt",
     "group": "复用 Prompt"
   },
   {
@@ -1100,6 +1115,11 @@ window.ATLAS_DOCUMENTS = [
     "group": "复用 Prompt"
   },
   {
+    "path": "prompts/patterns/clipped-word-rise.md",
+    "title": "逐词裁切上升的标题显现 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
     "path": "prompts/patterns/highlight-progress-gallery.md",
     "title": "逐项亮点与可暂停进度 · 复用 Prompt",
     "group": "复用 Prompt"
@@ -1107,6 +1127,11 @@ window.ATLAS_DOCUMENTS = [
   {
     "path": "prompts/patterns/film-overlay.md",
     "title": "主动观看的独立影片层 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
+    "path": "prompts/patterns/theme-invariant-gradient-panel.md",
+    "title": "主题切换中的恒定浅色品牌面板 · 复用 Prompt",
     "group": "复用 Prompt"
   },
   {
@@ -1147,6 +1172,16 @@ window.ATLAS_DOCUMENTS = [
   {
     "path": "prompts/cases/apple-product.md",
     "title": "Apple · 滚动产品舞台 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
+    "path": "prompts/cases/uiarc-platform.md",
+    "title": "Arc UI · 组件平台的产品官网 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
+    "path": "prompts/materials/arc-ui.md",
+    "title": "Arc UI · React 动效组件库（免费部分） · 复用 Prompt",
     "group": "复用 Prompt"
   },
   {
@@ -1320,6 +1355,15 @@ window.ATLAS_DOCUMENT_SOURCES = [
     ]
   },
   {
+    "path": "demos/cases/uiarc-platform/",
+    "referenceUrl": "https://uiarc.dev/",
+    "sources": [
+      "https://uiarc.dev/",
+      "https://github.com/kuratlielia/arc-library/tree/df3a600fd9ffca85ec8607438b599a4408ab8562",
+      "https://uiarc.dev/license"
+    ]
+  },
+  {
     "path": "demos/patterns/accent-role-tiers/",
     "sources": [
       "https://mibxr-design-atlas.mibxranime.chatgpt.site/",
@@ -1385,7 +1429,8 @@ window.ATLAS_DOCUMENT_SOURCES = [
       "https://qoder.cn/",
       "https://endfield.hypergryph.com/",
       "https://www.deepseek.com/harness/",
-      "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/demo/web-design-demo/demo1-with-skill.html"
+      "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/demo/web-design-demo/demo1-with-skill.html",
+      "https://uiarc.dev/"
     ]
   },
   {
@@ -1404,6 +1449,22 @@ window.ATLAS_DOCUMENT_SOURCES = [
       "https://github.com/jdan/98.css/blob/517d174b30392d39e068ef4eca457da66a189f8f/style.css",
       "https://github.com/jdan/98.css/blob/517d174b30392d39e068ef4eca457da66a189f8f/fonts/src/ms-sans-serif/license.txt",
       "https://github.com/jdan/98.css/blob/517d174b30392d39e068ef4eca457da66a189f8f/fonts/src/ms-sans-serif-bold/license.txt"
+    ]
+  },
+  {
+    "path": "demos/materials/arc-ui/",
+    "upstream": {
+      "repository": "kuratlielia/arc-library",
+      "url": "https://github.com/kuratlielia/arc-library",
+      "commit": "df3a600fd9ffca85ec8607438b599a4408ab8562",
+      "version": "提交 df3a600（package.json 为 0.0.0）",
+      "verifiedAt": "2026-11-01"
+    },
+    "sources": [
+      "https://github.com/kuratlielia/arc-library/tree/df3a600fd9ffca85ec8607438b599a4408ab8562",
+      "https://uiarc.dev/components/button",
+      "https://uiarc.dev/license",
+      "https://uiarc.dev/"
     ]
   },
   {

@@ -1,0 +1,15 @@
+{
+  "name": "atlas-arc-ui-demo",
+  "private": true,
+  "type": "module",
+  "scripts": { "build": "node build.mjs" },
+  "dependencies": {
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "motion": "13.4.0",
+    "lucide-react": "1.47.0",
+    "@radix-ui/react-dialog": "1.1.23",
+    "@radix-ui/react-tabs": "1.1.21"
+  },
+  "devDependencies": { "esbuild": "0.28.2" }
+}

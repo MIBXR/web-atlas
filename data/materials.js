@@ -166,6 +166,253 @@ window.ATLAS_MATERIALS = [
     }
   },
   {
+    "id": "arc-ui",
+    "title": "Arc UI · React 动效组件库（免费部分）",
+    "type": "component-library",
+    "category": "组件与效果",
+    "summary": "以可复制的 React / TypeScript 和 CSS Modules 提供日常控件、图表与完整区块。归档 120 个免费组件、22 个免费区块及共享设计与动效 tokens，八组中文样例运行真实上游代码。",
+    "tags": [
+      "React",
+      "TypeScript",
+      "Motion",
+      "CSS Modules",
+      "Radix UI",
+      "shadcn",
+      "MCP",
+      "组件库",
+      "形变",
+      "图表"
+    ],
+    "demo": "demos/materials/arc-ui/index.html",
+    "preview": "previews/materials/arc-ui.jpg",
+    "research": "docs/materials/arc-ui.md",
+    "demoNote": "组件逻辑和 CSS 保留原样；样例界面、中文文案、价格和图表数据为本库编写。只包含公开免费部分。",
+    "install": "复制 source/upstream/ 中的组件与共享 tokens，保持 @/ 路径别名；本地样例已捆绑依赖。重建：进入 source/，运行 npm ci 与 npm run build。",
+    "upstream": {
+      "repository": "kuratlielia/arc-library",
+      "url": "https://github.com/kuratlielia/arc-library",
+      "commit": "df3a600fd9ffca85ec8607438b599a4408ab8562",
+      "version": "提交 df3a600（package.json 为 0.0.0）",
+      "verifiedAt": "2026-11-01"
+    },
+    "license": {
+      "name": "MIT（免费组件与代码）；SIL OFL 1.1（字体）",
+      "url": "https://github.com/kuratlielia/arc-library/blob/df3a600fd9ffca85ec8607438b599a4408ab8562/LICENSE",
+      "scope": "免费 registry、lib、类型、文档与安装条目；不包含 Arc Pro 源码。",
+      "notes": "保留上游 MIT、运行依赖许可和 Inter / Geist OFL 原文；网站品牌与 Pro 商业许可不随软件许可转移。"
+    },
+    "useCases": [
+      "React 产品中的状态控件和微交互",
+      "需要源码所有权与本地修改的界面",
+      "以 CSS 语义 tokens 统一主题的组件组合",
+      "通过 registry、CLI 或 Agent 取用组件的流程"
+    ],
+    "avoid": [
+      "将其当作可直接引入的同名 npm 运行包",
+      "在非 React 项目中只复制 CSS 来冒充组件行为",
+      "把官网 Pro 目录或展示录像视为已归档的免费源码"
+    ],
+    "constraints": [
+      "固定归档 df3a600 的 144 个 registry 条目：120 个 registry:ui、22 个 registry:block 和 2 个共享基础条目。",
+      "上游要求 React 19、TypeScript 与 Next.js 或 Vite；本地以 React 19.3.0、Motion 13.4.0 和固定锁文件捆绑八组样例。",
+      "source/upstream/ 的 registry、lib、types、public/r 与根使用说明保留原始结构和字节，未引入上游的维护检查脚本。",
+      "样例数据、状态与操作仅作用于当前页面，不接入账户、支付或持久化服务。",
+      "浏览器实测覆盖本地 Chromium 桌面和手机模拟宽度；上游其余组件可直接从完整源码取材。"
+    ],
+    "workflow": [
+      "先从八组样例观察控件状态与动效，确定当前页面所需能力。",
+      "在固定快照 registry.json 与 public/r/<名称>.json 中查看文件和依赖，再复制对应源码。",
+      "接入 foundation.css 和 motion-tokens，设置 @/ 路径别名，保留组件内部相对结构。",
+      "按真实业务替换 props、标签与数据；明暗主题、键盘和减少动态由目标页面一起管理。"
+    ],
+    "relatedEntries": [
+      {
+        "kind": "case",
+        "id": "uiarc-platform",
+        "note": "同一产品的官网设计作为案例；本素材提供可取用的免费组件源码。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "固定提交免费源码与 MIT 许可",
+        "url": "https://github.com/kuratlielia/arc-library/tree/df3a600fd9ffca85ec8607438b599a4408ab8562",
+        "note": "registry.json 中 120 个 UI 组件、22 个区块和 2 个基础条目；源码和安装条目均随本体保存。",
+        "evidence": "source"
+      },
+      {
+        "title": "官网组件目录",
+        "url": "https://uiarc.dev/components/button",
+        "note": "官网同时展示免费与 Pro，免费快照的范围以固定 registry 为准。",
+        "evidence": "observed"
+      },
+      {
+        "title": "Arc 许可说明",
+        "url": "https://uiarc.dev/license",
+        "note": "免费部分为 MIT；Pro 采用独立许可。",
+        "evidence": "source"
+      },
+      {
+        "title": "官网原始字体",
+        "url": "https://uiarc.dev/",
+        "note": "Inter：_next/static/media/6c596dfcddeca1e9-s.p.woff2；Geist：9ff55a8a9670220d-s.p.woff2。字体原件与 OFL 原文保存在 fonts/。",
+        "evidence": "source"
+      }
+    ],
+    "demos": [
+      {
+        "id": "buttons",
+        "title": "按钮反馈",
+        "component": "Button",
+        "summary": "切换收藏与重置，比较主次与禁用状态。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=buttons",
+        "parameters": [
+          {
+            "name": "variant",
+            "value": "primary / secondary / ghost",
+            "note": "上游按钮层级；对应收藏、重置和禁用示例。"
+          }
+        ]
+      },
+      {
+        "id": "morph-select",
+        "title": "形变选择器",
+        "component": "MorphSelect",
+        "summary": "选择四种工作方向，观察触发器和列表的形变。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=morph-select",
+        "parameters": [
+          {
+            "name": "items / value",
+            "value": "4 个选项；初始 design",
+            "note": "工作方向为本地演示数据，选择后同步 value。"
+          },
+          {
+            "name": "panelWidth",
+            "value": "272px",
+            "note": "沿用上游默认展开宽度。"
+          }
+        ]
+      },
+      {
+        "id": "elastic-slider",
+        "title": "弹性滑块",
+        "component": "ElasticSlider",
+        "summary": "拖动与键盘调节 0–100%，步长 5。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=elastic-slider",
+        "parameters": [
+          {
+            "name": "min / max / step",
+            "value": "0 / 100 / 5",
+            "note": "本地样例范围；上游处理拖动、吸附与键盘。"
+          },
+          {
+            "name": "marks",
+            "value": "0、25、50、75、100",
+            "note": "本地提供的离散刻度。"
+          }
+        ]
+      },
+      {
+        "id": "tabs",
+        "title": "标签切换",
+        "component": "Tabs",
+        "summary": "切换布局、动效与源码三个内容面板。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=tabs",
+        "parameters": [
+          {
+            "name": "defaultValue",
+            "value": "layout",
+            "note": "初始布局面板；其余为 motion、source。"
+          }
+        ]
+      },
+      {
+        "id": "billing",
+        "title": "计费周期",
+        "component": "BillingToggle / AnimatedCounter",
+        "summary": "按月／按年更新示例价格与优惠。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=billing",
+        "parameters": [
+          {
+            "name": "value",
+            "value": "monthly / yearly",
+            "note": "本地受控周期；示例月价分别为 ¥20 与 ¥16。"
+          }
+        ]
+      },
+      {
+        "id": "chart",
+        "title": "折线图",
+        "component": "LineChart",
+        "summary": "切换 7／14 天并控制两条系列显隐。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=chart",
+        "parameters": [
+          {
+            "name": "data",
+            "value": "7 / 14 天",
+            "note": "本地固定示例序列，不读取外部数据。"
+          },
+          {
+            "name": "series",
+            "value": "本期 / 上期",
+            "note": "复用稳定 key，图例控制系列显隐。"
+          },
+          {
+            "name": "height",
+            "value": "220px",
+            "note": "本地绘图区高度，宽度跟随容器。"
+          }
+        ]
+      },
+      {
+        "id": "dialog",
+        "title": "对话框",
+        "component": "Dialog",
+        "summary": "打开、取消、确认与重置当前页面的归档状态。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=dialog",
+        "parameters": [
+          {
+            "name": "title / description",
+            "value": "归档确认与影响说明",
+            "note": "中文内容由本地提供，焦点和 Escape 由上游处理。"
+          }
+        ]
+      },
+      {
+        "id": "toast",
+        "title": "通知堆叠",
+        "component": "ToastStack",
+        "summary": "添加、展开、撤回与清空短通知。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=toast",
+        "parameters": [
+          {
+            "name": "contained / position",
+            "value": "true / bottom-center",
+            "note": "将原始通知堆叠限制在样例舞台内。"
+          },
+          {
+            "name": "action",
+            "value": "撤回",
+            "note": "通过上游 update 原位改写通知为已撤回。"
+          }
+        ]
+      }
+    ],
+    "sourceFiles": [
+      "demos/materials/arc-ui/source/main.tsx",
+      "demos/materials/arc-ui/source/build.mjs",
+      "demos/materials/arc-ui/source/package.json",
+      "demos/materials/arc-ui/source/package-lock.json",
+      "demos/materials/arc-ui/source/upstream/registry.json",
+      "demos/materials/arc-ui/source/upstream/registry/foundation.css",
+      "demos/materials/arc-ui/source/upstream/lib/motion-tokens.ts"
+    ],
+    "accessibility": {
+      "keyboard": "使用上游按钮、listbox、Radix 标签和对话框键盘模型；样例提供中文可见标签，滑块支持方向键/Home/End，通知支持聚焦与关闭。",
+      "reducedMotion": "上游 useReducedMotion 遵循系统设置；样例的手动开关通过 MotionConfig 关闭位移，并关闭本地 CSS 过渡。"
+    },
+    "prompt": "在已有 React 页面中使用 Arc UI 免费组件。先读取固定源码、registry 安装条目、中文说明与运行样例，按任务选择 Button、MorphSelect、ElasticSlider、Tabs、BillingToggle、LineChart、Dialog 或 ToastStack。保留上游 TypeScript、CSS Modules、motion tokens 和键盘模型，接入 foundation.css，以语义变量切换明暗与强调色；只修改业务 props、数据和页面组合。保持按钮、输入和标签的可访问名称，尊重系统减少动态。源文件从 source/upstream/ 复制，依赖使用当前项目明确固定的版本，保留 MIT 与各运行依赖、字体许可。官网首页的布局应从独立案例取得，不把官网媒体当作组件实现。"
+  },
+  {
     "id": "beautiful-article",
     "title": "Beautiful Article · 长文编辑工作流",
     "type": "agent-skill",

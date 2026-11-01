@@ -58,6 +58,14 @@
       "evidence": "observed",
       "referenceUrl": "https://qoder.cn/",
       "capturedAt": "2026-10-07"
+    },
+    {
+      "caseId": "uiarc-platform",
+      "locator": "entries/cases/uiarc-platform.json#interaction/6",
+      "observation": "六项 FAQ 默认展开第一项；打开另一项先收起前项，当前项可以再次收起，标题图标与内容高度同步，键盘激活保留焦点。",
+      "evidence": "observed",
+      "referenceUrl": "https://uiarc.dev/",
+      "capturedAt": "2026-11-01"
     }
   ],
   "sourceFiles": [
@@ -80,6 +88,13 @@
     "entries/cases/claude-platform.json",
     "entries/cases/qoder-platform.json",
     "entries/cases/stripe-platform.json",
-    "docs/cases/stripe-platform.md"
+    "docs/cases/stripe-platform.md",
+    "entries/cases/uiarc-platform.json",
+    "docs/cases/uiarc-platform.md",
+    "demos/cases/uiarc-platform/index.html",
+    "demos/cases/uiarc-platform/app.js",
+    "demos/cases/uiarc-platform/style.css",
+    "demos/cases/uiarc-platform/fidelity.md",
+    "demos/cases/uiarc-platform/source/content.json"
   ]
 }

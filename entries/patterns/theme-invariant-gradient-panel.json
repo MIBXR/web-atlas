@@ -1,0 +1,65 @@
+{
+  "id": "theme-invariant-gradient-panel",
+  "title": "主题切换中的恒定浅色品牌面板",
+  "category": "视觉构成",
+  "experienceTypes": [
+    "visual"
+  ],
+  "summary": "用稳定的浅色品牌面板连接首尾行动。",
+  "mechanism": "正文界面跟随明暗主题，首尾面板固定浅底深字；三处径向色场分布在边角，中心留给主张。",
+  "trigger": "进入页面或切换主题",
+  "effect": "品牌、文案对比与阅读主线保持稳定。",
+  "useCases": [
+    "组件库、开发者工具与产品介绍"
+  ],
+  "avoid": [
+    "让装饰遮住主张或真实操作"
+  ],
+  "constraints": [
+    "使用目标产品的真实文案与可用入口，原站数值只作为本例依据。"
+  ],
+  "composition": {
+    "role": "foundation",
+    "notes": "与页面的信息层级协调；保持正文、操作与当前状态可读。",
+    "pairsWellWith": [
+      "semantic-theme-roles"
+    ],
+    "conflicts": []
+  },
+  "accessibility": {
+    "keyboard": "链接与按钮保留原生键盘路径和可访问名称；标题的装饰分词不重复播报。",
+    "reducedMotion": "移除入场、交错和循环运动，保留所有文字、布局与复制结果。"
+  },
+  "parameters": [
+    {
+      "name": "径向色场",
+      "value": "粉：3% 96%；蓝：95% 5%；黄：50% 110%",
+      "note": "原站发布样式 page_hero 与 page_finalInner。"
+    },
+    {
+      "name": "面板尺度",
+      "value": "桌面 690px / 手机 590px",
+      "note": "原站首屏 min-height；标题与正文独立重排。"
+    }
+  ],
+  "prompt": "为目标页面实现「主题切换中的恒定浅色品牌面板」。正文界面跟随明暗主题，首尾面板固定浅底深字；三处径向色场分布在边角，中心留给主张。触发：进入页面或切换主题。结果：品牌、文案对比与阅读主线保持稳定。。沿用页面既有层级与真实内容；链接、复制按钮和状态提供可访问名称，减少动态直接显示稳定结果。",
+  "sources": [
+    {
+      "caseId": "uiarc-platform",
+      "locator": "entries/cases/uiarc-platform.json#interaction/0",
+      "observation": "主题按钮在系统默认与手动选择之间协调页面表面、文字、边界和导航；首尾两块粉蓝黄渐变面板始终保持浅底深字，产品影片保留原色。",
+      "evidence": "observed",
+      "referenceUrl": "https://uiarc.dev/",
+      "capturedAt": "2026-11-01"
+    }
+  ],
+  "sourceFiles": [
+    "entries/cases/uiarc-platform.json",
+    "docs/cases/uiarc-platform.md",
+    "demos/cases/uiarc-platform/index.html",
+    "demos/cases/uiarc-platform/app.js",
+    "demos/cases/uiarc-platform/style.css",
+    "demos/cases/uiarc-platform/fidelity.md",
+    "demos/cases/uiarc-platform/source/content.json"
+  ]
+}

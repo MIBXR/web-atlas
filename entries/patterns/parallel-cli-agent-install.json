@@ -1,0 +1,59 @@
+{
+  "id": "parallel-cli-agent-install",
+  "title": "面向开发者与 Agent 的并行安装入口",
+  "category": "内容组织",
+  "experienceTypes": [
+    "structure",
+    "micro-motion"
+  ],
+  "summary": "同一能力提供可直接复制的两条取用路径。",
+  "mechanism": "并排放置 CLI 与 MCP 安装卡，各自说明适用入口并复制完整命令；相邻数量卡说明免费核心与 Pro 内容的边界。",
+  "trigger": "选择安装方式并复制",
+  "effect": "用户能按自己的工作方式取得同一组件产品。",
+  "useCases": [
+    "组件库、开发者工具与产品介绍"
+  ],
+  "avoid": [
+    "让装饰遮住主张或真实操作"
+  ],
+  "constraints": [
+    "使用目标产品的真实文案与可用入口，原站数值只作为本例依据。"
+  ],
+  "composition": {
+    "role": "support",
+    "notes": "与页面的信息层级协调；保持正文、操作与当前状态可读。",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "accessibility": {
+    "keyboard": "链接与按钮保留原生键盘路径和可访问名称；标题的装饰分词不重复播报。",
+    "reducedMotion": "移除入场、交错和循环运动，保留所有文字、布局与复制结果。"
+  },
+  "parameters": [
+    {
+      "name": "布局",
+      "value": "桌面三列；窄屏单列",
+      "note": "前两张为安装方式，第三张解释内容层级。"
+    }
+  ],
+  "prompt": "为目标页面实现「面向开发者与 Agent 的并行安装入口」。并排放置 CLI 与 MCP 安装卡，各自说明适用入口并复制完整命令；相邻数量卡说明免费核心与 Pro 内容的边界。触发：选择安装方式并复制。结果：用户能按自己的工作方式取得同一组件产品。。沿用页面既有层级与真实内容；链接、复制按钮和状态提供可访问名称，减少动态直接显示稳定结果。",
+  "sources": [
+    {
+      "caseId": "uiarc-platform",
+      "locator": "entries/cases/uiarc-platform.json#interaction/4",
+      "observation": "shadcn CLI 与 MCP server 并排给出同一组件库的两个安装入口；复制按钮把完整命令写入剪贴板并短暂显示勾号，第三张卡区分免费与 Pro 数量。",
+      "evidence": "observed",
+      "referenceUrl": "https://uiarc.dev/",
+      "capturedAt": "2026-11-01"
+    }
+  ],
+  "sourceFiles": [
+    "entries/cases/uiarc-platform.json",
+    "docs/cases/uiarc-platform.md",
+    "demos/cases/uiarc-platform/index.html",
+    "demos/cases/uiarc-platform/app.js",
+    "demos/cases/uiarc-platform/style.css",
+    "demos/cases/uiarc-platform/fidelity.md",
+    "demos/cases/uiarc-platform/source/content.json"
+  ]
+}

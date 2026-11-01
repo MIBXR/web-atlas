@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "repository": "https://github.com/MIBXR/web-atlas",
-  "entryCount": 40,
+  "entryCount": 41,
   "entries": [
     {
       "id": "apple-product",
@@ -3013,6 +3013,86 @@
         "preview": "previews/cases/clawd-on-desk.jpg",
         "demo": "demos/cases/clawd-on-desk/index.html",
         "entry": "entries/cases/clawd-on-desk.json"
+      }
+    },
+    {
+      "id": "uiarc-platform",
+      "title": "Arc UI · 组件平台的产品官网",
+      "category": "产品",
+      "tags": [
+        "产品平台",
+        "组件库官网",
+        "开发者工具",
+        "渐变面板",
+        "静音产品影片",
+        "源码分发",
+        "明暗主题",
+        "响应式"
+      ],
+      "summary": "以恒定浅色的渐变首尾面板建立品牌，把高阶组件与日常组件分成两层产品影片，再用 CLI、MCP、免费／付费方案和 FAQ 完成开发者的取用路径。",
+      "useCases": [
+        "组件库或开发者平台首页",
+        "需要同时解释效果与安装方式的工具产品",
+        "用免费核心与专业内容分层介绍能力"
+      ],
+      "avoid": [
+        "用展示短片冒充可操作的组件实现",
+        "把 Pro 内容作为开放组件源码分发",
+        "把客户标识当作独立验证过的客户证言"
+      ],
+      "country": "未确认",
+      "implementation": "reference-study",
+      "capturedAt": "2026-11-01",
+      "tokens": {
+        "palette": [
+          "#ffffff",
+          "#f8f7f5",
+          "#262931",
+          "#5b626d",
+          "#e9babb",
+          "#afc7f6",
+          "#e8d9ad"
+        ],
+        "type": "Geist / Inter 可变字体；主标题 72px，章节 52px，正文 16–18px。",
+        "layout": "主内容 min(100% - 64px,1248px)；首屏 690px，手机 590px；手机外缘 16px。",
+        "motion": "标题词间 40ms；客户轨道 52s linear；FAQ 与底板为短局部过渡。"
+      },
+      "composition": {
+        "color": "中性黑白、层次分明的表面和灰字；粉 #E9BABB、蓝 #AFC7F6、黄 #E8D9AD 三个径向色场围住首尾标题。",
+        "typography": "Geist 负责 72px 桌面标题与章节标题，Inter 负责导航、说明与操作；手机主标题使用 7.2vw、24–30px 范围。",
+        "layout": "原生纵向长页；1440px 下主内容上限 1248px，首尾面板上限 1408px；Pro 两列、免费三列，手机一列／两列。",
+        "imagery": "15 组原始 WebP / WebM 展示媒体和 13 个客户 SVG 标识；影片是原站已有的营销内容，不作为组件实现。",
+        "shape": "30px 渐变面板、26px 媒体卡、18px 操作与胶囊层级标记。",
+        "hierarchy": "品牌主张、客户证据、Pro 作品、免费核心、安装方式、方案、疑问、最终行动依次展开。",
+        "motion": "裁切标题显现、52s 标识轨道、可视区静音影片、单开 FAQ 与套餐选中底板；减少动态保留静态内容。",
+        "coherence": "同一渐变在首尾呼应，中性页面框架与品牌面板各自保持颜色职责，所有例子都回到同一套源码产品。"
+      },
+      "interaction": [
+        "主题按钮在系统默认与手动选择之间协调页面表面、文字、边界和导航；首尾两块粉蓝黄渐变面板始终保持浅底深字，产品影片保留原色。",
+        "首屏标题按单词裁切向上显现，词间延迟 40ms；后续章节标题进入视口后上移并显现，减少动态时直接显示完整文字。",
+        "13 个客户标识组成两份同序轨道，以 52s 线性循环横移，左右渐隐；原站没有悬停暂停，减少动态时改为静态换行且隐藏重复组。",
+        "六张 Pro 卡片与九张免费卡片分别排成桌面两列和三列；卡片原本使用 WebP 海报与静音 WebM，进入视口播放，点击进入原站对应组件页。手机 Pro 为一列、免费组件为两列。",
+        "shadcn CLI 与 MCP server 并排给出同一组件库的两个安装入口；复制按钮把完整命令写入剪贴板并短暂显示勾号，第三张卡区分免费与 Pro 数量。",
+        "价格区的 Pro yearly / Free 共用一个移动选中底板，切换后更新说明、价格、功能清单与入口；右侧终身方案保持可见，手机按当前 yearly 入口保留年度卡在先。",
+        "六项 FAQ 默认展开第一项；打开另一项先收起前项，当前项可以再次收起，标题图标与内容高度同步，键盘激活保留焦点。",
+        "手机导航从顶栏下方展开为带背景模糊遮罩的菜单，显示五个入口及说明、GitHub、登录和 Examples；关闭与 Escape 返回原页面及触发按钮，公告可独立关闭。"
+      ],
+      "themeBehavior": {
+        "mode": "system-and-manual",
+        "default": "system",
+        "control": "顶栏太阳／月亮按钮切换并保存手动主题；没有手动值时跟随系统。",
+        "designReason": "中性界面按主题切换，浅色渐变品牌面板和原始产品媒体保持稳定。"
+      },
+      "soundBehavior": {
+        "kind": "none",
+        "control": "15 段产品展示影片原本为静音播放，没有背景音乐或操作音。",
+        "interactionRole": "运动只负责展示组件效果，页面阅读不依赖声音。"
+      },
+      "paths": {
+        "bundle": "agent/cases/uiarc-platform.json",
+        "preview": "previews/cases/uiarc-platform.jpg",
+        "demo": "demos/cases/uiarc-platform/index.html",
+        "entry": "entries/cases/uiarc-platform.json"
       }
     }
   ]

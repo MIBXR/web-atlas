@@ -1322,7 +1322,7 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责客户事实以低密度节奏出现，职责限定在当前区域。组合时提供暂停，减少动态展示静态可读标识，不能把滚动当证言验证。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+      "notes": "该原子负责客户事实以低密度节奏出现，职责限定在当前区域。组合时提供暂停，减少动态展示静态可读标识，不能把滚动当证言验证。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。 Arc 来源为 52s 连续轨道；原站没有悬停暂停，减少动态改为静态换行。迁移时按当前任务提供暂停入口。",
       "pairsWellWith": [
         "viewport-animation-lifecycle"
       ],
@@ -1350,6 +1350,14 @@ window.ATLAS_PATTERNS = [
         "evidence": "observed",
         "referenceUrl": "https://stripe.com/",
         "capturedAt": "2026-10-07"
+      },
+      {
+        "caseId": "uiarc-platform",
+        "locator": "entries/cases/uiarc-platform.json#interaction/2",
+        "observation": "13 个客户标识组成两份同序轨道，以 52s 线性循环横移，左右渐隐；原站没有悬停暂停，减少动态时改为静态换行且隐藏重复组。",
+        "evidence": "observed",
+        "referenceUrl": "https://uiarc.dev/",
+        "capturedAt": "2026-11-01"
       }
     ],
     "sourceFiles": [
@@ -1367,7 +1375,14 @@ window.ATLAS_PATTERNS = [
       "entries/cases/notion-editorial.json",
       "entries/cases/stripe-platform.json",
       "docs/cases/notion-editorial.md",
-      "docs/cases/stripe-platform.md"
+      "docs/cases/stripe-platform.md",
+      "entries/cases/uiarc-platform.json",
+      "docs/cases/uiarc-platform.md",
+      "demos/cases/uiarc-platform/index.html",
+      "demos/cases/uiarc-platform/app.js",
+      "demos/cases/uiarc-platform/style.css",
+      "demos/cases/uiarc-platform/fidelity.md",
+      "demos/cases/uiarc-platform/source/content.json"
     ]
   },
   {
@@ -1429,6 +1444,74 @@ window.ATLAS_PATTERNS = [
       "demos/cases/zelda-world/style.css",
       "entries/cases/zelda-world.json",
       "docs/cases/zelda-world.md"
+    ]
+  },
+  {
+    "id": "clipped-word-rise",
+    "title": "逐词裁切上升的标题显现",
+    "category": "加载与媒体",
+    "experienceTypes": [
+      "page-motion"
+    ],
+    "summary": "按阅读顺序让标题从各自裁切框内进入。",
+    "mechanism": "标题保留完整可访问名称，每个词位于独立裁切框内；词的位移、透明度和轻模糊按短间隔交错，完成后保持原排版。",
+    "trigger": "首屏进入",
+    "effect": "主张按阅读顺序显现，整行位置保持稳定。",
+    "useCases": [
+      "组件库、开发者工具与产品介绍"
+    ],
+    "avoid": [
+      "让装饰遮住主张或真实操作"
+    ],
+    "constraints": [
+      "使用目标产品的真实文案与可用入口，原站数值只作为本例依据。"
+    ],
+    "composition": {
+      "role": "accent",
+      "notes": "与页面的信息层级协调；保持正文、操作与当前状态可读。",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "accessibility": {
+      "keyboard": "链接与按钮保留原生键盘路径和可访问名称；标题的装饰分词不重复播报。",
+      "reducedMotion": "移除入场、交错和循环运动，保留所有文字、布局与复制结果。"
+    },
+    "parameters": [
+      {
+        "name": "词间延迟",
+        "value": "40ms",
+        "note": "原站标题 DOM 的 --reveal-delay 递增值。"
+      },
+      {
+        "name": "初始模糊",
+        "value": "8px",
+        "note": "原站标题 --reveal-blur。"
+      },
+      {
+        "name": "分通道时长",
+        "value": "位移 760ms；透明度 440ms；模糊 580ms",
+        "note": "原站发布 CSS 的三条 text-reveal 动画。"
+      }
+    ],
+    "prompt": "为目标页面实现「逐词裁切上升的标题显现」。标题保留完整可访问名称，每个词位于独立裁切框内；词的位移、透明度和轻模糊按短间隔交错，完成后保持原排版。触发：首屏进入。结果：主张按阅读顺序显现，整行位置保持稳定。。沿用页面既有层级与真实内容；链接、复制按钮和状态提供可访问名称，减少动态直接显示稳定结果。",
+    "sources": [
+      {
+        "caseId": "uiarc-platform",
+        "locator": "entries/cases/uiarc-platform.json#interaction/1",
+        "observation": "首屏标题按单词裁切向上显现，词间延迟 40ms；后续章节标题进入视口后上移并显现，减少动态时直接显示完整文字。",
+        "evidence": "observed",
+        "referenceUrl": "https://uiarc.dev/",
+        "capturedAt": "2026-11-01"
+      }
+    ],
+    "sourceFiles": [
+      "entries/cases/uiarc-platform.json",
+      "docs/cases/uiarc-platform.md",
+      "demos/cases/uiarc-platform/index.html",
+      "demos/cases/uiarc-platform/app.js",
+      "demos/cases/uiarc-platform/style.css",
+      "demos/cases/uiarc-platform/fidelity.md",
+      "demos/cases/uiarc-platform/source/content.json"
     ]
   },
   {
@@ -5818,14 +5901,14 @@ window.ATLAS_PATTERNS = [
   },
   {
     "id": "moving-tab-selection-bed",
-    "title": "选中底板与套餐组联动",
+    "title": "选中底板与套餐内容联动",
     "category": "交互反馈",
     "experienceTypes": [
       "micro-motion"
     ],
-    "summary": "让套餐受众切换保持明确选中位置。",
-    "mechanism": "一个选中底板沿tabs位置移动，同时替换当前受众对应的套餐卡；不同卡数仍由内容区域自然布局。",
-    "trigger": "选择个人或团队受众",
+    "summary": "让套餐切换保持明确选中位置。",
+    "mechanism": "一个选中底板沿选项位置移动，同时替换当前选项对应的套餐内容；不同卡数仍由内容区域自然布局。",
+    "trigger": "选择受众或套餐类型",
     "effect": "选择位置与可见方案一致。",
     "useCases": [
       "受众分组的套餐与能力介绍"
@@ -5850,7 +5933,7 @@ window.ATLAS_PATTERNS = [
       "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
     },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「选中底板与套餐组联动」。一个选中底板沿tabs位置移动，同时替换当前受众对应的套餐卡；不同卡数仍由内容区域自然布局。触发：选择个人或团队受众。可见结果：选择位置与可见方案一致。适用任务：受众分组的套餐与能力介绍。按真实受众组织方案，未验证的源动态标明公共模块依据。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责选择位置与可见方案一致，职责限定在当前区域。组合时按真实受众组织方案，未验证的源动态标明公共模块依据。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为目标页面实现「选中底板与套餐内容联动」。一个选中底板沿选项位置移动，同时替换当前选项对应的套餐内容；不同卡数仍由内容区域自然布局。选择受众或套餐类型后，选中位置、价格、说明、功能和行动保持一致。沿用来源真实的选项与计费方式，不添加来源不存在的账期。按钮提供键盘路径、aria-pressed 与明确焦点，方向键定位对应选项；减少动态即时完成切换。",
     "sources": [
       {
         "caseId": "claude-platform",
@@ -5859,6 +5942,14 @@ window.ATLAS_PATTERNS = [
         "evidence": "inferred",
         "referenceUrl": "https://claude.com/",
         "capturedAt": "2026-10-07"
+      },
+      {
+        "caseId": "uiarc-platform",
+        "locator": "entries/cases/uiarc-platform.json#interaction/5",
+        "observation": "价格区的 Pro yearly / Free 共用一个移动选中底板，切换后更新说明、价格、功能清单与入口；右侧终身方案保持可见，手机按当前 yearly 入口保留年度卡在先。",
+        "evidence": "observed",
+        "referenceUrl": "https://uiarc.dev/",
+        "capturedAt": "2026-11-01"
       }
     ],
     "sourceFiles": [
@@ -5867,7 +5958,14 @@ window.ATLAS_PATTERNS = [
       "demos/cases/claude-platform/journey.js",
       "demos/cases/claude-platform/script.js",
       "demos/cases/claude-platform/style.css",
-      "entries/cases/claude-platform.json"
+      "entries/cases/claude-platform.json",
+      "entries/cases/uiarc-platform.json",
+      "docs/cases/uiarc-platform.md",
+      "demos/cases/uiarc-platform/index.html",
+      "demos/cases/uiarc-platform/app.js",
+      "demos/cases/uiarc-platform/style.css",
+      "demos/cases/uiarc-platform/fidelity.md",
+      "demos/cases/uiarc-platform/source/content.json"
     ]
   },
   {
@@ -6265,6 +6363,65 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hand-drawn/style.css",
       "entries/cases/hand-drawn.json",
       "docs/cases/hand-drawn.md"
+    ]
+  },
+  {
+    "id": "parallel-cli-agent-install",
+    "title": "面向开发者与 Agent 的并行安装入口",
+    "category": "内容组织",
+    "experienceTypes": [
+      "structure",
+      "micro-motion"
+    ],
+    "summary": "同一能力提供可直接复制的两条取用路径。",
+    "mechanism": "并排放置 CLI 与 MCP 安装卡，各自说明适用入口并复制完整命令；相邻数量卡说明免费核心与 Pro 内容的边界。",
+    "trigger": "选择安装方式并复制",
+    "effect": "用户能按自己的工作方式取得同一组件产品。",
+    "useCases": [
+      "组件库、开发者工具与产品介绍"
+    ],
+    "avoid": [
+      "让装饰遮住主张或真实操作"
+    ],
+    "constraints": [
+      "使用目标产品的真实文案与可用入口，原站数值只作为本例依据。"
+    ],
+    "composition": {
+      "role": "support",
+      "notes": "与页面的信息层级协调；保持正文、操作与当前状态可读。",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "accessibility": {
+      "keyboard": "链接与按钮保留原生键盘路径和可访问名称；标题的装饰分词不重复播报。",
+      "reducedMotion": "移除入场、交错和循环运动，保留所有文字、布局与复制结果。"
+    },
+    "parameters": [
+      {
+        "name": "布局",
+        "value": "桌面三列；窄屏单列",
+        "note": "前两张为安装方式，第三张解释内容层级。"
+      }
+    ],
+    "prompt": "为目标页面实现「面向开发者与 Agent 的并行安装入口」。并排放置 CLI 与 MCP 安装卡，各自说明适用入口并复制完整命令；相邻数量卡说明免费核心与 Pro 内容的边界。触发：选择安装方式并复制。结果：用户能按自己的工作方式取得同一组件产品。。沿用页面既有层级与真实内容；链接、复制按钮和状态提供可访问名称，减少动态直接显示稳定结果。",
+    "sources": [
+      {
+        "caseId": "uiarc-platform",
+        "locator": "entries/cases/uiarc-platform.json#interaction/4",
+        "observation": "shadcn CLI 与 MCP server 并排给出同一组件库的两个安装入口；复制按钮把完整命令写入剪贴板并短暂显示勾号，第三张卡区分免费与 Pro 数量。",
+        "evidence": "observed",
+        "referenceUrl": "https://uiarc.dev/",
+        "capturedAt": "2026-11-01"
+      }
+    ],
+    "sourceFiles": [
+      "entries/cases/uiarc-platform.json",
+      "docs/cases/uiarc-platform.md",
+      "demos/cases/uiarc-platform/index.html",
+      "demos/cases/uiarc-platform/app.js",
+      "demos/cases/uiarc-platform/style.css",
+      "demos/cases/uiarc-platform/fidelity.md",
+      "demos/cases/uiarc-platform/source/content.json"
     ]
   },
   {
@@ -8190,6 +8347,14 @@ window.ATLAS_PATTERNS = [
         "evidence": "observed",
         "referenceUrl": "https://m3.material.io/",
         "capturedAt": "2026-10-07"
+      },
+      {
+        "caseId": "uiarc-platform",
+        "locator": "entries/cases/uiarc-platform.json#interaction/0",
+        "observation": "主题按钮在系统默认与手动选择之间协调页面表面、文字、边界和导航；首尾两块粉蓝黄渐变面板始终保持浅底深字，产品影片保留原色。",
+        "evidence": "observed",
+        "referenceUrl": "https://uiarc.dev/",
+        "capturedAt": "2026-11-01"
       }
     ],
     "sourceFiles": [
@@ -8198,7 +8363,14 @@ window.ATLAS_PATTERNS = [
       "demos/cases/google-material/index.html",
       "demos/cases/google-material/style.css",
       "entries/cases/google-material.json",
-      "docs/cases/google-material.md"
+      "docs/cases/google-material.md",
+      "entries/cases/uiarc-platform.json",
+      "docs/cases/uiarc-platform.md",
+      "demos/cases/uiarc-platform/index.html",
+      "demos/cases/uiarc-platform/app.js",
+      "demos/cases/uiarc-platform/style.css",
+      "demos/cases/uiarc-platform/fidelity.md",
+      "demos/cases/uiarc-platform/source/content.json"
     ]
   },
   {
@@ -8480,6 +8652,14 @@ window.ATLAS_PATTERNS = [
         "evidence": "observed",
         "referenceUrl": "https://qoder.cn/",
         "capturedAt": "2026-10-07"
+      },
+      {
+        "caseId": "uiarc-platform",
+        "locator": "entries/cases/uiarc-platform.json#interaction/6",
+        "observation": "六项 FAQ 默认展开第一项；打开另一项先收起前项，当前项可以再次收起，标题图标与内容高度同步，键盘激活保留焦点。",
+        "evidence": "observed",
+        "referenceUrl": "https://uiarc.dev/",
+        "capturedAt": "2026-11-01"
       }
     ],
     "sourceFiles": [
@@ -8502,7 +8682,14 @@ window.ATLAS_PATTERNS = [
       "entries/cases/claude-platform.json",
       "entries/cases/qoder-platform.json",
       "entries/cases/stripe-platform.json",
-      "docs/cases/stripe-platform.md"
+      "docs/cases/stripe-platform.md",
+      "entries/cases/uiarc-platform.json",
+      "docs/cases/uiarc-platform.md",
+      "demos/cases/uiarc-platform/index.html",
+      "demos/cases/uiarc-platform/app.js",
+      "demos/cases/uiarc-platform/style.css",
+      "demos/cases/uiarc-platform/fidelity.md",
+      "demos/cases/uiarc-platform/source/content.json"
     ]
   },
   {
@@ -9225,6 +9412,71 @@ window.ATLAS_PATTERNS = [
     ]
   },
   {
+    "id": "theme-invariant-gradient-panel",
+    "title": "主题切换中的恒定浅色品牌面板",
+    "category": "视觉构成",
+    "experienceTypes": [
+      "visual"
+    ],
+    "summary": "用稳定的浅色品牌面板连接首尾行动。",
+    "mechanism": "正文界面跟随明暗主题，首尾面板固定浅底深字；三处径向色场分布在边角，中心留给主张。",
+    "trigger": "进入页面或切换主题",
+    "effect": "品牌、文案对比与阅读主线保持稳定。",
+    "useCases": [
+      "组件库、开发者工具与产品介绍"
+    ],
+    "avoid": [
+      "让装饰遮住主张或真实操作"
+    ],
+    "constraints": [
+      "使用目标产品的真实文案与可用入口，原站数值只作为本例依据。"
+    ],
+    "composition": {
+      "role": "foundation",
+      "notes": "与页面的信息层级协调；保持正文、操作与当前状态可读。",
+      "pairsWellWith": [
+        "semantic-theme-roles"
+      ],
+      "conflicts": []
+    },
+    "accessibility": {
+      "keyboard": "链接与按钮保留原生键盘路径和可访问名称；标题的装饰分词不重复播报。",
+      "reducedMotion": "移除入场、交错和循环运动，保留所有文字、布局与复制结果。"
+    },
+    "parameters": [
+      {
+        "name": "径向色场",
+        "value": "粉：3% 96%；蓝：95% 5%；黄：50% 110%",
+        "note": "原站发布样式 page_hero 与 page_finalInner。"
+      },
+      {
+        "name": "面板尺度",
+        "value": "桌面 690px / 手机 590px",
+        "note": "原站首屏 min-height；标题与正文独立重排。"
+      }
+    ],
+    "prompt": "为目标页面实现「主题切换中的恒定浅色品牌面板」。正文界面跟随明暗主题，首尾面板固定浅底深字；三处径向色场分布在边角，中心留给主张。触发：进入页面或切换主题。结果：品牌、文案对比与阅读主线保持稳定。。沿用页面既有层级与真实内容；链接、复制按钮和状态提供可访问名称，减少动态直接显示稳定结果。",
+    "sources": [
+      {
+        "caseId": "uiarc-platform",
+        "locator": "entries/cases/uiarc-platform.json#interaction/0",
+        "observation": "主题按钮在系统默认与手动选择之间协调页面表面、文字、边界和导航；首尾两块粉蓝黄渐变面板始终保持浅底深字，产品影片保留原色。",
+        "evidence": "observed",
+        "referenceUrl": "https://uiarc.dev/",
+        "capturedAt": "2026-11-01"
+      }
+    ],
+    "sourceFiles": [
+      "entries/cases/uiarc-platform.json",
+      "docs/cases/uiarc-platform.md",
+      "demos/cases/uiarc-platform/index.html",
+      "demos/cases/uiarc-platform/app.js",
+      "demos/cases/uiarc-platform/style.css",
+      "demos/cases/uiarc-platform/fidelity.md",
+      "demos/cases/uiarc-platform/source/content.json"
+    ]
+  },
+  {
     "id": "timed-platform-carousel",
     "title": "可暂停的平台场景轮换",
     "category": "导航与状态",
@@ -9725,6 +9977,14 @@ window.ATLAS_PATTERNS = [
         "evidence": "observed",
         "referenceUrl": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/demo/web-design-demo/demo1-with-skill.html",
         "capturedAt": "2026-10-27"
+      },
+      {
+        "caseId": "uiarc-platform",
+        "locator": "entries/cases/uiarc-platform.json#interaction/3",
+        "observation": "六张 Pro 卡片与九张免费卡片分别排成桌面两列和三列；卡片原本使用 WebP 海报与静音 WebM，进入视口播放，点击进入原站对应组件页。手机 Pro 为一列、免费组件为两列。",
+        "evidence": "adapted",
+        "referenceUrl": "https://uiarc.dev/",
+        "capturedAt": "2026-11-01"
       }
     ],
     "sourceFiles": [
@@ -9787,7 +10047,14 @@ window.ATLAS_PATTERNS = [
       "demos/cases/stellar-museum/index.html",
       "demos/cases/stellar-museum/fidelity.md",
       "entries/cases/stellar-museum.json",
-      "docs/cases/stellar-museum.md"
+      "docs/cases/stellar-museum.md",
+      "entries/cases/uiarc-platform.json",
+      "docs/cases/uiarc-platform.md",
+      "demos/cases/uiarc-platform/index.html",
+      "demos/cases/uiarc-platform/app.js",
+      "demos/cases/uiarc-platform/style.css",
+      "demos/cases/uiarc-platform/fidelity.md",
+      "demos/cases/uiarc-platform/source/content.json"
     ]
   },
   {

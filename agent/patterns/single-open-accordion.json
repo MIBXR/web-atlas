@@ -61,6 +61,14 @@
         "evidence": "observed",
         "referenceUrl": "https://qoder.cn/",
         "capturedAt": "2026-10-07"
+      },
+      {
+        "caseId": "uiarc-platform",
+        "locator": "entries/cases/uiarc-platform.json#interaction/6",
+        "observation": "六项 FAQ 默认展开第一项；打开另一项先收起前项，当前项可以再次收起，标题图标与内容高度同步，键盘激活保留焦点。",
+        "evidence": "observed",
+        "referenceUrl": "https://uiarc.dev/",
+        "capturedAt": "2026-11-01"
       }
     ],
     "sourceFiles": [
@@ -83,7 +91,14 @@
       "entries/cases/claude-platform.json",
       "entries/cases/qoder-platform.json",
       "entries/cases/stripe-platform.json",
-      "docs/cases/stripe-platform.md"
+      "docs/cases/stripe-platform.md",
+      "entries/cases/uiarc-platform.json",
+      "docs/cases/uiarc-platform.md",
+      "demos/cases/uiarc-platform/index.html",
+      "demos/cases/uiarc-platform/app.js",
+      "demos/cases/uiarc-platform/style.css",
+      "demos/cases/uiarc-platform/fidelity.md",
+      "demos/cases/uiarc-platform/source/content.json"
     ]
   },
   "sourceCases": [
@@ -109,6 +124,14 @@
       "paths": {
         "bundle": "agent/cases/stripe-platform.json",
         "demo": "demos/cases/stripe-platform/index.html"
+      }
+    },
+    {
+      "id": "uiarc-platform",
+      "title": "Arc UI · 组件平台的产品官网",
+      "paths": {
+        "bundle": "agent/cases/uiarc-platform.json",
+        "demo": "demos/cases/uiarc-platform/index.html"
       }
     }
   ],
@@ -333,6 +356,314 @@
       "role": "source"
     },
     {
+      "path": "demos/cases/uiarc-platform/app.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets-manifest.json",
+      "role": "context"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/arc-mark.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/ai-chat.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/ai-chat.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/choropleth-explorer.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/choropleth-explorer.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/command-palette.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/command-palette.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/customer-galaxy.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/customer-galaxy.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/date-picker.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/date-picker.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/dialog.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/dialog.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/dropdown-menu.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/dropdown-menu.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/elastic-slider.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/elastic-slider.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/horizon-chart.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/horizon-chart.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/kanban-board.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/kanban-board.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/morph-select.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/morph-select.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/revenue-globe.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/revenue-globe.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/switch.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/switch.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/tabs.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/tabs.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/toast-stack.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/toast-stack.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/footer-mark.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/0.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/1.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/10.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/11.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/12.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/2.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/3.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/4.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/5.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/6.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/7.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/8.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/9.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/fidelity.md",
+      "role": "context"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/fonts/6c596dfcddeca1e9-s.p.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/fonts/9ff55a8a9670220d-s.p.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/fonts/Geist-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/fonts/Inter-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/LICENSES.md",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/arc-MIT-LICENSE.txt",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/content.json",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/foundation.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/README.md",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/00f047ef6c557b9f.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/0288b3904cc07ec4.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/063c24fc1e24617c.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/13f27d3855b19595.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/1deb81fc96cec2dc.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/2ea2b2731c5ba7bd.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/31bdadfcc9af4fd1.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/44939f48d4440596.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/4ea94117e9b9e540.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/7629db7a71e637c8.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/7b776a5cbbe2b78a.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/7bba85cd9a716746.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/9eedb49febe2cbe3.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/becc961a9b59e177.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/c623e9a67ae414ff.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/dce8d597c26e3056.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/ea73e4e582f921b0.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/f67fa7d19375a705.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/style.css",
+      "role": "source"
+    },
+    {
       "path": "docs.html",
       "role": "source"
     },
@@ -349,6 +680,10 @@
       "role": "context"
     },
     {
+      "path": "docs/cases/uiarc-platform.md",
+      "role": "context"
+    },
+    {
       "path": "entries/cases/claude-platform.json",
       "role": "context"
     },
@@ -358,6 +693,10 @@
     },
     {
       "path": "entries/cases/stripe-platform.json",
+      "role": "context"
+    },
+    {
+      "path": "entries/cases/uiarc-platform.json",
       "role": "context"
     },
     {
@@ -401,6 +740,18 @@
       "role": "preview"
     },
     {
+      "path": "previews/cases/uiarc-platform-mobile.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/cases/uiarc-platform-reference.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/cases/uiarc-platform.jpg",
+      "role": "preview"
+    },
+    {
       "path": "prompts/cases/claude-platform.md",
       "role": "context"
     },
@@ -410,6 +761,10 @@
     },
     {
       "path": "prompts/cases/stripe-platform.md",
+      "role": "context"
+    },
+    {
+      "path": "prompts/cases/uiarc-platform.md",
       "role": "context"
     },
     {
