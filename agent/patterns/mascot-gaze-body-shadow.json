@@ -1,0 +1,393 @@
+{
+  "schemaVersion": 1,
+  "id": "mascot-gaze-body-shadow",
+  "pattern": {
+    "id": "mascot-gaze-body-shadow",
+    "title": "视线、身体与影子同向反馈",
+    "category": "交互反馈",
+    "experienceTypes": [
+      "micro-motion"
+    ],
+    "summary": "角色回应用户，并在剧情动作发生时避免眼神与身体争抢方向。",
+    "mechanism": "将指针相对眼睛的方向转为限幅 SVG 偏移，眼睛、身体和影子按不同倍率联动；演示阶段把目标交给标题光标或暂时回正。",
+    "trigger": "指针移动或场景切换注视目标。",
+    "effect": "角色回应用户，并在剧情动作发生时避免眼神与身体争抢方向。",
+    "useCases": [
+      "角色产品页",
+      "轻量背景反馈"
+    ],
+    "avoid": [
+      "让装饰成为唯一的任务入口或状态线索"
+    ],
+    "constraints": [
+      "只从角色或界面本身取材，不用整个页面的截图替代机制。",
+      "角色与官网素材保留原权利；迁移时使用有对应授权的资源。"
+    ],
+    "composition": {
+      "role": "accent",
+      "notes": "负责局部注意力反馈，剧情表演时交还注视目标。",
+      "pairsWellWith": [
+        "pointer-proximity-pixel-garden"
+      ],
+      "conflicts": []
+    },
+    "accessibility": {
+      "keyboard": "注视只是装饰，不承担按钮、提示或关键信息。",
+      "reducedMotion": "原作视线继续跟随；移植时可固定前视并保留所有操作。"
+    },
+    "parameters": [
+      {
+        "name": "眼睛限幅",
+        "value": "距离300px饱和；X最大3、Y最大1.5 SVG单位；0.5单位取整",
+        "note": "官网 eye-track.js CFG 与 tick。"
+      },
+      {
+        "name": "分层比例",
+        "value": "身体=眼睛×0.33；影子拉伸0.15、平移0.3",
+        "note": "官网 applyEye。"
+      }
+    ],
+    "prompt": "实现「视线、身体与影子同向反馈」：将指针相对眼睛的方向转为限幅 SVG 偏移，眼睛、身体和影子按不同倍率联动；演示阶段把目标交给标题光标或暂时回正。触发：指针移动或场景切换注视目标。参数：距离300px饱和；X最大3、Y最大1.5 SVG单位；0.5单位取整；身体=眼睛×0.33；影子拉伸0.15、平移0.3。先读取来源案例的实际源码与 fidelity.md，保持角色 SVG、身体锚点、状态交接和原声音行为。注视只是装饰，不承担按钮、提示或关键信息。原作视线继续跟随；移植时可固定前视并保留所有操作。迁移时替换为有使用权的角色与素材。",
+    "sources": [
+      {
+        "caseId": "clawd-on-desk",
+        "locator": "entries/cases/clawd-on-desk.json#interaction/1",
+        "observation": "等待态的眼睛朝指针或标题光标偏移，300px 达到最大 3 SVG 单位，身体按 0.33 倍偏移并联动影子。围绕角色连续同向两圈触发 6 秒眩晕、12 秒冷却；拖放和权限决定优先取消反应。",
+        "evidence": "observed",
+        "referenceUrl": "https://clawdondesk.com/",
+        "capturedAt": "2026-11-01"
+      }
+    ],
+    "sourceFiles": [
+      "entries/cases/clawd-on-desk.json",
+      "docs/cases/clawd-on-desk.md",
+      "demos/cases/clawd-on-desk/fidelity.md",
+      "demos/cases/clawd-on-desk/source/website/scripts/eye-track.js",
+      "demos/cases/clawd-on-desk/source/website/scripts/dizzy.js",
+      "demos/cases/clawd-on-desk/index.html"
+    ]
+  },
+  "sourceCases": [
+    {
+      "id": "clawd-on-desk",
+      "title": "Clawd on Desk · 可互动的桌宠产品页",
+      "paths": {
+        "bundle": "agent/cases/clawd-on-desk.json",
+        "demo": "demos/cases/clawd-on-desk/index.html"
+      }
+    }
+  ],
+  "documents": [
+    {
+      "path": "prompts/patterns/mascot-gaze-body-shadow.md",
+      "role": "prompt",
+      "content": "# 视线、身体与影子同向反馈 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/mascot-gaze-body-shadow.json)\n\n实现「视线、身体与影子同向反馈」：将指针相对眼睛的方向转为限幅 SVG 偏移，眼睛、身体和影子按不同倍率联动；演示阶段把目标交给标题光标或暂时回正。触发：指针移动或场景切换注视目标。参数：距离300px饱和；X最大3、Y最大1.5 SVG单位；0.5单位取整；身体=眼睛×0.33；影子拉伸0.15、平移0.3。先读取来源案例的实际源码与 fidelity.md，保持角色 SVG、身体锚点、状态交接和原声音行为。注视只是装饰，不承担按钮、提示或关键信息。原作视线继续跟随；移植时可固定前视并保留所有操作。迁移时替换为有使用权的角色与素材。\n\n## 制作约束\n\n- 只从角色或界面本身取材，不用整个页面的截图替代机制。\n- 角色与官网素材保留原权利；迁移时使用有对应授权的资源。\n"
+    }
+  ],
+  "files": [
+    {
+      "path": "asset-cache-worker.js",
+      "role": "source"
+    },
+    {
+      "path": "data/asset-sources.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/assets-manifest.json",
+      "role": "context"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/assets/drag-hand.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/assets/svg/clawd-dizzy.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/assets/svg/clawd-error.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/assets/svg/clawd-homepage-scratch.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/assets/svg/clawd-mini-crabwalk.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/assets/svg/clawd-mini-enter.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/assets/svg/clawd-notification.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/assets/svg/clawd-shades.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/assets/svg/clawd-wake.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/assets/svg/clawd-working-typing.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/assets/svg/showcase/clawd-headphones-groove.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/assets/svg/showcase/clawd-idle-reading.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/assets/svg/showcase/clawd-working-juggling.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/assets/svg/showcase/clawd-working-thinking.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/assets/svg/showcase/clawd-working-typing.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/assets/svg/showcase/clawd-working-wizard.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/fidelity.md",
+      "role": "context"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/fonts/6NUh8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0K7iN7hzFUPJH58nib1603gg7S2nfgRYIctxujDg.ttf",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/fonts/6NVf8FyLNQOQZAnv9ZwNjucMHVn85Ni7emAe9lKqZTnbB-gzTK0K1ChJdt9vIVYX9G37lvd9sPEKsxx664UJf1hLTf7W.ttf",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/fonts/6NVf8FyLNQOQZAnv9ZwNjucMHVn85Ni7emAe9lKqZTnbB-gzTK0K1ChJdt9vIVYX9G37lvd9sPEKsxx664UJf1jiSv7W.ttf",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/fonts/e3t4euO8T-267oIAQAu6jDQyK0nS.ttf",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/fonts/fonts.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/fonts/fraunces-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/fonts/geistmono-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/fonts/or3yQ6H-1_WfwkMZI_qYPLs1a-t7PU0AbeE9KJ5T.ttf",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/fonts/or3yQ6H-1_WfwkMZI_qYPLs1a-t7PU0AbeEPKJ5T.ttf",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/fonts/or3yQ6H-1_WfwkMZI_qYPLs1a-t7PU0AbeHjL55T.ttf",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/fonts/pressstart2p-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/LICENSES.md",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/source/ARTWORK-LICENSE.txt",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/source/PRODUCT-LICENSE.txt",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/source/README.md",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/source/website/google-fonts.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/source/website/index.html",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/source/website/scripts/arc-pointer.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/source/website/scripts/dev-overlay.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/source/website/scripts/dizzy.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/source/website/scripts/drag.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/source/website/scripts/eye-track.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/source/website/scripts/flower-layer.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/source/website/scripts/pixel-flower.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/source/website/scripts/scene.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/source/website/scripts/stage-geometry.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/source/website/scripts/terminal.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/source/website/scripts/typewriter.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/source/website/scripts/visibility-guard.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/source/website/styles/responsive.css",
+      "role": "process"
+    },
+    {
+      "path": "docs.html",
+      "role": "source"
+    },
+    {
+      "path": "docs/cases/clawd-on-desk.md",
+      "role": "context"
+    },
+    {
+      "path": "entries/cases/clawd-on-desk.json",
+      "role": "context"
+    },
+    {
+      "path": "entries/patterns/mascot-gaze-body-shadow.json",
+      "role": "context"
+    },
+    {
+      "path": "previews/cases/clawd-on-desk-mobile.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/cases/clawd-on-desk-reference.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/cases/clawd-on-desk.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "prompts/cases/clawd-on-desk.md",
+      "role": "context"
+    },
+    {
+      "path": "prompts/patterns/mascot-gaze-body-shadow.md",
+      "role": "context"
+    },
+    {
+      "path": "site/icons/favicon.svg",
+      "role": "asset"
+    },
+    {
+      "path": "site/pages/docs/docs.css",
+      "role": "source"
+    },
+    {
+      "path": "site/pages/docs/docs.js",
+      "role": "source"
+    },
+    {
+      "path": "site/runtime/asset-cache.js",
+      "role": "source"
+    },
+    {
+      "path": "site/runtime/asset-runtime.js",
+      "role": "source"
+    },
+    {
+      "path": "site/runtime/case-loading.css",
+      "role": "source"
+    },
+    {
+      "path": "site/runtime/case-loading.js",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/site-footer.css",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/site-nav.css",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/site-shell.js",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/site-typography.css",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/theme-control.css",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/theme.js",
+      "role": "source"
+    },
+    {
+      "path": "site/vendor/LICENSES.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/vendor/marked.umd.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/vendor/purify.min.js",
+      "role": "vendor"
+    }
+  ]
+}

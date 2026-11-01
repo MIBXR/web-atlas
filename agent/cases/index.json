@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "repository": "https://github.com/MIBXR/web-atlas",
-  "entryCount": 39,
+  "entryCount": 40,
   "entries": [
     {
       "id": "apple-product",
@@ -2932,6 +2932,87 @@
         "preview": "previews/cases/atlas-sister-sites.jpg",
         "demo": "demos/cases/atlas-sister-sites/index.html",
         "entry": "entries/cases/atlas-sister-sites.json"
+      }
+    },
+    {
+      "id": "clawd-on-desk",
+      "title": "Clawd on Desk · 可互动的桌宠产品页",
+      "category": "产品",
+      "tags": [
+        "桌宠",
+        "产品展示",
+        "像素角色",
+        "拖放",
+        "权限分支",
+        "SVG 动画",
+        "指针花园"
+      ],
+      "summary": "把桌宠的陪伴感直接做成网页：角色看向指针，拖进目标后参与终端演示；允许、拒绝与再次拒绝通向不同反馈，最终展示六组产品动作或礼貌告别。",
+      "useCases": [
+        "以角色体验建立好感的产品页",
+        "桌宠或轻量工具宣传",
+        "由用户选择推进的功能演示"
+      ],
+      "avoid": [
+        "需要快速比较大量规格的产品页",
+        "把拒绝改成无穷重试的转化流程",
+        "把静态演示包装成实际运行安装"
+      ],
+      "country": "未确认",
+      "implementation": "reference-study",
+      "capturedAt": "2026-11-01",
+      "tokens": {
+        "palette": [
+          "#0E1116",
+          "#F4E8D4",
+          "#D98A66",
+          "#C76F50",
+          "#2A3040",
+          "#b56e55",
+          "#bd9760",
+          "#839579",
+          "#c49383"
+        ],
+        "type": "Press Start 2P 400；Geist Mono 400/500/600；Fraunces 正体400、斜体400/900。",
+        "layout": "角色尺寸 clamp(180px,34.81vmin,376px)；终端桌面宽受 842px、78vmin 和剩余空间共同约束；竖向或≤600px 时改到终端内下角；画廊 640px 以下两列。",
+        "motion": "800ms iris-in / 1500ms iris-out；400ms 吸附；600ms 权限卡位移；像素花 opacity .3s / scale .35s。"
+      },
+      "composition": {
+        "color": "#0E1116 黑底、#F4E8D4 纸色、#D98A66 角色与 #C76F50 品牌色；花朵用低饱和土红、黄褐与灰绿。",
+        "typography": "Press Start 2P 用于开场和告别，Geist Mono 用于终端与说明，Fraunces 用于画廊标题；原作英语文案保留。",
+        "layout": "100dvh 单屏交互舞台，拖放目标、终端与角色由同组 CSS 变量定位；终态切换为可滚动动作画廊。",
+        "imagery": "角色为内联和外链的独立 SVG 动画，终端为真实 DOM，花园由 SVG 网格与生成函数绘制。",
+        "shape": "方像素角色和花形与圆角终端、白色权限卡、虚线目标及圆形幕形成反差。",
+        "hierarchy": "角色建立注意力，拖放提示给下一步，终端解释产品价值，权限分支让用户决定去向，画廊给出产品动作与源码入口。",
+        "motion": "视线和花园回应指针；吸附完成后才升起终端；角色穿过遮挡层后从另一侧探头，按钮决定下一个场景。",
+        "coherence": "同一角色、配色和身体锚点连接全部状态，进入和离开使用同一圆形幕，打字机在首尾呼应。"
+      },
+      "interaction": [
+        "开场先停留 500ms，再以 100ms/字输入 Clawd on Desk、闪烁两次、50ms/字倒删；角色移至中央后，米色花园以 800ms 圆形遮罩揭开。Escape 可跳到拖放等待态，普通点击与历史访问不跳过。",
+        "等待态的眼睛朝指针或标题光标偏移，300px 达到最大 3 SVG 单位，身体按 0.33 倍偏移并联动影子。围绕角色连续同向两圈触发 6 秒眩晕、12 秒冷却；拖放和权限决定优先取消反应。",
+        "指针附近的 37px 网格生出像素花，90px 半径内按距离控制透明度与缩放；移开淡去，最多保留 96 个活动及淡出格子，装饰层不截获输入。",
+        "指针按下角色后保持握点偏移拖动，未命中时留在原地；以可见身体锚点命中 Drop here 后，400ms 吸附到与敲字位置共用的目标，随后升起终端。触摸和鼠标共用 Pointer Events。",
+        "终端以 60ms/字输入克隆请求，随后出现思考、Bash 命令与权限提示；角色用 140ms 脱离、1660ms 横行、1200ms 遮挡、1650ms 探头和 350ms 跳跃，与请求出现对齐。",
+        "Permission Request 的 Allow 淡出终端并进入六格动作画廊；首次 Deny 经过趴地、起身、挠头与撒娇后给出重试卡；重试可 Allow，也可再次 Deny 后戴墨镜、收回米色圆幕并逐字显示 Thanks for visiting.。末态点击角色七次显示作者彩蛋，5 秒后消失。",
+        "动作画廊展示 Reading、Thinking、Typing、Wizard、1 Subagent、2+ Subagents 六份独立 SVG；桌面三列、640px 以下两列，内容高于视口时在画廊内滚动。Play from start 重载开场，GitHub 入口打开真实产品仓库。",
+        "页面失焦超过 1000ms 后，非稳定表演段在恢复前台时重载；允许末态、退出锁定态与权限空闲态保持状态。减少动态仅关闭花朵过渡、提示摇动和引导手等局部效果，开场及角色表演仍保留。"
+      ],
+      "themeBehavior": {
+        "mode": "fixed",
+        "default": "light",
+        "control": "没有主题按钮；开场和告别为 #0E1116，交互阶段为 #F4E8D4。",
+        "designReason": "以场景揭幕和收幕区分相遇、演示与告别，角色始终保留珊瑚色。"
+      },
+      "soundBehavior": {
+        "kind": "none",
+        "control": "官网没有 audio/video、Web Audio 或声音控件；本地保持无声。",
+        "interactionRole": "表情、眼神、角色路径和文字反馈承担说明。"
+      },
+      "paths": {
+        "bundle": "agent/cases/clawd-on-desk.json",
+        "preview": "previews/cases/clawd-on-desk.jpg",
+        "demo": "demos/cases/clawd-on-desk/index.html",
+        "entry": "entries/cases/clawd-on-desk.json"
       }
     }
   ]

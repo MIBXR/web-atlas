@@ -1,0 +1,2514 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>Clawd on Desk</title>
+<meta name="description" content="A desktop crab that watches your AI code. Real-time, playful, yours to theme." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;1,400;1,900&family=Geist+Mono:wght@400;500;600&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    /* ── Palette ──────────────────────────────────────────────────────── */
+    --bg: #F4E8D4;
+    --body: #D98A66;
+    --brand: #C76F50;
+    --ink: #2A3040;
+    --muted: #8a7e6a;
+    --border: #e4d7bf;
+
+    --px-yellow: #E4B73F;
+    --px-blue:   #4A7FB0;
+    --px-green:  #7FA855;
+    --px-purple: #8B6FA8;
+
+    --ease-boing: cubic-bezier(.06, .06, .51, 1.1);
+
+    /* ── Frame 1: 终端开幕前 (黑底 / 像素字 / 后续 iris 揭出米色) ──────── */
+    --stage-bg: #0E1116;          /* 终端深黑（不是死黑） */
+    --brand-color: #D98A66;       /* 珊瑚橙在黑底上有呼吸感，预告下一帧 */
+    --author-color: #6b7280;      /* 灰白，副信息 */
+
+    /* 鹿鹿 dev overlay 调定 (2026-04-19) ——————————————————
+       布局：Clawd 顶 1/3 占据视觉重心，标题压下 2/3 做承托
+       擦除后 Clawd 居中（帧 1e），iris 从屏幕正中扩散（帧 3）
+       尺寸用 vmin (2026-04-20 · 按 1920×1080 换算) → resize 时保持比例不崩形 */
+    --clawd-x: 49.95vw;
+    --clawd-y: 21.20vh;
+    --clawd-size: 50.74vmin;
+
+    /* 帧 1e：Clawd 平滑居中（标题擦除完毕后）
+       鹿鹿 dev overlay 调定 (2026-04-19)
+       y 不是 50vh 因为 SVG character 在 viewBox 偏下，容器中心需上提让 character 视觉居中 */
+    --clawd-x-1e: 49.95vw;
+    --clawd-y-1e: 31.27vh;
+
+    /* 帧 3：揭幕后 Clawd 缩小，因为容器变小所以 y 要更下才能视觉居中
+       鹿鹿 dev overlay 调定 (2026-04-19) · size 改 vh (2026-04-20)
+       · y 36.67 → 40.27 (2026-04-20 · drop-zone 搬到左下后 Clawd 下来一点视觉更平衡) */
+    --clawd-x-3:    49.95vw;
+    --clawd-y-3:    40.27vh;
+    --clawd-size-3: 34.81vmin;
+
+    /* 帧 3 新世界背景 */
+    --world-bg-new: #F4E8D4;
+
+    --brand-x: 50.12vw;
+    --brand-y: 58.68vh;
+    --brand-size: 42px;
+    --brand-letter: 1px;
+
+    /* 署名：右下角水印位 (Geist Mono · 中灰，黑底/米底都不刺眼) */
+    --author-right: 24px;
+    --author-bottom: 20px;
+    --author-size: 12px;
+
+    /* 帧 4 · 本体中心偏移 (相对 .clawd 容器几何中心 · px)
+       SVG character 在 viewBox 里偏下，容器中心 ≠ 视觉本体中心
+       吸入判定用 "容器中心 + body offset" 作为本体锚点
+       dev mode + frame=4 屏幕上显示紫点可拖标定 */
+    --clawd-body-cx: 0px;
+    --clawd-body-cy: 100px;
+
+    /* 帧 4 · terminal-up 后 Clawd 打字位置偏移 (鹿鹿 dev overlay 调定 2026-04-20)
+       参考系：terminal 几何中心 · dx 正=右、dy 正=下 · 单位 vmin (resize 不崩)
+       当前值：Clawd 坐在 terminal 左外侧约 100px 处 */
+    --clawd-work-dx: -48.12vmin;
+    --clawd-work-dy:  19.08vmin;
+
+    /* 帧 4 · M2.4d · Clawd crabwalk 到对称右侧 (work-dx 取反) */
+    --clawd-walk-dx:  48.12vmin;
+    --clawd-walk-dy:  19.08vmin;
+    /* typing → crabwalk 的脱离节拍 · 先做一个很短的交叉淡切，补掉硬断点 */
+    --clawd-detach-duration: 0.14s;
+    /* 爬行时长 · 鹿鹿在 console 敲 __clawdWalk(n) 实时调
+       M2.4f 改版 · 脱离 0.14s 后再走 1.66s，到"身子完全进终端左边缘" · 然后藏起来瞬移右侧冒头
+       (crabwalk 速度 ≈ 主项目 CRABWALK_SPEED 120px/s · 按 clawd-size-3 34.81vmin 换算) */
+    --clawd-walk-duration: 1.66s;
+
+    /* ── M2.4f · Clawd 藏终端后冒头动画参数（对齐 D:/animation/src/mini.js 数值）── */
+    /* crabwalk sprite 的真实 body 只占 viewBox 宽的约 1/3。
+       走路终点要按"真实身子"而不是整张 sprite 容器算，否则会整只埋太深，
+       肉眼读成"螃蟹步没了"。留成独立 var，鹿鹿后续可继续微调。 */
+    --clawd-walk-body-half: calc(var(--clawd-size-3) * 0.1667);
+    /* crabwalk 终点：真实身子完全进终端左边缘（中心 x = 终端左 + 身子半宽）
+       终端左边缘 = -term-w/2；身子半宽 = walk-body-half */
+    --clawd-walk-end-dx: calc(var(--term-w) / -2 + var(--clawd-walk-body-half));
+    /* 冒头位：终端右边缘外侧 · 按主项目 offsetRatio 0.486 几何（中心距边缘 0.014 * size）
+       公式：+term-w/2 + 0.014 * clawd-size-3 ≈ 39 + 0.49 = 39.49vmin */
+    --clawd-peek-dx:      39.49vmin;
+    /* 冒头位 y · 相对终端垂直中心 · 默认 0 = 终端中线（从右侧中间冒）
+       不复用 --clawd-walk-dy（那是坐打字位 · 偏下太深） */
+    --clawd-peek-dy:      0vmin;
+    /* 抛物线跳跃参数 · 对齐主项目 JUMP_DURATION 350ms + JUMP_PEAK_HEIGHT 40px
+       峰高 = 40/280 * 34.81vmin ≈ 14% clawd-size ≈ 5vmin */
+    --clawd-jump-dur:      0.35s;
+    --clawd-jump-peak:     5vmin;
+    /* 冒头段时长 · 明显提前露出，并给手臂伸出的动作更完整的读感 */
+    --clawd-peek-dur:      1.65s;
+    /* sprite 内补偿 · 这批 mini SVG 的 body 中心本来就和舞台锚点匹配。
+       之前额外平移会把 walking / peeking 几何关系搞歪：walking 读不出在走，
+       peeking 整只被推到终端外面。默认保持 0，后续若鹿鹿要微调再用 overlay/console 调。 */
+    --clawd-crabwalk-shift-x: 0%;
+    --clawd-crabwalk-shift-y: 0%;
+    --clawd-peek-shift-x:     0%;
+    --clawd-peek-shift-y:     0%;
+
+    /* 帧 4 · M2.4d · 权限卡片悬浮高度 · popup 底部到 Clawd 头顶的距离
+       · 正数 = 悬浮 (越大越高) · 0 = 贴 Clawd 头顶 · 负数 = 重叠 Clawd 上身
+       · 默认 0 = 贴脸（鹿鹿 2026-04-20 定案 · 上一版 4vmin 感觉太高） */
+    --perm-gap: 0vmin;
+
+    /* 帧 4: 拖拽舞台 — 目标方块 + 提示文字
+       2026-04-20 · drop-zone 位置已绑定到 Clawd typing 最终位置 (见 .drop-zone left/top calc)
+       · 视觉闭环：拖到这个框 → 吸入 → 终端弹出 → Clawd 原地切 typing SVG，不瞬移
+       · 只保留 w/h (框的大小) · 位置随 --clawd-work-dx/dy + --term-bottom/h 自动派生 */
+    --drop-w: 17.78vmin;
+    --drop-h: 20.74vmin;
+    --drop-bg: #EDD9C4;          /* 米底偏深一档 */
+    --drop-border: #B8A08A;      /* 米褐虚线 */
+    --hint-x: 49.78vw;
+    --hint-y: 62.00vh;  /* 2026-04-20 · 从 66.95 往上挪 ~5vh · 跟新 Clawd (40.27vh) 距离近一点 */
+    --hint-size: 14px;
+
+    /* 帧 4 抛物线指示 — 2026-04-20 · 一劳永逸版
+       · 起点绑 Clawd 身体中心 + lift（窗口缩放/Clawd 移位自动跟）
+       · 终点绑 drop-zone 中心 + lift（drop-zone 本身已绑 Clawd typing · 二重绑定）
+       · 控制点保留独立 vw/vh（弧度审美独立调）
+       · 单位 vmin 和 drop-zone / Clawd 同体系 · resize 时箭头比例不崩 */
+    --arc-start-lift-x:  0vmin;   /* 起点相对 Clawd 身体中心水平偏移（0 = 正中） */
+    --arc-start-lift-y: -2vmin;   /* 起点相对身体中心上偏 · 藏在 Clawd 身体内（z=4 被身体 z=5 挡）· 弧线视觉"从背后延伸出来" */
+    --arc-end-lift-x:    0vmin;   /* 终点相对 drop-zone 中心水平偏移（0 = 正上） */
+    --arc-end-lift-y:   -5vmin;   /* 终点相对 drop-zone 中心垂直偏移（负数 = 上方） */
+    --arc-cx: 36.50vw;            /* Bezier 控制点 · 独立 · 决定弧度 + 朝向 */
+    --arc-cy: 40.00vh;
+
+    /* 帧 4 · 终端面板 (M2.4c · clawd-absorbed 后从屏幕底弹出)
+       锁 4:3 横长方形 · 宽由 dev overlay 调，高自动按 aspect-ratio 跟
+       鹿鹿 2026-04-20 */
+    --term-w:      78vmin;    /* w/h 独立 · 放弃锁比例，自由调横长方形 */
+    --term-h:      44vmin;    /* 78:44 ≈ 16:9 · 想更长更扁直接降 h */
+    --term-bottom: 18.89vh;   /* 距屏幕底部 */
+    --term-radius: 10px;
+    --term-chrome-h: 28px;
+
+    /* ── Eye tracking (mirrors clawd theme.json) ──────────────────────── */
+    --eye-max-offset: 3;        /* SVG units; viewBox is 45 wide */
+    --eye-body-scale: 0.33;
+    --eye-shadow-stretch: 0.15;
+    --eye-shadow-shift: 0.3;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html, body { height: 100%; }
+
+  body {
+    background: var(--stage-bg);
+    color: var(--ink);
+    font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    overflow: hidden;             /* 第一屏是固定一屏，不滚动 */
+  }
+
+  /* ── Stage ────────────────────────────────────────────────────────── */
+  .stage {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  /* ── Clawd ────────────────────────────────────────────────────────── */
+  .clawd {
+    position: absolute;
+    left: var(--clawd-x);
+    top: var(--clawd-y);
+    width: var(--clawd-size);
+    height: var(--clawd-size);
+    transform: translate(-50%, -50%);
+    user-select: none;
+    -webkit-user-select: none;
+    z-index: 5;                   /* 浮在 iris overlay 之上，跨世界存在 */
+    /* 入场淡入（参考主项目桌宠开机感）— overshoot 缓动让 Clawd "咚"出现 */
+    animation: clawd-fade-in 0.5s var(--ease-boing) both;
+    /* 帧切换时平滑过渡（移位 / 缩小） */
+    transition:
+      left 0.6s var(--ease-boing),
+      top 0.6s var(--ease-boing),
+      width 0.8s ease-out,
+      height 0.8s ease-out;
+  }
+  /* 调试模式下禁用 transition，避免 dev overlay 拖鼠标延迟跟手 */
+  body.dev-mode .clawd { transition: none; }
+
+  @keyframes clawd-fade-in {
+    from {
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.92);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+  }
+  .clawd svg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    image-rendering: pixelated;   /* 像素风：不要被反锯齿糊掉 */
+    image-rendering: crisp-edges;
+  }
+  /* 默认显示 idle，react/drag 隐藏；帧 3 切 react；body.dragging 切 drag
+     specificity 提高到 (0,2,0) 以上，避免被 .clawd svg (0,1,1) 覆盖 */
+  .clawd .clawd-idle     { display: block; }
+  .clawd .clawd-react    { display: none;  }
+  .clawd .clawd-drag     { display: none;  }
+  .clawd .clawd-work     { display: none;  }
+  .clawd .clawd-crabwalk { display: none;  }  /* M2.4d */
+  .clawd .clawd-alert    { display: none;  }  /* M2.4d */
+  .clawd .clawd-peek     { display: none;  }  /* M2.4f 从终端后冒头 */
+  .clawd .clawd-error    { display: none;  }  /* M2.4f 首次 Deny 趴地 */
+  .clawd .clawd-wake     { display: none;  }  /* M2.4f error 后弹起 */
+  .clawd .clawd-scratch  { display: none;  }  /* M2.4f 活物感过桥 */
+  .clawd .clawd-aegyo    { display: none;  }  /* M2.4f 二次请求撒娇态 */
+  .clawd .clawd-cheer    { display: none;  }  /* M2.4e Allow 庆祝 */
+  .clawd .clawd-shades   { display: none;  }  /* M2.4g 二次 Deny 善意彩蛋戴墨镜 */
+  .clawd .clawd-dizzy    { display: none;  }
+  /* img.clawd-* 需要和 svg 同样尺寸规则（.clawd svg 选择器不覆盖 img）
+     不设 pointer-events: none · 否则空父 div 接不到 mousedown，dev overlay 拖不动
+     用 -webkit-user-drag: none 禁掉浏览器原生图片拖拽（拖 img 会弹出复制图标） */
+  .clawd img.clawd-work,
+  .clawd img.clawd-crabwalk,
+  .clawd img.clawd-alert,
+  .clawd img.clawd-peek,
+  .clawd img.clawd-error,
+  .clawd img.clawd-wake,
+  .clawd img.clawd-scratch,
+  .clawd img.clawd-aegyo,
+  .clawd img.clawd-cheer,
+  .clawd img.clawd-dizzy,
+  .clawd img.clawd-shades {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-user-drag: none;
+  }
+  /* crabwalk / peek 这两个 sprite 的可见 body 都埋在透明留白里。
+     用 sprite 内偏移补偿，不污染舞台坐标语义。 */
+  .clawd .clawd-crabwalk {
+    transform: translate(var(--clawd-crabwalk-shift-x), var(--clawd-crabwalk-shift-y));
+  }
+  .clawd .clawd-peek {
+    transform: translate(var(--clawd-peek-shift-x), var(--clawd-peek-shift-y)) scaleX(-1);
+    transform-origin: center;
+  }
+  body[data-frame="3"] .clawd .clawd-idle  { display: none;  }
+  body[data-frame="3"] .clawd .clawd-react { display: block; }
+  body.dragging .clawd .clawd-idle  { display: none;  }
+  body.dragging .clawd .clawd-react { display: none;  }
+  body.dragging .clawd .clawd-drag  { display: block; }
+
+  /* 帧 4 (拖拽舞台) · 鼠标悬停 Clawd 显示抓握光标 */
+  body[data-frame="4"] .clawd { cursor: grab; }
+  /* 拖拽中 · 强制全局 grabbing 光标 + 关 transition (跟手) */
+  body.dragging               { cursor: grabbing !important; }
+  body.dragging .clawd        { cursor: grabbing; transition: none; }
+  /* 拖拽中 / 吸入后淡出软引导 (drag-hint / arc-pointer) · 已经在拖/已锁定 不再喊 */
+  body.dragging .drag-hint,
+  body.dragging .arc-pointer,
+  body.absorbed .drag-hint,
+  body.absorbed .arc-pointer  { opacity: 0 !important; transition: opacity 0.3s ease; }
+  /* 用户一旦按过 Clawd → drag-hint + arc 都永久消失
+     用户已经知道"可拖"，所有引导任务完成 · 没吸入还能再拖（不需要文字提示） */
+  body.interacted .drag-hint,
+  body.interacted .arc-pointer { opacity: 0 !important; transition: opacity 0.3s ease; }
+  /* 吸入后保持 drag SVG (锁在 drop-zone 等 4c 终端接管) */
+  body.absorbed .clawd .clawd-idle  { display: none;  }
+  body.absorbed .clawd .clawd-react { display: none;  }
+  body.absorbed .clawd .clawd-drag  { display: block; }
+  /* 吸入后 Clawd 位置 = Clawd typing 身体中心位置 - body offset
+     2026-04-20 改：drop-zone 已绑定到同一公式 · 吸入点 == typing 点 · 切终端时不再瞬移
+     specificity (0,3,0) 高于 body[data-frame="4"] .clawd (0,2,0) · 胜
+     drag.js 吸入动画结束会清 inline left/top · 让这条规则接管 */
+  body.absorbed[data-frame="4"] .clawd {
+    left: calc(50% + var(--clawd-work-dx) - var(--clawd-body-cx));
+    top:  calc(100% - var(--term-bottom) - var(--term-h) / 2 + var(--clawd-work-dy) - var(--clawd-body-cy));
+  }
+  /* M2.4c · terminal-up 后 Clawd 切 working-typing（埋头敲键盘 · 主项目原状态）
+     规则写在 body.absorbed 之后 · specificity 同，后写胜 · 覆盖 absorbed 的 drag SVG */
+  body.terminal-up .clawd .clawd-idle  { display: none;  }
+  body.terminal-up .clawd .clawd-react { display: none;  }
+  body.terminal-up .clawd .clawd-drag  { display: none;  }
+  body.terminal-up .clawd .clawd-work  { display: block; }
+  body.terminal-up .clawd              { cursor: default; }
+  /* terminal-up 后 Clawd 位置 = terminal 中心 + (dx, dy) 偏移
+     terminal 水平居中 → 中心 x = 50%（stage 50vw）
+     terminal 贴底 bottom=term-bottom → 中心 y = 100% - term-bottom - term-h/2
+     dx/dy 用 vmin · resize 时 Clawd 和 terminal 保持固定相对位置
+     specificity (0,3,0) 后于 body.absorbed 规则 · 胜 · 覆盖 drop-zone 锚点 */
+  body.terminal-up[data-frame="4"] .clawd {
+    left: calc(50% + var(--clawd-work-dx) - var(--clawd-body-cx));
+    top:  calc(100% - var(--term-bottom) - var(--term-h) / 2 + var(--clawd-work-dy) - var(--clawd-body-cy));
+  }
+  /* 非 dev mode 下 · 随 terminal 弹出 0.5s 平滑移到打字位置（同节奏 ease-boing）
+     dev mode 保留 transition: none 以便拖拽跟手 */
+  body.terminal-up:not(.dev-mode) .clawd {
+    transition:
+      left 0.5s var(--ease-boing),
+      top  0.5s var(--ease-boing);
+  }
+
+  /* ── M2.4f · Clawd 剧本 · 脱离→走→藏→冒头→跳→通知 ─────────────────
+     .clawd-untyping · 140ms work/crabwalk 交叉淡切 · 补掉 typing → crabwalk 硬断点
+     .clawd-walking  · 1.66s crabwalk · 走到身子完全进终端左边缘
+     .clawd-behind   · 藏终端后 · 瞬移到右侧冒头位 · 此段不显示任何 sprite
+     .clawd-peeking  · 1.65s mini-enter 冒头 · 用原版 enter SVG + CSS scaleX(-1) 镜像到右侧
+     .clawd-jumping  · 350ms 抛物线 · 跳到对称右侧落地位
+     .clawd-alerting · 落地切 notification · 头顶 !
+     (主角戏 · 参数对齐 D:/animation/src/mini.js) */
+
+  /* sprite 切换 */
+  body.terminal-up.clawd-untyping .clawd .clawd-work     {
+    display: block;
+    animation: clawd-work-exit var(--clawd-detach-duration) ease-out 1 both;
+  }
+  body.terminal-up.clawd-untyping .clawd .clawd-crabwalk {
+    display: block;
+    animation: clawd-crabwalk-enter var(--clawd-detach-duration) ease-out 1 both;
+  }
+  body.terminal-up.clawd-walking  .clawd .clawd-work     { display: none;  }
+  body.terminal-up.clawd-walking  .clawd .clawd-crabwalk { display: block; }
+  body.terminal-up.clawd-behind   .clawd .clawd-work     { display: none;  }
+  body.terminal-up.clawd-behind   .clawd .clawd-crabwalk { display: none;  }
+  body.terminal-up.clawd-behind   .clawd .clawd-peek     { display: none;  }
+  body.terminal-up.clawd-behind   .clawd .clawd-alert    { display: none;  }
+  body.terminal-up.clawd-peeking  .clawd .clawd-work     { display: none;  }
+  body.terminal-up.clawd-peeking  .clawd .clawd-crabwalk { display: none;  }
+  body.terminal-up.clawd-peeking  .clawd .clawd-peek     { display: block; }
+  body.terminal-up.clawd-jumping  .clawd .clawd-work     { display: none;  }
+  body.terminal-up.clawd-jumping  .clawd .clawd-crabwalk { display: none;  }
+  body.terminal-up.clawd-jumping  .clawd .clawd-peek     { display: block; }
+  body.terminal-up.clawd-alerting .clawd .clawd-work     { display: none;  }
+  body.terminal-up.clawd-alerting .clawd .clawd-crabwalk { display: none;  }
+  body.terminal-up.clawd-alerting .clawd .clawd-peek     { display: none;  }
+  body.terminal-up.clawd-alerting .clawd .clawd-alert    { display: block; }
+  body.terminal-up.clawd-deny-error .clawd .clawd-work     { display: none;  }
+  body.terminal-up.clawd-deny-error .clawd .clawd-alert    { display: none;  }
+  body.terminal-up.clawd-deny-error .clawd .clawd-peek     { display: none;  }
+  body.terminal-up.clawd-deny-error .clawd .clawd-error    { display: block; }
+  body.terminal-up.clawd-deny-wake .clawd .clawd-work      { display: none;  }
+  body.terminal-up.clawd-deny-wake .clawd .clawd-alert     { display: none;  }
+  body.terminal-up.clawd-deny-wake .clawd .clawd-error     { display: none;  }
+  body.terminal-up.clawd-deny-wake .clawd .clawd-wake      { display: block; }
+  body.terminal-up.clawd-deny-scratch .clawd .clawd-work    { display: none;  }
+  body.terminal-up.clawd-deny-scratch .clawd .clawd-alert   { display: none;  }
+  body.terminal-up.clawd-deny-scratch .clawd .clawd-wake    { display: none;  }
+  body.terminal-up.clawd-deny-scratch .clawd .clawd-scratch { display: block; }
+  body.terminal-up.clawd-deny-aegyo .clawd .clawd-work      { display: none;  }
+  body.terminal-up.clawd-deny-aegyo .clawd .clawd-alert     { display: none;  }
+  body.terminal-up.clawd-deny-aegyo .clawd .clawd-scratch   { display: none;  }
+  body.terminal-up.clawd-deny-aegyo .clawd .clawd-aegyo     { display: block; }
+
+  /* M2.4f · sprite 交叉淡入 · 消掉 deny 链路尾段两处硬切
+     核心：display:none → block 时 CSS animation 自动 reset，让 aegyo/idle 从"起手帧"开始播
+           (而不是让 sprite 在前面阶段隐形跑动画，那样切可见时会半路上车)
+     配合：scratch 反其道 · 在 deny-wake 阶段就 display:block + opacity:0 预热 1.5s，
+           等 scratch 内部 animation 跑过前 1.28s 静止准备期再显现 · 用户直接看挠头
+     淡入用 @keyframes sprite-fade-in (display 切换时 transition 不 fire，animation 会) */
+  @keyframes sprite-fade-in {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  @keyframes sprite-fade-out {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+  }
+
+  /* scratch · wake 阶段预热（invisible + animation 跑） → scratch 阶段瞬切可见
+             → scratch+aegyo 并存时 opacity 淡出 0.25s */
+  body.terminal-up.clawd-deny-wake .clawd .clawd-scratch {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    display: block;
+    opacity: 0;
+  }
+  body.terminal-up.clawd-deny-scratch .clawd .clawd-scratch {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    display: block;
+    opacity: 1;
+  }
+  body.terminal-up.clawd-deny-scratch.clawd-deny-aegyo .clawd .clawd-scratch {
+    display: block;   /* 并存期间保持 opacity:1 不淡出 · aegyo 在 DOM 后（z-index 隐式更高）淡入时直接盖住 scratch · 避免双方都半透导致中间空窗"闪" */
+    opacity: 1;
+    animation: none;
+  }
+
+  /* aegyo · deny-aegyo 阶段从 display:none → block，sprite-fade-in 跑 opacity 0→1
+          · 同时 SVG 内部 animation 因 display 切换自动 reset，撒娇从 0% 起手
+          · aegyo+perm-idle 并存时淡出 0.25s */
+  body.terminal-up.clawd-deny-aegyo .clawd .clawd-aegyo {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    display: block;
+    animation: sprite-fade-in 0.25s ease both;
+  }
+  body.terminal-up.clawd-deny-aegyo.clawd-perm-idle .clawd .clawd-aegyo {
+    display: block;   /* 并存期间保持 opacity:1 不淡出 · idle 靠下面的 z-index:1 盖在 aegyo 之上淡入 · 理由同上 */
+    opacity: 1;
+    animation: none;
+  }
+
+  /* idle · perm-idle 阶段同样 display:none → block + sprite-fade-in
+     handoff 期间提升 z-index 让 idle 盖在 aegyo/alert 之上（DOM 顺序里 aegyo 在 idle 后，默认层级更高会挡 idle 淡入） */
+  body.terminal-up.clawd-perm-idle .clawd .clawd-idle {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    display: block;
+    animation: sprite-fade-in 0.25s ease both;
+  }
+  body.terminal-up.clawd-perm-idle.clawd-idle-handoff .clawd .clawd-idle {
+    z-index: 1;
+  }
+
+  /* alerting → perm-idle 路径（超时回落）· 同样"新盖旧"保护
+     原来 alert 在 perm-idle 下默认 display:none，idle 还在 fade-in 时 alert 已消失 → 露背景"闪"
+     让 alert 在并存阶段保持 display:block opacity:1，被 idle 的 z-index:1 盖住 */
+  body.terminal-up.clawd-alerting.clawd-perm-idle .clawd .clawd-alert {
+    display: block;
+    opacity: 1;
+  }
+
+  @keyframes clawd-work-exit {
+    from { opacity: 1; }
+    to   { opacity: 0; }
+  }
+  @keyframes clawd-crabwalk-enter {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+
+  /* peeking / jumping · 使用原版 enter.svg，镜像改在 CSS 做，避免 SVG 内部翻转引入额外跳变 */
+  body.terminal-up.clawd-peeking .clawd .clawd-peek,
+  body.terminal-up.clawd-jumping .clawd .clawd-peek {
+    transform: translate(var(--clawd-peek-shift-x), var(--clawd-peek-shift-y)) scaleX(-1);
+  }
+
+  /* 位置 · walking 终点 = 身子完全进终端左边缘 */
+  body.terminal-up.clawd-walking[data-frame="4"] .clawd {
+    left: calc(50% + var(--clawd-walk-end-dx) - var(--clawd-body-cx));
+    top:  calc(100% - var(--term-bottom) - var(--term-h) / 2 + var(--clawd-walk-entry-dy, var(--clawd-walk-dy)) - var(--clawd-body-cy));
+  }
+  /* behind / peeking · 终端右侧冒头位（offsetRatio 0.486 几何）
+     y 用 --clawd-peek-dy（默认 0 = 终端中线）· 不沿用 walk-dy（那是坐打字位偏下太深） */
+  body.terminal-up.clawd-behind[data-frame="4"] .clawd,
+  body.terminal-up.clawd-peeking[data-frame="4"] .clawd {
+    left: calc(50% + var(--clawd-peek-dx) - var(--clawd-body-cx));
+    top:  calc(100% - var(--term-bottom) - var(--term-h) / 2 + var(--clawd-peek-dy) - var(--clawd-body-cy));
+  }
+  /* jumping / alerting · 对称右侧落地位（原 walk-dx 位置） */
+  body.terminal-up.clawd-jumping[data-frame="4"] .clawd,
+  body.terminal-up.clawd-alerting[data-frame="4"] .clawd {
+    left: calc(50% + var(--clawd-walk-dx) - var(--clawd-body-cx));
+    top:  calc(100% - var(--term-bottom) - var(--term-h) / 2 + var(--clawd-walk-dy) - var(--clawd-body-cy));
+  }
+  body.terminal-up.clawd-deny-error[data-frame="4"] .clawd,
+  body.terminal-up.clawd-deny-wake[data-frame="4"] .clawd,
+  body.terminal-up.clawd-deny-scratch[data-frame="4"] .clawd,
+  body.terminal-up.clawd-deny-aegyo[data-frame="4"] .clawd {
+    left: calc(50% + var(--clawd-walk-dx) - var(--clawd-body-cx));
+    top:  calc(100% - var(--term-bottom) - var(--term-h) / 2 + var(--clawd-walk-dy) - var(--clawd-body-cy));
+  }
+
+  /* walking 1.8s 强缓动（起步磨蹭 → 中段冲 → 缓缓停 · cubic-bezier ease-in-out 加强）
+     z-index: 3 · 在 new-world(z=2) 上、终端(z=4) 下 · 走到终端覆盖区域就被挡住 */
+  body.terminal-up.clawd-walking .clawd {
+    z-index: 3;
+  }
+  body.terminal-up.clawd-untyping:not(.dev-mode) .clawd {
+    transition: none;
+    z-index: 4;
+  }
+  body.terminal-up.clawd-walking:not(.dev-mode) .clawd {
+    transition:
+      left var(--clawd-walk-duration) cubic-bezier(0.76, 0, 0.24, 1),
+      top  var(--clawd-walk-duration) cubic-bezier(0.76, 0, 0.24, 1);
+  }
+  /* behind 瞬移 · 无 transition · 在 new-world(z=2) 上、终端(z=4) 下 */
+  body.terminal-up.clawd-behind:not(.dev-mode) .clawd {
+    transition: none;
+    z-index: 3;
+  }
+  /* peeking 仍在终端后 · 只让 mini-enter 在终端边缘内外滑入，不抢到前景 */
+  body.terminal-up.clawd-peeking:not(.dev-mode) .clawd {
+    transition: none;
+    z-index: 3;
+  }
+  /* jumping 350ms · X ease-out · Y 弧度由 @keyframes translateY 做（峰高 5vmin）
+     animation 从 translate(-50%, -50%) 抛物线升到最高 再回 · 和 .clawd 默认 transform 一致 */
+  body.terminal-up.clawd-jumping:not(.dev-mode) .clawd {
+    transition:
+      left var(--clawd-jump-dur) cubic-bezier(0.42, 0, 1, 1),
+      top  var(--clawd-jump-dur) cubic-bezier(0.42, 0, 1, 1);
+    animation: clawd-jump-arc var(--clawd-jump-dur) ease-out 1 both;
+  }
+  body.terminal-up.clawd-deny-error .clawd,
+  body.terminal-up.clawd-deny-wake .clawd,
+  body.terminal-up.clawd-deny-scratch .clawd,
+  body.terminal-up.clawd-deny-aegyo .clawd {
+    z-index: 5;
+  }
+  body.terminal-up.clawd-deny-error:not(.dev-mode) .clawd,
+  body.terminal-up.clawd-deny-wake:not(.dev-mode) .clawd,
+  body.terminal-up.clawd-deny-scratch:not(.dev-mode) .clawd,
+  body.terminal-up.clawd-deny-aegyo:not(.dev-mode) .clawd {
+    transition: none;
+    animation: none;
+  }
+
+  @keyframes clawd-jump-arc {
+    0%, 100% { transform: translate(-50%, -50%); }
+    50%      { transform: translate(-50%, calc(-50% - var(--clawd-jump-peak))); }
+  }
+  /* terminal-up 时连 dev mode 强制显示的 drop-zone/drag-hint/arc 一并覆盖掉
+     specificity (0,2,1) + 后于 dev-overlay 注入 · 用 #id 提权 */
+  body.terminal-up #drop-zone,
+  body.terminal-up #drag-hint,
+  body.terminal-up #arc-pointer,
+  body.clawd-allowing #drop-zone,
+  body.clawd-allowing #drag-hint,
+  body.clawd-allowing #arc-pointer {
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: opacity 0.4s ease;
+  }
+  /* dev mode + frame=4 下 arc-pointer 永远显示（覆盖 interacted/absorbed/terminal-up 的隐藏）
+     方便鹿鹿任意时间节点都能拖 3 个 handle 调弧线 · specificity (0,3,1) 胜过 interacted 等 (0,2,1)
+     :not(.clawd-allowing) · Allow 末态退场（同 drop-zone/drag-hint） */
+  body.dev-mode[data-frame="4"]:not(.clawd-allowing) #arc-pointer {
+    opacity: 1 !important;
+    pointer-events: none !important;
+  }
+
+  /* 本体中心标定紫点 (dev mode + frame=4 显示 · 拖动改 --clawd-body-cx/cy) */
+  .body-anchor {
+    position: fixed;
+    width: 14px; height: 14px;
+    border-radius: 50%;
+    background: rgba(180, 80, 200, 0.45);
+    border: 2px solid #B450C8;
+    transform: translate(-50%, -50%);
+    z-index: 9998;
+    cursor: move;
+    display: none;
+    pointer-events: auto;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  body.dev-mode[data-frame="4"] .body-anchor { display: block; }
+
+  /* 帧 1e：Clawd 平滑居中（标题擦除完毕后） */
+  body[data-frame="1e"] .clawd {
+    left: var(--clawd-x-1e);
+    top:  var(--clawd-y-1e);
+  }
+  /* 帧 3 / 4：Clawd 缩小同时位置微调（独立 var · 不与 1e 共用，因 character 视觉中心随容器大小变）
+     帧 4 (拖拽舞台) 保持帧 3 末态位置/大小 — 用户从这里开始拖 */
+  body[data-frame="3"] .clawd,
+  body[data-frame="4"] .clawd {
+    left:   var(--clawd-x-3);
+    top:    var(--clawd-y-3);
+    width:  var(--clawd-size-3);
+    height: var(--clawd-size-3);
+  }
+
+  /* ── New world overlay (iris 揭幕的米色新世界) ────────────────────── */
+  .new-world {
+    position: fixed;
+    inset: 0;
+    /* 点阵与鼠标花瓣随 iris 一起揭幕、一起收场。 */
+    background-color: var(--world-bg-new);
+    z-index: 2;                   /* 介于黑底 body 和 Clawd 之间 */
+    pointer-events: none;
+    /* 圆心固定屏幕正中（帧 1e 把 Clawd 移到中心后再扩散） */
+    clip-path: circle(0 at 50vw 50vh);
+    transition: clip-path 0.8s ease-out;
+  }
+  /* 米底舞台一旦撑开就保持，直到彩蛋（分支 B）才反向收 */
+  body[data-frame="3"] .new-world,
+  body[data-frame="4"] .new-world {
+    clip-path: circle(150vmax at 50vw 50vh);
+  }
+
+  /* 装饰层不接管鼠标，拖拽、权限按钮与重播仍由前景接收。 */
+  .new-world > .flower-field {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+  .pixel-flower {
+    transform-box: fill-box;
+    transform-origin: center;
+    transition: opacity .3s ease, transform .35s ease;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .pixel-flower { transition: none; }
+  }
+
+  /* ── Brand wordmark · Press Start 2P (像素终端打字机) ────────────── */
+  .brand {
+    position: absolute;
+    left: var(--brand-x);
+    top: var(--brand-y);
+    transform: translate(-50%, -50%);
+    /* 容器固定宽度（按完整文本算）→ 防止打字时容器抖动 */
+    width: 14ch;
+    text-align: left;
+    font-family: "Press Start 2P", "Geist Mono", monospace;
+    font-weight: 400;            /* PSP 只有一种字重 */
+    font-size: var(--brand-size);
+    line-height: 1.4;
+    letter-spacing: var(--brand-letter);
+    color: var(--brand-color);
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    transition: opacity 0.3s ease;  /* flash() 用 inline opacity，这里只兜底 */
+  }
+
+  /* 终端光标 ▌ */
+  #cursor {
+    display: inline-block;
+    margin-left: 1px;
+    animation: cursor-blink 1.06s steps(2, jump-none) infinite;
+  }
+  @keyframes cursor-blink {
+    0%, 49%   { opacity: 1; }
+    50%, 100% { opacity: 0; }
+  }
+  /* 帧 3 起光标 fade out 退场（含帧 4 拖拽舞台） */
+  body[data-frame="3"] #cursor,
+  body[data-frame="4"] #cursor {
+    opacity: 0;
+    animation: none;
+    transition: opacity 0.3s ease;
+  }
+  /* 帧 3 起标题整体淡出（M2.3 iris 启动时让位 · 帧 4 也保持隐藏） */
+  body[data-frame="3"] .brand,
+  body[data-frame="4"] .brand {
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  /* ── 帧 4 拖拽舞台 · 目标方块 + 提示文字 ──────────────────────────────
+     2026-04-20 · left/top 绑定到 Clawd typing 身体中心位置（方案 b · 永不漂）
+     · 公式同 body.terminal-up[data-frame="4"] .clawd 不减 body-cx/cy（translate -50% 已让 left/top = 中心）
+     · resize 时跟 --clawd-work-dx/dy + --term-bottom/--term-h 同步缩放
+     · dev overlay 拖 Clawd (dx/dy) → drop-zone 自动跟上 · 保证吸入点 == typing 点 */
+  .drop-zone {
+    position: absolute;
+    left: calc(50% + var(--clawd-work-dx));
+    top:  calc(100% - var(--term-bottom) - var(--term-h) / 2 + var(--clawd-work-dy));
+    width:  var(--drop-w);
+    height: var(--drop-h);
+    transform: translate(-50%, -50%);
+    background: var(--drop-bg);
+    border: 2px dashed var(--drop-border);
+    border-radius: 24px;
+    z-index: 4;                      /* 在 new-world (z=2) 之上, Clawd (z=5) 之下 */
+    pointer-events: none;            /* 暂不拦截鼠标，4b 拖拽用坐标判定 */
+    opacity: 0;
+    transition: opacity 1.5s ease;   /* 缓缓出现 */
+    /* 框内居中文字 "Drop here" · 静态稳定（不闪烁） */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 14px;
+    color: #5A4F3A;                  /* 同 drag-hint 字色 · 深米褐 */
+    letter-spacing: 0.5px;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  .drag-hint {
+    position: absolute;
+    left: var(--hint-x);
+    top:  var(--hint-y);
+    transform: translate(-50%, -50%);
+    font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: var(--hint-size);
+    color: #5A4F3A;                  /* 深米褐字 · 米底上对比清晰 */
+    background: #FAF3E5;             /* 比米底更浅一档 · 气泡 pop 出来 */
+    border: 1px solid #B8A08A;       /* 同 drop-zone 边色 · 视觉统一 */
+    border-radius: 8px;              /* 比 drop-zone 24px 小 · 区分层级 */
+    padding: 8px 16px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+    pointer-events: none;
+    user-select: none;
+    -webkit-user-select: none;
+    z-index: 6;
+    opacity: 0;
+    transition: opacity 1.5s ease;   /* 缓缓出现 */
+  }
+  /* drag-hint：帧 3 眨眼期就开始渐显 (delay 2s)
+     fade-in 1.5s 缓缓 · 到切帧 4 时已经稳稳落地 · 给用户"我该拖什么"的软提示 */
+  body[data-frame="3"] .drag-hint,
+  body[data-frame="4"] .drag-hint {
+    opacity: 1;
+    transition-delay: 2s;
+  }
+  /* drop-zone：切帧 4 后 1s 才出 · 让用户先消化 hint，再揭示拖拽目的地
+     fade-in 结束后加慢呼吸 · drag-hint 是 1.6s 快急促（注意我），drop-zone 用 3s 深呼吸（静静召唤）分工 */
+  body[data-frame="4"] .drop-zone {
+    opacity: 1;
+    transition-delay: 1s;
+    animation: drop-breathe 3s ease-in-out 2.6s infinite;
+  }
+  @keyframes drop-breathe {
+    0%, 100% { opacity: 1;    }
+    50%      { opacity: 0.55; }
+  }
+  /* drag-hint 落地后开始闪烁吸引注意（在 frame=4 才启动 pulse · fade-in 已完成） */
+  body[data-frame="4"] .drag-hint {
+    animation: hint-pulse 1.6s ease-in-out 0.3s infinite;
+  }
+  @keyframes hint-pulse {
+    0%, 100% { opacity: 1;    }
+    50%      { opacity: 0.45; }
+  }
+
+  /* ── 抛物线指示 (与 drop-zone/drag-hint 同步出现 · 从 Clawd 指向 drop-zone) ──
+     z-index: 4 = drop-zone(4) 之上 (源序后写) · Clawd(5) 之下 */
+  .arc-pointer {
+    position: fixed;
+    inset: 0;
+    width:  100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 4;
+  }
+  /* 主虚线：静态显示，提供"路径轮廓" */
+  .arc-pointer #arc-path {
+    fill: none;
+    stroke: #B8A08A;                  /* 同 drop-zone 边色 · 视觉统一 */
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-dasharray: 8 6;            /* 真虚线模式 (8 实 6 空) */
+    opacity: 0;
+    transition: opacity 1.2s ease;
+  }
+  .arc-pointer.show #arc-path {
+    opacity: 1;
+  }
+  /* 终点实心箭头 · 跟随切线方向旋转 (transform 由 JS 设) */
+  .arc-pointer #arc-arrow {
+    fill: #B8A08A;                    /* 同虚线色 · 视觉统一 */
+    stroke: none;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+  }
+  .arc-pointer.show #arc-arrow {
+    opacity: 1;
+  }
+  /* 引导手 · JS 控制位置 + opacity (沿 path 25%→75% 循环) */
+  .arc-pointer #drag-hand {
+    opacity: 0;                       /* 默认隐 · JS 接管动画 */
+    pointer-events: none;
+  }
+
+  /* ── Arc handles (dev mode + frame=4 显示 · 拖动调起终控点) ──────── */
+  .arc-handle {
+    position: fixed;
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    border: 2px solid #ffdc50;
+    transform: translate(-50%, -50%);
+    cursor: move;
+    z-index: 9998;
+    display: none;
+    pointer-events: auto;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  body.dev-mode[data-frame="4"] .arc-handle {
+    display: block;
+  }
+  /* 2026-04-20 一劳永逸版 · 起点/终点 handle 都派生绑定 (窗口缩放不崩)
+     · 绿 handle = Clawd 身体中心 (clawd-x/y-3 + body-cx/cy) + start-lift
+     · 红 handle = drop-zone 中心 (同 .drop-zone 公式) + end-lift
+     · 黄 handle = 独立 arc-cx/cy */
+  #arc-handle-start   {
+    left: calc(var(--clawd-x-3) + var(--clawd-body-cx) + var(--arc-start-lift-x));
+    top:  calc(var(--clawd-y-3) + var(--clawd-body-cy) + var(--arc-start-lift-y));
+    background: rgba(0, 200, 83, 0.4); border-color: #00C853;
+  }
+  #arc-handle-end     {
+    left: calc(50% + var(--clawd-work-dx) + var(--arc-end-lift-x));
+    top:  calc(100% - var(--term-bottom) - var(--term-h) / 2 + var(--clawd-work-dy) + var(--arc-end-lift-y));
+    background: rgba(255, 100, 80, 0.4); border-color: #FF6450;
+  }
+  #arc-handle-control {
+    left: var(--arc-cx); top: var(--arc-cy);
+    background: rgba(255, 220, 80, 0.4); border-color: #ffdc50;
+  }
+
+  /* ── 帧 4 · 终端面板 (M2.4c · clawd-absorbed 后升起) ─────────────────
+     层级：new-world(2) < hidden Clawd(3) < terminal(4) < front Clawd(5)
+     "Clawd 坐在大终端前埋头敲键盘" 的视觉分层 */
+  .terminal {
+    position: fixed;
+    left: 50%;
+    bottom: var(--term-bottom);
+    width:  var(--term-w);
+    height: var(--term-h);
+    background: #0E1116;
+    border-radius: var(--term-radius);
+    /* 右下方偏移 · 深一点 · 边缘实一点 · vmin 单位 resize 时阴影比例不崩 */
+    box-shadow: 1.2vmin 1.6vmin 2vmin rgba(0, 0, 0, 0.30);
+    /* 弹出效果：从底部中心缩小→放大 + overshoot 反弹（像气泡"嘣"一下出来）
+       transform-origin: center bottom · 贴地感，从下方 pop 起 */
+    transform-origin: center bottom;
+    transform: translateX(-50%) scale(0);
+    opacity: 0;
+    z-index: 4;
+    pointer-events: none;
+    overflow: hidden;
+    transition:
+      transform 0.5s var(--ease-boing),
+      opacity   0.25s ease,
+      filter    0.4s ease;
+    font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  }
+  body.terminal-up .terminal {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+  }
+  /* 弹窗出现时 · 终端退位成背景舞台（memory: feedback_product_positioning）
+     dim + blur 让终端"物理退后"· Clawd 自动上位成主角 */
+  body.clawd-perm-show .terminal,
+  body.clawd-deny-error .terminal,
+  body.clawd-deny-wake .terminal,
+  body.clawd-deny-scratch .terminal,
+  body.clawd-deny-aegyo .terminal {
+    filter: brightness(0.45) blur(1px);
+  }
+  /* macOS 风 chrome · 深灰条 + 左上三圆点 + 居中标题 */
+  .terminal .term-chrome {
+    height: var(--term-chrome-h);
+    background: #2A3040;
+    display: flex;
+    align-items: center;
+    padding: 0 12px;
+    position: relative;
+    user-select: none;
+    -webkit-user-select: none;
+  }
+  .terminal .term-dots {
+    display: flex;
+    gap: 8px;
+  }
+  .terminal .term-dots span {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    display: block;
+  }
+  .terminal .term-dots .dot-red    { background: #FF5F56; }
+  .terminal .term-dots .dot-yellow { background: #FFBD2E; }
+  .terminal .term-dots .dot-green  { background: #27C93F; }
+  .terminal .term-title {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 12px;
+    color: #8a8a8a;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+  }
+  /* 内容区 · 底部 padding 给 absolute footer 让位（避免输入行被盖） */
+  .terminal .term-body {
+    padding: 20px 24px 36px 24px;
+    height: calc(100% - var(--term-chrome-h));
+    color: #e8e6e0;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  /* terminal 升起 → drop-zone 淡出（Clawd 已吸入，框的使命完成） */
+  body.terminal-up .drop-zone {
+    opacity: 0 !important;
+    transition: opacity 0.4s ease;
+  }
+  /* dev mode + frame=4 强制显示终端 · 方便鹿鹿拖调位置/大小 */
+  body.dev-mode[data-frame="4"] .terminal {
+    transform: translateX(-50%) scale(1) !important;
+    opacity: 1 !important;
+    pointer-events: auto;
+    outline: 1px dashed rgba(255, 220, 80, 0.7);
+    outline-offset: 4px;
+    cursor: move;
+  }
+
+  /* ── M2.4d · 终端内 Claude Code 剧本（舞台真实复刻） ───────────────────
+     banner + 对话历史 + 当前输入行 + thinking + tool-call + 权限框
+     按真实 CC 长相还原（视频参考 2026-04-20）
+     所有历史项由 terminal.js 按时序 append · CSS fade-in
+     定格在权限框不做交互 · M2.4e 由 Clawd 弹自己的白底卡片接棒主角戏 */
+  .terminal .term-body {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    font-feature-settings: "liga" 0;  /* 禁连字 · 等宽才稳 */
+    position: relative;
+  }
+
+  /* Banner · Codex 风圆角边框块 · 去 logo · "Coding Agent" 泛化（多 agent 桌宠定位） */
+  .term-banner {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 12px 16px;
+    border: 1px solid #3a3a3a;
+    border-radius: 8px;
+    margin-bottom: 14px;
+    opacity: 0;
+    transition: opacity 0.3s ease 0.3s;
+  }
+  body.terminal-up .term-banner { opacity: 1; }
+
+  .term-banner-prompt {
+    color: #a8a8a8;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 1.45;
+    flex-shrink: 0;
+    padding-top: 1px;
+  }
+  .term-banner-text {
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+    line-height: 1.45;
+    gap: 4px;
+  }
+  .term-banner-title {
+    color: #e8e6e0;
+    font-weight: 600;
+  }
+  .term-banner-meta,
+  .term-banner-path { color: #8a8a8a; }
+
+  /* 对话历史区（flex 中部 · 可滚 · 隐藏滚动条 · append 后 JS scrollIntoView） */
+  .term-history {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-size: 13px;
+    line-height: 1.5;
+    scrollbar-width: none;
+  }
+  .term-history::-webkit-scrollbar { display: none; }
+
+  /* 通用历史项：append 时 fade-in */
+  .term-history-item {
+    opacity: 0;
+    animation: term-fade-in 0.3s ease forwards;
+  }
+  @keyframes term-fade-in {
+    from { opacity: 0; transform: translateY(-2px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* 用户消息（> 提示符 + 灰底高亮条） */
+  .term-user-msg {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 4px 8px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 2px;
+    color: #e8e6e0;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+  .term-user-msg .term-prompt {
+    color: #8a8a8a;
+    flex-shrink: 0;
+  }
+
+  /* Thinking indicator · 珊瑚 + 前缀脉冲闪 */
+  .term-thinking {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: #D98A66;
+  }
+  .term-thinking-icon {
+    animation: term-thinking-pulse 1s ease-in-out infinite;
+  }
+  @keyframes term-thinking-pulse {
+    0%, 100% { opacity: 0.4; }
+    50%      { opacity: 1; }
+  }
+  .term-thinking-meta {
+    color: #8a8a8a;
+    font-size: 12px;
+  }
+
+  /* Bash tool call 块 */
+  .term-tool-call {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .term-tool-call-line {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    color: #e8e6e0;
+    white-space: pre-wrap;
+    overflow-wrap: anywhere;
+  }
+  .term-tool-dot  { color: #e8e6e0; flex-shrink: 0; }
+  .term-tool-name { color: #D98A66; font-weight: 600; flex-shrink: 0; }
+  .term-tool-args { color: #e8e6e0; }
+
+  /* 权限框（真实 CC 流内 TUI · Bash command + 1/2/3 选项） */
+  .term-perm-box {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-top: 10px;
+    border-top: 1px solid #3a3a3a;
+  }
+  .term-perm-title    { color: #7B7FEE; font-weight: 600; }
+  .term-perm-cmd      { color: #e8e6e0; margin-left: 4px; white-space: pre-wrap; overflow-wrap: anywhere; }
+  .term-perm-desc     { color: #8a8a8a; margin-left: 4px; font-size: 12px; }
+  .term-perm-prompt   { color: #e8e6e0; margin-top: 6px; }
+  .term-perm-options {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .term-perm-option {
+    color: #8a8a8a;
+    padding-left: 16px;
+    position: relative;
+    white-space: pre-wrap;
+  }
+  .term-perm-option.selected { color: #E4B73F; }
+  .term-perm-option.selected::before {
+    content: '>';
+    position: absolute;
+    left: 0;
+    color: #e8e6e0;
+  }
+  .term-perm-shortcuts {
+    color: #5a5a5a;
+    font-size: 11px;
+    margin-top: 4px;
+  }
+
+  /* 当前输入行 · 始终贴 term-body 最底 · >  [打字中文本][块光标]
+     align-items: flex-start 换行时 > 贴顶；content wrap 让 text+cursor inline 换行 */
+  .term-input-line {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 4px 8px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 2px;
+    color: #e8e6e0;
+    margin-top: 10px;
+    font-size: 13px;
+    opacity: 0;
+    transition: opacity 0.3s ease 0.5s;
+  }
+  body.terminal-up .term-input-line { opacity: 1; }
+
+  .term-input-line .term-prompt {
+    color: #8a8a8a;
+    flex-shrink: 0;
+  }
+  .term-input-line .term-input-content {
+    flex: 1;
+    min-width: 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+  .term-input-line .term-cursor {
+    color: #e8e6e0;
+    animation: term-cursor-blink 0.8s step-end infinite;
+  }
+  @keyframes term-cursor-blink {
+    0%, 49%   { opacity: 1; }
+    50%, 100% { opacity: 0; }
+  }
+  /* 回车"发送"后 · 光标隐藏 · 输入行整体 hide */
+  .term-input-line.sent { display: none; }
+
+  /* 底部快捷键提示（右下角灰字 "esc to interrupt" 等） */
+  .term-footer {
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    color: #6b7280;
+    font-size: 11px;
+    opacity: 0;
+    transition: opacity 0.3s ease 0.6s;
+    pointer-events: none;
+  }
+  body.terminal-up .term-footer { opacity: 1; }
+  .term-footer-right { color: #E4B73F; }
+
+  /* ── M2.4d · Clawd 白底权限卡片（主角戏 · 复刻 poster/p2_permission_v2.html） ──
+     B 方案 · 弹窗跟着 Clawd 走（2026-04-20 鹿鹿定案 · 见 feedback_product_positioning）
+     · 锚点 = Clawd 身体中心坐标（和 Clawd 同参照系 · viewport 缩放时同步移动）
+     · 显示位置 = Clawd 头顶上方（像 Clawd 举着牌 / 从 Clawd 身上弹出的对话框）
+     · --perm-lift 控制 popup 底边到 Clawd 中心的距离（= 半个 Clawd + 呼吸间隙）
+     · 隐藏态 = 往 Clawd 身后沉降 + 透明（再显示时像从 Clawd 身上升起）
+     点 Allow/Deny 交互留给 M2.4e/f · 当前定格展示 */
+  .clawd-perm-card {
+    position: fixed;
+    /* Clawd 身体中心 X · 和 Clawd 用同一公式（不减 body-cx 因为我们要的是身体中心不是容器左上）*/
+    left: calc(50% + var(--clawd-walk-dx));
+    /* Clawd 身体中心 Y · 同理 · 不减 body-cy */
+    top:  calc(100% - var(--term-bottom) - var(--term-h) / 2 + var(--clawd-walk-dy));
+    width: min(360px, 78vw);
+    padding: 20px 22px;
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.18);
+    /* 隐藏：popup 中心贴在 Clawd 中心偏下（body 内部）· 透明 */
+    transform: translate(-50%, calc(-50% + 2vmin));
+    opacity: 0;
+    pointer-events: none;
+    z-index: 50;                  /* 盖在 terminal (z=3) 和 clawd (z=5) 之上 · 抢主角戏 */
+    transition:
+      transform 0.6s var(--ease-boing),
+      opacity   0.4s ease;
+    font-family:
+      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, sans-serif;
+    color: #2A3040;
+  }
+  body.clawd-perm-show .clawd-perm-card {
+    /* 显示：popup 底边 = Clawd 头顶 - perm-gap
+       translate(-50%) 水平居中到 Clawd · translateY(-100% - 半Clawd - gap) 上抬到头顶
+       半个 Clawd = size-3 / 2 ≈ 17vmin · perm-gap 由 :root 变量控制（默认 0 贴脸） */
+    transform: translate(-50%, calc(-100% - var(--clawd-size-3) / 2 - var(--perm-gap)));
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .perm-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+  }
+  .perm-card-title {
+    font-size: 15px;
+    font-weight: 600;
+    color: #2A3040;
+  }
+  .perm-card-tag {
+    background: #D98A66;
+    color: #ffffff;
+    padding: 3px 10px;
+    border-radius: 10px;
+    font-family: "Geist Mono", ui-monospace, Menlo, monospace;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.6px;
+  }
+  .perm-card-cmd {
+    background: #F5F5F5;
+    padding: 10px 12px;
+    border-radius: 6px;
+    margin-top: 12px;
+    font-family: "Geist Mono", ui-monospace, Menlo, monospace;
+    font-size: 12px;
+    color: #333333;
+    line-height: 1.55;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+  }
+  .perm-card-note {
+    display: none;
+    margin-top: 12px;
+    color: #8B5E4B;
+    font-size: 13px;
+    line-height: 1.55;
+  }
+  body.clawd-perm-retry .perm-card-note { display: block; }
+  .perm-card-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+  }
+  .perm-card-btn {
+    flex: 1;
+    padding: 10px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: inherit;
+    border: 1px solid transparent;
+    transition: transform 0.1s ease, filter 0.15s ease;
+  }
+  .perm-card-btn:active { transform: scale(0.97); }
+  .perm-card-allow {
+    background: #D98A66;
+    color: #ffffff;
+  }
+  .perm-card-allow:hover { filter: brightness(1.05); }
+  .perm-card-deny {
+    background: #ffffff;
+    color: #2A3040;
+    border-color: #D5D5D5;
+  }
+  .perm-card-deny:hover { background: #FAFAFA; }
+
+  /* ── Allow 分支 ───────────────────────────────────────────────────
+     时序：点 Allow → 卡片淡出 → 终端与主角退场 → 六格动画展示
+     超时回落：权限卡升起后 2s 用户没点 → Clawd 切 idle-follow 等点击
+              （卡片留在头顶不消失） */
+
+  /* ── 超时回落 · Clawd 切 idle-follow 但保持 alerting 位置不动 ─── */
+  /* 移除 alerting 后保留位置：复制 alerting 的位置规则 · 但 sprite 切回 idle */
+  body.terminal-up.clawd-perm-idle[data-frame="4"] .clawd {
+    left: calc(50% + var(--clawd-walk-dx) - var(--clawd-body-cx));
+    top:  calc(100% - var(--term-bottom) - var(--term-h) / 2 + var(--clawd-walk-dy) - var(--clawd-body-cy));
+  }
+  /* 和 clawd-deny-* / clawd-alerting 对齐关掉 .clawd 容器动画。
+     否则 aegyo→perm-idle 切换时，基础 .clawd 的 clawd-fade-in (opacity:0→1 + scale(.92→1))
+     从 animation:none 变回有效会被重新触发，视觉上 Clawd 从小变大闪一下。 */
+  body.terminal-up.clawd-perm-idle:not(.dev-mode) .clawd {
+    transition: none;
+    animation: none;
+  }
+  /* sprite · 显示 idle (盖住 terminal-up 默认隐藏 idle 的规则) */
+  body.terminal-up.clawd-perm-idle .clawd .clawd-work     { display: none;  }
+  body.terminal-up.clawd-perm-idle .clawd .clawd-alert    { display: none;  }
+  body.terminal-up.clawd-perm-idle .clawd .clawd-crabwalk { display: none;  }
+  body.terminal-up.clawd-perm-idle .clawd .clawd-idle     { display: block; }
+  /* aegyo → idle 的第一拍先冻结成 neutral pose。
+     这里故意关掉呼吸 / 眨眼 / JS transform 补间，避免切回 idle 时出现
+     "从小变大" 或从后面闪一下的假象。 */
+  body.clawd-idle-handoff .clawd .clawd-idle .breathe-anim,
+  body.clawd-idle-handoff .clawd .clawd-idle .eyes-blink {
+    animation: none !important;
+  }
+  body.clawd-idle-handoff .clawd .clawd-idle #eyes-js,
+  body.clawd-idle-handoff .clawd .clawd-idle #body-js,
+  body.clawd-idle-handoff .clawd .clawd-idle #shadow-js {
+    transition: none !important;
+  }
+
+  /* Optional idle reaction; the scene and drag handlers always take priority.
+     Both sprites stay mounted during the 140ms handoff, without a blank frame.
+     Cancellation removes both classes immediately (no fade over the story). */
+  .clawd.is-dizzy .clawd-idle {
+    opacity: 0 !important;
+    transition: opacity 140ms ease;
+  }
+  .clawd.dizzy-recovering .clawd-idle {
+    opacity: 1 !important;
+    transition: opacity 140ms ease;
+  }
+  .clawd.is-dizzy .clawd-dizzy,
+  .clawd.dizzy-recovering .clawd-dizzy {
+    display: block;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .clawd.is-dizzy .clawd-dizzy { animation: sprite-fade-in 140ms ease both; }
+  .clawd.dizzy-recovering .clawd-dizzy { animation: sprite-fade-in 140ms ease reverse both; }
+
+  /* 二次 Deny 出口仍复用原来的中央中转锚点。 */
+  :root {
+    --clawd-x-allow: 50vw;
+    --clawd-y-allow: 58vh;
+  }
+  /* 位置 · specificity (0,2,1) 胜过 body[data-frame="4"] .clawd (0,1,1) 默认 */
+  body.clawd-allowing[data-frame="4"] .clawd {
+    left: var(--clawd-fade-x, var(--clawd-x-3));
+    top:  var(--clawd-fade-y, var(--clawd-y-3));
+  }
+  body.clawd-allowing .clawd {
+    animation: none;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+  }
+  /* 保持 idle 姿态淡出，不播放 happy。 */
+  body.clawd-allowing .clawd .clawd-work     { display: none;  }
+  body.clawd-allowing .clawd .clawd-crabwalk { display: none;  }
+  body.clawd-allowing .clawd .clawd-alert    { display: none;  }
+  body.clawd-allowing .clawd .clawd-peek     { display: none;  }
+  body.clawd-allowing .clawd .clawd-drag     { display: none;  }
+  body.clawd-allowing .clawd .clawd-react    { display: none;  }
+  body.clawd-allowing .clawd .clawd-idle {
+    display: block;
+  }
+  /* dev mode · 4e Allow 末态终端已退场 · 覆盖"dev mode + frame=4 强制显示终端"
+     让 allowing 状态下 dev overlay 也能看到正确末态（终端缩回 + Clawd 居中） */
+  body.dev-mode.clawd-allowing[data-frame="4"] .terminal {
+    transform: translateX(-50%) scale(0) !important;
+    opacity: 0 !important;
+    pointer-events: none;
+    outline: none;
+  }
+
+  /* ── 结尾动画展示 · 三列两行，窄窗口自动换列 ─────────────────── */
+  .showcase {
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    overflow-y: auto;
+    padding: clamp(24px, 5vh, 64px) 6vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* 共用底下的互动背景，不能用实色面板把小花盖掉。 */
+    background: transparent;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.5s ease, visibility 0.5s;
+  }
+  body.clawd-allowed .showcase {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  body.clawd-allowed .stage {
+    /* 透明结尾下不透出旧舞台的署名和引导元素。 */
+    visibility: hidden;
+  }
+  .showcase-toolbar {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: flex-end;
+    width: min(100%, 1020px);
+    margin-bottom: 16px;
+    pointer-events: none;
+  }
+  .showcase-inner {
+    width: min(100%, 1020px);
+    margin-block: auto;
+    text-align: center;
+  }
+  .showcase-title {
+    color: var(--ink);
+    font: 400 clamp(30px, 5vmin, 52px)/1.2 "Fraunces", Georgia, serif;
+    letter-spacing: -0.04em;
+  }
+  .showcase-title:focus { outline: none; }
+  .showcase-caption {
+    color: #766d60;
+    font-size: clamp(11px, 1.6vmin, 13px);
+    line-height: 1.7;
+    margin: 12px 0 clamp(20px, 3.5vh, 36px);
+  }
+  .showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(10px, 1.7vmin, 18px);
+  }
+  .showcase-tile {
+    min-width: 0;
+    margin: 0;
+    overflow: hidden;
+    /* 与原先半透明白卡在米底上的颜色一致，遮住卡片下的花朵。 */
+    background: #f8f1e4;
+    border: 1px solid rgba(104, 77, 50, 0.12);
+    border-radius: 12px;
+  }
+  .showcase-sprite {
+    position: relative;
+    height: clamp(170px, 24vh, 220px);
+    overflow: hidden;
+  }
+  .showcase-sprite img {
+    /* 源 SVG 的角色位于 viewBox 偏下方；同一裁切框统一基线。 */
+    position: absolute;
+    width: clamp(215px, 32vmin, 300px);
+    height: clamp(215px, 32vmin, 300px);
+    max-width: none;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+  }
+  .showcase-tile figcaption {
+    padding: 0 12px 18px;
+    color: #62574b;
+    font-size: 11px;
+    line-height: 1.5;
+  }
+  .showcase-footer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 16px 24px;
+    margin-top: clamp(20px, 3.5vh, 36px);
+  }
+  .showcase-replay {
+    background: var(--world-bg-new);
+    border: 1px solid rgba(104, 77, 50, 0.2);
+    border-radius: 999px;
+    color: #62574b;
+    font: inherit;
+    font-size: 12px;
+    cursor: pointer;
+    min-height: 44px;
+    padding: 10px 16px;
+    pointer-events: auto;
+    text-underline-offset: 4px;
+  }
+  .showcase-replay:hover { text-decoration: underline; }
+  .showcase :is(a, button):focus-visible {
+    outline: 2px solid var(--brand);
+    outline-offset: 5px;
+  }
+  @media (max-width: 640px) {
+    .showcase-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .showcase-sprite { height: 170px; }
+    .showcase-sprite img { width: 215px; height: 215px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .showcase, body.clawd-allowing .clawd { transition: none; }
+  }
+
+  /* GitHub 入口与格子处于同一布局流，随窗口与内容高度自动移动。 */
+  .github-card {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 18px;
+    background: #ffffff;
+    border: 1px solid #e5e5e5;
+    border-radius: 999px;
+    box-shadow: 0 2px 4px rgba(75, 54, 35, 0.04);
+    color: #2A3040;
+    text-decoration: none;
+    font-family:
+      -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+      "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    transition: box-shadow 0.2s ease;
+  }
+  .github-card:hover {
+    box-shadow: 0 4px 12px rgba(75, 54, 35, 0.09);
+  }
+  .gh-octocat {
+    width: 22px;
+    height: 22px;
+    fill: #1F2328;
+    flex-shrink: 0;
+  }
+  .gh-card-name {
+    font-family: "Geist Mono", ui-monospace, Menlo, monospace;
+    font-size: 13px;
+    color: #1F2328;
+  }
+  .gh-card-arrow {
+    color: #8A8A8A;
+    font-size: 16px;
+    margin-left: 2px;
+    transition: transform 0.2s ease, color 0.2s ease;
+  }
+  .github-card:hover .gh-card-arrow {
+    color: #D98A66;
+    transform: translateX(3px);
+  }
+
+  /* ── M2.4g · 二次 Deny 善意彩蛋 · Deal with it 定格 + Thanks 告别 ─────
+     触发：aegyo 权限卡上第二次点 Deny
+     两阶段：
+       Phase 1 (clawd-exit-center): Clawd 滑到舞台正中央（保持 idle sprite / size-3）
+       Phase 2 (clawd-exit-shades): iris 收束 + Clawd 放大上移到顶 1/3（帧 1 位置） +
+                                     切墨镜 sprite + 下方 Thanks 打字机
+     复用 --clawd-x-allow/y-allow 作为 center 中转点（= Allow 分支中央落位）
+     iris-out 收束 duration 独立 var · 默认 1.5s（比 iris-in 0.8s 慢一点显郑重）
+     ─────────────────────────────────────────────────────────── */
+  :root {
+    --exit-iris-dur: 1.5s;           /* iris-out 收束时长 · 可 dev overlay 微调 */
+    --exit-credit-opacity-dur: 0.4s; /* 文字容器淡入时长 */
+  }
+
+  /* Phase 1 · Clawd 滑到中央（保持 size-3 / idle sprite · 0.6s 走完）
+     specificity 0,3,1 > body[data-frame="4"] .clawd (0,2,1) · 胜 */
+  body.clawd-exit-center[data-frame="4"] .clawd {
+    left:   var(--clawd-x-allow);
+    top:    var(--clawd-y-allow);
+    width:  var(--clawd-size-3);
+    height: var(--clawd-size-3);
+  }
+
+  /* Phase 2 · Clawd 放大上移到帧 1 初始几何（顶 1/3 大号）
+     --clawd-x/y/size 是开场 Clawd 第一次出现的位置和大小，首尾呼应 */
+  body.clawd-exit-shades[data-frame="4"] .clawd {
+    left:   var(--clawd-x);
+    top:    var(--clawd-y);
+    width:  var(--clawd-size);
+    height: var(--clawd-size);
+  }
+
+  /* Phase 2 · sprite 切换：只显 shades，其余全隐（覆盖 aegyo/idle/scratch/wake/error/... 所有态） */
+  body.clawd-exit-shades .clawd .clawd-idle,
+  body.clawd-exit-shades .clawd .clawd-react,
+  body.clawd-exit-shades .clawd .clawd-drag,
+  body.clawd-exit-shades .clawd .clawd-work,
+  body.clawd-exit-shades .clawd .clawd-crabwalk,
+  body.clawd-exit-shades .clawd .clawd-alert,
+  body.clawd-exit-shades .clawd .clawd-peek,
+  body.clawd-exit-shades .clawd .clawd-error,
+  body.clawd-exit-shades .clawd .clawd-wake,
+  body.clawd-exit-shades .clawd .clawd-scratch,
+  body.clawd-exit-shades .clawd .clawd-aegyo,
+  body.clawd-exit-shades .clawd .clawd-cheer {
+    display: none !important;
+  }
+  body.clawd-exit-shades .clawd .clawd-shades {
+    display: block;
+  }
+
+  /* Phase 2 · iris-out 收束 · 米底从 150vmax → 0（复刻开场 iris-in 反向）
+     specificity 0,3,1 胜过 body[data-frame="4"] .new-world (0,2,1) */
+  body.clawd-exit-shades[data-frame="4"] .new-world {
+    clip-path: circle(0 at 50vw 50vh);
+    transition: clip-path var(--exit-iris-dur) cubic-bezier(.4, 0, .2, 1);
+  }
+
+  /* Phase 1/2 · 舞台清场：隐藏软引导 + 右下角作者水印（exit-credit "— Clawd" 已承担署名） */
+  body.clawd-exit-center #drop-zone,
+  body.clawd-exit-center #drag-hint,
+  body.clawd-exit-center #arc-pointer,
+  body.clawd-exit-shades #drop-zone,
+  body.clawd-exit-shades #drag-hint,
+  body.clawd-exit-shades #arc-pointer,
+  body.clawd-exit-shades #author {
+    opacity: 0 !important;
+    pointer-events: none;
+    transition: opacity var(--exit-iris-dur) ease;
+  }
+
+  /* ── Exit credit 文字（一行：Thanks for visiting.）· 复刻 .brand 版式 ──
+     位置/字体/字号/颜色和开场 .brand 一致（首尾呼应 · 保 chonky 42px 气场） */
+  .exit-credit {
+    position: absolute;
+    left: var(--brand-x);
+    top: var(--brand-y);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    font-family: "Press Start 2P", "Geist Mono", monospace;
+    font-weight: 400;
+    font-size: var(--brand-size);
+    line-height: 1.4;
+    letter-spacing: var(--brand-letter);
+    color: var(--brand-color);
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    z-index: 6;                      /* 和 .clawd (z=5) 同世界 · 压过 new-world (z=2) */
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity var(--exit-credit-opacity-dur) ease;
+  }
+  body.clawd-exit-shades .exit-credit {
+    opacity: 1;
+  }
+
+  /* 光标：打字过程不显示（保持画面纯净）· 打完后 .typing-done 类触发淡入闪烁 */
+  .exit-credit-cursor {
+    display: inline-block;
+    margin-left: 2px;
+    opacity: 0;
+    animation: none;
+    transition: opacity 0.3s ease;
+  }
+  body.clawd-exit-shades .exit-credit.typing-done .exit-credit-cursor {
+    opacity: 1;
+    animation: cursor-blink 1.06s steps(2, jump-none) infinite;
+  }
+
+  /* ── M2.4g · 7-click 彩蛋 · 点 Clawd 7 次触发 Toast（对齐主仓库 settings/about）──
+     生效：body.clawd-exit-locked（墨镜 4.4s 动画真结束后加）· 未 locked 时 Clawd 不响应点击
+     反馈：每点一下 Clawd 抖 0.3s · 累计 7 次弹 toast · 无超时重置 */
+  body.clawd-exit-locked .clawd {
+    cursor: pointer;                /* 暗示可戳 */
+  }
+  .clawd.exit-shake {
+    animation: exit-clawd-shake 0.28s ease-in-out;
+  }
+  @keyframes exit-clawd-shake {
+    0%, 100% { transform: translate(-50%, -50%); }
+    20%      { transform: translate(calc(-50% - 3px), -50%); }
+    40%      { transform: translate(calc(-50% + 3px), -50%); }
+    60%      { transform: translate(calc(-50% - 2px), -50%); }
+    80%      { transform: translate(calc(-50% + 2px), -50%); }
+  }
+
+  /* Toast · 屏幕下方浮起 · Geist Mono 小号字 · 珊瑚橙粉底（和黑底拉出对比度） */
+  .exit-toast {
+    position: fixed;
+    left: 50vw;
+    bottom: 12vh;                        /* 抬高一点，不贴视口边 · 避开潜在裁切 */
+    transform: translate(-50%, 8px);     /* 淡入时从下方 8px 浮起 */
+    padding: 14px 22px;
+    border-radius: 10px;
+    background: rgba(217, 138, 102, 0.14);  /* 珊瑚橙淡底 · 在黑底上有明显色块 */
+    border: 1px solid rgba(217, 138, 102, 0.55);  /* 珊瑚橙边框加粗对比 */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.6);
+    color: var(--brand-color);           /* 珊瑚橙 #D98A66 */
+    font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-size: 14px;
+    letter-spacing: 0.2px;
+    line-height: 1.5;
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    pointer-events: none;
+    opacity: 0;
+    z-index: 20;                        /* 压所有其他层 */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  .exit-toast.show {
+    opacity: 1;
+    transform: translate(-50%, 0);
+  }
+
+  /* ── 署名 · 右下角水印 (Geist Mono · 反差打字机感) ─────────────────── */
+  .author {
+    position: fixed;
+    right: var(--author-right);
+    bottom: var(--author-bottom);
+    font-family: "Geist Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+    font-weight: 400;
+    font-size: var(--author-size);
+    line-height: 1.4;
+    letter-spacing: 0;
+    color: var(--author-color);
+    white-space: nowrap;
+    user-select: none;
+    -webkit-user-select: none;
+    z-index: 10;
+  }
+  .author a {
+    color: inherit;
+    text-decoration: none;
+    border-bottom: 1px dotted currentColor;
+    transition: color 0.2s ease;
+  }
+  .author a:hover { color: var(--brand-color); }
+
+  /* ── 中线辅助 (按 G 切换 · 仅对齐用，不进生产) ────────────────────── */
+  .guides {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    display: none;
+    z-index: 9999;
+  }
+  .guides.on { display: block; }
+  .guides::before, .guides::after {
+    content: "";
+    position: absolute;
+    background: rgba(0, 200, 83, 0.7);   /* 绿色，黑底/米底都清晰 */
+  }
+  .guides::before { /* 竖线 */
+    left: 50%;
+    top: 0;
+    width: 1px;
+    height: 100%;
+    transform: translateX(-0.5px);
+  }
+  .guides::after { /* 横线 */
+    top: 50%;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    transform: translateY(-0.5px);
+  }
+  /* 三分线（更细更淡，辅助黄金分割对位） */
+  .guides .third {
+    position: absolute;
+    background: rgba(0, 200, 83, 0.3);
+  }
+  .guides .v33 { left: 33.33%; top: 0; width: 1px; height: 100%; }
+  .guides .v66 { left: 66.66%; top: 0; width: 1px; height: 100%; }
+  .guides .h33 { top: 33.33%; left: 0; height: 1px; width: 100%; }
+  .guides .h66 { top: 66.66%; left: 0; height: 1px; width: 100%; }
+</style>
+<link rel="stylesheet" href="styles/responsive.css?v=20260921-r2">
+</head>
+<body data-frame="1a">
+
+  <main class="stage">
+
+    <!-- ─────────────────────────────────────────────────────────────────
+         Clawd · 两个状态共存于同一容器，CSS 切 display
+         · clawd-idle  : idle-follow，眼神追踪鼠标（帧 1-1e）
+         · clawd-react : react-double 惊慌（帧 3 揭幕同步）
+         IDs #eyes-js / #body-js / #shadow-js 由 scripts/eye-track.js 驱动
+         ───────────────────────────────────────────────────────────────── -->
+    <div class="clawd" id="clawd">
+      <span class="clawd-body-point" id="clawd-body-point" aria-hidden="true"></span>
+      <svg class="clawd-idle" xmlns="http://www.w3.org/2000/svg" viewBox="-15 -25 45 45" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <style>
+            .breathe-anim {
+              transform-origin: 7.5px 13px;
+              animation: breathe 3.2s infinite ease-in-out;
+            }
+            .eyes-blink {
+              transform-origin: 7.5px 9px;
+              animation: eye-blink 4s infinite ease-in-out;
+            }
+            #eyes-js, #body-js, #shadow-js {
+              transition: transform 0.2s ease-out;
+            }
+            #shadow-js {
+              transform-origin: 7.5px 15px;
+            }
+            @keyframes breathe {
+              0%, 100% { transform: scale(1, 1) translate(0, 0); }
+              50%      { transform: scale(1.02, 0.98) translate(0, 0.5px); }
+            }
+            @keyframes eye-blink {
+              0%, 10%, 100% { transform: scaleY(1); }
+              5%            { transform: scaleY(0.1); }
+            }
+          </style>
+        </defs>
+
+        <!-- Ground shadow (JS shifts + stretches) -->
+        <g id="shadow-js">
+          <rect x="3" y="15" width="9" height="1" fill="#000000" opacity="0.5"/>
+        </g>
+
+        <!-- Static legs -->
+        <g id="legs" fill="#DE886D">
+          <rect x="3" y="11" width="1" height="4"/>
+          <rect x="5" y="11" width="1" height="4"/>
+          <rect x="9" y="11" width="1" height="4"/>
+          <rect x="11" y="11" width="1" height="4"/>
+        </g>
+
+        <!-- Upper body (JS body-shift + CSS breathe) -->
+        <g id="body-js">
+          <g class="breathe-anim">
+            <rect id="torso" x="2" y="6" width="11" height="7" fill="#DE886D"/>
+            <rect x="0"  y="9" width="2" height="2" fill="#DE886D"/>
+            <rect x="13" y="9" width="2" height="2" fill="#DE886D"/>
+            <g id="eyes-js" fill="#000000">
+              <g class="eyes-blink">
+                <rect x="4"  y="8" width="1" height="2"/>
+                <rect x="10" y="8" width="1" height="2"/>
+              </g>
+            </g>
+          </g>
+        </g>
+      </svg>
+
+      <!-- react-double · 帧 3 揭幕惊慌（display 切换触发 animation 重新播放）
+           class .eyes-blink-r 是为避免与 idle 的 .eyes-blink 全局冲突而改名 -->
+      <svg class="clawd-react" xmlns="http://www.w3.org/2000/svg" viewBox="-15 -25 45 45" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <style>
+            .body-react { animation: body-panic 2s 1 ease-in-out forwards; }
+            .eyes-react { animation: eyes-panic 2s 1 ease-in-out forwards; }
+            .eyes-blink-r {
+              transform-origin: 7.5px 9px;
+              animation: blink-r 3s infinite linear;
+            }
+            .question-pop {
+              transform-origin: center;
+              animation: question-fade 2s 1 ease-in-out forwards;
+              opacity: 0;
+            }
+            @keyframes body-panic {
+              0%, 4%   { transform: translate(0px, 0px); }
+              10%, 18% { transform: translate(-1px, 0px); }
+              24%, 32% { transform: translate(1px, 0px); }
+              36%      { transform: translate(-1px, 0px); }
+              40%      { transform: translate(1px, 0px); }
+              46%, 72% { transform: translate(1px, -1px); }
+              82%, 100%{ transform: translate(0px, 0px); }
+            }
+            @keyframes eyes-panic {
+              0%, 4%   { transform: translate(0px, 0px); }
+              10%, 18% { transform: translate(-2px, 0px); }
+              24%, 32% { transform: translate(2px, 0px); }
+              36%      { transform: translate(-2px, 0px); }
+              40%      { transform: translate(2px, 0px); }
+              46%, 72% { transform: translate(3px, -2px); }
+              82%, 100%{ transform: translate(0px, 0px); }
+            }
+            @keyframes blink-r {
+              0%, 20%, 24%, 60%, 64%, 80%, 84%, 100% { transform: scaleY(1); }
+              22%, 62%, 82% { transform: scaleY(0.1); }
+            }
+            @keyframes question-fade {
+              0%, 6%   { opacity: 0; transform: translate(-4px, 4px) scale(0.5); }
+              12%, 38% { opacity: 1; transform: translate(-4px, 0px) scale(1); }
+              44%, 100%{ opacity: 0; transform: translate(-4px, -4px) scale(1.2); }
+            }
+          </style>
+        </defs>
+
+        <rect x="3" y="15" width="9" height="1" fill="#000000" opacity="0.5"/>
+        <g fill="#DE886D">
+          <rect x="3"  y="11" width="1" height="4"/>
+          <rect x="5"  y="11" width="1" height="4"/>
+          <rect x="9"  y="11" width="1" height="4"/>
+          <rect x="11" y="11" width="1" height="4"/>
+        </g>
+        <g class="body-react">
+          <g fill="#DE886D">
+            <rect x="2"  y="6" width="11" height="7"/>
+            <rect x="0"  y="9" width="2"  height="2"/>
+            <rect x="13" y="9" width="2"  height="2"/>
+          </g>
+          <g class="eyes-react">
+            <g class="eyes-blink-r" fill="#000000">
+              <rect x="4"  y="8" width="1" height="2"/>
+              <rect x="10" y="8" width="1" height="2"/>
+            </g>
+          </g>
+        </g>
+        <!-- 问号（左侧）— 揭幕后 Clawd 困惑 · 像素蓝 #4A7FB0 米底对比清晰（原白色在米底上看不见） -->
+        <g class="question-pop" fill="#4A7FB0">
+          <rect x="1" y="0" width="2" height="1"/>
+          <rect x="0" y="1" width="1" height="1"/>
+          <rect x="3" y="1" width="1" height="2"/>
+          <rect x="2" y="3" width="1" height="1"/>
+          <rect x="1" y="4" width="1" height="1"/>
+          <rect x="1" y="6" width="1" height="1"/>
+        </g>
+      </svg>
+
+      <!-- clawd-react-drag · 拖拽中挣扎 (body.dragging 时显示)
+           眼睛 >< 表情，身体 sway，手脚 dangle/flail，影子 shrink
+           class 名跟其他 SVG 不冲突（body-sway / leg-dangle / arm-flail / shadow-lift） -->
+      <svg class="clawd-drag" xmlns="http://www.w3.org/2000/svg" viewBox="-15 -25 45 45" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <style>
+            .body-sway {
+              transform-origin: 7.5px 6px;
+              animation: sway 1.2s infinite alternate ease-in-out;
+            }
+            .leg-dangle-1 {
+              animation: dangle-1 0.5s infinite linear;
+              transform-origin: top center;
+              transform-box: fill-box;
+            }
+            .leg-dangle-2 {
+              animation: dangle-2 0.5s infinite linear;
+              transform-origin: top center;
+              transform-box: fill-box;
+            }
+            .arm-flail-l {
+              transform-box: fill-box;
+              transform-origin: 100% 50%;
+              animation: flail-l 0.2s infinite alternate ease-in-out;
+            }
+            .arm-flail-r {
+              transform-box: fill-box;
+              transform-origin: 0% 50%;
+              animation: flail-r 0.2s infinite alternate ease-in-out;
+            }
+            .shadow-lift {
+              transform-origin: 7.5px 15.5px;
+              animation: shadow-pulse 1.2s infinite alternate ease-in-out;
+            }
+            @keyframes sway {
+              0%   { transform: rotate(-3deg) translate(-1px, 0); }
+              100% { transform: rotate(3deg)  translate( 1px, 0); }
+            }
+            @keyframes dangle-1 {
+              0%, 100% { transform: rotate(0deg) scaleY(1); }
+              50%      { transform: rotate(-25deg) scaleY(0.7); }
+            }
+            @keyframes dangle-2 {
+              0%, 100% { transform: rotate(-25deg) scaleY(0.7); }
+              50%      { transform: rotate(0deg) scaleY(1); }
+            }
+            @keyframes flail-l {
+              0%   { transform: rotate(45deg); }
+              100% { transform: rotate(85deg); }
+            }
+            @keyframes flail-r {
+              0%   { transform: rotate(-45deg); }
+              100% { transform: rotate(-85deg); }
+            }
+            @keyframes shadow-pulse {
+              0%   { transform: scale(0.7); opacity: 0.2; }
+              100% { transform: scale(0.8); opacity: 0.3; }
+            }
+          </style>
+        </defs>
+        <!-- Ground shadow (lifted = small + faint) -->
+        <rect class="shadow-lift" x="3" y="15" width="9" height="1" fill="#000000"/>
+        <!-- Swaying body -->
+        <g class="body-sway">
+          <!-- Dangling legs -->
+          <g fill="#DE886D">
+            <rect class="leg-dangle-1" x="3"  y="13" width="1" height="2"/>
+            <rect class="leg-dangle-2" x="5"  y="13" width="1" height="2"/>
+            <rect class="leg-dangle-1" x="9"  y="13" width="1" height="2"/>
+            <rect class="leg-dangle-2" x="11" y="13" width="1" height="2"/>
+          </g>
+          <!-- Torso + flailing arms -->
+          <g fill="#DE886D">
+            <rect x="2" y="6" width="11" height="7"/>
+            <g class="arm-flail-l"><rect x="0"  y="9" width="2" height="2"/></g>
+            <g class="arm-flail-r"><rect x="13" y="9" width="2" height="2"/></g>
+          </g>
+          <!-- >< Eyes (anime squint) -->
+          <g fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="4,8 5.5,9 4,10"/>
+            <polyline points="11,8 9.5,9 11,10"/>
+          </g>
+        </g>
+      </svg>
+
+      <!-- clawd-working-typing · M2.4c 吸入后埋头敲键盘（主项目原 SVG · 自带动画）
+           用 img 加载外部文件，SVG 内置 <style> 动画在 img 里一样会跑
+           draggable=false · 防止浏览器把拖 img 当成 native 图片拖拽 -->
+      <img class="clawd-dizzy" src="assets/svg/clawd-dizzy.svg" alt="" draggable="false" />
+      <img class="clawd-work" src="assets/svg/clawd-working-typing.svg" alt="" draggable="false" />
+
+      <!-- M2.4d · Clawd 反应剧本：用户发送后横步走向对称右侧 → 到位冒 ! -->
+      <img class="clawd-crabwalk" src="assets/svg/clawd-mini-crabwalk.svg" alt="" draggable="false" />
+      <img class="clawd-alert"    src="assets/svg/clawd-notification.svg?v=20260921"  alt="" draggable="false" />
+
+      <!-- M2.4f · 从终端后冒头 · 原版 mini-enter.svg，方向用 CSS scaleX(-1) 镜像 -->
+      <img class="clawd-peek"     src="assets/svg/clawd-mini-enter.svg"    data-base-src="assets/svg/clawd-mini-enter.svg" alt="" draggable="false" />
+      <img class="clawd-error"    src="assets/svg/clawd-error.svg"         alt="" draggable="false" />
+      <img class="clawd-wake"     src="assets/svg/clawd-wake.svg"          data-base-src="assets/svg/clawd-wake.svg" alt="" draggable="false" />
+      <img class="clawd-scratch"  src="assets/svg/clawd-homepage-scratch.svg" data-base-src="assets/svg/clawd-homepage-scratch.svg" alt="" draggable="false" />
+      <svg class="clawd-aegyo" xmlns="http://www.w3.org/2000/svg" viewBox="-15 -25 45 45" preserveAspectRatio="xMidYMid meet">
+        <defs>
+          <style>
+            .ground-shadow {
+              transform-origin: 7.5px 15.5px;
+              animation: ground-shadow 3.2s infinite ease-in-out;
+            }
+
+            .body-bashful {
+              transform-origin: 7.5px 13px;
+              animation: body-bashful 3.2s infinite ease-in-out;
+            }
+
+            .left-arm-shy {
+              animation: left-arm-shy 3.2s infinite ease-in-out;
+            }
+
+            .right-arm-shy {
+              animation: right-arm-shy 3.2s infinite ease-in-out;
+            }
+
+            .arm-shadow-fade {
+              animation: arm-shadow-fade 3.2s infinite ease-in-out;
+            }
+
+            .eye-block {
+              animation: eye-block-fade 3.2s infinite ease-in-out;
+            }
+
+            .eye-block-part {
+              transform-box: fill-box;
+              transform-origin: 50% 50%;
+              animation: eye-block-squash 3.2s infinite ease-in-out;
+            }
+
+            .eye-line {
+              animation: eye-line-fade 3.2s infinite ease-in-out;
+            }
+
+            .eye-smile {
+              animation: eye-smile-fade 3.2s infinite ease-in-out;
+            }
+
+            .eye-smile-shape {
+              transform-box: fill-box;
+              transform-origin: 50% 100%;
+              animation: eye-smile-pop 3.2s infinite ease-in-out;
+            }
+
+            .heart {
+              animation-duration: 3.2s;
+              animation-iteration-count: infinite;
+              animation-timing-function: ease-out;
+              opacity: 0;
+            }
+
+            .heart-main {
+              animation-name: heart-main;
+            }
+
+            .heart-small {
+              animation-name: heart-small;
+            }
+
+            .heart-mid {
+              animation-name: heart-mid;
+            }
+
+            .heart-tiny {
+              animation-name: heart-tiny;
+            }
+
+            @keyframes ground-shadow {
+              0%, 5%, 100% { transform: scaleX(1); opacity: 0.5; }
+              15% { transform: scaleX(1.08); opacity: 0.58; }
+              45% { transform: scaleX(1.05); opacity: 0.55; }
+              75% { transform: scaleX(1); opacity: 0.5; }
+            }
+
+            @keyframes body-bashful {
+              0%, 5%, 100% { transform: translate(0px, 0px) scale(1, 1) rotate(0deg); }
+              15% { transform: translate(0px, 0.8px) scale(1.03, 0.96) rotate(-2.2deg); }
+              27% { transform: translate(0px, 0.45px) scale(1.01, 0.98) rotate(-0.8deg); }
+              45% { transform: translate(0px, 0.55px) scale(1.01, 0.98) rotate(0.9deg); }
+              59% { transform: translate(0px, 0.3px) scale(1, 0.99) rotate(0.3deg); }
+              75% { transform: translate(0px, 0px) scale(1, 1) rotate(0deg); }
+            }
+
+            @keyframes left-arm-shy {
+              0%, 5%, 100% { transform: translate(0px, 0px); }
+              15% { transform: translate(5.4px, -0.2px); }
+              23%, 57% { transform: translate(5px, 0px); }
+              67% { transform: translate(5.1px, 0.1px); }
+              77% { transform: translate(0px, 0px); }
+            }
+
+            @keyframes right-arm-shy {
+              0%, 7%, 100% { transform: translate(0px, 0px); }
+              17% { transform: translate(-5.1px, 0px); }
+              25%, 57% { transform: translate(-4.8px, 0px); }
+              67% { transform: translate(-4.9px, 0.1px); }
+              77% { transform: translate(0px, 0px); }
+            }
+
+            @keyframes arm-shadow-fade {
+              0%, 7%, 100% { opacity: 0; }
+              15%, 61% { opacity: 1; }
+              77% { opacity: 0; }
+            }
+
+            @keyframes eye-block-fade {
+              0%, 9%, 12% { opacity: 1; }
+              15%, 71% { opacity: 0; }
+              75%, 100% { opacity: 1; }
+            }
+
+            @keyframes eye-block-squash {
+              0%, 9%, 100% { transform: scaleY(1); }
+              11% { transform: scaleY(0.42); }
+              13%, 15%, 71%, 73% { transform: scaleY(0.12); }
+              77% { transform: scaleY(1); }
+            }
+
+            @keyframes eye-line-fade {
+              0%, 11%, 72%, 100% { opacity: 0; }
+              13%, 14%, 69%, 71% { opacity: 1; }
+              16%, 67% { opacity: 0; }
+            }
+
+            @keyframes eye-smile-fade {
+              0%, 15%, 67%, 100% { opacity: 0; }
+              18%, 65% { opacity: 1; }
+            }
+
+            @keyframes eye-smile-pop {
+              0%, 15%, 67%, 100% { transform: scaleY(0.15); }
+              18%, 65% { transform: scaleY(1); }
+              71% { transform: scaleY(0.15); }
+            }
+
+            @keyframes heart-main {
+              0%, 15% { transform: translate(7.4px, 3.8px) scale(0.6); opacity: 0; }
+              23% { transform: translate(7.2px, 1.7px) scale(1); opacity: 1; }
+              39% { transform: translate(6.9px, -1.2px) scale(0.98); opacity: 1; }
+              55% { transform: translate(6.5px, -4.2px) scale(0.92); opacity: 0.95; }
+              69%, 100% { transform: translate(6.1px, -7.2px) scale(0.84); opacity: 0; }
+            }
+
+            @keyframes heart-mid {
+              0%, 29% { transform: translate(8.8px, 4.1px) scale(0.48); opacity: 0; }
+              37% { transform: translate(9px, 2.5px) scale(0.82); opacity: 0.92; }
+              53% { transform: translate(9.4px, -0.2px) scale(0.79); opacity: 0.92; }
+              67% { transform: translate(9.9px, -3px) scale(0.72); opacity: 0.82; }
+              79%, 100% { transform: translate(10.4px, -5.7px) scale(0.64); opacity: 0; }
+            }
+
+            @keyframes heart-small {
+              0%, 41% { transform: translate(10.4px, 4.3px) scale(0.45); opacity: 0; }
+              49% { transform: translate(10.8px, 3px) scale(0.8); opacity: 0.88; }
+              63% { transform: translate(11.3px, 0.7px) scale(0.76); opacity: 0.88; }
+              77% { transform: translate(11.9px, -2px) scale(0.68); opacity: 0.78; }
+              87%, 100% { transform: translate(12.3px, -4.6px) scale(0.6); opacity: 0; }
+            }
+
+            @keyframes heart-tiny {
+              0%, 53% { transform: translate(6.2px, 4.5px) scale(0.38); opacity: 0; }
+              61% { transform: translate(5.7px, 3px) scale(0.68); opacity: 0.8; }
+              73% { transform: translate(5.2px, 0.9px) scale(0.64); opacity: 0.78; }
+              85% { transform: translate(4.8px, -1.6px) scale(0.58); opacity: 0.68; }
+              93%, 100% { transform: translate(4.3px, -3.8px) scale(0.5); opacity: 0; }
+            }
+          </style>
+
+          <clipPath id="inside-torso-aegyo">
+            <rect x="2" y="6" width="11" height="7"/>
+          </clipPath>
+        </defs>
+
+        <rect class="ground-shadow" x="3" y="15" width="9" height="1" fill="#000000"/>
+
+        <g fill="#DE886D">
+          <rect x="3" y="11" width="1" height="4"/>
+          <rect x="5" y="11" width="1" height="4"/>
+          <rect x="9" y="11" width="1" height="4"/>
+          <rect x="11" y="11" width="1" height="4"/>
+        </g>
+
+        <g class="body-bashful">
+          <rect x="2" y="6" width="11" height="7" fill="#DE886D"/>
+
+          <g clip-path="url(#inside-torso-aegyo)" class="arm-shadow-fade">
+            <g class="left-arm-shy">
+              <rect x="-0.4" y="9" width="2.4" height="2.4" fill="#A85A3A"/>
+            </g>
+          </g>
+
+          <g clip-path="url(#inside-torso-aegyo)" class="arm-shadow-fade">
+            <g class="right-arm-shy">
+              <rect x="12.6" y="9" width="2.4" height="2.4" fill="#A85A3A"/>
+            </g>
+          </g>
+
+          <g class="eye-block" fill="#000000">
+            <rect class="eye-block-part" x="4" y="8" width="1" height="2"/>
+            <rect class="eye-block-part" x="10" y="8" width="1" height="2"/>
+          </g>
+
+          <g class="eye-line" fill="#000000">
+            <rect x="3.6" y="8.8" width="1.8" height="0.5"/>
+            <rect x="9.6" y="8.8" width="1.8" height="0.5"/>
+          </g>
+
+          <g class="eye-smile">
+            <g class="eye-smile-shape" fill="none" stroke="#000000" stroke-width="0.7" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="3.5,9 4.5,8 5.5,9"/>
+              <polyline points="9.5,9 10.5,8 11.5,9"/>
+            </g>
+          </g>
+
+          <g class="left-arm-shy">
+            <rect x="0" y="9" width="2" height="2" fill="#DE886D"/>
+          </g>
+
+          <g class="right-arm-shy">
+            <rect x="13" y="9" width="2" height="2" fill="#DE886D"/>
+          </g>
+        </g>
+
+        <g class="heart heart-main" fill="#FF2D3D">
+          <rect x="-1.05" y="-1.75" width="0.7" height="0.7"/>
+          <rect x="0.35" y="-1.75" width="0.7" height="0.7"/>
+          <rect x="-1.75" y="-1.05" width="3.5" height="1.4"/>
+          <rect x="-1.05" y="0.35" width="2.1" height="0.7"/>
+          <rect x="-0.35" y="1.05" width="0.7" height="0.7"/>
+        </g>
+
+        <g class="heart heart-mid" fill="#FF5365">
+          <rect x="-1.05" y="-1.75" width="0.7" height="0.7"/>
+          <rect x="0.35" y="-1.75" width="0.7" height="0.7"/>
+          <rect x="-1.75" y="-1.05" width="3.5" height="1.4"/>
+          <rect x="-1.05" y="0.35" width="2.1" height="0.7"/>
+          <rect x="-0.35" y="1.05" width="0.7" height="0.7"/>
+        </g>
+
+        <g class="heart heart-small" fill="#FF6B7A">
+          <rect x="-0.63" y="-1.05" width="0.42" height="0.42"/>
+          <rect x="0.21" y="-1.05" width="0.42" height="0.42"/>
+          <rect x="-1.05" y="-0.63" width="2.1" height="0.84"/>
+          <rect x="-0.63" y="0.21" width="1.26" height="0.42"/>
+          <rect x="-0.21" y="0.63" width="0.42" height="0.42"/>
+        </g>
+
+        <g class="heart heart-tiny" fill="#FF97A2">
+          <rect x="-0.63" y="-1.05" width="0.42" height="0.42"/>
+          <rect x="0.21" y="-1.05" width="0.42" height="0.42"/>
+          <rect x="-1.05" y="-0.63" width="2.1" height="0.84"/>
+          <rect x="-0.63" y="0.21" width="1.26" height="0.42"/>
+          <rect x="-0.21" y="0.63" width="0.42" height="0.42"/>
+        </g>
+      </svg>
+
+
+      <!-- M2.4g · 二次 Deny 善意彩蛋：戴墨镜 Deal with it 定格
+           SVG 内嵌 CSS animation 单次 4.4s forwards · 播到 sparkle-far 散完定格在 cool pose
+           restartOneShotSvg 重启：display 切换不 reset 外部 SVG 的 animation · 必须重设 src -->
+      <img class="clawd-shades"   src="assets/svg/clawd-shades.svg"        data-base-src="assets/svg/clawd-shades.svg" alt="" draggable="false" />
+    </div>
+
+    <!-- ─────────────────────────────────────────────────────────────────
+         Brand wordmark · Press Start 2P (像素终端打字机)
+         #brand-text 由 typewriter.js 填充，#cursor CSS 控制闪烁
+         ───────────────────────────────────────────────────────────────── -->
+    <div class="brand" id="brand"><span id="brand-text"></span><span id="cursor">▌</span></div>
+
+    <!-- M2.4g · 出口告别字 · 一行（Thanks for visiting.）
+         复用 .brand 位置/字号（首尾呼应开场 Clawd 标题）· 打字机逐字输出
+         默认 opacity:0 · body.clawd-exit-shades 时淡入 · 光标打完才显示 -->
+    <div class="exit-credit" id="exit-credit" aria-hidden="true"><span class="exit-credit-line" id="exit-credit-line1"></span><span class="exit-credit-cursor" id="exit-credit-cursor">▌</span></div>
+
+    <!-- M2.4g · 7-click 彩蛋 Toast · 对齐主项目 settings/about（文案 + ttl 5s + 无超时重置）
+         位置：屏幕底部中央浮起 · 黑幕定格画面上不压 Thanks 字 -->
+    <div class="exit-toast" id="exit-toast" aria-hidden="true"></div>
+
+    <!-- 帧 4 拖拽舞台：目标方块 + Drag me 提示（默认 opacity:0，frame=4 时显示） -->
+    <div class="drop-zone" id="drop-zone">Drop here</div>
+    <div class="drag-hint" id="drag-hint">Try dragging me</div>
+
+    <!-- 本体中心标定紫点 (dev mode + frame=4 显示 · 拖动改 --clawd-body-cx/cy) -->
+    <div class="body-anchor" id="body-anchor" title="本体中心 (拖动标定)"></div>
+
+    <!-- 作者信息 · 右下角水印 -->
+    <div class="author" id="author">
+      <a href="https://github.com/rullerzhou-afk/clawd-on-desk" target="_blank" rel="noopener">github.com/rullerzhou-afk</a>
+    </div>
+
+  </main>
+
+  <!-- New world (iris 揭幕的米色新世界 overlay · clip-path 撑开) -->
+  <div class="new-world" id="new-world" aria-hidden="true"></div>
+
+  <!-- 帧 4 · 大终端面板 (M2.4c · clawd-absorbed 后从屏幕底升起)
+       z=3 在 Clawd (z=5) 下面 · Clawd 坐在它前面敲键盘 -->
+  <div class="terminal" id="terminal">
+    <div class="term-chrome">
+      <div class="term-dots">
+        <span class="dot-red"></span>
+        <span class="dot-yellow"></span>
+        <span class="dot-green"></span>
+      </div>
+      <div class="term-title">clawd@desk: ~</div>
+    </div>
+    <div class="term-body" id="term-body">
+      <!-- Banner · Codex 风圆角框 · "Coding Agent" 泛化（Clawd 针对多 agent 桌宠） -->
+      <div class="term-banner">
+        <div class="term-banner-prompt">&gt;_</div>
+        <div class="term-banner-text">
+          <div class="term-banner-title">Coding Agent</div>
+          <div class="term-banner-meta">Opus 5 · high effort</div>
+          <div class="term-banner-path">~/clawd-on-desk</div>
+        </div>
+      </div>
+
+      <!-- 对话历史区 (JS 往里 append: user-msg / thinking / tool-call / perm-box) -->
+      <div class="term-history" id="term-history"></div>
+
+      <!-- 当前输入行 · content wrap 让 text+cursor 一起 inline 换行 -->
+      <div class="term-input-line" id="term-input-line">
+        <span class="term-prompt">&gt;</span>
+        <span class="term-input-content"><span class="term-input-text" id="term-input-text"></span><span class="term-cursor">█</span></span>
+      </div>
+
+      <!-- 底部快捷键提示 · left 在剧本响应阶段切成 "esc to interrupt" -->
+      <div class="term-footer">
+        <span class="term-footer-left" id="term-footer-left">? for shortcuts</span>
+        <span class="term-footer-right" id="term-footer-right">◎ xhigh · /effort</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- M2.4d · Clawd 白底权限卡片（从右 overshoot 滑入 · 屏幕右侧浮动）
+       body.clawd-perm-show 激活 · 样式参考 poster/p2_permission_v2.html -->
+  <div class="clawd-perm-card" id="clawd-perm-card" role="dialog" aria-hidden="true">
+    <div class="perm-card-head">
+      <div class="perm-card-title">Permission Request</div>
+      <div class="perm-card-tag">BASH</div>
+    </div>
+    <div class="perm-card-cmd" id="perm-card-cmd"></div>
+    <div class="perm-card-note" id="perm-card-note"></div>
+    <div class="perm-card-actions">
+      <button class="perm-card-btn perm-card-allow" type="button">Allow</button>
+      <button class="perm-card-btn perm-card-deny"  type="button">Deny</button>
+    </div>
+  </div>
+
+  <!-- Allow 末态：沿用 README 六格形式，精选主项目当前 Clawd 动画原件。 -->
+  <section class="showcase" id="showcase" aria-labelledby="showcase-title" aria-hidden="true" inert>
+    <div class="showcase-toolbar">
+      <button class="showcase-replay" id="showcase-replay" type="button">↻ Play from start</button>
+    </div>
+    <div class="showcase-inner">
+      <h1 class="showcase-title" id="showcase-title" tabindex="-1">Clawd on Desk</h1>
+      <p class="showcase-caption">A little company for your coding day.</p>
+      <div class="showcase-grid">
+        <figure class="showcase-tile">
+          <div class="showcase-sprite"><img src="assets/svg/showcase/clawd-idle-reading.svg" alt="" draggable="false"></div>
+          <figcaption>Reading</figcaption>
+        </figure>
+        <figure class="showcase-tile">
+          <div class="showcase-sprite"><img src="assets/svg/showcase/clawd-working-thinking.svg" alt="" draggable="false"></div>
+          <figcaption>Thinking</figcaption>
+        </figure>
+        <figure class="showcase-tile">
+          <div class="showcase-sprite"><img src="assets/svg/showcase/clawd-working-typing.svg" alt="" draggable="false"></div>
+          <figcaption>Typing</figcaption>
+        </figure>
+        <figure class="showcase-tile">
+          <div class="showcase-sprite"><img src="assets/svg/showcase/clawd-working-wizard.svg" alt="" draggable="false"></div>
+          <figcaption>Wizard</figcaption>
+        </figure>
+        <figure class="showcase-tile">
+          <div class="showcase-sprite"><img src="assets/svg/showcase/clawd-headphones-groove.svg" alt="" draggable="false"></div>
+          <figcaption>1 Subagent</figcaption>
+        </figure>
+        <figure class="showcase-tile">
+          <div class="showcase-sprite"><img src="assets/svg/showcase/clawd-working-juggling.svg" alt="" draggable="false"></div>
+          <figcaption>2+ Subagents</figcaption>
+        </figure>
+      </div>
+      <div class="showcase-footer">
+  <a class="github-card" id="github-card"
+     href="https://github.com/rullerzhou-afk/clawd-on-desk"
+     target="_blank" rel="noopener noreferrer"
+     aria-hidden="true" tabindex="-1">
+    <svg class="gh-octocat" viewBox="0 0 16 16" aria-hidden="true">
+      <path fill-rule="evenodd" clip-rule="evenodd"
+        d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
+    </svg>
+    <span class="gh-card-name">clawd-on-desk</span>
+    <span class="gh-card-arrow">→</span>
+  </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 抛物线指示 (与 drop-zone/drag-hint 同步出现) — 主虚线 + 扫描光斑 -->
+  <svg class="arc-pointer" id="arc-pointer" xmlns="http://www.w3.org/2000/svg">
+    <!-- 主虚线 (路径轮廓) -->
+    <path id="arc-path" d=""/>
+    <!-- 终点箭头 · 三角形指向 +x · 由 JS 设 transform 旋到切线方向 -->
+    <polygon id="arc-arrow" points="0,0 -14,-7 -14,7"/>
+    <!-- 引导手 · 24x24 · 由 JS 设 transform 沿 path 移动 -->
+    <image id="drag-hand" href="assets/drag-hand.svg" width="24" height="24" x="-12" y="-12"/>
+  </svg>
+
+  <!-- Arc handles (dev mode + frame=4 显示 · 拖起终控调位置) -->
+  <div class="arc-handle" id="arc-handle-start"   title="Arc Start"></div>
+  <div class="arc-handle" id="arc-handle-end"     title="Arc End"></div>
+  <div class="arc-handle" id="arc-handle-control" title="Arc Control"></div>
+
+  <!-- 中线辅助：按 G 切换 -->
+  <div class="guides" id="guides">
+    <div class="third v33"></div>
+    <div class="third v66"></div>
+    <div class="third h33"></div>
+    <div class="third h66"></div>
+  </div>
+
+  <!-- M1.2：眼神追踪 -->
+  <script src="scripts/eye-track.js?v=20260921-dizzy" defer></script>
+  <script src="scripts/dizzy.js?v=20260921-dizzy" defer></script>
+
+  <!-- 鹿鹿选定：C 像素小花园，间距 110%。与 demo 共用花型。 -->
+  <script src="scripts/pixel-flower.js?v=c110" defer></script>
+  <script src="scripts/flower-layer.js?v=20260921-c110" defer></script>
+
+  <!-- M2.2：终端打字机（必须在 scene.js 之前加载） -->
+  <script src="scripts/typewriter.js" defer></script>
+
+  <!-- M2.1：场景状态机（帧序列 + 跳过机制） -->
+  <script src="scripts/scene.js" defer></script>
+
+  <!-- M2.4a：frame=4 抛物线箭头指示 -->
+  <script src="scripts/stage-geometry.js?v=20260921-r1" defer></script>
+  <script src="scripts/arc-pointer.js?v=20260921-r1" defer></script>
+
+  <!-- M2.4b：拖拽手势 + 吸入判定 + 本体中心紫点标定 -->
+  <script src="scripts/drag.js?v=20260921-r1" defer></script>
+
+  <!-- M2.4c：吸入后终端升起 + 切 working-typing -->
+  <script src="scripts/terminal.js?v=20260921-r2" defer></script>
+
+  <!-- M1.4：dev overlay (按 D 调位置 + 大小) -->
+  <script src="scripts/dev-overlay.js?v=20260921-r3" defer></script>
+
+  <!-- M2.4-deferred：tab 失焦时间线错位兜底 -->
+  <script src="scripts/visibility-guard.js" defer></script>
+
+  <!-- 中线开关：G 键 -->
+  <script>
+    window.addEventListener('keydown', (e) => {
+      if (e.target && (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA')) return;
+      if (e.key === 'g' || e.key === 'G') {
+        document.getElementById('guides').classList.toggle('on');
+      }
+    });
+  </script>
+
+  <!-- Debug static state · 只在 URL 带 debugFrame/debugClasses 时生效
+       例：?debugFrame=4&debugClasses=absorbed,terminal-up,clawd-peeking -->
+  <script>
+    (() => {
+      const params = new URLSearchParams(window.location.search);
+      const debugFrame = params.get('debugFrame');
+      const debugClasses = params.get('debugClasses');
+      if (!debugFrame && !debugClasses) return;
+
+      const applyDebugStatic = () => {
+        if (window.__scene && typeof window.__scene.skip === 'function') {
+          window.__scene.skip();
+        }
+        if (window.__typewriter) {
+          window.__typewriter.interrupt();
+          window.__typewriter.clear();
+        }
+        if (window.__eyeTrack) {
+          window.__eyeTrack.paused = false;
+          window.__eyeTrack.lookAt = null;
+        }
+
+        if (debugFrame) document.body.dataset.frame = debugFrame;
+        document.body.className = '';
+        const classes = debugClasses
+          ? debugClasses
+              .split(',')
+              .map((name) => name.trim())
+              .filter(Boolean)
+          : [];
+        if (debugClasses) {
+          classes.forEach((name) => document.body.classList.add(name));
+        }
+
+        const permCard = document.getElementById('clawd-perm-card');
+        const permCmd = document.getElementById('perm-card-cmd');
+        const permNote = document.getElementById('perm-card-note');
+        const ghCard = document.getElementById('github-card');
+        if (permCard) permCard.setAttribute('aria-hidden', classes.includes('clawd-perm-show') ? 'false' : 'true');
+        if (permCmd && !permCmd.textContent) {
+          permCmd.textContent = 'git clone https://github.com/rullerzhou-afk/clawd-on-desk.git';
+        }
+        if (permNote) {
+          permNote.textContent = classes.includes('clawd-perm-retry')
+            ? 'I can start with just the repo... promise.'
+            : '';
+        }
+        if (ghCard) {
+          ghCard.setAttribute('aria-hidden', classes.includes('clawd-allowed') ? 'false' : 'true');
+          if (classes.includes('clawd-allowed')) ghCard.removeAttribute('tabindex');
+          else ghCard.setAttribute('tabindex', '-1');
+        }
+        if (window.__setShowcaseVisible) window.__setShowcaseVisible(classes.includes('clawd-allowed'));
+        if (classes.includes('clawd-deny-wake') && window.__restartOneShotSvg) {
+          window.__restartOneShotSvg('.clawd-wake');
+        }
+      };
+
+      if (document.readyState !== 'loading') applyDebugStatic();
+      else document.addEventListener('DOMContentLoaded', applyDebugStatic, { once: true });
+
+      window.addEventListener('load', applyDebugStatic, { once: true });
+      setTimeout(applyDebugStatic, 120);
+      setTimeout(applyDebugStatic, 600);
+    })();
+  </script>
+
+<!-- Cloudflare Pages Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "9a11d72853c64ca29ff71368e86e07e5"}'></script><!-- Cloudflare Pages Analytics --></body>
+</html>

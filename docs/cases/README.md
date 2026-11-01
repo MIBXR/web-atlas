@@ -1,6 +1,6 @@
 # 案例与代码索引
 
-由 entries/cases/ 自动生成，共 39 项。真实网站案例按原始网址与采集日期固定归档。国家/地区按具体机构与创作来源收录。详细比较见 [国别案例比较](../country-comparison.md)。
+由 entries/cases/ 自动生成，共 40 项。真实网站案例按原始网址与采集日期固定归档。国家/地区按具体机构与创作来源收录。详细比较见 [国别案例比较](../country-comparison.md)。
 
 | 顺序 | 案例 | 分类 | 国家/地区 | 类型 | 采集日期 | 可查询资料 |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -43,3 +43,4 @@
 | 70 | [星槎 STELLAR · 太空探索博物馆](../../cases.html#style/stellar-museum) | 示范作品 | 来源未标注 | 示范页面复现 | 2026-10-27 | [原始案例](https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/demo/web-design-demo/demo1-with-skill.html) · [研究](stellar-museum.md) · [Prompt数据](../../entries/cases/stellar-museum.json) · [Demo](../../demos/cases/stellar-museum/index.html) |
 | 71 | [Mira Høst · 北欧摄影作品集](../../cases.html#style/mira-host-photography) | 示范作品 | 来源未标注 | 示范页面复现 | 2026-10-27 | [原始案例](https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/demo/web-design-demo/demo2-with-skill.html) · [研究](mira-host-photography.md) · [Prompt数据](../../entries/cases/mira-host-photography.json) · [Demo](../../demos/cases/mira-host-photography/index.html) |
 | 72 | [Atlas 姊妹站 · 参考库界面骨架](../../cases.html#style/atlas-sister-sites) | 示范作品 | 中国 | 示范页面复现 | 2026-10-31 | [原始案例](https://mibxr-design-atlas.mibxranime.chatgpt.site/) · [研究](atlas-sister-sites.md) · [Prompt数据](../../entries/cases/atlas-sister-sites.json) · [Demo](../../demos/cases/atlas-sister-sites/index.html) |
+| 73 | [Clawd on Desk · 可互动的桌宠产品页](../../cases.html#style/clawd-on-desk) | 产品 | 未确认 | 原站局部复现 | 2026-11-01 | [原始案例](https://clawdondesk.com/) · [研究](clawd-on-desk.md) · [Prompt数据](../../entries/cases/clawd-on-desk.json) · [Demo](../../demos/cases/clawd-on-desk/index.html) |

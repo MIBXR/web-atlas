@@ -175,6 +175,11 @@ window.ATLAS_DOCUMENTS = [
     "group": "案例研究"
   },
   {
+    "path": "docs/cases/clawd-on-desk.md",
+    "title": "Clawd on Desk：把产品体验放进宣传网页",
+    "group": "案例研究"
+  },
+  {
     "path": "docs/cases/deepseek-harness.md",
     "title": "DeepSeek Harness：可观察的产品演示",
     "group": "案例研究"
@@ -325,8 +330,18 @@ window.ATLAS_DOCUMENTS = [
     "group": "复用 Prompt"
   },
   {
+    "path": "prompts/patterns/pointer-proximity-pixel-garden.md",
+    "title": "按指针距离生长的像素花园 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
     "path": "prompts/cases/philharmonie-music.md",
     "title": "巴黎爱乐厅 · 音乐展与音乐会详情 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
+    "path": "prompts/patterns/drag-mascot-into-product-demo.md",
+    "title": "把角色拖进产品演示 · 复用 Prompt",
     "group": "复用 Prompt"
   },
   {
@@ -595,6 +610,11 @@ window.ATLAS_DOCUMENTS = [
     "group": "复用 Prompt"
   },
   {
+    "path": "prompts/patterns/mascot-continuous-iris.md",
+    "title": "角色跨圆幕保持视觉连续 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
     "path": "prompts/patterns/shorter-column-sticky.md",
     "title": "较短一栏吸附的两栏详情 · 复用 Prompt",
     "group": "复用 Prompt"
@@ -690,6 +710,11 @@ window.ATLAS_DOCUMENTS = [
     "group": "复用 Prompt"
   },
   {
+    "path": "prompts/patterns/expressive-permission-branches.md",
+    "title": "权限选择驱动角色与页面分支 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
     "path": "prompts/patterns/heatmap-focus-tooltip.md",
     "title": "热图指针与焦点提示 · 复用 Prompt",
     "group": "复用 Prompt"
@@ -772,6 +797,11 @@ window.ATLAS_DOCUMENTS = [
   {
     "path": "prompts/patterns/viewport-animation-lifecycle.md",
     "title": "视口与前台驱动的动态生命周期 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
+    "path": "prompts/patterns/mascot-gaze-body-shadow.md",
+    "title": "视线、身体与影子同向反馈 · 复用 Prompt",
     "group": "复用 Prompt"
   },
   {
@@ -1140,6 +1170,11 @@ window.ATLAS_DOCUMENTS = [
     "group": "复用 Prompt"
   },
   {
+    "path": "prompts/cases/clawd-on-desk.md",
+    "title": "Clawd on Desk · 可互动的桌宠产品页 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
     "path": "prompts/cases/deepseek-harness.md",
     "title": "DeepSeek Harness · 可观察的产品演示 · 复用 Prompt",
     "group": "复用 Prompt"
@@ -1254,6 +1289,15 @@ window.ATLAS_DOCUMENT_SOURCES = [
       "https://github.com/MIBXR/motion-atlas/tree/80aac18cd2fcef4a97e53b1ef9227a223136ff60/site",
       "https://mibxr-design-atlas.mibxranime.chatgpt.site/",
       "https://motion-atlas.mibxranime.chatgpt.site/"
+    ]
+  },
+  {
+    "path": "demos/cases/clawd-on-desk/",
+    "referenceUrl": "https://clawdondesk.com/",
+    "sources": [
+      "https://clawdondesk.com/",
+      "https://github.com/rullerzhou-afk/clawd-on-desk/tree/44507f6863e3837895368d62794992613873cce8",
+      "https://github.com/rullerzhou-afk/clawd-on-desk/blob/44507f6863e3837895368d62794992613873cce8/assets/LICENSE"
     ]
   },
   {

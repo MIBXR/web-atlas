@@ -7,7 +7,7 @@
 从真实网站学习设计，让配色、排版、图像、形状和动效共同工作；从完整案例理解整体，把独立巧思组合成自己的设计；亲手试用组件与内容素材，再带着使用方式和授权边界取材。
 
 <!-- atlas-counts:start -->
-**39 个案例**　·　**142 个巧思**　·　**9 个素材**
+**40 个案例**　·　**147 个巧思**　·　**9 个素材**
 <!-- atlas-counts:end -->
 
 [打开首页](https://mibxr-design-atlas.mibxranime.chatgpt.site) · [案例库](https://mibxr-design-atlas.mibxranime.chatgpt.site/cases.html) · [巧思库](https://mibxr-design-atlas.mibxranime.chatgpt.site/patterns.html) · [素材库](https://mibxr-design-atlas.mibxranime.chatgpt.site/materials.html) · [设计实验室](https://mibxr-design-atlas.mibxranime.chatgpt.site/lab.html) · [Agent 工作流](https://mibxr-design-atlas.mibxranime.chatgpt.site/agent.html) · [文档中心](https://mibxr-design-atlas.mibxranime.chatgpt.site/docs.html) · [完整索引](docs/cases/README.md)

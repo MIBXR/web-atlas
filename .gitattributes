@@ -9,3 +9,6 @@ site/vendor/** -text -whitespace
 demos/materials/beautiful-article/** -text -whitespace
 demos/materials/web-design-engineer/** -text -whitespace
 demos/cases/atlas-sister-sites/source/*.html -text -whitespace
+
+demos/cases/clawd-on-desk/source/website/** -text -whitespace
+demos/cases/clawd-on-desk/source/*-LICENSE.txt -text -whitespace

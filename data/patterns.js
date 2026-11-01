@@ -2165,6 +2165,74 @@ window.ATLAS_PATTERNS = [
     ]
   },
   {
+    "id": "drag-mascot-into-product-demo",
+    "title": "把角色拖进产品演示",
+    "category": "交互反馈",
+    "experienceTypes": [
+      "micro-motion",
+      "structure"
+    ],
+    "summary": "体验产品的入口变成与角色互动的一步，并以同一落点衔接功能演示。",
+    "mechanism": "按下时记录指针与角色容器的握点偏移，移动时以可见身体锚点判定目标；命中后吸附到与工作姿态共用的位置，再触发产品界面。未命中则停在松手位置。",
+    "trigger": "将角色的身体拖入虚线目标。",
+    "effect": "体验产品的入口变成与角色互动的一步，并以同一落点衔接功能演示。",
+    "useCases": [
+      "互动产品页",
+      "软件功能体验"
+    ],
+    "avoid": [
+      "让装饰成为唯一的任务入口或状态线索"
+    ],
+    "constraints": [
+      "只从角色或界面本身取材，不用整个页面的截图替代机制。",
+      "角色与官网素材保留原权利；迁移时使用有对应授权的资源。"
+    ],
+    "composition": {
+      "role": "foundation",
+      "notes": "负责该入口或决策区域的状态关系，与其他机制共享同一角色及身体锚点。",
+      "pairsWellWith": [
+        "expressive-permission-branches"
+      ],
+      "conflicts": []
+    },
+    "accessibility": {
+      "keyboard": "原作没有键盘拖放入口；迁移时提供原生按钮触发同一吸附与界面状态。",
+      "reducedMotion": "原作保留吸附；迁移时可直接落到工作位置，再显示可读的产品界面。"
+    },
+    "parameters": [
+      {
+        "name": "吸附",
+        "value": "400ms cubic-bezier(.06,.06,.51,1.1)",
+        "note": "官网 drag.js absorb。"
+      },
+      {
+        "name": "身体锚点",
+        "value": "Y偏移=角色尺寸×.266；可见身体约占宽度44%",
+        "note": "官网响应式变量与 clampBody。"
+      }
+    ],
+    "prompt": "实现「把角色拖进产品演示」：按下时记录指针与角色容器的握点偏移，移动时以可见身体锚点判定目标；命中后吸附到与工作姿态共用的位置，再触发产品界面。未命中则停在松手位置。触发：将角色的身体拖入虚线目标。参数：400ms cubic-bezier(.06,.06,.51,1.1)；Y偏移=角色尺寸×.266；可见身体约占宽度44%。先读取来源案例的实际源码与 fidelity.md，保持角色 SVG、身体锚点、状态交接和原声音行为。原作没有键盘拖放入口；迁移时提供原生按钮触发同一吸附与界面状态。原作保留吸附；迁移时可直接落到工作位置，再显示可读的产品界面。迁移时替换为有使用权的角色与素材。",
+    "sources": [
+      {
+        "caseId": "clawd-on-desk",
+        "locator": "entries/cases/clawd-on-desk.json#interaction/3",
+        "observation": "指针按下角色后保持握点偏移拖动，未命中时留在原地；以可见身体锚点命中 Drop here 后，400ms 吸附到与敲字位置共用的目标，随后升起终端。触摸和鼠标共用 Pointer Events。",
+        "evidence": "observed",
+        "referenceUrl": "https://clawdondesk.com/",
+        "capturedAt": "2026-11-01"
+      }
+    ],
+    "sourceFiles": [
+      "entries/cases/clawd-on-desk.json",
+      "docs/cases/clawd-on-desk.md",
+      "demos/cases/clawd-on-desk/fidelity.md",
+      "demos/cases/clawd-on-desk/source/website/scripts/drag.js",
+      "demos/cases/clawd-on-desk/source/website/scripts/stage-geometry.js",
+      "demos/cases/clawd-on-desk/source/website/styles/responsive.css",
+      "demos/cases/clawd-on-desk/source/website/scripts/terminal.js"
+    ]
+  },
+  {
     "id": "edge-action-world-composition",
     "title": "中心世界与边缘行动分工",
     "category": "视觉构成",
@@ -2485,6 +2553,71 @@ window.ATLAS_PATTERNS = [
       "demos/cases/isometric-3d/style.css",
       "entries/cases/isometric-3d.json",
       "docs/cases/isometric-3d.md"
+    ]
+  },
+  {
+    "id": "expressive-permission-branches",
+    "title": "权限选择驱动角色与页面分支",
+    "category": "导航与状态",
+    "experienceTypes": [
+      "structure",
+      "page-motion"
+    ],
+    "summary": "用户的选择决定产品画廊、一次重试或完整告别，不把拒绝变成循环阻拦。",
+    "mechanism": "把允许、首次拒绝与再次拒绝保存为有限分支；一次选择同时更新权限卡、终端结果、角色动作与后续页面。过渡期间锁定重复输入，第二次拒绝结束请求。",
+    "trigger": "点击 Allow 或 Deny。",
+    "effect": "用户的选择决定产品画廊、一次重试或完整告别，不把拒绝变成循环阻拦。",
+    "useCases": [
+      "互动产品页",
+      "软件功能体验"
+    ],
+    "avoid": [
+      "再次拒绝后继续强制请求"
+    ],
+    "constraints": [
+      "只从角色或界面本身取材，不用整个页面的截图替代机制。",
+      "角色与官网素材保留原权利；迁移时使用有对应授权的资源。"
+    ],
+    "composition": {
+      "role": "foundation",
+      "notes": "负责该入口或决策区域的状态关系，与其他机制共享同一角色及身体锚点。",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "accessibility": {
+      "keyboard": "Allow、Deny、重播和产品链接均为原生控件；原作到达权限阶段前仍需拖放。",
+      "reducedMotion": "原作保留分支表演；迁移时即时显示选择结果，保留重试与结束路径。"
+    },
+    "parameters": [
+      {
+        "name": "允许",
+        "value": "卡片400ms淡出，舞台500ms退出后显示六格画廊",
+        "note": "官网 T.allowCardFade / allowStageFade。"
+      },
+      {
+        "name": "拒绝重试",
+        "value": "180ms退卡→1000ms趴地→1500ms起身→700ms挠头→撒娇重试；再次拒绝800ms居中并进入4400ms墨镜告别",
+        "note": "官网 T 与 playFirstDenySequence / handleSecondDeny。"
+      }
+    ],
+    "prompt": "实现「权限选择驱动角色与页面分支」：把允许、首次拒绝与再次拒绝保存为有限分支；一次选择同时更新权限卡、终端结果、角色动作与后续页面。过渡期间锁定重复输入，第二次拒绝结束请求。触发：点击 Allow 或 Deny。参数：卡片400ms淡出，舞台500ms退出后显示六格画廊；180ms退卡→1000ms趴地→1500ms起身→700ms挠头→撒娇重试；再次拒绝800ms居中并进入4400ms墨镜告别。先读取来源案例的实际源码与 fidelity.md，保持角色 SVG、身体锚点、状态交接和原声音行为。Allow、Deny、重播和产品链接均为原生控件；原作到达权限阶段前仍需拖放。原作保留分支表演；迁移时即时显示选择结果，保留重试与结束路径。迁移时替换为有使用权的角色与素材。",
+    "sources": [
+      {
+        "caseId": "clawd-on-desk",
+        "locator": "entries/cases/clawd-on-desk.json#interaction/5",
+        "observation": "Permission Request 的 Allow 淡出终端并进入六格动作画廊；首次 Deny 经过趴地、起身、挠头与撒娇后给出重试卡；重试可 Allow，也可再次 Deny 后戴墨镜、收回米色圆幕并逐字显示 Thanks for visiting.。末态点击角色七次显示作者彩蛋，5 秒后消失。",
+        "evidence": "observed",
+        "referenceUrl": "https://clawdondesk.com/",
+        "capturedAt": "2026-11-01"
+      }
+    ],
+    "sourceFiles": [
+      "entries/cases/clawd-on-desk.json",
+      "docs/cases/clawd-on-desk.md",
+      "demos/cases/clawd-on-desk/fidelity.md",
+      "demos/cases/clawd-on-desk/source/website/scripts/terminal.js",
+      "demos/cases/clawd-on-desk/index.html",
+      "demos/cases/clawd-on-desk/assets/svg/clawd-shades.svg"
     ]
   },
   {
@@ -4850,6 +4983,136 @@ window.ATLAS_PATTERNS = [
     ]
   },
   {
+    "id": "mascot-continuous-iris",
+    "title": "角色跨圆幕保持视觉连续",
+    "category": "加载与媒体",
+    "experienceTypes": [
+      "page-motion"
+    ],
+    "summary": "深浅场景切换时保留同一个视觉锚点。",
+    "mechanism": "把主角放在圆形背景遮罩之上；标题倒删后先将主角移到揭幕中心，再扩张背景并缩小角色，退出时反向收幕而角色持续可见。",
+    "trigger": "标题结束或二次拒绝后收场。",
+    "effect": "深浅场景切换时保留同一个视觉锚点。",
+    "useCases": [
+      "角色产品页",
+      "轻量背景反馈"
+    ],
+    "avoid": [
+      "让装饰成为唯一的任务入口或状态线索"
+    ],
+    "constraints": [
+      "只从角色或界面本身取材，不用整个页面的截图替代机制。",
+      "角色与官网素材保留原权利；迁移时使用有对应授权的资源。"
+    ],
+    "composition": {
+      "role": "support",
+      "notes": "只管理背景的交接，主角和交互保持独立层。",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "accessibility": {
+      "keyboard": "原作 Escape 可跳至等待态；移植时保持可直接进入内容的按钮。",
+      "reducedMotion": "原作未停用圆幕；移植时可即时换底色并保留角色位置。"
+    },
+    "parameters": [
+      {
+        "name": "揭幕",
+        "value": "circle(0) → circle(150vmax)，圆心50vw 50vh，800ms ease-out",
+        "note": "官网 index.html .new-world。"
+      },
+      {
+        "name": "收幕",
+        "value": "1500ms cubic-bezier(.4,0,.2,1)",
+        "note": "官网 .clawd-exit-shades .new-world。"
+      }
+    ],
+    "prompt": "实现「角色跨圆幕保持视觉连续」：把主角放在圆形背景遮罩之上；标题倒删后先将主角移到揭幕中心，再扩张背景并缩小角色，退出时反向收幕而角色持续可见。触发：标题结束或二次拒绝后收场。参数：circle(0) → circle(150vmax)，圆心50vw 50vh，800ms ease-out；1500ms cubic-bezier(.4,0,.2,1)。先读取来源案例的实际源码与 fidelity.md，保持角色 SVG、身体锚点、状态交接和原声音行为。原作 Escape 可跳至等待态；移植时保持可直接进入内容的按钮。原作未停用圆幕；移植时可即时换底色并保留角色位置。迁移时替换为有使用权的角色与素材。",
+    "sources": [
+      {
+        "caseId": "clawd-on-desk",
+        "locator": "entries/cases/clawd-on-desk.json#interaction/0",
+        "observation": "开场先停留 500ms，再以 100ms/字输入 Clawd on Desk、闪烁两次、50ms/字倒删；角色移至中央后，米色花园以 800ms 圆形遮罩揭开。Escape 可跳到拖放等待态，普通点击与历史访问不跳过。",
+        "evidence": "observed",
+        "referenceUrl": "https://clawdondesk.com/",
+        "capturedAt": "2026-11-01"
+      }
+    ],
+    "sourceFiles": [
+      "entries/cases/clawd-on-desk.json",
+      "docs/cases/clawd-on-desk.md",
+      "demos/cases/clawd-on-desk/fidelity.md",
+      "demos/cases/clawd-on-desk/index.html",
+      "demos/cases/clawd-on-desk/source/website/scripts/scene.js",
+      "demos/cases/clawd-on-desk/source/website/styles/responsive.css"
+    ]
+  },
+  {
+    "id": "mascot-gaze-body-shadow",
+    "title": "视线、身体与影子同向反馈",
+    "category": "交互反馈",
+    "experienceTypes": [
+      "micro-motion"
+    ],
+    "summary": "角色回应用户，并在剧情动作发生时避免眼神与身体争抢方向。",
+    "mechanism": "将指针相对眼睛的方向转为限幅 SVG 偏移，眼睛、身体和影子按不同倍率联动；演示阶段把目标交给标题光标或暂时回正。",
+    "trigger": "指针移动或场景切换注视目标。",
+    "effect": "角色回应用户，并在剧情动作发生时避免眼神与身体争抢方向。",
+    "useCases": [
+      "角色产品页",
+      "轻量背景反馈"
+    ],
+    "avoid": [
+      "让装饰成为唯一的任务入口或状态线索"
+    ],
+    "constraints": [
+      "只从角色或界面本身取材，不用整个页面的截图替代机制。",
+      "角色与官网素材保留原权利；迁移时使用有对应授权的资源。"
+    ],
+    "composition": {
+      "role": "accent",
+      "notes": "负责局部注意力反馈，剧情表演时交还注视目标。",
+      "pairsWellWith": [
+        "pointer-proximity-pixel-garden"
+      ],
+      "conflicts": []
+    },
+    "accessibility": {
+      "keyboard": "注视只是装饰，不承担按钮、提示或关键信息。",
+      "reducedMotion": "原作视线继续跟随；移植时可固定前视并保留所有操作。"
+    },
+    "parameters": [
+      {
+        "name": "眼睛限幅",
+        "value": "距离300px饱和；X最大3、Y最大1.5 SVG单位；0.5单位取整",
+        "note": "官网 eye-track.js CFG 与 tick。"
+      },
+      {
+        "name": "分层比例",
+        "value": "身体=眼睛×0.33；影子拉伸0.15、平移0.3",
+        "note": "官网 applyEye。"
+      }
+    ],
+    "prompt": "实现「视线、身体与影子同向反馈」：将指针相对眼睛的方向转为限幅 SVG 偏移，眼睛、身体和影子按不同倍率联动；演示阶段把目标交给标题光标或暂时回正。触发：指针移动或场景切换注视目标。参数：距离300px饱和；X最大3、Y最大1.5 SVG单位；0.5单位取整；身体=眼睛×0.33；影子拉伸0.15、平移0.3。先读取来源案例的实际源码与 fidelity.md，保持角色 SVG、身体锚点、状态交接和原声音行为。注视只是装饰，不承担按钮、提示或关键信息。原作视线继续跟随；移植时可固定前视并保留所有操作。迁移时替换为有使用权的角色与素材。",
+    "sources": [
+      {
+        "caseId": "clawd-on-desk",
+        "locator": "entries/cases/clawd-on-desk.json#interaction/1",
+        "observation": "等待态的眼睛朝指针或标题光标偏移，300px 达到最大 3 SVG 单位，身体按 0.33 倍偏移并联动影子。围绕角色连续同向两圈触发 6 秒眩晕、12 秒冷却；拖放和权限决定优先取消反应。",
+        "evidence": "observed",
+        "referenceUrl": "https://clawdondesk.com/",
+        "capturedAt": "2026-11-01"
+      }
+    ],
+    "sourceFiles": [
+      "entries/cases/clawd-on-desk.json",
+      "docs/cases/clawd-on-desk.md",
+      "demos/cases/clawd-on-desk/fidelity.md",
+      "demos/cases/clawd-on-desk/source/website/scripts/eye-track.js",
+      "demos/cases/clawd-on-desk/source/website/scripts/dizzy.js",
+      "demos/cases/clawd-on-desk/index.html"
+    ]
+  },
+  {
     "id": "masked-transaction-rotation",
     "title": "裁切文字与交易预览同步",
     "category": "交互反馈",
@@ -6614,6 +6877,70 @@ window.ATLAS_PATTERNS = [
       "demos/cases/arknights-world/style.css",
       "entries/cases/arknights-world.json",
       "docs/cases/arknights-world.md"
+    ]
+  },
+  {
+    "id": "pointer-proximity-pixel-garden",
+    "title": "按指针距离生长的像素花园",
+    "category": "交互反馈",
+    "experienceTypes": [
+      "micro-motion"
+    ],
+    "summary": "整片背景以稳定像素格回应用户，装饰层不截获拖放或按钮。",
+    "mechanism": "在固定网格格点按坐标散列选择花形与颜色；仅实例化指针半径内的花，按距离同步透明度和缩放，离开后淡去并回收超额节点。",
+    "trigger": "指针移动或触摸按下。",
+    "effect": "整片背景以稳定像素格回应用户，装饰层不截获拖放或按钮。",
+    "useCases": [
+      "角色产品页",
+      "轻量背景反馈"
+    ],
+    "avoid": [
+      "让装饰成为唯一的任务入口或状态线索"
+    ],
+    "constraints": [
+      "只从角色或界面本身取材，不用整个页面的截图替代机制。",
+      "角色与官网素材保留原权利；迁移时使用有对应授权的资源。"
+    ],
+    "composition": {
+      "role": "accent",
+      "notes": "以低对比装饰回应指针，不与角色和行动按钮争夺点击。",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "accessibility": {
+      "keyboard": "花园为 aria-hidden 装饰，不改变键盘焦点或传达唯一状态。",
+      "reducedMotion": "原作只取消透明度/缩放过渡；可按目标需要停用花形响应。"
+    },
+    "parameters": [
+      {
+        "name": "邻域",
+        "value": "网格37px；半径90px；最多96个节点",
+        "note": "官网 BASE_GAP=34、SPACING_PERCENT=110 与 MAX_MARKS。"
+      },
+      {
+        "name": "映射",
+        "value": "opacity=(1−d/90)^.68×.9；scale=.65+.5×opacity",
+        "note": "官网 opacityAt / scaleAt。"
+      }
+    ],
+    "prompt": "实现「按指针距离生长的像素花园」：在固定网格格点按坐标散列选择花形与颜色；仅实例化指针半径内的花，按距离同步透明度和缩放，离开后淡去并回收超额节点。触发：指针移动或触摸按下。参数：网格37px；半径90px；最多96个节点；opacity=(1−d/90)^.68×.9；scale=.65+.5×opacity。先读取来源案例的实际源码与 fidelity.md，保持角色 SVG、身体锚点、状态交接和原声音行为。花园为 aria-hidden 装饰，不改变键盘焦点或传达唯一状态。原作只取消透明度/缩放过渡；可按目标需要停用花形响应。迁移时替换为有使用权的角色与素材。",
+    "sources": [
+      {
+        "caseId": "clawd-on-desk",
+        "locator": "entries/cases/clawd-on-desk.json#interaction/2",
+        "observation": "指针附近的 37px 网格生出像素花，90px 半径内按距离控制透明度与缩放；移开淡去，最多保留 96 个活动及淡出格子，装饰层不截获输入。",
+        "evidence": "observed",
+        "referenceUrl": "https://clawdondesk.com/",
+        "capturedAt": "2026-11-01"
+      }
+    ],
+    "sourceFiles": [
+      "entries/cases/clawd-on-desk.json",
+      "docs/cases/clawd-on-desk.md",
+      "demos/cases/clawd-on-desk/fidelity.md",
+      "demos/cases/clawd-on-desk/source/website/scripts/pixel-flower.js",
+      "demos/cases/clawd-on-desk/source/website/scripts/flower-layer.js",
+      "demos/cases/clawd-on-desk/index.html"
     ]
   },
   {

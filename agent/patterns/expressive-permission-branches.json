@@ -1,0 +1,392 @@
+{
+  "schemaVersion": 1,
+  "id": "expressive-permission-branches",
+  "pattern": {
+    "id": "expressive-permission-branches",
+    "title": "权限选择驱动角色与页面分支",
+    "category": "导航与状态",
+    "experienceTypes": [
+      "structure",
+      "page-motion"
+    ],
+    "summary": "用户的选择决定产品画廊、一次重试或完整告别，不把拒绝变成循环阻拦。",
+    "mechanism": "把允许、首次拒绝与再次拒绝保存为有限分支；一次选择同时更新权限卡、终端结果、角色动作与后续页面。过渡期间锁定重复输入，第二次拒绝结束请求。",
+    "trigger": "点击 Allow 或 Deny。",
+    "effect": "用户的选择决定产品画廊、一次重试或完整告别，不把拒绝变成循环阻拦。",
+    "useCases": [
+      "互动产品页",
+      "软件功能体验"
+    ],
+    "avoid": [
+      "再次拒绝后继续强制请求"
+    ],
+    "constraints": [
+      "只从角色或界面本身取材，不用整个页面的截图替代机制。",
+      "角色与官网素材保留原权利；迁移时使用有对应授权的资源。"
+    ],
+    "composition": {
+      "role": "foundation",
+      "notes": "负责该入口或决策区域的状态关系，与其他机制共享同一角色及身体锚点。",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "accessibility": {
+      "keyboard": "Allow、Deny、重播和产品链接均为原生控件；原作到达权限阶段前仍需拖放。",
+      "reducedMotion": "原作保留分支表演；迁移时即时显示选择结果，保留重试与结束路径。"
+    },
+    "parameters": [
+      {
+        "name": "允许",
+        "value": "卡片400ms淡出，舞台500ms退出后显示六格画廊",
+        "note": "官网 T.allowCardFade / allowStageFade。"
+      },
+      {
+        "name": "拒绝重试",
+        "value": "180ms退卡→1000ms趴地→1500ms起身→700ms挠头→撒娇重试；再次拒绝800ms居中并进入4400ms墨镜告别",
+        "note": "官网 T 与 playFirstDenySequence / handleSecondDeny。"
+      }
+    ],
+    "prompt": "实现「权限选择驱动角色与页面分支」：把允许、首次拒绝与再次拒绝保存为有限分支；一次选择同时更新权限卡、终端结果、角色动作与后续页面。过渡期间锁定重复输入，第二次拒绝结束请求。触发：点击 Allow 或 Deny。参数：卡片400ms淡出，舞台500ms退出后显示六格画廊；180ms退卡→1000ms趴地→1500ms起身→700ms挠头→撒娇重试；再次拒绝800ms居中并进入4400ms墨镜告别。先读取来源案例的实际源码与 fidelity.md，保持角色 SVG、身体锚点、状态交接和原声音行为。Allow、Deny、重播和产品链接均为原生控件；原作到达权限阶段前仍需拖放。原作保留分支表演；迁移时即时显示选择结果，保留重试与结束路径。迁移时替换为有使用权的角色与素材。",
+    "sources": [
+      {
+        "caseId": "clawd-on-desk",
+        "locator": "entries/cases/clawd-on-desk.json#interaction/5",
+        "observation": "Permission Request 的 Allow 淡出终端并进入六格动作画廊；首次 Deny 经过趴地、起身、挠头与撒娇后给出重试卡；重试可 Allow，也可再次 Deny 后戴墨镜、收回米色圆幕并逐字显示 Thanks for visiting.。末态点击角色七次显示作者彩蛋，5 秒后消失。",
+        "evidence": "observed",
+        "referenceUrl": "https://clawdondesk.com/",
+        "capturedAt": "2026-11-01"
+      }
+    ],
+    "sourceFiles": [
+      "entries/cases/clawd-on-desk.json",
+      "docs/cases/clawd-on-desk.md",
+      "demos/cases/clawd-on-desk/fidelity.md",
+      "demos/cases/clawd-on-desk/source/website/scripts/terminal.js",
+      "demos/cases/clawd-on-desk/index.html",
+      "demos/cases/clawd-on-desk/assets/svg/clawd-shades.svg"
+    ]
+  },
+  "sourceCases": [
+    {
+      "id": "clawd-on-desk",
+      "title": "Clawd on Desk · 可互动的桌宠产品页",
+      "paths": {
+        "bundle": "agent/cases/clawd-on-desk.json",
+        "demo": "demos/cases/clawd-on-desk/index.html"
+      }
+    }
+  ],
+  "documents": [
+    {
+      "path": "prompts/patterns/expressive-permission-branches.md",
+      "role": "prompt",
+      "content": "# 权限选择驱动角色与页面分支 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/expressive-permission-branches.json)\n\n实现「权限选择驱动角色与页面分支」：把允许、首次拒绝与再次拒绝保存为有限分支；一次选择同时更新权限卡、终端结果、角色动作与后续页面。过渡期间锁定重复输入，第二次拒绝结束请求。触发：点击 Allow 或 Deny。参数：卡片400ms淡出，舞台500ms退出后显示六格画廊；180ms退卡→1000ms趴地→1500ms起身→700ms挠头→撒娇重试；再次拒绝800ms居中并进入4400ms墨镜告别。先读取来源案例的实际源码与 fidelity.md，保持角色 SVG、身体锚点、状态交接和原声音行为。Allow、Deny、重播和产品链接均为原生控件；原作到达权限阶段前仍需拖放。原作保留分支表演；迁移时即时显示选择结果，保留重试与结束路径。迁移时替换为有使用权的角色与素材。\n\n## 制作约束\n\n- 只从角色或界面本身取材，不用整个页面的截图替代机制。\n- 角色与官网素材保留原权利；迁移时使用有对应授权的资源。\n"
+    }
+  ],
+  "files": [
+    {
+      "path": "asset-cache-worker.js",
+      "role": "source"
+    },
+    {
+      "path": "data/asset-sources.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/assets-manifest.json",
+      "role": "context"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/assets/drag-hand.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/assets/svg/clawd-dizzy.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/assets/svg/clawd-error.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/assets/svg/clawd-homepage-scratch.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/assets/svg/clawd-mini-crabwalk.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/assets/svg/clawd-mini-enter.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/assets/svg/clawd-notification.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/assets/svg/clawd-shades.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/assets/svg/clawd-wake.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/assets/svg/clawd-working-typing.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/assets/svg/showcase/clawd-headphones-groove.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/assets/svg/showcase/clawd-idle-reading.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/assets/svg/showcase/clawd-working-juggling.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/assets/svg/showcase/clawd-working-thinking.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/assets/svg/showcase/clawd-working-typing.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/assets/svg/showcase/clawd-working-wizard.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/fidelity.md",
+      "role": "context"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/fonts/6NUh8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0K7iN7hzFUPJH58nib1603gg7S2nfgRYIctxujDg.ttf",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/fonts/6NVf8FyLNQOQZAnv9ZwNjucMHVn85Ni7emAe9lKqZTnbB-gzTK0K1ChJdt9vIVYX9G37lvd9sPEKsxx664UJf1hLTf7W.ttf",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/fonts/6NVf8FyLNQOQZAnv9ZwNjucMHVn85Ni7emAe9lKqZTnbB-gzTK0K1ChJdt9vIVYX9G37lvd9sPEKsxx664UJf1jiSv7W.ttf",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/fonts/e3t4euO8T-267oIAQAu6jDQyK0nS.ttf",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/fonts/fonts.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/fonts/fraunces-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/fonts/geistmono-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/fonts/or3yQ6H-1_WfwkMZI_qYPLs1a-t7PU0AbeE9KJ5T.ttf",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/fonts/or3yQ6H-1_WfwkMZI_qYPLs1a-t7PU0AbeEPKJ5T.ttf",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/fonts/or3yQ6H-1_WfwkMZI_qYPLs1a-t7PU0AbeHjL55T.ttf",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/fonts/pressstart2p-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/LICENSES.md",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/source/ARTWORK-LICENSE.txt",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/source/PRODUCT-LICENSE.txt",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/source/README.md",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/source/website/google-fonts.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/source/website/index.html",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/source/website/scripts/arc-pointer.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/source/website/scripts/dev-overlay.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/source/website/scripts/dizzy.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/source/website/scripts/drag.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/source/website/scripts/eye-track.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/source/website/scripts/flower-layer.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/source/website/scripts/pixel-flower.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/source/website/scripts/scene.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/source/website/scripts/stage-geometry.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/source/website/scripts/terminal.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/source/website/scripts/typewriter.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/source/website/scripts/visibility-guard.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/clawd-on-desk/source/website/styles/responsive.css",
+      "role": "process"
+    },
+    {
+      "path": "docs.html",
+      "role": "source"
+    },
+    {
+      "path": "docs/cases/clawd-on-desk.md",
+      "role": "context"
+    },
+    {
+      "path": "entries/cases/clawd-on-desk.json",
+      "role": "context"
+    },
+    {
+      "path": "entries/patterns/expressive-permission-branches.json",
+      "role": "context"
+    },
+    {
+      "path": "previews/cases/clawd-on-desk-mobile.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/cases/clawd-on-desk-reference.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/cases/clawd-on-desk.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "prompts/cases/clawd-on-desk.md",
+      "role": "context"
+    },
+    {
+      "path": "prompts/patterns/expressive-permission-branches.md",
+      "role": "context"
+    },
+    {
+      "path": "site/icons/favicon.svg",
+      "role": "asset"
+    },
+    {
+      "path": "site/pages/docs/docs.css",
+      "role": "source"
+    },
+    {
+      "path": "site/pages/docs/docs.js",
+      "role": "source"
+    },
+    {
+      "path": "site/runtime/asset-cache.js",
+      "role": "source"
+    },
+    {
+      "path": "site/runtime/asset-runtime.js",
+      "role": "source"
+    },
+    {
+      "path": "site/runtime/case-loading.css",
+      "role": "source"
+    },
+    {
+      "path": "site/runtime/case-loading.js",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/site-footer.css",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/site-nav.css",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/site-shell.js",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/site-typography.css",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/theme-control.css",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/theme.js",
+      "role": "source"
+    },
+    {
+      "path": "site/vendor/LICENSES.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/vendor/marked.umd.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/vendor/purify.min.js",
+      "role": "vendor"
+    }
+  ]
+}
