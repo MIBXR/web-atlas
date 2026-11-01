@@ -41,6 +41,14 @@
       "locator": "entries/cases/isometric-3d.json#interaction/0",
       "observation": "整岛、花园、建筑三种焦点切换",
       "evidence": "adapted"
+    },
+    {
+      "caseId": "hallmark",
+      "locator": "entries/cases/hallmark.json#interaction/34",
+      "observation": "Ultraviolet 的 solo 按钮只强调当前通道，mute 降低对应通道，第二次点击撤销，通道按钮的按下状态和 is-dim 样式同步。",
+      "evidence": "observed",
+      "referenceUrl": "https://www.usehallmark.com/",
+      "capturedAt": "2026-11-01"
     }
   ],
   "sourceFiles": [
@@ -48,6 +56,11 @@
     "demos/cases/isometric-3d/script.js",
     "demos/cases/isometric-3d/style.css",
     "entries/cases/isometric-3d.json",
-    "docs/cases/isometric-3d.md"
+    "docs/cases/isometric-3d.md",
+    "entries/cases/hallmark.json",
+    "docs/cases/hallmark.md",
+    "demos/cases/hallmark/fidelity.md",
+    "demos/cases/hallmark/themes/ultraviolet/index.html",
+    "demos/cases/hallmark/themes/ultraviolet/style.css"
   ]
 }

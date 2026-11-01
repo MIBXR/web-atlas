@@ -1,0 +1,21 @@
+/* Sentient */
+@font-face {
+  font-family: 'Sentient';
+  src: url('../files/M6X7C56BMVHUUEP2JAWS7SGZ7N6BGP7I.woff2') format('woff2'),
+       url('../files/M6X7C56BMVHUUEP2JAWS7SGZ7N6BGP7I.woff') format('woff'),
+       url('../files/M6X7C56BMVHUUEP2JAWS7SGZ7N6BGP7I.ttf') format('truetype');
+  font-weight: 300;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Sentient';
+  src: url('../files/SIH66VPT4WS2HIF5PEJNDU4INNUF54LG.woff2') format('woff2'),
+       url('../files/SIH66VPT4WS2HIF5PEJNDU4INNUF54LG.woff') format('woff'),
+       url('../files/SIH66VPT4WS2HIF5PEJNDU4INNUF54LG.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+

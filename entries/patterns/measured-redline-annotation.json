@@ -1,0 +1,72 @@
+{
+  "id": "measured-redline-annotation",
+  "order": 166,
+  "title": "实测几何的设计红线",
+  "category": "交互反馈",
+  "experienceTypes": [
+    "micro-motion",
+    "visual"
+  ],
+  "summary": "从真实字形和区块尺寸生成红线，而非放固定的装饰尺。",
+  "mechanism": "用DOM矩形寻找四向最近相交邻块，SVG显示边界与间距；用Range逐字量宽并按em千分之一标advance，高频指针输入合到一帧。",
+  "trigger": "指向、触摸或聚焦可测量区块。",
+  "effect": "尺寸文字能解释当前对象及其排版关系。",
+  "useCases": [
+    "字体与品牌规范",
+    "布局检查和设计工具演示"
+  ],
+  "avoid": [
+    "把预设数字画成实测结果"
+  ],
+  "constraints": [
+    "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
+  ],
+  "composition": {
+    "role": "accent",
+    "notes": "红线为当前对象的临时解释层，移开后还给原版面。",
+    "pairsWellWith": [
+      "font-metric-guides"
+    ],
+    "conflicts": []
+  },
+  "accessibility": {
+    "keyboard": "区块focusin触发同一测量，标签有实际对象名称。",
+    "reducedMotion": "尺寸线和读数直接显示，保持几何准确。"
+  },
+  "parameters": [
+    {
+      "name": "坐标",
+      "value": "round(v)+.5px",
+      "note": "固定提交源码／线上实测：themes/studio/spec.js px。"
+    },
+    {
+      "name": "字宽",
+      "value": "round(glyphWidth/fontSize×1000)",
+      "note": "固定提交源码／线上实测：spec.js measureLetter。"
+    },
+    {
+      "name": "标签",
+      "value": "getBBox外扩左右5px、上下2px",
+      "note": "固定提交源码／线上实测：spec.js tag。"
+    }
+  ],
+  "prompt": "为目标页面实现「实测几何的设计红线」：用DOM矩形寻找四向最近相交邻块，SVG显示边界与间距；用Range逐字量宽并按em千分之一标advance，高频指针输入合到一帧。触发：指向、触摸或聚焦可测量区块。结果：尺寸文字能解释当前对象及其排版关系。参数：坐标=round(v)+.5px；字宽=round(glyphWidth/fontSize×1000)；标签=getBBox外扩左右5px、上下2px。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；区块focusin触发同一测量，标签有实际对象名称。尺寸线和读数直接显示，保持几何准确。",
+  "sources": [
+    {
+      "caseId": "hallmark",
+      "locator": "entries/cases/hallmark.json#interaction/14",
+      "observation": "Studio 指向、触摸或聚焦版面区块时测量真实矩形和四向邻块间距并生成 SVG 红线，指向字母时用 DOM Range 逐字测量，以 em 千分之一显示 advance。",
+      "evidence": "observed",
+      "referenceUrl": "https://www.usehallmark.com/",
+      "capturedAt": "2026-11-01"
+    }
+  ],
+  "sourceFiles": [
+    "entries/cases/hallmark.json",
+    "docs/cases/hallmark.md",
+    "demos/cases/hallmark/fidelity.md",
+    "demos/cases/hallmark/themes/studio/spec.js",
+    "demos/cases/hallmark/themes/studio/index.html",
+    "demos/cases/hallmark/themes/studio/style.css"
+  ]
+}

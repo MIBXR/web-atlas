@@ -19,3 +19,10 @@ demos/cases/uiarc-platform/source/site-styles/** -text -whitespace
 demos/cases/uiarc-platform/source/foundation.css -text -whitespace
 demos/cases/uiarc-platform/source/arc-MIT-LICENSE.txt -text -whitespace
 demos/cases/uiarc-platform/source/site-scripts/** -text -whitespace
+demos/cases/hallmark/** -text -whitespace
+demos/cases/hallmark/fidelity.md text eol=lf
+demos/cases/hallmark/LICENSES.md text eol=lf
+demos/cases/hallmark/assets-manifest.json text eol=lf
+demos/cases/hallmark/source/README.md text eol=lf
+demos/cases/hallmark/source/localize.mjs text eol=lf
+demos/materials/hallmark-skill/** -text -whitespace

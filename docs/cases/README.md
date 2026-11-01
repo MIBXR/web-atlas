@@ -1,6 +1,6 @@
 # 案例与代码索引
 
-由 entries/cases/ 自动生成，共 41 项。真实网站案例按原始网址与采集日期固定归档。国家/地区按具体机构与创作来源收录。详细比较见 [国别案例比较](../country-comparison.md)。
+由 entries/cases/ 自动生成，共 42 项。真实网站案例按原始网址与采集日期固定归档。国家/地区按具体机构与创作来源收录。详细比较见 [国别案例比较](../country-comparison.md)。
 
 | 顺序 | 案例 | 分类 | 国家/地区 | 类型 | 采集日期 | 可查询资料 |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -45,3 +45,4 @@
 | 72 | [Atlas 姊妹站 · 参考库界面骨架](../../cases.html#style/atlas-sister-sites) | 示范作品 | 中国 | 示范页面复现 | 2026-10-31 | [原始案例](https://mibxr-design-atlas.mibxranime.chatgpt.site/) · [研究](atlas-sister-sites.md) · [Prompt数据](../../entries/cases/atlas-sister-sites.json) · [Demo](../../demos/cases/atlas-sister-sites/index.html) |
 | 73 | [Clawd on Desk · 可互动的桌宠产品页](../../cases.html#style/clawd-on-desk) | 产品 | 未确认 | 原站局部复现 | 2026-11-01 | [原始案例](https://clawdondesk.com/) · [研究](clawd-on-desk.md) · [Prompt数据](../../entries/cases/clawd-on-desk.json) · [Demo](../../demos/cases/clawd-on-desk/index.html) |
 | 74 | [Arc UI · 组件平台的产品官网](../../cases.html#style/uiarc-platform) | 产品 | 瑞士 | 原站局部复现 | 2026-11-01 | [原始案例](https://uiarc.dev/) · [研究](uiarc-platform.md) · [Prompt数据](../../entries/cases/uiarc-platform.json) · [Demo](../../demos/cases/uiarc-platform/index.html) |
+| 75 | [Hallmark · 设计 skill 官网与五十主题](../../cases.html#style/hallmark) | 产品 | 美国 | 原站局部复现 | 2026-11-01 | [原始案例](https://www.usehallmark.com/) · [研究](hallmark.md) · [Prompt数据](../../entries/cases/hallmark.json) · [Demo](../../demos/cases/hallmark/index.html) |

@@ -1,0 +1,72 @@
+{
+  "id": "inertial-page-wheel",
+  "order": 158,
+  "title": "惯性三维页面转轮",
+  "category": "导航与状态",
+  "experienceTypes": [
+    "page-motion"
+  ],
+  "summary": "用深度、明暗和惯性让真实页面围绕当前页排列。",
+  "mechanism": "按卡数计算圆柱半径和步角，指针位移换算角度与速度，松手后摩擦衰减再吸附；新拖动取消目标和惯性，首次接触永久停止闲置自转。",
+  "trigger": "拖动、松手、方向键或闲置等待。",
+  "effect": "页面具有连续空间位置，主动浏览接管闲置演示。",
+  "useCases": [
+    "页面成果浏览",
+    "数量适中的作品或样本"
+  ],
+  "avoid": [
+    "把转轮设为唯一目的地入口"
+  ],
+  "constraints": [
+    "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。",
+    "Edge 155 的侧页点击保持原作 pointer capture 结果，浏览入口使用键盘、显式按钮和页面链接。"
+  ],
+  "composition": {
+    "role": "foundation",
+    "notes": "用当前牌、相邻牌、标题与键盘索引共享选择状态。",
+    "pairsWellWith": [
+      "same-material-page-pairs"
+    ],
+    "conflicts": []
+  },
+  "accessibility": {
+    "keyboard": "区域支持方向键和显式前后按钮，保留列表入口。",
+    "reducedMotion": "停用闲置自转，以即时选择替代惯性与吸附运动。"
+  },
+  "parameters": [
+    {
+      "name": "卡数与步角",
+      "value": "17张；360/n≈21.176°",
+      "note": "固定提交源码／线上实测：index.html #examples 与 js/wheel.js。"
+    },
+    {
+      "name": "动力",
+      "value": "目标趋近.14；速度乘.93；速度阈值.02°/帧",
+      "note": "固定提交源码／线上实测：js/wheel.js loop。"
+    },
+    {
+      "name": "闲置与拖动",
+      "value": "闲置-.06°/帧；拖动超过6px阻止打开",
+      "note": "固定提交源码／线上实测：js/wheel.js loop/click。"
+    }
+  ],
+  "prompt": "为目标页面实现「惯性三维页面转轮」：按卡数计算圆柱半径和步角，指针位移换算角度与速度，松手后摩擦衰减再吸附；新拖动取消目标和惯性，首次接触永久停止闲置自转。触发：拖动、松手、方向键或闲置等待。结果：页面具有连续空间位置，主动浏览接管闲置演示。参数：卡数与步角=17张；360/n≈21.176°；动力=目标趋近.14；速度乘.93；速度阈值.02°/帧；闲置与拖动=闲置-.06°/帧；拖动超过6px阻止打开。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；区域支持方向键和显式前后按钮，保留列表入口。停用闲置自转，以即时选择替代惯性与吸附运动。",
+  "sources": [
+    {
+      "caseId": "hallmark",
+      "locator": "entries/cases/hallmark.json#interaction/6",
+      "observation": "Made 把十七张页面牌排在三维圆柱上，闲置时缓慢自转，拖动松手后按速度惯性衰减并吸附到整步角，新的拖动接管惯性，方向键选择相邻页，首次接触后停止闲置自转；Edge 155 中侧页点击被 pointer capture 重定向到轮容器，当前项保持。",
+      "evidence": "observed",
+      "referenceUrl": "https://www.usehallmark.com/",
+      "capturedAt": "2026-11-01"
+    }
+  ],
+  "sourceFiles": [
+    "entries/cases/hallmark.json",
+    "docs/cases/hallmark.md",
+    "demos/cases/hallmark/fidelity.md",
+    "demos/cases/hallmark/js/wheel.js",
+    "demos/cases/hallmark/index.html",
+    "demos/cases/hallmark/style.css"
+  ]
+}

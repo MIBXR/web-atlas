@@ -45,6 +45,14 @@
         "evidence": "adapted",
         "referenceUrl": "https://chatgpt.com/zh-Hans-CN/overview/",
         "capturedAt": "2026-10-07"
+      },
+      {
+        "caseId": "hallmark",
+        "locator": "entries/cases/hallmark.json#interaction/35",
+        "observation": "Coral 的滚动说明面板在屏幕中央的窄观察带进入时选择对应发票状态，桌面说明与吸附发票同步，窄于 60rem 时直接显示完整的第三步。",
+        "evidence": "observed",
+        "referenceUrl": "https://www.usehallmark.com/",
+        "capturedAt": "2026-11-01"
       }
     ],
     "sourceFiles": [
@@ -54,7 +62,12 @@
       "demos/cases/chatgpt-platform/motion-data.js",
       "demos/cases/chatgpt-platform/script.js",
       "demos/cases/chatgpt-platform/style.css",
-      "entries/cases/chatgpt-platform.json"
+      "entries/cases/chatgpt-platform.json",
+      "entries/cases/hallmark.json",
+      "docs/cases/hallmark.md",
+      "demos/cases/hallmark/fidelity.md",
+      "demos/cases/hallmark/themes/coral/scene.js",
+      "demos/cases/hallmark/themes/coral/style.css"
     ]
   },
   "sourceCases": [
@@ -64,6 +77,14 @@
       "paths": {
         "bundle": "agent/cases/chatgpt-platform.json",
         "demo": "demos/cases/chatgpt-platform/index.html"
+      }
+    },
+    {
+      "id": "hallmark",
+      "title": "Hallmark · 设计 skill 官网与五十主题",
+      "paths": {
+        "bundle": "agent/cases/hallmark.json",
+        "demo": "demos/cases/hallmark/index.html"
       }
     }
   ],
@@ -280,6 +301,5710 @@
       "role": "source"
     },
     {
+      "path": "demos/cases/hallmark/apple-touch-icon.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets-manifest.json",
+      "role": "context"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/cmp/closewise-bare-full.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/cmp/closewise-hallmark-full.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/cmp/closewise-thumb.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/cmp/fieldbook-bare-full.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/cmp/fieldbook-hallmark-full.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/cmp/fieldbook-thumb.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/cmp/relay-bare-full.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/cmp/relay-hallmark-full.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/cmp/relay-thumb.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/almanac.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/arcade.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/atelier.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/bloom.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/blueprint.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/broadside.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/brutal.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/carnival.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/cobalt.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/console.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/coral.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/darkroom.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/dose.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/dusk.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/editorial.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/formwork.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/furrow.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/garden.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/grid.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/halftone.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/hedgerow.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/hum.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/ink.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/kiln.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/loom.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/lumen.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/manifesto.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/midnight.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/newsprint.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/overprint.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/pasteup.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/piste.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/refract.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/ribbon.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/rim.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/riso.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/solstice.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/specimen.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/spore.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/sport.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/squeeze.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/sticker.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/studio.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/terminal.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/terrazzo.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/ultraviolet.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/vantage.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/vellum.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/wayfind.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/desk/werkstatt.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/ex/atelier-architect.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/ex/cobalt-database-client.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/ex/custom-couples-budget.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/ex/custom-mobile-bike-repair.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/ex/custom-photo-rename-cli.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/ex/custom-ramen-counter.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/ex/darkroom-photographer.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/ex/hedgerow-dog-walking.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/ex/hum-coding-camp.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/ex/kiln-pottery-school.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/ex/kiln-stoneware-shop.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/ex/midnight-jazz-club.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/ex/midnight-video-tool.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/ex/ribbon-meditation-app.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/ex/theme-atelier.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/ex/theme-cobalt.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/ex/theme-dose.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/ex/theme-furrow.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/ex/theme-hum.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/ex/theme-ribbon.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/ex/theme-studio.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/almanac.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/arcade.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/atelier.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/bloom.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/blueprint.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/broadside.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/brutal.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/carnival.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/cobalt.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/console.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/coral.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/darkroom.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/dose.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/dusk.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/editorial.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/formwork.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/furrow.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/garden.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/grid.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/halftone.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/hedgerow.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/hum.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/ink.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/kiln.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/loom.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/lumen.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/manifesto.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/midnight.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/newsprint.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/overprint.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/pasteup.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/piste.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/refract.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/ribbon.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/rim.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/riso.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/solstice.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/specimen.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/spore.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/sport.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/squeeze.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/sticker.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/studio.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/terminal.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/terrazzo.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/ultraviolet.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/vantage.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/vellum.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/wayfind.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/phone/werkstatt.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/almanac.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/arcade.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/atelier.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/bloom.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/blueprint.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/broadside.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/brutal.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/carnival.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/cobalt.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/console.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/coral.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/darkroom.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/dose.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/dusk.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/editorial.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/formwork.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/furrow.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/garden.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/grid.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/halftone.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/hedgerow.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/hum.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/ink.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/kiln.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/loom.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/lumen.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/manifesto.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/midnight.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/newsprint.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/overprint.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/pasteup.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/piste.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/refract.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/ribbon.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/rim.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/riso.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/solstice.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/specimen.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/spore.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/sport.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/squeeze.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/sticker.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/studio.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/terminal.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/terrazzo.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/ultraviolet.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/vantage.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/vellum.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/wayfind.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/assets/themes/werkstatt.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/favicon.ico",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/favicon.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/fidelity.md",
+      "role": "context"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/albertsans-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/anton-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/anybody-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/archivo-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/archivonarrow-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/atkinsonhyperlegiblemono-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/barlow-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/barlowcondensed-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/bevan-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/bigshouldersdisplay-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/bodonimoda-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/bowlbyonesc-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/bricolagegrotesque-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/bungee-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/chakrapetch-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/chivo-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/chivomono-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-01.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-02.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-03.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-04.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-05.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-06.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-07.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-08.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-09.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-10.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-11.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-12.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-13.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-14.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-15.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-16.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-17.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-18.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-19.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-20.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-21.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-22.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-23.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-24.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-25.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-26.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-27.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-28.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-29.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-30.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-31.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-32.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-33.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-34.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-35.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-36.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-37.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-38.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-39.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-40.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-41.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-42.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-43.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-44.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-45.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-46.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-47.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-48.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-49.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-50.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-51.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-52.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-53.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-54.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-55.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-56.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-57.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-58.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-59.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-60.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-61.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-62.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-63.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-64.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-65.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/css/font-66.css",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/dmmono-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/epilogue-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/familjengrotesk-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/figtree-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/_Xms-HUzqDCFdgfMm4q9DbZs.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/_Xms-HUzqDCFdgfMm4S9DQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/-F63fjptAgt5VM-kVkqdyU8n1i8q1w.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/-F63fjptAgt5VM-kVkqdyU8n1iAq129k.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/-F63fjptAgt5VM-kVkqdyU8n1iEq129k.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/-F63fjptAgt5VM-kVkqdyU8n1iIq129k.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/-F63fjptAgt5VM-kVkqdyU8n1isq129k.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/-F6qfjptAgt5VM-kVkqdyU8n3twJwl1FgtIU.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/-F6qfjptAgt5VM-kVkqdyU8n3twJwl5FgtIU.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/-F6qfjptAgt5VM-kVkqdyU8n3twJwl9FgtIU.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/-F6qfjptAgt5VM-kVkqdyU8n3twJwlBFgg.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/-F6qfjptAgt5VM-kVkqdyU8n3twJwlRFgtIU.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/-W_oXI_oSymQ8Qj-Apx3HGN_Hu1RTCk5FtSDETgf0cJhM9eCiJU.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/-W_oXI_oSymQ8Qj-Apx3HGN_Hu1RTCk5FtSDETgf0cJhM9eGiJVd9g.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/-W_oXI_oSymQ8Qj-Apx3HGN_Hu1RTCk5FtSDETgf0cJhM9eMiJVd9g.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/-W_oXI_oSymQ8Qj-Apx3HGN_Hu1RTCk5FtSDETgf0cJhM9eNiJVd9g.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/-W_oXI_oSymQ8Qj-Apx3HGN_Hu1RTCk5FtSDETgf0cJhM9ePiJVd9g.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/-W_oXI_oSymQ8Qj-Apx3HGN_Hu1RTCk5FtSDETgf0cK_NNeCiJU.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/-W_oXI_oSymQ8Qj-Apx3HGN_Hu1RTCk5FtSDETgf0cK_NNeGiJVd9g.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/-W_oXI_oSymQ8Qj-Apx3HGN_Hu1RTCk5FtSDETgf0cK_NNeMiJVd9g.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/-W_oXI_oSymQ8Qj-Apx3HGN_Hu1RTCk5FtSDETgf0cK_NNeNiJVd9g.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/-W_oXI_oSymQ8Qj-Apx3HGN_Hu1RTCk5FtSDETgf0cK_NNePiJVd9g.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/-W_oXI_oSymQ8Qj-Apx3HGN_Hu1RTCk5FtSDETgf0cKNNNeCiJU.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/-W_oXI_oSymQ8Qj-Apx3HGN_Hu1RTCk5FtSDETgf0cKNNNeGiJVd9g.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/-W_oXI_oSymQ8Qj-Apx3HGN_Hu1RTCk5FtSDETgf0cKNNNeMiJVd9g.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/-W_oXI_oSymQ8Qj-Apx3HGN_Hu1RTCk5FtSDETgf0cKNNNeNiJVd9g.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/-W_oXI_oSymQ8Qj-Apx3HGN_Hu1RTCk5FtSDETgf0cKNNNePiJVd9g.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/0ybgGDoxxrvAnPhYGzMlQLzuMasz6Df27naeE2mcIbA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/0ybgGDoxxrvAnPhYGzMlQLzuMasz6Df27naeEGmcIbA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/0ybgGDoxxrvAnPhYGzMlQLzuMasz6Df27naeEWmcIbA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/0ybgGDoxxrvAnPhYGzMlQLzuMasz6Df27naeGmmcIbA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/0ybgGDoxxrvAnPhYGzMlQLzuMasz6Df27naeHmmc.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/0ybgGDoxxrvAnPhYGzMlQLzuMasz6Df27naeHWmcIbA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/1Ptgg87LROyAm3K8-C8QSw.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/1Ptgg87LROyAm3K9-C8QSw.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/1Ptgg87LROyAm3Kz-C8.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/2V0aKIcADoYhV6w87xrTKjsSAanIV2U.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/2V0aKIcADoYhV6w87xrTKjsSBanI.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/2V0aKIcADoYhV6w87xrTKjsSC6nIV2U.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/2V0aKIcADoYhV6w87xrTKjsSCKnIV2U.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/3qTpojO2nS2VtkB3KtkQZ1t93kY.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/3qTpojO2nS2VtkB3KtkQZ1tz3kYoaQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/3y996as8bTXq_nANBjzKo3IeZx8z6up5L-aNGe6N.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/3y996as8bTXq_nANBjzKo3IeZx8z6up5L-eNGe6N.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/3y996as8bTXq_nANBjzKo3IeZx8z6up5L-iNGQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/3ZLMEXZEQPLTEPMHTQDAUXP5ZZXCZAEN.ttf",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/3ZLMEXZEQPLTEPMHTQDAUXP5ZZXCZAEN.woff",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/3ZLMEXZEQPLTEPMHTQDAUXP5ZZXCZAEN.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/433XP6QWDVL6KQ5K7ZCOP524TX4LE4RJ.ttf",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/433XP6QWDVL6KQ5K7ZCOP524TX4LE4RJ.woff",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/433XP6QWDVL6KQ5K7ZCOP524TX4LE4RJ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/4iCj6KZ0a9NXjG8dWCs.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/4iCj6KZ0a9NXjG8SWCvLtg.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/4iCj6KZ0a9NXjG8TWCvLtg.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/6ae_4KGrU7VR7bNmaYcb_3TqPA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/6ae_4KGrU7VR7bNmaYcV_3Q.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/6IN5WOLRCYP4G4MOCOHOMXNON6Q7MDAR.ttf",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/6IN5WOLRCYP4G4MOCOHOMXNON6Q7MDAR.woff",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/6IN5WOLRCYP4G4MOCOHOMXNON6Q7MDAR.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/6KBHT5NXCZVM6GHTPKGIR6DXZLQAYIFK.ttf",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/6KBHT5NXCZVM6GHTPKGIR6DXZLQAYIFK.woff",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/6KBHT5NXCZVM6GHTPKGIR6DXZLQAYIFK.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxC9TeA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxCBTeO-U.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/6NU78FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0KxCFTeO-U.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/6QH2ALVTTK7IRVO5MYOQQ3OZNXW5SSS3.ttf",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/6QH2ALVTTK7IRVO5MYOQQ3OZNXW5SSS3.woff",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/6QH2ALVTTK7IRVO5MYOQQ3OZNXW5SSS3.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/6xKhdSpbNNCT-sWACm7JLQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/6xKhdSpbNNCT-sWCCm7JLQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/6xKhdSpbNNCT-sWLCm7JLQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/6xKhdSpbNNCT-sWPCm4.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/6XPIMU23OJVRY676OG5YVJMWEHWICATX.ttf",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/6XPIMU23OJVRY676OG5YVJMWEHWICATX.woff",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/6XPIMU23OJVRY676OG5YVJMWEHWICATX.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/7BXN3ORLQXOR6A3D5ZRM4EDMGISGKSZ2.ttf",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/7BXN3ORLQXOR6A3D5ZRM4EDMGISGKSZ2.woff",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/7BXN3ORLQXOR6A3D5ZRM4EDMGISGKSZ2.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/7cHpv4kjgoGqM7E_A8s52Hs.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/7cHpv4kjgoGqM7E_Ass52Hs.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/7cHpv4kjgoGqM7E_DMs5.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/7cHqv4kjgoGqM7E3_-gs51os.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/7cHqv4kjgoGqM7E3_-gs6FospT4.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/7cHqv4kjgoGqM7E3_-gs6VospT4.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/7cHqv4kjgoGqM7E3p-ks51os.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/7cHqv4kjgoGqM7E3p-ks6FospT4.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/7cHqv4kjgoGqM7E3p-ks6VospT4.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/7YY3ZAAE3TRV2LANYOLXNHTPHLXVWTKH.ttf",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/7YY3ZAAE3TRV2LANYOLXNHTPHLXVWTKH.woff",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/7YY3ZAAE3TRV2LANYOLXNHTPHLXVWTKH.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/8vIf7wUr0m80wwYf0QCXZzYzUoTK8RZQvRd-D1NYbrKRQk8z-A.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/8vIf7wUr0m80wwYf0QCXZzYzUoTK8RZQvRd-D1NYbrKRQkEz-Eec.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/8vIS7w4qzmVxsWxjBZRjr0FKM_3fvg6gTY_9CQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/8vIS7w4qzmVxsWxjBZRjr0FKM_3fvg6jTY8.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/8vIS7w4qzmVxsWxjBZRjr0FKM_3fvg6tTY_9CQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/92zPtBhPNqw79Ij1E865zBUv7mxEIjVBNIg.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/92zPtBhPNqw79Ij1E865zBUv7mxEIjVFNIg8mg.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/92zPtBhPNqw79Ij1E865zBUv7mxEIjVPNIg8mg.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/aFTQ7PxzY382XsXX63LUYJSESKjEXw.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/aFTQ7PxzY382XsXX63LUYJSKSKg.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/aFTQ7PxzY382XsXX63LUYJT2SKjEXw.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/aFTQ7PxzY382XsXX63LUYJTkSKjEXw.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/aFTR7PB1QTsUX8KYvumzEY2tbZX9.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/aFTR7PB1QTsUX8KYvumzEYOtbQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/aFTS7PxzY382XsXX63LUYJSPeKrcWw.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/aFTS7PxzY382XsXX63LUYJSPeKTcW2BO.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/aFTS7PxzY382XsXX63LUYJSPeMTcW2BO.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/aFTS7PxzY382XsXX63LUYJSPeNbcW2BO.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/aFTU7PB1QTsUX8KYthqQBA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/aFTU7PB1QTsUX8KYthSQBLyM.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/B50bF7FGv37QNVWgE0ga--4PbZSRJXrOHcLHLoAYfWTnUc9xEZA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/B50bF7FGv37QNVWgE0ga--4PbZSRJXrOHcLHLoAYfWTnX89x.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/B50WF7FGv37QNVWgE0ga--4Pbb6dDYs.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/B50WF7FGv37QNVWgE0ga--4Pbb6TDYsmgQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/cIflMapbsEk7TDLdtEz1BwkeQI51R5_F.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/cIflMapbsEk7TDLdtEz1BwkeQI51SJ_F7AY.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/cIflMapbsEk7TDLdtEz1BwkeQI51SZ_F7AY.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/cIflMapbsEk7TDLdtEz1BwkeQI51U5_F7AY.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/co3BmWBnlCJ3U42vbbfdwMjZpFjm.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/co3BmWBnlCJ3U42vbbfdwMjZqljm0U0.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/cY9AfjOCX1hbuyalUrK4397yjA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/cY9AfjOCX1hbuyalUrK439DyjJBG.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/cY9AfjOCX1hbuyalUrK439HyjJBG.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/cY9XfjOCX1hbuyalUrK439vogqCz_goCYw7oRd6JFYgzbBZD.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/cY9XfjOCX1hbuyalUrK439vogqCz_goCYw7oRd6JFYkzbBZD.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/cY9XfjOCX1hbuyalUrK439vogqCz_goCYw7oRd6JFYYzbA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/cY9XfjOCX1hbuyalUrK439vogqCz_goCYw7oRYCJFYgzbBZD.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/cY9XfjOCX1hbuyalUrK439vogqCz_goCYw7oRYCJFYkzbBZD.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/cY9XfjOCX1hbuyalUrK439vogqCz_goCYw7oRYCJFYYzbA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/DCZMHDUIIND3BTWZGHAVWGQPO6EB5M4I.ttf",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/DCZMHDUIIND3BTWZGHAVWGQPO6EB5M4I.woff",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/DCZMHDUIIND3BTWZGHAVWGQPO6EB5M4I.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/dFa5ZfeM_74wlPZtksIFYoEf6H2pW2hz.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/dFa5ZfeM_74wlPZtksIFYoEf6HOpWw.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/DtVlJxerQqQm37tzN3wMug9P_g_2og.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/DtVlJxerQqQm37tzN3wMug9P_gH2ojhN.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/ea8JadoyU_jkHdalebHvyWVNdYoIsHe5Hvny4AfcaZE.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/ea8JadoyU_jkHdalebHvyWVNdYoIsHe5Hvny4AfSaZFENA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/ea8JadoyU_jkHdalebHvyWVNdYoIsHe5Hvny4AfTaZFENA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/EJRLQgErUN8XuHNEtX81i9TmEkrnBc1Q-a2fli0.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/EJRLQgErUN8XuHNEtX81i9TmEkrnBc1Q-K2fli0.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/EJRLQgErUN8XuHNEtX81i9TmEkrnBc1Q962f.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/fC1MPZJEZG-e9gHhdI4-NBbfd2ys3SjJCx12wPgf9g-_3F0YdQ88FFcwSCP4.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/fC1MPZJEZG-e9gHhdI4-NBbfd2ys3SjJCx12wPgf9g-_3F0YdQ88FFkwSA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/fC1MPZJEZG-e9gHhdI4-NBbfd2ys3SjJCx12wPgf9g-_3F0YdQ88FFYwSCP4.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/Fh4hPjjqNDz1osh_jX9YfjudpBJBNV5y5wf_k1i58Thkd4qc.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/Fh4hPjjqNDz1osh_jX9YfjudpBJBNV5y5wf_k1i58ThkeIqcUPQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/Fh4hPjjqNDz1osh_jX9YfjudpBJBNV5y5wf_k1i58ThkeYqcUPQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/font",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/font-2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/font-3",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/font-4",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/font-5",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/gNMKW3F-SZuj7xmb-HY6EQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/gNMKW3F-SZuj7xmf-HY.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/gNMKW3F-SZuj7xmQ-HY6EQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/gNMKW3F-SZuj7xmR-HY6EQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/gNMKW3F-SZuj7xmS-HY6EQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/gNMKW3F-SZuj7xnj-HY6EQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/gNMKW3F-SZuj7xnx-HY6EQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/gNMZW3F-SZuj7zOT0IfSjTS16cPh9R-p2xtNcWU.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/gNMZW3F-SZuj7zOT0IfSjTS16cPh9R-psRtNcWU.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/gNMZW3F-SZuj7zOT0IfSjTS16cPh9R-ptRtN.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/gNMZW3F-SZuj7zOT0IfSjTS16cPh9R-puBtNcWU.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/gNMZW3F-SZuj7zOT0IfSjTS16cPh9R-puhtNcWU.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/gNMZW3F-SZuj7zOT0IfSjTS16cPh9R-puxtNcWU.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/gNMZW3F-SZuj7zOT0IfSjTS16cPh9R-pyRtNcWU.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/gyByhwUxId8gMEwcGFU.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/gyByhwUxId8gMEwRGFWfOw.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/gyByhwUxId8gMEwSGFWfOw.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/gyByhwUxId8gMEwTGFWfOw.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/gyByhwUxId8gMEwYGFWfOw.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/HTxwL3I-JCGChYJ8VI-L6OO_au7B47b1z3bWuQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/HTxwL3I-JCGChYJ8VI-L6OO_au7B47b1z3jWuZEC.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/HTxwL3I-JCGChYJ8VI-L6OO_au7B47b1z3nWuZEC.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/i7dOIFdwYjGaAMFtZd_QA1ZbYFc.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/i7dOIFdwYjGaAMFtZd_QA1ZVYFeCGg.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/ieVn2YZDLWuGJpnzaiwFXS9tYtpd59A.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/ieVn2YZDLWuGJpnzaiwFXS9tYtpQ59CjCQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/ieVn2YZDLWuGJpnzaiwFXS9tYtpS59CjCQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/ieVn2YZDLWuGJpnzaiwFXS9tYtpT59CjCQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/ieVq2YZDLWuGJpnzaiwFXS9tYvBRzyFLlZg_f_Ncs2Zq5vBM.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/ieVq2YZDLWuGJpnzaiwFXS9tYvBRzyFLlZg_f_Ncs2Zq6_BM_Xg.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/ieVq2YZDLWuGJpnzaiwFXS9tYvBRzyFLlZg_f_Ncs2Zq6fBM_Xg.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/ieVq2YZDLWuGJpnzaiwFXS9tYvBRzyFLlZg_f_Ncs2Zq6PBM_Xg.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/ijwRs572Xtc6ZYQws9YVwnNGfJ4.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/ijwRs572Xtc6ZYQws9YVwnNIfJ7Cww.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/ijwRs572Xtc6ZYQws9YVwnNJfJ7Cww.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/jizBRFtNs2ka5fXjeivQ4LroWlx-6zsTjmbI.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/jizBRFtNs2ka5fXjeivQ4LroWlx-6zUTjg.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/jizDREVItHgc8qDIbSTKq4XkRiUb2zcLig.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/jizDREVItHgc8qDIbSTKq4XkRiUf2zc.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/jizDREVItHgc8qDIbSTKq4XkRiUQ2zcLig.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/jizDREVItHgc8qDIbSTKq4XkRiUR2zcLig.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/jizDREVItHgc8qDIbSTKq4XkRiUS2zcLig.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/JqzK5SSPQuCQF3t8uOwiUL-taUTtarVKQ9vZ6pJJWlMNxcYwRshvbFE.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/JqzK5SSPQuCQF3t8uOwiUL-taUTtarVKQ9vZ6pJJWlMNxcYwSMhv.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/jVyN7nDnA2uf2zVvFAhhzEsUVuxSzgw.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/jVyN7nDnA2uf2zVvFAhhzEsUWOxS.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/jVyY7nDnA2uf2zVvFAhhzEs-VMSjJpBTfgjwQV3Iy7bHuA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/jVyY7nDnA2uf2zVvFAhhzEs-VMSjJpBTfgjwQV3Iy7jHuF4Q.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLydOxI.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLySOxK-vA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/k3kPo8UDI-1M0wlSV9XAw6lQkqWY8Q82sLyTOxK-vA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/LYjZdHrinEImAoQewU0hyTsPFra4SJ2S8g6N.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/LYjZdHrinEImAoQewU0hyTsPFra4SJOS8g.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/M6X7C56BMVHUUEP2JAWS7SGZ7N6BGP7I.ttf",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/M6X7C56BMVHUUEP2JAWS7SGZ7N6BGP7I.woff",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/M6X7C56BMVHUUEP2JAWS7SGZ7N6BGP7I.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/m8JUjfVPf62XiF7kO-i9aAhAfmKi2Oud.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/m8JUjfVPf62XiF7kO-i9aAhAfmyi2A.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/mFT0WbgRxKvF_Z5eQMO9gx8D1Q.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/mFT0WbgRxKvF_Z5eQMO9gxAD1XJ7.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/mFT0WbgRxKvF_Z5eQMO9gxED1XJ7.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/N0bU2SZBIuF2PU_0A3R1Gd8.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/N0bU2SZBIuF2PU_0AnR1Gd8.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/N0bU2SZBIuF2PU_0DXR1.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/o-0IIpQmx24alC5A4PNr5TRA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/o-0IIpQmx24alC5A4PNr6jRAW_0.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/o-0IIpQmx24alC5A4PNr6zRAW_0.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/O4ZOFGb7hR12Bxqt9ErXQpCpkHScyovU6HfiCQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/O4ZOFGb7hR12Bxqt9ErXQpCpkHScyovU6HjiCYfQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/O4ZOFGb7hR12Bxqt9ErXQpCpkHScyovU6HniCYfQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/O4ZRFGj5hxF0EhjimlIksgg.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/O4ZRFGj5hxF0EhjimlIqsggqlg.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/O4ZRFGj5hxF0EhjimlIrsggqlg.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/OD5cuN2I2mekHmyoU1Kj2AXOd5_7v7gIDn_-ghclfg.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/OD5cuN2I2mekHmyoU1Kj2AXOd5_7v7gIDn_wghc.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/OD5cuN2I2mekHmyoU1Kj2AXOd5_7v7gIDn-eghclfg.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/OD5cuN2I2mekHmyoU1Kj2AXOd5_7v7gIDn-Mghclfg.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/OpNIno8Dg9bX6Bsp3Wq69Tp8fhj6yg.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/OpNIno8Dg9bX6Bsp3Wq69Tpyfhg.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/OpNJno4ck8vc-xYpwWWxli1VWw.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/OpNJno4ck8vc-xYpwWWxliBVWyXD.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/OpNJno4ck8vc-xYpwWWxliJVWyXD.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/OpNJno4ck8vc-xYpwWWxlilVWyXD.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/OpNJno4ck8vc-xYpwWWxliNVWyXD.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/or3nQ6H-1_WfwkMZI_qYFg08vz7ehw.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/or3nQ6H-1_WfwkMZI_qYFrcdmg.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/or3nQ6H-1_WfwkMZI_qYFrgdmgPn.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/or3nQ6H-1_WfwkMZI_qYFrkdmgPn.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/or3nQ6H-1_WfwkMZI_qYFrMdmgPn.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/or3nQ6H-1_WfwkMZI_qYFrodmgPn.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/or3PQ6P12-iJxAIgLa78DkTtAoDhk0oVpaK3YLanFLHpPf2TbLi4J__WTFCW.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/or3PQ6P12-iJxAIgLa78DkTtAoDhk0oVpaK3YLanFLHpPf2TbLi4J_3WTFCW.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/or3PQ6P12-iJxAIgLa78DkTtAoDhk0oVpaK3YLanFLHpPf2TbLi4J_7WTFCW.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/or3PQ6P12-iJxAIgLa78DkTtAoDhk0oVpaK3YLanFLHpPf2TbLi4J_HWTA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/or3PQ6P12-iJxAIgLa78DkTtAoDhk0oVpaK3YLanFLHpPf2TbLi4J_LWTFCW.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/or3PQ6P12-iJxAIgLa78DkTtAoDhk0oVpaK3YLanFLHpPf2TbLi4J_XWTFCW.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/or3PQ6P12-iJxAIgLa78DkTtAoDhk0oVpaK3YLanFLHpPf2TbLi4J_zWTFCW.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/or3yQ6H-1_WfwkMZI_qYPLs1a-t7PU0AbeE9KK5a5ClqOw.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/or3yQ6H-1_WfwkMZI_qYPLs1a-t7PU0AbeE9KK5b5ClqOw.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/or3yQ6H-1_WfwkMZI_qYPLs1a-t7PU0AbeE9KK5Q5ClqOw.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/or3yQ6H-1_WfwkMZI_qYPLs1a-t7PU0AbeE9KK5U5Ck.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/or3yQ6H-1_WfwkMZI_qYPLs1a-t7PU0AbeE9KK5Z5ClqOw.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/or3yQ6H-1_WfwkMZI_qYPLs1a-t7PU0AbeE9KK7uxQxXAuk.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/or3yQ6H-1_WfwkMZI_qYPLs1a-t7PU0AbeEPKK5a5ClqOw.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/or3yQ6H-1_WfwkMZI_qYPLs1a-t7PU0AbeEPKK5b5ClqOw.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/or3yQ6H-1_WfwkMZI_qYPLs1a-t7PU0AbeEPKK5Q5ClqOw.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/or3yQ6H-1_WfwkMZI_qYPLs1a-t7PU0AbeEPKK5U5Ck.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/or3yQ6H-1_WfwkMZI_qYPLs1a-t7PU0AbeEPKK5Z5ClqOw.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/or3yQ6H-1_WfwkMZI_qYPLs1a-t7PU0AbeEPKK7uxQxXAuk.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/oY1y8evIr7j9P3TN9YwNAdyjzUyDKkKdAGOJh1UlLE0YhQAdhCZOn33DmtnfPQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/oY1y8evIr7j9P3TN9YwNAdyjzUyDKkKdAGOJh1UlLE0YhQAdhCZOn33EmtnfPQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/oY1y8evIr7j9P3TN9YwNAdyjzUyDKkKdAGOJh1UlLE0YhQAdhCZOn33Hmtk.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/oY1y8evIr7j9P3TN9YwNAdyjzUyDKkKdAGOJh1UlLE0YhQAdhCZOn33ImtnfPQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/oY1y8evIr7j9P3TN9YwNAdyjzUyDKkKdAGOJh1UlLE0YhQAdhCZOn33JmtnfPQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/oY1y8evIr7j9P3TN9YwNAdyjzUyDKkKdAGOJh1UlLE0YhQAdhCZOn33KmtnfPQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/pxigypc9vsFDm051Uf6KVwgkfoSbSnNPooZAN0lInHGpCWNE27lgU-XJojENuu-2oy4H2w.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/pxigypc9vsFDm051Uf6KVwgkfoSbSnNPooZAN0lInHGpCWNE27lgU-XJojENuu-2oyAH297Y.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/pxiTypc9vsFDm051Uf6KVwgkfoSxQ0GsQv8ToedPibnr0She1YmV.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/pxiTypc9vsFDm051Uf6KVwgkfoSxQ0GsQv8ToedPibnr0SZe1Q.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/qFdH35WCmI96Ajtm81GhU9vyww.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/qFdH35WCmI96Ajtm81GlU9s.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/qFdH35WCmI96Ajtm81GoU9vyww.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/qFdH35WCmI96Ajtm81GqU9vyww.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/qFdH35WCmI96Ajtm81GrU9vyww.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/qFdR35CBi4tvBz81xy7WG7ep-BQAY7Krj7feObpH_9ahg9U.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/qFdR35CBi4tvBz81xy7WG7ep-BQAY7Krj7feObpH_9aug9UKQw.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/qFdR35CBi4tvBz81xy7WG7ep-BQAY7Krj7feObpH_9avg9UKQw.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/QGYvz_MVcBeNP4NJtEtq.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/QGYvz_MVcBeNP4NJuktqQ4E.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/QGYwz_0dZAGKJJ4t3FFkc3Q8AkNP9Pj2Y8WEEQgs.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/QGYwz_0dZAGKJJ4t3FFkc3Q8AkNP9Pj2Y8WEHwgsm6Y.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/qkB9XvYC6trAT55ZBi1ueQVIjQTD-JrIH2G7nytkHRyQ8p4wUje6bg.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/qkB9XvYC6trAT55ZBi1ueQVIjQTD-JrIH2G7nytkHRyQ8p4wUjm6bnEr.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/Qw3GZR9ZHiDnImG6-NEMQ41wby8WbHoEjw.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/Qw3GZR9ZHiDnImG6-NEMQ41wby8WbHQEj6M7.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/Qw3GZR9ZHiDnImG6-NEMQ41wby8WbHUEj6M7.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/R70BjzAei_CDNLfgZxrW6wrZOF2WX5KZmA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/R70BjzAei_CDNLfgZxrW6wrZOF2WX5yZmF2a.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/raxdHjafvdAIOju4GcIfJH0i7zi50X3zRtuLNiMS0d6iDr-MD5Si9NGLqGi0djON754.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/raxdHjafvdAIOju4GcIfJH0i7zi50X3zRtuLNiMS0d6iDr-MD5Si9NGLqGi0dTON754.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/raxdHjafvdAIOju4GcIfJH0i7zi50X3zRtuLNiMS0d6iDr-MD5Si9NGLqGi0eDON.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/raxdHjafvdAIOju4GcIfJH0i7zi50X3zRtuLNiMS0d6iDr-MD5Si9NGLqGi0ezON754.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/raxdHjafvdAIOju4GcIfJH0i7zi50X3zRtuLNiMS0d6iDr-MD5Si9NGLqGi0fDON754.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/raxoHjafvdAIOju4GcIfJH0i7zi50X3zRtuLNiMS0fSgJk5kkw.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/raxoHjafvdAIOju4GcIfJH0i7zi50X3zRtuLNiMS0fSjJk5kkw.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/raxoHjafvdAIOju4GcIfJH0i7zi50X3zRtuLNiMS0fSqJk5kkw.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/raxoHjafvdAIOju4GcIfJH0i7zi50X3zRtuLNiMS0fStJk5kkw.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/raxoHjafvdAIOju4GcIfJH0i7zi50X3zRtuLNiMS0fSuJk4.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/rnCr-xNNww_2s0amA9M0knj-SA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/rnCr-xNNww_2s0amA9M2knj-SA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/rnCr-xNNww_2s0amA9M3knj-SA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/rnCr-xNNww_2s0amA9M5kng.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/rnCr-xNNww_2s0amA9M9knj-SA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/rnCs-xNNww_2s0amA9vKsW3BafY.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/rnCs-xNNww_2s0amA9vKsW3FafadWQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/rnCs-xNNww_2s0amA9vKsW3MafadWQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/rnCs-xNNww_2s0amA9vKsW3OafadWQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/rnCs-xNNww_2s0amA9vKsW3PafadWQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/rnCt-xNNww_2s0amA9M8on7mTMuk.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/rnCt-xNNww_2s0amA9M8onfmTMuk.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/rnCt-xNNww_2s0amA9M8onrmTA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/rnCt-xNNww_2s0amA9M8onTmTMuk.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/rnCt-xNNww_2s0amA9M8onXmTMuk.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/RrQXbohi_ic6B3yVSzGBrMxQaKct.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/RrQXbohi_ic6B3yVSzGBrMxQZqctI8w.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/RXZ46KOEDGXL7HVIXMJIAZICDYUR5QZJ.ttf",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/RXZ46KOEDGXL7HVIXMJIAZICDYUR5QZJ.woff",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/RXZ46KOEDGXL7HVIXMJIAZICDYUR5QZJ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/SB2OEB6IKZPRR6JT4GFJ2TFT6HBB6AZN.ttf",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/SB2OEB6IKZPRR6JT4GFJ2TFT6HBB6AZN.woff",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/SB2OEB6IKZPRR6JT4GFJ2TFT6HBB6AZN.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/SIH66VPT4WS2HIF5PEJNDU4INNUF54LG.ttf",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/SIH66VPT4WS2HIF5PEJNDU4INNUF54LG.woff",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/SIH66VPT4WS2HIF5PEJNDU4INNUF54LG.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/SZcl3EX9IbbyeJ8aOluD52KXgUA_7Ed1CV_uAnVe.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/SZcl3EX9IbbyeJ8aOluD52KXgUA_7Ed1CV7uAnVe.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/SZcl3EX9IbbyeJ8aOluD52KXgUA_7Ed1CVHuAg.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/SZcl3EX9IbbyeJ8aOluD52KXgUA_7Ed1CVXuAnVe.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/SZcl3EX9IbbyeJ8aOluD52KXgUA_7Ed1CVzuAnVe.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPx_cwhsk.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPx3cwhsk.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPx7cwhsk.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPxDcwg.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPxPcwhsk.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/tDbv2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8yKwBNntkaToggR7BYRbKPxTcwhsk.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8-qxTN1OVgaY.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8-qxTNFOVgaY.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8-qxTNVOVgaY.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8-qxTOlOV.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8-qxTOVOVgaY.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/tDbY2o-flEEny0FZhsfKu5WU4zr3E_BX0PnT8RD8-qxTPlOVgaY.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/THF5L6EHVL4N4NNE3GYDZNZSHABL5CH5.ttf",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/THF5L6EHVL4N4NNE3GYDZNZSHABL5CH5.woff",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/THF5L6EHVL4N4NNE3GYDZNZSHABL5CH5.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/TK3_WkUHHAIjg75cFRf3bXL8LICs1xZosUhiZTaR.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/TK3_WkUHHAIjg75cFRf3bXL8LICs1xZosUJiZTaR.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/TK3_WkUHHAIjg75cFRf3bXL8LICs1xZosUliZTaR.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/TK3_WkUHHAIjg75cFRf3bXL8LICs1xZosUtiZTaR.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/TK3_WkUHHAIjg75cFRf3bXL8LICs1xZosUZiZQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/tss0ApVBdCYD5Q7hcxTE1ArZ0bb_iXxi2g.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/tss0ApVBdCYD5Q7hcxTE1ArZ0bb-iXxi2g.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/tss0ApVBdCYD5Q7hcxTE1ArZ0bbwiXw.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/tss4AoFBci4C4gvhPXrt3wjT1MqSzhA4t7IIcncBiwKjhFyRHQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/tss4AoFBci4C4gvhPXrt3wjT1MqSzhA4t7IIcncBiwKthFw.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/tss5ApVBdCYD5Q7hcxTE1ArZ0Zz8oY2KRmwvKhhv8la6o3ms.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/tss5ApVBdCYD5Q7hcxTE1ArZ0Zz8oY2KRmwvKhhv8la6rHmsJCQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/tss5ApVBdCYD5Q7hcxTE1ArZ0Zz8oY2KRmwvKhhv8la6rXmsJCQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/tss5ApVBdCYD5Q7hcxTE1ArZ0Zz8oY2KRmwvKhhvHlG6o3ms.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/tss5ApVBdCYD5Q7hcxTE1ArZ0Zz8oY2KRmwvKhhvHlG6rHmsJCQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/tss5ApVBdCYD5Q7hcxTE1ArZ0Zz8oY2KRmwvKhhvHlG6rXmsJCQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/TuGOUUFxWphYQ6YI6q9Xp61FQzxDRKmzr1lWfxk.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/TuGOUUFxWphYQ6YI6q9Xp61FQzxDRKmzr1lYfxldCA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/va9I4kzIxd1KFrBmQeNHkQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/va9I4kzIxd1KFrBnQeNHkQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/va9I4kzIxd1KFrBoQeM.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/vEFF2_tTDB4M7-auWDN0ahZJW3IX2iZPwg3BucvUtfykA3r4cXk.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/vEFF2_tTDB4M7-auWDN0ahZJW3IX2iZPwg3BucvUtfykAHr4cXk.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/vEFF2_tTDB4M7-auWDN0ahZJW3IX2iZPwg3BucvUtfykAnr4cXk.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/vEFF2_tTDB4M7-auWDN0ahZJW3IX2iZPwg3BucvUtfykCXr4cXk.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/vEFF2_tTDB4M7-auWDN0ahZJW3IX2iZPwg3BucvUtfykDnr4cXk.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/vEFF2_tTDB4M7-auWDN0ahZJW3IX2iZPwg3BucvUtfykDXr4.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/vEFH2_tTDB4M7-auWDN0ahZJW1ge6NmXq2ZbF8zBfb98SUr-aX2AzA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/vEFH2_tTDB4M7-auWDN0ahZJW1ge6NmXq2ZbF8zBfb98SUr0aX2AzA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/vEFH2_tTDB4M7-auWDN0ahZJW1ge6NmXq2ZbF8zBfb98SUr1aX2AzA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/vEFH2_tTDB4M7-auWDN0ahZJW1ge6NmXq2ZbF8zBfb98SUr3aX2AzA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/vEFH2_tTDB4M7-auWDN0ahZJW1ge6NmXq2ZbF8zBfb98SUr5aX2AzA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/vEFH2_tTDB4M7-auWDN0ahZJW1ge6NmXq2ZbF8zBfb98SUr6aX0.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/VuJudNvK2Ib2ppdWYq31yFn72hxIv0u04CDkWdTKRA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/VuJudNvK2Ib2ppdWYq31yFn72hxIv0u04CDlWdTKRA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/VuJudNvK2Ib2ppdWYq31yFn72hxIv0u04CDrWdQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/WZY5PMNTII6NKOB2TTIAX7QVAWMSY2DQ.ttf",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/WZY5PMNTII6NKOB2TTIAX7QVAWMSY2DQ.woff",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/WZY5PMNTII6NKOB2TTIAX7QVAWMSY2DQ.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/xn7gYHE41ni1AdIRggexSg.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/xn7gYHE41ni1AdIRggixSuXd.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/xn7gYHE41ni1AdIRggmxSuXd.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/xn7gYHE41ni1AdIRggOxSuXd.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/xn7gYHE41ni1AdIRggqxSuXd.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/xn7gYHE41ni1AdIRggSxSuXd.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/XRXG3ISXn0dBMcibU6jlAqr3ejLv5OLZYiYXik6dRUDQfvT5.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/XRXG3ISXn0dBMcibU6jlAqr3ejLv5OLZYiYXik6dRW_Qfg.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/XRXG3ISXn0dBMcibU6jlAqr3ejLv5OLZYiYXik6dRWDQfvT5.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/XRXG3ISXn0dBMcibU6jlAqr3ejLv5OLZYiYXik6dRWHQfvT5.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/Yq6R-LCVXSLy9uPBwlATrO96kigt.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/Yq6R-LCVXSLy9uPBwlATrOF6kg.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/Yq6R-LCVXSLy9uPBwlATrOJ6kigt.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/Yq6R-LCVXSLy9uPBwlATrOV6kigt.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/Yq6R-LCVXSLy9uPBwlATrOx6kigt.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/zOLy4prXmrtY-uT9wrI.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/zOLy4prXmrtY-uTzwrKz6A.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxaKYbABA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxdKYbABA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxeKYY.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxQKYbABA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxRKYbABA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/files/zYXzKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1syxTKYbABA.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/fraunces-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/funneldisplay-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/funnelsans-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/gabarito-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/geist-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/geistmono-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/geologica-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/golostext-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/grenze-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/grenzegotisch-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/hankengrotesk-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/hedviglettersserif-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/heptaslab-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/hostgrotesk-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/ibmplexmono-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/ibmplexsans-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/instrumentsans-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/instrumentserif-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/jetbrainsmono-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/jost-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/karla-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/leaguegothic-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/librecaslondisplay-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/librefranklin-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/literata-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/manrope-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/martianmono-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/monasans-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/newsreader-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/onest-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/oswald-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/outfit-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/overpass-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/prata-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/publicsans-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/radiocanada-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/radiocanadabig-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/redhatdisplay-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/redhatmono-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/redhattext-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/sairacondensed-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/schibstedgrotesk-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/silkscreen-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/sixcaps-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/sofiasans-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/sofiasansextracondensed-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/sourceserif4-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/spectral-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/splinesansmono-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/syne-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/ultra-LICENSE.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/vollkorn-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/wixmadefordisplay-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/wixmadefortext-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/yesevaone-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/youngserif-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/fonts/zillaslab-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/js/compare.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/js/core.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/js/fan.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/js/headline.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/js/how.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/js/themes.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/js/wheel.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/LICENSES.md",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hallmark/made/atelier-architect/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/atelier-architect/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/atelier-architect/photos/1280px-342_East_Church_Street_Frederick_MD1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/atelier-architect/photos/1280px-A_section_of_an_architectural_model_on_Durham.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/atelier-architect/photos/1280px-At_Chiltern_Open_Air_Museum_2024_010.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/atelier-architect/photos/1280px-Heiligengrabe__Kloster_Stift_zum_Heiligengrabe__Abtei__Appartement_im_Dormitorium_--_2017_--_7261-7.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/atelier-architect/photos/1920px-342_East_Church_Street_Frederick_MD1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/atelier-architect/photos/1920px-A_section_of_an_architectural_model_on_Durham.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/atelier-architect/photos/1920px-At_Chiltern_Open_Air_Museum_2024_010.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/atelier-architect/photos/1920px-Heiligengrabe__Kloster_Stift_zum_Heiligengrabe__Abtei__Appartement_im_Dormitorium_--_2017_--_7261-7.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/atelier-architect/photos/960px-342_East_Church_Street_Frederick_MD1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/atelier-architect/photos/960px-A_section_of_an_architectural_model_on_Durham.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/atelier-architect/photos/960px-At_Chiltern_Open_Air_Museum_2024_010.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/atelier-architect/photos/960px-Heiligengrabe__Kloster_Stift_zum_Heiligengrabe__Abtei__Appartement_im_Dormitorium_--_2017_--_7261-7.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/atelier-architect/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/atelier-architect/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/bloom-swim-school/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/bloom-swim-school/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/bloom-swim-school/photos/1280px-Swimming_Pool_in_a_hotel_in_Tamil_Nadu_03.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/bloom-swim-school/photos/1280px-Swimming_Pool_lanes_and_starting_blocks_at_AIS.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/bloom-swim-school/photos/1920px-Swimming_Pool_in_a_hotel_in_Tamil_Nadu_03.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/bloom-swim-school/photos/1920px-Swimming_Pool_lanes_and_starting_blocks_at_AIS.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/bloom-swim-school/photos/960px-Swimming_Pool_in_a_hotel_in_Tamil_Nadu_03.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/bloom-swim-school/photos/960px-Swimming_Pool_lanes_and_starting_blocks_at_AIS.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/bloom-swim-school/photos/Swimming_Pool_in_a_hotel_in_Tamil_Nadu_03.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/bloom-swim-school/photos/Swimming_Pool_lanes_and_starting_blocks_at_AIS.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/bloom-swim-school/styles.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/bloom-swim-school/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/cobalt-database-client/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/cobalt-database-client/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/cobalt-database-client/styles.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/cobalt-database-client/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/coral-physio-booking/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/coral-physio-booking/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/coral-physio-booking/photos/1280px-Close-up_Hand_holding_dumbbell_in_gym.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/coral-physio-booking/photos/1280px-Human_running_gait_-_terminal_swing_to_heel_strike_(runner_with_Asics_Metaspeed_Edge_Paris_-_2024_Ljubljana_Marathon).jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/coral-physio-booking/photos/1280px-Young_businesswoman_holding_her_smartphone_in_the_home_office.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/coral-physio-booking/photos/1920px-Close-up_Hand_holding_dumbbell_in_gym.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/coral-physio-booking/photos/1920px-Human_running_gait_-_terminal_swing_to_heel_strike_(runner_with_Asics_Metaspeed_Edge_Paris_-_2024_Ljubljana_Marathon).jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/coral-physio-booking/photos/1920px-Young_businesswoman_holding_her_smartphone_in_the_home_office.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/coral-physio-booking/photos/960px-Close-up_Hand_holding_dumbbell_in_gym.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/coral-physio-booking/photos/960px-Human_running_gait_-_terminal_swing_to_heel_strike_(runner_with_Asics_Metaspeed_Edge_Paris_-_2024_Ljubljana_Marathon).jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/coral-physio-booking/photos/960px-Young_businesswoman_holding_her_smartphone_in_the_home_office.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/coral-physio-booking/styles.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/coral-physio-booking/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-couples-budget/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-couples-budget/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-couples-budget/styles.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-couples-budget/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-mobile-bike-repair/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-mobile-bike-repair/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-mobile-bike-repair/photos/1280px-Christiania_Winter_-_Cycling_in_Winter_in_Copenhagen_(3296897865).jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-mobile-bike-repair/photos/1280px-Raleigh_lady_s_loop_frame_bicycle_1930s.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-mobile-bike-repair/photos/1920px-Christiania_Winter_-_Cycling_in_Winter_in_Copenhagen_(3296897865).jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-mobile-bike-repair/photos/1920px-Raleigh_lady_s_loop_frame_bicycle_1930s.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-mobile-bike-repair/photos/960px-Christiania_Winter_-_Cycling_in_Winter_in_Copenhagen_(3296897865).jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-mobile-bike-repair/photos/960px-Raleigh_lady_s_loop_frame_bicycle_1930s.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-mobile-bike-repair/styles.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-mobile-bike-repair/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-photo-rename-cli/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-photo-rename-cli/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-photo-rename-cli/photos/1280px-Almond_croissant_-_Workshop_Coffee_Lab_2025-06-27.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-photo-rename-cli/photos/1280px-Conwy_Estuary_at_dusk_-_geograph.org.uk_-_4556293.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-photo-rename-cli/photos/1280px-Cycling_Amsterdam_03.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-photo-rename-cli/photos/1280px-Esztergom_by_night_01_-_Simor_János_utca.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-photo-rename-cli/photos/1280px-Herbert_Lake_beim_Icefields_Parkway.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-photo-rename-cli/photos/1280px-Sunset_Agta_Beach_Resort_-_Biliran_Philippines.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-photo-rename-cli/photos/1920px-Almond_croissant_-_Workshop_Coffee_Lab_2025-06-27.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-photo-rename-cli/photos/1920px-Conwy_Estuary_at_dusk_-_geograph.org.uk_-_4556293.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-photo-rename-cli/photos/1920px-Cycling_Amsterdam_03.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-photo-rename-cli/photos/1920px-Esztergom_by_night_01_-_Simor_János_utca.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-photo-rename-cli/photos/1920px-Herbert_Lake_beim_Icefields_Parkway.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-photo-rename-cli/photos/1920px-Sunset_Agta_Beach_Resort_-_Biliran_Philippines.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-photo-rename-cli/photos/960px-Almond_croissant_-_Workshop_Coffee_Lab_2025-06-27.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-photo-rename-cli/photos/960px-Conwy_Estuary_at_dusk_-_geograph.org.uk_-_4556293.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-photo-rename-cli/photos/960px-Cycling_Amsterdam_03.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-photo-rename-cli/photos/960px-Esztergom_by_night_01_-_Simor_János_utca.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-photo-rename-cli/photos/960px-Herbert_Lake_beim_Icefields_Parkway.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-photo-rename-cli/photos/960px-Sunset_Agta_Beach_Resort_-_Biliran_Philippines.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-photo-rename-cli/styles.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-photo-rename-cli/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-ramen-counter/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-ramen-counter/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-ramen-counter/photos/1280px-Barhocker_(fcm).jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-ramen-counter/photos/1280px-Dalian_Liaoning_China_Noodlemaker-01.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-ramen-counter/photos/1280px-Making_of_chinese_noodles_5166105.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-ramen-counter/photos/1920px-Barhocker_(fcm).jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-ramen-counter/photos/1920px-Dalian_Liaoning_China_Noodlemaker-01.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-ramen-counter/photos/1920px-Making_of_chinese_noodles_5166105.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-ramen-counter/photos/960px-Barhocker_(fcm).jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-ramen-counter/photos/960px-Dalian_Liaoning_China_Noodlemaker-01.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-ramen-counter/photos/960px-Making_of_chinese_noodles_5166105.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-ramen-counter/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/custom-ramen-counter/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/darkroom-photographer/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/darkroom-photographer/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/darkroom-photographer/photos/1280px-A_boat_rests_unused_near_the_Acheloos_river_delta.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/darkroom-photographer/photos/1280px-Bristol_MMB_«D8_River_Trym.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/darkroom-photographer/photos/1280px-Fishing_Boat_Nets_Sholayar_Valparai_Feb26_A7CR_10156.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/darkroom-photographer/photos/1280px-Matsalu_onn.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/darkroom-photographer/photos/1280px-Po_River_Delta_aerial_2.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/darkroom-photographer/photos/1280px-Shrimp_fisherman.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/darkroom-photographer/photos/1280px-Traditional_floating_vegetable_garden_34.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/darkroom-photographer/photos/1280px-Water_reflection_of_a_boy_feeding_hay_to_a_cow_in_a_paddy_field_at_golden_hour_in_Laos.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/darkroom-photographer/photos/1920px-A_boat_rests_unused_near_the_Acheloos_river_delta.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/darkroom-photographer/photos/1920px-Bristol_MMB_«D8_River_Trym.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/darkroom-photographer/photos/1920px-Fishing_Boat_Nets_Sholayar_Valparai_Feb26_A7CR_10156.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/darkroom-photographer/photos/1920px-Matsalu_onn.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/darkroom-photographer/photos/1920px-Po_River_Delta_aerial_2.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/darkroom-photographer/photos/1920px-Shrimp_fisherman.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/darkroom-photographer/photos/1920px-Traditional_floating_vegetable_garden_34.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/darkroom-photographer/photos/1920px-Water_reflection_of_a_boy_feeding_hay_to_a_cow_in_a_paddy_field_at_golden_hour_in_Laos.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/darkroom-photographer/photos/960px-A_boat_rests_unused_near_the_Acheloos_river_delta.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/darkroom-photographer/photos/960px-Bristol_MMB_«D8_River_Trym.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/darkroom-photographer/photos/960px-Fishing_Boat_Nets_Sholayar_Valparai_Feb26_A7CR_10156.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/darkroom-photographer/photos/960px-Matsalu_onn.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/darkroom-photographer/photos/960px-Po_River_Delta_aerial_2.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/darkroom-photographer/photos/960px-Shrimp_fisherman.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/darkroom-photographer/photos/960px-Traditional_floating_vegetable_garden_34.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/darkroom-photographer/photos/960px-Water_reflection_of_a_boy_feeding_hay_to_a_cow_in_a_paddy_field_at_golden_hour_in_Laos.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/darkroom-photographer/styles.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/darkroom-photographer/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/furrow-farm-shop/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/furrow-farm-shop/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/furrow-farm-shop/photos/1280px-2014_Fields_Swaledale_Gunnerside.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/furrow-farm-shop/photos/1280px-A_cup_of_coffee_in_Mohk.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/furrow-farm-shop/photos/1280px-Apples_in_basket_2018_G1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/furrow-farm-shop/photos/1280px-Cow_on_Pupers.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/furrow-farm-shop/photos/1280px-Dülmen__Börnste__Tropfen_am_Gatter_--_2020_--_3592.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/furrow-farm-shop/photos/1280px-Matin_ensoleillé_au_marché_de_la_Terrasse.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/furrow-farm-shop/photos/1280px-Steelport_6-Inch_Chef_Knife_(2026)-104A6580.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/furrow-farm-shop/photos/1280px-Two_fried_eggs.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/furrow-farm-shop/photos/1920px-2014_Fields_Swaledale_Gunnerside.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/furrow-farm-shop/photos/1920px-A_cup_of_coffee_in_Mohk.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/furrow-farm-shop/photos/1920px-Apples_in_basket_2018_G1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/furrow-farm-shop/photos/1920px-Cow_on_Pupers.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/furrow-farm-shop/photos/1920px-Dülmen__Börnste__Tropfen_am_Gatter_--_2020_--_3592.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/furrow-farm-shop/photos/1920px-Matin_ensoleillé_au_marché_de_la_Terrasse.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/furrow-farm-shop/photos/1920px-Steelport_6-Inch_Chef_Knife_(2026)-104A6580.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/furrow-farm-shop/photos/1920px-Two_fried_eggs.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/furrow-farm-shop/photos/2014_Fields_Swaledale_Gunnerside.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/furrow-farm-shop/photos/960px-2014_Fields_Swaledale_Gunnerside.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/furrow-farm-shop/photos/960px-A_cup_of_coffee_in_Mohk.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/furrow-farm-shop/photos/960px-Apples_in_basket_2018_G1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/furrow-farm-shop/photos/960px-Cow_on_Pupers.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/furrow-farm-shop/photos/960px-Dülmen__Börnste__Tropfen_am_Gatter_--_2020_--_3592.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/furrow-farm-shop/photos/960px-Matin_ensoleillé_au_marché_de_la_Terrasse.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/furrow-farm-shop/photos/960px-Steelport_6-Inch_Chef_Knife_(2026)-104A6580.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/furrow-farm-shop/photos/960px-Two_fried_eggs.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/furrow-farm-shop/styles.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/furrow-farm-shop/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/hedgerow-dog-walking/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/hedgerow-dog-walking/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/hedgerow-dog-walking/photos/1280px-Human–canine_friendship_-_girl_hugging_her_dog_tightly_at_golden_hour_in_Laos.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/hedgerow-dog-walking/photos/1280px-Liver_yellow_dog_in_the_water_looking_at_viewer_at_golden_hour_in_Don_Det_Laos.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/hedgerow-dog-walking/photos/1280px-Slezské_Beskydy_-_Rytířská_stezka_(cesta_Nýdek_-_Velká_Čantoryje).JPG",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/hedgerow-dog-walking/photos/1920px-Human–canine_friendship_-_girl_hugging_her_dog_tightly_at_golden_hour_in_Laos.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/hedgerow-dog-walking/photos/1920px-Liver_yellow_dog_in_the_water_looking_at_viewer_at_golden_hour_in_Don_Det_Laos.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/hedgerow-dog-walking/photos/1920px-Slezské_Beskydy_-_Rytířská_stezka_(cesta_Nýdek_-_Velká_Čantoryje).JPG",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/hedgerow-dog-walking/photos/960px-Human–canine_friendship_-_girl_hugging_her_dog_tightly_at_golden_hour_in_Laos.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/hedgerow-dog-walking/photos/960px-Liver_yellow_dog_in_the_water_looking_at_viewer_at_golden_hour_in_Don_Det_Laos.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/hedgerow-dog-walking/photos/960px-Slezské_Beskydy_-_Rytířská_stezka_(cesta_Nýdek_-_Velká_Čantoryje).JPG",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/hedgerow-dog-walking/styles.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/hedgerow-dog-walking/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/hum-coding-camp/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/hum-coding-camp/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/hum-coding-camp/photos/1280px-Soldering_a_0805.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/hum-coding-camp/photos/1920px-Soldering_a_0805.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/hum-coding-camp/photos/960px-Soldering_a_0805.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/hum-coding-camp/styles.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/hum-coding-camp/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-pottery-school/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-pottery-school/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-pottery-school/photos/1280px-Clay_Pottery_Drying.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-pottery-school/photos/1280px-Flookan_community_ceramics_studio__Market_House__St_Austell__Cornwall_-_October_2024_(5).jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-pottery-school/photos/1280px-Grnčarska_radionica.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-pottery-school/photos/1280px-Play_with_a_wheel.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-pottery-school/photos/1280px-Pottery_at_the_Chokhi_Dhani_Resort_Panchkula_32.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-pottery-school/photos/1280px-Pottery_workshop_at_Odisha_Crafts_Museum_02.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-pottery-school/photos/1920px-Clay_Pottery_Drying.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-pottery-school/photos/1920px-Flookan_community_ceramics_studio__Market_House__St_Austell__Cornwall_-_October_2024_(5).jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-pottery-school/photos/1920px-Grnčarska_radionica.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-pottery-school/photos/1920px-Play_with_a_wheel.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-pottery-school/photos/1920px-Pottery_at_the_Chokhi_Dhani_Resort_Panchkula_32.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-pottery-school/photos/1920px-Pottery_workshop_at_Odisha_Crafts_Museum_02.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-pottery-school/photos/960px-Clay_Pottery_Drying.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-pottery-school/photos/960px-Flookan_community_ceramics_studio__Market_House__St_Austell__Cornwall_-_October_2024_(5).jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-pottery-school/photos/960px-Grnčarska_radionica.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-pottery-school/photos/960px-Play_with_a_wheel.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-pottery-school/photos/960px-Pottery_at_the_Chokhi_Dhani_Resort_Panchkula_32.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-pottery-school/photos/960px-Pottery_workshop_at_Odisha_Crafts_Museum_02.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-pottery-school/photos/Play_with_a_wheel.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-pottery-school/photos/Pottery_at_the_Chokhi_Dhani_Resort_Panchkula_32.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-pottery-school/styles.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-pottery-school/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-stoneware-shop/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-stoneware-shop/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-stoneware-shop/photos/1280px-Almond_croissant_-_Workshop_Coffee_Lab_2025-06-27.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-stoneware-shop/photos/1280px-Ceramics_studio__Epworth_Studios__Liskeard__Cornwall_-_September_2026_(2).jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-stoneware-shop/photos/1280px-Dörfleins_Töpferei_Döppmann-20190714-RM-194552.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-stoneware-shop/photos/1280px-Onta_Pottery_drying_in_the_sun.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-stoneware-shop/photos/1280px-Ordinary_chickpeas_in_a_ceramic_bowl.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-stoneware-shop/photos/1280px-Pottery_oven_in_Nová_budova_Národního_muzea_Prague.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-stoneware-shop/photos/1280px-Tea_in_action.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-stoneware-shop/photos/1920px-Almond_croissant_-_Workshop_Coffee_Lab_2025-06-27.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-stoneware-shop/photos/1920px-Ceramics_studio__Epworth_Studios__Liskeard__Cornwall_-_September_2026_(2).jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-stoneware-shop/photos/1920px-Dörfleins_Töpferei_Döppmann-20190714-RM-194552.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-stoneware-shop/photos/1920px-Onta_Pottery_drying_in_the_sun.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-stoneware-shop/photos/1920px-Ordinary_chickpeas_in_a_ceramic_bowl.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-stoneware-shop/photos/1920px-Pottery_oven_in_Nová_budova_Národního_muzea_Prague.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-stoneware-shop/photos/1920px-Tea_in_action.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-stoneware-shop/photos/960px-Almond_croissant_-_Workshop_Coffee_Lab_2025-06-27.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-stoneware-shop/photos/960px-Ceramics_studio__Epworth_Studios__Liskeard__Cornwall_-_September_2026_(2).jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-stoneware-shop/photos/960px-Dörfleins_Töpferei_Döppmann-20190714-RM-194552.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-stoneware-shop/photos/960px-Onta_Pottery_drying_in_the_sun.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-stoneware-shop/photos/960px-Ordinary_chickpeas_in_a_ceramic_bowl.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-stoneware-shop/photos/960px-Pottery_oven_in_Nová_budova_Národního_muzea_Prague.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-stoneware-shop/photos/960px-Tea_in_action.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-stoneware-shop/photos/Ceramics_studio__Epworth_Studios__Liskeard__Cornwall_-_September_2026_(2).jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-stoneware-shop/styles.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/kiln-stoneware-shop/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-jazz-club/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-jazz-club/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-jazz-club/photos/1280px-Ansambel_SkaMeika´.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-jazz-club/photos/1280px-Cocktail-Bar_(Kleines_Phi)_in_Hamburg.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-jazz-club/photos/1280px-Crest_kitchenette_motel_stairwell.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-jazz-club/photos/1280px-Cure_cocktail_bar_New_Orleans_2011.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-jazz-club/photos/1280px-Fresh_Mojito_Premium.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-jazz-club/photos/1280px-Gin_and_tonic_with_lemon.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-jazz-club/photos/1280px-Kratzen_at_Puch_Open_Air_2024_02.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-jazz-club/photos/1280px-Lights_(2011-04-24_by_Ian_T._McFarland).jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-jazz-club/photos/1920px-Ansambel_SkaMeika´.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-jazz-club/photos/1920px-Cocktail-Bar_(Kleines_Phi)_in_Hamburg.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-jazz-club/photos/1920px-Crest_kitchenette_motel_stairwell.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-jazz-club/photos/1920px-Cure_cocktail_bar_New_Orleans_2011.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-jazz-club/photos/1920px-Fresh_Mojito_Premium.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-jazz-club/photos/1920px-Gin_and_tonic_with_lemon.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-jazz-club/photos/1920px-Kratzen_at_Puch_Open_Air_2024_02.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-jazz-club/photos/1920px-Lights_(2011-04-24_by_Ian_T._McFarland).jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-jazz-club/photos/960px-Ansambel_SkaMeika´.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-jazz-club/photos/960px-Cocktail-Bar_(Kleines_Phi)_in_Hamburg.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-jazz-club/photos/960px-Crest_kitchenette_motel_stairwell.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-jazz-club/photos/960px-Cure_cocktail_bar_New_Orleans_2011.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-jazz-club/photos/960px-Fresh_Mojito_Premium.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-jazz-club/photos/960px-Gin_and_tonic_with_lemon.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-jazz-club/photos/960px-Kratzen_at_Puch_Open_Air_2024_02.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-jazz-club/photos/960px-Lights_(2011-04-24_by_Ian_T._McFarland).jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-jazz-club/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-jazz-club/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-video-tool/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-video-tool/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-video-tool/photos/1280px-Close_up_view_of_a_microphone_set_up_in_a_recording_studio.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-video-tool/photos/1280px-Farjad_jolani_Cinematographer.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-video-tool/photos/1280px-Neumann_U87_Condenser_Microphone_-_Studio_A__In_Your_Ear_Studios.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-video-tool/photos/1280px-Rob_Bourdon_HQ.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-video-tool/photos/1280px-Shure_SM7.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-video-tool/photos/1920px-Close_up_view_of_a_microphone_set_up_in_a_recording_studio.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-video-tool/photos/1920px-Farjad_jolani_Cinematographer.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-video-tool/photos/1920px-Rob_Bourdon_HQ.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-video-tool/photos/960px-Close_up_view_of_a_microphone_set_up_in_a_recording_studio.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-video-tool/photos/960px-Farjad_jolani_Cinematographer.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-video-tool/photos/960px-Neumann_U87_Condenser_Microphone_-_Studio_A__In_Your_Ear_Studios.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-video-tool/photos/960px-Rob_Bourdon_HQ.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-video-tool/photos/960px-Shure_SM7.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-video-tool/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/midnight-video-tool/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/piste-surf-school/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/piste-surf-school/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/piste-surf-school/photos/1280px-Gorse_at_Howth_Head_cliffs.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/piste-surf-school/photos/1280px-Henry_Espinoza_Panta_smashing_a_wave_at_Lobitos.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/piste-surf-school/photos/1280px-Porto_Covo_July_2011-6.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/piste-surf-school/photos/1280px-Swimmer_at_Leigh-on-Sea_-_geograph.org.uk_-_6672247.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/piste-surf-school/photos/1920px-Gorse_at_Howth_Head_cliffs.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/piste-surf-school/photos/1920px-Henry_Espinoza_Panta_smashing_a_wave_at_Lobitos.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/piste-surf-school/photos/1920px-Porto_Covo_July_2011-6.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/piste-surf-school/photos/1920px-Swimmer_at_Leigh-on-Sea_-_geograph.org.uk_-_6672247.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/piste-surf-school/photos/960px-Gorse_at_Howth_Head_cliffs.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/piste-surf-school/photos/960px-Henry_Espinoza_Panta_smashing_a_wave_at_Lobitos.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/piste-surf-school/photos/960px-Porto_Covo_July_2011-6.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/piste-surf-school/photos/960px-Swimmer_at_Leigh-on-Sea_-_geograph.org.uk_-_6672247.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/piste-surf-school/styles.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/piste-surf-school/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/ribbon-meditation-app/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/ribbon-meditation-app/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/ribbon-meditation-app/photos/1280px-Blassenstein_Erlauftal_mit_Nebel_02_Panorama.JPG",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/ribbon-meditation-app/photos/1280px-Langweerderwielen_(Langwarder_Wielen)_in_de_mist._01-04-2026._(d.j.b.)_08.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/ribbon-meditation-app/photos/1920px-Blassenstein_Erlauftal_mit_Nebel_02_Panorama.JPG",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/ribbon-meditation-app/photos/1920px-Langweerderwielen_(Langwarder_Wielen)_in_de_mist._01-04-2026._(d.j.b.)_08.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/ribbon-meditation-app/photos/960px-Blassenstein_Erlauftal_mit_Nebel_02_Panorama.JPG",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/ribbon-meditation-app/photos/960px-Langweerderwielen_(Langwarder_Wielen)_in_de_mist._01-04-2026._(d.j.b.)_08.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/ribbon-meditation-app/styles.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/ribbon-meditation-app/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/terminal-migrations-cli/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/terminal-migrations-cli/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/terminal-migrations-cli/photos/1280px-NOIRLab_HQ_Server_Racks_(6V6A0395-CC).jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/terminal-migrations-cli/photos/1920px-NOIRLab_HQ_Server_Racks_(6V6A0395-CC).jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/terminal-migrations-cli/photos/960px-NOIRLab_HQ_Server_Racks_(6V6A0395-CC).jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/terminal-migrations-cli/styles.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/terminal-migrations-cli/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/vellum-coffee-subscription/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/vellum-coffee-subscription/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/vellum-coffee-subscription/photos/1280px-Coffee_roasting_machine__The_Roastery__Coaltown_Coffee__Ammanford__Wales.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/vellum-coffee-subscription/photos/1280px-Dülmen__Privatrösterei_Schröer__Kaffeebohnen_--_2018_--_0547.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/vellum-coffee-subscription/photos/1280px-Dülmen__Privatrösterei_Schröer_--_2018_--_0553.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/vellum-coffee-subscription/photos/1280px-Green_Bean_Coffee.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/vellum-coffee-subscription/photos/1280px-Roasted_coffee_beans_on_the_surface._01.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/vellum-coffee-subscription/photos/1920px-Coffee_roasting_machine__The_Roastery__Coaltown_Coffee__Ammanford__Wales.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/vellum-coffee-subscription/photos/1920px-Dülmen__Privatrösterei_Schröer__Kaffeebohnen_--_2018_--_0547.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/vellum-coffee-subscription/photos/1920px-Dülmen__Privatrösterei_Schröer_--_2018_--_0553.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/vellum-coffee-subscription/photos/1920px-Green_Bean_Coffee.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/vellum-coffee-subscription/photos/1920px-Roasted_coffee_beans_on_the_surface._01.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/vellum-coffee-subscription/photos/960px-Coffee_roasting_machine__The_Roastery__Coaltown_Coffee__Ammanford__Wales.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/vellum-coffee-subscription/photos/960px-Dülmen__Privatrösterei_Schröer__Kaffeebohnen_--_2018_--_0547.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/vellum-coffee-subscription/photos/960px-Dülmen__Privatrösterei_Schröer_--_2018_--_0553.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/vellum-coffee-subscription/photos/960px-Green_Bean_Coffee.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/vellum-coffee-subscription/photos/960px-Roasted_coffee_beans_on_the_surface._01.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/vellum-coffee-subscription/styles.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/vellum-coffee-subscription/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/vellum-translation/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/vellum-translation/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/vellum-translation/photos/1280px-Salle_de_lecture_Bibliotheque_Sainte-Genevieve_n03.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/vellum-translation/photos/1920px-Salle_de_lecture_Bibliotheque_Sainte-Genevieve_n03.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/vellum-translation/photos/960px-Salle_de_lecture_Bibliotheque_Sainte-Genevieve_n03.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/made/vellum-translation/styles.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/made/vellum-translation/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/OG-hallmark.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/source/LICENSE",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/hallmark/source/localize.mjs",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/hallmark/source/README.md",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/hallmark/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/almanac/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/almanac/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/almanac/page.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/almanac/photos/newlyn-old-harbour-pier-july-2026-01-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/almanac/photos/swimmer-at-leigh-on-sea-geograph-org-uk-6672247-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/almanac/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/almanac/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/arcade/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/arcade/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/arcade/photos/arcade-8409657650-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/arcade/photos/backlit-keyboard-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/arcade/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/arcade/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/atelier/air.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/atelier/air.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/atelier/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/atelier/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/atelier/page.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/atelier/photos/eucalypt-oils-1-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/atelier/photos/gewuerze-004-2024-08-10-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/atelier/photos/lobby-lounge-of-amantaka-suite-amantaka-luxury-resort-hotel--1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/atelier/photos/perfume-glass-bottle-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/atelier/photos/rosa-canina-focus-stacked-20220522-rm-123334-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/atelier/photos/rosemary-oil-in-a-bottle-and-rosemary-herb-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/atelier/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/atelier/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/bloom/arrange.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/bloom/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/bloom/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/bloom/page.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/bloom/photos/brac-and-celo-on-the-sofa-2019-04-20-16-48-01-by-marko-miliv-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/bloom/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/bloom/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/blueprint/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/blueprint/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/blueprint/photos/at-chiltern-open-air-museum-2024-010-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/blueprint/photos/brettsperrholzkonstruktion-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/blueprint/photos/saxon-style-timber-roof-structure-inside-st-aidan-s-church-in-bamburgh-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/blueprint/photos/zimmermann-nagelt-verschalung-20160531-rm-110839-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/blueprint/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/blueprint/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/broadside/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/broadside/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/broadside/photos/fr-nkische-schweiz-getreideernte-20210821-rm-154445-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/broadside/photos/high-pressure-cleaning-with-personal-protective-equipment-01-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/broadside/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/broadside/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/brutal/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/brutal/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/brutal/photos/beach-please-2022-crowd-stage-lights-night-performance-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/brutal/photos/brown-campsite-reading-festival-2017-geograph-org-uk-7428069-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/brutal/photos/tianjin-grand-theater-concert-hall-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/brutal/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/brutal/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/carnival/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/carnival/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/carnival/photos/blood-orange-slice-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/carnival/photos/dried-chillies-2-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/carnival/photos/vitorjubini-mercadodavilarubim-vitoria-es-39182859020-square-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/carnival/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/carnival/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/cobalt/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/cobalt/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/cobalt/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/cobalt/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/cobalt/wire.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/console/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/console/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/console/photos/csiro-scienceimage-11401-csiro-researcher-with-pipette-1280.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/console/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/console/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/coral/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/coral/blotter.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/coral/cotton.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/coral/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/coral/scene.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/coral/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/coral/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/darkroom/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/darkroom/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/darkroom/photos/bristol-mmb-d8-river-trym-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/darkroom/photos/desna-river-vinn-meadow-2016-g9-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/darkroom/photos/fisherman-at-gullmarsvik-mudflats-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/darkroom/photos/low-tide-in-rivedoux-r-island-august-2015-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/darkroom/photos/yesa-embalse-sequ-a-01-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/darkroom/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/darkroom/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/dose/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/dose/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/dose/photos/grandmothers-hand-childrens-hands-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/dose/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/dose/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/dusk/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/dusk/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/dusk/photos/estuary.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/dusk/photos/fog.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/dusk/scene.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/dusk/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/dusk/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/editorial/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/editorial/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/editorial/photos/bike-repair-is-taking-place-in-a-workshop-with-focus-on-fixi-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/editorial/photos/traditional-hand-plane-china-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/editorial/photos/wooden-chairs-in-workshop-awaiting-restoration-and-repair-in-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/editorial/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/editorial/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/formwork/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/formwork/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/formwork/photos/in-situ-concrete-pouring-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/formwork/photos/p-rtschach-10-oktober-stra-e-27-telekommunikationsgeb-ude-si-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/formwork/photos/part-of-ramp-at-brastad-sk8-the-new-skatepark-in-lysekil-mun-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/formwork/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/formwork/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/furrow/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/furrow/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/furrow/map-still.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/furrow/map.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/furrow/photos/2014-fields-swaledale-gunnerside-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/furrow/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/furrow/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/garden/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/garden/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/garden/photos/aepfel-p1260372-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/garden/photos/apple-picker-grythengen-toten-norway-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/garden/photos/apples-in-basket-2018-g1-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/garden/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/garden/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/grid/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/grid/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/grid/photos/wood-type-close-up-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/grid/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/grid/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/halftone/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/halftone/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/halftone/photos/ginger-root-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/halftone/photos/lemon-series-3047083562-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/halftone/photos/lemon-whole-and-split-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/halftone/photos/zitronenscheiben-2025-7302-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/halftone/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/halftone/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/hedgerow/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/hedgerow/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/hedgerow/photos/closeup-of-blackthorn-aka-sloe-aka-prunus-spinosa-sweden-200-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/hedgerow/photos/gin-and-tonic-with-lemon-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/hedgerow/photos/gorse-at-howth-head-cliffs-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/hedgerow/photos/palousefromsteptoebuttemay2023-2-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/hedgerow/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/hedgerow/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/hum/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/hum/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/hum/paper.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/hum/photos/child-playing-with-a-kite-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/hum/round.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/hum/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/hum/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/ink/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/ink/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/ink/photos/diy-means-choosing-the-right-tool-for-the-purpose-a-watchmak-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/ink/photos/ladder-in-gyumri-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/ink/photos/raleigh-lady-s-loop-frame-bicycle-1930s-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/ink/photos/various-tools-hanging-on-a-pegboard-in-a-workshop-setting-wi-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/ink/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/ink/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/kiln/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/kiln/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/kiln/photos/play-with-a-wheel-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/kiln/photos/pottery-oven-in-nov-budova-n-rodn-ho-muzea-prague-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/kiln/photos/stacking-kiln-for-bulk-firing-of-one-pattern-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/kiln/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/kiln/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/loom/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/loom/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/loom/photos/jeansfabric-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/loom/photos/nabburg-freilandmuseum-kolbeckhof-webstuhl-20190823-rm-11533-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/loom/photos/tailor-s-shop-werkstatt-2-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/loom/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/loom/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/lumen/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/lumen/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/lumen/page.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/lumen/photos/virginia-tech-data-center-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/lumen/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/lumen/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/manifesto/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/manifesto/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/manifesto/photos/canoscan-5600f-main-pcb-top-view-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/manifesto/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/manifesto/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/midnight/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/midnight/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/midnight/photos/kings-cross-subway-tunnel-pipette-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/midnight/photos/symmetric-view-of-the-staircase-at-the-fullerton-hotel-singa-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/midnight/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/midnight/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/newsprint/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/newsprint/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/newsprint/photos/english-queue-flickr-gagilas-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/newsprint/photos/hebden-bridge-53190059068-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/newsprint/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/newsprint/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/overprint/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/overprint/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/overprint/photos/ansambel-skameika-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/overprint/photos/lights-2011-04-24-by-ian-t-mcfarland-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/overprint/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/overprint/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/pasteup/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/pasteup/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/pasteup/photos/carteles-en-riso-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/pasteup/photos/everyday-joy-zine-making-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/pasteup/photos/screen-printing-demonstration-at-tedxutm-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/pasteup/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/pasteup/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/piste/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/piste/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/piste/photos/maestrodisciclaviereinsegnando-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/piste/photos/ski-resort-soelden-p1032614-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/piste/photos/snow-covered-skis-kosciuszko-national-park-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/piste/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/piste/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/refract/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/refract/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/refract/photos/lanes.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/refract/photos/palms.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/refract/scene.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/refract/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/refract/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/ribbon/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/ribbon/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/ribbon/night.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/ribbon/photos/night-train-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/ribbon/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/ribbon/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/rim/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/rim/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/rim/photos/aerial-view-a-coastline-of-hailing-island-yangjiang-city-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/rim/photos/mackenzie-river-outflow-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/rim/photos/solar-power-nieder-olm-p1090617-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/rim/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/rim/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/riso/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/riso/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/riso/photos/oscal-2017-silkscreen-printed-materials-29-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/riso/photos/studio-andrea-marescalchi-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/riso/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/riso/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/solstice/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/solstice/img/bottle.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/solstice/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/solstice/page.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/solstice/photos/d-lmen-brachliegendes-feld-mit-wildblumen-2021-9756-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/solstice/photos/d-lmen-umland-2014-7056-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/solstice/photos/haltern-am-see-westruper-heide-2015-8306-10-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/solstice/photos/pyrus-pyrifolia-fruit-on-tree-ps-2z-lr-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/solstice/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/solstice/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/specimen/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/specimen/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/specimen/page.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/specimen/photos/salle-de-lecture-bibliotheque-sainte-genevieve-n03-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/specimen/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/specimen/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/spore/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/spore/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/spore/photos/paris-a-waiter-lighting-candles-in-a-bar-3418-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/spore/photos/pouring-wine-into-a-decanter-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/spore/photos/schramsberg-vineyards-july-2019-7579-7580-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/spore/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/spore/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/sport/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/sport/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/sport/photos/2014-track-on-fremington-edge-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/sport/photos/human-running-gait-terminal-swing-to-heel-strike-runner-with-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/sport/photos/jogging-20210116-161032-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/sport/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/sport/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/squeeze/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/squeeze/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/squeeze/photos/alaska-wild-berries-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/squeeze/photos/javier-shows-part-of-the-grape-harvest-in-his-lysekil-vineya-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/squeeze/photos/winterswijk-nl-wochenmarkt-2016-4139-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/squeeze/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/squeeze/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/sticker/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/sticker/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/sticker/photos/abziehen-der-r-ckseite-eines-geschlitzten-stickers-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/sticker/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/sticker/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/studio/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/studio/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/studio/photos/001-2011-10-02-einsamkeit-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/studio/photos/christchurch-art-gallery-interior-002-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/studio/photos/cowork-videmonte-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/studio/photos/don-quijote-in-teatro-teresa-carre-o-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/studio/photos/george-peabody-library-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/studio/photos/la-fenice-opera-house-from-the-stage-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/studio/spec.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/studio/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/studio/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/terminal/art.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/terminal/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/terminal/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/terminal/page.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/terminal/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/terminal/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/terrazzo/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/terrazzo/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/terrazzo/photos/fichte-dreischichtplatte-2009-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/terrazzo/photos/marble-top-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/terrazzo/photos/old-brickwork-red-brick-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/terrazzo/photos/red-marble-quarry-cava-buscada-erto-e-casso-pordenone-friuli-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/terrazzo/photos/stone-wall-old-farm-dordogne-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/terrazzo/photos/travessa-couto-fernandes-60-centro-s-o-lu-s-2025-6016-pcorr--1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/terrazzo/photos/vitoria-adurza-iturritxu-bt-03-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/terrazzo/photos/zellige-loose-tile-shapes-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/terrazzo/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/terrazzo/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/ultraviolet/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/ultraviolet/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/ultraviolet/photos/behringer-x32-digital-mixer-in-operation-angled-2017-07-21-1-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/ultraviolet/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/ultraviolet/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/vantage/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/vantage/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/vantage/scene.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/vantage/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/vantage/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/vellum/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/vellum/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/vellum/photos/coffee-roasting-machine-the-roastery-coaltown-coffee-ammanfo-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/vellum/photos/cooling-time-for-coffee-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/vellum/photos/espresso-coffee-pouring-from-retro-espresso-machine-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/vellum/photos/green-bean-coffee-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/vellum/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/vellum/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/wayfind/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/wayfind/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/wayfind/photos/2025-08-06-lisbon-metro-train-waiting-at-santa-apol-nia-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/wayfind/photos/metro-lisboa-january-2015-2a-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/wayfind/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/wayfind/tokens.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/werkstatt/base.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/werkstatt/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/werkstatt/photos/american-french-tool-24x48-etching-press-1280.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/werkstatt/photos/pottery-workshop-at-odisha-crafts-museum-02-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/werkstatt/photos/woodshop-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/werkstatt/photos/woodturning-indonesia-1920.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/werkstatt/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hallmark/themes/werkstatt/tokens.css",
+      "role": "source"
+    },
+    {
       "path": "docs.html",
       "role": "source"
     },
@@ -288,7 +6013,15 @@
       "role": "context"
     },
     {
+      "path": "docs/cases/hallmark.md",
+      "role": "context"
+    },
+    {
       "path": "entries/cases/chatgpt-platform.json",
+      "role": "context"
+    },
+    {
+      "path": "entries/cases/hallmark.json",
       "role": "context"
     },
     {
@@ -308,7 +6041,23 @@
       "role": "preview"
     },
     {
+      "path": "previews/cases/hallmark-mobile.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/cases/hallmark-reference.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/cases/hallmark.jpg",
+      "role": "preview"
+    },
+    {
       "path": "prompts/cases/chatgpt-platform.md",
+      "role": "context"
+    },
+    {
+      "path": "prompts/cases/hallmark.md",
       "role": "context"
     },
     {

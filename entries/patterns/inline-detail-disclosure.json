@@ -56,6 +56,14 @@
       "evidence": "inferred",
       "referenceUrl": "https://www.2121designsight.jp/",
       "capturedAt": "2026-10-07"
+    },
+    {
+      "caseId": "hallmark",
+      "locator": "entries/cases/hallmark.json#interaction/30",
+      "observation": "主题网格初始显示十项，Show all 展开五十项并把焦点移到第十一项；七个 FAQ 使用原生 details 在文档流中独立展开与收起。",
+      "evidence": "observed",
+      "referenceUrl": "https://www.usehallmark.com/",
+      "capturedAt": "2026-11-01"
     }
   ],
   "sourceFiles": [
@@ -73,6 +81,12 @@
     "entries/cases/philharmonie-music.json",
     "docs/cases/bauhaus-geometry.md",
     "docs/cases/design-sight.md",
-    "docs/cases/philharmonie-music.md"
+    "docs/cases/philharmonie-music.md",
+    "entries/cases/hallmark.json",
+    "docs/cases/hallmark.md",
+    "demos/cases/hallmark/fidelity.md",
+    "demos/cases/hallmark/index.html",
+    "demos/cases/hallmark/js/themes.js",
+    "demos/cases/hallmark/style.css"
   ]
 }

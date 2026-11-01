@@ -1,0 +1,72 @@
+{
+  "id": "shared-caustic-surfaces",
+  "order": 169,
+  "title": "一个焦散着色器驱动多个界面",
+  "category": "视觉构成",
+  "experienceTypes": [
+    "visual",
+    "page-motion"
+  ],
+  "summary": "把同一水面材料用于场景、选中行和数据柱。",
+  "mechanism": "片元着色器共用焦散、色散和池砖折射，再按ground、row、bars配置尺度与强度；四个指针环波弯曲光线。",
+  "trigger": "进入水面区域、移动指针或切换日期组。",
+  "effect": "不同界面对象来自同一套水材质，图表保留数据含义。",
+  "useCases": [
+    "水与光主题",
+    "需要跨场景复用材质的界面"
+  ],
+  "avoid": [
+    "水光覆盖正文而削弱阅读"
+  ],
+  "constraints": [
+    "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
+  ],
+  "composition": {
+    "role": "foundation",
+    "notes": "用相同光学材料连接背景、日程选择与客流图。",
+    "pairsWellWith": [
+      "viewport-animation-lifecycle"
+    ],
+    "conflicts": []
+  },
+  "accessibility": {
+    "keyboard": "日期控件和说明为独立DOM，图表保留名称与读数。",
+    "reducedMotion": "固定时间14绘制静帧，数据切换直接给目标高度。"
+  },
+  "parameters": [
+    {
+      "name": "主水面",
+      "value": "cell=118，tile=30，strength=.72",
+      "note": "固定提交源码／线上实测：themes/refract/scene.js make cfg。"
+    },
+    {
+      "name": "涟漪",
+      "value": "最多4个，移动间隔520ms，210px/s，3.5s",
+      "note": "固定提交源码／线上实测：scene.js drop与FRAG。"
+    },
+    {
+      "name": "水柱",
+      "value": "15柱，dt×(5+i×.12)趋近目标",
+      "note": "固定提交源码／线上实测：scene.js frame。"
+    }
+  ],
+  "prompt": "为目标页面实现「一个焦散着色器驱动多个界面」：片元着色器共用焦散、色散和池砖折射，再按ground、row、bars配置尺度与强度；四个指针环波弯曲光线。触发：进入水面区域、移动指针或切换日期组。结果：不同界面对象来自同一套水材质，图表保留数据含义。参数：主水面=cell=118，tile=30，strength=.72；涟漪=最多4个，移动间隔520ms，210px/s，3.5s；水柱=15柱，dt×(5+i×.12)趋近目标。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；日期控件和说明为独立DOM，图表保留名称与读数。固定时间14绘制静帧，数据切换直接给目标高度。",
+  "sources": [
+    {
+      "caseId": "hallmark",
+      "locator": "entries/cases/hallmark.json#interaction/17",
+      "observation": "Refract 的同一焦散着色器驱动池底、课表亮行和十五根客流水柱，指针触水留下最多四个扩散环，换工作日或周末时水柱、安静时段说明与时间标记一起更新。",
+      "evidence": "observed",
+      "referenceUrl": "https://www.usehallmark.com/",
+      "capturedAt": "2026-11-01"
+    }
+  ],
+  "sourceFiles": [
+    "entries/cases/hallmark.json",
+    "docs/cases/hallmark.md",
+    "demos/cases/hallmark/fidelity.md",
+    "demos/cases/hallmark/themes/refract/scene.js",
+    "demos/cases/hallmark/themes/refract/index.html",
+    "demos/cases/hallmark/themes/refract/style.css"
+  ]
+}

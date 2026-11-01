@@ -1,0 +1,72 @@
+{
+  "id": "scaled-live-page-dialog",
+  "order": 157,
+  "title": "对话框内缩放真实页面",
+  "category": "导航与状态",
+  "experienceTypes": [
+    "structure"
+  ],
+  "summary": "在列表上下文中预览完整真实网页并沿当前筛选翻页。",
+  "mechanism": "原生dialog加载同源iframe，页面按固定排版宽度布局，缩放系数取容器宽度比，高度反除系数；前后项取当前过滤结果，关闭恢复当前链接焦点。",
+  "trigger": "激活主题链接、前后按钮或Escape。",
+  "effect": "预览保留作品排版，也保留列表的选择上下文。",
+  "useCases": [
+    "网页主题库",
+    "可运行模板与作品浏览"
+  ],
+  "avoid": [
+    "以模糊截图冒充真实页面"
+  ],
+  "constraints": [
+    "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
+  ],
+  "composition": {
+    "role": "support",
+    "notes": "从主题网格或手牌进入同一个真实页面预览。",
+    "pairsWellWith": [
+      "dealt-page-hand",
+      "filter-count-feedback"
+    ],
+    "conflicts": []
+  },
+  "accessibility": {
+    "keyboard": "使用原生dialog、可命名iframe、Escape与焦点返回。",
+    "reducedMotion": "省略对话框入场运动，缩放与导航保留。"
+  },
+  "parameters": [
+    {
+      "name": "排版宽度",
+      "value": "1440px",
+      "note": "固定提交源码／线上实测：js/themes.js fit。"
+    },
+    {
+      "name": "缩放",
+      "value": "k=frame.clientWidth/1440；iframe高=frame.clientHeight/k",
+      "note": "固定提交源码／线上实测：js/themes.js fit。"
+    },
+    {
+      "name": "实测",
+      "value": "1440视口对话框frame宽1224px，k=.85",
+      "note": "固定提交源码／线上实测：双宽 CDP 记录，fidelity.md。"
+    }
+  ],
+  "prompt": "为目标页面实现「对话框内缩放真实页面」：原生dialog加载同源iframe，页面按固定排版宽度布局，缩放系数取容器宽度比，高度反除系数；前后项取当前过滤结果，关闭恢复当前链接焦点。触发：激活主题链接、前后按钮或Escape。结果：预览保留作品排版，也保留列表的选择上下文。参数：排版宽度=1440px；缩放=k=frame.clientWidth/1440；iframe高=frame.clientHeight/k；实测=1440视口对话框frame宽1224px，k=.85。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；使用原生dialog、可命名iframe、Escape与焦点返回。省略对话框入场运动，缩放与导航保留。",
+  "sources": [
+    {
+      "caseId": "hallmark",
+      "locator": "entries/cases/hallmark.json#interaction/5",
+      "observation": "主题网格在原生对话框中打开真实主题页，iframe 按 1440px 排版并以容器宽度缩放，材料说明与当前主题同步，上一项和下一项沿筛选结果循环，Escape 关闭后焦点返回当前主题链接。",
+      "evidence": "observed",
+      "referenceUrl": "https://www.usehallmark.com/",
+      "capturedAt": "2026-11-01"
+    }
+  ],
+  "sourceFiles": [
+    "entries/cases/hallmark.json",
+    "docs/cases/hallmark.md",
+    "demos/cases/hallmark/fidelity.md",
+    "demos/cases/hallmark/js/themes.js",
+    "demos/cases/hallmark/index.html",
+    "demos/cases/hallmark/style.css"
+  ]
+}

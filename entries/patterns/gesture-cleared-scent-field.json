@@ -1,0 +1,72 @@
+{
+  "id": "gesture-cleared-scent-field",
+  "order": 162,
+  "title": "指针拨开、选择染色的香气场",
+  "category": "视觉构成",
+  "experienceTypes": [
+    "visual",
+    "page-motion"
+  ],
+  "summary": "让同一个程序场回应手势、香型选择和实物位置。",
+  "mechanism": "域扭曲噪声绘上升雾，试香纸几何给羽流源；环形指针尾迹减弱附近密度，香型目标色缓慢混入环境和羽流。",
+  "trigger": "移动指针或选择香型。",
+  "effect": "香气成为可操作、可辨认且与试香纸相连的材料。",
+  "useCases": [
+    "气味与材料品牌",
+    "轻量背景场互动"
+  ],
+  "avoid": [
+    "高强度背景遮住正文"
+  ],
+  "constraints": [
+    "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
+  ],
+  "composition": {
+    "role": "foundation",
+    "notes": "羽流源读取真实试香纸位置，选择按钮同时解释颜色变化。",
+    "pairsWellWith": [
+      "viewport-animation-lifecycle"
+    ],
+    "conflicts": []
+  },
+  "accessibility": {
+    "keyboard": "香型由可聚焦按钮选择，背景画布不截获主体操作。",
+    "reducedMotion": "保留静帧和即时换色，停用连续噪声与尾迹。"
+  },
+  "parameters": [
+    {
+      "name": "渲染",
+      "value": "CSS尺寸×.5；初始时间37",
+      "note": "固定提交源码／线上实测：themes/atelier/air.js SCALE/T0。"
+    },
+    {
+      "name": "尾迹",
+      "value": "8点、70ms落点、150px半径、.75s衰减",
+      "note": "固定提交源码／线上实测：air.js TRAIL/frame/draw。"
+    },
+    {
+      "name": "色调",
+      "value": "目标色时间常数.9s，环境混合比.55",
+      "note": "固定提交源码／线上实测：air.js frame/Air.scent。"
+    }
+  ],
+  "prompt": "为目标页面实现「指针拨开、选择染色的香气场」：域扭曲噪声绘上升雾，试香纸几何给羽流源；环形指针尾迹减弱附近密度，香型目标色缓慢混入环境和羽流。触发：移动指针或选择香型。结果：香气成为可操作、可辨认且与试香纸相连的材料。参数：渲染=CSS尺寸×.5；初始时间37；尾迹=8点、70ms落点、150px半径、.75s衰减；色调=目标色时间常数.9s，环境混合比.55。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；香型由可聚焦按钮选择，背景画布不截获主体操作。保留静帧和即时换色，停用连续噪声与尾迹。",
+  "sources": [
+    {
+      "caseId": "hallmark",
+      "locator": "entries/cases/hallmark.json#interaction/10",
+      "observation": "Atelier 用同一个半尺寸 WebGL 场绘制上升香气、试香纸羽流和指针尾迹，指针移动拨开雾，选择香型同时改变环境雾与羽流颜色，离开显雾区域或后台时停帧。",
+      "evidence": "observed",
+      "referenceUrl": "https://www.usehallmark.com/",
+      "capturedAt": "2026-11-01"
+    }
+  ],
+  "sourceFiles": [
+    "entries/cases/hallmark.json",
+    "docs/cases/hallmark.md",
+    "demos/cases/hallmark/fidelity.md",
+    "demos/cases/hallmark/themes/atelier/air.js",
+    "demos/cases/hallmark/themes/atelier/page.js",
+    "demos/cases/hallmark/themes/atelier/style.css"
+  ]
+}

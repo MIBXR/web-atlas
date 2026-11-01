@@ -102,6 +102,14 @@
       "evidence": "observed",
       "referenceUrl": "https://uiarc.dev/",
       "capturedAt": "2026-11-01"
+    },
+    {
+      "caseId": "hallmark",
+      "locator": "entries/cases/hallmark.json#interaction/32",
+      "observation": "Atelier 根据显雾区域的视口交集和文档前台状态启停绘制，Coral 在纸面演示离屏时暂停 Web Animations，减少动态直接给各自可读的结果。",
+      "evidence": "observed",
+      "referenceUrl": "https://www.usehallmark.com/",
+      "capturedAt": "2026-11-01"
     }
   ],
   "sourceFiles": [
@@ -172,6 +180,11 @@
     "demos/cases/uiarc-platform/style.css",
     "demos/cases/uiarc-platform/fidelity.md",
     "demos/cases/uiarc-platform/source/content.json",
-    "demos/cases/uiarc-platform/source/components.tsx"
+    "demos/cases/uiarc-platform/source/components.tsx",
+    "entries/cases/hallmark.json",
+    "docs/cases/hallmark.md",
+    "demos/cases/hallmark/fidelity.md",
+    "demos/cases/hallmark/themes/atelier/air.js",
+    "demos/cases/hallmark/themes/coral/scene.js"
   ]
 }

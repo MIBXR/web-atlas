@@ -1,0 +1,72 @@
+{
+  "id": "procedural-map-loupe",
+  "order": 165,
+  "title": "重绘程序地图的放大镜",
+  "category": "交互反馈",
+  "experienceTypes": [
+    "micro-motion",
+    "visual"
+  ],
+  "summary": "放大镜重新绘制同一套地图几何，保留线条与地物细节。",
+  "mechanism": "固定噪声经marching squares生成等高线与地块，放大镜裁切局部并按倍率重绘路线和地物；指针移开后回停到门边。",
+  "trigger": "鼠标进入地图、移动或离开。",
+  "effect": "细察保持地图清晰，也与农场日志有共同空间基准。",
+  "useCases": [
+    "程序地图",
+    "线稿、图样与测绘展示"
+  ],
+  "avoid": [
+    "把装饰地图包装为真实测绘数据"
+  ],
+  "constraints": [
+    "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
+  ],
+  "composition": {
+    "role": "support",
+    "notes": "以同一程序几何连接背景地图、放大镜和日志图钉。",
+    "pairsWellWith": [
+      "measured-redline-annotation"
+    ],
+    "conflicts": []
+  },
+  "accessibility": {
+    "keyboard": "日志保留可聚焦图钉与卡片，放大镜为细察辅助。",
+    "reducedMotion": "保留固定地图和停靠放大镜，选择即时完成。"
+  },
+  "parameters": [
+    {
+      "name": "等高线",
+      "value": "5px采样格；两轮Chaikin；每第五条加粗",
+      "note": "固定提交源码／线上实测：themes/furrow/map.js build/trace。"
+    },
+    {
+      "name": "放大镜",
+      "value": "半径76px；倍率1.9；画布边长200px",
+      "note": "固定提交源码／线上实测：map.js R/M/D。"
+    },
+    {
+      "name": "跟随",
+      "value": "60/110ms时间常数，回停260ms",
+      "note": "固定提交源码／线上实测：map.js tick/pointermove。"
+    }
+  ],
+  "prompt": "为目标页面实现「重绘程序地图的放大镜」：固定噪声经marching squares生成等高线与地块，放大镜裁切局部并按倍率重绘路线和地物；指针移开后回停到门边。触发：鼠标进入地图、移动或离开。结果：细察保持地图清晰，也与农场日志有共同空间基准。参数：等高线=5px采样格；两轮Chaikin；每第五条加粗；放大镜=半径76px；倍率1.9；画布边长200px；跟随=60/110ms时间常数，回停260ms。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；日志保留可聚焦图钉与卡片，放大镜为细察辅助。保留固定地图和停靠放大镜，选择即时完成。",
+  "sources": [
+    {
+      "caseId": "hallmark",
+      "locator": "entries/cases/hallmark.json#interaction/13",
+      "observation": "Furrow 从固定噪声场以 marching squares 生成等高线，再绘地块、树篱与路线；放大镜跟随地图指针并以 1.9 倍重新绘制同一程序几何，移开后缓慢回到农场门边。",
+      "evidence": "observed",
+      "referenceUrl": "https://www.usehallmark.com/",
+      "capturedAt": "2026-11-01"
+    }
+  ],
+  "sourceFiles": [
+    "entries/cases/hallmark.json",
+    "docs/cases/hallmark.md",
+    "demos/cases/hallmark/fidelity.md",
+    "demos/cases/hallmark/themes/furrow/map.js",
+    "demos/cases/hallmark/themes/furrow/style.css",
+    "demos/cases/hallmark/themes/furrow/index.html"
+  ]
+}

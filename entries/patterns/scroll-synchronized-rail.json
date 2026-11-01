@@ -42,6 +42,14 @@
       "evidence": "adapted",
       "referenceUrl": "https://chatgpt.com/zh-Hans-CN/overview/",
       "capturedAt": "2026-10-07"
+    },
+    {
+      "caseId": "hallmark",
+      "locator": "entries/cases/hallmark.json#interaction/35",
+      "observation": "Coral 的滚动说明面板在屏幕中央的窄观察带进入时选择对应发票状态，桌面说明与吸附发票同步，窄于 60rem 时直接显示完整的第三步。",
+      "evidence": "observed",
+      "referenceUrl": "https://www.usehallmark.com/",
+      "capturedAt": "2026-11-01"
     }
   ],
   "sourceFiles": [
@@ -51,6 +59,11 @@
     "demos/cases/chatgpt-platform/motion-data.js",
     "demos/cases/chatgpt-platform/script.js",
     "demos/cases/chatgpt-platform/style.css",
-    "entries/cases/chatgpt-platform.json"
+    "entries/cases/chatgpt-platform.json",
+    "entries/cases/hallmark.json",
+    "docs/cases/hallmark.md",
+    "demos/cases/hallmark/fidelity.md",
+    "demos/cases/hallmark/themes/coral/scene.js",
+    "demos/cases/hallmark/themes/coral/style.css"
   ]
 }

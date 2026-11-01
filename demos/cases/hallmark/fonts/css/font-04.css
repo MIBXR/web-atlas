@@ -1,0 +1,21 @@
+/* Ranade */
+@font-face {
+  font-family: 'Ranade';
+  src: url('../files/RXZ46KOEDGXL7HVIXMJIAZICDYUR5QZJ.woff2') format('woff2'),
+       url('../files/RXZ46KOEDGXL7HVIXMJIAZICDYUR5QZJ.woff') format('woff'),
+       url('../files/RXZ46KOEDGXL7HVIXMJIAZICDYUR5QZJ.ttf') format('truetype');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Ranade';
+  src: url('../files/7BXN3ORLQXOR6A3D5ZRM4EDMGISGKSZ2.woff2') format('woff2'),
+       url('../files/7BXN3ORLQXOR6A3D5ZRM4EDMGISGKSZ2.woff') format('woff'),
+       url('../files/7BXN3ORLQXOR6A3D5ZRM4EDMGISGKSZ2.ttf') format('truetype');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+

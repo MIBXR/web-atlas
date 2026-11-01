@@ -48,6 +48,14 @@
       "evidence": "adapted",
       "referenceUrl": "https://www.mori.art.museum/jp/",
       "capturedAt": "2026-10-07"
+    },
+    {
+      "caseId": "hallmark",
+      "locator": "entries/cases/hallmark.json#interaction/29",
+      "observation": "流派按钮同步 aria-pressed 与主题 hidden 状态，Editorial、Modern minimal、Atmospheric、Playful 分别显示 20、12、9、9 项，按钮计数与结果对应。",
+      "evidence": "observed",
+      "referenceUrl": "https://www.usehallmark.com/",
+      "capturedAt": "2026-11-01"
     }
   ],
   "sourceFiles": [
@@ -59,6 +67,12 @@
     "entries/cases/mori-art-museum.json",
     "entries/cases/swiss-grid.json",
     "docs/cases/mori-art-museum.md",
-    "docs/cases/swiss-grid.md"
+    "docs/cases/swiss-grid.md",
+    "entries/cases/hallmark.json",
+    "docs/cases/hallmark.md",
+    "demos/cases/hallmark/fidelity.md",
+    "demos/cases/hallmark/js/themes.js",
+    "demos/cases/hallmark/index.html",
+    "demos/cases/hallmark/style.css"
   ]
 }

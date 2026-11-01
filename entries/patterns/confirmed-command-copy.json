@@ -1,0 +1,62 @@
+{
+  "id": "confirmed-command-copy",
+  "order": 161,
+  "title": "可确认的命令复制",
+  "category": "交互反馈",
+  "experienceTypes": [
+    "micro-motion"
+  ],
+  "summary": "把复制结果立即反馈给按钮和状态区。",
+  "mechanism": "复制当前命令或可见代码，成功后设置勾与Copied，计时后恢复；主页面用Clipboard API并保留选区复制分支。",
+  "trigger": "激活复制按钮。",
+  "effect": "用户知道复制的是哪段内容以及操作是否成功。",
+  "useCases": [
+    "安装命令",
+    "多语言请求代码与CLI示例"
+  ],
+  "avoid": [
+    "复制隐藏的其他标签内容"
+  ],
+  "constraints": [
+    "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
+  ],
+  "composition": {
+    "role": "accent",
+    "notes": "与当前可见命令或代码同组，成功文字和按钮状态一致。",
+    "pairsWellWith": [
+      "scaled-live-page-dialog"
+    ],
+    "conflicts": []
+  },
+  "accessibility": {
+    "keyboard": "使用原生按钮、明确名称和状态播报，复制失败保留可选文本。",
+    "reducedMotion": "成功勾与文字即时变化，计时恢复保留。"
+  },
+  "parameters": [
+    {
+      "name": "反馈时长",
+      "value": "首页1600ms；Lumen/Terminal 1400ms",
+      "note": "固定提交源码／线上实测：js/core.js copy；themes/lumen/page.js copy；themes/terminal/page.js copy。"
+    }
+  ],
+  "prompt": "为目标页面实现「可确认的命令复制」：复制当前命令或可见代码，成功后设置勾与Copied，计时后恢复；主页面用Clipboard API并保留选区复制分支。触发：激活复制按钮。结果：用户知道复制的是哪段内容以及操作是否成功。参数：反馈时长=首页1600ms；Lumen/Terminal 1400ms。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；使用原生按钮、明确名称和状态播报，复制失败保留可选文本。成功勾与文字即时变化，计时恢复保留。",
+  "sources": [
+    {
+      "caseId": "hallmark",
+      "locator": "entries/cases/hallmark.json#interaction/9",
+      "observation": "首页、Lumen 和 Terminal 的复制按钮复制对应命令或当前可见代码，成功后短暂显示勾或 Copied 并更新状态播报，反馈计时结束后恢复按钮。",
+      "evidence": "observed",
+      "referenceUrl": "https://www.usehallmark.com/",
+      "capturedAt": "2026-11-01"
+    }
+  ],
+  "sourceFiles": [
+    "entries/cases/hallmark.json",
+    "docs/cases/hallmark.md",
+    "demos/cases/hallmark/fidelity.md",
+    "demos/cases/hallmark/js/core.js",
+    "demos/cases/hallmark/themes/lumen/page.js",
+    "demos/cases/hallmark/themes/terminal/page.js",
+    "demos/cases/hallmark/index.html"
+  ]
+}

@@ -1,0 +1,71 @@
+{
+  "id": "demo-once-then-yield-divider",
+  "order": 155,
+  "title": "分隔线示范一次后交给用户",
+  "category": "交互反馈",
+  "experienceTypes": [
+    "micro-motion"
+  ],
+  "summary": "先用一次短扫说明比较方式，首次主动输入后保持用户选择。",
+  "mechanism": "首次进入阈值后播放分隔比例关键帧；拖动或键盘调用同一个set，并由mine取消自动RAF和标记已接管。",
+  "trigger": "比较区初次出现，随后拖动或键盘操作。",
+  "effect": "一次示范让控制可发现，手动操作有持续所有权。",
+  "useCases": [
+    "前后图比较",
+    "需要示范但不能持续抢控制的滑块"
+  ],
+  "avoid": [
+    "持续自动改变用户已经选定的比例"
+  ],
+  "constraints": [
+    "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
+  ],
+  "composition": {
+    "role": "support",
+    "notes": "为同一比较画框介绍输入方式，不改变比较内容。",
+    "pairsWellWith": [
+      "normalized-long-page-compare"
+    ],
+    "conflicts": []
+  },
+  "accessibility": {
+    "keyboard": "用role=slider与aria值表达比例，方向键和Home/End可用。",
+    "reducedMotion": "跳过示范，保持手动分隔线。"
+  },
+  "parameters": [
+    {
+      "name": "自动关键帧",
+      "value": "0ms 50%；360ms 74%；800ms 30%；1100ms 50%",
+      "note": "固定提交源码／线上实测：js/compare.js runSweep。"
+    },
+    {
+      "name": "启动",
+      "value": "可见比例.55，延迟150ms",
+      "note": "固定提交源码／线上实测：js/compare.js IntersectionObserver。"
+    },
+    {
+      "name": "键盘",
+      "value": "2%；Shift 10%；Home/End 0/100%",
+      "note": "固定提交源码／线上实测：js/compare.js handle keydown。"
+    }
+  ],
+  "prompt": "为目标页面实现「分隔线示范一次后交给用户」：首次进入阈值后播放分隔比例关键帧；拖动或键盘调用同一个set，并由mine取消自动RAF和标记已接管。触发：比较区初次出现，随后拖动或键盘操作。结果：一次示范让控制可发现，手动操作有持续所有权。参数：自动关键帧=0ms 50%；360ms 74%；800ms 30%；1100ms 50%；启动=可见比例.55，延迟150ms；键盘=2%；Shift 10%；Home/End 0/100%。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；用role=slider与aria值表达比例，方向键和Home/End可用。跳过示范，保持手动分隔线。",
+  "sources": [
+    {
+      "caseId": "hallmark",
+      "locator": "entries/cases/hallmark.json#interaction/3",
+      "observation": "比较分隔线首次进入视口后按 50→74→30→50 示范一次，拖动或键盘操作立即取消自动扫；方向键每次移动 2%，Shift 加速到 10%，Home 和 End 到达两端。",
+      "evidence": "observed",
+      "referenceUrl": "https://www.usehallmark.com/",
+      "capturedAt": "2026-11-01"
+    }
+  ],
+  "sourceFiles": [
+    "entries/cases/hallmark.json",
+    "docs/cases/hallmark.md",
+    "demos/cases/hallmark/fidelity.md",
+    "demos/cases/hallmark/js/compare.js",
+    "demos/cases/hallmark/index.html",
+    "demos/cases/hallmark/style.css"
+  ]
+}

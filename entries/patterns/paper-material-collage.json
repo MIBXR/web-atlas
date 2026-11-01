@@ -41,6 +41,14 @@
       "locator": "entries/cases/hand-drawn.json#composition/imagery",
       "observation": "自绘植物、笔记页与贴纸解释记录生活的场景。",
       "evidence": "adapted"
+    },
+    {
+      "caseId": "hallmark",
+      "locator": "entries/cases/hallmark.json#interaction/37",
+      "observation": "Pasteup 以小角度旋转、真实纸面投影、复印图混合和压在肖像边缘的日期纸签组织信息，纸张叠放关系保持正文与操作可读。",
+      "evidence": "observed",
+      "referenceUrl": "https://www.usehallmark.com/",
+      "capturedAt": "2026-11-01"
     }
   ],
   "sourceFiles": [
@@ -48,6 +56,11 @@
     "demos/cases/hand-drawn/script.js",
     "demos/cases/hand-drawn/style.css",
     "entries/cases/hand-drawn.json",
-    "docs/cases/hand-drawn.md"
+    "docs/cases/hand-drawn.md",
+    "entries/cases/hallmark.json",
+    "docs/cases/hallmark.md",
+    "demos/cases/hallmark/fidelity.md",
+    "demos/cases/hallmark/themes/pasteup/style.css",
+    "demos/cases/hallmark/themes/pasteup/index.html"
   ]
 }

@@ -14,3 +14,4 @@
 | Shaders | [图层与参数](shaders.md) |
 | Beautiful Article | [阅读文章工作流资料](beautiful-article.md) |
 | Web Design Engineer | [阅读网页设计资料](web-design-engineer.md) |
+| Hallmark | [阅读与使用资料](hallmark-skill.md) |
