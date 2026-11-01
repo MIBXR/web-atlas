@@ -55,7 +55,7 @@ const clean = value => String(value).replace(/\|/g, '\\|').replace(/\n/g, ' ');
 const rows = entries.map(entry => {
   const source = entry.referenceUrl || entry.sources[0]?.url;
   const label = entry.category === '示范作品' ? '示范页面复现' : entry.studyScope === 'visual-adaptation' ? '官方影像网页转译' : entry.implementation === 'reference-study' ? '原站局部复现' : '经典构成练习';
-  return `| ${entry.order} | [${clean(entry.title)}](../../cases.html#style/${entry.id}) | ${clean(entry.category)} | ${clean(entry.country || '跨来源研究')} | ${label} | ${entry.capturedAt || '—'} | [原始案例](${source}) · [研究](${path.posix.relative('docs/cases',entry.research)}) · [Prompt数据](../../entries/cases/${entry.id}.json) · [Demo](../../${entry.demo}) |`;
+  return `| ${entry.order} | [${clean(entry.title)}](../../cases.html#style/${entry.id}) | ${clean(entry.category)} | ${clean(entry.country || '未确认')} | ${label} | ${entry.capturedAt || '—'} | [原始案例](${source}) · [研究](${path.posix.relative('docs/cases',entry.research)}) · [Prompt数据](../../entries/cases/${entry.id}.json) · [Demo](../../${entry.demo}) |`;
 });
 fs.writeFileSync(path.join(root,'docs/cases','README.md'), `# 案例与代码索引\n\n由 entries/cases/ 自动生成，共 ${entries.length} 项。真实网站案例按原始网址与采集日期固定归档。国家/地区按具体机构与创作来源收录。详细比较见 [国别案例比较](../country-comparison.md)。\n\n| 顺序 | 案例 | 分类 | 国家/地区 | 类型 | 采集日期 | 可查询资料 |\n| --- | --- | --- | --- | --- | --- | --- |\n${rows.join('\n')}\n`, 'utf8');
 console.log(`Built ${entries.length} entries. Open index.html or run npm start.`);

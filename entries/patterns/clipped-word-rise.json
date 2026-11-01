@@ -1,0 +1,69 @@
+{
+  "id": "clipped-word-rise",
+  "title": "逐词裁切上升的标题显现",
+  "category": "加载与媒体",
+  "experienceTypes": [
+    "page-motion"
+  ],
+  "summary": "按阅读顺序让标题从各自裁切框内进入。",
+  "mechanism": "标题保留完整可访问名称，每个词位于独立裁切框内；词的位移、透明度和轻模糊按短间隔交错，完成后保持原排版。",
+  "trigger": "首屏进入",
+  "effect": "主张按阅读顺序显现，整行位置保持稳定。",
+  "useCases": [
+    "组件库、开发者工具与产品介绍"
+  ],
+  "avoid": [
+    "让装饰遮住主张或真实操作"
+  ],
+  "constraints": [
+    "使用目标产品的真实文案与可用入口，原站数值只作为本例依据。"
+  ],
+  "composition": {
+    "role": "accent",
+    "notes": "与页面的信息层级协调；保持正文、操作与当前状态可读。",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "accessibility": {
+    "keyboard": "链接与按钮保留原生键盘路径和可访问名称；标题的装饰分词不重复播报。",
+    "reducedMotion": "移除入场、交错和循环运动，保留所有文字、布局与复制结果。"
+  },
+  "parameters": [
+    {
+      "name": "词间延迟",
+      "value": "40ms",
+      "note": "原站标题 DOM 的 --reveal-delay 递增值。"
+    },
+    {
+      "name": "初始模糊",
+      "value": "8px",
+      "note": "原站标题 --reveal-blur。"
+    },
+    {
+      "name": "分通道时长",
+      "value": "位移 760ms；透明度 440ms；模糊 580ms",
+      "note": "原站发布 CSS 的三条 text-reveal 动画。"
+    }
+  ],
+  "prompt": "为目标页面实现「逐词裁切上升的标题显现」。标题保留完整可访问名称，每个词位于独立裁切框内；词的位移、透明度和轻模糊按短间隔交错，完成后保持原排版。触发：首屏进入。结果：主张按阅读顺序显现，整行位置保持稳定。。沿用页面既有层级与真实内容；链接、复制按钮和状态提供可访问名称，减少动态直接显示稳定结果。",
+  "sources": [
+    {
+      "caseId": "uiarc-platform",
+      "locator": "entries/cases/uiarc-platform.json#interaction/1",
+      "observation": "首屏标题按单词裁切向上显现，词间延迟 40ms，位移／透明度／模糊分别为 760／440／580ms；章节标题可见面积达到 45% 后从 112% 下方上升，860ms 位移与 481.6ms 透明度，结尾双行间隔 80ms；越过的标题直接显示，减少动态保留完整文字。",
+      "evidence": "observed",
+      "referenceUrl": "https://uiarc.dev/",
+      "capturedAt": "2026-11-01"
+    }
+  ],
+  "sourceFiles": [
+    "entries/cases/uiarc-platform.json",
+    "docs/cases/uiarc-platform.md",
+    "demos/cases/uiarc-platform/index.html",
+    "demos/cases/uiarc-platform/app.js",
+    "demos/cases/uiarc-platform/style.css",
+    "demos/cases/uiarc-platform/fidelity.md",
+    "demos/cases/uiarc-platform/source/content.json",
+    "demos/cases/uiarc-platform/source/components.tsx"
+  ]
+}

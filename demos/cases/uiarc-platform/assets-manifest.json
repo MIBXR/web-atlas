@@ -1,0 +1,618 @@
+{
+  "assets": [
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "官网原始字体",
+      "file": "fonts/6c596dfcddeca1e9-s.p.woff2",
+      "sourceUrl": "https://uiarc.dev/_next/static/media/6c596dfcddeca1e9-s.p.woff2",
+      "transformation": "保留原字节",
+      "license": "SIL OFL 1.1，见 fonts/ 中许可"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "官网原始字体",
+      "file": "fonts/9ff55a8a9670220d-s.p.woff2",
+      "sourceUrl": "https://uiarc.dev/_next/static/media/9ff55a8a9670220d-s.p.woff2",
+      "transformation": "保留原字节",
+      "license": "SIL OFL 1.1，见 fonts/ 中许可"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站发布样式，供尺寸与时序溯源；不在本地页面执行",
+      "file": "source/site-styles/dce8d597c26e3056.css",
+      "sourceUrl": "https://uiarc.dev/_next/static/css/dce8d597c26e3056.css",
+      "transformation": "保留原字节",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站发布样式，供尺寸与时序溯源；不在本地页面执行",
+      "file": "source/site-styles/7b776a5cbbe2b78a.css",
+      "sourceUrl": "https://uiarc.dev/_next/static/css/7b776a5cbbe2b78a.css",
+      "transformation": "保留原字节",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站发布样式，供尺寸与时序溯源；不在本地页面执行",
+      "file": "source/site-styles/00f047ef6c557b9f.css",
+      "sourceUrl": "https://uiarc.dev/_next/static/css/00f047ef6c557b9f.css",
+      "transformation": "保留原字节",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站发布样式，供尺寸与时序溯源；不在本地页面执行",
+      "file": "source/site-styles/31bdadfcc9af4fd1.css",
+      "sourceUrl": "https://uiarc.dev/_next/static/css/31bdadfcc9af4fd1.css",
+      "transformation": "保留原字节",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站发布样式，供尺寸与时序溯源；不在本地页面执行",
+      "file": "source/site-styles/becc961a9b59e177.css",
+      "sourceUrl": "https://uiarc.dev/_next/static/css/becc961a9b59e177.css",
+      "transformation": "保留原字节",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站发布样式，供尺寸与时序溯源；不在本地页面执行",
+      "file": "source/site-styles/ea73e4e582f921b0.css",
+      "sourceUrl": "https://uiarc.dev/_next/static/css/ea73e4e582f921b0.css",
+      "transformation": "保留原字节",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站发布样式，供尺寸与时序溯源；不在本地页面执行",
+      "file": "source/site-styles/f67fa7d19375a705.css",
+      "sourceUrl": "https://uiarc.dev/_next/static/css/f67fa7d19375a705.css",
+      "transformation": "保留原字节",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站发布样式，供尺寸与时序溯源；不在本地页面执行",
+      "file": "source/site-styles/13f27d3855b19595.css",
+      "sourceUrl": "https://uiarc.dev/_next/static/css/13f27d3855b19595.css",
+      "transformation": "保留原字节",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站发布样式，供尺寸与时序溯源；不在本地页面执行",
+      "file": "source/site-styles/9eedb49febe2cbe3.css",
+      "sourceUrl": "https://uiarc.dev/_next/static/css/9eedb49febe2cbe3.css",
+      "transformation": "保留原字节",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站发布样式，供尺寸与时序溯源；不在本地页面执行",
+      "file": "source/site-styles/1deb81fc96cec2dc.css",
+      "sourceUrl": "https://uiarc.dev/_next/static/css/1deb81fc96cec2dc.css",
+      "transformation": "保留原字节",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站发布样式，供尺寸与时序溯源；不在本地页面执行",
+      "file": "source/site-styles/4ea94117e9b9e540.css",
+      "sourceUrl": "https://uiarc.dev/_next/static/css/4ea94117e9b9e540.css",
+      "transformation": "保留原字节",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站发布样式，供尺寸与时序溯源；不在本地页面执行",
+      "file": "source/site-styles/063c24fc1e24617c.css",
+      "sourceUrl": "https://uiarc.dev/_next/static/css/063c24fc1e24617c.css",
+      "transformation": "保留原字节",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站发布样式，供尺寸与时序溯源；不在本地页面执行",
+      "file": "source/site-styles/c623e9a67ae414ff.css",
+      "sourceUrl": "https://uiarc.dev/_next/static/css/c623e9a67ae414ff.css",
+      "transformation": "保留原字节",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站发布样式，供尺寸与时序溯源；不在本地页面执行",
+      "file": "source/site-styles/2ea2b2731c5ba7bd.css",
+      "sourceUrl": "https://uiarc.dev/_next/static/css/2ea2b2731c5ba7bd.css",
+      "transformation": "保留原字节",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站发布样式，供尺寸与时序溯源；不在本地页面执行",
+      "file": "source/site-styles/44939f48d4440596.css",
+      "sourceUrl": "https://uiarc.dev/_next/static/css/44939f48d4440596.css",
+      "transformation": "保留原字节",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站首页原本使用的产品展示图片与静音短片",
+      "file": "assets/clips/revenue-globe.webp",
+      "sourceUrl": "https://uiarc.dev/media/showcase/revenue-globe.webp?v=1b688055",
+      "transformation": "保留原字节",
+      "dimensions": "1600×1000",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站首页原本使用的产品展示图片与静音短片",
+      "file": "assets/clips/customer-galaxy.webp",
+      "sourceUrl": "https://uiarc.dev/media/showcase/customer-galaxy.webp?v=34d7dfa6",
+      "transformation": "保留原字节",
+      "dimensions": "1280×800",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站首页原本使用的产品展示图片与静音短片",
+      "file": "assets/clips/horizon-chart.webp",
+      "sourceUrl": "https://uiarc.dev/media/showcase/horizon-chart.webp?v=7e0daac5",
+      "transformation": "保留原字节",
+      "dimensions": "1600×1000",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站首页原本使用的产品展示图片与静音短片",
+      "file": "assets/clips/kanban-board.webp",
+      "sourceUrl": "https://uiarc.dev/media/showcase/kanban-board.webp?v=792736c3",
+      "transformation": "保留原字节",
+      "dimensions": "1600×1000",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站首页原本使用的产品展示图片与静音短片",
+      "file": "assets/clips/choropleth-explorer.webp",
+      "sourceUrl": "https://uiarc.dev/media/showcase/choropleth-explorer.webp?v=471db4cf",
+      "transformation": "保留原字节",
+      "dimensions": "1600×1000",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站首页原本使用的产品展示图片与静音短片",
+      "file": "assets/clips/ai-chat.webp",
+      "sourceUrl": "https://uiarc.dev/media/showcase/ai-chat.webp?v=41d31c3b",
+      "transformation": "保留原字节",
+      "dimensions": "1600×1000",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站首页原本使用的产品展示图片与静音短片",
+      "file": "assets/clips/command-palette.webp",
+      "sourceUrl": "https://uiarc.dev/media/showcase/command-palette.webp?v=b303da86",
+      "transformation": "保留原字节",
+      "dimensions": "1280×800",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站首页原本使用的产品展示图片与静音短片",
+      "file": "assets/clips/dropdown-menu.webp",
+      "sourceUrl": "https://uiarc.dev/media/showcase/dropdown-menu.webp?v=97946e8e",
+      "transformation": "保留原字节",
+      "dimensions": "1280×800",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站首页原本使用的产品展示图片与静音短片",
+      "file": "assets/clips/dialog.webp",
+      "sourceUrl": "https://uiarc.dev/media/showcase/dialog.webp?v=67f6a543",
+      "transformation": "保留原字节",
+      "dimensions": "1280×800",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站首页原本使用的产品展示图片与静音短片",
+      "file": "assets/clips/revenue-globe.webm",
+      "sourceUrl": "https://uiarc.dev/media/showcase/revenue-globe.webm?v=1b688055",
+      "transformation": "保留原字节",
+      "dimensions": "1600×1000",
+      "duration": 9.133,
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站首页原本使用的产品展示图片与静音短片",
+      "file": "assets/clips/customer-galaxy.webm",
+      "sourceUrl": "https://uiarc.dev/media/showcase/customer-galaxy.webm?v=34d7dfa6",
+      "transformation": "保留原字节",
+      "dimensions": "1280×800",
+      "duration": 7.166,
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站首页原本使用的产品展示图片与静音短片",
+      "file": "assets/clips/horizon-chart.webm",
+      "sourceUrl": "https://uiarc.dev/media/showcase/horizon-chart.webm?v=7e0daac5",
+      "transformation": "保留原字节",
+      "dimensions": "1600×1000",
+      "duration": 6.933,
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站首页原本使用的产品展示图片与静音短片",
+      "file": "assets/clips/kanban-board.webm",
+      "sourceUrl": "https://uiarc.dev/media/showcase/kanban-board.webm?v=792736c3",
+      "transformation": "保留原字节",
+      "dimensions": "1600×1000",
+      "duration": 8.733,
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站首页原本使用的产品展示图片与静音短片",
+      "file": "assets/clips/morph-select.webp",
+      "sourceUrl": "https://uiarc.dev/media/showcase/morph-select.webp?v=7f927c52",
+      "transformation": "保留原字节",
+      "dimensions": "1280×800",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站首页原本使用的产品展示图片与静音短片",
+      "file": "assets/clips/tabs.webp",
+      "sourceUrl": "https://uiarc.dev/media/showcase/tabs.webp?v=067eadfc",
+      "transformation": "保留原字节",
+      "dimensions": "1280×800",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站首页原本使用的产品展示图片与静音短片",
+      "file": "assets/clips/toast-stack.webp",
+      "sourceUrl": "https://uiarc.dev/media/showcase/toast-stack.webp?v=68eec328",
+      "transformation": "保留原字节",
+      "dimensions": "1280×800",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站首页原本使用的产品展示图片与静音短片",
+      "file": "assets/clips/date-picker.webp",
+      "sourceUrl": "https://uiarc.dev/media/showcase/date-picker.webp?v=9de25143",
+      "transformation": "保留原字节",
+      "dimensions": "1280×800",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站首页原本使用的产品展示图片与静音短片",
+      "file": "assets/clips/elastic-slider.webp",
+      "sourceUrl": "https://uiarc.dev/media/showcase/elastic-slider.webp?v=eb28401f",
+      "transformation": "保留原字节",
+      "dimensions": "1280×800",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站首页原本使用的产品展示图片与静音短片",
+      "file": "assets/clips/switch.webp",
+      "sourceUrl": "https://uiarc.dev/media/showcase/switch.webp?v=4e05f7c0",
+      "transformation": "保留原字节",
+      "dimensions": "1280×800",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站首页原本使用的产品展示图片与静音短片",
+      "file": "assets/clips/choropleth-explorer.webm",
+      "sourceUrl": "https://uiarc.dev/media/showcase/choropleth-explorer.webm?v=471db4cf",
+      "transformation": "保留原字节",
+      "dimensions": "1600×1000",
+      "duration": 12.033,
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站首页原本使用的产品展示图片与静音短片",
+      "file": "assets/clips/ai-chat.webm",
+      "sourceUrl": "https://uiarc.dev/media/showcase/ai-chat.webm?v=41d31c3b",
+      "transformation": "保留原字节",
+      "dimensions": "1600×1000",
+      "duration": 9.233,
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站发布样式，供尺寸与时序溯源；不在本地页面执行",
+      "file": "source/site-styles/0288b3904cc07ec4.css",
+      "sourceUrl": "https://uiarc.dev/_next/static/css/0288b3904cc07ec4.css",
+      "transformation": "保留原字节",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站首页原本使用的产品展示图片与静音短片",
+      "file": "assets/clips/command-palette.webm",
+      "sourceUrl": "https://uiarc.dev/media/showcase/command-palette.webm?v=b303da86",
+      "transformation": "保留原字节",
+      "dimensions": "1280×800",
+      "duration": 5.766,
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站首页原本使用的产品展示图片与静音短片",
+      "file": "assets/clips/dropdown-menu.webm",
+      "sourceUrl": "https://uiarc.dev/media/showcase/dropdown-menu.webm?v=97946e8e",
+      "transformation": "保留原字节",
+      "dimensions": "1280×800",
+      "duration": 6.066,
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站首页原本使用的产品展示图片与静音短片",
+      "file": "assets/clips/dialog.webm",
+      "sourceUrl": "https://uiarc.dev/media/showcase/dialog.webm?v=67f6a543",
+      "transformation": "保留原字节",
+      "dimensions": "1280×800",
+      "duration": 5.133,
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站发布样式，供尺寸与时序溯源；不在本地页面执行",
+      "file": "source/site-styles/7bba85cd9a716746.css",
+      "sourceUrl": "https://uiarc.dev/_next/static/css/7bba85cd9a716746.css",
+      "transformation": "保留原字节",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站发布样式，供尺寸与时序溯源；不在本地页面执行",
+      "file": "source/site-styles/7629db7a71e637c8.css",
+      "sourceUrl": "https://uiarc.dev/_next/static/css/7629db7a71e637c8.css",
+      "transformation": "保留原字节",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站首页原本使用的产品展示图片与静音短片",
+      "file": "assets/clips/date-picker.webm",
+      "sourceUrl": "https://uiarc.dev/media/showcase/date-picker.webm?v=9de25143",
+      "transformation": "保留原字节",
+      "dimensions": "1280×800",
+      "duration": 8.066,
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站首页原本使用的产品展示图片与静音短片",
+      "file": "assets/clips/elastic-slider.webm",
+      "sourceUrl": "https://uiarc.dev/media/showcase/elastic-slider.webm?v=eb28401f",
+      "transformation": "保留原字节",
+      "dimensions": "1280×800",
+      "duration": 8.066,
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站首页原本使用的产品展示图片与静音短片",
+      "file": "assets/clips/switch.webm",
+      "sourceUrl": "https://uiarc.dev/media/showcase/switch.webm?v=4e05f7c0",
+      "transformation": "保留原字节",
+      "dimensions": "1280×800",
+      "duration": 4.733,
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站首页原本使用的产品展示图片与静音短片",
+      "file": "assets/clips/morph-select.webm",
+      "sourceUrl": "https://uiarc.dev/media/showcase/morph-select.webm?v=7f927c52",
+      "transformation": "保留原字节",
+      "dimensions": "1280×800",
+      "duration": 9.1,
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站首页原本使用的产品展示图片与静音短片",
+      "file": "assets/clips/tabs.webm",
+      "sourceUrl": "https://uiarc.dev/media/showcase/tabs.webm?v=067eadfc",
+      "transformation": "保留原字节",
+      "dimensions": "1280×800",
+      "duration": 6.233,
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc；字体归原作者",
+      "usage": "原站首页原本使用的产品展示图片与静音短片",
+      "file": "assets/clips/toast-stack.webm",
+      "sourceUrl": "https://uiarc.dev/media/showcase/toast-stack.webm?v=68eec328",
+      "transformation": "保留原字节",
+      "dimensions": "1280×800",
+      "duration": 8.333,
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Boston Consulting Group",
+      "usage": "官网标识条带中的原始内联 SVG",
+      "file": "assets/logos/0.svg",
+      "sourceUrl": "https://uiarc.dev/",
+      "transformation": "从公开 DOM 序列化，保留路径与比例",
+      "dimensions": "viewBox 0 0 72.31 29.47",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Whop",
+      "usage": "官网标识条带中的原始内联 SVG",
+      "file": "assets/logos/1.svg",
+      "sourceUrl": "https://uiarc.dev/",
+      "transformation": "从公开 DOM 序列化，保留路径与比例",
+      "dimensions": "viewBox 0 0 118.03 25.88",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "A24",
+      "usage": "官网标识条带中的原始内联 SVG",
+      "file": "assets/logos/2.svg",
+      "sourceUrl": "https://uiarc.dev/",
+      "transformation": "从公开 DOM 序列化，保留路径与比例",
+      "dimensions": "viewBox 0 0 379.7 155.8",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Airtel",
+      "usage": "官网标识条带中的原始内联 SVG",
+      "file": "assets/logos/3.svg",
+      "sourceUrl": "https://uiarc.dev/",
+      "transformation": "从公开 DOM 序列化，保留路径与比例",
+      "dimensions": "viewBox 0 0 221.78 56.89",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "CoinTracker",
+      "usage": "官网标识条带中的原始内联 SVG",
+      "file": "assets/logos/4.svg",
+      "sourceUrl": "https://uiarc.dev/",
+      "transformation": "从公开 DOM 序列化，保留路径与比例",
+      "dimensions": "viewBox 0 0 147 20.09",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Teamworks",
+      "usage": "官网标识条带中的原始内联 SVG",
+      "file": "assets/logos/5.svg",
+      "sourceUrl": "https://uiarc.dev/",
+      "transformation": "从公开 DOM 序列化，保留路径与比例",
+      "dimensions": "viewBox 0 0 148 37",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Nearform",
+      "usage": "官网标识条带中的原始内联 SVG",
+      "file": "assets/logos/6.svg",
+      "sourceUrl": "https://uiarc.dev/",
+      "transformation": "从公开 DOM 序列化，保留路径与比例",
+      "dimensions": "viewBox 0 0 143.74 25.01",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "HappyRobot",
+      "usage": "官网标识条带中的原始内联 SVG",
+      "file": "assets/logos/7.svg",
+      "sourceUrl": "https://uiarc.dev/",
+      "transformation": "从公开 DOM 序列化，保留路径与比例",
+      "dimensions": "viewBox 0 0 2906 448",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Nixtla",
+      "usage": "官网标识条带中的原始内联 SVG",
+      "file": "assets/logos/8.svg",
+      "sourceUrl": "https://uiarc.dev/",
+      "transformation": "从公开 DOM 序列化，保留路径与比例",
+      "dimensions": "viewBox 0 0 114.81 16.36",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Maximum Effort",
+      "usage": "官网标识条带中的原始内联 SVG",
+      "file": "assets/logos/9.svg",
+      "sourceUrl": "https://uiarc.dev/",
+      "transformation": "从公开 DOM 序列化，保留路径与比例",
+      "dimensions": "viewBox 0 0 938 339.7",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "The Post and Courier",
+      "usage": "官网标识条带中的原始内联 SVG",
+      "file": "assets/logos/10.svg",
+      "sourceUrl": "https://uiarc.dev/",
+      "transformation": "从公开 DOM 序列化，保留路径与比例",
+      "dimensions": "viewBox 0 0 3382 406",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Rezi",
+      "usage": "官网标识条带中的原始内联 SVG",
+      "file": "assets/logos/11.svg",
+      "sourceUrl": "https://uiarc.dev/",
+      "transformation": "从公开 DOM 序列化，保留路径与比例",
+      "dimensions": "viewBox 0 0 51 21",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Ordinal",
+      "usage": "官网标识条带中的原始内联 SVG",
+      "file": "assets/logos/12.svg",
+      "sourceUrl": "https://uiarc.dev/",
+      "transformation": "从公开 DOM 序列化，保留路径与比例",
+      "dimensions": "viewBox 0 0 110.09 25.15",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc",
+      "usage": "原站品牌标记",
+      "file": "assets/arc-mark.svg",
+      "sourceUrl": "https://uiarc.dev/",
+      "transformation": "从公开 DOM 序列化，保留路径与比例",
+      "dimensions": "viewBox 0 0 64 64",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "owner": "Elia Kuratli / Arc",
+      "usage": "原站品牌标记",
+      "file": "assets/footer-mark.svg",
+      "sourceUrl": "https://uiarc.dev/",
+      "transformation": "从公开 DOM 序列化，保留路径与比例",
+      "dimensions": "viewBox 0 3.5 64 31",
+      "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "file": "source/site-scripts/95714-07d7cb0e45d9a488.js",
+      "sourceUrl": "https://uiarc.dev/_next/static/chunks/95714-07d7cb0e45d9a488.js",
+      "owner": "Elia Kuratli / Arc",
+      "usage": "公开部署代码中的主题、标题、菜单、媒体和价格交互参数参照；本地不加载此文件",
+      "transformation": "保留公开响应的原始 JavaScript 内容",
+      "license": "保留作者权利；参数参照，不标为 MIT"
+    },
+    {
+      "file": "source/site-scripts/23473-216b40ab39e6c47c.js",
+      "sourceUrl": "https://uiarc.dev/_next/static/chunks/23473-216b40ab39e6c47c.js",
+      "owner": "Elia Kuratli / Arc",
+      "usage": "公开部署代码中的主题、标题、菜单、媒体和价格交互参数参照；本地不加载此文件",
+      "transformation": "保留公开响应的原始 JavaScript 内容",
+      "license": "保留作者权利；参数参照，不标为 MIT"
+    },
+    {
+      "file": "source/site-scripts/19483-e4d11383c4facb88.js",
+      "sourceUrl": "https://uiarc.dev/_next/static/chunks/19483-e4d11383c4facb88.js",
+      "owner": "Elia Kuratli / Arc",
+      "usage": "公开部署代码中的主题、标题、菜单、媒体和价格交互参数参照；本地不加载此文件",
+      "transformation": "保留公开响应的原始 JavaScript 内容",
+      "license": "保留作者权利；参数参照，不标为 MIT"
+    },
+    {
+      "file": "source/site-scripts/72250-79d591c795014f46.js",
+      "sourceUrl": "https://uiarc.dev/_next/static/chunks/72250-79d591c795014f46.js",
+      "owner": "Elia Kuratli / Arc",
+      "usage": "公开部署代码中的主题、标题、菜单、媒体和价格交互参数参照；本地不加载此文件",
+      "transformation": "保留公开响应的原始 JavaScript 内容",
+      "license": "保留作者权利；参数参照，不标为 MIT"
+    }
+  ],
+  "capturedAt": "2026-11-01",
+  "referenceUrl": "https://uiarc.dev/"
+}

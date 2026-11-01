@@ -4,6 +4,7 @@
   "title": "等轴 3D：让空间讲述系统",
   "subtitle": "Monument Valley / Little Terraces",
   "category": "经典风格",
+  "country": "英国",
   "tags": [
     "等轴",
     "3D",
@@ -81,6 +82,12 @@
       "url": "https://www.adobe.com/products/photoshop/isometric-art.html",
       "type": "理论",
       "note": "解释二维表现三维、30° 侧向轴与侧面明暗。demo 使用严格平行坐标生成 SVG，是风格迁移而非原游戏复刻。"
+    },
+    {
+      "title": "ustwo games · 工作室所在地",
+      "url": "https://ustwogames.co.uk/contact-us/",
+      "type": "创作来源",
+      "note": "本练习主要取材于 Monument Valley；开发商官方联系页列出工作室位于英国伦敦。"
     }
   ],
   "prompt": "可替换内容：产品/品牌【名称】；受众【用户】；核心价值【卖点与证据】；主行动【希望用户完成的动作】。以下为风格示范任务，可替换具体品牌与内容，保留设计约束。\n\n为虚构宁静世界 Little Terraces 制作本地网页，借鉴 Monument Valley 的极简建筑世界呈现，并依据 Adobe 等轴制图说明使用严格 30° 平行投影。不要复制其关卡、角色和标志。信息顺序：宁静探索的价值主张→一个原创浮岛的完整世界→三个旅程章节→回到场景的邀请。画面包含陶土基础台、奶油塔楼、薄荷温室、水池、树木和连续路径；全部用同一 x/y/z 投影函数与统一三面明度生成 SVG。左侧窄文案右侧大场景，避免通用卡片首屏。提供整岛/花园/建筑焦点按钮，和将平台、建筑、植物分层的展开按钮；状态说明和 aria-pressed 同步。至少三节内容，小屏重排，SVG 适配视口，键盘可操作，reduced motion 即时切换；无CDN、外部素材或WebGL依赖。\n\n要素协调要求：柔和调色、衬线标题和稳定投影共享安静情绪；结构展开解释层次，不能随意更换投影角度。",

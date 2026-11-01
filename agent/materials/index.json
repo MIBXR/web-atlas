@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "repository": "https://github.com/MIBXR/web-atlas",
-  "materialCount": 9,
+  "materialCount": 10,
   "materials": [
     {
       "id": "98-css",
@@ -43,6 +43,49 @@
         "demo": "demos/materials/98-css/index.html",
         "entry": "entries/materials/98-css.json",
         "preview": "previews/materials/98-css.png"
+      }
+    },
+    {
+      "id": "arc-ui",
+      "title": "Arc UI · React 动效组件库（免费部分）",
+      "type": "component-library",
+      "category": "组件与效果",
+      "summary": "归档 120 个免费 React 动效组件和 22 个免费区块；每项提供可操作预览与原始 TypeScript、CSS 代码，保留共享设计和动效 tokens。",
+      "tags": [
+        "React",
+        "TypeScript",
+        "Motion",
+        "CSS Modules",
+        "Radix UI",
+        "shadcn",
+        "MCP",
+        "组件库",
+        "形变",
+        "图表"
+      ],
+      "useCases": [
+        "React 产品中的状态控件和微交互",
+        "需要源码所有权与本地修改的界面",
+        "以 CSS 语义 tokens 统一主题的组件组合",
+        "通过 registry、CLI 或 Agent 取用组件的流程"
+      ],
+      "avoid": [
+        "将其当作可直接引入的同名 npm 运行包",
+        "在非 React 项目中只复制 CSS 来冒充组件行为",
+        "把官网 Pro 目录或展示录像视为已归档的免费源码"
+      ],
+      "constraints": [
+        "固定归档 df3a600 的 144 个 registry 条目：120 个 registry:ui、22 个 registry:block 和 2 个共享基础条目。",
+        "上游要求 React 19、TypeScript 与 Next.js 或 Vite；本地使用固定依赖锁，六类预览按需加载。",
+        "source/upstream/ 的 registry、lib、types、public/r 与根使用说明保留原始结构和字节，未引入上游的维护检查脚本。",
+        "样例数据、状态与操作仅作用于当前页面，不接入账户、支付或持久化服务。",
+        "预览覆盖固定快照全部 120 个组件与 22 个区块；每项代码区展示该 registry 条目的全部源文件。"
+      ],
+      "paths": {
+        "bundle": "agent/materials/arc-ui.json",
+        "demo": "demos/materials/arc-ui/index.html",
+        "entry": "entries/materials/arc-ui.json",
+        "preview": "previews/materials/arc-ui.jpg"
       }
     },
     {

@@ -21,7 +21,7 @@
   ],
   "composition": {
     "role": "support",
-    "notes": "该原子负责客户事实以低密度节奏出现，职责限定在当前区域。组合时提供暂停，减少动态展示静态可读标识，不能把滚动当证言验证。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "notes": "该原子负责客户事实以低密度节奏出现，职责限定在当前区域。组合时提供暂停，减少动态展示静态可读标识，不能把滚动当证言验证。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。 Arc 来源为 52s 连续轨道；原站没有悬停暂停，减少动态改为静态换行。迁移时按当前任务提供暂停入口。",
     "pairsWellWith": [
       "viewport-animation-lifecycle"
     ],
@@ -49,6 +49,14 @@
       "evidence": "observed",
       "referenceUrl": "https://stripe.com/",
       "capturedAt": "2026-10-07"
+    },
+    {
+      "caseId": "uiarc-platform",
+      "locator": "entries/cases/uiarc-platform.json#interaction/2",
+      "observation": "13 个客户标识组成两份同序轨道，以 52s 线性循环横移，左右渐隐；原站没有悬停暂停，减少动态时改为静态换行且隐藏重复组。",
+      "evidence": "observed",
+      "referenceUrl": "https://uiarc.dev/",
+      "capturedAt": "2026-11-01"
     }
   ],
   "sourceFiles": [
@@ -66,6 +74,14 @@
     "entries/cases/notion-editorial.json",
     "entries/cases/stripe-platform.json",
     "docs/cases/notion-editorial.md",
-    "docs/cases/stripe-platform.md"
+    "docs/cases/stripe-platform.md",
+    "entries/cases/uiarc-platform.json",
+    "docs/cases/uiarc-platform.md",
+    "demos/cases/uiarc-platform/index.html",
+    "demos/cases/uiarc-platform/app.js",
+    "demos/cases/uiarc-platform/style.css",
+    "demos/cases/uiarc-platform/fidelity.md",
+    "demos/cases/uiarc-platform/source/content.json",
+    "demos/cases/uiarc-platform/source/components.tsx"
   ]
 }

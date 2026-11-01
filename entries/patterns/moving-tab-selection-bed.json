@@ -1,13 +1,13 @@
 {
   "id": "moving-tab-selection-bed",
-  "title": "选中底板与套餐组联动",
+  "title": "选中底板与套餐内容联动",
   "category": "交互反馈",
   "experienceTypes": [
     "micro-motion"
   ],
-  "summary": "让套餐受众切换保持明确选中位置。",
-  "mechanism": "一个选中底板沿tabs位置移动，同时替换当前受众对应的套餐卡；不同卡数仍由内容区域自然布局。",
-  "trigger": "选择个人或团队受众",
+  "summary": "让套餐切换保持明确选中位置。",
+  "mechanism": "一个选中底板沿选项位置移动，同时替换当前选项对应的套餐内容；不同卡数仍由内容区域自然布局。",
+  "trigger": "选择受众或套餐类型",
   "effect": "选择位置与可见方案一致。",
   "useCases": [
     "受众分组的套餐与能力介绍"
@@ -32,7 +32,7 @@
     "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
   },
   "parameters": [],
-  "prompt": "为【目标页面/组件】实现「选中底板与套餐组联动」。一个选中底板沿tabs位置移动，同时替换当前受众对应的套餐卡；不同卡数仍由内容区域自然布局。触发：选择个人或团队受众。可见结果：选择位置与可见方案一致。适用任务：受众分组的套餐与能力介绍。按真实受众组织方案，未验证的源动态标明公共模块依据。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责选择位置与可见方案一致，职责限定在当前区域。组合时按真实受众组织方案，未验证的源动态标明公共模块依据。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+  "prompt": "为目标页面实现「选中底板与套餐内容联动」。一个选中底板沿选项位置移动，同时替换当前选项对应的套餐内容；不同卡数仍由内容区域自然布局。选择受众或套餐类型后，选中位置、价格、说明、功能和行动保持一致。沿用来源真实的选项与计费方式，不添加来源不存在的账期。按钮提供键盘路径、aria-pressed 与明确焦点，方向键定位对应选项；减少动态即时完成切换。",
   "sources": [
     {
       "caseId": "claude-platform",
@@ -41,6 +41,14 @@
       "evidence": "inferred",
       "referenceUrl": "https://claude.com/",
       "capturedAt": "2026-10-07"
+    },
+    {
+      "caseId": "uiarc-platform",
+      "locator": "entries/cases/uiarc-platform.json#interaction/5",
+      "observation": "价格区的 Pro yearly / Free 使用原始 SegmentedControl 移动选中底板，整块说明、金额、清单和入口通过 AnimatePresence 交接，240ms 透明度、400ms 无回弹弹簧位移；金额使用原始 AnimatedCounter。右侧终身方案保持可见，手机保留年度卡在先。",
+      "evidence": "observed",
+      "referenceUrl": "https://uiarc.dev/",
+      "capturedAt": "2026-11-01"
     }
   ],
   "sourceFiles": [
@@ -49,6 +57,14 @@
     "demos/cases/claude-platform/journey.js",
     "demos/cases/claude-platform/script.js",
     "demos/cases/claude-platform/style.css",
-    "entries/cases/claude-platform.json"
+    "entries/cases/claude-platform.json",
+    "entries/cases/uiarc-platform.json",
+    "docs/cases/uiarc-platform.md",
+    "demos/cases/uiarc-platform/index.html",
+    "demos/cases/uiarc-platform/app.js",
+    "demos/cases/uiarc-platform/style.css",
+    "demos/cases/uiarc-platform/fidelity.md",
+    "demos/cases/uiarc-platform/source/content.json",
+    "demos/cases/uiarc-platform/source/components.tsx"
   ]
 }

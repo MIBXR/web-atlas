@@ -20,7 +20,7 @@
     const terms = $('#agent-query').value.trim().toLowerCase().split(/\s+/).filter(Boolean);
     const entries = catalog.entries.filter(entry => terms.every(term => JSON.stringify(entry).toLowerCase().includes(term)));
     $('#agent-status').textContent = `${entries.length} / ${catalog.entryCount} 个案例 · 关键词筛选`;
-    $('#agent-cases').innerHTML = entries.map(e => `<article class="agent-case"><small>${esc(e.category)} · ${esc(e.country || '跨来源研究')}</small><h3>${esc(e.title)}</h3><p>${esc(e.summary)}</p><code>${esc(e.id)}</code><div class="agent-case-actions"><a class="copy-button" href="cases.html#style/${encodeURIComponent(e.id)}">人工预览</a><a class="copy-button" href="${esc(e.paths.bundle)}" download="${esc(e.id)}-context.json">下载案例包 JSON</a><button class="copy-button" data-case="${esc(e.id)}">复制 Agent 入口</button></div></article>`).join('');
+    $('#agent-cases').innerHTML = entries.map(e => `<article class="agent-case"><small>${esc(e.category)} · ${esc(e.country || '未确认')}</small><h3>${esc(e.title)}</h3><p>${esc(e.summary)}</p><code>${esc(e.id)}</code><div class="agent-case-actions"><a class="copy-button" href="cases.html#style/${encodeURIComponent(e.id)}">人工预览</a><a class="copy-button" href="${esc(e.paths.bundle)}" download="${esc(e.id)}-context.json">下载案例包 JSON</a><button class="copy-button" data-case="${esc(e.id)}">复制 Agent 入口</button></div></article>`).join('');
     $('#agent-cases').querySelectorAll('[data-case]').forEach(button => button.addEventListener('click', () => {
       const e = catalog.entries.find(entry => entry.id === button.dataset.case);
       const source = catalog.source;

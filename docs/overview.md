@@ -32,7 +32,7 @@
 
 图片进入对应在线案例，文字链接可直接阅读 Prompt、研究与代码。品牌页面按各自注明范围归档复现，官方影像条目明确标记网页转译，经典语言是有真实参考与理论依据的构成练习；示范作品归档来源仓库的固定提交，虚构人物与机构文案按示范内容阅读。
 
-### 产品与平台 · 10
+### 产品与平台 · 11
 
 从产品卖点到可观察的工作结果，版式与交互各自承担说明任务。
 
@@ -54,7 +54,7 @@
 </tr>
 <tr>
 <td width="33%" valign="top"><a href="https://mibxr-design-atlas.mibxranime.chatgpt.site/cases.html#style/clawd-on-desk"><img src="../previews/cases/clawd-on-desk.jpg" alt="Clawd on Desk 可互动产品页实际代码预览" width="100%"></a><br><strong>Clawd on Desk · 可互动的桌宠产品页</strong><br><sub>视线跟随、像素花园、拖放入口和允许／拒绝分支。</sub><br><br><a href="../prompts/cases/clawd-on-desk.md">Prompt</a> · <a href="cases/clawd-on-desk.md">研究</a> · <a href="../demos/cases/clawd-on-desk">代码</a> · <a href="../previews/cases/clawd-on-desk-mobile.jpg">手机预览</a></td>
-<td></td>
+<td width="33%" valign="top"><a href="https://mibxr-design-atlas.mibxranime.chatgpt.site/cases.html#style/uiarc-platform"><img src="../previews/cases/uiarc-platform.jpg" alt="Arc UI 产品官网实际代码预览" width="100%"></a><br><strong>Arc UI · 组件平台的产品官网</strong><br><sub>恒定浅色渐变面板、组件影片分组、CLI／MCP 与方案切换。</sub><br><br><a href="../prompts/cases/uiarc-platform.md">Prompt</a> · <a href="cases/uiarc-platform.md">研究</a> · <a href="../demos/cases/uiarc-platform">代码</a> · <a href="../previews/cases/uiarc-platform-mobile.jpg">手机预览</a></td>
 <td></td>
 </tr>
 </table>

@@ -209,6 +209,8 @@ Prompt写结构、尺度、素材、关键状态及交接、音乐和主题行�
 
 原站案例记录 `implementation: reference-study`、`country`、`referenceUrl`、`capturedAt`（`YYYY-MM-DD`），可加语言／年度标签。国别指具体机构或创作来源。官方影像等资料的网页转译使用 `studyScope: visual-adaptation`，标题、摘要和研究区分影像观察与本地交互；详情显示“官方影像网页转译”。经典构成练习用 `theoryVerifiedAt` 记录理论核验日期；缺失时显示“理论来源核验日期未记录”。
 
+`country` 填写实际参考机构或创作者的公开所在地，出处与依据记入 `sources`。经典构成练习按主要范本的机构或作者来源标注，示范作品按实际作者来源标注；网页语言、市场版本、风格名称和虚构设定另记。证据不足统一填写“未确认”，案例列表、Agent 列表与索引使用同一值。
+
 ### 巧思
 
 `title`、`summary`、`mechanism`、`trigger`、`effect` 分别说明名称、价值、机制、触发和结果；`useCases`、`avoid`、`constraints`、`prompt` 支持任务适配。`parameters` 是 `{name,value,note}` 数组，数值用字符串并注明实测、公开代码或本地拟合依据。

@@ -1,0 +1,179 @@
+{
+  "id": "uiarc-platform",
+  "order": 74,
+  "title": "Arc UI · 组件平台的产品官网",
+  "subtitle": "ARC UI / SOURCE YOU KEEP",
+  "category": "产品",
+  "country": "瑞士",
+  "capturedAt": "2026-11-01",
+  "referenceUrl": "https://uiarc.dev/",
+  "implementation": "reference-study",
+  "edition": "2026-11-01 英文官网首页，含按需载入的价格区",
+  "demo": "demos/cases/uiarc-platform/index.html",
+  "preview": "previews/cases/uiarc-platform.jpg",
+  "previewMobile": "previews/cases/uiarc-platform-mobile.jpg",
+  "referencePreview": "previews/cases/uiarc-platform-reference.jpg",
+  "research": "docs/cases/uiarc-platform.md",
+  "fidelity": "demos/cases/uiarc-platform/fidelity.md",
+  "assetManifest": "demos/cases/uiarc-platform/assets-manifest.json",
+  "tags": [
+    "产品平台",
+    "组件库官网",
+    "开发者工具",
+    "渐变面板",
+    "静音产品影片",
+    "源码分发",
+    "明暗主题",
+    "响应式"
+  ],
+  "summary": "以恒定浅色的渐变首尾面板建立品牌，把高阶组件与日常组件分成两层产品影片，再用 CLI、MCP、免费／付费方案和 FAQ 完成开发者的取用路径。",
+  "accent": "#afc7f6",
+  "background": "#ffffff",
+  "productFocus": "用真实组件效果说明产品能力，通过源码、CLI 和 AI 工具入口降低取用门槛。",
+  "principles": [
+    "先用一句明确主张和双行动解释产品，再以真实效果证明质量。",
+    "高阶展示与免费核心分组，组件名称、说明和许可层级放在影片外阅读。",
+    "安装入口同时面向直接使用 CLI 的开发者与通过 MCP 取材的 Agent。",
+    "网站设计是案例；可直接取用的免费组件代码单独作为素材收录。"
+  ],
+  "interaction": [
+    "主题按钮在系统默认与手动选择之间协调页面表面、文字、边界和导航；点击后通过 View Transition 让新主题从横向中线向上下展开，390ms、cubic-bezier(.22,1,.36,1)，完成后清理过渡状态。首尾粉蓝黄渐变面板和产品影片保持原色，减少动态直接完成切换。",
+    "首屏标题按单词裁切向上显现，词间延迟 40ms，位移／透明度／模糊分别为 760／440／580ms；章节标题可见面积达到 45% 后从 112% 下方上升，860ms 位移与 481.6ms 透明度，结尾双行间隔 80ms；越过的标题直接显示，减少动态保留完整文字。",
+    "13 个客户标识组成两份同序轨道，以 52s 线性循环横移，左右渐隐；原站没有悬停暂停，减少动态时改为静态换行且隐藏重复组。",
+    "六张 Pro 卡片与九张免费卡片分别排成桌面两列和三列；原始 WebP 海报与静音 WebM 在前后一屏预载，可见比例达到 35% 时播放，离屏或后台暂停并保留已显示的视频帧，同时最多播放 8 段。首入减少动态或节流模式使用海报和手动播放按钮；点击卡片进入对应原站页。手机为一列／两列。",
+    "shadcn CLI 与 MCP server 并排给出同一组件库的两个安装入口；原始 CopyButton 复制完整命令，以图标交叉淡化和描线勾号反馈，1900ms 后复位；第三张卡区分免费与 Pro 数量。",
+    "价格区的 Pro yearly / Free 使用原始 SegmentedControl 移动选中底板，整块说明、金额、清单和入口通过 AnimatePresence 交接，240ms 透明度、400ms 无回弹弹簧位移；金额使用原始 AnimatedCounter。右侧终身方案保持可见，手机保留年度卡在先。",
+    "六项 FAQ 默认展开第一项；使用原始 Accordion 的单开状态、400ms 无回弹高度弹簧、260ms 图标弹簧和 2px 轻模糊，打开另一项收起前项，当前项可再次收起；Radix 管理语义、焦点与折叠后可访问状态。",
+    "手机菜单通过 Radix Dialog 在顶栏下方展开，460ms 向下裁切，条目延迟 90ms 起、40ms 错峰；关闭使用 240ms 反向裁切，背景 320／240ms 淡化与 5px 模糊。Escape 返回触发按钮，Examples 关闭后滚动并聚焦展示区。"
+  ],
+  "themeBehavior": {
+    "mode": "system-and-manual",
+    "default": "system",
+    "control": "顶栏太阳／月亮按钮切换并保存手动主题；没有手动值时跟随系统。",
+    "designReason": "中性界面按主题切换，浅色渐变品牌面板和原始产品媒体保持稳定。"
+  },
+  "soundBehavior": {
+    "kind": "none",
+    "control": "15 段产品展示影片原本为静音播放，没有背景音乐或操作音。",
+    "interactionRole": "运动只负责展示组件效果，页面阅读不依赖声音。"
+  },
+  "composition": {
+    "color": "中性黑白、层次分明的表面和灰字；粉 #E9BABB、蓝 #AFC7F6、黄 #E8D9AD 三个径向色场围住首尾标题。",
+    "typography": "Geist 负责 72px 桌面标题与章节标题，Inter 负责导航、说明与操作；手机主标题使用 7.2vw、24–30px 范围。",
+    "layout": "原生纵向长页；1440px 下主内容上限 1248px，首尾面板上限 1408px；Pro 两列、免费三列，手机一列／两列。",
+    "imagery": "15 组原始 WebP / WebM 展示媒体和 13 个客户 SVG 标识；影片是原站已有的营销内容，不作为组件实现。",
+    "shape": "30px 渐变面板、26px 媒体卡、18px 操作与胶囊层级标记。",
+    "hierarchy": "品牌主张、客户证据、Pro 作品、免费核心、安装方式、方案、疑问、最终行动依次展开。",
+    "motion": "裁切标题显现、52s 标识轨道、可视区静音影片、单开 FAQ 与套餐选中底板；减少动态保留静态内容。",
+    "coherence": "同一渐变在首尾呼应，中性页面框架与品牌面板各自保持颜色职责，所有例子都回到同一套源码产品。"
+  },
+  "tokens": {
+    "palette": [
+      "#ffffff",
+      "#f8f7f5",
+      "#262931",
+      "#5b626d",
+      "#e9babb",
+      "#afc7f6",
+      "#e8d9ad"
+    ],
+    "type": "Geist / Inter 可变字体；主标题 72px，章节 52px，正文 16–18px。",
+    "layout": "主内容 min(100% - 64px,1248px)；首屏 690px，手机 590px；手机外缘 16px。",
+    "motion": "主题 390ms 中央展开；标题 45% 可见触发、860ms 上升；标识 52s；菜单 460／240ms 裁切；FAQ 400ms 弹簧。"
+  },
+  "constraints": [
+    "采集范围为官网完整首页；组件目录、文档、Showcase、Pro、登录与交易通过原站入口访问。",
+    "官网没有可取得的独立网站工程；本地 HTML/CSS/JavaScript 根据公开页面与发布样式自行实现。source/site-styles/ 为参数来源快照，不是本地运行代码。",
+    "官网影片、标识和页面美术保留作者及相关品牌权利；免费组件的 MIT 不扩展到 Pro 源码或整站媒体。",
+    "价格与数量固定为本次采集快照；账号、交易与实时统计通过原站入口使用。本地复用同一免费素材的原始组件，菜单、标题与媒体按公开部署参数实现。"
+  ],
+  "useCases": [
+    "组件库或开发者平台首页",
+    "需要同时解释效果与安装方式的工具产品",
+    "用免费核心与专业内容分层介绍能力"
+  ],
+  "avoid": [
+    "用展示短片冒充可操作的组件实现",
+    "把 Pro 内容作为开放组件源码分发",
+    "把客户标识当作独立验证过的客户证言"
+  ],
+  "sources": [
+    {
+      "title": "Arc UI 公开官网",
+      "url": "https://uiarc.dev/",
+      "type": "实例",
+      "note": "首页、原始字体与媒体、主题、手机菜单、FAQ 和按需载入价格区。"
+    },
+    {
+      "title": "免费组件固定源码",
+      "url": "https://github.com/kuratlielia/arc-library/tree/df3a600fd9ffca85ec8607438b599a4408ab8562",
+      "type": "实例",
+      "note": "提供免费组件、共享设计与动效 tokens；不包含官网工程或 Pro 源码。"
+    },
+    {
+      "title": "Arc 许可说明",
+      "url": "https://uiarc.dev/license",
+      "type": "许可",
+      "note": "免费部分 MIT；Pro 源码使用独立商业许可，不能作为组件库重新分发。"
+    },
+    {
+      "title": "Arc · 官方运营主体",
+      "url": "https://uiarc.dev/imprint",
+      "type": "创作来源",
+      "note": "官方 Imprint 将 Arc 运营主体列为 Elia Kuratli 在瑞士经营的个体企业；地区按运营机构来源标注。"
+    },
+    {
+      "title": "官网公开交互部署 · 95714",
+      "url": "https://uiarc.dev/_next/static/chunks/95714-07d7cb0e45d9a488.js",
+      "type": "实现依据",
+      "note": "采集版本的主题、标题、菜单、媒体或价格交互参数；原始响应保存在 source/site-scripts/，本地自行实现，不执行这些发布包。"
+    },
+    {
+      "title": "官网公开交互部署 · 23473",
+      "url": "https://uiarc.dev/_next/static/chunks/23473-216b40ab39e6c47c.js",
+      "type": "实现依据",
+      "note": "采集版本的主题、标题、菜单、媒体或价格交互参数；原始响应保存在 source/site-scripts/，本地自行实现，不执行这些发布包。"
+    },
+    {
+      "title": "官网公开交互部署 · 19483",
+      "url": "https://uiarc.dev/_next/static/chunks/19483-e4d11383c4facb88.js",
+      "type": "实现依据",
+      "note": "采集版本的主题、标题、菜单、媒体或价格交互参数；原始响应保存在 source/site-scripts/，本地自行实现，不执行这些发布包。"
+    },
+    {
+      "title": "官网公开交互部署 · 72250",
+      "url": "https://uiarc.dev/_next/static/chunks/72250-79d591c795014f46.js",
+      "type": "实现依据",
+      "note": "采集版本的主题、标题、菜单、媒体或价格交互参数；原始响应保存在 source/site-scripts/，本地自行实现，不执行这些发布包。"
+    }
+  ],
+  "patternIds": [
+    "semantic-theme-roles",
+    "client-logo-marquee",
+    "viewport-animation-lifecycle",
+    "moving-tab-selection-bed",
+    "single-open-accordion",
+    "theme-invariant-gradient-panel",
+    "clipped-word-rise",
+    "parallel-cli-agent-install",
+    "center-split-theme-transition",
+    "top-down-clipped-menu"
+  ],
+  "migration": [
+    {
+      "field": "index.html 与 source/content.json",
+      "how": "替换主张、导航、产品分组及真实媒体来源；保留明确的免费／收费边界。"
+    },
+    {
+      "field": "style.css 与 source/foundation.css",
+      "how": "修改品牌色场、字体尺度和布局；保持浅色品牌面板内文字与页面主题分开。"
+    },
+    {
+      "field": "app.js 与 source/components.tsx",
+      "how": "前者管理主题、标题和媒体；后者组合原始 Accordion、SegmentedControl、AnimatedCounter、CopyButton 与手机菜单。修改业务文案和快照数据时同时查看 index.html。"
+    }
+  ],
+  "prompt": "参考 Arc UI 的完整官网首页，以真实 HTML/CSS/JavaScript 实现固定浅色的粉蓝黄径向渐变首屏、中性明暗主题、Geist 双行主张、两个行动、客户 SVG 连续轨道、六项 Pro 与九项免费产品媒体、CLI 与 MCP 命令复制、免费／年度方案切换、终身方案、单开 FAQ、渐变结尾和品牌页脚。产品影片只用于原站已有的媒体卡，实际组件代码从独立 Arc UI 素材包取得。沿用原文与真实产品链接，不实现账户和支付后台。桌面两列／三列网格在手机变成一列／两列，导航在顶栏下方展开并支持 Escape 与焦点返回。跟随系统并保存手动主题，品牌面板与媒体保持原色；减少动态时静态显示标题、标识和海报，原作无声音，不加配乐。迁移前读取来源、素材清单与 fidelity.md。 深浅主题以390ms中央横线向上下展开。章节标题按45%可见阈值从112%下方升起。FAQ、套餐底板、金额与复制反馈复用固定免费源码；手机菜单保留460ms展开、240ms收回和40ms条目错峰。媒体在35%可见时静音播放，离屏保留帧，减少动态的海报提供手动播放。",
+  "negativePrompt": "不要把整站截图或录屏当作页面；不要将营销短片当成组件实现；不要收录 Pro 源码；不要把免费组件 MIT 许可套用于整站媒体；不要只做首屏而漏掉价格、安装和 FAQ。",
+  "exercise": "在 1440×1000 与 390×844、DPR 1、相同主题下并排对照原站和本地；走完主题、菜单、影片、复制、两个价格状态和六项 FAQ，结果见 fidelity.md。"
+}

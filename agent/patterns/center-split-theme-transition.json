@@ -1,0 +1,696 @@
+{
+  "schemaVersion": 1,
+  "id": "center-split-theme-transition",
+  "pattern": {
+    "id": "center-split-theme-transition",
+    "title": "从中央向上下展开的新主题",
+    "category": "导航与状态",
+    "experienceTypes": [
+      "page-motion"
+    ],
+    "summary": "保留旧主题快照，让新主题从水平中线展开。",
+    "mechanism": "在 View Transition 更新回调中切换完整主题；旧根快照不动，新根快照由 inset(50% 0) 展开为 inset(0)，完成后移除临时过渡状态。",
+    "trigger": "激活主题按钮",
+    "effect": "颜色角色一起交接，用户能看清主题更替的方向。",
+    "useCases": [
+      "具有完整明暗主题的产品页面"
+    ],
+    "avoid": [],
+    "constraints": [
+      "主题更新在快照回调中提交，所有颜色角色同步。",
+      "减少动态直接切换；品牌图像与固定色面保持原色。"
+    ],
+    "composition": {
+      "role": "accent",
+      "notes": "负责主题更替的全页交接，颜色职责由语义主题控制。",
+      "pairsWellWith": [
+        "semantic-theme-roles",
+        "theme-invariant-gradient-panel"
+      ],
+      "conflicts": []
+    },
+    "accessibility": {
+      "keyboard": "原生主题按钮支持 Enter/Space，并提供下一主题的可访问名称；切换后保持焦点。",
+      "reducedMotion": "prefers-reduced-motion 下直接切换，不创建展开动画。"
+    },
+    "parameters": [
+      {
+        "name": "新快照裁切",
+        "value": "inset(50% 0) → inset(0)",
+        "note": "原站 theme-split 公开样式及实际主题切换。"
+      },
+      {
+        "name": "时长与缓动",
+        "value": "390ms；cubic-bezier(.22,1,.36,1)",
+        "note": "原站 ::view-transition-new(root) 计算样式。"
+      }
+    ],
+    "prompt": "为完整明暗主题实现中央展开：使用原生 View Transition 在更新回调内提交新主题，保留旧根快照，新根快照以390ms、cubic-bezier(.22,1,.36,1)从inset(50% 0)展开到inset(0)。结束后清理临时状态，快速重复操作接续到最后选择。按钮保留键盘与明确名称；减少动态直接提交新主题。",
+    "sources": [
+      {
+        "caseId": "uiarc-platform",
+        "locator": "entries/cases/uiarc-platform.json#interaction/0",
+        "observation": "主题按钮在系统默认与手动选择之间协调页面表面、文字、边界和导航；点击后通过 View Transition 让新主题从横向中线向上下展开，390ms、cubic-bezier(.22,1,.36,1)，完成后清理过渡状态。首尾粉蓝黄渐变面板和产品影片保持原色，减少动态直接完成切换。",
+        "evidence": "observed",
+        "referenceUrl": "https://uiarc.dev/",
+        "capturedAt": "2026-11-01"
+      }
+    ],
+    "sourceFiles": [
+      "entries/cases/uiarc-platform.json",
+      "docs/cases/uiarc-platform.md",
+      "demos/cases/uiarc-platform/index.html",
+      "demos/cases/uiarc-platform/app.js",
+      "demos/cases/uiarc-platform/style.css",
+      "demos/cases/uiarc-platform/source/components.tsx",
+      "demos/cases/uiarc-platform/fidelity.md"
+    ]
+  },
+  "sourceCases": [
+    {
+      "id": "uiarc-platform",
+      "title": "Arc UI · 组件平台的产品官网",
+      "paths": {
+        "bundle": "agent/cases/uiarc-platform.json",
+        "demo": "demos/cases/uiarc-platform/index.html"
+      }
+    }
+  ],
+  "documents": [
+    {
+      "path": "prompts/patterns/center-split-theme-transition.md",
+      "role": "prompt",
+      "content": "# 从中央向上下展开的新主题 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/center-split-theme-transition.json)\n\n为完整明暗主题实现中央展开：使用原生 View Transition 在更新回调内提交新主题，保留旧根快照，新根快照以390ms、cubic-bezier(.22,1,.36,1)从inset(50% 0)展开到inset(0)。结束后清理临时状态，快速重复操作接续到最后选择。按钮保留键盘与明确名称；减少动态直接提交新主题。\n\n## 制作约束\n\n- 主题更新在快照回调中提交，所有颜色角色同步。\n- 减少动态直接切换；品牌图像与固定色面保持原色。\n"
+    }
+  ],
+  "files": [
+    {
+      "path": "asset-cache-worker.js",
+      "role": "source"
+    },
+    {
+      "path": "data/asset-sources.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/app.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets-manifest.json",
+      "role": "context"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/arc-mark.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/ai-chat.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/ai-chat.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/choropleth-explorer.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/choropleth-explorer.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/command-palette.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/command-palette.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/customer-galaxy.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/customer-galaxy.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/date-picker.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/date-picker.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/dialog.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/dialog.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/dropdown-menu.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/dropdown-menu.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/elastic-slider.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/elastic-slider.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/horizon-chart.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/horizon-chart.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/kanban-board.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/kanban-board.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/morph-select.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/morph-select.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/revenue-globe.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/revenue-globe.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/switch.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/switch.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/tabs.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/tabs.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/toast-stack.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/toast-stack.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/footer-mark.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/0.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/1.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/10.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/11.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/12.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/2.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/3.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/4.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/5.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/6.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/7.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/8.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/9.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/fidelity.md",
+      "role": "context"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/fonts/6c596dfcddeca1e9-s.p.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/fonts/9ff55a8a9670220d-s.p.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/fonts/Geist-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/fonts/Inter-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/LICENSES.md",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/arc-MIT-LICENSE.txt",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/build.mjs",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/components.tsx",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/content.json",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/foundation.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/package-lock.json",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/package.json",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/README.md",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-scripts/19483-e4d11383c4facb88.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-scripts/23473-216b40ab39e6c47c.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-scripts/72250-79d591c795014f46.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-scripts/95714-07d7cb0e45d9a488.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/00f047ef6c557b9f.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/0288b3904cc07ec4.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/063c24fc1e24617c.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/13f27d3855b19595.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/1deb81fc96cec2dc.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/2ea2b2731c5ba7bd.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/31bdadfcc9af4fd1.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/44939f48d4440596.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/4ea94117e9b9e540.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/7629db7a71e637c8.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/7b776a5cbbe2b78a.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/7bba85cd9a716746.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/9eedb49febe2cbe3.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/becc961a9b59e177.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/c623e9a67ae414ff.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/dce8d597c26e3056.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/ea73e4e582f921b0.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/f67fa7d19375a705.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses.json",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-primitive-1.1.7.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-accordion-1.2.20.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-collapsible-1.1.20.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-collection-1.1.15.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-compose-refs-1.1.5.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-context-1.2.2.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-dialog-1.1.23.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-direction-1.1.4.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-dismissable-layer-1.1.19.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-focus-guards-1.1.6.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-focus-scope-1.1.16.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-id-1.1.4.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-portal-1.1.17.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-presence-1.1.10.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-primitive-2.1.10.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-slot-1.3.3.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-use-callback-ref-1.1.4.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-use-controllable-state-1.2.6.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-use-effect-event-0.0.5.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-use-layout-effect-1.1.4.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/aria-hidden-1.2.6.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/detect-node-es-1.1.0.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/framer-motion-13.5.1.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/get-nonce-1.0.1.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/lucide-react-1.47.0.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/motion-13.4.0.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/motion-dom-13.5.1.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/motion-utils-13.5.0.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/react-19.3.0.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/react-dom-19.3.0.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/react-remove-scroll-2.7.2.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/react-style-singleton-2.2.3.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/scheduler-0.28.0.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/tslib-2.9.1.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/use-callback-ref-1.3.3.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/use-sidecar-1.1.3.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/runtime.css",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/runtime.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/runtime.js.LEGAL.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "docs.html",
+      "role": "source"
+    },
+    {
+      "path": "docs/cases/uiarc-platform.md",
+      "role": "context"
+    },
+    {
+      "path": "entries/cases/uiarc-platform.json",
+      "role": "context"
+    },
+    {
+      "path": "entries/patterns/center-split-theme-transition.json",
+      "role": "context"
+    },
+    {
+      "path": "previews/cases/uiarc-platform-mobile.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/cases/uiarc-platform-reference.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/cases/uiarc-platform.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "prompts/cases/uiarc-platform.md",
+      "role": "context"
+    },
+    {
+      "path": "prompts/patterns/center-split-theme-transition.md",
+      "role": "context"
+    },
+    {
+      "path": "site/icons/favicon.svg",
+      "role": "asset"
+    },
+    {
+      "path": "site/pages/docs/docs.css",
+      "role": "source"
+    },
+    {
+      "path": "site/pages/docs/docs.js",
+      "role": "source"
+    },
+    {
+      "path": "site/runtime/asset-cache.js",
+      "role": "source"
+    },
+    {
+      "path": "site/runtime/asset-runtime.js",
+      "role": "source"
+    },
+    {
+      "path": "site/runtime/case-loading.css",
+      "role": "source"
+    },
+    {
+      "path": "site/runtime/case-loading.js",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/site-footer.css",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/site-nav.css",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/site-shell.js",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/site-typography.css",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/theme-control.css",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/theme.js",
+      "role": "source"
+    },
+    {
+      "path": "site/vendor/LICENSES.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/vendor/marked.umd.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/vendor/purify.min.js",
+      "role": "vendor"
+    }
+  ]
+}

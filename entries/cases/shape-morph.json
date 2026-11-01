@@ -4,6 +4,7 @@
   "title": "动态形状：同一单元，多种表达",
   "subtitle": "In Pieces / Form Shift",
   "category": "经典风格",
+  "country": "荷兰",
   "tags": [
     "几何",
     "形状变化",
@@ -79,7 +80,7 @@
       "title": "CSSconf EU 对 Bryan James 的访谈",
       "url": "https://blog.cssconf.eu/2015/09/24/introducing-bryan-james/",
       "type": "实例",
-      "note": "原作者访谈再次说明原项目的技术实验如何与 pieces 的核心概念结合，作为原作品制作依据。"
+      "note": "原作者访谈再次说明原项目的技术实验如何与 pieces 的核心概念结合，作为原作品制作依据。 2015 年项目同期的作者资料说明 Bryan James 当时在阿姆斯特丹从事交互创作；地区按 In Pieces 作者的创作所在地记为荷兰。"
     },
     {
       "title": "MDN — polygon()",

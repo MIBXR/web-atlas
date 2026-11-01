@@ -1,12 +1,12 @@
 {
   "id": "top-down-clipped-menu",
-  "title": "从上向下裁切的全屏菜单",
+  "title": "从上向下裁切的菜单",
   "category": "导航与状态",
   "experienceTypes": [
     "page-motion"
   ],
   "summary": "用一个进入方向组织菜单项目。",
-  "mechanism": "全屏面板从顶部向下clip进入，项目按次序交错；关闭反向收束，背景阅读状态随关闭恢复。",
+  "mechanism": "菜单面板从顶部向下裁切进入，项目按次序交错；关闭反向收束，背景阅读状态随关闭恢复。",
   "trigger": "手机打开/关闭菜单",
   "effect": "菜单作为有明确边界的导航场景。",
   "useCases": [
@@ -43,7 +43,7 @@
       "note": "交错项目时间"
     }
   ],
-  "prompt": "为【目标页面/组件】实现「从上向下裁切的全屏菜单」。全屏面板从顶部向下clip进入，项目按次序交错；关闭反向收束，背景阅读状态随关闭恢复。触发：手机打开/关闭菜单。可见结果：菜单作为有明确边界的导航场景。适用任务：精简全屏品牌导航。时长为来源公共模块，源端手机实时未验证，实施时检查快速反向。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责菜单作为有明确边界的导航场景，职责限定在当前区域。组合时时长为来源公共模块，源端手机实时未验证，实施时检查快速反向。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+  "prompt": "为目标页面实现从上向下裁切的菜单：面板从顶部向下进入，项目按短间隔交错，关闭反向收束。面板高度按实际内容确定，保持 Escape、焦点返回和关闭后的原阅读位置；减少动态直接到达可操作状态。",
   "sources": [
     {
       "caseId": "claude-platform",
@@ -52,6 +52,14 @@
       "evidence": "inferred",
       "referenceUrl": "https://claude.com/",
       "capturedAt": "2026-10-07"
+    },
+    {
+      "caseId": "uiarc-platform",
+      "locator": "entries/cases/uiarc-platform.json#interaction/7",
+      "observation": "手机菜单通过 Radix Dialog 在顶栏下方展开，460ms 向下裁切，条目延迟 90ms 起、40ms 错峰；关闭使用 240ms 反向裁切，背景 320／240ms 淡化与 5px 模糊。Escape 返回触发按钮，Examples 关闭后滚动并聚焦展示区。",
+      "evidence": "observed",
+      "referenceUrl": "https://uiarc.dev/",
+      "capturedAt": "2026-11-01"
     }
   ],
   "sourceFiles": [
@@ -60,6 +68,13 @@
     "demos/cases/claude-platform/journey.js",
     "demos/cases/claude-platform/script.js",
     "demos/cases/claude-platform/style.css",
-    "entries/cases/claude-platform.json"
+    "entries/cases/claude-platform.json",
+    "entries/cases/uiarc-platform.json",
+    "docs/cases/uiarc-platform.md",
+    "demos/cases/uiarc-platform/index.html",
+    "demos/cases/uiarc-platform/app.js",
+    "demos/cases/uiarc-platform/style.css",
+    "demos/cases/uiarc-platform/source/components.tsx",
+    "demos/cases/uiarc-platform/fidelity.md"
   ]
 }

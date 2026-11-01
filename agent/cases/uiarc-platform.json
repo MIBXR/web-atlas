@@ -1,0 +1,829 @@
+{
+  "schemaVersion": 1,
+  "id": "uiarc-platform",
+  "entry": {
+    "id": "uiarc-platform",
+    "order": 74,
+    "title": "Arc UI · 组件平台的产品官网",
+    "subtitle": "ARC UI / SOURCE YOU KEEP",
+    "category": "产品",
+    "country": "瑞士",
+    "capturedAt": "2026-11-01",
+    "referenceUrl": "https://uiarc.dev/",
+    "implementation": "reference-study",
+    "edition": "2026-11-01 英文官网首页，含按需载入的价格区",
+    "demo": "demos/cases/uiarc-platform/index.html",
+    "preview": "previews/cases/uiarc-platform.jpg",
+    "previewMobile": "previews/cases/uiarc-platform-mobile.jpg",
+    "referencePreview": "previews/cases/uiarc-platform-reference.jpg",
+    "research": "docs/cases/uiarc-platform.md",
+    "fidelity": "demos/cases/uiarc-platform/fidelity.md",
+    "assetManifest": "demos/cases/uiarc-platform/assets-manifest.json",
+    "tags": [
+      "产品平台",
+      "组件库官网",
+      "开发者工具",
+      "渐变面板",
+      "静音产品影片",
+      "源码分发",
+      "明暗主题",
+      "响应式"
+    ],
+    "summary": "以恒定浅色的渐变首尾面板建立品牌，把高阶组件与日常组件分成两层产品影片，再用 CLI、MCP、免费／付费方案和 FAQ 完成开发者的取用路径。",
+    "accent": "#afc7f6",
+    "background": "#ffffff",
+    "productFocus": "用真实组件效果说明产品能力，通过源码、CLI 和 AI 工具入口降低取用门槛。",
+    "principles": [
+      "先用一句明确主张和双行动解释产品，再以真实效果证明质量。",
+      "高阶展示与免费核心分组，组件名称、说明和许可层级放在影片外阅读。",
+      "安装入口同时面向直接使用 CLI 的开发者与通过 MCP 取材的 Agent。",
+      "网站设计是案例；可直接取用的免费组件代码单独作为素材收录。"
+    ],
+    "interaction": [
+      "主题按钮在系统默认与手动选择之间协调页面表面、文字、边界和导航；点击后通过 View Transition 让新主题从横向中线向上下展开，390ms、cubic-bezier(.22,1,.36,1)，完成后清理过渡状态。首尾粉蓝黄渐变面板和产品影片保持原色，减少动态直接完成切换。",
+      "首屏标题按单词裁切向上显现，词间延迟 40ms，位移／透明度／模糊分别为 760／440／580ms；章节标题可见面积达到 45% 后从 112% 下方上升，860ms 位移与 481.6ms 透明度，结尾双行间隔 80ms；越过的标题直接显示，减少动态保留完整文字。",
+      "13 个客户标识组成两份同序轨道，以 52s 线性循环横移，左右渐隐；原站没有悬停暂停，减少动态时改为静态换行且隐藏重复组。",
+      "六张 Pro 卡片与九张免费卡片分别排成桌面两列和三列；原始 WebP 海报与静音 WebM 在前后一屏预载，可见比例达到 35% 时播放，离屏或后台暂停并保留已显示的视频帧，同时最多播放 8 段。首入减少动态或节流模式使用海报和手动播放按钮；点击卡片进入对应原站页。手机为一列／两列。",
+      "shadcn CLI 与 MCP server 并排给出同一组件库的两个安装入口；原始 CopyButton 复制完整命令，以图标交叉淡化和描线勾号反馈，1900ms 后复位；第三张卡区分免费与 Pro 数量。",
+      "价格区的 Pro yearly / Free 使用原始 SegmentedControl 移动选中底板，整块说明、金额、清单和入口通过 AnimatePresence 交接，240ms 透明度、400ms 无回弹弹簧位移；金额使用原始 AnimatedCounter。右侧终身方案保持可见，手机保留年度卡在先。",
+      "六项 FAQ 默认展开第一项；使用原始 Accordion 的单开状态、400ms 无回弹高度弹簧、260ms 图标弹簧和 2px 轻模糊，打开另一项收起前项，当前项可再次收起；Radix 管理语义、焦点与折叠后可访问状态。",
+      "手机菜单通过 Radix Dialog 在顶栏下方展开，460ms 向下裁切，条目延迟 90ms 起、40ms 错峰；关闭使用 240ms 反向裁切，背景 320／240ms 淡化与 5px 模糊。Escape 返回触发按钮，Examples 关闭后滚动并聚焦展示区。"
+    ],
+    "themeBehavior": {
+      "mode": "system-and-manual",
+      "default": "system",
+      "control": "顶栏太阳／月亮按钮切换并保存手动主题；没有手动值时跟随系统。",
+      "designReason": "中性界面按主题切换，浅色渐变品牌面板和原始产品媒体保持稳定。"
+    },
+    "soundBehavior": {
+      "kind": "none",
+      "control": "15 段产品展示影片原本为静音播放，没有背景音乐或操作音。",
+      "interactionRole": "运动只负责展示组件效果，页面阅读不依赖声音。"
+    },
+    "composition": {
+      "color": "中性黑白、层次分明的表面和灰字；粉 #E9BABB、蓝 #AFC7F6、黄 #E8D9AD 三个径向色场围住首尾标题。",
+      "typography": "Geist 负责 72px 桌面标题与章节标题，Inter 负责导航、说明与操作；手机主标题使用 7.2vw、24–30px 范围。",
+      "layout": "原生纵向长页；1440px 下主内容上限 1248px，首尾面板上限 1408px；Pro 两列、免费三列，手机一列／两列。",
+      "imagery": "15 组原始 WebP / WebM 展示媒体和 13 个客户 SVG 标识；影片是原站已有的营销内容，不作为组件实现。",
+      "shape": "30px 渐变面板、26px 媒体卡、18px 操作与胶囊层级标记。",
+      "hierarchy": "品牌主张、客户证据、Pro 作品、免费核心、安装方式、方案、疑问、最终行动依次展开。",
+      "motion": "裁切标题显现、52s 标识轨道、可视区静音影片、单开 FAQ 与套餐选中底板；减少动态保留静态内容。",
+      "coherence": "同一渐变在首尾呼应，中性页面框架与品牌面板各自保持颜色职责，所有例子都回到同一套源码产品。"
+    },
+    "tokens": {
+      "palette": [
+        "#ffffff",
+        "#f8f7f5",
+        "#262931",
+        "#5b626d",
+        "#e9babb",
+        "#afc7f6",
+        "#e8d9ad"
+      ],
+      "type": "Geist / Inter 可变字体；主标题 72px，章节 52px，正文 16–18px。",
+      "layout": "主内容 min(100% - 64px,1248px)；首屏 690px，手机 590px；手机外缘 16px。",
+      "motion": "主题 390ms 中央展开；标题 45% 可见触发、860ms 上升；标识 52s；菜单 460／240ms 裁切；FAQ 400ms 弹簧。"
+    },
+    "constraints": [
+      "采集范围为官网完整首页；组件目录、文档、Showcase、Pro、登录与交易通过原站入口访问。",
+      "官网没有可取得的独立网站工程；本地 HTML/CSS/JavaScript 根据公开页面与发布样式自行实现。source/site-styles/ 为参数来源快照，不是本地运行代码。",
+      "官网影片、标识和页面美术保留作者及相关品牌权利；免费组件的 MIT 不扩展到 Pro 源码或整站媒体。",
+      "价格与数量固定为本次采集快照；账号、交易与实时统计通过原站入口使用。本地复用同一免费素材的原始组件，菜单、标题与媒体按公开部署参数实现。"
+    ],
+    "useCases": [
+      "组件库或开发者平台首页",
+      "需要同时解释效果与安装方式的工具产品",
+      "用免费核心与专业内容分层介绍能力"
+    ],
+    "avoid": [
+      "用展示短片冒充可操作的组件实现",
+      "把 Pro 内容作为开放组件源码分发",
+      "把客户标识当作独立验证过的客户证言"
+    ],
+    "sources": [
+      {
+        "title": "Arc UI 公开官网",
+        "url": "https://uiarc.dev/",
+        "type": "实例",
+        "note": "首页、原始字体与媒体、主题、手机菜单、FAQ 和按需载入价格区。"
+      },
+      {
+        "title": "免费组件固定源码",
+        "url": "https://github.com/kuratlielia/arc-library/tree/df3a600fd9ffca85ec8607438b599a4408ab8562",
+        "type": "实例",
+        "note": "提供免费组件、共享设计与动效 tokens；不包含官网工程或 Pro 源码。"
+      },
+      {
+        "title": "Arc 许可说明",
+        "url": "https://uiarc.dev/license",
+        "type": "许可",
+        "note": "免费部分 MIT；Pro 源码使用独立商业许可，不能作为组件库重新分发。"
+      },
+      {
+        "title": "Arc · 官方运营主体",
+        "url": "https://uiarc.dev/imprint",
+        "type": "创作来源",
+        "note": "官方 Imprint 将 Arc 运营主体列为 Elia Kuratli 在瑞士经营的个体企业；地区按运营机构来源标注。"
+      },
+      {
+        "title": "官网公开交互部署 · 95714",
+        "url": "https://uiarc.dev/_next/static/chunks/95714-07d7cb0e45d9a488.js",
+        "type": "实现依据",
+        "note": "采集版本的主题、标题、菜单、媒体或价格交互参数；原始响应保存在 source/site-scripts/，本地自行实现，不执行这些发布包。"
+      },
+      {
+        "title": "官网公开交互部署 · 23473",
+        "url": "https://uiarc.dev/_next/static/chunks/23473-216b40ab39e6c47c.js",
+        "type": "实现依据",
+        "note": "采集版本的主题、标题、菜单、媒体或价格交互参数；原始响应保存在 source/site-scripts/，本地自行实现，不执行这些发布包。"
+      },
+      {
+        "title": "官网公开交互部署 · 19483",
+        "url": "https://uiarc.dev/_next/static/chunks/19483-e4d11383c4facb88.js",
+        "type": "实现依据",
+        "note": "采集版本的主题、标题、菜单、媒体或价格交互参数；原始响应保存在 source/site-scripts/，本地自行实现，不执行这些发布包。"
+      },
+      {
+        "title": "官网公开交互部署 · 72250",
+        "url": "https://uiarc.dev/_next/static/chunks/72250-79d591c795014f46.js",
+        "type": "实现依据",
+        "note": "采集版本的主题、标题、菜单、媒体或价格交互参数；原始响应保存在 source/site-scripts/，本地自行实现，不执行这些发布包。"
+      }
+    ],
+    "patternIds": [
+      "semantic-theme-roles",
+      "client-logo-marquee",
+      "viewport-animation-lifecycle",
+      "moving-tab-selection-bed",
+      "single-open-accordion",
+      "theme-invariant-gradient-panel",
+      "clipped-word-rise",
+      "parallel-cli-agent-install",
+      "center-split-theme-transition",
+      "top-down-clipped-menu"
+    ],
+    "migration": [
+      {
+        "field": "index.html 与 source/content.json",
+        "how": "替换主张、导航、产品分组及真实媒体来源；保留明确的免费／收费边界。"
+      },
+      {
+        "field": "style.css 与 source/foundation.css",
+        "how": "修改品牌色场、字体尺度和布局；保持浅色品牌面板内文字与页面主题分开。"
+      },
+      {
+        "field": "app.js 与 source/components.tsx",
+        "how": "前者管理主题、标题和媒体；后者组合原始 Accordion、SegmentedControl、AnimatedCounter、CopyButton 与手机菜单。修改业务文案和快照数据时同时查看 index.html。"
+      }
+    ],
+    "prompt": "参考 Arc UI 的完整官网首页，以真实 HTML/CSS/JavaScript 实现固定浅色的粉蓝黄径向渐变首屏、中性明暗主题、Geist 双行主张、两个行动、客户 SVG 连续轨道、六项 Pro 与九项免费产品媒体、CLI 与 MCP 命令复制、免费／年度方案切换、终身方案、单开 FAQ、渐变结尾和品牌页脚。产品影片只用于原站已有的媒体卡，实际组件代码从独立 Arc UI 素材包取得。沿用原文与真实产品链接，不实现账户和支付后台。桌面两列／三列网格在手机变成一列／两列，导航在顶栏下方展开并支持 Escape 与焦点返回。跟随系统并保存手动主题，品牌面板与媒体保持原色；减少动态时静态显示标题、标识和海报，原作无声音，不加配乐。迁移前读取来源、素材清单与 fidelity.md。 深浅主题以390ms中央横线向上下展开。章节标题按45%可见阈值从112%下方升起。FAQ、套餐底板、金额与复制反馈复用固定免费源码；手机菜单保留460ms展开、240ms收回和40ms条目错峰。媒体在35%可见时静音播放，离屏保留帧，减少动态的海报提供手动播放。",
+    "negativePrompt": "不要把整站截图或录屏当作页面；不要将营销短片当成组件实现；不要收录 Pro 源码；不要把免费组件 MIT 许可套用于整站媒体；不要只做首屏而漏掉价格、安装和 FAQ。",
+    "exercise": "在 1440×1000 与 390×844、DPR 1、相同主题下并排对照原站和本地；走完主题、菜单、影片、复制、两个价格状态和六项 FAQ，结果见 fidelity.md。"
+  },
+  "patternIds": [
+    "center-split-theme-transition",
+    "client-logo-marquee",
+    "clipped-word-rise",
+    "moving-tab-selection-bed",
+    "parallel-cli-agent-install",
+    "semantic-theme-roles",
+    "single-open-accordion",
+    "theme-invariant-gradient-panel",
+    "top-down-clipped-menu",
+    "viewport-animation-lifecycle"
+  ],
+  "documents": [
+    {
+      "path": "docs/cases/uiarc-platform.md",
+      "role": "research",
+      "content": "# Arc UI · 组件平台的产品官网\n\n[案例入口](../../cases.html#style/uiarc-platform) · [独立网页](../../demos/cases/uiarc-platform/index.html) · [对照结果](../../demos/cases/uiarc-platform/fidelity.md)\n\n## 从效果到取用\n\n官网把“能做什么”和“怎样取得”放在同一条阅读线上。首屏用一句主张解释 React 组件与 AI 工具的关系，双行动分别通往组件目录和 Pro；客户标识随后补充采用背景。先展示六项高级作品，再展示九项日常免费控件，读者能在了解价格前看到两种内容的实际效果。\n\n原站这些卡片使用录制好的静音产品影片。卡片外围的标题、层级标记和一句机制说明负责检索，影片负责传达运动细节。页面复刻使用相同媒体，卡片并不被描述为可操作组件。可修改的真实免费组件在独立的 [Arc UI 素材](../../materials.html#material/arc-ui) 中。\n\n## 品牌面板与界面主题\n\n首尾都是浅色径向渐变面板：粉色停在左下，蓝色停在右上，黄色从下方延伸，文字占据中间的稳定区域。网页切成深色时，周围表面、灰字、边界和导航一起变暗，首尾面板仍保持浅底深字。品牌识别与工具界面主题分别承担职责。\n\nGeist 的紧字距双行标题是主要视觉锚点，Inter 负责较长的产品解释和操作。主张逐词在裁切框内上升，章节标题在可见面积达到 45% 后从裁切框下方进入。两个网格保持稳定的图文关系：Pro 大卡两列，免费核心三列；手机分别变为一列和两列。\n\n主题切换使用原生 View Transition：旧主题快照保持不动，新主题从水平中线向上下展开，390ms 后完整接管画面。固定浅色面板和媒体保留原色，减少动态直接完成切换。\n\n## 安装、方案与疑问\n\nCLI 和 MCP 两张安装卡并列，对同一个产品提供直接操作与 Agent 取用两条路径。命令区只展示一行，复制按钮取得完整命令；相邻卡说明免费与专业内容的数量。\n\n价格区让年度与免费共用一个弹簧移动的选中底板，左栏内容成组退出与进入，终身方案保持可见。FAQ 一次只打开一项，也允许再次收起当前项；原始组件用同一弹簧管理高度接续和图标翻转。手机菜单以向下裁切和条目错峰进入，关闭反向收束；Examples 关闭后把焦点交给展示区。\n\n## 取材位置\n\n页面结构在 `index.html`，视觉规则在 `style.css`，主题、标题和媒体由 `app.js` 管理；`source/components.tsx` 组合原始交互组件。产品卡片与客户标识输入在 `source/content.json`，媒体、字体与发布参照的逐文件事实在素材清单中。构建入口与共享源码用法见本体的制作资料。\n\n与 Google Material 官网相比，本例把组件效果直接组织成免费与专业内容的产品梯度；与 DeepSeek Harness 的任务流程演示相比，本例让每张短片只说明一个组件机制。迁移时先确定产品分组与取用路径，再安排视觉与运动。\n"
+    },
+    {
+      "path": "prompts/cases/uiarc-platform.md",
+      "role": "prompt",
+      "content": "# Arc UI · 组件平台的产品官网 · 复用 Prompt\n\n由 [结构化案例](../../entries/cases/uiarc-platform.json) 自动生成。参考观察与具体边界见 [调研](../../docs/cases/uiarc-platform.md)。\n\n## 正向 Prompt\n\n参考 Arc UI 的完整官网首页，以真实 HTML/CSS/JavaScript 实现固定浅色的粉蓝黄径向渐变首屏、中性明暗主题、Geist 双行主张、两个行动、客户 SVG 连续轨道、六项 Pro 与九项免费产品媒体、CLI 与 MCP 命令复制、免费／年度方案切换、终身方案、单开 FAQ、渐变结尾和品牌页脚。产品影片只用于原站已有的媒体卡，实际组件代码从独立 Arc UI 素材包取得。沿用原文与真实产品链接，不实现账户和支付后台。桌面两列／三列网格在手机变成一列／两列，导航在顶栏下方展开并支持 Escape 与焦点返回。跟随系统并保存手动主题，品牌面板与媒体保持原色；减少动态时静态显示标题、标识和海报，原作无声音，不加配乐。迁移前读取来源、素材清单与 fidelity.md。 深浅主题以390ms中央横线向上下展开。章节标题按45%可见阈值从112%下方升起。FAQ、套餐底板、金额与复制反馈复用固定免费源码；手机菜单保留460ms展开、240ms收回和40ms条目错峰。媒体在35%可见时静音播放，离屏保留帧，减少动态的海报提供手动播放。\n\n## 负向约束\n\n不要把整站截图或录屏当作页面；不要将营销短片当成组件实现；不要收录 Pro 源码；不要把免费组件 MIT 许可套用于整站媒体；不要只做首屏而漏掉价格、安装和 FAQ。\n\n## 制作约束\n\n- 采集范围为官网完整首页；组件目录、文档、Showcase、Pro、登录与交易通过原站入口访问。\n- 官网没有可取得的独立网站工程；本地 HTML/CSS/JavaScript 根据公开页面与发布样式自行实现。source/site-styles/ 为参数来源快照，不是本地运行代码。\n- 官网影片、标识和页面美术保留作者及相关品牌权利；免费组件的 MIT 不扩展到 Pro 源码或整站媒体。\n- 价格与数量固定为本次采集快照；账号、交易与实时统计通过原站入口使用。本地复用同一免费素材的原始组件，菜单、标题与媒体按公开部署参数实现。\n\n## 检查方法\n\n在 1440×1000 与 390×844、DPR 1、相同主题下并排对照原站和本地；走完主题、菜单、影片、复制、两个价格状态和六项 FAQ，结果见 fidelity.md。\n\n[查看 Demo](../../demos/cases/uiarc-platform/index.html) · [返回案例库](../../cases.html#style/uiarc-platform)\n"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/fidelity.md",
+      "role": "fidelity",
+      "content": "# Arc UI 官网首页 · 复刻对照\n\n## 范围与条件\n\n原站为 [uiarc.dev](https://uiarc.dev/)，采集日期为 2026-11-01，范围是英文首页：导航、首屏、客户标识、两组产品媒体、安装入口、价格、FAQ、最终行动及页脚。目录、文档、Showcase、Pro、账号与交易使用原站入口。\n\n原站与本地使用同一 Chromium 浏览器，在 1440×1000 和 390×844 CSS 视口、DPR 1、相同主题下对照。顶部推广条按任务要求移除；同条件对照时先关闭原站公告，手机菜单从 y=68px 开始。预览使用稳定的浅色画面，在主题过渡和文字入场结束后截取内容区域，不含滚动条；页面没有加载整站截图。原始字体、标识、海报与静音影片保留，几何与时序同时参照公开 DOM、计算样式和发布代码。\n\n本地使用 `app.js` 实现主题、标题、标识和媒体管理，`source/components.tsx` 组合固定免费源码中的组件。发布代码保存在 `source/site-scripts/` 供参数溯源，本地不执行这些发布包。\n\n## 模块与状态\n\n| 模块／状态 | 原站响应与依据 | 本地对应 | 对照结果 |\n| --- | --- | --- | --- |\n| 首屏与字体 | 浅色渐变面板、Geist 双行主张、Inter 正文与双行动 | `.hero`、原始字体、三个径向色场 | 相同视口并排截图；桌面主标题宽 702.1875px，手机标题 274.1×59.875px，首屏高度分别为 690／590px。 |\n| 首屏逐词显现 | 每词延迟 40ms，位移 .62em；位移／透明度／模糊分别为 760／440／580ms | `.word-clip`、`.title-word` | DOM 与发布样式参数一致；保留裁切边缘及阅读顺序。 |\n| 章节标题 | 45% 可见触发，从 112% 下方升起，860ms 位移、481.6ms 透明度，双行间隔 80ms | `.heading-clip`、`.heading-part` | 按原参数实现并对照进入与回程；已越过的标题保持显示，减少动态直接显示。 |\n| 深浅主题 | `theme-split` 由 `inset(50% 0)` 展开至 `inset(0)`，390ms、cubic-bezier(.22,1,.36,1) | `document.startViewTransition` 与根快照裁切 | 正向、反向及结束清理已对照。本地连续采样包含 50%、40.7362%、25.4042%、11.2555%、1.2117% 等真实裁切中间态；固定色面和媒体保持原色。 |\n| 客户标识 | 13 个 SVG 各自具有高度因子与比例，52s 线性重复轨道 | 原始 SVG 掩模、逐项 factor／ratio | 标识尺寸、颜色角色与条带高度按原站校准。原站没有悬停暂停；减少动态静态换行，重复组隐藏。 |\n| Pro／免费网格 | 六项与九项，桌面两列／三列，手机一列／两列 | `#pro-clips`、`#free-clips` | 卡片内容与原始媒体完整；桌面两组区段高度分别为 1808.3px、1436.38px，原站与本地一致。 |\n| 媒体自动与手动分支 | 前后一屏预载，35% 可见播放，离屏／后台暂停，最多 8 段；首入减少动态或节流模式提供手动预览 | 两个 IntersectionObserver、播放集合、海报播放按钮 | 源码参数一致。减少动态首入两端均有 15 个播放入口、无自动播放；原站用键盘、本地用按钮启动首段，确认静音播放。暂停保留已就绪帧；后台策略按发布代码复现。 |\n| 命令复制 | 图标交叉淡化、勾号描线，1900ms 后复位 | 原始 CopyButton 与 useCopyFeedback | 原站与本地键盘触发均返回 copied 状态；原始组件保留成功与失败消息、焦点和文本选择处理。 |\n| 年度／免费价格 | 原始 SegmentedControl；整块内容以 AnimatePresence 交接，金额由 AnimatedCounter 呈现 | 同一固定源码组件与原参数 | 两端 Free、Pro yearly 正向及返回均验证；选择、金额、说明和功能清单同步。价格按采集快照固定。 |\n| FAQ | 单开且可收起，400ms 高度弹簧、260ms 图标弹簧、2px 轻模糊 | 原始 Accordion 的 lg 变体 | 六项逐一及快速连续切换已对照；两端最终只有首项展开，Geist 18px 问题与 Inter 正文对应，区段高度 786.4px 一致。 |\n| 手机菜单 | 460ms 向下裁切、240ms 收回；条目 90ms 起每项错峰 40ms；背景 5px 模糊 | Radix Dialog、原参数 CSS 与 SVG 线条图标 | 390px 下两端面板均从 y=68px 开始、高 623.8px。Escape 都返回 Open navigation；Examples 都关闭菜单、更新 #showcase 并聚焦展示区。 |\n| 最终行动与页脚 | 浅色渐变面板、三组语义列表、巨大品牌标记与渐隐 | 原始 SVG、列表结构及掩模 | 所有入口可到达；桌面结尾高度 740px、页脚高度 1041.16px 与原站一致，保留法律与社交目的地。 |\n\n## 实现边界\n\n- 免费组件的原始 TypeScript 和 CSS Modules 由 Arc UI 素材共享，构建依赖与许可随本体保存；官网其余结构按公开页面与发布参数实现。\n- 金额、内容数量和 GitHub 星数固定为采集快照；账户、交易弹层、实时计费请求与统计不接入本地，价格动作通往官方价格页。\n- 实测范围是 Chromium 桌面窗口及手机宽度模拟。真实触屏、其他浏览器、慢网络失败恢复及真实后台切换没有作为本次通过结论。\n"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets-manifest.json",
+      "role": "asset-manifest",
+      "content": "{\n  \"assets\": [\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"官网原始字体\",\n      \"file\": \"fonts/6c596dfcddeca1e9-s.p.woff2\",\n      \"sourceUrl\": \"https://uiarc.dev/_next/static/media/6c596dfcddeca1e9-s.p.woff2\",\n      \"transformation\": \"保留原字节\",\n      \"license\": \"SIL OFL 1.1，见 fonts/ 中许可\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"官网原始字体\",\n      \"file\": \"fonts/9ff55a8a9670220d-s.p.woff2\",\n      \"sourceUrl\": \"https://uiarc.dev/_next/static/media/9ff55a8a9670220d-s.p.woff2\",\n      \"transformation\": \"保留原字节\",\n      \"license\": \"SIL OFL 1.1，见 fonts/ 中许可\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站发布样式，供尺寸与时序溯源；不在本地页面执行\",\n      \"file\": \"source/site-styles/dce8d597c26e3056.css\",\n      \"sourceUrl\": \"https://uiarc.dev/_next/static/css/dce8d597c26e3056.css\",\n      \"transformation\": \"保留原字节\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站发布样式，供尺寸与时序溯源；不在本地页面执行\",\n      \"file\": \"source/site-styles/7b776a5cbbe2b78a.css\",\n      \"sourceUrl\": \"https://uiarc.dev/_next/static/css/7b776a5cbbe2b78a.css\",\n      \"transformation\": \"保留原字节\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站发布样式，供尺寸与时序溯源；不在本地页面执行\",\n      \"file\": \"source/site-styles/00f047ef6c557b9f.css\",\n      \"sourceUrl\": \"https://uiarc.dev/_next/static/css/00f047ef6c557b9f.css\",\n      \"transformation\": \"保留原字节\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站发布样式，供尺寸与时序溯源；不在本地页面执行\",\n      \"file\": \"source/site-styles/31bdadfcc9af4fd1.css\",\n      \"sourceUrl\": \"https://uiarc.dev/_next/static/css/31bdadfcc9af4fd1.css\",\n      \"transformation\": \"保留原字节\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站发布样式，供尺寸与时序溯源；不在本地页面执行\",\n      \"file\": \"source/site-styles/becc961a9b59e177.css\",\n      \"sourceUrl\": \"https://uiarc.dev/_next/static/css/becc961a9b59e177.css\",\n      \"transformation\": \"保留原字节\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站发布样式，供尺寸与时序溯源；不在本地页面执行\",\n      \"file\": \"source/site-styles/ea73e4e582f921b0.css\",\n      \"sourceUrl\": \"https://uiarc.dev/_next/static/css/ea73e4e582f921b0.css\",\n      \"transformation\": \"保留原字节\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站发布样式，供尺寸与时序溯源；不在本地页面执行\",\n      \"file\": \"source/site-styles/f67fa7d19375a705.css\",\n      \"sourceUrl\": \"https://uiarc.dev/_next/static/css/f67fa7d19375a705.css\",\n      \"transformation\": \"保留原字节\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站发布样式，供尺寸与时序溯源；不在本地页面执行\",\n      \"file\": \"source/site-styles/13f27d3855b19595.css\",\n      \"sourceUrl\": \"https://uiarc.dev/_next/static/css/13f27d3855b19595.css\",\n      \"transformation\": \"保留原字节\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站发布样式，供尺寸与时序溯源；不在本地页面执行\",\n      \"file\": \"source/site-styles/9eedb49febe2cbe3.css\",\n      \"sourceUrl\": \"https://uiarc.dev/_next/static/css/9eedb49febe2cbe3.css\",\n      \"transformation\": \"保留原字节\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站发布样式，供尺寸与时序溯源；不在本地页面执行\",\n      \"file\": \"source/site-styles/1deb81fc96cec2dc.css\",\n      \"sourceUrl\": \"https://uiarc.dev/_next/static/css/1deb81fc96cec2dc.css\",\n      \"transformation\": \"保留原字节\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站发布样式，供尺寸与时序溯源；不在本地页面执行\",\n      \"file\": \"source/site-styles/4ea94117e9b9e540.css\",\n      \"sourceUrl\": \"https://uiarc.dev/_next/static/css/4ea94117e9b9e540.css\",\n      \"transformation\": \"保留原字节\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站发布样式，供尺寸与时序溯源；不在本地页面执行\",\n      \"file\": \"source/site-styles/063c24fc1e24617c.css\",\n      \"sourceUrl\": \"https://uiarc.dev/_next/static/css/063c24fc1e24617c.css\",\n      \"transformation\": \"保留原字节\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站发布样式，供尺寸与时序溯源；不在本地页面执行\",\n      \"file\": \"source/site-styles/c623e9a67ae414ff.css\",\n      \"sourceUrl\": \"https://uiarc.dev/_next/static/css/c623e9a67ae414ff.css\",\n      \"transformation\": \"保留原字节\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站发布样式，供尺寸与时序溯源；不在本地页面执行\",\n      \"file\": \"source/site-styles/2ea2b2731c5ba7bd.css\",\n      \"sourceUrl\": \"https://uiarc.dev/_next/static/css/2ea2b2731c5ba7bd.css\",\n      \"transformation\": \"保留原字节\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站发布样式，供尺寸与时序溯源；不在本地页面执行\",\n      \"file\": \"source/site-styles/44939f48d4440596.css\",\n      \"sourceUrl\": \"https://uiarc.dev/_next/static/css/44939f48d4440596.css\",\n      \"transformation\": \"保留原字节\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站首页原本使用的产品展示图片与静音短片\",\n      \"file\": \"assets/clips/revenue-globe.webp\",\n      \"sourceUrl\": \"https://uiarc.dev/media/showcase/revenue-globe.webp?v=1b688055\",\n      \"transformation\": \"保留原字节\",\n      \"dimensions\": \"1600×1000\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站首页原本使用的产品展示图片与静音短片\",\n      \"file\": \"assets/clips/customer-galaxy.webp\",\n      \"sourceUrl\": \"https://uiarc.dev/media/showcase/customer-galaxy.webp?v=34d7dfa6\",\n      \"transformation\": \"保留原字节\",\n      \"dimensions\": \"1280×800\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站首页原本使用的产品展示图片与静音短片\",\n      \"file\": \"assets/clips/horizon-chart.webp\",\n      \"sourceUrl\": \"https://uiarc.dev/media/showcase/horizon-chart.webp?v=7e0daac5\",\n      \"transformation\": \"保留原字节\",\n      \"dimensions\": \"1600×1000\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站首页原本使用的产品展示图片与静音短片\",\n      \"file\": \"assets/clips/kanban-board.webp\",\n      \"sourceUrl\": \"https://uiarc.dev/media/showcase/kanban-board.webp?v=792736c3\",\n      \"transformation\": \"保留原字节\",\n      \"dimensions\": \"1600×1000\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站首页原本使用的产品展示图片与静音短片\",\n      \"file\": \"assets/clips/choropleth-explorer.webp\",\n      \"sourceUrl\": \"https://uiarc.dev/media/showcase/choropleth-explorer.webp?v=471db4cf\",\n      \"transformation\": \"保留原字节\",\n      \"dimensions\": \"1600×1000\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站首页原本使用的产品展示图片与静音短片\",\n      \"file\": \"assets/clips/ai-chat.webp\",\n      \"sourceUrl\": \"https://uiarc.dev/media/showcase/ai-chat.webp?v=41d31c3b\",\n      \"transformation\": \"保留原字节\",\n      \"dimensions\": \"1600×1000\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站首页原本使用的产品展示图片与静音短片\",\n      \"file\": \"assets/clips/command-palette.webp\",\n      \"sourceUrl\": \"https://uiarc.dev/media/showcase/command-palette.webp?v=b303da86\",\n      \"transformation\": \"保留原字节\",\n      \"dimensions\": \"1280×800\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站首页原本使用的产品展示图片与静音短片\",\n      \"file\": \"assets/clips/dropdown-menu.webp\",\n      \"sourceUrl\": \"https://uiarc.dev/media/showcase/dropdown-menu.webp?v=97946e8e\",\n      \"transformation\": \"保留原字节\",\n      \"dimensions\": \"1280×800\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站首页原本使用的产品展示图片与静音短片\",\n      \"file\": \"assets/clips/dialog.webp\",\n      \"sourceUrl\": \"https://uiarc.dev/media/showcase/dialog.webp?v=67f6a543\",\n      \"transformation\": \"保留原字节\",\n      \"dimensions\": \"1280×800\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站首页原本使用的产品展示图片与静音短片\",\n      \"file\": \"assets/clips/revenue-globe.webm\",\n      \"sourceUrl\": \"https://uiarc.dev/media/showcase/revenue-globe.webm?v=1b688055\",\n      \"transformation\": \"保留原字节\",\n      \"dimensions\": \"1600×1000\",\n      \"duration\": 9.133,\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站首页原本使用的产品展示图片与静音短片\",\n      \"file\": \"assets/clips/customer-galaxy.webm\",\n      \"sourceUrl\": \"https://uiarc.dev/media/showcase/customer-galaxy.webm?v=34d7dfa6\",\n      \"transformation\": \"保留原字节\",\n      \"dimensions\": \"1280×800\",\n      \"duration\": 7.166,\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站首页原本使用的产品展示图片与静音短片\",\n      \"file\": \"assets/clips/horizon-chart.webm\",\n      \"sourceUrl\": \"https://uiarc.dev/media/showcase/horizon-chart.webm?v=7e0daac5\",\n      \"transformation\": \"保留原字节\",\n      \"dimensions\": \"1600×1000\",\n      \"duration\": 6.933,\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站首页原本使用的产品展示图片与静音短片\",\n      \"file\": \"assets/clips/kanban-board.webm\",\n      \"sourceUrl\": \"https://uiarc.dev/media/showcase/kanban-board.webm?v=792736c3\",\n      \"transformation\": \"保留原字节\",\n      \"dimensions\": \"1600×1000\",\n      \"duration\": 8.733,\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站首页原本使用的产品展示图片与静音短片\",\n      \"file\": \"assets/clips/morph-select.webp\",\n      \"sourceUrl\": \"https://uiarc.dev/media/showcase/morph-select.webp?v=7f927c52\",\n      \"transformation\": \"保留原字节\",\n      \"dimensions\": \"1280×800\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站首页原本使用的产品展示图片与静音短片\",\n      \"file\": \"assets/clips/tabs.webp\",\n      \"sourceUrl\": \"https://uiarc.dev/media/showcase/tabs.webp?v=067eadfc\",\n      \"transformation\": \"保留原字节\",\n      \"dimensions\": \"1280×800\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站首页原本使用的产品展示图片与静音短片\",\n      \"file\": \"assets/clips/toast-stack.webp\",\n      \"sourceUrl\": \"https://uiarc.dev/media/showcase/toast-stack.webp?v=68eec328\",\n      \"transformation\": \"保留原字节\",\n      \"dimensions\": \"1280×800\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站首页原本使用的产品展示图片与静音短片\",\n      \"file\": \"assets/clips/date-picker.webp\",\n      \"sourceUrl\": \"https://uiarc.dev/media/showcase/date-picker.webp?v=9de25143\",\n      \"transformation\": \"保留原字节\",\n      \"dimensions\": \"1280×800\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站首页原本使用的产品展示图片与静音短片\",\n      \"file\": \"assets/clips/elastic-slider.webp\",\n      \"sourceUrl\": \"https://uiarc.dev/media/showcase/elastic-slider.webp?v=eb28401f\",\n      \"transformation\": \"保留原字节\",\n      \"dimensions\": \"1280×800\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站首页原本使用的产品展示图片与静音短片\",\n      \"file\": \"assets/clips/switch.webp\",\n      \"sourceUrl\": \"https://uiarc.dev/media/showcase/switch.webp?v=4e05f7c0\",\n      \"transformation\": \"保留原字节\",\n      \"dimensions\": \"1280×800\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站首页原本使用的产品展示图片与静音短片\",\n      \"file\": \"assets/clips/choropleth-explorer.webm\",\n      \"sourceUrl\": \"https://uiarc.dev/media/showcase/choropleth-explorer.webm?v=471db4cf\",\n      \"transformation\": \"保留原字节\",\n      \"dimensions\": \"1600×1000\",\n      \"duration\": 12.033,\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站首页原本使用的产品展示图片与静音短片\",\n      \"file\": \"assets/clips/ai-chat.webm\",\n      \"sourceUrl\": \"https://uiarc.dev/media/showcase/ai-chat.webm?v=41d31c3b\",\n      \"transformation\": \"保留原字节\",\n      \"dimensions\": \"1600×1000\",\n      \"duration\": 9.233,\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站发布样式，供尺寸与时序溯源；不在本地页面执行\",\n      \"file\": \"source/site-styles/0288b3904cc07ec4.css\",\n      \"sourceUrl\": \"https://uiarc.dev/_next/static/css/0288b3904cc07ec4.css\",\n      \"transformation\": \"保留原字节\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站首页原本使用的产品展示图片与静音短片\",\n      \"file\": \"assets/clips/command-palette.webm\",\n      \"sourceUrl\": \"https://uiarc.dev/media/showcase/command-palette.webm?v=b303da86\",\n      \"transformation\": \"保留原字节\",\n      \"dimensions\": \"1280×800\",\n      \"duration\": 5.766,\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站首页原本使用的产品展示图片与静音短片\",\n      \"file\": \"assets/clips/dropdown-menu.webm\",\n      \"sourceUrl\": \"https://uiarc.dev/media/showcase/dropdown-menu.webm?v=97946e8e\",\n      \"transformation\": \"保留原字节\",\n      \"dimensions\": \"1280×800\",\n      \"duration\": 6.066,\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站首页原本使用的产品展示图片与静音短片\",\n      \"file\": \"assets/clips/dialog.webm\",\n      \"sourceUrl\": \"https://uiarc.dev/media/showcase/dialog.webm?v=67f6a543\",\n      \"transformation\": \"保留原字节\",\n      \"dimensions\": \"1280×800\",\n      \"duration\": 5.133,\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站发布样式，供尺寸与时序溯源；不在本地页面执行\",\n      \"file\": \"source/site-styles/7bba85cd9a716746.css\",\n      \"sourceUrl\": \"https://uiarc.dev/_next/static/css/7bba85cd9a716746.css\",\n      \"transformation\": \"保留原字节\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站发布样式，供尺寸与时序溯源；不在本地页面执行\",\n      \"file\": \"source/site-styles/7629db7a71e637c8.css\",\n      \"sourceUrl\": \"https://uiarc.dev/_next/static/css/7629db7a71e637c8.css\",\n      \"transformation\": \"保留原字节\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站首页原本使用的产品展示图片与静音短片\",\n      \"file\": \"assets/clips/date-picker.webm\",\n      \"sourceUrl\": \"https://uiarc.dev/media/showcase/date-picker.webm?v=9de25143\",\n      \"transformation\": \"保留原字节\",\n      \"dimensions\": \"1280×800\",\n      \"duration\": 8.066,\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站首页原本使用的产品展示图片与静音短片\",\n      \"file\": \"assets/clips/elastic-slider.webm\",\n      \"sourceUrl\": \"https://uiarc.dev/media/showcase/elastic-slider.webm?v=eb28401f\",\n      \"transformation\": \"保留原字节\",\n      \"dimensions\": \"1280×800\",\n      \"duration\": 8.066,\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站首页原本使用的产品展示图片与静音短片\",\n      \"file\": \"assets/clips/switch.webm\",\n      \"sourceUrl\": \"https://uiarc.dev/media/showcase/switch.webm?v=4e05f7c0\",\n      \"transformation\": \"保留原字节\",\n      \"dimensions\": \"1280×800\",\n      \"duration\": 4.733,\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站首页原本使用的产品展示图片与静音短片\",\n      \"file\": \"assets/clips/morph-select.webm\",\n      \"sourceUrl\": \"https://uiarc.dev/media/showcase/morph-select.webm?v=7f927c52\",\n      \"transformation\": \"保留原字节\",\n      \"dimensions\": \"1280×800\",\n      \"duration\": 9.1,\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站首页原本使用的产品展示图片与静音短片\",\n      \"file\": \"assets/clips/tabs.webm\",\n      \"sourceUrl\": \"https://uiarc.dev/media/showcase/tabs.webm?v=067eadfc\",\n      \"transformation\": \"保留原字节\",\n      \"dimensions\": \"1280×800\",\n      \"duration\": 6.233,\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc；字体归原作者\",\n      \"usage\": \"原站首页原本使用的产品展示图片与静音短片\",\n      \"file\": \"assets/clips/toast-stack.webm\",\n      \"sourceUrl\": \"https://uiarc.dev/media/showcase/toast-stack.webm?v=68eec328\",\n      \"transformation\": \"保留原字节\",\n      \"dimensions\": \"1280×800\",\n      \"duration\": 8.333,\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Boston Consulting Group\",\n      \"usage\": \"官网标识条带中的原始内联 SVG\",\n      \"file\": \"assets/logos/0.svg\",\n      \"sourceUrl\": \"https://uiarc.dev/\",\n      \"transformation\": \"从公开 DOM 序列化，保留路径与比例\",\n      \"dimensions\": \"viewBox 0 0 72.31 29.47\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Whop\",\n      \"usage\": \"官网标识条带中的原始内联 SVG\",\n      \"file\": \"assets/logos/1.svg\",\n      \"sourceUrl\": \"https://uiarc.dev/\",\n      \"transformation\": \"从公开 DOM 序列化，保留路径与比例\",\n      \"dimensions\": \"viewBox 0 0 118.03 25.88\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"A24\",\n      \"usage\": \"官网标识条带中的原始内联 SVG\",\n      \"file\": \"assets/logos/2.svg\",\n      \"sourceUrl\": \"https://uiarc.dev/\",\n      \"transformation\": \"从公开 DOM 序列化，保留路径与比例\",\n      \"dimensions\": \"viewBox 0 0 379.7 155.8\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Airtel\",\n      \"usage\": \"官网标识条带中的原始内联 SVG\",\n      \"file\": \"assets/logos/3.svg\",\n      \"sourceUrl\": \"https://uiarc.dev/\",\n      \"transformation\": \"从公开 DOM 序列化，保留路径与比例\",\n      \"dimensions\": \"viewBox 0 0 221.78 56.89\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"CoinTracker\",\n      \"usage\": \"官网标识条带中的原始内联 SVG\",\n      \"file\": \"assets/logos/4.svg\",\n      \"sourceUrl\": \"https://uiarc.dev/\",\n      \"transformation\": \"从公开 DOM 序列化，保留路径与比例\",\n      \"dimensions\": \"viewBox 0 0 147 20.09\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Teamworks\",\n      \"usage\": \"官网标识条带中的原始内联 SVG\",\n      \"file\": \"assets/logos/5.svg\",\n      \"sourceUrl\": \"https://uiarc.dev/\",\n      \"transformation\": \"从公开 DOM 序列化，保留路径与比例\",\n      \"dimensions\": \"viewBox 0 0 148 37\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Nearform\",\n      \"usage\": \"官网标识条带中的原始内联 SVG\",\n      \"file\": \"assets/logos/6.svg\",\n      \"sourceUrl\": \"https://uiarc.dev/\",\n      \"transformation\": \"从公开 DOM 序列化，保留路径与比例\",\n      \"dimensions\": \"viewBox 0 0 143.74 25.01\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"HappyRobot\",\n      \"usage\": \"官网标识条带中的原始内联 SVG\",\n      \"file\": \"assets/logos/7.svg\",\n      \"sourceUrl\": \"https://uiarc.dev/\",\n      \"transformation\": \"从公开 DOM 序列化，保留路径与比例\",\n      \"dimensions\": \"viewBox 0 0 2906 448\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Nixtla\",\n      \"usage\": \"官网标识条带中的原始内联 SVG\",\n      \"file\": \"assets/logos/8.svg\",\n      \"sourceUrl\": \"https://uiarc.dev/\",\n      \"transformation\": \"从公开 DOM 序列化，保留路径与比例\",\n      \"dimensions\": \"viewBox 0 0 114.81 16.36\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Maximum Effort\",\n      \"usage\": \"官网标识条带中的原始内联 SVG\",\n      \"file\": \"assets/logos/9.svg\",\n      \"sourceUrl\": \"https://uiarc.dev/\",\n      \"transformation\": \"从公开 DOM 序列化，保留路径与比例\",\n      \"dimensions\": \"viewBox 0 0 938 339.7\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"The Post and Courier\",\n      \"usage\": \"官网标识条带中的原始内联 SVG\",\n      \"file\": \"assets/logos/10.svg\",\n      \"sourceUrl\": \"https://uiarc.dev/\",\n      \"transformation\": \"从公开 DOM 序列化，保留路径与比例\",\n      \"dimensions\": \"viewBox 0 0 3382 406\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Rezi\",\n      \"usage\": \"官网标识条带中的原始内联 SVG\",\n      \"file\": \"assets/logos/11.svg\",\n      \"sourceUrl\": \"https://uiarc.dev/\",\n      \"transformation\": \"从公开 DOM 序列化，保留路径与比例\",\n      \"dimensions\": \"viewBox 0 0 51 21\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Ordinal\",\n      \"usage\": \"官网标识条带中的原始内联 SVG\",\n      \"file\": \"assets/logos/12.svg\",\n      \"sourceUrl\": \"https://uiarc.dev/\",\n      \"transformation\": \"从公开 DOM 序列化，保留路径与比例\",\n      \"dimensions\": \"viewBox 0 0 110.09 25.15\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc\",\n      \"usage\": \"原站品牌标记\",\n      \"file\": \"assets/arc-mark.svg\",\n      \"sourceUrl\": \"https://uiarc.dev/\",\n      \"transformation\": \"从公开 DOM 序列化，保留路径与比例\",\n      \"dimensions\": \"viewBox 0 0 64 64\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"owner\": \"Elia Kuratli / Arc\",\n      \"usage\": \"原站品牌标记\",\n      \"file\": \"assets/footer-mark.svg\",\n      \"sourceUrl\": \"https://uiarc.dev/\",\n      \"transformation\": \"从公开 DOM 序列化，保留路径与比例\",\n      \"dimensions\": \"viewBox 0 3.5 64 31\",\n      \"license\": \"保留作者及品牌权利；设计参考，未标为 MIT\"\n    },\n    {\n      \"file\": \"source/site-scripts/95714-07d7cb0e45d9a488.js\",\n      \"sourceUrl\": \"https://uiarc.dev/_next/static/chunks/95714-07d7cb0e45d9a488.js\",\n      \"owner\": \"Elia Kuratli / Arc\",\n      \"usage\": \"公开部署代码中的主题、标题、菜单、媒体和价格交互参数参照；本地不加载此文件\",\n      \"transformation\": \"保留公开响应的原始 JavaScript 内容\",\n      \"license\": \"保留作者权利；参数参照，不标为 MIT\"\n    },\n    {\n      \"file\": \"source/site-scripts/23473-216b40ab39e6c47c.js\",\n      \"sourceUrl\": \"https://uiarc.dev/_next/static/chunks/23473-216b40ab39e6c47c.js\",\n      \"owner\": \"Elia Kuratli / Arc\",\n      \"usage\": \"公开部署代码中的主题、标题、菜单、媒体和价格交互参数参照；本地不加载此文件\",\n      \"transformation\": \"保留公开响应的原始 JavaScript 内容\",\n      \"license\": \"保留作者权利；参数参照，不标为 MIT\"\n    },\n    {\n      \"file\": \"source/site-scripts/19483-e4d11383c4facb88.js\",\n      \"sourceUrl\": \"https://uiarc.dev/_next/static/chunks/19483-e4d11383c4facb88.js\",\n      \"owner\": \"Elia Kuratli / Arc\",\n      \"usage\": \"公开部署代码中的主题、标题、菜单、媒体和价格交互参数参照；本地不加载此文件\",\n      \"transformation\": \"保留公开响应的原始 JavaScript 内容\",\n      \"license\": \"保留作者权利；参数参照，不标为 MIT\"\n    },\n    {\n      \"file\": \"source/site-scripts/72250-79d591c795014f46.js\",\n      \"sourceUrl\": \"https://uiarc.dev/_next/static/chunks/72250-79d591c795014f46.js\",\n      \"owner\": \"Elia Kuratli / Arc\",\n      \"usage\": \"公开部署代码中的主题、标题、菜单、媒体和价格交互参数参照；本地不加载此文件\",\n      \"transformation\": \"保留公开响应的原始 JavaScript 内容\",\n      \"license\": \"保留作者权利；参数参照，不标为 MIT\"\n    }\n  ],\n  \"capturedAt\": \"2026-11-01\",\n  \"referenceUrl\": \"https://uiarc.dev/\"\n}\n"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/LICENSES.md",
+      "role": "license",
+      "content": "# 许可索引\n\n- [共享设计 tokens · MIT](source/arc-MIT-LICENSE.txt)：`source/foundation.css` 来自公开免费组件仓库。\n- [组件运行依赖](vendor/arc-ui@df3a600/licenses.json)：所复用 Arc UI 组件、React、Motion、Radix 与 Lucide 的运行版本和许可原文。\n- [Inter · SIL OFL 1.1](fonts/Inter-OFL.txt) 与 [Geist · SIL OFL 1.1](fonts/Geist-OFL.txt)：原始可变字体。\n- 首页影片、海报、品牌标记、客户标识及发布样式的来源见 [素材清单](assets-manifest.json)，相关权利归 Arc 和各品牌作者。本案例保留署名用于设计参考，不将这些内容标为 MIT。\n- 免费组件与 Pro 源码的权利范围见 [Arc 官方许可](https://uiarc.dev/license)。本案例没有收录 Pro 源码。\n"
+    }
+  ],
+  "files": [
+    {
+      "path": "asset-cache-worker.js",
+      "role": "source"
+    },
+    {
+      "path": "data/asset-sources.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/LICENSES.md",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/app.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets-manifest.json",
+      "role": "context"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/arc-mark.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/ai-chat.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/ai-chat.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/choropleth-explorer.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/choropleth-explorer.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/command-palette.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/command-palette.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/customer-galaxy.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/customer-galaxy.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/date-picker.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/date-picker.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/dialog.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/dialog.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/dropdown-menu.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/dropdown-menu.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/elastic-slider.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/elastic-slider.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/horizon-chart.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/horizon-chart.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/kanban-board.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/kanban-board.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/morph-select.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/morph-select.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/revenue-globe.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/revenue-globe.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/switch.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/switch.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/tabs.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/tabs.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/toast-stack.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/toast-stack.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/footer-mark.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/0.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/1.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/10.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/11.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/12.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/2.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/3.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/4.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/5.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/6.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/7.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/8.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/9.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/fidelity.md",
+      "role": "context"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/fonts/6c596dfcddeca1e9-s.p.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/fonts/9ff55a8a9670220d-s.p.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/fonts/Geist-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/fonts/Inter-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/README.md",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/arc-MIT-LICENSE.txt",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/build.mjs",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/components.tsx",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/content.json",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/foundation.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/package-lock.json",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/package.json",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-scripts/19483-e4d11383c4facb88.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-scripts/23473-216b40ab39e6c47c.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-scripts/72250-79d591c795014f46.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-scripts/95714-07d7cb0e45d9a488.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/00f047ef6c557b9f.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/0288b3904cc07ec4.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/063c24fc1e24617c.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/13f27d3855b19595.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/1deb81fc96cec2dc.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/2ea2b2731c5ba7bd.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/31bdadfcc9af4fd1.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/44939f48d4440596.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/4ea94117e9b9e540.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/7629db7a71e637c8.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/7b776a5cbbe2b78a.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/7bba85cd9a716746.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/9eedb49febe2cbe3.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/becc961a9b59e177.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/c623e9a67ae414ff.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/dce8d597c26e3056.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/ea73e4e582f921b0.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/f67fa7d19375a705.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses.json",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-primitive-1.1.7.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-accordion-1.2.20.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-collapsible-1.1.20.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-collection-1.1.15.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-compose-refs-1.1.5.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-context-1.2.2.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-dialog-1.1.23.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-direction-1.1.4.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-dismissable-layer-1.1.19.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-focus-guards-1.1.6.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-focus-scope-1.1.16.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-id-1.1.4.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-portal-1.1.17.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-presence-1.1.10.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-primitive-2.1.10.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-slot-1.3.3.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-use-callback-ref-1.1.4.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-use-controllable-state-1.2.6.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-use-effect-event-0.0.5.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-use-layout-effect-1.1.4.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/aria-hidden-1.2.6.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/detect-node-es-1.1.0.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/framer-motion-13.5.1.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/get-nonce-1.0.1.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/lucide-react-1.47.0.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/motion-13.4.0.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/motion-dom-13.5.1.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/motion-utils-13.5.0.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/react-19.3.0.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/react-dom-19.3.0.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/react-remove-scroll-2.7.2.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/react-style-singleton-2.2.3.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/scheduler-0.28.0.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/tslib-2.9.1.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/use-callback-ref-1.3.3.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/use-sidecar-1.1.3.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/runtime.css",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/runtime.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/runtime.js.LEGAL.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "docs.html",
+      "role": "source"
+    },
+    {
+      "path": "docs/cases/uiarc-platform.md",
+      "role": "context"
+    },
+    {
+      "path": "entries/cases/uiarc-platform.json",
+      "role": "context"
+    },
+    {
+      "path": "previews/cases/uiarc-platform-mobile.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/cases/uiarc-platform-reference.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/cases/uiarc-platform.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "prompts/cases/uiarc-platform.md",
+      "role": "context"
+    },
+    {
+      "path": "site/icons/favicon.svg",
+      "role": "asset"
+    },
+    {
+      "path": "site/pages/docs/docs.css",
+      "role": "source"
+    },
+    {
+      "path": "site/pages/docs/docs.js",
+      "role": "source"
+    },
+    {
+      "path": "site/runtime/asset-cache.js",
+      "role": "source"
+    },
+    {
+      "path": "site/runtime/asset-runtime.js",
+      "role": "source"
+    },
+    {
+      "path": "site/runtime/case-loading.css",
+      "role": "source"
+    },
+    {
+      "path": "site/runtime/case-loading.js",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/site-footer.css",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/site-nav.css",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/site-shell.js",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/site-typography.css",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/theme-control.css",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/theme.js",
+      "role": "source"
+    },
+    {
+      "path": "site/vendor/LICENSES.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/vendor/marked.umd.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/vendor/purify.min.js",
+      "role": "vendor"
+    }
+  ],
+  "webNotes": {
+    "format": "text/html",
+    "renderer": "site/pages/cases/atlas.js",
+    "content": "<section><h2>从要素看风格</h2><p>下方映射展示各个元素如何共同表达主题。实验室可交互调配，案例Demo保留自己的构成与交互。</p><a class=\"element-lab-link\" href=\"lab.html?style=uiarc-platform\">调配这个风格的设计要素</a><dl class=\"element-map\"><div class=\"\"><dt>配色角色</dt><dd>中性黑白、层次分明的表面和灰字；粉 #E9BABB、蓝 #AFC7F6、黄 #E8D9AD 三个径向色场围住首尾标题。</dd></div><div class=\"\"><dt>字体排版</dt><dd>Geist 负责 72px 桌面标题与章节标题，Inter 负责导航、说明与操作；手机主标题使用 7.2vw、24–30px 范围。</dd></div><div class=\"\"><dt>布局留白</dt><dd>原生纵向长页；1440px 下主内容上限 1248px，首尾面板上限 1408px；Pro 两列、免费三列，手机一列／两列。</dd></div><div class=\"\"><dt>图像图标</dt><dd>15 组原始 WebP / WebM 展示媒体和 13 个客户 SVG 标识；影片是原站已有的营销内容，不作为组件实现。</dd></div><div class=\"\"><dt>线条形状</dt><dd>30px 渐变面板、26px 媒体卡、18px 操作与胶囊层级标记。</dd></div><div class=\"\"><dt>信息层级</dt><dd>品牌主张、客户证据、Pro 作品、免费核心、安装方式、方案、疑问、最终行动依次展开。</dd></div><div class=\"\"><dt>动效反馈</dt><dd>裁切标题显现、52s 标识轨道、可视区静音影片、单开 FAQ 与套餐选中底板；减少动态保留静态内容。</dd></div><div class=\"coherence\"><dt>协调逻辑</dt><dd>同一渐变在首尾呼应，中性页面框架与品牌面板各自保持颜色职责，所有例子都回到同一套源码产品。</dd></div></dl></section><section><h2>01 / 设计机制</h2><ul><li>先用一句明确主张和双行动解释产品，再以真实效果证明质量。</li><li>高阶展示与免费核心分组，组件名称、说明和许可层级放在影片外阅读。</li><li>安装入口同时面向直接使用 CLI 的开发者与通过 MCP 取材的 Agent。</li><li>网站设计是案例；可直接取用的免费组件代码单独作为素材收录。</li></ul><h3>怎样凸显产品重点</h3><p>用真实组件效果说明产品能力，通过源码、CLI 和 AI 工具入口降低取用门槛。</p><h3>主题与情绪</h3><p></p></section><section><h2>02 / 交互巧思</h2><ul><li>主题按钮在系统默认与手动选择之间协调页面表面、文字、边界和导航；点击后通过 View Transition 让新主题从横向中线向上下展开，390ms、cubic-bezier(.22,1,.36,1)，完成后清理过渡状态。首尾粉蓝黄渐变面板和产品影片保持原色，减少动态直接完成切换。</li><li>首屏标题按单词裁切向上显现，词间延迟 40ms，位移／透明度／模糊分别为 760／440／580ms；章节标题可见面积达到 45% 后从 112% 下方上升，860ms 位移与 481.6ms 透明度，结尾双行间隔 80ms；越过的标题直接显示，减少动态保留完整文字。</li><li>13 个客户标识组成两份同序轨道，以 52s 线性循环横移，左右渐隐；原站没有悬停暂停，减少动态时改为静态换行且隐藏重复组。</li><li>六张 Pro 卡片与九张免费卡片分别排成桌面两列和三列；原始 WebP 海报与静音 WebM 在前后一屏预载，可见比例达到 35% 时播放，离屏或后台暂停并保留已显示的视频帧，同时最多播放 8 段。首入减少动态或节流模式使用海报和手动播放按钮；点击卡片进入对应原站页。手机为一列／两列。</li><li>shadcn CLI 与 MCP server 并排给出同一组件库的两个安装入口；原始 CopyButton 复制完整命令，以图标交叉淡化和描线勾号反馈，1900ms 后复位；第三张卡区分免费与 Pro 数量。</li><li>价格区的 Pro yearly / Free 使用原始 SegmentedControl 移动选中底板，整块说明、金额、清单和入口通过 AnimatePresence 交接，240ms 透明度、400ms 无回弹弹簧位移；金额使用原始 AnimatedCounter。右侧终身方案保持可见，手机保留年度卡在先。</li><li>六项 FAQ 默认展开第一项；使用原始 Accordion 的单开状态、400ms 无回弹高度弹簧、260ms 图标弹簧和 2px 轻模糊，打开另一项收起前项，当前项可再次收起；Radix 管理语义、焦点与折叠后可访问状态。</li><li>手机菜单通过 Radix Dialog 在顶栏下方展开，460ms 向下裁切，条目延迟 90ms 起、40ms 错峰；关闭使用 240ms 反向裁切，背景 320／240ms 淡化与 5px 模糊。Escape 返回触发按钮，Examples 关闭后滚动并聚焦展示区。</li></ul><div class=\"behavior-block\"><span class=\"behavior-label\">显示主题</span><h3>系统 + 手动</h3><p>顶栏太阳／月亮按钮切换并保存手动主题；没有手动值时跟随系统。</p><p>中性界面按主题切换，浅色渐变品牌面板和原始产品媒体保持稳定。</p></div><div class=\"behavior-block\"><span class=\"behavior-label\">声音与交互</span><h3>无网站配乐</h3><p>15 段产品展示影片原本为静音播放，没有背景音乐或操作音。</p><p>运动只负责展示组件效果，页面阅读不依赖声音。</p></div></section><section><h2>03 / 约束与适用场景</h2><ul><li>采集范围为官网完整首页；组件目录、文档、Showcase、Pro、登录与交易通过原站入口访问。</li><li>官网没有可取得的独立网站工程；本地 HTML/CSS/JavaScript 根据公开页面与发布样式自行实现。source/site-styles/ 为参数来源快照，不是本地运行代码。</li><li>官网影片、标识和页面美术保留作者及相关品牌权利；免费组件的 MIT 不扩展到 Pro 源码或整站媒体。</li><li>价格与数量固定为本次采集快照；账号、交易与实时统计通过原站入口使用。本地复用同一免费素材的原始组件，菜单、标题与媒体按公开部署参数实现。</li></ul><h3>适合</h3><p>组件库或开发者平台首页 / 需要同时解释效果与安装方式的工具产品 / 用免费核心与专业内容分层介绍能力</p><h3>谨慎使用</h3><p>用展示短片冒充可操作的组件实现 / 把 Pro 内容作为开放组件源码分发 / 把客户标识当作独立验证过的客户证言</p></section><section><h2>04 / 设计 Tokens</h2><div class=\"swatches\"><span class=\"swatch\"><i style=\"background:#ffffff\"></i>#ffffff</span><span class=\"swatch\"><i style=\"background:#f8f7f5\"></i>#f8f7f5</span><span class=\"swatch\"><i style=\"background:#262931\"></i>#262931</span><span class=\"swatch\"><i style=\"background:#5b626d\"></i>#5b626d</span><span class=\"swatch\"><i style=\"background:#e9babb\"></i>#e9babb</span><span class=\"swatch\"><i style=\"background:#afc7f6\"></i>#afc7f6</span><span class=\"swatch\"><i style=\"background:#e8d9ad\"></i>#e8d9ad</span></div><p><b>字体</b> · Geist / Inter 可变字体；主标题 72px，章节 52px，正文 16–18px。<br><b>布局</b> · 主内容 min(100% - 64px,1248px)；首屏 690px，手机 590px；手机外缘 16px。<br><b>动效</b> · 主题 390ms 中央展开；标题 45% 可见触发、860ms 上升；标识 52s；菜单 460／240ms 裁切；FAQ 400ms 弹簧。</p></section><section><div class=\"prompt-head\"><h2>05 / 可复用 Prompt</h2><button class=\"copy-button\" id=\"copy-prompt\">复制 Prompt</button></div><textarea class=\"prompt-box\" aria-label=\"可复用 Prompt\" readonly>参考 Arc UI 的完整官网首页，以真实 HTML/CSS/JavaScript 实现固定浅色的粉蓝黄径向渐变首屏、中性明暗主题、Geist 双行主张、两个行动、客户 SVG 连续轨道、六项 Pro 与九项免费产品媒体、CLI 与 MCP 命令复制、免费／年度方案切换、终身方案、单开 FAQ、渐变结尾和品牌页脚。产品影片只用于原站已有的媒体卡，实际组件代码从独立 Arc UI 素材包取得。沿用原文与真实产品链接，不实现账户和支付后台。桌面两列／三列网格在手机变成一列／两列，导航在顶栏下方展开并支持 Escape 与焦点返回。跟随系统并保存手动主题，品牌面板与媒体保持原色；减少动态时静态显示标题、标识和海报，原作无声音，不加配乐。迁移前读取来源、素材清单与 fidelity.md。 深浅主题以390ms中央横线向上下展开。章节标题按45%可见阈值从112%下方升起。FAQ、套餐底板、金额与复制反馈复用固定免费源码；手机菜单保留460ms展开、240ms收回和40ms条目错峰。媒体在35%可见时静音播放，离屏保留帧，减少动态的海报提供手动播放。</textarea><details><summary>负面约束 / Negative Prompt</summary><p>不要把整站截图或录屏当作页面；不要将营销短片当成组件实现；不要收录 Pro 源码；不要把免费组件 MIT 许可套用于整站媒体；不要只做首屏而漏掉价格、安装和 FAQ。</p></details><h3>改造练习</h3><p>在 1440×1000 与 390×844、DPR 1、相同主题下并排对照原站和本地；走完主题、菜单、影片、复制、两个价格状态和六项 FAQ，结果见 fidelity.md。</p></section><section><h2>06 / 来源与证据</h2><div class=\"source-item\"><span class=\"source-badge\">实例</span><a href=\"https://uiarc.dev/\" target=\"_blank\" rel=\"noopener noreferrer\">Arc UI 公开官网 </a><small>首页、原始字体与媒体、主题、手机菜单、FAQ 和按需载入价格区。</small></div><div class=\"source-item\"><span class=\"source-badge\">实例</span><a href=\"https://github.com/kuratlielia/arc-library/tree/df3a600fd9ffca85ec8607438b599a4408ab8562\" target=\"_blank\" rel=\"noopener noreferrer\">免费组件固定源码 </a><small>提供免费组件、共享设计与动效 tokens；不包含官网工程或 Pro 源码。</small></div><div class=\"source-item\"><span class=\"source-badge\">许可</span><a href=\"https://uiarc.dev/license\" target=\"_blank\" rel=\"noopener noreferrer\">Arc 许可说明 </a><small>免费部分 MIT；Pro 源码使用独立商业许可，不能作为组件库重新分发。</small></div><div class=\"source-item\"><span class=\"source-badge\">创作来源</span><a href=\"https://uiarc.dev/imprint\" target=\"_blank\" rel=\"noopener noreferrer\">Arc · 官方运营主体 </a><small>官方 Imprint 将 Arc 运营主体列为 Elia Kuratli 在瑞士经营的个体企业；地区按运营机构来源标注。</small></div><div class=\"source-item\"><span class=\"source-badge\">实现依据</span><a href=\"https://uiarc.dev/_next/static/chunks/95714-07d7cb0e45d9a488.js\" target=\"_blank\" rel=\"noopener noreferrer\">官网公开交互部署 · 95714 </a><small>采集版本的主题、标题、菜单、媒体或价格交互参数；原始响应保存在 source/site-scripts/，本地自行实现，不执行这些发布包。</small></div><div class=\"source-item\"><span class=\"source-badge\">实现依据</span><a href=\"https://uiarc.dev/_next/static/chunks/23473-216b40ab39e6c47c.js\" target=\"_blank\" rel=\"noopener noreferrer\">官网公开交互部署 · 23473 </a><small>采集版本的主题、标题、菜单、媒体或价格交互参数；原始响应保存在 source/site-scripts/，本地自行实现，不执行这些发布包。</small></div><div class=\"source-item\"><span class=\"source-badge\">实现依据</span><a href=\"https://uiarc.dev/_next/static/chunks/19483-e4d11383c4facb88.js\" target=\"_blank\" rel=\"noopener noreferrer\">官网公开交互部署 · 19483 </a><small>采集版本的主题、标题、菜单、媒体或价格交互参数；原始响应保存在 source/site-scripts/，本地自行实现，不执行这些发布包。</small></div><div class=\"source-item\"><span class=\"source-badge\">实现依据</span><a href=\"https://uiarc.dev/_next/static/chunks/72250-79d591c795014f46.js\" target=\"_blank\" rel=\"noopener noreferrer\">官网公开交互部署 · 72250 </a><small>采集版本的主题、标题、菜单、媒体或价格交互参数；原始响应保存在 source/site-scripts/，本地自行实现，不执行这些发布包。</small></div><p>参考站采集：2026-11-01。本案例归档这次采集的页面与交互。详细观察、推断与限制见<a href=\"docs.html?file=docs%2Fcases%2Fuiarc-platform.md\" target=\"_blank\">调研记录</a>。</p></section>"
+  }
+}

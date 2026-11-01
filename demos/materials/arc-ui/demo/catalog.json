@@ -1,0 +1,3100 @@
+{
+  "sections": [
+    {
+      "id": "component",
+      "title": "Components",
+      "titleZh": "组件",
+      "groups": [
+        {
+          "id": "component-buttons",
+          "title": "Buttons",
+          "titleZh": "按钮",
+          "items": [
+            "button",
+            "action-button",
+            "split-button",
+            "button-group",
+            "floating-button-group",
+            "expanding-button-group",
+            "copy-button",
+            "action-swap",
+            "icon-morph",
+            "confirm-morph",
+            "theme-switch",
+            "theme-switch-eclipse",
+            "theme-switch-split",
+            "theme-switch-rise"
+          ]
+        },
+        {
+          "id": "component-gestures",
+          "title": "Gestures",
+          "titleZh": "手势",
+          "items": [
+            "hold-to-confirm",
+            "swipe-actions",
+            "reactions"
+          ]
+        },
+        {
+          "id": "component-menus",
+          "title": "Menus",
+          "titleZh": "菜单",
+          "items": [
+            "dropdown-menu",
+            "context-menu",
+            "user-menu"
+          ]
+        },
+        {
+          "id": "component-text-fields",
+          "title": "Text fields",
+          "titleZh": "文本字段",
+          "items": [
+            "input",
+            "textarea",
+            "password-field",
+            "password-strength",
+            "search-field",
+            "expanding-search",
+            "inline-edit"
+          ]
+        },
+        {
+          "id": "component-special-inputs",
+          "title": "Special inputs",
+          "titleZh": "专用输入",
+          "items": [
+            "number-field",
+            "money-input",
+            "phone-input",
+            "scrub-input",
+            "tag-input",
+            "mention-input",
+            "shortcut-recorder"
+          ]
+        },
+        {
+          "id": "component-selects",
+          "title": "Selects",
+          "titleZh": "选择器",
+          "items": [
+            "select",
+            "combobox",
+            "multi-select",
+            "morph-select",
+            "chip-group"
+          ]
+        },
+        {
+          "id": "component-toggles",
+          "title": "Toggles",
+          "titleZh": "切换与选项",
+          "items": [
+            "radio-cards",
+            "billing-toggle",
+            "checkbox",
+            "radio-group",
+            "switch",
+            "segmented-control",
+            "rating"
+          ]
+        },
+        {
+          "id": "component-sliders",
+          "title": "Sliders",
+          "titleZh": "滑块",
+          "items": [
+            "slider",
+            "elastic-slider",
+            "range-histogram-slider",
+            "ruler-slider"
+          ]
+        },
+        {
+          "id": "component-pickers",
+          "title": "Pickers",
+          "titleZh": "选择面板",
+          "items": [
+            "calendar",
+            "date-picker",
+            "date-range-picker",
+            "time-picker",
+            "color-picker"
+          ]
+        },
+        {
+          "id": "component-editors",
+          "title": "Editors",
+          "titleZh": "编辑器",
+          "items": [
+            "rich-text-editor",
+            "signature-pad",
+            "file-dropzone"
+          ]
+        },
+        {
+          "id": "component-navigation",
+          "title": "Navigation",
+          "titleZh": "导航",
+          "items": [
+            "tabs",
+            "breadcrumb",
+            "pagination"
+          ]
+        },
+        {
+          "id": "component-expand",
+          "title": "Expand",
+          "titleZh": "展开与布局",
+          "items": [
+            "scroll-area",
+            "accordion",
+            "expandable-card",
+            "resizable-panels",
+            "expandable-text"
+          ]
+        },
+        {
+          "id": "component-overlays",
+          "title": "Overlays",
+          "titleZh": "浮层",
+          "items": [
+            "dialog",
+            "drawer",
+            "bottom-sheet",
+            "popover",
+            "hover-card",
+            "tooltip"
+          ]
+        },
+        {
+          "id": "component-messages",
+          "title": "Messages",
+          "titleZh": "消息反馈",
+          "items": [
+            "alert",
+            "toast",
+            "toast-stack",
+            "announcement-bar",
+            "cookie-consent"
+          ]
+        },
+        {
+          "id": "component-progress",
+          "title": "Progress",
+          "titleZh": "进度",
+          "items": [
+            "progress",
+            "skeleton",
+            "stepper",
+            "countdown",
+            "usage-meter",
+            "onboarding-checklist"
+          ]
+        },
+        {
+          "id": "component-avatars",
+          "title": "Avatars",
+          "titleZh": "头像与徽标",
+          "items": [
+            "avatar",
+            "avatar-group",
+            "badge"
+          ]
+        },
+        {
+          "id": "component-cards",
+          "title": "Cards",
+          "titleZh": "卡片",
+          "items": [
+            "card",
+            "metric-card",
+            "empty-state"
+          ]
+        },
+        {
+          "id": "component-charts",
+          "title": "Charts",
+          "titleZh": "图表",
+          "items": [
+            "line-chart",
+            "bar-chart",
+            "donut-chart",
+            "streamgraph",
+            "brush-chart",
+            "waffle-chart",
+            "slope-chart",
+            "sparkline",
+            "gauge",
+            "activity-heatmap",
+            "animated-counter",
+            "ridgeline",
+            "treemap"
+          ]
+        },
+        {
+          "id": "component-tables",
+          "title": "Tables",
+          "titleZh": "表格与结构",
+          "items": [
+            "sortable-data-table",
+            "tree-table",
+            "tree-view",
+            "reorderable-list",
+            "filter-toolbar",
+            "code-block",
+            "json-viewer"
+          ]
+        },
+        {
+          "id": "component-activity",
+          "title": "Activity",
+          "titleZh": "活动记录",
+          "items": [
+            "timeline",
+            "comment-thread",
+            "chat-thread"
+          ]
+        },
+        {
+          "id": "component-media",
+          "title": "Media",
+          "titleZh": "媒体",
+          "items": [
+            "image-compare",
+            "carousel",
+            "card-stack"
+          ]
+        },
+        {
+          "id": "component-text-effects",
+          "title": "Text effects",
+          "titleZh": "文字效果",
+          "items": [
+            "text-reveal",
+            "in-view-title",
+            "text-morph",
+            "text-shimmer",
+            "slot-text"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "block",
+      "title": "Blocks",
+      "titleZh": "区块",
+      "groups": [
+        {
+          "id": "block-app-shell",
+          "title": "App shell",
+          "titleZh": "应用外壳",
+          "items": [
+            "page-header",
+            "command-palette",
+            "notification-center",
+            "empty-states"
+          ]
+        },
+        {
+          "id": "block-auth",
+          "title": "Auth",
+          "titleZh": "身份表单",
+          "items": [
+            "signup-form",
+            "sign-in",
+            "login-centered",
+            "otp-input"
+          ]
+        },
+        {
+          "id": "block-pricing",
+          "title": "Pricing",
+          "titleZh": "价格方案",
+          "items": [
+            "plan-comparison"
+          ]
+        },
+        {
+          "id": "block-media",
+          "title": "Media",
+          "titleZh": "媒体",
+          "items": [
+            "file-upload"
+          ]
+        },
+        {
+          "id": "block-heroes",
+          "title": "Heroes",
+          "titleZh": "首屏",
+          "items": [
+            "hero-section"
+          ]
+        },
+        {
+          "id": "block-features",
+          "title": "Features",
+          "titleZh": "功能对比",
+          "items": [
+            "comparison-table"
+          ]
+        },
+        {
+          "id": "block-social-proof",
+          "title": "Social proof",
+          "titleZh": "信任背书",
+          "items": [
+            "logo-marquee",
+            "stats-band"
+          ]
+        },
+        {
+          "id": "block-content",
+          "title": "Content",
+          "titleZh": "内容",
+          "items": [
+            "changelog-feed",
+            "faq-section",
+            "contact-section",
+            "blog-grid"
+          ]
+        },
+        {
+          "id": "block-headers-and-footers",
+          "title": "Headers and footers",
+          "titleZh": "导航与页脚",
+          "items": [
+            "site-header",
+            "site-footer",
+            "cta-section",
+            "newsletter-signup"
+          ]
+        }
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "button",
+      "title": "Button",
+      "titleZh": "按钮",
+      "category": {
+        "id": "component-buttons",
+        "title": "Buttons",
+        "titleZh": "按钮",
+        "order": 0
+      },
+      "kind": "component",
+      "group": "actions",
+      "url": "https://uiarc.dev/components/button",
+      "files": [
+        "registry/components/button/button.tsx",
+        "registry/components/button/button.module.css"
+      ]
+    },
+    {
+      "id": "action-button",
+      "title": "Action button",
+      "titleZh": "操作按钮",
+      "category": {
+        "id": "component-buttons",
+        "title": "Buttons",
+        "titleZh": "按钮",
+        "order": 1
+      },
+      "kind": "component",
+      "group": "actions",
+      "url": "https://uiarc.dev/components/action-button",
+      "files": [
+        "registry/components/action-button/action-button.tsx",
+        "registry/components/action-button/action-button.module.css"
+      ]
+    },
+    {
+      "id": "split-button",
+      "title": "Split button",
+      "titleZh": "分体按钮",
+      "category": {
+        "id": "component-buttons",
+        "title": "Buttons",
+        "titleZh": "按钮",
+        "order": 2
+      },
+      "kind": "component",
+      "group": "actions",
+      "url": "https://uiarc.dev/components/split-button",
+      "files": [
+        "registry/components/split-button/split-button.tsx",
+        "registry/components/split-button/split-button.module.css"
+      ]
+    },
+    {
+      "id": "button-group",
+      "title": "Button group",
+      "titleZh": "按钮组",
+      "category": {
+        "id": "component-buttons",
+        "title": "Buttons",
+        "titleZh": "按钮",
+        "order": 3
+      },
+      "kind": "component",
+      "group": "actions",
+      "url": "https://uiarc.dev/components/button-group",
+      "files": [
+        "registry/components/button-group/button-group.tsx",
+        "registry/components/button-group/button-group.module.css"
+      ]
+    },
+    {
+      "id": "floating-button-group",
+      "title": "Floating button group",
+      "titleZh": "悬浮按钮组",
+      "category": {
+        "id": "component-buttons",
+        "title": "Buttons",
+        "titleZh": "按钮",
+        "order": 4
+      },
+      "kind": "component",
+      "group": "actions",
+      "url": "https://uiarc.dev/components/floating-button-group",
+      "files": [
+        "registry/components/floating-button-group/floating-button-group.tsx",
+        "registry/components/floating-button-group/floating-button-group.module.css",
+        "registry/components/tooltip/tooltip.tsx",
+        "registry/components/tooltip/tooltip.module.css"
+      ]
+    },
+    {
+      "id": "expanding-button-group",
+      "title": "Expanding button group",
+      "titleZh": "展开按钮组",
+      "category": {
+        "id": "component-buttons",
+        "title": "Buttons",
+        "titleZh": "按钮",
+        "order": 5
+      },
+      "kind": "component",
+      "group": "actions",
+      "url": "https://uiarc.dev/components/expanding-button-group",
+      "files": [
+        "registry/components/expanding-button-group/expanding-button-group.tsx",
+        "registry/components/expanding-button-group/expanding-button-group.module.css"
+      ]
+    },
+    {
+      "id": "copy-button",
+      "title": "Copy button",
+      "titleZh": "复制按钮",
+      "category": {
+        "id": "component-buttons",
+        "title": "Buttons",
+        "titleZh": "按钮",
+        "order": 6
+      },
+      "kind": "component",
+      "group": "actions",
+      "url": "https://uiarc.dev/components/copy-button",
+      "files": [
+        "registry/components/copy-button/copy-button.tsx",
+        "registry/components/copy-button/copy-button.module.css",
+        "lib/use-copy-feedback.ts"
+      ]
+    },
+    {
+      "id": "action-swap",
+      "title": "Action swap",
+      "titleZh": "状态切换按钮",
+      "category": {
+        "id": "component-buttons",
+        "title": "Buttons",
+        "titleZh": "按钮",
+        "order": 7
+      },
+      "kind": "component",
+      "group": "actions",
+      "url": "https://uiarc.dev/components/action-swap",
+      "files": [
+        "registry/components/action-swap/action-swap.tsx",
+        "registry/components/action-swap/action-swap.module.css"
+      ]
+    },
+    {
+      "id": "icon-morph",
+      "title": "Icon morph",
+      "titleZh": "图标形变",
+      "category": {
+        "id": "component-buttons",
+        "title": "Buttons",
+        "titleZh": "按钮",
+        "order": 8
+      },
+      "kind": "component",
+      "group": "actions",
+      "url": "https://uiarc.dev/components/icon-morph",
+      "files": [
+        "registry/components/icon-morph/icon-morph.tsx",
+        "registry/components/icon-morph/icon-morph.module.css"
+      ]
+    },
+    {
+      "id": "confirm-morph",
+      "title": "Confirm morph",
+      "titleZh": "确认形变",
+      "category": {
+        "id": "component-buttons",
+        "title": "Buttons",
+        "titleZh": "按钮",
+        "order": 9
+      },
+      "kind": "component",
+      "group": "actions",
+      "url": "https://uiarc.dev/components/confirm-morph",
+      "files": [
+        "registry/components/confirm-morph/confirm-morph.tsx",
+        "registry/components/confirm-morph/confirm-morph.module.css"
+      ]
+    },
+    {
+      "id": "theme-switch",
+      "title": "Theme switcher",
+      "titleZh": "主题切换器",
+      "category": {
+        "id": "component-buttons",
+        "title": "Buttons",
+        "titleZh": "按钮",
+        "order": 10
+      },
+      "kind": "component",
+      "group": "actions",
+      "url": "https://uiarc.dev/components/theme-switch",
+      "files": [
+        "registry/components/theme-switch/theme-switch.tsx",
+        "registry/components/theme-switch/theme-switch.module.css",
+        "registry/components/button/button.tsx",
+        "registry/components/button/button.module.css"
+      ]
+    },
+    {
+      "id": "theme-switch-eclipse",
+      "title": "Eclipse",
+      "titleZh": "月蚀主题切换",
+      "category": {
+        "id": "component-buttons",
+        "title": "Buttons",
+        "titleZh": "按钮",
+        "order": 11
+      },
+      "kind": "component",
+      "group": "actions",
+      "url": "https://uiarc.dev/components/theme-switch-eclipse",
+      "files": [
+        "registry/components/theme-switch/theme-switch.tsx",
+        "registry/components/theme-switch/theme-switch.module.css",
+        "registry/components/button/button.tsx",
+        "registry/components/button/button.module.css"
+      ]
+    },
+    {
+      "id": "theme-switch-split",
+      "title": "Split",
+      "titleZh": "分幕主题切换",
+      "category": {
+        "id": "component-buttons",
+        "title": "Buttons",
+        "titleZh": "按钮",
+        "order": 12
+      },
+      "kind": "component",
+      "group": "actions",
+      "url": "https://uiarc.dev/components/theme-switch-split",
+      "files": [
+        "registry/components/theme-switch/theme-switch.tsx",
+        "registry/components/theme-switch/theme-switch.module.css",
+        "registry/components/button/button.tsx",
+        "registry/components/button/button.module.css"
+      ]
+    },
+    {
+      "id": "theme-switch-rise",
+      "title": "Rise",
+      "titleZh": "上升主题切换",
+      "category": {
+        "id": "component-buttons",
+        "title": "Buttons",
+        "titleZh": "按钮",
+        "order": 13
+      },
+      "kind": "component",
+      "group": "actions",
+      "url": "https://uiarc.dev/components/theme-switch-rise",
+      "files": [
+        "registry/components/theme-switch/theme-switch.tsx",
+        "registry/components/theme-switch/theme-switch.module.css",
+        "registry/components/button/button.tsx",
+        "registry/components/button/button.module.css"
+      ]
+    },
+    {
+      "id": "hold-to-confirm",
+      "title": "Hold to confirm",
+      "titleZh": "长按确认",
+      "category": {
+        "id": "component-gestures",
+        "title": "Gestures",
+        "titleZh": "手势",
+        "order": 14
+      },
+      "kind": "component",
+      "group": "actions",
+      "url": "https://uiarc.dev/components/hold-to-confirm",
+      "files": [
+        "registry/components/hold-to-confirm/hold-to-confirm.tsx",
+        "registry/components/hold-to-confirm/hold-to-confirm.module.css"
+      ]
+    },
+    {
+      "id": "swipe-actions",
+      "title": "Swipe actions",
+      "titleZh": "滑动操作",
+      "category": {
+        "id": "component-gestures",
+        "title": "Gestures",
+        "titleZh": "手势",
+        "order": 15
+      },
+      "kind": "component",
+      "group": "actions",
+      "url": "https://uiarc.dev/components/swipe-actions",
+      "files": [
+        "registry/components/swipe-actions/swipe-actions.tsx",
+        "registry/components/swipe-actions/swipe-actions.module.css"
+      ]
+    },
+    {
+      "id": "reactions",
+      "title": "Reactions",
+      "titleZh": "表态反馈",
+      "category": {
+        "id": "component-gestures",
+        "title": "Gestures",
+        "titleZh": "手势",
+        "order": 16
+      },
+      "kind": "component",
+      "group": "actions",
+      "url": "https://uiarc.dev/components/reactions",
+      "files": [
+        "registry/components/reactions/reactions.tsx",
+        "registry/components/reactions/reactions.module.css"
+      ]
+    },
+    {
+      "id": "dropdown-menu",
+      "title": "Dropdown menu",
+      "titleZh": "下拉菜单",
+      "category": {
+        "id": "component-menus",
+        "title": "Menus",
+        "titleZh": "菜单",
+        "order": 17
+      },
+      "kind": "component",
+      "group": "actions",
+      "url": "https://uiarc.dev/components/dropdown-menu",
+      "files": [
+        "registry/components/dropdown-menu/dropdown-menu.tsx",
+        "registry/components/dropdown-menu/dropdown-menu.module.css"
+      ]
+    },
+    {
+      "id": "context-menu",
+      "title": "Context menu",
+      "titleZh": "上下文菜单",
+      "category": {
+        "id": "component-menus",
+        "title": "Menus",
+        "titleZh": "菜单",
+        "order": 18
+      },
+      "kind": "component",
+      "group": "actions",
+      "url": "https://uiarc.dev/components/context-menu",
+      "files": [
+        "registry/components/context-menu/context-menu.tsx",
+        "registry/components/context-menu/context-menu.module.css"
+      ]
+    },
+    {
+      "id": "user-menu",
+      "title": "User menu",
+      "titleZh": "用户菜单",
+      "category": {
+        "id": "component-menus",
+        "title": "Menus",
+        "titleZh": "菜单",
+        "order": 19
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/user-menu",
+      "files": [
+        "registry/components/user-menu/user-menu.tsx",
+        "registry/components/user-menu/user-menu.module.css"
+      ]
+    },
+    {
+      "id": "input",
+      "title": "Input",
+      "titleZh": "文本输入框",
+      "category": {
+        "id": "component-text-fields",
+        "title": "Text fields",
+        "titleZh": "文本字段",
+        "order": 20
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/input",
+      "files": [
+        "registry/components/input/input.tsx",
+        "registry/components/input/input.module.css"
+      ]
+    },
+    {
+      "id": "textarea",
+      "title": "Textarea",
+      "titleZh": "多行文本框",
+      "category": {
+        "id": "component-text-fields",
+        "title": "Text fields",
+        "titleZh": "文本字段",
+        "order": 21
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/textarea",
+      "files": [
+        "registry/components/textarea/textarea.tsx",
+        "registry/components/textarea/textarea.module.css"
+      ]
+    },
+    {
+      "id": "password-field",
+      "title": "Password field",
+      "titleZh": "密码框",
+      "category": {
+        "id": "component-text-fields",
+        "title": "Text fields",
+        "titleZh": "文本字段",
+        "order": 22
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/password-field",
+      "files": [
+        "registry/components/password-field/password-field.tsx",
+        "registry/components/password-field/password-field.module.css"
+      ]
+    },
+    {
+      "id": "password-strength",
+      "title": "Password strength",
+      "titleZh": "密码强度",
+      "category": {
+        "id": "component-text-fields",
+        "title": "Text fields",
+        "titleZh": "文本字段",
+        "order": 23
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/password-strength",
+      "files": [
+        "registry/components/password-strength/password-strength.tsx",
+        "registry/components/password-strength/password-strength.module.css"
+      ]
+    },
+    {
+      "id": "search-field",
+      "title": "Search field",
+      "titleZh": "搜索框",
+      "category": {
+        "id": "component-text-fields",
+        "title": "Text fields",
+        "titleZh": "文本字段",
+        "order": 24
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/search-field",
+      "files": [
+        "registry/components/search-field/search-field.tsx",
+        "registry/components/search-field/search-field.module.css"
+      ]
+    },
+    {
+      "id": "expanding-search",
+      "title": "Expanding search",
+      "titleZh": "展开搜索",
+      "category": {
+        "id": "component-text-fields",
+        "title": "Text fields",
+        "titleZh": "文本字段",
+        "order": 25
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/expanding-search",
+      "files": [
+        "registry/components/expanding-search/expanding-search.tsx",
+        "registry/components/expanding-search/expanding-search.module.css"
+      ]
+    },
+    {
+      "id": "inline-edit",
+      "title": "Inline edit",
+      "titleZh": "行内编辑",
+      "category": {
+        "id": "component-text-fields",
+        "title": "Text fields",
+        "titleZh": "文本字段",
+        "order": 26
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/inline-edit",
+      "files": [
+        "registry/components/inline-edit/inline-edit.tsx",
+        "registry/components/inline-edit/inline-edit.module.css"
+      ]
+    },
+    {
+      "id": "number-field",
+      "title": "Number field",
+      "titleZh": "数字输入",
+      "category": {
+        "id": "component-special-inputs",
+        "title": "Special inputs",
+        "titleZh": "专用输入",
+        "order": 27
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/number-field",
+      "files": [
+        "registry/components/number-field/number-field.tsx",
+        "registry/components/number-field/number-field.module.css"
+      ]
+    },
+    {
+      "id": "money-input",
+      "title": "Money input",
+      "titleZh": "金额输入",
+      "category": {
+        "id": "component-special-inputs",
+        "title": "Special inputs",
+        "titleZh": "专用输入",
+        "order": 28
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/money-input",
+      "files": [
+        "registry/components/money-input/money-input.tsx",
+        "registry/components/money-input/money-input.module.css"
+      ]
+    },
+    {
+      "id": "phone-input",
+      "title": "Phone input",
+      "titleZh": "电话输入",
+      "category": {
+        "id": "component-special-inputs",
+        "title": "Special inputs",
+        "titleZh": "专用输入",
+        "order": 29
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/phone-input",
+      "files": [
+        "registry/components/phone-input/phone-input.tsx",
+        "registry/components/phone-input/phone-input.module.css"
+      ]
+    },
+    {
+      "id": "scrub-input",
+      "title": "Scrub input",
+      "titleZh": "拖动数值输入",
+      "category": {
+        "id": "component-special-inputs",
+        "title": "Special inputs",
+        "titleZh": "专用输入",
+        "order": 30
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/scrub-input",
+      "files": [
+        "registry/components/scrub-input/scrub-input.tsx",
+        "registry/components/scrub-input/scrub-input.module.css"
+      ]
+    },
+    {
+      "id": "tag-input",
+      "title": "Tag input",
+      "titleZh": "标签输入",
+      "category": {
+        "id": "component-special-inputs",
+        "title": "Special inputs",
+        "titleZh": "专用输入",
+        "order": 31
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/tag-input",
+      "files": [
+        "registry/components/tag-input/tag-input.tsx",
+        "registry/components/tag-input/tag-input.module.css"
+      ]
+    },
+    {
+      "id": "mention-input",
+      "title": "Mention input",
+      "titleZh": "提及输入",
+      "category": {
+        "id": "component-special-inputs",
+        "title": "Special inputs",
+        "titleZh": "专用输入",
+        "order": 32
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/mention-input",
+      "files": [
+        "registry/components/mention-input/mention-input.tsx",
+        "registry/components/mention-input/mention-input.module.css"
+      ]
+    },
+    {
+      "id": "shortcut-recorder",
+      "title": "Shortcut recorder",
+      "titleZh": "快捷键录入",
+      "category": {
+        "id": "component-special-inputs",
+        "title": "Special inputs",
+        "titleZh": "专用输入",
+        "order": 33
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/shortcut-recorder",
+      "files": [
+        "registry/components/shortcut-recorder/shortcut-recorder.tsx",
+        "registry/components/shortcut-recorder/shortcut-recorder.module.css"
+      ]
+    },
+    {
+      "id": "select",
+      "title": "Select",
+      "titleZh": "下拉选择",
+      "category": {
+        "id": "component-selects",
+        "title": "Selects",
+        "titleZh": "选择器",
+        "order": 34
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/select",
+      "files": [
+        "registry/components/select/select.tsx",
+        "registry/components/select/select.module.css"
+      ]
+    },
+    {
+      "id": "combobox",
+      "title": "Combobox",
+      "titleZh": "组合选择框",
+      "category": {
+        "id": "component-selects",
+        "title": "Selects",
+        "titleZh": "选择器",
+        "order": 35
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/combobox",
+      "files": [
+        "registry/components/combobox/combobox.tsx",
+        "registry/components/combobox/combobox.module.css"
+      ]
+    },
+    {
+      "id": "multi-select",
+      "title": "Multi-select",
+      "titleZh": "多项选择",
+      "category": {
+        "id": "component-selects",
+        "title": "Selects",
+        "titleZh": "选择器",
+        "order": 36
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/multi-select",
+      "files": [
+        "registry/components/multi-select/multi-select.tsx",
+        "registry/components/multi-select/multi-select.module.css"
+      ]
+    },
+    {
+      "id": "morph-select",
+      "title": "Morph select",
+      "titleZh": "形变选择器",
+      "category": {
+        "id": "component-selects",
+        "title": "Selects",
+        "titleZh": "选择器",
+        "order": 37
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/morph-select",
+      "files": [
+        "registry/components/morph-select/morph-select.tsx",
+        "registry/components/morph-select/morph-select.module.css"
+      ]
+    },
+    {
+      "id": "chip-group",
+      "title": "Chip group",
+      "titleZh": "标签选项组",
+      "category": {
+        "id": "component-selects",
+        "title": "Selects",
+        "titleZh": "选择器",
+        "order": 38
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/chip-group",
+      "files": [
+        "registry/components/chip-group/chip-group.tsx",
+        "registry/components/chip-group/chip-group.module.css"
+      ]
+    },
+    {
+      "id": "radio-cards",
+      "title": "Radio cards",
+      "titleZh": "单选卡片",
+      "category": {
+        "id": "component-toggles",
+        "title": "Toggles",
+        "titleZh": "切换与选项",
+        "order": 39
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/radio-cards",
+      "files": [
+        "registry/components/radio-cards/radio-cards.tsx",
+        "registry/components/radio-cards/radio-cards.module.css"
+      ]
+    },
+    {
+      "id": "billing-toggle",
+      "title": "Billing toggle",
+      "titleZh": "计费周期切换",
+      "category": {
+        "id": "component-toggles",
+        "title": "Toggles",
+        "titleZh": "切换与选项",
+        "order": 40
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/billing-toggle",
+      "files": [
+        "registry/components/billing-toggle/billing-toggle.tsx",
+        "registry/components/billing-toggle/billing-toggle.module.css",
+        "registry/components/animated-counter/animated-counter.tsx",
+        "registry/components/animated-counter/animated-counter.module.css"
+      ]
+    },
+    {
+      "id": "checkbox",
+      "title": "Checkbox",
+      "titleZh": "复选框",
+      "category": {
+        "id": "component-toggles",
+        "title": "Toggles",
+        "titleZh": "切换与选项",
+        "order": 41
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/checkbox",
+      "files": [
+        "registry/components/checkbox/checkbox.tsx",
+        "registry/components/checkbox/checkbox.module.css"
+      ]
+    },
+    {
+      "id": "radio-group",
+      "title": "Radio group",
+      "titleZh": "单选组",
+      "category": {
+        "id": "component-toggles",
+        "title": "Toggles",
+        "titleZh": "切换与选项",
+        "order": 42
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/radio-group",
+      "files": [
+        "registry/components/radio-group/radio-group.tsx",
+        "registry/components/radio-group/radio-group.module.css"
+      ]
+    },
+    {
+      "id": "switch",
+      "title": "Switch",
+      "titleZh": "开关",
+      "category": {
+        "id": "component-toggles",
+        "title": "Toggles",
+        "titleZh": "切换与选项",
+        "order": 43
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/switch",
+      "files": [
+        "registry/components/switch/switch.tsx",
+        "registry/components/switch/switch.module.css"
+      ]
+    },
+    {
+      "id": "segmented-control",
+      "title": "Segmented control",
+      "titleZh": "分段控件",
+      "category": {
+        "id": "component-toggles",
+        "title": "Toggles",
+        "titleZh": "切换与选项",
+        "order": 44
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/segmented-control",
+      "files": [
+        "registry/components/segmented-control/segmented-control.tsx",
+        "registry/components/segmented-control/segmented-control.module.css"
+      ]
+    },
+    {
+      "id": "rating",
+      "title": "Rating",
+      "titleZh": "评分",
+      "category": {
+        "id": "component-toggles",
+        "title": "Toggles",
+        "titleZh": "切换与选项",
+        "order": 45
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/rating",
+      "files": [
+        "registry/components/rating/rating.tsx",
+        "registry/components/rating/rating.module.css"
+      ]
+    },
+    {
+      "id": "slider",
+      "title": "Slider",
+      "titleZh": "滑块",
+      "category": {
+        "id": "component-sliders",
+        "title": "Sliders",
+        "titleZh": "滑块",
+        "order": 46
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/slider",
+      "files": [
+        "registry/components/slider/slider.tsx",
+        "registry/components/slider/slider.module.css"
+      ]
+    },
+    {
+      "id": "elastic-slider",
+      "title": "Elastic slider",
+      "titleZh": "弹性滑块",
+      "category": {
+        "id": "component-sliders",
+        "title": "Sliders",
+        "titleZh": "滑块",
+        "order": 47
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/elastic-slider",
+      "files": [
+        "registry/components/elastic-slider/elastic-slider.tsx",
+        "registry/components/elastic-slider/elastic-slider.module.css"
+      ]
+    },
+    {
+      "id": "range-histogram-slider",
+      "title": "Range histogram slider",
+      "titleZh": "区间直方图滑块",
+      "category": {
+        "id": "component-sliders",
+        "title": "Sliders",
+        "titleZh": "滑块",
+        "order": 48
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/range-histogram-slider",
+      "files": [
+        "registry/components/range-histogram-slider/range-histogram-slider.tsx",
+        "registry/components/range-histogram-slider/range-histogram-slider.module.css"
+      ]
+    },
+    {
+      "id": "ruler-slider",
+      "title": "Ruler slider",
+      "titleZh": "刻度滑块",
+      "category": {
+        "id": "component-sliders",
+        "title": "Sliders",
+        "titleZh": "滑块",
+        "order": 49
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/ruler-slider",
+      "files": [
+        "registry/components/ruler-slider/ruler-slider.tsx",
+        "registry/components/ruler-slider/ruler-slider.module.css"
+      ]
+    },
+    {
+      "id": "calendar",
+      "title": "Calendar",
+      "titleZh": "日历",
+      "category": {
+        "id": "component-pickers",
+        "title": "Pickers",
+        "titleZh": "选择面板",
+        "order": 50
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/calendar",
+      "files": [
+        "registry/components/calendar/calendar.tsx",
+        "lib/use-today.ts",
+        "registry/components/calendar/calendar.module.css"
+      ]
+    },
+    {
+      "id": "date-picker",
+      "title": "Date picker",
+      "titleZh": "日期选择",
+      "category": {
+        "id": "component-pickers",
+        "title": "Pickers",
+        "titleZh": "选择面板",
+        "order": 51
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/date-picker",
+      "files": [
+        "registry/components/date-picker/date-picker.tsx",
+        "registry/components/date-picker/date-picker.module.css",
+        "registry/components/calendar/calendar.tsx",
+        "lib/use-today.ts",
+        "registry/components/calendar/calendar.module.css"
+      ]
+    },
+    {
+      "id": "date-range-picker",
+      "title": "Date range picker",
+      "titleZh": "日期区间选择",
+      "category": {
+        "id": "component-pickers",
+        "title": "Pickers",
+        "titleZh": "选择面板",
+        "order": 52
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/date-range-picker",
+      "files": [
+        "registry/components/date-range-picker/date-range-picker.tsx",
+        "lib/use-today.ts",
+        "registry/components/date-range-picker/date-range-picker.module.css"
+      ]
+    },
+    {
+      "id": "time-picker",
+      "title": "Time picker",
+      "titleZh": "时间选择",
+      "category": {
+        "id": "component-pickers",
+        "title": "Pickers",
+        "titleZh": "选择面板",
+        "order": 53
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/time-picker",
+      "files": [
+        "registry/components/time-picker/time-picker.tsx",
+        "registry/components/time-picker/time-picker.module.css"
+      ]
+    },
+    {
+      "id": "color-picker",
+      "title": "Color picker",
+      "titleZh": "颜色选择",
+      "category": {
+        "id": "component-pickers",
+        "title": "Pickers",
+        "titleZh": "选择面板",
+        "order": 54
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/color-picker",
+      "files": [
+        "registry/components/color-picker/color-picker.tsx",
+        "registry/components/color-picker/color-picker.module.css",
+        "registry/components/text-morph/text-morph.tsx",
+        "registry/components/text-morph/text-morph.module.css"
+      ]
+    },
+    {
+      "id": "rich-text-editor",
+      "title": "Rich text editor",
+      "titleZh": "富文本编辑器",
+      "category": {
+        "id": "component-editors",
+        "title": "Editors",
+        "titleZh": "编辑器",
+        "order": 55
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/rich-text-editor",
+      "files": [
+        "registry/components/rich-text-editor/rich-text-editor.tsx",
+        "registry/components/rich-text-editor/rich-text-editor.module.css"
+      ]
+    },
+    {
+      "id": "signature-pad",
+      "title": "Signature pad",
+      "titleZh": "签名板",
+      "category": {
+        "id": "component-editors",
+        "title": "Editors",
+        "titleZh": "编辑器",
+        "order": 56
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/signature-pad",
+      "files": [
+        "registry/components/signature-pad/signature-pad.tsx",
+        "registry/components/signature-pad/signature-pad.module.css"
+      ]
+    },
+    {
+      "id": "file-dropzone",
+      "title": "File dropzone",
+      "titleZh": "文件拖放区",
+      "category": {
+        "id": "component-editors",
+        "title": "Editors",
+        "titleZh": "编辑器",
+        "order": 57
+      },
+      "kind": "component",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/file-dropzone",
+      "files": [
+        "registry/components/file-dropzone/file-dropzone.tsx",
+        "registry/components/file-dropzone/file-dropzone.module.css"
+      ]
+    },
+    {
+      "id": "tabs",
+      "title": "Tabs",
+      "titleZh": "标签页",
+      "category": {
+        "id": "component-navigation",
+        "title": "Navigation",
+        "titleZh": "导航",
+        "order": 58
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/tabs",
+      "files": [
+        "registry/components/tabs/tabs.tsx",
+        "registry/components/tabs/tabs.module.css"
+      ]
+    },
+    {
+      "id": "breadcrumb",
+      "title": "Breadcrumb",
+      "titleZh": "面包屑",
+      "category": {
+        "id": "component-navigation",
+        "title": "Navigation",
+        "titleZh": "导航",
+        "order": 59
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/breadcrumb",
+      "files": [
+        "registry/components/breadcrumb/breadcrumb.tsx",
+        "registry/components/breadcrumb/breadcrumb.module.css",
+        "lib/arc-provider.tsx"
+      ]
+    },
+    {
+      "id": "pagination",
+      "title": "Pagination",
+      "titleZh": "分页",
+      "category": {
+        "id": "component-navigation",
+        "title": "Navigation",
+        "titleZh": "导航",
+        "order": 60
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/pagination",
+      "files": [
+        "registry/components/pagination/pagination.tsx",
+        "registry/components/pagination/pagination.module.css"
+      ]
+    },
+    {
+      "id": "scroll-area",
+      "title": "Scroll area",
+      "titleZh": "滚动区域",
+      "category": {
+        "id": "component-expand",
+        "title": "Expand",
+        "titleZh": "展开与布局",
+        "order": 61
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/scroll-area",
+      "files": [
+        "registry/components/scroll-area/scroll-area.tsx",
+        "registry/components/scroll-area/scroll-area.module.css"
+      ]
+    },
+    {
+      "id": "accordion",
+      "title": "Accordion",
+      "titleZh": "折叠面板",
+      "category": {
+        "id": "component-expand",
+        "title": "Expand",
+        "titleZh": "展开与布局",
+        "order": 62
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/accordion",
+      "files": [
+        "registry/components/accordion/accordion.tsx",
+        "registry/components/accordion/accordion.module.css"
+      ]
+    },
+    {
+      "id": "expandable-card",
+      "title": "Expandable card",
+      "titleZh": "展开卡片",
+      "category": {
+        "id": "component-expand",
+        "title": "Expand",
+        "titleZh": "展开与布局",
+        "order": 63
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/expandable-card",
+      "files": [
+        "registry/components/expandable-card/expandable-card.tsx",
+        "registry/components/expandable-card/expandable-card.module.css"
+      ]
+    },
+    {
+      "id": "resizable-panels",
+      "title": "Resizable panels",
+      "titleZh": "可调面板",
+      "category": {
+        "id": "component-expand",
+        "title": "Expand",
+        "titleZh": "展开与布局",
+        "order": 64
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/resizable-panels",
+      "files": [
+        "registry/components/resizable-panels/resizable-panels.tsx",
+        "registry/components/resizable-panels/resizable-panels.module.css"
+      ]
+    },
+    {
+      "id": "expandable-text",
+      "title": "Expandable text",
+      "titleZh": "展开文本",
+      "category": {
+        "id": "component-expand",
+        "title": "Expand",
+        "titleZh": "展开与布局",
+        "order": 65
+      },
+      "kind": "component",
+      "group": "text",
+      "url": "https://uiarc.dev/components/expandable-text",
+      "files": [
+        "registry/components/expandable-text/expandable-text.tsx",
+        "registry/components/expandable-text/expandable-text.module.css"
+      ]
+    },
+    {
+      "id": "dialog",
+      "title": "Dialog",
+      "titleZh": "对话框",
+      "category": {
+        "id": "component-overlays",
+        "title": "Overlays",
+        "titleZh": "浮层",
+        "order": 66
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/dialog",
+      "files": [
+        "registry/components/dialog/dialog.tsx",
+        "registry/components/dialog/dialog.module.css"
+      ]
+    },
+    {
+      "id": "drawer",
+      "title": "Drawer",
+      "titleZh": "抽屉",
+      "category": {
+        "id": "component-overlays",
+        "title": "Overlays",
+        "titleZh": "浮层",
+        "order": 67
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/drawer",
+      "files": [
+        "registry/components/drawer/drawer.tsx",
+        "registry/components/drawer/drawer.module.css"
+      ]
+    },
+    {
+      "id": "bottom-sheet",
+      "title": "Bottom sheet",
+      "titleZh": "底部面板",
+      "category": {
+        "id": "component-overlays",
+        "title": "Overlays",
+        "titleZh": "浮层",
+        "order": 68
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/bottom-sheet",
+      "files": [
+        "registry/components/bottom-sheet/bottom-sheet.tsx",
+        "registry/components/bottom-sheet/bottom-sheet.module.css"
+      ]
+    },
+    {
+      "id": "popover",
+      "title": "Popover",
+      "titleZh": "弹出层",
+      "category": {
+        "id": "component-overlays",
+        "title": "Overlays",
+        "titleZh": "浮层",
+        "order": 69
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/popover",
+      "files": [
+        "registry/components/popover/popover.tsx",
+        "registry/components/popover/popover.module.css"
+      ]
+    },
+    {
+      "id": "hover-card",
+      "title": "Hover card",
+      "titleZh": "悬停卡片",
+      "category": {
+        "id": "component-overlays",
+        "title": "Overlays",
+        "titleZh": "浮层",
+        "order": 70
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/hover-card",
+      "files": [
+        "registry/components/hover-card/hover-card.tsx",
+        "registry/components/hover-card/hover-card.module.css"
+      ]
+    },
+    {
+      "id": "tooltip",
+      "title": "Tooltip",
+      "titleZh": "提示气泡",
+      "category": {
+        "id": "component-overlays",
+        "title": "Overlays",
+        "titleZh": "浮层",
+        "order": 71
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/tooltip",
+      "files": [
+        "registry/components/tooltip/tooltip.tsx",
+        "registry/components/tooltip/tooltip.module.css"
+      ]
+    },
+    {
+      "id": "alert",
+      "title": "Alert",
+      "titleZh": "提示信息",
+      "category": {
+        "id": "component-messages",
+        "title": "Messages",
+        "titleZh": "消息反馈",
+        "order": 72
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/alert",
+      "files": [
+        "registry/components/alert/alert.tsx",
+        "registry/components/alert/alert.module.css"
+      ]
+    },
+    {
+      "id": "toast",
+      "title": "Toast",
+      "titleZh": "轻提示",
+      "category": {
+        "id": "component-messages",
+        "title": "Messages",
+        "titleZh": "消息反馈",
+        "order": 73
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/toast",
+      "files": [
+        "registry/components/toast/toast.tsx",
+        "registry/components/toast/toast.module.css"
+      ]
+    },
+    {
+      "id": "toast-stack",
+      "title": "Toast stack",
+      "titleZh": "堆叠通知",
+      "category": {
+        "id": "component-messages",
+        "title": "Messages",
+        "titleZh": "消息反馈",
+        "order": 74
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/toast-stack",
+      "files": [
+        "registry/components/toast-stack/toast-stack.tsx",
+        "registry/components/toast-stack/toast-stack.module.css"
+      ]
+    },
+    {
+      "id": "announcement-bar",
+      "title": "Announcement bar",
+      "titleZh": "公告栏",
+      "category": {
+        "id": "component-messages",
+        "title": "Messages",
+        "titleZh": "消息反馈",
+        "order": 75
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/announcement-bar",
+      "files": [
+        "registry/components/announcement-bar/announcement-bar.tsx",
+        "registry/components/announcement-bar/announcement-bar.module.css"
+      ]
+    },
+    {
+      "id": "cookie-consent",
+      "title": "Cookie consent",
+      "titleZh": "Cookie 同意面板",
+      "category": {
+        "id": "component-messages",
+        "title": "Messages",
+        "titleZh": "消息反馈",
+        "order": 76
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/cookie-consent",
+      "files": [
+        "registry/components/cookie-consent/cookie-consent.tsx",
+        "registry/components/cookie-consent/cookie-consent.module.css",
+        "registry/components/switch/switch.tsx",
+        "registry/components/switch/switch.module.css",
+        "registry/components/button/button.tsx",
+        "registry/components/button/button.module.css"
+      ]
+    },
+    {
+      "id": "progress",
+      "title": "Progress",
+      "titleZh": "进度条",
+      "category": {
+        "id": "component-progress",
+        "title": "Progress",
+        "titleZh": "进度",
+        "order": 77
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/progress",
+      "files": [
+        "registry/components/progress/progress.tsx",
+        "registry/components/progress/progress.module.css"
+      ]
+    },
+    {
+      "id": "skeleton",
+      "title": "Skeleton",
+      "titleZh": "骨架屏",
+      "category": {
+        "id": "component-progress",
+        "title": "Progress",
+        "titleZh": "进度",
+        "order": 78
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/skeleton",
+      "files": [
+        "registry/components/skeleton/skeleton.tsx",
+        "registry/components/skeleton/skeleton.module.css"
+      ]
+    },
+    {
+      "id": "stepper",
+      "title": "Stepper",
+      "titleZh": "步骤条",
+      "category": {
+        "id": "component-progress",
+        "title": "Progress",
+        "titleZh": "进度",
+        "order": 79
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/stepper",
+      "files": [
+        "registry/components/stepper/stepper.tsx",
+        "registry/components/stepper/stepper.module.css"
+      ]
+    },
+    {
+      "id": "countdown",
+      "title": "Countdown",
+      "titleZh": "倒计时",
+      "category": {
+        "id": "component-progress",
+        "title": "Progress",
+        "titleZh": "进度",
+        "order": 80
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/countdown",
+      "files": [
+        "registry/components/countdown/countdown.tsx",
+        "registry/components/countdown/countdown.module.css"
+      ]
+    },
+    {
+      "id": "usage-meter",
+      "title": "Usage meter",
+      "titleZh": "用量计量",
+      "category": {
+        "id": "component-progress",
+        "title": "Progress",
+        "titleZh": "进度",
+        "order": 81
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/usage-meter",
+      "files": [
+        "registry/components/usage-meter/usage-meter.tsx",
+        "registry/components/usage-meter/usage-meter.module.css"
+      ]
+    },
+    {
+      "id": "onboarding-checklist",
+      "title": "Onboarding checklist",
+      "titleZh": "入门清单",
+      "category": {
+        "id": "component-progress",
+        "title": "Progress",
+        "titleZh": "进度",
+        "order": 82
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/onboarding-checklist",
+      "files": [
+        "registry/components/onboarding-checklist/onboarding-checklist.tsx",
+        "registry/components/onboarding-checklist/onboarding-checklist.module.css"
+      ]
+    },
+    {
+      "id": "avatar",
+      "title": "Avatar",
+      "titleZh": "头像",
+      "category": {
+        "id": "component-avatars",
+        "title": "Avatars",
+        "titleZh": "头像与徽标",
+        "order": 83
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/avatar",
+      "files": [
+        "registry/components/avatar/avatar.tsx",
+        "registry/components/avatar/avatar.module.css",
+        "lib/arc-provider.tsx"
+      ]
+    },
+    {
+      "id": "avatar-group",
+      "title": "Avatar group",
+      "titleZh": "头像组",
+      "category": {
+        "id": "component-avatars",
+        "title": "Avatars",
+        "titleZh": "头像与徽标",
+        "order": 84
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/avatar-group",
+      "files": [
+        "registry/components/avatar-group/avatar-group.tsx",
+        "registry/components/avatar-group/avatar-group.module.css",
+        "registry/components/avatar/avatar.tsx",
+        "registry/components/avatar/avatar.module.css",
+        "lib/arc-provider.tsx"
+      ]
+    },
+    {
+      "id": "badge",
+      "title": "Badge",
+      "titleZh": "徽标",
+      "category": {
+        "id": "component-avatars",
+        "title": "Avatars",
+        "titleZh": "头像与徽标",
+        "order": 85
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/badge",
+      "files": [
+        "registry/components/badge/badge.tsx",
+        "registry/components/badge/badge.module.css"
+      ]
+    },
+    {
+      "id": "card",
+      "title": "Card",
+      "titleZh": "卡片",
+      "category": {
+        "id": "component-cards",
+        "title": "Cards",
+        "titleZh": "卡片",
+        "order": 86
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/card",
+      "files": [
+        "registry/components/card/card.tsx",
+        "registry/components/card/card.module.css"
+      ]
+    },
+    {
+      "id": "metric-card",
+      "title": "Metric card",
+      "titleZh": "指标卡片",
+      "category": {
+        "id": "component-cards",
+        "title": "Cards",
+        "titleZh": "卡片",
+        "order": 87
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/metric-card",
+      "files": [
+        "registry/components/metric-card/metric-card.tsx",
+        "registry/components/metric-card/metric-card.module.css",
+        "registry/components/animated-counter/animated-counter.tsx",
+        "registry/components/animated-counter/animated-counter.module.css"
+      ]
+    },
+    {
+      "id": "empty-state",
+      "title": "Empty state",
+      "titleZh": "空状态",
+      "category": {
+        "id": "component-cards",
+        "title": "Cards",
+        "titleZh": "卡片",
+        "order": 88
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/empty-state",
+      "files": [
+        "registry/components/empty-state/empty-state.tsx",
+        "registry/components/empty-state/empty-state.module.css"
+      ]
+    },
+    {
+      "id": "line-chart",
+      "title": "Line chart",
+      "titleZh": "折线图",
+      "category": {
+        "id": "component-charts",
+        "title": "Charts",
+        "titleZh": "图表",
+        "order": 89
+      },
+      "kind": "component",
+      "group": "charts",
+      "url": "https://uiarc.dev/components/line-chart",
+      "files": [
+        "registry/components/line-chart/line-chart.tsx",
+        "registry/components/line-chart/line-chart.module.css"
+      ]
+    },
+    {
+      "id": "bar-chart",
+      "title": "Bar chart",
+      "titleZh": "柱状图",
+      "category": {
+        "id": "component-charts",
+        "title": "Charts",
+        "titleZh": "图表",
+        "order": 90
+      },
+      "kind": "component",
+      "group": "charts",
+      "url": "https://uiarc.dev/components/bar-chart",
+      "files": [
+        "registry/components/bar-chart/bar-chart.tsx",
+        "registry/components/bar-chart/bar-chart.module.css"
+      ]
+    },
+    {
+      "id": "donut-chart",
+      "title": "Donut chart",
+      "titleZh": "环形图",
+      "category": {
+        "id": "component-charts",
+        "title": "Charts",
+        "titleZh": "图表",
+        "order": 91
+      },
+      "kind": "component",
+      "group": "charts",
+      "url": "https://uiarc.dev/components/donut-chart",
+      "files": [
+        "registry/components/donut-chart/donut-chart.tsx",
+        "registry/components/donut-chart/donut-chart.module.css"
+      ]
+    },
+    {
+      "id": "streamgraph",
+      "title": "Streamgraph",
+      "titleZh": "流图",
+      "category": {
+        "id": "component-charts",
+        "title": "Charts",
+        "titleZh": "图表",
+        "order": 92
+      },
+      "kind": "component",
+      "group": "charts",
+      "url": "https://uiarc.dev/components/streamgraph",
+      "files": [
+        "registry/components/streamgraph/streamgraph.tsx",
+        "registry/components/streamgraph/streamgraph.module.css"
+      ]
+    },
+    {
+      "id": "brush-chart",
+      "title": "Brush chart",
+      "titleZh": "刷选图表",
+      "category": {
+        "id": "component-charts",
+        "title": "Charts",
+        "titleZh": "图表",
+        "order": 93
+      },
+      "kind": "component",
+      "group": "charts",
+      "url": "https://uiarc.dev/components/brush-chart",
+      "files": [
+        "registry/components/brush-chart/brush-chart.tsx",
+        "registry/components/brush-chart/brush-chart.module.css"
+      ]
+    },
+    {
+      "id": "waffle-chart",
+      "title": "Waffle chart",
+      "titleZh": "华夫图",
+      "category": {
+        "id": "component-charts",
+        "title": "Charts",
+        "titleZh": "图表",
+        "order": 94
+      },
+      "kind": "component",
+      "group": "charts",
+      "url": "https://uiarc.dev/components/waffle-chart",
+      "files": [
+        "registry/components/waffle-chart/waffle-chart.tsx",
+        "registry/components/waffle-chart/waffle-chart.module.css"
+      ]
+    },
+    {
+      "id": "slope-chart",
+      "title": "Slope chart",
+      "titleZh": "坡度图",
+      "category": {
+        "id": "component-charts",
+        "title": "Charts",
+        "titleZh": "图表",
+        "order": 95
+      },
+      "kind": "component",
+      "group": "charts",
+      "url": "https://uiarc.dev/components/slope-chart",
+      "files": [
+        "registry/components/slope-chart/slope-chart.tsx",
+        "registry/components/slope-chart/slope-chart.module.css"
+      ]
+    },
+    {
+      "id": "sparkline",
+      "title": "Sparkline",
+      "titleZh": "迷你趋势图",
+      "category": {
+        "id": "component-charts",
+        "title": "Charts",
+        "titleZh": "图表",
+        "order": 96
+      },
+      "kind": "component",
+      "group": "charts",
+      "url": "https://uiarc.dev/components/sparkline",
+      "files": [
+        "registry/components/sparkline/sparkline.tsx",
+        "registry/components/sparkline/sparkline.module.css"
+      ]
+    },
+    {
+      "id": "gauge",
+      "title": "Gauge",
+      "titleZh": "仪表盘",
+      "category": {
+        "id": "component-charts",
+        "title": "Charts",
+        "titleZh": "图表",
+        "order": 97
+      },
+      "kind": "component",
+      "group": "charts",
+      "url": "https://uiarc.dev/components/gauge",
+      "files": [
+        "registry/components/gauge/gauge.tsx",
+        "registry/components/gauge/gauge.module.css"
+      ]
+    },
+    {
+      "id": "activity-heatmap",
+      "title": "Activity heatmap",
+      "titleZh": "活动热力图",
+      "category": {
+        "id": "component-charts",
+        "title": "Charts",
+        "titleZh": "图表",
+        "order": 98
+      },
+      "kind": "component",
+      "group": "charts",
+      "url": "https://uiarc.dev/components/activity-heatmap",
+      "files": [
+        "registry/components/activity-heatmap/activity-heatmap.tsx",
+        "registry/components/activity-heatmap/activity-heatmap.module.css"
+      ]
+    },
+    {
+      "id": "animated-counter",
+      "title": "Animated counter",
+      "titleZh": "动态计数",
+      "category": {
+        "id": "component-charts",
+        "title": "Charts",
+        "titleZh": "图表",
+        "order": 99
+      },
+      "kind": "component",
+      "group": "charts",
+      "url": "https://uiarc.dev/components/animated-counter",
+      "files": [
+        "registry/components/animated-counter/animated-counter.tsx",
+        "registry/components/animated-counter/animated-counter.module.css"
+      ]
+    },
+    {
+      "id": "ridgeline",
+      "title": "Ridgeline",
+      "titleZh": "山脊图",
+      "category": {
+        "id": "component-charts",
+        "title": "Charts",
+        "titleZh": "图表",
+        "order": 100
+      },
+      "kind": "component",
+      "group": "charts",
+      "url": "https://uiarc.dev/components/ridgeline",
+      "files": [
+        "registry/components/ridgeline/ridgeline.tsx",
+        "registry/components/ridgeline/ridgeline.module.css"
+      ]
+    },
+    {
+      "id": "treemap",
+      "title": "Treemap",
+      "titleZh": "矩形树图",
+      "category": {
+        "id": "component-charts",
+        "title": "Charts",
+        "titleZh": "图表",
+        "order": 101
+      },
+      "kind": "component",
+      "group": "charts",
+      "url": "https://uiarc.dev/components/treemap",
+      "files": [
+        "registry/components/treemap/treemap.tsx",
+        "registry/components/treemap/treemap.module.css"
+      ]
+    },
+    {
+      "id": "sortable-data-table",
+      "title": "Sortable data table",
+      "titleZh": "可排序数据表",
+      "category": {
+        "id": "component-tables",
+        "title": "Tables",
+        "titleZh": "表格与结构",
+        "order": 102
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/sortable-data-table",
+      "files": [
+        "registry/components/sortable-data-table/sortable-data-table.tsx",
+        "registry/components/sortable-data-table/sortable-data-table.module.css"
+      ]
+    },
+    {
+      "id": "tree-table",
+      "title": "Tree table",
+      "titleZh": "树状表格",
+      "category": {
+        "id": "component-tables",
+        "title": "Tables",
+        "titleZh": "表格与结构",
+        "order": 103
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/tree-table",
+      "files": [
+        "registry/components/tree-table/tree-table.tsx",
+        "registry/components/tree-table/tree-table.module.css",
+        "registry/components/checkbox/checkbox.tsx",
+        "registry/components/checkbox/checkbox.module.css"
+      ]
+    },
+    {
+      "id": "tree-view",
+      "title": "Tree view",
+      "titleZh": "树形目录",
+      "category": {
+        "id": "component-tables",
+        "title": "Tables",
+        "titleZh": "表格与结构",
+        "order": 104
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/tree-view",
+      "files": [
+        "registry/components/tree-view/tree-view.tsx",
+        "registry/components/tree-view/tree-view.module.css"
+      ]
+    },
+    {
+      "id": "reorderable-list",
+      "title": "Reorderable list",
+      "titleZh": "可重排列表",
+      "category": {
+        "id": "component-tables",
+        "title": "Tables",
+        "titleZh": "表格与结构",
+        "order": 105
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/reorderable-list",
+      "files": [
+        "registry/components/reorderable-list/reorderable-list.tsx",
+        "registry/components/reorderable-list/reorderable-list.module.css"
+      ]
+    },
+    {
+      "id": "filter-toolbar",
+      "title": "Filter toolbar",
+      "titleZh": "筛选工具栏",
+      "category": {
+        "id": "component-tables",
+        "title": "Tables",
+        "titleZh": "表格与结构",
+        "order": 106
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/filter-toolbar",
+      "files": [
+        "registry/components/filter-toolbar/filter-toolbar.tsx",
+        "registry/components/filter-toolbar/filter-toolbar.module.css"
+      ]
+    },
+    {
+      "id": "code-block",
+      "title": "Code block",
+      "titleZh": "代码块",
+      "category": {
+        "id": "component-tables",
+        "title": "Tables",
+        "titleZh": "表格与结构",
+        "order": 107
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/code-block",
+      "files": [
+        "registry/components/code-block/code-block.tsx",
+        "registry/components/code-block/code-block.module.css",
+        "registry/components/copy-button/copy-button.tsx",
+        "registry/components/copy-button/copy-button.module.css",
+        "lib/use-copy-feedback.ts"
+      ]
+    },
+    {
+      "id": "json-viewer",
+      "title": "JSON viewer",
+      "titleZh": "JSON 查看器",
+      "category": {
+        "id": "component-tables",
+        "title": "Tables",
+        "titleZh": "表格与结构",
+        "order": 108
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/json-viewer",
+      "files": [
+        "registry/components/json-viewer/json-viewer.tsx",
+        "registry/components/json-viewer/json-viewer.module.css"
+      ]
+    },
+    {
+      "id": "timeline",
+      "title": "Timeline",
+      "titleZh": "时间线",
+      "category": {
+        "id": "component-activity",
+        "title": "Activity",
+        "titleZh": "活动记录",
+        "order": 109
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/timeline",
+      "files": [
+        "registry/components/timeline/timeline.tsx",
+        "registry/components/timeline/timeline.module.css"
+      ]
+    },
+    {
+      "id": "comment-thread",
+      "title": "Comment thread",
+      "titleZh": "评论串",
+      "category": {
+        "id": "component-activity",
+        "title": "Activity",
+        "titleZh": "活动记录",
+        "order": 110
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/comment-thread",
+      "files": [
+        "registry/components/comment-thread/comment-thread.tsx",
+        "registry/components/comment-thread/comment-thread.module.css"
+      ]
+    },
+    {
+      "id": "chat-thread",
+      "title": "Chat thread",
+      "titleZh": "聊天串",
+      "category": {
+        "id": "component-activity",
+        "title": "Activity",
+        "titleZh": "活动记录",
+        "order": 111
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/chat-thread",
+      "files": [
+        "registry/components/chat-thread/chat-thread.tsx",
+        "registry/components/chat-thread/chat-thread.module.css"
+      ]
+    },
+    {
+      "id": "image-compare",
+      "title": "Image compare",
+      "titleZh": "图像对比",
+      "category": {
+        "id": "component-media",
+        "title": "Media",
+        "titleZh": "媒体",
+        "order": 112
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/image-compare",
+      "files": [
+        "registry/components/image-compare/image-compare.tsx",
+        "registry/components/image-compare/image-compare.module.css"
+      ]
+    },
+    {
+      "id": "carousel",
+      "title": "Carousel",
+      "titleZh": "轮播",
+      "category": {
+        "id": "component-media",
+        "title": "Media",
+        "titleZh": "媒体",
+        "order": 113
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/carousel",
+      "files": [
+        "registry/components/carousel/carousel.tsx",
+        "registry/components/carousel/carousel.module.css"
+      ]
+    },
+    {
+      "id": "card-stack",
+      "title": "Card stack",
+      "titleZh": "卡片堆",
+      "category": {
+        "id": "component-media",
+        "title": "Media",
+        "titleZh": "媒体",
+        "order": 114
+      },
+      "kind": "component",
+      "group": "content",
+      "url": "https://uiarc.dev/components/card-stack",
+      "files": [
+        "registry/components/card-stack/card-stack.tsx",
+        "registry/components/card-stack/card-stack.module.css"
+      ]
+    },
+    {
+      "id": "text-reveal",
+      "title": "Text reveal",
+      "titleZh": "文本揭示",
+      "category": {
+        "id": "component-text-effects",
+        "title": "Text effects",
+        "titleZh": "文字效果",
+        "order": 115
+      },
+      "kind": "component",
+      "group": "text",
+      "url": "https://uiarc.dev/components/text-reveal",
+      "files": [
+        "registry/components/text-reveal/text-reveal.tsx",
+        "registry/components/text-reveal/text-reveal.module.css"
+      ]
+    },
+    {
+      "id": "in-view-title",
+      "title": "In-view title",
+      "titleZh": "入屏标题",
+      "category": {
+        "id": "component-text-effects",
+        "title": "Text effects",
+        "titleZh": "文字效果",
+        "order": 116
+      },
+      "kind": "component",
+      "group": "text",
+      "url": "https://uiarc.dev/components/in-view-title",
+      "files": [
+        "registry/components/in-view-title/in-view-title.tsx",
+        "registry/components/in-view-title/in-view-title.module.css"
+      ]
+    },
+    {
+      "id": "text-morph",
+      "title": "Text morph",
+      "titleZh": "文本形变",
+      "category": {
+        "id": "component-text-effects",
+        "title": "Text effects",
+        "titleZh": "文字效果",
+        "order": 117
+      },
+      "kind": "component",
+      "group": "text",
+      "url": "https://uiarc.dev/components/text-morph",
+      "files": [
+        "registry/components/text-morph/text-morph.tsx",
+        "registry/components/text-morph/text-morph.module.css"
+      ]
+    },
+    {
+      "id": "text-shimmer",
+      "title": "Text shimmer",
+      "titleZh": "流光文字",
+      "category": {
+        "id": "component-text-effects",
+        "title": "Text effects",
+        "titleZh": "文字效果",
+        "order": 118
+      },
+      "kind": "component",
+      "group": "text",
+      "url": "https://uiarc.dev/components/text-shimmer",
+      "files": [
+        "registry/components/text-shimmer/text-shimmer.tsx",
+        "registry/components/text-shimmer/text-shimmer.module.css"
+      ]
+    },
+    {
+      "id": "slot-text",
+      "title": "Slot text",
+      "titleZh": "滚轮文字",
+      "category": {
+        "id": "component-text-effects",
+        "title": "Text effects",
+        "titleZh": "文字效果",
+        "order": 119
+      },
+      "kind": "component",
+      "group": "text",
+      "url": "https://uiarc.dev/components/slot-text",
+      "files": [
+        "registry/components/slot-text/slot-text.tsx",
+        "registry/components/slot-text/slot-text.module.css"
+      ]
+    },
+    {
+      "id": "page-header",
+      "title": "Page header",
+      "titleZh": "页面首部",
+      "category": {
+        "id": "block-app-shell",
+        "title": "App shell",
+        "titleZh": "应用外壳",
+        "order": 120
+      },
+      "kind": "block",
+      "group": "blocks",
+      "url": "https://uiarc.dev/components/blocks/page-header",
+      "files": [
+        "registry/blocks/page-header/page-header.tsx",
+        "lib/use-copy-feedback.ts",
+        "registry/blocks/page-header/page-header.module.css",
+        "registry/components/progress/progress.tsx",
+        "registry/components/progress/progress.module.css",
+        "registry/components/button/button.tsx",
+        "registry/components/button/button.module.css",
+        "registry/components/badge/badge.tsx",
+        "registry/components/badge/badge.module.css",
+        "registry/components/avatar-group/avatar-group.tsx",
+        "registry/components/avatar-group/avatar-group.module.css",
+        "registry/components/avatar/avatar.tsx",
+        "registry/components/avatar/avatar.module.css",
+        "lib/arc-provider.tsx",
+        "registry/components/animated-counter/animated-counter.tsx",
+        "registry/components/animated-counter/animated-counter.module.css"
+      ]
+    },
+    {
+      "id": "command-palette",
+      "title": "Command palette",
+      "titleZh": "命令面板",
+      "category": {
+        "id": "block-app-shell",
+        "title": "App shell",
+        "titleZh": "应用外壳",
+        "order": 121
+      },
+      "kind": "block",
+      "group": "content",
+      "url": "https://uiarc.dev/components/blocks/command-palette",
+      "files": [
+        "registry/components/command-palette/command-palette.tsx",
+        "registry/components/command-palette/command-palette.module.css"
+      ]
+    },
+    {
+      "id": "notification-center",
+      "title": "Notification center",
+      "titleZh": "通知中心",
+      "category": {
+        "id": "block-app-shell",
+        "title": "App shell",
+        "titleZh": "应用外壳",
+        "order": 122
+      },
+      "kind": "block",
+      "group": "content",
+      "url": "https://uiarc.dev/components/blocks/notification-center",
+      "files": [
+        "registry/components/notification-center/notification-center.tsx",
+        "registry/components/notification-center/notification-center.module.css",
+        "registry/components/avatar/avatar.tsx",
+        "registry/components/avatar/avatar.module.css",
+        "lib/arc-provider.tsx"
+      ]
+    },
+    {
+      "id": "empty-states",
+      "title": "Empty states",
+      "titleZh": "空状态集合",
+      "category": {
+        "id": "block-app-shell",
+        "title": "App shell",
+        "titleZh": "应用外壳",
+        "order": 123
+      },
+      "kind": "block",
+      "group": "blocks",
+      "url": "https://uiarc.dev/components/blocks/empty-states",
+      "files": [
+        "registry/blocks/empty-states/empty-states.tsx",
+        "registry/blocks/empty-states/empty-states.module.css",
+        "registry/blocks/empty-states/empty-states-art.ts",
+        "registry/components/button/button.tsx",
+        "registry/components/button/button.module.css"
+      ]
+    },
+    {
+      "id": "signup-form",
+      "title": "Sign up form",
+      "titleZh": "注册表单",
+      "category": {
+        "id": "block-auth",
+        "title": "Auth",
+        "titleZh": "身份表单",
+        "order": 124
+      },
+      "kind": "block",
+      "group": "blocks",
+      "url": "https://uiarc.dev/components/blocks/signup-form",
+      "files": [
+        "registry/blocks/signup-form/signup-form.tsx",
+        "registry/blocks/signup-form/signup-form.module.css",
+        "registry/components/password-field/password-field.tsx",
+        "registry/components/password-field/password-field.module.css",
+        "registry/components/input/input.tsx",
+        "registry/components/input/input.module.css",
+        "registry/components/checkbox/checkbox.tsx",
+        "registry/components/checkbox/checkbox.module.css",
+        "registry/components/button/button.tsx",
+        "registry/components/button/button.module.css"
+      ]
+    },
+    {
+      "id": "sign-in",
+      "title": "Sign in",
+      "titleZh": "登录表单",
+      "category": {
+        "id": "block-auth",
+        "title": "Auth",
+        "titleZh": "身份表单",
+        "order": 125
+      },
+      "kind": "block",
+      "group": "blocks",
+      "url": "https://uiarc.dev/components/blocks/sign-in",
+      "files": [
+        "registry/blocks/sign-in/sign-in.tsx",
+        "registry/blocks/sign-in/sign-in.module.css",
+        "lib/media.ts",
+        "registry/components/otp-input/otp-input.tsx",
+        "registry/components/otp-input/otp-input.module.css",
+        "registry/components/input/input.tsx",
+        "registry/components/input/input.module.css",
+        "registry/components/button/button.tsx",
+        "registry/components/button/button.module.css",
+        "registry/components/avatar/avatar.tsx",
+        "registry/components/avatar/avatar.module.css",
+        "lib/arc-provider.tsx"
+      ]
+    },
+    {
+      "id": "login-centered",
+      "title": "Centered login",
+      "titleZh": "居中登录",
+      "category": {
+        "id": "block-auth",
+        "title": "Auth",
+        "titleZh": "身份表单",
+        "order": 126
+      },
+      "kind": "block",
+      "group": "blocks",
+      "url": "https://uiarc.dev/components/blocks/login-centered",
+      "files": [
+        "registry/blocks/login-centered/login-centered.tsx",
+        "registry/blocks/login-centered/login-centered.module.css",
+        "registry/components/otp-input/otp-input.tsx",
+        "registry/components/otp-input/otp-input.module.css",
+        "registry/components/input/input.tsx",
+        "registry/components/input/input.module.css",
+        "registry/components/button/button.tsx",
+        "registry/components/button/button.module.css"
+      ]
+    },
+    {
+      "id": "otp-input",
+      "title": "OTP input",
+      "titleZh": "验证码输入",
+      "category": {
+        "id": "block-auth",
+        "title": "Auth",
+        "titleZh": "身份表单",
+        "order": 127
+      },
+      "kind": "block",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/blocks/otp-input",
+      "files": [
+        "registry/components/otp-input/otp-input.tsx",
+        "registry/components/otp-input/otp-input.module.css"
+      ]
+    },
+    {
+      "id": "plan-comparison",
+      "title": "Plan comparison",
+      "titleZh": "套餐对比",
+      "category": {
+        "id": "block-pricing",
+        "title": "Pricing",
+        "titleZh": "价格方案",
+        "order": 128
+      },
+      "kind": "block",
+      "group": "blocks",
+      "url": "https://uiarc.dev/components/blocks/plan-comparison",
+      "files": [
+        "registry/blocks/plan-comparison/plan-comparison.tsx",
+        "registry/blocks/plan-comparison/plan-comparison.module.css",
+        "registry/components/switch/switch.tsx",
+        "registry/components/switch/switch.module.css",
+        "registry/components/segmented-control/segmented-control.tsx",
+        "registry/components/segmented-control/segmented-control.module.css",
+        "registry/components/button/button.tsx",
+        "registry/components/button/button.module.css"
+      ]
+    },
+    {
+      "id": "file-upload",
+      "title": "File upload",
+      "titleZh": "文件上传",
+      "category": {
+        "id": "block-media",
+        "title": "Media",
+        "titleZh": "媒体",
+        "order": 129
+      },
+      "kind": "block",
+      "group": "inputs",
+      "url": "https://uiarc.dev/components/blocks/file-upload",
+      "files": [
+        "registry/components/file-upload/file-upload.tsx",
+        "registry/components/file-upload/file-upload.module.css"
+      ]
+    },
+    {
+      "id": "hero-section",
+      "title": "Hero section",
+      "titleZh": "首屏区块",
+      "category": {
+        "id": "block-heroes",
+        "title": "Heroes",
+        "titleZh": "首屏",
+        "order": 130
+      },
+      "kind": "block",
+      "group": "blocks",
+      "url": "https://uiarc.dev/components/blocks/hero-section",
+      "files": [
+        "registry/blocks/hero-section/hero-section.tsx",
+        "registry/blocks/hero-section/hero-section.module.css",
+        "registry/blocks/hero-section/hero-content.tsx",
+        "registry/blocks/hero-section/hero-content.module.css",
+        "registry/blocks/hero-section/hero-motion.ts",
+        "registry/components/copy-button/copy-button.tsx",
+        "registry/components/copy-button/copy-button.module.css",
+        "lib/use-copy-feedback.ts",
+        "registry/components/button/button.tsx",
+        "registry/components/button/button.module.css",
+        "registry/blocks/hero-section/hero-mesh.tsx",
+        "registry/blocks/hero-section/hero-mesh.module.css",
+        "registry/blocks/hero-section/hero-cadence.tsx",
+        "registry/blocks/hero-section/hero-cadence.module.css",
+        "registry/blocks/hero-section/hero-relay.tsx",
+        "registry/blocks/hero-section/hero-relay.module.css",
+        "registry/blocks/hero-section/hero-lumen.tsx",
+        "registry/blocks/hero-section/hero-lumen.module.css",
+        "registry/blocks/hero-section/hero-lumen-data.ts",
+        "registry/components/line-chart/line-chart.tsx",
+        "registry/components/line-chart/line-chart.module.css",
+        "lib/media.ts",
+        "registry/components/avatar/avatar.tsx",
+        "registry/components/avatar/avatar.module.css",
+        "lib/arc-provider.tsx",
+        "registry/components/segmented-control/segmented-control.tsx",
+        "registry/components/segmented-control/segmented-control.module.css",
+        "registry/components/sparkline/sparkline.tsx",
+        "registry/components/sparkline/sparkline.module.css"
+      ]
+    },
+    {
+      "id": "comparison-table",
+      "title": "Comparison table",
+      "titleZh": "对比表格",
+      "category": {
+        "id": "block-features",
+        "title": "Features",
+        "titleZh": "功能对比",
+        "order": 131
+      },
+      "kind": "block",
+      "group": "blocks",
+      "url": "https://uiarc.dev/components/blocks/comparison-table",
+      "files": [
+        "registry/blocks/comparison-table/comparison-table.tsx",
+        "registry/blocks/comparison-table/comparison-table-data.ts",
+        "registry/blocks/comparison-table/comparison-table.module.css"
+      ]
+    },
+    {
+      "id": "logo-marquee",
+      "title": "Logo marquee",
+      "titleZh": "标识走马灯",
+      "category": {
+        "id": "block-social-proof",
+        "title": "Social proof",
+        "titleZh": "信任背书",
+        "order": 132
+      },
+      "kind": "block",
+      "group": "blocks",
+      "url": "https://uiarc.dev/components/blocks/logo-marquee",
+      "files": [
+        "registry/blocks/logo-marquee/logo-marquee.tsx",
+        "registry/blocks/logo-marquee/logo-marquee.module.css",
+        "registry/components/button/button.tsx",
+        "registry/components/button/button.module.css"
+      ]
+    },
+    {
+      "id": "stats-band",
+      "title": "Stats band",
+      "titleZh": "统计指标带",
+      "category": {
+        "id": "block-social-proof",
+        "title": "Social proof",
+        "titleZh": "信任背书",
+        "order": 133
+      },
+      "kind": "block",
+      "group": "blocks",
+      "url": "https://uiarc.dev/components/blocks/stats-band",
+      "files": [
+        "registry/blocks/stats-band/stats-band.tsx",
+        "registry/blocks/stats-band/stats-band-data.ts",
+        "registry/blocks/stats-band/stats-band.module.css",
+        "registry/blocks/stats-band/stats-band-world.ts",
+        "registry/components/segmented-control/segmented-control.tsx",
+        "registry/components/segmented-control/segmented-control.module.css"
+      ]
+    },
+    {
+      "id": "changelog-feed",
+      "title": "Changelog feed",
+      "titleZh": "更新日志流",
+      "category": {
+        "id": "block-content",
+        "title": "Content",
+        "titleZh": "内容",
+        "order": 134
+      },
+      "kind": "block",
+      "group": "blocks",
+      "url": "https://uiarc.dev/components/blocks/changelog-feed",
+      "files": [
+        "registry/blocks/changelog-feed/changelog-feed.tsx",
+        "registry/blocks/changelog-feed/changelog-feed.module.css",
+        "lib/media.ts",
+        "registry/components/copy-button/copy-button.tsx",
+        "registry/components/copy-button/copy-button.module.css",
+        "lib/use-copy-feedback.ts"
+      ]
+    },
+    {
+      "id": "faq-section",
+      "title": "FAQ section",
+      "titleZh": "常见问题",
+      "category": {
+        "id": "block-content",
+        "title": "Content",
+        "titleZh": "内容",
+        "order": 135
+      },
+      "kind": "block",
+      "group": "blocks",
+      "url": "https://uiarc.dev/components/blocks/faq-section",
+      "files": [
+        "registry/blocks/faq-section/faq-section.tsx",
+        "registry/blocks/faq-section/faq-section.module.css",
+        "registry/components/segmented-control/segmented-control.tsx",
+        "registry/components/segmented-control/segmented-control.module.css",
+        "registry/components/search-field/search-field.tsx",
+        "registry/components/search-field/search-field.module.css"
+      ]
+    },
+    {
+      "id": "contact-section",
+      "title": "Contact section",
+      "titleZh": "联系区块",
+      "category": {
+        "id": "block-content",
+        "title": "Content",
+        "titleZh": "内容",
+        "order": 136
+      },
+      "kind": "block",
+      "group": "blocks",
+      "url": "https://uiarc.dev/components/blocks/contact-section",
+      "files": [
+        "registry/blocks/contact-section/contact-section.tsx",
+        "registry/blocks/contact-section/contact-section.module.css",
+        "lib/media.ts",
+        "registry/components/textarea/textarea.tsx",
+        "registry/components/textarea/textarea.module.css",
+        "registry/components/segmented-control/segmented-control.tsx",
+        "registry/components/segmented-control/segmented-control.module.css",
+        "registry/components/input/input.tsx",
+        "registry/components/input/input.module.css",
+        "registry/components/copy-button/copy-button.tsx",
+        "registry/components/copy-button/copy-button.module.css",
+        "lib/use-copy-feedback.ts",
+        "registry/components/button/button.tsx",
+        "registry/components/button/button.module.css",
+        "registry/components/avatar/avatar.tsx",
+        "registry/components/avatar/avatar.module.css",
+        "lib/arc-provider.tsx"
+      ]
+    },
+    {
+      "id": "blog-grid",
+      "title": "Blog grid",
+      "titleZh": "博客网格",
+      "category": {
+        "id": "block-content",
+        "title": "Content",
+        "titleZh": "内容",
+        "order": 137
+      },
+      "kind": "block",
+      "group": "blocks",
+      "url": "https://uiarc.dev/components/blocks/blog-grid",
+      "files": [
+        "registry/blocks/blog-grid/blog-grid.tsx",
+        "registry/blocks/blog-grid/blog-grid-data.ts",
+        "registry/blocks/blog-grid/blog-grid.module.css"
+      ]
+    },
+    {
+      "id": "site-header",
+      "title": "Site header",
+      "titleZh": "站点导航",
+      "category": {
+        "id": "block-headers-and-footers",
+        "title": "Headers and footers",
+        "titleZh": "导航与页脚",
+        "order": 138
+      },
+      "kind": "block",
+      "group": "blocks",
+      "url": "https://uiarc.dev/components/blocks/site-header",
+      "files": [
+        "registry/blocks/site-header/site-header.tsx",
+        "registry/blocks/site-header/site-header.module.css",
+        "lib/media.ts",
+        "registry/components/segmented-control/segmented-control.tsx",
+        "registry/components/segmented-control/segmented-control.module.css"
+      ]
+    },
+    {
+      "id": "site-footer",
+      "title": "Site footer",
+      "titleZh": "站点页脚",
+      "category": {
+        "id": "block-headers-and-footers",
+        "title": "Headers and footers",
+        "titleZh": "导航与页脚",
+        "order": 139
+      },
+      "kind": "block",
+      "group": "blocks",
+      "url": "https://uiarc.dev/components/blocks/site-footer",
+      "files": [
+        "registry/blocks/site-footer/site-footer.tsx",
+        "registry/blocks/site-footer/site-footer.module.css",
+        "registry/components/segmented-control/segmented-control.tsx",
+        "registry/components/segmented-control/segmented-control.module.css",
+        "registry/components/button/button.tsx",
+        "registry/components/button/button.module.css"
+      ]
+    },
+    {
+      "id": "cta-section",
+      "title": "CTA section",
+      "titleZh": "行动号召区块",
+      "category": {
+        "id": "block-headers-and-footers",
+        "title": "Headers and footers",
+        "titleZh": "导航与页脚",
+        "order": 140
+      },
+      "kind": "block",
+      "group": "blocks",
+      "url": "https://uiarc.dev/components/blocks/cta-section",
+      "files": [
+        "registry/blocks/cta-section/cta-section.tsx",
+        "registry/blocks/cta-section/cta-section-data.ts",
+        "lib/media.ts",
+        "registry/blocks/cta-section/cta-section.module.css",
+        "registry/components/segmented-control/segmented-control.tsx",
+        "registry/components/segmented-control/segmented-control.module.css",
+        "registry/components/button/button.tsx",
+        "registry/components/button/button.module.css"
+      ]
+    },
+    {
+      "id": "newsletter-signup",
+      "title": "Newsletter signup",
+      "titleZh": "邮件订阅",
+      "category": {
+        "id": "block-headers-and-footers",
+        "title": "Headers and footers",
+        "titleZh": "导航与页脚",
+        "order": 141
+      },
+      "kind": "block",
+      "group": "blocks",
+      "url": "https://uiarc.dev/components/blocks/newsletter-signup",
+      "files": [
+        "registry/blocks/newsletter-signup/newsletter-signup.tsx",
+        "registry/blocks/newsletter-signup/newsletter-signup-data.ts",
+        "lib/media.ts",
+        "registry/blocks/newsletter-signup/newsletter-signup.module.css",
+        "registry/components/switch/switch.tsx",
+        "registry/components/switch/switch.module.css",
+        "registry/components/segmented-control/segmented-control.tsx",
+        "registry/components/segmented-control/segmented-control.module.css",
+        "registry/components/animated-counter/animated-counter.tsx",
+        "registry/components/animated-counter/animated-counter.module.css"
+      ]
+    }
+  ]
+}

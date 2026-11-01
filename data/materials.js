@@ -166,6 +166,1140 @@ window.ATLAS_MATERIALS = [
     }
   },
   {
+    "id": "arc-ui",
+    "title": "Arc UI · React 动效组件库（免费部分）",
+    "type": "component-library",
+    "category": "组件与效果",
+    "summary": "归档 120 个免费 React 动效组件和 22 个免费区块；每项提供可操作预览与原始 TypeScript、CSS 代码，保留共享设计和动效 tokens。",
+    "tags": [
+      "React",
+      "TypeScript",
+      "Motion",
+      "CSS Modules",
+      "Radix UI",
+      "shadcn",
+      "MCP",
+      "组件库",
+      "形变",
+      "图表"
+    ],
+    "demo": "demos/materials/arc-ui/index.html",
+    "preview": "previews/materials/arc-ui.jpg",
+    "research": "docs/materials/arc-ui.md",
+    "demoNote": "142 个免费预览按官网小分类组织为双语目录。外框保留底部目录抽屉、面包屑、快捷搜索、八色外观、四种主题转场、真实手机视口与全屏形变；代码区提供等宽高亮、行号、平滑展开与复制。",
+    "install": "复制 source/upstream/ 中的组件与共享 tokens，保持 @/ 路径别名；本地样例已捆绑依赖。重建：进入 source/，运行 npm ci 与 npm run build。",
+    "upstream": {
+      "repository": "kuratlielia/arc-library",
+      "url": "https://github.com/kuratlielia/arc-library",
+      "commit": "df3a600fd9ffca85ec8607438b599a4408ab8562",
+      "version": "提交 df3a600（package.json 为 0.0.0）",
+      "verifiedAt": "2026-11-01"
+    },
+    "license": {
+      "name": "MIT（免费组件与代码）；SIL OFL 1.1（字体）",
+      "url": "https://github.com/kuratlielia/arc-library/blob/df3a600fd9ffca85ec8607438b599a4408ab8562/LICENSE",
+      "scope": "免费 registry、lib、类型、文档与安装条目；不包含 Arc Pro 源码。",
+      "notes": "保留上游 MIT、运行依赖许可和 Inter / Geist OFL 原文；官网示例媒体的署名与权利见 demo/media/CREDITS.md，品牌标识不随软件许可转移。"
+    },
+    "useCases": [
+      "React 产品中的状态控件和微交互",
+      "需要源码所有权与本地修改的界面",
+      "以 CSS 语义 tokens 统一主题的组件组合",
+      "通过 registry、CLI 或 Agent 取用组件的流程"
+    ],
+    "avoid": [
+      "将其当作可直接引入的同名 npm 运行包",
+      "在非 React 项目中只复制 CSS 来冒充组件行为",
+      "把官网 Pro 目录或展示录像视为已归档的免费源码"
+    ],
+    "constraints": [
+      "固定归档 df3a600 的 144 个 registry 条目：120 个 registry:ui、22 个 registry:block 和 2 个共享基础条目。",
+      "上游要求 React 19、TypeScript 与 Next.js 或 Vite；本地使用固定依赖锁，六类预览按需加载。",
+      "source/upstream/ 的 registry、lib、types、public/r 与根使用说明保留原始结构和字节，未引入上游的维护检查脚本。",
+      "样例数据、状态与操作仅作用于当前页面，不接入账户、支付或持久化服务。",
+      "预览覆盖固定快照全部 120 个组件与 22 个区块；每项代码区展示该 registry 条目的全部源文件。"
+    ],
+    "workflow": [
+      "按中英文名称搜索，展开官网小分类目录，打开预览操作实际效果。",
+      "切到代码，选择 TypeScript、CSS 或关联文件并复制；依赖关系见固定 registry.json 与 public/r/<名称>.json。",
+      "接入 foundation.css 和 motion-tokens，设置 @/ 路径别名，保留组件内部相对结构。",
+      "按真实业务替换 props、标签与数据；明暗主题、键盘和减少动态由目标页面一起管理。"
+    ],
+    "relatedEntries": [
+      {
+        "kind": "case",
+        "id": "uiarc-platform",
+        "note": "同一产品的官网设计作为案例；本素材提供可取用的免费组件源码。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "固定提交免费源码与 MIT 许可",
+        "url": "https://github.com/kuratlielia/arc-library/tree/df3a600fd9ffca85ec8607438b599a4408ab8562",
+        "note": "registry.json 中 120 个 UI 组件、22 个区块和 2 个基础条目；源码和安装条目均随本体保存。",
+        "evidence": "source"
+      },
+      {
+        "title": "官网组件目录",
+        "url": "https://uiarc.dev/components/button",
+        "note": "官网同时展示免费与 Pro，免费快照的范围以固定 registry 为准。",
+        "evidence": "observed"
+      },
+      {
+        "title": "Arc 许可说明",
+        "url": "https://uiarc.dev/license",
+        "note": "免费部分为 MIT；Pro 采用独立许可。",
+        "evidence": "source"
+      },
+      {
+        "title": "官网原始字体",
+        "url": "https://uiarc.dev/",
+        "note": "Inter：_next/static/media/6c596dfcddeca1e9-s.p.woff2；Geist：9ff55a8a9670220d-s.p.woff2。字体原件与 OFL 原文保存在 fonts/。",
+        "evidence": "source"
+      },
+      {
+        "title": "官网组件文档交互实现",
+        "url": "https://uiarc.dev/_next/static/chunks/39865-dc562cb1ebef7cfb.js",
+        "note": "目录抽屉、外观设置、主题控制、导航历史和预览外框的公开实现依据；本地外框独立实现。",
+        "evidence": "source"
+      },
+      {
+        "title": "官网主题转场样式",
+        "url": "https://uiarc.dev/_next/static/css/dce8d597c26e3056.css",
+        "note": "reveal 380ms、eclipse 430ms、split 390ms、rise 360ms 与裁切参数的公开依据。",
+        "evidence": "source"
+      }
+    ],
+    "demos": [
+      {
+        "id": "button",
+        "title": "按钮 · Button",
+        "component": "Button",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=button"
+      },
+      {
+        "id": "action-swap",
+        "title": "状态切换按钮 · Action swap",
+        "component": "Action swap",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=action-swap"
+      },
+      {
+        "id": "action-button",
+        "title": "操作按钮 · Action button",
+        "component": "Action button",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=action-button"
+      },
+      {
+        "id": "split-button",
+        "title": "分体按钮 · Split button",
+        "component": "Split button",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=split-button"
+      },
+      {
+        "id": "button-group",
+        "title": "按钮组 · Button group",
+        "component": "Button group",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=button-group"
+      },
+      {
+        "id": "floating-button-group",
+        "title": "悬浮按钮组 · Floating button group",
+        "component": "Floating button group",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=floating-button-group"
+      },
+      {
+        "id": "expanding-button-group",
+        "title": "展开按钮组 · Expanding button group",
+        "component": "Expanding button group",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=expanding-button-group"
+      },
+      {
+        "id": "dropdown-menu",
+        "title": "下拉菜单 · Dropdown menu",
+        "component": "Dropdown menu",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=dropdown-menu"
+      },
+      {
+        "id": "context-menu",
+        "title": "上下文菜单 · Context menu",
+        "component": "Context menu",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=context-menu"
+      },
+      {
+        "id": "copy-button",
+        "title": "复制按钮 · Copy button",
+        "component": "Copy button",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=copy-button"
+      },
+      {
+        "id": "drawer",
+        "title": "抽屉 · Drawer",
+        "component": "Drawer",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=drawer"
+      },
+      {
+        "id": "theme-switch",
+        "title": "主题切换器 · Theme switcher",
+        "component": "Theme switcher",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=theme-switch"
+      },
+      {
+        "id": "theme-switch-eclipse",
+        "title": "月蚀主题切换 · Eclipse",
+        "component": "Eclipse",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=theme-switch-eclipse"
+      },
+      {
+        "id": "theme-switch-split",
+        "title": "分幕主题切换 · Split",
+        "component": "Split",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=theme-switch-split"
+      },
+      {
+        "id": "theme-switch-rise",
+        "title": "上升主题切换 · Rise",
+        "component": "Rise",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=theme-switch-rise"
+      },
+      {
+        "id": "avatar",
+        "title": "头像 · Avatar",
+        "component": "Avatar",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=avatar"
+      },
+      {
+        "id": "avatar-group",
+        "title": "头像组 · Avatar group",
+        "component": "Avatar group",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=avatar-group"
+      },
+      {
+        "id": "input",
+        "title": "文本输入框 · Input",
+        "component": "Input",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=input"
+      },
+      {
+        "id": "textarea",
+        "title": "多行文本框 · Textarea",
+        "component": "Textarea",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=textarea"
+      },
+      {
+        "id": "select",
+        "title": "下拉选择 · Select",
+        "component": "Select",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=select"
+      },
+      {
+        "id": "combobox",
+        "title": "组合选择框 · Combobox",
+        "component": "Combobox",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=combobox"
+      },
+      {
+        "id": "checkbox",
+        "title": "复选框 · Checkbox",
+        "component": "Checkbox",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=checkbox"
+      },
+      {
+        "id": "switch",
+        "title": "开关 · Switch",
+        "component": "Switch",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=switch"
+      },
+      {
+        "id": "multi-select",
+        "title": "多项选择 · Multi-select",
+        "component": "Multi-select",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=multi-select"
+      },
+      {
+        "id": "number-field",
+        "title": "数字输入 · Number field",
+        "component": "Number field",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=number-field"
+      },
+      {
+        "id": "password-field",
+        "title": "密码框 · Password field",
+        "component": "Password field",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=password-field"
+      },
+      {
+        "id": "search-field",
+        "title": "搜索框 · Search field",
+        "component": "Search field",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=search-field"
+      },
+      {
+        "id": "tag-input",
+        "title": "标签输入 · Tag input",
+        "component": "Tag input",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=tag-input"
+      },
+      {
+        "id": "file-dropzone",
+        "title": "文件拖放区 · File dropzone",
+        "component": "File dropzone",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=file-dropzone"
+      },
+      {
+        "id": "radio-group",
+        "title": "单选组 · Radio group",
+        "component": "Radio group",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=radio-group"
+      },
+      {
+        "id": "segmented-control",
+        "title": "分段控件 · Segmented control",
+        "component": "Segmented control",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=segmented-control"
+      },
+      {
+        "id": "calendar",
+        "title": "日历 · Calendar",
+        "component": "Calendar",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=calendar"
+      },
+      {
+        "id": "date-picker",
+        "title": "日期选择 · Date picker",
+        "component": "Date picker",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=date-picker"
+      },
+      {
+        "id": "time-picker",
+        "title": "时间选择 · Time picker",
+        "component": "Time picker",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=time-picker"
+      },
+      {
+        "id": "accordion",
+        "title": "折叠面板 · Accordion",
+        "component": "Accordion",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=accordion"
+      },
+      {
+        "id": "dialog",
+        "title": "对话框 · Dialog",
+        "component": "Dialog",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=dialog"
+      },
+      {
+        "id": "popover",
+        "title": "弹出层 · Popover",
+        "component": "Popover",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=popover"
+      },
+      {
+        "id": "tooltip",
+        "title": "提示气泡 · Tooltip",
+        "component": "Tooltip",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=tooltip"
+      },
+      {
+        "id": "tabs",
+        "title": "标签页 · Tabs",
+        "component": "Tabs",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=tabs"
+      },
+      {
+        "id": "expandable-card",
+        "title": "展开卡片 · Expandable card",
+        "component": "Expandable card",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=expandable-card"
+      },
+      {
+        "id": "breadcrumb",
+        "title": "面包屑 · Breadcrumb",
+        "component": "Breadcrumb",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=breadcrumb"
+      },
+      {
+        "id": "alert",
+        "title": "提示信息 · Alert",
+        "component": "Alert",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=alert"
+      },
+      {
+        "id": "toast",
+        "title": "轻提示 · Toast",
+        "component": "Toast",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=toast"
+      },
+      {
+        "id": "rating",
+        "title": "评分 · Rating",
+        "component": "Rating",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=rating"
+      },
+      {
+        "id": "progress",
+        "title": "进度条 · Progress",
+        "component": "Progress",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=progress"
+      },
+      {
+        "id": "skeleton",
+        "title": "骨架屏 · Skeleton",
+        "component": "Skeleton",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=skeleton"
+      },
+      {
+        "id": "badge",
+        "title": "徽标 · Badge",
+        "component": "Badge",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=badge"
+      },
+      {
+        "id": "card",
+        "title": "卡片 · Card",
+        "component": "Card",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=card"
+      },
+      {
+        "id": "metric-card",
+        "title": "指标卡片 · Metric card",
+        "component": "Metric card",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=metric-card"
+      },
+      {
+        "id": "empty-state",
+        "title": "空状态 · Empty state",
+        "component": "Empty state",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=empty-state"
+      },
+      {
+        "id": "tree-view",
+        "title": "树形目录 · Tree view",
+        "component": "Tree view",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=tree-view"
+      },
+      {
+        "id": "pagination",
+        "title": "分页 · Pagination",
+        "component": "Pagination",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=pagination"
+      },
+      {
+        "id": "filter-toolbar",
+        "title": "筛选工具栏 · Filter toolbar",
+        "component": "Filter toolbar",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=filter-toolbar"
+      },
+      {
+        "id": "sortable-data-table",
+        "title": "可排序数据表 · Sortable data table",
+        "component": "Sortable data table",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=sortable-data-table"
+      },
+      {
+        "id": "sparkline",
+        "title": "迷你趋势图 · Sparkline",
+        "component": "Sparkline",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=sparkline"
+      },
+      {
+        "id": "gauge",
+        "title": "仪表盘 · Gauge",
+        "component": "Gauge",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=gauge"
+      },
+      {
+        "id": "animated-counter",
+        "title": "动态计数 · Animated counter",
+        "component": "Animated counter",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=animated-counter"
+      },
+      {
+        "id": "code-block",
+        "title": "代码块 · Code block",
+        "component": "Code block",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=code-block"
+      },
+      {
+        "id": "reorderable-list",
+        "title": "可重排列表 · Reorderable list",
+        "component": "Reorderable list",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=reorderable-list"
+      },
+      {
+        "id": "text-reveal",
+        "title": "文本揭示 · Text reveal",
+        "component": "Text reveal",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=text-reveal"
+      },
+      {
+        "id": "in-view-title",
+        "title": "入屏标题 · In-view title",
+        "component": "In-view title",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=in-view-title"
+      },
+      {
+        "id": "text-morph",
+        "title": "文本形变 · Text morph",
+        "component": "Text morph",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=text-morph"
+      },
+      {
+        "id": "text-shimmer",
+        "title": "流光文字 · Text shimmer",
+        "component": "Text shimmer",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=text-shimmer"
+      },
+      {
+        "id": "hold-to-confirm",
+        "title": "长按确认 · Hold to confirm",
+        "component": "Hold to confirm",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=hold-to-confirm"
+      },
+      {
+        "id": "swipe-actions",
+        "title": "滑动操作 · Swipe actions",
+        "component": "Swipe actions",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=swipe-actions"
+      },
+      {
+        "id": "reactions",
+        "title": "表态反馈 · Reactions",
+        "component": "Reactions",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=reactions"
+      },
+      {
+        "id": "slider",
+        "title": "滑块 · Slider",
+        "component": "Slider",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=slider"
+      },
+      {
+        "id": "elastic-slider",
+        "title": "弹性滑块 · Elastic slider",
+        "component": "Elastic slider",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=elastic-slider"
+      },
+      {
+        "id": "range-histogram-slider",
+        "title": "区间直方图滑块 · Range histogram slider",
+        "component": "Range histogram slider",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=range-histogram-slider"
+      },
+      {
+        "id": "ruler-slider",
+        "title": "刻度滑块 · Ruler slider",
+        "component": "Ruler slider",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=ruler-slider"
+      },
+      {
+        "id": "inline-edit",
+        "title": "行内编辑 · Inline edit",
+        "component": "Inline edit",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=inline-edit"
+      },
+      {
+        "id": "expanding-search",
+        "title": "展开搜索 · Expanding search",
+        "component": "Expanding search",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=expanding-search"
+      },
+      {
+        "id": "chip-group",
+        "title": "标签选项组 · Chip group",
+        "component": "Chip group",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=chip-group"
+      },
+      {
+        "id": "password-strength",
+        "title": "密码强度 · Password strength",
+        "component": "Password strength",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=password-strength"
+      },
+      {
+        "id": "bottom-sheet",
+        "title": "底部面板 · Bottom sheet",
+        "component": "Bottom sheet",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=bottom-sheet"
+      },
+      {
+        "id": "hover-card",
+        "title": "悬停卡片 · Hover card",
+        "component": "Hover card",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=hover-card"
+      },
+      {
+        "id": "resizable-panels",
+        "title": "可调面板 · Resizable panels",
+        "component": "Resizable panels",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=resizable-panels"
+      },
+      {
+        "id": "toast-stack",
+        "title": "堆叠通知 · Toast stack",
+        "component": "Toast stack",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=toast-stack"
+      },
+      {
+        "id": "usage-meter",
+        "title": "用量计量 · Usage meter",
+        "component": "Usage meter",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=usage-meter"
+      },
+      {
+        "id": "onboarding-checklist",
+        "title": "入门清单 · Onboarding checklist",
+        "component": "Onboarding checklist",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=onboarding-checklist"
+      },
+      {
+        "id": "image-compare",
+        "title": "图像对比 · Image compare",
+        "component": "Image compare",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=image-compare"
+      },
+      {
+        "id": "carousel",
+        "title": "轮播 · Carousel",
+        "component": "Carousel",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=carousel"
+      },
+      {
+        "id": "card-stack",
+        "title": "卡片堆 · Card stack",
+        "component": "Card stack",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=card-stack"
+      },
+      {
+        "id": "bar-chart",
+        "title": "柱状图 · Bar chart",
+        "component": "Bar chart",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=bar-chart"
+      },
+      {
+        "id": "activity-heatmap",
+        "title": "活动热力图 · Activity heatmap",
+        "component": "Activity heatmap",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=activity-heatmap"
+      },
+      {
+        "id": "timeline",
+        "title": "时间线 · Timeline",
+        "component": "Timeline",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=timeline"
+      },
+      {
+        "id": "user-menu",
+        "title": "用户菜单 · User menu",
+        "component": "User menu",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=user-menu"
+      },
+      {
+        "id": "stepper",
+        "title": "步骤条 · Stepper",
+        "component": "Stepper",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=stepper"
+      },
+      {
+        "id": "signature-pad",
+        "title": "签名板 · Signature pad",
+        "component": "Signature pad",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=signature-pad"
+      },
+      {
+        "id": "icon-morph",
+        "title": "图标形变 · Icon morph",
+        "component": "Icon morph",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=icon-morph"
+      },
+      {
+        "id": "date-range-picker",
+        "title": "日期区间选择 · Date range picker",
+        "component": "Date range picker",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=date-range-picker"
+      },
+      {
+        "id": "color-picker",
+        "title": "颜色选择 · Color picker",
+        "component": "Color picker",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=color-picker"
+      },
+      {
+        "id": "morph-select",
+        "title": "形变选择器 · Morph select",
+        "component": "Morph select",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=morph-select"
+      },
+      {
+        "id": "line-chart",
+        "title": "折线图 · Line chart",
+        "component": "Line chart",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=line-chart"
+      },
+      {
+        "id": "donut-chart",
+        "title": "环形图 · Donut chart",
+        "component": "Donut chart",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=donut-chart"
+      },
+      {
+        "id": "streamgraph",
+        "title": "流图 · Streamgraph",
+        "component": "Streamgraph",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=streamgraph"
+      },
+      {
+        "id": "brush-chart",
+        "title": "刷选图表 · Brush chart",
+        "component": "Brush chart",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=brush-chart"
+      },
+      {
+        "id": "ridgeline",
+        "title": "山脊图 · Ridgeline",
+        "component": "Ridgeline",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=ridgeline"
+      },
+      {
+        "id": "treemap",
+        "title": "矩形树图 · Treemap",
+        "component": "Treemap",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=treemap"
+      },
+      {
+        "id": "waffle-chart",
+        "title": "华夫图 · Waffle chart",
+        "component": "Waffle chart",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=waffle-chart"
+      },
+      {
+        "id": "slope-chart",
+        "title": "坡度图 · Slope chart",
+        "component": "Slope chart",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=slope-chart"
+      },
+      {
+        "id": "countdown",
+        "title": "倒计时 · Countdown",
+        "component": "Countdown",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=countdown"
+      },
+      {
+        "id": "cookie-consent",
+        "title": "Cookie 同意面板 · Cookie consent",
+        "component": "Cookie consent",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=cookie-consent"
+      },
+      {
+        "id": "announcement-bar",
+        "title": "公告栏 · Announcement bar",
+        "component": "Announcement bar",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=announcement-bar"
+      },
+      {
+        "id": "json-viewer",
+        "title": "JSON 查看器 · JSON viewer",
+        "component": "JSON viewer",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=json-viewer"
+      },
+      {
+        "id": "scrub-input",
+        "title": "拖动数值输入 · Scrub input",
+        "component": "Scrub input",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=scrub-input"
+      },
+      {
+        "id": "tree-table",
+        "title": "树状表格 · Tree table",
+        "component": "Tree table",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=tree-table"
+      },
+      {
+        "id": "phone-input",
+        "title": "电话输入 · Phone input",
+        "component": "Phone input",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=phone-input"
+      },
+      {
+        "id": "money-input",
+        "title": "金额输入 · Money input",
+        "component": "Money input",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=money-input"
+      },
+      {
+        "id": "shortcut-recorder",
+        "title": "快捷键录入 · Shortcut recorder",
+        "component": "Shortcut recorder",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=shortcut-recorder"
+      },
+      {
+        "id": "confirm-morph",
+        "title": "确认形变 · Confirm morph",
+        "component": "Confirm morph",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=confirm-morph"
+      },
+      {
+        "id": "mention-input",
+        "title": "提及输入 · Mention input",
+        "component": "Mention input",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=mention-input"
+      },
+      {
+        "id": "chat-thread",
+        "title": "聊天串 · Chat thread",
+        "component": "Chat thread",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=chat-thread"
+      },
+      {
+        "id": "rich-text-editor",
+        "title": "富文本编辑器 · Rich text editor",
+        "component": "Rich text editor",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=rich-text-editor"
+      },
+      {
+        "id": "billing-toggle",
+        "title": "计费周期切换 · Billing toggle",
+        "component": "Billing toggle",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=billing-toggle"
+      },
+      {
+        "id": "scroll-area",
+        "title": "滚动区域 · Scroll area",
+        "component": "Scroll area",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=scroll-area"
+      },
+      {
+        "id": "radio-cards",
+        "title": "单选卡片 · Radio cards",
+        "component": "Radio cards",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=radio-cards"
+      },
+      {
+        "id": "comment-thread",
+        "title": "评论串 · Comment thread",
+        "component": "Comment thread",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=comment-thread"
+      },
+      {
+        "id": "slot-text",
+        "title": "滚轮文字 · Slot text",
+        "component": "Slot text",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=slot-text"
+      },
+      {
+        "id": "expandable-text",
+        "title": "展开文本 · Expandable text",
+        "component": "Expandable text",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=expandable-text"
+      },
+      {
+        "id": "signup-form",
+        "title": "注册表单 · Sign up form",
+        "component": "Sign up form",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=signup-form"
+      },
+      {
+        "id": "logo-marquee",
+        "title": "标识走马灯 · Logo marquee",
+        "component": "Logo marquee",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=logo-marquee"
+      },
+      {
+        "id": "plan-comparison",
+        "title": "套餐对比 · Plan comparison",
+        "component": "Plan comparison",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=plan-comparison"
+      },
+      {
+        "id": "command-palette",
+        "title": "命令面板 · Command palette",
+        "component": "Command palette",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=command-palette"
+      },
+      {
+        "id": "notification-center",
+        "title": "通知中心 · Notification center",
+        "component": "Notification center",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=notification-center"
+      },
+      {
+        "id": "file-upload",
+        "title": "文件上传 · File upload",
+        "component": "File upload",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=file-upload"
+      },
+      {
+        "id": "otp-input",
+        "title": "验证码输入 · OTP input",
+        "component": "OTP input",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=otp-input"
+      },
+      {
+        "id": "changelog-feed",
+        "title": "更新日志流 · Changelog feed",
+        "component": "Changelog feed",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=changelog-feed"
+      },
+      {
+        "id": "sign-in",
+        "title": "登录表单 · Sign in",
+        "component": "Sign in",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=sign-in"
+      },
+      {
+        "id": "page-header",
+        "title": "页面首部 · Page header",
+        "component": "Page header",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=page-header"
+      },
+      {
+        "id": "empty-states",
+        "title": "空状态集合 · Empty states",
+        "component": "Empty states",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=empty-states"
+      },
+      {
+        "id": "login-centered",
+        "title": "居中登录 · Centered login",
+        "component": "Centered login",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=login-centered"
+      },
+      {
+        "id": "site-header",
+        "title": "站点导航 · Site header",
+        "component": "Site header",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=site-header"
+      },
+      {
+        "id": "site-footer",
+        "title": "站点页脚 · Site footer",
+        "component": "Site footer",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=site-footer"
+      },
+      {
+        "id": "hero-section",
+        "title": "首屏区块 · Hero section",
+        "component": "Hero section",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=hero-section"
+      },
+      {
+        "id": "faq-section",
+        "title": "常见问题 · FAQ section",
+        "component": "FAQ section",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=faq-section"
+      },
+      {
+        "id": "contact-section",
+        "title": "联系区块 · Contact section",
+        "component": "Contact section",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=contact-section"
+      },
+      {
+        "id": "blog-grid",
+        "title": "博客网格 · Blog grid",
+        "component": "Blog grid",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=blog-grid"
+      },
+      {
+        "id": "comparison-table",
+        "title": "对比表格 · Comparison table",
+        "component": "Comparison table",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=comparison-table"
+      },
+      {
+        "id": "stats-band",
+        "title": "统计指标带 · Stats band",
+        "component": "Stats band",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=stats-band"
+      },
+      {
+        "id": "cta-section",
+        "title": "行动号召区块 · CTA section",
+        "component": "CTA section",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=cta-section"
+      },
+      {
+        "id": "newsletter-signup",
+        "title": "邮件订阅 · Newsletter signup",
+        "component": "Newsletter signup",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=newsletter-signup"
+      }
+    ],
+    "sourceFiles": [
+      "demos/materials/arc-ui/source/main.tsx",
+      "demos/materials/arc-ui/source/build.mjs",
+      "demos/materials/arc-ui/source/navigation.json",
+      "demos/materials/arc-ui/source/fetch-media.mjs",
+      "demos/materials/arc-ui/source/media.json",
+      "demos/materials/arc-ui/source/media.tsx",
+      "demos/materials/arc-ui/source/next-link.tsx",
+      "demos/materials/arc-ui/source/package.json",
+      "demos/materials/arc-ui/source/package-lock.json",
+      "demos/materials/arc-ui/source/previews/actions.tsx",
+      "demos/materials/arc-ui/source/previews/inputs.tsx",
+      "demos/materials/arc-ui/source/previews/content.tsx",
+      "demos/materials/arc-ui/source/previews/charts.tsx",
+      "demos/materials/arc-ui/source/previews/text.tsx",
+      "demos/materials/arc-ui/source/previews/blocks.tsx",
+      "demos/materials/arc-ui/source/upstream/registry.json",
+      "demos/materials/arc-ui/source/upstream/registry/foundation.css",
+      "demos/materials/arc-ui/source/upstream/lib/motion-tokens.ts",
+      "demos/materials/arc-ui/fidelity.md",
+      "demos/materials/arc-ui/source/appearance.tsx",
+      "demos/materials/arc-ui/source/catalog-panel.tsx",
+      "demos/materials/arc-ui/source/library-overlays.tsx",
+      "demos/materials/arc-ui/source/preview-stage.tsx",
+      "demos/materials/arc-ui/source/render-preview.tsx",
+      "demos/materials/arc-ui/source/frame.tsx"
+    ],
+    "accessibility": {
+      "keyboard": "目录支持 Tab／方向键与中英搜索，Ctrl K 聚焦桌面目录，/ 聚焦目录搜索；抽屉与快捷搜索约束焦点，抽屉、搜索和全屏支持 Escape 返回；预览／代码支持方向键及 Home/End。",
+      "reducedMotion": "原组件、主题转场和外框动画遵循系统 prefers-reduced-motion；默认保留完整动效。"
+    },
+    "prompt": "在 React 页面中取用 Arc UI 的免费组件或区块。先从完整目录操作预览，再到代码区读取对应的 TypeScript、CSS 和关联文件，按固定 registry 的依赖关系复制。保留上游组件结构、语义 tokens、动效参数、键盘模型与减少动态分支，只按真实任务调整 props、数据与组合。使用 source/upstream/ 的固定快照和当前项目明确固定的依赖版本，保留代码、运行依赖、字体与媒体的许可署名。官网首页布局从独立案例取得。"
+  },
+  {
     "id": "beautiful-article",
     "title": "Beautiful Article · 长文编辑工作流",
     "type": "agent-skill",

@@ -1,0 +1,523 @@
+{
+  "reference": "https://uiarc.dev/components/button",
+  "capturedAt": "2026-11-01",
+  "sections": [
+    {
+      "id": "component",
+      "title": "Components",
+      "titleZh": "组件",
+      "groups": [
+        {
+          "id": "component-buttons",
+          "title": "Buttons",
+          "titleZh": "按钮",
+          "items": [
+            "button",
+            "action-button",
+            "split-button",
+            "button-group",
+            "floating-button-group",
+            "expanding-button-group",
+            "copy-button",
+            "action-swap",
+            "icon-morph",
+            "confirm-morph",
+            "theme-switch",
+            "theme-switch-eclipse",
+            "theme-switch-split",
+            "theme-switch-rise"
+          ]
+        },
+        {
+          "id": "component-gestures",
+          "title": "Gestures",
+          "titleZh": "手势",
+          "items": [
+            "hold-to-confirm",
+            "swipe-actions",
+            "reactions"
+          ]
+        },
+        {
+          "id": "component-menus",
+          "title": "Menus",
+          "titleZh": "菜单",
+          "items": [
+            "dropdown-menu",
+            "context-menu",
+            "user-menu"
+          ]
+        },
+        {
+          "id": "component-text-fields",
+          "title": "Text fields",
+          "titleZh": "文本字段",
+          "items": [
+            "input",
+            "textarea",
+            "password-field",
+            "password-strength",
+            "search-field",
+            "expanding-search",
+            "inline-edit"
+          ]
+        },
+        {
+          "id": "component-special-inputs",
+          "title": "Special inputs",
+          "titleZh": "专用输入",
+          "items": [
+            "number-field",
+            "money-input",
+            "phone-input",
+            "scrub-input",
+            "tag-input",
+            "mention-input",
+            "shortcut-recorder"
+          ]
+        },
+        {
+          "id": "component-selects",
+          "title": "Selects",
+          "titleZh": "选择器",
+          "items": [
+            "select",
+            "combobox",
+            "multi-select",
+            "morph-select",
+            "chip-group"
+          ]
+        },
+        {
+          "id": "component-toggles",
+          "title": "Toggles",
+          "titleZh": "切换与选项",
+          "items": [
+            "radio-cards",
+            "billing-toggle",
+            "checkbox",
+            "radio-group",
+            "switch",
+            "segmented-control",
+            "rating"
+          ]
+        },
+        {
+          "id": "component-sliders",
+          "title": "Sliders",
+          "titleZh": "滑块",
+          "items": [
+            "slider",
+            "elastic-slider",
+            "range-histogram-slider",
+            "ruler-slider"
+          ]
+        },
+        {
+          "id": "component-pickers",
+          "title": "Pickers",
+          "titleZh": "选择面板",
+          "items": [
+            "calendar",
+            "date-picker",
+            "date-range-picker",
+            "time-picker",
+            "color-picker"
+          ]
+        },
+        {
+          "id": "component-editors",
+          "title": "Editors",
+          "titleZh": "编辑器",
+          "items": [
+            "rich-text-editor",
+            "signature-pad",
+            "file-dropzone"
+          ]
+        },
+        {
+          "id": "component-navigation",
+          "title": "Navigation",
+          "titleZh": "导航",
+          "items": [
+            "tabs",
+            "breadcrumb",
+            "pagination"
+          ]
+        },
+        {
+          "id": "component-expand",
+          "title": "Expand",
+          "titleZh": "展开与布局",
+          "items": [
+            "scroll-area",
+            "accordion",
+            "expandable-card",
+            "resizable-panels",
+            "expandable-text"
+          ]
+        },
+        {
+          "id": "component-overlays",
+          "title": "Overlays",
+          "titleZh": "浮层",
+          "items": [
+            "dialog",
+            "drawer",
+            "bottom-sheet",
+            "popover",
+            "hover-card",
+            "tooltip"
+          ]
+        },
+        {
+          "id": "component-messages",
+          "title": "Messages",
+          "titleZh": "消息反馈",
+          "items": [
+            "alert",
+            "toast",
+            "toast-stack",
+            "announcement-bar",
+            "cookie-consent"
+          ]
+        },
+        {
+          "id": "component-progress",
+          "title": "Progress",
+          "titleZh": "进度",
+          "items": [
+            "progress",
+            "skeleton",
+            "stepper",
+            "countdown",
+            "usage-meter",
+            "onboarding-checklist"
+          ]
+        },
+        {
+          "id": "component-avatars",
+          "title": "Avatars",
+          "titleZh": "头像与徽标",
+          "items": [
+            "avatar",
+            "avatar-group",
+            "badge"
+          ]
+        },
+        {
+          "id": "component-cards",
+          "title": "Cards",
+          "titleZh": "卡片",
+          "items": [
+            "card",
+            "metric-card",
+            "empty-state"
+          ]
+        },
+        {
+          "id": "component-charts",
+          "title": "Charts",
+          "titleZh": "图表",
+          "items": [
+            "line-chart",
+            "bar-chart",
+            "donut-chart",
+            "streamgraph",
+            "brush-chart",
+            "waffle-chart",
+            "slope-chart",
+            "sparkline",
+            "gauge",
+            "activity-heatmap",
+            "animated-counter",
+            "ridgeline",
+            "treemap"
+          ]
+        },
+        {
+          "id": "component-tables",
+          "title": "Tables",
+          "titleZh": "表格与结构",
+          "items": [
+            "sortable-data-table",
+            "tree-table",
+            "tree-view",
+            "reorderable-list",
+            "filter-toolbar",
+            "code-block",
+            "json-viewer"
+          ]
+        },
+        {
+          "id": "component-activity",
+          "title": "Activity",
+          "titleZh": "活动记录",
+          "items": [
+            "timeline",
+            "comment-thread",
+            "chat-thread"
+          ]
+        },
+        {
+          "id": "component-media",
+          "title": "Media",
+          "titleZh": "媒体",
+          "items": [
+            "image-compare",
+            "carousel",
+            "card-stack"
+          ]
+        },
+        {
+          "id": "component-text-effects",
+          "title": "Text effects",
+          "titleZh": "文字效果",
+          "items": [
+            "text-reveal",
+            "in-view-title",
+            "text-morph",
+            "text-shimmer",
+            "slot-text"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "block",
+      "title": "Blocks",
+      "titleZh": "区块",
+      "groups": [
+        {
+          "id": "block-app-shell",
+          "title": "App shell",
+          "titleZh": "应用外壳",
+          "items": [
+            "page-header",
+            "command-palette",
+            "notification-center",
+            "empty-states"
+          ]
+        },
+        {
+          "id": "block-auth",
+          "title": "Auth",
+          "titleZh": "身份表单",
+          "items": [
+            "signup-form",
+            "sign-in",
+            "login-centered",
+            "otp-input"
+          ]
+        },
+        {
+          "id": "block-pricing",
+          "title": "Pricing",
+          "titleZh": "价格方案",
+          "items": [
+            "plan-comparison"
+          ]
+        },
+        {
+          "id": "block-media",
+          "title": "Media",
+          "titleZh": "媒体",
+          "items": [
+            "file-upload"
+          ]
+        },
+        {
+          "id": "block-heroes",
+          "title": "Heroes",
+          "titleZh": "首屏",
+          "items": [
+            "hero-section"
+          ]
+        },
+        {
+          "id": "block-features",
+          "title": "Features",
+          "titleZh": "功能对比",
+          "items": [
+            "comparison-table"
+          ]
+        },
+        {
+          "id": "block-social-proof",
+          "title": "Social proof",
+          "titleZh": "信任背书",
+          "items": [
+            "logo-marquee",
+            "stats-band"
+          ]
+        },
+        {
+          "id": "block-content",
+          "title": "Content",
+          "titleZh": "内容",
+          "items": [
+            "changelog-feed",
+            "faq-section",
+            "contact-section",
+            "blog-grid"
+          ]
+        },
+        {
+          "id": "block-headers-and-footers",
+          "title": "Headers and footers",
+          "titleZh": "导航与页脚",
+          "items": [
+            "site-header",
+            "site-footer",
+            "cta-section",
+            "newsletter-signup"
+          ]
+        }
+      ]
+    }
+  ],
+  "labels": {
+    "button": "按钮",
+    "action-button": "操作按钮",
+    "action-swap": "状态切换按钮",
+    "split-button": "分体按钮",
+    "button-group": "按钮组",
+    "floating-button-group": "悬浮按钮组",
+    "expanding-button-group": "展开按钮组",
+    "copy-button": "复制按钮",
+    "icon-morph": "图标形变",
+    "confirm-morph": "确认形变",
+    "theme-switch": "主题切换器",
+    "theme-switch-eclipse": "月蚀主题切换",
+    "theme-switch-split": "分幕主题切换",
+    "theme-switch-rise": "上升主题切换",
+    "hold-to-confirm": "长按确认",
+    "swipe-actions": "滑动操作",
+    "reactions": "表态反馈",
+    "dropdown-menu": "下拉菜单",
+    "context-menu": "上下文菜单",
+    "user-menu": "用户菜单",
+    "input": "文本输入框",
+    "textarea": "多行文本框",
+    "password-field": "密码框",
+    "password-strength": "密码强度",
+    "search-field": "搜索框",
+    "expanding-search": "展开搜索",
+    "inline-edit": "行内编辑",
+    "number-field": "数字输入",
+    "money-input": "金额输入",
+    "phone-input": "电话输入",
+    "scrub-input": "拖动数值输入",
+    "tag-input": "标签输入",
+    "mention-input": "提及输入",
+    "shortcut-recorder": "快捷键录入",
+    "select": "下拉选择",
+    "combobox": "组合选择框",
+    "multi-select": "多项选择",
+    "morph-select": "形变选择器",
+    "chip-group": "标签选项组",
+    "radio-cards": "单选卡片",
+    "billing-toggle": "计费周期切换",
+    "checkbox": "复选框",
+    "radio-group": "单选组",
+    "switch": "开关",
+    "segmented-control": "分段控件",
+    "rating": "评分",
+    "slider": "滑块",
+    "elastic-slider": "弹性滑块",
+    "range-histogram-slider": "区间直方图滑块",
+    "ruler-slider": "刻度滑块",
+    "calendar": "日历",
+    "date-picker": "日期选择",
+    "date-range-picker": "日期区间选择",
+    "time-picker": "时间选择",
+    "color-picker": "颜色选择",
+    "rich-text-editor": "富文本编辑器",
+    "signature-pad": "签名板",
+    "file-dropzone": "文件拖放区",
+    "tabs": "标签页",
+    "breadcrumb": "面包屑",
+    "pagination": "分页",
+    "scroll-area": "滚动区域",
+    "accordion": "折叠面板",
+    "expandable-card": "展开卡片",
+    "resizable-panels": "可调面板",
+    "expandable-text": "展开文本",
+    "dialog": "对话框",
+    "drawer": "抽屉",
+    "bottom-sheet": "底部面板",
+    "popover": "弹出层",
+    "hover-card": "悬停卡片",
+    "tooltip": "提示气泡",
+    "alert": "提示信息",
+    "toast": "轻提示",
+    "toast-stack": "堆叠通知",
+    "announcement-bar": "公告栏",
+    "cookie-consent": "Cookie 同意面板",
+    "progress": "进度条",
+    "skeleton": "骨架屏",
+    "stepper": "步骤条",
+    "countdown": "倒计时",
+    "usage-meter": "用量计量",
+    "onboarding-checklist": "入门清单",
+    "avatar": "头像",
+    "avatar-group": "头像组",
+    "badge": "徽标",
+    "card": "卡片",
+    "metric-card": "指标卡片",
+    "empty-state": "空状态",
+    "line-chart": "折线图",
+    "bar-chart": "柱状图",
+    "donut-chart": "环形图",
+    "streamgraph": "流图",
+    "brush-chart": "刷选图表",
+    "waffle-chart": "华夫图",
+    "slope-chart": "坡度图",
+    "sparkline": "迷你趋势图",
+    "gauge": "仪表盘",
+    "activity-heatmap": "活动热力图",
+    "animated-counter": "动态计数",
+    "ridgeline": "山脊图",
+    "treemap": "矩形树图",
+    "sortable-data-table": "可排序数据表",
+    "tree-table": "树状表格",
+    "tree-view": "树形目录",
+    "reorderable-list": "可重排列表",
+    "filter-toolbar": "筛选工具栏",
+    "code-block": "代码块",
+    "json-viewer": "JSON 查看器",
+    "timeline": "时间线",
+    "comment-thread": "评论串",
+    "chat-thread": "聊天串",
+    "image-compare": "图像对比",
+    "carousel": "轮播",
+    "card-stack": "卡片堆",
+    "text-reveal": "文本揭示",
+    "in-view-title": "入屏标题",
+    "text-morph": "文本形变",
+    "text-shimmer": "流光文字",
+    "slot-text": "滚轮文字",
+    "page-header": "页面首部",
+    "command-palette": "命令面板",
+    "notification-center": "通知中心",
+    "empty-states": "空状态集合",
+    "otp-input": "验证码输入",
+    "signup-form": "注册表单",
+    "sign-in": "登录表单",
+    "login-centered": "居中登录",
+    "plan-comparison": "套餐对比",
+    "file-upload": "文件上传",
+    "hero-section": "首屏区块",
+    "comparison-table": "对比表格",
+    "logo-marquee": "标识走马灯",
+    "stats-band": "统计指标带",
+    "changelog-feed": "更新日志流",
+    "faq-section": "常见问题",
+    "contact-section": "联系区块",
+    "blog-grid": "博客网格",
+    "site-header": "站点导航",
+    "site-footer": "站点页脚",
+    "cta-section": "行动号召区块",
+    "newsletter-signup": "邮件订阅"
+  }
+}
