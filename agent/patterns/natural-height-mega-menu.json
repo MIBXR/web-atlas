@@ -3,6 +3,7 @@
   "id": "natural-height-mega-menu",
   "pattern": {
     "id": "natural-height-mega-menu",
+    "order": 16,
     "title": "自然高度连续衔接的目录",
     "category": "导航与状态",
     "experienceTypes": [

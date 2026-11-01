@@ -3,6 +3,7 @@
   "id": "center-aligned-section-index",
   "pattern": {
     "id": "center-aligned-section-index",
+    "order": 94,
     "title": "章节中心定位的侧边索引",
     "category": "导航与状态",
     "experienceTypes": [

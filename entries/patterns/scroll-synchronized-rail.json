@@ -1,5 +1,6 @@
 {
   "id": "scroll-synchronized-rail",
+  "order": 71,
   "title": "说明索引与窗口进度同步",
   "category": "滚动叙事",
   "experienceTypes": [

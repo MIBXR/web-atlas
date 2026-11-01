@@ -3,6 +3,7 @@
   "id": "directional-sticky-navigation",
   "pattern": {
     "id": "directional-sticky-navigation",
+    "order": 104,
     "title": "向上找回、向下让位的导览条",
     "category": "滚动叙事",
     "experienceTypes": [

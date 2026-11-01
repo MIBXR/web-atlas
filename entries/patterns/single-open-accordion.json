@@ -1,5 +1,6 @@
 {
   "id": "single-open-accordion",
+  "order": 17,
   "title": "单开内容与图像联动",
   "category": "内容组织",
   "experienceTypes": [

@@ -3,6 +3,7 @@
   "id": "direct-purpose-navigation",
   "pattern": {
     "id": "direct-purpose-navigation",
+    "order": 110,
     "title": "机构目的地即时展开",
     "category": "导航与状态",
     "experienceTypes": [

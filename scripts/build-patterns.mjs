@@ -95,7 +95,7 @@ export function loadPatterns({ root = defaultRoot, entries } = {}) {
   if (ids.size !== patterns.length || !patterns.length) throw new Error('Duplicate or empty pattern library');
   if (new Set(patterns.map(p => p.title)).size !== patterns.length) throw new Error('Duplicate pattern title; merge shared mechanisms');
   for (const p of patterns) for (const key of ['pairsWellWith', 'conflicts']) for (const id of p.composition[key]) if (!ids.has(id) || id === p.id) throw new Error(`Invalid pattern relationship: ${p.id}/${id}`);
-  return patterns;
+  return patterns.sort((a, b) => a.order - b.order);
 }
 
 export function buildPatterns({ root = defaultRoot, patterns, caseRecords, caseBundles, write = true } = {}) {

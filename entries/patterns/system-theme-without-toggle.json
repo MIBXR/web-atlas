@@ -1,5 +1,6 @@
 {
   "id": "system-theme-without-toggle",
+  "order": 72,
   "title": "跟随系统的媒体与文字主题",
   "category": "视觉构成",
   "experienceTypes": [

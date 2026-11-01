@@ -1,5 +1,6 @@
 {
   "id": "inline-detail-disclosure",
+  "order": 61,
   "title": "原位展开次级信息",
   "category": "内容组织",
   "experienceTypes": [

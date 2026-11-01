@@ -1,5 +1,6 @@
 {
   "id": "top-down-clipped-menu",
+  "order": 75,
   "title": "从上向下裁切的菜单",
   "category": "导航与状态",
   "experienceTypes": [

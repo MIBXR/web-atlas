@@ -1,5 +1,6 @@
 {
   "id": "last-request-transition",
+  "order": 32,
   "title": "快速切换保留最后目标",
   "category": "导航与状态",
   "experienceTypes": [

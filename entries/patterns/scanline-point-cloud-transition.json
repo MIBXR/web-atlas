@@ -1,5 +1,6 @@
 {
   "id": "scanline-point-cloud-transition",
+  "order": 128,
   "title": "扫描线与射线驱动的点云交接",
   "category": "交互反馈",
   "experienceTypes": [

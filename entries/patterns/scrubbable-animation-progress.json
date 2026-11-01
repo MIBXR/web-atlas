@@ -1,5 +1,6 @@
 {
   "id": "scrubbable-animation-progress",
+  "order": 49,
   "title": "可拖动回看的动画进度",
   "category": "交互反馈",
   "experienceTypes": [

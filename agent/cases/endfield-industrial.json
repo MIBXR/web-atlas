@@ -131,15 +131,15 @@
     }
   },
   "patternIds": [
-    "hatched-registration-type",
-    "layered-directional-media-reveal",
-    "resource-bound-fullscreen-loading",
-    "restrained-signal-color",
-    "scanline-point-cloud-transition",
+    "viewport-animation-lifecycle",
     "sound-opt-in",
-    "transparent-video-mode-stage",
+    "restrained-signal-color",
+    "resource-bound-fullscreen-loading",
+    "hatched-registration-type",
     "vertical-media-spine",
-    "viewport-animation-lifecycle"
+    "layered-directional-media-reveal",
+    "scanline-point-cloud-transition",
+    "transparent-video-mode-stage"
   ],
   "documents": [
     {

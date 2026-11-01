@@ -3,6 +3,7 @@
   "id": "interruptible-morph",
   "pattern": {
     "id": "interruptible-morph",
+    "order": 52,
     "title": "从当前中间态继续变形",
     "category": "导航与状态",
     "experienceTypes": [

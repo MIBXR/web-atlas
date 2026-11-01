@@ -3,6 +3,7 @@
   "id": "local-code-theme-preview",
   "pattern": {
     "id": "local-code-theme-preview",
+    "order": 19,
     "title": "代码主题只改变局部预览",
     "category": "交互反馈",
     "experienceTypes": [

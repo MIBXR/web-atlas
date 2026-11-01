@@ -116,9 +116,9 @@
     "capturedAt": "2026-10-07"
   },
   "patternIds": [
+    "native-document-reading",
     "full-bleed-photography-brand",
     "fullscreen-photography-menu",
-    "native-document-reading",
     "photo-edge-text-contrast"
   ],
   "documents": [

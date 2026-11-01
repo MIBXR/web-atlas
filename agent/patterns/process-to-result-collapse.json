@@ -3,6 +3,7 @@
   "id": "process-to-result-collapse",
   "pattern": {
     "id": "process-to-result-collapse",
+    "order": 134,
     "title": "执行过程折叠后保留结果",
     "category": "内容组织",
     "experienceTypes": [

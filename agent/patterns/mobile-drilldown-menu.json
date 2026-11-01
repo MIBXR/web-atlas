@@ -3,6 +3,7 @@
   "id": "mobile-drilldown-menu",
   "pattern": {
     "id": "mobile-drilldown-menu",
+    "order": 15,
     "title": "手机菜单逐层进入与返回",
     "category": "导航与状态",
     "experienceTypes": [

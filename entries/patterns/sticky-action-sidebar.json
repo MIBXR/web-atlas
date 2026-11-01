@@ -1,5 +1,6 @@
 {
   "id": "sticky-action-sidebar",
+  "order": 113,
   "title": "桌面粘性行动栏、手机回文档流",
   "category": "内容组织",
   "experienceTypes": [

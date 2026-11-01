@@ -1,5 +1,6 @@
 {
   "id": "inline-product-detail-viewer",
+  "order": 3,
   "title": "胶囊原位展开产品说明",
   "category": "交互反馈",
   "experienceTypes": [

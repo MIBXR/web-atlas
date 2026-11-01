@@ -3,6 +3,7 @@
   "id": "theme-invariant-gradient-panel",
   "pattern": {
     "id": "theme-invariant-gradient-panel",
+    "order": 151,
     "title": "主题切换中的恒定浅色品牌面板",
     "category": "视觉构成",
     "experienceTypes": [

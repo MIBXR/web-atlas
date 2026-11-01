@@ -1,5 +1,6 @@
 {
   "id": "persistent-header-page-transition",
+  "order": 141,
   "title": "顶栏不动的页面切换",
   "category": "导航与状态",
   "experienceTypes": [

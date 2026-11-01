@@ -135,9 +135,9 @@
     }
   },
   "patternIds": [
+    "photo-crossfade-cycle",
     "difference-blend-navigation",
-    "inline-row-photo-preview",
-    "photo-crossfade-cycle"
+    "inline-row-photo-preview"
   ],
   "documents": [
     {

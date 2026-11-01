@@ -3,6 +3,7 @@
   "id": "independent-outfit-state",
   "pattern": {
     "id": "independent-outfit-state",
+    "order": 40,
     "title": "人物与服装分别管理",
     "category": "交互反馈",
     "experienceTypes": [

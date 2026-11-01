@@ -3,6 +3,7 @@
   "id": "reacticle",
   "material": {
     "id": "reacticle",
+    "order": 8,
     "title": "Reacticle · 长文排版组件库",
     "type": "component-library",
     "category": "组件与效果",

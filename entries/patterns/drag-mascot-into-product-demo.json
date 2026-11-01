@@ -1,5 +1,6 @@
 {
   "id": "drag-mascot-into-product-demo",
+  "order": 143,
   "title": "把角色拖进产品演示",
   "category": "交互反馈",
   "experienceTypes": [

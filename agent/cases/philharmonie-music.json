@@ -127,11 +127,11 @@
     "capturedAt": "2026-10-07"
   },
   "patternIds": [
-    "activity-title-ticket-overlap",
     "centered-loop-gallery",
-    "direct-purpose-navigation",
-    "inline-detail-disclosure",
     "offsite-playlist-extension",
+    "inline-detail-disclosure",
+    "direct-purpose-navigation",
+    "activity-title-ticket-overlap",
     "sticky-action-sidebar"
   ],
   "documents": [

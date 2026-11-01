@@ -3,6 +3,7 @@
   "id": "beautiful-article",
   "material": {
     "id": "beautiful-article",
+    "order": 7,
     "title": "Beautiful Article · 长文编辑工作流",
     "type": "agent-skill",
     "category": "Agent 工作流",

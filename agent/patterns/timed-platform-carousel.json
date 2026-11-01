@@ -3,6 +3,7 @@
   "id": "timed-platform-carousel",
   "pattern": {
     "id": "timed-platform-carousel",
+    "order": 79,
     "title": "可暂停的平台场景轮换",
     "category": "导航与状态",
     "experienceTypes": [

@@ -1,5 +1,6 @@
 {
   "id": "parallel-isometric-projection",
+  "order": 48,
   "title": "统一等轴投影与三面明度",
   "category": "视觉构成",
   "experienceTypes": [

@@ -1,5 +1,6 @@
 {
   "id": "half-paper-category-label",
+  "order": 118,
   "title": "图像与半幅纸签分类",
   "category": "视觉构成",
   "experienceTypes": [

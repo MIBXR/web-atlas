@@ -1,5 +1,6 @@
 {
   "id": "transparent-video-mode-stage",
+  "order": 129,
   "title": "透明视频的静态与动态模式舞台",
   "category": "加载与媒体",
   "experienceTypes": [

@@ -3,6 +3,7 @@
   "id": "inline-row-photo-preview",
   "pattern": {
     "id": "inline-row-photo-preview",
+    "order": 138,
     "title": "文字目录行内浮现摄影预览",
     "category": "交互反馈",
     "experienceTypes": [

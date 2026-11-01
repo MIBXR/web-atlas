@@ -1,5 +1,6 @@
 {
   "id": "artwork-caption-separation",
+  "order": 96,
   "title": "作品原图与图下题注分工",
   "category": "内容组织",
   "experienceTypes": [

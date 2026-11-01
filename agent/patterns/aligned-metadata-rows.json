@@ -3,6 +3,7 @@
   "id": "aligned-metadata-rows",
   "pattern": {
     "id": "aligned-metadata-rows",
+    "order": 54,
     "title": "编号与元数据对齐列表",
     "category": "内容组织",
     "experienceTypes": [

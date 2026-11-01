@@ -1,5 +1,6 @@
 {
   "id": "spatial-navigation-map",
+  "order": 66,
   "title": "场景地标作为导航",
   "category": "导航与状态",
   "experienceTypes": [

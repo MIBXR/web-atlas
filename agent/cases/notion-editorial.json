@@ -118,12 +118,12 @@
     }
   },
   "patternIds": [
-    "avatar-pile-personality",
     "capability-bento-hierarchy",
     "client-logo-marquee",
+    "mobile-media-prioritization",
+    "avatar-pile-personality",
     "instant-open-menu-category-switch",
     "measured-width-action-pill",
-    "mobile-media-prioritization",
     "mobile-single-open-navigation"
   ],
   "documents": [

@@ -134,9 +134,9 @@
     "capturedAt": "2026-10-07"
   },
   "patternIds": [
+    "inline-detail-disclosure",
     "artwork-caption-separation",
     "header-below-mobile-navigation",
-    "inline-detail-disclosure",
     "load-completion-brand-marker",
     "mixed-ratio-archive-columns",
     "photo-crossfade-cycle"

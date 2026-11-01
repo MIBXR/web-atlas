@@ -3,6 +3,7 @@
   "id": "hatched-registration-type",
   "pattern": {
     "id": "hatched-registration-type",
+    "order": 123,
     "title": "斜线注册大字与前景记录",
     "category": "视觉构成",
     "experienceTypes": [

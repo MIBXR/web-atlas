@@ -1,5 +1,6 @@
 {
   "id": "blurred-layered-video-handoff",
+  "order": 28,
   "title": "旧片模糊退出、新片延后进入",
   "category": "加载与媒体",
   "experienceTypes": [

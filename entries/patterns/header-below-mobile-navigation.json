@@ -1,5 +1,6 @@
 {
   "id": "header-below-mobile-navigation",
+  "order": 97,
   "title": "顶栏下展开并恢复阅读位置",
   "category": "导航与状态",
   "experienceTypes": [

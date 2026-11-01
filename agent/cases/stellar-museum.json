@@ -137,8 +137,8 @@
     }
   },
   "patternIds": [
-    "aspect-recomposed-3d-hero",
-    "viewport-animation-lifecycle"
+    "viewport-animation-lifecycle",
+    "aspect-recomposed-3d-hero"
   ],
   "documents": [
     {

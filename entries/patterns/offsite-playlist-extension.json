@@ -1,5 +1,6 @@
 {
   "id": "offsite-playlist-extension",
+  "order": 41,
   "title": "以官方播放列表延伸主题",
   "category": "加载与媒体",
   "experienceTypes": [

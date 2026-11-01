@@ -3,6 +3,7 @@
   "id": "directional-section-wipe",
   "pattern": {
     "id": "directional-section-wipe",
+    "order": 83,
     "title": "按方向侧向裁切交接整章",
     "category": "滚动叙事",
     "experienceTypes": [

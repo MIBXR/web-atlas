@@ -1,5 +1,6 @@
 {
   "id": "web-design-engineer",
+  "order": 9,
   "title": "Web Design Engineer · 网页设计工作流",
   "type": "agent-skill",
   "category": "Agent 工作流",

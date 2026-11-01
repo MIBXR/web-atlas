@@ -119,12 +119,12 @@
     }
   },
   "patternIds": [
+    "single-open-accordion",
+    "viewport-animation-lifecycle",
+    "last-request-transition",
     "fixed-task-timeline",
     "heatmap-focus-tooltip",
-    "last-request-transition",
-    "single-open-accordion",
-    "timed-platform-carousel",
-    "viewport-animation-lifecycle"
+    "timed-platform-carousel"
   ],
   "documents": [
     {

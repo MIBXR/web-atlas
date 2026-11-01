@@ -1,5 +1,6 @@
 {
   "id": "client-logo-marquee",
+  "order": 11,
   "title": "可停的连续客户标识条带",
   "category": "加载与媒体",
   "experienceTypes": [

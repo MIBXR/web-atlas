@@ -1,5 +1,6 @@
 {
   "id": "permanent-event-metadata",
+  "order": 106,
   "title": "常驻日期与边缘票据入口",
   "category": "内容组织",
   "experienceTypes": [

@@ -3,6 +3,7 @@
   "id": "parallel-cli-agent-install",
   "pattern": {
     "id": "parallel-cli-agent-install",
+    "order": 150,
     "title": "面向开发者与 Agent 的并行安装入口",
     "category": "内容组织",
     "experienceTypes": [

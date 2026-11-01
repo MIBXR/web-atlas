@@ -3,6 +3,7 @@
   "id": "editorial-alignment-grid",
   "pattern": {
     "id": "editorial-alignment-grid",
+    "order": 55,
     "title": "共享对齐线的编辑网格",
     "category": "视觉构成",
     "experienceTypes": [

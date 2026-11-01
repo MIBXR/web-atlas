@@ -3,6 +3,7 @@
   "id": "load-completion-brand-marker",
   "pattern": {
     "id": "load-completion-brand-marker",
+    "order": 98,
     "title": "资源完成后品牌标记退场",
     "category": "加载与媒体",
     "experienceTypes": [

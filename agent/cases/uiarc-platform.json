@@ -181,16 +181,16 @@
     "exercise": "在 1440×1000 与 390×844、DPR 1、相同主题下并排对照原站和本地；走完主题、菜单、影片、复制、两个价格状态和六项 FAQ，结果见 fidelity.md。"
   },
   "patternIds": [
-    "center-split-theme-transition",
     "client-logo-marquee",
-    "clipped-word-rise",
-    "moving-tab-selection-bed",
-    "parallel-cli-agent-install",
-    "semantic-theme-roles",
     "single-open-accordion",
-    "theme-invariant-gradient-panel",
+    "viewport-animation-lifecycle",
+    "moving-tab-selection-bed",
     "top-down-clipped-menu",
-    "viewport-animation-lifecycle"
+    "semantic-theme-roles",
+    "center-split-theme-transition",
+    "clipped-word-rise",
+    "parallel-cli-agent-install",
+    "theme-invariant-gradient-panel"
   ],
   "documents": [
     {

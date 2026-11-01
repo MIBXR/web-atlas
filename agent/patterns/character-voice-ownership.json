@@ -3,6 +3,7 @@
   "id": "character-voice-ownership",
   "pattern": {
     "id": "character-voice-ownership",
+    "order": 81,
     "title": "声线主动播放并归属于当前人物",
     "category": "加载与媒体",
     "experienceTypes": [

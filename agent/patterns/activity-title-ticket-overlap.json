@@ -3,6 +3,7 @@
   "id": "activity-title-ticket-overlap",
   "pattern": {
     "id": "activity-title-ticket-overlap",
+    "order": 112,
     "title": "活动标题与票务跨区并置",
     "category": "视觉构成",
     "experienceTypes": [

@@ -3,6 +3,7 @@
   "id": "integer-pixel-canvas",
   "pattern": {
     "id": "integer-pixel-canvas",
+    "order": 65,
     "title": "整数像素与有限色板",
     "category": "视觉构成",
     "experienceTypes": [

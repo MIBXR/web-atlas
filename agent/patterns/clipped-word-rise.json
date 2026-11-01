@@ -3,6 +3,7 @@
   "id": "clipped-word-rise",
   "pattern": {
     "id": "clipped-word-rise",
+    "order": 149,
     "title": "逐词裁切上升的标题显现",
     "category": "加载与媒体",
     "experienceTypes": [

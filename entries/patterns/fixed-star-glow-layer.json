@@ -1,5 +1,6 @@
 {
   "id": "fixed-star-glow-layer",
+  "order": 38,
   "title": "固定星光的明暗呼吸层",
   "category": "视觉构成",
   "experienceTypes": [

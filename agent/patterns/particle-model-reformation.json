@@ -3,6 +3,7 @@
   "id": "particle-model-reformation",
   "pattern": {
     "id": "particle-model-reformation",
+    "order": 84,
     "title": "术语选择重组同一粒子池",
     "category": "交互反馈",
     "experienceTypes": [

@@ -3,6 +3,7 @@
   "id": "scroll-video-scrub",
   "pattern": {
     "id": "scroll-video-scrub",
+    "order": 7,
     "title": "滚动进度驱动视频帧",
     "category": "滚动叙事",
     "experienceTypes": [

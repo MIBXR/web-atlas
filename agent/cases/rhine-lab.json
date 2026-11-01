@@ -156,8 +156,8 @@
     }
   },
   "patternIds": [
-    "department-code-matrix",
     "restrained-signal-color",
+    "department-code-matrix",
     "specimen-pullout-selection"
   ],
   "documents": [
