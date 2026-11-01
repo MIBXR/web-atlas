@@ -81,6 +81,7 @@
     "demos/cases/uiarc-platform/app.js",
     "demos/cases/uiarc-platform/style.css",
     "demos/cases/uiarc-platform/fidelity.md",
-    "demos/cases/uiarc-platform/source/content.json"
+    "demos/cases/uiarc-platform/source/content.json",
+    "demos/cases/uiarc-platform/source/components.tsx"
   ]
 }

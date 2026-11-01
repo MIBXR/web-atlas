@@ -4,6 +4,7 @@
   "title": "像素：微型世界",
   "subtitle": "Celeste / PICO-8 / Saint11 → 地图驱动的探索页面",
   "category": "经典风格",
+  "country": "加拿大",
   "tags": [
     "像素",
     "游戏",
@@ -94,6 +95,12 @@
       "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/image-rendering",
       "type": "规范",
       "note": "说明pixelated/crisp-edges的缩放行为；本例Canvas使用pixelated保留边缘。"
+    },
+    {
+      "title": "Celeste 团队 · 工作室介绍",
+      "url": "https://exok.com/team.html",
+      "type": "创作来源",
+      "note": "主要实例 Celeste 的创作团队在官方介绍中说明工作室位于加拿大温哥华。"
     }
   ],
   "prompt": "可替换内容：产品/品牌【名称】；受众【用户】；核心价值【卖点与证据】；主行动【希望用户完成的动作】。以下为风格示范任务，可替换具体品牌与内容，保留设计约束。\n\n为虚构小型IP [品牌] 制作地图驱动的像素风介绍页。参考PICO-8的128×128、16色、8×8tile创作约束，自绘一个可辨认轮廓的岛屿世界；禁止复制Celeste或其他游戏角色/背景。使用Canvas整数像素绘制并用image-rendering:pixelated放大，桌面尽量整数倍率，手机完整显示地图。首屏地图为主，旅行手账为辅：四个可聚焦DOM地点按钮、实时地点说明、角色位置与发现计数，方向键/WASD仅在地图聚焦时生效，手机提供四向按钮。探索记录可存当前浏览器并可清除。后续至少两節为地点索引与玩法说明；中文正文使用正常可读系统字体，英文元数据可用等宽字。没有自动音频、闪烁扫描线或滚动劫持，尊重reduced-motion。注明这是PICO-8约束的局部迁移，而不是所有像素艺术的定义。\n\n要素协调要求：低分辨率地景、有限调色与清楚状态共同形成游戏感；中文说明保留正常可读字体，不强行像素化。",

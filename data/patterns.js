@@ -962,6 +962,71 @@ window.ATLAS_PATTERNS = [
     ]
   },
   {
+    "id": "center-split-theme-transition",
+    "title": "从中央向上下展开的新主题",
+    "category": "导航与状态",
+    "experienceTypes": [
+      "page-motion"
+    ],
+    "summary": "保留旧主题快照，让新主题从水平中线展开。",
+    "mechanism": "在 View Transition 更新回调中切换完整主题；旧根快照不动，新根快照由 inset(50% 0) 展开为 inset(0)，完成后移除临时过渡状态。",
+    "trigger": "激活主题按钮",
+    "effect": "颜色角色一起交接，用户能看清主题更替的方向。",
+    "useCases": [
+      "具有完整明暗主题的产品页面"
+    ],
+    "avoid": [],
+    "constraints": [
+      "主题更新在快照回调中提交，所有颜色角色同步。",
+      "减少动态直接切换；品牌图像与固定色面保持原色。"
+    ],
+    "composition": {
+      "role": "accent",
+      "notes": "负责主题更替的全页交接，颜色职责由语义主题控制。",
+      "pairsWellWith": [
+        "semantic-theme-roles",
+        "theme-invariant-gradient-panel"
+      ],
+      "conflicts": []
+    },
+    "accessibility": {
+      "keyboard": "原生主题按钮支持 Enter/Space，并提供下一主题的可访问名称；切换后保持焦点。",
+      "reducedMotion": "prefers-reduced-motion 下直接切换，不创建展开动画。"
+    },
+    "parameters": [
+      {
+        "name": "新快照裁切",
+        "value": "inset(50% 0) → inset(0)",
+        "note": "原站 theme-split 公开样式及实际主题切换。"
+      },
+      {
+        "name": "时长与缓动",
+        "value": "390ms；cubic-bezier(.22,1,.36,1)",
+        "note": "原站 ::view-transition-new(root) 计算样式。"
+      }
+    ],
+    "prompt": "为完整明暗主题实现中央展开：使用原生 View Transition 在更新回调内提交新主题，保留旧根快照，新根快照以390ms、cubic-bezier(.22,1,.36,1)从inset(50% 0)展开到inset(0)。结束后清理临时状态，快速重复操作接续到最后选择。按钮保留键盘与明确名称；减少动态直接提交新主题。",
+    "sources": [
+      {
+        "caseId": "uiarc-platform",
+        "locator": "entries/cases/uiarc-platform.json#interaction/0",
+        "observation": "主题按钮在系统默认与手动选择之间协调页面表面、文字、边界和导航；点击后通过 View Transition 让新主题从横向中线向上下展开，390ms、cubic-bezier(.22,1,.36,1)，完成后清理过渡状态。首尾粉蓝黄渐变面板和产品影片保持原色，减少动态直接完成切换。",
+        "evidence": "observed",
+        "referenceUrl": "https://uiarc.dev/",
+        "capturedAt": "2026-11-01"
+      }
+    ],
+    "sourceFiles": [
+      "entries/cases/uiarc-platform.json",
+      "docs/cases/uiarc-platform.md",
+      "demos/cases/uiarc-platform/index.html",
+      "demos/cases/uiarc-platform/app.js",
+      "demos/cases/uiarc-platform/style.css",
+      "demos/cases/uiarc-platform/source/components.tsx",
+      "demos/cases/uiarc-platform/fidelity.md"
+    ]
+  },
+  {
     "id": "centered-loop-gallery",
     "title": "中心图与邻图预告的循环轨道",
     "category": "导航与状态",
@@ -1382,7 +1447,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/uiarc-platform/app.js",
       "demos/cases/uiarc-platform/style.css",
       "demos/cases/uiarc-platform/fidelity.md",
-      "demos/cases/uiarc-platform/source/content.json"
+      "demos/cases/uiarc-platform/source/content.json",
+      "demos/cases/uiarc-platform/source/components.tsx"
     ]
   },
   {
@@ -1498,7 +1564,7 @@ window.ATLAS_PATTERNS = [
       {
         "caseId": "uiarc-platform",
         "locator": "entries/cases/uiarc-platform.json#interaction/1",
-        "observation": "首屏标题按单词裁切向上显现，词间延迟 40ms；后续章节标题进入视口后上移并显现，减少动态时直接显示完整文字。",
+        "observation": "首屏标题按单词裁切向上显现，词间延迟 40ms，位移／透明度／模糊分别为 760／440／580ms；章节标题可见面积达到 45% 后从 112% 下方上升，860ms 位移与 481.6ms 透明度，结尾双行间隔 80ms；越过的标题直接显示，减少动态保留完整文字。",
         "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
         "capturedAt": "2026-11-01"
@@ -1511,7 +1577,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/uiarc-platform/app.js",
       "demos/cases/uiarc-platform/style.css",
       "demos/cases/uiarc-platform/fidelity.md",
-      "demos/cases/uiarc-platform/source/content.json"
+      "demos/cases/uiarc-platform/source/content.json",
+      "demos/cases/uiarc-platform/source/components.tsx"
     ]
   },
   {
@@ -5946,7 +6013,7 @@ window.ATLAS_PATTERNS = [
       {
         "caseId": "uiarc-platform",
         "locator": "entries/cases/uiarc-platform.json#interaction/5",
-        "observation": "价格区的 Pro yearly / Free 共用一个移动选中底板，切换后更新说明、价格、功能清单与入口；右侧终身方案保持可见，手机按当前 yearly 入口保留年度卡在先。",
+        "observation": "价格区的 Pro yearly / Free 使用原始 SegmentedControl 移动选中底板，整块说明、金额、清单和入口通过 AnimatePresence 交接，240ms 透明度、400ms 无回弹弹簧位移；金额使用原始 AnimatedCounter。右侧终身方案保持可见，手机保留年度卡在先。",
         "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
         "capturedAt": "2026-11-01"
@@ -5965,7 +6032,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/uiarc-platform/app.js",
       "demos/cases/uiarc-platform/style.css",
       "demos/cases/uiarc-platform/fidelity.md",
-      "demos/cases/uiarc-platform/source/content.json"
+      "demos/cases/uiarc-platform/source/content.json",
+      "demos/cases/uiarc-platform/source/components.tsx"
     ]
   },
   {
@@ -6408,7 +6476,7 @@ window.ATLAS_PATTERNS = [
       {
         "caseId": "uiarc-platform",
         "locator": "entries/cases/uiarc-platform.json#interaction/4",
-        "observation": "shadcn CLI 与 MCP server 并排给出同一组件库的两个安装入口；复制按钮把完整命令写入剪贴板并短暂显示勾号，第三张卡区分免费与 Pro 数量。",
+        "observation": "shadcn CLI 与 MCP server 并排给出同一组件库的两个安装入口；原始 CopyButton 复制完整命令，以图标交叉淡化和描线勾号反馈，1900ms 后复位；第三张卡区分免费与 Pro 数量。",
         "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
         "capturedAt": "2026-11-01"
@@ -6421,7 +6489,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/uiarc-platform/app.js",
       "demos/cases/uiarc-platform/style.css",
       "demos/cases/uiarc-platform/fidelity.md",
-      "demos/cases/uiarc-platform/source/content.json"
+      "demos/cases/uiarc-platform/source/content.json",
+      "demos/cases/uiarc-platform/source/components.tsx"
     ]
   },
   {
@@ -8351,7 +8420,7 @@ window.ATLAS_PATTERNS = [
       {
         "caseId": "uiarc-platform",
         "locator": "entries/cases/uiarc-platform.json#interaction/0",
-        "observation": "主题按钮在系统默认与手动选择之间协调页面表面、文字、边界和导航；首尾两块粉蓝黄渐变面板始终保持浅底深字，产品影片保留原色。",
+        "observation": "主题按钮在系统默认与手动选择之间协调页面表面、文字、边界和导航；点击后通过 View Transition 让新主题从横向中线向上下展开，390ms、cubic-bezier(.22,1,.36,1)，完成后清理过渡状态。首尾粉蓝黄渐变面板和产品影片保持原色，减少动态直接完成切换。",
         "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
         "capturedAt": "2026-11-01"
@@ -8370,7 +8439,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/uiarc-platform/app.js",
       "demos/cases/uiarc-platform/style.css",
       "demos/cases/uiarc-platform/fidelity.md",
-      "demos/cases/uiarc-platform/source/content.json"
+      "demos/cases/uiarc-platform/source/content.json",
+      "demos/cases/uiarc-platform/source/components.tsx"
     ]
   },
   {
@@ -8656,7 +8726,7 @@ window.ATLAS_PATTERNS = [
       {
         "caseId": "uiarc-platform",
         "locator": "entries/cases/uiarc-platform.json#interaction/6",
-        "observation": "六项 FAQ 默认展开第一项；打开另一项先收起前项，当前项可以再次收起，标题图标与内容高度同步，键盘激活保留焦点。",
+        "observation": "六项 FAQ 默认展开第一项；使用原始 Accordion 的单开状态、400ms 无回弹高度弹簧、260ms 图标弹簧和 2px 轻模糊，打开另一项收起前项，当前项可再次收起；Radix 管理语义、焦点与折叠后可访问状态。",
         "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
         "capturedAt": "2026-11-01"
@@ -8689,7 +8759,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/uiarc-platform/app.js",
       "demos/cases/uiarc-platform/style.css",
       "demos/cases/uiarc-platform/fidelity.md",
-      "demos/cases/uiarc-platform/source/content.json"
+      "demos/cases/uiarc-platform/source/content.json",
+      "demos/cases/uiarc-platform/source/components.tsx"
     ]
   },
   {
@@ -9460,7 +9531,7 @@ window.ATLAS_PATTERNS = [
       {
         "caseId": "uiarc-platform",
         "locator": "entries/cases/uiarc-platform.json#interaction/0",
-        "observation": "主题按钮在系统默认与手动选择之间协调页面表面、文字、边界和导航；首尾两块粉蓝黄渐变面板始终保持浅底深字，产品影片保留原色。",
+        "observation": "主题按钮在系统默认与手动选择之间协调页面表面、文字、边界和导航；点击后通过 View Transition 让新主题从横向中线向上下展开，390ms、cubic-bezier(.22,1,.36,1)，完成后清理过渡状态。首尾粉蓝黄渐变面板和产品影片保持原色，减少动态直接完成切换。",
         "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
         "capturedAt": "2026-11-01"
@@ -9473,7 +9544,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/uiarc-platform/app.js",
       "demos/cases/uiarc-platform/style.css",
       "demos/cases/uiarc-platform/fidelity.md",
-      "demos/cases/uiarc-platform/source/content.json"
+      "demos/cases/uiarc-platform/source/content.json",
+      "demos/cases/uiarc-platform/source/components.tsx"
     ]
   },
   {
@@ -9539,13 +9611,13 @@ window.ATLAS_PATTERNS = [
   },
   {
     "id": "top-down-clipped-menu",
-    "title": "从上向下裁切的全屏菜单",
+    "title": "从上向下裁切的菜单",
     "category": "导航与状态",
     "experienceTypes": [
       "page-motion"
     ],
     "summary": "用一个进入方向组织菜单项目。",
-    "mechanism": "全屏面板从顶部向下clip进入，项目按次序交错；关闭反向收束，背景阅读状态随关闭恢复。",
+    "mechanism": "菜单面板从顶部向下裁切进入，项目按次序交错；关闭反向收束，背景阅读状态随关闭恢复。",
     "trigger": "手机打开/关闭菜单",
     "effect": "菜单作为有明确边界的导航场景。",
     "useCases": [
@@ -9582,7 +9654,7 @@ window.ATLAS_PATTERNS = [
         "note": "交错项目时间"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「从上向下裁切的全屏菜单」。全屏面板从顶部向下clip进入，项目按次序交错；关闭反向收束，背景阅读状态随关闭恢复。触发：手机打开/关闭菜单。可见结果：菜单作为有明确边界的导航场景。适用任务：精简全屏品牌导航。时长为来源公共模块，源端手机实时未验证，实施时检查快速反向。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责菜单作为有明确边界的导航场景，职责限定在当前区域。组合时时长为来源公共模块，源端手机实时未验证，实施时检查快速反向。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为目标页面实现从上向下裁切的菜单：面板从顶部向下进入，项目按短间隔交错，关闭反向收束。面板高度按实际内容确定，保持 Escape、焦点返回和关闭后的原阅读位置；减少动态直接到达可操作状态。",
     "sources": [
       {
         "caseId": "claude-platform",
@@ -9591,6 +9663,14 @@ window.ATLAS_PATTERNS = [
         "evidence": "inferred",
         "referenceUrl": "https://claude.com/",
         "capturedAt": "2026-10-07"
+      },
+      {
+        "caseId": "uiarc-platform",
+        "locator": "entries/cases/uiarc-platform.json#interaction/7",
+        "observation": "手机菜单通过 Radix Dialog 在顶栏下方展开，460ms 向下裁切，条目延迟 90ms 起、40ms 错峰；关闭使用 240ms 反向裁切，背景 320／240ms 淡化与 5px 模糊。Escape 返回触发按钮，Examples 关闭后滚动并聚焦展示区；公告以高度弹簧收起并将焦点交给品牌入口。",
+        "evidence": "observed",
+        "referenceUrl": "https://uiarc.dev/",
+        "capturedAt": "2026-11-01"
       }
     ],
     "sourceFiles": [
@@ -9599,7 +9679,14 @@ window.ATLAS_PATTERNS = [
       "demos/cases/claude-platform/journey.js",
       "demos/cases/claude-platform/script.js",
       "demos/cases/claude-platform/style.css",
-      "entries/cases/claude-platform.json"
+      "entries/cases/claude-platform.json",
+      "entries/cases/uiarc-platform.json",
+      "docs/cases/uiarc-platform.md",
+      "demos/cases/uiarc-platform/index.html",
+      "demos/cases/uiarc-platform/app.js",
+      "demos/cases/uiarc-platform/style.css",
+      "demos/cases/uiarc-platform/source/components.tsx",
+      "demos/cases/uiarc-platform/fidelity.md"
     ]
   },
   {
@@ -9981,8 +10068,8 @@ window.ATLAS_PATTERNS = [
       {
         "caseId": "uiarc-platform",
         "locator": "entries/cases/uiarc-platform.json#interaction/3",
-        "observation": "六张 Pro 卡片与九张免费卡片分别排成桌面两列和三列；卡片原本使用 WebP 海报与静音 WebM，进入视口播放，点击进入原站对应组件页。手机 Pro 为一列、免费组件为两列。",
-        "evidence": "adapted",
+        "observation": "六张 Pro 卡片与九张免费卡片分别排成桌面两列和三列；原始 WebP 海报与静音 WebM 在前后一屏预载，可见比例达到 35% 时播放，离屏或后台暂停并保留已显示的视频帧，同时最多播放 8 段。首入减少动态或节流模式使用海报和手动播放按钮；点击卡片进入对应原站页。手机为一列／两列。",
+        "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
         "capturedAt": "2026-11-01"
       }
@@ -10054,7 +10141,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/uiarc-platform/app.js",
       "demos/cases/uiarc-platform/style.css",
       "demos/cases/uiarc-platform/fidelity.md",
-      "demos/cases/uiarc-platform/source/content.json"
+      "demos/cases/uiarc-platform/source/content.json",
+      "demos/cases/uiarc-platform/source/components.tsx"
     ]
   },
   {

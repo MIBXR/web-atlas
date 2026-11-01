@@ -100,8 +100,8 @@
       {
         "caseId": "uiarc-platform",
         "locator": "entries/cases/uiarc-platform.json#interaction/3",
-        "observation": "六张 Pro 卡片与九张免费卡片分别排成桌面两列和三列；卡片原本使用 WebP 海报与静音 WebM，进入视口播放，点击进入原站对应组件页。手机 Pro 为一列、免费组件为两列。",
-        "evidence": "adapted",
+        "observation": "六张 Pro 卡片与九张免费卡片分别排成桌面两列和三列；原始 WebP 海报与静音 WebM 在前后一屏预载，可见比例达到 35% 时播放，离屏或后台暂停并保留已显示的视频帧，同时最多播放 8 段。首入减少动态或节流模式使用海报和手动播放按钮；点击卡片进入对应原站页。手机为一列／两列。",
+        "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
         "capturedAt": "2026-11-01"
       }
@@ -173,7 +173,8 @@
       "demos/cases/uiarc-platform/app.js",
       "demos/cases/uiarc-platform/style.css",
       "demos/cases/uiarc-platform/fidelity.md",
-      "demos/cases/uiarc-platform/source/content.json"
+      "demos/cases/uiarc-platform/source/content.json",
+      "demos/cases/uiarc-platform/source/components.tsx"
     ]
   },
   "sourceCases": [
@@ -2891,6 +2892,14 @@
       "role": "process"
     },
     {
+      "path": "demos/cases/uiarc-platform/source/build.mjs",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/components.tsx",
+      "role": "process"
+    },
+    {
       "path": "demos/cases/uiarc-platform/source/content.json",
       "role": "process"
     },
@@ -2899,7 +2908,31 @@
       "role": "process"
     },
     {
+      "path": "demos/cases/uiarc-platform/source/package-lock.json",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/package.json",
+      "role": "process"
+    },
+    {
       "path": "demos/cases/uiarc-platform/source/README.md",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-scripts/19483-e4d11383c4facb88.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-scripts/23473-216b40ab39e6c47c.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-scripts/72250-79d591c795014f46.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-scripts/95714-07d7cb0e45d9a488.js",
       "role": "process"
     },
     {
@@ -2977,6 +3010,166 @@
     {
       "path": "demos/cases/uiarc-platform/style.css",
       "role": "source"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses.json",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-primitive-1.1.7.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-accordion-1.2.20.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-collapsible-1.1.20.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-collection-1.1.15.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-compose-refs-1.1.5.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-context-1.2.2.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-dialog-1.1.23.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-direction-1.1.4.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-dismissable-layer-1.1.19.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-focus-guards-1.1.6.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-focus-scope-1.1.16.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-id-1.1.4.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-portal-1.1.17.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-presence-1.1.10.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-primitive-2.1.10.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-slot-1.3.3.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-use-callback-ref-1.1.4.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-use-controllable-state-1.2.6.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-use-effect-event-0.0.5.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-use-layout-effect-1.1.4.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/aria-hidden-1.2.6.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/detect-node-es-1.1.0.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/framer-motion-13.5.1.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/get-nonce-1.0.1.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/lucide-react-1.47.0.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/motion-13.4.0.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/motion-dom-13.5.1.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/motion-utils-13.5.0.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/react-19.3.0.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/react-dom-19.3.0.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/react-remove-scroll-2.7.2.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/react-style-singleton-2.2.3.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/scheduler-0.28.0.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/tslib-2.9.1.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/use-callback-ref-1.3.3.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/use-sidecar-1.1.3.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/runtime.css",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/runtime.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/runtime.js.LEGAL.txt",
+      "role": "vendor"
     },
     {
       "path": "docs.html",

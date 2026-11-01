@@ -416,7 +416,12 @@ window.ATLAS_DOCUMENTS = [
   },
   {
     "path": "prompts/patterns/top-down-clipped-menu.md",
-    "title": "从上向下裁切的全屏菜单 · 复用 Prompt",
+    "title": "从上向下裁切的菜单 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
+    "path": "prompts/patterns/center-split-theme-transition.md",
+    "title": "从中央向上下展开的新主题 · 复用 Prompt",
     "group": "复用 Prompt"
   },
   {
@@ -1332,7 +1337,8 @@ window.ATLAS_DOCUMENT_SOURCES = [
     "sources": [
       "https://clawdondesk.com/",
       "https://github.com/rullerzhou-afk/clawd-on-desk/tree/44507f6863e3837895368d62794992613873cce8",
-      "https://github.com/rullerzhou-afk/clawd-on-desk/blob/44507f6863e3837895368d62794992613873cce8/assets/LICENSE"
+      "https://github.com/rullerzhou-afk/clawd-on-desk/blob/44507f6863e3837895368d62794992613873cce8/assets/LICENSE",
+      "https://github.com/rullerzhou-afk"
     ]
   },
   {
@@ -1341,7 +1347,8 @@ window.ATLAS_DOCUMENT_SOURCES = [
     "sources": [
       "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/demo/web-design-demo/demo2-with-skill.html",
       "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-design-engineer/README.zh-CN.md#L434-L446",
-      "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-design-engineer/SKILL.md#L175-L182"
+      "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-design-engineer/SKILL.md#L175-L182",
+      "https://github.com/ConardLi"
     ]
   },
   {
@@ -1351,7 +1358,8 @@ window.ATLAS_DOCUMENT_SOURCES = [
       "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/demo/web-design-demo/demo1-with-skill.html",
       "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/demo/web-design-demo/demo1.html",
       "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-design-engineer/README.zh-CN.md#L417-L433",
-      "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-design-engineer/SKILL.md#L61-L71"
+      "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-design-engineer/SKILL.md#L61-L71",
+      "https://github.com/ConardLi"
     ]
   },
   {
@@ -1360,7 +1368,12 @@ window.ATLAS_DOCUMENT_SOURCES = [
     "sources": [
       "https://uiarc.dev/",
       "https://github.com/kuratlielia/arc-library/tree/df3a600fd9ffca85ec8607438b599a4408ab8562",
-      "https://uiarc.dev/license"
+      "https://uiarc.dev/license",
+      "https://uiarc.dev/imprint",
+      "https://uiarc.dev/_next/static/chunks/95714-07d7cb0e45d9a488.js",
+      "https://uiarc.dev/_next/static/chunks/23473-216b40ab39e6c47c.js",
+      "https://uiarc.dev/_next/static/chunks/19483-e4d11383c4facb88.js",
+      "https://uiarc.dev/_next/static/chunks/72250-79d591c795014f46.js"
     ]
   },
   {

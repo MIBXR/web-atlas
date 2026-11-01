@@ -45,7 +45,7 @@
     {
       "caseId": "uiarc-platform",
       "locator": "entries/cases/uiarc-platform.json#interaction/5",
-      "observation": "价格区的 Pro yearly / Free 共用一个移动选中底板，切换后更新说明、价格、功能清单与入口；右侧终身方案保持可见，手机按当前 yearly 入口保留年度卡在先。",
+      "observation": "价格区的 Pro yearly / Free 使用原始 SegmentedControl 移动选中底板，整块说明、金额、清单和入口通过 AnimatePresence 交接，240ms 透明度、400ms 无回弹弹簧位移；金额使用原始 AnimatedCounter。右侧终身方案保持可见，手机保留年度卡在先。",
       "evidence": "observed",
       "referenceUrl": "https://uiarc.dev/",
       "capturedAt": "2026-11-01"
@@ -64,6 +64,7 @@
     "demos/cases/uiarc-platform/app.js",
     "demos/cases/uiarc-platform/style.css",
     "demos/cases/uiarc-platform/fidelity.md",
-    "demos/cases/uiarc-platform/source/content.json"
+    "demos/cases/uiarc-platform/source/content.json",
+    "demos/cases/uiarc-platform/source/components.tsx"
   ]
 }

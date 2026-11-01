@@ -50,7 +50,7 @@
     {
       "caseId": "uiarc-platform",
       "locator": "entries/cases/uiarc-platform.json#interaction/1",
-      "observation": "首屏标题按单词裁切向上显现，词间延迟 40ms；后续章节标题进入视口后上移并显现，减少动态时直接显示完整文字。",
+      "observation": "首屏标题按单词裁切向上显现，词间延迟 40ms，位移／透明度／模糊分别为 760／440／580ms；章节标题可见面积达到 45% 后从 112% 下方上升，860ms 位移与 481.6ms 透明度，结尾双行间隔 80ms；越过的标题直接显示，减少动态保留完整文字。",
       "evidence": "observed",
       "referenceUrl": "https://uiarc.dev/",
       "capturedAt": "2026-11-01"
@@ -63,6 +63,7 @@
     "demos/cases/uiarc-platform/app.js",
     "demos/cases/uiarc-platform/style.css",
     "demos/cases/uiarc-platform/fidelity.md",
-    "demos/cases/uiarc-platform/source/content.json"
+    "demos/cases/uiarc-platform/source/content.json",
+    "demos/cases/uiarc-platform/source/components.tsx"
   ]
 }

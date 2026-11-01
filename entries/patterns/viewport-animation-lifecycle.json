@@ -97,8 +97,8 @@
     {
       "caseId": "uiarc-platform",
       "locator": "entries/cases/uiarc-platform.json#interaction/3",
-      "observation": "六张 Pro 卡片与九张免费卡片分别排成桌面两列和三列；卡片原本使用 WebP 海报与静音 WebM，进入视口播放，点击进入原站对应组件页。手机 Pro 为一列、免费组件为两列。",
-      "evidence": "adapted",
+      "observation": "六张 Pro 卡片与九张免费卡片分别排成桌面两列和三列；原始 WebP 海报与静音 WebM 在前后一屏预载，可见比例达到 35% 时播放，离屏或后台暂停并保留已显示的视频帧，同时最多播放 8 段。首入减少动态或节流模式使用海报和手动播放按钮；点击卡片进入对应原站页。手机为一列／两列。",
+      "evidence": "observed",
       "referenceUrl": "https://uiarc.dev/",
       "capturedAt": "2026-11-01"
     }
@@ -170,6 +170,7 @@
     "demos/cases/uiarc-platform/app.js",
     "demos/cases/uiarc-platform/style.css",
     "demos/cases/uiarc-platform/fidelity.md",
-    "demos/cases/uiarc-platform/source/content.json"
+    "demos/cases/uiarc-platform/source/content.json",
+    "demos/cases/uiarc-platform/source/components.tsx"
   ]
 }

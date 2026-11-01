@@ -1,0 +1,65 @@
+{
+  "id": "center-split-theme-transition",
+  "title": "从中央向上下展开的新主题",
+  "category": "导航与状态",
+  "experienceTypes": [
+    "page-motion"
+  ],
+  "summary": "保留旧主题快照，让新主题从水平中线展开。",
+  "mechanism": "在 View Transition 更新回调中切换完整主题；旧根快照不动，新根快照由 inset(50% 0) 展开为 inset(0)，完成后移除临时过渡状态。",
+  "trigger": "激活主题按钮",
+  "effect": "颜色角色一起交接，用户能看清主题更替的方向。",
+  "useCases": [
+    "具有完整明暗主题的产品页面"
+  ],
+  "avoid": [],
+  "constraints": [
+    "主题更新在快照回调中提交，所有颜色角色同步。",
+    "减少动态直接切换；品牌图像与固定色面保持原色。"
+  ],
+  "composition": {
+    "role": "accent",
+    "notes": "负责主题更替的全页交接，颜色职责由语义主题控制。",
+    "pairsWellWith": [
+      "semantic-theme-roles",
+      "theme-invariant-gradient-panel"
+    ],
+    "conflicts": []
+  },
+  "accessibility": {
+    "keyboard": "原生主题按钮支持 Enter/Space，并提供下一主题的可访问名称；切换后保持焦点。",
+    "reducedMotion": "prefers-reduced-motion 下直接切换，不创建展开动画。"
+  },
+  "parameters": [
+    {
+      "name": "新快照裁切",
+      "value": "inset(50% 0) → inset(0)",
+      "note": "原站 theme-split 公开样式及实际主题切换。"
+    },
+    {
+      "name": "时长与缓动",
+      "value": "390ms；cubic-bezier(.22,1,.36,1)",
+      "note": "原站 ::view-transition-new(root) 计算样式。"
+    }
+  ],
+  "prompt": "为完整明暗主题实现中央展开：使用原生 View Transition 在更新回调内提交新主题，保留旧根快照，新根快照以390ms、cubic-bezier(.22,1,.36,1)从inset(50% 0)展开到inset(0)。结束后清理临时状态，快速重复操作接续到最后选择。按钮保留键盘与明确名称；减少动态直接提交新主题。",
+  "sources": [
+    {
+      "caseId": "uiarc-platform",
+      "locator": "entries/cases/uiarc-platform.json#interaction/0",
+      "observation": "主题按钮在系统默认与手动选择之间协调页面表面、文字、边界和导航；点击后通过 View Transition 让新主题从横向中线向上下展开，390ms、cubic-bezier(.22,1,.36,1)，完成后清理过渡状态。首尾粉蓝黄渐变面板和产品影片保持原色，减少动态直接完成切换。",
+      "evidence": "observed",
+      "referenceUrl": "https://uiarc.dev/",
+      "capturedAt": "2026-11-01"
+    }
+  ],
+  "sourceFiles": [
+    "entries/cases/uiarc-platform.json",
+    "docs/cases/uiarc-platform.md",
+    "demos/cases/uiarc-platform/index.html",
+    "demos/cases/uiarc-platform/app.js",
+    "demos/cases/uiarc-platform/style.css",
+    "demos/cases/uiarc-platform/source/components.tsx",
+    "demos/cases/uiarc-platform/fidelity.md"
+  ]
+}

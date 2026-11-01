@@ -704,6 +704,7 @@ window.ATLAS_CASES = [
     "title": "手绘：把不完美变成亲近感",
     "subtitle": "Excalidraw / Field Notes",
     "category": "经典风格",
+    "country": "捷克",
     "tags": [
       "手绘",
       "纸张",
@@ -773,6 +774,12 @@ window.ATLAS_CASES = [
         "url": "https://roughjs.com/",
         "type": "理论",
         "note": "官方展示线条粗糙度、弯曲度、排线等可调机制；demo 以原创 SVG 固定曲线迁移该表达思想，不依赖库。"
+      },
+      {
+        "title": "Excalidraw+ · 运营主体",
+        "url": "https://plus.excalidraw.com/terms-of-service",
+        "type": "创作来源",
+        "note": "主要实例 Excalidraw+ 的官方条款列出运营主体 Excalidraw s.r.o. 位于捷克布尔诺；地区按该实例的机构来源标注。"
       }
     ],
     "prompt": "可替换内容：产品/品牌【名称】；受众【用户】；核心价值【卖点与证据】；主行动【希望用户完成的动作】。以下为风格示范任务，可替换具体品牌与内容，保留设计约束。\n\n为虚构手帐俱乐部 Field Notes 制作可离线运行的英文网页。参考 Excalidraw 的手绘产品表达和 Rough.js 的受控轮廓/排线机制，但使用原创名称、文案和 SVG 插画。信息顺序：生活记录价值主张→已经写过的植物与咖啡笔记→三个低门槛开始步骤→不同记录场景。首屏用深橄榄色衬线大标题和奶油纸张；右侧原创笔记本带细横线、胶带、铅笔、小角度旋转和一张可切换贴纸。手绘不是全页面凌乱：正文正常排版，线宽统一，主 CTA 明显。三项清单必须可以勾选并更新可读进度，提供清单重置；贴纸按钮需 aria-pressed。至少三节完整内容，移动端将两栏重排成单栏；保留键盘焦点与 reduced motion；全部素材本地，不使用 CDN 或他人插画。\n\n要素协调要求：纸色、植物线稿、宽松排版和手工贴纸都服务于“慢下来记录”；正文使用清楚字形，避免过度装饰。",
@@ -810,6 +817,7 @@ window.ATLAS_CASES = [
     "title": "等轴 3D：让空间讲述系统",
     "subtitle": "Monument Valley / Little Terraces",
     "category": "经典风格",
+    "country": "英国",
     "tags": [
       "等轴",
       "3D",
@@ -887,6 +895,12 @@ window.ATLAS_CASES = [
         "url": "https://www.adobe.com/products/photoshop/isometric-art.html",
         "type": "理论",
         "note": "解释二维表现三维、30° 侧向轴与侧面明暗。demo 使用严格平行坐标生成 SVG，是风格迁移而非原游戏复刻。"
+      },
+      {
+        "title": "ustwo games · 工作室所在地",
+        "url": "https://ustwogames.co.uk/contact-us/",
+        "type": "创作来源",
+        "note": "本练习主要取材于 Monument Valley；开发商官方联系页列出工作室位于英国伦敦。"
       }
     ],
     "prompt": "可替换内容：产品/品牌【名称】；受众【用户】；核心价值【卖点与证据】；主行动【希望用户完成的动作】。以下为风格示范任务，可替换具体品牌与内容，保留设计约束。\n\n为虚构宁静世界 Little Terraces 制作本地网页，借鉴 Monument Valley 的极简建筑世界呈现，并依据 Adobe 等轴制图说明使用严格 30° 平行投影。不要复制其关卡、角色和标志。信息顺序：宁静探索的价值主张→一个原创浮岛的完整世界→三个旅程章节→回到场景的邀请。画面包含陶土基础台、奶油塔楼、薄荷温室、水池、树木和连续路径；全部用同一 x/y/z 投影函数与统一三面明度生成 SVG。左侧窄文案右侧大场景，避免通用卡片首屏。提供整岛/花园/建筑焦点按钮，和将平台、建筑、植物分层的展开按钮；状态说明和 aria-pressed 同步。至少三节内容，小屏重排，SVG 适配视口，键盘可操作，reduced motion 即时切换；无CDN、外部素材或WebGL依赖。\n\n要素协调要求：柔和调色、衬线标题和稳定投影共享安静情绪；结构展开解释层次，不能随意更换投影角度。",
@@ -924,6 +938,7 @@ window.ATLAS_CASES = [
     "title": "线条：沿绘制顺序解释结构",
     "subtitle": "Vivus / Codrops / Monoline",
     "category": "经典风格",
+    "country": "英国",
     "tags": [
       "线条",
       "线描",
@@ -1004,6 +1019,12 @@ window.ATLAS_CASES = [
         "url": "https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/stroke-dashoffset",
         "type": "规范",
         "note": "核验 stroke-dashoffset 的偏移、可动画性和 pathLength 归一化；注意旧 Vivus README 的限制属于旧库实现，不代表当前 SVG 仅 path 支持。"
+      },
+      {
+        "title": "Vivus 作者 · 公开作品集",
+        "url": "https://maxwellito.com/",
+        "type": "创作来源",
+        "note": "主要实例 Vivus 的作者 Maxwellito 在个人作品集中说明自己工作于伦敦；地区按该创作者公开所在地标注。"
       }
     ],
     "prompt": "可替换内容：产品/品牌【名称】；受众【用户】；核心价值【卖点与证据】；主行动【希望用户完成的动作】。以下为风格示范任务，可替换具体品牌与内容，保留设计约束。\n\n为虚构建筑工作室 Monoline 制作英文静态网站。依据 Vivus 官方线描示范、Codrops SVG Drawing Animation 原作者实验和 SVG stroke-dasharray/stroke-dashoffset 机制。素材为原创院落住宅、树、玻璃幕墙和水池线稿，不复制案例的设备插图。信息顺序：精简空间的观点→通栏建筑概念线稿→三步设计方法→可选择项目类型的咨询说明。近白背景、石墨线条、蓝灰强调，有限线宽和细工程标签；标题使用无衬线和单一衬线斜体强调，设窄侧边栏。默认展示完整线稿，重播按钮才开始从基础到细节绘制；用 pathLength 归一化每条路径，进度滑块可中断并控制图形；文本不等待动画。至少三节内容，移动端缩放和重排，键盘焦点、可读状态及 reduced motion 终态齐全；全部本地，无CDN。\n\n要素协调要求：线宽、清淡色彩、大留白和简短标题共同表达“减少噪声”；描绘动效与建筑构成顺序相呼应。",
@@ -1041,6 +1062,7 @@ window.ATLAS_CASES = [
     "title": "动态形状：同一单元，多种表达",
     "subtitle": "In Pieces / Form Shift",
     "category": "经典风格",
+    "country": "荷兰",
     "tags": [
       "几何",
       "形状变化",
@@ -1116,7 +1138,7 @@ window.ATLAS_CASES = [
         "title": "CSSconf EU 对 Bryan James 的访谈",
         "url": "https://blog.cssconf.eu/2015/09/24/introducing-bryan-james/",
         "type": "实例",
-        "note": "原作者访谈再次说明原项目的技术实验如何与 pieces 的核心概念结合，作为原作品制作依据。"
+        "note": "原作者访谈再次说明原项目的技术实验如何与 pieces 的核心概念结合，作为原作品制作依据。 2015 年项目同期的作者资料说明 Bryan James 当时在阿姆斯特丹从事交互创作；地区按 In Pieces 作者的创作所在地记为荷兰。"
       },
       {
         "title": "MDN — polygon()",
@@ -1160,6 +1182,7 @@ window.ATLAS_CASES = [
     "title": "瑞士设计：编辑网格",
     "subtitle": "Swissted / Müller-Brockmann → 信息优先的展览日程",
     "category": "经典风格",
+    "country": "美国",
     "tags": [
       "瑞士",
       "国际主义",
@@ -1224,7 +1247,7 @@ window.ATLAS_CASES = [
         "title": "About Swissted — Mike Joyce",
         "url": "https://www.swissted.com/pages/about-us",
         "type": "理论",
-        "note": "作者说明将真实演出传单改为 International Typographic Style，并明确 Akzidenz-Grotesk 不是 Helvetica。"
+        "note": "作者说明将真实演出传单改为 International Typographic Style，并明确 Akzidenz-Grotesk 不是 Helvetica。 主要实例 Swissted 的官方介绍说明作者 Mike Joyce 及其 Stereotype Design 位于纽约。地区按实际创作来源标注，风格沿用瑞士现代主义。"
       },
       {
         "title": "Josef Müller-Brockmann — MoMA",
@@ -1274,6 +1297,7 @@ window.ATLAS_CASES = [
     "title": "包豪斯：几何与实验",
     "subtitle": "Bauhaus Dessau / Kandinsky 课程 → 可操作的构成工坊",
     "category": "经典风格",
+    "country": "德国",
     "tags": [
       "包豪斯",
       "几何",
@@ -1348,6 +1372,12 @@ window.ATLAS_CASES = [
         "url": "https://www.carbondesignsystem.com/building-blocks/foundations/2x-grid/overview",
         "type": "规范",
         "note": "用关键对齐线与响应式重排保证页面可读；这一当代实现方法不是包豪斯的历史专属规则。"
+      },
+      {
+        "title": "UNESCO · 包豪斯及其魏玛、德绍和贝尔瑙建筑",
+        "url": "https://whc.unesco.org/en/list/729/",
+        "type": "创作来源",
+        "note": "世界遗产条目将包豪斯在魏玛、德绍与贝尔瑙的建筑列于德国；本练习的主要参考机构为德绍包豪斯。"
       }
     ],
     "prompt": "可替换内容：产品/品牌【名称】；受众【用户】；核心价值【卖点与证据】；主行动【希望用户完成的动作】。以下为风格示范任务，可替换具体品牌与内容，保留设计约束。\n\n为虚构品牌 [品牌] 的设计工坊制作包豪斯基础形色课程启发的网页。聚焦几何关系和实际制作，背景温暖纸色，以红、黄、蓝、炭黑为有限色板。首屏采用非对称文字/构成两区，大标题保持正常可读；右侧原创SVG包含圆、三角、矩形、线条。提供三组明确的构成预设、原生range旋转控件、实时角度文字以及下载当前SVG的导出动作。后续至少两节分别介绍材料课程与制作方法，以横向条目/details组织，避免圆角卡片堆砌。手机图文纵向重排，键盘可操作，尊重reduced-motion。明确这是Bauhaus形色课程的局部现代迁移，不能把Kandinsky的形色对应宣称为科学定律，也不要复制任何馆藏练习。\n\n要素协调要求：形色实验与排版共享比例关系；每个色块承担构成任务，不能把原色和几何物随机铺满。",
@@ -1385,6 +1415,7 @@ window.ATLAS_CASES = [
     "title": "80年代：合成器面板",
     "subtitle": "Arturia Jup-8 V / Jupiter-8 → 手感与信号流程",
     "category": "经典风格",
+    "country": "法国",
     "tags": [
       "80年代",
       "复古",
@@ -1461,6 +1492,12 @@ window.ATLAS_CASES = [
         "url": "https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API",
         "type": "规范",
         "note": "浏览器音频节点图与参数实现依据； demo 通过用户操作初始化AudioContext。"
+      },
+      {
+        "title": "Arturia · 官方公司介绍",
+        "url": "https://www.arturia.com/company/press",
+        "type": "创作来源",
+        "note": "主要实例 Jup-8 V 的开发商 Arturia 在官方介绍中说明公司创立于法国格勒诺布尔；地区按该实例的机构来源标注。"
       }
     ],
     "prompt": "可替换内容：产品/品牌【名称】；受众【用户】；核心价值【卖点与证据】；主行动【希望用户完成的动作】。以下为风格示范任务，可替换具体品牌与内容，保留设计约束。\n\n为虚构音频品牌 [品牌] 制作1980年代模拟合成器设备启发的可试玩宣传页。参考Arturia Jup-8 V的实体面板逻辑，采用哑光海军灰/炭灰、暖白标字、橙色分区、青色低亮读数。首屏让真实可操作面板成为主角：预设列表、波形显示、带数值标签的Cutoff/Attack/Output原生滑块、可聚焦琴键。实现原创单振荡器Web Audio，三个预设改变波形和参数；默认静音，主动开启后才演奏，可关闭。提供A–K白键键盘演奏，失焦停止声音。后续至少两节说明信号流程与预设用途，采用设备手册式排版。手机面板分区纵向重排、每控件至少44px、避免只有颜色的状态、尊重reduced-motion。不复制商标、音色或音乐，不声称模拟Jupiter-8全部电路，也不以霓虹网格代表所有80年代。\n\n要素协调要求：等宽标签、功能分区、彩色标识和直接反馈构成同一种设备语言；装饰必须对应可操作控制。",
@@ -1498,6 +1535,7 @@ window.ATLAS_CASES = [
     "title": "像素：微型世界",
     "subtitle": "Celeste / PICO-8 / Saint11 → 地图驱动的探索页面",
     "category": "经典风格",
+    "country": "加拿大",
     "tags": [
       "像素",
       "游戏",
@@ -1588,6 +1626,12 @@ window.ATLAS_CASES = [
         "url": "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/image-rendering",
         "type": "规范",
         "note": "说明pixelated/crisp-edges的缩放行为；本例Canvas使用pixelated保留边缘。"
+      },
+      {
+        "title": "Celeste 团队 · 工作室介绍",
+        "url": "https://exok.com/team.html",
+        "type": "创作来源",
+        "note": "主要实例 Celeste 的创作团队在官方介绍中说明工作室位于加拿大温哥华。"
       }
     ],
     "prompt": "可替换内容：产品/品牌【名称】；受众【用户】；核心价值【卖点与证据】；主行动【希望用户完成的动作】。以下为风格示范任务，可替换具体品牌与内容，保留设计约束。\n\n为虚构小型IP [品牌] 制作地图驱动的像素风介绍页。参考PICO-8的128×128、16色、8×8tile创作约束，自绘一个可辨认轮廓的岛屿世界；禁止复制Celeste或其他游戏角色/背景。使用Canvas整数像素绘制并用image-rendering:pixelated放大，桌面尽量整数倍率，手机完整显示地图。首屏地图为主，旅行手账为辅：四个可聚焦DOM地点按钮、实时地点说明、角色位置与发现计数，方向键/WASD仅在地图聚焦时生效，手机提供四向按钮。探索记录可存当前浏览器并可清除。后续至少两節为地点索引与玩法说明；中文正文使用正常可读系统字体，英文元数据可用等宽字。没有自动音频、闪烁扫描线或滚动劫持，尊重reduced-motion。注明这是PICO-8约束的局部迁移，而不是所有像素艺术的定义。\n\n要素协调要求：低分辨率地景、有限调色与清楚状态共同形成游戏感；中文说明保留正常可读字体，不强行像素化。",
@@ -4461,7 +4505,7 @@ window.ATLAS_CASES = [
     "title": "星槎 STELLAR · 太空探索博物馆",
     "subtitle": "garden-skills 的太空博物馆示范页与无 skill 基线",
     "category": "示范作品",
-    "country": "来源未标注",
+    "country": "中国",
     "tags": [
       "示范作品",
       "虚构博物馆",
@@ -4555,6 +4599,12 @@ window.ATLAS_CASES = [
         "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-design-engineer/SKILL.md#L61-L71",
         "type": "规范",
         "note": "来源技能要求从色彩、字体、间距、圆角、阴影、运动和密度分析参考；仅用于解释该示范的设计机制，不声称生成过程逐步执行了全部工作流。"
+      },
+      {
+        "title": "示范源码作者 · 公开所在地",
+        "url": "https://github.com/ConardLi",
+        "type": "创作来源",
+        "note": "固定来源仓库 garden-skills 的作者 ConardLi 在公开资料中标注所在地为北京；地区按实际作者来源标注，页内场馆为示范内容。"
       }
     ],
     "prompt": "帮我做一个'太空探索博物馆'的线上展览首页——全屏 Hero、4 个核心展览介绍、一个至少 6 个节点的时间线、参观预约 CTA、页脚。整体风格要沉浸感强、有宇宙的深邃感。\n\n出处：来源仓库固定提交 2b9a89340b70f632d31c0f1c69fce94a7912423e 的 skills/web-design-engineer/README.zh-CN.md 第 423 行，原始生成提示词照录。",
@@ -4590,7 +4640,7 @@ window.ATLAS_CASES = [
     "title": "Mira Høst · 北欧摄影作品集",
     "subtitle": "公开技能仓库中的虚构摄影师示范页",
     "category": "示范作品",
-    "country": "来源未标注",
+    "country": "中国",
     "tags": [
       "示范作品",
       "虚构摄影师",
@@ -4681,6 +4731,12 @@ window.ATLAS_CASES = [
         "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-design-engineer/SKILL.md#L175-L182",
         "type": "理论",
         "note": "来源技能讨论视觉层级、对齐、色彩和字体数量，用于理解其设计取向；不视为具体生成过程或本页无障碍实测证据。"
+      },
+      {
+        "title": "示范源码作者 · 公开所在地",
+        "url": "https://github.com/ConardLi",
+        "type": "创作来源",
+        "note": "固定来源仓库 garden-skills 的作者 ConardLi 在公开资料中标注所在地为北京；地区按实际作者来源标注，Mira Høst 为示范页的虚构角色。"
       }
     ],
     "prompt": "帮我做一个独立摄影师的个人作品集网站首页。\n\n原始生成提示词，照录自 garden-skills 固定提交 2b9a89340b70f632d31c0f1c69fce94a7912423e 的 skills/web-design-engineer/README.zh-CN.md 第 436 行：https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-design-engineer/README.zh-CN.md#L436",
@@ -4994,6 +5050,12 @@ window.ATLAS_CASES = [
         "url": "https://github.com/rullerzhou-afk/clawd-on-desk/blob/44507f6863e3837895368d62794992613873cce8/assets/LICENSE",
         "type": "许可",
         "note": "Clawd/同人美术与产品代码分别管理；原文保存在 source/。"
+      },
+      {
+        "title": "Clawd on Desk 作者 · 公开资料",
+        "url": "https://github.com/rullerzhou-afk",
+        "type": "创作来源",
+        "note": "官网与作者公开资料未提供可核实的国家或地区，来源地区统一记为未确认。"
       }
     ],
     "migration": [
@@ -5022,7 +5084,7 @@ window.ATLAS_CASES = [
     "title": "Arc UI · 组件平台的产品官网",
     "subtitle": "ARC UI / SOURCE YOU KEEP",
     "category": "产品",
-    "country": "未确认",
+    "country": "瑞士",
     "capturedAt": "2026-11-01",
     "referenceUrl": "https://uiarc.dev/",
     "implementation": "reference-study",
@@ -5055,14 +5117,14 @@ window.ATLAS_CASES = [
       "网站设计是案例；可直接取用的免费组件代码单独作为素材收录。"
     ],
     "interaction": [
-      "主题按钮在系统默认与手动选择之间协调页面表面、文字、边界和导航；首尾两块粉蓝黄渐变面板始终保持浅底深字，产品影片保留原色。",
-      "首屏标题按单词裁切向上显现，词间延迟 40ms；后续章节标题进入视口后上移并显现，减少动态时直接显示完整文字。",
+      "主题按钮在系统默认与手动选择之间协调页面表面、文字、边界和导航；点击后通过 View Transition 让新主题从横向中线向上下展开，390ms、cubic-bezier(.22,1,.36,1)，完成后清理过渡状态。首尾粉蓝黄渐变面板和产品影片保持原色，减少动态直接完成切换。",
+      "首屏标题按单词裁切向上显现，词间延迟 40ms，位移／透明度／模糊分别为 760／440／580ms；章节标题可见面积达到 45% 后从 112% 下方上升，860ms 位移与 481.6ms 透明度，结尾双行间隔 80ms；越过的标题直接显示，减少动态保留完整文字。",
       "13 个客户标识组成两份同序轨道，以 52s 线性循环横移，左右渐隐；原站没有悬停暂停，减少动态时改为静态换行且隐藏重复组。",
-      "六张 Pro 卡片与九张免费卡片分别排成桌面两列和三列；卡片原本使用 WebP 海报与静音 WebM，进入视口播放，点击进入原站对应组件页。手机 Pro 为一列、免费组件为两列。",
-      "shadcn CLI 与 MCP server 并排给出同一组件库的两个安装入口；复制按钮把完整命令写入剪贴板并短暂显示勾号，第三张卡区分免费与 Pro 数量。",
-      "价格区的 Pro yearly / Free 共用一个移动选中底板，切换后更新说明、价格、功能清单与入口；右侧终身方案保持可见，手机按当前 yearly 入口保留年度卡在先。",
-      "六项 FAQ 默认展开第一项；打开另一项先收起前项，当前项可以再次收起，标题图标与内容高度同步，键盘激活保留焦点。",
-      "手机导航从顶栏下方展开为带背景模糊遮罩的菜单，显示五个入口及说明、GitHub、登录和 Examples；关闭与 Escape 返回原页面及触发按钮，公告可独立关闭。"
+      "六张 Pro 卡片与九张免费卡片分别排成桌面两列和三列；原始 WebP 海报与静音 WebM 在前后一屏预载，可见比例达到 35% 时播放，离屏或后台暂停并保留已显示的视频帧，同时最多播放 8 段。首入减少动态或节流模式使用海报和手动播放按钮；点击卡片进入对应原站页。手机为一列／两列。",
+      "shadcn CLI 与 MCP server 并排给出同一组件库的两个安装入口；原始 CopyButton 复制完整命令，以图标交叉淡化和描线勾号反馈，1900ms 后复位；第三张卡区分免费与 Pro 数量。",
+      "价格区的 Pro yearly / Free 使用原始 SegmentedControl 移动选中底板，整块说明、金额、清单和入口通过 AnimatePresence 交接，240ms 透明度、400ms 无回弹弹簧位移；金额使用原始 AnimatedCounter。右侧终身方案保持可见，手机保留年度卡在先。",
+      "六项 FAQ 默认展开第一项；使用原始 Accordion 的单开状态、400ms 无回弹高度弹簧、260ms 图标弹簧和 2px 轻模糊，打开另一项收起前项，当前项可再次收起；Radix 管理语义、焦点与折叠后可访问状态。",
+      "手机菜单通过 Radix Dialog 在顶栏下方展开，460ms 向下裁切，条目延迟 90ms 起、40ms 错峰；关闭使用 240ms 反向裁切，背景 320／240ms 淡化与 5px 模糊。Escape 返回触发按钮，Examples 关闭后滚动并聚焦展示区；公告以高度弹簧收起并将焦点交给品牌入口。"
     ],
     "themeBehavior": {
       "mode": "system-and-manual",
@@ -5097,13 +5159,13 @@ window.ATLAS_CASES = [
       ],
       "type": "Geist / Inter 可变字体；主标题 72px，章节 52px，正文 16–18px。",
       "layout": "主内容 min(100% - 64px,1248px)；首屏 690px，手机 590px；手机外缘 16px。",
-      "motion": "标题词间 40ms；客户轨道 52s linear；FAQ 与底板为短局部过渡。"
+      "motion": "主题 390ms 中央展开；标题 45% 可见触发、860ms 上升；标识 52s；菜单 460／240ms 裁切；FAQ 400ms 弹簧。"
     },
     "constraints": [
       "采集范围为官网完整首页；组件目录、文档、Showcase、Pro、登录与交易通过原站入口访问。",
       "官网没有可取得的独立网站工程；本地 HTML/CSS/JavaScript 根据公开页面与发布样式自行实现。source/site-styles/ 为参数来源快照，不是本地运行代码。",
       "官网影片、标识和页面美术保留作者及相关品牌权利；免费组件的 MIT 不扩展到 Pro 源码或整站媒体。",
-      "本地价格切换保留内容与选中状态，未复用原站 Motion 数字滚动内部实现；具体几何、时序与菜单差异见 fidelity.md。"
+      "价格与数量固定为本次采集快照；账号、交易与实时统计通过原站入口使用。本地复用同一免费素材的原始组件，菜单、标题与媒体按公开部署参数实现。"
     ],
     "useCases": [
       "组件库或开发者平台首页",
@@ -5133,6 +5195,36 @@ window.ATLAS_CASES = [
         "url": "https://uiarc.dev/license",
         "type": "许可",
         "note": "免费部分 MIT；Pro 源码使用独立商业许可，不能作为组件库重新分发。"
+      },
+      {
+        "title": "Arc · 官方运营主体",
+        "url": "https://uiarc.dev/imprint",
+        "type": "创作来源",
+        "note": "官方 Imprint 将 Arc 运营主体列为 Elia Kuratli 在瑞士经营的个体企业；地区按运营机构来源标注。"
+      },
+      {
+        "title": "官网公开交互部署 · 95714",
+        "url": "https://uiarc.dev/_next/static/chunks/95714-07d7cb0e45d9a488.js",
+        "type": "实现依据",
+        "note": "采集版本的主题、标题、菜单、媒体或价格交互参数；原始响应保存在 source/site-scripts/，本地自行实现，不执行这些发布包。"
+      },
+      {
+        "title": "官网公开交互部署 · 23473",
+        "url": "https://uiarc.dev/_next/static/chunks/23473-216b40ab39e6c47c.js",
+        "type": "实现依据",
+        "note": "采集版本的主题、标题、菜单、媒体或价格交互参数；原始响应保存在 source/site-scripts/，本地自行实现，不执行这些发布包。"
+      },
+      {
+        "title": "官网公开交互部署 · 19483",
+        "url": "https://uiarc.dev/_next/static/chunks/19483-e4d11383c4facb88.js",
+        "type": "实现依据",
+        "note": "采集版本的主题、标题、菜单、媒体或价格交互参数；原始响应保存在 source/site-scripts/，本地自行实现，不执行这些发布包。"
+      },
+      {
+        "title": "官网公开交互部署 · 72250",
+        "url": "https://uiarc.dev/_next/static/chunks/72250-79d591c795014f46.js",
+        "type": "实现依据",
+        "note": "采集版本的主题、标题、菜单、媒体或价格交互参数；原始响应保存在 source/site-scripts/，本地自行实现，不执行这些发布包。"
       }
     ],
     "patternIds": [
@@ -5143,7 +5235,9 @@ window.ATLAS_CASES = [
       "single-open-accordion",
       "theme-invariant-gradient-panel",
       "clipped-word-rise",
-      "parallel-cli-agent-install"
+      "parallel-cli-agent-install",
+      "center-split-theme-transition",
+      "top-down-clipped-menu"
     ],
     "migration": [
       {
@@ -5155,11 +5249,11 @@ window.ATLAS_CASES = [
         "how": "修改品牌色场、字体尺度和布局；保持浅色品牌面板内文字与页面主题分开。"
       },
       {
-        "field": "app.js",
-        "how": "修改复制命令、套餐内容、FAQ 状态和媒体可见性行为。"
+        "field": "app.js 与 source/components.tsx",
+        "how": "前者管理主题、标题和媒体；后者组合原始 Accordion、SegmentedControl、AnimatedCounter、CopyButton 与手机菜单。修改业务文案和快照数据时同时查看 index.html。"
       }
     ],
-    "prompt": "参考 Arc UI 的完整官网首页，以真实 HTML/CSS/JavaScript 实现固定浅色的粉蓝黄径向渐变首屏、中性明暗主题、Geist 双行主张、两个行动、客户 SVG 连续轨道、六项 Pro 与九项免费产品媒体、CLI 与 MCP 命令复制、免费／年度方案切换、终身方案、单开 FAQ、渐变结尾和品牌页脚。产品影片只用于原站已有的媒体卡，实际组件代码从独立 Arc UI 素材包取得。沿用原文与真实产品链接，不实现账户和支付后台。桌面两列／三列网格在手机变成一列／两列，导航在顶栏下方展开并支持 Escape 与焦点返回。跟随系统并保存手动主题，品牌面板与媒体保持原色；减少动态时静态显示标题、标识和海报，原作无声音，不加配乐。迁移前读取来源、素材清单与 fidelity.md。",
+    "prompt": "参考 Arc UI 的完整官网首页，以真实 HTML/CSS/JavaScript 实现固定浅色的粉蓝黄径向渐变首屏、中性明暗主题、Geist 双行主张、两个行动、客户 SVG 连续轨道、六项 Pro 与九项免费产品媒体、CLI 与 MCP 命令复制、免费／年度方案切换、终身方案、单开 FAQ、渐变结尾和品牌页脚。产品影片只用于原站已有的媒体卡，实际组件代码从独立 Arc UI 素材包取得。沿用原文与真实产品链接，不实现账户和支付后台。桌面两列／三列网格在手机变成一列／两列，导航在顶栏下方展开并支持 Escape 与焦点返回。跟随系统并保存手动主题，品牌面板与媒体保持原色；减少动态时静态显示标题、标识和海报，原作无声音，不加配乐。迁移前读取来源、素材清单与 fidelity.md。 深浅主题以390ms中央横线向上下展开。章节标题按45%可见阈值从112%下方升起。FAQ、套餐底板、金额与复制反馈复用固定免费源码；手机菜单保留460ms展开、240ms收回和40ms条目错峰。媒体在35%可见时静音播放，离屏保留帧，减少动态的海报提供手动播放。",
     "negativePrompt": "不要把整站截图或录屏当作页面；不要将营销短片当成组件实现；不要收录 Pro 源码；不要把免费组件 MIT 许可套用于整站媒体；不要只做首屏而漏掉价格、安装和 FAQ。",
     "exercise": "在 1440×1000 与 390×844、DPR 1、相同主题下并排对照原站和本地；走完主题、菜单、影片、复制、两个价格状态和六项 FAQ，结果见 fidelity.md。"
   }

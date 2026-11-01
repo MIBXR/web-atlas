@@ -46,7 +46,7 @@
     {
       "caseId": "uiarc-platform",
       "locator": "entries/cases/uiarc-platform.json#interaction/0",
-      "observation": "主题按钮在系统默认与手动选择之间协调页面表面、文字、边界和导航；首尾两块粉蓝黄渐变面板始终保持浅底深字，产品影片保留原色。",
+      "observation": "主题按钮在系统默认与手动选择之间协调页面表面、文字、边界和导航；点击后通过 View Transition 让新主题从横向中线向上下展开，390ms、cubic-bezier(.22,1,.36,1)，完成后清理过渡状态。首尾粉蓝黄渐变面板和产品影片保持原色，减少动态直接完成切换。",
       "evidence": "observed",
       "referenceUrl": "https://uiarc.dev/",
       "capturedAt": "2026-11-01"
@@ -65,6 +65,7 @@
     "demos/cases/uiarc-platform/app.js",
     "demos/cases/uiarc-platform/style.css",
     "demos/cases/uiarc-platform/fidelity.md",
-    "demos/cases/uiarc-platform/source/content.json"
+    "demos/cases/uiarc-platform/source/content.json",
+    "demos/cases/uiarc-platform/source/components.tsx"
   ]
 }

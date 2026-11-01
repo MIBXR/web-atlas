@@ -579,6 +579,38 @@
       "transformation": "从公开 DOM 序列化，保留路径与比例",
       "dimensions": "viewBox 0 3.5 64 31",
       "license": "保留作者及品牌权利；设计参考，未标为 MIT"
+    },
+    {
+      "file": "source/site-scripts/95714-07d7cb0e45d9a488.js",
+      "sourceUrl": "https://uiarc.dev/_next/static/chunks/95714-07d7cb0e45d9a488.js",
+      "owner": "Elia Kuratli / Arc",
+      "usage": "公开部署代码中的主题、标题、菜单、媒体和价格交互参数参照；本地不加载此文件",
+      "transformation": "保留公开响应的原始 JavaScript 内容",
+      "license": "保留作者权利；参数参照，不标为 MIT"
+    },
+    {
+      "file": "source/site-scripts/23473-216b40ab39e6c47c.js",
+      "sourceUrl": "https://uiarc.dev/_next/static/chunks/23473-216b40ab39e6c47c.js",
+      "owner": "Elia Kuratli / Arc",
+      "usage": "公开部署代码中的主题、标题、菜单、媒体和价格交互参数参照；本地不加载此文件",
+      "transformation": "保留公开响应的原始 JavaScript 内容",
+      "license": "保留作者权利；参数参照，不标为 MIT"
+    },
+    {
+      "file": "source/site-scripts/19483-e4d11383c4facb88.js",
+      "sourceUrl": "https://uiarc.dev/_next/static/chunks/19483-e4d11383c4facb88.js",
+      "owner": "Elia Kuratli / Arc",
+      "usage": "公开部署代码中的主题、标题、菜单、媒体和价格交互参数参照；本地不加载此文件",
+      "transformation": "保留公开响应的原始 JavaScript 内容",
+      "license": "保留作者权利；参数参照，不标为 MIT"
+    },
+    {
+      "file": "source/site-scripts/72250-79d591c795014f46.js",
+      "sourceUrl": "https://uiarc.dev/_next/static/chunks/72250-79d591c795014f46.js",
+      "owner": "Elia Kuratli / Arc",
+      "usage": "公开部署代码中的主题、标题、菜单、媒体和价格交互参数参照；本地不加载此文件",
+      "transformation": "保留公开响应的原始 JavaScript 内容",
+      "license": "保留作者权利；参数参照，不标为 MIT"
     }
   ],
   "capturedAt": "2026-11-01",

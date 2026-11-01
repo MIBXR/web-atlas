@@ -16,3 +16,4 @@ demos/materials/arc-ui/source/upstream/** -text -whitespace
 demos/cases/uiarc-platform/source/site-styles/** -text -whitespace
 demos/cases/uiarc-platform/source/foundation.css -text -whitespace
 demos/cases/uiarc-platform/source/arc-MIT-LICENSE.txt -text -whitespace
+demos/cases/uiarc-platform/source/site-scripts/** -text -whitespace

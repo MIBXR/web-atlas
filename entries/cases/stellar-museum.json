@@ -4,7 +4,7 @@
   "title": "星槎 STELLAR · 太空探索博物馆",
   "subtitle": "garden-skills 的太空博物馆示范页与无 skill 基线",
   "category": "示范作品",
-  "country": "来源未标注",
+  "country": "中国",
   "tags": ["示范作品", "虚构博物馆", "编辑排版", "程序化星球", "三维展示", "时间线", "基线对照"],
   "summary": "来源仓库公开的太空博物馆示范页，以大标题、编号展厅、程序化三维场景和编年史组织长页；附未使用 web-design-engineer skill 时的生成结果作为基线。",
   "accent": "oklch(0.78 0.13 65)",
@@ -56,7 +56,8 @@
     {"title": "garden-skills · 有 skill 的太空博物馆示范源码", "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/demo/web-design-demo/demo1-with-skill.html", "type": "实例", "note": "主页面全部 HTML、CSS 和 JavaScript 的固定版本依据；页内自称 STELLARIA／星海博物馆，内容按示范文案保留。"},
     {"title": "garden-skills · 无 skill 的基线源码", "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/demo/web-design-demo/demo1.html", "type": "实例", "note": "未使用 web-design-engineer skill 时的生成结果；版本身份依据 README 第 419、425–431 行，文件实际位置以该固定提交为准。"},
     {"title": "web-design-engineer · 原始提示词与启用前后对照", "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-design-engineer/README.zh-CN.md#L417-L433", "type": "理论", "note": "第 419 行声明相同提示词下的有／无 skill 对照；第 423 行保存原始提示词，第 425–431 行列版本、字体与布局差别。作者的品质评价不作为本库实测结论。"},
-    {"title": "web-design-engineer · 设计机制分析维度", "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-design-engineer/SKILL.md#L61-L71", "type": "规范", "note": "来源技能要求从色彩、字体、间距、圆角、阴影、运动和密度分析参考；仅用于解释该示范的设计机制，不声称生成过程逐步执行了全部工作流。"}
+    {"title": "web-design-engineer · 设计机制分析维度", "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-design-engineer/SKILL.md#L61-L71", "type": "规范", "note": "来源技能要求从色彩、字体、间距、圆角、阴影、运动和密度分析参考；仅用于解释该示范的设计机制，不声称生成过程逐步执行了全部工作流。"},
+    {"title": "示范源码作者 · 公开所在地", "url": "https://github.com/ConardLi", "type": "创作来源", "note": "固定来源仓库 garden-skills 的作者 ConardLi 在公开资料中标注所在地为北京；地区按实际作者来源标注，页内场馆为示范内容。"}
   ],
   "prompt": "帮我做一个'太空探索博物馆'的线上展览首页——全屏 Hero、4 个核心展览介绍、一个至少 6 个节点的时间线、参观预约 CTA、页脚。整体风格要沉浸感强、有宇宙的深邃感。\n\n出处：来源仓库固定提交 2b9a89340b70f632d31c0f1c69fce94a7912423e 的 skills/web-design-engineer/README.zh-CN.md 第 423 行，原始生成提示词照录。",
   "negativePrompt": "复现本归档时，不改来源页面的设计、文案、结构、交互或占位业务；只把外链资源换为本地路径。虚构机构、馆藏、地址和未来事件不得作为现实事实。此处为 Web Atlas 的复现约束，非来源原始负向提示词。",

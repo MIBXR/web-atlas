@@ -110,80 +110,80 @@
     {
       "name": "Boston Consulting Group",
       "file": "assets/logos/0.svg",
-      "factor": null,
-      "viewBox": "0 0 72.31 29.47"
+      "factor": 0.973,
+      "ratio": 2.4536817102137767
     },
     {
       "name": "Whop",
       "file": "assets/logos/1.svg",
-      "factor": null,
-      "viewBox": "0 0 118.03 25.88"
+      "factor": 0.961,
+      "ratio": 4.560664605873262
     },
     {
       "name": "A24",
       "file": "assets/logos/2.svg",
-      "factor": null,
-      "viewBox": "0 0 379.7 155.8"
+      "factor": 0.998,
+      "ratio": 2.437098844672657
     },
     {
       "name": "Airtel",
       "file": "assets/logos/3.svg",
-      "factor": null,
-      "viewBox": "0 0 221.78 56.89"
+      "factor": 1.008,
+      "ratio": 3.89840042186676
     },
     {
       "name": "CoinTracker",
       "file": "assets/logos/4.svg",
-      "factor": null,
-      "viewBox": "0 0 147 20.09"
+      "factor": 0.834,
+      "ratio": 7.317073170731708
     },
     {
       "name": "Teamworks",
       "file": "assets/logos/5.svg",
-      "factor": null,
-      "viewBox": "0 0 148 37"
+      "factor": 1.22,
+      "ratio": 4
     },
     {
       "name": "Nearform",
       "file": "assets/logos/6.svg",
-      "factor": null,
-      "viewBox": "0 0 143.74 25.01"
+      "factor": 0.843,
+      "ratio": 5.747301079568173
     },
     {
       "name": "HappyRobot",
       "file": "assets/logos/7.svg",
-      "factor": null,
-      "viewBox": "0 0 2906 448"
+      "factor": 0.865,
+      "ratio": 6.486607142857143
     },
     {
       "name": "Nixtla",
       "file": "assets/logos/8.svg",
-      "factor": null,
-      "viewBox": "0 0 114.81 16.36"
+      "factor": 0.777,
+      "ratio": 7.017726161369193
     },
     {
       "name": "Maximum Effort",
       "file": "assets/logos/9.svg",
-      "factor": null,
-      "viewBox": "0 0 938 339.7"
+      "factor": 1.453,
+      "ratio": 2.761259935236974
     },
     {
       "name": "The Post and Courier",
       "file": "assets/logos/10.svg",
-      "factor": null,
-      "viewBox": "0 0 3382 406"
+      "factor": 0.867,
+      "ratio": 8.330049261083744
     },
     {
       "name": "Rezi",
       "file": "assets/logos/11.svg",
-      "factor": null,
-      "viewBox": "0 0 51 21"
+      "factor": 0.929,
+      "ratio": 2.4285714285714284
     },
     {
       "name": "Ordinal",
       "file": "assets/logos/12.svg",
-      "factor": null,
-      "viewBox": "0 0 110.09 25.15"
+      "factor": 0.973,
+      "ratio": 4.377335984095428
     }
   ]
 }

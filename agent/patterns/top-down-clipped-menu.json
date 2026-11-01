@@ -3,13 +3,13 @@
   "id": "top-down-clipped-menu",
   "pattern": {
     "id": "top-down-clipped-menu",
-    "title": "从上向下裁切的全屏菜单",
+    "title": "从上向下裁切的菜单",
     "category": "导航与状态",
     "experienceTypes": [
       "page-motion"
     ],
     "summary": "用一个进入方向组织菜单项目。",
-    "mechanism": "全屏面板从顶部向下clip进入，项目按次序交错；关闭反向收束，背景阅读状态随关闭恢复。",
+    "mechanism": "菜单面板从顶部向下裁切进入，项目按次序交错；关闭反向收束，背景阅读状态随关闭恢复。",
     "trigger": "手机打开/关闭菜单",
     "effect": "菜单作为有明确边界的导航场景。",
     "useCases": [
@@ -46,7 +46,7 @@
         "note": "交错项目时间"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「从上向下裁切的全屏菜单」。全屏面板从顶部向下clip进入，项目按次序交错；关闭反向收束，背景阅读状态随关闭恢复。触发：手机打开/关闭菜单。可见结果：菜单作为有明确边界的导航场景。适用任务：精简全屏品牌导航。时长为来源公共模块，源端手机实时未验证，实施时检查快速反向。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责菜单作为有明确边界的导航场景，职责限定在当前区域。组合时时长为来源公共模块，源端手机实时未验证，实施时检查快速反向。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为目标页面实现从上向下裁切的菜单：面板从顶部向下进入，项目按短间隔交错，关闭反向收束。面板高度按实际内容确定，保持 Escape、焦点返回和关闭后的原阅读位置；减少动态直接到达可操作状态。",
     "sources": [
       {
         "caseId": "claude-platform",
@@ -55,6 +55,14 @@
         "evidence": "inferred",
         "referenceUrl": "https://claude.com/",
         "capturedAt": "2026-10-07"
+      },
+      {
+        "caseId": "uiarc-platform",
+        "locator": "entries/cases/uiarc-platform.json#interaction/7",
+        "observation": "手机菜单通过 Radix Dialog 在顶栏下方展开，460ms 向下裁切，条目延迟 90ms 起、40ms 错峰；关闭使用 240ms 反向裁切，背景 320／240ms 淡化与 5px 模糊。Escape 返回触发按钮，Examples 关闭后滚动并聚焦展示区；公告以高度弹簧收起并将焦点交给品牌入口。",
+        "evidence": "observed",
+        "referenceUrl": "https://uiarc.dev/",
+        "capturedAt": "2026-11-01"
       }
     ],
     "sourceFiles": [
@@ -63,7 +71,14 @@
       "demos/cases/claude-platform/journey.js",
       "demos/cases/claude-platform/script.js",
       "demos/cases/claude-platform/style.css",
-      "entries/cases/claude-platform.json"
+      "entries/cases/claude-platform.json",
+      "entries/cases/uiarc-platform.json",
+      "docs/cases/uiarc-platform.md",
+      "demos/cases/uiarc-platform/index.html",
+      "demos/cases/uiarc-platform/app.js",
+      "demos/cases/uiarc-platform/style.css",
+      "demos/cases/uiarc-platform/source/components.tsx",
+      "demos/cases/uiarc-platform/fidelity.md"
     ]
   },
   "sourceCases": [
@@ -74,13 +89,21 @@
         "bundle": "agent/cases/claude-platform.json",
         "demo": "demos/cases/claude-platform/index.html"
       }
+    },
+    {
+      "id": "uiarc-platform",
+      "title": "Arc UI · 组件平台的产品官网",
+      "paths": {
+        "bundle": "agent/cases/uiarc-platform.json",
+        "demo": "demos/cases/uiarc-platform/index.html"
+      }
     }
   ],
   "documents": [
     {
       "path": "prompts/patterns/top-down-clipped-menu.md",
       "role": "prompt",
-      "content": "# 从上向下裁切的全屏菜单 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/top-down-clipped-menu.json)\n\n为【目标页面/组件】实现「从上向下裁切的全屏菜单」。全屏面板从顶部向下clip进入，项目按次序交错；关闭反向收束，背景阅读状态随关闭恢复。触发：手机打开/关闭菜单。可见结果：菜单作为有明确边界的导航场景。适用任务：精简全屏品牌导航。时长为来源公共模块，源端手机实时未验证，实施时检查快速反向。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责菜单作为有明确边界的导航场景，职责限定在当前区域。组合时时长为来源公共模块，源端手机实时未验证，实施时检查快速反向。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。\n\n## 制作约束\n\n- 时长为来源公共模块，源端手机实时未验证，实施时检查快速反向。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
+      "content": "# 从上向下裁切的菜单 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/top-down-clipped-menu.json)\n\n为目标页面实现从上向下裁切的菜单：面板从顶部向下进入，项目按短间隔交错，关闭反向收束。面板高度按实际内容确定，保持 Escape、焦点返回和关闭后的原阅读位置；减少动态直接到达可操作状态。\n\n## 制作约束\n\n- 时长为来源公共模块，源端手机实时未验证，实施时检查快速反向。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
     }
   ],
   "files": [
@@ -137,6 +160,506 @@
       "role": "source"
     },
     {
+      "path": "demos/cases/uiarc-platform/app.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets-manifest.json",
+      "role": "context"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/arc-mark.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/ai-chat.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/ai-chat.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/choropleth-explorer.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/choropleth-explorer.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/command-palette.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/command-palette.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/customer-galaxy.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/customer-galaxy.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/date-picker.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/date-picker.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/dialog.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/dialog.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/dropdown-menu.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/dropdown-menu.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/elastic-slider.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/elastic-slider.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/horizon-chart.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/horizon-chart.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/kanban-board.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/kanban-board.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/morph-select.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/morph-select.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/revenue-globe.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/revenue-globe.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/switch.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/switch.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/tabs.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/tabs.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/toast-stack.webm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/clips/toast-stack.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/footer-mark.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/0.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/1.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/10.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/11.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/12.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/2.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/3.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/4.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/5.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/6.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/7.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/8.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/assets/logos/9.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/fidelity.md",
+      "role": "context"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/fonts/6c596dfcddeca1e9-s.p.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/fonts/9ff55a8a9670220d-s.p.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/fonts/Geist-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/fonts/Inter-OFL.txt",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/LICENSES.md",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/arc-MIT-LICENSE.txt",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/build.mjs",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/components.tsx",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/content.json",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/foundation.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/package-lock.json",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/package.json",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/README.md",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-scripts/19483-e4d11383c4facb88.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-scripts/23473-216b40ab39e6c47c.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-scripts/72250-79d591c795014f46.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-scripts/95714-07d7cb0e45d9a488.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/00f047ef6c557b9f.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/0288b3904cc07ec4.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/063c24fc1e24617c.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/13f27d3855b19595.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/1deb81fc96cec2dc.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/2ea2b2731c5ba7bd.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/31bdadfcc9af4fd1.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/44939f48d4440596.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/4ea94117e9b9e540.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/7629db7a71e637c8.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/7b776a5cbbe2b78a.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/7bba85cd9a716746.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/9eedb49febe2cbe3.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/becc961a9b59e177.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/c623e9a67ae414ff.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/dce8d597c26e3056.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/ea73e4e582f921b0.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/source/site-styles/f67fa7d19375a705.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/style.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses.json",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-primitive-1.1.7.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-accordion-1.2.20.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-collapsible-1.1.20.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-collection-1.1.15.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-compose-refs-1.1.5.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-context-1.2.2.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-dialog-1.1.23.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-direction-1.1.4.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-dismissable-layer-1.1.19.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-focus-guards-1.1.6.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-focus-scope-1.1.16.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-id-1.1.4.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-portal-1.1.17.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-presence-1.1.10.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-primitive-2.1.10.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-slot-1.3.3.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-use-callback-ref-1.1.4.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-use-controllable-state-1.2.6.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-use-effect-event-0.0.5.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/@radix-ui-react-use-layout-effect-1.1.4.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/aria-hidden-1.2.6.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/detect-node-es-1.1.0.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/framer-motion-13.5.1.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/get-nonce-1.0.1.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/lucide-react-1.47.0.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/motion-13.4.0.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/motion-dom-13.5.1.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/motion-utils-13.5.0.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/react-19.3.0.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/react-dom-19.3.0.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/react-remove-scroll-2.7.2.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/react-style-singleton-2.2.3.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/scheduler-0.28.0.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/tslib-2.9.1.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/use-callback-ref-1.3.3.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/licenses/use-sidecar-1.1.3.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/runtime.css",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/runtime.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/uiarc-platform/vendor/arc-ui@df3a600/runtime.js.LEGAL.txt",
+      "role": "vendor"
+    },
+    {
       "path": "docs.html",
       "role": "source"
     },
@@ -145,7 +668,15 @@
       "role": "context"
     },
     {
+      "path": "docs/cases/uiarc-platform.md",
+      "role": "context"
+    },
+    {
       "path": "entries/cases/claude-platform.json",
+      "role": "context"
+    },
+    {
+      "path": "entries/cases/uiarc-platform.json",
       "role": "context"
     },
     {
@@ -165,7 +696,23 @@
       "role": "preview"
     },
     {
+      "path": "previews/cases/uiarc-platform-mobile.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/cases/uiarc-platform-reference.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/cases/uiarc-platform.jpg",
+      "role": "preview"
+    },
+    {
       "path": "prompts/cases/claude-platform.md",
+      "role": "context"
+    },
+    {
+      "path": "prompts/cases/uiarc-platform.md",
       "role": "context"
     },
     {

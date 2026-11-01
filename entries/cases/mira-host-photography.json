@@ -4,7 +4,7 @@
   "title": "Mira Høst · 北欧摄影作品集",
   "subtitle": "公开技能仓库中的虚构摄影师示范页",
   "category": "示范作品",
-  "country": "来源未标注",
+  "country": "中国",
   "tags": ["示范作品", "虚构摄影师", "摄影作品集", "编辑排版", "衬线斜体", "暖纸色", "全幅摄影", "悬停预览"],
   "summary": "以全幅摄影、暖纸色与墨色、衬线斜体和编号章节组织虚构摄影师的作品集；保留来源页面的慢速推镜、非对称图组和目录悬停预览。",
   "accent": "#161513",
@@ -71,7 +71,8 @@
       "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-design-engineer/SKILL.md#L175-L182",
       "type": "理论",
       "note": "来源技能讨论视觉层级、对齐、色彩和字体数量，用于理解其设计取向；不视为具体生成过程或本页无障碍实测证据。"
-    }
+    },
+    {"title": "示范源码作者 · 公开所在地", "url": "https://github.com/ConardLi", "type": "创作来源", "note": "固定来源仓库 garden-skills 的作者 ConardLi 在公开资料中标注所在地为北京；地区按实际作者来源标注，Mira Høst 为示范页的虚构角色。"}
   ],
   "prompt": "帮我做一个独立摄影师的个人作品集网站首页。\n\n原始生成提示词，照录自 garden-skills 固定提交 2b9a89340b70f632d31c0f1c69fce94a7912423e 的 skills/web-design-engineer/README.zh-CN.md 第 436 行：https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-design-engineer/README.zh-CN.md#L436",
   "negativePrompt": "以下约束由 Web Atlas 撰写：不改来源设计与原文，不将示范人物、地点履历和图片署名当作真实机构事实，不增补来源没有的详情、后端、音乐或基线，不将源码判断写成浏览器实测。",
