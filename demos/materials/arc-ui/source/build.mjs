@@ -5,15 +5,37 @@ import { fileURLToPath } from 'node:url';
 
 const source = path.dirname(fileURLToPath(import.meta.url));
 const vendor = path.resolve(source, '../vendor/arc-ui@df3a600');
+const registry=JSON.parse(await fs.readFile(path.join(source,'upstream/registry.json'),'utf8'));
+const groups={};
+for(const group of ['actions','inputs','content','charts','text','blocks']){
+  const code=await fs.readFile(path.join(source,`previews/${group}.tsx`),'utf8');
+  const ids=code.match(/export const \w+=\[([^\n]+)\]/)[1].matchAll(/'([^']+)'/g);
+  for(const [,id] of ids)groups[id]=group;
+}
+const navigation=JSON.parse(await fs.readFile(path.join(source,'navigation.json'),'utf8'));
+const categories={};
+let order=0;
+for(const section of navigation.sections)for(const category of section.groups)for(const id of category.items)categories[id]={id:category.id,title:category.title,titleZh:category.titleZh,order:order++};
+const catalog=registry.items.filter(item=>['registry:ui','registry:block'].includes(item.type)).map(item=>{
+  const titleZh=navigation.labels[item.name],category=categories[item.name];
+  if(!titleZh||!category)throw Error(`Missing translation or category: ${item.name}`);
+  return {id:item.name,title:item.title,titleZh,category,kind:item.type==='registry:block'?'block':'component',group:groups[item.name],url:item.docs.match(/https:\/\/[^\s]+/)[0],files:item.files.map(file=>file.path)};
+}).sort((a,b)=>a.category.order-b.category.order);
+await fs.writeFile(path.resolve(source,'../demo/catalog.json'),`${JSON.stringify({sections:navigation.sections,items:catalog},null,2)}\n`);
+await fs.mkdir(path.join(vendor,'chunks'),{recursive:true});
+for(const file of await fs.readdir(path.join(vendor,'chunks')))await fs.unlink(path.join(vendor,'chunks',file));
 await build({
   entryPoints: [path.join(source, 'main.tsx')],
-  outfile: path.join(vendor, 'runtime.js'),
+  outdir:vendor,
+  entryNames:'runtime',
+  chunkNames:'chunks/[name]-[hash]',
+  splitting:true,
   bundle: true,
   format: 'esm',
   jsx: 'automatic',
   minify: true,
   target: 'es2022',
-  alias: { '@': path.join(source, 'upstream') },
+  alias: { '@/lib/media':path.join(source,'media.tsx'), '@': path.join(source, 'upstream'), 'next/image':path.join(source,'media.tsx'), 'next/link':path.join(source,'next-link.tsx') },
   legalComments: 'linked'
 });
 const licenses = [];

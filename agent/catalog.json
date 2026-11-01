@@ -3083,7 +3083,7 @@
         "shadcn CLI 与 MCP server 并排给出同一组件库的两个安装入口；原始 CopyButton 复制完整命令，以图标交叉淡化和描线勾号反馈，1900ms 后复位；第三张卡区分免费与 Pro 数量。",
         "价格区的 Pro yearly / Free 使用原始 SegmentedControl 移动选中底板，整块说明、金额、清单和入口通过 AnimatePresence 交接，240ms 透明度、400ms 无回弹弹簧位移；金额使用原始 AnimatedCounter。右侧终身方案保持可见，手机保留年度卡在先。",
         "六项 FAQ 默认展开第一项；使用原始 Accordion 的单开状态、400ms 无回弹高度弹簧、260ms 图标弹簧和 2px 轻模糊，打开另一项收起前项，当前项可再次收起；Radix 管理语义、焦点与折叠后可访问状态。",
-        "手机菜单通过 Radix Dialog 在顶栏下方展开，460ms 向下裁切，条目延迟 90ms 起、40ms 错峰；关闭使用 240ms 反向裁切，背景 320／240ms 淡化与 5px 模糊。Escape 返回触发按钮，Examples 关闭后滚动并聚焦展示区；公告以高度弹簧收起并将焦点交给品牌入口。"
+        "手机菜单通过 Radix Dialog 在顶栏下方展开，460ms 向下裁切，条目延迟 90ms 起、40ms 错峰；关闭使用 240ms 反向裁切，背景 320／240ms 淡化与 5px 模糊。Escape 返回触发按钮，Examples 关闭后滚动并聚焦展示区。"
       ],
       "themeBehavior": {
         "mode": "system-and-manual",

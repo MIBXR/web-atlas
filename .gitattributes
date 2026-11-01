@@ -13,6 +13,8 @@ demos/cases/atlas-sister-sites/source/*.html -text -whitespace
 demos/cases/clawd-on-desk/source/website/** -text -whitespace
 demos/cases/clawd-on-desk/source/*-LICENSE.txt -text -whitespace
 demos/materials/arc-ui/source/upstream/** -text -whitespace
+demos/materials/arc-ui/demo/media/** -text -whitespace
+demos/materials/arc-ui/demo/block-logos/** -text -whitespace
 demos/cases/uiarc-platform/source/site-styles/** -text -whitespace
 demos/cases/uiarc-platform/source/foundation.css -text -whitespace
 demos/cases/uiarc-platform/source/arc-MIT-LICENSE.txt -text -whitespace

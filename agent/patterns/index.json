@@ -10097,7 +10097,7 @@
         {
           "caseId": "uiarc-platform",
           "locator": "entries/cases/uiarc-platform.json#interaction/7",
-          "observation": "手机菜单通过 Radix Dialog 在顶栏下方展开，460ms 向下裁切，条目延迟 90ms 起、40ms 错峰；关闭使用 240ms 反向裁切，背景 320／240ms 淡化与 5px 模糊。Escape 返回触发按钮，Examples 关闭后滚动并聚焦展示区；公告以高度弹簧收起并将焦点交给品牌入口。",
+          "observation": "手机菜单通过 Radix Dialog 在顶栏下方展开，460ms 向下裁切，条目延迟 90ms 起、40ms 错峰；关闭使用 240ms 反向裁切，背景 320／240ms 淡化与 5px 模糊。Escape 返回触发按钮，Examples 关闭后滚动并聚焦展示区。",
           "evidence": "observed",
           "referenceUrl": "https://uiarc.dev/",
           "capturedAt": "2026-11-01"

@@ -50,25 +50,15 @@ template.remove();
 
 function Navigation(){
   const [open,setOpen]=useState(false);
-  const [announcement,setAnnouncement]=useState(true);
   const section=useRef<string|null>(null);
   const reduced=useReducedMotion();
-  return <Dialog.Root open={open} onOpenChange={next=>{setAnnouncement(!!document.querySelector('.announcement'));setOpen(next);}}><Dialog.Trigger asChild><Button variant="ghost" id="menu-trigger" className="icon-button" aria-label={open?'Close navigation':'Open navigation'}><span className="menu-glyph" data-open={open}><svg width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true"><path d="M.75 2.75h16.5"/><path d="M.75 9.25h16.5"/></svg></span></Button></Dialog.Trigger><Dialog.Portal><Dialog.Overlay className="menu-overlay"/><Dialog.Content className="mobile-menu" data-announcement={announcement} aria-describedby={undefined} onCloseAutoFocus={event=>{
+  return <Dialog.Root open={open} onOpenChange={setOpen}><Dialog.Trigger asChild><Button variant="ghost" id="menu-trigger" className="icon-button" aria-label={open?'Close navigation':'Open navigation'}><span className="menu-glyph" data-open={open}><svg width="18" height="12" viewBox="0 0 18 12" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" aria-hidden="true"><path d="M.75 2.75h16.5"/><path d="M.75 9.25h16.5"/></svg></span></Button></Dialog.Trigger><Dialog.Portal><Dialog.Overlay className="menu-overlay"/><Dialog.Content className="mobile-menu" aria-describedby={undefined} onCloseAutoFocus={event=>{
     if(!section.current)return;
     const id=section.current;section.current=null;event.preventDefault();
     requestAnimationFrame(()=>{const target=document.getElementById(id)!;target.scrollIntoView({behavior:reduced?'instant':'smooth',block:'start'});target.setAttribute('tabindex','-1');target.focus({preventScroll:true});});
   }}><div className="menu-top"><Dialog.Title>{menuTitle}</Dialog.Title><Dialog.Close asChild><Button variant="ghost" className="icon-button menu-close" aria-label="Close navigation"><X size={20} aria-hidden="true"/></Button></Dialog.Close></div><nav className="menu-links" aria-label="Mobile navigation">{menuLinks.map((link,index)=><a key={link.href} href={link.href} style={{'--item':index} as CSSProperties} onClick={()=>setOpen(false)}><span><strong>{link.label}</strong><small>{link.detail}</small></span><ArrowUpRight size={20} aria-hidden="true"/></a>)}</nav><a className="star menu-stars" href={menuActions[0].href}><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d={githubMark}/></svg>Star on GitHub<span className="star-count">1.1k</span></a><div className="menu-bottom"><a className="menu-action solid" href={menuActions[1].href} onClick={()=>setOpen(false)}>{menuActions[1].text}</a><a className="menu-action" href={menuActions[2].href} onClick={event=>{event.preventDefault();section.current='showcase';history.pushState(null,'','#showcase');setOpen(false);}}>{menuActions[2].text}</a></div></Dialog.Content></Dialog.Portal></Dialog.Root>;
 }
 createRoot(document.getElementById('menu-root')!).render(<Navigation/>);
-
-document.getElementById('dismiss')!.addEventListener('click',()=>{
-  const announcement=document.querySelector<HTMLElement>('.announcement')!;
-  document.querySelector<HTMLAnchorElement>('.brand')!.focus({preventScroll:true});
-  if(matchMedia('(prefers-reduced-motion: reduce)').matches){announcement.remove();return;}
-  announcement.style.minHeight='0';
-  animate(announcement.querySelector('.announcement-inner')!,{opacity:0,y:-6,filter:'blur(2px)'},{duration:.18,ease:[...motionTokens.ease.standard]});
-  animate(announcement,{height:[announcement.offsetHeight,0],opacity:0},{height:motionTokens.spring.smooth,opacity:{duration:.24,ease:[...motionTokens.ease.standard]}}).then(()=>announcement.remove());
-});
 
 const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
 for(const [index,element] of [document.querySelector<HTMLElement>('.pricing-heading')!,document.querySelector<HTMLElement>('.plans')!].entries()){

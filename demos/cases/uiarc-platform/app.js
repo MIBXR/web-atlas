@@ -1,7 +1,6 @@
 const svg = (paths, className='') => `<svg class="${className}" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">${paths}</svg>`;
 const arrow = svg('<path d="M5 12h14m-7-7 7 7-7 7"/>');
 const arrowUp = svg('<path d="M7 17 17 7M7 7h10v10"/>');
-const close = svg('<path d="m6 6 12 12M6 18 18 6"/>');
 const sun = svg('<circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/>');
 const moon = svg('<path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/>');
 let wordIndex=0;
@@ -11,7 +10,6 @@ document.querySelectorAll('.title-line').forEach(line=>{
 });
 document.querySelectorAll('[data-arrow]').forEach(e=>e.insertAdjacentHTML('beforeend',arrow));
 document.querySelector('.header-cta svg').outerHTML=arrowUp;
-document.querySelector('#dismiss').innerHTML=close;
 const themeButton=document.querySelector('#theme');
 const systemTheme=matchMedia('(prefers-color-scheme: dark)');
 function setTheme(theme){

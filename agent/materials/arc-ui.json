@@ -6,7 +6,7 @@
     "title": "Arc UI · React 动效组件库（免费部分）",
     "type": "component-library",
     "category": "组件与效果",
-    "summary": "以可复制的 React / TypeScript 和 CSS Modules 提供日常控件、图表与完整区块。归档 120 个免费组件、22 个免费区块及共享设计与动效 tokens，八组中文样例运行真实上游代码。",
+    "summary": "归档 120 个免费 React 动效组件和 22 个免费区块；每项提供可操作预览与原始 TypeScript、CSS 代码，保留共享设计和动效 tokens。",
     "tags": [
       "React",
       "TypeScript",
@@ -22,7 +22,7 @@
     "demo": "demos/materials/arc-ui/index.html",
     "preview": "previews/materials/arc-ui.jpg",
     "research": "docs/materials/arc-ui.md",
-    "demoNote": "组件逻辑和 CSS 保留原样；样例界面、中文文案、价格和图表数据为本库编写。只包含公开免费部分。",
+    "demoNote": "142 个免费预览按官网小分类组织为双语目录。外框保留底部目录抽屉、面包屑、快捷搜索、八色外观、四种主题转场、真实手机视口与全屏形变；代码区提供等宽高亮、行号、平滑展开与复制。",
     "install": "复制 source/upstream/ 中的组件与共享 tokens，保持 @/ 路径别名；本地样例已捆绑依赖。重建：进入 source/，运行 npm ci 与 npm run build。",
     "upstream": {
       "repository": "kuratlielia/arc-library",
@@ -35,7 +35,7 @@
       "name": "MIT（免费组件与代码）；SIL OFL 1.1（字体）",
       "url": "https://github.com/kuratlielia/arc-library/blob/df3a600fd9ffca85ec8607438b599a4408ab8562/LICENSE",
       "scope": "免费 registry、lib、类型、文档与安装条目；不包含 Arc Pro 源码。",
-      "notes": "保留上游 MIT、运行依赖许可和 Inter / Geist OFL 原文；网站品牌与 Pro 商业许可不随软件许可转移。"
+      "notes": "保留上游 MIT、运行依赖许可和 Inter / Geist OFL 原文；官网示例媒体的署名与权利见 demo/media/CREDITS.md，品牌标识不随软件许可转移。"
     },
     "useCases": [
       "React 产品中的状态控件和微交互",
@@ -50,14 +50,14 @@
     ],
     "constraints": [
       "固定归档 df3a600 的 144 个 registry 条目：120 个 registry:ui、22 个 registry:block 和 2 个共享基础条目。",
-      "上游要求 React 19、TypeScript 与 Next.js 或 Vite；本地以 React 19.3.0、Motion 13.4.0 和固定锁文件捆绑八组样例。",
+      "上游要求 React 19、TypeScript 与 Next.js 或 Vite；本地使用固定依赖锁，六类预览按需加载。",
       "source/upstream/ 的 registry、lib、types、public/r 与根使用说明保留原始结构和字节，未引入上游的维护检查脚本。",
       "样例数据、状态与操作仅作用于当前页面，不接入账户、支付或持久化服务。",
-      "浏览器实测覆盖本地 Chromium 桌面和手机模拟宽度；上游其余组件可直接从完整源码取材。"
+      "预览覆盖固定快照全部 120 个组件与 22 个区块；每项代码区展示该 registry 条目的全部源文件。"
     ],
     "workflow": [
-      "先从八组样例观察控件状态与动效，确定当前页面所需能力。",
-      "在固定快照 registry.json 与 public/r/<名称>.json 中查看文件和依赖，再复制对应源码。",
+      "按中英文名称搜索，展开官网小分类目录，打开预览操作实际效果。",
+      "切到代码，选择 TypeScript、CSS 或关联文件并复制；依赖关系见固定 registry.json 与 public/r/<名称>.json。",
       "接入 foundation.css 和 motion-tokens，设置 @/ 路径别名，保留组件内部相对结构。",
       "按真实业务替换 props、标签与数据；明暗主题、键盘和减少动态由目标页面一起管理。"
     ],
@@ -92,177 +92,1074 @@
         "url": "https://uiarc.dev/",
         "note": "Inter：_next/static/media/6c596dfcddeca1e9-s.p.woff2；Geist：9ff55a8a9670220d-s.p.woff2。字体原件与 OFL 原文保存在 fonts/。",
         "evidence": "source"
+      },
+      {
+        "title": "官网组件文档交互实现",
+        "url": "https://uiarc.dev/_next/static/chunks/39865-dc562cb1ebef7cfb.js",
+        "note": "目录抽屉、外观设置、主题控制、导航历史和预览外框的公开实现依据；本地外框独立实现。",
+        "evidence": "source"
+      },
+      {
+        "title": "官网主题转场样式",
+        "url": "https://uiarc.dev/_next/static/css/dce8d597c26e3056.css",
+        "note": "reveal 380ms、eclipse 430ms、split 390ms、rise 360ms 与裁切参数的公开依据。",
+        "evidence": "source"
       }
     ],
     "demos": [
       {
-        "id": "buttons",
-        "title": "按钮反馈",
+        "id": "button",
+        "title": "按钮 · Button",
         "component": "Button",
-        "summary": "切换收藏与重置，比较主次与禁用状态。",
-        "entrypoint": "demos/materials/arc-ui/index.html?demo=buttons",
-        "parameters": [
-          {
-            "name": "variant",
-            "value": "primary / secondary / ghost",
-            "note": "上游按钮层级；对应收藏、重置和禁用示例。"
-          }
-        ]
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=button"
       },
       {
-        "id": "morph-select",
-        "title": "形变选择器",
-        "component": "MorphSelect",
-        "summary": "选择四种工作方向，观察触发器和列表的形变。",
-        "entrypoint": "demos/materials/arc-ui/index.html?demo=morph-select",
-        "parameters": [
-          {
-            "name": "items / value",
-            "value": "4 个选项；初始 design",
-            "note": "工作方向为本地演示数据，选择后同步 value。"
-          },
-          {
-            "name": "panelWidth",
-            "value": "272px",
-            "note": "沿用上游默认展开宽度。"
-          }
-        ]
+        "id": "action-swap",
+        "title": "状态切换按钮 · Action swap",
+        "component": "Action swap",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=action-swap"
       },
       {
-        "id": "elastic-slider",
-        "title": "弹性滑块",
-        "component": "ElasticSlider",
-        "summary": "拖动与键盘调节 0–100%，步长 5。",
-        "entrypoint": "demos/materials/arc-ui/index.html?demo=elastic-slider",
-        "parameters": [
-          {
-            "name": "min / max / step",
-            "value": "0 / 100 / 5",
-            "note": "本地样例范围；上游处理拖动、吸附与键盘。"
-          },
-          {
-            "name": "marks",
-            "value": "0、25、50、75、100",
-            "note": "本地提供的离散刻度。"
-          }
-        ]
+        "id": "action-button",
+        "title": "操作按钮 · Action button",
+        "component": "Action button",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=action-button"
       },
       {
-        "id": "tabs",
-        "title": "标签切换",
-        "component": "Tabs",
-        "summary": "切换布局、动效与源码三个内容面板。",
-        "entrypoint": "demos/materials/arc-ui/index.html?demo=tabs",
-        "parameters": [
-          {
-            "name": "defaultValue",
-            "value": "layout",
-            "note": "初始布局面板；其余为 motion、source。"
-          }
-        ]
+        "id": "split-button",
+        "title": "分体按钮 · Split button",
+        "component": "Split button",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=split-button"
       },
       {
-        "id": "billing",
-        "title": "计费周期",
-        "component": "BillingToggle / AnimatedCounter",
-        "summary": "按月／按年更新示例价格与优惠。",
-        "entrypoint": "demos/materials/arc-ui/index.html?demo=billing",
-        "parameters": [
-          {
-            "name": "value",
-            "value": "monthly / yearly",
-            "note": "本地受控周期；示例月价分别为 ¥20 与 ¥16。"
-          }
-        ]
+        "id": "button-group",
+        "title": "按钮组 · Button group",
+        "component": "Button group",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=button-group"
       },
       {
-        "id": "chart",
-        "title": "折线图",
-        "component": "LineChart",
-        "summary": "切换 7／14 天并控制两条系列显隐。",
-        "entrypoint": "demos/materials/arc-ui/index.html?demo=chart",
-        "parameters": [
-          {
-            "name": "data",
-            "value": "7 / 14 天",
-            "note": "本地固定示例序列，不读取外部数据。"
-          },
-          {
-            "name": "series",
-            "value": "本期 / 上期",
-            "note": "复用稳定 key，图例控制系列显隐。"
-          },
-          {
-            "name": "height",
-            "value": "220px",
-            "note": "本地绘图区高度，宽度跟随容器。"
-          }
-        ]
+        "id": "floating-button-group",
+        "title": "悬浮按钮组 · Floating button group",
+        "component": "Floating button group",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=floating-button-group"
+      },
+      {
+        "id": "expanding-button-group",
+        "title": "展开按钮组 · Expanding button group",
+        "component": "Expanding button group",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=expanding-button-group"
+      },
+      {
+        "id": "dropdown-menu",
+        "title": "下拉菜单 · Dropdown menu",
+        "component": "Dropdown menu",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=dropdown-menu"
+      },
+      {
+        "id": "context-menu",
+        "title": "上下文菜单 · Context menu",
+        "component": "Context menu",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=context-menu"
+      },
+      {
+        "id": "copy-button",
+        "title": "复制按钮 · Copy button",
+        "component": "Copy button",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=copy-button"
+      },
+      {
+        "id": "drawer",
+        "title": "抽屉 · Drawer",
+        "component": "Drawer",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=drawer"
+      },
+      {
+        "id": "theme-switch",
+        "title": "主题切换器 · Theme switcher",
+        "component": "Theme switcher",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=theme-switch"
+      },
+      {
+        "id": "theme-switch-eclipse",
+        "title": "月蚀主题切换 · Eclipse",
+        "component": "Eclipse",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=theme-switch-eclipse"
+      },
+      {
+        "id": "theme-switch-split",
+        "title": "分幕主题切换 · Split",
+        "component": "Split",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=theme-switch-split"
+      },
+      {
+        "id": "theme-switch-rise",
+        "title": "上升主题切换 · Rise",
+        "component": "Rise",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=theme-switch-rise"
+      },
+      {
+        "id": "avatar",
+        "title": "头像 · Avatar",
+        "component": "Avatar",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=avatar"
+      },
+      {
+        "id": "avatar-group",
+        "title": "头像组 · Avatar group",
+        "component": "Avatar group",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=avatar-group"
+      },
+      {
+        "id": "input",
+        "title": "文本输入框 · Input",
+        "component": "Input",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=input"
+      },
+      {
+        "id": "textarea",
+        "title": "多行文本框 · Textarea",
+        "component": "Textarea",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=textarea"
+      },
+      {
+        "id": "select",
+        "title": "下拉选择 · Select",
+        "component": "Select",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=select"
+      },
+      {
+        "id": "combobox",
+        "title": "组合选择框 · Combobox",
+        "component": "Combobox",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=combobox"
+      },
+      {
+        "id": "checkbox",
+        "title": "复选框 · Checkbox",
+        "component": "Checkbox",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=checkbox"
+      },
+      {
+        "id": "switch",
+        "title": "开关 · Switch",
+        "component": "Switch",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=switch"
+      },
+      {
+        "id": "multi-select",
+        "title": "多项选择 · Multi-select",
+        "component": "Multi-select",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=multi-select"
+      },
+      {
+        "id": "number-field",
+        "title": "数字输入 · Number field",
+        "component": "Number field",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=number-field"
+      },
+      {
+        "id": "password-field",
+        "title": "密码框 · Password field",
+        "component": "Password field",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=password-field"
+      },
+      {
+        "id": "search-field",
+        "title": "搜索框 · Search field",
+        "component": "Search field",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=search-field"
+      },
+      {
+        "id": "tag-input",
+        "title": "标签输入 · Tag input",
+        "component": "Tag input",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=tag-input"
+      },
+      {
+        "id": "file-dropzone",
+        "title": "文件拖放区 · File dropzone",
+        "component": "File dropzone",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=file-dropzone"
+      },
+      {
+        "id": "radio-group",
+        "title": "单选组 · Radio group",
+        "component": "Radio group",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=radio-group"
+      },
+      {
+        "id": "segmented-control",
+        "title": "分段控件 · Segmented control",
+        "component": "Segmented control",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=segmented-control"
+      },
+      {
+        "id": "calendar",
+        "title": "日历 · Calendar",
+        "component": "Calendar",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=calendar"
+      },
+      {
+        "id": "date-picker",
+        "title": "日期选择 · Date picker",
+        "component": "Date picker",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=date-picker"
+      },
+      {
+        "id": "time-picker",
+        "title": "时间选择 · Time picker",
+        "component": "Time picker",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=time-picker"
+      },
+      {
+        "id": "accordion",
+        "title": "折叠面板 · Accordion",
+        "component": "Accordion",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=accordion"
       },
       {
         "id": "dialog",
-        "title": "对话框",
+        "title": "对话框 · Dialog",
         "component": "Dialog",
-        "summary": "打开、取消、确认与重置当前页面的归档状态。",
-        "entrypoint": "demos/materials/arc-ui/index.html?demo=dialog",
-        "parameters": [
-          {
-            "name": "title / description",
-            "value": "归档确认与影响说明",
-            "note": "中文内容由本地提供，焦点和 Escape 由上游处理。"
-          }
-        ]
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=dialog"
+      },
+      {
+        "id": "popover",
+        "title": "弹出层 · Popover",
+        "component": "Popover",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=popover"
+      },
+      {
+        "id": "tooltip",
+        "title": "提示气泡 · Tooltip",
+        "component": "Tooltip",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=tooltip"
+      },
+      {
+        "id": "tabs",
+        "title": "标签页 · Tabs",
+        "component": "Tabs",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=tabs"
+      },
+      {
+        "id": "expandable-card",
+        "title": "展开卡片 · Expandable card",
+        "component": "Expandable card",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=expandable-card"
+      },
+      {
+        "id": "breadcrumb",
+        "title": "面包屑 · Breadcrumb",
+        "component": "Breadcrumb",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=breadcrumb"
+      },
+      {
+        "id": "alert",
+        "title": "提示信息 · Alert",
+        "component": "Alert",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=alert"
       },
       {
         "id": "toast",
-        "title": "通知堆叠",
-        "component": "ToastStack",
-        "summary": "添加、展开、撤回与清空短通知。",
-        "entrypoint": "demos/materials/arc-ui/index.html?demo=toast",
-        "parameters": [
-          {
-            "name": "contained / position",
-            "value": "true / bottom-center",
-            "note": "将原始通知堆叠限制在样例舞台内。"
-          },
-          {
-            "name": "action",
-            "value": "撤回",
-            "note": "通过上游 update 原位改写通知为已撤回。"
-          }
-        ]
+        "title": "轻提示 · Toast",
+        "component": "Toast",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=toast"
+      },
+      {
+        "id": "rating",
+        "title": "评分 · Rating",
+        "component": "Rating",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=rating"
+      },
+      {
+        "id": "progress",
+        "title": "进度条 · Progress",
+        "component": "Progress",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=progress"
+      },
+      {
+        "id": "skeleton",
+        "title": "骨架屏 · Skeleton",
+        "component": "Skeleton",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=skeleton"
+      },
+      {
+        "id": "badge",
+        "title": "徽标 · Badge",
+        "component": "Badge",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=badge"
+      },
+      {
+        "id": "card",
+        "title": "卡片 · Card",
+        "component": "Card",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=card"
+      },
+      {
+        "id": "metric-card",
+        "title": "指标卡片 · Metric card",
+        "component": "Metric card",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=metric-card"
+      },
+      {
+        "id": "empty-state",
+        "title": "空状态 · Empty state",
+        "component": "Empty state",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=empty-state"
+      },
+      {
+        "id": "tree-view",
+        "title": "树形目录 · Tree view",
+        "component": "Tree view",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=tree-view"
+      },
+      {
+        "id": "pagination",
+        "title": "分页 · Pagination",
+        "component": "Pagination",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=pagination"
+      },
+      {
+        "id": "filter-toolbar",
+        "title": "筛选工具栏 · Filter toolbar",
+        "component": "Filter toolbar",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=filter-toolbar"
+      },
+      {
+        "id": "sortable-data-table",
+        "title": "可排序数据表 · Sortable data table",
+        "component": "Sortable data table",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=sortable-data-table"
+      },
+      {
+        "id": "sparkline",
+        "title": "迷你趋势图 · Sparkline",
+        "component": "Sparkline",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=sparkline"
+      },
+      {
+        "id": "gauge",
+        "title": "仪表盘 · Gauge",
+        "component": "Gauge",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=gauge"
+      },
+      {
+        "id": "animated-counter",
+        "title": "动态计数 · Animated counter",
+        "component": "Animated counter",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=animated-counter"
+      },
+      {
+        "id": "code-block",
+        "title": "代码块 · Code block",
+        "component": "Code block",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=code-block"
+      },
+      {
+        "id": "reorderable-list",
+        "title": "可重排列表 · Reorderable list",
+        "component": "Reorderable list",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=reorderable-list"
+      },
+      {
+        "id": "text-reveal",
+        "title": "文本揭示 · Text reveal",
+        "component": "Text reveal",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=text-reveal"
+      },
+      {
+        "id": "in-view-title",
+        "title": "入屏标题 · In-view title",
+        "component": "In-view title",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=in-view-title"
+      },
+      {
+        "id": "text-morph",
+        "title": "文本形变 · Text morph",
+        "component": "Text morph",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=text-morph"
+      },
+      {
+        "id": "text-shimmer",
+        "title": "流光文字 · Text shimmer",
+        "component": "Text shimmer",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=text-shimmer"
+      },
+      {
+        "id": "hold-to-confirm",
+        "title": "长按确认 · Hold to confirm",
+        "component": "Hold to confirm",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=hold-to-confirm"
+      },
+      {
+        "id": "swipe-actions",
+        "title": "滑动操作 · Swipe actions",
+        "component": "Swipe actions",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=swipe-actions"
+      },
+      {
+        "id": "reactions",
+        "title": "表态反馈 · Reactions",
+        "component": "Reactions",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=reactions"
+      },
+      {
+        "id": "slider",
+        "title": "滑块 · Slider",
+        "component": "Slider",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=slider"
+      },
+      {
+        "id": "elastic-slider",
+        "title": "弹性滑块 · Elastic slider",
+        "component": "Elastic slider",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=elastic-slider"
+      },
+      {
+        "id": "range-histogram-slider",
+        "title": "区间直方图滑块 · Range histogram slider",
+        "component": "Range histogram slider",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=range-histogram-slider"
+      },
+      {
+        "id": "ruler-slider",
+        "title": "刻度滑块 · Ruler slider",
+        "component": "Ruler slider",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=ruler-slider"
+      },
+      {
+        "id": "inline-edit",
+        "title": "行内编辑 · Inline edit",
+        "component": "Inline edit",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=inline-edit"
+      },
+      {
+        "id": "expanding-search",
+        "title": "展开搜索 · Expanding search",
+        "component": "Expanding search",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=expanding-search"
+      },
+      {
+        "id": "chip-group",
+        "title": "标签选项组 · Chip group",
+        "component": "Chip group",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=chip-group"
+      },
+      {
+        "id": "password-strength",
+        "title": "密码强度 · Password strength",
+        "component": "Password strength",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=password-strength"
+      },
+      {
+        "id": "bottom-sheet",
+        "title": "底部面板 · Bottom sheet",
+        "component": "Bottom sheet",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=bottom-sheet"
+      },
+      {
+        "id": "hover-card",
+        "title": "悬停卡片 · Hover card",
+        "component": "Hover card",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=hover-card"
+      },
+      {
+        "id": "resizable-panels",
+        "title": "可调面板 · Resizable panels",
+        "component": "Resizable panels",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=resizable-panels"
+      },
+      {
+        "id": "toast-stack",
+        "title": "堆叠通知 · Toast stack",
+        "component": "Toast stack",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=toast-stack"
+      },
+      {
+        "id": "usage-meter",
+        "title": "用量计量 · Usage meter",
+        "component": "Usage meter",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=usage-meter"
+      },
+      {
+        "id": "onboarding-checklist",
+        "title": "入门清单 · Onboarding checklist",
+        "component": "Onboarding checklist",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=onboarding-checklist"
+      },
+      {
+        "id": "image-compare",
+        "title": "图像对比 · Image compare",
+        "component": "Image compare",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=image-compare"
+      },
+      {
+        "id": "carousel",
+        "title": "轮播 · Carousel",
+        "component": "Carousel",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=carousel"
+      },
+      {
+        "id": "card-stack",
+        "title": "卡片堆 · Card stack",
+        "component": "Card stack",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=card-stack"
+      },
+      {
+        "id": "bar-chart",
+        "title": "柱状图 · Bar chart",
+        "component": "Bar chart",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=bar-chart"
+      },
+      {
+        "id": "activity-heatmap",
+        "title": "活动热力图 · Activity heatmap",
+        "component": "Activity heatmap",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=activity-heatmap"
+      },
+      {
+        "id": "timeline",
+        "title": "时间线 · Timeline",
+        "component": "Timeline",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=timeline"
+      },
+      {
+        "id": "user-menu",
+        "title": "用户菜单 · User menu",
+        "component": "User menu",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=user-menu"
+      },
+      {
+        "id": "stepper",
+        "title": "步骤条 · Stepper",
+        "component": "Stepper",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=stepper"
+      },
+      {
+        "id": "signature-pad",
+        "title": "签名板 · Signature pad",
+        "component": "Signature pad",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=signature-pad"
+      },
+      {
+        "id": "icon-morph",
+        "title": "图标形变 · Icon morph",
+        "component": "Icon morph",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=icon-morph"
+      },
+      {
+        "id": "date-range-picker",
+        "title": "日期区间选择 · Date range picker",
+        "component": "Date range picker",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=date-range-picker"
+      },
+      {
+        "id": "color-picker",
+        "title": "颜色选择 · Color picker",
+        "component": "Color picker",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=color-picker"
+      },
+      {
+        "id": "morph-select",
+        "title": "形变选择器 · Morph select",
+        "component": "Morph select",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=morph-select"
+      },
+      {
+        "id": "line-chart",
+        "title": "折线图 · Line chart",
+        "component": "Line chart",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=line-chart"
+      },
+      {
+        "id": "donut-chart",
+        "title": "环形图 · Donut chart",
+        "component": "Donut chart",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=donut-chart"
+      },
+      {
+        "id": "streamgraph",
+        "title": "流图 · Streamgraph",
+        "component": "Streamgraph",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=streamgraph"
+      },
+      {
+        "id": "brush-chart",
+        "title": "刷选图表 · Brush chart",
+        "component": "Brush chart",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=brush-chart"
+      },
+      {
+        "id": "ridgeline",
+        "title": "山脊图 · Ridgeline",
+        "component": "Ridgeline",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=ridgeline"
+      },
+      {
+        "id": "treemap",
+        "title": "矩形树图 · Treemap",
+        "component": "Treemap",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=treemap"
+      },
+      {
+        "id": "waffle-chart",
+        "title": "华夫图 · Waffle chart",
+        "component": "Waffle chart",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=waffle-chart"
+      },
+      {
+        "id": "slope-chart",
+        "title": "坡度图 · Slope chart",
+        "component": "Slope chart",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=slope-chart"
+      },
+      {
+        "id": "countdown",
+        "title": "倒计时 · Countdown",
+        "component": "Countdown",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=countdown"
+      },
+      {
+        "id": "cookie-consent",
+        "title": "Cookie 同意面板 · Cookie consent",
+        "component": "Cookie consent",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=cookie-consent"
+      },
+      {
+        "id": "announcement-bar",
+        "title": "公告栏 · Announcement bar",
+        "component": "Announcement bar",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=announcement-bar"
+      },
+      {
+        "id": "json-viewer",
+        "title": "JSON 查看器 · JSON viewer",
+        "component": "JSON viewer",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=json-viewer"
+      },
+      {
+        "id": "scrub-input",
+        "title": "拖动数值输入 · Scrub input",
+        "component": "Scrub input",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=scrub-input"
+      },
+      {
+        "id": "tree-table",
+        "title": "树状表格 · Tree table",
+        "component": "Tree table",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=tree-table"
+      },
+      {
+        "id": "phone-input",
+        "title": "电话输入 · Phone input",
+        "component": "Phone input",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=phone-input"
+      },
+      {
+        "id": "money-input",
+        "title": "金额输入 · Money input",
+        "component": "Money input",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=money-input"
+      },
+      {
+        "id": "shortcut-recorder",
+        "title": "快捷键录入 · Shortcut recorder",
+        "component": "Shortcut recorder",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=shortcut-recorder"
+      },
+      {
+        "id": "confirm-morph",
+        "title": "确认形变 · Confirm morph",
+        "component": "Confirm morph",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=confirm-morph"
+      },
+      {
+        "id": "mention-input",
+        "title": "提及输入 · Mention input",
+        "component": "Mention input",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=mention-input"
+      },
+      {
+        "id": "chat-thread",
+        "title": "聊天串 · Chat thread",
+        "component": "Chat thread",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=chat-thread"
+      },
+      {
+        "id": "rich-text-editor",
+        "title": "富文本编辑器 · Rich text editor",
+        "component": "Rich text editor",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=rich-text-editor"
+      },
+      {
+        "id": "billing-toggle",
+        "title": "计费周期切换 · Billing toggle",
+        "component": "Billing toggle",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=billing-toggle"
+      },
+      {
+        "id": "scroll-area",
+        "title": "滚动区域 · Scroll area",
+        "component": "Scroll area",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=scroll-area"
+      },
+      {
+        "id": "radio-cards",
+        "title": "单选卡片 · Radio cards",
+        "component": "Radio cards",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=radio-cards"
+      },
+      {
+        "id": "comment-thread",
+        "title": "评论串 · Comment thread",
+        "component": "Comment thread",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=comment-thread"
+      },
+      {
+        "id": "slot-text",
+        "title": "滚轮文字 · Slot text",
+        "component": "Slot text",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=slot-text"
+      },
+      {
+        "id": "expandable-text",
+        "title": "展开文本 · Expandable text",
+        "component": "Expandable text",
+        "summary": "操作免费组件预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=expandable-text"
+      },
+      {
+        "id": "signup-form",
+        "title": "注册表单 · Sign up form",
+        "component": "Sign up form",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=signup-form"
+      },
+      {
+        "id": "logo-marquee",
+        "title": "标识走马灯 · Logo marquee",
+        "component": "Logo marquee",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=logo-marquee"
+      },
+      {
+        "id": "plan-comparison",
+        "title": "套餐对比 · Plan comparison",
+        "component": "Plan comparison",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=plan-comparison"
+      },
+      {
+        "id": "command-palette",
+        "title": "命令面板 · Command palette",
+        "component": "Command palette",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=command-palette"
+      },
+      {
+        "id": "notification-center",
+        "title": "通知中心 · Notification center",
+        "component": "Notification center",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=notification-center"
+      },
+      {
+        "id": "file-upload",
+        "title": "文件上传 · File upload",
+        "component": "File upload",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=file-upload"
+      },
+      {
+        "id": "otp-input",
+        "title": "验证码输入 · OTP input",
+        "component": "OTP input",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=otp-input"
+      },
+      {
+        "id": "changelog-feed",
+        "title": "更新日志流 · Changelog feed",
+        "component": "Changelog feed",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=changelog-feed"
+      },
+      {
+        "id": "sign-in",
+        "title": "登录表单 · Sign in",
+        "component": "Sign in",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=sign-in"
+      },
+      {
+        "id": "page-header",
+        "title": "页面首部 · Page header",
+        "component": "Page header",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=page-header"
+      },
+      {
+        "id": "empty-states",
+        "title": "空状态集合 · Empty states",
+        "component": "Empty states",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=empty-states"
+      },
+      {
+        "id": "login-centered",
+        "title": "居中登录 · Centered login",
+        "component": "Centered login",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=login-centered"
+      },
+      {
+        "id": "site-header",
+        "title": "站点导航 · Site header",
+        "component": "Site header",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=site-header"
+      },
+      {
+        "id": "site-footer",
+        "title": "站点页脚 · Site footer",
+        "component": "Site footer",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=site-footer"
+      },
+      {
+        "id": "hero-section",
+        "title": "首屏区块 · Hero section",
+        "component": "Hero section",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=hero-section"
+      },
+      {
+        "id": "faq-section",
+        "title": "常见问题 · FAQ section",
+        "component": "FAQ section",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=faq-section"
+      },
+      {
+        "id": "contact-section",
+        "title": "联系区块 · Contact section",
+        "component": "Contact section",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=contact-section"
+      },
+      {
+        "id": "blog-grid",
+        "title": "博客网格 · Blog grid",
+        "component": "Blog grid",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=blog-grid"
+      },
+      {
+        "id": "comparison-table",
+        "title": "对比表格 · Comparison table",
+        "component": "Comparison table",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=comparison-table"
+      },
+      {
+        "id": "stats-band",
+        "title": "统计指标带 · Stats band",
+        "component": "Stats band",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=stats-band"
+      },
+      {
+        "id": "cta-section",
+        "title": "行动号召区块 · CTA section",
+        "component": "CTA section",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=cta-section"
+      },
+      {
+        "id": "newsletter-signup",
+        "title": "邮件订阅 · Newsletter signup",
+        "component": "Newsletter signup",
+        "summary": "操作免费区块预览，并逐文件查看与复制原始源码。",
+        "entrypoint": "demos/materials/arc-ui/index.html?demo=newsletter-signup"
       }
     ],
     "sourceFiles": [
       "demos/materials/arc-ui/source/main.tsx",
       "demos/materials/arc-ui/source/build.mjs",
+      "demos/materials/arc-ui/source/navigation.json",
+      "demos/materials/arc-ui/source/fetch-media.mjs",
+      "demos/materials/arc-ui/source/media.json",
+      "demos/materials/arc-ui/source/media.tsx",
+      "demos/materials/arc-ui/source/next-link.tsx",
       "demos/materials/arc-ui/source/package.json",
       "demos/materials/arc-ui/source/package-lock.json",
+      "demos/materials/arc-ui/source/previews/actions.tsx",
+      "demos/materials/arc-ui/source/previews/inputs.tsx",
+      "demos/materials/arc-ui/source/previews/content.tsx",
+      "demos/materials/arc-ui/source/previews/charts.tsx",
+      "demos/materials/arc-ui/source/previews/text.tsx",
+      "demos/materials/arc-ui/source/previews/blocks.tsx",
       "demos/materials/arc-ui/source/upstream/registry.json",
       "demos/materials/arc-ui/source/upstream/registry/foundation.css",
-      "demos/materials/arc-ui/source/upstream/lib/motion-tokens.ts"
+      "demos/materials/arc-ui/source/upstream/lib/motion-tokens.ts",
+      "demos/materials/arc-ui/fidelity.md",
+      "demos/materials/arc-ui/source/appearance.tsx",
+      "demos/materials/arc-ui/source/catalog-panel.tsx",
+      "demos/materials/arc-ui/source/library-overlays.tsx",
+      "demos/materials/arc-ui/source/preview-stage.tsx",
+      "demos/materials/arc-ui/source/render-preview.tsx",
+      "demos/materials/arc-ui/source/frame.tsx"
     ],
     "accessibility": {
-      "keyboard": "使用上游按钮、listbox、Radix 标签和对话框键盘模型；样例提供中文可见标签，滑块支持方向键/Home/End，通知支持聚焦与关闭。",
-      "reducedMotion": "上游 useReducedMotion 遵循系统设置；样例的手动开关通过 MotionConfig 关闭位移，并关闭本地 CSS 过渡。"
+      "keyboard": "目录支持 Tab／方向键与中英搜索，Ctrl K 聚焦桌面目录，/ 聚焦目录搜索；抽屉与快捷搜索约束焦点，抽屉、搜索和全屏支持 Escape 返回；预览／代码支持方向键及 Home/End。",
+      "reducedMotion": "原组件、主题转场和外框动画遵循系统 prefers-reduced-motion；默认保留完整动效。"
     },
-    "prompt": "在已有 React 页面中使用 Arc UI 免费组件。先读取固定源码、registry 安装条目、中文说明与运行样例，按任务选择 Button、MorphSelect、ElasticSlider、Tabs、BillingToggle、LineChart、Dialog 或 ToastStack。保留上游 TypeScript、CSS Modules、motion tokens 和键盘模型，接入 foundation.css，以语义变量切换明暗与强调色；只修改业务 props、数据和页面组合。保持按钮、输入和标签的可访问名称，尊重系统减少动态。源文件从 source/upstream/ 复制，依赖使用当前项目明确固定的版本，保留 MIT 与各运行依赖、字体许可。官网首页的布局应从独立案例取得，不把官网媒体当作组件实现。"
+    "prompt": "在 React 页面中取用 Arc UI 的免费组件或区块。先从完整目录操作预览，再到代码区读取对应的 TypeScript、CSS 和关联文件，按固定 registry 的依赖关系复制。保留上游组件结构、语义 tokens、动效参数、键盘模型与减少动态分支，只按真实任务调整 props、数据与组合。使用 source/upstream/ 的固定快照和当前项目明确固定的依赖版本，保留代码、运行依赖、字体与媒体的许可署名。官网首页布局从独立案例取得。"
   },
   "documents": [
     {
       "path": "docs/materials/arc-ui.md",
       "role": "research",
-      "content": "# Arc UI · React 动效组件库\n\n[运行样例](../../demos/materials/arc-ui/index.html) · [素材条目](../../entries/materials/arc-ui.json) · [上游原文](../../demos/materials/arc-ui/source/upstream/README.md)\n\n## 选择组件\n\n八组中文样例使用上游真实组件，界面组合与业务数据由本库编写。按钮适合观察按压与结果交接；形变选择器和弹性滑块展示连续的几何反馈；标签页与计费开关展示选中位置和内容如何一起变化；折线图、对话框和通知提供更完整的状态路径。\n\n样例支持明暗主题、四种强调色和手动减少动态。状态只存在于当前页面，可以通过重新进入样例恢复。它们是组件用法展示，官网布局另见 [官网案例](../../cases.html#style/uiarc-platform)。\n\n## 取得源码\n\n`source/upstream/registry/components/` 保存免费组件，`registry/blocks/` 保存免费组合区块，`registry/foundation.css` 和 `lib/motion-tokens.ts` 提供共享视觉与动效参数。完整安装清单在 `registry.json`；每项 `public/r/<名称>.json` 同时列出文件、外部包和组件依赖。\n\n手工接入时，把需要的组件目录及其依赖复制到项目，保持上游目录关系，并将 `@/` 配置为复制后的源码根。导入 `foundation.css`，按目标项目设置字体与语义颜色，再替换组件 props、标签和业务数据。上游 README 还提供 shadcn registry 和 MCP 用法；在线入口的内容会变化，复用本次版本时以归档快照为准。\n\n## 修改与重建样例\n\n中文页面组合和示例数据在 `source/main.tsx`，样例外框在 `demo/demo.css`，组件原文保持不变。进入 `source/` 后运行：\n\n```sh\nnpm ci\nnpm run build\n```\n\n构建使用随条目保存的锁文件，生成 `vendor/arc-ui@df3a600/` 的运行 JavaScript、CSS 与依赖许可。以 HTTP 服务打开本体入口即可使用，无需在查看时安装依赖。\n\n## 在目标页面中使用\n\n优先保留组件的键盘路径、焦点管理和减少动态分支，用目标页面的语义 tokens 统一样式。图表的标签、选择器的可访问名称和通知的动作应表达真实业务。示例价格与收录数量用于观察运动，不是产品信息。\n\n素材范围、固定版本与许可事实见结构化条目；许可原文入口集中在 [LICENSES.md](../../demos/materials/arc-ui/LICENSES.md)。\n"
+      "content": "# Arc UI · React 动效组件库\n\n[运行目录](../../demos/materials/arc-ui/index.html) · [素材条目](../../entries/materials/arc-ui.json) · [对照结果](../../demos/materials/arc-ui/fidelity.md)\n\n## 预览与代码\n\n目录覆盖固定免费快照中的 120 个组件和 22 个区块。目录按官网的小分类分级，名称同时显示中文与英文，可按任一语言搜索；每项可在预览和代码之间切换。代码区使用等宽字体、语法高亮和行号，列出该条目的 TypeScript、CSS 与关联文件，支持逐文件复制。\n\n预览运行真实上游组件，区块优先使用上游自带样例。按钮包含样式、尺寸、图标、加载与结果状态；图表可更新数据，输入与浮层保留键盘操作。外框提供带原生转场的主题切换、八色外观、主题 CSS 复制，以及适应／真实手机视口／全屏预览。手机目录由顶部左侧按钮打开为可拖拽底部抽屉；桌面和手机都显示面包屑。减少动态遵循系统设置。状态仅用于本地演示，官网布局另见 [官网案例](../../cases.html#style/uiarc-platform)。\n\n## 源码与重建\n\n原始组件与区块在 `source/upstream/registry/`，依赖关系在 `registry.json` 和 `public/r/`。目录外框在 `source/main.tsx`，六类预览组合在 `source/previews/`，外框样式在 `demo/demo.css`。复制组件时保留内部目录、共享 tokens 和 `@/` 路径别名。\n\n在本体的 `source/` 中运行：\n\n```sh\nnpm ci\nnpm run build\n```\n\n构建生成目录数据、按需加载的运行文件与依赖许可。以 HTTP 服务打开本体入口即可使用；制作资料见 [source/README.md](../../demos/materials/arc-ui/source/README.md)，许可和媒体署名见 [LICENSES.md](../../demos/materials/arc-ui/LICENSES.md)。\n"
     },
     {
       "path": "prompts/materials/arc-ui.md",
       "role": "prompt",
-      "content": "# Arc UI · React 动效组件库（免费部分） · 复用 Prompt\n\n[结构化条目](../../entries/materials/arc-ui.json)\n\n在已有 React 页面中使用 Arc UI 免费组件。先读取固定源码、registry 安装条目、中文说明与运行样例，按任务选择 Button、MorphSelect、ElasticSlider、Tabs、BillingToggle、LineChart、Dialog 或 ToastStack。保留上游 TypeScript、CSS Modules、motion tokens 和键盘模型，接入 foundation.css，以语义变量切换明暗与强调色；只修改业务 props、数据和页面组合。保持按钮、输入和标签的可访问名称，尊重系统减少动态。源文件从 source/upstream/ 复制，依赖使用当前项目明确固定的版本，保留 MIT 与各运行依赖、字体许可。官网首页的布局应从独立案例取得，不把官网媒体当作组件实现。\n\n## 制作约束\n\n- 固定归档 df3a600 的 144 个 registry 条目：120 个 registry:ui、22 个 registry:block 和 2 个共享基础条目。\n- 上游要求 React 19、TypeScript 与 Next.js 或 Vite；本地以 React 19.3.0、Motion 13.4.0 和固定锁文件捆绑八组样例。\n- source/upstream/ 的 registry、lib、types、public/r 与根使用说明保留原始结构和字节，未引入上游的维护检查脚本。\n- 样例数据、状态与操作仅作用于当前页面，不接入账户、支付或持久化服务。\n- 浏览器实测覆盖本地 Chromium 桌面和手机模拟宽度；上游其余组件可直接从完整源码取材。\n"
+      "content": "# Arc UI · React 动效组件库（免费部分） · 复用 Prompt\n\n[结构化条目](../../entries/materials/arc-ui.json)\n\n在 React 页面中取用 Arc UI 的免费组件或区块。先从完整目录操作预览，再到代码区读取对应的 TypeScript、CSS 和关联文件，按固定 registry 的依赖关系复制。保留上游组件结构、语义 tokens、动效参数、键盘模型与减少动态分支，只按真实任务调整 props、数据与组合。使用 source/upstream/ 的固定快照和当前项目明确固定的依赖版本，保留代码、运行依赖、字体与媒体的许可署名。官网首页布局从独立案例取得。\n\n## 制作约束\n\n- 固定归档 df3a600 的 144 个 registry 条目：120 个 registry:ui、22 个 registry:block 和 2 个共享基础条目。\n- 上游要求 React 19、TypeScript 与 Next.js 或 Vite；本地使用固定依赖锁，六类预览按需加载。\n- source/upstream/ 的 registry、lib、types、public/r 与根使用说明保留原始结构和字节，未引入上游的维护检查脚本。\n- 样例数据、状态与操作仅作用于当前页面，不接入账户、支付或持久化服务。\n- 预览覆盖固定快照全部 120 个组件与 22 个区块；每项代码区展示该 registry 条目的全部源文件。\n"
     },
     {
       "path": "demos/materials/arc-ui/LICENSES.md",
       "role": "license",
-      "content": "# 许可索引\n\n- [Arc 免费源码 MIT](source/upstream/LICENSE)：组件、区块、共享逻辑、设计 tokens 与文档。\n- [运行依赖清单](vendor/arc-ui@df3a600/licenses.json)：React、Motion、Radix 等实际捆绑版本及各自许可原文路径。\n- [Inter · SIL OFL 1.1](fonts/Inter-OFL.txt) 与 [Geist · SIL OFL 1.1](fonts/Geist-OFL.txt)：官网使用的原始字体。\n\nArc Pro 源码不在本素材中。品牌及网站展示媒体不因免费软件的 MIT 许可获得额外授权。\n"
+      "content": "# 许可索引\n\n- [Arc 免费源码 MIT](source/upstream/LICENSE)：组件、区块、共享逻辑、设计 tokens 与文档。\n- [运行依赖清单](vendor/arc-ui@df3a600/licenses.json)：React、Motion、Radix 等实际捆绑版本及各自许可原文路径。\n- [Inter · SIL OFL 1.1](fonts/Inter-OFL.txt) 与 [Geist · SIL OFL 1.1](fonts/Geist-OFL.txt)：官网使用的原始字体。\n- [官方示例媒体署名](demo/media/CREDITS.md)：照片来自 Unsplash，各图作者和原始页面逐项列出；渐变头像及其引擎归属沿用原站署名。品牌标识的权利归各品牌。\n\nArc Pro 源码不在本素材中。品牌及网站展示媒体不因免费软件的 MIT 许可获得额外授权。\n"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/CREDITS.md",
+      "role": "context",
+      "content": "# Shared demo media\n\nEvery file in `photos/` is a photograph from [Unsplash](https://unsplash.com), used under the [Unsplash License](https://unsplash.com/license), resized to 1600 px on the long side at JPEG quality 80. The typed catalog lives in `lib/media.ts`.\n\n## People\n\n`people/` holds seeded gradient avatars, not photos. `scripts/generate-avatars.mjs` writes a 400 px square and an 800 × 1000 portrait (`people/portrait/`) for every person in `lib/media.ts`, using the engine in `lib/gradient-avatar.ts`, a port of the mesh engine from [@outpacelabs/avatars](https://github.com/outpacelabs/avatars) (MIT, Outpace Studios). Run `npm run avatars` after adding a person. The names and roles are fictional sample content.\n\n\n## Photos\n\n| File | Photographer | Source |\n| --- | --- | --- |\n| `photos/lounge-chair.jpg` | Clay Banks | [Unsplash](https://unsplash.com/photos/Y9iAaT2my2I) |\n| `photos/table-lamp.jpg` | Andy Bob | [Unsplash](https://unsplash.com/photos/-Gem15xQAE4) |\n| `photos/linen-throw.jpg` | Maite Oñate | [Unsplash](https://unsplash.com/photos/AXWyDjC_Y3U) |\n| `photos/glass-carafe.jpg` | Elena Golubeva | [Unsplash](https://unsplash.com/photos/tU-7tQgL-eU) |\n| `photos/stoneware-cups.jpg` | Mathilde Langevin | [Unsplash](https://unsplash.com/photos/15vfRBmnpBc) |\n| `photos/stacked-bowls.jpg` | Tom Crew | [Unsplash](https://unsplash.com/photos/uDF1mW7EUwM) |\n| `photos/ceramic-lamp.jpg` | Karolina Grabowska | [Unsplash](https://unsplash.com/photos/ulh3-dLSXjI) |\n| `photos/living-room.jpg` | Collov Home Design | [Unsplash](https://unsplash.com/photos/H-1j_s0dhCw) |\n| `photos/sunroom.jpg` | Clay Banks | [Unsplash](https://unsplash.com/photos/BnDI_MVomAI) |\n| `photos/home-office.jpg` | Collov Home Design | [Unsplash](https://unsplash.com/photos/UUsQk_9bdR8) |\n| `photos/reading-chair.jpg` | Jason Wang | [Unsplash](https://unsplash.com/photos/NxAwryAbtIw) |\n| `photos/bedroom.jpg` | Aleksandra Dementeva | [Unsplash](https://unsplash.com/photos/VotK70bRo0U) |\n| `photos/restaurant.jpg` | Jelezniac Bianca | [Unsplash](https://unsplash.com/photos/3rAXuDp3pVs) |\n| `photos/wine-bar.jpg` | Fenghua | [Unsplash](https://unsplash.com/photos/tvqpWQnfvBo) |\n| `photos/concert-hall.jpg` | Tobias Keller | [Unsplash](https://unsplash.com/photos/2ecH5Lw3zSk) |\n| `photos/curved-facade.jpg` | Kimon Maritz | [Unsplash](https://unsplash.com/photos/mQiZnKwGXW0) |\n| `photos/pool-house.jpg` | Salman Saqib | [Unsplash](https://unsplash.com/photos/z6UAWpQAhXs) |\n| `photos/terracotta-waves.jpg` | Ricardo Gomez Angel | [Unsplash](https://unsplash.com/photos/PzYiCWOHtfU) |\n| `photos/mountain-ridges.jpg` | Sven Pieren | [Unsplash](https://unsplash.com/photos/ibikgDapcp4) |\n| `photos/alpine-lake.jpg` | Alessio Furlan | [Unsplash](https://unsplash.com/photos/Vw3a0HgE7AM) |\n| `photos/coastline.jpg` | Vera Lee Bird | [Unsplash](https://unsplash.com/photos/5g_A3WL_yyU) |\n| `photos/sea-at-dusk.jpg` | Hannah Reding | [Unsplash](https://unsplash.com/photos/RTVJvcyzKWw) |\n| `photos/lisbon-tram.jpg` | Aayush Gupta | [Unsplash](https://unsplash.com/photos/ljhCEaHYWJ8) |\n| `photos/lisbon-bridge.jpg` | Svetlana Gumerova | [Unsplash](https://unsplash.com/photos/gOLCAOuc7iA) |\n| `photos/lisbon-rooftops.jpg` | Tom Byrom | [Unsplash](https://unsplash.com/photos/hgFX7SydvFk) |\n| `photos/salmon-dinner.jpg` | Casey Lee | [Unsplash](https://unsplash.com/photos/awj7sRviVXo) |\n| `photos/chef-plating.jpg` | Urban Gyllström | [Unsplash](https://unsplash.com/photos/MaWMfm-HCqQ) |\n"
+    },
+    {
+      "path": "demos/materials/arc-ui/fidelity.md",
+      "role": "fidelity",
+      "content": "# Arc UI 免费预览与代码 · 对照结果\n\n## 范围与条件\n\n参考 [官网组件目录](https://uiarc.dev/components/button)，免费范围以素材条目固定的 registry 为准：120 个组件、22 个区块。每项提供实际预览与代码；不收录 Pro 实现，也不复制官网的 When to use、Usage 和 API 文档页面。\n\n组件与 CSS 原文保存在 `source/upstream/`，预览组合在 `source/previews/`。区块优先运行上游自带样例，其他预览使用对应原始组件与本地演示数据。外框沿用官网的目录层级、图标标签和代码排版；中文名称为本库译名，英文名称与 API 标识保留。\n\n使用同一 Chromium，在 1440×1000 与 390×844 CSS 视口、DPR 1 下核对。预览图使用浅色；主题过渡与首屏入场完成后，截取页面内容区域，排除滚动条。\n\n## 模块与状态\n\n| 模块 | 原站依据与本地实现 | 验证结果 |\n| --- | --- | --- |\n| 分级目录 | Components／Blocks 之下按官网小分类组织；固定快照的主题变体和表单归入对应类别。 | 31 个小分类、142 个中英名称；目录展开与收起正常。中文搜索“滑块”返回四项。类型由目录承担，没有重复的顶部类型筛选。 |\n| 全量预览 | 六类入口按需加载，运行固定源码。 | 142 个预览入口及各自首个代码文件逐项打开；时间线、博客与区块的媒体使用本地原件。 |\n| 预览／代码 | Eye、CodeXml SVG 图标，底部下划线标记；两个面板保留各自职责。 | 图标、下划线及方向键、Home／End 切换可用。 |\n| 外观与主题 | 八色选择、主题 CSS 复制；顶部 rise 360ms，组件 reveal／eclipse／split／rise 分别为 380／430／390／360ms，同一 cubic-bezier(.22,1,.36,1)。 | 四种真实裁切中间态均已采样并反向返回；快速反向切换接续到最后选择，手机 iframe 主题同步。 |\n| 手机目录抽屉 | 顶部 10px、圆角 22px、高度 100dvh−10px，无回弹平滑弹簧；遮罩 260ms，拖拽超过 110px 或 650px/s 关闭。 | 142 项在抽屉内可选；中文搜索、选中关闭、回焦点、滚动锁定及拖拽收起已实际操作。 |\n| 尺寸与全屏 | 适应与真实 390×844 手机 iframe；容器宽高、20→46px 圆角与图层交接，原参数弹簧；全屏从预览矩形形变到窗口。 | 形变宽高和圆角中间态已采样；全屏 iframe 内 Escape 关闭并返回原按钮，滚动状态恢复。 |\n| 搜索与位置导航 | 顶部命令搜索、目录快捷键、面包屑和相邻条目；选择更新浏览器历史并回顶。 | 中英搜索跳转、浏览器返回、Ctrl K 与 / 目录快捷键通过；手机与桌面均有当前位置。 |\n| 代码排版 | 按官网使用等宽字体链；桌面 12.5px／21.875px，字距 −0.16px；语法配色、行号、文件选择、24 行折叠和弹簧平滑展开。 | pre、code、行号与高亮文本的实际字体一致；六字符关键词宽 40.2625px，与原站一致。TypeScript／CSS 切换、展开与复制反馈通过；复制内容保留原文，不含行号。 |\n| 按钮 | 官网三组样例：样式、图标与尺寸、反馈与状态。 | 两端主按钮均为 125.5×44px；加载状态、完成反馈和 copied 状态已实际对照。 |\n| 选择、图表、浮层 | 原始 MorphSelect、LineChart、Dialog 等组件。 | 选择 Engineering 后标签同步；30 天切换、空状态与恢复可用；对话框 Escape 关闭后焦点返回 Open dialog。 |\n| 手机布局 | 顶部左侧打开底部目录抽屉，右侧提供搜索、外观与主题；两端显示面包屑。 | 390px 视口下页面内容宽 375px，无页面横向溢出；普通外框文字不少于 12px。 |\n| 媒体与主题 | 官方示例照片、头像和标识保留原件，署名见 LICENSES.md；原始头像路径映射到官网提供的 SVG。 | 55 个媒体及署名输入齐备；浅色、深色与强调色使用共享语义变量。系统减少动态由原组件处理。 |\n\n## 实现边界\n\n预览中的业务状态、价格、图表和表单均用于当前页面演示，不连接账户、支付或生产服务。实际交互检查覆盖上表路径及全部入口；真实触屏和其他浏览器不列为本次已验证范围。\n"
     },
     {
       "path": "demos/materials/arc-ui/fonts/Geist-OFL.txt",
@@ -277,7 +1174,7 @@
     {
       "path": "demos/materials/arc-ui/source/README.md",
       "role": "process",
-      "content": "# 样例制作资料\n\n`main.tsx` 组合上游组件，`build.mjs` 捆绑运行文件并收集依赖许可；依赖由 `package.json` 与 `package-lock.json` 固定。\n\n`upstream/` 保存原始组件、区块、共享逻辑、类型、registry 安装条目与使用说明。版本及范围见素材条目。样例只导入实际使用的组件，完整免费源码仍可直接取用。\n\n上游 `lib/media.ts` 引用的 `public/media/` 示例图片未随公开仓库提供。需要这些图片的区块可按文件内的 `/media/people/`、`/media/photos/` 路径从 `https://uiarc.dev` 获取并确认相应权利，或传入自己的图片；本地八组样例不依赖这些图片。\n\n在本目录运行 `npm ci`、`npm run build`，输出到 `../vendor/arc-ui@df3a600/`。使用与修改说明见 [中文文档](../../../../docs/materials/arc-ui.md)。\n"
+      "content": "# 样例制作资料\n\n`upstream/` 保留固定免费源码的原始结构与字节。`main.tsx` 组织导航与源码查看，`catalog-panel.tsx` 提供共用目录，`library-overlays.tsx` 提供抽屉与快捷搜索，`appearance.tsx` 管理完整主题转场和外观；`preview-stage.tsx` 提供尺寸形变与全屏，`frame.tsx` 为真实 390×844 手机视口隔离样例；`previews/` 按按钮、输入、内容、图表、文字与区块组合实际组件。`navigation.json` 保存官网小分类和本库中英名称；`build.mjs` 结合 registry 生成 `demo/catalog.json`，捆绑六类预览并收集运行许可；依赖由 `package.json` 和 `package-lock.json` 固定。\n\n在本目录运行 `npm ci`、`npm run build`，输出到 `../vendor/arc-ui@df3a600/`。查看时无需安装依赖。源码查看器沿用免费 CodeBlock 的词法规则，字体和配色对照官网代码区；行号不参与复制。\n\n## 示例媒体\n\n`media.json` 记录采集的官方媒体路径与依据。`fetch-media.mjs` 读取这份清单，从 `https://uiarc.dev` 下载原始文件到 `demo/media/` 和 `demo/block-logos/`；已有原件随素材保存，常规构建不访问网络。\n\n`media.tsx` 通过上游 ArcProvider 接入本地图片；公开源码声明的头像 JPG 路径映射到官网实际提供的 SVG。`next-link.tsx` 与图片入口为区块中的 Next.js 标签提供本地锚点和图片，组件源码保持原样。\n\n头像的生成依据在上游 `lib/media.ts` 和原站 `demo/media/CREDITS.md`。原站提到的生成脚本与移植引擎未随免费仓库提供；本素材保留已生成的 SVG 和公开输入，没有本地头像生成步骤。照片与品牌标识沿用原件，出处与署名见 [LICENSES.md](../LICENSES.md)。\n"
     },
     {
       "path": "demos/materials/arc-ui/source/upstream/LICENSE",
@@ -292,7 +1189,7 @@
     {
       "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/licenses.json",
       "role": "license",
-      "content": "[\n  {\n    \"name\": \"@radix-ui/primitive\",\n    \"version\": \"1.1.7\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-primitive-1.1.7.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-collection\",\n    \"version\": \"1.1.15\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-collection-1.1.15.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-compose-refs\",\n    \"version\": \"1.1.5\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-compose-refs-1.1.5.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-context\",\n    \"version\": \"1.2.2\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-context-1.2.2.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-dialog\",\n    \"version\": \"1.1.23\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-dialog-1.1.23.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-direction\",\n    \"version\": \"1.1.4\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-direction-1.1.4.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-dismissable-layer\",\n    \"version\": \"1.1.19\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-dismissable-layer-1.1.19.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-focus-guards\",\n    \"version\": \"1.1.6\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-focus-guards-1.1.6.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-focus-scope\",\n    \"version\": \"1.1.16\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-focus-scope-1.1.16.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-id\",\n    \"version\": \"1.1.4\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-id-1.1.4.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-portal\",\n    \"version\": \"1.1.17\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-portal-1.1.17.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-presence\",\n    \"version\": \"1.1.10\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-presence-1.1.10.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-primitive\",\n    \"version\": \"2.1.10\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-primitive-2.1.10.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-roving-focus\",\n    \"version\": \"1.1.19\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-roving-focus-1.1.19.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-slot\",\n    \"version\": \"1.3.3\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-slot-1.3.3.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-tabs\",\n    \"version\": \"1.1.21\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-tabs-1.1.21.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-use-callback-ref\",\n    \"version\": \"1.1.4\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-use-callback-ref-1.1.4.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-use-controllable-state\",\n    \"version\": \"1.2.6\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-use-controllable-state-1.2.6.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-use-effect-event\",\n    \"version\": \"0.0.5\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-use-effect-event-0.0.5.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-use-is-hydrated\",\n    \"version\": \"0.1.3\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-use-is-hydrated-0.1.3.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-use-layout-effect\",\n    \"version\": \"1.1.4\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-use-layout-effect-1.1.4.txt\"\n  },\n  {\n    \"name\": \"aria-hidden\",\n    \"version\": \"1.2.6\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/aria-hidden-1.2.6.txt\"\n  },\n  {\n    \"name\": \"detect-node-es\",\n    \"version\": \"1.1.0\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/detect-node-es-1.1.0.txt\"\n  },\n  {\n    \"name\": \"framer-motion\",\n    \"version\": \"13.5.1\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/framer-motion-13.5.1.txt\"\n  },\n  {\n    \"name\": \"get-nonce\",\n    \"version\": \"1.0.1\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/get-nonce-1.0.1.txt\"\n  },\n  {\n    \"name\": \"lucide-react\",\n    \"version\": \"1.47.0\",\n    \"license\": \"ISC\",\n    \"file\": \"licenses/lucide-react-1.47.0.txt\"\n  },\n  {\n    \"name\": \"motion\",\n    \"version\": \"13.4.0\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/motion-13.4.0.txt\"\n  },\n  {\n    \"name\": \"motion-dom\",\n    \"version\": \"13.5.1\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/motion-dom-13.5.1.txt\"\n  },\n  {\n    \"name\": \"motion-utils\",\n    \"version\": \"13.5.0\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/motion-utils-13.5.0.txt\"\n  },\n  {\n    \"name\": \"react\",\n    \"version\": \"19.3.0\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/react-19.3.0.txt\"\n  },\n  {\n    \"name\": \"react-dom\",\n    \"version\": \"19.3.0\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/react-dom-19.3.0.txt\"\n  },\n  {\n    \"name\": \"react-remove-scroll\",\n    \"version\": \"2.7.2\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/react-remove-scroll-2.7.2.txt\"\n  },\n  {\n    \"name\": \"react-style-singleton\",\n    \"version\": \"2.2.3\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/react-style-singleton-2.2.3.txt\"\n  },\n  {\n    \"name\": \"scheduler\",\n    \"version\": \"0.28.0\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/scheduler-0.28.0.txt\"\n  },\n  {\n    \"name\": \"tslib\",\n    \"version\": \"2.9.1\",\n    \"license\": \"0BSD\",\n    \"file\": \"licenses/tslib-2.9.1.txt\"\n  },\n  {\n    \"name\": \"use-callback-ref\",\n    \"version\": \"1.3.3\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/use-callback-ref-1.3.3.txt\"\n  },\n  {\n    \"name\": \"use-sidecar\",\n    \"version\": \"1.1.3\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/use-sidecar-1.1.3.txt\"\n  }\n]\n"
+      "content": "[\n  {\n    \"name\": \"@floating-ui/core\",\n    \"version\": \"1.8.0\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@floating-ui-core-1.8.0.txt\"\n  },\n  {\n    \"name\": \"@floating-ui/dom\",\n    \"version\": \"1.8.0\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@floating-ui-dom-1.8.0.txt\"\n  },\n  {\n    \"name\": \"@floating-ui/react-dom\",\n    \"version\": \"2.1.9\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@floating-ui-react-dom-2.1.9.txt\"\n  },\n  {\n    \"name\": \"@floating-ui/utils\",\n    \"version\": \"0.2.12\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@floating-ui-utils-0.2.12.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/number\",\n    \"version\": \"1.1.3\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-number-1.1.3.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/primitive\",\n    \"version\": \"1.1.7\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-primitive-1.1.7.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-accordion\",\n    \"version\": \"1.2.20\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-accordion-1.2.20.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-arrow\",\n    \"version\": \"1.1.15\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-arrow-1.1.15.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-checkbox\",\n    \"version\": \"1.3.11\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-checkbox-1.3.11.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-collapsible\",\n    \"version\": \"1.1.20\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-collapsible-1.1.20.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-collection\",\n    \"version\": \"1.1.15\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-collection-1.1.15.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-compose-refs\",\n    \"version\": \"1.1.5\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-compose-refs-1.1.5.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-context\",\n    \"version\": \"1.2.2\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-context-1.2.2.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-dialog\",\n    \"version\": \"1.1.23\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-dialog-1.1.23.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-direction\",\n    \"version\": \"1.1.4\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-direction-1.1.4.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-dismissable-layer\",\n    \"version\": \"1.1.19\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-dismissable-layer-1.1.19.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-dropdown-menu\",\n    \"version\": \"2.1.24\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-dropdown-menu-2.1.24.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-focus-guards\",\n    \"version\": \"1.1.6\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-focus-guards-1.1.6.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-focus-scope\",\n    \"version\": \"1.1.16\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-focus-scope-1.1.16.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-id\",\n    \"version\": \"1.1.4\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-id-1.1.4.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-menu\",\n    \"version\": \"2.1.24\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-menu-2.1.24.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-popover\",\n    \"version\": \"1.1.23\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-popover-1.1.23.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-popper\",\n    \"version\": \"1.3.7\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-popper-1.3.7.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-portal\",\n    \"version\": \"1.1.17\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-portal-1.1.17.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-presence\",\n    \"version\": \"1.1.10\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-presence-1.1.10.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-primitive\",\n    \"version\": \"2.1.10\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-primitive-2.1.10.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-roving-focus\",\n    \"version\": \"1.1.19\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-roving-focus-1.1.19.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-select\",\n    \"version\": \"2.3.7\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-select-2.3.7.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-slot\",\n    \"version\": \"1.3.3\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-slot-1.3.3.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-switch\",\n    \"version\": \"1.3.7\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-switch-1.3.7.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-tabs\",\n    \"version\": \"1.1.21\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-tabs-1.1.21.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-tooltip\",\n    \"version\": \"1.2.16\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-tooltip-1.2.16.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-use-callback-ref\",\n    \"version\": \"1.1.4\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-use-callback-ref-1.1.4.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-use-controllable-state\",\n    \"version\": \"1.2.6\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-use-controllable-state-1.2.6.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-use-effect-event\",\n    \"version\": \"0.0.5\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-use-effect-event-0.0.5.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-use-is-hydrated\",\n    \"version\": \"0.1.3\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-use-is-hydrated-0.1.3.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-use-layout-effect\",\n    \"version\": \"1.1.4\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-use-layout-effect-1.1.4.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-use-previous\",\n    \"version\": \"1.1.4\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-use-previous-1.1.4.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-use-rect\",\n    \"version\": \"1.1.4\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-use-rect-1.1.4.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-use-size\",\n    \"version\": \"1.1.4\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-use-size-1.1.4.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/react-visually-hidden\",\n    \"version\": \"1.2.11\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-react-visually-hidden-1.2.11.txt\"\n  },\n  {\n    \"name\": \"@radix-ui/rect\",\n    \"version\": \"1.1.3\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/@radix-ui-rect-1.1.3.txt\"\n  },\n  {\n    \"name\": \"aria-hidden\",\n    \"version\": \"1.2.6\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/aria-hidden-1.2.6.txt\"\n  },\n  {\n    \"name\": \"detect-node-es\",\n    \"version\": \"1.1.0\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/detect-node-es-1.1.0.txt\"\n  },\n  {\n    \"name\": \"framer-motion\",\n    \"version\": \"13.5.1\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/framer-motion-13.5.1.txt\"\n  },\n  {\n    \"name\": \"get-nonce\",\n    \"version\": \"1.0.1\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/get-nonce-1.0.1.txt\"\n  },\n  {\n    \"name\": \"lucide-react\",\n    \"version\": \"1.47.0\",\n    \"license\": \"ISC\",\n    \"file\": \"licenses/lucide-react-1.47.0.txt\"\n  },\n  {\n    \"name\": \"motion\",\n    \"version\": \"13.4.0\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/motion-13.4.0.txt\"\n  },\n  {\n    \"name\": \"motion-dom\",\n    \"version\": \"13.5.1\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/motion-dom-13.5.1.txt\"\n  },\n  {\n    \"name\": \"motion-utils\",\n    \"version\": \"13.5.0\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/motion-utils-13.5.0.txt\"\n  },\n  {\n    \"name\": \"react\",\n    \"version\": \"19.3.0\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/react-19.3.0.txt\"\n  },\n  {\n    \"name\": \"react-dom\",\n    \"version\": \"19.3.0\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/react-dom-19.3.0.txt\"\n  },\n  {\n    \"name\": \"react-remove-scroll\",\n    \"version\": \"2.7.2\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/react-remove-scroll-2.7.2.txt\"\n  },\n  {\n    \"name\": \"react-style-singleton\",\n    \"version\": \"2.2.3\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/react-style-singleton-2.2.3.txt\"\n  },\n  {\n    \"name\": \"scheduler\",\n    \"version\": \"0.28.0\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/scheduler-0.28.0.txt\"\n  },\n  {\n    \"name\": \"tslib\",\n    \"version\": \"2.9.1\",\n    \"license\": \"0BSD\",\n    \"file\": \"licenses/tslib-2.9.1.txt\"\n  },\n  {\n    \"name\": \"use-callback-ref\",\n    \"version\": \"1.3.3\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/use-callback-ref-1.3.3.txt\"\n  },\n  {\n    \"name\": \"use-sidecar\",\n    \"version\": \"1.1.3\",\n    \"license\": \"MIT\",\n    \"file\": \"licenses/use-sidecar-1.1.3.txt\"\n  }\n]\n"
     }
   ],
   "files": [
@@ -301,7 +1198,235 @@
       "role": "license"
     },
     {
+      "path": "demos/materials/arc-ui/demo/block-logos/figma-color.svg",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/block-logos/figma.svg",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/block-logos/github.svg",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/block-logos/linear.svg",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/block-logos/loom.svg",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/block-logos/notion.svg",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/block-logos/raycast.svg",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/block-logos/slack-color.svg",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/block-logos/slack.svg",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/block-logos/stripe.svg",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/block-logos/vercel.svg",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/catalog.json",
+      "role": "context"
+    },
+    {
       "path": "demos/materials/arc-ui/demo/demo.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/CREDITS.md",
+      "role": "context"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/people/andre-williams.svg",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/people/ava-mitchell.svg",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/people/chloe-nguyen.svg",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/people/daniel-kim.svg",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/people/diane-foster.svg",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/people/emma-collins.svg",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/people/hannah-walsh.svg",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/people/jasmine-brooks.svg",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/people/jordan-reyes.svg",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/people/marcus-johnson.svg",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/people/mateo-alvarez.svg",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/people/nathan-cole.svg",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/people/olivia-bennett.svg",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/people/ryan-sullivan.svg",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/people/sofia-ramirez.svg",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/people/tyler-hayes.svg",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/photos/alpine-lake.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/photos/bedroom.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/photos/ceramic-lamp.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/photos/chef-plating.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/photos/coastline.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/photos/concert-hall.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/photos/curved-facade.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/photos/glass-carafe.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/photos/home-office.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/photos/linen-throw.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/photos/lisbon-bridge.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/photos/lisbon-rooftops.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/photos/lisbon-tram.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/photos/living-room.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/photos/lounge-chair.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/photos/mountain-ridges.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/photos/pool-house.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/photos/reading-chair.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/photos/restaurant.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/photos/salmon-dinner.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/photos/sea-at-dusk.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/photos/stacked-bowls.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/photos/stoneware-cups.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/photos/sunroom.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/photos/table-lamp.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/photos/terracotta-waves.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/arc-ui/demo/media/photos/wine-bar.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/arc-ui/fidelity.md",
       "role": "source"
     },
     {
@@ -329,11 +1454,47 @@
       "role": "process"
     },
     {
+      "path": "demos/materials/arc-ui/source/appearance.tsx",
+      "role": "process"
+    },
+    {
       "path": "demos/materials/arc-ui/source/build.mjs",
       "role": "process"
     },
     {
+      "path": "demos/materials/arc-ui/source/catalog-panel.tsx",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/arc-ui/source/fetch-media.mjs",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/arc-ui/source/frame.tsx",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/arc-ui/source/library-overlays.tsx",
+      "role": "process"
+    },
+    {
       "path": "demos/materials/arc-ui/source/main.tsx",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/arc-ui/source/media.json",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/arc-ui/source/media.tsx",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/arc-ui/source/navigation.json",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/arc-ui/source/next-link.tsx",
       "role": "process"
     },
     {
@@ -342,6 +1503,38 @@
     },
     {
       "path": "demos/materials/arc-ui/source/package.json",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/arc-ui/source/preview-stage.tsx",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/arc-ui/source/previews/actions.tsx",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/arc-ui/source/previews/blocks.tsx",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/arc-ui/source/previews/charts.tsx",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/arc-ui/source/previews/content.tsx",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/arc-ui/source/previews/inputs.tsx",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/arc-ui/source/previews/text.tsx",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/arc-ui/source/render-preview.tsx",
       "role": "process"
     },
     {
@@ -2161,11 +3354,187 @@
       "role": "process"
     },
     {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/chunks/actions-CXVWBBAN.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/chunks/actions-HIL74R2N.css",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/chunks/blocks-HJWQWUGG.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/chunks/blocks-VRHPN5OA.css",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/chunks/charts-BX3IGOWS.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/chunks/charts-Z7GIBFYC.css",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/chunks/chunk-2VIGR3EJ.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/chunks/chunk-2VIGR3EJ.js.LEGAL.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/chunks/chunk-4KLN6K7J.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/chunks/chunk-4KOPK32K.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/chunks/chunk-4KOPK32K.js.LEGAL.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/chunks/chunk-7EMVEFKD.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/chunks/chunk-A2PYKA7E.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/chunks/chunk-BEHIWECX.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/chunks/chunk-DGSOXEN4.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/chunks/chunk-E7VI6XHJ.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/chunks/chunk-E7VI6XHJ.js.LEGAL.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/chunks/chunk-EG4EREO2.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/chunks/chunk-G6FSQ3CT.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/chunks/chunk-ITFQSS3V.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/chunks/chunk-JBQTH7NI.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/chunks/chunk-LTK67L2V.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/chunks/chunk-MYCSSOFQ.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/chunks/chunk-NXGLQNMZ.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/chunks/chunk-OMEZWWIF.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/chunks/chunk-QLIEVIFB.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/chunks/chunk-QMEX2TZP.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/chunks/chunk-WJJ5AA62.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/chunks/chunk-ZVQEJIYE.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/chunks/content-B44ZKY3T.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/chunks/content-VJNAOU3E.css",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/chunks/inputs-DBZJCXTG.css",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/chunks/inputs-RKUKPCKR.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/chunks/text-WT5C4RTQ.css",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/chunks/text-X6DXNLAY.js",
+      "role": "vendor"
+    },
+    {
       "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/licenses.json",
       "role": "license"
     },
     {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/licenses/@floating-ui-core-1.8.0.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/licenses/@floating-ui-dom-1.8.0.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/licenses/@floating-ui-react-dom-2.1.9.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/licenses/@floating-ui-utils-0.2.12.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/licenses/@radix-ui-number-1.1.3.txt",
+      "role": "vendor"
+    },
+    {
       "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/licenses/@radix-ui-primitive-1.1.7.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/licenses/@radix-ui-react-accordion-1.2.20.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/licenses/@radix-ui-react-arrow-1.1.15.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/licenses/@radix-ui-react-checkbox-1.3.11.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/licenses/@radix-ui-react-collapsible-1.1.20.txt",
       "role": "vendor"
     },
     {
@@ -2193,6 +3562,10 @@
       "role": "vendor"
     },
     {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/licenses/@radix-ui-react-dropdown-menu-2.1.24.txt",
+      "role": "vendor"
+    },
+    {
       "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/licenses/@radix-ui-react-focus-guards-1.1.6.txt",
       "role": "vendor"
     },
@@ -2202,6 +3575,18 @@
     },
     {
       "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/licenses/@radix-ui-react-id-1.1.4.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/licenses/@radix-ui-react-menu-2.1.24.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/licenses/@radix-ui-react-popover-1.1.23.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/licenses/@radix-ui-react-popper-1.3.7.txt",
       "role": "vendor"
     },
     {
@@ -2221,11 +3606,23 @@
       "role": "vendor"
     },
     {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/licenses/@radix-ui-react-select-2.3.7.txt",
+      "role": "vendor"
+    },
+    {
       "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/licenses/@radix-ui-react-slot-1.3.3.txt",
       "role": "vendor"
     },
     {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/licenses/@radix-ui-react-switch-1.3.7.txt",
+      "role": "vendor"
+    },
+    {
       "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/licenses/@radix-ui-react-tabs-1.1.21.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/licenses/@radix-ui-react-tooltip-1.2.16.txt",
       "role": "vendor"
     },
     {
@@ -2246,6 +3643,26 @@
     },
     {
       "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/licenses/@radix-ui-react-use-layout-effect-1.1.4.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/licenses/@radix-ui-react-use-previous-1.1.4.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/licenses/@radix-ui-react-use-rect-1.1.4.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/licenses/@radix-ui-react-use-size-1.1.4.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/licenses/@radix-ui-react-visually-hidden-1.2.11.txt",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/arc-ui/vendor/arc-ui@df3a600/licenses/@radix-ui-rect-1.1.3.txt",
       "role": "vendor"
     },
     {
@@ -2344,10 +3761,28 @@
   "sourceFiles": [
     "demos/materials/arc-ui/source/main.tsx",
     "demos/materials/arc-ui/source/build.mjs",
+    "demos/materials/arc-ui/source/navigation.json",
+    "demos/materials/arc-ui/source/fetch-media.mjs",
+    "demos/materials/arc-ui/source/media.json",
+    "demos/materials/arc-ui/source/media.tsx",
+    "demos/materials/arc-ui/source/next-link.tsx",
     "demos/materials/arc-ui/source/package.json",
     "demos/materials/arc-ui/source/package-lock.json",
+    "demos/materials/arc-ui/source/previews/actions.tsx",
+    "demos/materials/arc-ui/source/previews/inputs.tsx",
+    "demos/materials/arc-ui/source/previews/content.tsx",
+    "demos/materials/arc-ui/source/previews/charts.tsx",
+    "demos/materials/arc-ui/source/previews/text.tsx",
+    "demos/materials/arc-ui/source/previews/blocks.tsx",
     "demos/materials/arc-ui/source/upstream/registry.json",
     "demos/materials/arc-ui/source/upstream/registry/foundation.css",
-    "demos/materials/arc-ui/source/upstream/lib/motion-tokens.ts"
+    "demos/materials/arc-ui/source/upstream/lib/motion-tokens.ts",
+    "demos/materials/arc-ui/fidelity.md",
+    "demos/materials/arc-ui/source/appearance.tsx",
+    "demos/materials/arc-ui/source/catalog-panel.tsx",
+    "demos/materials/arc-ui/source/library-overlays.tsx",
+    "demos/materials/arc-ui/source/preview-stage.tsx",
+    "demos/materials/arc-ui/source/render-preview.tsx",
+    "demos/materials/arc-ui/source/frame.tsx"
   ]
 }

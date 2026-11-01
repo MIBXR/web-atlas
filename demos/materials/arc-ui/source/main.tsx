@@ -1,56 +1,163 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { createRoot } from 'react-dom/client';
-import { MotionConfig } from 'motion/react';
-import { Button } from './upstream/registry/components/button/button';
-import { MorphSelect } from './upstream/registry/components/morph-select/morph-select';
-import { ElasticSlider } from './upstream/registry/components/elastic-slider/elastic-slider';
-import { BillingToggle } from './upstream/registry/components/billing-toggle/billing-toggle';
-import { AnimatedCounter } from './upstream/registry/components/animated-counter/animated-counter';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from './upstream/registry/components/tabs/tabs';
-import { Dialog, DialogTrigger, DialogContent, DialogClose } from './upstream/registry/components/dialog/dialog';
-import { LineChart } from './upstream/registry/components/line-chart/line-chart';
-import { ToastStackProvider, ToastStack, useToastStack } from './upstream/registry/components/toast-stack/toast-stack';
+import { AnimatePresence, MotionConfig, motion, useReducedMotion } from 'motion/react';
+import { Search, Menu, X, ExternalLink, Eye, CodeXml, ChevronDown, ChevronRight, ChevronLeft, FileCode2 } from 'lucide-react';
+import { CopyButton } from './upstream/registry/components/copy-button/copy-button';
+import { ThemeSwitch } from './upstream/registry/components/theme-switch/theme-switch';
+import { ArcProvider } from './upstream/lib/arc-provider';
+import { motionTokens } from './upstream/lib/motion-tokens';
+import LocalImage from './media';
+import catalogData from '../demo/catalog.json';
+import { useAppearance, AppearanceControl } from './appearance';
+import { CatalogPanel } from './catalog-panel';
+import { CatalogSheet, GlobalSearch } from './library-overlays';
+import { PreviewStage, PreviewTools, type PreviewMode } from './preview-stage';
+import { RenderPreview } from './render-preview';
+import { PreviewFrame } from './frame';
 
-const samples = [
-  {id:'buttons',title:'按钮反馈',component:'Button',description:'同一按钮在主操作、次操作、禁用与结果状态之间保持位置，标签与图标在原组件内交接。'},
-  {id:'morph-select',title:'形变选择器',component:'MorphSelect',description:'触发器本身长成选项面板；选中标签从列表回到触发器，宽度随内容收束。'},
-  {id:'elastic-slider',title:'弹性滑块',component:'ElasticSlider',description:'拖过端点时轨道产生阻力，松手后回弹；刻度吸附与键盘步进使用同一数值。'},
-  {id:'tabs',title:'标签切换',component:'Tabs',description:'选中底板在标签之间移动，内容根据方向进入；键盘方向键可以切换当前面板。'},
-  {id:'billing',title:'计费周期',component:'BillingToggle / AnimatedCounter',description:'切换计费周期时，底板、优惠标签与价格数字一起更新；业务数值是本地示例。'},
-  {id:'chart',title:'折线图',component:'LineChart',description:'切换时间范围时复用同一条路径，图例控制系列显隐；指针与键盘都能读取数据。'},
-  {id:'dialog',title:'对话框',component:'Dialog',description:'原组件管理浮层、焦点限制、Escape 与关闭后的焦点返回，示例只更新页面内状态。'},
-  {id:'toast',title:'通知堆叠',component:'ToastStack',description:'新通知从底部入场，旧通知缩进后方；悬停或聚焦展开，支持关闭与撤回。'}
-];
+const catalog=catalogData.items;
+type Item=typeof catalog[number];
+const tokenPattern=/\/\*[\s\S]*?\*\/|\/\/[^\n]*|<!--[\s\S]*?-->|`(?:\\.|[^`\\])*`|"(?:\\.|[^"\\])*"|'(?:\\.|[^'\\])*'|\b\d+(?:\.\d+)?\b|\b[A-Za-z_$][\w$-]*\b|[{}[\]();,.<>:=+*/!?|&-]/g;
+const keywordPattern=/^(?:abstract|as|async|await|break|case|catch|class|const|continue|default|delete|do|else|enum|export|extends|finally|for|from|function|get|if|implements|import|in|instanceof|interface|let|new|of|private|protected|public|readonly|return|set|static|switch|throw|try|type|typeof|var|void|while|with|yield|true|false|null|undefined)$/;
 
-function ButtonsDemo(){
-  const [saved,setSaved]=useState(false);
-  return <div className="stack"><div className="row"><Button onClick={()=>setSaved(!saved)}>{saved?'已加入收藏':'加入收藏'}</Button><Button variant="secondary" onClick={()=>setSaved(false)}>重置</Button><Button variant="ghost" disabled>暂无更新</Button></div><p className="status" role="status">{saved?'已收藏这份参考；再次点击可以移除。':'点击按钮，观察按压与文字交接。'}</p></div>;
+function highlightLines(code:string,language:string){
+  const lines:ReactNode[][]=[[]];
+  let cursor=0;
+  function append(text:string,kind?:string){
+    text.split('\n').forEach((part,index)=>{
+      if(index)lines.push([]);
+      const line=lines[lines.length-1];
+      if(part)line.push(kind?<span className={`source-token-${kind}`} key={line.length}>{part}</span>:part);
+    });
+  }
+  for(const match of code.matchAll(tokenPattern)){
+    const value=match[0],index=match.index!;
+    append(code.slice(cursor,index));
+    let kind:string|undefined;
+    if(value.startsWith('//')||value.startsWith('/*')||value.startsWith('<!--'))kind='comment';
+    else if(/^["'`]/.test(value))kind='string';
+    else if(/^\d/.test(value))kind='number';
+    else if(keywordPattern.test(value))kind='keyword';
+    else if(['tsx','jsx','html'].includes(language)&&/<\/?$/.test(code.slice(0,index)))kind='tag';
+    append(value,kind);
+    cursor=index+value.length;
+  }
+  append(code.slice(cursor));
+  return lines;
 }
-function SelectDemo(){
-  const [value,setValue]=useState('design');
-  return <div className="stack"><MorphSelect label="工作方向" value={value} onValueChange={setValue} items={[{value:'design',label:'界面设计',meta:'12 项'},{value:'motion',label:'动态设计',meta:'8 项'},{value:'code',label:'前端实现',meta:'16 项'},{value:'archive',label:'资料整理',meta:'6 项'}]}/><p className="status">当前值：{value}</p></div>;
+
+function CodePane({item}:{item:Item}){
+  const [file,setFile]=useState(item.files[0]);
+  const [code,setCode]=useState('');
+  const [expanded,setExpanded]=useState(false);
+  const pre=useRef<HTMLPreElement>(null);
+  const [sizes,setSizes]=useState({full:0,collapsed:0});
+  const reduced=useReducedMotion();
+  const language=file.split('.').pop()!;
+  const lines=useMemo(()=>highlightLines(code.replace(/\r?\n$/,''),language),[code,language]);
+  useEffect(()=>{
+    const controller=new AbortController();
+    setCode('');
+    fetch(`source/upstream/${file}`,{signal:controller.signal})
+      .then(response=>{if(!response.ok)throw Error(`无法读取源码：${file}`);return response.text();})
+      .then(setCode)
+      .catch(error=>{if(error.name!=='AbortError')throw error;});
+    return ()=>controller.abort();
+  },[file]);
+  useLayoutEffect(()=>{const element=pre.current!;const measure=()=>{const style=getComputedStyle(element),full=element.offsetHeight,collapsed=Math.min(full,24*parseFloat(style.lineHeight)+parseFloat(style.paddingTop)+parseFloat(style.paddingBottom));setSizes(previous=>previous.full===full&&previous.collapsed===collapsed?previous:{full,collapsed});};measure();const observer=new ResizeObserver(measure);observer.observe(element);return()=>observer.disconnect();},[]);
+  return <div className="code-pane source-block">
+    <header className="source-header">
+      <div className="source-file"><FileCode2 size={16} strokeWidth={1.75}/><div className="source-file-picker">
+        <select aria-label="源文件" value={file} title={file} onChange={event=>{setFile(event.target.value);setExpanded(false);}}>
+          {item.files.map(path=><option key={path} value={path}>{path}</option>)}
+        </select><ChevronDown size={12} aria-hidden="true"/>
+      </div><span className="source-language">{language}</span></div>
+      <CopyButton className="source-copy" value={code} label="复制代码" variant="plain" disabled={!code}/>
+    </header>
+    <motion.div className="source-code-viewport" initial={false} animate={{height:(expanded?sizes.full:sizes.collapsed)||'auto'}} transition={reduced?{duration:0}:motionTokens.spring.smooth}><pre ref={pre} tabIndex={0} aria-label={`${file} 源码`}><code>{code?lines.map((line,index)=><span className="source-line" key={index}><span className="source-line-number" aria-hidden="true">{index+1}</span><span>{line.length?line:' '}</span></span>):<span className="source-loading">正在读取源码…</span>}</code></pre></motion.div>
+    {lines.length>24&&<button className="source-expand" aria-expanded={expanded} onClick={()=>setExpanded(!expanded)}>{expanded?'收起代码':`显示全部 ${lines.length} 行`}<ChevronDown size={14} className={expanded?'is-open':''}/></button>}
+  </div>;
 }
-function SliderDemo(){const [value,setValue]=useState(40);return <div className="stack"><ElasticSlider label="预览强度" value={value} onValueChange={setValue} min={0} max={100} step={5} marks={[0,25,50,75,100]} format={v=>`${v}%`}/><p className="status">拖动滑块或按方向键；Home / End 到达两端。</p></div>;}
-function TabsDemo(){return <Tabs defaultValue="layout"><TabsList aria-label="设计内容"><TabsTrigger value="layout">布局</TabsTrigger><TabsTrigger value="motion">动效</TabsTrigger><TabsTrigger value="source">源码</TabsTrigger></TabsList><TabsContent value="layout"><p className="tab-copy">用稳定的对齐线组织标题、正文与操作。内容变长时，面板按真实高度调整。</p></TabsContent><TabsContent value="motion"><p className="tab-copy">底板与内容共享当前项。快速来回切换时，由组件接续正在进行的动画。</p></TabsContent><TabsContent value="source"><p className="tab-copy">完整免费源码在 source/upstream/，保留原始目录、CSS Modules 与 MIT 许可。</p></TabsContent></Tabs>;}
-function BillingDemo(){const [value,setValue]=useState('monthly');return <><BillingToggle value={value} onValueChange={setValue} label="计费周期" options={[{value:'monthly',label:'按月'},{value:'yearly',label:'按年',badge:'节省 20%',activeBadge:'每年节省 ¥48'}]}/><p className="price"><AnimatedCounter value={value==='monthly'?20:16} prefix="¥"/><small> / 月</small></p><p className="status">本地演示价格，不发生订阅或付款。</p></>;}
-const chartSeries=[{key:'current',label:'本期',color:'var(--accent)'},{key:'previous',label:'上期',dashed:true,color:'var(--text-muted)'}];
-const chartData=(days:number)=>Array.from({length:days},(_,i)=>({key:`day-${i}`,label:`第 ${i+1} 天`,axisLabel:i%Math.max(1,Math.floor(days/5))===0?`${i+1}日`:'',values:{current:[32,48,42,66,58,80,92,74,102,88,122,112,140,128][i%14],previous:[24,30,38,32,48,44,60,58,68,60,80,76,92,88][i%14]}}));
-function ChartDemo(){const [days,setDays]=useState(7);return <div className="stack"><div className="row"><Button variant={days===7?'primary':'secondary'} onClick={()=>setDays(7)}>近 7 天</Button><Button variant={days===14?'primary':'secondary'} onClick={()=>setDays(14)}>近 14 天</Button></div><LineChart data={chartData(days)} series={chartSeries} label="参考收录数量示例" height={220} categoryLabel="日期"/></div>;}
-function DialogDemo(){const [saved,setSaved]=useState(false);return <div className="stack"><Dialog><DialogTrigger asChild><Button>整理资料</Button></DialogTrigger><DialogContent title="归档这份参考？" description="这只会改变当前样例中的状态。"><p>确认后可以用重置按钮恢复。</p><div className="row"><DialogClose asChild><Button variant="secondary">取消</Button></DialogClose><DialogClose asChild><Button onClick={()=>setSaved(true)}>确认归档</Button></DialogClose></div></DialogContent></Dialog><p role="status">{saved?'这份参考已在样例中归档。':'资料仍在待整理列表。'}</p><Button variant="ghost" onClick={()=>setSaved(false)}>重置状态</Button></div>;}
-function ToastDemo(){const {toast,dismiss,update}=useToastStack();return <div className="stack toast-stage"><div className="row"><Button onClick={()=>toast({title:'参考已收藏',description:'可在本次浏览中继续整理。',type:'success',action:{label:'撤回',onClick:id=>update(id,{title:'已撤回收藏',description:undefined,type:'info',action:undefined})}})}>添加通知</Button><Button variant="secondary" onClick={()=>dismiss()}>清空通知</Button></div><p className="status">连续添加几条，再将焦点或指针移到通知上。</p><ToastStack label="操作结果" contained position="bottom-center"/></div>;}
-const views=[ButtonsDemo,SelectDemo,SliderDemo,TabsDemo,BillingDemo,ChartDemo,DialogDemo,ToastDemo];
+
+function ContentHeight({children}:{children:ReactNode}){
+  const content=useRef<HTMLDivElement>(null),reduced=useReducedMotion();
+  const [height,setHeight]=useState<number|'auto'>('auto'),[moving,setMoving]=useState(false),[morphing,setMorphing]=useState(false);
+  useLayoutEffect(()=>{const element=content.current!;const measure=()=>{setMorphing(!!element.querySelector('[data-preview-morph]'));setHeight(element.offsetHeight);};measure();const observer=new ResizeObserver(measure);observer.observe(element);return()=>observer.disconnect();},[]);
+  return <motion.div className="pane-height" initial={false} animate={{height}} transition={reduced||morphing?{duration:0}:motionTokens.spring.smooth} style={{overflow:moving?'clip':'visible'}} onAnimationStart={()=>setMoving(true)} onAnimationComplete={()=>setMoving(false)}><div ref={content} className="pane-height-content">{children}</div></motion.div>;
+}
 
 function App(){
-  const query=new URLSearchParams(location.search).get('demo')||'buttons';
-  const [sample,setSample]=useState(query);
-  const [dark,setDark]=useState(false);
-  const [accent,setAccent]=useState('violet');
-  const [reduced,setReduced]=useState(false);
-  const index=samples.findIndex(item=>item.id===sample);
-  if(index<0) throw new Error(`未知样例：${sample}`);
-  const current=samples[index],View=views[index];
-  useEffect(()=>{document.documentElement.dataset.theme=dark?'dark':'light';document.documentElement.dataset.accent=accent;document.documentElement.dataset.reduced=String(reduced);},[dark,accent,reduced]);
-  function choose(id:string){setSample(id);history.replaceState(null,'',`?demo=${id}`);}
-  return <MotionConfig reducedMotion={reduced?'always':'user'}><ToastStackProvider><header className="topbar"><div className="brand">Arc UI<span>源码组件样例</span></div><div className="settings"><button className="plain-button" onClick={()=>setDark(!dark)}>{dark?'浅色主题':'深色主题'}</button><label>强调色<select value={accent} onChange={e=>setAccent(e.target.value)}><option value="violet">紫色</option><option value="blue">蓝色</option><option value="green">绿色</option><option value="neutral">中性</option></select></label><label><input type="checkbox" checked={reduced} onChange={e=>setReduced(e.target.checked)}/>减少动态</label></div></header><div className="layout"><nav className="samples" aria-label="组件样例"><p>真实组件 · 本地组合</p>{samples.map(item=><a href={`?demo=${item.id}`} key={item.id} aria-current={sample===item.id?'page':undefined} onClick={e=>{e.preventDefault();choose(item.id);}}>{item.title}</a>)}</nav><main><p className="eyebrow">ARC / OPEN SOURCE</p><h1>{current.title}</h1><p className="intro">{current.description}</p><section className="stage" aria-label={current.title} key={sample}><div className="stage-inner"><View/></div></section><aside className="demo-note"><p>使用组件：<code>{current.component}</code></p><p>组件逻辑和样式来自固定提交的免费源码；中文文案、示例数据与这套样例界面由本库编写。</p></aside><footer className="footer"><a href="https://uiarc.dev/" target="_blank" rel="noreferrer">查看官网</a><a href="source/upstream/README.md" target="_blank">上游使用说明</a><a href="LICENSES.md" target="_blank">许可</a></footer></main></div></ToastStackProvider></MotionConfig>;
+  const [selected,setSelected]=useState(()=>new URLSearchParams(location.search).get('demo')||'button');
+  const [query,setQuery]=useState('');
+  const [tab,setTab]=useState('preview');
+  const [catalogOpen,setCatalogOpen]=useState(false),[searchOpen,setSearchOpen]=useState(false);
+  const [mode,setMode]=useState<PreviewMode>('fit'),[warm,setWarm]=useState(false),[fullscreen,setFullscreen]=useState(false);
+  const [collapsed,setCollapsed]=useState<Record<string,boolean>>({block:true});
+  const directoryInput=useRef<HTMLInputElement>(null),mobileDirectoryInput=useRef<HTMLInputElement>(null),menuButton=useRef<HTMLButtonElement>(null),searchButton=useRef<HTMLButtonElement>(null);
+  const {theme,accent,setAccent,changeTheme}=useAppearance();
+  const reduced=useReducedMotion();
+  const current=catalog.find(item=>item.id===selected);
+  if(!current)throw Error(`未知组件：${selected}`);
+  const peers=catalog.filter(item=>item.kind===current.kind),index=peers.findIndex(item=>item.id===selected),previous=peers[index-1],next=peers[index+1];
+  const rootItem=peers[0];
+  const closeCatalog=useCallback(()=>{setCatalogOpen(false);requestAnimationFrame(()=>menuButton.current?.focus({preventScroll:true}));},[]);
+  const dismissCatalog=useCallback(()=>setCatalogOpen(false),[]);
+  const toggle=useCallback((id:string)=>setCollapsed(state=>({...state,[id]:!state[id]})),[]);
+  function choose(id:string){
+    const item=catalog.find(item=>item.id===id)!;
+    setSelected(id);setTab('preview');setMode('fit');setWarm(false);setFullscreen(false);
+    setCollapsed(state=>({...state,[item.kind]:false,[item.category.id]:false}));
+    if(catalogOpen){setQuery('');closeCatalog();}
+    if(searchOpen){setQuery('');setSearchOpen(false);}
+    history.pushState(null,'',`?demo=${encodeURIComponent(id)}`);
+    window.scrollTo({top:0,behavior:'instant'});
+  }
+  useEffect(()=>{const back=()=>{const id=new URLSearchParams(location.search).get('demo')||'button',item=catalog.find(item=>item.id===id)!;setSelected(id);setTab('preview');setMode('fit');setWarm(false);setFullscreen(false);setCollapsed(state=>({...state,[item.kind]:false,[item.category.id]:false}));window.scrollTo({top:0,behavior:'instant'});};addEventListener('popstate',back);return()=>removeEventListener('popstate',back);},[]);
+  useEffect(()=>{
+    const key=(event:KeyboardEvent)=>{
+      if(event.defaultPrevented||searchOpen||fullscreen)return;
+      const editing=(event.target as Element)?.closest('input,textarea,select,[contenteditable="true"]');
+      if((event.ctrlKey||event.metaKey)&&event.key.toLowerCase()==='k'&&innerWidth>760){event.preventDefault();directoryInput.current?.focus();directoryInput.current?.select();}
+      else if(event.key==='/'&&!editing&&!event.metaKey&&!event.ctrlKey&&!event.altKey){event.preventDefault();if(innerWidth<=760){setCatalogOpen(true);requestAnimationFrame(()=>mobileDirectoryInput.current?.focus());}else directoryInput.current?.focus();}
+    };
+    window.addEventListener('keydown',key,{capture:true});return()=>window.removeEventListener('keydown',key,{capture:true});
+  },[searchOpen,fullscreen]);
+  useEffect(()=>{
+    const message=(event:MessageEvent)=>{if(event.origin!==location.origin||event.data?.type!=='atlas-preview-theme')return;const frame=[...document.querySelectorAll<HTMLIFrameElement>('iframe[data-arc-frame]')].find(frame=>frame.contentWindow===event.source);if(frame)changeTheme(event.data.theme,event.data.variant,frame);};
+    window.addEventListener('message',message);return()=>window.removeEventListener('message',message);
+  },[changeTheme]);
+  const panelProps={selected,query,onQuery:setQuery,collapsed,onToggle:toggle,onChoose:choose};
+  const paneMotion=reduced?{initial:false,animate:{opacity:1},exit:{opacity:0},transition:{duration:0}}:{initial:{opacity:0,y:6},animate:{opacity:1,y:0,transition:{opacity:{duration:.24,ease:[...motionTokens.ease.enter]},y:motionTokens.spring.smooth}},exit:{opacity:0,transition:{duration:motionTokens.duration.instant,ease:[...motionTokens.ease.standard]}}};
+  return <MotionConfig reducedMotion="user"><ArcProvider image={LocalImage}>
+    <header className="topbar">
+      <div className="topbar-brand-group"><button ref={menuButton} className="toolbar-icon mobile-library-trigger" aria-label={catalogOpen?'关闭组件目录':'打开组件目录'} aria-expanded={catalogOpen} aria-controls="mobile-library-navigation" onClick={()=>setCatalogOpen(open=>!open)}>{catalogOpen?<X size={19}/>:<Menu size={19}/>}</button>
+        <a className="brand" href="https://uiarc.dev/" target="_blank" rel="noreferrer" inert={catalogOpen||fullscreen}><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" strokeWidth="5.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><path d="M9 48V29C9 15 19 7 32 7s23 8 23 22v19"/><path d="M20 48V31c0-8 5-13 12-13s12 5 12 13v17"/><path d="M32 38v10"/></svg>Arc<span>免费组件与区块</span></a>
+      </div>
+      <div className="topbar-tools" inert={catalogOpen||fullscreen}><button ref={searchButton} className="toolbar-icon global-search-trigger" aria-label="搜索组件" onClick={()=>setSearchOpen(true)}><Search size={16} strokeWidth={1.8}/><span>搜索</span><kbd>Ctrl K</kbd></button><div className="appearance-group"><AppearanceControl theme={theme} accent={accent} onAccent={setAccent} onTheme={changeTheme}/><span className="toolbar-theme"><ThemeSwitch theme={theme} variant="rise" iconOnly onThemeChange={changeTheme} label={theme==='light'?'切换深色主题':'切换浅色主题'}/></span></div></div>
+    </header>
+    <div className="gallery-layout" inert={catalogOpen||fullscreen}>
+      <aside className="catalog"><CatalogPanel {...panelProps} inputRef={directoryInput}/></aside>
+      <main className="gallery-main" id="component-detail">
+        <nav className="component-breadcrumb" aria-label="面包屑"><a href={`?demo=${rootItem.id}`} onClick={event=>{event.preventDefault();choose(rootItem.id);}}>{current.kind==='block'?'区块':'组件'} <span lang="en">{current.kind==='block'?'Blocks':'Components'}</span></a><ChevronRight size={13} aria-hidden="true"/><span aria-current="page">{current.titleZh} <span lang="en">{current.title}</span></span></nav>
+        <div className="component-heading"><h1>{current.titleZh}<small lang="en">{current.title}</small></h1><a className="source-link" href={current.url} target="_blank" rel="noreferrer">官网示例<ExternalLink size={14}/></a></div>
+        <section className="example-panel">
+          <div className="panel-toolbar">
+            <div className="pane-tabs" role="tablist" aria-label="预览与源码" onKeyDown={event=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();const next=event.key==='Home'?'preview':event.key==='End'?'code':tab==='preview'?'code':'preview';setTab(next);document.getElementById(`${next}-tab`)!.focus();}}>
+              <button id="preview-tab" role="tab" tabIndex={tab==='preview'?0:-1} aria-selected={tab==='preview'} aria-controls="preview-panel" onClick={()=>setTab('preview')}><span><Eye size={14} strokeWidth={1.8}/>预览 <span className="tab-english">Preview</span></span>{tab==='preview'&&<motion.i className="tab-underline" layoutId="preview-code-indicator" transition={motionTokens.spring.snappy}/>}</button>
+              <button id="code-tab" role="tab" tabIndex={tab==='code'?0:-1} aria-selected={tab==='code'} aria-controls="code-panel" onClick={()=>setTab('code')}><span><CodeXml size={14} strokeWidth={1.8}/>代码 <span className="tab-english">Code</span></span>{tab==='code'&&<motion.i className="tab-underline" layoutId="preview-code-indicator" transition={motionTokens.spring.snappy}/>}</button>
+            </div>
+            {tab==='preview'&&<div className="preview-toolbar-right"><span className="preview-live-hint">可交互 · 支持键盘</span><PreviewTools mode={mode} onMode={setMode} onFullscreen={()=>setFullscreen(true)} onPrime={()=>setWarm(true)}/></div>}
+          </div>
+          <ContentHeight><AnimatePresence initial={false} mode="popLayout">{tab==='preview'?<motion.div key="preview" id="preview-panel" className="preview-panel" role="tabpanel" aria-labelledby="preview-tab" {...paneMotion}><PreviewStage key={selected} mode={mode} warm={warm} src={`index.html?demo=${encodeURIComponent(selected)}&frame=1`} title={`${current.titleZh} · ${current.title}`} fullscreen={fullscreen} onFullscreen={setFullscreen}><div className={`stage-fit-body ${current.kind==='block'?'is-block':''}`}><RenderPreview id={selected} group={current.group} theme={theme} onThemeChange={changeTheme}/></div></PreviewStage></motion.div>:<motion.div key="code" id="code-panel" role="tabpanel" aria-labelledby="code-tab" {...paneMotion}><CodePane item={current} key={selected}/></motion.div>}</AnimatePresence></ContentHeight>
+        </section>
+        <p className="source-note">组件与区块使用固定版本的原始源码。源码区可切换 TypeScript、CSS 及关联文件。</p>
+        <nav className="component-pagination" aria-label="相邻条目">{previous?<a href={`?demo=${previous.id}`} onClick={event=>{event.preventDefault();choose(previous.id);}}><ChevronLeft size={15}/><span><small>上一项</small><span>{previous.titleZh} <span lang="en">{previous.title}</span></span></span></a>:<span/>}{next&&<a href={`?demo=${next.id}`} onClick={event=>{event.preventDefault();choose(next.id);}}><span><small>下一项</small><span>{next.titleZh} <span lang="en">{next.title}</span></span></span><ChevronRight size={15}/></a>}</nav>
+        <footer className="gallery-footer"><a href="source/upstream/README.md" target="_blank">上游使用说明</a><a href="LICENSES.md" target="_blank">许可与署名</a><span>Arc UI · 免费部分</span></footer>
+      </main>
+    </div>
+    <CatalogSheet open={catalogOpen} onClose={closeCatalog} onDismiss={dismissCatalog}><CatalogPanel {...panelProps} inputRef={mobileDirectoryInput} mobile onClose={closeCatalog}/></CatalogSheet>
+    <GlobalSearch open={searchOpen} onOpenChange={setSearchOpen} onChoose={choose} returnFocusRef={searchButton}/>
+  </ArcProvider></MotionConfig>;
 }
-createRoot(document.getElementById('root')!).render(<App/>);
+
+createRoot(document.getElementById('root')!).render(new URLSearchParams(location.search).has('frame')?<PreviewFrame/>:<App/>);

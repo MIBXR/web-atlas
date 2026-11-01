@@ -4,7 +4,7 @@
 
 `site-styles/` 与 `site-scripts/` 保存采集时公开加载的发布产物，用于核对布局、断点、字体和交互参数，不由本地页面加载。官网未提供独立网站工程，本地实现位于上级的 HTML、CSS 和 JavaScript。
 
-`components.tsx` 组合原始 Accordion、SegmentedControl、AnimatedCounter、CopyButton、Button 与 Radix Dialog，负责 FAQ、价格、复制反馈、手机菜单和公告收起。共享源码取自本库 `demos/materials/arc-ui/source/upstream/`，版本由 Arc UI 素材固定。
+`components.tsx` 组合原始 Accordion、SegmentedControl、AnimatedCounter、CopyButton、Button 与 Radix Dialog，负责 FAQ、价格、复制反馈和手机菜单。共享源码取自本库 `demos/materials/arc-ui/source/upstream/`，版本由 Arc UI 素材固定。
 
 重建时保留案例与 Arc UI 素材在仓库中的相对路径，在本目录运行 `npm ci`、`npm run build`；输出为上级 `vendor/arc-ui@df3a600/`。依赖锁与运行许可随本体保存。
 

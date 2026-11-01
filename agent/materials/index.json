@@ -50,7 +50,7 @@
       "title": "Arc UI · React 动效组件库（免费部分）",
       "type": "component-library",
       "category": "组件与效果",
-      "summary": "以可复制的 React / TypeScript 和 CSS Modules 提供日常控件、图表与完整区块。归档 120 个免费组件、22 个免费区块及共享设计与动效 tokens，八组中文样例运行真实上游代码。",
+      "summary": "归档 120 个免费 React 动效组件和 22 个免费区块；每项提供可操作预览与原始 TypeScript、CSS 代码，保留共享设计和动效 tokens。",
       "tags": [
         "React",
         "TypeScript",
@@ -76,10 +76,10 @@
       ],
       "constraints": [
         "固定归档 df3a600 的 144 个 registry 条目：120 个 registry:ui、22 个 registry:block 和 2 个共享基础条目。",
-        "上游要求 React 19、TypeScript 与 Next.js 或 Vite；本地以 React 19.3.0、Motion 13.4.0 和固定锁文件捆绑八组样例。",
+        "上游要求 React 19、TypeScript 与 Next.js 或 Vite；本地使用固定依赖锁，六类预览按需加载。",
         "source/upstream/ 的 registry、lib、types、public/r 与根使用说明保留原始结构和字节，未引入上游的维护检查脚本。",
         "样例数据、状态与操作仅作用于当前页面，不接入账户、支付或持久化服务。",
-        "浏览器实测覆盖本地 Chromium 桌面和手机模拟宽度；上游其余组件可直接从完整源码取材。"
+        "预览覆盖固定快照全部 120 个组件与 22 个区块；每项代码区展示该 registry 条目的全部源文件。"
       ],
       "paths": {
         "bundle": "agent/materials/arc-ui.json",

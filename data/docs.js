@@ -1477,7 +1477,9 @@ window.ATLAS_DOCUMENT_SOURCES = [
       "https://github.com/kuratlielia/arc-library/tree/df3a600fd9ffca85ec8607438b599a4408ab8562",
       "https://uiarc.dev/components/button",
       "https://uiarc.dev/license",
-      "https://uiarc.dev/"
+      "https://uiarc.dev/",
+      "https://uiarc.dev/_next/static/chunks/39865-dc562cb1ebef7cfb.js",
+      "https://uiarc.dev/_next/static/css/dce8d597c26e3056.css"
     ]
   },
   {
