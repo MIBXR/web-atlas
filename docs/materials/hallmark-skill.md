@@ -20,7 +20,7 @@ Hallmark 用规则、材料主题和检查压住模型的默认审美：标题�
 
 用户说 custom 时，从提示词与真实材料中建立该客户的专属方向，入口为 [references/direction.md](../../demos/materials/hallmark-skill/references/direction.md)。
 
-效果图画廊展示 50 个主题的作者配图，每张可打开案例中的对应页面。
+效果图画廊展示 50 个主题的官网桌面截图，每张可打开案例中的对应页面。
 
 ## 图片
 
