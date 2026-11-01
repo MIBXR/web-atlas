@@ -3,6 +3,7 @@
   "id": "product-entrance-film",
   "pattern": {
     "id": "product-entrance-film",
+    "order": 6,
     "title": "真实产品影片建立首屏主角",
     "category": "加载与媒体",
     "experienceTypes": [

@@ -1,5 +1,6 @@
 {
   "id": "shorter-column-sticky",
+  "order": 142,
   "title": "较短一栏吸附的两栏详情",
   "category": "内容组织",
   "experienceTypes": [

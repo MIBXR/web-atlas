@@ -109,7 +109,7 @@ export function loadMaterials({ root = defaultRoot } = {}) {
     }
     for (const relative of [material.demo, material.preview, material.research, ...material.sourceFiles].filter(relative => relative !== undefined)) repositoryFile(root, relative);
     return material;
-  });
+  }).sort((a, b) => a.order - b.order);
 }
 
 export function buildMaterials({ root = defaultRoot, materials, write = true } = {}) {

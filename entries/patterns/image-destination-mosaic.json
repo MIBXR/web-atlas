@@ -1,5 +1,6 @@
 {
   "id": "image-destination-mosaic",
+  "order": 122,
   "title": "多尺度图像目的地目录",
   "category": "内容组织",
   "experienceTypes": [

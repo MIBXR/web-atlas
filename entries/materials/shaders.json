@@ -1,5 +1,6 @@
 {
   "id": "shaders",
+  "order": 1,
   "title": "Shaders · 可调节的 WebGPU 效果",
   "type": "component-library",
   "category": "组件与效果",

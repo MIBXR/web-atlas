@@ -3,6 +3,7 @@
   "id": "footer-aware-back-to-top",
   "pattern": {
     "id": "footer-aware-back-to-top",
+    "order": 102,
     "title": "回顶入口避让页脚",
     "category": "导航与状态",
     "experienceTypes": [

@@ -1,5 +1,6 @@
 {
   "id": "film-overlay",
+  "order": 1,
   "title": "主动观看的独立影片层",
   "category": "加载与媒体",
   "experienceTypes": [

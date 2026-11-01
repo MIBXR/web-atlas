@@ -1,5 +1,6 @@
 {
   "id": "sound-choice-emblem-opening",
+  "order": 33,
   "title": "声音选择与纹章开场同步",
   "category": "加载与媒体",
   "experienceTypes": [

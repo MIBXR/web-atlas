@@ -133,12 +133,12 @@
     "capturedAt": "2026-10-07"
   },
   "patternIds": [
-    "compact-scroll-header",
     "filter-count-feedback",
-    "footer-aware-back-to-top",
-    "institution-overlap-logo",
+    "restrained-signal-color",
     "responsive-art-direction",
-    "restrained-signal-color"
+    "compact-scroll-header",
+    "footer-aware-back-to-top",
+    "institution-overlap-logo"
   ],
   "documents": [
     {

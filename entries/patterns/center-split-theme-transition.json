@@ -1,5 +1,6 @@
 {
   "id": "center-split-theme-transition",
+  "order": 148,
   "title": "从中央向上下展开的新主题",
   "category": "导航与状态",
   "experienceTypes": [

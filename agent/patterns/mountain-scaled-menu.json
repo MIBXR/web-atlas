@@ -3,6 +3,7 @@
   "id": "mountain-scaled-menu",
   "pattern": {
     "id": "mountain-scaled-menu",
+    "order": 105,
     "title": "菜单缩放倾转与背景降强调",
     "category": "导航与状态",
     "experienceTypes": [

@@ -3,6 +3,7 @@
   "id": "live-parameter-readout",
   "pattern": {
     "id": "live-parameter-readout",
+    "order": 53,
     "title": "滑块与带单位读数联动",
     "category": "交互反馈",
     "experienceTypes": [

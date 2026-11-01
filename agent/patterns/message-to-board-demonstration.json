@@ -3,6 +3,7 @@
   "id": "message-to-board-demonstration",
   "pattern": {
     "id": "message-to-board-demonstration",
+    "order": 20,
     "title": "消息到任务板的可重播演示",
     "category": "交互反馈",
     "experienceTypes": [

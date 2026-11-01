@@ -3,6 +3,7 @@
   "id": "continuous-bgm-bridge",
   "pattern": {
     "id": "continuous-bgm-bridge",
+    "order": 30,
     "title": "跨章节连续的环境声音",
     "category": "加载与媒体",
     "experienceTypes": [

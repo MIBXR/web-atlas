@@ -1,5 +1,6 @@
 {
   "id": "layered-navigation-drawer",
+  "order": 114,
   "title": "导航容器先行、内容后入",
   "category": "导航与状态",
   "experienceTypes": [

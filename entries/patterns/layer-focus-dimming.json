@@ -1,5 +1,6 @@
 {
   "id": "layer-focus-dimming",
+  "order": 47,
   "title": "聚焦一层并减弱其余层",
   "category": "交互反馈",
   "experienceTypes": [

@@ -3,6 +3,7 @@
   "id": "hover-focus-mode-selection",
   "pattern": {
     "id": "hover-focus-mode-selection",
+    "order": 67,
     "title": "标题悬停与聚焦选择模式",
     "category": "交互反馈",
     "experienceTypes": [

@@ -3,6 +3,7 @@
   "id": "capability-bento-hierarchy",
   "pattern": {
     "id": "capability-bento-hierarchy",
+    "order": 10,
     "title": "以跨列比例表达能力层次",
     "category": "内容组织",
     "experienceTypes": [

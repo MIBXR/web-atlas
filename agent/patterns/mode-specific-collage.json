@@ -3,6 +3,7 @@
   "id": "mode-specific-collage",
   "pattern": {
     "id": "mode-specific-collage",
+    "order": 70,
     "title": "按模式组织独立拼贴层",
     "category": "视觉构成",
     "experienceTypes": [

@@ -1,5 +1,6 @@
 {
   "id": "vertical-fullscreen-stage",
+  "order": 82,
   "title": "有限章节的垂直整屏舞台",
   "category": "滚动叙事",
   "experienceTypes": [

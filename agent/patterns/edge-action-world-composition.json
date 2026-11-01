@@ -3,6 +3,7 @@
   "id": "edge-action-world-composition",
   "pattern": {
     "id": "edge-action-world-composition",
+    "order": 92,
     "title": "中心世界与边缘行动分工",
     "category": "视觉构成",
     "experienceTypes": [

@@ -3,6 +3,7 @@
   "id": "resource-bound-fullscreen-loading",
   "pattern": {
     "id": "resource-bound-fullscreen-loading",
+    "order": 87,
     "title": "真实资源驱动的全屏载入",
     "category": "加载与媒体",
     "experienceTypes": [

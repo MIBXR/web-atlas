@@ -3,6 +3,7 @@
   "id": "idle-interface-retreat",
   "pattern": {
     "id": "idle-interface-retreat",
+    "order": 31,
     "title": "闲置时控件退隐、操作时恢复",
     "category": "导航与状态",
     "experienceTypes": [

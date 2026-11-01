@@ -1,5 +1,6 @@
 {
   "id": "filter-count-feedback",
+  "order": 56,
   "title": "筛选与结果计数同步",
   "category": "交互反馈",
   "experienceTypes": [

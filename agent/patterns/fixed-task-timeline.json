@@ -3,6 +3,7 @@
   "id": "fixed-task-timeline",
   "pattern": {
     "id": "fixed-task-timeline",
+    "order": 77,
     "title": "固定任务按阶段揭示交付",
     "category": "交互反馈",
     "experienceTypes": [

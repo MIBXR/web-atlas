@@ -1,5 +1,6 @@
 {
   "id": "vertical-card-swap",
+  "order": 73,
   "title": "中央窗口垂直退出与进入",
   "category": "交互反馈",
   "experienceTypes": [

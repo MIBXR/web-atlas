@@ -1,5 +1,6 @@
 {
   "id": "exploded-layer-view",
+  "order": 46,
   "title": "展开图层解释组成",
   "category": "交互反馈",
   "experienceTypes": [

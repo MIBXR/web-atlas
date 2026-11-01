@@ -1,5 +1,6 @@
 {
   "id": "mixed-ratio-archive-columns",
+  "order": 99,
   "title": "等宽栏目保留不同图像比例",
   "category": "内容组织",
   "experienceTypes": [

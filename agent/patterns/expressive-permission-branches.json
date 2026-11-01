@@ -3,6 +3,7 @@
   "id": "expressive-permission-branches",
   "pattern": {
     "id": "expressive-permission-branches",
+    "order": 144,
     "title": "权限选择驱动角色与页面分支",
     "category": "导航与状态",
     "experienceTypes": [

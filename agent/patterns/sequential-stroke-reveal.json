@@ -3,6 +3,7 @@
   "id": "sequential-stroke-reveal",
   "pattern": {
     "id": "sequential-stroke-reveal",
+    "order": 50,
     "title": "按构造顺序描绘线稿",
     "category": "交互反馈",
     "experienceTypes": [

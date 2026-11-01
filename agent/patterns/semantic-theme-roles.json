@@ -3,6 +3,7 @@
   "id": "semantic-theme-roles",
   "pattern": {
     "id": "semantic-theme-roles",
+    "order": 115,
     "title": "语义颜色角色整体切换",
     "category": "视觉构成",
     "experienceTypes": [

@@ -120,15 +120,15 @@
     }
   },
   "patternIds": [
+    "native-horizontal-shelf",
+    "section-color-rhythm",
     "capability-bento-hierarchy",
     "client-logo-marquee",
     "folded-wave-hero",
     "masked-transaction-rotation",
     "metric-explanation-selector",
     "mobile-drilldown-menu",
-    "native-horizontal-shelf",
     "natural-height-mega-menu",
-    "section-color-rhythm",
     "single-open-accordion",
     "viewport-animation-lifecycle"
   ],

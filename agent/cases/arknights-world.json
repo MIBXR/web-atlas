@@ -125,16 +125,16 @@
     }
   },
   "patternIds": [
+    "continuous-bgm-bridge",
+    "last-request-transition",
+    "sound-opt-in",
     "character-stage-coordination",
     "character-voice-ownership",
-    "continuous-bgm-bridge",
     "directional-section-wipe",
-    "last-request-transition",
     "particle-model-reformation",
     "pointer-image-shader-preview",
     "pointer-repulsion-particles",
     "resource-bound-fullscreen-loading",
-    "sound-opt-in",
     "synchronized-rolling-index"
   ],
   "documents": [

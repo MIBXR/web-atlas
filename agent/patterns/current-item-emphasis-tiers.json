@@ -3,6 +3,7 @@
   "id": "current-item-emphasis-tiers",
   "pattern": {
     "id": "current-item-emphasis-tiers",
+    "order": 140,
     "title": "当前项分级强调与中性悬停",
     "category": "导航与状态",
     "experienceTypes": [

@@ -3,6 +3,7 @@
   "id": "sticky-stage-handoff",
   "pattern": {
     "id": "sticky-stage-handoff",
+    "order": 9,
     "title": "同一媒体从主舞台交给说明",
     "category": "滚动叙事",
     "experienceTypes": [

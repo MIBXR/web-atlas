@@ -3,6 +3,7 @@
   "id": "responsive-art-direction",
   "pattern": {
     "id": "responsive-art-direction",
+    "order": 90,
     "title": "桌面与手机使用专门主图",
     "category": "视觉构成",
     "experienceTypes": [

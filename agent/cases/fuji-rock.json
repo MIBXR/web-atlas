@@ -135,14 +135,14 @@
   },
   "patternIds": [
     "centered-loop-gallery",
-    "directional-sticky-navigation",
-    "load-completion-brand-marker",
-    "mountain-scaled-menu",
-    "native-document-reading",
     "offsite-playlist-extension",
-    "permanent-event-metadata",
+    "native-document-reading",
+    "responsive-art-direction",
+    "load-completion-brand-marker",
     "photo-crossfade-cycle",
-    "responsive-art-direction"
+    "directional-sticky-navigation",
+    "mountain-scaled-menu",
+    "permanent-event-metadata"
   ],
   "documents": [
     {

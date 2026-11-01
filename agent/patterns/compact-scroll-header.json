@@ -3,6 +3,7 @@
   "id": "compact-scroll-header",
   "pattern": {
     "id": "compact-scroll-header",
+    "order": 101,
     "title": "跨过品牌区出现紧凑导航",
     "category": "滚动叙事",
     "experienceTypes": [

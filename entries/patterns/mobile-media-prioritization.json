@@ -1,5 +1,6 @@
 {
   "id": "mobile-media-prioritization",
+  "order": 21,
   "title": "按手机信息任务裁减复杂演示",
   "category": "内容组织",
   "experienceTypes": [

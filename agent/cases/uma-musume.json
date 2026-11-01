@@ -134,8 +134,8 @@
     "capturedAt": "2026-10-07"
   },
   "patternIds": [
-    "bounded-panel-track",
     "film-overlay",
+    "bounded-panel-track",
     "inclined-motion-bands",
     "native-document-reading",
     "responsive-art-direction",

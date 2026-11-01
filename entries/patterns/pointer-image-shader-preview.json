@@ -1,5 +1,6 @@
 {
   "id": "pointer-image-shader-preview",
+  "order": 85,
   "title": "术语图像随指针形变预览",
   "category": "交互反馈",
   "experienceTypes": [

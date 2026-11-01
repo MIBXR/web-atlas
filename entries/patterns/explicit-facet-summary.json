@@ -1,5 +1,6 @@
 {
   "id": "explicit-facet-summary",
+  "order": 120,
   "title": "分面条件在列表前显式呈现",
   "category": "导航与状态",
   "experienceTypes": [

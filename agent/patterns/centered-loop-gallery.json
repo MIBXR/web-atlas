@@ -3,6 +3,7 @@
   "id": "centered-loop-gallery",
   "pattern": {
     "id": "centered-loop-gallery",
+    "order": 37,
     "title": "中心图与邻图预告的循环轨道",
     "category": "导航与状态",
     "experienceTypes": [

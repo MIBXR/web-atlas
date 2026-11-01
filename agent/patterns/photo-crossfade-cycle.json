@@ -3,6 +3,7 @@
   "id": "photo-crossfade-cycle",
   "pattern": {
     "id": "photo-crossfade-cycle",
+    "order": 100,
     "title": "给摄影留阅读时间的淡化轮换",
     "category": "加载与媒体",
     "experienceTypes": [

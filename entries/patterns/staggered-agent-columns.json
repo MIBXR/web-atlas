@@ -1,5 +1,6 @@
 {
   "id": "staggered-agent-columns",
+  "order": 23,
   "title": "交错代理状态展示",
   "category": "交互反馈",
   "experienceTypes": [

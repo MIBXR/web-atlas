@@ -3,6 +3,7 @@
   "id": "material-web",
   "material": {
     "id": "material-web",
+    "order": 3,
     "title": "Google Material Web · Material 3 官方组件",
     "type": "component-library",
     "category": "组件与效果",

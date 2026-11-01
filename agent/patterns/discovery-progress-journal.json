@@ -3,6 +3,7 @@
   "id": "discovery-progress-journal",
   "pattern": {
     "id": "discovery-progress-journal",
+    "order": 64,
     "title": "探索进度与可重置手账",
     "category": "导航与状态",
     "experienceTypes": [

@@ -3,6 +3,7 @@
   "id": "department-code-matrix",
   "pattern": {
     "id": "department-code-matrix",
+    "order": 125,
     "title": "机构缩写的中心矩阵",
     "category": "视觉构成",
     "experienceTypes": [

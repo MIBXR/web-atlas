@@ -122,14 +122,14 @@
     }
   },
   "patternIds": [
-    "hover-focus-mode-selection",
+    "native-horizontal-shelf",
+    "sticky-stage-handoff",
     "last-request-transition",
+    "hover-focus-mode-selection",
     "mobile-native-mode-cards",
     "mode-character-accent",
     "mode-specific-collage",
-    "native-horizontal-shelf",
     "scroll-synchronized-rail",
-    "sticky-stage-handoff",
     "system-theme-without-toggle",
     "vertical-card-swap"
   ],
