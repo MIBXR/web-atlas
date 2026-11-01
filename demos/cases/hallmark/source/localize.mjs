@@ -71,7 +71,7 @@ async function download(url) {
 function allocate(directory, url) {
   const key = `${directory}\n${url}`;
   if (destinations.has(key)) return destinations.get(key);
-  const base = decodeURIComponent(new URL(url).pathname.split('/').pop());
+  const base = decodeURIComponent(new URL(url).pathname.split('/').pop()).replace(/[,']/g, '_');
   const extension = path.extname(base);
   const stem = base.slice(0, base.length - extension.length);
   let name = base, count = 1;

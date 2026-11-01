@@ -16,9 +16,15 @@
 .materials-page .material-skill-content{display:block;padding:16px;border:1px solid var(--atlas-surface-line);border-radius:var(--r-lg);background:var(--atlas-surface);box-shadow:none}
 .materials-page .material-skill-content ol{padding-left:24px;margin:0}
 .materials-page .material-skill-content .material-examples{margin:16px 0}
-.materials-page .material-skill-gallery{margin:16px 0}
-.materials-page .material-skill-gallery img{display:block;width:100%;height:auto;border:1px solid var(--atlas-surface-line);border-radius:var(--r)}
-.materials-page .material-skill-gallery figcaption{margin-top:8px;font-size:14px;color:var(--atlas-muted)}
+.materials-page .material-gallery{grid-template-columns:repeat(auto-fill,minmax(min(100%,280px),1fr))}
+.materials-page .material-gallery .material-preview{display:flex;flex-direction:column;gap:12px;min-width:0;margin:0}
+.materials-page .material-preview .card-preview{border-radius:var(--r);border:1px solid var(--atlas-surface-line);background:var(--atlas-surface-2)}
+.materials-page .material-preview:hover .card-preview img{transform:scale(1.035)}
+.materials-page .material-gallery .card-preview img{object-fit:contain}
+.materials-page .material-gallery .card-body{padding:0}
+.materials-page .material-gallery .tag{align-self:flex-start}
+.materials-page .material-gallery .card-summary{display:block;min-height:0;order:0}
+.materials-page .material-credit{font-size:12px;color:var(--atlas-muted);margin:0}
 .materials-page #material-detail .detail-title .tags{align-items:start}
 @media(max-width:650px){.material-examples{grid-template-columns:1fr}.materials-page .demo-toolbar>div{justify-content:flex-start}.materials-page .detail-top{gap:12px;flex-wrap:wrap}}
 .material-examples a:hover{background:var(--accent-4);color:var(--accent-1);border-color:var(--accent-1)}

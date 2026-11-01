@@ -20,6 +20,8 @@ Hallmark 用规则、材料主题和检查压住模型的默认审美：标题�
 
 用户说 custom 时，从提示词与真实材料中建立该客户的专属方向，入口为 [references/direction.md](../../demos/materials/hallmark-skill/references/direction.md)。
 
+效果图画廊展示 50 个主题的作者配图，每张可打开案例中的对应页面。
+
 ## 图片
 
 默认图库在 [scripts/photos.json](../../demos/materials/hallmark-skill/scripts/photos.json)，登记 755 张 Wikimedia Commons 的开放授权照片及其署名；`theme.mjs photos` 按主体和主题选图，成品页面逐图署名。

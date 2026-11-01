@@ -1,5 +1,6 @@
 {
   "id": "one-move-process-panels",
+  "order": 156,
   "title": "每格只演一个动作的流程",
   "category": "内容组织",
   "experienceTypes": [
@@ -18,8 +19,7 @@
     "把解释动画伪装成真实检查结果"
   ],
   "constraints": [
-    "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。",
-    "每格以一个对象和动作解释一个阶段，文本负责该格的含义。"
+    "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
   ],
   "composition": {
     "role": "support",
@@ -37,17 +37,17 @@
     {
       "name": "入场",
       "value": "问题200+i×260ms；发牌350ms",
-      "note": "固定提交源码／首阶段实测：js/how.js play。"
+      "note": "固定提交源码／线上实测：js/how.js play。"
     },
     {
       "name": "修复与线框",
       "value": "修复700+i×380ms；线框周期1900ms",
-      "note": "固定提交源码／首阶段实测：js/how.js play/draw。"
+      "note": "固定提交源码／线上实测：js/how.js play/draw。"
     },
     {
       "name": "重放",
       "value": "收回260ms后重新发出",
-      "note": "固定提交源码／首阶段实测：js/how.js pointerenter。"
+      "note": "固定提交源码／线上实测：js/how.js pointerenter。"
     }
   ],
   "prompt": "为目标页面实现「每格只演一个动作的流程」：每格固定职责，进入视口后按顺序显示问题、发牌与修复；线框在三个预案间循环，发牌格悬停单独重放。触发：流程区进入视口，或指针进入发牌格。结果：读者能将提问、方向、构成和检查逐格对应。参数：入场=问题200+i×260ms；发牌350ms；修复与线框=修复700+i×380ms；线框周期1900ms；重放=收回260ms后重新发出。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；说明文本始终可读，发牌图示旁保留步骤标题。直接显示所有问题和修复结果，线框保持初态。",

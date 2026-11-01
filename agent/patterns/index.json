@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "patternCount": 151,
+  "patternCount": 180,
   "repository": "https://github.com/MIBXR/web-atlas",
   "patterns": [
     {
@@ -1350,6 +1350,14 @@
           "evidence": "observed",
           "referenceUrl": "https://uiarc.dev/",
           "capturedAt": "2026-11-01"
+        },
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/32",
+          "observation": "Atelier 根据显雾区域的视口交集和文档前台状态启停绘制，Coral 在纸面演示离屏时暂停 Web Animations，减少动态直接给各自可读的结果。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
         }
       ],
       "sourceFiles": [
@@ -1420,7 +1428,12 @@
         "demos/cases/uiarc-platform/style.css",
         "demos/cases/uiarc-platform/fidelity.md",
         "demos/cases/uiarc-platform/source/content.json",
-        "demos/cases/uiarc-platform/source/components.tsx"
+        "demos/cases/uiarc-platform/source/components.tsx",
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/themes/atelier/air.js",
+        "demos/cases/hallmark/themes/coral/scene.js"
       ],
       "paths": {
         "bundle": "agent/patterns/viewport-animation-lifecycle.json"
@@ -2508,6 +2521,14 @@
           "evidence": "adapted",
           "referenceUrl": "https://endfield.hypergryph.com/",
           "capturedAt": "2026-10-09"
+        },
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/31",
+          "observation": "首页保持无声，Bloom 的 Play 和 Ribbon 的 Listen 只在用户激活后创建或恢复 AudioContext，按钮和 Escape 可停止声音并复位界面，Ribbon 停止后挂起上下文。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
         }
       ],
       "sourceFiles": [
@@ -2533,7 +2554,13 @@
         "demos/cases/endfield-industrial/app.js",
         "demos/cases/endfield-industrial/state.css",
         "demos/cases/endfield-industrial/assets-manifest.json",
-        "demos/cases/endfield-industrial/source/source-provenance.json"
+        "demos/cases/endfield-industrial/source/source-provenance.json",
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/themes/bloom/page.js",
+        "demos/cases/hallmark/themes/bloom/arrange.js",
+        "demos/cases/hallmark/themes/ribbon/night.js"
       ],
       "paths": {
         "bundle": "agent/patterns/sound-opt-in.json"
@@ -3307,6 +3334,14 @@
           "locator": "entries/cases/hand-drawn.json#composition/imagery",
           "observation": "自绘植物、笔记页与贴纸解释记录生活的场景。",
           "evidence": "adapted"
+        },
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/37",
+          "observation": "Pasteup 以小角度旋转、真实纸面投影、复印图混合和压在肖像边缘的日期纸签组织信息，纸张叠放关系保持正文与操作可读。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
         }
       ],
       "sourceFiles": [
@@ -3314,7 +3349,12 @@
         "demos/cases/hand-drawn/script.js",
         "demos/cases/hand-drawn/style.css",
         "entries/cases/hand-drawn.json",
-        "docs/cases/hand-drawn.md"
+        "docs/cases/hand-drawn.md",
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/themes/pasteup/style.css",
+        "demos/cases/hallmark/themes/pasteup/index.html"
       ],
       "paths": {
         "bundle": "agent/patterns/paper-material-collage.json"
@@ -3419,6 +3459,14 @@
           "locator": "entries/cases/isometric-3d.json#interaction/0",
           "observation": "整岛、花园、建筑三种焦点切换",
           "evidence": "adapted"
+        },
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/34",
+          "observation": "Ultraviolet 的 solo 按钮只强调当前通道，mute 降低对应通道，第二次点击撤销，通道按钮的按下状态和 is-dim 样式同步。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
         }
       ],
       "sourceFiles": [
@@ -3426,7 +3474,12 @@
         "demos/cases/isometric-3d/script.js",
         "demos/cases/isometric-3d/style.css",
         "entries/cases/isometric-3d.json",
-        "docs/cases/isometric-3d.md"
+        "docs/cases/isometric-3d.md",
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/themes/ultraviolet/index.html",
+        "demos/cases/hallmark/themes/ultraviolet/style.css"
       ],
       "paths": {
         "bundle": "agent/patterns/layer-focus-dimming.json"
@@ -3791,6 +3844,14 @@
           "locator": "entries/cases/shape-morph.json#interaction/1",
           "observation": "间距滑块将单元从连续图案分离为碎片",
           "evidence": "adapted"
+        },
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/36",
+          "observation": "Specimen 的字号与字重滑块同步写入试排 CSS 变量及带单位读数，Ribbon 的推子同步百分比、aria-valuenow、视觉强度和音量。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
         }
       ],
       "sourceFiles": [
@@ -3804,7 +3865,13 @@
         "entries/cases/shape-morph.json",
         "docs/cases/bauhaus-geometry.md",
         "docs/cases/retro-80s.md",
-        "docs/cases/shape-morph.md"
+        "docs/cases/shape-morph.md",
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/themes/specimen/page.js",
+        "demos/cases/hallmark/themes/specimen/index.html",
+        "demos/cases/hallmark/themes/ribbon/night.js"
       ],
       "paths": {
         "bundle": "agent/patterns/live-parameter-readout.json"
@@ -3974,6 +4041,14 @@
           "evidence": "adapted",
           "referenceUrl": "https://www.mori.art.museum/jp/",
           "capturedAt": "2026-10-07"
+        },
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/29",
+          "observation": "流派按钮同步 aria-pressed 与主题 hidden 状态，Editorial、Modern minimal、Atmospheric、Playful 分别显示 20、12、9、9 项，按钮计数与结果对应。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
         }
       ],
       "sourceFiles": [
@@ -3985,7 +4060,13 @@
         "entries/cases/mori-art-museum.json",
         "entries/cases/swiss-grid.json",
         "docs/cases/mori-art-museum.md",
-        "docs/cases/swiss-grid.md"
+        "docs/cases/swiss-grid.md",
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/js/themes.js",
+        "demos/cases/hallmark/index.html",
+        "demos/cases/hallmark/style.css"
       ],
       "paths": {
         "bundle": "agent/patterns/filter-count-feedback.json"
@@ -4319,6 +4400,14 @@
           "evidence": "inferred",
           "referenceUrl": "https://www.2121designsight.jp/",
           "capturedAt": "2026-10-07"
+        },
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/30",
+          "observation": "主题网格初始显示十项，Show all 展开五十项并把焦点移到第十一项；七个 FAQ 使用原生 details 在文档流中独立展开与收起。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
         }
       ],
       "sourceFiles": [
@@ -4336,7 +4425,13 @@
         "entries/cases/philharmonie-music.json",
         "docs/cases/bauhaus-geometry.md",
         "docs/cases/design-sight.md",
-        "docs/cases/philharmonie-music.md"
+        "docs/cases/philharmonie-music.md",
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/index.html",
+        "demos/cases/hallmark/js/themes.js",
+        "demos/cases/hallmark/style.css"
       ],
       "paths": {
         "bundle": "agent/patterns/inline-detail-disclosure.json"
@@ -4911,6 +5006,14 @@
           "evidence": "adapted",
           "referenceUrl": "https://chatgpt.com/zh-Hans-CN/overview/",
           "capturedAt": "2026-10-07"
+        },
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/35",
+          "observation": "Coral 的滚动说明面板在屏幕中央的窄观察带进入时选择对应发票状态，桌面说明与吸附发票同步，窄于 60rem 时直接显示完整的第三步。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
         }
       ],
       "sourceFiles": [
@@ -4920,7 +5023,12 @@
         "demos/cases/chatgpt-platform/motion-data.js",
         "demos/cases/chatgpt-platform/script.js",
         "demos/cases/chatgpt-platform/style.css",
-        "entries/cases/chatgpt-platform.json"
+        "entries/cases/chatgpt-platform.json",
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/themes/coral/scene.js",
+        "demos/cases/hallmark/themes/coral/style.css"
       ],
       "paths": {
         "bundle": "agent/patterns/scroll-synchronized-rail.json"
@@ -5465,6 +5573,14 @@
           "evidence": "observed",
           "referenceUrl": "https://qoder.cn/",
           "capturedAt": "2026-10-07"
+        },
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/33",
+          "observation": "Studio 的三套系统在区域可见时每 4200ms 自动切换，悬停或聚焦时暂停，用户主动选项后停止自动切换，标签、board 和 aria 状态共同更新。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
         }
       ],
       "sourceFiles": [
@@ -5473,7 +5589,12 @@
         "demos/cases/qoder-platform/journey.js",
         "demos/cases/qoder-platform/script.js",
         "demos/cases/qoder-platform/style.css",
-        "entries/cases/qoder-platform.json"
+        "entries/cases/qoder-platform.json",
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/themes/studio/spec.js",
+        "demos/cases/hallmark/themes/studio/index.html"
       ],
       "paths": {
         "bundle": "agent/patterns/timed-platform-carousel.json"
@@ -10925,6 +11046,2111 @@
       ],
       "paths": {
         "bundle": "agent/patterns/theme-invariant-gradient-panel.json"
+      }
+    },
+    {
+      "id": "proofreader-headline-edit",
+      "order": 152,
+      "title": "校对式改写首屏标题",
+      "category": "加载与媒体",
+      "experienceTypes": [
+        "page-motion"
+      ],
+      "summary": "把主张里的一个词当作校样修改，让品牌的“纠正”动作直接进入标题。",
+      "mechanism": "首入允许动态时，用 ghost 测量旧词与新词的矩形，先画斜线、写小词，再放大落位并用 FLIP 补偿邻词；最后真实文字接管。",
+      "trigger": "页面首入且允许动态。",
+      "effect": "改词过程与最终主张连成一件事，文本仍可读取。",
+      "useCases": [
+        "工具与方法官网",
+        "以纠错表达产品价值的首屏"
+      ],
+      "avoid": [
+        "静态排版不发生标题改词的页面"
+      ],
+      "constraints": [
+        "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
+      ],
+      "composition": {
+        "role": "accent",
+        "notes": "与手牌入场共享首屏节拍，标题完成后交还稳定文本。",
+        "pairsWellWith": [
+          "dealt-page-hand"
+        ],
+        "conflicts": []
+      },
+      "accessibility": {
+        "keyboard": "最终标题保留真实文字与 aria-label。",
+        "reducedMotion": "跳过改词过程，直接显示最终标题。"
+      },
+      "parameters": [
+        {
+          "name": "起点",
+          "value": "950ms",
+          "note": "固定提交源码／线上实测：js/headline.js:14 START。"
+        },
+        {
+          "name": "校对轴",
+          "value": "划线240ms；写入340ms；落位1540ms；转墨2140ms",
+          "note": "固定提交源码／线上实测：js/headline.js:15 T，数值相对校对起点。"
+        },
+        {
+          "name": "接管",
+          "value": "ghost 180ms 淡出；字体等待最多3000ms",
+          "note": "固定提交源码／线上实测：js/headline.js finish/start。"
+        }
+      ],
+      "prompt": "为目标页面实现「校对式改写首屏标题」：首入允许动态时，用 ghost 测量旧词与新词的矩形，先画斜线、写小词，再放大落位并用 FLIP 补偿邻词；最后真实文字接管。触发：页面首入且允许动态。结果：改词过程与最终主张连成一件事，文本仍可读取。参数：起点=950ms；校对轴=划线240ms；写入340ms；落位1540ms；转墨2140ms；接管=ghost 180ms 淡出；字体等待最多3000ms。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；最终标题保留真实文字与 aria-label。跳过改词过程，直接显示最终标题。",
+      "sources": [
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/0",
+          "observation": "首屏标题在允许动态时先显示 A design skill，约 950ms 后以斜线划去 A、写入 The、放大落入行内并转为墨色；邻词用前后实测矩形补偿重排，真实文字接管，减少动态直接显示最终标题。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
+        }
+      ],
+      "sourceFiles": [
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/js/headline.js",
+        "demos/cases/hallmark/index.html",
+        "demos/cases/hallmark/style.css"
+      ],
+      "paths": {
+        "bundle": "agent/patterns/proofreader-headline-edit.json"
+      }
+    },
+    {
+      "id": "dealt-page-hand",
+      "order": 153,
+      "title": "发牌式真实页面手牌",
+      "category": "交互反馈",
+      "experienceTypes": [
+        "micro-motion",
+        "page-motion"
+      ],
+      "summary": "用可以打开的真实页面组成手牌，并在重抽时先备好新图。",
+      "mechanism": "桌面牌与手机牌沿浅弧交错布置，聚焦或悬停抬牌并让邻牌退让；重抽排除当前主题，等图像 decode 与收牌完成再替换，busy 防止连按再入。",
+      "trigger": "首入、悬停或聚焦卡片、激活 Deal again。",
+      "effect": "页面证据可浏览，换牌过程连续且新牌有完整图像。",
+      "useCases": [
+        "主题库或模板产品",
+        "以真实页面证明能力的官网"
+      ],
+      "avoid": [
+        "将卡片装饰作为唯一导航"
+      ],
+      "constraints": [
+        "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
+      ],
+      "composition": {
+        "role": "foundation",
+        "notes": "首屏的产品证据与选项入口，共享主题目的地。",
+        "pairsWellWith": [
+          "proofreader-headline-edit",
+          "scaled-live-page-dialog"
+        ],
+        "conflicts": []
+      },
+      "accessibility": {
+        "keyboard": "卡片和重抽均可聚焦，卡片保留实际链接。",
+        "reducedMotion": "直接布局与换图，保留重抽、名称和打开动作。"
+      },
+      "parameters": [
+        {
+          "name": "几何",
+          "value": "间隔 max(14px,.07W)；弧高 .055W·u²；旋转2.9u°",
+          "note": "固定提交源码／线上实测：js/fan.js place，W为桌面牌宽，u为相对中心位置。"
+        },
+        {
+          "name": "抬升与入场",
+          "value": "抬高.1W；相邻让位.06W/.035W；交错55ms",
+          "note": "固定提交源码／线上实测：js/fan.js layout/deal。"
+        },
+        {
+          "name": "换牌",
+          "value": "等decode与560ms收牌；重发后1000ms解除busy",
+          "note": "固定提交源码／线上实测：js/fan.js Deal again click。"
+        }
+      ],
+      "prompt": "为目标页面实现「发牌式真实页面手牌」：桌面牌与手机牌沿浅弧交错布置，聚焦或悬停抬牌并让邻牌退让；重抽排除当前主题，等图像 decode 与收牌完成再替换，busy 防止连按再入。触发：首入、悬停或聚焦卡片、激活 Deal again。结果：页面证据可浏览，换牌过程连续且新牌有完整图像。参数：几何=间隔 max(14px,.07W)；弧高 .055W·u²；旋转2.9u°；抬升与入场=抬高.1W；相邻让位.06W/.035W；交错55ms；换牌=等decode与560ms收牌；重发后1000ms解除busy。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；卡片和重抽均可聚焦，卡片保留实际链接。直接布局与换图，保留重抽、名称和打开动作。",
+      "sources": [
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/1",
+          "observation": "首屏将五张桌面牌与四张手机牌沿浅弧交错发出，悬停或聚焦抬牌并让邻牌横移；Deal again 排除当前主题，随机抽取九个主题，等图片预解码与收牌完成后重发，busy 期间忽略重复点击。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
+        }
+      ],
+      "sourceFiles": [
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/js/fan.js",
+        "demos/cases/hallmark/index.html",
+        "demos/cases/hallmark/style.css"
+      ],
+      "paths": {
+        "bundle": "agent/patterns/dealt-page-hand.json"
+      }
+    },
+    {
+      "id": "normalized-long-page-compare",
+      "order": 154,
+      "title": "不等长整页同步读完",
+      "category": "滚动叙事",
+      "experienceTypes": [
+        "page-motion",
+        "structure"
+      ],
+      "summary": "同一段页面滚动同时读完两份不同长度的结果。",
+      "mechanism": "粘性画框保持位置，将外层行程归一化为0–1，再分别乘两图各自的溢出高度；标签改变pair并重新计算行程。",
+      "trigger": "滚动经过比较区域或切换对比标签。",
+      "effect": "长短结果在同一时刻读到尾部，观看者能对照对应进度。",
+      "useCases": [
+        "同题前后结果对比",
+        "不同长度页面的产品证据"
+      ],
+      "avoid": [
+        "两图内容没有共同任务基准"
+      ],
+      "constraints": [
+        "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
+      ],
+      "composition": {
+        "role": "foundation",
+        "notes": "负责结果证据的共同阅读进度，与分隔线共享画框。",
+        "pairsWellWith": [
+          "demo-once-then-yield-divider"
+        ],
+        "conflicts": []
+      },
+      "accessibility": {
+        "keyboard": "比较标签和分隔线有键盘路径，外层保留正常滚动。",
+        "reducedMotion": "保留完整页面与手动阅读，停用自动扫线。"
+      },
+      "parameters": [
+        {
+          "name": "外层行程",
+          "value": "clamp(.55×最大溢出高度,.6×视口高,1.6×视口高)",
+          "note": "固定提交源码／线上实测：js/compare.js fit。"
+        },
+        {
+          "name": "位移",
+          "value": "-p×max(0,W×原图高/1440-H)",
+          "note": "固定提交源码／线上实测：js/compare.js move，各图单独计算。"
+        },
+        {
+          "name": "换组",
+          "value": "先淡出180ms，再等pair与decode",
+          "note": "固定提交源码／线上实测：js/compare.js 标签切换。"
+        }
+      ],
+      "prompt": "为目标页面实现「不等长整页同步读完」：粘性画框保持位置，将外层行程归一化为0–1，再分别乘两图各自的溢出高度；标签改变pair并重新计算行程。触发：滚动经过比较区域或切换对比标签。结果：长短结果在同一时刻读到尾部，观看者能对照对应进度。参数：外层行程=clamp(.55×最大溢出高度,.6×视口高,1.6×视口高)；位移=-p×max(0,W×原图高/1440-H)；换组=先淡出180ms，再等pair与decode。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；比较标签和分隔线有键盘路径，外层保留正常滚动。保留完整页面与手动阅读，停用自动扫线。",
+      "sources": [
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/2",
+          "observation": "比较区以同一归一化滚动进度分别计算两张整页图的溢出高度，使不等长页面同时到达各自底部；三组标签替换整页图、问题数和阅读行程。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
+        }
+      ],
+      "sourceFiles": [
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/js/compare.js",
+        "demos/cases/hallmark/index.html",
+        "demos/cases/hallmark/style.css"
+      ],
+      "paths": {
+        "bundle": "agent/patterns/normalized-long-page-compare.json"
+      }
+    },
+    {
+      "id": "demo-once-then-yield-divider",
+      "order": 155,
+      "title": "分隔线示范一次后交给用户",
+      "category": "交互反馈",
+      "experienceTypes": [
+        "micro-motion"
+      ],
+      "summary": "先用一次短扫说明比较方式，首次主动输入后保持用户选择。",
+      "mechanism": "首次进入阈值后播放分隔比例关键帧；拖动或键盘调用同一个set，并由mine取消自动RAF和标记已接管。",
+      "trigger": "比较区初次出现，随后拖动或键盘操作。",
+      "effect": "一次示范让控制可发现，手动操作有持续所有权。",
+      "useCases": [
+        "前后图比较",
+        "需要示范但不能持续抢控制的滑块"
+      ],
+      "avoid": [
+        "持续自动改变用户已经选定的比例"
+      ],
+      "constraints": [
+        "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
+      ],
+      "composition": {
+        "role": "support",
+        "notes": "为同一比较画框介绍输入方式，不改变比较内容。",
+        "pairsWellWith": [
+          "normalized-long-page-compare"
+        ],
+        "conflicts": []
+      },
+      "accessibility": {
+        "keyboard": "用role=slider与aria值表达比例，方向键和Home/End可用。",
+        "reducedMotion": "跳过示范，保持手动分隔线。"
+      },
+      "parameters": [
+        {
+          "name": "自动关键帧",
+          "value": "0ms 50%；360ms 74%；800ms 30%；1100ms 50%",
+          "note": "固定提交源码／线上实测：js/compare.js runSweep。"
+        },
+        {
+          "name": "启动",
+          "value": "可见比例.55，延迟150ms",
+          "note": "固定提交源码／线上实测：js/compare.js IntersectionObserver。"
+        },
+        {
+          "name": "键盘",
+          "value": "2%；Shift 10%；Home/End 0/100%",
+          "note": "固定提交源码／线上实测：js/compare.js handle keydown。"
+        }
+      ],
+      "prompt": "为目标页面实现「分隔线示范一次后交给用户」：首次进入阈值后播放分隔比例关键帧；拖动或键盘调用同一个set，并由mine取消自动RAF和标记已接管。触发：比较区初次出现，随后拖动或键盘操作。结果：一次示范让控制可发现，手动操作有持续所有权。参数：自动关键帧=0ms 50%；360ms 74%；800ms 30%；1100ms 50%；启动=可见比例.55，延迟150ms；键盘=2%；Shift 10%；Home/End 0/100%。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；用role=slider与aria值表达比例，方向键和Home/End可用。跳过示范，保持手动分隔线。",
+      "sources": [
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/3",
+          "observation": "比较分隔线首次进入视口后按 50→74→30→50 示范一次，拖动或键盘操作立即取消自动扫；方向键每次移动 2%，Shift 加速到 10%，Home 和 End 到达两端。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
+        }
+      ],
+      "sourceFiles": [
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/js/compare.js",
+        "demos/cases/hallmark/index.html",
+        "demos/cases/hallmark/style.css"
+      ],
+      "paths": {
+        "bundle": "agent/patterns/demo-once-then-yield-divider.json"
+      }
+    },
+    {
+      "id": "one-move-process-panels",
+      "order": 156,
+      "title": "每格只演一个动作的流程",
+      "category": "内容组织",
+      "experienceTypes": [
+        "micro-motion",
+        "structure"
+      ],
+      "summary": "用并列的几个局部动作说明一条制作流程。",
+      "mechanism": "每格固定职责，进入视口后按顺序显示问题、发牌与修复；线框在三个预案间循环，发牌格悬停单独重放。",
+      "trigger": "流程区进入视口，或指针进入发牌格。",
+      "effect": "读者能将提问、方向、构成和检查逐格对应。",
+      "useCases": [
+        "有清晰阶段的方法与工具",
+        "流程说明型产品页"
+      ],
+      "avoid": [
+        "把解释动画伪装成真实检查结果"
+      ],
+      "constraints": [
+        "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
+      ],
+      "composition": {
+        "role": "support",
+        "notes": "每格以一个对象和动作解释一个阶段，文本负责该格的含义。",
+        "pairsWellWith": [
+          "dealt-page-hand"
+        ],
+        "conflicts": []
+      },
+      "accessibility": {
+        "keyboard": "说明文本始终可读，发牌图示旁保留步骤标题。",
+        "reducedMotion": "直接显示所有问题和修复结果，线框保持初态。"
+      },
+      "parameters": [
+        {
+          "name": "入场",
+          "value": "问题200+i×260ms；发牌350ms",
+          "note": "固定提交源码／线上实测：js/how.js play。"
+        },
+        {
+          "name": "修复与线框",
+          "value": "修复700+i×380ms；线框周期1900ms",
+          "note": "固定提交源码／线上实测：js/how.js play/draw。"
+        },
+        {
+          "name": "重放",
+          "value": "收回260ms后重新发出",
+          "note": "固定提交源码／线上实测：js/how.js pointerenter。"
+        }
+      ],
+      "prompt": "为目标页面实现「每格只演一个动作的流程」：每格固定职责，进入视口后按顺序显示问题、发牌与修复；线框在三个预案间循环，发牌格悬停单独重放。触发：流程区进入视口，或指针进入发牌格。结果：读者能将提问、方向、构成和检查逐格对应。参数：入场=问题200+i×260ms；发牌350ms；修复与线框=修复700+i×380ms；线框周期1900ms；重放=收回260ms后重新发出。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；说明文本始终可读，发牌图示旁保留步骤标题。直接显示所有问题和修复结果，线框保持初态。",
+      "sources": [
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/4",
+          "observation": "How 的四格分别只解释一个动作：问题依次出现、三张主题牌发出、三个线框预案每 1.9 秒切换、四条 lint 问题逐项修复；悬停发牌格会先收回再发出。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
+        }
+      ],
+      "sourceFiles": [
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/js/how.js",
+        "demos/cases/hallmark/index.html",
+        "demos/cases/hallmark/style.css"
+      ],
+      "paths": {
+        "bundle": "agent/patterns/one-move-process-panels.json"
+      }
+    },
+    {
+      "id": "scaled-live-page-dialog",
+      "order": 157,
+      "title": "对话框内缩放真实页面",
+      "category": "导航与状态",
+      "experienceTypes": [
+        "structure"
+      ],
+      "summary": "在列表上下文中预览完整真实网页并沿当前筛选翻页。",
+      "mechanism": "原生dialog加载同源iframe，页面按固定排版宽度布局，缩放系数取容器宽度比，高度反除系数；前后项取当前过滤结果，关闭恢复当前链接焦点。",
+      "trigger": "激活主题链接、前后按钮或Escape。",
+      "effect": "预览保留作品排版，也保留列表的选择上下文。",
+      "useCases": [
+        "网页主题库",
+        "可运行模板与作品浏览"
+      ],
+      "avoid": [
+        "以模糊截图冒充真实页面"
+      ],
+      "constraints": [
+        "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
+      ],
+      "composition": {
+        "role": "support",
+        "notes": "从主题网格或手牌进入同一个真实页面预览。",
+        "pairsWellWith": [
+          "dealt-page-hand",
+          "filter-count-feedback"
+        ],
+        "conflicts": []
+      },
+      "accessibility": {
+        "keyboard": "使用原生dialog、可命名iframe、Escape与焦点返回。",
+        "reducedMotion": "省略对话框入场运动，缩放与导航保留。"
+      },
+      "parameters": [
+        {
+          "name": "排版宽度",
+          "value": "1440px",
+          "note": "固定提交源码／线上实测：js/themes.js fit。"
+        },
+        {
+          "name": "缩放",
+          "value": "k=frame.clientWidth/1440；iframe高=frame.clientHeight/k",
+          "note": "固定提交源码／线上实测：js/themes.js fit。"
+        },
+        {
+          "name": "实测",
+          "value": "1440视口对话框frame宽1224px，k=.85",
+          "note": "固定提交源码／线上实测：双宽 CDP 记录，fidelity.md。"
+        }
+      ],
+      "prompt": "为目标页面实现「对话框内缩放真实页面」：原生dialog加载同源iframe，页面按固定排版宽度布局，缩放系数取容器宽度比，高度反除系数；前后项取当前过滤结果，关闭恢复当前链接焦点。触发：激活主题链接、前后按钮或Escape。结果：预览保留作品排版，也保留列表的选择上下文。参数：排版宽度=1440px；缩放=k=frame.clientWidth/1440；iframe高=frame.clientHeight/k；实测=1440视口对话框frame宽1224px，k=.85。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；使用原生dialog、可命名iframe、Escape与焦点返回。省略对话框入场运动，缩放与导航保留。",
+      "sources": [
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/5",
+          "observation": "主题网格在原生对话框中打开真实主题页，iframe 按 1440px 排版并以容器宽度缩放，材料说明与当前主题同步，上一项和下一项沿筛选结果循环，Escape 关闭后焦点返回当前主题链接。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
+        }
+      ],
+      "sourceFiles": [
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/js/themes.js",
+        "demos/cases/hallmark/index.html",
+        "demos/cases/hallmark/style.css"
+      ],
+      "paths": {
+        "bundle": "agent/patterns/scaled-live-page-dialog.json"
+      }
+    },
+    {
+      "id": "inertial-page-wheel",
+      "order": 158,
+      "title": "惯性三维页面转轮",
+      "category": "导航与状态",
+      "experienceTypes": [
+        "page-motion"
+      ],
+      "summary": "用深度、明暗和惯性让真实页面围绕当前页排列。",
+      "mechanism": "按卡数计算圆柱半径和步角，指针位移换算角度与速度，松手后摩擦衰减再吸附；新拖动取消目标和惯性，首次接触永久停止闲置自转。",
+      "trigger": "拖动、松手、方向键或闲置等待。",
+      "effect": "页面具有连续空间位置，主动浏览接管闲置演示。",
+      "useCases": [
+        "页面成果浏览",
+        "数量适中的作品或样本"
+      ],
+      "avoid": [
+        "把转轮设为唯一目的地入口"
+      ],
+      "constraints": [
+        "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。",
+        "Edge 155 的侧页点击保持原作 pointer capture 结果，浏览入口使用键盘、显式按钮和页面链接。"
+      ],
+      "composition": {
+        "role": "foundation",
+        "notes": "用当前牌、相邻牌、标题与键盘索引共享选择状态。",
+        "pairsWellWith": [
+          "same-material-page-pairs"
+        ],
+        "conflicts": []
+      },
+      "accessibility": {
+        "keyboard": "区域支持方向键和显式前后按钮，保留列表入口。",
+        "reducedMotion": "停用闲置自转，以即时选择替代惯性与吸附运动。"
+      },
+      "parameters": [
+        {
+          "name": "卡数与步角",
+          "value": "17张；360/n≈21.176°",
+          "note": "固定提交源码／线上实测：index.html #examples 与 js/wheel.js。"
+        },
+        {
+          "name": "动力",
+          "value": "目标趋近.14；速度乘.93；速度阈值.02°/帧",
+          "note": "固定提交源码／线上实测：js/wheel.js loop。"
+        },
+        {
+          "name": "闲置与拖动",
+          "value": "闲置-.06°/帧；拖动超过6px阻止打开",
+          "note": "固定提交源码／线上实测：js/wheel.js loop/click。"
+        }
+      ],
+      "prompt": "为目标页面实现「惯性三维页面转轮」：按卡数计算圆柱半径和步角，指针位移换算角度与速度，松手后摩擦衰减再吸附；新拖动取消目标和惯性，首次接触永久停止闲置自转。触发：拖动、松手、方向键或闲置等待。结果：页面具有连续空间位置，主动浏览接管闲置演示。参数：卡数与步角=17张；360/n≈21.176°；动力=目标趋近.14；速度乘.93；速度阈值.02°/帧；闲置与拖动=闲置-.06°/帧；拖动超过6px阻止打开。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；区域支持方向键和显式前后按钮，保留列表入口。停用闲置自转，以即时选择替代惯性与吸附运动。",
+      "sources": [
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/6",
+          "observation": "Made 把十七张页面牌排在三维圆柱上，闲置时缓慢自转，拖动松手后按速度惯性衰减并吸附到整步角，新的拖动接管惯性，方向键选择相邻页，首次接触后停止闲置自转；Edge 155 中侧页点击被 pointer capture 重定向到轮容器，当前项保持。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
+        }
+      ],
+      "sourceFiles": [
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/js/wheel.js",
+        "demos/cases/hallmark/index.html",
+        "demos/cases/hallmark/style.css"
+      ],
+      "paths": {
+        "bundle": "agent/patterns/inertial-page-wheel.json"
+      }
+    },
+    {
+      "id": "digit-odometer-count",
+      "order": 159,
+      "title": "数字逐位滚入",
+      "category": "交互反馈",
+      "experienceTypes": [
+        "micro-motion"
+      ],
+      "summary": "真实数据到达时，让各数位从同一竖列停靠到目标。",
+      "mechanism": "每位创建0–9的纵向列，用目标数字乘行高计算translateY，以位序延迟滚入；非数字字符单独保留。",
+      "trigger": "星标API返回有效数字。",
+      "effect": "数值到达有清楚的轻量反馈，最终文字与实际数据一致。",
+      "useCases": [
+        "实时计数",
+        "数据到达的局部反馈"
+      ],
+      "avoid": [
+        "滚动数字掩饰无来源的指标"
+      ],
+      "constraints": [
+        "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
+      ],
+      "composition": {
+        "role": "accent",
+        "notes": "只负责数据到达后的数位表现，按钮仍有真实外链与完整aria名称。",
+        "pairsWellWith": [
+          "confirmed-command-copy"
+        ],
+        "conflicts": []
+      },
+      "accessibility": {
+        "keyboard": "以完整数值更新aria-label，装饰数位不代替名称。",
+        "reducedMotion": "直接定位最终数位，跳过滚动。"
+      },
+      "parameters": [
+        {
+          "name": "列高",
+          "value": "每位1.2em",
+          "note": "固定提交源码／线上实测：js/core.js 星标数位translateY。"
+        },
+        {
+          "name": "交错",
+          "value": "每位90ms",
+          "note": "固定提交源码／线上实测：js/core.js 数位transitionDelay。"
+        },
+        {
+          "name": "格式",
+          "value": "千以上显示k，万以上取整数k",
+          "note": "固定提交源码／线上实测：js/core.js txt格式化。"
+        }
+      ],
+      "prompt": "为目标页面实现「数字逐位滚入」：每位创建0–9的纵向列，用目标数字乘行高计算translateY，以位序延迟滚入；非数字字符单独保留。触发：星标API返回有效数字。结果：数值到达有清楚的轻量反馈，最终文字与实际数据一致。参数：列高=每位1.2em；交错=每位90ms；格式=千以上显示k，万以上取整数k。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；以完整数值更新aria-label，装饰数位不代替名称。直接定位最终数位，跳过滚动。",
+      "sources": [
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/7",
+          "observation": "GitHub 星标请求完成后，每位数字以 0–9 的竖列滚到目标数位，位间延迟 90ms，千以上显示 k；减少动态直接定位到最终数字。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
+        }
+      ],
+      "sourceFiles": [
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/js/core.js",
+        "demos/cases/hallmark/style.css",
+        "demos/cases/hallmark/index.html"
+      ],
+      "paths": {
+        "bundle": "agent/patterns/digit-odometer-count.json"
+      }
+    },
+    {
+      "id": "same-material-page-pairs",
+      "order": 160,
+      "title": "同一材料的异页并置",
+      "category": "内容组织",
+      "experienceTypes": [
+        "visual",
+        "structure"
+      ],
+      "summary": "把同一材料下的不同页面成对展示，解释材料与结构的分工。",
+      "mechanism": "按材料分组，在每组并列两张真实页面，保留各自目的地、主体内容与不同构成。",
+      "trigger": "阅读同主题不同页面区域或打开页面。",
+      "effect": "共同字体和色彩可辨认，结构差异也能直接看见。",
+      "useCases": [
+        "主题或设计系统展示",
+        "同材料多用途的案例研究"
+      ],
+      "avoid": [
+        "只换颜色却声称结构有变化"
+      ],
+      "constraints": [
+        "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
+      ],
+      "composition": {
+        "role": "support",
+        "notes": "作为主题网格之后的证据，说明材料统一而页面结构可变化。",
+        "pairsWellWith": [
+          "scaled-live-page-dialog"
+        ],
+        "conflicts": []
+      },
+      "accessibility": {
+        "keyboard": "每张图保留有文字名称的真实链接。",
+        "reducedMotion": "成对比较为静态构成，内容保持可读。"
+      },
+      "parameters": [
+        {
+          "name": "分组",
+          "value": "Kiln与Midnight各两页",
+          "note": "固定提交源码／线上实测：index.html:263 #same。"
+        }
+      ],
+      "prompt": "为目标页面实现「同一材料的异页并置」：按材料分组，在每组并列两张真实页面，保留各自目的地、主体内容与不同构成。触发：阅读同主题不同页面区域或打开页面。结果：共同字体和色彩可辨认，结构差异也能直接看见。参数：分组=Kiln与Midnight各两页。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；每张图保留有文字名称的真实链接。成对比较为静态构成，内容保持可读。",
+      "sources": [
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/8",
+          "observation": "Same 区把同属 Kiln 的两页和同属 Midnight 的两页分别并置，用相同材料下不同的内容与布局说明主题提供材料、构建决定页面结构。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
+        }
+      ],
+      "sourceFiles": [
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/index.html",
+        "demos/cases/hallmark/style.css"
+      ],
+      "paths": {
+        "bundle": "agent/patterns/same-material-page-pairs.json"
+      }
+    },
+    {
+      "id": "confirmed-command-copy",
+      "order": 161,
+      "title": "可确认的命令复制",
+      "category": "交互反馈",
+      "experienceTypes": [
+        "micro-motion"
+      ],
+      "summary": "把复制结果立即反馈给按钮和状态区。",
+      "mechanism": "复制当前命令或可见代码，成功后设置勾与Copied，计时后恢复；主页面用Clipboard API并保留选区复制分支。",
+      "trigger": "激活复制按钮。",
+      "effect": "用户知道复制的是哪段内容以及操作是否成功。",
+      "useCases": [
+        "安装命令",
+        "多语言请求代码与CLI示例"
+      ],
+      "avoid": [
+        "复制隐藏的其他标签内容"
+      ],
+      "constraints": [
+        "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
+      ],
+      "composition": {
+        "role": "accent",
+        "notes": "与当前可见命令或代码同组，成功文字和按钮状态一致。",
+        "pairsWellWith": [
+          "scaled-live-page-dialog"
+        ],
+        "conflicts": []
+      },
+      "accessibility": {
+        "keyboard": "使用原生按钮、明确名称和状态播报，复制失败保留可选文本。",
+        "reducedMotion": "成功勾与文字即时变化，计时恢复保留。"
+      },
+      "parameters": [
+        {
+          "name": "反馈时长",
+          "value": "首页1600ms；Lumen/Terminal 1400ms",
+          "note": "固定提交源码／线上实测：js/core.js copy；themes/lumen/page.js copy；themes/terminal/page.js copy。"
+        }
+      ],
+      "prompt": "为目标页面实现「可确认的命令复制」：复制当前命令或可见代码，成功后设置勾与Copied，计时后恢复；主页面用Clipboard API并保留选区复制分支。触发：激活复制按钮。结果：用户知道复制的是哪段内容以及操作是否成功。参数：反馈时长=首页1600ms；Lumen/Terminal 1400ms。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；使用原生按钮、明确名称和状态播报，复制失败保留可选文本。成功勾与文字即时变化，计时恢复保留。",
+      "sources": [
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/9",
+          "observation": "首页、Lumen 和 Terminal 的复制按钮复制对应命令或当前可见代码，成功后短暂显示勾或 Copied 并更新状态播报，反馈计时结束后恢复按钮。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
+        }
+      ],
+      "sourceFiles": [
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/js/core.js",
+        "demos/cases/hallmark/themes/lumen/page.js",
+        "demos/cases/hallmark/themes/terminal/page.js",
+        "demos/cases/hallmark/index.html"
+      ],
+      "paths": {
+        "bundle": "agent/patterns/confirmed-command-copy.json"
+      }
+    },
+    {
+      "id": "gesture-cleared-scent-field",
+      "order": 162,
+      "title": "指针拨开、选择染色的香气场",
+      "category": "视觉构成",
+      "experienceTypes": [
+        "visual",
+        "page-motion"
+      ],
+      "summary": "让同一个程序场回应手势、香型选择和实物位置。",
+      "mechanism": "域扭曲噪声绘上升雾，试香纸几何给羽流源；环形指针尾迹减弱附近密度，香型目标色缓慢混入环境和羽流。",
+      "trigger": "移动指针或选择香型。",
+      "effect": "香气成为可操作、可辨认且与试香纸相连的材料。",
+      "useCases": [
+        "气味与材料品牌",
+        "轻量背景场互动"
+      ],
+      "avoid": [
+        "高强度背景遮住正文"
+      ],
+      "constraints": [
+        "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
+      ],
+      "composition": {
+        "role": "foundation",
+        "notes": "羽流源读取真实试香纸位置，选择按钮同时解释颜色变化。",
+        "pairsWellWith": [
+          "viewport-animation-lifecycle"
+        ],
+        "conflicts": []
+      },
+      "accessibility": {
+        "keyboard": "香型由可聚焦按钮选择，背景画布不截获主体操作。",
+        "reducedMotion": "保留静帧和即时换色，停用连续噪声与尾迹。"
+      },
+      "parameters": [
+        {
+          "name": "渲染",
+          "value": "CSS尺寸×.5；初始时间37",
+          "note": "固定提交源码／线上实测：themes/atelier/air.js SCALE/T0。"
+        },
+        {
+          "name": "尾迹",
+          "value": "8点、70ms落点、150px半径、.75s衰减",
+          "note": "固定提交源码／线上实测：air.js TRAIL/frame/draw。"
+        },
+        {
+          "name": "色调",
+          "value": "目标色时间常数.9s，环境混合比.55",
+          "note": "固定提交源码／线上实测：air.js frame/Air.scent。"
+        }
+      ],
+      "prompt": "为目标页面实现「指针拨开、选择染色的香气场」：域扭曲噪声绘上升雾，试香纸几何给羽流源；环形指针尾迹减弱附近密度，香型目标色缓慢混入环境和羽流。触发：移动指针或选择香型。结果：香气成为可操作、可辨认且与试香纸相连的材料。参数：渲染=CSS尺寸×.5；初始时间37；尾迹=8点、70ms落点、150px半径、.75s衰减；色调=目标色时间常数.9s，环境混合比.55。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；香型由可聚焦按钮选择，背景画布不截获主体操作。保留静帧和即时换色，停用连续噪声与尾迹。",
+      "sources": [
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/10",
+          "observation": "Atelier 用同一个半尺寸 WebGL 场绘制上升香气、试香纸羽流和指针尾迹，指针移动拨开雾，选择香型同时改变环境雾与羽流颜色，离开显雾区域或后台时停帧。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
+        }
+      ],
+      "sourceFiles": [
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/themes/atelier/air.js",
+        "demos/cases/hallmark/themes/atelier/page.js",
+        "demos/cases/hallmark/themes/atelier/style.css"
+      ],
+      "paths": {
+        "bundle": "agent/patterns/gesture-cleared-scent-field.json"
+      }
+    },
+    {
+      "id": "gated-character-stream",
+      "order": 163,
+      "title": "字符数据流过类型门",
+      "category": "视觉构成",
+      "experienceTypes": [
+        "page-motion"
+      ],
+      "summary": "用字符本身显示原始数据如何变成规范事件。",
+      "mechanism": "噪声束按字符格输送数据包，记录每字越门时刻，从原JSON改为事件名；失败包停顿、等待和重试，标题周围按实测文本留出安静区。",
+      "trigger": "进入场景或移动指针。",
+      "effect": "流、类型转换和重试被放进同一张可读场景。",
+      "useCases": [
+        "数据与API工具",
+        "传输或转换流程解释"
+      ],
+      "avoid": [
+        "字符噪声替代真实产品信息"
+      ],
+      "constraints": [
+        "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
+      ],
+      "composition": {
+        "role": "foundation",
+        "notes": "字符场让出正文安静区，数据包语义与产品任务一致。",
+        "pairsWellWith": [
+          "field-linked-connectors"
+        ],
+        "conflicts": []
+      },
+      "accessibility": {
+        "keyboard": "正文与事件说明为稳定DOM，画布为辅助证据。",
+        "reducedMotion": "渲染固定时间37的可读字符场，保留原始、越门与已类型化状态。"
+      },
+      "parameters": [
+        {
+          "name": "字格",
+          "value": "8×16px；13.333px JetBrains Mono",
+          "note": "固定提交源码／线上实测：themes/cobalt/wire.js CW/CH/MONO。"
+        },
+        {
+          "name": "重试",
+          "value": "抖动.75s；等待2.6s；重试速度加3",
+          "note": "固定提交源码／线上实测：wire.js step。"
+        },
+        {
+          "name": "指针",
+          "value": "200px范围，最多偏移46px",
+          "note": "固定提交源码／线上实测：wire.js bands。"
+        }
+      ],
+      "prompt": "为目标页面实现「字符数据流过类型门」：噪声束按字符格输送数据包，记录每字越门时刻，从原JSON改为事件名；失败包停顿、等待和重试，标题周围按实测文本留出安静区。触发：进入场景或移动指针。结果：流、类型转换和重试被放进同一张可读场景。参数：字格=8×16px；13.333px JetBrains Mono；重试=抖动.75s；等待2.6s；重试速度加3；指针=200px范围，最多偏移46px。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；正文与事件说明为稳定DOM，画布为辅助证据。渲染固定时间37的可读字符场，保留原始、越门与已类型化状态。",
+      "sources": [
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/11",
+          "observation": "Cobalt 将数据包沿 8×16px 字格中的噪声束送过类型门，字符跨门后由原始 JSON 变为事件名，失败包经历抖动、等待和重试，指针使附近字符束偏开并增亮。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
+        }
+      ],
+      "sourceFiles": [
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/themes/cobalt/wire.js",
+        "demos/cases/hallmark/themes/cobalt/index.html",
+        "demos/cases/hallmark/themes/cobalt/style.css"
+      ],
+      "paths": {
+        "bundle": "agent/patterns/gated-character-stream.json"
+      }
+    },
+    {
+      "id": "field-linked-connectors",
+      "order": 164,
+      "title": "字段悬停联动弯折连线",
+      "category": "交互反馈",
+      "experienceTypes": [
+        "micro-motion",
+        "structure"
+      ],
+      "summary": "用同名字段的几何连线显示两份记录的对应关系。",
+      "mechanism": "读取两侧字段矩形，选择中间折线通道，生成水平段、圆角和端点；以共同data-k同步行与线，ResizeObserver重算位置。",
+      "trigger": "悬停字段或容器尺寸变化。",
+      "effect": "用户能沿同一高亮找出源字段与结果字段。",
+      "useCases": [
+        "数据映射",
+        "字段转换和检查器"
+      ],
+      "avoid": [
+        "只有颜色却没有字段名称"
+      ],
+      "constraints": [
+        "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
+      ],
+      "composition": {
+        "role": "support",
+        "notes": "连接本就对齐的两组字段，选中只强调对应关系。",
+        "pairsWellWith": [
+          "gated-character-stream"
+        ],
+        "conflicts": []
+      },
+      "accessibility": {
+        "keyboard": "字段名称保持稳定，迁移时为聚焦提供同一data-k高亮。",
+        "reducedMotion": "直接生成静态连线，选中高亮即时完成。"
+      },
+      "parameters": [
+        {
+          "name": "圆角",
+          "value": "最大12px，受两端高差约束",
+          "note": "固定提交源码／线上实测：themes/cobalt/wire.js inspector/draw。"
+        },
+        {
+          "name": "节点",
+          "value": "5px节点；行端外移12px",
+          "note": "固定提交源码／线上实测：wire.js inspector/draw的seg。"
+        }
+      ],
+      "prompt": "为目标页面实现「字段悬停联动弯折连线」：读取两侧字段矩形，选择中间折线通道，生成水平段、圆角和端点；以共同data-k同步行与线，ResizeObserver重算位置。触发：悬停字段或容器尺寸变化。结果：用户能沿同一高亮找出源字段与结果字段。参数：圆角=最大12px，受两端高差约束；节点=5px节点；行端外移12px。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；字段名称保持稳定，迁移时为聚焦提供同一data-k高亮。直接生成静态连线，选中高亮即时完成。",
+      "sources": [
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/12",
+          "observation": "Cobalt 检查器根据两侧同名字段的真实矩形生成带圆角的弯折连线，悬停字段时同步强调对应行与连线，容器变化后重新测量。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
+        }
+      ],
+      "sourceFiles": [
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/themes/cobalt/wire.js",
+        "demos/cases/hallmark/themes/cobalt/index.html",
+        "demos/cases/hallmark/themes/cobalt/style.css"
+      ],
+      "paths": {
+        "bundle": "agent/patterns/field-linked-connectors.json"
+      }
+    },
+    {
+      "id": "procedural-map-loupe",
+      "order": 165,
+      "title": "重绘程序地图的放大镜",
+      "category": "交互反馈",
+      "experienceTypes": [
+        "micro-motion",
+        "visual"
+      ],
+      "summary": "放大镜重新绘制同一套地图几何，保留线条与地物细节。",
+      "mechanism": "固定噪声经marching squares生成等高线与地块，放大镜裁切局部并按倍率重绘路线和地物；指针移开后回停到门边。",
+      "trigger": "鼠标进入地图、移动或离开。",
+      "effect": "细察保持地图清晰，也与农场日志有共同空间基准。",
+      "useCases": [
+        "程序地图",
+        "线稿、图样与测绘展示"
+      ],
+      "avoid": [
+        "把装饰地图包装为真实测绘数据"
+      ],
+      "constraints": [
+        "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
+      ],
+      "composition": {
+        "role": "support",
+        "notes": "以同一程序几何连接背景地图、放大镜和日志图钉。",
+        "pairsWellWith": [
+          "measured-redline-annotation"
+        ],
+        "conflicts": []
+      },
+      "accessibility": {
+        "keyboard": "日志保留可聚焦图钉与卡片，放大镜为细察辅助。",
+        "reducedMotion": "保留固定地图和停靠放大镜，选择即时完成。"
+      },
+      "parameters": [
+        {
+          "name": "等高线",
+          "value": "5px采样格；两轮Chaikin；每第五条加粗",
+          "note": "固定提交源码／线上实测：themes/furrow/map.js build/trace。"
+        },
+        {
+          "name": "放大镜",
+          "value": "半径76px；倍率1.9；画布边长200px",
+          "note": "固定提交源码／线上实测：map.js R/M/D。"
+        },
+        {
+          "name": "跟随",
+          "value": "60/110ms时间常数，回停260ms",
+          "note": "固定提交源码／线上实测：map.js tick/pointermove。"
+        }
+      ],
+      "prompt": "为目标页面实现「重绘程序地图的放大镜」：固定噪声经marching squares生成等高线与地块，放大镜裁切局部并按倍率重绘路线和地物；指针移开后回停到门边。触发：鼠标进入地图、移动或离开。结果：细察保持地图清晰，也与农场日志有共同空间基准。参数：等高线=5px采样格；两轮Chaikin；每第五条加粗；放大镜=半径76px；倍率1.9；画布边长200px；跟随=60/110ms时间常数，回停260ms。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；日志保留可聚焦图钉与卡片，放大镜为细察辅助。保留固定地图和停靠放大镜，选择即时完成。",
+      "sources": [
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/13",
+          "observation": "Furrow 从固定噪声场以 marching squares 生成等高线，再绘地块、树篱与路线；放大镜跟随地图指针并以 1.9 倍重新绘制同一程序几何，移开后缓慢回到农场门边。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
+        }
+      ],
+      "sourceFiles": [
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/themes/furrow/map.js",
+        "demos/cases/hallmark/themes/furrow/style.css",
+        "demos/cases/hallmark/themes/furrow/index.html"
+      ],
+      "paths": {
+        "bundle": "agent/patterns/procedural-map-loupe.json"
+      }
+    },
+    {
+      "id": "measured-redline-annotation",
+      "order": 166,
+      "title": "实测几何的设计红线",
+      "category": "交互反馈",
+      "experienceTypes": [
+        "micro-motion",
+        "visual"
+      ],
+      "summary": "从真实字形和区块尺寸生成红线，而非放固定的装饰尺。",
+      "mechanism": "用DOM矩形寻找四向最近相交邻块，SVG显示边界与间距；用Range逐字量宽并按em千分之一标advance，高频指针输入合到一帧。",
+      "trigger": "指向、触摸或聚焦可测量区块。",
+      "effect": "尺寸文字能解释当前对象及其排版关系。",
+      "useCases": [
+        "字体与品牌规范",
+        "布局检查和设计工具演示"
+      ],
+      "avoid": [
+        "把预设数字画成实测结果"
+      ],
+      "constraints": [
+        "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
+      ],
+      "composition": {
+        "role": "accent",
+        "notes": "红线为当前对象的临时解释层，移开后还给原版面。",
+        "pairsWellWith": [
+          "font-metric-guides"
+        ],
+        "conflicts": []
+      },
+      "accessibility": {
+        "keyboard": "区块focusin触发同一测量，标签有实际对象名称。",
+        "reducedMotion": "尺寸线和读数直接显示，保持几何准确。"
+      },
+      "parameters": [
+        {
+          "name": "坐标",
+          "value": "round(v)+.5px",
+          "note": "固定提交源码／线上实测：themes/studio/spec.js px。"
+        },
+        {
+          "name": "字宽",
+          "value": "round(glyphWidth/fontSize×1000)",
+          "note": "固定提交源码／线上实测：spec.js measureLetter。"
+        },
+        {
+          "name": "标签",
+          "value": "getBBox外扩左右5px、上下2px",
+          "note": "固定提交源码／线上实测：spec.js tag。"
+        }
+      ],
+      "prompt": "为目标页面实现「实测几何的设计红线」：用DOM矩形寻找四向最近相交邻块，SVG显示边界与间距；用Range逐字量宽并按em千分之一标advance，高频指针输入合到一帧。触发：指向、触摸或聚焦可测量区块。结果：尺寸文字能解释当前对象及其排版关系。参数：坐标=round(v)+.5px；字宽=round(glyphWidth/fontSize×1000)；标签=getBBox外扩左右5px、上下2px。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；区块focusin触发同一测量，标签有实际对象名称。尺寸线和读数直接显示，保持几何准确。",
+      "sources": [
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/14",
+          "observation": "Studio 指向、触摸或聚焦版面区块时测量真实矩形和四向邻块间距并生成 SVG 红线，指向字母时用 DOM Range 逐字测量，以 em 千分之一显示 advance。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
+        }
+      ],
+      "sourceFiles": [
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/themes/studio/spec.js",
+        "demos/cases/hallmark/themes/studio/index.html",
+        "demos/cases/hallmark/themes/studio/style.css"
+      ],
+      "paths": {
+        "bundle": "agent/patterns/measured-redline-annotation.json"
+      }
+    },
+    {
+      "id": "reading-grows-glyph-garden",
+      "order": 167,
+      "title": "顺序朗读长出字形植物",
+      "category": "内容组织",
+      "experienceTypes": [
+        "micro-motion",
+        "structure"
+      ],
+      "summary": "把已读单词一一映射到花园里的植物。",
+      "mechanism": "按当前词序接受点击，越序给出下一词；更新aria-pressed、下一词焦点、植物和种子，时间带定期撕片。",
+      "trigger": "按句子顺序标记已读词或重新开始。",
+      "effect": "阅读进度是具体的生长结果，顺序与下一步清楚。",
+      "useCases": [
+        "阅读练习",
+        "逐项学习与轻量习惯工具"
+      ],
+      "avoid": [
+        "只以动画颜色表达完成状态"
+      ],
+      "constraints": [
+        "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
+      ],
+      "composition": {
+        "role": "foundation",
+        "notes": "词、植物与下一步焦点共用同一个完成数。",
+        "pairsWellWith": [
+          "inline-detail-disclosure"
+        ],
+        "conflicts": []
+      },
+      "accessibility": {
+        "keyboard": "每词使用原生按钮与aria-pressed，读后焦点移向下一词。",
+        "reducedMotion": "显示已读完的静态花园，并保留重读入口。"
+      },
+      "parameters": [
+        {
+          "name": "词与时间",
+          "value": "6词；300s",
+          "note": "固定提交源码／线上实测：themes/hum/round.js tiles/TOTAL。"
+        },
+        {
+          "name": "撕片",
+          "value": "每1s减时，每5s撕片",
+          "note": "固定提交源码／线上实测：round.js tick/scrap。"
+        },
+        {
+          "name": "听读",
+          "value": "en-GB，rate=.82",
+          "note": "固定提交源码／线上实测：round.js SpeechSynthesisUtterance。"
+        }
+      ],
+      "prompt": "为目标页面实现「顺序朗读长出字形植物」：按当前词序接受点击，越序给出下一词；更新aria-pressed、下一词焦点、植物和种子，时间带定期撕片。触发：按句子顺序标记已读词或重新开始。结果：阅读进度是具体的生长结果，顺序与下一步清楚。参数：词与时间=6词；300s；撕片=每1s减时，每5s撕片；听读=en-GB，rate=.82。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；每词使用原生按钮与aria-pressed，读后焦点移向下一词。显示已读完的静态花园，并保留重读入口。",
+      "sources": [
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/15",
+          "observation": "Hum 按顺序点击句中单词，每个已读词长出一株字形植物；越序点击提示下一词，焦点跟到下一词，五分钟时间带每五秒撕下一片纸屑，完成后可重读。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
+        }
+      ],
+      "sourceFiles": [
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/themes/hum/round.js",
+        "demos/cases/hallmark/themes/hum/index.html",
+        "demos/cases/hallmark/themes/hum/style.css"
+      ],
+      "paths": {
+        "bundle": "agent/patterns/reading-grows-glyph-garden.json"
+      }
+    },
+    {
+      "id": "dotfile-glyph-portrait",
+      "order": 168,
+      "title": "用配置文本字符成像",
+      "category": "视觉构成",
+      "experienceTypes": [
+        "visual",
+        "micro-motion"
+      ],
+      "summary": "让产品自己的配置文本组成图像轮廓。",
+      "mechanism": "从灰度格提取亮格，以配置字符循环填格，亮度决定字号、字重和颜色；逐行由扰动字符解析，指针热度短暂替换字符后冷却。",
+      "trigger": "图像入场或指针经过。",
+      "effect": "图像既有主体轮廓，也能近看出产品材料。",
+      "useCases": [
+        "开发者工具",
+        "文字与字符是材料的品牌页"
+      ],
+      "avoid": [
+        "正文内容依赖画布字符阅读"
+      ],
+      "constraints": [
+        "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
+      ],
+      "composition": {
+        "role": "foundation",
+        "notes": "配置字符和兔的图像身份共存，正文独立排版。",
+        "pairsWellWith": [
+          "digit-odometer-count"
+        ],
+        "conflicts": []
+      },
+      "accessibility": {
+        "keyboard": "图像之外保留可读品牌与实际安装命令。",
+        "reducedMotion": "直接绘制最终字符与色阶，停用解析和热度。"
+      },
+      "parameters": [
+        {
+          "name": "图像数据",
+          "value": "hare 132×110，mark 250×31，纵横比1.85",
+          "note": "固定提交源码／线上实测：themes/terminal/art.js:1。"
+        },
+        {
+          "name": "入场",
+          "value": "逐行1100ms加0–420ms抖动，单格扰动260ms",
+          "note": "固定提交源码／线上实测：themes/terminal/page.js art/start/draw。"
+        },
+        {
+          "name": "指针",
+          "value": "半径7格，heat每帧乘.9",
+          "note": "固定提交源码／线上实测：page.js art pointermove/draw。"
+        }
+      ],
+      "prompt": "为目标页面实现「用配置文本字符成像」：从灰度格提取亮格，以配置字符循环填格，亮度决定字号、字重和颜色；逐行由扰动字符解析，指针热度短暂替换字符后冷却。触发：图像入场或指针经过。结果：图像既有主体轮廓，也能近看出产品材料。参数：图像数据=hare 132×110，mark 250×31，纵横比1.85；入场=逐行1100ms加0–420ms抖动，单格扰动260ms；指针=半径7格，heat每帧乘.9。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；图像之外保留可读品牌与实际安装命令。直接绘制最终字符与色阶，停用解析和热度。",
+      "sources": [
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/16",
+          "observation": "Terminal 以灰度格数据决定配置文本字符的大小、字重和色阶，逐行从扰动字符解析为兔与字标；指针附近字符加热变亮并逐帧冷却回到原字符。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
+        }
+      ],
+      "sourceFiles": [
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/themes/terminal/art.js",
+        "demos/cases/hallmark/themes/terminal/page.js",
+        "demos/cases/hallmark/themes/terminal/style.css"
+      ],
+      "paths": {
+        "bundle": "agent/patterns/dotfile-glyph-portrait.json"
+      }
+    },
+    {
+      "id": "shared-caustic-surfaces",
+      "order": 169,
+      "title": "一个焦散着色器驱动多个界面",
+      "category": "视觉构成",
+      "experienceTypes": [
+        "visual",
+        "page-motion"
+      ],
+      "summary": "把同一水面材料用于场景、选中行和数据柱。",
+      "mechanism": "片元着色器共用焦散、色散和池砖折射，再按ground、row、bars配置尺度与强度；四个指针环波弯曲光线。",
+      "trigger": "进入水面区域、移动指针或切换日期组。",
+      "effect": "不同界面对象来自同一套水材质，图表保留数据含义。",
+      "useCases": [
+        "水与光主题",
+        "需要跨场景复用材质的界面"
+      ],
+      "avoid": [
+        "水光覆盖正文而削弱阅读"
+      ],
+      "constraints": [
+        "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
+      ],
+      "composition": {
+        "role": "foundation",
+        "notes": "用相同光学材料连接背景、日程选择与客流图。",
+        "pairsWellWith": [
+          "viewport-animation-lifecycle"
+        ],
+        "conflicts": []
+      },
+      "accessibility": {
+        "keyboard": "日期控件和说明为独立DOM，图表保留名称与读数。",
+        "reducedMotion": "固定时间14绘制静帧，数据切换直接给目标高度。"
+      },
+      "parameters": [
+        {
+          "name": "主水面",
+          "value": "cell=118，tile=30，strength=.72",
+          "note": "固定提交源码／线上实测：themes/refract/scene.js make cfg。"
+        },
+        {
+          "name": "涟漪",
+          "value": "最多4个，移动间隔520ms，210px/s，3.5s",
+          "note": "固定提交源码／线上实测：scene.js drop与FRAG。"
+        },
+        {
+          "name": "水柱",
+          "value": "15柱，dt×(5+i×.12)趋近目标",
+          "note": "固定提交源码／线上实测：scene.js frame。"
+        }
+      ],
+      "prompt": "为目标页面实现「一个焦散着色器驱动多个界面」：片元着色器共用焦散、色散和池砖折射，再按ground、row、bars配置尺度与强度；四个指针环波弯曲光线。触发：进入水面区域、移动指针或切换日期组。结果：不同界面对象来自同一套水材质，图表保留数据含义。参数：主水面=cell=118，tile=30，strength=.72；涟漪=最多4个，移动间隔520ms，210px/s，3.5s；水柱=15柱，dt×(5+i×.12)趋近目标。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；日期控件和说明为独立DOM，图表保留名称与读数。固定时间14绘制静帧，数据切换直接给目标高度。",
+      "sources": [
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/17",
+          "observation": "Refract 的同一焦散着色器驱动池底、课表亮行和十五根客流水柱，指针触水留下最多四个扩散环，换工作日或周末时水柱、安静时段说明与时间标记一起更新。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
+        }
+      ],
+      "sourceFiles": [
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/themes/refract/scene.js",
+        "demos/cases/hallmark/themes/refract/index.html",
+        "demos/cases/hallmark/themes/refract/style.css"
+      ],
+      "paths": {
+        "bundle": "agent/patterns/shared-caustic-surfaces.json"
+      }
+    },
+    {
+      "id": "two-scan-point-cloud-compare",
+      "order": 170,
+      "title": "两次扫描的点云图层与比较",
+      "category": "导航与状态",
+      "experienceTypes": [
+        "page-motion",
+        "structure"
+      ],
+      "summary": "在同一个测量场内比较时点、图层和截面。",
+      "mechanism": "多视图复用同一点位数据，以分类权重显隐层，以scissor在分隔线两侧绘两个扫描状态，平面选择与截面共用z值和投影。",
+      "trigger": "图层开关、分隔线或截面输入。",
+      "effect": "变化区、组成层和测量高度能在同一场地中核对。",
+      "useCases": [
+        "场地测量",
+        "三维扫描和分层空间数据"
+      ],
+      "avoid": [
+        "把演示点位写成真实项目测量"
+      ],
+      "constraints": [
+        "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
+      ],
+      "composition": {
+        "role": "foundation",
+        "notes": "同一点集负责多视图、分类和时点，标注随投影定位。",
+        "pairsWellWith": [
+          "measured-redline-annotation"
+        ],
+        "conflicts": []
+      },
+      "accessibility": {
+        "keyboard": "开关与分隔线有语义名称、aria值和键盘输入。",
+        "reducedMotion": "固定扫带与视角，图层、比较和截面按输入直接更新。"
+      },
+      "parameters": [
+        {
+          "name": "场地",
+          "value": "W=120，D=90，平台41.25，楼层3.6",
+          "note": "固定提交源码／线上实测：themes/vantage/scene.js 常量。"
+        },
+        {
+          "name": "扫带",
+          "value": "hero 8s周期/6.4s穿越；layers 10s/7.2s",
+          "note": "固定提交源码／线上实测：scene.js sweepAt/mount。"
+        },
+        {
+          "name": "比较与截面",
+          "value": "分隔4%–96%，键盘5%；切片半厚1.1，z量化.5",
+          "note": "固定提交源码／线上实测：scene.js compare/drawCut。"
+        }
+      ],
+      "prompt": "为目标页面实现「两次扫描的点云图层与比较」：多视图复用同一点位数据，以分类权重显隐层，以scissor在分隔线两侧绘两个扫描状态，平面选择与截面共用z值和投影。触发：图层开关、分隔线或截面输入。结果：变化区、组成层和测量高度能在同一场地中核对。参数：场地=W=120，D=90，平台41.25，楼层3.6；扫带=hero 8s周期/6.4s穿越；layers 10s/7.2s；比较与截面=分隔4%–96%，键盘5%；切片半厚1.1，z量化.5。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；开关与分隔线有语义名称、aria值和键盘输入。固定扫带与视角，图层、比较和截面按输入直接更新。",
+      "sources": [
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/18",
+          "observation": "Vantage 在多个视图中复用同一测量场地点位，扫带照亮点云，图层开关控制地面、结构、树冠和变化区域，比较分隔线以 scissor 绘制两次扫描，截面控件同步更新平面切线与高程标注。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
+        }
+      ],
+      "sourceFiles": [
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/themes/vantage/scene.js",
+        "demos/cases/hallmark/themes/vantage/index.html",
+        "demos/cases/hallmark/themes/vantage/style.css"
+      ],
+      "paths": {
+        "bundle": "agent/patterns/two-scan-point-cloud-compare.json"
+      }
+    },
+    {
+      "id": "single-score-audio-visual",
+      "order": 171,
+      "title": "同一谱面驱动画面与合成音乐",
+      "category": "加载与媒体",
+      "experienceTypes": [
+        "sound",
+        "page-motion"
+      ],
+      "summary": "让音符、波形、clip和声音具有同一个数据来源。",
+      "mechanism": "谱面事件生成哼唱曲线、量化音符、四轨包络与合成调度；播放头和高亮读音频时钟，切风格重排同一旋律。",
+      "trigger": "主动播放或选择磁带风格。",
+      "effect": "听到的段落、看到的播放位置和分轨内容一致。",
+      "useCases": [
+        "音乐产品解释",
+        "生成编曲与音频工作台"
+      ],
+      "avoid": [
+        "装饰波形与实际声音无对应"
+      ],
+      "constraints": [
+        "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
+      ],
+      "composition": {
+        "role": "foundation",
+        "notes": "画面解释音乐事件，播放依然由用户启用和停止。",
+        "pairsWellWith": [
+          "sound-opt-in"
+        ],
+        "conflicts": []
+      },
+      "accessibility": {
+        "keyboard": "播放按钮有名称，停止复位状态，谱面之外保留文字说明。",
+        "reducedMotion": "直接给已编曲画面，主动声音和手动风格选择保留。"
+      },
+      "parameters": [
+        {
+          "name": "谱面",
+          "value": "92 BPM、16拍、14行、13个旋律事件",
+          "note": "固定提交源码／线上实测：themes/bloom/arrange.js 常量/MEL。"
+        },
+        {
+          "name": "曲长与调度",
+          "value": "16×60/92≈10.435s，提前60ms开始",
+          "note": "固定提交源码／线上实测：themes/bloom/page.js LEN/play。"
+        },
+        {
+          "name": "开场",
+          "value": "听写300–3300ms；轨道4000ms起按300ms交错，6100ms结束",
+          "note": "固定提交源码／线上实测：page.js T/END。"
+        }
+      ],
+      "prompt": "为目标页面实现「同一谱面驱动画面与合成音乐」：谱面事件生成哼唱曲线、量化音符、四轨包络与合成调度；播放头和高亮读音频时钟，切风格重排同一旋律。触发：主动播放或选择磁带风格。结果：听到的段落、看到的播放位置和分轨内容一致。参数：谱面=92 BPM、16拍、14行、13个旋律事件；曲长与调度=16×60/92≈10.435s，提前60ms开始；开场=听写300–3300ms；轨道4000ms起按300ms交错，6100ms结束。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；播放按钮有名称，停止复位状态，谱面之外保留文字说明。直接给已编曲画面，主动声音和手动风格选择保留。",
+      "sources": [
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/19",
+          "observation": "Bloom 用一份十六拍谱面同时生成哼唱曲线、音符、四条乐器轨、波形包络和 Web Audio 合成事件，播放头、时码与音符高亮跟随同一音频时钟，切换磁带风格重排同一旋律。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
+        }
+      ],
+      "sourceFiles": [
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/themes/bloom/arrange.js",
+        "demos/cases/hallmark/themes/bloom/page.js",
+        "demos/cases/hallmark/themes/bloom/index.html",
+        "demos/cases/hallmark/themes/bloom/style.css"
+      ],
+      "paths": {
+        "bundle": "agent/patterns/single-score-audio-visual.json"
+      }
+    },
+    {
+      "id": "weather-sound-scene-mixer",
+      "order": 172,
+      "title": "推子同时控制声音与夜景",
+      "category": "交互反馈",
+      "experienceTypes": [
+        "sound",
+        "micro-motion"
+      ],
+      "summary": "用同一组推子让天气画面与声音强度一起变化。",
+      "mechanism": "雨、风和列车共用level与穿越相位，推子同步多个面板；定时器前段保持，后段余弦淡出到静音与结束状态。",
+      "trigger": "调整推子、淡出定时器或Listen/Stop。",
+      "effect": "视觉材料帮助理解混音，启停和结束状态清楚。",
+      "useCases": [
+        "环境声音工具",
+        "具象声音混音与夜景产品"
+      ],
+      "avoid": [
+        "进入页面即播放环境音"
+      ],
+      "constraints": [
+        "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
+      ],
+      "composition": {
+        "role": "foundation",
+        "notes": "推子、夜景和音频是同一状态的不同读数。",
+        "pairsWellWith": [
+          "sound-opt-in",
+          "live-parameter-readout"
+        ],
+        "conflicts": []
+      },
+      "accessibility": {
+        "keyboard": "推子支持方向键、PageUp/Down和Home/End，Listen是原生按钮。",
+        "reducedMotion": "显示静态夜景并即时更新强度，保留用户启停声音。"
+      },
+      "parameters": [
+        {
+          "name": "初值",
+          "value": "雨.6、风.35、列车.15、定时30min",
+          "note": "固定提交源码／线上实测：themes/ribbon/night.js 共享状态。"
+        },
+        {
+          "name": "列车",
+          "value": "周期62s，穿越44s",
+          "note": "固定提交源码／线上实测：night.js PERIOD/CROSS/trainP。"
+        },
+        {
+          "name": "淡出",
+          "value": "前60%保持，后40%余弦淡出，Stop后900ms挂起",
+          "note": "固定提交源码／线上实测：night.js fadeAt/engine.stop。"
+        }
+      ],
+      "prompt": "为目标页面实现「推子同时控制声音与夜景」：雨、风和列车共用level与穿越相位，推子同步多个面板；定时器前段保持，后段余弦淡出到静音与结束状态。触发：调整推子、淡出定时器或Listen/Stop。结果：视觉材料帮助理解混音，启停和结束状态清楚。参数：初值=雨.6、风.35、列车.15、定时30min；列车=周期62s，穿越44s；淡出=前60%保持，后40%余弦淡出，Stop后900ms挂起。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；推子支持方向键、PageUp/Down和Home/End，Listen是原生按钮。显示静态夜景并即时更新强度，保留用户启停声音。",
+      "sources": [
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/20",
+          "observation": "Ribbon 的雨、风、远处列车和淡出定时器共用控制量，推子同时改变 Web Audio 混音与夜景强度，列车画面和声音共用穿越相位，Listen 启用声音，Stop 淡出后挂起上下文。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
+        }
+      ],
+      "sourceFiles": [
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/themes/ribbon/night.js",
+        "demos/cases/hallmark/themes/ribbon/index.html",
+        "demos/cases/hallmark/themes/ribbon/style.css"
+      ],
+      "paths": {
+        "bundle": "agent/patterns/weather-sound-scene-mixer.json"
+      }
+    },
+    {
+      "id": "date-place-derived-chart",
+      "order": 173,
+      "title": "由日期与地点推导图表",
+      "category": "内容组织",
+      "experienceTypes": [
+        "structure",
+        "visual"
+      ],
+      "summary": "将日期与地点输入同时用于曲线、极值、日照和读数。",
+      "mechanism": "以港口参数与周期模型算潮高，从相邻采样找高低潮，按纬度和日期算日出日落，在一次draw中更新SVG与文字。",
+      "trigger": "拖动日期或选择港口。",
+      "effect": "输入与图表、昼夜底色和读数有明确对应。",
+      "useCases": [
+        "科学模型演示",
+        "日期与地点共同驱动的数据图"
+      ],
+      "avoid": [
+        "把示例推导结果作为正式预报"
+      ],
+      "constraints": [
+        "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
+      ],
+      "composition": {
+        "role": "foundation",
+        "notes": "曲线与文字由同一计算生成，标签保持可读。",
+        "pairsWellWith": [
+          "live-parameter-readout"
+        ],
+        "conflicts": []
+      },
+      "accessibility": {
+        "keyboard": "原生日期范围输入与港口按钮，极值和日照有文字读数。",
+        "reducedMotion": "输入后直接重绘目标数据和标注。"
+      },
+      "parameters": [
+        {
+          "name": "潮汐周期",
+          "value": "12.42h与14.77d",
+          "note": "固定提交源码／线上实测：themes/almanac/page.js SEMI/SPRING。"
+        },
+        {
+          "name": "采样",
+          "value": "1000×300 SVG，24h内289点，每5min一点",
+          "note": "固定提交源码／线上实测：page.js draw。"
+        },
+        {
+          "name": "地点",
+          "value": "3组纬度、均值、潮差与时滞",
+          "note": "固定提交源码／线上实测：page.js PORTS。"
+        }
+      ],
+      "prompt": "为目标页面实现「由日期与地点推导图表」：以港口参数与周期模型算潮高，从相邻采样找高低潮，按纬度和日期算日出日落，在一次draw中更新SVG与文字。触发：拖动日期或选择港口。结果：输入与图表、昼夜底色和读数有明确对应。参数：潮汐周期=12.42h与14.77d；采样=1000×300 SVG，24h内289点，每5min一点；地点=3组纬度、均值、潮差与时滞。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；原生日期范围输入与港口按钮，极值和日照有文字读数。输入后直接重绘目标数据和标注。",
+      "sources": [
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/21",
+          "observation": "Almanac 按日期和港口的纬度、均值、潮差与时滞推导潮线及日照，在同一次重绘中更新 SVG 曲线、高低潮、日出日落、夜间遮罩和文字读数。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
+        }
+      ],
+      "sourceFiles": [
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/themes/almanac/page.js",
+        "demos/cases/hallmark/themes/almanac/index.html",
+        "demos/cases/hallmark/themes/almanac/style.css"
+      ],
+      "paths": {
+        "bundle": "agent/patterns/date-place-derived-chart.json"
+      }
+    },
+    {
+      "id": "paper-action-explainer",
+      "order": 174,
+      "title": "用纸面动作讲解业务流程",
+      "category": "加载与媒体",
+      "experienceTypes": [
+        "page-motion"
+      ],
+      "summary": "把业务动作放进有遮挡和物理顺序的纸面对象中。",
+      "mechanism": "信件滑进窗口信封，贴资后回信进入，最后在发票盖Paid；每步只动画transform和opacity，离屏暂停。",
+      "trigger": "首屏纸面场景进入视口。",
+      "effect": "用户从对象处理顺序理解提醒、寄出、回信与付款。",
+      "useCases": [
+        "有文书隐喻的业务产品",
+        "账单和寄送流程解释"
+      ],
+      "avoid": [
+        "让自动表演成为唯一的业务说明"
+      ],
+      "constraints": [
+        "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
+      ],
+      "composition": {
+        "role": "foundation",
+        "notes": "纸面流程与标题、实际产品文案共同解释业务。",
+        "pairsWellWith": [
+          "scroll-synchronized-rail",
+          "paper-material-collage"
+        ],
+        "conflicts": []
+      },
+      "accessibility": {
+        "keyboard": "对象旁保留稳定说明，主要行动使用真实按钮。",
+        "reducedMotion": "直接呈现寄信后的可读场景。"
+      },
+      "parameters": [
+        {
+          "name": "寄信",
+          "value": "700ms后滑动1700ms，2550ms贴资",
+          "note": "固定提交源码／线上实测：themes/coral/scene.js start。"
+        },
+        {
+          "name": "回信与盖章",
+          "value": "3050ms回信1150ms；4400ms盖章520ms",
+          "note": "固定提交源码／线上实测：scene.js start。"
+        }
+      ],
+      "prompt": "为目标页面实现「用纸面动作讲解业务流程」：信件滑进窗口信封，贴资后回信进入，最后在发票盖Paid；每步只动画transform和opacity，离屏暂停。触发：首屏纸面场景进入视口。结果：用户从对象处理顺序理解提醒、寄出、回信与付款。参数：寄信=700ms后滑动1700ms，2550ms贴资；回信与盖章=3050ms回信1150ms；4400ms盖章520ms。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；对象旁保留稳定说明，主要行动使用真实按钮。直接呈现寄信后的可读场景。",
+      "sources": [
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/22",
+          "observation": "Coral 按顺序把提醒信滑入窗口信封、贴资、放入回信并在发票上盖 Paid，用纸面对象的位移、遮挡和盖章解释催款流程，离屏时暂停开场。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
+        }
+      ],
+      "sourceFiles": [
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/themes/coral/scene.js",
+        "demos/cases/hallmark/themes/coral/index.html",
+        "demos/cases/hallmark/themes/coral/style.css"
+      ],
+      "paths": {
+        "bundle": "agent/patterns/paper-action-explainer.json"
+      }
+    },
+    {
+      "id": "font-metric-guides",
+      "order": 175,
+      "title": "字体真实量度生成参考线",
+      "category": "视觉构成",
+      "experienceTypes": [
+        "visual"
+      ],
+      "summary": "让参考线跟随当前字体与字号的真实轮廓。",
+      "mechanism": "Canvas measureText读取H、x、y的边界，以临时基线标记确定DOM基线，再放置cap、x-height、baseline和descender。",
+      "trigger": "字体就绪、视口或字号几何变化。",
+      "effect": "线与实际字体对应，能解释字高而非仅作装饰。",
+      "useCases": [
+        "字体样本",
+        "排印系统与字形研究"
+      ],
+      "avoid": [
+        "用固定比例冒充所有字体的真实量度"
+      ],
+      "constraints": [
+        "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
+      ],
+      "composition": {
+        "role": "support",
+        "notes": "参考线属于当前样本，试排操作仍是独立控件。",
+        "pairsWellWith": [
+          "measured-redline-annotation",
+          "live-parameter-readout"
+        ],
+        "conflicts": []
+      },
+      "accessibility": {
+        "keyboard": "字形和控件保持真实文本，参考线不替代标签。",
+        "reducedMotion": "参考线按最终几何直接放置。"
+      },
+      "parameters": [
+        {
+          "name": "度量",
+          "value": "H的actualBoundingBoxAscent；x的ascent；y的descent",
+          "note": "固定提交源码／线上实测：themes/specimen/page.js place。"
+        },
+        {
+          "name": "更新",
+          "value": "document.fonts.ready与resize",
+          "note": "固定提交源码／线上实测：page.js place绑定。"
+        }
+      ],
+      "prompt": "为目标页面实现「字体真实量度生成参考线」：Canvas measureText读取H、x、y的边界，以临时基线标记确定DOM基线，再放置cap、x-height、baseline和descender。触发：字体就绪、视口或字号几何变化。结果：线与实际字体对应，能解释字高而非仅作装饰。参数：度量=H的actualBoundingBoxAscent；x的ascent；y的descent；更新=document.fonts.ready与resize。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；字形和控件保持真实文本，参考线不替代标签。参考线按最终几何直接放置。",
+      "sources": [
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/23",
+          "observation": "Specimen 从字体实际轮廓与基线生成 cap、x-height、baseline 和 descender 参考线，字号、字重与正斜体控件直接更新可编辑试排和读数。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
+        }
+      ],
+      "sourceFiles": [
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/themes/specimen/page.js",
+        "demos/cases/hallmark/themes/specimen/index.html",
+        "demos/cases/hallmark/themes/specimen/style.css"
+      ],
+      "paths": {
+        "bundle": "agent/patterns/font-metric-guides.json"
+      }
+    },
+    {
+      "id": "crt-subpixel-mesh",
+      "order": 176,
+      "title": "CRT 子像素网与字边色散",
+      "category": "视觉构成",
+      "experienceTypes": [
+        "visual"
+      ],
+      "summary": "以细小的子像素网与双色字边定义显示器材料。",
+      "mechanism": "RGB竖条和横扫线叠在图面上，红青text-shadow错位字边，悬停字标放大错位。",
+      "trigger": "浏览显示面或悬停字标。",
+      "effect": "图像和字标共享克制的CRT语汇。",
+      "useCases": [
+        "复古电子界面",
+        "像素与显示器主题"
+      ],
+      "avoid": [
+        "用扫描线削弱小字对比"
+      ],
+      "constraints": [
+        "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
+      ],
+      "composition": {
+        "role": "accent",
+        "notes": "材质层不截获指针，正文与图面仍有独立层级。",
+        "pairsWellWith": [
+          "dotfile-glyph-portrait"
+        ],
+        "conflicts": []
+      },
+      "accessibility": {
+        "keyboard": "正文保持真实文本与清楚焦点，不靠字边颜色表达状态。",
+        "reducedMotion": "网格和字边是静态构成，悬停状态即时切换。"
+      },
+      "parameters": [
+        {
+          "name": "网格",
+          "value": "RGB竖向3px周期，横线3px周期",
+          "note": "固定提交源码／线上实测：themes/arcade/style.css .crt::after。"
+        },
+        {
+          "name": "字边",
+          "value": "标题±1.5px；字标悬停±2px",
+          "note": "固定提交源码／线上实测：style.css h1/.bar__mark。"
+        }
+      ],
+      "prompt": "为目标页面实现「CRT 子像素网与字边色散」：RGB竖条和横扫线叠在图面上，红青text-shadow错位字边，悬停字标放大错位。触发：浏览显示面或悬停字标。结果：图像和字标共享克制的CRT语汇。参数：网格=RGB竖向3px周期，横线3px周期；字边=标题±1.5px；字标悬停±2px。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；正文保持真实文本与清楚焦点，不靠字边颜色表达状态。网格和字边是静态构成，悬停状态即时切换。",
+      "sources": [
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/24",
+          "observation": "Arcade 以三像素周期的 RGB 竖条与横向扫描线覆盖显示面，并用红青偏移字边模拟 CRT 子像素色散，字标悬停扩大错位。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
+        }
+      ],
+      "sourceFiles": [
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/themes/arcade/style.css",
+        "demos/cases/hallmark/themes/arcade/index.html"
+      ],
+      "paths": {
+        "bundle": "agent/patterns/crt-subpixel-mesh.json"
+      }
+    },
+    {
+      "id": "overprint-misregistration",
+      "order": 177,
+      "title": "两版套印与错版字形",
+      "category": "视觉构成",
+      "experienceTypes": [
+        "visual"
+      ],
+      "summary": "用色版相交和注册偏差形成印刷材料。",
+      "mechanism": "两块独立色版按混合模式叠印；文字用相同内容的彩色副本偏移，相交圆继续以multiply产生第三色。",
+      "trigger": "阅读双色印刷构成。",
+      "effect": "共享内容的错版露边与叠色可以直接辨认。",
+      "useCases": [
+        "印刷与出版主题",
+        "双色活动与海报页面"
+      ],
+      "avoid": [
+        "重复副本文字进入无障碍名称"
+      ],
+      "constraints": [
+        "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
+      ],
+      "composition": {
+        "role": "support",
+        "notes": "色版与真实文字共用轮廓，材料变化不破坏内容层级。",
+        "pairsWellWith": [
+          "halftone-fade-edge"
+        ],
+        "conflicts": []
+      },
+      "accessibility": {
+        "keyboard": "装饰副本不参与朗读，文字保持单一可读名称。",
+        "reducedMotion": "保持静态套印与错位，停用套准入场动画。"
+      },
+      "parameters": [
+        {
+          "name": "错版",
+          "value": "translate(2px,3px)",
+          "note": "固定提交源码／线上实测：themes/riso/style.css .misreg::after。"
+        },
+        {
+          "name": "混合",
+          "value": "两色版var(--blend)，重叠圆multiply",
+          "note": "固定提交源码／线上实测：themes/overprint/style.css .pass-1/.pass-2；riso .plate__disc--over。"
+        }
+      ],
+      "prompt": "为目标页面实现「两版套印与错版字形」：两块独立色版按混合模式叠印；文字用相同内容的彩色副本偏移，相交圆继续以multiply产生第三色。触发：阅读双色印刷构成。结果：共享内容的错版露边与叠色可以直接辨认。参数：错版=translate(2px,3px)；混合=两色版var(--blend)，重叠圆multiply。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；装饰副本不参与朗读，文字保持单一可读名称。保持静态套印与错位，停用套准入场动画。",
+      "sources": [
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/25",
+          "observation": "Overprint 的两个色版以混合模式叠印，Riso 将同一字形副本偏移 2px、3px 并以相交色圆表现错版与套色后的第三色。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
+        }
+      ],
+      "sourceFiles": [
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/themes/overprint/style.css",
+        "demos/cases/hallmark/themes/overprint/index.html",
+        "demos/cases/hallmark/themes/riso/style.css",
+        "demos/cases/hallmark/themes/riso/index.html"
+      ],
+      "paths": {
+        "bundle": "agent/patterns/overprint-misregistration.json"
+      }
+    },
+    {
+      "id": "duotone-blend-photo",
+      "order": 178,
+      "title": "双层混合的双色摄影",
+      "category": "视觉构成",
+      "experienceTypes": [
+        "visual"
+      ],
+      "summary": "以同一纸色和墨色处理整组摄影。",
+      "mechanism": "原图先灰度化并提高对比，用multiply混入底色，再叠同底色的lighten层，保持细节和统一印刷色调。",
+      "trigger": "浏览摄影与画框。",
+      "effect": "不同来源照片形成同一材料系统。",
+      "useCases": [
+        "摄影与音乐活动页",
+        "双色印刷主题"
+      ],
+      "avoid": [
+        "丢失照片主体细节的过重处理"
+      ],
+      "constraints": [
+        "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
+      ],
+      "composition": {
+        "role": "foundation",
+        "notes": "摄影原图与色调处理分离，构成由画框和题注组织。",
+        "pairsWellWith": [
+          "overprint-misregistration"
+        ],
+        "conflicts": []
+      },
+      "accessibility": {
+        "keyboard": "原图保留替代文本，颜色处理不承载唯一信息。",
+        "reducedMotion": "双色处理为静态样式，保持原构成。"
+      },
+      "parameters": [
+        {
+          "name": "图像处理",
+          "value": "grayscale(1) contrast(1.08)与multiply",
+          "note": "固定提交源码／线上实测：themes/midnight/style.css .frame > img等。"
+        },
+        {
+          "name": "副层",
+          "value": "同底色::before使用lighten",
+          "note": "固定提交源码／线上实测：style.css .frame::before等。"
+        }
+      ],
+      "prompt": "为目标页面实现「双层混合的双色摄影」：原图先灰度化并提高对比，用multiply混入底色，再叠同底色的lighten层，保持细节和统一印刷色调。触发：浏览摄影与画框。结果：不同来源照片形成同一材料系统。参数：图像处理=grayscale(1) contrast(1.08)与multiply；副层=同底色::before使用lighten。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；原图保留替代文本，颜色处理不承载唯一信息。双色处理为静态样式，保持原构成。",
+      "sources": [
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/26",
+          "observation": "Midnight 先将摄影灰度化并提高对比，再以 multiply 和同底色的 lighten 副层混合，使整张图片统一为双色印刷效果并保留细节。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
+        }
+      ],
+      "sourceFiles": [
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/themes/midnight/style.css",
+        "demos/cases/hallmark/themes/midnight/index.html"
+      ],
+      "paths": {
+        "bundle": "agent/patterns/duotone-blend-photo.json"
+      }
+    },
+    {
+      "id": "knockout-headline-split",
+      "order": 179,
+      "title": "同一标题跨色场反白",
+      "category": "视觉构成",
+      "experienceTypes": [
+        "visual"
+      ],
+      "summary": "同一标题横跨两块底色，文字色与底色边界精确对应。",
+      "mechanism": "两份几何对齐的标题以同一栏界做互补clip-path，一侧墨色一侧反白；手机移除副本裁切。",
+      "trigger": "阅读跨色场标题或改变视口。",
+      "effect": "字形连续，色场边界又保持清楚。",
+      "useCases": [
+        "编辑网格",
+        "跨纸面与色块的大标题"
+      ],
+      "avoid": [
+        "两份标题几何不同导致重影"
+      ],
+      "constraints": [
+        "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
+      ],
+      "composition": {
+        "role": "support",
+        "notes": "标题与背景分栏使用同一边界变量。",
+        "pairsWellWith": [
+          "halftone-fade-edge"
+        ],
+        "conflicts": []
+      },
+      "accessibility": {
+        "keyboard": "副本aria-hidden，原文提供完整标题语义。",
+        "reducedMotion": "裁切为静态布局，窄屏给完整单份标题。"
+      },
+      "parameters": [
+        {
+          "name": "边界",
+          "value": "--cols-7",
+          "note": "固定提交源码／线上实测：themes/grid/style.css .hero__head/.hero__knock。"
+        },
+        {
+          "name": "手机",
+          "value": "取消副本clip-path",
+          "note": "固定提交源码／线上实测：style.css 手机媒体规则。"
+        }
+      ],
+      "prompt": "为目标页面实现「同一标题跨色场反白」：两份几何对齐的标题以同一栏界做互补clip-path，一侧墨色一侧反白；手机移除副本裁切。触发：阅读跨色场标题或改变视口。结果：字形连续，色场边界又保持清楚。参数：边界=--cols-7；手机=取消副本clip-path。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；副本aria-hidden，原文提供完整标题语义。裁切为静态布局，窄屏给完整单份标题。",
+      "sources": [
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/27",
+          "observation": "Grid 将对齐的两份标题按第七栏边界互补裁切，使同一标题跨纸面和色场时分别使用对应文字色，窄屏取消副本裁切。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
+        }
+      ],
+      "sourceFiles": [
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/themes/grid/style.css",
+        "demos/cases/hallmark/themes/grid/index.html"
+      ],
+      "paths": {
+        "bundle": "agent/patterns/knockout-headline-split.json"
+      }
+    },
+    {
+      "id": "halftone-fade-edge",
+      "order": 180,
+      "title": "半色调渐隐边界",
+      "category": "视觉构成",
+      "experienceTypes": [
+        "visual"
+      ],
+      "summary": "以规则网点连接实色场和纸面。",
+      "mechanism": "radial-gradient生成可调半径与周期的网点，再用线性mask让网点从实到空；边界层独立于文字和摄影。",
+      "trigger": "阅读色场边界。",
+      "effect": "印刷颗粒成为色面衔接，而非普通透明渐变。",
+      "useCases": [
+        "印刷与饮品主题",
+        "需要材质化边界的色块构成"
+      ],
+      "avoid": [
+        "网点压在正文下影响阅读"
+      ],
+      "constraints": [
+        "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
+      ],
+      "composition": {
+        "role": "accent",
+        "notes": "网点位于独立装饰层，主体图与文字保持完整。",
+        "pairsWellWith": [
+          "overprint-misregistration"
+        ],
+        "conflicts": []
+      },
+      "accessibility": {
+        "keyboard": "网点不传递必要内容且不截获操作。",
+        "reducedMotion": "静态渐隐边界保持可见。"
+      },
+      "parameters": [
+        {
+          "name": "过渡带",
+          "value": "64px",
+          "note": "固定提交源码／线上实测：themes/halftone/style.css .hero::before。"
+        },
+        {
+          "name": "网点与遮罩",
+          "value": "--halftone-dot/--halftone-size；110° mask",
+          "note": "固定提交源码／线上实测：style.css .screen::before。"
+        }
+      ],
+      "prompt": "为目标页面实现「半色调渐隐边界」：radial-gradient生成可调半径与周期的网点，再用线性mask让网点从实到空；边界层独立于文字和摄影。触发：阅读色场边界。结果：印刷颗粒成为色面衔接，而非普通透明渐变。参数：过渡带=64px；网点与遮罩=--halftone-dot/--halftone-size；110° mask。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；网点不传递必要内容且不截获操作。静态渐隐边界保持可见。",
+      "sources": [
+        {
+          "caseId": "hallmark",
+          "locator": "entries/cases/hallmark.json#interaction/28",
+          "observation": "Halftone 用 radial-gradient 生成规则网点，再以线性 mask 将网点从实到空，在主色场和纸面之间形成六十四像素的半色调过渡边界。",
+          "evidence": "observed",
+          "referenceUrl": "https://www.usehallmark.com/",
+          "capturedAt": "2026-11-01"
+        }
+      ],
+      "sourceFiles": [
+        "entries/cases/hallmark.json",
+        "docs/cases/hallmark.md",
+        "demos/cases/hallmark/fidelity.md",
+        "demos/cases/hallmark/themes/halftone/style.css",
+        "demos/cases/hallmark/themes/halftone/index.html"
+      ],
+      "paths": {
+        "bundle": "agent/patterns/halftone-fade-edge.json"
       }
     }
   ]

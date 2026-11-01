@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "repository": "https://github.com/MIBXR/web-atlas",
-  "materialCount": 10,
+  "materialCount": 11,
   "materials": [
     {
       "id": "shaders",
@@ -441,6 +441,47 @@
         "demo": "demos/materials/arc-ui/index.html",
         "entry": "entries/materials/arc-ui.json",
         "preview": "previews/materials/arc-ui.jpg"
+      }
+    },
+    {
+      "id": "hallmark-skill",
+      "title": "Hallmark · 反 AI 套路的网页设计 skill",
+      "type": "agent-skill",
+      "category": "Agent 工作流",
+      "summary": "用不可破例的底线、可记录破例的惯性检查和 50 套材料主题约束 Agent 做网页，先发主题、按页面用途定结构，再用真实浏览器检查和无上下文审查收尾；也能按名字重新设计或审计已有页面。",
+      "tags": [
+        "网页设计",
+        "反 AI 套路",
+        "主题库",
+        "页面审查",
+        "重新设计",
+        "开放授权摄影",
+        "浏览器检查"
+      ],
+      "useCases": [
+        "从零制作落地页与产品页",
+        "用开放授权照片和真实材料搭建品牌页面",
+        "按名字重新设计已有站点并保留内容与接线",
+        "审计现有页面里的生成痕迹"
+      ],
+      "avoid": [
+        "未点名时改动已有设计",
+        "编造指标、证言或客户标识",
+        "按时间线播放的视频与展示台"
+      ],
+      "constraints": [
+        "本条目保存上游固定提交的技能原文、脚本与评测工具，不提供在线生成。",
+        "浏览器检查需要 puppeteer-core 与 Chrome；缺少时只运行静态检查。",
+        "图片生成只在设置 TOGETHER_API_KEY 且用户要求时使用，默认用 scripts/photos.json 登记的 755 张 Wikimedia Commons 开放授权照片，页面逐张署名。",
+        "redesign 和 audit 只在用户点名时运行；audit 只出报告。",
+        "快照 README 的相对链接指向上游仓库结构，需结合固定提交阅读。"
+      ],
+      "paths": {
+        "bundle": "agent/materials/hallmark-skill.json",
+        "snapshot": "demos/materials/hallmark-skill/",
+        "snapshotEntry": "SKILL.md",
+        "entry": "entries/materials/hallmark-skill.json",
+        "preview": "previews/materials/hallmark-skill.jpg"
       }
     }
   ]

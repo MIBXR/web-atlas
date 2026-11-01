@@ -5256,5 +5256,190 @@ window.ATLAS_CASES = [
     "prompt": "参考 Arc UI 的完整官网首页，以真实 HTML/CSS/JavaScript 实现固定浅色的粉蓝黄径向渐变首屏、中性明暗主题、Geist 双行主张、两个行动、客户 SVG 连续轨道、六项 Pro 与九项免费产品媒体、CLI 与 MCP 命令复制、免费／年度方案切换、终身方案、单开 FAQ、渐变结尾和品牌页脚。产品影片只用于原站已有的媒体卡，实际组件代码从独立 Arc UI 素材包取得。沿用原文与真实产品链接，不实现账户和支付后台。桌面两列／三列网格在手机变成一列／两列，导航在顶栏下方展开并支持 Escape 与焦点返回。跟随系统并保存手动主题，品牌面板与媒体保持原色；减少动态时静态显示标题、标识和海报，原作无声音，不加配乐。迁移前读取来源、素材清单与 fidelity.md。 深浅主题以390ms中央横线向上下展开。章节标题按45%可见阈值从112%下方升起。FAQ、套餐底板、金额与复制反馈复用固定免费源码；手机菜单保留460ms展开、240ms收回和40ms条目错峰。媒体在35%可见时静音播放，离屏保留帧，减少动态的海报提供手动播放。",
     "negativePrompt": "不要把整站截图或录屏当作页面；不要将营销短片当成组件实现；不要收录 Pro 源码；不要把免费组件 MIT 许可套用于整站媒体；不要只做首屏而漏掉价格、安装和 FAQ。",
     "exercise": "在 1440×1000 与 390×844、DPR 1、相同主题下并排对照原站和本地；走完主题、菜单、影片、复制、两个价格状态和六项 FAQ，结果见 fidelity.md。"
+  },
+  {
+    "id": "hallmark",
+    "order": 75,
+    "title": "Hallmark · 设计 skill 官网与五十主题",
+    "subtitle": "用同一条提示词的对比、发牌手牌和真实主题页说明一个 skill",
+    "category": "产品",
+    "country": "美国",
+    "capturedAt": "2026-11-01",
+    "referenceUrl": "https://www.usehallmark.com/",
+    "implementation": "reference-study",
+    "edition": "v2.0.0 · 4f6a46c",
+    "demo": "demos/cases/hallmark/index.html",
+    "preview": "previews/cases/hallmark.jpg",
+    "referencePreview": "previews/cases/hallmark-reference.jpg",
+    "research": "docs/cases/hallmark.md",
+    "fidelity": "demos/cases/hallmark/fidelity.md",
+    "assetManifest": "demos/cases/hallmark/assets-manifest.json",
+    "tags": [
+      "产品官网",
+      "Agent Skill",
+      "示范作品",
+      "主题库",
+      "前后对比",
+      "发牌动效",
+      "三维转轮",
+      "WebGL",
+      "浏览器合成声音"
+    ],
+    "summary": "Together AI 的设计 skill 官网：首屏发一手真实页面牌，标题以校对动作改字，对比区让两张不等长整页同步读完，主题网格在对话框内缩放真实页面；全站含 50 个主题示范页和 21 个成品页。",
+    "productFocus": "官网展示 skill 本身；50 个主题页和 21 个 Made 页是 skill 产出的示范作品，其中的品牌、人物、地址、价格和数据都是示范设定，不作为真实机构事实。",
+    "accent": "#FC4C02",
+    "background": "#FAFAF9",
+    "principles": [
+      "把产品证据放在首屏：手牌里的每张牌都能打开对应真实页面。",
+      "用同题对比证明差异，由观看者拖动分隔线下判断。",
+      "主题只定材料，“同主题不同页面”这一区块直接说明版式由构建决定。",
+      "官网自身克制，用纸色网格和校样橙承托色彩各异的主题页。"
+    ],
+    "interaction": [
+      "首屏标题在允许动态时先显示 A design skill，约 950ms 后以斜线划去 A、写入 The、放大落入行内并转为墨色；邻词用前后实测矩形补偿重排，真实文字接管，减少动态直接显示最终标题。",
+      "首屏将五张桌面牌与四张手机牌沿浅弧交错发出，悬停或聚焦抬牌并让邻牌横移；Deal again 排除当前主题，随机抽取九个主题，等图片预解码与收牌完成后重发，busy 期间忽略重复点击。",
+      "比较区以同一归一化滚动进度分别计算两张整页图的溢出高度，使不等长页面同时到达各自底部；三组标签替换整页图、问题数和阅读行程。",
+      "比较分隔线首次进入视口后按 50→74→30→50 示范一次，拖动或键盘操作立即取消自动扫；方向键每次移动 2%，Shift 加速到 10%，Home 和 End 到达两端。",
+      "How 的四格分别只解释一个动作：问题依次出现、三张主题牌发出、三个线框预案每 1.9 秒切换、四条 lint 问题逐项修复；悬停发牌格会先收回再发出。",
+      "主题网格在原生对话框中打开真实主题页，iframe 按 1440px 排版并以容器宽度缩放，材料说明与当前主题同步，上一项和下一项沿筛选结果循环，Escape 关闭后焦点返回当前主题链接。",
+      "Made 把十七张页面牌排在三维圆柱上，闲置时缓慢自转，拖动松手后按速度惯性衰减并吸附到整步角，新的拖动接管惯性，方向键选择相邻页，首次接触后停止闲置自转；Edge 155 中侧页点击被 pointer capture 重定向到轮容器，当前项保持。",
+      "GitHub 星标请求完成后，每位数字以 0–9 的竖列滚到目标数位，位间延迟 90ms，千以上显示 k；减少动态直接定位到最终数字。",
+      "Same 区把同属 Kiln 的两页和同属 Midnight 的两页分别并置，用相同材料下不同的内容与布局说明主题提供材料、构建决定页面结构。",
+      "首页、Lumen 和 Terminal 的复制按钮复制对应命令或当前可见代码，成功后短暂显示勾或 Copied 并更新状态播报，反馈计时结束后恢复按钮。",
+      "Atelier 用同一个半尺寸 WebGL 场绘制上升香气、试香纸羽流和指针尾迹，指针移动拨开雾，选择香型同时改变环境雾与羽流颜色，离开显雾区域或后台时停帧。",
+      "Cobalt 将数据包沿 8×16px 字格中的噪声束送过类型门，字符跨门后由原始 JSON 变为事件名，失败包经历抖动、等待和重试，指针使附近字符束偏开并增亮。",
+      "Cobalt 检查器根据两侧同名字段的真实矩形生成带圆角的弯折连线，悬停字段时同步强调对应行与连线，容器变化后重新测量。",
+      "Furrow 从固定噪声场以 marching squares 生成等高线，再绘地块、树篱与路线；放大镜跟随地图指针并以 1.9 倍重新绘制同一程序几何，移开后缓慢回到农场门边。",
+      "Studio 指向、触摸或聚焦版面区块时测量真实矩形和四向邻块间距并生成 SVG 红线，指向字母时用 DOM Range 逐字测量，以 em 千分之一显示 advance。",
+      "Hum 按顺序点击句中单词，每个已读词长出一株字形植物；越序点击提示下一词，焦点跟到下一词，五分钟时间带每五秒撕下一片纸屑，完成后可重读。",
+      "Terminal 以灰度格数据决定配置文本字符的大小、字重和色阶，逐行从扰动字符解析为兔与字标；指针附近字符加热变亮并逐帧冷却回到原字符。",
+      "Refract 的同一焦散着色器驱动池底、课表亮行和十五根客流水柱，指针触水留下最多四个扩散环，换工作日或周末时水柱、安静时段说明与时间标记一起更新。",
+      "Vantage 在多个视图中复用同一测量场地点位，扫带照亮点云，图层开关控制地面、结构、树冠和变化区域，比较分隔线以 scissor 绘制两次扫描，截面控件同步更新平面切线与高程标注。",
+      "Bloom 用一份十六拍谱面同时生成哼唱曲线、音符、四条乐器轨、波形包络和 Web Audio 合成事件，播放头、时码与音符高亮跟随同一音频时钟，切换磁带风格重排同一旋律。",
+      "Ribbon 的雨、风、远处列车和淡出定时器共用控制量，推子同时改变 Web Audio 混音与夜景强度，列车画面和声音共用穿越相位，Listen 启用声音，Stop 淡出后挂起上下文。",
+      "Almanac 按日期和港口的纬度、均值、潮差与时滞推导潮线及日照，在同一次重绘中更新 SVG 曲线、高低潮、日出日落、夜间遮罩和文字读数。",
+      "Coral 按顺序把提醒信滑入窗口信封、贴资、放入回信并在发票上盖 Paid，用纸面对象的位移、遮挡和盖章解释催款流程，离屏时暂停开场。",
+      "Specimen 从字体实际轮廓与基线生成 cap、x-height、baseline 和 descender 参考线，字号、字重与正斜体控件直接更新可编辑试排和读数。",
+      "Arcade 以三像素周期的 RGB 竖条与横向扫描线覆盖显示面，并用红青偏移字边模拟 CRT 子像素色散，字标悬停扩大错位。",
+      "Overprint 的两个色版以混合模式叠印，Riso 将同一字形副本偏移 2px、3px 并以相交色圆表现错版与套色后的第三色。",
+      "Midnight 先将摄影灰度化并提高对比，再以 multiply 和同底色的 lighten 副层混合，使整张图片统一为双色印刷效果并保留细节。",
+      "Grid 将对齐的两份标题按第七栏边界互补裁切，使同一标题跨纸面和色场时分别使用对应文字色，窄屏取消副本裁切。",
+      "Halftone 用 radial-gradient 生成规则网点，再以线性 mask 将网点从实到空，在主色场和纸面之间形成六十四像素的半色调过渡边界。",
+      "流派按钮同步 aria-pressed 与主题 hidden 状态，Editorial、Modern minimal、Atmospheric、Playful 分别显示 20、12、9、9 项，按钮计数与结果对应。",
+      "主题网格初始显示十项，Show all 展开五十项并把焦点移到第十一项；七个 FAQ 使用原生 details 在文档流中独立展开与收起。",
+      "首页保持无声，Bloom 的 Play 和 Ribbon 的 Listen 只在用户激活后创建或恢复 AudioContext，按钮和 Escape 可停止声音并复位界面，Ribbon 停止后挂起上下文。",
+      "Atelier 根据显雾区域的视口交集和文档前台状态启停绘制，Coral 在纸面演示离屏时暂停 Web Animations，减少动态直接给各自可读的结果。",
+      "Studio 的三套系统在区域可见时每 4200ms 自动切换，悬停或聚焦时暂停，用户主动选项后停止自动切换，标签、board 和 aria 状态共同更新。",
+      "Ultraviolet 的 solo 按钮只强调当前通道，mute 降低对应通道，第二次点击撤销，通道按钮的按下状态和 is-dim 样式同步。",
+      "Coral 的滚动说明面板在屏幕中央的窄观察带进入时选择对应发票状态，桌面说明与吸附发票同步，窄于 60rem 时直接显示完整的第三步。",
+      "Specimen 的字号与字重滑块同步写入试排 CSS 变量及带单位读数，Ribbon 的推子同步百分比、aria-valuenow、视觉强度和音量。",
+      "Pasteup 以小角度旋转、真实纸面投影、复印图混合和压在肖像边缘的日期纸签组织信息，纸张叠放关系保持正文与操作可读。"
+    ],
+    "theme": "首页固定浅纸色与墨色，Made 和安装页脚转为墨底；主题页各自采用其材料配色。",
+    "themeBehavior": {
+      "mode": "fixed",
+      "default": "light",
+      "control": "无切换",
+      "designReason": "固定纸色底，让各主题页的色彩成为画面主角；主题页各自决定明暗"
+    },
+    "soundBehavior": {
+      "kind": "interactive",
+      "control": "首页无声；Bloom、Ribbon 由 Play／Listen 按钮启用并可停止",
+      "interactionRole": "Bloom 将谱面、播放头和合成音乐对齐；Ribbon 将雨、风、列车的推子同时映射到声音和夜景。"
+    },
+    "composition": {
+      "color": "#FAFAF9 纸色、#0F0F0E 墨色与 #FC4C02 校样橙；卡片、网格和边界用同一组冷暖中性色。",
+      "typography": "Fraunces 字标、Newsreader 正文大标题、Geist 正文与控件、Geist Mono 命令；主标题字号 clamp(2.75rem,1.6rem + 4vw,5.5rem)。",
+      "layout": "1240px 居中容器；首屏居中标题下发牌，长页比较区吸附，主题网格桌面五列，Same 成对并列，Made 与安装收束为墨底。",
+      "imagery": "首页手牌、网格、比较与转轮使用原作页面截图，主题对话框加载真实 HTML；主题及 Made 页保留开放授权摄影。",
+      "shape": "14px 页面表面、胶囊控件、浅弧手牌与圆柱转轮；背景的细网格作为校样语汇。",
+      "hierarchy": "可打开的手牌先给产品证据，同题比较解释价值，How 解释流程，Themes 和 Same 展示范围与变化，FAQ 回答顾虑，安装命令给出行动。",
+      "motion": "标题划线改字、预解码后发牌、双整页归一阅读、一次示范的分隔线与有惯性的页面转轮；主题页按各自材料采用绘制或声音。",
+      "coherence": "纸色、墨色、校样橙与同一圆角尺度统一官网，不同主题的色彩集中在页面证据中，多个入口回到同一批真实主题。"
+    },
+    "tokens": {
+      "palette": [
+        "#FAFAF9",
+        "#F2F2F0",
+        "#E9E9E6",
+        "#0F0F0E",
+        "#3A3A37",
+        "#6B6B66",
+        "#FC4C02",
+        "#1F9D55",
+        "#E5484D"
+      ],
+      "type": "Fraunces 字标；Newsreader 400 大标题；Geist 400/500/600；Geist Mono 400/500；正文 16px、控件 15px、辅助文字 13px。",
+      "layout": "容器 1240px；边距 clamp(16px,4vw,48px)；顶栏 72px；表面半径 14px、控件 999px。",
+      "motion": "普通过渡 320ms、快速 160ms；标题起点约 950ms，校对时间轴 2140ms；手牌交错 55ms；分隔线示范 1100ms；线框周期 1900ms。"
+    },
+    "constraints": [
+      "来源固定为 Nutlope/hallmark@4f6a46c6dc325d40ab268c93e25c7b96676ebccd 的 site/，保持原作布局、目录、脚本和示范内容。",
+      "字体、Wikimedia 地址与预连接的本地化范围及双宽对照结果见 demos/cases/hallmark/fidelity.md。",
+      "js/core.js 的 api.github.com 星标请求保留，数量按真实响应更新。",
+      "Edge 155 中侧页点击的 pointer capture 行为及当前版本没有入口的色条、网格悬停材料、指针光斑与 Ultraviolet 试听按原作记录于 fidelity.md。"
+    ],
+    "useCases": [
+      "Agent 工具官网",
+      "设计系统或主题库展示",
+      "前后对比型产品页",
+      "以真实页面为证据的落地页"
+    ],
+    "avoid": [
+      "把示范品牌写成真实机构",
+      "把手牌和转轮当作唯一的导航入口",
+      "把比较区两张整页换成未做的效果图"
+    ],
+    "sources": [
+      {
+        "title": "Hallmark 公开官网",
+        "url": "https://www.usehallmark.com/",
+        "type": "实例",
+        "note": "首页、五十个主题页与二十一个 Made 页；当前源码对应已确认的线上版本。"
+      },
+      {
+        "title": "Hallmark 固定提交",
+        "url": "https://github.com/Nutlope/hallmark/tree/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site",
+        "type": "源码",
+        "note": "全部页面、交互脚本、截图与主题摄影的原始来源。"
+      },
+      {
+        "title": "Hallmark skill 原文",
+        "url": "https://github.com/Nutlope/hallmark/blob/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/SKILL.md",
+        "type": "制作方法",
+        "note": "Powered by Together AI；主题、材料、流程与审查要求，完整快照收录为 hallmark-skill。"
+      },
+      {
+        "title": "Together AI 官方公司资料",
+        "url": "https://www.linkedin.com/company/togethercomputer/",
+        "type": "创作来源",
+        "note": "公司资料的 Headquarters 为 San Francisco, California，来源地区为美国。"
+      }
+    ],
+    "migration": [
+      {
+        "field": "index.html [data-fan-pool]",
+        "how": "修改可抽取的主题名称、slug 和材料配色；对应桌面／手机截图位于 assets/desk 与 assets/phone。"
+      },
+      {
+        "field": "index.html [data-cmp-data]",
+        "how": "修改三组对比的标签、问题数和两张整页高度；与 assets/cmp 中的实际整页图一起调整。"
+      },
+      {
+        "field": "index.html #themes",
+        "how": "修改主题链接、流派、名称和 data-mat；对话框沿当前可见结果翻阅。"
+      },
+      {
+        "field": "index.html #examples",
+        "how": "修改转轮的页面牌、名称、说明与目的地；js/wheel.js 按卡片总数计算步角。"
+      },
+      {
+        "field": "themes/<id>/tokens.css",
+        "how": "修改单个主题的字体、配色与尺度，再在该主题 style.css 和脚本中调整构成与交互。"
+      }
+    ],
+    "prompt": "读取本案例源码、研究、fidelity.md 和关联 hallmark-skill 素材，为目标产品制作以真实页面为证据的官网。保留纸色、墨色与校样橙的层级，首屏以真实桌面／手机页面组成九张浅弧手牌，标题用校对动作将 A 改为 The，发牌支持悬停、聚焦和预解码后的不重复重抽。比较区让同题两张不等长整页按归一进度同时读完，分隔线示范一次后交给拖动与键盘。主题网格有计数过滤与渐进展开，在原生对话框内按 1440px 排版缩放真实页面并恢复焦点。以同材料的异页并置说明结构变化，FAQ 原位开合，末段用页面转轮和安装命令收束。首页保持无声，主题内的声音由用户主动启用并可停止。按目标内容替换真实页面、数据和入口，沿用对应的响应式与减少动态分支。",
+    "negativePrompt": "不要把示范品牌当真实机构；不要用尚未制作的效果图证明前后差异；不要删掉键盘分隔线、对话框焦点返回或减少动态结果；不要把手牌或转轮设为唯一入口；不要给首页自动配乐。",
+    "exercise": "在两宽各打开一张手牌、切换比较 pair 并读到底、用键盘移动分隔线、过滤主题并在对话框前后翻页；对照同材料的两种结构，再到 Bloom 与 Ribbon 主动启停声音。"
   }
 ];

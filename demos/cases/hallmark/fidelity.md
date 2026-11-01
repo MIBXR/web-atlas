@@ -19,7 +19,7 @@
 | HTML 字体链接与 CSS 字体导入 | Google Fonts／Fontshare，共 66 个不同样式表请求 | `fonts/css/font-01.css` 至 `font-66.css` | 使用桌面 Chrome UA；同一 URL 保存一份。保留全部字体族、字重、正斜体、font-display、unicode-range 与 @font-face。 |
 | 字体样式表中的字库 | Google 字库及 Fontshare，包括 `//cdn.fontshare.com/…` | `fonts/files/` | 原始响应字节，保留全部响应格式，仅把 url 改相对路径。 |
 | 字体 preconnect | Google Fonts、Gstatic、Fontshare API／CDN | 删除对应标签 | 字体从案例目录读取。 |
-| 19 个 Made 页的 Wikimedia 图片 | src／srcset 中 238 个不同 `upload.wikimedia.org` URL | 对应页面的 `photos/` | 逐 URL 保存原始响应字节；不同宽度分别保存；429 退避重试；credit 的 Commons 外链保留。 |
+| 19 个 Made 页的 Wikimedia 图片 | src／srcset 中 238 个不同 `upload.wikimedia.org` URL | 对应页面的 `photos/` | 逐 URL 保存原始响应字节；不同宽度分别保存；文件名采用 URL 末段，其中逗号和单引号换为下划线；429 退避重试；credit 的 Commons 外链保留。 |
 | 原有摄影、截图、图标、CSS 与 JavaScript | 固定提交 `site/` 文件 | 原目录与文件名 | git archive 保留原始字节；HTML 仅作上述资源本地化；不导入仅含 `.vercel` 的上游 `.gitignore`。 |
 
 `fonts/` 共 9,046,106 字节（8.63 MiB，含许可原文）。Made 摄影完整保留。字体逐家族按原文记录，Ultra 为 Apache License 2.0，其余按 OFL 或 Fontshare 条款。源码中没有任务所列的统计／追踪标签。GitHub 星标请求、GitHub／X 外链、example.com 示例地址和官网 OG／canonical 信息保留。

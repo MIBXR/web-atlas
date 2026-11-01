@@ -66,6 +66,89 @@ Bloom 的一份十六拍谱面生成哼唱曲线、量化音符、四轨包络�
 
 Made 的四个 custom 页面分别是 [伴侣预算](../../demos/cases/hallmark/made/custom-couples-budget/index.html)、[上门修车](../../demos/cases/hallmark/made/custom-mobile-bike-repair/index.html)、[照片改名 CLI](../../demos/cases/hallmark/made/custom-photo-rename-cli/index.html) 和 [拉面柜台](../../demos/cases/hallmark/made/custom-ramen-counter/index.html)，以各自用途选择构成，与主题材料生成页共同进入成品范围。
 
+## 全部页面清单
+
+50 个主题按首页网格顺序排列，从本站案例首页的 Show all 50 themes 展开。
+
+| 主题 | 流派 | 材料 | 示范品牌 |
+| --- | --- | --- | --- |
+| [Refract](../../demos/cases/hallmark/themes/refract/index.html) | 氛围 | 阳光照在白色灰泥上，水光在表面流动 | Bellwater Lido |
+| [Cobalt](../../demos/cases/hallmark/themes/cobalt/index.html) | 现代极简 | 干净的开发者工具，以一抹电光蓝点睛 | Relay |
+| [Dusk](../../demos/cases/hallmark/themes/dusk/index.html) | 现代极简 | 暮色薄雾与石板底色，产品置于烟色玻璃中 | Closewise |
+| [Vantage](../../demos/cases/hallmark/themes/vantage/index.html) | 现代极简 | 夜间扫描，每个点都经过测量与扫掠 | Swath |
+| [Furrow](../../demos/cases/hallmark/themes/furrow/index.html) | 现代极简 | 暖纸上的实用农场办公室，以一抹橘色点睛 | Fieldbook |
+| [Studio](../../demos/cases/hallmark/themes/studio/index.html) | 社论 | 设计工作室的白墙，作品保留真实色彩 | Field Office |
+| [Atelier](../../demos/cases/hallmark/themes/atelier/index.html) | 社论 | 温暖日光中的安静工作室，石灰墙与赭褐色 | Maison Orla |
+| [Ribbon](../../demos/cases/hallmark/themes/ribbon/index.html) | 氛围 | 安静夜色、机加工推子与一颗亮着的胶囊按钮 | Lull |
+| [Dose](../../demos/cases/hallmark/themes/dose/index.html) | 现代极简 | 诊室般洁净的应用，带淡绿色调 | Tandem |
+| [Coral](../../demos/cases/hallmark/themes/coral/index.html) | 现代极简 | 暖灰色的平静应用，以一抹珊瑚色传递信号 | Tilly |
+| [Almanac](../../demos/cases/hallmark/themes/almanac/index.html) | 社论 | 石板色纸上的参考书，精确到小数位 | Tidetable 2027 |
+| [Arcade](../../demos/cases/hallmark/themes/arcade/index.html) | 俏皮 | 夜间街机机柜，喧闹而明亮 | Pixel Picnic |
+| [Bloom](../../demos/cases/hallmark/themes/bloom/index.html) | 氛围 | 两团陶土色微光温暖柔软纸面 | Driftsong |
+| [Blueprint](../../demos/cases/hallmark/themes/blueprint/index.html) | 现代极简 | 普鲁士蓝绘图纸与白色线条 | Halden and Roe |
+| [Broadside](../../demos/cases/hallmark/themes/broadside/index.html) | 社论 | 在浅黄纸上压印的木活字海报 | Wickford Autumn Machinery Sale |
+| [Brutal](../../demos/cases/hallmark/themes/brutal/index.html) | 社论 | 黑色线框、硬边色块与一抹酸黄 | Unit Nine |
+| [Carnival](../../demos/cases/hallmark/themes/carnival/index.html) | 社论 | 两种颜色争夺版面的游乐场招贴 | Cold Comfort |
+| [Console](../../demos/cases/hallmark/themes/console/index.html) | 现代极简 | 供全天运行软件使用的石墨色面板 | Benchmark |
+| [Darkroom](../../demos/cases/hallmark/themes/darkroom/index.html) | 氛围 | 近黑色墙面上的黑白照片 | Low Water |
+| [Editorial](../../demos/cases/hallmark/themes/editorial/index.html) | 社论 | 非涂布纸上的黑墨杂志跨页 | Margin Notes |
+| [Formwork](../../demos/cases/hallmark/themes/formwork/index.html) | 社论 | 浇筑混凝土、硬阴影与黑白摄影 | Ashgrove Concrete |
+| [Garden](../../demos/cases/hallmark/themes/garden/index.html) | 社论 | 燕麦色纸、深绿墨与日光 | Hollins Orchard |
+| [Grid](../../demos/cases/hallmark/themes/grid/index.html) | 社论 | 瑞士式栏网、群青色块与一处红色标记 | Kessler Archive |
+| [Halftone](../../demos/cases/hallmark/themes/halftone/index.html) | 俏皮 | 奶油黄纸上经过网点印刷的漫画 | Pop Fizz |
+| [Hedgerow](../../demos/cases/hallmark/themes/hedgerow/index.html) | 社论 | 深篱绿、奶油色文字与一抹亮绿新芽 | Five Mile Gin |
+| [Hum](../../demos/cases/hallmark/themes/hum/index.html) | 俏皮 | 欢快而有触感，按钮像键盘按键般按下 | Sprout |
+| [Ink](../../demos/cases/hallmark/themes/ink/index.html) | 社论 | 白纸、纯黑与一抹蓝绿 | Barton Road Library of Things |
+| [Kiln](../../demos/cases/hallmark/themes/kiln/index.html) | 氛围 | 暗色工坊里只有炽热物体发光 | Cone Six |
+| [Loom](../../demos/cases/hallmark/themes/loom/index.html) | 社论 | 窗光下近看的本色织物 | Wren Weaving |
+| [Lumen](../../demos/cases/hallmark/themes/lumen/index.html) | 氛围 | 紫罗兰夜色与熔融黄铜细节 | quarry |
+| [Manifesto](../../demos/cases/hallmark/themes/manifesto/index.html) | 社论 | 暖黑底上的紧排大写字与一抹战斗红 | Right to Repair Coalition |
+| [Midnight](../../demos/cases/hallmark/themes/midnight/index.html) | 氛围 | 铺满边缘的午夜蓝，冷静而有电影感 | Afterimage |
+| [Newsprint](../../demos/cases/hallmark/themes/newsprint/index.html) | 社论 | 地方报纸头版、粗衬线标题与分栏线 | The Lantern |
+| [Overprint](../../demos/cases/hallmark/themes/overprint/index.html) | 俏皮 | 新闻纸上的两色油墨，交叠处印出苔绿色 | The Boiler Room |
+| [Paste-up](../../demos/cases/hallmark/themes/pasteup/index.html) | 俏皮 | 牛皮纸板上拼贴的小志 | Small Hours Zine Fair |
+| [Piste](../../demos/cases/hallmark/themes/piste/index.html) | 俏皮 | 雪白、冷色油墨与一抹钴蓝 | Col Blanc |
+| [Rim](../../demos/cases/hallmark/themes/rim/index.html) | 现代极简 | 暖黑底与测量标记，俯瞰地球 | Northstar |
+| [Riso](../../demos/cases/hallmark/themes/riso/index.html) | 社论 | 蓝色与荧光粉双色滚筒孔版印刷 | Off Register |
+| [Solstice](../../demos/cases/hallmark/themes/solstice/index.html) | 社论 | 低垂晚光中的奶油色与金色 | Long Meadow |
+| [Specimen](../../demos/cases/hallmark/themes/specimen/index.html) | 社论 | 采用纤细 Bodoni 字体的字样册 | Halyard |
+| [Spore](../../demos/cases/hallmark/themes/spore/index.html) | 氛围 | 灯光与烛光照亮咖啡黑底色 | Night Cellar |
+| [Sport](../../demos/cases/hallmark/themes/sport/index.html) | 社论 | 混凝土底上的赛事大写字与一抹电光黄 | Calder Valley Half Marathon |
+| [Squeeze](../../demos/cases/hallmark/themes/squeeze/index.html) | 俏皮 | 森林绿与明亮近摄的水果 | Peachy |
+| [Sticker](../../demos/cases/hallmark/themes/sticker/index.html) | 俏皮 | 亮粉与青柠色模切贴纸 | Pip and Pocket |
+| [Terminal](../../demos/cases/hallmark/themes/terminal/index.html) | 氛围 | 页面就是终端，图像由字符印出 | burrow |
+| [Terrazzo](../../demos/cases/hallmark/themes/terrazzo/index.html) | 现代极简 | 米白底上的白卡片、宽标题与铁锈色 | Sample Room |
+| [Ultraviolet](../../demos/cases/hallmark/themes/ultraviolet/index.html) | 现代极简 | 淡紫纸面汇聚成一抹饱和紫罗兰色 | stemcell |
+| [Vellum](../../demos/cases/hallmark/themes/vellum/index.html) | 社论 | 老印刷所里的羊皮纸、哥特体与群青 | Fenwick and Daughters |
+| [Wayfind](../../demos/cases/hallmark/themes/wayfind/index.html) | 现代极简 | 等宽字导视，以钴蓝标明实时状态 | Platform |
+| [Werkstatt](../../demos/cases/hallmark/themes/werkstatt/index.html) | 俏皮 | 由三原色构成的工作坊 | Summer School of Making |
+
+21 个 Made 页按目录名排序；本站案例首页从转轮和 Same 区块进入，转轮含 Made 页和主题页，共 17 张牌。
+
+| 页面 | 主题 | 需求 | 首页入口 |
+| --- | --- | --- | --- |
+| [Ward Hollis](../../demos/cases/hallmark/made/atelier-architect/index.html) | atelier | 建筑事务所 | 转轮 |
+| [Little Otters](../../demos/cases/hallmark/made/bloom-swim-school/index.html) | bloom | 游泳学校 | 无 |
+| [Rowan](../../demos/cases/hallmark/made/cobalt-database-client/index.html) | cobalt | 数据库客户端 | 转轮 |
+| [Kneedle](../../demos/cases/hallmark/made/coral-physio-booking/index.html) | coral | 物理治疗预约 | 无 |
+| [Ours](../../demos/cases/hallmark/made/custom-couples-budget/index.html) | 自定义 | 伴侣预算 | 转轮 |
+| [Mobile bike repair](../../demos/cases/hallmark/made/custom-mobile-bike-repair/index.html) | 自定义 | 上门自行车维修 | 转轮 |
+| [whenshot](../../demos/cases/hallmark/made/custom-photo-rename-cli/index.html) | 自定义 | 照片改名命令行工具 | 转轮 |
+| [Ramen at the counter that stays lit](../../demos/cases/hallmark/made/custom-ramen-counter/index.html) | 自定义 | 拉面柜台 | 转轮 |
+| [Ines Calvo](../../demos/cases/hallmark/made/darkroom-photographer/index.html) | darkroom | 纪实摄影师 | 转轮 |
+| [Long Acre Farm Shop](../../demos/cases/hallmark/made/furrow-farm-shop/index.html) | furrow | 农场商店 | 无 |
+| [Long Lane Walks](../../demos/cases/hallmark/made/hedgerow-dog-walking/index.html) | hedgerow | 遛狗服务 | 转轮 |
+| [Loop](../../demos/cases/hallmark/made/hum-coding-camp/index.html) | hum | 编程夏令营 | 转轮 |
+| [Wheel House](../../demos/cases/hallmark/made/kiln-pottery-school/index.html) | kiln | 陶艺学校 | Same 区块 |
+| [Ashfield Stoneware](../../demos/cases/hallmark/made/kiln-stoneware-shop/index.html) | kiln | 炻器商店 | Same 区块 |
+| [The Low Room](../../demos/cases/hallmark/made/midnight-jazz-club/index.html) | midnight | 爵士俱乐部 | Same 区块 |
+| [Reelcut](../../demos/cases/hallmark/made/midnight-video-tool/index.html) | midnight | 视频剪辑工具 | Same 区块 |
+| [Gwithian Surf School](../../demos/cases/hallmark/made/piste-surf-school/index.html) | piste | 冲浪学校 | 无 |
+| [Inlet](../../demos/cases/hallmark/made/ribbon-meditation-app/index.html) | ribbon | 冥想应用 | 转轮 |
+| [shift](../../demos/cases/hallmark/made/terminal-migrations-cli/index.html) | terminal | 数据库迁移命令行工具 | 无 |
+| [Northdrift](../../demos/cases/hallmark/made/vellum-coffee-subscription/index.html) | vellum | 咖啡订阅 | 无 |
+| [Tilde & Co](../../demos/cases/hallmark/made/vellum-translation/index.html) | vellum | 文学翻译 | 无 |
+
 ## 怎么改
 
 [条目的 migration](../../entries/cases/hallmark.json) 列出手牌池、比较数据、主题网格、转轮和主题 token 的位置。制作入口与资源本地化用法见 [source/README.md](../../demos/cases/hallmark/source/README.md)。

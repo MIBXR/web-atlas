@@ -1,5 +1,6 @@
 {
   "id": "single-score-audio-visual",
+  "order": 171,
   "title": "同一谱面驱动画面与合成音乐",
   "category": "加载与媒体",
   "experienceTypes": [
@@ -18,8 +19,7 @@
     "装饰波形与实际声音无对应"
   ],
   "constraints": [
-    "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。",
-    "画面解释音乐事件，播放依然由用户启用和停止。"
+    "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
   ],
   "composition": {
     "role": "foundation",
@@ -37,17 +37,17 @@
     {
       "name": "谱面",
       "value": "92 BPM、16拍、14行、13个旋律事件",
-      "note": "固定提交源码／首阶段实测：themes/bloom/arrange.js 常量/MEL。"
+      "note": "固定提交源码／线上实测：themes/bloom/arrange.js 常量/MEL。"
     },
     {
       "name": "曲长与调度",
       "value": "16×60/92≈10.435s，提前60ms开始",
-      "note": "固定提交源码／首阶段实测：themes/bloom/page.js LEN/play。"
+      "note": "固定提交源码／线上实测：themes/bloom/page.js LEN/play。"
     },
     {
       "name": "开场",
       "value": "听写300–3300ms；轨道4000ms起按300ms交错，6100ms结束",
-      "note": "固定提交源码／首阶段实测：page.js T/END。"
+      "note": "固定提交源码／线上实测：page.js T/END。"
     }
   ],
   "prompt": "为目标页面实现「同一谱面驱动画面与合成音乐」：谱面事件生成哼唱曲线、量化音符、四轨包络与合成调度；播放头和高亮读音频时钟，切风格重排同一旋律。触发：主动播放或选择磁带风格。结果：听到的段落、看到的播放位置和分轨内容一致。参数：谱面=92 BPM、16拍、14行、13个旋律事件；曲长与调度=16×60/92≈10.435s，提前60ms开始；开场=听写300–3300ms；轨道4000ms起按300ms交错，6100ms结束。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；播放按钮有名称，停止复位状态，谱面之外保留文字说明。直接给已编曲画面，主动声音和手动风格选择保留。",

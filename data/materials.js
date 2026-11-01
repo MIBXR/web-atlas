@@ -2775,5 +2775,557 @@ window.ATLAS_MATERIALS = [
       "reducedMotion": "原组件、主题转场和外框动画遵循系统 prefers-reduced-motion；默认保留完整动效。"
     },
     "prompt": "在 React 页面中取用 Arc UI 的免费组件或区块。先从完整目录操作预览，再到代码区读取对应的 TypeScript、CSS 和关联文件，按固定 registry 的依赖关系复制。保留上游组件结构、语义 tokens、动效参数、键盘模型与减少动态分支，只按真实任务调整 props、数据与组合。使用 source/upstream/ 的固定快照和当前项目明确固定的依赖版本，保留代码、运行依赖、字体与媒体的许可署名。官网首页布局从独立案例取得。"
+  },
+  {
+    "id": "hallmark-skill",
+    "order": 11,
+    "title": "Hallmark · 反 AI 套路的网页设计 skill",
+    "type": "agent-skill",
+    "category": "Agent 工作流",
+    "summary": "用不可破例的底线、可记录破例的惯性检查和 50 套材料主题约束 Agent 做网页，先发主题、按页面用途定结构，再用真实浏览器检查和无上下文审查收尾；也能按名字重新设计或审计已有页面。",
+    "install": "npx skills add nutlope/hallmark -g 全局安装；或把 demos/materials/hallmark-skill/ 复制到 .claude/skills/hallmark/ 或 .agents/skills/hallmark/。在 Claude Code 用 /hallmark <提示词> 调用，在 Codex CLI 用 $hallmark <提示词>。",
+    "tags": [
+      "网页设计",
+      "反 AI 套路",
+      "主题库",
+      "页面审查",
+      "重新设计",
+      "开放授权摄影",
+      "浏览器检查"
+    ],
+    "useCases": [
+      "从零制作落地页与产品页",
+      "用开放授权照片和真实材料搭建品牌页面",
+      "按名字重新设计已有站点并保留内容与接线",
+      "审计现有页面里的生成痕迹"
+    ],
+    "avoid": [
+      "未点名时改动已有设计",
+      "编造指标、证言或客户标识",
+      "按时间线播放的视频与展示台"
+    ],
+    "constraints": [
+      "本条目保存上游固定提交的技能原文、脚本与评测工具，不提供在线生成。",
+      "浏览器检查需要 puppeteer-core 与 Chrome；缺少时只运行静态检查。",
+      "图片生成只在设置 TOGETHER_API_KEY 且用户要求时使用，默认用 scripts/photos.json 登记的 755 张 Wikimedia Commons 开放授权照片，页面逐张署名。",
+      "redesign 和 audit 只在用户点名时运行；audit 只出报告。",
+      "快照 README 的相对链接指向上游仓库结构，需结合固定提交阅读。"
+    ],
+    "upstream": {
+      "repository": "Nutlope/hallmark",
+      "url": "https://github.com/Nutlope/hallmark/tree/4f6a46c6dc325d40ab268c93e25c7b96676ebccd",
+      "commit": "4f6a46c6dc325d40ab268c93e25c7b96676ebccd",
+      "version": "2.0.0",
+      "verifiedAt": "2026-11-01"
+    },
+    "license": {
+      "name": "MIT",
+      "url": "https://github.com/Nutlope/hallmark/blob/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/LICENSE",
+      "scope": "Hallmark 技能文本、参考文件与脚本。",
+      "notes": "photos.json 登记照片地址与署名，照片分别采用 CC0、公有领域、CC BY 或 CC BY-SA 许可。"
+    },
+    "sources": [
+      {
+        "title": "Hallmark 技能原文",
+        "url": "https://github.com/Nutlope/hallmark/blob/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/SKILL.md",
+        "note": "Floor、主题、首屏先行、浏览器检查与新上下文审查的直接流程。",
+        "evidence": "source"
+      },
+      {
+        "title": "宿主与流程分支",
+        "url": "https://github.com/Nutlope/hallmark/blob/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/flow.md",
+        "note": "锁定 design.md、custom、组件／应用范围及 Codex CLI 审查方式。",
+        "evidence": "source"
+      },
+      {
+        "title": "重新设计与审计",
+        "url": "https://github.com/Nutlope/hallmark/blob/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/redesign.md",
+        "note": "full、restyle、polish 深度、--before／--kept 和 audit 报告边界。",
+        "evidence": "source"
+      }
+    ],
+    "snapshotPath": "demos/materials/hallmark-skill/",
+    "snapshotEntry": "SKILL.md",
+    "workflow": [
+      "预检读取项目的字体、配色、框架和锁定的 design.md，并向用户要一次照片、截图和真实数字，不编造内容。",
+      "先按材料与页面用途设计结构；没有锁定 design.md 且未指定主题时，用 theme.mjs deal 发出三个主题并看图选择，选定主题后 draw 抽取结构；custom 按提示词设计专属方向，已有锁定系统时跳过主题发牌。",
+      "用 scaffold 写入 tokens.css 和 base.css，先单独完成首屏，运行 --render --stage hero，再在新上下文审查首屏；Codex CLI 在当前线程完成审查并明说。",
+      "完成其余页面，行动入口放在该品类应有的位置，页面以它结束。",
+      "sloplint --render 在真实浏览器按多种宽度测量折叠线、对比度、焦点和节奏，修掉全部 FAIL，修复或记录破例每条 REFLEX。",
+      "在新上下文审查成品；支持子 Agent 的宿主使用子 Agent，Codex CLI 在当前线程完成审查并明说，CSS 首行保留决策戳；重新设计时额外用 --before 记录、--kept 比对全部链接、字段、处理器和标题。"
+    ],
+    "relatedEntries": [
+      {
+        "kind": "case",
+        "id": "hallmark",
+        "note": "官网、50 个主题示范页和 21 个成品页。"
+      }
+    ],
+    "preview": "previews/materials/hallmark-skill.jpg",
+    "research": "docs/materials/hallmark-skill.md",
+    "sourceFiles": [
+      "demos/materials/hallmark-skill/SKILL.md",
+      "demos/materials/hallmark-skill/README.md",
+      "demos/materials/hallmark-skill/references/gates.md",
+      "demos/materials/hallmark-skill/scripts/sloplint.mjs",
+      "demos/materials/hallmark-skill/scripts/theme.mjs"
+    ],
+    "prompt": "先阅读 demos/materials/hallmark-skill/SKILL.md，按宿主阅读 references/flow.md，明确页面材料、受众、用途和语气。已有 design.md 时遵守锁定系统；否则按指名主题、custom 或 deal 的优先顺序选方向，以材料与页面用途确定结构。scaffold 后先完成首屏并运行相应审查，再完成页面，用 sloplint --render 修掉 Floor FAIL，修复或逐条记录 Reflex 破例，完成新上下文审查并保留 CSS 决策戳。需要重新设计或审计时先阅读 references/redesign.md；用 --before 记录、--kept 保留内容与接线，audit 输出报告。参考结果阅读 hallmark 案例的真实页面与 fidelity.md。",
+    "accessibility": {
+      "keyboard": "原文与关联案例通过真实链接读取；应用技能时以 Floor 的 focus-visible 和八态控件要求完成键盘路径。",
+      "reducedMotion": "本资源为文本、脚本和评测工具快照；制作页面时遵守原文的 prefers-reduced-motion 分支与无脚本内容可见规则。"
+    },
+    "gallery": [
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/refract.jpg",
+        "caption": "Refract：阳光照在白色灰泥上，水光在表面流动；示范品牌 Bellwater Lido",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/refract.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/refract/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/cobalt.jpg",
+        "caption": "Cobalt：干净的开发者工具，以一抹电光蓝点睛；示范品牌 Relay",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/cobalt.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/cobalt/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/dusk.jpg",
+        "caption": "Dusk：暮色薄雾与石板底色，产品置于烟色玻璃中；示范品牌 Closewise",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/dusk.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/dusk/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/vantage.jpg",
+        "caption": "Vantage：夜间扫描，每个点都经过测量与扫掠；示范品牌 Swath",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/vantage.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/vantage/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/furrow.jpg",
+        "caption": "Furrow：暖纸上的实用农场办公室，以一抹橘色点睛；示范品牌 Fieldbook",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/furrow.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/furrow/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/studio.jpg",
+        "caption": "Studio：设计工作室的白墙，作品保留真实色彩；示范品牌 Field Office",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/studio.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/studio/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/atelier.jpg",
+        "caption": "Atelier：温暖日光中的安静工作室，石灰墙与赭褐色；示范品牌 Maison Orla",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/atelier.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/atelier/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/ribbon.jpg",
+        "caption": "Ribbon：安静夜色、机加工推子与一颗亮着的胶囊按钮；示范品牌 Lull",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/ribbon.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/ribbon/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/dose.jpg",
+        "caption": "Dose：诊室般洁净的应用，带淡绿色调；示范品牌 Tandem",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/dose.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/dose/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/coral.jpg",
+        "caption": "Coral：暖灰色的平静应用，以一抹珊瑚色传递信号；示范品牌 Tilly",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/coral.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/coral/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/almanac.jpg",
+        "caption": "Almanac：石板色纸上的参考书，精确到小数位；示范品牌 Tidetable 2027",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/almanac.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/almanac/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/arcade.jpg",
+        "caption": "Arcade：夜间街机机柜，喧闹而明亮；示范品牌 Pixel Picnic",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/arcade.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/arcade/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/bloom.jpg",
+        "caption": "Bloom：两团陶土色微光温暖柔软纸面；示范品牌 Driftsong",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/bloom.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/bloom/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/blueprint.jpg",
+        "caption": "Blueprint：普鲁士蓝绘图纸与白色线条；示范品牌 Halden and Roe",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/blueprint.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/blueprint/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/broadside.jpg",
+        "caption": "Broadside：在浅黄纸上压印的木活字海报；示范品牌 Wickford Autumn Machinery Sale",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/broadside.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/broadside/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/brutal.jpg",
+        "caption": "Brutal：黑色线框、硬边色块与一抹酸黄；示范品牌 Unit Nine",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/brutal.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/brutal/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/carnival.jpg",
+        "caption": "Carnival：两种颜色争夺版面的游乐场招贴；示范品牌 Cold Comfort",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/carnival.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/carnival/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/console.jpg",
+        "caption": "Console：供全天运行软件使用的石墨色面板；示范品牌 Benchmark",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/console.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/console/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/darkroom.jpg",
+        "caption": "Darkroom：近黑色墙面上的黑白照片；示范品牌 Low Water",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/darkroom.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/darkroom/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/editorial.jpg",
+        "caption": "Editorial：非涂布纸上的黑墨杂志跨页；示范品牌 Margin Notes",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/editorial.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/editorial/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/formwork.jpg",
+        "caption": "Formwork：浇筑混凝土、硬阴影与黑白摄影；示范品牌 Ashgrove Concrete",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/formwork.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/formwork/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/garden.jpg",
+        "caption": "Garden：燕麦色纸、深绿墨与日光；示范品牌 Hollins Orchard",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/garden.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/garden/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/grid.jpg",
+        "caption": "Grid：瑞士式栏网、群青色块与一处红色标记；示范品牌 Kessler Archive",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/grid.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/grid/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/halftone.jpg",
+        "caption": "Halftone：奶油黄纸上经过网点印刷的漫画；示范品牌 Pop Fizz",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/halftone.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/halftone/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/hedgerow.jpg",
+        "caption": "Hedgerow：深篱绿、奶油色文字与一抹亮绿新芽；示范品牌 Five Mile Gin",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/hedgerow.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/hedgerow/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/hum.jpg",
+        "caption": "Hum：欢快而有触感，按钮像键盘按键般按下；示范品牌 Sprout",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/hum.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/hum/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/ink.jpg",
+        "caption": "Ink：白纸、纯黑与一抹蓝绿；示范品牌 Barton Road Library of Things",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/ink.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/ink/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/kiln.jpg",
+        "caption": "Kiln：暗色工坊里只有炽热物体发光；示范品牌 Cone Six",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/kiln.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/kiln/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/loom.jpg",
+        "caption": "Loom：窗光下近看的本色织物；示范品牌 Wren Weaving",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/loom.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/loom/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/lumen.jpg",
+        "caption": "Lumen：紫罗兰夜色与熔融黄铜细节；示范品牌 quarry",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/lumen.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/lumen/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/manifesto.jpg",
+        "caption": "Manifesto：暖黑底上的紧排大写字与一抹战斗红；示范品牌 Right to Repair Coalition",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/manifesto.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/manifesto/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/midnight.jpg",
+        "caption": "Midnight：铺满边缘的午夜蓝，冷静而有电影感；示范品牌 Afterimage",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/midnight.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/midnight/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/newsprint.jpg",
+        "caption": "Newsprint：地方报纸头版、粗衬线标题与分栏线；示范品牌 The Lantern",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/newsprint.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/newsprint/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/overprint.jpg",
+        "caption": "Overprint：新闻纸上的两色油墨，交叠处印出苔绿色；示范品牌 The Boiler Room",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/overprint.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/overprint/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/pasteup.jpg",
+        "caption": "Paste-up：牛皮纸板上拼贴的小志；示范品牌 Small Hours Zine Fair",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/pasteup.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/pasteup/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/piste.jpg",
+        "caption": "Piste：雪白、冷色油墨与一抹钴蓝；示范品牌 Col Blanc",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/piste.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/piste/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/rim.jpg",
+        "caption": "Rim：暖黑底与测量标记，俯瞰地球；示范品牌 Northstar",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/rim.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/rim/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/riso.jpg",
+        "caption": "Riso：蓝色与荧光粉双色滚筒孔版印刷；示范品牌 Off Register",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/riso.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/riso/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/solstice.jpg",
+        "caption": "Solstice：低垂晚光中的奶油色与金色；示范品牌 Long Meadow",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/solstice.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/solstice/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/specimen.jpg",
+        "caption": "Specimen：采用纤细 Bodoni 字体的字样册；示范品牌 Halyard",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/specimen.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/specimen/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/spore.jpg",
+        "caption": "Spore：灯光与烛光照亮咖啡黑底色；示范品牌 Night Cellar",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/spore.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/spore/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/sport.jpg",
+        "caption": "Sport：混凝土底上的赛事大写字与一抹电光黄；示范品牌 Calder Valley Half Marathon",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/sport.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/sport/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/squeeze.jpg",
+        "caption": "Squeeze：森林绿与明亮近摄的水果；示范品牌 Peachy",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/squeeze.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/squeeze/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/sticker.jpg",
+        "caption": "Sticker：亮粉与青柠色模切贴纸；示范品牌 Pip and Pocket",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/sticker.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/sticker/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/terminal.jpg",
+        "caption": "Terminal：页面就是终端，图像由字符印出；示范品牌 burrow",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/terminal.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/terminal/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/terrazzo.jpg",
+        "caption": "Terrazzo：米白底上的白卡片、宽标题与铁锈色；示范品牌 Sample Room",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/terrazzo.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/terrazzo/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/ultraviolet.jpg",
+        "caption": "Ultraviolet：淡紫纸面汇聚成一抹饱和紫罗兰色；示范品牌 stemcell",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/ultraviolet.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/ultraviolet/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/vellum.jpg",
+        "caption": "Vellum：老印刷所里的羊皮纸、哥特体与群青；示范品牌 Fenwick and Daughters",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/vellum.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/vellum/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/wayfind.jpg",
+        "caption": "Wayfind：等宽字导视，以钴蓝标明实时状态；示范品牌 Platform",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/wayfind.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/wayfind/index.html"
+      },
+      {
+        "path": "demos/materials/hallmark-skill/references/themes/werkstatt.jpg",
+        "caption": "Werkstatt：由三原色构成的工作坊；示范品牌 Summer School of Making",
+        "kind": "theme",
+        "replicated": false,
+        "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/themes/werkstatt.jpg",
+        "license": "Hallmark 仓库 MIT；示范页照片各自授权，见案例 LICENSES.md。",
+        "replicaPage": "demos/cases/hallmark/themes/werkstatt/index.html"
+      }
+    ]
   }
 ];

@@ -1,5 +1,6 @@
 {
   "id": "font-metric-guides",
+  "order": 175,
   "title": "字体真实量度生成参考线",
   "category": "视觉构成",
   "experienceTypes": [
@@ -17,8 +18,7 @@
     "用固定比例冒充所有字体的真实量度"
   ],
   "constraints": [
-    "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。",
-    "参考线属于当前样本，试排操作仍是独立控件。"
+    "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
   ],
   "composition": {
     "role": "support",
@@ -37,12 +37,12 @@
     {
       "name": "度量",
       "value": "H的actualBoundingBoxAscent；x的ascent；y的descent",
-      "note": "固定提交源码／首阶段实测：themes/specimen/page.js place。"
+      "note": "固定提交源码／线上实测：themes/specimen/page.js place。"
     },
     {
       "name": "更新",
       "value": "document.fonts.ready与resize",
-      "note": "固定提交源码／首阶段实测：page.js place绑定。"
+      "note": "固定提交源码／线上实测：page.js place绑定。"
     }
   ],
   "prompt": "为目标页面实现「字体真实量度生成参考线」：Canvas measureText读取H、x、y的边界，以临时基线标记确定DOM基线，再放置cap、x-height、baseline和descender。触发：字体就绪、视口或字号几何变化。结果：线与实际字体对应，能解释字高而非仅作装饰。参数：度量=H的actualBoundingBoxAscent；x的ascent；y的descent；更新=document.fonts.ready与resize。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；字形和控件保持真实文本，参考线不替代标签。参考线按最终几何直接放置。",

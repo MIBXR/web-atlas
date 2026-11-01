@@ -200,6 +200,11 @@ window.ATLAS_DOCUMENTS = [
     "group": "案例研究"
   },
   {
+    "path": "docs/cases/hallmark.md",
+    "title": "Hallmark：官网与主题页研究",
+    "group": "案例研究"
+  },
+  {
     "path": "docs/cases/linear-workflow.md",
     "title": "Linear：当前页面的设计与交互",
     "group": "案例研究"
@@ -262,6 +267,11 @@ window.ATLAS_DOCUMENTS = [
   {
     "path": "docs/materials/material-web.md",
     "title": "Google Material Web：Material 3 官方组件",
+    "group": "素材使用"
+  },
+  {
+    "path": "docs/materials/hallmark-skill.md",
+    "title": "Hallmark：阅读与使用资料",
     "group": "素材使用"
   },
   {
@@ -355,6 +365,11 @@ window.ATLAS_DOCUMENTS = [
     "group": "复用 Prompt"
   },
   {
+    "path": "prompts/patterns/halftone-fade-edge.md",
+    "title": "半色调渐隐边界 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
     "path": "prompts/cases/bauhaus-geometry.md",
     "title": "包豪斯：几何与实验 · 复用 Prompt",
     "group": "复用 Prompt"
@@ -377,6 +392,11 @@ window.ATLAS_DOCUMENTS = [
   {
     "path": "prompts/patterns/hover-focus-mode-selection.md",
     "title": "标题悬停与聚焦选择模式 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
+    "path": "prompts/patterns/normalized-long-page-compare.md",
+    "title": "不等长整页同步读完 · 复用 Prompt",
     "group": "复用 Prompt"
   },
   {
@@ -500,13 +520,28 @@ window.ATLAS_DOCUMENTS = [
     "group": "复用 Prompt"
   },
   {
+    "path": "prompts/patterns/scaled-live-page-dialog.md",
+    "title": "对话框内缩放真实页面 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
     "path": "prompts/patterns/image-destination-mosaic.md",
     "title": "多尺度图像目的地目录 · 复用 Prompt",
     "group": "复用 Prompt"
   },
   {
+    "path": "prompts/patterns/dealt-page-hand.md",
+    "title": "发牌式真实页面手牌 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
     "path": "prompts/patterns/institution-overlap-logo.md",
     "title": "方形机构锚点跨主图边界 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
+    "path": "prompts/patterns/demo-once-then-yield-divider.md",
+    "title": "分隔线示范一次后交给用户 · 复用 Prompt",
     "group": "复用 Prompt"
   },
   {
@@ -547,6 +582,11 @@ window.ATLAS_DOCUMENTS = [
   {
     "path": "prompts/cases/palace-museum.md",
     "title": "故宫 · 六章探索与宫廷视觉目录 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
+    "path": "prompts/patterns/inertial-page-wheel.md",
+    "title": "惯性三维页面转轮 · 复用 Prompt",
     "group": "复用 Prompt"
   },
   {
@@ -665,6 +705,11 @@ window.ATLAS_DOCUMENTS = [
     "group": "复用 Prompt"
   },
   {
+    "path": "prompts/patterns/confirmed-command-copy.md",
+    "title": "可确认的命令复制 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
     "path": "prompts/patterns/client-logo-marquee.md",
     "title": "可停的连续客户标识条带 · 复用 Prompt",
     "group": "复用 Prompt"
@@ -705,8 +750,23 @@ window.ATLAS_DOCUMENTS = [
     "group": "复用 Prompt"
   },
   {
+    "path": "prompts/patterns/overprint-misregistration.md",
+    "title": "两版套印与错版字形 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
+    "path": "prompts/patterns/two-scan-point-cloud-compare.md",
+    "title": "两次扫描的点云图层与比较 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
     "path": "prompts/patterns/procedural-fluid-spotlight.md",
     "title": "流体色场中的固定光核 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
+    "path": "prompts/patterns/one-move-process-panels.md",
+    "title": "每格只演一个动作的流程 · 复用 Prompt",
     "group": "复用 Prompt"
   },
   {
@@ -815,6 +875,11 @@ window.ATLAS_DOCUMENTS = [
     "group": "复用 Prompt"
   },
   {
+    "path": "prompts/patterns/measured-redline-annotation.md",
+    "title": "实测几何的设计红线 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
     "path": "prompts/patterns/viewport-animation-lifecycle.md",
     "title": "视口与前台驱动的动态生命周期 · 复用 Prompt",
     "group": "复用 Prompt"
@@ -875,6 +940,21 @@ window.ATLAS_DOCUMENTS = [
     "group": "复用 Prompt"
   },
   {
+    "path": "prompts/patterns/digit-odometer-count.md",
+    "title": "数字逐位滚入 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
+    "path": "prompts/patterns/duotone-blend-photo.md",
+    "title": "双层混合的双色摄影 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
+    "path": "prompts/patterns/reading-grows-glyph-garden.md",
+    "title": "顺序朗读长出字形植物 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
     "path": "prompts/patterns/scroll-synchronized-rail.md",
     "title": "说明索引与窗口进度同步 · 复用 Prompt",
     "group": "复用 Prompt"
@@ -895,8 +975,23 @@ window.ATLAS_DOCUMENTS = [
     "group": "复用 Prompt"
   },
   {
+    "path": "prompts/patterns/knockout-headline-split.md",
+    "title": "同一标题跨色场反白 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
+    "path": "prompts/patterns/same-material-page-pairs.md",
+    "title": "同一材料的异页并置 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
     "path": "prompts/patterns/sticky-stage-handoff.md",
     "title": "同一媒体从主舞台交给说明 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
+    "path": "prompts/patterns/single-score-audio-visual.md",
+    "title": "同一谱面驱动画面与合成音乐 · 复用 Prompt",
     "group": "复用 Prompt"
   },
   {
@@ -917,6 +1012,11 @@ window.ATLAS_DOCUMENTS = [
   {
     "path": "prompts/patterns/half-paper-category-label.md",
     "title": "图像与半幅纸签分类 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
+    "path": "prompts/patterns/weather-sound-scene-mixer.md",
+    "title": "推子同时控制声音与夜景 · 复用 Prompt",
     "group": "复用 Prompt"
   },
   {
@@ -947,6 +1047,11 @@ window.ATLAS_DOCUMENTS = [
   {
     "path": "prompts/patterns/message-to-board-demonstration.md",
     "title": "消息到任务板的可重播演示 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
+    "path": "prompts/patterns/proofreader-headline-edit.md",
+    "title": "校对式改写首屏标题 · 复用 Prompt",
     "group": "复用 Prompt"
   },
   {
@@ -985,6 +1090,11 @@ window.ATLAS_DOCUMENTS = [
     "group": "复用 Prompt"
   },
   {
+    "path": "prompts/patterns/shared-caustic-surfaces.md",
+    "title": "一个焦散着色器驱动多个界面 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
     "path": "prompts/patterns/persistent-created-widget.md",
     "title": "已创建挂件跨场景保留 · 复用 Prompt",
     "group": "复用 Prompt"
@@ -1002,6 +1112,21 @@ window.ATLAS_DOCUMENTS = [
   {
     "path": "prompts/patterns/capability-bento-hierarchy.md",
     "title": "以跨列比例表达能力层次 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
+    "path": "prompts/patterns/dotfile-glyph-portrait.md",
+    "title": "用配置文本字符成像 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
+    "path": "prompts/patterns/paper-action-explainer.md",
+    "title": "用纸面动作讲解业务流程 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
+    "path": "prompts/patterns/date-place-derived-chart.md",
+    "title": "由日期与地点推导图表 · 复用 Prompt",
     "group": "复用 Prompt"
   },
   {
@@ -1095,6 +1220,11 @@ window.ATLAS_DOCUMENTS = [
     "group": "复用 Prompt"
   },
   {
+    "path": "prompts/patterns/gesture-cleared-scent-field.md",
+    "title": "指针拨开、选择染色的香气场 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
     "path": "prompts/patterns/pointer-repulsion-particles.md",
     "title": "指针排斥与回聚点阵 · 复用 Prompt",
     "group": "复用 Prompt"
@@ -1117,6 +1247,11 @@ window.ATLAS_DOCUMENTS = [
   {
     "path": "prompts/cases/endfield-industrial.md",
     "title": "终末地 · 完整工业科幻门户 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
+    "path": "prompts/patterns/procedural-map-loupe.md",
+    "title": "重绘程序地图的放大镜 · 复用 Prompt",
     "group": "复用 Prompt"
   },
   {
@@ -1157,6 +1292,21 @@ window.ATLAS_DOCUMENTS = [
   {
     "path": "prompts/patterns/load-completion-brand-marker.md",
     "title": "资源完成后品牌标记退场 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
+    "path": "prompts/patterns/field-linked-connectors.md",
+    "title": "字段悬停联动弯折连线 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
+    "path": "prompts/patterns/gated-character-stream.md",
+    "title": "字符数据流过类型门 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
+    "path": "prompts/patterns/font-metric-guides.md",
+    "title": "字体真实量度生成参考线 · 复用 Prompt",
     "group": "复用 Prompt"
   },
   {
@@ -1215,6 +1365,11 @@ window.ATLAS_DOCUMENTS = [
     "group": "复用 Prompt"
   },
   {
+    "path": "prompts/patterns/crt-subpixel-mesh.md",
+    "title": "CRT 子像素网与字边色散 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
     "path": "prompts/cases/deepseek-harness.md",
     "title": "DeepSeek Harness · 可观察的产品演示 · 复用 Prompt",
     "group": "复用 Prompt"
@@ -1232,6 +1387,16 @@ window.ATLAS_DOCUMENTS = [
   {
     "path": "prompts/cases/google-material.md",
     "title": "Google Material：表现力与组件秩序 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
+    "path": "prompts/materials/hallmark-skill.md",
+    "title": "Hallmark · 反 AI 套路的网页设计 skill · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
+    "path": "prompts/cases/hallmark.md",
+    "title": "Hallmark · 设计 skill 官网与五十主题 · 复用 Prompt",
     "group": "复用 Prompt"
   },
   {
@@ -1342,6 +1507,16 @@ window.ATLAS_DOCUMENT_SOURCES = [
     ]
   },
   {
+    "path": "demos/cases/hallmark/",
+    "referenceUrl": "https://www.usehallmark.com/",
+    "sources": [
+      "https://www.usehallmark.com/",
+      "https://github.com/Nutlope/hallmark/tree/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site",
+      "https://github.com/Nutlope/hallmark/blob/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/SKILL.md",
+      "https://www.linkedin.com/company/togethercomputer/"
+    ]
+  },
+  {
     "path": "demos/cases/mira-host-photography/",
     "referenceUrl": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/demo/web-design-demo/demo2-with-skill.html",
     "sources": [
@@ -1443,7 +1618,8 @@ window.ATLAS_DOCUMENT_SOURCES = [
       "https://endfield.hypergryph.com/",
       "https://www.deepseek.com/harness/",
       "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/demo/web-design-demo/demo1-with-skill.html",
-      "https://uiarc.dev/"
+      "https://uiarc.dev/",
+      "https://www.usehallmark.com/"
     ]
   },
   {
@@ -1496,6 +1672,21 @@ window.ATLAS_DOCUMENT_SOURCES = [
       "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/beautiful-article/README.md",
       "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/beautiful-article/theme-profiles/index.json",
       "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/beautiful-article/manifest.json"
+    ]
+  },
+  {
+    "path": "demos/materials/hallmark-skill/",
+    "upstream": {
+      "repository": "Nutlope/hallmark",
+      "url": "https://github.com/Nutlope/hallmark/tree/4f6a46c6dc325d40ab268c93e25c7b96676ebccd",
+      "commit": "4f6a46c6dc325d40ab268c93e25c7b96676ebccd",
+      "version": "2.0.0",
+      "verifiedAt": "2026-11-01"
+    },
+    "sources": [
+      "https://github.com/Nutlope/hallmark/blob/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/SKILL.md",
+      "https://github.com/Nutlope/hallmark/blob/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/flow.md",
+      "https://github.com/Nutlope/hallmark/blob/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/redesign.md"
     ]
   },
   {

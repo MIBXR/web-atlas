@@ -1,5 +1,6 @@
 {
   "id": "two-scan-point-cloud-compare",
+  "order": 170,
   "title": "两次扫描的点云图层与比较",
   "category": "导航与状态",
   "experienceTypes": [
@@ -18,8 +19,7 @@
     "把演示点位写成真实项目测量"
   ],
   "constraints": [
-    "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。",
-    "同一点集负责多视图、分类和时点，标注随投影定位。"
+    "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
   ],
   "composition": {
     "role": "foundation",
@@ -37,17 +37,17 @@
     {
       "name": "场地",
       "value": "W=120，D=90，平台41.25，楼层3.6",
-      "note": "固定提交源码／首阶段实测：themes/vantage/scene.js 常量。"
+      "note": "固定提交源码／线上实测：themes/vantage/scene.js 常量。"
     },
     {
       "name": "扫带",
       "value": "hero 8s周期/6.4s穿越；layers 10s/7.2s",
-      "note": "固定提交源码／首阶段实测：scene.js sweepAt/mount。"
+      "note": "固定提交源码／线上实测：scene.js sweepAt/mount。"
     },
     {
       "name": "比较与截面",
       "value": "分隔4%–96%，键盘5%；切片半厚1.1，z量化.5",
-      "note": "固定提交源码／首阶段实测：scene.js compare/drawCut。"
+      "note": "固定提交源码／线上实测：scene.js compare/drawCut。"
     }
   ],
   "prompt": "为目标页面实现「两次扫描的点云图层与比较」：多视图复用同一点位数据，以分类权重显隐层，以scissor在分隔线两侧绘两个扫描状态，平面选择与截面共用z值和投影。触发：图层开关、分隔线或截面输入。结果：变化区、组成层和测量高度能在同一场地中核对。参数：场地=W=120，D=90，平台41.25，楼层3.6；扫带=hero 8s周期/6.4s穿越；layers 10s/7.2s；比较与截面=分隔4%–96%，键盘5%；切片半厚1.1，z量化.5。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；开关与分隔线有语义名称、aria值和键盘输入。固定扫带与视角，图层、比较和截面按输入直接更新。",

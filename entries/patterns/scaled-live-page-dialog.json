@@ -1,5 +1,6 @@
 {
   "id": "scaled-live-page-dialog",
+  "order": 157,
   "title": "对话框内缩放真实页面",
   "category": "导航与状态",
   "experienceTypes": [
@@ -17,8 +18,7 @@
     "以模糊截图冒充真实页面"
   ],
   "constraints": [
-    "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。",
-    "从主题网格或手牌进入同一个真实页面预览。"
+    "固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。"
   ],
   "composition": {
     "role": "support",
@@ -37,17 +37,17 @@
     {
       "name": "排版宽度",
       "value": "1440px",
-      "note": "固定提交源码／首阶段实测：js/themes.js fit。"
+      "note": "固定提交源码／线上实测：js/themes.js fit。"
     },
     {
       "name": "缩放",
       "value": "k=frame.clientWidth/1440；iframe高=frame.clientHeight/k",
-      "note": "固定提交源码／首阶段实测：js/themes.js fit。"
+      "note": "固定提交源码／线上实测：js/themes.js fit。"
     },
     {
       "name": "实测",
       "value": "1440视口对话框frame宽1224px，k=.85",
-      "note": "固定提交源码／首阶段实测：第一阶段双宽CDP记录，fidelity.md。"
+      "note": "固定提交源码／线上实测：双宽 CDP 记录，fidelity.md。"
     }
   ],
   "prompt": "为目标页面实现「对话框内缩放真实页面」：原生dialog加载同源iframe，页面按固定排版宽度布局，缩放系数取容器宽度比，高度反除系数；前后项取当前过滤结果，关闭恢复当前链接焦点。触发：激活主题链接、前后按钮或Escape。结果：预览保留作品排版，也保留列表的选择上下文。参数：排版宽度=1440px；缩放=k=frame.clientWidth/1440；iframe高=frame.clientHeight/k；实测=1440视口对话框frame宽1224px，k=.85。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；使用原生dialog、可命名iframe、Escape与焦点返回。省略对话框入场运动，缩放与导航保留。",
