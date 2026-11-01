@@ -38,11 +38,11 @@ npm start
 
 复用单个真实网站 Demo 时，也需携带`data/asset-sources.js`、`site/runtime/` 中的共享运行时与根目录的 `asset-cache-worker.js`，或将这些公共模块连同引用一起迁移。入口HTML是项目的一部分，直接下载一份HTML无法包含它依赖的图像、字体和脚本。
 
-`npm run build:site` 生成引用 GitHub 大素材的部署目录，省略对应的大文件，保持素材原字节与画质。`npm run build:local` 生成包含全部素材的静态目录，可用于完整本地托管。两种构建都不修改 `demos/` 中的原始素材。GitHub 素材固定到 `data/asset-sources.js` 中的完整提交 SHA；Sites 的大素材首次下载需要网络。
+`npm run build:site` 按[素材分发与发布](../CONTRIBUTING.md#素材分发与发布)生成部署目录，省略对应的 GitHub 媒体文件，保持素材原字节与画质。`npm run build:local` 生成包含全部素材的静态目录，可用于完整本地托管。两种构建都不修改 `demos/` 中的原始素材。GitHub 素材固定到 `data/asset-sources.js` 中的完整提交 SHA；Sites 的 GitHub 媒体首次下载需要网络。
 
 首屏加载只等待当前画面必要的图片、可见字体和视频首帧，后续章节提前按需准备。进度按已就绪资源项统计，不伪造下载字节百分比；失败时可以重试或继续浏览。明日方舟与塞尔达保留自己的原站风格加载／声音入口，开场从资源就绪之后开始。音乐由用户启用，不进入首屏必等列表。
 
-固定 GitHub 地址的大素材使用浏览器 Cache Storage 保存；后续再次进入时优先复用，完整视频缓存支持字节区间读取与拖动。嵌入预览与独立页面同属一个站点时共享这份缓存。只按访问加载，不在进入案例库时下载所有案例；素材缓存最多256MiB，按存入顺序移除较早的素材。HTML、脚本与样式照常获取当前版本。本地服务使用 ETag／Last-Modified 条件请求，未变化的本地文件返回304并复用已下载内容。
+固定 GitHub 地址的媒体使用浏览器 Cache Storage 保存；后续再次进入时优先复用，完整视频缓存支持字节区间读取与拖动。嵌入预览与独立页面同属一个站点时共享这份缓存。只按访问加载，不在进入案例库时下载所有案例；素材缓存最多256MiB，按存入顺序移除较早的素材。HTML、脚本与样式照常获取当前版本。本地服务使用 ETag／Last-Modified 条件请求，未变化的本地文件返回304并复用已下载内容。
 
 顶栏主题按钮旁的素材缓存工具可查看、清除已下载的素材。收藏与素材缓存分别保存。Cache Storage 由浏览器管理；缓存缺失时重新下载，参见 [MDN Cache](https://developer.mozilla.org/en-US/docs/Web/API/Cache)。
 

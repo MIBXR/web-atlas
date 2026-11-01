@@ -18,7 +18,7 @@ export function buildAssetSources(sourceRoot = root, commit) {
     const tab = record.indexOf('\t');
     const canonical = record.slice(tab + 1);
     const [mode, type, , size] = record.slice(0, tab).trim().split(/\s+/);
-    if (!assetFolders.some(folder => canonical.startsWith(folder + '/')) || !mediaExtensions.has(path.posix.extname(canonical).toLowerCase()) || Number(size) < ASSET_THRESHOLD) continue;
+    if (!assetFolders.some(folder => canonical.startsWith(folder + '/')) || !mediaExtensions.has(path.posix.extname(canonical).toLowerCase()) || (!canonical.startsWith('demos/') && Number(size) < ASSET_THRESHOLD)) continue;
     if (type !== 'blob' || !['100644', '100755'].includes(mode)) throw new Error('Media must be a regular file: ' + canonical);
     assets[canonical] = {url:baseUrl + canonical.split('/').map(encodeURIComponent).join('/'), bytes:Number(size)};
   }
