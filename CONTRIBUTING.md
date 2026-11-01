@@ -263,7 +263,7 @@ npm run check
 
 构建同步三类 Prompt、单类索引、资料包、站点数据、文档目录、案例索引及 README 计数块。取材接口见 [Agent 工作流](docs/agent.md)。
 
-`npm run check` 检查换行、已跟踪的忽略类型文件和条目引用；单个文件超过 50 MiB 时列出提示，不计为失败。
+`npm run check` 检查换行、已跟踪的忽略类型文件、条目引用和单文件大小。单个文件超过 50 MiB 时报错；原文件确实超过且不能改动的，经仓库所有者同意后把路径和原因写进 `scripts/check.mjs` 的 `oversizeAllowed`，此后只列提示。
 
 ### 案例
 
