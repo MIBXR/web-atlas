@@ -174,7 +174,7 @@ Web 深色高亮条取 `#526438`，浅色标题 `#edf0e6` 对其为 5.62；它�
 
 **最终方案**：[Web #54](https://github.com/MIBXR/web-atlas/pull/54)与 [Motion #38](https://github.com/MIBXR/motion-atlas/pull/38)复用既有素材解析器：发布副本改写 HTML／CSS，文档素材链接直接指向固定提交原件，仓库原件与 Markdown、许可保持原样。快照和普通素材使用同一规则。两站扩展名及扫描范围对齐，覆盖发布包全部目录。
 
-**数值**：阈值为至少 128 KiB，固定完整 Git 提交；覆盖图像、音视频、字体及 `.glb/.gltf/.bin/.blend/.hdr/.ply` 等制作文件。Motion #39 把约 31MB 的 Blender 工程、环境光和网格移出发布包；Web #55 同步扩展名和范围。当前案例的三份研究 HTML 随源码保存，独立 Demo 无外部图像请求。
+**数值**：媒体分流遵循[素材分发与发布](../../CONTRIBUTING.md#素材分发与发布)，使用固定完整 Git 提交；覆盖图像、音视频、字体及 `.glb/.gltf/.bin/.blend/.hdr/.ply` 等制作文件。Motion #39 把约 31MB 的 Blender 工程、环境光和网格移出发布包；Web #55 同步扩展名和范围。当前案例的三份研究 HTML 随源码保存，独立 Demo 无外部图像请求。
 
 ## 怎么修改
 
