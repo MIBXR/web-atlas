@@ -8,6 +8,16 @@ const patterns=fs.readdirSync(path.join(root,'entries/patterns')).filter(x=>x.en
 const patternsById=new Map(patterns.map(pattern=>[pattern.id,pattern]));
 const snapshots=fs.readdirSync(path.join(root,'entries/materials')).filter(name=>name.endsWith('.json')).map(name=>JSON.parse(fs.readFileSync(path.join(root,'entries/materials',name),'utf8')).snapshotPath).filter(Boolean);
 const failures=[];
+const materials=fs.readdirSync(path.join(root,'entries/materials')).filter(name=>name.endsWith('.json')).map(name=>JSON.parse(fs.readFileSync(path.join(root,'entries/materials',name),'utf8')));
+for(const [kind,items] of [['cases',entries],['patterns',patterns],['materials',materials]]){
+  const seen=new Map();
+  for(const item of items){
+    const file='entries/'+kind+'/'+item.id+'.json';
+    if(!Number.isInteger(item.order)){failures.push('order: '+file+': expected integer');continue;}
+    if(seen.has(item.order))failures.push('order: '+file+': '+item.order+' already used by '+seen.get(item.order));
+    seen.set(item.order,item.id);
+  }
+}
 const gitFiles=(...args)=>execFileSync('git',['ls-files','-z',...args],{cwd:root,encoding:'utf8'}).split('\0').filter(Boolean);
 for(const record of gitFiles('--eol')){
   const separator=record.indexOf('\t'),metadata=record.slice(0,separator),file=record.slice(separator+1);
@@ -51,13 +61,13 @@ function checkCSS(label,css,dir){
 }
 function checkRefs(label,html,dir){
   for(const tag of html.matchAll(/<(?:script|img|link|source|video|audio|iframe)\b[^>]*>/g)){
-    for(const match of tag[0].matchAll(/(?:src|href|poster|data-src)=["']([^"']+)["']/g)){
-      const ref=match[1];if(!local(ref))continue;const file=resolve(dir,ref.split(/[?#]/)[0]);
+    for(const match of tag[0].matchAll(/(?:src|href|poster|data-src)=(["'])(.+?)\1/g)){
+      const ref=match[2];if(!local(ref))continue;const file=resolve(dir,ref.split(/[?#]/)[0]);
       if(!fs.existsSync(file))failures.push(label+': missing local asset '+ref);
       else if(tag[0].startsWith('<link')&&file.endsWith('.css'))checkCSS(label,fs.readFileSync(file,'utf8'),path.dirname(file));
     }
-    const srcset=tag[0].match(/srcset=["']([^"']+)["']/)?.[1];
-    if(srcset&&!srcset.startsWith('data:'))for(const value of srcset.split(',')){const ref=value.trim().split(/\s+/)[0];if(local(ref)&&!fs.existsSync(resolve(dir,ref.split(/[?#]/)[0])))failures.push(label+': missing srcset asset '+ref);}
+    const srcset=tag[0].match(/srcset=(["'])(.+?)\1/)?.[2];
+    if(srcset&&!srcset.startsWith('data:'))for(const [,ref] of srcset.matchAll(/(?:^|,)\s*(\S*[^\s,])(?:\s+[^,]*)?(?=,|$)/g)){if(local(ref)&&!fs.existsSync(resolve(dir,ref.split(/[?#]/)[0])))failures.push(label+': missing srcset asset '+ref);}
   }
   for(const style of html.matchAll(/<style\b[^>]*>([\s\S]*?)<\/style>/g))checkCSS(label,style[1],dir);
   for(const style of html.matchAll(/\bstyle=(["'])(.*?)\1/g))checkCSS(label,style[2],dir);
