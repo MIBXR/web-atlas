@@ -1,0 +1,65 @@
+{
+  "id": "expressive-permission-branches",
+  "title": "权限选择驱动角色与页面分支",
+  "category": "导航与状态",
+  "experienceTypes": [
+    "structure",
+    "page-motion"
+  ],
+  "summary": "用户的选择决定产品画廊、一次重试或完整告别，不把拒绝变成循环阻拦。",
+  "mechanism": "把允许、首次拒绝与再次拒绝保存为有限分支；一次选择同时更新权限卡、终端结果、角色动作与后续页面。过渡期间锁定重复输入，第二次拒绝结束请求。",
+  "trigger": "点击 Allow 或 Deny。",
+  "effect": "用户的选择决定产品画廊、一次重试或完整告别，不把拒绝变成循环阻拦。",
+  "useCases": [
+    "互动产品页",
+    "软件功能体验"
+  ],
+  "avoid": [
+    "再次拒绝后继续强制请求"
+  ],
+  "constraints": [
+    "只从角色或界面本身取材，不用整个页面的截图替代机制。",
+    "角色与官网素材保留原权利；迁移时使用有对应授权的资源。"
+  ],
+  "composition": {
+    "role": "foundation",
+    "notes": "负责该入口或决策区域的状态关系，与其他机制共享同一角色及身体锚点。",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "accessibility": {
+    "keyboard": "Allow、Deny、重播和产品链接均为原生控件；原作到达权限阶段前仍需拖放。",
+    "reducedMotion": "原作保留分支表演；迁移时即时显示选择结果，保留重试与结束路径。"
+  },
+  "parameters": [
+    {
+      "name": "允许",
+      "value": "卡片400ms淡出，舞台500ms退出后显示六格画廊",
+      "note": "官网 T.allowCardFade / allowStageFade。"
+    },
+    {
+      "name": "拒绝重试",
+      "value": "180ms退卡→1000ms趴地→1500ms起身→700ms挠头→撒娇重试；再次拒绝800ms居中并进入4400ms墨镜告别",
+      "note": "官网 T 与 playFirstDenySequence / handleSecondDeny。"
+    }
+  ],
+  "prompt": "实现「权限选择驱动角色与页面分支」：把允许、首次拒绝与再次拒绝保存为有限分支；一次选择同时更新权限卡、终端结果、角色动作与后续页面。过渡期间锁定重复输入，第二次拒绝结束请求。触发：点击 Allow 或 Deny。参数：卡片400ms淡出，舞台500ms退出后显示六格画廊；180ms退卡→1000ms趴地→1500ms起身→700ms挠头→撒娇重试；再次拒绝800ms居中并进入4400ms墨镜告别。先读取来源案例的实际源码与 fidelity.md，保持角色 SVG、身体锚点、状态交接和原声音行为。Allow、Deny、重播和产品链接均为原生控件；原作到达权限阶段前仍需拖放。原作保留分支表演；迁移时即时显示选择结果，保留重试与结束路径。迁移时替换为有使用权的角色与素材。",
+  "sources": [
+    {
+      "caseId": "clawd-on-desk",
+      "locator": "entries/cases/clawd-on-desk.json#interaction/5",
+      "observation": "Permission Request 的 Allow 淡出终端并进入六格动作画廊；首次 Deny 经过趴地、起身、挠头与撒娇后给出重试卡；重试可 Allow，也可再次 Deny 后戴墨镜、收回米色圆幕并逐字显示 Thanks for visiting.。末态点击角色七次显示作者彩蛋，5 秒后消失。",
+      "evidence": "observed",
+      "referenceUrl": "https://clawdondesk.com/",
+      "capturedAt": "2026-11-01"
+    }
+  ],
+  "sourceFiles": [
+    "entries/cases/clawd-on-desk.json",
+    "docs/cases/clawd-on-desk.md",
+    "demos/cases/clawd-on-desk/fidelity.md",
+    "demos/cases/clawd-on-desk/source/website/scripts/terminal.js",
+    "demos/cases/clawd-on-desk/index.html",
+    "demos/cases/clawd-on-desk/assets/svg/clawd-shades.svg"
+  ]
+}

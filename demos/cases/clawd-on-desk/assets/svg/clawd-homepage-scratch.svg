@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-15 -25 45 45" width="500" height="500">
+  <defs>
+    <style>
+      /* 4s Loop — idle → scratch (3 times) → idle */
+
+      .action-body {
+        transform-origin: 7.5px 13px;
+        animation: action-body 4s infinite ease-in-out;
+      }
+
+      .breathe-anim {
+        transform-origin: 7.5px 13px;
+        animation: breathe 3.2s infinite ease-in-out;
+      }
+
+      .shadow-anim {
+        transform-origin: 7.5px 15.5px;
+        animation: shadow-action 4s infinite ease-in-out;
+      }
+
+      .arm-l {
+        transform-origin: 1px 10px;
+        animation: arm-l-loop 4s infinite ease-in-out;
+      }
+
+      .eyes-blink {
+        transform-origin: 7.5px 9px;
+        animation: eye-blink 4s infinite linear;
+      }
+
+      /* --- Keyframes --- */
+
+      @keyframes breathe {
+        0%, 100% { transform: scale(1, 1) translate(0, 0); }
+        50% { transform: scale(1.02, 0.98) translate(0, 0.5px); }
+      }
+
+      @keyframes action-body {
+        0%, 30%, 58%, 100% { transform: translate(0, 0); }
+        /* Slight body lean while scratching */
+        35%, 52% { transform: translate(0.5px, 0); }
+      }
+
+      @keyframes shadow-action {
+        0%, 30%, 58%, 100% { transform: translate(0, 0); opacity: 0.5; }
+        35%, 52% { transform: translate(0.5px, 0); opacity: 0.5; }
+      }
+
+      @keyframes arm-l-loop {
+        0%, 32% { transform: translate(0, 0) rotate(0deg); }
+        /* 3 quick scratches on the head */
+        35% { transform: translate(1px, -3px) rotate(15deg); }
+        38% { transform: translate(1.5px, -4px) rotate(35deg); }
+        40% { transform: translate(0.5px, -2.5px) rotate(0deg); }
+        43% { transform: translate(1.5px, -4px) rotate(35deg); }
+        45% { transform: translate(0.5px, -2.5px) rotate(0deg); }
+        48% { transform: translate(1.5px, -4px) rotate(35deg); }
+        50% { transform: translate(0.5px, -2.5px) rotate(0deg); }
+        55%, 100% { transform: translate(0, 0) rotate(0deg); }
+      }
+
+      @keyframes eye-blink {
+        0%, 10%, 14%, 75%, 79%, 100% { transform: scaleY(1); }
+        12%, 77% { transform: scaleY(0.1); }
+      }
+    </style>
+  </defs>
+
+  <!-- Ground Shadow -->
+  <rect id="ground-shadow" class="shadow-anim" x="3" y="15" width="9" height="1" fill="#000000" opacity="0.5"/>
+
+  <!-- Static Legs -->
+  <g id="legs" fill="#DE886D">
+    <rect x="3" y="12" width="1" height="3"/>
+    <rect x="5" y="12" width="1" height="3"/>
+    <rect x="9" y="12" width="1" height="3"/>
+    <rect x="11" y="12" width="1" height="3"/>
+  </g>
+
+  <!-- Animated Upper Body -->
+  <g class="action-body">
+    <g class="breathe-anim">
+      <rect id="torso" x="2" y="6" width="11" height="7" fill="#DE886D"/>
+      <g class="arm-l">
+        <rect x="0" y="9" width="2" height="2" fill="#DE886D"/>
+      </g>
+      <rect x="13" y="9" width="2" height="2" fill="#DE886D"/>
+      <g fill="#000000">
+        <g class="eyes-blink">
+          <rect x="4" y="8" width="1" height="2"/>
+          <rect x="10" y="8" width="1" height="2"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

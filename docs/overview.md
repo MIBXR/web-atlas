@@ -32,7 +32,7 @@
 
 图片进入对应在线案例，文字链接可直接阅读 Prompt、研究与代码。品牌页面按各自注明范围归档复现，官方影像条目明确标记网页转译，经典语言是有真实参考与理论依据的构成练习；示范作品归档来源仓库的固定提交，虚构人物与机构文案按示范内容阅读。
 
-### 产品与平台 · 9
+### 产品与平台 · 10
 
 从产品卖点到可观察的工作结果，版式与交互各自承担说明任务。
 
@@ -51,6 +51,11 @@
 <td width="33%" valign="top"><a href="https://mibxr-design-atlas.mibxranime.chatgpt.site/cases.html#style/qoder-platform"><img src="../previews/cases/qoder-platform.jpg" alt="Qoder — 绿色工作台与多形态平台 实际代码预览" width="100%"></a><br><strong>Qoder — 绿色工作台与多形态平台</strong><br><sub>无衬线巨字、产品内嵌预览、400ms横向平台切换。</sub><br><br><a href="../prompts/cases/qoder-platform.md">Prompt</a> · <a href="cases/qoder-platform.md">研究</a> · <a href="../demos/cases/qoder-platform">代码</a> · <a href="../previews/cases/qoder-platform-mobile.jpg">手机预览</a></td>
 <td width="33%" valign="top"><a href="https://mibxr-design-atlas.mibxranime.chatgpt.site/cases.html#style/google-material"><img src="../previews/cases/google-material.jpg" alt="Google Material：表现力与组件秩序 实际代码预览" width="100%"></a><br><strong>Google Material：表现力与组件秩序</strong><br><sub>系统与手动主题、300ms目录、9秒组件视频与圆角反馈。</sub><br><br><a href="../prompts/cases/google-material.md">Prompt</a> · <a href="cases/google-material.md">研究</a> · <a href="../demos/cases/google-material">代码</a> · <a href="../previews/cases/google-material-mobile.jpg">手机预览</a></td>
 <td width="33%" valign="top"><a href="https://mibxr-design-atlas.mibxranime.chatgpt.site/cases.html#style/deepseek-harness"><img src="../previews/cases/deepseek-harness.jpg" alt="DeepSeek Harness · 可观察的产品演示 实际代码预览" width="100%"></a><br><strong>DeepSeek Harness · 可观察的产品演示</strong><br><sub>完整双语产品页、四组代码动效、流体与三维聚合页尾。</sub><br><br><a href="../prompts/cases/deepseek-harness.md">Prompt</a> · <a href="cases/deepseek-harness.md">研究</a> · <a href="../demos/cases/deepseek-harness">代码</a> · <a href="../previews/cases/deepseek-harness-mobile.jpg">手机预览</a></td>
+</tr>
+<tr>
+<td width="33%" valign="top"><a href="https://mibxr-design-atlas.mibxranime.chatgpt.site/cases.html#style/clawd-on-desk"><img src="../previews/cases/clawd-on-desk.jpg" alt="Clawd on Desk 可互动产品页实际代码预览" width="100%"></a><br><strong>Clawd on Desk · 可互动的桌宠产品页</strong><br><sub>视线跟随、像素花园、拖放入口和允许／拒绝分支。</sub><br><br><a href="../prompts/cases/clawd-on-desk.md">Prompt</a> · <a href="cases/clawd-on-desk.md">研究</a> · <a href="../demos/cases/clawd-on-desk">代码</a> · <a href="../previews/cases/clawd-on-desk-mobile.jpg">手机预览</a></td>
+<td></td>
+<td></td>
 </tr>
 </table>
 

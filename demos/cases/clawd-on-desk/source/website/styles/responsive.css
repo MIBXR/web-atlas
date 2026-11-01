@@ -1,0 +1,149 @@
+/* One scene coordinate system: the guide, drop target and typing position
+   share anchors. The C / 110% background is intentionally unchanged. */
+:root {
+  --scene-height: 100vh;
+  --scene-edge: max(20px, env(safe-area-inset-left), env(safe-area-inset-right));
+  --clawd-size: clamp(240px, 50.74vmin, 548px);
+  --clawd-size-3: clamp(180px, 34.81vmin, 376px);
+  /* Preserve the calibrated 100px offset at 376px, scale with the sprite. */
+  --clawd-body-cy: calc(var(--clawd-size-3) * 0.266);
+  --clawd-y: calc(var(--scene-height) * 0.212);
+  --clawd-y-1e: calc(var(--scene-height) * 0.5 - var(--clawd-size) * 0.266);
+  --clawd-y-3: calc(var(--scene-height) * 0.4027);
+  --brand-y: calc(var(--scene-height) * 0.5868);
+  --brand-size: clamp(18px, 4.4vw, 42px);
+  --brand-letter: clamp(0px, 0.1vw, 1px);
+  --term-w: min(842px, 78vmin, calc(100vw - var(--clawd-size-3) * 0.95 - var(--scene-edge) * 2));
+  --term-h: clamp(260px, 44vmin, 476px);
+  --term-bottom: calc(var(--scene-height) * 0.1889);
+  --clawd-work-dx: calc(var(--term-w) / -2 - var(--clawd-size-3) * 0.262);
+  --clawd-work-dy: calc(var(--term-h) / 2 - var(--clawd-size-3) * 0.084);
+  --clawd-walk-dx: calc(var(--clawd-work-dx) * -1);
+  --clawd-walk-dy: var(--clawd-work-dy);
+  /* Entry is NOT the later landing position. Portrait typing sits below the
+     terminal, so walking must move both right and up before hiding. Include
+     the crabwalk sprite's arms, +3 SVG-unit sway, feet and shadow, not just
+     its torso; the extra corner inset stays clear of the rounded terminal. */
+  --clawd-walk-cover-inset: calc(var(--term-radius) + 2px);
+  --clawd-walk-end-dx: max(
+    calc(var(--term-w) / -2 + var(--clawd-size-3) * 0.27 + var(--clawd-walk-cover-inset)),
+    calc(var(--clawd-work-dx) + var(--clawd-size-3) * 0.3)
+  );
+  --clawd-walk-entry-dy: min(
+    var(--clawd-work-dy),
+    calc(var(--term-h) / 2 - var(--clawd-size-3) * 0.19 - var(--clawd-walk-cover-inset))
+  );
+  --clawd-peek-dx: calc(var(--term-w) / 2 + var(--clawd-size-3) * 0.014);
+  --drop-w: clamp(92px, 17.78vmin, 192px);
+  --drop-h: clamp(104px, 20.74vmin, 224px);
+  --hint-x: var(--clawd-x-3);
+  --hint-y: calc(var(--clawd-y-3) + var(--clawd-body-cy) + var(--clawd-size-3) * 0.24 + 28px);
+  --arc-start-lift-y: calc(var(--clawd-size-3) * -0.055);
+  --arc-end-lift-y: calc(var(--drop-h) * -0.24);
+  --arc-cx: var(--arc-auto-cx, 36.5vw);
+  --arc-cy: var(--arc-auto-cy, 40vh);
+  --perm-width: min(360px, calc(100vw - var(--scene-edge) * 2));
+  --perm-bottom: calc(var(--term-bottom) + var(--term-h) / 2 - var(--clawd-walk-dy) + var(--clawd-size-3) / 2 + var(--perm-gap));
+  --author-right: max(20px, env(safe-area-inset-right));
+  --author-bottom: max(16px, env(safe-area-inset-bottom));
+}
+@supports (height: 100dvh) { :root { --scene-height: 100dvh; } }
+
+.stage { height: var(--scene-height); width: 100%; overflow: clip; }
+.arc-pointer { height: var(--scene-height); width: 100%; }
+.clawd { touch-action: none; -webkit-touch-callout: none; }
+body.scene-resizing .clawd { transition: none !important; }
+.clawd-body-point {
+  position: absolute;
+  left: calc(50% + var(--clawd-body-cx));
+  top: calc(50% + var(--clawd-body-cy));
+  width: 0; height: 0; pointer-events: none;
+}
+.drag-hint { max-width: calc(100vw - var(--scene-edge) * 2); }
+.drop-zone {
+  border-radius: clamp(16px, 3vmin, 24px);
+  font-size: clamp(12px, 1.8vmin, 14px);
+  white-space: nowrap;
+}
+.brand { max-width: calc(100vw - 32px); }
+.exit-credit { font-size: clamp(12px, 4vw, 42px); }
+.exit-toast { width: max-content; max-width: calc(100vw - 32px); white-space: normal; }
+.author { max-width: calc(100vw - 40px); font-size: clamp(9px, 1.5vw, 12px); }
+.clawd-perm-card {
+  width: var(--perm-width);
+  left: clamp(calc(var(--scene-edge) + var(--perm-width) / 2), calc(50% + var(--clawd-walk-dx)), calc(100% - var(--scene-edge) - var(--perm-width) / 2));
+  top: auto;
+  bottom: var(--perm-bottom);
+  max-height: calc(var(--scene-height) - var(--perm-bottom) - max(16px, env(safe-area-inset-top)));
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  transform: translate(-50%, 24px);
+}
+body.clawd-perm-show .clawd-perm-card { transform: translate(-50%, 0); }
+.perm-card-actions { position: sticky; bottom: 0; background: #fff; padding-top: 4px; }
+.perm-card-btn { min-height: 44px; }
+.showcase {
+  height: var(--scene-height);
+  padding-top: max(24px, env(safe-area-inset-top));
+  padding-bottom: max(24px, env(safe-area-inset-bottom));
+  overscroll-behavior: contain;
+}
+.term-banner { flex-shrink: 0; }
+.term-banner-text, .term-user-text { min-width: 0; overflow-wrap: anywhere; }
+
+/* Portrait / narrow windows: Clawd works at the lower corner of the terminal,
+   not outside the viewport. The drop target inherits that exact position. */
+@media (max-aspect-ratio: 1/1), (max-width: 600px) {
+  :root {
+    --clawd-y: calc(var(--scene-height) * 0.3 - var(--clawd-size) * 0.266);
+    --clawd-y-3: calc(var(--scene-height) * 0.4 - var(--clawd-body-cy));
+    --term-w: calc(100vw - max(var(--scene-edge), var(--clawd-size-3) * 0.24) * 2);
+    --term-h: min(430px, calc(var(--scene-height) * 0.44));
+    --term-bottom: calc(var(--scene-height) * 0.24);
+    --clawd-work-dx: calc(var(--term-w) / -2 + var(--clawd-size-3) * 0.18);
+    --clawd-work-dy: calc(var(--term-h) / 2 + var(--clawd-size-3) * 0.16);
+    --hint-size: 13px;
+  }
+  .terminal .term-body { padding: 12px 14px 32px; font-size: 12px; }
+  .term-banner { padding: 8px 10px; margin-bottom: 10px; gap: 8px; }
+  .term-banner-text { font-size: 11px; }
+  .term-thinking { flex-wrap: wrap; gap: 5px; }
+  .term-thinking-meta { font-size: 10px; }
+  .term-footer { left: 14px; right: 14px; font-size: 9px; }
+  .term-footer-right { display: none; }
+  .terminal .term-title { font-size: 10px; left: auto; right: 12px; transform: translateY(-50%); }
+  .terminal .term-dots { gap: 5px; }
+  .terminal .term-dots span { width: 9px; height: 9px; }
+  .clawd-perm-card { padding: 16px; }
+}
+
+/* Short landscape (including phones rotated sideways): keep room above the
+   notification for both decisions, and below the sprite for the credit. */
+@media (max-height: 540px) and (min-aspect-ratio: 1/1) {
+  :root {
+    --clawd-size: min(50.74vmin, 240px);
+    --clawd-size-3: clamp(132px, 34.81vmin, 188px);
+    --clawd-y-3: calc(var(--scene-height) * 0.36);
+    --term-w: min(78vmin, calc(100vw - var(--clawd-size-3) * 0.95 - var(--scene-edge) * 2));
+    --term-h: calc(var(--scene-height) * 0.64);
+    --term-bottom: max(calc(52px + env(safe-area-inset-bottom)), calc(var(--scene-height) * 0.12));
+    --clawd-work-dx: calc(var(--term-w) / -2 - var(--clawd-size-3) * 0.262);
+    --clawd-work-dy: calc(var(--term-h) / 2 - var(--clawd-size-3) * 0.084);
+    --hint-y: calc(var(--clawd-y-3) + var(--clawd-body-cy) + var(--clawd-size-3) * 0.24 + 20px);
+    --drop-w: 84px;
+    --drop-h: 92px;
+    --perm-gap: -16px;
+  }
+  .terminal .term-body { padding: 10px 14px 30px; font-size: 11px; }
+  .term-banner { padding: 6px 10px; margin-bottom: 8px; }
+  .term-banner-text { font-size: 11px; }
+  .clawd-perm-card { padding: 12px 16px; }
+  .perm-card-cmd { margin-top: 8px; padding: 6px 10px; font-size: 11px; }
+  .perm-card-note { font-size: 11px; margin-top: 6px; }
+  .perm-card-actions { margin-top: 8px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .drag-hint, .drop-zone { animation: none !important; }
+  #drag-hand { display: none; }
+}

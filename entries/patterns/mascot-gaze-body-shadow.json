@@ -1,0 +1,66 @@
+{
+  "id": "mascot-gaze-body-shadow",
+  "title": "视线、身体与影子同向反馈",
+  "category": "交互反馈",
+  "experienceTypes": [
+    "micro-motion"
+  ],
+  "summary": "角色回应用户，并在剧情动作发生时避免眼神与身体争抢方向。",
+  "mechanism": "将指针相对眼睛的方向转为限幅 SVG 偏移，眼睛、身体和影子按不同倍率联动；演示阶段把目标交给标题光标或暂时回正。",
+  "trigger": "指针移动或场景切换注视目标。",
+  "effect": "角色回应用户，并在剧情动作发生时避免眼神与身体争抢方向。",
+  "useCases": [
+    "角色产品页",
+    "轻量背景反馈"
+  ],
+  "avoid": [
+    "让装饰成为唯一的任务入口或状态线索"
+  ],
+  "constraints": [
+    "只从角色或界面本身取材，不用整个页面的截图替代机制。",
+    "角色与官网素材保留原权利；迁移时使用有对应授权的资源。"
+  ],
+  "composition": {
+    "role": "accent",
+    "notes": "负责局部注意力反馈，剧情表演时交还注视目标。",
+    "pairsWellWith": [
+      "pointer-proximity-pixel-garden"
+    ],
+    "conflicts": []
+  },
+  "accessibility": {
+    "keyboard": "注视只是装饰，不承担按钮、提示或关键信息。",
+    "reducedMotion": "原作视线继续跟随；移植时可固定前视并保留所有操作。"
+  },
+  "parameters": [
+    {
+      "name": "眼睛限幅",
+      "value": "距离300px饱和；X最大3、Y最大1.5 SVG单位；0.5单位取整",
+      "note": "官网 eye-track.js CFG 与 tick。"
+    },
+    {
+      "name": "分层比例",
+      "value": "身体=眼睛×0.33；影子拉伸0.15、平移0.3",
+      "note": "官网 applyEye。"
+    }
+  ],
+  "prompt": "实现「视线、身体与影子同向反馈」：将指针相对眼睛的方向转为限幅 SVG 偏移，眼睛、身体和影子按不同倍率联动；演示阶段把目标交给标题光标或暂时回正。触发：指针移动或场景切换注视目标。参数：距离300px饱和；X最大3、Y最大1.5 SVG单位；0.5单位取整；身体=眼睛×0.33；影子拉伸0.15、平移0.3。先读取来源案例的实际源码与 fidelity.md，保持角色 SVG、身体锚点、状态交接和原声音行为。注视只是装饰，不承担按钮、提示或关键信息。原作视线继续跟随；移植时可固定前视并保留所有操作。迁移时替换为有使用权的角色与素材。",
+  "sources": [
+    {
+      "caseId": "clawd-on-desk",
+      "locator": "entries/cases/clawd-on-desk.json#interaction/1",
+      "observation": "等待态的眼睛朝指针或标题光标偏移，300px 达到最大 3 SVG 单位，身体按 0.33 倍偏移并联动影子。围绕角色连续同向两圈触发 6 秒眩晕、12 秒冷却；拖放和权限决定优先取消反应。",
+      "evidence": "observed",
+      "referenceUrl": "https://clawdondesk.com/",
+      "capturedAt": "2026-11-01"
+    }
+  ],
+  "sourceFiles": [
+    "entries/cases/clawd-on-desk.json",
+    "docs/cases/clawd-on-desk.md",
+    "demos/cases/clawd-on-desk/fidelity.md",
+    "demos/cases/clawd-on-desk/source/website/scripts/eye-track.js",
+    "demos/cases/clawd-on-desk/source/website/scripts/dizzy.js",
+    "demos/cases/clawd-on-desk/index.html"
+  ]
+}

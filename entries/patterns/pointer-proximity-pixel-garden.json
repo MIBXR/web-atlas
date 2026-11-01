@@ -1,0 +1,64 @@
+{
+  "id": "pointer-proximity-pixel-garden",
+  "title": "按指针距离生长的像素花园",
+  "category": "交互反馈",
+  "experienceTypes": [
+    "micro-motion"
+  ],
+  "summary": "整片背景以稳定像素格回应用户，装饰层不截获拖放或按钮。",
+  "mechanism": "在固定网格格点按坐标散列选择花形与颜色；仅实例化指针半径内的花，按距离同步透明度和缩放，离开后淡去并回收超额节点。",
+  "trigger": "指针移动或触摸按下。",
+  "effect": "整片背景以稳定像素格回应用户，装饰层不截获拖放或按钮。",
+  "useCases": [
+    "角色产品页",
+    "轻量背景反馈"
+  ],
+  "avoid": [
+    "让装饰成为唯一的任务入口或状态线索"
+  ],
+  "constraints": [
+    "只从角色或界面本身取材，不用整个页面的截图替代机制。",
+    "角色与官网素材保留原权利；迁移时使用有对应授权的资源。"
+  ],
+  "composition": {
+    "role": "accent",
+    "notes": "以低对比装饰回应指针，不与角色和行动按钮争夺点击。",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "accessibility": {
+    "keyboard": "花园为 aria-hidden 装饰，不改变键盘焦点或传达唯一状态。",
+    "reducedMotion": "原作只取消透明度/缩放过渡；可按目标需要停用花形响应。"
+  },
+  "parameters": [
+    {
+      "name": "邻域",
+      "value": "网格37px；半径90px；最多96个节点",
+      "note": "官网 BASE_GAP=34、SPACING_PERCENT=110 与 MAX_MARKS。"
+    },
+    {
+      "name": "映射",
+      "value": "opacity=(1−d/90)^.68×.9；scale=.65+.5×opacity",
+      "note": "官网 opacityAt / scaleAt。"
+    }
+  ],
+  "prompt": "实现「按指针距离生长的像素花园」：在固定网格格点按坐标散列选择花形与颜色；仅实例化指针半径内的花，按距离同步透明度和缩放，离开后淡去并回收超额节点。触发：指针移动或触摸按下。参数：网格37px；半径90px；最多96个节点；opacity=(1−d/90)^.68×.9；scale=.65+.5×opacity。先读取来源案例的实际源码与 fidelity.md，保持角色 SVG、身体锚点、状态交接和原声音行为。花园为 aria-hidden 装饰，不改变键盘焦点或传达唯一状态。原作只取消透明度/缩放过渡；可按目标需要停用花形响应。迁移时替换为有使用权的角色与素材。",
+  "sources": [
+    {
+      "caseId": "clawd-on-desk",
+      "locator": "entries/cases/clawd-on-desk.json#interaction/2",
+      "observation": "指针附近的 37px 网格生出像素花，90px 半径内按距离控制透明度与缩放；移开淡去，最多保留 96 个活动及淡出格子，装饰层不截获输入。",
+      "evidence": "observed",
+      "referenceUrl": "https://clawdondesk.com/",
+      "capturedAt": "2026-11-01"
+    }
+  ],
+  "sourceFiles": [
+    "entries/cases/clawd-on-desk.json",
+    "docs/cases/clawd-on-desk.md",
+    "demos/cases/clawd-on-desk/fidelity.md",
+    "demos/cases/clawd-on-desk/source/website/scripts/pixel-flower.js",
+    "demos/cases/clawd-on-desk/source/website/scripts/flower-layer.js",
+    "demos/cases/clawd-on-desk/index.html"
+  ]
+}

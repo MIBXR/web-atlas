@@ -1,0 +1,206 @@
+{
+  "capturedAt": "2026-11-01",
+  "referenceUrl": "https://clawdondesk.com/",
+  "assets": [
+    {
+      "owner": "鹿鹿（rullerzhou-afk）；Clawd 角色归 Anthropic",
+      "usage": "官网角色与指示素材",
+      "license": "美术保留所有权利；见 source/ARTWORK-LICENSE.txt",
+      "file": "assets/svg/clawd-dizzy.svg",
+      "sourceUrl": "https://clawdondesk.com/assets/svg/clawd-dizzy.svg",
+      "transformation": "原始字节；未裁切、转码或重绘",
+      "dimensions": "-15 -25 45 45"
+    },
+    {
+      "owner": "鹿鹿（rullerzhou-afk）；Clawd 角色归 Anthropic",
+      "usage": "官网角色与指示素材",
+      "license": "美术保留所有权利；见 source/ARTWORK-LICENSE.txt",
+      "file": "assets/svg/clawd-working-typing.svg",
+      "sourceUrl": "https://clawdondesk.com/assets/svg/clawd-working-typing.svg",
+      "transformation": "原始字节；未裁切、转码或重绘",
+      "dimensions": "-15 -25 45 45"
+    },
+    {
+      "owner": "鹿鹿（rullerzhou-afk）；Clawd 角色归 Anthropic",
+      "usage": "官网角色与指示素材",
+      "license": "美术保留所有权利；见 source/ARTWORK-LICENSE.txt",
+      "file": "assets/svg/clawd-mini-crabwalk.svg",
+      "sourceUrl": "https://clawdondesk.com/assets/svg/clawd-mini-crabwalk.svg",
+      "transformation": "原始字节；未裁切、转码或重绘",
+      "dimensions": "-15 -25 45 45"
+    },
+    {
+      "owner": "鹿鹿（rullerzhou-afk）；Clawd 角色归 Anthropic",
+      "usage": "官网角色与指示素材",
+      "license": "美术保留所有权利；见 source/ARTWORK-LICENSE.txt",
+      "file": "assets/svg/clawd-notification.svg",
+      "sourceUrl": "https://clawdondesk.com/assets/svg/clawd-notification.svg",
+      "transformation": "原始字节；未裁切、转码或重绘",
+      "dimensions": "-15 -25 45 45"
+    },
+    {
+      "owner": "鹿鹿（rullerzhou-afk）；Clawd 角色归 Anthropic",
+      "usage": "官网角色与指示素材",
+      "license": "美术保留所有权利；见 source/ARTWORK-LICENSE.txt",
+      "file": "assets/svg/clawd-mini-enter.svg",
+      "sourceUrl": "https://clawdondesk.com/assets/svg/clawd-mini-enter.svg",
+      "transformation": "原始字节；未裁切、转码或重绘",
+      "dimensions": "-15 -25 45 45"
+    },
+    {
+      "owner": "鹿鹿（rullerzhou-afk）；Clawd 角色归 Anthropic",
+      "usage": "官网角色与指示素材",
+      "license": "美术保留所有权利；见 source/ARTWORK-LICENSE.txt",
+      "file": "assets/svg/clawd-error.svg",
+      "sourceUrl": "https://clawdondesk.com/assets/svg/clawd-error.svg",
+      "transformation": "原始字节；未裁切、转码或重绘",
+      "dimensions": "-15 -25 45 45"
+    },
+    {
+      "owner": "鹿鹿（rullerzhou-afk）；Clawd 角色归 Anthropic",
+      "usage": "官网角色与指示素材",
+      "license": "美术保留所有权利；见 source/ARTWORK-LICENSE.txt",
+      "file": "assets/svg/clawd-wake.svg",
+      "sourceUrl": "https://clawdondesk.com/assets/svg/clawd-wake.svg",
+      "transformation": "原始字节；未裁切、转码或重绘",
+      "dimensions": "-15 -25 45 45"
+    },
+    {
+      "owner": "鹿鹿（rullerzhou-afk）；Clawd 角色归 Anthropic",
+      "usage": "官网角色与指示素材",
+      "license": "美术保留所有权利；见 source/ARTWORK-LICENSE.txt",
+      "file": "assets/svg/clawd-homepage-scratch.svg",
+      "sourceUrl": "https://clawdondesk.com/assets/svg/clawd-homepage-scratch.svg",
+      "transformation": "原始字节；未裁切、转码或重绘",
+      "dimensions": "-15 -25 45 45"
+    },
+    {
+      "owner": "鹿鹿（rullerzhou-afk）；Clawd 角色归 Anthropic",
+      "usage": "官网角色与指示素材",
+      "license": "美术保留所有权利；见 source/ARTWORK-LICENSE.txt",
+      "file": "assets/svg/clawd-shades.svg",
+      "sourceUrl": "https://clawdondesk.com/assets/svg/clawd-shades.svg",
+      "transformation": "原始字节；未裁切、转码或重绘",
+      "dimensions": "-15 -25 45 45"
+    },
+    {
+      "owner": "鹿鹿（rullerzhou-afk）；Clawd 角色归 Anthropic",
+      "usage": "官网角色与指示素材",
+      "license": "美术保留所有权利；见 source/ARTWORK-LICENSE.txt",
+      "file": "assets/svg/showcase/clawd-idle-reading.svg",
+      "sourceUrl": "https://clawdondesk.com/assets/svg/showcase/clawd-idle-reading.svg",
+      "transformation": "原始字节；未裁切、转码或重绘",
+      "dimensions": "-15 -25 45 45"
+    },
+    {
+      "owner": "鹿鹿（rullerzhou-afk）；Clawd 角色归 Anthropic",
+      "usage": "官网角色与指示素材",
+      "license": "美术保留所有权利；见 source/ARTWORK-LICENSE.txt",
+      "file": "assets/svg/showcase/clawd-working-thinking.svg",
+      "sourceUrl": "https://clawdondesk.com/assets/svg/showcase/clawd-working-thinking.svg",
+      "transformation": "原始字节；未裁切、转码或重绘",
+      "dimensions": "-15 -25 45 45"
+    },
+    {
+      "owner": "鹿鹿（rullerzhou-afk）；Clawd 角色归 Anthropic",
+      "usage": "官网角色与指示素材",
+      "license": "美术保留所有权利；见 source/ARTWORK-LICENSE.txt",
+      "file": "assets/svg/showcase/clawd-working-typing.svg",
+      "sourceUrl": "https://clawdondesk.com/assets/svg/showcase/clawd-working-typing.svg",
+      "transformation": "原始字节；未裁切、转码或重绘",
+      "dimensions": "-15 -25 45 45"
+    },
+    {
+      "owner": "鹿鹿（rullerzhou-afk）；Clawd 角色归 Anthropic",
+      "usage": "官网角色与指示素材",
+      "license": "美术保留所有权利；见 source/ARTWORK-LICENSE.txt",
+      "file": "assets/svg/showcase/clawd-working-wizard.svg",
+      "sourceUrl": "https://clawdondesk.com/assets/svg/showcase/clawd-working-wizard.svg",
+      "transformation": "原始字节；未裁切、转码或重绘",
+      "dimensions": "-15 -25 45 45"
+    },
+    {
+      "owner": "鹿鹿（rullerzhou-afk）；Clawd 角色归 Anthropic",
+      "usage": "官网角色与指示素材",
+      "license": "美术保留所有权利；见 source/ARTWORK-LICENSE.txt",
+      "file": "assets/svg/showcase/clawd-headphones-groove.svg",
+      "sourceUrl": "https://clawdondesk.com/assets/svg/showcase/clawd-headphones-groove.svg",
+      "transformation": "原始字节；未裁切、转码或重绘",
+      "dimensions": "-15 -25 45 45"
+    },
+    {
+      "owner": "鹿鹿（rullerzhou-afk）；Clawd 角色归 Anthropic",
+      "usage": "官网角色与指示素材",
+      "license": "美术保留所有权利；见 source/ARTWORK-LICENSE.txt",
+      "file": "assets/svg/showcase/clawd-working-juggling.svg",
+      "sourceUrl": "https://clawdondesk.com/assets/svg/showcase/clawd-working-juggling.svg",
+      "transformation": "原始字节；未裁切、转码或重绘",
+      "dimensions": "-15 -25 45 45"
+    },
+    {
+      "owner": "鹿鹿（rullerzhou-afk）；Clawd 角色归 Anthropic",
+      "usage": "官网角色与指示素材",
+      "license": "美术保留所有权利；见 source/ARTWORK-LICENSE.txt",
+      "file": "assets/drag-hand.svg",
+      "sourceUrl": "https://clawdondesk.com/assets/drag-hand.svg",
+      "transformation": "原始字节；未裁切、转码或重绘",
+      "dimensions": "0 0 64 64"
+    },
+    {
+      "owner": "各字体作者 / Google Fonts",
+      "usage": "官网 Google Fonts 字体",
+      "license": "SIL Open Font License 1.1",
+      "file": "fonts/6NVf8FyLNQOQZAnv9ZwNjucMHVn85Ni7emAe9lKqZTnbB-gzTK0K1ChJdt9vIVYX9G37lvd9sPEKsxx664UJf1hLTf7W.ttf",
+      "sourceUrl": "https://fonts.gstatic.com/s/fraunces/v38/6NVf8FyLNQOQZAnv9ZwNjucMHVn85Ni7emAe9lKqZTnbB-gzTK0K1ChJdt9vIVYX9G37lvd9sPEKsxx664UJf1hLTf7W.ttf",
+      "transformation": "原始字节；未裁切、转码或重绘"
+    },
+    {
+      "owner": "各字体作者 / Google Fonts",
+      "usage": "官网 Google Fonts 字体",
+      "license": "SIL Open Font License 1.1",
+      "file": "fonts/6NVf8FyLNQOQZAnv9ZwNjucMHVn85Ni7emAe9lKqZTnbB-gzTK0K1ChJdt9vIVYX9G37lvd9sPEKsxx664UJf1jiSv7W.ttf",
+      "sourceUrl": "https://fonts.gstatic.com/s/fraunces/v38/6NVf8FyLNQOQZAnv9ZwNjucMHVn85Ni7emAe9lKqZTnbB-gzTK0K1ChJdt9vIVYX9G37lvd9sPEKsxx664UJf1jiSv7W.ttf",
+      "transformation": "原始字节；未裁切、转码或重绘"
+    },
+    {
+      "owner": "各字体作者 / Google Fonts",
+      "usage": "官网 Google Fonts 字体",
+      "license": "SIL Open Font License 1.1",
+      "file": "fonts/6NUh8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0K7iN7hzFUPJH58nib1603gg7S2nfgRYIctxujDg.ttf",
+      "sourceUrl": "https://fonts.gstatic.com/s/fraunces/v38/6NUh8FyLNQOQZAnv9bYEvDiIdE9Ea92uemAk_WBq8U_9v0c2Wa0K7iN7hzFUPJH58nib1603gg7S2nfgRYIctxujDg.ttf",
+      "transformation": "原始字节；未裁切、转码或重绘"
+    },
+    {
+      "owner": "各字体作者 / Google Fonts",
+      "usage": "官网 Google Fonts 字体",
+      "license": "SIL Open Font License 1.1",
+      "file": "fonts/or3yQ6H-1_WfwkMZI_qYPLs1a-t7PU0AbeE9KJ5T.ttf",
+      "sourceUrl": "https://fonts.gstatic.com/s/geistmono/v6/or3yQ6H-1_WfwkMZI_qYPLs1a-t7PU0AbeE9KJ5T.ttf",
+      "transformation": "原始字节；未裁切、转码或重绘"
+    },
+    {
+      "owner": "各字体作者 / Google Fonts",
+      "usage": "官网 Google Fonts 字体",
+      "license": "SIL Open Font License 1.1",
+      "file": "fonts/or3yQ6H-1_WfwkMZI_qYPLs1a-t7PU0AbeEPKJ5T.ttf",
+      "sourceUrl": "https://fonts.gstatic.com/s/geistmono/v6/or3yQ6H-1_WfwkMZI_qYPLs1a-t7PU0AbeEPKJ5T.ttf",
+      "transformation": "原始字节；未裁切、转码或重绘"
+    },
+    {
+      "owner": "各字体作者 / Google Fonts",
+      "usage": "官网 Google Fonts 字体",
+      "license": "SIL Open Font License 1.1",
+      "file": "fonts/or3yQ6H-1_WfwkMZI_qYPLs1a-t7PU0AbeHjL55T.ttf",
+      "sourceUrl": "https://fonts.gstatic.com/s/geistmono/v6/or3yQ6H-1_WfwkMZI_qYPLs1a-t7PU0AbeHjL55T.ttf",
+      "transformation": "原始字节；未裁切、转码或重绘"
+    },
+    {
+      "owner": "各字体作者 / Google Fonts",
+      "usage": "官网 Google Fonts 字体",
+      "license": "SIL Open Font License 1.1",
+      "file": "fonts/e3t4euO8T-267oIAQAu6jDQyK0nS.ttf",
+      "sourceUrl": "https://fonts.gstatic.com/s/pressstart2p/v16/e3t4euO8T-267oIAQAu6jDQyK0nS.ttf",
+      "transformation": "原始字节；未裁切、转码或重绘"
+    }
+  ]
+}
