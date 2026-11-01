@@ -4568,7 +4568,10 @@ window.ATLAS_CASES = [
     "fidelity": "demos/cases/stellar-museum/fidelity.md",
     "assetManifest": "demos/cases/stellar-museum/assets-manifest.json",
     "capturedAt": "2026-10-27",
-    "patternIds": [],
+    "patternIds": [
+      "aspect-recomposed-3d-hero",
+      "viewport-animation-lifecycle"
+    ],
     "themeBehavior": {
       "mode": "fixed",
       "default": "dark",
@@ -4691,7 +4694,11 @@ window.ATLAS_CASES = [
     "fidelity": "demos/cases/mira-host-photography/fidelity.md",
     "assetManifest": "demos/cases/mira-host-photography/assets-manifest.json",
     "capturedAt": "2026-10-27",
-    "patternIds": [],
+    "patternIds": [
+      "difference-blend-navigation",
+      "inline-row-photo-preview",
+      "photo-crossfade-cycle"
+    ],
     "themeBehavior": {
       "mode": "fixed",
       "default": "light",

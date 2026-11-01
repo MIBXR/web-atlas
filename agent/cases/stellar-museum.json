@@ -114,7 +114,10 @@
     "fidelity": "demos/cases/stellar-museum/fidelity.md",
     "assetManifest": "demos/cases/stellar-museum/assets-manifest.json",
     "capturedAt": "2026-10-27",
-    "patternIds": [],
+    "patternIds": [
+      "aspect-recomposed-3d-hero",
+      "viewport-animation-lifecycle"
+    ],
     "themeBehavior": {
       "mode": "fixed",
       "default": "dark",
