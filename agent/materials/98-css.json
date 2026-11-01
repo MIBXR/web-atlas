@@ -3,6 +3,7 @@
   "id": "98-css",
   "material": {
     "id": "98-css",
+    "order": 2,
     "title": "98.css · 复古桌面组件",
     "type": "component-library",
     "category": "组件与效果",

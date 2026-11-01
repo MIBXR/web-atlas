@@ -3,6 +3,7 @@
   "id": "world-shaped-thumbnail-frame",
   "pattern": {
     "id": "world-shaped-thumbnail-frame",
+    "order": 35,
     "title": "目录边框延续世界语汇",
     "category": "视觉构成",
     "experienceTypes": [

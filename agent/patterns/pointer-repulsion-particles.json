@@ -3,6 +3,7 @@
   "id": "pointer-repulsion-particles",
   "pattern": {
     "id": "pointer-repulsion-particles",
+    "order": 86,
     "title": "指针排斥与回聚点阵",
     "category": "交互反馈",
     "experienceTypes": [

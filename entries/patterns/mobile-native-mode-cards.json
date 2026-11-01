@@ -1,5 +1,6 @@
 {
   "id": "mobile-native-mode-cards",
+  "order": 68,
   "title": "手机以原生模式卡替代桌面长舞台",
   "category": "导航与状态",
   "experienceTypes": [

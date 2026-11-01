@@ -1,5 +1,6 @@
 {
   "id": "mobile-single-open-navigation",
+  "order": 27,
   "title": "手机菜单原位单开分类",
   "category": "导航与状态",
   "experienceTypes": [

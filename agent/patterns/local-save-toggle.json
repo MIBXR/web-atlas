@@ -3,6 +3,7 @@
   "id": "local-save-toggle",
   "pattern": {
     "id": "local-save-toggle",
+    "order": 57,
     "title": "可取消的本地收藏",
     "category": "交互反馈",
     "experienceTypes": [

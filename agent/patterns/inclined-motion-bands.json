@@ -3,6 +3,7 @@
   "id": "inclined-motion-bands",
   "pattern": {
     "id": "inclined-motion-bands",
+    "order": 39,
     "title": "斜切条带延续运动方向",
     "category": "视觉构成",
     "experienceTypes": [

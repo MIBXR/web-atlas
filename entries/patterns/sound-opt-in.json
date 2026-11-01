@@ -1,5 +1,6 @@
 {
   "id": "sound-opt-in",
+  "order": 34,
   "title": "声音主动启用与随时停止",
   "category": "加载与媒体",
   "experienceTypes": [

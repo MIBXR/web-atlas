@@ -3,6 +3,7 @@
   "id": "measured-width-action-pill",
   "pattern": {
     "id": "measured-width-action-pill",
+    "order": 26,
     "title": "测量文字宽度的动作胶囊",
     "category": "交互反馈",
     "experienceTypes": [

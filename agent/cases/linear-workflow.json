@@ -125,12 +125,12 @@
     }
   },
   "patternIds": [
+    "viewport-animation-lifecycle",
     "local-code-theme-preview",
     "message-to-board-demonstration",
     "mobile-media-prioritization",
     "staged-product-ui-entrance",
-    "staggered-agent-columns",
-    "viewport-animation-lifecycle"
+    "staggered-agent-columns"
   ],
   "documents": [
     {

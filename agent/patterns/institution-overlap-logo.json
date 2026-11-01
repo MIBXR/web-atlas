@@ -3,6 +3,7 @@
   "id": "institution-overlap-logo",
   "pattern": {
     "id": "institution-overlap-logo",
+    "order": 103,
     "title": "方形机构锚点跨主图边界",
     "category": "视觉构成",
     "experienceTypes": [

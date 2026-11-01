@@ -3,6 +3,7 @@
   "id": "pointer-proximity-pixel-garden",
   "pattern": {
     "id": "pointer-proximity-pixel-garden",
+    "order": 147,
     "title": "按指针距离生长的像素花园",
     "category": "交互反馈",
     "experienceTypes": [

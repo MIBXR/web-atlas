@@ -3,6 +3,7 @@
   "id": "procedural-fluid-spotlight",
   "pattern": {
     "id": "procedural-fluid-spotlight",
+    "order": 133,
     "title": "流体色场中的固定光核",
     "category": "视觉构成",
     "experienceTypes": [

@@ -3,6 +3,7 @@
   "id": "reversible-center-reveal",
   "pattern": {
     "id": "reversible-center-reveal",
+    "order": 95,
     "title": "穿越章节中心的双向显现",
     "category": "滚动叙事",
     "experienceTypes": [

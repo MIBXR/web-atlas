@@ -3,6 +3,7 @@
   "id": "wired-elements",
   "material": {
     "id": "wired-elements",
+    "order": 5,
     "title": "Wired Elements · 可操作的手绘草稿",
     "type": "component-library",
     "category": "组件与效果",

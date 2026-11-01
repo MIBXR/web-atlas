@@ -1,5 +1,6 @@
 {
   "id": "word-opacity-stagger",
+  "order": 76,
   "title": "单词透明度的低幅交错",
   "category": "加载与媒体",
   "experienceTypes": [

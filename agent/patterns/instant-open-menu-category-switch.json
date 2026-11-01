@@ -3,6 +3,7 @@
   "id": "instant-open-menu-category-switch",
   "pattern": {
     "id": "instant-open-menu-category-switch",
+    "order": 25,
     "title": "已打开菜单分类即时切换",
     "category": "导航与状态",
     "experienceTypes": [

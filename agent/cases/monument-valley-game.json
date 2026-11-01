@@ -149,11 +149,11 @@
     }
   },
   "patternIds": [
-    "center-aligned-section-index",
-    "centered-loop-gallery",
     "film-overlay",
-    "reversible-center-reveal",
-    "section-color-rhythm"
+    "section-color-rhythm",
+    "centered-loop-gallery",
+    "center-aligned-section-index",
+    "reversible-center-reveal"
   ],
   "documents": [
     {

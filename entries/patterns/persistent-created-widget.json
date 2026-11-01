@@ -1,5 +1,6 @@
 {
   "id": "persistent-created-widget",
+  "order": 132,
   "title": "已创建挂件跨场景保留",
   "category": "内容组织",
   "experienceTypes": [

@@ -3,6 +3,7 @@
   "id": "three-html-render",
   "material": {
     "id": "three-html-render",
+    "order": 6,
     "title": "three-html-render · HTML-in-Canvas polyfill",
     "type": "component-library",
     "category": "组件与效果",

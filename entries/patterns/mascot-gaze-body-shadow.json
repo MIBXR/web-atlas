@@ -1,5 +1,6 @@
 {
   "id": "mascot-gaze-body-shadow",
+  "order": 146,
   "title": "视线、身体与影子同向反馈",
   "category": "交互反馈",
   "experienceTypes": [

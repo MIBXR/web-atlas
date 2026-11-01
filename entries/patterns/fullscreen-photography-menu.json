@@ -1,5 +1,6 @@
 {
   "id": "fullscreen-photography-menu",
+  "order": 108,
   "title": "摄影与分列链接组成全屏目录",
   "category": "导航与状态",
   "experienceTypes": [

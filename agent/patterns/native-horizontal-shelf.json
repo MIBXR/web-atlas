@@ -3,6 +3,7 @@
   "id": "native-horizontal-shelf",
   "pattern": {
     "id": "native-horizontal-shelf",
+    "order": 4,
     "title": "原生横向内容架子",
     "category": "导航与状态",
     "experienceTypes": [

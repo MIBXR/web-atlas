@@ -3,6 +3,7 @@
   "id": "restrained-signal-color",
   "pattern": {
     "id": "restrained-signal-color",
+    "order": 58,
     "title": "单一信号色集中强调",
     "category": "视觉构成",
     "experienceTypes": [

@@ -1,5 +1,6 @@
 {
   "id": "bounded-image-inspection",
+  "order": 119,
   "title": "公开边界内的瓦片细察",
   "category": "交互反馈",
   "experienceTypes": [

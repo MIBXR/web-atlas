@@ -3,6 +3,7 @@
   "id": "moving-tab-selection-bed",
   "pattern": {
     "id": "moving-tab-selection-bed",
+    "order": 74,
     "title": "选中底板与套餐内容联动",
     "category": "交互反馈",
     "experienceTypes": [

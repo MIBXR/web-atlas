@@ -3,6 +3,7 @@
   "id": "metric-explanation-selector",
   "pattern": {
     "id": "metric-explanation-selector",
+    "order": 14,
     "title": "指标选择与解释联动",
     "category": "交互反馈",
     "experienceTypes": [

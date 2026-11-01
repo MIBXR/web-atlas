@@ -3,6 +3,7 @@
   "id": "photography-option-selector",
   "pattern": {
     "id": "photography-option-selector",
+    "order": 5,
     "title": "选项与真实摄影对应",
     "category": "交互反馈",
     "experienceTypes": [

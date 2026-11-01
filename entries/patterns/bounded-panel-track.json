@@ -1,5 +1,6 @@
 {
   "id": "bounded-panel-track",
+  "order": 36,
   "title": "有界的完整面板横向轨道",
   "category": "导航与状态",
   "experienceTypes": [

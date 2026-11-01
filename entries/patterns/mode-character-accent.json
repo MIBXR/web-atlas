@@ -1,5 +1,6 @@
 {
   "id": "mode-character-accent",
+  "order": 69,
   "title": "当前能力词逐字强调色",
   "category": "交互反馈",
   "experienceTypes": [

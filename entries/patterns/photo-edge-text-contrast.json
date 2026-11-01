@@ -1,5 +1,6 @@
 {
   "id": "photo-edge-text-contrast",
+  "order": 109,
   "title": "仅在照片文字边缘增强对比",
   "category": "视觉构成",
   "experienceTypes": [

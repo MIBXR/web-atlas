@@ -3,6 +3,7 @@
   "id": "keyboard-playable-notes",
   "pattern": {
     "id": "keyboard-playable-notes",
+    "order": 63,
     "title": "可聚焦音键与物理键演奏",
     "category": "交互反馈",
     "experienceTypes": [

@@ -3,6 +3,7 @@
   "id": "staged-product-ui-entrance",
   "pattern": {
     "id": "staged-product-ui-entrance",
+    "order": 22,
     "title": "延迟产品界面与扫光入场",
     "category": "加载与媒体",
     "experienceTypes": [

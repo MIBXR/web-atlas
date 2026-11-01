@@ -118,9 +118,9 @@
     }
   },
   "patternIds": [
-    "moving-tab-selection-bed",
     "single-open-accordion",
     "system-theme-without-toggle",
+    "moving-tab-selection-bed",
     "top-down-clipped-menu",
     "word-opacity-stagger"
   ],

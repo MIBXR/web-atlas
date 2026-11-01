@@ -1,5 +1,6 @@
 {
   "id": "character-stage-coordination",
+  "order": 80,
   "title": "人物、背景与资料成组换态",
   "category": "交互反馈",
   "experienceTypes": [

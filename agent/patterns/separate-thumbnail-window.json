@@ -3,6 +3,7 @@
   "id": "separate-thumbnail-window",
   "pattern": {
     "id": "separate-thumbnail-window",
+    "order": 130,
     "title": "头像翻页与舞台选择分离",
     "category": "导航与状态",
     "experienceTypes": [

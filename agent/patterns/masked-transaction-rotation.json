@@ -3,6 +3,7 @@
   "id": "masked-transaction-rotation",
   "pattern": {
     "id": "masked-transaction-rotation",
+    "order": 13,
     "title": "裁切文字与交易预览同步",
     "category": "交互反馈",
     "experienceTypes": [

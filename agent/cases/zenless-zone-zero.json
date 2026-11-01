@@ -135,8 +135,8 @@
     }
   },
   "patternIds": [
-    "character-stage-coordination",
     "inclined-motion-bands",
+    "character-stage-coordination",
     "separate-thumbnail-window"
   ],
   "documents": [

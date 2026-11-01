@@ -1,5 +1,6 @@
 {
   "id": "audio-signal-panel",
+  "order": 62,
   "title": "按信号流程组织声音面板",
   "category": "内容组织",
   "experienceTypes": [

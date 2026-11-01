@@ -136,12 +136,12 @@
     }
   },
   "patternIds": [
+    "viewport-animation-lifecycle",
     "execution-trace-drilldown",
     "persistent-created-widget",
     "procedural-fluid-spotlight",
     "process-to-result-collapse",
-    "scroll-gathered-pixel-mark",
-    "viewport-animation-lifecycle"
+    "scroll-gathered-pixel-mark"
   ],
   "documents": [
     {

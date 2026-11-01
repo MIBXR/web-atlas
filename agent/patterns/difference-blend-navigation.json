@@ -3,6 +3,7 @@
   "id": "difference-blend-navigation",
   "pattern": {
     "id": "difference-blend-navigation",
+    "order": 137,
     "title": "跨深浅背景的差值导航",
     "category": "导航与状态",
     "experienceTypes": [

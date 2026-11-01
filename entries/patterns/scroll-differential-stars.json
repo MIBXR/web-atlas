@@ -1,5 +1,6 @@
 {
   "id": "scroll-differential-stars",
+  "order": 42,
   "title": "滚动差值驱动背景不同速光点",
   "category": "滚动叙事",
   "experienceTypes": [

@@ -3,6 +3,7 @@
   "id": "specimen-pullout-selection",
   "pattern": {
     "id": "specimen-pullout-selection",
+    "order": 126,
     "title": "样本阵列的抽出选择",
     "category": "交互反馈",
     "experienceTypes": [

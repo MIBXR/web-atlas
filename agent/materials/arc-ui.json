@@ -3,6 +3,7 @@
   "id": "arc-ui",
   "material": {
     "id": "arc-ui",
+    "order": 10,
     "title": "Arc UI · React 动效组件库（免费部分）",
     "type": "component-library",
     "category": "组件与效果",

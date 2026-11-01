@@ -3,6 +3,7 @@
   "id": "geometric-balance-presets",
   "pattern": {
     "id": "geometric-balance-presets",
+    "order": 60,
     "title": "几何关系预设实验",
     "category": "交互反馈",
     "experienceTypes": [

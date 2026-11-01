@@ -3,6 +3,7 @@
   "id": "state-shape-feedback",
   "pattern": {
     "id": "state-shape-feedback",
+    "order": 116,
     "title": "按压与聚焦改变容器形状",
     "category": "交互反馈",
     "experienceTypes": [

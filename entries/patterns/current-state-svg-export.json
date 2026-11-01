@@ -1,5 +1,6 @@
 {
   "id": "current-state-svg-export",
+  "order": 59,
   "title": "导出当前构成",
   "category": "导航与状态",
   "experienceTypes": [

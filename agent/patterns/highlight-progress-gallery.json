@@ -3,6 +3,7 @@
   "id": "highlight-progress-gallery",
   "pattern": {
     "id": "highlight-progress-gallery",
+    "order": 2,
     "title": "逐项亮点与可暂停进度",
     "category": "加载与媒体",
     "experienceTypes": [

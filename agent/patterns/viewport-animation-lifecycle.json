@@ -3,6 +3,7 @@
   "id": "viewport-animation-lifecycle",
   "pattern": {
     "id": "viewport-animation-lifecycle",
+    "order": 18,
     "title": "视口与前台驱动的动态生命周期",
     "category": "导航与状态",
     "experienceTypes": [

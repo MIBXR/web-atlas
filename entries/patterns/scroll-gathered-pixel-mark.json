@@ -1,5 +1,6 @@
 {
   "id": "scroll-gathered-pixel-mark",
+  "order": 135,
   "title": "散布立方体随滚动聚合标记",
   "category": "滚动叙事",
   "experienceTypes": [

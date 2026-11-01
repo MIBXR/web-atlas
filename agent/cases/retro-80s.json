@@ -122,10 +122,10 @@
     }
   },
   "patternIds": [
-    "audio-signal-panel",
-    "keyboard-playable-notes",
+    "sound-opt-in",
     "live-parameter-readout",
-    "sound-opt-in"
+    "audio-signal-panel",
+    "keyboard-playable-notes"
   ],
   "documents": [
     {

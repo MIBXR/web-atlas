@@ -3,6 +3,7 @@
   "id": "synchronized-rolling-index",
   "pattern": {
     "id": "synchronized-rolling-index",
+    "order": 88,
     "title": "编号、计数与章名分组滚动",
     "category": "交互反馈",
     "experienceTypes": [

@@ -1,5 +1,6 @@
 {
   "id": "clip-tail-advance",
+  "order": 29,
   "title": "在影片片尾前交给下一章",
   "category": "加载与媒体",
   "experienceTypes": [

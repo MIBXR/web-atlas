@@ -1,5 +1,6 @@
 {
   "id": "checklist-progress",
+  "order": 43,
   "title": "短清单与即时完成进度",
   "category": "交互反馈",
   "experienceTypes": [

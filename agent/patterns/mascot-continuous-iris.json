@@ -3,6 +3,7 @@
   "id": "mascot-continuous-iris",
   "pattern": {
     "id": "mascot-continuous-iris",
+    "order": 145,
     "title": "角色跨圆幕保持视觉连续",
     "category": "加载与媒体",
     "experienceTypes": [

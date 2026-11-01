@@ -3,6 +3,7 @@
   "id": "independent-character-page",
   "pattern": {
     "id": "independent-character-page",
+    "order": 93,
     "title": "首页世界与人物档案分别成页",
     "category": "内容组织",
     "experienceTypes": [
