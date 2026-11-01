@@ -15,3 +15,5 @@
 需要创建工程时，按技能原文使用脚手架，把占位标题、正文与封面替换为源材料。脚手架生成 React、TypeScript 和 Vite 工程并安装 reacticle；文章的字体与离线资源按实际交付目标配置。
 
 原文中的仓库相对链接通过[上游固定提交](https://github.com/ConardLi/garden-skills/tree/2b9a89340b70f632d31c0f1c69fce94a7912423e)阅读上下文。
+
+效果图画廊收录作者的 8 篇文章实例截图和 11 套主题样品截图；主题样品可打开 Reacticle 素材的对应样例。

@@ -20,7 +20,8 @@
 .materials-page .material-gallery .material-preview{display:flex;flex-direction:column;gap:12px;min-width:0;margin:0}
 .materials-page .material-preview .card-preview{border-radius:var(--r);border:1px solid var(--atlas-surface-line);background:var(--atlas-surface-2)}
 .materials-page .material-preview:hover .card-preview img{transform:scale(1.035)}
-.materials-page .material-gallery .card-preview img{object-fit:contain}
+.materials-page .material-gallery .card-preview{aspect-ratio:auto;height:auto}
+.materials-page .material-gallery .card-preview img{position:static;display:block;width:100%;height:auto}
 .materials-page .material-gallery .card-body{padding:0}
 .materials-page .material-gallery .tag{align-self:flex-start}
 .materials-page .material-gallery .card-summary{display:block;min-height:0;order:0}
