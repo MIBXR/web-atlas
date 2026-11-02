@@ -58,7 +58,8 @@
       else {const section=document.createElement('section');section.append(...description.childNodes);notes.append(section);}
       description.remove();
     }
-    root.querySelector('.detail-layout').replaceChildren(stage, notes);
+    const layout = root.querySelector('.detail-layout');
+    layout.replaceChildren(stage, notes);
     const headings = [...notes.querySelectorAll('h1,h2')];
     const toc = document.createElement('nav');
     toc.className = 'detail-toc';
@@ -124,6 +125,8 @@
     document.addEventListener('click',outside);document.addEventListener('keydown',escape);compact.addEventListener('change',sync);
     const header=document.querySelector('.atlas-site-header');
     const syncColumns=()=>{
+      if (innerWidth < 1160 && title.parentElement !== layout) layout.prepend(title);
+      else if (innerWidth >= 1160 && title.parentElement !== notes) notes.prepend(title);
       const actionsHeight=actions.getBoundingClientRect().height;
       const stageHeight=stage.getBoundingClientRect().height;
       const notesHeight=notes.getBoundingClientRect().height;

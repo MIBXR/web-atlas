@@ -41,7 +41,7 @@ body :is(.collection-tools,.collection-filter-dialog) select{appearance:none;box
 @media(max-width:1050px){.collection-tools>.select-wrap{width:100%;max-width:none}}
 @media(forced-colors:active){.select-wrap>select{appearance:auto}.select-wrap>.atlas-icon{display:none}}
 body.cases-page .case-layout main .sort-dir{width:44px;height:44px;min-height:44px;border-radius:var(--r)}
-body .tag{display:inline-flex;align-items:center;gap:6px;padding:3px 9px;border:1px solid var(--atlas-surface-line);border-radius:var(--r-sm);font-size:12px;line-height:1.5;white-space:nowrap}
+body .tag{display:inline-flex;align-items:center;gap:6px;padding:2px 6px;border:0;border-radius:var(--r-sm);background:var(--atlas-surface-2);font-size:12px;line-height:1.5;white-space:nowrap}
 body :is(.subtitle,.source-badge,.behavior-label,.eyebrow){font-size:12px}
 body :is(.favorite,.dialog-close):not(.sample *){box-sizing:border-box;display:inline-flex;align-items:center;justify-content:center;flex:none;width:44px;height:44px;min-width:44px;min-height:44px;padding:0;border-radius:var(--r)}
 .favorite.selected [data-icon=star] path{fill:var(--accent-2)}
@@ -73,3 +73,5 @@ body:is(.landing-page,.cases-page,.agent-page,.document-page,.lab-page) :is(butt
 body .atlas-site-header .atlas-site-nav-toggle{gap:8px}
 @media(max-width:1050px){body .atlas-site-header .atlas-site-wordmark strong{font-size:14px}body .atlas-site-header .atlas-site-nav>a{font-size:12px}}
 @media(max-width:800px){body .atlas-site-header .atlas-site-nav>a{font-size:14px}}
+
+body .subtitle{font-family:var(--atlas-font-sans);letter-spacing:0;text-transform:none;color:var(--atlas-muted)}
