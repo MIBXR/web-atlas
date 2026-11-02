@@ -1,0 +1,83 @@
+{
+  "id": "hf-video-shard-ribbon",
+  "order": 181,
+  "title": "视频碎片沿虹彩光带飞行聚合",
+  "category": "视觉构成",
+  "experienceTypes": [
+    "visual",
+    "page-motion"
+  ],
+  "summary": "把代码与视频切成相连的三角面，用统一路径、拼组和散开建立编辑器识别。",
+  "mechanism": "Hero：三行圆角挤出三角面共享视频分组，种子 7331 的 LCG 固定碎片形态；方向 166°、速度 1.6、扭转 6°，指针以 0.045 插值改变场景旋转，离开 Hero 后停止其帧循环和视频。",
+  "trigger": "首屏进入、指针移动与 Hero 出入视口",
+  "effect": "圆角三角面在松散空间与连续视频面之间过渡。",
+  "useCases": [
+    "视频编辑器与 Agent 工具官网",
+    "媒体作品展示墙",
+    "带实时图形的产品发布首页"
+  ],
+  "avoid": [
+    "缺少真实影片内容的静态信息页",
+    "需要低带宽首屏且没有媒体预算的页面"
+  ],
+  "constraints": [
+    "数值来自 2026-11-02 原站打包代码与 CSS。",
+    "媒体和字体使用来源案例中的完整原文件。"
+  ],
+  "composition": {
+    "role": "accent",
+    "notes": "与同一案例的其他机制共同构成页面，源码与素材由来源案例提供。",
+    "pairsWellWith": [
+      "hf-video-wall-lazy-play",
+      "hf-ground-canvas-close"
+    ],
+    "conflicts": []
+  },
+  "accessibility": {
+    "keyboard": "页面文字与下载链接独立于 Canvas，保留原生键盘入口。",
+    "reducedMotion": "Hero 保留静态三角场，停止自动视频与指针场景循环。"
+  },
+  "parameters": [
+    {
+      "name": "三角场",
+      "value": "3 行；triSize=3；gap=0.035；videoSpan=4",
+      "note": "原站公开实现的实际值。"
+    },
+    {
+      "name": "路径",
+      "value": "166°；dirZ=23°；speed=1.6；twist=6°",
+      "note": "原站公开实现的实际值。"
+    },
+    {
+      "name": "聚合",
+      "value": "formSpan=8；formGap=15；scatter=5；looseRot=1.34",
+      "note": "原站公开实现的实际值。"
+    },
+    {
+      "name": "相机",
+      "value": "桌面 fov=50、z=14；窄幅 fov=57、y=-2.7、z=20.5",
+      "note": "原站公开实现的实际值。"
+    }
+  ],
+  "prompt": "为【目标页面】实现「视频碎片沿虹彩光带飞行聚合」。Hero：三行圆角挤出三角面共享视频分组，种子 7331 的 LCG 固定碎片形态；方向 166°、速度 1.6、扭转 6°，指针以 0.045 插值改变场景旋转，离开 Hero 后停止其帧循环和视频。 三角场：3 行；triSize=3；gap=0.035；videoSpan=4。路径：166°；dirZ=23°；speed=1.6；twist=6°。聚合：formSpan=8；formGap=15；scatter=5；looseRot=1.34。相机：桌面 fov=50、z=14；窄幅 fov=57、y=-2.7、z=20.5。使用来源案例的真实素材与可读实现，按桌面和手机状态对照。",
+  "sources": [
+    {
+      "caseId": "hyperframes-site",
+      "locator": "entries/cases/hyperframes-site.json#interaction/0",
+      "observation": "Hero：三行圆角挤出三角面共享视频分组，种子 7331 的 LCG 固定碎片形态；方向 166°、速度 1.6、扭转 6°，指针以 0.045 插值改变场景旋转，离开 Hero 后停止其帧循环和视频。",
+      "evidence": "observed",
+      "referenceUrl": "https://hyperframes.heygen.com/",
+      "capturedAt": "2026-11-02"
+    }
+  ],
+  "sourceFiles": [
+    "entries/cases/hyperframes-site.json",
+    "docs/cases/hyperframes-site.md",
+    "demos/cases/hyperframes-site/fidelity.md",
+    "demos/cases/hyperframes-site/assets-manifest.json",
+    "demos/cases/hyperframes-site/ribbon.js",
+    "demos/cases/hyperframes-site/vendor/three@0.185.0/three.module.js",
+    "demos/cases/hyperframes-site/vendor/three@0.185.0/three.core.js",
+    "demos/cases/hyperframes-site/fonts.css"
+  ]
+}

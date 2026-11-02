@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "patternCount": 180,
+  "patternCount": 183,
   "repository": "https://github.com/MIBXR/web-atlas",
   "patterns": [
     {
@@ -13151,6 +13151,262 @@
       ],
       "paths": {
         "bundle": "agent/patterns/halftone-fade-edge.json"
+      }
+    },
+    {
+      "id": "hf-video-shard-ribbon",
+      "order": 181,
+      "title": "视频碎片沿虹彩光带飞行聚合",
+      "category": "视觉构成",
+      "experienceTypes": [
+        "visual",
+        "page-motion"
+      ],
+      "summary": "把代码与视频切成相连的三角面，用统一路径、拼组和散开建立编辑器识别。",
+      "mechanism": "Hero：三行圆角挤出三角面共享视频分组，种子 7331 的 LCG 固定碎片形态；方向 166°、速度 1.6、扭转 6°，指针以 0.045 插值改变场景旋转，离开 Hero 后停止其帧循环和视频。",
+      "trigger": "首屏进入、指针移动与 Hero 出入视口",
+      "effect": "圆角三角面在松散空间与连续视频面之间过渡。",
+      "useCases": [
+        "视频编辑器与 Agent 工具官网",
+        "媒体作品展示墙",
+        "带实时图形的产品发布首页"
+      ],
+      "avoid": [
+        "缺少真实影片内容的静态信息页",
+        "需要低带宽首屏且没有媒体预算的页面"
+      ],
+      "constraints": [
+        "数值来自 2026-11-02 原站打包代码与 CSS。",
+        "媒体和字体使用来源案例中的完整原文件。"
+      ],
+      "composition": {
+        "role": "accent",
+        "notes": "与同一案例的其他机制共同构成页面，源码与素材由来源案例提供。",
+        "pairsWellWith": [
+          "hf-video-wall-lazy-play",
+          "hf-ground-canvas-close"
+        ],
+        "conflicts": []
+      },
+      "accessibility": {
+        "keyboard": "页面文字与下载链接独立于 Canvas，保留原生键盘入口。",
+        "reducedMotion": "Hero 保留静态三角场，停止自动视频与指针场景循环。"
+      },
+      "parameters": [
+        {
+          "name": "三角场",
+          "value": "3 行；triSize=3；gap=0.035；videoSpan=4",
+          "note": "原站公开实现的实际值。"
+        },
+        {
+          "name": "路径",
+          "value": "166°；dirZ=23°；speed=1.6；twist=6°",
+          "note": "原站公开实现的实际值。"
+        },
+        {
+          "name": "聚合",
+          "value": "formSpan=8；formGap=15；scatter=5；looseRot=1.34",
+          "note": "原站公开实现的实际值。"
+        },
+        {
+          "name": "相机",
+          "value": "桌面 fov=50、z=14；窄幅 fov=57、y=-2.7、z=20.5",
+          "note": "原站公开实现的实际值。"
+        }
+      ],
+      "prompt": "为【目标页面】实现「视频碎片沿虹彩光带飞行聚合」。Hero：三行圆角挤出三角面共享视频分组，种子 7331 的 LCG 固定碎片形态；方向 166°、速度 1.6、扭转 6°，指针以 0.045 插值改变场景旋转，离开 Hero 后停止其帧循环和视频。 三角场：3 行；triSize=3；gap=0.035；videoSpan=4。路径：166°；dirZ=23°；speed=1.6；twist=6°。聚合：formSpan=8；formGap=15；scatter=5；looseRot=1.34。相机：桌面 fov=50、z=14；窄幅 fov=57、y=-2.7、z=20.5。使用来源案例的真实素材与可读实现，按桌面和手机状态对照。",
+      "sources": [
+        {
+          "caseId": "hyperframes-site",
+          "locator": "entries/cases/hyperframes-site.json#interaction/0",
+          "observation": "Hero：三行圆角挤出三角面共享视频分组，种子 7331 的 LCG 固定碎片形态；方向 166°、速度 1.6、扭转 6°，指针以 0.045 插值改变场景旋转，离开 Hero 后停止其帧循环和视频。",
+          "evidence": "observed",
+          "referenceUrl": "https://hyperframes.heygen.com/",
+          "capturedAt": "2026-11-02"
+        }
+      ],
+      "sourceFiles": [
+        "entries/cases/hyperframes-site.json",
+        "docs/cases/hyperframes-site.md",
+        "demos/cases/hyperframes-site/fidelity.md",
+        "demos/cases/hyperframes-site/assets-manifest.json",
+        "demos/cases/hyperframes-site/ribbon.js",
+        "demos/cases/hyperframes-site/vendor/three@0.185.0/three.module.js",
+        "demos/cases/hyperframes-site/vendor/three@0.185.0/three.core.js",
+        "demos/cases/hyperframes-site/fonts.css"
+      ],
+      "paths": {
+        "bundle": "agent/patterns/hf-video-shard-ribbon.json"
+      }
+    },
+    {
+      "id": "hf-video-wall-lazy-play",
+      "order": 182,
+      "title": "懒加载视频墙与可见即播",
+      "category": "加载与媒体",
+      "experienceTypes": [
+        "page-motion",
+        "structure"
+      ],
+      "summary": "让混合比例的作品持续经过视口，可见视频自动播放，离开后卸载。",
+      "mechanism": "视频墙：22＋23 部影片各复制一遍形成 90 张卡片；两行按 -1／+1 方向以 40／34 px/s 移动。阈值 0.2 的观察器挂载并播放可见视频，离开时卸载；400px 预取海报，悬停缩放 1.03。",
+      "trigger": "视频墙进入视口、拖动、横向滚轮、键盘焦点和暂停按钮",
+      "effect": "保持完整作品数量与连续移动，同时将视频加载限定在可见区域。",
+      "useCases": [
+        "视频编辑器与 Agent 工具官网",
+        "媒体作品展示墙",
+        "带实时图形的产品发布首页"
+      ],
+      "avoid": [
+        "缺少真实影片内容的静态信息页",
+        "需要低带宽首屏且没有媒体预算的页面"
+      ],
+      "constraints": [
+        "数值来自 2026-11-02 原站打包代码与 CSS。",
+        "媒体和字体使用来源案例中的完整原文件。"
+      ],
+      "composition": {
+        "role": "support",
+        "notes": "与同一案例的其他机制共同构成页面，源码与素材由来源案例提供。",
+        "pairsWellWith": [
+          "hf-video-shard-ribbon",
+          "hf-ground-canvas-close"
+        ],
+        "conflicts": []
+      },
+      "accessibility": {
+        "keyboard": "卡片保留可见焦点与居中定位；弹层支持 Close 和 Esc。",
+        "reducedMotion": "视频墙停止自动移动和播放，保留海报、拖动与点击。"
+      },
+      "parameters": [
+        {
+          "name": "数量",
+          "value": "22＋23；每行 concat 一次，共 90 张卡片",
+          "note": "原站公开实现的实际值。"
+        },
+        {
+          "name": "移动",
+          "value": "方向 -1／+1；40／34px/s；dt≤0.05",
+          "note": "原站公开实现的实际值。"
+        },
+        {
+          "name": "加载",
+          "value": "视频 threshold=0.2；海报 rootMargin=400px",
+          "note": "原站公开实现的实际值。"
+        },
+        {
+          "name": "操作",
+          "value": "拖动 6px；惯性 0.86；hover scale=1.03",
+          "note": "原站公开实现的实际值。"
+        }
+      ],
+      "prompt": "为【目标页面】实现「懒加载视频墙与可见即播」。视频墙：22＋23 部影片各复制一遍形成 90 张卡片；两行按 -1／+1 方向以 40／34 px/s 移动。阈值 0.2 的观察器挂载并播放可见视频，离开时卸载；400px 预取海报，悬停缩放 1.03。 数量：22＋23；每行 concat 一次，共 90 张卡片。移动：方向 -1／+1；40／34px/s；dt≤0.05。加载：视频 threshold=0.2；海报 rootMargin=400px。操作：拖动 6px；惯性 0.86；hover scale=1.03。使用来源案例的真实素材与可读实现，按桌面和手机状态对照。",
+      "sources": [
+        {
+          "caseId": "hyperframes-site",
+          "locator": "entries/cases/hyperframes-site.json#interaction/1",
+          "observation": "视频墙：22＋23 部影片各复制一遍形成 90 张卡片；两行按 -1／+1 方向以 40／34 px/s 移动。阈值 0.2 的观察器挂载并播放可见视频，离开时卸载；400px 预取海报，悬停缩放 1.03。",
+          "evidence": "observed",
+          "referenceUrl": "https://hyperframes.heygen.com/",
+          "capturedAt": "2026-11-02"
+        }
+      ],
+      "sourceFiles": [
+        "entries/cases/hyperframes-site.json",
+        "docs/cases/hyperframes-site.md",
+        "demos/cases/hyperframes-site/fidelity.md",
+        "demos/cases/hyperframes-site/assets-manifest.json",
+        "demos/cases/hyperframes-site/showcase.js",
+        "demos/cases/hyperframes-site/index.html",
+        "demos/cases/hyperframes-site/styles.css"
+      ],
+      "paths": {
+        "bundle": "agent/patterns/hf-video-wall-lazy-play.json"
+      }
+    },
+    {
+      "id": "hf-ground-canvas-close",
+      "order": 183,
+      "title": "底部地面 Canvas 收束",
+      "category": "视觉构成",
+      "experienceTypes": [
+        "visual",
+        "page-motion"
+      ],
+      "summary": "同一块固定虹彩地面贯穿页面，Hero 离开后承托下载和开源区。",
+      "mechanism": "地面：固定全屏 WebGL2 四顶点三角条带，uColorScale=10、uFrequency=7、白色基底、0.8 混合；#f7ecd3cc 遮罩覆盖光色，并贯穿下载和开源区。减少动态时保留 Canvas 节点并停止创建地面渲染器。",
+      "trigger": "页面加载与自然滚动",
+      "effect": "原生 WebGL2 背景和米色遮罩为下半页提供连续光色。",
+      "useCases": [
+        "视频编辑器与 Agent 工具官网",
+        "媒体作品展示墙",
+        "带实时图形的产品发布首页"
+      ],
+      "avoid": [
+        "缺少真实影片内容的静态信息页",
+        "需要低带宽首屏且没有媒体预算的页面"
+      ],
+      "constraints": [
+        "数值来自 2026-11-02 原站打包代码与 CSS。",
+        "媒体和字体使用来源案例中的完整原文件。"
+      ],
+      "composition": {
+        "role": "support",
+        "notes": "与同一案例的其他机制共同构成页面，源码与素材由来源案例提供。",
+        "pairsWellWith": [
+          "hf-video-shard-ribbon",
+          "hf-video-wall-lazy-play"
+        ],
+        "conflicts": []
+      },
+      "accessibility": {
+        "keyboard": "页面文字与下载链接独立于 Canvas，保留原生键盘入口。",
+        "reducedMotion": "停止创建地面 WebGL2 渲染器。"
+      },
+      "parameters": [
+        {
+          "name": "管线",
+          "value": "WebGL2；四顶点 TRIANGLE_STRIP；DPR≤2",
+          "note": "原站公开实现的实际值。"
+        },
+        {
+          "name": "着色器",
+          "value": "uColorScale=10；uFrequency=7；uBaseColor=(1,1,1)",
+          "note": "原站公开实现的实际值。"
+        },
+        {
+          "name": "时间",
+          "value": "uTime += 0.00375 × dt × 60；dt≤0.05",
+          "note": "原站公开实现的实际值。"
+        },
+        {
+          "name": "层叠",
+          "value": "position:fixed；z-index:-1；veil=#f7ecd3cc",
+          "note": "原站公开实现的实际值。"
+        }
+      ],
+      "prompt": "为【目标页面】实现「底部地面 Canvas 收束」。地面：固定全屏 WebGL2 四顶点三角条带，uColorScale=10、uFrequency=7、白色基底、0.8 混合；#f7ecd3cc 遮罩覆盖光色，并贯穿下载和开源区。减少动态时保留 Canvas 节点并停止创建地面渲染器。 管线：WebGL2；四顶点 TRIANGLE_STRIP；DPR≤2。着色器：uColorScale=10；uFrequency=7；uBaseColor=(1,1,1)。时间：uTime += 0.00375 × dt × 60；dt≤0.05。层叠：position:fixed；z-index:-1；veil=#f7ecd3cc。使用来源案例的真实素材与可读实现，按桌面和手机状态对照。",
+      "sources": [
+        {
+          "caseId": "hyperframes-site",
+          "locator": "entries/cases/hyperframes-site.json#interaction/2",
+          "observation": "地面：固定全屏 WebGL2 四顶点三角条带，uColorScale=10、uFrequency=7、白色基底、0.8 混合；#f7ecd3cc 遮罩覆盖光色，并贯穿下载和开源区。减少动态时保留 Canvas 节点并停止创建地面渲染器。",
+          "evidence": "observed",
+          "referenceUrl": "https://hyperframes.heygen.com/",
+          "capturedAt": "2026-11-02"
+        }
+      ],
+      "sourceFiles": [
+        "entries/cases/hyperframes-site.json",
+        "docs/cases/hyperframes-site.md",
+        "demos/cases/hyperframes-site/fidelity.md",
+        "demos/cases/hyperframes-site/assets-manifest.json",
+        "demos/cases/hyperframes-site/ground.js",
+        "demos/cases/hyperframes-site/styles.css",
+        "demos/cases/hyperframes-site/index.html"
+      ],
+      "paths": {
+        "bundle": "agent/patterns/hf-ground-canvas-close.json"
       }
     }
   ]

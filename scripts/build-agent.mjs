@@ -10,7 +10,7 @@ export const repository = 'https://github.com/MIBXR/web-atlas';
 export const defaultRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const encode = value => Buffer.from(JSON.stringify(value, null, 2) + '\n', 'utf8');
 const catalogFields = ['id', 'title', 'category', 'tags', 'summary', 'useCases', 'avoid', 'country', 'implementation', 'studyScope', 'capturedAt', 'theoryVerifiedAt', 'tokens', 'composition', 'interaction', 'themeBehavior', 'soundBehavior'];
-const sharedFiles = ['data/asset-sources.js', 'site/runtime/asset-runtime.js', 'site/runtime/asset-cache.js', 'asset-cache-worker.js', 'site/runtime/case-loading.css', 'site/runtime/case-loading.js', 'site/shared/theme.js', 'site/icons/favicon.svg', 'docs.html', 'site/pages/docs/docs.js', 'site/pages/docs/docs.css', 'site/shared/site-nav.css', 'site/shared/theme-control.css', 'site/shared/site-typography.css', 'site/shared/site-footer.css', 'site/shared/site-shell.js'];
+const sharedFiles = ['data/asset-sources.js', 'site/runtime/asset-runtime.js', 'site/runtime/asset-cache.js', 'site/runtime/demo-scrollbars.css', 'asset-cache-worker.js', 'site/runtime/case-loading.css', 'site/runtime/case-loading.js', 'site/shared/theme.js', 'site/icons/favicon.svg', 'docs.html', 'site/pages/docs/docs.js', 'site/pages/docs/docs.css', 'site/shared/site-nav.css', 'site/shared/theme-control.css', 'site/shared/site-typography.css', 'site/shared/site-footer.css', 'site/shared/site-shell.js'];
 
 // Public paths always use the repository's portable, relative path syntax.
 // Check every existing component rather than trusting a lexical prefix alone.

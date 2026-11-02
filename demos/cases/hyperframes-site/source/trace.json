@@ -1,0 +1,18 @@
+{
+  "pageBundle": "upstream/hyperframes.heygen.com/assets_2025_redesign/_next/static/immutable/chunks/0751nek0k02fg.js",
+  "ribbonBundle": "upstream/hyperframes.heygen.com/assets_2025_redesign/_next/static/immutable/chunks/1chjzh-gdj3zu.js",
+  "modules": {
+    "ribbon": 294867,
+    "film": 466927,
+    "ground": 936622,
+    "downloads": 755468,
+    "showcase": 538559,
+    "navigation": 74189,
+    "installCommand": 7091
+  },
+  "three": {
+    "version": "0.185.0",
+    "shaderChunksMatched": 142,
+    "shaderChunksTotal": 142
+  }
+}

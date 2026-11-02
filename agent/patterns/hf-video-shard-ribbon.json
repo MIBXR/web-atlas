@@ -1,0 +1,822 @@
+{
+  "schemaVersion": 1,
+  "id": "hf-video-shard-ribbon",
+  "pattern": {
+    "id": "hf-video-shard-ribbon",
+    "order": 181,
+    "title": "视频碎片沿虹彩光带飞行聚合",
+    "category": "视觉构成",
+    "experienceTypes": [
+      "visual",
+      "page-motion"
+    ],
+    "summary": "把代码与视频切成相连的三角面，用统一路径、拼组和散开建立编辑器识别。",
+    "mechanism": "Hero：三行圆角挤出三角面共享视频分组，种子 7331 的 LCG 固定碎片形态；方向 166°、速度 1.6、扭转 6°，指针以 0.045 插值改变场景旋转，离开 Hero 后停止其帧循环和视频。",
+    "trigger": "首屏进入、指针移动与 Hero 出入视口",
+    "effect": "圆角三角面在松散空间与连续视频面之间过渡。",
+    "useCases": [
+      "视频编辑器与 Agent 工具官网",
+      "媒体作品展示墙",
+      "带实时图形的产品发布首页"
+    ],
+    "avoid": [
+      "缺少真实影片内容的静态信息页",
+      "需要低带宽首屏且没有媒体预算的页面"
+    ],
+    "constraints": [
+      "数值来自 2026-11-02 原站打包代码与 CSS。",
+      "媒体和字体使用来源案例中的完整原文件。"
+    ],
+    "composition": {
+      "role": "accent",
+      "notes": "与同一案例的其他机制共同构成页面，源码与素材由来源案例提供。",
+      "pairsWellWith": [
+        "hf-video-wall-lazy-play",
+        "hf-ground-canvas-close"
+      ],
+      "conflicts": []
+    },
+    "accessibility": {
+      "keyboard": "页面文字与下载链接独立于 Canvas，保留原生键盘入口。",
+      "reducedMotion": "Hero 保留静态三角场，停止自动视频与指针场景循环。"
+    },
+    "parameters": [
+      {
+        "name": "三角场",
+        "value": "3 行；triSize=3；gap=0.035；videoSpan=4",
+        "note": "原站公开实现的实际值。"
+      },
+      {
+        "name": "路径",
+        "value": "166°；dirZ=23°；speed=1.6；twist=6°",
+        "note": "原站公开实现的实际值。"
+      },
+      {
+        "name": "聚合",
+        "value": "formSpan=8；formGap=15；scatter=5；looseRot=1.34",
+        "note": "原站公开实现的实际值。"
+      },
+      {
+        "name": "相机",
+        "value": "桌面 fov=50、z=14；窄幅 fov=57、y=-2.7、z=20.5",
+        "note": "原站公开实现的实际值。"
+      }
+    ],
+    "prompt": "为【目标页面】实现「视频碎片沿虹彩光带飞行聚合」。Hero：三行圆角挤出三角面共享视频分组，种子 7331 的 LCG 固定碎片形态；方向 166°、速度 1.6、扭转 6°，指针以 0.045 插值改变场景旋转，离开 Hero 后停止其帧循环和视频。 三角场：3 行；triSize=3；gap=0.035；videoSpan=4。路径：166°；dirZ=23°；speed=1.6；twist=6°。聚合：formSpan=8；formGap=15；scatter=5；looseRot=1.34。相机：桌面 fov=50、z=14；窄幅 fov=57、y=-2.7、z=20.5。使用来源案例的真实素材与可读实现，按桌面和手机状态对照。",
+    "sources": [
+      {
+        "caseId": "hyperframes-site",
+        "locator": "entries/cases/hyperframes-site.json#interaction/0",
+        "observation": "Hero：三行圆角挤出三角面共享视频分组，种子 7331 的 LCG 固定碎片形态；方向 166°、速度 1.6、扭转 6°，指针以 0.045 插值改变场景旋转，离开 Hero 后停止其帧循环和视频。",
+        "evidence": "observed",
+        "referenceUrl": "https://hyperframes.heygen.com/",
+        "capturedAt": "2026-11-02"
+      }
+    ],
+    "sourceFiles": [
+      "entries/cases/hyperframes-site.json",
+      "docs/cases/hyperframes-site.md",
+      "demos/cases/hyperframes-site/fidelity.md",
+      "demos/cases/hyperframes-site/assets-manifest.json",
+      "demos/cases/hyperframes-site/ribbon.js",
+      "demos/cases/hyperframes-site/vendor/three@0.185.0/three.module.js",
+      "demos/cases/hyperframes-site/vendor/three@0.185.0/three.core.js",
+      "demos/cases/hyperframes-site/fonts.css"
+    ]
+  },
+  "sourceCases": [
+    {
+      "id": "hyperframes-site",
+      "title": "HyperFrames · 为 Agent 打造的视频编辑器官网",
+      "paths": {
+        "bundle": "agent/cases/hyperframes-site.json",
+        "demo": "demos/cases/hyperframes-site/index.html"
+      }
+    }
+  ],
+  "documents": [
+    {
+      "path": "prompts/patterns/hf-video-shard-ribbon.md",
+      "role": "prompt",
+      "content": "# 视频碎片沿虹彩光带飞行聚合 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/hf-video-shard-ribbon.json)\n\n为【目标页面】实现「视频碎片沿虹彩光带飞行聚合」。Hero：三行圆角挤出三角面共享视频分组，种子 7331 的 LCG 固定碎片形态；方向 166°、速度 1.6、扭转 6°，指针以 0.045 插值改变场景旋转，离开 Hero 后停止其帧循环和视频。 三角场：3 行；triSize=3；gap=0.035；videoSpan=4。路径：166°；dirZ=23°；speed=1.6；twist=6°。聚合：formSpan=8；formGap=15；scatter=5；looseRot=1.34。相机：桌面 fov=50、z=14；窄幅 fov=57、y=-2.7、z=20.5。使用来源案例的真实素材与可读实现，按桌面和手机状态对照。\n\n## 制作约束\n\n- 数值来自 2026-11-02 原站打包代码与 CSS。\n- 媒体和字体使用来源案例中的完整原文件。\n"
+    }
+  ],
+  "files": [
+    {
+      "path": "asset-cache-worker.js",
+      "role": "source"
+    },
+    {
+      "path": "data/asset-sources.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/app.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets-manifest.json",
+      "role": "context"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/favicon.ico",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/film-v19.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/framey-hop-v1.mp3",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/ascii-sharks-logo-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/axe-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/captions-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/cartoon-frameys-launch-one-take-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/cow-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/demo-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/everything-was-written-v2.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/explainer-code2video-bench-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/framey-orby-halloween-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/frameys-felt-party-v2.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/frameys-opening-night-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/generative-replica-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/home-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/jake-taycan-bricks-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/just-html-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/k-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/kinetic-type-curiosity-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/launch-claude-motion-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/launch-heygen-video1-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/launch-hyperframes-studio-intro-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/launch-moments-catalog-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/launch-storyboard-first-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/launch-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/manga-last-onigiri-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/muybridge-horse-styles-v2.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/pixel-game-one-canvas-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/rackrats-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/real-ui-cctv-v2.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/real-ui-google-search-v2.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/real-ui-newspaper-1969-v2.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/real-ui-wikipedia-v2.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/remotion-to-hyperframes-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/session-story-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/shards-logo-reveal-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/sitcom-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/square-one-strudel-v2.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/studio-launch-pixel-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/studio-launch-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/tutorial-wenbo-studio-tutorial-talkinghead-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/vfx-background-removal-launch-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/vfx-billboard-hoodie-handoff-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/vfx-giant-keyboard-reel-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/website-to-launch-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/wordmark-sting-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/card/youtube-online-business-v1.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/ascii-sharks-logo-v1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/axe-v1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/captions-v1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/cartoon-frameys-launch-one-take-v1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/cow-v1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/demo-v1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/everything-was-written-v2.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/explainer-code2video-bench-v1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/framey-orby-halloween-v1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/frameys-felt-party-v2.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/frameys-opening-night-v1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/generative-replica-v1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/home-v1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/jake-taycan-bricks-v1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/just-html-v1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/k-v1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/kinetic-type-curiosity-v1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/launch-claude-motion-v1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/launch-heygen-video1-v1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/launch-hyperframes-studio-intro-v1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/launch-moments-catalog-v1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/launch-storyboard-first-v1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/launch-v1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/manga-last-onigiri-v1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/muybridge-horse-styles-v2.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/pixel-game-one-canvas-v1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/rackrats-v1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/real-ui-cctv-v2.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/real-ui-google-search-v2.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/real-ui-newspaper-1969-v2.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/real-ui-wikipedia-v2.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/remotion-to-hyperframes-v1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/session-story-v1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/shards-logo-reveal-v1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/sitcom-v1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/square-one-strudel-v2.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/studio-launch-pixel-v1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/tutorial-wenbo-studio-tutorial-talkinghead-v1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/vfx-background-removal-launch-v1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/vfx-billboard-hoodie-handoff-v1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/vfx-giant-keyboard-reel-v1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/website-to-launch-v1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/wordmark-sting-v1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/homepage/showcase/poster/youtube-online-business-v1.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/hyperframes-landing/captions.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/hyperframes-landing/hf-stripe.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/hyperframes-landing/hyperframes-launch.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/hyperframes-landing/k3-promo.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/hyperframes-landing/keyframes.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/hyperframes-landing/media-use.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/hyperframes-landing/music-vid.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/hyperframes-landing/skills.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/hyperframes-landing/vfx.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/hyperframes-landing/video-agent.mp4",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/hyperframes/logo-dark.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/hyperframes/matcap-1.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/hyperframes/matcap-2.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/hyperframes/matcap-3.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/hyperframes/matcap-4.webp",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/assets/site/studio-launch-nib-sf-audio-poster.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/fidelity.md",
+      "role": "context"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/film.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/fonts.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/fonts/tt_norms_pro_mono_regular-webfont.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/fonts/tt-norms-pro-regular.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/ground.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/LICENSES.md",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/ribbon.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/showcase.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/source/README.md",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/source/trace.json",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/source/upstream/hyperframes.heygen.com/assets_2025_redesign/_next/static/immutable/chunks/050giyjmx45_b.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/source/upstream/hyperframes.heygen.com/assets_2025_redesign/_next/static/immutable/chunks/0751nek0k02fg.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/source/upstream/hyperframes.heygen.com/assets_2025_redesign/_next/static/immutable/chunks/08va3xybowvsu.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/source/upstream/hyperframes.heygen.com/assets_2025_redesign/_next/static/immutable/chunks/0nqxa1-l-90uj.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/source/upstream/hyperframes.heygen.com/assets_2025_redesign/_next/static/immutable/chunks/0qjpvxbcex7o4.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/source/upstream/hyperframes.heygen.com/assets_2025_redesign/_next/static/immutable/chunks/0vv8wedbr_w5_.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/source/upstream/hyperframes.heygen.com/assets_2025_redesign/_next/static/immutable/chunks/1-nl197eyqwf0.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/source/upstream/hyperframes.heygen.com/assets_2025_redesign/_next/static/immutable/chunks/13f5caiaiwm_1.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/source/upstream/hyperframes.heygen.com/assets_2025_redesign/_next/static/immutable/chunks/19byzok-zf3cr.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/source/upstream/hyperframes.heygen.com/assets_2025_redesign/_next/static/immutable/chunks/1chjzh-gdj3zu.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/source/upstream/hyperframes.heygen.com/assets_2025_redesign/_next/static/immutable/chunks/1m27g_7ppcvvq.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/source/upstream/hyperframes.heygen.com/assets_2025_redesign/_next/static/immutable/chunks/2b1q2-_tf21db.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/source/upstream/hyperframes.heygen.com/assets_2025_redesign/_next/static/immutable/chunks/2deb550mysuf3.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/source/upstream/hyperframes.heygen.com/assets_2025_redesign/_next/static/immutable/chunks/2xfhk_dpcn3jm.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/source/upstream/hyperframes.heygen.com/assets_2025_redesign/_next/static/immutable/chunks/384poaxfaqo1_.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/source/upstream/hyperframes.heygen.com/assets_2025_redesign/_next/static/immutable/chunks/3f077usjkprdd.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/source/upstream/hyperframes.heygen.com/assets_2025_redesign/_next/static/immutable/chunks/3fsgkui-q3wh3.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/source/upstream/hyperframes.heygen.com/assets_2025_redesign/_next/static/immutable/chunks/3hljp_tdbu86q.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/source/upstream/hyperframes.heygen.com/assets_2025_redesign/_next/static/immutable/chunks/3t8ven26xbqu0.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/source/upstream/hyperframes.heygen.com/assets_2025_redesign/_next/static/immutable/chunks/3tmu-vkg9tp54.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/source/upstream/hyperframes.heygen.com/assets_2025_redesign/_next/static/immutable/chunks/3uvcso8k7f3ec.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/source/upstream/hyperframes.heygen.com/assets_2025_redesign/_next/static/immutable/chunks/405z6hky0dto4.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/source/upstream/hyperframes.heygen.com/assets_2025_redesign/_next/static/immutable/chunks/44nqsnsdt4lg5.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/source/upstream/hyperframes.heygen.com/assets_2025_redesign/_next/static/immutable/chunks/turbopack-3c-o5x4euir_x.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/source/upstream/hyperframes.heygen.com/index.html",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/styles.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/vendor/three@0.185.0/LICENSE",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/vendor/three@0.185.0/three.core.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/hyperframes-site/vendor/three@0.185.0/three.module.js",
+      "role": "vendor"
+    },
+    {
+      "path": "docs.html",
+      "role": "source"
+    },
+    {
+      "path": "docs/cases/hyperframes-site.md",
+      "role": "context"
+    },
+    {
+      "path": "entries/cases/hyperframes-site.json",
+      "role": "context"
+    },
+    {
+      "path": "entries/patterns/hf-video-shard-ribbon.json",
+      "role": "context"
+    },
+    {
+      "path": "previews/cases/hyperframes-site-mobile.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/cases/hyperframes-site-reference.png",
+      "role": "preview"
+    },
+    {
+      "path": "previews/cases/hyperframes-site.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "prompts/cases/hyperframes-site.md",
+      "role": "context"
+    },
+    {
+      "path": "prompts/patterns/hf-video-shard-ribbon.md",
+      "role": "context"
+    },
+    {
+      "path": "site/icons/favicon.svg",
+      "role": "asset"
+    },
+    {
+      "path": "site/pages/docs/docs.css",
+      "role": "source"
+    },
+    {
+      "path": "site/pages/docs/docs.js",
+      "role": "source"
+    },
+    {
+      "path": "site/runtime/asset-cache.js",
+      "role": "source"
+    },
+    {
+      "path": "site/runtime/asset-runtime.js",
+      "role": "source"
+    },
+    {
+      "path": "site/runtime/case-loading.css",
+      "role": "source"
+    },
+    {
+      "path": "site/runtime/case-loading.js",
+      "role": "source"
+    },
+    {
+      "path": "site/runtime/demo-scrollbars.css",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/site-footer.css",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/site-nav.css",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/site-shell.js",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/site-typography.css",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/theme-control.css",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/theme.js",
+      "role": "source"
+    },
+    {
+      "path": "site/vendor/LICENSES.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/vendor/marked.umd.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/vendor/purify.min.js",
+      "role": "vendor"
+    }
+  ]
+}

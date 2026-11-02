@@ -1,0 +1,118 @@
+{
+  "id": "hyperframes-site",
+  "order": 76,
+  "title": "HyperFrames · 为 Agent 打造的视频编辑器官网",
+  "subtitle": "The video editor built for agents.",
+  "category": "产品",
+  "country": "未确认",
+  "tags": [
+    "HyperFrames",
+    "HeyGen",
+    "Agent",
+    "WebGL",
+    "视频碎片",
+    "视频墙",
+    "Film"
+  ],
+  "summary": "实时视频碎片、贯穿全页的虹彩地面和可拖动的双行视频墙，把编辑器定位、展示影片、桌面下载与开源信息连接成一页。",
+  "accent": "#3ce6ac",
+  "background": "#f7ecd3",
+  "principles": [
+    "实时三角面把代码与视频内容放进同一条空间路径。",
+    "全屏地面着色器和玻璃面板维持上下区块的光色连续。",
+    "混合比例的视频墙让影片类型直接可见，弹层复用卡片视频。",
+    "Film 将页面本身切开、缩放并恢复，主视觉与产品影片共享同一叙事空间。"
+  ],
+  "productFocus": "围绕为 Agent 制作视频的桌面编辑器组织 Hero、作品展示、系统下载和开源入口。",
+  "interaction": [
+    "Hero：三行圆角挤出三角面共享视频分组，种子 7331 的 LCG 固定碎片形态；方向 166°、速度 1.6、扭转 6°，指针以 0.045 插值改变场景旋转，离开 Hero 后停止其帧循环和视频。",
+    "视频墙：22＋23 部影片各复制一遍形成 90 张卡片；两行按 -1／+1 方向以 40／34 px/s 移动。阈值 0.2 的观察器挂载并播放可见视频，离开时卸载；400px 预取海报，悬停缩放 1.03。",
+    "地面：固定全屏 WebGL2 四顶点三角条带，uColorScale=10、uFrequency=7、白色基底、0.8 混合；#f7ecd3cc 遮罩覆盖光色，并贯穿下载和开源区。减少动态时保留 Canvas 节点并停止创建地面渲染器。",
+    "Film：桌面宽度至少 900px、宽高比至少 1.15 且支持精细指针时，点击 Framey 或气泡播放 19 秒序列。页面克隆通过 captureStream(60) 接入实时光带，SVG 光线、吉祥物、文字和闪光按影片时间合成。",
+    "Film timeline：Sound on／Mute、时间、五章轨道和 Skip；拖动播放头暂停并定位，松开后按原播放状态继续，结束或跳过后恢复页面与 Framey 焦点。",
+    "卡片：横向滚轮与 Shift 滚轮产生 0.86 惯性，拖动超过 6px 后抑制点击；键盘焦点将卡片居中。点击在原生 dialog 中播放同一视频，支持 Close、Esc 和背景关闭。",
+    "下载：按手机、Windows、Linux、未知系统和 macOS 架构显示原始按钮与帮助文字；手机分享、复制成功及直接显示链接三种分支沿用原站行为。",
+    "导航和开源：手机菜单支持按钮、Esc、外部点击及选项关闭；安装命令复制后显示勾号与 Copied，1600ms 后复位。隐藏的 Skip to main content 保留键盘入口。"
+  ],
+  "theme": "固定浅色：米色遮罩、黑色文字、绿色吉祥物与低饱和虹彩背景；系统深色偏好保持同一页面配色。",
+  "constraints": [
+    "范围固定为 2026-11-02 的英文官网首页。",
+    "运行时由本库可读 JavaScript、原站 GLSL 和 Three.js 0.185.0 构成。",
+    "全部卡片视频、海报、碎片视频、Film 和跳动音效保留原文件。",
+    "字体声明与失败回退按线上实际保留，统计冻结为取证当日值。"
+  ],
+  "useCases": [
+    "视频编辑器与 Agent 工具官网",
+    "媒体作品展示墙",
+    "带实时图形的产品发布首页"
+  ],
+  "avoid": [
+    "缺少真实影片内容的静态信息页",
+    "需要低带宽首屏且没有媒体预算的页面"
+  ],
+  "tokens": {
+    "palette": [
+      "#131109",
+      "#f7ecd3",
+      "#3ce6ac",
+      "#ffffff"
+    ],
+    "type": "Studio TT Norms 400–500、TT Norms Pro Mono；300、700 与 TT Norms Pro 600 按原站回退。",
+    "layout": "1200px 内容基准；gutter=max(4vw,(100vw-1200px)/2)；100svh Hero；300px／220px 卡片。",
+    "motion": "LCG 7331；3 行、triSize 3、direction 166°、speed 1.6、twist 6°；Film 19s；视频墙 40／34px/s，dt≤0.05。"
+  },
+  "composition": {
+    "color": "#131109 文字与按钮，#f7ecd3cc 地面遮罩，#3ce6ac Framey 和影片光线。",
+    "typography": "Hero 字标 clamp(44px,5.6vw,92px)，主句 clamp(32px,4.25vw,70px)，字标和统计使用原站字体回退。",
+    "layout": "Hero 字标右上、主句和下载左下；全宽双行视频墙后接下载卡与四项开源统计。",
+    "imagery": "10 部碎片纹理视频、4 张 matcap、45 部卡片视频、45 张海报、Film、品牌 SVG 与本地字体。",
+    "shape": "3 行圆角挤出三角面；药丸按钮、28px 卡片圆角与原生视频弹层。",
+    "hierarchy": "编辑器定位、作品证据、系统下载、开源入口依次展开。",
+    "motion": "实时三角场、双向视频墙、Framey 待机与 19 秒影片序列共用原站数值。",
+    "coherence": "虹彩地面作为全页底层，玻璃卡片与三角面的材质相互呼应。",
+    "scroll": "自然纵向滚动；Hero 离屏暂停，视频墙可见即播，底部继续显示固定地面。"
+  },
+  "sources": [
+    {
+      "title": "HyperFrames 官网首页",
+      "url": "https://hyperframes.heygen.com/",
+      "note": "2026-11-02 英文首页；HTML、样式、页面模块、Film、GLSL、媒体和状态取证。",
+      "type": "实例"
+    },
+    {
+      "title": "Three.js 0.185.0",
+      "url": "https://www.npmjs.com/package/three/v/0.185.0",
+      "note": "142 个 shader chunk 与页面打包版本一致。",
+      "type": "实现"
+    }
+  ],
+  "prompt": "以 https://hyperframes.heygen.com/ 在 2026-11-02 的英文首页为依据，实现【目标产品】页面。保留 100svh Hero 的真实 WebGL 三角场、原始 GLSL、种子 7331、3 行、triSize=3、166° 方向、1.6 速度和 6° 扭转；指针与滚动按源码响应。保留全部 45 部影片及复制后的 90 张卡片、40／34px/s 双向移动、0.2 可见观察器、400px 海报预取、6px 拖动阈值与 0.86 惯性；悬停仅缩放 1.03。在 dialog 中播放对应卡片的视频。Film 保留 Framey、SVG 光线、captureStream 页面克隆、19 秒序列、定位轨道、声音和 Skip。保留全部系统下载分支、导航状态、安装命令复制、四统计和固定地面着色器。字体按线上成功与失败状态配置，运行所需素材本地化，链接保持原站绝对地址。在 1440×900 DPR1 与 390×844 DPR2 下逐状态对照。",
+  "negativePrompt": "不用截图、录屏或整段影片替代实时 Hero；不简化 GLSL、几何、影片数量、文案、交互和断点；不加入悬停才播放的策略、额外音乐或原站没有的界面。",
+  "demo": "demos/cases/hyperframes-site/index.html",
+  "preview": "previews/cases/hyperframes-site.jpg",
+  "previewMobile": "previews/cases/hyperframes-site-mobile.jpg",
+  "referencePreview": "previews/cases/hyperframes-site-reference.png",
+  "research": "docs/cases/hyperframes-site.md",
+  "fidelity": "demos/cases/hyperframes-site/fidelity.md",
+  "assetManifest": "demos/cases/hyperframes-site/assets-manifest.json",
+  "referenceUrl": "https://hyperframes.heygen.com/",
+  "implementation": "reference-study",
+  "capturedAt": "2026-11-02",
+  "patternIds": [
+    "hf-video-shard-ribbon",
+    "hf-video-wall-lazy-play",
+    "hf-ground-canvas-close"
+  ],
+  "exercise": "在 ribbon.js 中只改变一个场景参数，观察三角面编组、视差和代码转视频的关系；保持影片数据、文字及操作状态。",
+  "themeBehavior": {
+    "mode": "fixed",
+    "default": "light",
+    "control": "页面采用固定浅色，系统深色偏好保留同一配色。",
+    "designReason": "米色遮罩与虹彩地面连接实时图形、影片和下载信息。"
+  },
+  "soundBehavior": {
+    "kind": "video",
+    "control": "Film 音量 0.85，支持静音和开启；弹层提供原生 controls；Framey 跳动音量 0.35。",
+    "interactionRole": "视频墙静音播放。弹层播放卡片文件自带的音轨，Film 保留影片声轨与 Framey 跳动音效。"
+  }
+}
