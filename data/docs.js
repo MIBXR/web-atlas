@@ -1488,11 +1488,11 @@ window.ATLAS_DOCUMENTS = [
 window.ATLAS_DOCUMENT_SOURCES = [
   {
     "path": "demos/cases/atlas-sister-sites/",
-    "referenceUrl": "https://mibxr-design-atlas.mibxranime.chatgpt.site/",
+    "referenceUrl": "https://web-atlas.mibxranime.chatgpt.site/",
     "sources": [
       "https://github.com/MIBXR/web-atlas/tree/2541e56a21d5321717b9397c14ae09462d562ee4/site",
       "https://github.com/MIBXR/motion-atlas/tree/80aac18cd2fcef4a97e53b1ef9227a223136ff60/site",
-      "https://mibxr-design-atlas.mibxranime.chatgpt.site/",
+      "https://web-atlas.mibxranime.chatgpt.site/",
       "https://motion-atlas.mibxranime.chatgpt.site/"
     ]
   },
@@ -1554,7 +1554,7 @@ window.ATLAS_DOCUMENT_SOURCES = [
   {
     "path": "demos/patterns/accent-role-tiers/",
     "sources": [
-      "https://mibxr-design-atlas.mibxranime.chatgpt.site/",
+      "https://web-atlas.mibxranime.chatgpt.site/",
       "https://github.com/MIBXR/web-atlas/tree/2541e56a21d5321717b9397c14ae09462d562ee4/site",
       "https://github.com/MIBXR/motion-atlas/tree/80aac18cd2fcef4a97e53b1ef9227a223136ff60/site"
     ]
@@ -1568,7 +1568,7 @@ window.ATLAS_DOCUMENT_SOURCES = [
   {
     "path": "demos/patterns/current-item-emphasis-tiers/",
     "sources": [
-      "https://mibxr-design-atlas.mibxranime.chatgpt.site/",
+      "https://web-atlas.mibxranime.chatgpt.site/",
       "https://github.com/MIBXR/web-atlas/tree/2541e56a21d5321717b9397c14ae09462d562ee4/site",
       "https://github.com/MIBXR/motion-atlas/tree/80aac18cd2fcef4a97e53b1ef9227a223136ff60/site"
     ]
@@ -1588,7 +1588,7 @@ window.ATLAS_DOCUMENT_SOURCES = [
   {
     "path": "demos/patterns/persistent-header-page-transition/",
     "sources": [
-      "https://mibxr-design-atlas.mibxranime.chatgpt.site/",
+      "https://web-atlas.mibxranime.chatgpt.site/",
       "https://github.com/MIBXR/web-atlas/tree/2541e56a21d5321717b9397c14ae09462d562ee4/site",
       "https://github.com/MIBXR/motion-atlas/tree/80aac18cd2fcef4a97e53b1ef9227a223136ff60/site"
     ]
@@ -1604,7 +1604,7 @@ window.ATLAS_DOCUMENT_SOURCES = [
   {
     "path": "demos/patterns/shorter-column-sticky/",
     "sources": [
-      "https://mibxr-design-atlas.mibxranime.chatgpt.site/",
+      "https://web-atlas.mibxranime.chatgpt.site/",
       "https://github.com/MIBXR/web-atlas/tree/2541e56a21d5321717b9397c14ae09462d562ee4/site",
       "https://github.com/MIBXR/motion-atlas/tree/80aac18cd2fcef4a97e53b1ef9227a223136ff60/site"
     ]

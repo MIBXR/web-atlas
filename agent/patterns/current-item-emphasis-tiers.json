@@ -63,7 +63,7 @@
         "locator": "entries/cases/atlas-sister-sites.json#interaction/1",
         "observation": "顶栏当前页与手机全站导航当前页使用 --accent-3 底和 --accent-3-ink 字；侧栏和本文目录使用 --accent-4 底、--accent-2 字与 650 字重，非当前导航悬停使用次级面与正文色。",
         "evidence": "adapted",
-        "referenceUrl": "https://mibxr-design-atlas.mibxranime.chatgpt.site/",
+        "referenceUrl": "https://web-atlas.mibxranime.chatgpt.site/",
         "capturedAt": "2026-10-31"
       },
       {

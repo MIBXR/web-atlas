@@ -10101,7 +10101,7 @@
           "locator": "entries/cases/atlas-sister-sites.json#interaction/0",
           "observation": "品牌切换在同一 DOM 上更新 data-brand；主题按跟随系统、深色、浅色循环，四组变量分别控制页面底、表面、文字、五层主题色、标志与圆角，页面不刷新。",
           "evidence": "adapted",
-          "referenceUrl": "https://mibxr-design-atlas.mibxranime.chatgpt.site/",
+          "referenceUrl": "https://web-atlas.mibxranime.chatgpt.site/",
           "capturedAt": "2026-10-31"
         },
         {
@@ -10197,7 +10197,7 @@
           "locator": "entries/cases/atlas-sister-sites.json#interaction/1",
           "observation": "顶栏当前页与手机全站导航当前页使用 --accent-3 底和 --accent-3-ink 字；侧栏和本文目录使用 --accent-4 底、--accent-2 字与 650 字重，非当前导航悬停使用次级面与正文色。",
           "evidence": "adapted",
-          "referenceUrl": "https://mibxr-design-atlas.mibxranime.chatgpt.site/",
+          "referenceUrl": "https://web-atlas.mibxranime.chatgpt.site/",
           "capturedAt": "2026-10-31"
         },
         {
@@ -10292,7 +10292,7 @@
           "locator": "entries/cases/atlas-sister-sites.json#interaction/4",
           "observation": "hash 驱动列表、详情与文档的 DOM 更新；支持 startViewTransition 且不减少动态时开启 140ms ease-out 根过渡，atlas-header 快照无动画、旧快照隐藏；不支持或减少动态时直接更新。",
           "evidence": "adapted",
-          "referenceUrl": "https://mibxr-design-atlas.mibxranime.chatgpt.site/",
+          "referenceUrl": "https://web-atlas.mibxranime.chatgpt.site/",
           "capturedAt": "2026-10-31"
         },
         {
@@ -10392,7 +10392,7 @@
           "locator": "entries/cases/atlas-sister-sites.json#interaction/3",
           "observation": "详情以 ResizeObserver 读取顶栏、操作栏、舞台列与说明栏：1160px 起舞台列始终 sticky，说明比舞台短时同时 sticky；top 为顶栏 68px 加操作栏实高加 24px，两栏在容器末尾按自然 sticky 边界结束；1159px 及以下单列。",
           "evidence": "adapted",
-          "referenceUrl": "https://mibxr-design-atlas.mibxranime.chatgpt.site/",
+          "referenceUrl": "https://web-atlas.mibxranime.chatgpt.site/",
           "capturedAt": "2026-10-31"
         },
         {

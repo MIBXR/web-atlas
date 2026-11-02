@@ -4886,7 +4886,7 @@ window.ATLAS_CASES = [
       },
       {
         "title": "Web Atlas · 线上界面",
-        "url": "https://mibxr-design-atlas.mibxranime.chatgpt.site/",
+        "url": "https://web-atlas.mibxranime.chatgpt.site/",
         "type": "实例",
         "note": "1440×900 下顶栏、列表、详情与文档的对照对象。"
       },
@@ -4904,7 +4904,7 @@ window.ATLAS_CASES = [
     "research": "docs/cases/atlas-sister-sites.md",
     "fidelity": "demos/cases/atlas-sister-sites/fidelity.md",
     "assetManifest": "demos/cases/atlas-sister-sites/assets-manifest.json",
-    "referenceUrl": "https://mibxr-design-atlas.mibxranime.chatgpt.site/",
+    "referenceUrl": "https://web-atlas.mibxranime.chatgpt.site/",
     "capturedAt": "2026-10-31",
     "patternIds": [
       "accent-role-tiers",

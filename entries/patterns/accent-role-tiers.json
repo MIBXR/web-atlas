@@ -59,7 +59,7 @@
       "locator": "entries/cases/atlas-sister-sites.json#interaction/0",
       "observation": "品牌切换在同一 DOM 上更新 data-brand；主题按跟随系统、深色、浅色循环，四组变量分别控制页面底、表面、文字、五层主题色、标志与圆角，页面不刷新。",
       "evidence": "adapted",
-      "referenceUrl": "https://mibxr-design-atlas.mibxranime.chatgpt.site/",
+      "referenceUrl": "https://web-atlas.mibxranime.chatgpt.site/",
       "capturedAt": "2026-10-31"
     },
     {

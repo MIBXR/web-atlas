@@ -59,7 +59,7 @@
       "locator": "entries/cases/atlas-sister-sites.json#interaction/4",
       "observation": "hash 驱动列表、详情与文档的 DOM 更新；支持 startViewTransition 且不减少动态时开启 140ms ease-out 根过渡，atlas-header 快照无动画、旧快照隐藏；不支持或减少动态时直接更新。",
       "evidence": "adapted",
-      "referenceUrl": "https://mibxr-design-atlas.mibxranime.chatgpt.site/",
+      "referenceUrl": "https://web-atlas.mibxranime.chatgpt.site/",
       "capturedAt": "2026-10-31"
     },
     {
