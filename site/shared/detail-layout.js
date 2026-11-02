@@ -59,6 +59,43 @@
       description.remove();
     }
     root.querySelector('.detail-layout').replaceChildren(stage, notes);
+    const headings = [...notes.querySelectorAll('h1,h2')];
+    const toc = document.createElement('nav');
+    toc.className = 'detail-toc';
+    toc.setAttribute('aria-label', '详情目录');
+    const markers = headings.map(heading => {
+      const button = document.createElement('button');
+      button.type = 'button';
+      button.setAttribute('aria-label', heading.textContent.trim());
+      button.innerHTML = '<svg viewBox="0 0 24 4" aria-hidden="true"><path d="M2 2h20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>';
+      const caption = document.createElement('span');
+      caption.className = 'detail-toc-label';
+      caption.textContent = heading.textContent.trim();
+      caption.setAttribute('aria-hidden', 'true');
+      button.append(caption);
+      button.addEventListener('click', () => window.scrollTo({
+        top: Math.max(0, scrollY + heading.getBoundingClientRect().top - header.getBoundingClientRect().height - actions.getBoundingClientRect().height - 24),
+        behavior: matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth',
+      }));
+      toc.append(button);
+      return button;
+    });
+    document.body.append(toc);
+    let tocFrame = 0;
+    const syncToc = () => {
+      tocFrame = 0;
+      const top = header.getBoundingClientRect().height + actions.getBoundingClientRect().height + 24;
+      toc.style.top = `${top}px`;
+      let current = 0;
+      headings.forEach((heading, index) => {if (heading.getBoundingClientRect().top <= top + 8) current = index;});
+      if (scrollY + innerHeight >= document.documentElement.scrollHeight - 2) current = headings.length - 1;
+      markers.forEach((button, index) => {
+        if (index === current) button.setAttribute('aria-current', 'location');
+        else button.removeAttribute('aria-current');
+      });
+    };
+    const scheduleToc = () => {if (!tocFrame) tocFrame = requestAnimationFrame(syncToc);};
+    window.addEventListener('scroll', scheduleToc, {passive:true});
     const copy = root.querySelector('#copy-prompt,#copy-pattern-prompt,#copy-material-prompt');
     copy.classList.remove('copy-button');copy.classList.add('primary-button');
     label(copy, 'copy', '复制 Prompt');tools.append(copy);
@@ -93,11 +130,12 @@
       root.style.setProperty('--atlas-detail-sticky-top',`calc(var(--atlas-visible-header-height) + ${actionsHeight}px + 24px)`);
       stage.classList.toggle('detail-sticky',window.innerWidth>=1160);
       notes.classList.toggle('detail-sticky',window.innerWidth>=1160&&stageHeight>notesHeight);
+      scheduleToc();
     };
     const columnsObserver=new ResizeObserver(syncColumns);
     for(const element of [header,actions,stage,notes])columnsObserver.observe(element);
     window.addEventListener('resize',syncColumns);
-    disposeMenu=()=>{document.removeEventListener('click',outside);document.removeEventListener('keydown',escape);compact.removeEventListener('change',sync);columnsObserver.disconnect();window.removeEventListener('resize',syncColumns);};
+    disposeMenu=()=>{document.removeEventListener('click',outside);document.removeEventListener('keydown',escape);compact.removeEventListener('change',sync);columnsObserver.disconnect();window.removeEventListener('resize',syncColumns);window.removeEventListener('scroll',scheduleToc);cancelAnimationFrame(tocFrame);toc.remove();};
     sync();
     window.AtlasIcons.paint(root);
     syncColumns();

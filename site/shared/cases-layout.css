@@ -165,6 +165,16 @@ body.atlas-detail .detail-reading-head .eyebrow{font:400 12px/1.5 var(--atlas-fo
 body.atlas-detail .detail-reading-head p{font-size:16px;line-height:1.7}
 body.atlas-detail .detail-reading-head>.tags{margin-top:16px;gap:6px}
 body.atlas-detail .detail-notes>section{margin:0;padding:20px;border:1px solid var(--atlas-surface-line);border-radius:var(--r-lg);background:var(--atlas-surface)}
+.detail-toc{position:fixed;right:2px;bottom:84px;z-index:35;display:flex;flex-direction:column;justify-content:center;width:24px;pointer-events:none}
+.detail-toc>button{position:relative;display:flex;align-items:center;justify-content:center;flex:0 1 20px;min-height:0;width:100%;padding:0;border:0;background:transparent;color:var(--atlas-muted);opacity:.55;pointer-events:auto}
+.detail-toc>button>svg{display:block;flex:none;width:12px;height:4px}
+.detail-toc>button:is(:hover,:focus-visible,[aria-current]){color:var(--accent-1);opacity:1}
+.detail-toc>button:is(:hover,:focus-visible,[aria-current])>svg{width:20px}
+.detail-toc>button:focus-visible{outline-offset:0}
+.detail-toc-label{position:absolute;top:50%;right:calc(100% + 8px);transform:translateY(-50%);width:max-content;max-width:min(260px,calc(100vw - 56px));padding:8px 12px;border:1px solid var(--atlas-surface-line);border-radius:var(--r);background:var(--atlas-surface);color:var(--atlas-ink);font:400 14px/1.5 var(--atlas-font-sans);text-align:left;overflow-wrap:anywhere;visibility:hidden;pointer-events:none;box-shadow:0 4px 16px color-mix(in srgb,var(--atlas-ink) 12%,transparent)}
+.detail-toc>button:is(:hover,:focus-visible)>.detail-toc-label{visibility:visible}
+@media(hover:none){.detail-toc>button:focus>.detail-toc-label{visibility:visible}}
+@media(max-width:800px){.detail-toc{right:0;width:16px}.detail-toc>button>svg{width:8px}.detail-toc>button:is(:hover,:focus-visible,[aria-current])>svg{width:14px}}
 @media(min-width:801px){body.atlas-detail .case-layout>.rail{display:none}}
 @media(max-width:1159px){body.atlas-detail .detail-layout{grid-template-columns:minmax(0,1fr)}body.atlas-detail .detail-actions{justify-content:flex-start}}
 @media(max-width:800px){
