@@ -1,0 +1,1103 @@
+{
+  "scope": "HyperFrames 官网首页及展示影片；版权归 HeyGen 与原作品作者。",
+  "assets": [
+    {
+      "file": "assets/homepage/showcase/card/studio-launch-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/studio-launch-v1.mp4",
+      "purpose": "视频墙卡片与弹层：Studio launch",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/site/studio-launch-nib-sf-audio-poster.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/site/studio-launch-nib-sf-audio-poster.jpg",
+      "purpose": "视频墙与弹层海报：Studio launch",
+      "width": 1440,
+      "height": 810,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/vfx-billboard-hoodie-handoff-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/vfx-billboard-hoodie-handoff-v1.mp4",
+      "purpose": "视频墙卡片与弹层：Out of the billboard",
+      "width": 720,
+      "height": 1280,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/vfx-billboard-hoodie-handoff-v1.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/vfx-billboard-hoodie-handoff-v1.jpg",
+      "purpose": "视频墙与弹层海报：Out of the billboard",
+      "width": 720,
+      "height": 1280,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/frameys-opening-night-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/frameys-opening-night-v1.mp4",
+      "purpose": "视频墙卡片与弹层：Opening night",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/frameys-opening-night-v1.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/frameys-opening-night-v1.jpg",
+      "purpose": "视频墙与弹层海报：Opening night",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/jake-taycan-bricks-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/jake-taycan-bricks-v1.mp4",
+      "purpose": "视频墙卡片与弹层：Jake & the Taycan",
+      "width": 720,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/jake-taycan-bricks-v1.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/jake-taycan-bricks-v1.jpg",
+      "purpose": "视频墙与弹层海报：Jake & the Taycan",
+      "width": 1080,
+      "height": 1080,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/cartoon-frameys-launch-one-take-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/cartoon-frameys-launch-one-take-v1.mp4",
+      "purpose": "视频墙卡片与弹层：The Frameys",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/cartoon-frameys-launch-one-take-v1.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/cartoon-frameys-launch-one-take-v1.jpg",
+      "purpose": "视频墙与弹层海报：The Frameys",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/k-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/k-v1.mp4",
+      "purpose": "视频墙卡片与弹层：The journey of “k”",
+      "width": 720,
+      "height": 1280,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/k-v1.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/k-v1.jpg",
+      "purpose": "视频墙与弹层海报：The journey of “k”",
+      "width": 720,
+      "height": 1280,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/real-ui-newspaper-1969-v2.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/real-ui-newspaper-1969-v2.mp4",
+      "purpose": "视频墙卡片与弹层：Men walk on the Moon",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/real-ui-newspaper-1969-v2.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/real-ui-newspaper-1969-v2.jpg",
+      "purpose": "视频墙与弹层海报：Men walk on the Moon",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/launch-storyboard-first-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/launch-storyboard-first-v1.mp4",
+      "purpose": "视频墙卡片与弹层：Storyboard first",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/launch-storyboard-first-v1.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/launch-storyboard-first-v1.jpg",
+      "purpose": "视频墙与弹层海报：Storyboard first",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/captions-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/captions-v1.mp4",
+      "purpose": "视频墙卡片与弹层：Don’t tell my clients",
+      "width": 720,
+      "height": 900,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/captions-v1.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/captions-v1.jpg",
+      "purpose": "视频墙与弹层海报：Don’t tell my clients",
+      "width": 720,
+      "height": 900,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/manga-last-onigiri-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/manga-last-onigiri-v1.mp4",
+      "purpose": "视频墙卡片与弹层：The last onigiri",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/manga-last-onigiri-v1.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/manga-last-onigiri-v1.jpg",
+      "purpose": "视频墙与弹层海报：The last onigiri",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/square-one-strudel-v2.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/square-one-strudel-v2.mp4",
+      "purpose": "视频墙卡片与弹层：Square one",
+      "width": 720,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/square-one-strudel-v2.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/square-one-strudel-v2.jpg",
+      "purpose": "视频墙与弹层海报：Square one",
+      "width": 1080,
+      "height": 1080,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/vfx-background-removal-launch-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/vfx-background-removal-launch-v1.mp4",
+      "purpose": "视频墙卡片与弹层：Background removal",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/vfx-background-removal-launch-v1.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/vfx-background-removal-launch-v1.jpg",
+      "purpose": "视频墙与弹层海报：Background removal",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/sitcom-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/sitcom-v1.mp4",
+      "purpose": "视频墙卡片与弹层：Two lines",
+      "width": 720,
+      "height": 1280,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/sitcom-v1.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/sitcom-v1.jpg",
+      "purpose": "视频墙与弹层海报：Two lines",
+      "width": 720,
+      "height": 1280,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/just-html-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/just-html-v1.mp4",
+      "purpose": "视频墙卡片与弹层：It’s just HTML",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/just-html-v1.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/just-html-v1.jpg",
+      "purpose": "视频墙与弹层海报：It’s just HTML",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/kinetic-type-curiosity-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/kinetic-type-curiosity-v1.mp4",
+      "purpose": "视频墙卡片与弹层：Going through a change",
+      "width": 960,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/kinetic-type-curiosity-v1.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/kinetic-type-curiosity-v1.jpg",
+      "purpose": "视频墙与弹层海报：Going through a change",
+      "width": 1280,
+      "height": 960,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/home-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/home-v1.mp4",
+      "purpose": "视频墙卡片与弹层：This homepage",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/home-v1.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/home-v1.jpg",
+      "purpose": "视频墙与弹层海报：This homepage",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/wordmark-sting-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/wordmark-sting-v1.mp4",
+      "purpose": "视频墙卡片与弹层：Wordmark",
+      "width": 720,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/wordmark-sting-v1.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/wordmark-sting-v1.jpg",
+      "purpose": "视频墙与弹层海报：Wordmark",
+      "width": 900,
+      "height": 900,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/session-story-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/session-story-v1.mp4",
+      "purpose": "视频墙卡片与弹层：Jake’s favorite agent",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/session-story-v1.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/session-story-v1.jpg",
+      "purpose": "视频墙与弹层海报：Jake’s favorite agent",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/launch-claude-motion-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/launch-claude-motion-v1.mp4",
+      "purpose": "视频墙卡片与弹层：Claude Motion",
+      "width": 720,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/launch-claude-motion-v1.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/launch-claude-motion-v1.jpg",
+      "purpose": "视频墙与弹层海报：Claude Motion",
+      "width": 720,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/real-ui-google-search-v2.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/real-ui-google-search-v2.mp4",
+      "purpose": "视频墙卡片与弹层：How do cameras focus",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/real-ui-google-search-v2.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/real-ui-google-search-v2.jpg",
+      "purpose": "视频墙与弹层海报：How do cameras focus",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/muybridge-horse-styles-v2.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/muybridge-horse-styles-v2.mp4",
+      "purpose": "视频墙卡片与弹层：One horse, many looks",
+      "width": 2560,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/muybridge-horse-styles-v2.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/muybridge-horse-styles-v2.jpg",
+      "purpose": "视频墙与弹层海报：One horse, many looks",
+      "width": 1280,
+      "height": 360,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/rackrats-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/rackrats-v1.mp4",
+      "purpose": "视频墙卡片与弹层：Rackrats",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/rackrats-v1.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/rackrats-v1.jpg",
+      "purpose": "视频墙与弹层海报：Rackrats",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/tutorial-wenbo-studio-tutorial-talkinghead-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/tutorial-wenbo-studio-tutorial-talkinghead-v1.mp4",
+      "purpose": "视频墙卡片与弹层：Reference any video",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/tutorial-wenbo-studio-tutorial-talkinghead-v1.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/tutorial-wenbo-studio-tutorial-talkinghead-v1.jpg",
+      "purpose": "视频墙与弹层海报：Reference any video",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/axe-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/axe-v1.mp4",
+      "purpose": "视频墙卡片与弹层：Axe chop",
+      "width": 720,
+      "height": 1280,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/axe-v1.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/axe-v1.jpg",
+      "purpose": "视频墙与弹层海报：Axe chop",
+      "width": 720,
+      "height": 1280,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/framey-orby-halloween-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/framey-orby-halloween-v1.mp4",
+      "purpose": "视频墙卡片与弹层：Halloween party",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/framey-orby-halloween-v1.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/framey-orby-halloween-v1.jpg",
+      "purpose": "视频墙与弹层海报：Halloween party",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/cow-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/cow-v1.mp4",
+      "purpose": "视频墙卡片与弹层：Cow 1.0",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/cow-v1.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/cow-v1.jpg",
+      "purpose": "视频墙与弹层海报：Cow 1.0",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/ascii-sharks-logo-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/ascii-sharks-logo-v1.mp4",
+      "purpose": "视频墙卡片与弹层：ASCII sharks",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/ascii-sharks-logo-v1.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/ascii-sharks-logo-v1.jpg",
+      "purpose": "视频墙与弹层海报：ASCII sharks",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/vfx-giant-keyboard-reel-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/vfx-giant-keyboard-reel-v1.mp4",
+      "purpose": "视频墙卡片与弹层：Giant keyboard",
+      "width": 720,
+      "height": 1280,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/vfx-giant-keyboard-reel-v1.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/vfx-giant-keyboard-reel-v1.jpg",
+      "purpose": "视频墙与弹层海报：Giant keyboard",
+      "width": 720,
+      "height": 1280,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/real-ui-wikipedia-v2.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/real-ui-wikipedia-v2.mp4",
+      "purpose": "视频墙卡片与弹层：Wikipedia",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/real-ui-wikipedia-v2.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/real-ui-wikipedia-v2.jpg",
+      "purpose": "视频墙与弹层海报：Wikipedia",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/launch-heygen-video1-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/launch-heygen-video1-v1.mp4",
+      "purpose": "视频墙卡片与弹层：HeyGen Video 1",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/launch-heygen-video1-v1.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/launch-heygen-video1-v1.jpg",
+      "purpose": "视频墙与弹层海报：HeyGen Video 1",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/pixel-game-one-canvas-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/pixel-game-one-canvas-v1.mp4",
+      "purpose": "视频墙卡片与弹层：A game in one canvas",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/pixel-game-one-canvas-v1.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/pixel-game-one-canvas-v1.jpg",
+      "purpose": "视频墙与弹层海报：A game in one canvas",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/demo-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/demo-v1.mp4",
+      "purpose": "视频墙卡片与弹层：Tool demo",
+      "width": 720,
+      "height": 1280,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/demo-v1.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/demo-v1.jpg",
+      "purpose": "视频墙与弹层海报：Tool demo",
+      "width": 720,
+      "height": 1280,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/everything-was-written-v2.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/everything-was-written-v2.mp4",
+      "purpose": "视频墙卡片与弹层：Everything was written",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/everything-was-written-v2.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/everything-was-written-v2.jpg",
+      "purpose": "视频墙与弹层海报：Everything was written",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/launch-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/launch-v1.mp4",
+      "purpose": "视频墙卡片与弹层：Keynote line",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/launch-v1.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/launch-v1.jpg",
+      "purpose": "视频墙与弹层海报：Keynote line",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/remotion-to-hyperframes-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/remotion-to-hyperframes-v1.mp4",
+      "purpose": "视频墙卡片与弹层：Remotion to HyperFrames",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/remotion-to-hyperframes-v1.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/remotion-to-hyperframes-v1.jpg",
+      "purpose": "视频墙与弹层海报：Remotion to HyperFrames",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/explainer-code2video-bench-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/explainer-code2video-bench-v1.mp4",
+      "purpose": "视频墙卡片与弹层：Code2Video Bench",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/explainer-code2video-bench-v1.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/explainer-code2video-bench-v1.jpg",
+      "purpose": "视频墙与弹层海报：Code2Video Bench",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/real-ui-cctv-v2.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/real-ui-cctv-v2.mp4",
+      "purpose": "视频墙卡片与弹层：CCTV tracking",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/real-ui-cctv-v2.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/real-ui-cctv-v2.jpg",
+      "purpose": "视频墙与弹层海报：CCTV tracking",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/frameys-felt-party-v2.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/frameys-felt-party-v2.mp4",
+      "purpose": "视频墙卡片与弹层：The Frameys dance",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/frameys-felt-party-v2.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/frameys-felt-party-v2.jpg",
+      "purpose": "视频墙与弹层海报：The Frameys dance",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/launch-moments-catalog-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/launch-moments-catalog-v1.mp4",
+      "purpose": "视频墙卡片与弹层：Moments catalog",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/launch-moments-catalog-v1.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/launch-moments-catalog-v1.jpg",
+      "purpose": "视频墙与弹层海报：Moments catalog",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/shards-logo-reveal-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/shards-logo-reveal-v1.mp4",
+      "purpose": "视频墙卡片与弹层：Shards",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/shards-logo-reveal-v1.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/shards-logo-reveal-v1.jpg",
+      "purpose": "视频墙与弹层海报：Shards",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/launch-hyperframes-studio-intro-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/launch-hyperframes-studio-intro-v1.mp4",
+      "purpose": "视频墙卡片与弹层：Studio intro",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/launch-hyperframes-studio-intro-v1.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/launch-hyperframes-studio-intro-v1.jpg",
+      "purpose": "视频墙与弹层海报：Studio intro",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/studio-launch-pixel-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/studio-launch-pixel-v1.mp4",
+      "purpose": "视频墙卡片与弹层：A launch video in 6 hours",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/studio-launch-pixel-v1.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/studio-launch-pixel-v1.jpg",
+      "purpose": "视频墙与弹层海报：A launch video in 6 hours",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/youtube-online-business-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/youtube-online-business-v1.mp4",
+      "purpose": "视频墙卡片与弹层：Online business story",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/youtube-online-business-v1.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/youtube-online-business-v1.jpg",
+      "purpose": "视频墙与弹层海报：Online business story",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/website-to-launch-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/website-to-launch-v1.mp4",
+      "purpose": "视频墙卡片与弹层：From your website",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/website-to-launch-v1.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/website-to-launch-v1.jpg",
+      "purpose": "视频墙与弹层海报：From your website",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/homepage/showcase/card/generative-replica-v1.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/card/generative-replica-v1.mp4",
+      "purpose": "视频墙卡片与弹层：Code is a material",
+      "width": 1277,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/showcase/poster/generative-replica-v1.jpg",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/showcase/poster/generative-replica-v1.jpg",
+      "purpose": "视频墙与弹层海报：Code is a material",
+      "width": 1280,
+      "height": 722,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/jpeg"
+    },
+    {
+      "file": "assets/hyperframes-landing/skills.mp4",
+      "sourceUrl": "https://dynamic.heygen.ai/www/video/hyperframes-landing/skills.mp4",
+      "purpose": "WebGL 三角碎片视频纹理",
+      "width": 640,
+      "height": 360,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/hyperframes-landing/keyframes.mp4",
+      "sourceUrl": "https://dynamic.heygen.ai/www/video/hyperframes-landing/keyframes.mp4",
+      "purpose": "WebGL 三角碎片视频纹理",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/hyperframes-landing/music-vid.mp4",
+      "sourceUrl": "https://dynamic.heygen.ai/www/video/hyperframes-landing/music-vid.mp4",
+      "purpose": "WebGL 三角碎片视频纹理",
+      "width": 640,
+      "height": 360,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/hyperframes-landing/k3-promo.mp4",
+      "sourceUrl": "https://dynamic.heygen.ai/www/video/hyperframes-landing/k3-promo.mp4",
+      "purpose": "WebGL 三角碎片视频纹理",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/hyperframes-landing/hf-stripe.mp4",
+      "sourceUrl": "https://dynamic.heygen.ai/www/video/hyperframes-landing/hf-stripe.mp4",
+      "purpose": "WebGL 三角碎片视频纹理",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/hyperframes-landing/video-agent.mp4",
+      "sourceUrl": "https://dynamic.heygen.ai/www/video/hyperframes-landing/video-agent.mp4",
+      "purpose": "WebGL 三角碎片视频纹理",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/hyperframes-landing/media-use.mp4",
+      "sourceUrl": "https://dynamic.heygen.ai/www/video/hyperframes-landing/media-use.mp4",
+      "purpose": "WebGL 三角碎片视频纹理",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/hyperframes-landing/captions.mp4",
+      "sourceUrl": "https://dynamic.heygen.ai/www/video/hyperframes-landing/captions.mp4",
+      "purpose": "WebGL 三角碎片视频纹理",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/hyperframes-landing/vfx.mp4",
+      "sourceUrl": "https://dynamic.heygen.ai/www/video/hyperframes-landing/vfx.mp4",
+      "purpose": "WebGL 三角碎片视频纹理",
+      "width": 960,
+      "height": 540,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/hyperframes-landing/hyperframes-launch.mp4",
+      "sourceUrl": "https://dynamic.heygen.ai/www/video/hyperframes-landing/hyperframes-launch.mp4",
+      "purpose": "WebGL 三角碎片视频纹理",
+      "width": 1280,
+      "height": 720,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/hyperframes/matcap-1.webp",
+      "sourceUrl": "https://hyperframes.heygen.com/hyperframes/matcap-1.webp",
+      "purpose": "碎片玻璃材质 matcap",
+      "width": 512,
+      "height": 512,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/webp"
+    },
+    {
+      "file": "assets/hyperframes/matcap-2.webp",
+      "sourceUrl": "https://hyperframes.heygen.com/hyperframes/matcap-2.webp",
+      "purpose": "碎片玻璃材质 matcap",
+      "width": 512,
+      "height": 512,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/webp"
+    },
+    {
+      "file": "assets/hyperframes/matcap-3.webp",
+      "sourceUrl": "https://hyperframes.heygen.com/hyperframes/matcap-3.webp",
+      "purpose": "碎片玻璃材质 matcap",
+      "width": 512,
+      "height": 512,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/webp"
+    },
+    {
+      "file": "assets/hyperframes/matcap-4.webp",
+      "sourceUrl": "https://hyperframes.heygen.com/hyperframes/matcap-4.webp",
+      "purpose": "碎片玻璃材质 matcap",
+      "width": 512,
+      "height": 512,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/webp"
+    },
+    {
+      "file": "assets/homepage/film-v19.mp4",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/film-v19.mp4",
+      "purpose": "Film 场景影片",
+      "width": 1920,
+      "height": 1080,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "video/mp4"
+    },
+    {
+      "file": "assets/homepage/framey-hop-v1.mp3",
+      "sourceUrl": "https://static.heygen.ai/hyperframes-oss/homepage/framey-hop-v1.mp3",
+      "purpose": "Framey 跳动音效",
+      "width": null,
+      "height": null,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "audio/mpeg"
+    },
+    {
+      "file": "assets/hyperframes/logo-dark.svg",
+      "sourceUrl": "https://hyperframes.heygen.com/hyperframes/logo-dark.svg",
+      "purpose": "顶栏品牌标志",
+      "width": 263.0,
+      "height": 79.0,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/svg+xml"
+    },
+    {
+      "file": "fonts/tt-norms-pro-regular.woff2",
+      "sourceUrl": "https://hyperframes.heygen.com/hyperframes/fonts/tt-norms-pro-regular.woff2",
+      "purpose": "Studio TT Norms 400–500",
+      "width": null,
+      "height": null,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "font/woff2"
+    },
+    {
+      "file": "fonts/tt_norms_pro_mono_regular-webfont.woff2",
+      "sourceUrl": "https://www-static-assets.heygen.com/fonts/tt-norms-pro-mono/tt_norms_pro_mono_regular-webfont.woff2",
+      "purpose": "碎片代码等宽字体",
+      "width": null,
+      "height": null,
+      "copyright": "HeyGen 及原作品作者",
+      "retrievedAt": "2026-11-02",
+      "contentType": "font/woff2"
+    },
+    {
+      "file": "assets/favicon.ico",
+      "sourceUrl": "https://hyperframes.heygen.com/favicon.ico?favicon.2m321y0geyyfh.ico",
+      "purpose": "浏览器网站图标",
+      "copyright": "HeyGen",
+      "retrievedAt": "2026-11-02",
+      "contentType": "image/x-icon"
+    }
+  ]
+}

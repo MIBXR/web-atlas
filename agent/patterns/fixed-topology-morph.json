@@ -159,6 +159,10 @@
       "role": "source"
     },
     {
+      "path": "site/runtime/demo-scrollbars.css",
+      "role": "source"
+    },
+    {
       "path": "site/shared/site-footer.css",
       "role": "source"
     },

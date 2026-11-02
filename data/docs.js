@@ -205,6 +205,11 @@ window.ATLAS_DOCUMENTS = [
     "group": "案例研究"
   },
   {
+    "path": "docs/cases/hyperframes-site.md",
+    "title": "HyperFrames · 为 Agent 打造的视频编辑器官网",
+    "group": "案例研究"
+  },
+  {
     "path": "docs/cases/linear-workflow.md",
     "title": "Linear：当前页面的设计与交互",
     "group": "案例研究"
@@ -500,6 +505,11 @@ window.ATLAS_DOCUMENTS = [
     "group": "复用 Prompt"
   },
   {
+    "path": "prompts/patterns/hf-ground-canvas-close.md",
+    "title": "底部地面 Canvas 收束 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
     "path": "prompts/patterns/persistent-header-page-transition.md",
     "title": "顶栏不动的页面切换 · 复用 Prompt",
     "group": "复用 Prompt"
@@ -750,6 +760,11 @@ window.ATLAS_DOCUMENTS = [
     "group": "复用 Prompt"
   },
   {
+    "path": "prompts/patterns/hf-video-wall-lazy-play.md",
+    "title": "懒加载视频墙与可见即播 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
     "path": "prompts/patterns/overprint-misregistration.md",
     "title": "两版套印与错版字形 · 复用 Prompt",
     "group": "复用 Prompt"
@@ -882,6 +897,11 @@ window.ATLAS_DOCUMENTS = [
   {
     "path": "prompts/patterns/viewport-animation-lifecycle.md",
     "title": "视口与前台驱动的动态生命周期 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
+    "path": "prompts/patterns/hf-video-shard-ribbon.md",
+    "title": "视频碎片沿虹彩光带飞行聚合 · 复用 Prompt",
     "group": "复用 Prompt"
   },
   {
@@ -1397,6 +1417,11 @@ window.ATLAS_DOCUMENTS = [
   {
     "path": "prompts/cases/hallmark.md",
     "title": "Hallmark · 设计 skill 官网与五十主题 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
+    "path": "prompts/cases/hyperframes-site.md",
+    "title": "HyperFrames · 为 Agent 打造的视频编辑器官网 · 复用 Prompt",
     "group": "复用 Prompt"
   },
   {

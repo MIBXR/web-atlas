@@ -1,0 +1,1731 @@
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HyperFrames: The video editor built for agents</title>
+    <link rel="icon" href="assets/favicon.ico" />
+    <script src="../../../data/asset-sources.js"></script>
+    <script src="../../../site/runtime/asset-runtime.js" data-case-runtime="true"></script>
+    <script src="../../../site/runtime/asset-cache.js" async></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body data-country="US">
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <div data-nav-offset=""
+      ><div id="main-content"
+        ><script type="application/ld+json">
+          {
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "itemListElement": [
+                  { "item": "https://www.heygen.com", "name": "Home", "position": 1, "@type": "ListItem" },
+                  { "name": "HyperFrames", "position": 2, "@type": "ListItem" }
+                ],
+                "@type": "BreadcrumbList"
+              }
+            ]
+          }</script
+        ><div class="hf-page"
+          ><div class="sr-ground" aria-hidden="true"
+            ><canvas class="sr-ground-canvas"></canvas><div class="sr-ground-veil"></div></div
+          ><div class="hf-stage"
+            ><nav class="sr-bar"
+              ><a class="sr-brand" href="https://hyperframes.heygen.com"
+                ><img src="assets/hyperframes/logo-dark.svg" alt="HyperFrames" height="26" style="" /></a
+              ><div class="flex items-center gap-8"
+                ><div class="sr-bar-links hidden min-[900px]:flex"
+                  ><a href="https://hyperframes.heygen.com/catalog" class="sr-bar-link">Catalog</a
+                  ><a href="https://hyperframes.heygen.com/lessons" class="sr-bar-link">Lessons</a
+                  ><a href="https://hyperframes.heygen.com/quickstart" class="sr-bar-link">Docs</a></div
+                ><button
+                  type="button"
+                  class="-mr-10 grid size-44 shrink-0 place-items-center rounded-10 min-[900px]:hidden"
+                  aria-label="Open navigation"
+                  aria-expanded="false"
+                  aria-controls="hf-mobile-nav"
+                  ><span class="relative block h-14 w-18" aria-hidden="true"
+                    ><span
+                      class="absolute left-0 block h-2 w-18 bg-[var(--sr-ink)] transition-transform duration-200 ease-out motion-reduce:transition-none top-0"
+                    ></span
+                    ><span
+                      class="absolute top-6 left-0 block h-2 w-18 bg-[var(--sr-ink)] transition-opacity duration-200 ease-out motion-reduce:transition-none opacity-100"
+                    ></span
+                    ><span
+                      class="absolute left-0 block h-2 w-18 bg-[var(--sr-ink)] transition-transform duration-200 ease-out motion-reduce:transition-none top-12"
+                    ></span></span></button></div></nav
+            ><main
+              ><section class="hf-hero"
+                ><script>
+                  (function (u) {
+                    if ((/iPhone|iPod/.test(u) && !/iPad/.test(u)) || /Android/i.test(u))
+                      document.documentElement.setAttribute('data-hf-phone', '');
+                  })(navigator.userAgent);</script
+                ><div
+                  aria-hidden="true"
+                  class="hf-hero-skeleton pointer-events-none absolute inset-0 transition-opacity duration-500 ease-out motion-reduce:transition-none opacity-100"
+                ></div
+                ><canvas class="hf-ribbon absolute inset-0 block h-full w-full" aria-hidden="true"></canvas
+                ><p class="sr-lockup"
+                  >HyperFrames<!-- -->
+                  <span class="sr-light">Studio</span></p
+                ><div class="hf-hero-low"
+                  ><h1 class="hf-headline"
+                    ><span class="block">The video editor</span>
+                    <span class="block">built for agents.</span></h1
+                  ><div class="sr-actions"
+                    ><div class="hf-phone-only"
+                      ><button type="button" class="sr-pill sr-lg"
+                        ><svg
+                          viewbox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          aria-hidden="true"
+                        >
+                          <path d="M12 4v11m-5-5 5 5 5-5M5 20h14"></path></svg
+                        >Send to my computer</button
+                      ><p class="sr-mac-note">HyperFrames Studio runs on Mac, Windows and Linux.</p></div
+                    ><div class="hf-desktop-only"
+                      ><a
+                        aria-label="Download HyperFrames"
+                        class="sr-pill sr-lg"
+                        href="https://hyperframes.studio/studio/download?src=home-hero"
+                        data-cta-tracked="true"
+                        data-cta-aux-tracked="true"
+                        ><span class="sr-labels"
+                          ><span
+                            ><svg
+                              viewbox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              aria-hidden="true"
+                            >
+                              <path d="M12 4v11m-5-5 5 5 5-5M5 20h14"></path></svg
+                            >Download HyperFrames</span
+                          ><span class="invisible"
+                            ><svg viewbox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                              <path
+                                d="M16.4 2c.1 1.2-.4 2.4-1.1 3.2-.8.8-1.8 1.3-2.9 1.2-.1-1.1.4-2.3 1.1-3.1C14.3 2.5 15.4 2.1 16.4 2ZM20 17.4c-.5 1.2-.8 1.8-1.5 2.8-.9 1.3-2.1 2.9-3.6 2.9-1.3 0-1.7-.8-3.4-.8s-2.1.8-3.5.8c-1.5.1-2.6-1.4-3.5-2.7C2 16.7 1.7 11.3 3.3 8.7 4.5 6.8 6.3 6.5 7.6 6.5c1.4 0 2.4.8 3.5.8 1 0 2.3-.9 3.9-.8 1.3 0 2.8.7 3.9 2-3.4 1.9-2.9 6.8 1.1 8.9Z"
+                              ></path></svg
+                            >Download for macOS</span
+                          ><span class="invisible"
+                            ><svg
+                              viewbox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              aria-hidden="true"
+                            >
+                              <path d="M12 4v11m-5-5 5 5 5-5M5 20h14"></path></svg
+                            >Download for Linux</span
+                          ></span
+                        ></a
+                      ><a
+                        class="sr-alt"
+                        href="https://hyperframes.studio/studio/download?os=windows&amp;src=home-hero"
+                        data-cta-tracked="true"
+                        data-cta-aux-tracked="true"
+                        ><svg viewbox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                          <path
+                            d="M3 5.1 10.4 4v7.2H3V5.1Zm8.3-1.2L21 2.5v8.7h-9.7V3.9ZM3 12.8h7.4V20L3 18.9v-6.1Zm8.3 0H21v8.7l-9.7-1.4v-7.3Z"
+                          ></path></svg
+                        >Download for Windows</a
+                      ><p class="sr-mac-note"><a href="#studio-start">Other systems</a></p></div
+                    ></div
+                  ></div
+                ></section
+              ><section class="hf-showcase" aria-label="Made with HyperFrames"
+                ><div class="hf-rows-wrap"
+                  ><div class="hf-rows"
+                    ><div class="hf-row"
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Studio launch, launch film"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/site/studio-launch-nib-sf-audio-poster.jpg"
+                          data-src="assets/homepage/showcase/card/studio-launch-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Launch film<small>Studio launch</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:0.5625"
+                        aria-label="Play Out of the billboard, vfx"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/vfx-billboard-hoodie-handoff-v1.jpg"
+                          data-src="assets/homepage/showcase/card/vfx-billboard-hoodie-handoff-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">VFX<small>Out of the billboard</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Opening night, awards trailer"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/frameys-opening-night-v1.jpg"
+                          data-src="assets/homepage/showcase/card/frameys-opening-night-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Awards trailer<small>Opening night</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1"
+                        aria-label="Play Jake &amp; the Taycan, 3d build"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/jake-taycan-bricks-v1.jpg"
+                          data-src="assets/homepage/showcase/card/jake-taycan-bricks-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label"
+                          >3D build<small>Jake &amp; the Taycan</small></span
+                        ></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play The Frameys, cartoon"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/cartoon-frameys-launch-one-take-v1.jpg"
+                          data-src="assets/homepage/showcase/card/cartoon-frameys-launch-one-take-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Cartoon<small>The Frameys</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:0.5625"
+                        aria-label="Play The journey of “k”, explainer"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/k-v1.jpg"
+                          data-src="assets/homepage/showcase/card/k-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Explainer<small>The journey of “k”</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Men walk on the Moon, real ui"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/real-ui-newspaper-1969-v2.jpg"
+                          data-src="assets/homepage/showcase/card/real-ui-newspaper-1969-v2.mp4"
+                        ></video
+                        ><span class="hf-card-label">Real UI<small>Men walk on the Moon</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Storyboard first, product launch"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/launch-storyboard-first-v1.jpg"
+                          data-src="assets/homepage/showcase/card/launch-storyboard-first-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label"
+                          >Product launch<small>Storyboard first</small></span
+                        ></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:0.8"
+                        aria-label="Play Don’t tell my clients, captions"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/captions-v1.jpg"
+                          data-src="assets/homepage/showcase/card/captions-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label"
+                          >Captions<small>Don’t tell my clients</small></span
+                        ></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play The last onigiri, manga"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/manga-last-onigiri-v1.jpg"
+                          data-src="assets/homepage/showcase/card/manga-last-onigiri-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Manga<small>The last onigiri</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1"
+                        aria-label="Play Square one, live-coded music"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/square-one-strudel-v2.jpg"
+                          data-src="assets/homepage/showcase/card/square-one-strudel-v2.mp4"
+                        ></video
+                        ><span class="hf-card-label">Live-coded music<small>Square one</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Background removal, vfx"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/vfx-background-removal-launch-v1.jpg"
+                          data-src="assets/homepage/showcase/card/vfx-background-removal-launch-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">VFX<small>Background removal</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:0.5625"
+                        aria-label="Play Two lines, sitcom"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/sitcom-v1.jpg"
+                          data-src="assets/homepage/showcase/card/sitcom-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Sitcom<small>Two lines</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play It’s just HTML, explainer"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/just-html-v1.jpg"
+                          data-src="assets/homepage/showcase/card/just-html-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Explainer<small>It’s just HTML</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.3333333333333333"
+                        aria-label="Play Going through a change, kinetic type"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/kinetic-type-curiosity-v1.jpg"
+                          data-src="assets/homepage/showcase/card/kinetic-type-curiosity-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label"
+                          >Kinetic type<small>Going through a change</small></span
+                        ></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play This homepage, many looks"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/home-v1.jpg"
+                          data-src="assets/homepage/showcase/card/home-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Many looks<small>This homepage</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1"
+                        aria-label="Play Wordmark, logo sting"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/wordmark-sting-v1.jpg"
+                          data-src="assets/homepage/showcase/card/wordmark-sting-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Logo sting<small>Wordmark</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Jake’s favorite agent, cartoon"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/session-story-v1.jpg"
+                          data-src="assets/homepage/showcase/card/session-story-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label"
+                          >Cartoon<small>Jake’s favorite agent</small></span
+                        ></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1"
+                        aria-label="Play Claude Motion, square"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/launch-claude-motion-v1.jpg"
+                          data-src="assets/homepage/showcase/card/launch-claude-motion-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Square<small>Claude Motion</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play How do cameras focus, real ui"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/real-ui-google-search-v2.jpg"
+                          data-src="assets/homepage/showcase/card/real-ui-google-search-v2.mp4"
+                        ></video
+                        ><span class="hf-card-label">Real UI<small>How do cameras focus</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:3.5555555555555554"
+                        aria-label="Play One horse, many looks, style study"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/muybridge-horse-styles-v2.jpg"
+                          data-src="assets/homepage/showcase/card/muybridge-horse-styles-v2.mp4"
+                        ></video
+                        ><span class="hf-card-label"
+                          >Style study<small>One horse, many looks</small></span
+                        ></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Rackrats, cartoon"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/rackrats-v1.jpg"
+                          data-src="assets/homepage/showcase/card/rackrats-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Cartoon<small>Rackrats</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Studio launch, launch film"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/site/studio-launch-nib-sf-audio-poster.jpg"
+                          data-src="assets/homepage/showcase/card/studio-launch-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Launch film<small>Studio launch</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:0.5625"
+                        aria-label="Play Out of the billboard, vfx"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/vfx-billboard-hoodie-handoff-v1.jpg"
+                          data-src="assets/homepage/showcase/card/vfx-billboard-hoodie-handoff-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">VFX<small>Out of the billboard</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Opening night, awards trailer"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/frameys-opening-night-v1.jpg"
+                          data-src="assets/homepage/showcase/card/frameys-opening-night-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Awards trailer<small>Opening night</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1"
+                        aria-label="Play Jake &amp; the Taycan, 3d build"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/jake-taycan-bricks-v1.jpg"
+                          data-src="assets/homepage/showcase/card/jake-taycan-bricks-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label"
+                          >3D build<small>Jake &amp; the Taycan</small></span
+                        ></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play The Frameys, cartoon"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/cartoon-frameys-launch-one-take-v1.jpg"
+                          data-src="assets/homepage/showcase/card/cartoon-frameys-launch-one-take-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Cartoon<small>The Frameys</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:0.5625"
+                        aria-label="Play The journey of “k”, explainer"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/k-v1.jpg"
+                          data-src="assets/homepage/showcase/card/k-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Explainer<small>The journey of “k”</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Men walk on the Moon, real ui"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/real-ui-newspaper-1969-v2.jpg"
+                          data-src="assets/homepage/showcase/card/real-ui-newspaper-1969-v2.mp4"
+                        ></video
+                        ><span class="hf-card-label">Real UI<small>Men walk on the Moon</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Storyboard first, product launch"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/launch-storyboard-first-v1.jpg"
+                          data-src="assets/homepage/showcase/card/launch-storyboard-first-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label"
+                          >Product launch<small>Storyboard first</small></span
+                        ></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:0.8"
+                        aria-label="Play Don’t tell my clients, captions"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/captions-v1.jpg"
+                          data-src="assets/homepage/showcase/card/captions-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label"
+                          >Captions<small>Don’t tell my clients</small></span
+                        ></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play The last onigiri, manga"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/manga-last-onigiri-v1.jpg"
+                          data-src="assets/homepage/showcase/card/manga-last-onigiri-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Manga<small>The last onigiri</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1"
+                        aria-label="Play Square one, live-coded music"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/square-one-strudel-v2.jpg"
+                          data-src="assets/homepage/showcase/card/square-one-strudel-v2.mp4"
+                        ></video
+                        ><span class="hf-card-label">Live-coded music<small>Square one</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Background removal, vfx"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/vfx-background-removal-launch-v1.jpg"
+                          data-src="assets/homepage/showcase/card/vfx-background-removal-launch-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">VFX<small>Background removal</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:0.5625"
+                        aria-label="Play Two lines, sitcom"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/sitcom-v1.jpg"
+                          data-src="assets/homepage/showcase/card/sitcom-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Sitcom<small>Two lines</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play It’s just HTML, explainer"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/just-html-v1.jpg"
+                          data-src="assets/homepage/showcase/card/just-html-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Explainer<small>It’s just HTML</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.3333333333333333"
+                        aria-label="Play Going through a change, kinetic type"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/kinetic-type-curiosity-v1.jpg"
+                          data-src="assets/homepage/showcase/card/kinetic-type-curiosity-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label"
+                          >Kinetic type<small>Going through a change</small></span
+                        ></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play This homepage, many looks"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/home-v1.jpg"
+                          data-src="assets/homepage/showcase/card/home-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Many looks<small>This homepage</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1"
+                        aria-label="Play Wordmark, logo sting"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/wordmark-sting-v1.jpg"
+                          data-src="assets/homepage/showcase/card/wordmark-sting-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Logo sting<small>Wordmark</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Jake’s favorite agent, cartoon"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/session-story-v1.jpg"
+                          data-src="assets/homepage/showcase/card/session-story-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label"
+                          >Cartoon<small>Jake’s favorite agent</small></span
+                        ></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1"
+                        aria-label="Play Claude Motion, square"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/launch-claude-motion-v1.jpg"
+                          data-src="assets/homepage/showcase/card/launch-claude-motion-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Square<small>Claude Motion</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play How do cameras focus, real ui"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/real-ui-google-search-v2.jpg"
+                          data-src="assets/homepage/showcase/card/real-ui-google-search-v2.mp4"
+                        ></video
+                        ><span class="hf-card-label">Real UI<small>How do cameras focus</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:3.5555555555555554"
+                        aria-label="Play One horse, many looks, style study"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/muybridge-horse-styles-v2.jpg"
+                          data-src="assets/homepage/showcase/card/muybridge-horse-styles-v2.mp4"
+                        ></video
+                        ><span class="hf-card-label"
+                          >Style study<small>One horse, many looks</small></span
+                        ></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Rackrats, cartoon"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/rackrats-v1.jpg"
+                          data-src="assets/homepage/showcase/card/rackrats-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Cartoon<small>Rackrats</small></span></button
+                      ></div
+                    ><div class="hf-row"
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Reference any video, tutorial"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/tutorial-wenbo-studio-tutorial-talkinghead-v1.jpg"
+                          data-src="assets/homepage/showcase/card/tutorial-wenbo-studio-tutorial-talkinghead-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Tutorial<small>Reference any video</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:0.5625"
+                        aria-label="Play Axe chop, 3d tutorial"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/axe-v1.jpg"
+                          data-src="assets/homepage/showcase/card/axe-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">3D tutorial<small>Axe chop</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Halloween party, cartoon"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/framey-orby-halloween-v1.jpg"
+                          data-src="assets/homepage/showcase/card/framey-orby-halloween-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Cartoon<small>Halloween party</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Cow 1.0, launch parody"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/cow-v1.jpg"
+                          data-src="assets/homepage/showcase/card/cow-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Launch parody<small>Cow 1.0</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play ASCII sharks, logo sting"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/ascii-sharks-logo-v1.jpg"
+                          data-src="assets/homepage/showcase/card/ascii-sharks-logo-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Logo sting<small>ASCII sharks</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:0.5625"
+                        aria-label="Play Giant keyboard, vfx"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/vfx-giant-keyboard-reel-v1.jpg"
+                          data-src="assets/homepage/showcase/card/vfx-giant-keyboard-reel-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">VFX<small>Giant keyboard</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Wikipedia, real ui"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/real-ui-wikipedia-v2.jpg"
+                          data-src="assets/homepage/showcase/card/real-ui-wikipedia-v2.mp4"
+                        ></video
+                        ><span class="hf-card-label">Real UI<small>Wikipedia</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play HeyGen Video 1, ai footage"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/launch-heygen-video1-v1.jpg"
+                          data-src="assets/homepage/showcase/card/launch-heygen-video1-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">AI footage<small>HeyGen Video 1</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play A game in one canvas, code tutorial"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/pixel-game-one-canvas-v1.jpg"
+                          data-src="assets/homepage/showcase/card/pixel-game-one-canvas-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label"
+                          >Code tutorial<small>A game in one canvas</small></span
+                        ></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:0.5625"
+                        aria-label="Play Tool demo, talking head"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/demo-v1.jpg"
+                          data-src="assets/homepage/showcase/card/demo-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Talking head<small>Tool demo</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Everything was written, motion design"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/everything-was-written-v2.jpg"
+                          data-src="assets/homepage/showcase/card/everything-was-written-v2.mp4"
+                        ></video
+                        ><span class="hf-card-label"
+                          >Motion design<small>Everything was written</small></span
+                        ></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Keynote line, kinetic type"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/launch-v1.jpg"
+                          data-src="assets/homepage/showcase/card/launch-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Kinetic type<small>Keynote line</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Remotion to HyperFrames, 3d voxel"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/remotion-to-hyperframes-v1.jpg"
+                          data-src="assets/homepage/showcase/card/remotion-to-hyperframes-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label"
+                          >3D voxel<small>Remotion to HyperFrames</small></span
+                        ></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Code2Video Bench, presenter"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/explainer-code2video-bench-v1.jpg"
+                          data-src="assets/homepage/showcase/card/explainer-code2video-bench-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Presenter<small>Code2Video Bench</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play CCTV tracking, real ui"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/real-ui-cctv-v2.jpg"
+                          data-src="assets/homepage/showcase/card/real-ui-cctv-v2.mp4"
+                        ></video
+                        ><span class="hf-card-label">Real UI<small>CCTV tracking</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play The Frameys dance, 3d characters"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/frameys-felt-party-v2.jpg"
+                          data-src="assets/homepage/showcase/card/frameys-felt-party-v2.mp4"
+                        ></video
+                        ><span class="hf-card-label"
+                          >3D characters<small>The Frameys dance</small></span
+                        ></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Moments catalog, product launch"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/launch-moments-catalog-v1.jpg"
+                          data-src="assets/homepage/showcase/card/launch-moments-catalog-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label"
+                          >Product launch<small>Moments catalog</small></span
+                        ></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Shards, logo reveal"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/shards-logo-reveal-v1.jpg"
+                          data-src="assets/homepage/showcase/card/shards-logo-reveal-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Logo reveal<small>Shards</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Studio intro, product reveal"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/launch-hyperframes-studio-intro-v1.jpg"
+                          data-src="assets/homepage/showcase/card/launch-hyperframes-studio-intro-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Product reveal<small>Studio intro</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play A launch video in 6 hours, launch film"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/studio-launch-pixel-v1.jpg"
+                          data-src="assets/homepage/showcase/card/studio-launch-pixel-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label"
+                          >Launch film<small>A launch video in 6 hours</small></span
+                        ></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Online business story, youtube edit"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/youtube-online-business-v1.jpg"
+                          data-src="assets/homepage/showcase/card/youtube-online-business-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label"
+                          >YouTube edit<small>Online business story</small></span
+                        ></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play From your website, product launch"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/website-to-launch-v1.jpg"
+                          data-src="assets/homepage/showcase/card/website-to-launch-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label"
+                          >Product launch<small>From your website</small></span
+                        ></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Code is a material, generative art"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/generative-replica-v1.jpg"
+                          data-src="assets/homepage/showcase/card/generative-replica-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label"
+                          >Generative art<small>Code is a material</small></span
+                        ></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Reference any video, tutorial"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/tutorial-wenbo-studio-tutorial-talkinghead-v1.jpg"
+                          data-src="assets/homepage/showcase/card/tutorial-wenbo-studio-tutorial-talkinghead-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Tutorial<small>Reference any video</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:0.5625"
+                        aria-label="Play Axe chop, 3d tutorial"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/axe-v1.jpg"
+                          data-src="assets/homepage/showcase/card/axe-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">3D tutorial<small>Axe chop</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Halloween party, cartoon"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/framey-orby-halloween-v1.jpg"
+                          data-src="assets/homepage/showcase/card/framey-orby-halloween-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Cartoon<small>Halloween party</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Cow 1.0, launch parody"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/cow-v1.jpg"
+                          data-src="assets/homepage/showcase/card/cow-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Launch parody<small>Cow 1.0</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play ASCII sharks, logo sting"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/ascii-sharks-logo-v1.jpg"
+                          data-src="assets/homepage/showcase/card/ascii-sharks-logo-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Logo sting<small>ASCII sharks</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:0.5625"
+                        aria-label="Play Giant keyboard, vfx"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/vfx-giant-keyboard-reel-v1.jpg"
+                          data-src="assets/homepage/showcase/card/vfx-giant-keyboard-reel-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">VFX<small>Giant keyboard</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Wikipedia, real ui"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/real-ui-wikipedia-v2.jpg"
+                          data-src="assets/homepage/showcase/card/real-ui-wikipedia-v2.mp4"
+                        ></video
+                        ><span class="hf-card-label">Real UI<small>Wikipedia</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play HeyGen Video 1, ai footage"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/launch-heygen-video1-v1.jpg"
+                          data-src="assets/homepage/showcase/card/launch-heygen-video1-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">AI footage<small>HeyGen Video 1</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play A game in one canvas, code tutorial"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/pixel-game-one-canvas-v1.jpg"
+                          data-src="assets/homepage/showcase/card/pixel-game-one-canvas-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label"
+                          >Code tutorial<small>A game in one canvas</small></span
+                        ></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:0.5625"
+                        aria-label="Play Tool demo, talking head"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/demo-v1.jpg"
+                          data-src="assets/homepage/showcase/card/demo-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Talking head<small>Tool demo</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Everything was written, motion design"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/everything-was-written-v2.jpg"
+                          data-src="assets/homepage/showcase/card/everything-was-written-v2.mp4"
+                        ></video
+                        ><span class="hf-card-label"
+                          >Motion design<small>Everything was written</small></span
+                        ></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Keynote line, kinetic type"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/launch-v1.jpg"
+                          data-src="assets/homepage/showcase/card/launch-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Kinetic type<small>Keynote line</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Remotion to HyperFrames, 3d voxel"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/remotion-to-hyperframes-v1.jpg"
+                          data-src="assets/homepage/showcase/card/remotion-to-hyperframes-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label"
+                          >3D voxel<small>Remotion to HyperFrames</small></span
+                        ></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Code2Video Bench, presenter"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/explainer-code2video-bench-v1.jpg"
+                          data-src="assets/homepage/showcase/card/explainer-code2video-bench-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Presenter<small>Code2Video Bench</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play CCTV tracking, real ui"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/real-ui-cctv-v2.jpg"
+                          data-src="assets/homepage/showcase/card/real-ui-cctv-v2.mp4"
+                        ></video
+                        ><span class="hf-card-label">Real UI<small>CCTV tracking</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play The Frameys dance, 3d characters"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/frameys-felt-party-v2.jpg"
+                          data-src="assets/homepage/showcase/card/frameys-felt-party-v2.mp4"
+                        ></video
+                        ><span class="hf-card-label"
+                          >3D characters<small>The Frameys dance</small></span
+                        ></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Moments catalog, product launch"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/launch-moments-catalog-v1.jpg"
+                          data-src="assets/homepage/showcase/card/launch-moments-catalog-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label"
+                          >Product launch<small>Moments catalog</small></span
+                        ></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Shards, logo reveal"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/shards-logo-reveal-v1.jpg"
+                          data-src="assets/homepage/showcase/card/shards-logo-reveal-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Logo reveal<small>Shards</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Studio intro, product reveal"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/launch-hyperframes-studio-intro-v1.jpg"
+                          data-src="assets/homepage/showcase/card/launch-hyperframes-studio-intro-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label">Product reveal<small>Studio intro</small></span></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play A launch video in 6 hours, launch film"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/studio-launch-pixel-v1.jpg"
+                          data-src="assets/homepage/showcase/card/studio-launch-pixel-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label"
+                          >Launch film<small>A launch video in 6 hours</small></span
+                        ></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Online business story, youtube edit"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/youtube-online-business-v1.jpg"
+                          data-src="assets/homepage/showcase/card/youtube-online-business-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label"
+                          >YouTube edit<small>Online business story</small></span
+                        ></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play From your website, product launch"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/website-to-launch-v1.jpg"
+                          data-src="assets/homepage/showcase/card/website-to-launch-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label"
+                          >Product launch<small>From your website</small></span
+                        ></button
+                      ><button
+                        type="button"
+                        class="hf-card"
+                        style="aspect-ratio:1.7777777777777777"
+                        aria-label="Play Code is a material, generative art"
+                        aria-hidden="true"
+                        tabindex="-1"
+                        ><video
+                          muted=""
+                          playsinline=""
+                          loop=""
+                          preload="none"
+                          data-poster="assets/homepage/showcase/poster/generative-replica-v1.jpg"
+                          data-src="assets/homepage/showcase/card/generative-replica-v1.mp4"
+                        ></video
+                        ><span class="hf-card-label"
+                          >Generative art<small>Code is a material</small></span
+                        ></button
+                      ></div
+                    ></div
+                  ><div class="hf-rows-pause"
+                    ><button
+                      type="button"
+                      aria-label="Pause animation"
+                      title="Pause animation"
+                      data-carousel-pause="playing"
+                      class="inline-flex shrink-0 items-center justify-center w-28 h-28 rounded-full cursor-pointer bg-white/70 border border-black/10 backdrop-blur-[6px] text-heygen-gray-slate bg-white"
+                      ><svg width="12" height="12" viewbox="0 0 12 12" aria-hidden="true" focusable="false">
+                        <rect x="2.25" y="1.5" width="2.5" height="9" rx="0.75" fill="currentColor"></rect>
+                        <rect
+                          x="7.25"
+                          y="1.5"
+                          width="2.5"
+                          height="9"
+                          rx="0.75"
+                          fill="currentColor"
+                        ></rect></svg></button></div></div
+                ><dialog class="hf-player"
+                  ><button type="button" class="hf-player-close" aria-label="Close">×</button></dialog
+                ><hr class="sr-rule" /></section
+              ><div class="sr-below"
+                ><section id="studio-start" class="sr-start" aria-label="Get started"
+                  ><div class="sr-intro"><h2>Get started</h2><p>Access HyperFrames Studio on desktop.</p></div
+                  ><article class="sr-card"
+                    ><h3>Desktop</h3
+                    ><p
+                      >All of HyperFrames Studio, in one app. Works with your files and apps to get things
+                      done.</p
+                    ><ul
+                      ><li
+                        ><span>macOS</span
+                        ><span class="sr-files"
+                          ><a
+                            href="https://hyperframes.studio/studio/download?os=mac-arm64&amp;src=home-get-started"
+                            data-cta-tracked="true"
+                            data-cta-aux-tracked="true"
+                            >Apple Silicon</a
+                          ><a
+                            href="https://hyperframes.studio/studio/download?os=mac-x64&amp;src=home-get-started"
+                            data-cta-tracked="true"
+                            data-cta-aux-tracked="true"
+                            >Intel</a
+                          ><a
+                            class="sr-universal"
+                            href="https://hyperframes.studio/studio/download?os=mac&amp;src=home-get-started"
+                            data-cta-tracked="true"
+                            data-cta-aux-tracked="true"
+                            >Universal</a
+                          ></span
+                        ></li
+                      ><li
+                        ><span>Windows</span
+                        ><a
+                          href="https://hyperframes.studio/studio/download?os=windows&amp;src=home-get-started"
+                          data-cta-tracked="true"
+                          data-cta-aux-tracked="true"
+                          >Download</a
+                        ></li
+                      ><li><span>Windows (arm 64)</span><span class="sr-na">Coming soon</span></li
+                      ><li
+                        ><span>Linux (.deb)</span
+                        ><a
+                          href="https://hyperframes.studio/studio/download?os=deb&amp;src=home-get-started"
+                          data-cta-tracked="true"
+                          data-cta-aux-tracked="true"
+                          >Download</a
+                        ></li
+                      ><li
+                        ><span>Linux (AppImage)</span
+                        ><a
+                          href="https://hyperframes.studio/studio/download?os=linux&amp;src=home-get-started"
+                          data-cta-tracked="true"
+                          data-cta-aux-tracked="true"
+                          >Download</a
+                        ></li
+                      ><li
+                        ><span>Enterprise deployment</span
+                        ><a href="https://www.heygen.com/contact-us/sales">Contact us</a></li
+                      ></ul
+                    ></article
+                  ></section
+                ><hr class="sr-rule" /><section class="sr-repo" aria-labelledby="studio-open-source"
+                  ><div class="sr-intro"
+                    ><h2 id="studio-open-source">Open source</h2
+                    ><p
+                      >Apache-2.0 on GitHub at<!-- -->
+                      <a href="https://github.com/heygen-com/hyperframes" target="_blank" rel="noreferrer"
+                        >heygen-com/hyperframes</a
+                      >.</p
+                    ></div
+                  ><!--$--><div class="sr-stats"
+                    ><div class="sr-stat"
+                      ><a
+                        href="https://github.com/heygen-com/hyperframes"
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label="77,252 GitHub stars"
+                        ><span class="sr-stat-n" aria-hidden="true">77.3<small>k</small></span
+                        ><span class="sr-stat-l" aria-hidden="true">GitHub stars</span></a
+                      ></div
+                    ><div class="sr-stat"
+                      ><a
+                        href="https://www.npmjs.com/package/hyperframes"
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label="1,353,223 npm downloads last week"
+                        ><span class="sr-stat-n" aria-hidden="true">1.4<small>m</small></span
+                        ><span class="sr-stat-l" aria-hidden="true">npm downloads last week</span></a
+                      ></div
+                    ><div class="sr-stat"
+                      ><a
+                        href="https://github.com/heygen-com/hyperframes/forks"
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label="7,081 Forks"
+                        ><span class="sr-stat-n" aria-hidden="true">7.1<small>k</small></span
+                        ><span class="sr-stat-l" aria-hidden="true">Forks</span></a
+                      ></div
+                    ><div class="sr-stat"
+                      ><a
+                        href="https://github.com/heygen-com/hyperframes/graphs/contributors"
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label="121 Contributors"
+                        ><span class="sr-stat-n" aria-hidden="true">121</span
+                        ><span class="sr-stat-l" aria-hidden="true">Contributors</span></a
+                      ></div
+                    ></div
+                  ><!--/$--><div class="sr-repo-actions"
+                    ><button
+                      type="button"
+                      class="sr-cmd"
+                      aria-label="Copy install command: npx skills add heygen-com/hyperframes"
+                      ><code>npx skills add heygen-com/hyperframes</code
+                      ><span class="sr-ic"
+                        ><svg
+                          viewbox="0 0 16 16"
+                          fill="none"
+                          stroke="currentColor"
+                          stroke-width="1.4"
+                          aria-hidden="true"
+                        >
+                          <rect x="5.5" y="5.5" width="8" height="8" rx="2"></rect>
+                          <path
+                            d="M10.5 3.5v-.5a1.5 1.5 0 0 0-1.5-1.5H4A1.5 1.5 0 0 0 2.5 3v5A1.5 1.5 0 0 0 4 9.5h.5"
+                          ></path></svg></span
+                      ><span role="status" aria-live="polite" class="sr-only"></span></button
+                    ><a class="sr-docs" href="https://hyperframes.heygen.com/introduction">Docs</a
+                    ><a
+                      class="sr-pill sr-lg"
+                      href="https://github.com/heygen-com/hyperframes"
+                      target="_blank"
+                      rel="noreferrer"
+                      ><svg viewbox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path
+                          d="M12 2C6.48 2 2 6.58 2 12.23c0 4.52 2.87 8.35 6.84 9.7.5.1.68-.22.68-.49l-.01-1.7c-2.78.62-3.37-1.37-3.37-1.37-.46-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.62.07-.62 1 .07 1.53 1.06 1.53 1.06.9 1.56 2.35 1.11 2.92.85.09-.66.35-1.11.63-1.37-2.22-.26-4.55-1.14-4.55-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.4 9.4 0 0 1 12 6.98c.85 0 1.71.12 2.51.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.8-4.57 5.05.36.32.68.94.68 1.9l-.01 2.81c0 .27.18.6.69.49A10.1 10.1 0 0 0 22 12.23C22 6.58 17.52 2 12 2Z"
+                        ></path></svg
+                      >Star on GitHub</a
+                    ></div
+                  ></section
+                ></div
+              ></main
+            ></div
+          ><div class="hf-film"></div></div></div
+    ></div>
+    <script type="module" src="app.js"></script>
+  </body>
+</html>
