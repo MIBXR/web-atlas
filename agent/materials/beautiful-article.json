@@ -74,6 +74,12 @@
         "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/beautiful-article/manifest.json",
         "note": "固定提交声明版本为 0.1.0；技能兼容声明不作为逐宿主运行实测。",
         "evidence": "source"
+      },
+      {
+        "title": "作者 README 封面",
+        "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/covers/beautiful-article.webp",
+        "note": "素材卡使用作者发布的原图。",
+        "evidence": "source"
       }
     ],
     "snapshotPath": "demos/materials/beautiful-article/",
@@ -264,7 +270,7 @@
       "keyboard": "技能条目通过真实链接进入原文与 Reacticle 样例；创作文章时保留语义结构、可读目录，以及控件的键盘与焦点操作。",
       "reducedMotion": "本资源为工作流与文本快照，没有自动播放的演示；文章内自由图文层若带动效，需要在技术终审中检查移动端与可访问性。"
     },
-    "preview": "previews/materials/beautiful-article.png",
+    "preview": "previews/materials/beautiful-article.webp",
     "research": "docs/materials/beautiful-article.md",
     "sourceFiles": [
       "demos/materials/beautiful-article/SKILL.md",
@@ -743,7 +749,7 @@
       "role": "context"
     },
     {
-      "path": "previews/materials/beautiful-article.png",
+      "path": "previews/materials/beautiful-article.webp",
       "role": "preview"
     },
     {

@@ -1,0 +1,1158 @@
+{
+  "schemaVersion": 1,
+  "id": "animejs-site",
+  "entry": {
+    "id": "animejs-site",
+    "order": 77,
+    "title": "Anime.js · JavaScript 动画引擎官网",
+    "subtitle": "All-in-one animation engine.",
+    "category": "产品",
+    "country": "未确认",
+    "capturedAt": "2026-11-02",
+    "referenceUrl": "https://animejs.com/",
+    "implementation": "reference-study",
+    "edition": "Anime.js 4.5.0 · home.js?v=1787698626",
+    "demo": "demos/cases/animejs-site/index.html",
+    "preview": "previews/cases/animejs-site.jpg",
+    "previewMobile": "previews/cases/animejs-site-mobile.jpg",
+    "research": "docs/cases/animejs-site.md",
+    "fidelity": "demos/cases/animejs-site/fidelity.md",
+    "assetManifest": "demos/cases/animejs-site/assets-manifest.json",
+    "tags": [
+      "动画引擎",
+      "产品官网",
+      "仪表盘",
+      "滚动叙事",
+      "Three.js",
+      "Canvas",
+      "SVG",
+      "模块组装",
+      "响应式"
+    ],
+    "summary": "以彩环仪表盘建立动画引擎的视觉语汇，在八节全屏 API 演示中展示能力，再把真实三维模块展开、缩减与组装成轻量机芯，连接赞助名单与文档入口。",
+    "productFocus": "通过真实运行的动画、代码和模块体积展示网页动画引擎的能力与取用路径。",
+    "theme": "深色机芯与彩环承托首屏和演示，浅色工具箱及模块章节突出轮廓、标签与体积。",
+    "accent": "#ff4b4b",
+    "background": "#252423",
+    "principles": [
+      "用真实动画机制展示动画产品。",
+      "以同一机芯、颜色与环形几何连接首屏、工具箱和模块场景。",
+      "滚动位置统筹章节交接，局部动效各自维护播放生命周期。",
+      "代码、体积与官方文档同时提供可操作的取用入口。"
+    ],
+    "interaction": [
+      "首屏用 Three.js 模块机芯、CSS3D SVG 弧线与五层二维 Canvas 组成仪表盘；4000ms 开场代理驱动主时间线，标题于 INTRO_ON 1400 进入，说明比标题延后 500ms，循环交错曲线、点列与环形刻度共同运行。",
+      "页面通过一个线性主时间线连接 HEADING、TOOLBOX、FEATURES、MODULES、SPONSORS 与 GET_STARTED 标签；Scroll Observer 以 sync .9 跟随页面位置，八节 API 演示分别维护进入、离开与可同步的子时间线。",
+      "22 个原始 GLB 构成动画引擎机芯；滚动进入 modules 后按 MODULES_TRANSFORM 590、MODULES_SHRINK 1250、MODULES_ROTATION 1750、MODULES_CASE 1900 展开、缩减与组装模块，Bundle size 和标签数值随同一时间线改变。",
+      "Start animating 提供十二个带原始 SVG 箭头的文档入口，悬停箭头按原站 CSS 反馈；GET_STARTED 同时将三维场景沿 X 轴旋转至 100 度并向上退出，持续 4000ms。",
+      "手机与窄屏菜单使用 Draggable 横向滑入，打开为 500ms outElastic(.75, 1.25)，关闭为 250ms inOut(2.5)；菜单同步限制背景滚动。",
+      "Learn more 以 2500ms inOut(2) 滚动至三倍视口高度；安装命令与八段代码提供描线勾号的复制反馈。底部进度条可点击、悬停与拖拽，章节卡随当前区块交接。",
+      "Springs and draggable 圆形可拖拽，释放使用 stiffness 120、damping 6 的弹簧；悬停缩放至 1.15，抓取缩放 .8，释放恢复 1。",
+      "赞助按钮以 24 个 SVG 心形粒子的池响应指针与可视区，Funding goal、赞助标志和五十个头像采用取证日响应；订阅表单保留待提交、成功与错误状态。"
+    ],
+    "themeBehavior": {
+      "mode": "fixed",
+      "default": "dark",
+      "control": "深色首页与浅色工具箱、模块章节随滚动交接。",
+      "designReason": "深底承托发光彩环，浅底章节突出模型轮廓和体积标签。"
+    },
+    "soundBehavior": {
+      "kind": "none",
+      "control": "首页无声音控件。",
+      "interactionRole": "视觉与指针、滚动共同表达动画机制。"
+    },
+    "composition": {
+      "color": "原站红、橙、黄、绿、青、蓝环形色谱；深色 #252423 与浅色机芯章节交替。",
+      "typography": "DINish 可变字体组织大标题与正文，Berkeley Mono 用于代码、导航和读数，Digital-7 Mono Italic 用于数字。",
+      "layout": "长页以视口高度定义章节；工具箱与模块各跨四屏，八节特性各一屏，固定渲染层与原生文档流组合。",
+      "imagery": "22 个原始 GLB、原始 SVG 与真实赞助标志、头像；三维几何与五层 Canvas 共同组成仪表盘。",
+      "shape": "彩色同心弧、193 条刻度、13×13 点阵、机芯圆盘与透明叠层。",
+      "hierarchy": "产品主张、工具箱、八节 API、模块体积、赞助与开始使用依次推进。",
+      "motion": "主滚动时间线、局部循环、弹簧拖拽、SVG 描线、相机与模型变换以及着色器颜色同步。",
+      "coherence": "同一红色中心、彩环与机械结构在首屏、能力展示和体积叙事之间持续出现。"
+    },
+    "tokens": {
+      "palette": [
+        "#252423",
+        "#f6f4f2",
+        "#ff4b4b",
+        "#ff7d36",
+        "#ffa828",
+        "#ffcc2a",
+        "#b7ff54",
+        "#8dff55",
+        "#00ffaa",
+        "#26f2d5"
+      ],
+      "type": "原站 Berkeley Mono、DINish、Digital-7；字号与断点保留 assets/css/core.css 和 home.css。",
+      "layout": "900px、1200px 断点；400px 演示画布；主机芯透视相机 fov 40。",
+      "motion": "开场 4000ms；主滚动 sync .9；文本与演示交接 250ms；拖拽 stiffness 120 / damping 6。"
+    },
+    "useCases": [
+      "开发者工具产品官网",
+      "用真实交互说明 API 能力的长页",
+      "模块化产品的体积与组合叙事",
+      "将 Canvas、SVG 与三维结构协同的滚动展示"
+    ],
+    "avoid": [
+      "内容需要连续快速扫读的文档正文"
+    ],
+    "constraints": [
+      "首页采用 2026-11-02 的原始结构、CSS、字体、SVG、GLB 与赞助快照。",
+      "运行依赖固定 Anime.js 4.5.0、Three.js r172、postprocessing 6.36.6、highlight.js 11.11.1。",
+      "八节特性与滚动时间线按原始站点函数拆解；参数字节定位见 source/values.md。",
+      "系统配色与减少动态偏好沿用原站实际行为。"
+    ],
+    "sources": [
+      {
+        "title": "Anime.js 官网首页",
+        "url": "https://animejs.com/",
+        "type": "实例",
+        "note": "2026-11-02 的完整首页、内容、媒体、动效与交互。"
+      },
+      {
+        "title": "官网首页发布脚本",
+        "url": "https://animejs.com/assets/js/home.js?v=1787698626",
+        "type": "公开代码",
+        "note": "站点函数、主时间线、Canvas、GLSL 与 22 个模型的加载逻辑；原始分块随 source/upstream 保存。"
+      },
+      {
+        "title": "Anime.js v4.5.0 源码",
+        "url": "https://github.com/juliangarnier/anime/tree/2c9cf8ea00329f6768c7d7902252ed977d75ce42",
+        "type": "源码",
+        "note": "固定发行库及三维适配器。"
+      }
+    ],
+    "prompt": "读取本案例源码、研究、fidelity.md、source/values.md，并关联 animejs 素材。以原始 HTML、CSS、字体和 22 个 GLB 组成完整官网首页，保留彩环仪表盘开场、粘性工具箱、八节 API 演示、滚动驱动的模块展开与组装、赞助与十二个文档入口。主时间线、局部循环、SVG、Canvas、三维材质、相机、灯光、断点和交接参数从公开包的对应字节段取值。通过同视口、同时刻与同操作序列对照。",
+    "negativePrompt": "保持原始章节、内容、几何、颜色、交互与动态关系。",
+    "exercise": "在两个视口滚动至八节 API 演示，操作拖拽与进度条；比较模块展开、缩减、组装时体积标签的变化，再打开相应代码与文档入口。"
+  },
+  "patternIds": [
+    "anime-dial-hero",
+    "anime-pinned-feature-demos",
+    "anime-glb-module-assembly",
+    "anime-get-started-svg"
+  ],
+  "documents": [
+    {
+      "path": "docs/cases/animejs-site.md",
+      "role": "research",
+      "content": "# Anime.js · JavaScript 动画引擎官网\n\n## 来源与版本\n\n[官网首页](https://animejs.com/)的取证日期为 2026-11-02。原始发布入口与全部分块保存在 `demos/cases/animejs-site/source/upstream/`，固定库版本、来源与 source map 响应见 [source/README.md](../../demos/cases/animejs-site/source/README.md)。[打开独立 Demo](../../demos/cases/animejs-site/index.html)。\n\n## 页面结构\n\n| 区块 | 结构与职责 | 实现 |\n| --- | --- | --- |\n| 顶栏 | 标志、Docs、Easings、Learn、Examples、GitHub、Sponsor 与窄屏菜单；版本选择器在首页由原站 CSS 隐藏，保留三个官方文档地址 | `index.html`、`js/nav.js` |\n| intro | 产品标题、命令、Learn more、赞助标志与彩环仪表盘 | `js/intro.js`、`js/canvas.js`、`js/main.js` |\n| toolbox | 跨四屏的固定机芯、标签与连线 | `js/toolbox.js`、`js/stage.js` |\n| features-gallery | 八节各一屏、共用固定画面 | `js/features/` |\n| modules | 跨四屏的模块展开、体积缩减与组装 | `js/modules-scene.js` |\n| sponsors | 赞助名单与资金数据 | `js/sponsors.js`、`assets/sponsors/` |\n| get-started | 场景退出与十二个文档入口、SVG 箭头反馈 | `js/get-started.js`、`assets/css/core.css` |\n| 页脚与进度条 | 站点链接、订阅、复制代码、章节卡与可拖动进度 | `js/footer.js`、`js/copy-button.js`、`js/main.js` |\n\n## 八节演示\n\n| 节点 | API 与实际机制 | 参数 | 源码 |\n| --- | --- | --- | --- |\n| intuitive | 方块进入时弹簧放大，旋转循环随章节启停 | rotate 90；750ms；inOutExpo；离开 250ms out(3) | `js/features/intuitive.js` |\n| composition | 每个形状的 x、y、rotate、scale 独立递归刷新，退出取消活动动画 | 500–2000ms；80% 时长启动下一次；x/y/rotate ±90；scale .05–.4 | `js/features/composition.js` |\n| scroll | 球形 SVG 的路径描线与滚动同步，内部路径位置和线宽持续循环 | 2500ms；stagger 200；描线 stagger 40；inOut(3) | `js/features/scroll.js` |\n| staggering | 13×13 Canvas 网格以中心距离组织半径、位置与透明度 | stagger 200；起始 50；scale 1→15→1；750ms | `js/features/staggering.js` |\n| svgUtils | 小车沿真实路径运行，高亮描线与双层轨道旋转并行 | 小车、描线 10000ms；轨道 20000ms；进入 rotateX 45 | `js/features/svgUtils.js` |\n| draggable | 圆形拖拽、约束弹性、抓取与释放缩放 | stiffness 120、damping 6；containerFriction .5；悬停 1.15、抓取 .8 | `js/features/draggable.js` |\n| clockwork | 192 个有效刻度与最后一个交接刻度配合径向路径与播放头 | stagger 10；刻度 50ms；播放头 1920ms；径向 stagger 240 | `js/features/clockwork.js` |\n| responsive | 演示视口宽高互换，同时把圆点运动从纵向插值到横向 | width 80%→50%；height 50%→80%；750ms；stagger 100 | `js/features/responsive.js` |\n\n所有字串、数值、缓动与 CSS 声明的原包字节偏移见 [values.md](../../demos/cases/animejs-site/source/values.md)。\n\n## 三维模块场景\n\n22 个 GLB 从 `assets/models/` 加载，经 Draco 解码取得原始几何。`ModuleAssembly` 创建 animation、draggable、scroll、scope、timer、stagger、spring、svg、timeline、renderer、waapi、shield 等分组，内部继续运行齿轮旋转、弹簧、层叠、SVG 圆柱形变和时间线顶针。\n\n透视相机基础 fov 为 40，near 1、far 1000。场景由强度 2 的环境光和强度 1 的方向光照明。原始轮廓材质、轮廓后处理与 FXAA GLSL 位于 `js/shaders/`；postprocessing 使用 RenderPass、轮廓 ShaderPass 与 EffectPass 组合。\n\n模块时间线的四个关键位置为 `MODULES_TRANSFORM +=590`、`MODULES_SHRINK +=1250`、`MODULES_ROTATION +=1750`、`MODULES_CASE +=1900`。选定模块横移 ±2.5，随后旋转 ±90 度并缩小为零；条形体积、数字与标签同步收束，最后重新装壳。\n\n## 滚动驱动结构\n\n主时间线标签按 INTRO、HEADING、TOOLBOX、FEATURES、MODULES、SPONSORS、GET_STARTED 排列。页面区块实际高度映射到时间线标签区间，Scroll Observer 的同步系数为 .9。特性画廊使用独立的 `featuresTimeline`，每节在进入与离开时调用对应的 `onEnter`、`onLeave`，可同步的子时间线直接连接滚动进度。\n\n底部进度条将各章节实际高度映射到拖动位置，点击位置以 1/65 为步长吸附。固定章节在进入时启用指针并于 350ms 内显现；离开时关闭指针并淡出。工具箱与模块章节以 250ms inOutQuad 切换背景及着色器颜色。\n\n## 响应式\n\n源端作用域断点为 `minM: 900px`、`isM: 900–1199px`、`minL: 1200px`。桌面相机 z 为 120，手机为 180；主时间线按断点使用对应场景位置。手机标题换行、特性说明、工具标签与底部代码卡沿用原始 CSS 和 Scope 分支。首页沿用固定配色与滚动驱动的明暗章节，正常与减少动态系统偏好使用源端同一套动画逻辑。\n\n## 怎么改\n\n| 内容 | 修改位置 |\n| --- | --- |\n| 标题、正文、链接与文档目录 | `index.html` |\n| 颜色、字号、断点与布局 | `assets/css/core.css`、`assets/css/home.css` |\n| 仪表盘点阵、曲线、刻度与开场 | `js/canvas.js`、`js/intro.js`、`js/main.js` |\n| 单节 API 演示 | `js/features/<节 id>.js` |\n| 模型、模块分组与组装节拍 | `assets/models/`、`js/modules-scene.js` |\n| 相机、灯光与轮廓效果 | `js/stage.js`、`js/materials.js`、`js/post-processing.js`、`js/shaders/` |\n| 赞助名单与资金数据 | `assets/sponsors/`、`assets/avatars/`、`js/sponsors.js` |\n\n运行库与上游 36 个独立样例见 [Anime.js 素材](../materials/animejs.md)。来源与署名见 [LICENSES.md](../../demos/cases/animejs-site/LICENSES.md)，对照结论见 [fidelity.md](../../demos/cases/animejs-site/fidelity.md)。\n"
+    },
+    {
+      "path": "prompts/cases/animejs-site.md",
+      "role": "prompt",
+      "content": "# Anime.js · JavaScript 动画引擎官网 · 复用 Prompt\n\n由 [结构化案例](../../entries/cases/animejs-site.json) 自动生成。参考观察与具体边界见 [调研](../../docs/cases/animejs-site.md)。\n\n## 正向 Prompt\n\n读取本案例源码、研究、fidelity.md、source/values.md，并关联 animejs 素材。以原始 HTML、CSS、字体和 22 个 GLB 组成完整官网首页，保留彩环仪表盘开场、粘性工具箱、八节 API 演示、滚动驱动的模块展开与组装、赞助与十二个文档入口。主时间线、局部循环、SVG、Canvas、三维材质、相机、灯光、断点和交接参数从公开包的对应字节段取值。通过同视口、同时刻与同操作序列对照。\n\n## 负向约束\n\n保持原始章节、内容、几何、颜色、交互与动态关系。\n\n## 制作约束\n\n- 首页采用 2026-11-02 的原始结构、CSS、字体、SVG、GLB 与赞助快照。\n- 运行依赖固定 Anime.js 4.5.0、Three.js r172、postprocessing 6.36.6、highlight.js 11.11.1。\n- 八节特性与滚动时间线按原始站点函数拆解；参数字节定位见 source/values.md。\n- 系统配色与减少动态偏好沿用原站实际行为。\n\n## 检查方法\n\n在两个视口滚动至八节 API 演示，操作拖拽与进度条；比较模块展开、缩减、组装时体积标签的变化，再打开相应代码与文档入口。\n\n[查看 Demo](../../demos/cases/animejs-site/index.html) · [返回案例库](../../cases.html#style/animejs-site)\n"
+    },
+    {
+      "path": "demos/cases/animejs-site/fidelity.md",
+      "role": "fidelity",
+      "content": "# Anime.js 官网首页对照\n\n来源：https://animejs.com/ 。归档日期：2026-11-02。固定库版本和源码定位见 [source/README.md](source/README.md)。\n\n## 范围\n\n原始 HTML、两份 CSS、字体、SVG、模型、赞助标志与名单构成首页。站点代码按导航、仪表盘、八节 API 演示、模块场景、赞助与页脚分文件实现；数值定位见 [source/values.md](source/values.md)。赞助名单、资金数据与头像采用归档日快照。\n\n## 已接受差异\n\n运行页移除 gtag 和 Carbon 脚本。页脚广告位为空，保留[原站容器尺寸](source/values.md#carbon-容器布局)。\n\n## 对照条件\n\nEdge，DPR 1，1440×900 与 390×844。两个视口分别覆盖浅色与深色、正常与减少动态。\n\n## 对照结果\n\n8 组组合均加载全部 22 个 GLB。原站和本库各有 6 个 Canvas，480 组对齐的 Canvas 帧逐像素一致。两个视口各 68 条文案与链接一致。原站自身重复绘制时，页面边缘也有光栅波动。\n\n8195 条覆盖记录中，8194 条一致，1 条为页脚广告差异。模块最长 64 秒循环的动画时刻、位置、旋转与缩放一致。\n\n独立页面与站内预览使用 Web Atlas 共用的细滚动条。\n"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets-manifest.json",
+      "role": "asset-manifest",
+      "content": "{\n  \"assets\": [\n    {\n      \"file\": \"source/upstream/index.html\",\n      \"sourceUrl\": \"https://animejs.com/\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"原站原始 HTML、样式与发布脚本\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"source/upstream/assets/css/core.css\",\n      \"sourceUrl\": \"https://animejs.com/assets/css/core.css\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"原站原始 HTML、样式与发布脚本\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"source/upstream/assets/css/home.css\",\n      \"sourceUrl\": \"https://animejs.com/assets/css/home.css\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"原站原始 HTML、样式与发布脚本\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"source/upstream/assets/js/home.js\",\n      \"sourceUrl\": \"https://animejs.com/assets/js/home.js\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"原站原始 HTML、样式与发布脚本\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"source/upstream/assets/js/chunks/chunk-CKCSI7LY.js\",\n      \"sourceUrl\": \"https://animejs.com/assets/js/chunks/chunk-CKCSI7LY.js\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"原站发布分块快照\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"source/upstream/assets/js/chunks/chunk-CPVC3KGU.js\",\n      \"sourceUrl\": \"https://animejs.com/assets/js/chunks/chunk-CPVC3KGU.js\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"原站发布分块快照\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"source/upstream/assets/js/chunks/chunk-DCANE7XH.js\",\n      \"sourceUrl\": \"https://animejs.com/assets/js/chunks/chunk-DCANE7XH.js\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"原站发布分块快照\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"source/upstream/assets/js/chunks/chunk-FX45FQRC.js\",\n      \"sourceUrl\": \"https://animejs.com/assets/js/chunks/chunk-FX45FQRC.js\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"原站发布分块快照\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"source/upstream/assets/js/chunks/chunk-N6I4AEHZ.js\",\n      \"sourceUrl\": \"https://animejs.com/assets/js/chunks/chunk-N6I4AEHZ.js\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"原站发布分块快照\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"source/upstream/assets/js/chunks/chunk-WQVFBASJ.js\",\n      \"sourceUrl\": \"https://animejs.com/assets/js/chunks/chunk-WQVFBASJ.js\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"原站发布分块快照\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"source/upstream/assets/js/chunks/chunk-WXAKRBIO.js\",\n      \"sourceUrl\": \"https://animejs.com/assets/js/chunks/chunk-WXAKRBIO.js\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"原站发布分块快照\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"source/upstream/assets/js/chunks/debug-CBQ742GO.js\",\n      \"sourceUrl\": \"https://animejs.com/assets/js/chunks/debug-CBQ742GO.js\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"原站发布分块快照\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"fonts/BerkeleyMono-Italic.woff2\",\n      \"sourceUrl\": \"https://animejs.com/assets/fonts/BerkeleyMono-Italic.woff2\",\n      \"owner\": \"Neil Panchal / Berkeley Graphics\",\n      \"usage\": \"原站字体\",\n      \"license\": \"Proprietary and Non-transferrable.\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"fonts/BerkeleyMono-Regular.woff2\",\n      \"sourceUrl\": \"https://animejs.com/assets/fonts/BerkeleyMono-Regular.woff2\",\n      \"owner\": \"Neil Panchal / Berkeley Graphics\",\n      \"usage\": \"原站字体\",\n      \"license\": \"Proprietary and Non-transferrable.\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"fonts/Digital-7MonoItalic.woff2\",\n      \"sourceUrl\": \"https://animejs.com/assets/fonts/Digital-7MonoItalic.woff2\",\n      \"owner\": \"Sizenko Alexander / Created by Sizenko Alexander. \",\n      \"usage\": \"原站字体\",\n      \"license\": \"Freeware for personal use.\\r\\nFor commercial use please contuct us.\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"fonts/DINish[slnt,wdth,wght].woff2\",\n      \"sourceUrl\": \"https://animejs.com/assets/fonts/DINish[slnt,wdth,wght].woff2\",\n      \"owner\": \"Bert Driehuis / Playbeing\",\n      \"usage\": \"原站字体\",\n      \"license\": \"This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/models/module-animate-01.glb\",\n      \"sourceUrl\": \"https://animejs.com/assets/models/module-animate-01.glb\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"三维模型\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/models/module-draggable-01.glb\",\n      \"sourceUrl\": \"https://animejs.com/assets/models/module-draggable-01.glb\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"三维模型\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/models/module-draggable-02.glb\",\n      \"sourceUrl\": \"https://animejs.com/assets/models/module-draggable-02.glb\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"三维模型\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/models/module-easing-01.glb\",\n      \"sourceUrl\": \"https://animejs.com/assets/models/module-easing-01.glb\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"三维模型\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/models/module-engine-01.glb\",\n      \"sourceUrl\": \"https://animejs.com/assets/models/module-engine-01.glb\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"三维模型\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/models/module-renderer-01.glb\",\n      \"sourceUrl\": \"https://animejs.com/assets/models/module-renderer-01.glb\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"三维模型\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/models/module-scope-01.glb\",\n      \"sourceUrl\": \"https://animejs.com/assets/models/module-scope-01.glb\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"三维模型\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/models/module-scroll-01.glb\",\n      \"sourceUrl\": \"https://animejs.com/assets/models/module-scroll-01.glb\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"三维模型\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/models/module-shield-01.glb\",\n      \"sourceUrl\": \"https://animejs.com/assets/models/module-shield-01.glb\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"三维模型\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/models/module-shield-02.glb\",\n      \"sourceUrl\": \"https://animejs.com/assets/models/module-shield-02.glb\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"三维模型\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/models/module-spring-01.glb\",\n      \"sourceUrl\": \"https://animejs.com/assets/models/module-spring-01.glb\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"三维模型\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/models/module-stagger-01.glb\",\n      \"sourceUrl\": \"https://animejs.com/assets/models/module-stagger-01.glb\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"三维模型\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/models/module-stagger-02.glb\",\n      \"sourceUrl\": \"https://animejs.com/assets/models/module-stagger-02.glb\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"三维模型\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/models/module-svg-01.glb\",\n      \"sourceUrl\": \"https://animejs.com/assets/models/module-svg-01.glb\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"三维模型\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/models/module-timeline-01.glb\",\n      \"sourceUrl\": \"https://animejs.com/assets/models/module-timeline-01.glb\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"三维模型\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/models/module-timeline-02.glb\",\n      \"sourceUrl\": \"https://animejs.com/assets/models/module-timeline-02.glb\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"三维模型\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/models/module-timer-01.glb\",\n      \"sourceUrl\": \"https://animejs.com/assets/models/module-timer-01.glb\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"三维模型\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/models/module-timer-02.glb\",\n      \"sourceUrl\": \"https://animejs.com/assets/models/module-timer-02.glb\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"三维模型\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/models/module-timer-03.glb\",\n      \"sourceUrl\": \"https://animejs.com/assets/models/module-timer-03.glb\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"三维模型\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/models/module-timer-04.glb\",\n      \"sourceUrl\": \"https://animejs.com/assets/models/module-timer-04.glb\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"三维模型\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/models/module-timer-05.glb\",\n      \"sourceUrl\": \"https://animejs.com/assets/models/module-timer-05.glb\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"三维模型\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/models/module-waapi-01.glb\",\n      \"sourceUrl\": \"https://animejs.com/assets/models/module-waapi-01.glb\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"三维模型\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/images/anime-js-logo-v4.svg\",\n      \"sourceUrl\": \"https://animejs.com/assets/images/anime-js-logo-v4.svg\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"原站图像与标志\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/images/favicon.png\",\n      \"sourceUrl\": \"https://animejs.com/assets/images/favicon.png\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"原站图像与标志\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/draco/draco_decoder.wasm\",\n      \"sourceUrl\": \"https://animejs.com/assets/draco/draco_decoder.wasm\",\n      \"owner\": \"Google Draco authors\",\n      \"usage\": \"Draco 解码运行文件\",\n      \"license\": \"Apache-2.0\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/draco/draco_wasm_wrapper.js\",\n      \"sourceUrl\": \"https://animejs.com/assets/draco/draco_wasm_wrapper.js\",\n      \"owner\": \"Google Draco authors\",\n      \"usage\": \"Draco 解码运行文件\",\n      \"license\": \"Apache-2.0\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/media/pages/sponsors/platinum-sponsors/ef1c9c6c85-1787698629/sponsor-placeholder.svg\",\n      \"sourceUrl\": \"https://animejs.com/media/pages/sponsors/platinum-sponsors/ef1c9c6c85-1787698629/sponsor-placeholder.svg\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"原站赞助标志\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/4730431.png\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/4730431?u=810f2f1b1e34cf036d1f43380dcadc4d64b0b2de&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/1908341.png\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/1908341?v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/30808859.png\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/30808859?u=a7a495be11f99ca9b492c88f647760cbfb7a687b&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/7033186.png\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/7033186?v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/16178877.jpg\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/16178877?u=739b6e357c3c58a0bf10f929bc0a2580e849daa1&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/213351.png\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/213351?v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/2091293.jpg\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/2091293?u=6e51eb1a83632573fd481be390949b0880dd66fe&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/123018012.png\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/123018012?v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/1255528.jpg\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/1255528?u=03abccfc54f1c49b1317cce0528632b573722684&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/7850794.jpg\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/7850794?u=c7a82c242c85e58c8ceeac958e7f9ad774f2147b&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/7050547.jpg\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/7050547?u=50b846f10e206481e93656b73f9eb11088499c56&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/7118754.png\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/7118754?u=2fdcdec87990222f732dd517f0cfd35afc4194cc&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/4593699.jpg\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/4593699?v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/456538.png\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/456538?u=ace3c7cc31bd8b8d7e0df844061a9d3401f92ecb&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/217863722.png\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/217863722?v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/52384531.jpg\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/52384531?v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/140085084.png\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/140085084?v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/14859935.jpg\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/14859935?u=915c2e3e2ff24d493818d4230974ea288ee80a40&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/24833827.png\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/24833827?u=23434967a0a3af479a377aa54f6ca9306ce36355&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/78906517.jpg\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/78906517?u=924a27cbee3db7e0ece5cc1509921402e1445e74&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/21299126.png\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/21299126?u=2d1bbde99e3e5c845faf50f4da1ad120b88bcf4d&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/107817481.jpg\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/107817481?u=cfb66d78c84e423f4a0c950473f1a98e8be44fc6&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/15028082.png\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/15028082?v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/171258970.png\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/171258970?v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/203968980.png\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/203968980?u=69ae5d7a543e6d070a4c885edce191288d8a5b8b&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/20308945.png\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/20308945?u=f38b5218c48a8c4062d317450bb404cc9b361ee6&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/374134.png\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/374134?v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/335118.png\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/335118?v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/47975771.png\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/47975771?u=6dc0328cb90cd8b70a428e431ba28368a361e691&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/1682225.jpg\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/1682225?u=aed3340b6f3c3a85abcb0370e854cb8ffb6ecf1e&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/4266359.jpg\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/4266359?u=baee5a32c570af66b8a554df33701e11dea8a5fc&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/1121725.png\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/1121725?v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/8617673.jpg\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/8617673?u=770d2e1cb0cf72212f3f425e178f2e2068a2f893&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/24498666.jpg\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/24498666?v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/1492806.jpg\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/1492806?u=6edbac420bab75f3692e0ddec4431cfb5434b748&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/15368010.jpg\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/15368010?u=d27a3d5bc457e9e1c48a8bd9e501cafe01b8daec&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/579887.png\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/579887?u=16c3e4c14be7e3700b04f91ea9003d6d9b4c65df&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/14097554.png\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/14097554?u=f823ef7666925188e5ebec12ede0582b0f471dfd&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/3381818.jpg\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/3381818?u=3a2f9f9d3fffbaaebc3c56b863b4ca2aae508510&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/40425150.png\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/40425150?v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/13168561.jpg\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/13168561?u=0c8ae2cf90de781073693984fe03d6f0396919b7&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/6699959.png\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/6699959?u=bd2dde1f6570f2024c07aea866c2fec6042c55a5&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/8131304.jpg\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/8131304?v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/56684844.jpg\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/56684844?u=15591a4cd624676b8534311a31a897503d0d3aab&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/95952866.png\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/95952866?u=f4a0773cc5205cc4b531bdd87039b9e6a42f31d2&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/38730517.png\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/38730517?u=305b8b15a7cd43488d594f3ce28b4ef2951217b5&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/84647728.png\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/84647728?u=0da38d40520d88563af56c87f2c0ba7fbb8080c1&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/123049964.png\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/123049964?v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/8601493.png\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/8601493?u=4ee62b87479fbfb7ea8b5e20ed910c3824b1c310&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/1351436.jpg\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/1351436?u=eaf9fdf001221636b78b574f9c4e115b592f5a48&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/9310.jpg\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/9310?u=179151b7c0e01aa08598bfc041508a83998c759e&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/171592363.png\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/171592363?u=080d9ba6069d0ff2a0558825ff2f667c45807687&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/109645758.jpg\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/109645758?u=1381cce110221c5541e7f3084d03539ae579d31c&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/4291354.jpg\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/4291354?u=d62b6917e998cb98640c1b6d0c102c656b2ada17&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/5545171.jpg\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/5545171?u=ba1b5f5376949d6ab5a451c1587de028768904b1&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/412352.jpg\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/412352?u=aae5e2d4f1a518805529da191830c3c5fa1db5fe&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/11381341.png\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/11381341?v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/1417323.png\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/1417323?u=12876f6373e65427454a3616b219e1d3f3c78a8e&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/22761713.png\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/22761713?v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/avatars/16688047.jpg\",\n      \"sourceUrl\": \"https://avatars.githubusercontent.com/u/16688047?u=37490b86ccfb7a60b3dfdea411ee196ece08d456&v=4\",\n      \"owner\": \"对应 GitHub 用户\",\n      \"usage\": \"取证当日 GitHub Sponsors 头像\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/sponsors/github-sponsors\",\n      \"sourceUrl\": \"https://animejs.com/sponsors/github-sponsors\",\n      \"owner\": \"Julian Garnier / Anime.js 与对应赞助者\",\n      \"usage\": \"2026-11-02 冻结的赞助名单与资金数据\",\n      \"license\": \"原站品牌与赞助者内容权利\",\n      \"transformation\": \"图片地址本地化\"\n    },\n    {\n      \"file\": \"assets/sponsors/platinum-sponsors\",\n      \"sourceUrl\": \"https://animejs.com/sponsors/platinum-sponsors\",\n      \"owner\": \"Julian Garnier / Anime.js 与对应赞助者\",\n      \"usage\": \"2026-11-02 冻结的赞助名单与资金数据\",\n      \"license\": \"原站品牌与赞助者内容权利\",\n      \"transformation\": \"图片地址本地化\"\n    },\n    {\n      \"file\": \"assets/sponsors/silver-sponsors\",\n      \"sourceUrl\": \"https://animejs.com/sponsors/silver-sponsors\",\n      \"owner\": \"Julian Garnier / Anime.js 与对应赞助者\",\n      \"usage\": \"2026-11-02 冻结的赞助名单与资金数据\",\n      \"license\": \"原站品牌与赞助者内容权利\",\n      \"transformation\": \"图片地址本地化\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/index.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/index.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/adapters/three/index.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/adapters/three/index.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/LICENSE.md\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/LICENSE.md\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/timer/timer.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/timer/timer.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/animation/animation.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/animation/animation.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/timeline/timeline.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/timeline/timeline.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/animatable/animatable.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/animatable/animatable.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/draggable/draggable.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/draggable/draggable.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/scope/scope.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/scope/scope.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/events/scroll.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/events/scroll.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/engine/engine.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/engine/engine.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/easings/index.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/easings/index.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/layout/layout.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/layout/layout.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/utils/index.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/utils/index.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/svg/index.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/svg/index.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/text/index.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/text/index.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/waapi/waapi.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/waapi/waapi.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/core/globals.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/core/globals.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/easings/cubic-bezier/index.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/easings/cubic-bezier/index.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/easings/steps/index.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/easings/steps/index.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/easings/linear/index.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/easings/linear/index.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/easings/irregular/index.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/easings/irregular/index.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/easings/spring/index.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/easings/spring/index.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/easings/eases/parser.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/easings/eases/parser.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/core/helpers.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/core/helpers.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/utils/chainable.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/utils/chainable.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/utils/random.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/utils/random.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/utils/time.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/utils/time.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/core/styles.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/core/styles.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/core/targets.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/core/targets.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/utils/target.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/utils/target.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/utils/stagger.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/utils/stagger.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/svg/motionpath.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/svg/motionpath.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/svg/drawable.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/svg/drawable.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/svg/morphto.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/svg/morphto.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/text/split.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/text/split.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/text/scramble.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/text/scramble.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/adapters/three/adapter.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/adapters/three/adapter.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/adapters/three/resolvers.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/adapters/three/resolvers.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/adapters/three/uniform.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/adapters/three/uniform.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/adapters/three/object3d.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/adapters/three/object3d.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/adapters/three/instance.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/adapters/three/instance.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/core/consts.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/core/consts.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/core/values.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/core/values.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/core/render.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/core/render.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/animation/composition.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/animation/composition.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/core/clock.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/core/clock.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/adapters/registry.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/adapters/registry.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/core/units.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/core/units.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/animation/additive.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/animation/additive.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/timeline/position.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/timeline/position.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/utils/number.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/utils/number.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/easings/none.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/easings/none.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/waapi/composition.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/waapi/composition.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/scope/index.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/scope/index.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/core/transforms.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/core/transforms.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/svg/helpers.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/svg/helpers.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/adapters/three/helpers.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/adapters/three/helpers.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/animejs@4.5.0/dist/modules/core/colors.js\",\n      \"sourceUrl\": \"https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/dist/modules/core/colors.js\",\n      \"owner\": \"Julian Garnier\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/three@0.172.0/build/three.module.js\",\n      \"sourceUrl\": \"https://unpkg.com/three@0.172.0/build/three.module.js\",\n      \"owner\": \"Three.js authors\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/three@0.172.0/examples/jsm/renderers/CSS3DRenderer.js\",\n      \"sourceUrl\": \"https://unpkg.com/three@0.172.0/examples/jsm/renderers/CSS3DRenderer.js\",\n      \"owner\": \"Three.js authors\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/three@0.172.0/examples/jsm/renderers/CSS2DRenderer.js\",\n      \"sourceUrl\": \"https://unpkg.com/three@0.172.0/examples/jsm/renderers/CSS2DRenderer.js\",\n      \"owner\": \"Three.js authors\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/three@0.172.0/examples/jsm/loaders/GLTFLoader.js\",\n      \"sourceUrl\": \"https://unpkg.com/three@0.172.0/examples/jsm/loaders/GLTFLoader.js\",\n      \"owner\": \"Three.js authors\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/three@0.172.0/examples/jsm/loaders/DRACOLoader.js\",\n      \"sourceUrl\": \"https://unpkg.com/three@0.172.0/examples/jsm/loaders/DRACOLoader.js\",\n      \"owner\": \"Three.js authors\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/three@0.172.0/LICENSE\",\n      \"sourceUrl\": \"https://unpkg.com/three@0.172.0/LICENSE\",\n      \"owner\": \"Three.js authors\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/three@0.172.0/build/three.core.js\",\n      \"sourceUrl\": \"https://unpkg.com/three@0.172.0/build/three.core.js\",\n      \"owner\": \"Three.js authors\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/three@0.172.0/examples/jsm/utils/BufferGeometryUtils.js\",\n      \"sourceUrl\": \"https://unpkg.com/three@0.172.0/examples/jsm/utils/BufferGeometryUtils.js\",\n      \"owner\": \"Three.js authors\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"MIT\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/postprocessing@6.36.6/build/index.js\",\n      \"sourceUrl\": \"https://unpkg.com/postprocessing@6.36.6/build/index.js\",\n      \"owner\": \"Raoul van Rüschen\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"Zlib\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/postprocessing@6.36.6/LICENSE.md\",\n      \"sourceUrl\": \"https://unpkg.com/postprocessing@6.36.6/LICENSE.md\",\n      \"owner\": \"Raoul van Rüschen\",\n      \"usage\": \"固定版本运行依赖\",\n      \"license\": \"Zlib\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/highlight.js@11.11.1/es/core.min.js\",\n      \"sourceUrl\": \"https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/core.min.js\",\n      \"owner\": \"highlight.js authors\",\n      \"usage\": \"代码高亮\",\n      \"license\": \"BSD-3-Clause\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/highlight.js@11.11.1/es/languages/javascript.min.js\",\n      \"sourceUrl\": \"https://unpkg.com/@highlightjs/cdn-assets@11.11.1/es/languages/javascript.min.js\",\n      \"owner\": \"highlight.js authors\",\n      \"usage\": \"代码高亮\",\n      \"license\": \"BSD-3-Clause\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"vendor/highlight.js@11.11.1/LICENSE\",\n      \"sourceUrl\": \"https://unpkg.com/@highlightjs/cdn-assets@11.11.1/LICENSE\",\n      \"owner\": \"highlight.js authors\",\n      \"usage\": \"代码高亮\",\n      \"license\": \"BSD-3-Clause\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/images/icons/drop-down.svg\",\n      \"sourceUrl\": \"https://animejs.com/assets/images/icons/drop-down.svg\",\n      \"owner\": \"Julian Garnier / Anime.js\",\n      \"usage\": \"版本选择器的 SVG 图标\",\n      \"license\": \"原站品牌与素材权利\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/draco/LICENSE\",\n      \"sourceUrl\": \"https://github.com/google/draco/blob/1.5.7/LICENSE\",\n      \"owner\": \"Google Draco authors\",\n      \"usage\": \"Draco 解码器的许可原文\",\n      \"license\": \"Apache-2.0\",\n      \"transformation\": \"保留原字节\"\n    },\n    {\n      \"file\": \"assets/media/pages/sponsors/silver-sponsors/49214d1e15-1787698629/testmu-ai-logomark.svg\",\n      \"sourceUrl\": \"https://animejs.com/media/pages/sponsors/silver-sponsors/49214d1e15-1787698629/testmu-ai-logomark.svg\",\n      \"owner\": \"TestMu AI\",\n      \"usage\": \"银牌赞助者标志\",\n      \"license\": \"TestMu AI 品牌素材权利\",\n      \"transformation\": \"原始 SVG，本地相对地址\"\n    }\n  ]\n}\n"
+    },
+    {
+      "path": "demos/cases/animejs-site/LICENSES.md",
+      "role": "license",
+      "content": "# 来源、许可与署名\n\n| 内容 | 作者与来源 | 许可与归属 |\n| --- | --- | --- |\n| Anime.js 4.5.0 运行库 | Julian Garnier，juliangarnier/anime，2c9cf8ea00329f6768c7d7902252ed977d75ce42 | [MIT 原文](vendor/animejs@4.5.0/LICENSE.md) |\n| Three.js r172 与 CSS / GLTF / Draco 加载器 | Three.js authors | [MIT 原文](vendor/three@0.172.0/LICENSE) |\n| postprocessing 6.36.6 | Raoul van Rüschen | [Zlib 原文](vendor/postprocessing@6.36.6/LICENSE.md) |\n| highlight.js 11.11.1 | highlight.js authors | [BSD-3-Clause 原文](vendor/highlight.js@11.11.1/LICENSE) |\n| 官网 HTML、CSS、站点机制、GLSL、品牌、SVG、22 个 GLB 与文案 | [Anime.js 官网](https://animejs.com/)，Julian Garnier | 原站作者与品牌权利；本案例用于个人学习与非商业参考 |\n| Berkeley Mono Regular / Italic | Neil Panchal / Berkeley Graphics LLC，原站 `assets/fonts/` | 保留字体内嵌许可、版权与作者信息 |\n| DINish | Bert Driehuis / Playbeing / The DINish Project Authors，原站 `assets/fonts/` | 保留字体内嵌许可与署名；项目来源 https://github.com/playbeing/dinish |\n| Digital-7 Mono Italic | Sizenko Alexander / Style-7，原站 `assets/fonts/` | 保留字体内嵌版权与作者信息 |\n| 赞助者标志与 GitHub 头像 | Anime.js 赞助名单与对应 GitHub 用户 | 对应品牌与用户内容权利；取证日期 2026-11-02 |\n| TestMu AI 银牌赞助标志 | [TestMu AI](https://www.testmuai.com/)，原站银牌赞助素材 | TestMu AI 品牌素材权利 |\n| Draco 解码器 | [Google Draco](https://github.com/google/draco)，原站 `assets/draco/` | [Apache-2.0 原文](assets/draco/LICENSE)；保留 wrapper 中的原始许可声明 |\n\n逐文件来源、用途和处理方式见 [assets-manifest.json](assets-manifest.json)。\n"
+    }
+  ],
+  "files": [
+    {
+      "path": "asset-cache-worker.js",
+      "role": "source"
+    },
+    {
+      "path": "data/asset-sources.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/.gitignore",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/LICENSES.md",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets-manifest.json",
+      "role": "context"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/107817481.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/109645758.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/1121725.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/11381341.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/123018012.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/123049964.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/1255528.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/13168561.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/1351436.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/140085084.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/14097554.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/1417323.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/14859935.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/1492806.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/15028082.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/15368010.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/16178877.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/16688047.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/1682225.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/171258970.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/171592363.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/1908341.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/20308945.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/203968980.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/2091293.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/21299126.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/213351.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/217863722.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/22761713.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/24498666.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/24833827.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/30808859.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/335118.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/3381818.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/374134.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/38730517.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/40425150.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/412352.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/4266359.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/4291354.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/456538.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/4593699.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/4730431.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/47975771.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/52384531.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/5545171.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/56684844.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/579887.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/6699959.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/7033186.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/7050547.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/7118754.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/7850794.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/78906517.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/8131304.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/84647728.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/8601493.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/8617673.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/9310.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/95952866.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/css/core.css",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/css/home.css",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/draco/LICENSE",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/draco/draco_decoder.wasm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/draco/draco_wasm_wrapper.js",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/images/anime-js-logo-v4.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/images/favicon.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/images/icons/drop-down.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/media/pages/sponsors/platinum-sponsors/ef1c9c6c85-1787698629/sponsor-placeholder.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/media/pages/sponsors/silver-sponsors/49214d1e15-1787698629/testmu-ai-logomark.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-animate-01.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-draggable-01.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-draggable-02.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-easing-01.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-engine-01.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-renderer-01.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-scope-01.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-scroll-01.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-shield-01.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-shield-02.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-spring-01.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-stagger-01.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-stagger-02.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-svg-01.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-timeline-01.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-timeline-02.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-timer-01.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-timer-02.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-timer-03.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-timer-04.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-timer-05.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-waapi-01.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/sponsors/github-sponsors",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/sponsors/platinum-sponsors",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/sponsors/silver-sponsors",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/fidelity.md",
+      "role": "context"
+    },
+    {
+      "path": "demos/cases/animejs-site/fonts/BerkeleyMono-Italic.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/animejs-site/fonts/BerkeleyMono-Regular.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/animejs-site/fonts/DINish[slnt,wdth,wght].woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/animejs-site/fonts/Digital-7MonoItalic.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/animejs-site/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/canvas.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/copy-button.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/features/clockwork.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/features/composition.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/features/demo.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/features/draggable.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/features/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/features/intuitive.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/features/responsive.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/features/scroll.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/features/staggering.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/features/svgUtils.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/footer.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/get-started.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/intro.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/main.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/materials.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/modules-scene.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/nav.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/post-processing.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/settings.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/shaders/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/shaders/materialsShader1.glsl",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/shaders/materialsShader2.glsl",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/shaders/materialsShader3.glsl",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/shaders/materialsShader4.glsl",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/shaders/materialsShader5.glsl",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/shaders/materialsShader6.glsl",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/shaders/materialsShader7.glsl",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/sponsors.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/stage.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/toolbox.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/source/README.md",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/animejs-site/source/upstream/assets/css/core.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/animejs-site/source/upstream/assets/css/home.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/animejs-site/source/upstream/assets/js/chunks/chunk-CKCSI7LY.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/animejs-site/source/upstream/assets/js/chunks/chunk-CPVC3KGU.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/animejs-site/source/upstream/assets/js/chunks/chunk-DCANE7XH.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/animejs-site/source/upstream/assets/js/chunks/chunk-FX45FQRC.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/animejs-site/source/upstream/assets/js/chunks/chunk-N6I4AEHZ.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/animejs-site/source/upstream/assets/js/chunks/chunk-WQVFBASJ.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/animejs-site/source/upstream/assets/js/chunks/chunk-WXAKRBIO.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/animejs-site/source/upstream/assets/js/chunks/debug-CBQ742GO.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/animejs-site/source/upstream/assets/js/home.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/animejs-site/source/upstream/index.html",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/animejs-site/source/values.md",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/LICENSE.md",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/adapters/registry.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/adapters/three/adapter.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/adapters/three/helpers.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/adapters/three/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/adapters/three/instance.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/adapters/three/object3d.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/adapters/three/resolvers.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/adapters/three/uniform.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/animatable/animatable.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/animation/additive.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/animation/animation.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/animation/composition.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/core/clock.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/core/colors.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/core/consts.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/core/globals.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/core/helpers.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/core/render.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/core/styles.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/core/targets.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/core/transforms.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/core/units.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/core/values.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/draggable/draggable.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/easings/cubic-bezier/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/easings/eases/parser.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/easings/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/easings/irregular/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/easings/linear/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/easings/none.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/easings/spring/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/easings/steps/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/engine/engine.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/events/scroll.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/layout/layout.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/scope/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/scope/scope.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/svg/drawable.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/svg/helpers.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/svg/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/svg/morphto.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/svg/motionpath.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/text/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/text/scramble.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/text/split.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/timeline/position.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/timeline/timeline.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/timer/timer.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/utils/chainable.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/utils/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/utils/number.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/utils/random.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/utils/stagger.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/utils/target.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/utils/time.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/waapi/composition.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/waapi/waapi.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/highlight.js@11.11.1/LICENSE",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/highlight.js@11.11.1/es/core.min.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/highlight.js@11.11.1/es/languages/javascript.min.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/postprocessing@6.36.6/LICENSE.md",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/postprocessing@6.36.6/build/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/three@0.172.0/LICENSE",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/three@0.172.0/build/three.core.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/three@0.172.0/build/three.module.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/three@0.172.0/examples/jsm/loaders/DRACOLoader.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/three@0.172.0/examples/jsm/loaders/GLTFLoader.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/three@0.172.0/examples/jsm/renderers/CSS2DRenderer.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/three@0.172.0/examples/jsm/renderers/CSS3DRenderer.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/three@0.172.0/examples/jsm/utils/BufferGeometryUtils.js",
+      "role": "vendor"
+    },
+    {
+      "path": "docs.html",
+      "role": "source"
+    },
+    {
+      "path": "docs/cases/animejs-site.md",
+      "role": "context"
+    },
+    {
+      "path": "entries/cases/animejs-site.json",
+      "role": "context"
+    },
+    {
+      "path": "previews/cases/animejs-site-mobile.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/cases/animejs-site.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "prompts/cases/animejs-site.md",
+      "role": "context"
+    },
+    {
+      "path": "site/icons/favicon.svg",
+      "role": "asset"
+    },
+    {
+      "path": "site/pages/docs/docs.css",
+      "role": "source"
+    },
+    {
+      "path": "site/pages/docs/docs.js",
+      "role": "source"
+    },
+    {
+      "path": "site/runtime/asset-cache.js",
+      "role": "source"
+    },
+    {
+      "path": "site/runtime/asset-runtime.js",
+      "role": "source"
+    },
+    {
+      "path": "site/runtime/case-loading.css",
+      "role": "source"
+    },
+    {
+      "path": "site/runtime/case-loading.js",
+      "role": "source"
+    },
+    {
+      "path": "site/runtime/demo-scrollbars.css",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/site-footer.css",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/site-nav.css",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/site-shell.js",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/site-typography.css",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/theme-control.css",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/theme.js",
+      "role": "source"
+    },
+    {
+      "path": "site/vendor/LICENSES.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/vendor/marked.umd.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/vendor/purify.min.js",
+      "role": "vendor"
+    }
+  ],
+  "webNotes": {
+    "format": "text/html",
+    "renderer": "site/pages/cases/atlas.js",
+    "content": "<section><h2>从要素看风格</h2><p>下方映射展示各个元素如何共同表达主题。实验室可交互调配，案例Demo保留自己的构成与交互。</p><a class=\"element-lab-link\" href=\"lab.html?style=animejs-site\">调配这个风格的设计要素</a><dl class=\"element-map\"><div class=\"\"><dt>配色角色</dt><dd>原站红、橙、黄、绿、青、蓝环形色谱；深色 #252423 与浅色机芯章节交替。</dd></div><div class=\"\"><dt>字体排版</dt><dd>DINish 可变字体组织大标题与正文，Berkeley Mono 用于代码、导航和读数，Digital-7 Mono Italic 用于数字。</dd></div><div class=\"\"><dt>布局留白</dt><dd>长页以视口高度定义章节；工具箱与模块各跨四屏，八节特性各一屏，固定渲染层与原生文档流组合。</dd></div><div class=\"\"><dt>图像图标</dt><dd>22 个原始 GLB、原始 SVG 与真实赞助标志、头像；三维几何与五层 Canvas 共同组成仪表盘。</dd></div><div class=\"\"><dt>线条形状</dt><dd>彩色同心弧、193 条刻度、13×13 点阵、机芯圆盘与透明叠层。</dd></div><div class=\"\"><dt>信息层级</dt><dd>产品主张、工具箱、八节 API、模块体积、赞助与开始使用依次推进。</dd></div><div class=\"\"><dt>动效反馈</dt><dd>主滚动时间线、局部循环、弹簧拖拽、SVG 描线、相机与模型变换以及着色器颜色同步。</dd></div><div class=\"coherence\"><dt>协调逻辑</dt><dd>同一红色中心、彩环与机械结构在首屏、能力展示和体积叙事之间持续出现。</dd></div></dl></section><section><h2>01 / 设计机制</h2><ul><li>用真实动画机制展示动画产品。</li><li>以同一机芯、颜色与环形几何连接首屏、工具箱和模块场景。</li><li>滚动位置统筹章节交接，局部动效各自维护播放生命周期。</li><li>代码、体积与官方文档同时提供可操作的取用入口。</li></ul><h3>怎样凸显产品重点</h3><p>通过真实运行的动画、代码和模块体积展示网页动画引擎的能力与取用路径。</p><h3>主题与情绪</h3><p>深色机芯与彩环承托首屏和演示，浅色工具箱及模块章节突出轮廓、标签与体积。</p></section><section><h2>02 / 交互巧思</h2><ul><li>首屏用 Three.js 模块机芯、CSS3D SVG 弧线与五层二维 Canvas 组成仪表盘；4000ms 开场代理驱动主时间线，标题于 INTRO_ON 1400 进入，说明比标题延后 500ms，循环交错曲线、点列与环形刻度共同运行。</li><li>页面通过一个线性主时间线连接 HEADING、TOOLBOX、FEATURES、MODULES、SPONSORS 与 GET_STARTED 标签；Scroll Observer 以 sync .9 跟随页面位置，八节 API 演示分别维护进入、离开与可同步的子时间线。</li><li>22 个原始 GLB 构成动画引擎机芯；滚动进入 modules 后按 MODULES_TRANSFORM 590、MODULES_SHRINK 1250、MODULES_ROTATION 1750、MODULES_CASE 1900 展开、缩减与组装模块，Bundle size 和标签数值随同一时间线改变。</li><li>Start animating 提供十二个带原始 SVG 箭头的文档入口，悬停箭头按原站 CSS 反馈；GET_STARTED 同时将三维场景沿 X 轴旋转至 100 度并向上退出，持续 4000ms。</li><li>手机与窄屏菜单使用 Draggable 横向滑入，打开为 500ms outElastic(.75, 1.25)，关闭为 250ms inOut(2.5)；菜单同步限制背景滚动。</li><li>Learn more 以 2500ms inOut(2) 滚动至三倍视口高度；安装命令与八段代码提供描线勾号的复制反馈。底部进度条可点击、悬停与拖拽，章节卡随当前区块交接。</li><li>Springs and draggable 圆形可拖拽，释放使用 stiffness 120、damping 6 的弹簧；悬停缩放至 1.15，抓取缩放 .8，释放恢复 1。</li><li>赞助按钮以 24 个 SVG 心形粒子的池响应指针与可视区，Funding goal、赞助标志和五十个头像采用取证日响应；订阅表单保留待提交、成功与错误状态。</li></ul><div class=\"behavior-block\"><span class=\"behavior-label\">显示主题</span><h3>固定主题</h3><p>深色首页与浅色工具箱、模块章节随滚动交接。</p><p>深底承托发光彩环，浅底章节突出模型轮廓和体积标签。</p></div><div class=\"behavior-block\"><span class=\"behavior-label\">声音与交互</span><h3>无网站配乐</h3><p>首页无声音控件。</p><p>视觉与指针、滚动共同表达动画机制。</p></div></section><section><h2>03 / 约束与适用场景</h2><ul><li>首页采用 2026-11-02 的原始结构、CSS、字体、SVG、GLB 与赞助快照。</li><li>运行依赖固定 Anime.js 4.5.0、Three.js r172、postprocessing 6.36.6、highlight.js 11.11.1。</li><li>八节特性与滚动时间线按原始站点函数拆解；参数字节定位见 source/values.md。</li><li>系统配色与减少动态偏好沿用原站实际行为。</li></ul><h3>适合</h3><p>开发者工具产品官网 / 用真实交互说明 API 能力的长页 / 模块化产品的体积与组合叙事 / 将 Canvas、SVG 与三维结构协同的滚动展示</p><h3>谨慎使用</h3><p>内容需要连续快速扫读的文档正文</p></section><section><h2>04 / 设计 Tokens</h2><div class=\"swatches\"><span class=\"swatch\"><i style=\"background:#252423\"></i>#252423</span><span class=\"swatch\"><i style=\"background:#f6f4f2\"></i>#f6f4f2</span><span class=\"swatch\"><i style=\"background:#ff4b4b\"></i>#ff4b4b</span><span class=\"swatch\"><i style=\"background:#ff7d36\"></i>#ff7d36</span><span class=\"swatch\"><i style=\"background:#ffa828\"></i>#ffa828</span><span class=\"swatch\"><i style=\"background:#ffcc2a\"></i>#ffcc2a</span><span class=\"swatch\"><i style=\"background:#b7ff54\"></i>#b7ff54</span><span class=\"swatch\"><i style=\"background:#8dff55\"></i>#8dff55</span><span class=\"swatch\"><i style=\"background:#00ffaa\"></i>#00ffaa</span><span class=\"swatch\"><i style=\"background:#26f2d5\"></i>#26f2d5</span></div><p><b>字体</b> · 原站 Berkeley Mono、DINish、Digital-7；字号与断点保留 assets/css/core.css 和 home.css。<br><b>布局</b> · 900px、1200px 断点；400px 演示画布；主机芯透视相机 fov 40。<br><b>动效</b> · 开场 4000ms；主滚动 sync .9；文本与演示交接 250ms；拖拽 stiffness 120 / damping 6。</p></section><section><div class=\"prompt-head\"><h2>05 / 可复用 Prompt</h2><button class=\"copy-button\" id=\"copy-prompt\">复制 Prompt</button></div><textarea class=\"prompt-box\" aria-label=\"可复用 Prompt\" readonly>读取本案例源码、研究、fidelity.md、source/values.md，并关联 animejs 素材。以原始 HTML、CSS、字体和 22 个 GLB 组成完整官网首页，保留彩环仪表盘开场、粘性工具箱、八节 API 演示、滚动驱动的模块展开与组装、赞助与十二个文档入口。主时间线、局部循环、SVG、Canvas、三维材质、相机、灯光、断点和交接参数从公开包的对应字节段取值。通过同视口、同时刻与同操作序列对照。</textarea><details><summary>负面约束 / Negative Prompt</summary><p>保持原始章节、内容、几何、颜色、交互与动态关系。</p></details><h3>改造练习</h3><p>在两个视口滚动至八节 API 演示，操作拖拽与进度条；比较模块展开、缩减、组装时体积标签的变化，再打开相应代码与文档入口。</p></section><section><h2>06 / 来源与证据</h2><div class=\"source-item\"><span class=\"source-badge\">实例</span><a href=\"https://animejs.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Anime.js 官网首页 </a><small>2026-11-02 的完整首页、内容、媒体、动效与交互。</small></div><div class=\"source-item\"><span class=\"source-badge\">公开代码</span><a href=\"https://animejs.com/assets/js/home.js?v=1787698626\" target=\"_blank\" rel=\"noopener noreferrer\">官网首页发布脚本 </a><small>站点函数、主时间线、Canvas、GLSL 与 22 个模型的加载逻辑；原始分块随 source/upstream 保存。</small></div><div class=\"source-item\"><span class=\"source-badge\">源码</span><a href=\"https://github.com/juliangarnier/anime/tree/2c9cf8ea00329f6768c7d7902252ed977d75ce42\" target=\"_blank\" rel=\"noopener noreferrer\">Anime.js v4.5.0 源码 </a><small>固定发行库及三维适配器。</small></div><p>参考站采集：2026-11-02。本案例归档这次采集的页面与交互。详细观察、推断与限制见<a href=\"docs.html?file=docs%2Fcases%2Fanimejs-site.md\" target=\"_blank\">调研记录</a>。</p></section>"
+  }
+}

@@ -155,6 +155,11 @@ window.ATLAS_DOCUMENTS = [
     "group": "案例研究"
   },
   {
+    "path": "docs/cases/animejs-site.md",
+    "title": "Anime.js · JavaScript 动画引擎官网",
+    "group": "案例研究"
+  },
+  {
     "path": "docs/cases/apple-product.md",
     "title": "Apple iPhone 18 Pro：当前页面的设计与交互",
     "group": "案例研究"
@@ -257,6 +262,11 @@ window.ATLAS_DOCUMENTS = [
   {
     "path": "docs/materials/README.md",
     "title": "内容素材使用说明",
+    "group": "素材使用"
+  },
+  {
+    "path": "docs/materials/animejs.md",
+    "title": "Anime.js · JavaScript 动画引擎",
     "group": "素材使用"
   },
   {
@@ -407,6 +417,11 @@ window.ATLAS_DOCUMENTS = [
   {
     "path": "prompts/patterns/masked-transaction-rotation.md",
     "title": "裁切文字与交易预览同步 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
+    "path": "prompts/patterns/anime-dial-hero.md",
+    "title": "彩环仪表盘开场 · 复用 Prompt",
     "group": "复用 Prompt"
   },
   {
@@ -612,6 +627,11 @@ window.ATLAS_DOCUMENTS = [
   {
     "path": "prompts/patterns/scroll-video-scrub.md",
     "title": "滚动进度驱动视频帧 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
+    "path": "prompts/patterns/anime-glb-module-assembly.md",
+    "title": "滚动驱动的 GLB 模块组装 · 复用 Prompt",
     "group": "复用 Prompt"
   },
   {
@@ -910,6 +930,11 @@ window.ATLAS_DOCUMENTS = [
     "group": "复用 Prompt"
   },
   {
+    "path": "prompts/patterns/anime-get-started-svg.md",
+    "title": "收尾文档入口与 SVG 反馈 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
     "path": "prompts/cases/hand-drawn.md",
     "title": "手绘：把不完美变成亲近感 · 复用 Prompt",
     "group": "复用 Prompt"
@@ -1190,6 +1215,11 @@ window.ATLAS_DOCUMENTS = [
     "group": "复用 Prompt"
   },
   {
+    "path": "prompts/patterns/anime-pinned-feature-demos.md",
+    "title": "粘性分节全屏 API 演示 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
     "path": "prompts/patterns/exploded-layer-view.md",
     "title": "展开图层解释组成 · 复用 Prompt",
     "group": "复用 Prompt"
@@ -1342,6 +1372,16 @@ window.ATLAS_DOCUMENTS = [
   {
     "path": "prompts/patterns/artwork-caption-separation.md",
     "title": "作品原图与图下题注分工 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
+    "path": "prompts/materials/animejs.md",
+    "title": "Anime.js · JavaScript 动画引擎 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
+    "path": "prompts/cases/animejs-site.md",
+    "title": "Anime.js · JavaScript 动画引擎官网 · 复用 Prompt",
     "group": "复用 Prompt"
   },
   {
@@ -1512,6 +1552,15 @@ window.ATLAS_DOCUMENTS = [
 ];
 window.ATLAS_DOCUMENT_SOURCES = [
   {
+    "path": "demos/cases/animejs-site/",
+    "referenceUrl": "https://animejs.com/",
+    "sources": [
+      "https://animejs.com/",
+      "https://animejs.com/assets/js/home.js?v=1787698626",
+      "https://github.com/juliangarnier/anime/tree/2c9cf8ea00329f6768c7d7902252ed977d75ce42"
+    ]
+  },
+  {
     "path": "demos/cases/atlas-sister-sites/",
     "referenceUrl": "https://web-atlas.mibxranime.chatgpt.site/",
     "sources": [
@@ -1666,6 +1715,23 @@ window.ATLAS_DOCUMENT_SOURCES = [
     ]
   },
   {
+    "path": "demos/materials/animejs/",
+    "upstream": {
+      "repository": "juliangarnier/anime",
+      "url": "https://github.com/juliangarnier/anime",
+      "version": "4.5.0",
+      "commit": "2c9cf8ea00329f6768c7d7902252ed977d75ce42",
+      "verifiedAt": "2026-11-02"
+    },
+    "sources": [
+      "https://github.com/juliangarnier/anime/tree/2c9cf8ea00329f6768c7d7902252ed977d75ce42",
+      "https://animejs.com/documentation",
+      "https://github.com/juliangarnier/anime/tree/2c9cf8ea00329f6768c7d7902252ed977d75ce42/examples",
+      "https://codepen.io/collection/Poerqa",
+      "https://animejs.com/media/pages/home/066c76f87b-1787698629/generated-og-image.en.png"
+    ]
+  },
+  {
     "path": "demos/materials/arc-ui/",
     "upstream": {
       "repository": "kuratlielia/arc-library",
@@ -1696,7 +1762,8 @@ window.ATLAS_DOCUMENT_SOURCES = [
       "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/beautiful-article/SKILL.md",
       "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/beautiful-article/README.md",
       "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/beautiful-article/theme-profiles/index.json",
-      "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/beautiful-article/manifest.json"
+      "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/beautiful-article/manifest.json",
+      "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/covers/beautiful-article.webp"
     ]
   },
   {
@@ -1750,7 +1817,8 @@ window.ATLAS_DOCUMENT_SOURCES = [
       "https://github.com/ConardLi/reacticle/blob/dcfc4baf386bbc220cd1aa6274bed3b741108465/apps/site/src/data/gallery.tsx",
       "https://rearticle.mmh1.top/#/gallery",
       "https://github.com/ConardLi/garden-skills/tree/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/beautiful-article/theme-profiles",
-      "https://github.com/ConardLi/reacticle/blob/dcfc4baf386bbc220cd1aa6274bed3b741108465/apps/site/index.html"
+      "https://github.com/ConardLi/reacticle/blob/dcfc4baf386bbc220cd1aa6274bed3b741108465/apps/site/index.html",
+      "https://github.com/ConardLi/reacticle/blob/dcfc4baf386bbc220cd1aa6274bed3b741108465/public/img/banner.jpeg"
     ]
   },
   {

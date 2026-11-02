@@ -260,6 +260,10 @@
     {
       "path": "prompts/materials/wired-elements.md",
       "role": "context"
+    },
+    {
+      "path": "site/runtime/demo-scrollbars.css",
+      "role": "source"
     }
   ],
   "sourceFiles": [

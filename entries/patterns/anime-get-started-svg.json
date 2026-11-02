@@ -1,0 +1,59 @@
+{
+  "id": "anime-get-started-svg",
+  "order": 187,
+  "title": "收尾文档入口与 SVG 反馈",
+  "category": "视觉构成",
+  "experienceTypes": [
+    "micro-motion"
+  ],
+  "summary": "完整文档目录在收束的场景中成为下一步行动。",
+  "mechanism": "十二个文档入口保留原始 SVG 箭头与悬停反馈；背景机芯旋转并上移，形成进入文档前的视觉收束。",
+  "trigger": "到达 Start animating 并悬停入口",
+  "effect": "完整文档目录在收束的场景中成为下一步行动。",
+  "useCases": [
+    "开发者产品官网",
+    "模块化产品与文档入口"
+  ],
+  "avoid": [],
+  "constraints": [
+    "几何、时间线与素材参数定位到来源代码。",
+    "章节内容与操作入口保留原生 DOM。"
+  ],
+  "composition": {
+    "role": "accent",
+    "notes": "与同一首页的彩环、机芯、字体和章节进度协作。",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "accessibility": {
+    "keyboard": "链接、选择器和表单沿用原生 DOM 焦点与键盘操作。",
+    "reducedMotion": "来源首页保留连续动画；迁移时按目标页面的减少动态需求选择直接呈现状态。"
+  },
+  "parameters": [
+    {
+      "name": "原作参数",
+      "value": "4000ms",
+      "note": "GET_STARTED 的三维退出时长；十二个 SVG 箭头保留原作。"
+    }
+  ],
+  "sources": [
+    {
+      "caseId": "animejs-site",
+      "locator": "entries/cases/animejs-site.json#interaction/3",
+      "observation": "Start animating 提供十二个带原始 SVG 箭头的文档入口，悬停箭头按原站 CSS 反馈；GET_STARTED 同时将三维场景沿 X 轴旋转至 100 度并向上退出，持续 4000ms。",
+      "evidence": "observed",
+      "referenceUrl": "https://animejs.com/",
+      "capturedAt": "2026-11-02"
+    }
+  ],
+  "sourceFiles": [
+    "entries/cases/animejs-site.json",
+    "docs/cases/animejs-site.md",
+    "demos/cases/animejs-site/index.html",
+    "demos/cases/animejs-site/js/get-started.js",
+    "demos/cases/animejs-site/js/main.js",
+    "demos/cases/animejs-site/fidelity.md",
+    "demos/cases/animejs-site/source/values.md"
+  ],
+  "prompt": "读取 animejs-site 的完整来源包，为目标页面实现「收尾文档入口与 SVG 反馈」。十二个文档入口保留原始 SVG 箭头与悬停反馈；背景机芯旋转并上移，形成进入文档前的视觉收束。 数值与素材从 source/values.md、对应区块源码和原始资源中取得。保持触发、交接、反向滚动和原生入口关系。"
+}

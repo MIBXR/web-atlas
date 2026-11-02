@@ -1,0 +1,396 @@
+{
+  "id": "animejs",
+  "order": 12,
+  "title": "Anime.js · JavaScript 动画引擎",
+  "type": "component-library",
+  "category": "组件与效果",
+  "summary": "归档 Anime.js 4.5.0 的完整发行库、源码与 36 个上游样例，涵盖 DOM、SVG、Canvas、三维变换、布局、滚动、拖拽与文本。",
+  "tags": [
+    "JavaScript",
+    "Anime.js",
+    "动画",
+    "SVG",
+    "Canvas",
+    "Three.js",
+    "滚动",
+    "拖拽",
+    "文本",
+    "布局"
+  ],
+  "demo": "demos/materials/animejs/index.html",
+  "preview": "previews/materials/animejs.png",
+  "research": "docs/materials/animejs.md",
+  "demoNote": "Anime.js 4.5.0",
+  "carrierNote": "面向网页的动画引擎，示例含滚动、拖拽与响应式，归入本库。",
+  "install": "import { animate, stagger, createTimeline, onScroll, createDraggable, svg } from './vendor/animejs@4.5.0/dist/modules/index.js';",
+  "upstream": {
+    "repository": "juliangarnier/anime",
+    "url": "https://github.com/juliangarnier/anime",
+    "version": "4.5.0",
+    "commit": "2c9cf8ea00329f6768c7d7902252ed977d75ce42",
+    "verifiedAt": "2026-11-02"
+  },
+  "license": {
+    "name": "MIT（代码）；SIL OFL 1.1（字体）",
+    "url": "https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/LICENSE.md",
+    "scope": "Anime.js 发行库、源码与样例代码；Three.js 和 tweaks 的 MIT 原文随包提供，共享 IoskeleyMono 字体保留 OFL 1.1 元数据。",
+    "notes": "保留 Julian Garnier 与各依赖作者署名；Google Fonts 和 picsum.photos 来源见样例索引。"
+  },
+  "useCases": [
+    "网页中的独立变换与微交互",
+    "随滚动推进的页面叙事",
+    "SVG 描线与形变",
+    "可拖动、可响应媒体查询的界面",
+    "文本拆分与布局切换"
+  ],
+  "avoid": [
+    "以固定时间轴导出影片为主要交付物的工作"
+  ],
+  "constraints": [
+    "Anime.js 固定 v4.5.0 与完整提交，样例保留原始目录层级。",
+    "36 个样例共用完整 dist/，Three.js 固定 0.184.0，tweaks 固定 0.3.4。",
+    "远程字体、随机图片和两处源码适配见样例索引。"
+  ],
+  "relatedEntries": [
+    {
+      "kind": "case",
+      "id": "animejs-site",
+      "note": "官网首页用 Anime.js 实现"
+    }
+  ],
+  "sources": [
+    {
+      "title": "Anime.js 固定提交",
+      "url": "https://github.com/juliangarnier/anime/tree/2c9cf8ea00329f6768c7d7902252ed977d75ce42",
+      "note": "v4.5.0 的 examples、dist 和 src。",
+      "evidence": "source"
+    },
+    {
+      "title": "Anime.js 官方文档",
+      "url": "https://animejs.com/documentation",
+      "note": "动画、时间线、滚动、拖拽和 SVG API。",
+      "evidence": "source"
+    },
+    {
+      "title": "官方仓库的样例源码",
+      "url": "https://github.com/juliangarnier/anime/tree/2c9cf8ea00329f6768c7d7902252ed977d75ce42/examples",
+      "note": "收录含 index.html 的 36 个样例，包括嵌套目录。",
+      "evidence": "source"
+    },
+    {
+      "title": "官网 Examples · 作者的 CodePen 合集",
+      "url": "https://codepen.io/collection/Poerqa",
+      "note": "官网导航的 Examples 入口。",
+      "evidence": "source"
+    },
+    {
+      "title": "作者官网分享图",
+      "url": "https://animejs.com/media/pages/home/066c76f87b-1787698629/generated-og-image.en.png",
+      "note": "素材封面使用官网首页标注的品牌与模块分解原图。",
+      "evidence": "source"
+    }
+  ],
+  "accessibility": {
+    "keyboard": "外框使用原生链接并保留焦点样式；样例控件遵循上游的键盘行为。",
+    "reducedMotion": "样例保留上游媒体查询与作用域行为；目标页面可用 createScope 连接 prefers-reduced-motion。"
+  },
+  "sourceFiles": [
+    "demos/materials/animejs/index.html",
+    "demos/materials/animejs/demo/demo.js",
+    "site/shared/theme.js",
+    "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/index.js",
+    "demos/materials/animejs/source/package.json",
+    "docs/materials/animejs.md"
+  ],
+  "demos": [
+    {
+      "id": "additive-creature",
+      "title": "指针引导的游动生物",
+      "component": "animate、createTimeline、stagger",
+      "summary": "以混合变换叠加出跟随指针的生物。",
+      "entrypoint": "demos/materials/animejs/index.html?demo=additive-creature",
+      "group": "图形与运动"
+    },
+    {
+      "id": "additive-fireflies",
+      "title": "萤火虫轨迹叠加",
+      "component": "animate、createTimer",
+      "summary": "点状元素的叠加运动与指针跟随。",
+      "entrypoint": "demos/materials/animejs/index.html?demo=additive-fireflies",
+      "group": "图形与运动"
+    },
+    {
+      "id": "advanced-grid-staggering",
+      "title": "从中心扩散的点阵",
+      "component": "createTimeline、stagger",
+      "summary": "以二维网格、中心距离和交错延迟组织点阵。",
+      "entrypoint": "demos/materials/animejs/index.html?demo=advanced-grid-staggering",
+      "group": "图形与运动"
+    },
+    {
+      "id": "animatable-follow-cursor",
+      "title": "平滑追随指针",
+      "component": "createAnimatable",
+      "summary": "指针目标通过可更新的动画属性平滑跟随。",
+      "entrypoint": "demos/materials/animejs/index.html?demo=animatable-follow-cursor",
+      "group": "图形与运动"
+    },
+    {
+      "id": "animejs-v4-logo-animation",
+      "title": "标志描线",
+      "component": "createTimeline、svg、stagger",
+      "summary": "沿真实 SVG 路径错峰描绘 Anime.js 标志。",
+      "entrypoint": "demos/materials/animejs/index.html?demo=animejs-v4-logo-animation",
+      "group": "文字与矢量"
+    },
+    {
+      "id": "auto-layout-accordion",
+      "title": "手风琴折叠",
+      "component": "createLayout",
+      "summary": "折叠面板在真实布局变化间过渡。",
+      "entrypoint": "demos/materials/animejs/index.html?demo=auto-layout/accordion",
+      "group": "自动布局"
+    },
+    {
+      "id": "auto-layout-cards",
+      "title": "可展开卡片",
+      "component": "createLayout",
+      "summary": "卡片在展开、排列与随机图片间保持布局连续。",
+      "entrypoint": "demos/materials/animejs/index.html?demo=auto-layout/cards",
+      "group": "自动布局"
+    },
+    {
+      "id": "auto-layout-code",
+      "title": "代码块换行",
+      "component": "createLayout",
+      "summary": "代码容器在内容变化时过渡到新布局。",
+      "entrypoint": "demos/materials/animejs/index.html?demo=auto-layout/code",
+      "group": "自动布局"
+    },
+    {
+      "id": "auto-layout-grid-columns",
+      "title": "网格列切换",
+      "component": "createLayout",
+      "summary": "网格列数改变时逐项衔接位置与尺寸。",
+      "entrypoint": "demos/materials/animejs/index.html?demo=auto-layout/grid-columns",
+      "group": "自动布局"
+    },
+    {
+      "id": "auto-layout-nav",
+      "title": "导航选中态",
+      "component": "createLayout",
+      "summary": "导航的选中项和排列随操作变换。",
+      "entrypoint": "demos/materials/animejs/index.html?demo=auto-layout/nav",
+      "group": "自动布局"
+    },
+    {
+      "id": "auto-layout-onscroll",
+      "title": "滚动重排",
+      "component": "createLayout、onScroll",
+      "summary": "滚动触发布局变化。",
+      "entrypoint": "demos/materials/animejs/index.html?demo=auto-layout/onscroll",
+      "group": "自动布局"
+    },
+    {
+      "id": "auto-layout-periodic-table",
+      "title": "元素周期表",
+      "component": "createLayout",
+      "summary": "元素周期表在不同排列间转换。",
+      "entrypoint": "demos/materials/animejs/index.html?demo=auto-layout/periodic-table",
+      "group": "自动布局"
+    },
+    {
+      "id": "auto-layout-planets",
+      "title": "行星卡片",
+      "component": "createLayout",
+      "summary": "行星卡片在多种布局间转换。",
+      "entrypoint": "demos/materials/animejs/index.html?demo=auto-layout/planets",
+      "group": "自动布局"
+    },
+    {
+      "id": "auto-layout-todo-list",
+      "title": "待办清单",
+      "component": "createLayout",
+      "summary": "待办项目增删与重排形成连续过渡。",
+      "entrypoint": "demos/materials/animejs/index.html?demo=auto-layout/todo-list",
+      "group": "自动布局"
+    },
+    {
+      "id": "canvas-2d",
+      "title": "画布粒子",
+      "component": "animate、createTimer",
+      "summary": "将动画对象属性绘制为二维 Canvas 粒子。",
+      "entrypoint": "demos/materials/animejs/index.html?demo=canvas-2d",
+      "group": "图形与运动"
+    },
+    {
+      "id": "clock-playback-controls",
+      "title": "播放时钟",
+      "component": "animate、createTimeline",
+      "summary": "用时钟演示播放、暂停与播放进度控制。",
+      "entrypoint": "demos/materials/animejs/index.html?demo=clock-playback-controls",
+      "group": "时钟与时间线"
+    },
+    {
+      "id": "draggable-infinite-auto-carousel",
+      "title": "无限轮播",
+      "component": "createDraggable、createTimeline",
+      "summary": "轮播在自动播放与拖拽之间连续接管。",
+      "entrypoint": "demos/materials/animejs/index.html?demo=draggable-infinite-auto-carousel",
+      "group": "拖拽与滚动"
+    },
+    {
+      "id": "draggable-mouse-scroll-snap-carousel",
+      "title": "滚动吸附轮播",
+      "component": "createDraggable",
+      "summary": "轮播结合鼠标、滚动与吸附。",
+      "entrypoint": "demos/materials/animejs/index.html?demo=draggable-mouse-scroll-snap-carousel",
+      "group": "拖拽与滚动"
+    },
+    {
+      "id": "draggable-playground",
+      "title": "拖拽实验台",
+      "component": "createDraggable、createSpring",
+      "summary": "直接操作容器约束、吸附、弹簧与拖动目标。",
+      "entrypoint": "demos/materials/animejs/index.html?demo=draggable-playground",
+      "group": "拖拽与滚动"
+    },
+    {
+      "id": "irregular-playback-typewriter",
+      "title": "不等速打字",
+      "component": "createTimeline、irregular",
+      "summary": "用不规则播放节奏模拟打字。",
+      "entrypoint": "demos/materials/animejs/index.html?demo=irregular-playback-typewriter",
+      "group": "时钟与时间线"
+    },
+    {
+      "id": "layered-css-transforms",
+      "title": "多层变换",
+      "component": "createTimeline、createSpring",
+      "summary": "独立的 CSS 变换分层组合。",
+      "entrypoint": "demos/materials/animejs/index.html?demo=layered-css-transforms",
+      "group": "图形与运动"
+    },
+    {
+      "id": "onscroll-responsive-scope",
+      "title": "响应式滚动区域",
+      "component": "createScope、onScroll",
+      "summary": "将媒体查询作用域与滚动动画联动。",
+      "entrypoint": "demos/materials/animejs/index.html?demo=onscroll-responsive-scope",
+      "group": "拖拽与滚动"
+    },
+    {
+      "id": "onscroll-sticky",
+      "title": "粘性滚动",
+      "component": "onScroll、createTimeline",
+      "summary": "粘性舞台随滚动进度播放时间线。",
+      "entrypoint": "demos/materials/animejs/index.html?demo=onscroll-sticky",
+      "group": "拖拽与滚动"
+    },
+    {
+      "id": "stagger",
+      "title": "交错延迟",
+      "component": "stagger、createTimeline",
+      "summary": "比较交错函数的时间、位置和距离分布。",
+      "entrypoint": "demos/materials/animejs/index.html?demo=stagger",
+      "group": "图形与运动"
+    },
+    {
+      "id": "svg-graph",
+      "title": "动态图表",
+      "component": "svg、animate",
+      "summary": "SVG 图表的几何与路径变化。",
+      "entrypoint": "demos/materials/animejs/index.html?demo=svg-graph",
+      "group": "文字与矢量"
+    },
+    {
+      "id": "svg-line-drawing",
+      "title": "路径描线",
+      "component": "svg.createDrawable、createTimeline",
+      "summary": "错峰描线展示 SVG 路径进度。",
+      "entrypoint": "demos/materials/animejs/index.html?demo=svg-line-drawing",
+      "group": "文字与矢量"
+    },
+    {
+      "id": "text-hover-effects",
+      "title": "文字悬停",
+      "component": "splitText、animate",
+      "summary": "悬停文字时按字符或词形成反馈。",
+      "entrypoint": "demos/materials/animejs/index.html?demo=text/hover-effects",
+      "group": "文字与矢量"
+    },
+    {
+      "id": "text-scramble",
+      "title": "字符扰乱",
+      "component": "scrambleText",
+      "summary": "通过可操作参数观察文本扰乱与揭示。",
+      "entrypoint": "demos/materials/animejs/index.html?demo=text/scramble",
+      "group": "文字与矢量"
+    },
+    {
+      "id": "text-scramble-tl",
+      "title": "文字扰乱时间线",
+      "component": "scrambleText、createTimeline",
+      "summary": "将多屏文字扰乱、缩放与颜色串成时间线。",
+      "entrypoint": "demos/materials/animejs/index.html?demo=text/scramble-tl",
+      "group": "文字与矢量"
+    },
+    {
+      "id": "text-split-effects",
+      "title": "逐字拆分",
+      "component": "splitText、createTimeline",
+      "summary": "按行、词与字符拆分并组合文字动效。",
+      "entrypoint": "demos/materials/animejs/index.html?demo=text/split-effects",
+      "group": "文字与矢量"
+    },
+    {
+      "id": "text-split-playground",
+      "title": "拆字实验台",
+      "component": "splitText",
+      "summary": "直接调整文字拆分与呈现参数。",
+      "entrypoint": "demos/materials/animejs/index.html?demo=text/split-playground",
+      "group": "文字与矢量"
+    },
+    {
+      "id": "threejs-transforms",
+      "title": "三维对象变换",
+      "component": "animate、threeAdapter",
+      "summary": "对三维对象、材质与相机执行独立属性动画。",
+      "entrypoint": "demos/materials/animejs/index.html?demo=threejs/transforms",
+      "group": "图形与运动"
+    },
+    {
+      "id": "timeline-50K-stars",
+      "title": "五万颗星",
+      "component": "createTimeline、animate",
+      "summary": "用时间线调度五万颗星的分布与运动。",
+      "entrypoint": "demos/materials/animejs/index.html?demo=timeline-50K-stars",
+      "group": "时钟与时间线"
+    },
+    {
+      "id": "timeline-refresh-starlings",
+      "title": "椋鸟群",
+      "component": "createTimeline",
+      "summary": "刷新目标值形成椋鸟群的连续运动。",
+      "entrypoint": "demos/materials/animejs/index.html?demo=timeline-refresh-starlings",
+      "group": "时钟与时间线"
+    },
+    {
+      "id": "timeline-seamless-loop",
+      "title": "无缝循环",
+      "component": "createTimeline、stagger",
+      "summary": "将交错动画接成无缝循环。",
+      "entrypoint": "demos/materials/animejs/index.html?demo=timeline-seamless-loop",
+      "group": "时钟与时间线"
+    },
+    {
+      "id": "timeline-stress-test",
+      "title": "时间线压力演示",
+      "component": "createTimeline",
+      "entrypoint": "demos/materials/animejs/index.html?demo=timeline-stress-test",
+      "group": "时钟与时间线",
+      "summary": "通过大量目标观察时间线调度。"
+    }
+  ],
+  "prompt": "读取 animejs 素材的中文说明与相关上游样例，以 Anime.js 4.5.0 实现目标网页动效。按元素与属性选择 animate，用 stagger 组织分布，用 createTimeline 协调先后，用 onScroll 连接滚动，用 createDraggable 处理拖拽，用 svg 工具处理描线与路径。保持独立变换、作用域和销毁关系与所取样例一致。"
+}

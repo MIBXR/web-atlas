@@ -1,0 +1,60 @@
+{
+  "id": "anime-glb-module-assembly",
+  "order": 186,
+  "title": "滚动驱动的 GLB 模块组装",
+  "category": "滚动叙事",
+  "experienceTypes": [
+    "visual",
+    "page-motion"
+  ],
+  "summary": "三维结构与数字共同说明按需导入如何缩小动画引擎。",
+  "mechanism": "真实模型在主时间线中展开、横移、缩减、旋转与装壳；模块标签和 Bundle size 使用同一组时间线位置。",
+  "trigger": "滚动进入模块章节",
+  "effect": "三维结构与数字共同说明按需导入如何缩小动画引擎。",
+  "useCases": [
+    "开发者产品官网",
+    "模块化产品与文档入口"
+  ],
+  "avoid": [],
+  "constraints": [
+    "几何、时间线与素材参数定位到来源代码。",
+    "章节内容与操作入口保留原生 DOM。"
+  ],
+  "composition": {
+    "role": "foundation",
+    "notes": "与同一首页的彩环、机芯、字体和章节进度协作。",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "accessibility": {
+    "keyboard": "链接、选择器和表单沿用原生 DOM 焦点与键盘操作。",
+    "reducedMotion": "来源首页保留连续动画；迁移时按目标页面的减少动态需求选择直接呈现状态。"
+  },
+  "parameters": [
+    {
+      "name": "原作参数",
+      "value": "22 GLB",
+      "note": "原始模型完整集合；MODULES_CASE 位于 1900。"
+    }
+  ],
+  "sources": [
+    {
+      "caseId": "animejs-site",
+      "locator": "entries/cases/animejs-site.json#interaction/2",
+      "observation": "22 个原始 GLB 构成动画引擎机芯；滚动进入 modules 后按 MODULES_TRANSFORM 590、MODULES_SHRINK 1250、MODULES_ROTATION 1750、MODULES_CASE 1900 展开、缩减与组装模块，Bundle size 和标签数值随同一时间线改变。",
+      "evidence": "observed",
+      "referenceUrl": "https://animejs.com/",
+      "capturedAt": "2026-11-02"
+    }
+  ],
+  "sourceFiles": [
+    "entries/cases/animejs-site.json",
+    "docs/cases/animejs-site.md",
+    "demos/cases/animejs-site/index.html",
+    "demos/cases/animejs-site/js/modules-scene.js",
+    "demos/cases/animejs-site/js/main.js",
+    "demos/cases/animejs-site/fidelity.md",
+    "demos/cases/animejs-site/source/values.md"
+  ],
+  "prompt": "读取 animejs-site 的完整来源包，为目标页面实现「滚动驱动的 GLB 模块组装」。真实模型在主时间线中展开、横移、缩减、旋转与装壳；模块标签和 Bundle size 使用同一组时间线位置。 数值与素材从 source/values.md、对应区块源码和原始资源中取得。保持触发、交接、反向滚动和原生入口关系。"
+}

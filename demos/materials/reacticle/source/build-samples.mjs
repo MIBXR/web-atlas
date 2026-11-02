@@ -39,7 +39,7 @@ createRoot(document.getElementById('root')!).render(<div className="gx-reader" d
     publicDir: false,
     plugins: [react(), {
       name: 'local-fonts',
-      transformIndexHtml: () => [{ tag: 'link', attrs: { rel: 'stylesheet', href: '../fonts/fonts.css' }, injectTo: 'head-prepend' }],
+      transformIndexHtml: () => [{ tag: 'link', attrs: { rel: 'stylesheet', href: '../fonts/fonts.css' }, injectTo: 'head-prepend' }, { tag: 'link', attrs: { rel: 'stylesheet', href: '../../../../../site/runtime/demo-scrollbars.css' }, injectTo: 'head' }],
     }],
     resolve: { alias: {
       reacticle: resolve(source, 'src/index.ts'),

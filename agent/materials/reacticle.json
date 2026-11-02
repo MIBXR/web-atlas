@@ -84,6 +84,12 @@
         "url": "https://github.com/ConardLi/reacticle/blob/dcfc4baf386bbc220cd1aa6274bed3b741108465/apps/site/index.html",
         "note": "本地化相同 Google Fonts 请求中的全部字体资源；字体声明、字重及子集保持一致。",
         "evidence": "source"
+      },
+      {
+        "title": "作者 README 封面",
+        "url": "https://github.com/ConardLi/reacticle/blob/dcfc4baf386bbc220cd1aa6274bed3b741108465/public/img/banner.jpeg",
+        "note": "素材卡使用作者发布的原图。",
+        "evidence": "source"
       }
     ],
     "demos": [
@@ -248,7 +254,7 @@
       "reducedMotion": "沿用原站与主题中的 prefers-reduced-motion CSS；呼吸练习计时仍由原始开始／暂停控件控制，不增加额外动态行为。"
     },
     "demo": "demos/materials/reacticle/index.html",
-    "preview": "previews/materials/reacticle.png",
+    "preview": "previews/materials/reacticle.jpeg",
     "research": "docs/materials/reacticle.md",
     "sourceFiles": [
       "demos/materials/reacticle/index.html",
@@ -4037,12 +4043,16 @@
       "role": "context"
     },
     {
-      "path": "previews/materials/reacticle.png",
+      "path": "previews/materials/reacticle.jpeg",
       "role": "preview"
     },
     {
       "path": "prompts/materials/reacticle.md",
       "role": "context"
+    },
+    {
+      "path": "site/runtime/demo-scrollbars.css",
+      "role": "source"
     }
   ],
   "sourceFiles": [

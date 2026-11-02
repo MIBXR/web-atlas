@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <script src="../../../site/shared/theme.js"></script>
+  <title>Anime.js · 官方代码样例</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="demo/demo.css">
+  <link rel="stylesheet" href="../../../site/runtime/demo-scrollbars.css">
+</head>
+<body class="aj-standalone">
+  <main class="aj-browser"><div class="aj-layout"><nav class="aj-directory" aria-label="官方样例目录"></nav><iframe title="官方互动样例"></iframe></div></main>
+  <script type="module">
+    import {mountDirectory} from './demo/demo.js';
+    const material = await fetch('../../../entries/materials/animejs.json').then(response => response.json());
+    const frame = document.querySelector('iframe');
+    const url = new URL(location.href);
+    mountDirectory(document.querySelector('nav'), material, url.searchParams.get('demo'), (example,path) => {
+      url.searchParams.set('demo',path);
+      history.replaceState(null,'',url);
+      frame.title = example.title;
+      frame.src = 'demo/examples/' + path + '/index.html';
+    });
+  </script>
+</body>
+</html>

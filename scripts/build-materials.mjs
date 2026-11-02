@@ -126,7 +126,8 @@ export function buildMaterials({ root = defaultRoot, materials, write = true } =
       new TextDecoder('utf-8', { fatal: true }).decode(bytes);
       return { path: relative, role: relative === material.research ? 'research' : relative === `prompts/materials/${material.id}.md` ? 'prompt' : isLicense(relative) ? 'license' : relative.includes('/source/') ? 'process' : relative.endsWith('/fidelity.md') ? 'fidelity' : 'context', content: bytes.toString('utf8') };
     });
-    const paths = new Set([`entries/materials/${material.id}.json`, material.preview, ...documentPaths, ...contentFiles, ...(material.gallery || []).flatMap(picture => [picture.path, picture.replicaPage?.split('?')[0]].filter(Boolean))]);
+    const sharedSources = material.sourceFiles.filter(relative => relative === 'site/shared/theme.js');
+    const paths = new Set([`entries/materials/${material.id}.json`, material.preview, ...(material.demo ? ['site/runtime/demo-scrollbars.css'] : []), ...sharedSources, ...documentPaths, ...contentFiles, ...(material.gallery || []).flatMap(picture => [picture.path, picture.replicaPage?.split('?')[0]].filter(Boolean))]);
     const files = [...paths].sort().map(relative => {
       const role = relative === material.preview ? 'preview' : isLicense(relative) ? 'license' : relative.includes('/source/') ? 'process' : material.sourceFiles.includes(relative) ? 'source' : relative.includes('/fonts/') ? 'font' : relative.includes('/vendor/') && !documentPaths.includes(relative) ? 'vendor' : documentPaths.includes(relative) || relative === `entries/materials/${material.id}.json` || /\.(?:md|txt|json)$/i.test(relative) ? 'context' : /\.(?:html|js|mjs|css|svg)$/i.test(relative) ? 'source' : 'asset';
       return { path: relative, role };
