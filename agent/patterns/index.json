@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "patternCount": 183,
+  "patternCount": 187,
   "repository": "https://github.com/MIBXR/web-atlas",
   "patterns": [
     {
@@ -13407,6 +13407,256 @@
       ],
       "paths": {
         "bundle": "agent/patterns/hf-ground-canvas-close.json"
+      }
+    },
+    {
+      "id": "anime-dial-hero",
+      "order": 184,
+      "title": "彩环仪表盘开场",
+      "category": "视觉构成",
+      "experienceTypes": [
+        "visual",
+        "page-motion"
+      ],
+      "summary": "以真实运行的多种绘图载体同时建立动画引擎的产品形象。",
+      "mechanism": "三维机芯与 CSS3D 弧线承托 13×13 点阵、73 条曲线和 37 个点，标题与环形刻度按同一开场代理进入。",
+      "trigger": "冷启动首页",
+      "effect": "以真实运行的多种绘图载体同时建立动画引擎的产品形象。",
+      "useCases": [
+        "开发者产品官网",
+        "多载体动画能力展示"
+      ],
+      "avoid": [],
+      "constraints": [
+        "几何、时间线与素材参数定位到来源代码。",
+        "章节内容与操作入口保留原生 DOM。"
+      ],
+      "composition": {
+        "role": "accent",
+        "notes": "与同一首页的彩环、机芯、字体和章节进度协作。",
+        "pairsWellWith": [],
+        "conflicts": []
+      },
+      "accessibility": {
+        "keyboard": "链接、选择器和表单沿用原生 DOM 焦点与键盘操作。",
+        "reducedMotion": "来源首页保留连续动画；迁移时按目标页面的减少动态需求选择直接呈现状态。"
+      },
+      "parameters": [
+        {
+          "name": "原作参数",
+          "value": "4000ms",
+          "note": "开场代理时长；INTRO_ON 位于 1400。"
+        }
+      ],
+      "sources": [
+        {
+          "caseId": "animejs-site",
+          "locator": "entries/cases/animejs-site.json#interaction/0",
+          "observation": "首屏用 Three.js 模块机芯、CSS3D SVG 弧线与五层二维 Canvas 组成仪表盘；4000ms 开场代理驱动主时间线，标题于 INTRO_ON 1400 进入，说明比标题延后 500ms，循环交错曲线、点列与环形刻度共同运行。",
+          "evidence": "observed",
+          "referenceUrl": "https://animejs.com/",
+          "capturedAt": "2026-11-02"
+        }
+      ],
+      "sourceFiles": [
+        "entries/cases/animejs-site.json",
+        "docs/cases/animejs-site.md",
+        "demos/cases/animejs-site/index.html",
+        "demos/cases/animejs-site/js/intro.js",
+        "demos/cases/animejs-site/js/main.js",
+        "demos/cases/animejs-site/fidelity.md",
+        "demos/cases/animejs-site/source/values.md"
+      ],
+      "prompt": "读取 animejs-site 的完整来源包，为目标页面实现「彩环仪表盘开场」。三维机芯与 CSS3D 弧线承托 13×13 点阵、73 条曲线和 37 个点，标题与环形刻度按同一开场代理进入。 数值与素材从 source/values.md、对应区块源码和原始资源中取得。保持触发、交接、反向滚动和原生入口关系。",
+      "paths": {
+        "bundle": "agent/patterns/anime-dial-hero.json"
+      }
+    },
+    {
+      "id": "anime-pinned-feature-demos",
+      "order": 185,
+      "title": "粘性分节全屏 API 演示",
+      "category": "滚动叙事",
+      "experienceTypes": [
+        "page-motion"
+      ],
+      "summary": "标题、演示与代码在同一个章节范围内接续。",
+      "mechanism": "八节内容共用固定演示层；滚动驱动进度与章节子时间线，每节进入时播放、离开时暂停或复位。",
+      "trigger": "滚动进入八节特性",
+      "effect": "标题、演示与代码在同一个章节范围内接续。",
+      "useCases": [
+        "开发者产品官网",
+        "多载体动画能力展示"
+      ],
+      "avoid": [],
+      "constraints": [
+        "几何、时间线与素材参数定位到来源代码。",
+        "章节内容与操作入口保留原生 DOM。"
+      ],
+      "composition": {
+        "role": "foundation",
+        "notes": "与同一首页的彩环、机芯、字体和章节进度协作。",
+        "pairsWellWith": [],
+        "conflicts": []
+      },
+      "accessibility": {
+        "keyboard": "链接、选择器和表单沿用原生 DOM 焦点与键盘操作。",
+        "reducedMotion": "来源首页保留连续动画；迁移时按目标页面的减少动态需求选择直接呈现状态。"
+      },
+      "parameters": [
+        {
+          "name": "原作参数",
+          "value": "sync .9",
+          "note": "主页面与特性画廊的滚动同步系数。"
+        }
+      ],
+      "sources": [
+        {
+          "caseId": "animejs-site",
+          "locator": "entries/cases/animejs-site.json#interaction/1",
+          "observation": "页面通过一个线性主时间线连接 HEADING、TOOLBOX、FEATURES、MODULES、SPONSORS 与 GET_STARTED 标签；Scroll Observer 以 sync .9 跟随页面位置，八节 API 演示分别维护进入、离开与可同步的子时间线。",
+          "evidence": "observed",
+          "referenceUrl": "https://animejs.com/",
+          "capturedAt": "2026-11-02"
+        }
+      ],
+      "sourceFiles": [
+        "entries/cases/animejs-site.json",
+        "docs/cases/animejs-site.md",
+        "demos/cases/animejs-site/index.html",
+        "demos/cases/animejs-site/js/features/index.js",
+        "demos/cases/animejs-site/js/main.js",
+        "demos/cases/animejs-site/fidelity.md",
+        "demos/cases/animejs-site/source/values.md"
+      ],
+      "prompt": "读取 animejs-site 的完整来源包，为目标页面实现「粘性分节全屏 API 演示」。八节内容共用固定演示层；滚动驱动进度与章节子时间线，每节进入时播放、离开时暂停或复位。 数值与素材从 source/values.md、对应区块源码和原始资源中取得。保持触发、交接、反向滚动和原生入口关系。",
+      "paths": {
+        "bundle": "agent/patterns/anime-pinned-feature-demos.json"
+      }
+    },
+    {
+      "id": "anime-glb-module-assembly",
+      "order": 186,
+      "title": "滚动驱动的 GLB 模块组装",
+      "category": "滚动叙事",
+      "experienceTypes": [
+        "visual",
+        "page-motion"
+      ],
+      "summary": "三维结构与数字共同说明按需导入如何缩小动画引擎。",
+      "mechanism": "真实模型在主时间线中展开、横移、缩减、旋转与装壳；模块标签和 Bundle size 使用同一组时间线位置。",
+      "trigger": "滚动进入模块章节",
+      "effect": "三维结构与数字共同说明按需导入如何缩小动画引擎。",
+      "useCases": [
+        "开发者产品官网",
+        "模块化产品与文档入口"
+      ],
+      "avoid": [],
+      "constraints": [
+        "几何、时间线与素材参数定位到来源代码。",
+        "章节内容与操作入口保留原生 DOM。"
+      ],
+      "composition": {
+        "role": "foundation",
+        "notes": "与同一首页的彩环、机芯、字体和章节进度协作。",
+        "pairsWellWith": [],
+        "conflicts": []
+      },
+      "accessibility": {
+        "keyboard": "链接、选择器和表单沿用原生 DOM 焦点与键盘操作。",
+        "reducedMotion": "来源首页保留连续动画；迁移时按目标页面的减少动态需求选择直接呈现状态。"
+      },
+      "parameters": [
+        {
+          "name": "原作参数",
+          "value": "22 GLB",
+          "note": "原始模型完整集合；MODULES_CASE 位于 1900。"
+        }
+      ],
+      "sources": [
+        {
+          "caseId": "animejs-site",
+          "locator": "entries/cases/animejs-site.json#interaction/2",
+          "observation": "22 个原始 GLB 构成动画引擎机芯；滚动进入 modules 后按 MODULES_TRANSFORM 590、MODULES_SHRINK 1250、MODULES_ROTATION 1750、MODULES_CASE 1900 展开、缩减与组装模块，Bundle size 和标签数值随同一时间线改变。",
+          "evidence": "observed",
+          "referenceUrl": "https://animejs.com/",
+          "capturedAt": "2026-11-02"
+        }
+      ],
+      "sourceFiles": [
+        "entries/cases/animejs-site.json",
+        "docs/cases/animejs-site.md",
+        "demos/cases/animejs-site/index.html",
+        "demos/cases/animejs-site/js/modules-scene.js",
+        "demos/cases/animejs-site/js/main.js",
+        "demos/cases/animejs-site/fidelity.md",
+        "demos/cases/animejs-site/source/values.md"
+      ],
+      "prompt": "读取 animejs-site 的完整来源包，为目标页面实现「滚动驱动的 GLB 模块组装」。真实模型在主时间线中展开、横移、缩减、旋转与装壳；模块标签和 Bundle size 使用同一组时间线位置。 数值与素材从 source/values.md、对应区块源码和原始资源中取得。保持触发、交接、反向滚动和原生入口关系。",
+      "paths": {
+        "bundle": "agent/patterns/anime-glb-module-assembly.json"
+      }
+    },
+    {
+      "id": "anime-get-started-svg",
+      "order": 187,
+      "title": "收尾文档入口与 SVG 反馈",
+      "category": "视觉构成",
+      "experienceTypes": [
+        "micro-motion"
+      ],
+      "summary": "完整文档目录在收束的场景中成为下一步行动。",
+      "mechanism": "十二个文档入口保留原始 SVG 箭头与悬停反馈；背景机芯旋转并上移，形成进入文档前的视觉收束。",
+      "trigger": "到达 Start animating 并悬停入口",
+      "effect": "完整文档目录在收束的场景中成为下一步行动。",
+      "useCases": [
+        "开发者产品官网",
+        "模块化产品与文档入口"
+      ],
+      "avoid": [],
+      "constraints": [
+        "几何、时间线与素材参数定位到来源代码。",
+        "章节内容与操作入口保留原生 DOM。"
+      ],
+      "composition": {
+        "role": "accent",
+        "notes": "与同一首页的彩环、机芯、字体和章节进度协作。",
+        "pairsWellWith": [],
+        "conflicts": []
+      },
+      "accessibility": {
+        "keyboard": "链接、选择器和表单沿用原生 DOM 焦点与键盘操作。",
+        "reducedMotion": "来源首页保留连续动画；迁移时按目标页面的减少动态需求选择直接呈现状态。"
+      },
+      "parameters": [
+        {
+          "name": "原作参数",
+          "value": "4000ms",
+          "note": "GET_STARTED 的三维退出时长；十二个 SVG 箭头保留原作。"
+        }
+      ],
+      "sources": [
+        {
+          "caseId": "animejs-site",
+          "locator": "entries/cases/animejs-site.json#interaction/3",
+          "observation": "Start animating 提供十二个带原始 SVG 箭头的文档入口，悬停箭头按原站 CSS 反馈；GET_STARTED 同时将三维场景沿 X 轴旋转至 100 度并向上退出，持续 4000ms。",
+          "evidence": "observed",
+          "referenceUrl": "https://animejs.com/",
+          "capturedAt": "2026-11-02"
+        }
+      ],
+      "sourceFiles": [
+        "entries/cases/animejs-site.json",
+        "docs/cases/animejs-site.md",
+        "demos/cases/animejs-site/index.html",
+        "demos/cases/animejs-site/js/get-started.js",
+        "demos/cases/animejs-site/js/main.js",
+        "demos/cases/animejs-site/fidelity.md",
+        "demos/cases/animejs-site/source/values.md"
+      ],
+      "prompt": "读取 animejs-site 的完整来源包，为目标页面实现「收尾文档入口与 SVG 反馈」。十二个文档入口保留原始 SVG 箭头与悬停反馈；背景机芯旋转并上移，形成进入文档前的视觉收束。 数值与素材从 source/values.md、对应区块源码和原始资源中取得。保持触发、交接、反向滚动和原生入口关系。",
+      "paths": {
+        "bundle": "agent/patterns/anime-get-started-svg.json"
       }
     }
   ]

@@ -1,0 +1,60 @@
+{
+  "id": "anime-dial-hero",
+  "order": 184,
+  "title": "彩环仪表盘开场",
+  "category": "视觉构成",
+  "experienceTypes": [
+    "visual",
+    "page-motion"
+  ],
+  "summary": "以真实运行的多种绘图载体同时建立动画引擎的产品形象。",
+  "mechanism": "三维机芯与 CSS3D 弧线承托 13×13 点阵、73 条曲线和 37 个点，标题与环形刻度按同一开场代理进入。",
+  "trigger": "冷启动首页",
+  "effect": "以真实运行的多种绘图载体同时建立动画引擎的产品形象。",
+  "useCases": [
+    "开发者产品官网",
+    "多载体动画能力展示"
+  ],
+  "avoid": [],
+  "constraints": [
+    "几何、时间线与素材参数定位到来源代码。",
+    "章节内容与操作入口保留原生 DOM。"
+  ],
+  "composition": {
+    "role": "accent",
+    "notes": "与同一首页的彩环、机芯、字体和章节进度协作。",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "accessibility": {
+    "keyboard": "链接、选择器和表单沿用原生 DOM 焦点与键盘操作。",
+    "reducedMotion": "来源首页保留连续动画；迁移时按目标页面的减少动态需求选择直接呈现状态。"
+  },
+  "parameters": [
+    {
+      "name": "原作参数",
+      "value": "4000ms",
+      "note": "开场代理时长；INTRO_ON 位于 1400。"
+    }
+  ],
+  "sources": [
+    {
+      "caseId": "animejs-site",
+      "locator": "entries/cases/animejs-site.json#interaction/0",
+      "observation": "首屏用 Three.js 模块机芯、CSS3D SVG 弧线与五层二维 Canvas 组成仪表盘；4000ms 开场代理驱动主时间线，标题于 INTRO_ON 1400 进入，说明比标题延后 500ms，循环交错曲线、点列与环形刻度共同运行。",
+      "evidence": "observed",
+      "referenceUrl": "https://animejs.com/",
+      "capturedAt": "2026-11-02"
+    }
+  ],
+  "sourceFiles": [
+    "entries/cases/animejs-site.json",
+    "docs/cases/animejs-site.md",
+    "demos/cases/animejs-site/index.html",
+    "demos/cases/animejs-site/js/intro.js",
+    "demos/cases/animejs-site/js/main.js",
+    "demos/cases/animejs-site/fidelity.md",
+    "demos/cases/animejs-site/source/values.md"
+  ],
+  "prompt": "读取 animejs-site 的完整来源包，为目标页面实现「彩环仪表盘开场」。三维机芯与 CSS3D 弧线承托 13×13 点阵、73 条曲线和 37 个点，标题与环形刻度按同一开场代理进入。 数值与素材从 source/values.md、对应区块源码和原始资源中取得。保持触发、交接、反向滚动和原生入口关系。"
+}

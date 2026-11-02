@@ -1,0 +1,1999 @@
+{
+  "schemaVersion": 1,
+  "id": "animejs",
+  "material": {
+    "id": "animejs",
+    "order": 12,
+    "title": "Anime.js · JavaScript 动画引擎",
+    "type": "component-library",
+    "category": "组件与效果",
+    "summary": "归档 Anime.js 4.5.0 的完整发行库、源码与 36 个上游样例，涵盖 DOM、SVG、Canvas、三维变换、布局、滚动、拖拽与文本。",
+    "tags": [
+      "JavaScript",
+      "Anime.js",
+      "动画",
+      "SVG",
+      "Canvas",
+      "Three.js",
+      "滚动",
+      "拖拽",
+      "文本",
+      "布局"
+    ],
+    "demo": "demos/materials/animejs/index.html",
+    "preview": "previews/materials/animejs.png",
+    "research": "docs/materials/animejs.md",
+    "demoNote": "Anime.js 4.5.0",
+    "carrierNote": "面向网页的动画引擎，示例含滚动、拖拽与响应式，归入本库。",
+    "install": "import { animate, stagger, createTimeline, onScroll, createDraggable, svg } from './vendor/animejs@4.5.0/dist/modules/index.js';",
+    "upstream": {
+      "repository": "juliangarnier/anime",
+      "url": "https://github.com/juliangarnier/anime",
+      "version": "4.5.0",
+      "commit": "2c9cf8ea00329f6768c7d7902252ed977d75ce42",
+      "verifiedAt": "2026-11-02"
+    },
+    "license": {
+      "name": "MIT（代码）；SIL OFL 1.1（字体）",
+      "url": "https://github.com/juliangarnier/anime/blob/2c9cf8ea00329f6768c7d7902252ed977d75ce42/LICENSE.md",
+      "scope": "Anime.js 发行库、源码与样例代码；Three.js 和 tweaks 的 MIT 原文随包提供，共享 IoskeleyMono 字体保留 OFL 1.1 元数据。",
+      "notes": "保留 Julian Garnier 与各依赖作者署名；Google Fonts 和 picsum.photos 来源见样例索引。"
+    },
+    "useCases": [
+      "网页中的独立变换与微交互",
+      "随滚动推进的页面叙事",
+      "SVG 描线与形变",
+      "可拖动、可响应媒体查询的界面",
+      "文本拆分与布局切换"
+    ],
+    "avoid": [
+      "以固定时间轴导出影片为主要交付物的工作"
+    ],
+    "constraints": [
+      "Anime.js 固定 v4.5.0 与完整提交，样例保留原始目录层级。",
+      "36 个样例共用完整 dist/，Three.js 固定 0.184.0，tweaks 固定 0.3.4。",
+      "远程字体、随机图片和两处源码适配见样例索引。"
+    ],
+    "relatedEntries": [
+      {
+        "kind": "case",
+        "id": "animejs-site",
+        "note": "官网首页用 Anime.js 实现"
+      }
+    ],
+    "sources": [
+      {
+        "title": "Anime.js 固定提交",
+        "url": "https://github.com/juliangarnier/anime/tree/2c9cf8ea00329f6768c7d7902252ed977d75ce42",
+        "note": "v4.5.0 的 examples、dist 和 src。",
+        "evidence": "source"
+      },
+      {
+        "title": "Anime.js 官方文档",
+        "url": "https://animejs.com/documentation",
+        "note": "动画、时间线、滚动、拖拽和 SVG API。",
+        "evidence": "source"
+      },
+      {
+        "title": "官方仓库的样例源码",
+        "url": "https://github.com/juliangarnier/anime/tree/2c9cf8ea00329f6768c7d7902252ed977d75ce42/examples",
+        "note": "收录含 index.html 的 36 个样例，包括嵌套目录。",
+        "evidence": "source"
+      },
+      {
+        "title": "官网 Examples · 作者的 CodePen 合集",
+        "url": "https://codepen.io/collection/Poerqa",
+        "note": "官网导航的 Examples 入口。",
+        "evidence": "source"
+      },
+      {
+        "title": "作者官网分享图",
+        "url": "https://animejs.com/media/pages/home/066c76f87b-1787698629/generated-og-image.en.png",
+        "note": "素材封面使用官网首页标注的品牌与模块分解原图。",
+        "evidence": "source"
+      }
+    ],
+    "accessibility": {
+      "keyboard": "外框使用原生链接并保留焦点样式；样例控件遵循上游的键盘行为。",
+      "reducedMotion": "样例保留上游媒体查询与作用域行为；目标页面可用 createScope 连接 prefers-reduced-motion。"
+    },
+    "sourceFiles": [
+      "demos/materials/animejs/index.html",
+      "demos/materials/animejs/demo/demo.js",
+      "site/shared/theme.js",
+      "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/index.js",
+      "demos/materials/animejs/source/package.json",
+      "docs/materials/animejs.md"
+    ],
+    "demos": [
+      {
+        "id": "additive-creature",
+        "title": "指针引导的游动生物",
+        "component": "animate、createTimeline、stagger",
+        "summary": "以混合变换叠加出跟随指针的生物。",
+        "entrypoint": "demos/materials/animejs/index.html?demo=additive-creature",
+        "group": "图形与运动"
+      },
+      {
+        "id": "additive-fireflies",
+        "title": "萤火虫轨迹叠加",
+        "component": "animate、createTimer",
+        "summary": "点状元素的叠加运动与指针跟随。",
+        "entrypoint": "demos/materials/animejs/index.html?demo=additive-fireflies",
+        "group": "图形与运动"
+      },
+      {
+        "id": "advanced-grid-staggering",
+        "title": "从中心扩散的点阵",
+        "component": "createTimeline、stagger",
+        "summary": "以二维网格、中心距离和交错延迟组织点阵。",
+        "entrypoint": "demos/materials/animejs/index.html?demo=advanced-grid-staggering",
+        "group": "图形与运动"
+      },
+      {
+        "id": "animatable-follow-cursor",
+        "title": "平滑追随指针",
+        "component": "createAnimatable",
+        "summary": "指针目标通过可更新的动画属性平滑跟随。",
+        "entrypoint": "demos/materials/animejs/index.html?demo=animatable-follow-cursor",
+        "group": "图形与运动"
+      },
+      {
+        "id": "animejs-v4-logo-animation",
+        "title": "标志描线",
+        "component": "createTimeline、svg、stagger",
+        "summary": "沿真实 SVG 路径错峰描绘 Anime.js 标志。",
+        "entrypoint": "demos/materials/animejs/index.html?demo=animejs-v4-logo-animation",
+        "group": "文字与矢量"
+      },
+      {
+        "id": "auto-layout-accordion",
+        "title": "手风琴折叠",
+        "component": "createLayout",
+        "summary": "折叠面板在真实布局变化间过渡。",
+        "entrypoint": "demos/materials/animejs/index.html?demo=auto-layout/accordion",
+        "group": "自动布局"
+      },
+      {
+        "id": "auto-layout-cards",
+        "title": "可展开卡片",
+        "component": "createLayout",
+        "summary": "卡片在展开、排列与随机图片间保持布局连续。",
+        "entrypoint": "demos/materials/animejs/index.html?demo=auto-layout/cards",
+        "group": "自动布局"
+      },
+      {
+        "id": "auto-layout-code",
+        "title": "代码块换行",
+        "component": "createLayout",
+        "summary": "代码容器在内容变化时过渡到新布局。",
+        "entrypoint": "demos/materials/animejs/index.html?demo=auto-layout/code",
+        "group": "自动布局"
+      },
+      {
+        "id": "auto-layout-grid-columns",
+        "title": "网格列切换",
+        "component": "createLayout",
+        "summary": "网格列数改变时逐项衔接位置与尺寸。",
+        "entrypoint": "demos/materials/animejs/index.html?demo=auto-layout/grid-columns",
+        "group": "自动布局"
+      },
+      {
+        "id": "auto-layout-nav",
+        "title": "导航选中态",
+        "component": "createLayout",
+        "summary": "导航的选中项和排列随操作变换。",
+        "entrypoint": "demos/materials/animejs/index.html?demo=auto-layout/nav",
+        "group": "自动布局"
+      },
+      {
+        "id": "auto-layout-onscroll",
+        "title": "滚动重排",
+        "component": "createLayout、onScroll",
+        "summary": "滚动触发布局变化。",
+        "entrypoint": "demos/materials/animejs/index.html?demo=auto-layout/onscroll",
+        "group": "自动布局"
+      },
+      {
+        "id": "auto-layout-periodic-table",
+        "title": "元素周期表",
+        "component": "createLayout",
+        "summary": "元素周期表在不同排列间转换。",
+        "entrypoint": "demos/materials/animejs/index.html?demo=auto-layout/periodic-table",
+        "group": "自动布局"
+      },
+      {
+        "id": "auto-layout-planets",
+        "title": "行星卡片",
+        "component": "createLayout",
+        "summary": "行星卡片在多种布局间转换。",
+        "entrypoint": "demos/materials/animejs/index.html?demo=auto-layout/planets",
+        "group": "自动布局"
+      },
+      {
+        "id": "auto-layout-todo-list",
+        "title": "待办清单",
+        "component": "createLayout",
+        "summary": "待办项目增删与重排形成连续过渡。",
+        "entrypoint": "demos/materials/animejs/index.html?demo=auto-layout/todo-list",
+        "group": "自动布局"
+      },
+      {
+        "id": "canvas-2d",
+        "title": "画布粒子",
+        "component": "animate、createTimer",
+        "summary": "将动画对象属性绘制为二维 Canvas 粒子。",
+        "entrypoint": "demos/materials/animejs/index.html?demo=canvas-2d",
+        "group": "图形与运动"
+      },
+      {
+        "id": "clock-playback-controls",
+        "title": "播放时钟",
+        "component": "animate、createTimeline",
+        "summary": "用时钟演示播放、暂停与播放进度控制。",
+        "entrypoint": "demos/materials/animejs/index.html?demo=clock-playback-controls",
+        "group": "时钟与时间线"
+      },
+      {
+        "id": "draggable-infinite-auto-carousel",
+        "title": "无限轮播",
+        "component": "createDraggable、createTimeline",
+        "summary": "轮播在自动播放与拖拽之间连续接管。",
+        "entrypoint": "demos/materials/animejs/index.html?demo=draggable-infinite-auto-carousel",
+        "group": "拖拽与滚动"
+      },
+      {
+        "id": "draggable-mouse-scroll-snap-carousel",
+        "title": "滚动吸附轮播",
+        "component": "createDraggable",
+        "summary": "轮播结合鼠标、滚动与吸附。",
+        "entrypoint": "demos/materials/animejs/index.html?demo=draggable-mouse-scroll-snap-carousel",
+        "group": "拖拽与滚动"
+      },
+      {
+        "id": "draggable-playground",
+        "title": "拖拽实验台",
+        "component": "createDraggable、createSpring",
+        "summary": "直接操作容器约束、吸附、弹簧与拖动目标。",
+        "entrypoint": "demos/materials/animejs/index.html?demo=draggable-playground",
+        "group": "拖拽与滚动"
+      },
+      {
+        "id": "irregular-playback-typewriter",
+        "title": "不等速打字",
+        "component": "createTimeline、irregular",
+        "summary": "用不规则播放节奏模拟打字。",
+        "entrypoint": "demos/materials/animejs/index.html?demo=irregular-playback-typewriter",
+        "group": "时钟与时间线"
+      },
+      {
+        "id": "layered-css-transforms",
+        "title": "多层变换",
+        "component": "createTimeline、createSpring",
+        "summary": "独立的 CSS 变换分层组合。",
+        "entrypoint": "demos/materials/animejs/index.html?demo=layered-css-transforms",
+        "group": "图形与运动"
+      },
+      {
+        "id": "onscroll-responsive-scope",
+        "title": "响应式滚动区域",
+        "component": "createScope、onScroll",
+        "summary": "将媒体查询作用域与滚动动画联动。",
+        "entrypoint": "demos/materials/animejs/index.html?demo=onscroll-responsive-scope",
+        "group": "拖拽与滚动"
+      },
+      {
+        "id": "onscroll-sticky",
+        "title": "粘性滚动",
+        "component": "onScroll、createTimeline",
+        "summary": "粘性舞台随滚动进度播放时间线。",
+        "entrypoint": "demos/materials/animejs/index.html?demo=onscroll-sticky",
+        "group": "拖拽与滚动"
+      },
+      {
+        "id": "stagger",
+        "title": "交错延迟",
+        "component": "stagger、createTimeline",
+        "summary": "比较交错函数的时间、位置和距离分布。",
+        "entrypoint": "demos/materials/animejs/index.html?demo=stagger",
+        "group": "图形与运动"
+      },
+      {
+        "id": "svg-graph",
+        "title": "动态图表",
+        "component": "svg、animate",
+        "summary": "SVG 图表的几何与路径变化。",
+        "entrypoint": "demos/materials/animejs/index.html?demo=svg-graph",
+        "group": "文字与矢量"
+      },
+      {
+        "id": "svg-line-drawing",
+        "title": "路径描线",
+        "component": "svg.createDrawable、createTimeline",
+        "summary": "错峰描线展示 SVG 路径进度。",
+        "entrypoint": "demos/materials/animejs/index.html?demo=svg-line-drawing",
+        "group": "文字与矢量"
+      },
+      {
+        "id": "text-hover-effects",
+        "title": "文字悬停",
+        "component": "splitText、animate",
+        "summary": "悬停文字时按字符或词形成反馈。",
+        "entrypoint": "demos/materials/animejs/index.html?demo=text/hover-effects",
+        "group": "文字与矢量"
+      },
+      {
+        "id": "text-scramble",
+        "title": "字符扰乱",
+        "component": "scrambleText",
+        "summary": "通过可操作参数观察文本扰乱与揭示。",
+        "entrypoint": "demos/materials/animejs/index.html?demo=text/scramble",
+        "group": "文字与矢量"
+      },
+      {
+        "id": "text-scramble-tl",
+        "title": "文字扰乱时间线",
+        "component": "scrambleText、createTimeline",
+        "summary": "将多屏文字扰乱、缩放与颜色串成时间线。",
+        "entrypoint": "demos/materials/animejs/index.html?demo=text/scramble-tl",
+        "group": "文字与矢量"
+      },
+      {
+        "id": "text-split-effects",
+        "title": "逐字拆分",
+        "component": "splitText、createTimeline",
+        "summary": "按行、词与字符拆分并组合文字动效。",
+        "entrypoint": "demos/materials/animejs/index.html?demo=text/split-effects",
+        "group": "文字与矢量"
+      },
+      {
+        "id": "text-split-playground",
+        "title": "拆字实验台",
+        "component": "splitText",
+        "summary": "直接调整文字拆分与呈现参数。",
+        "entrypoint": "demos/materials/animejs/index.html?demo=text/split-playground",
+        "group": "文字与矢量"
+      },
+      {
+        "id": "threejs-transforms",
+        "title": "三维对象变换",
+        "component": "animate、threeAdapter",
+        "summary": "对三维对象、材质与相机执行独立属性动画。",
+        "entrypoint": "demos/materials/animejs/index.html?demo=threejs/transforms",
+        "group": "图形与运动"
+      },
+      {
+        "id": "timeline-50K-stars",
+        "title": "五万颗星",
+        "component": "createTimeline、animate",
+        "summary": "用时间线调度五万颗星的分布与运动。",
+        "entrypoint": "demos/materials/animejs/index.html?demo=timeline-50K-stars",
+        "group": "时钟与时间线"
+      },
+      {
+        "id": "timeline-refresh-starlings",
+        "title": "椋鸟群",
+        "component": "createTimeline",
+        "summary": "刷新目标值形成椋鸟群的连续运动。",
+        "entrypoint": "demos/materials/animejs/index.html?demo=timeline-refresh-starlings",
+        "group": "时钟与时间线"
+      },
+      {
+        "id": "timeline-seamless-loop",
+        "title": "无缝循环",
+        "component": "createTimeline、stagger",
+        "summary": "将交错动画接成无缝循环。",
+        "entrypoint": "demos/materials/animejs/index.html?demo=timeline-seamless-loop",
+        "group": "时钟与时间线"
+      },
+      {
+        "id": "timeline-stress-test",
+        "title": "时间线压力演示",
+        "component": "createTimeline",
+        "entrypoint": "demos/materials/animejs/index.html?demo=timeline-stress-test",
+        "group": "时钟与时间线",
+        "summary": "通过大量目标观察时间线调度。"
+      }
+    ],
+    "prompt": "读取 animejs 素材的中文说明与相关上游样例，以 Anime.js 4.5.0 实现目标网页动效。按元素与属性选择 animate，用 stagger 组织分布，用 createTimeline 协调先后，用 onScroll 连接滚动，用 createDraggable 处理拖拽，用 svg 工具处理描线与路径。保持独立变换、作用域和销毁关系与所取样例一致。"
+  },
+  "documents": [
+    {
+      "path": "docs/materials/animejs.md",
+      "role": "research",
+      "content": "# Anime.js · JavaScript 动画引擎\n\n## 是什么\n\nAnime.js 为网页提供统一的动画、时间线、交错、滚动、拖拽、文本与布局 API。此素材保存 v4.5.0 的 36 个上游样例、完整发行库与制作源码。[打开样例](../../demos/materials/animejs/index.html)。\n\n## 安装与导入\n\n```js\nimport { animate, stagger, createTimeline, onScroll, createDraggable, svg }\n  from './vendor/animejs@4.5.0/dist/modules/index.js';\n\nanimate('.square', { rotate: 90, delay: stagger(60) });\ncreateTimeline().add('.square', { x: 100 }).add('.circle', { scale: 1.2 });\nanimate('.item', { y: [80, 0], autoplay: onScroll({ sync: true }) });\ncreateDraggable('.handle', { container: '.track' });\nanimate(svg.createDrawable('path'), { draw: '0 1' });\n```\n\n通过 HTTP 静态服务打开 `index.html?demo=<路径>`。目录层级保持为 `demo/examples/`，共享 CSS 与素材位于 `demo/examples/assets/`。库引用统一指向 `vendor/`；Three.js 样例的 importmap 使用 0.184.0，tweaks/gui 指向 npm 包内的 `gui.js`。\n\n## 样例索引\n\n36 项取自 [4.5.0 仓库示例目录](https://github.com/juliangarnier/anime/tree/2c9cf8ea00329f6768c7d7902252ed977d75ce42/examples)。官网 Examples 入口指向[作者的 CodePen 合集](https://codepen.io/collection/Poerqa)。\n\n| 样例 | API 与来源说明 |\n| --- | --- |\n| [指针引导的游动生物](../../demos/materials/animejs/index.html?demo=additive-creature) | animate、createTimeline、stagger |\n| [萤火虫轨迹叠加](../../demos/materials/animejs/index.html?demo=additive-fireflies) | animate、createTimer |\n| [从中心扩散的点阵](../../demos/materials/animejs/index.html?demo=advanced-grid-staggering) | createTimeline、stagger |\n| [平滑追随指针](../../demos/materials/animejs/index.html?demo=animatable-follow-cursor) | createAnimatable |\n| [标志描线](../../demos/materials/animejs/index.html?demo=animejs-v4-logo-animation) | createTimeline、svg、stagger |\n| [手风琴折叠](../../demos/materials/animejs/index.html?demo=auto-layout/accordion) | createLayout |\n| [可展开卡片](../../demos/materials/animejs/index.html?demo=auto-layout/cards) | createLayout。图片沿用 picsum.photos。 |\n| [代码块换行](../../demos/materials/animejs/index.html?demo=auto-layout/code) | createLayout |\n| [网格列切换](../../demos/materials/animejs/index.html?demo=auto-layout/grid-columns) | createLayout |\n| [导航选中态](../../demos/materials/animejs/index.html?demo=auto-layout/nav) | createLayout |\n| [滚动重排](../../demos/materials/animejs/index.html?demo=auto-layout/onscroll) | createLayout、onScroll |\n| [元素周期表](../../demos/materials/animejs/index.html?demo=auto-layout/periodic-table) | createLayout |\n| [行星卡片](../../demos/materials/animejs/index.html?demo=auto-layout/planets) | createLayout |\n| [待办清单](../../demos/materials/animejs/index.html?demo=auto-layout/todo-list) | createLayout |\n| [画布粒子](../../demos/materials/animejs/index.html?demo=canvas-2d) | animate、createTimer。省去上游失效的 assets/css/styles.css 链接。 |\n| [播放时钟](../../demos/materials/animejs/index.html?demo=clock-playback-controls) | animate、createTimeline |\n| [无限轮播](../../demos/materials/animejs/index.html?demo=draggable-infinite-auto-carousel) | createDraggable、createTimeline |\n| [滚动吸附轮播](../../demos/materials/animejs/index.html?demo=draggable-mouse-scroll-snap-carousel) | createDraggable |\n| [拖拽实验台](../../demos/materials/animejs/index.html?demo=draggable-playground) | createDraggable、createSpring |\n| [不等速打字](../../demos/materials/animejs/index.html?demo=irregular-playback-typewriter) | createTimeline、irregular |\n| [多层变换](../../demos/materials/animejs/index.html?demo=layered-css-transforms) | createTimeline、createSpring |\n| [响应式滚动区域](../../demos/materials/animejs/index.html?demo=onscroll-responsive-scope) | createScope、onScroll |\n| [粘性滚动](../../demos/materials/animejs/index.html?demo=onscroll-sticky) | onScroll、createTimeline |\n| [交错延迟](../../demos/materials/animejs/index.html?demo=stagger) | stagger、createTimeline |\n| [动态图表](../../demos/materials/animejs/index.html?demo=svg-graph) | svg、animate |\n| [路径描线](../../demos/materials/animejs/index.html?demo=svg-line-drawing) | svg.createDrawable、createTimeline |\n| [文字悬停](../../demos/materials/animejs/index.html?demo=text/hover-effects) | splitText、animate。保留 Google Fonts 外链。 |\n| [字符扰乱](../../demos/materials/animejs/index.html?demo=text/scramble) | scrambleText |\n| [文字扰乱时间线](../../demos/materials/animejs/index.html?demo=text/scramble-tl) | scrambleText、createTimeline。删除上游未公开的 animatorkit 导入及 showGUI() 调用。 |\n| [逐字拆分](../../demos/materials/animejs/index.html?demo=text/split-effects) | splitText、createTimeline。保留 Google Fonts 外链。 |\n| [拆字实验台](../../demos/materials/animejs/index.html?demo=text/split-playground) | splitText。保留 Google Fonts 外链。 |\n| [三维对象变换](../../demos/materials/animejs/index.html?demo=threejs/transforms) | animate、threeAdapter |\n| [五万颗星](../../demos/materials/animejs/index.html?demo=timeline-50K-stars) | createTimeline、animate |\n| [椋鸟群](../../demos/materials/animejs/index.html?demo=timeline-refresh-starlings) | createTimeline |\n| [无缝循环](../../demos/materials/animejs/index.html?demo=timeline-seamless-loop) | createTimeline、stagger |\n| [时间线压力演示](../../demos/materials/animejs/index.html?demo=timeline-stress-test) | createTimeline |\n\n## 官方文档\n\n[Anime.js documentation](https://animejs.com/documentation)。许可与署名见[LICENSES.md](../../demos/materials/animejs/LICENSES.md)。\n"
+    },
+    {
+      "path": "prompts/materials/animejs.md",
+      "role": "prompt",
+      "content": "# Anime.js · JavaScript 动画引擎 · 复用 Prompt\n\n[结构化条目](../../entries/materials/animejs.json)\n\n读取 animejs 素材的中文说明与相关上游样例，以 Anime.js 4.5.0 实现目标网页动效。按元素与属性选择 animate，用 stagger 组织分布，用 createTimeline 协调先后，用 onScroll 连接滚动，用 createDraggable 处理拖拽，用 svg 工具处理描线与路径。保持独立变换、作用域和销毁关系与所取样例一致。\n\n## 制作约束\n\n- Anime.js 固定 v4.5.0 与完整提交，样例保留原始目录层级。\n- 36 个样例共用完整 dist/，Three.js 固定 0.184.0，tweaks 固定 0.3.4。\n- 远程字体、随机图片和两处源码适配见样例索引。\n"
+    },
+    {
+      "path": "demos/materials/animejs/LICENSES.md",
+      "role": "license",
+      "content": "# 许可与署名\n\n| 内容 | 作者与来源 | 许可原文 |\n| --- | --- | --- |\n| Anime.js 4.5.0、36 个样例代码与源码 | Julian Garnier，juliangarnier/anime，2c9cf8ea00329f6768c7d7902252ed977d75ce42 | [MIT](vendor/animejs@4.5.0/LICENSE.md) |\n| IoskeleyMono Regular / Bold | Renzhi Li / Belleve Invis，字体内嵌署名；上游 `examples/assets/fonts/` | [SIL OFL 1.1](https://openfontlicense.org/)，保留字体内嵌许可 |\n| Three.js 0.184.0 | Three.js authors | [MIT](vendor/three@0.184.0/LICENSE) |\n| tweaks 0.3.4 | Julian Garnier | [MIT](vendor/tweaks@0.3.4/LICENSE) |\n\n样例中的远程字体与图片来源见[样例索引](../../../docs/materials/animejs.md)。\n"
+    },
+    {
+      "path": "demos/materials/animejs/source/README.md",
+      "role": "process",
+      "content": "# Anime.js 源码\n\n上游：https://github.com/juliangarnier/anime/tree/2c9cf8ea00329f6768c7d7902252ed977d75ce42 。版本 v4.5.0，归档日期 2026-11-02。\n\n`src/`、`package.json`、`package-lock.json` 与 `rollup.config.js` 保留上游内容。浏览器直接导入 `../vendor/animejs@4.5.0/dist/modules/index.js`；36 个样例通过 `../index.html?demo=<路径>` 打开。使用说明与样例索引见 `docs/materials/animejs.md`。\n"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/LICENSE.md",
+      "role": "license",
+      "content": "The MIT License\n\nCopyright (c) 2025 Julian Garnier\n\nPermission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.\n"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/three@0.184.0/LICENSE",
+      "role": "license",
+      "content": "The MIT License\n\nCopyright © 2010-2026 three.js authors\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in\nall copies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN\nTHE SOFTWARE.\n"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/tweaks@0.3.4/LICENSE",
+      "role": "license",
+      "content": "MIT License\n\nCopyright (c) 2026 Julian Garnier\n\nPermission is hereby granted, free of charge, to any person obtaining a copy\nof this software and associated documentation files (the \"Software\"), to deal\nin the Software without restriction, including without limitation the rights\nto use, copy, modify, merge, publish, distribute, sublicense, and/or sell\ncopies of the Software, and to permit persons to whom the Software is\nfurnished to do so, subject to the following conditions:\n\nThe above copyright notice and this permission notice shall be included in all\ncopies or substantial portions of the Software.\n\nTHE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR\nIMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,\nFITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE\nAUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER\nLIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,\nOUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE\nSOFTWARE.\n"
+    }
+  ],
+  "files": [
+    {
+      "path": "demos/materials/animejs/.gitignore",
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/animejs/LICENSES.md",
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/animejs/demo/demo.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/demo.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/additive-creature/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/additive-creature/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/additive-fireflies/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/additive-fireflies/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/advanced-grid-staggering/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/advanced-grid-staggering/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/animatable-follow-cursor/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/animatable-follow-cursor/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/animejs-v4-logo-animation/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/animejs-v4-logo-animation/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/assets/css/styles.css",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/assets/fonts/IoskeleyMono-Bold.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/assets/fonts/IoskeleyMono-Regular.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/auto-layout/accordion/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/auto-layout/accordion/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/auto-layout/cards/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/auto-layout/cards/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/auto-layout/code/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/auto-layout/code/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/auto-layout/grid-columns/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/auto-layout/grid-columns/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/auto-layout/nav/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/auto-layout/nav/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/auto-layout/onscroll/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/auto-layout/onscroll/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/auto-layout/periodic-table/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/auto-layout/periodic-table/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/auto-layout/planets/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/auto-layout/planets/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/auto-layout/todo-list/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/auto-layout/todo-list/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/canvas-2d/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/canvas-2d/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/clock-playback-controls/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/clock-playback-controls/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/draggable-infinite-auto-carousel/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/draggable-infinite-auto-carousel/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/draggable-mouse-scroll-snap-carousel/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/draggable-mouse-scroll-snap-carousel/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/draggable-playground/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/draggable-playground/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/irregular-playback-typewriter/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/irregular-playback-typewriter/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/layered-css-transforms/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/layered-css-transforms/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/onscroll-responsive-scope/card-back.svg",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/onscroll-responsive-scope/card.svg",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/onscroll-responsive-scope/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/onscroll-responsive-scope/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/onscroll-sticky/card-back.svg",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/onscroll-sticky/card.svg",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/onscroll-sticky/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/onscroll-sticky/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/stagger/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/stagger/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/svg-graph/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/svg-graph/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/svg-line-drawing/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/svg-line-drawing/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/text/hover-effects/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/text/hover-effects/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/text/scramble-tl/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/text/scramble-tl/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/text/scramble/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/text/scramble/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/text/split-effects/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/text/split-effects/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/text/split-playground/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/text/split-playground/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/threejs/transforms/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/threejs/transforms/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/timeline-50K-stars/cursor.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/timeline-50K-stars/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/timeline-50K-stars/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/timeline-refresh-starlings/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/timeline-refresh-starlings/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/timeline-seamless-loop/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/timeline-seamless-loop/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/timeline-stress-test/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/demo/examples/timeline-stress-test/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/source/README.md",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/package-lock.json",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/package.json",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/rollup.config.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/adapters/index.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/adapters/registry.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/adapters/three/adapter.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/adapters/three/helpers.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/adapters/three/index.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/adapters/three/instance.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/adapters/three/object3d.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/adapters/three/resolvers.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/adapters/three/uniform.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/animatable/animatable.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/animatable/index.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/animation/additive.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/animation/animation.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/animation/composition.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/animation/index.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/core/clock.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/core/colors.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/core/consts.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/core/globals.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/core/helpers.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/core/render.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/core/styles.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/core/targets.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/core/transforms.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/core/units.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/core/values.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/draggable/draggable.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/draggable/index.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/easings/cubic-bezier/index.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/easings/eases/index.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/easings/eases/parser.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/easings/index.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/easings/irregular/index.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/easings/linear/index.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/easings/none.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/easings/spring/index.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/easings/steps/index.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/engine/engine.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/engine/index.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/events/index.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/events/scroll.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/index.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/layout/index.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/layout/layout.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/scope/index.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/scope/scope.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/svg/drawable.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/svg/helpers.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/svg/index.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/svg/morphto.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/svg/motionpath.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/text/index.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/text/scramble.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/text/split.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/timeline/index.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/timeline/position.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/timeline/timeline.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/timer/index.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/timer/timer.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/types/index.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/utils/chainable.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/utils/index.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/utils/number.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/utils/random.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/utils/stagger.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/utils/target.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/utils/time.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/waapi/composition.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/waapi/index.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/src/waapi/waapi.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/LICENSE.md",
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/bundles/anime.esm.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/bundles/anime.esm.min.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/bundles/anime.umd.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/bundles/anime.umd.min.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/adapters/index.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/adapters/index.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/adapters/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/adapters/registry.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/adapters/registry.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/adapters/registry.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/adapters/three/adapter.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/adapters/three/adapter.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/adapters/three/adapter.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/adapters/three/helpers.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/adapters/three/helpers.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/adapters/three/helpers.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/adapters/three/index.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/adapters/three/index.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/adapters/three/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/adapters/three/instance.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/adapters/three/instance.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/adapters/three/instance.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/adapters/three/object3d.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/adapters/three/object3d.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/adapters/three/object3d.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/adapters/three/resolvers.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/adapters/three/resolvers.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/adapters/three/resolvers.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/adapters/three/uniform.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/adapters/three/uniform.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/adapters/three/uniform.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/animatable/animatable.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/animatable/animatable.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/animatable/animatable.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/animatable/index.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/animatable/index.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/animatable/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/animation/additive.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/animation/additive.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/animation/additive.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/animation/animation.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/animation/animation.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/animation/animation.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/animation/composition.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/animation/composition.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/animation/composition.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/animation/index.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/animation/index.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/animation/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/core/clock.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/core/clock.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/core/clock.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/core/colors.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/core/colors.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/core/colors.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/core/consts.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/core/consts.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/core/consts.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/core/globals.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/core/globals.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/core/globals.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/core/helpers.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/core/helpers.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/core/helpers.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/core/render.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/core/render.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/core/render.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/core/styles.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/core/styles.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/core/styles.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/core/targets.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/core/targets.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/core/targets.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/core/transforms.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/core/transforms.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/core/transforms.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/core/units.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/core/units.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/core/units.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/core/values.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/core/values.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/core/values.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/draggable/draggable.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/draggable/draggable.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/draggable/draggable.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/draggable/index.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/draggable/index.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/draggable/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/easings/cubic-bezier/index.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/easings/cubic-bezier/index.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/easings/cubic-bezier/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/easings/eases/index.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/easings/eases/index.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/easings/eases/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/easings/eases/parser.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/easings/eases/parser.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/easings/eases/parser.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/easings/index.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/easings/index.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/easings/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/easings/irregular/index.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/easings/irregular/index.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/easings/irregular/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/easings/linear/index.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/easings/linear/index.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/easings/linear/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/easings/none.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/easings/none.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/easings/none.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/easings/spring/index.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/easings/spring/index.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/easings/spring/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/easings/steps/index.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/easings/steps/index.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/easings/steps/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/engine/engine.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/engine/engine.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/engine/engine.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/engine/index.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/engine/index.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/engine/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/events/index.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/events/index.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/events/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/events/scroll.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/events/scroll.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/events/scroll.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/index.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/index.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/layout/index.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/layout/index.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/layout/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/layout/layout.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/layout/layout.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/layout/layout.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/scope/index.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/scope/index.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/scope/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/scope/scope.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/scope/scope.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/scope/scope.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/svg/drawable.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/svg/drawable.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/svg/drawable.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/svg/helpers.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/svg/helpers.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/svg/helpers.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/svg/index.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/svg/index.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/svg/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/svg/morphto.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/svg/morphto.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/svg/morphto.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/svg/motionpath.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/svg/motionpath.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/svg/motionpath.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/text/index.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/text/index.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/text/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/text/scramble.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/text/scramble.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/text/scramble.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/text/split.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/text/split.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/text/split.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/timeline/index.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/timeline/index.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/timeline/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/timeline/position.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/timeline/position.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/timeline/position.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/timeline/timeline.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/timeline/timeline.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/timeline/timeline.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/timer/index.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/timer/index.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/timer/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/timer/timer.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/timer/timer.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/timer/timer.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/types/index.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/utils/chainable.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/utils/chainable.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/utils/chainable.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/utils/index.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/utils/index.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/utils/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/utils/number.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/utils/number.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/utils/number.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/utils/random.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/utils/random.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/utils/random.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/utils/stagger.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/utils/stagger.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/utils/stagger.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/utils/target.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/utils/target.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/utils/target.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/utils/time.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/utils/time.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/utils/time.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/waapi/composition.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/waapi/composition.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/waapi/composition.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/waapi/index.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/waapi/index.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/waapi/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/waapi/waapi.cjs",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/waapi/waapi.d.ts",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/waapi/waapi.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/three@0.184.0/LICENSE",
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/three@0.184.0/build/three.core.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/three@0.184.0/build/three.module.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/three@0.184.0/examples/jsm/controls/OrbitControls.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/tweaks@0.3.4/LICENSE",
+      "role": "license"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/tweaks@0.3.4/gui.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/tweaks@0.3.4/icons.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/tweaks@0.3.4/state.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/tweaks@0.3.4/styles.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/materials/animejs/vendor/tweaks@0.3.4/tweaks.js",
+      "role": "vendor"
+    },
+    {
+      "path": "docs/materials/animejs.md",
+      "role": "source"
+    },
+    {
+      "path": "entries/materials/animejs.json",
+      "role": "context"
+    },
+    {
+      "path": "previews/materials/animejs.png",
+      "role": "preview"
+    },
+    {
+      "path": "prompts/materials/animejs.md",
+      "role": "context"
+    },
+    {
+      "path": "site/runtime/demo-scrollbars.css",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/theme.js",
+      "role": "source"
+    }
+  ],
+  "sourceFiles": [
+    "demos/materials/animejs/index.html",
+    "demos/materials/animejs/demo/demo.js",
+    "site/shared/theme.js",
+    "demos/materials/animejs/vendor/animejs@4.5.0/dist/modules/index.js",
+    "demos/materials/animejs/source/package.json",
+    "docs/materials/animejs.md"
+  ]
+}

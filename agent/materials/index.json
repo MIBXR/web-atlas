@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "repository": "https://github.com/MIBXR/web-atlas",
-  "materialCount": 11,
+  "materialCount": 12,
   "materials": [
     {
       "id": "shaders",
@@ -312,7 +312,7 @@
         "snapshot": "demos/materials/beautiful-article/",
         "snapshotEntry": "SKILL.md",
         "entry": "entries/materials/beautiful-article.json",
-        "preview": "previews/materials/beautiful-article.png"
+        "preview": "previews/materials/beautiful-article.webp"
       }
     },
     {
@@ -356,7 +356,7 @@
         "bundle": "agent/materials/reacticle.json",
         "demo": "demos/materials/reacticle/index.html",
         "entry": "entries/materials/reacticle.json",
-        "preview": "previews/materials/reacticle.png"
+        "preview": "previews/materials/reacticle.jpeg"
       }
     },
     {
@@ -482,6 +482,46 @@
         "snapshotEntry": "SKILL.md",
         "entry": "entries/materials/hallmark-skill.json",
         "preview": "previews/materials/hallmark-skill.jpg"
+      }
+    },
+    {
+      "id": "animejs",
+      "title": "Anime.js · JavaScript 动画引擎",
+      "type": "component-library",
+      "category": "组件与效果",
+      "summary": "归档 Anime.js 4.5.0 的完整发行库、源码与 36 个上游样例，涵盖 DOM、SVG、Canvas、三维变换、布局、滚动、拖拽与文本。",
+      "tags": [
+        "JavaScript",
+        "Anime.js",
+        "动画",
+        "SVG",
+        "Canvas",
+        "Three.js",
+        "滚动",
+        "拖拽",
+        "文本",
+        "布局"
+      ],
+      "useCases": [
+        "网页中的独立变换与微交互",
+        "随滚动推进的页面叙事",
+        "SVG 描线与形变",
+        "可拖动、可响应媒体查询的界面",
+        "文本拆分与布局切换"
+      ],
+      "avoid": [
+        "以固定时间轴导出影片为主要交付物的工作"
+      ],
+      "constraints": [
+        "Anime.js 固定 v4.5.0 与完整提交，样例保留原始目录层级。",
+        "36 个样例共用完整 dist/，Three.js 固定 0.184.0，tweaks 固定 0.3.4。",
+        "远程字体、随机图片和两处源码适配见样例索引。"
+      ],
+      "paths": {
+        "bundle": "agent/materials/animejs.json",
+        "demo": "demos/materials/animejs/index.html",
+        "entry": "entries/materials/animejs.json",
+        "preview": "previews/materials/animejs.png"
       }
     }
   ]

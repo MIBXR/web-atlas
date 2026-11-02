@@ -34,7 +34,8 @@
     {"title": "Beautiful Article 技能原文", "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/beautiful-article/SKILL.md", "note": "材料抽取、编辑规划、三次确认、首屏与逐节生成、终审和交付的直接依据。", "evidence": "source"},
     {"title": "技能说明与 Reacticle 分层", "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/beautiful-article/README.md", "note": "区分技能的编辑方法与 Reacticle 的组件、主题及运行时；作者展示的成品长文与本库主题样文分别记录。", "evidence": "source"},
     {"title": "主题写作资料索引", "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/beautiful-article/theme-profiles/index.json", "note": "11 份主题写作资料与运行时主题标识的对应依据。", "evidence": "source"},
-    {"title": "技能版本声明", "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/beautiful-article/manifest.json", "note": "固定提交声明版本为 0.1.0；技能兼容声明不作为逐宿主运行实测。", "evidence": "source"}
+    {"title": "技能版本声明", "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/beautiful-article/manifest.json", "note": "固定提交声明版本为 0.1.0；技能兼容声明不作为逐宿主运行实测。", "evidence": "source"},
+    {"title": "作者 README 封面", "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/covers/beautiful-article.webp", "note": "素材卡使用作者发布的原图。", "evidence": "source"}
   ],
   "snapshotPath": "demos/materials/beautiful-article/",
   "snapshotEntry": "SKILL.md",
@@ -220,7 +221,7 @@
     "keyboard": "技能条目通过真实链接进入原文与 Reacticle 样例；创作文章时保留语义结构、可读目录，以及控件的键盘与焦点操作。",
     "reducedMotion": "本资源为工作流与文本快照，没有自动播放的演示；文章内自由图文层若带动效，需要在技术终审中检查移动端与可访问性。"
   },
-  "preview": "previews/materials/beautiful-article.png",
+  "preview": "previews/materials/beautiful-article.webp",
   "research": "docs/materials/beautiful-article.md",
   "sourceFiles": ["demos/materials/beautiful-article/SKILL.md", "demos/materials/beautiful-article/README.md"]
 }

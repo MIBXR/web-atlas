@@ -15,3 +15,4 @@
 | Beautiful Article | [阅读文章工作流资料](beautiful-article.md) |
 | Web Design Engineer | [阅读网页设计资料](web-design-engineer.md) |
 | Hallmark | [阅读与使用资料](hallmark-skill.md) |
+| Anime.js | [动画引擎与 36 个上游样例](animejs.md) |

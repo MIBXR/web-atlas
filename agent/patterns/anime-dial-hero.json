@@ -1,0 +1,1079 @@
+{
+  "schemaVersion": 1,
+  "id": "anime-dial-hero",
+  "pattern": {
+    "id": "anime-dial-hero",
+    "order": 184,
+    "title": "彩环仪表盘开场",
+    "category": "视觉构成",
+    "experienceTypes": [
+      "visual",
+      "page-motion"
+    ],
+    "summary": "以真实运行的多种绘图载体同时建立动画引擎的产品形象。",
+    "mechanism": "三维机芯与 CSS3D 弧线承托 13×13 点阵、73 条曲线和 37 个点，标题与环形刻度按同一开场代理进入。",
+    "trigger": "冷启动首页",
+    "effect": "以真实运行的多种绘图载体同时建立动画引擎的产品形象。",
+    "useCases": [
+      "开发者产品官网",
+      "多载体动画能力展示"
+    ],
+    "avoid": [],
+    "constraints": [
+      "几何、时间线与素材参数定位到来源代码。",
+      "章节内容与操作入口保留原生 DOM。"
+    ],
+    "composition": {
+      "role": "accent",
+      "notes": "与同一首页的彩环、机芯、字体和章节进度协作。",
+      "pairsWellWith": [],
+      "conflicts": []
+    },
+    "accessibility": {
+      "keyboard": "链接、选择器和表单沿用原生 DOM 焦点与键盘操作。",
+      "reducedMotion": "来源首页保留连续动画；迁移时按目标页面的减少动态需求选择直接呈现状态。"
+    },
+    "parameters": [
+      {
+        "name": "原作参数",
+        "value": "4000ms",
+        "note": "开场代理时长；INTRO_ON 位于 1400。"
+      }
+    ],
+    "sources": [
+      {
+        "caseId": "animejs-site",
+        "locator": "entries/cases/animejs-site.json#interaction/0",
+        "observation": "首屏用 Three.js 模块机芯、CSS3D SVG 弧线与五层二维 Canvas 组成仪表盘；4000ms 开场代理驱动主时间线，标题于 INTRO_ON 1400 进入，说明比标题延后 500ms，循环交错曲线、点列与环形刻度共同运行。",
+        "evidence": "observed",
+        "referenceUrl": "https://animejs.com/",
+        "capturedAt": "2026-11-02"
+      }
+    ],
+    "sourceFiles": [
+      "entries/cases/animejs-site.json",
+      "docs/cases/animejs-site.md",
+      "demos/cases/animejs-site/index.html",
+      "demos/cases/animejs-site/js/intro.js",
+      "demos/cases/animejs-site/js/main.js",
+      "demos/cases/animejs-site/fidelity.md",
+      "demos/cases/animejs-site/source/values.md"
+    ],
+    "prompt": "读取 animejs-site 的完整来源包，为目标页面实现「彩环仪表盘开场」。三维机芯与 CSS3D 弧线承托 13×13 点阵、73 条曲线和 37 个点，标题与环形刻度按同一开场代理进入。 数值与素材从 source/values.md、对应区块源码和原始资源中取得。保持触发、交接、反向滚动和原生入口关系。"
+  },
+  "sourceCases": [
+    {
+      "id": "animejs-site",
+      "title": "Anime.js · JavaScript 动画引擎官网",
+      "paths": {
+        "bundle": "agent/cases/animejs-site.json",
+        "demo": "demos/cases/animejs-site/index.html"
+      }
+    }
+  ],
+  "documents": [
+    {
+      "path": "prompts/patterns/anime-dial-hero.md",
+      "role": "prompt",
+      "content": "# 彩环仪表盘开场 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/anime-dial-hero.json)\n\n读取 animejs-site 的完整来源包，为目标页面实现「彩环仪表盘开场」。三维机芯与 CSS3D 弧线承托 13×13 点阵、73 条曲线和 37 个点，标题与环形刻度按同一开场代理进入。 数值与素材从 source/values.md、对应区块源码和原始资源中取得。保持触发、交接、反向滚动和原生入口关系。\n\n## 制作约束\n\n- 几何、时间线与素材参数定位到来源代码。\n- 章节内容与操作入口保留原生 DOM。\n"
+    }
+  ],
+  "files": [
+    {
+      "path": "asset-cache-worker.js",
+      "role": "source"
+    },
+    {
+      "path": "data/asset-sources.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/.gitignore",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets-manifest.json",
+      "role": "context"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/107817481.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/109645758.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/1121725.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/11381341.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/123018012.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/123049964.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/1255528.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/13168561.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/1351436.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/140085084.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/14097554.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/1417323.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/14859935.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/1492806.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/15028082.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/15368010.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/16178877.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/16688047.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/1682225.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/171258970.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/171592363.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/1908341.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/20308945.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/203968980.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/2091293.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/21299126.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/213351.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/217863722.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/22761713.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/24498666.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/24833827.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/30808859.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/335118.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/3381818.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/374134.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/38730517.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/40425150.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/412352.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/4266359.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/4291354.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/456538.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/4593699.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/4730431.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/47975771.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/52384531.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/5545171.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/56684844.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/579887.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/6699959.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/7033186.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/7050547.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/7118754.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/7850794.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/78906517.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/8131304.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/84647728.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/8601493.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/8617673.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/9310.jpg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/avatars/95952866.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/css/core.css",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/css/home.css",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/draco/draco_decoder.wasm",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/draco/draco_wasm_wrapper.js",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/draco/LICENSE",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/images/anime-js-logo-v4.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/images/favicon.png",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/images/icons/drop-down.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/media/pages/sponsors/platinum-sponsors/ef1c9c6c85-1787698629/sponsor-placeholder.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/media/pages/sponsors/silver-sponsors/49214d1e15-1787698629/testmu-ai-logomark.svg",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-animate-01.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-draggable-01.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-draggable-02.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-easing-01.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-engine-01.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-renderer-01.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-scope-01.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-scroll-01.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-shield-01.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-shield-02.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-spring-01.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-stagger-01.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-stagger-02.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-svg-01.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-timeline-01.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-timeline-02.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-timer-01.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-timer-02.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-timer-03.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-timer-04.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-timer-05.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/models/module-waapi-01.glb",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/sponsors/github-sponsors",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/sponsors/platinum-sponsors",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/assets/sponsors/silver-sponsors",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/fidelity.md",
+      "role": "context"
+    },
+    {
+      "path": "demos/cases/animejs-site/fonts/BerkeleyMono-Italic.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/animejs-site/fonts/BerkeleyMono-Regular.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/animejs-site/fonts/Digital-7MonoItalic.woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/animejs-site/fonts/DINish[slnt,wdth,wght].woff2",
+      "role": "font"
+    },
+    {
+      "path": "demos/cases/animejs-site/index.html",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/canvas.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/copy-button.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/features/clockwork.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/features/composition.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/features/demo.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/features/draggable.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/features/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/features/intuitive.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/features/responsive.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/features/scroll.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/features/staggering.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/features/svgUtils.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/footer.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/get-started.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/intro.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/main.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/materials.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/modules-scene.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/nav.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/post-processing.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/settings.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/shaders/index.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/shaders/materialsShader1.glsl",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/shaders/materialsShader2.glsl",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/shaders/materialsShader3.glsl",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/shaders/materialsShader4.glsl",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/shaders/materialsShader5.glsl",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/shaders/materialsShader6.glsl",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/shaders/materialsShader7.glsl",
+      "role": "asset"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/sponsors.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/stage.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/js/toolbox.js",
+      "role": "source"
+    },
+    {
+      "path": "demos/cases/animejs-site/LICENSES.md",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/animejs-site/source/README.md",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/animejs-site/source/upstream/assets/css/core.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/animejs-site/source/upstream/assets/css/home.css",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/animejs-site/source/upstream/assets/js/chunks/chunk-CKCSI7LY.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/animejs-site/source/upstream/assets/js/chunks/chunk-CPVC3KGU.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/animejs-site/source/upstream/assets/js/chunks/chunk-DCANE7XH.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/animejs-site/source/upstream/assets/js/chunks/chunk-FX45FQRC.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/animejs-site/source/upstream/assets/js/chunks/chunk-N6I4AEHZ.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/animejs-site/source/upstream/assets/js/chunks/chunk-WQVFBASJ.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/animejs-site/source/upstream/assets/js/chunks/chunk-WXAKRBIO.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/animejs-site/source/upstream/assets/js/chunks/debug-CBQ742GO.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/animejs-site/source/upstream/assets/js/home.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/animejs-site/source/upstream/index.html",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/animejs-site/source/values.md",
+      "role": "process"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/adapters/registry.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/adapters/three/adapter.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/adapters/three/helpers.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/adapters/three/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/adapters/three/instance.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/adapters/three/object3d.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/adapters/three/resolvers.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/adapters/three/uniform.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/animatable/animatable.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/animation/additive.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/animation/animation.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/animation/composition.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/core/clock.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/core/colors.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/core/consts.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/core/globals.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/core/helpers.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/core/render.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/core/styles.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/core/targets.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/core/transforms.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/core/units.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/core/values.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/draggable/draggable.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/easings/cubic-bezier/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/easings/eases/parser.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/easings/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/easings/irregular/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/easings/linear/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/easings/none.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/easings/spring/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/easings/steps/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/engine/engine.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/events/scroll.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/layout/layout.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/scope/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/scope/scope.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/svg/drawable.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/svg/helpers.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/svg/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/svg/morphto.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/svg/motionpath.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/text/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/text/scramble.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/text/split.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/timeline/position.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/timeline/timeline.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/timer/timer.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/utils/chainable.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/utils/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/utils/number.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/utils/random.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/utils/stagger.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/utils/target.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/utils/time.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/waapi/composition.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/dist/modules/waapi/waapi.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/animejs@4.5.0/LICENSE.md",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/highlight.js@11.11.1/es/core.min.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/highlight.js@11.11.1/es/languages/javascript.min.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/highlight.js@11.11.1/LICENSE",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/postprocessing@6.36.6/build/index.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/postprocessing@6.36.6/LICENSE.md",
+      "role": "license"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/three@0.172.0/build/three.core.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/three@0.172.0/build/three.module.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/three@0.172.0/examples/jsm/loaders/DRACOLoader.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/three@0.172.0/examples/jsm/loaders/GLTFLoader.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/three@0.172.0/examples/jsm/renderers/CSS2DRenderer.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/three@0.172.0/examples/jsm/renderers/CSS3DRenderer.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/three@0.172.0/examples/jsm/utils/BufferGeometryUtils.js",
+      "role": "vendor"
+    },
+    {
+      "path": "demos/cases/animejs-site/vendor/three@0.172.0/LICENSE",
+      "role": "license"
+    },
+    {
+      "path": "docs.html",
+      "role": "source"
+    },
+    {
+      "path": "docs/cases/animejs-site.md",
+      "role": "context"
+    },
+    {
+      "path": "entries/cases/animejs-site.json",
+      "role": "context"
+    },
+    {
+      "path": "entries/patterns/anime-dial-hero.json",
+      "role": "context"
+    },
+    {
+      "path": "previews/cases/animejs-site-mobile.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/cases/animejs-site.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "prompts/cases/animejs-site.md",
+      "role": "context"
+    },
+    {
+      "path": "prompts/patterns/anime-dial-hero.md",
+      "role": "context"
+    },
+    {
+      "path": "site/icons/favicon.svg",
+      "role": "asset"
+    },
+    {
+      "path": "site/pages/docs/docs.css",
+      "role": "source"
+    },
+    {
+      "path": "site/pages/docs/docs.js",
+      "role": "source"
+    },
+    {
+      "path": "site/runtime/asset-cache.js",
+      "role": "source"
+    },
+    {
+      "path": "site/runtime/asset-runtime.js",
+      "role": "source"
+    },
+    {
+      "path": "site/runtime/case-loading.css",
+      "role": "source"
+    },
+    {
+      "path": "site/runtime/case-loading.js",
+      "role": "source"
+    },
+    {
+      "path": "site/runtime/demo-scrollbars.css",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/site-footer.css",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/site-nav.css",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/site-shell.js",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/site-typography.css",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/theme-control.css",
+      "role": "source"
+    },
+    {
+      "path": "site/shared/theme.js",
+      "role": "source"
+    },
+    {
+      "path": "site/vendor/LICENSES.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/vendor/marked.umd.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/vendor/purify.min.js",
+      "role": "vendor"
+    }
+  ]
+}

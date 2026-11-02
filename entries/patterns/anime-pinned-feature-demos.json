@@ -1,0 +1,59 @@
+{
+  "id": "anime-pinned-feature-demos",
+  "order": 185,
+  "title": "粘性分节全屏 API 演示",
+  "category": "滚动叙事",
+  "experienceTypes": [
+    "page-motion"
+  ],
+  "summary": "标题、演示与代码在同一个章节范围内接续。",
+  "mechanism": "八节内容共用固定演示层；滚动驱动进度与章节子时间线，每节进入时播放、离开时暂停或复位。",
+  "trigger": "滚动进入八节特性",
+  "effect": "标题、演示与代码在同一个章节范围内接续。",
+  "useCases": [
+    "开发者产品官网",
+    "多载体动画能力展示"
+  ],
+  "avoid": [],
+  "constraints": [
+    "几何、时间线与素材参数定位到来源代码。",
+    "章节内容与操作入口保留原生 DOM。"
+  ],
+  "composition": {
+    "role": "foundation",
+    "notes": "与同一首页的彩环、机芯、字体和章节进度协作。",
+    "pairsWellWith": [],
+    "conflicts": []
+  },
+  "accessibility": {
+    "keyboard": "链接、选择器和表单沿用原生 DOM 焦点与键盘操作。",
+    "reducedMotion": "来源首页保留连续动画；迁移时按目标页面的减少动态需求选择直接呈现状态。"
+  },
+  "parameters": [
+    {
+      "name": "原作参数",
+      "value": "sync .9",
+      "note": "主页面与特性画廊的滚动同步系数。"
+    }
+  ],
+  "sources": [
+    {
+      "caseId": "animejs-site",
+      "locator": "entries/cases/animejs-site.json#interaction/1",
+      "observation": "页面通过一个线性主时间线连接 HEADING、TOOLBOX、FEATURES、MODULES、SPONSORS 与 GET_STARTED 标签；Scroll Observer 以 sync .9 跟随页面位置，八节 API 演示分别维护进入、离开与可同步的子时间线。",
+      "evidence": "observed",
+      "referenceUrl": "https://animejs.com/",
+      "capturedAt": "2026-11-02"
+    }
+  ],
+  "sourceFiles": [
+    "entries/cases/animejs-site.json",
+    "docs/cases/animejs-site.md",
+    "demos/cases/animejs-site/index.html",
+    "demos/cases/animejs-site/js/features/index.js",
+    "demos/cases/animejs-site/js/main.js",
+    "demos/cases/animejs-site/fidelity.md",
+    "demos/cases/animejs-site/source/values.md"
+  ],
+  "prompt": "读取 animejs-site 的完整来源包，为目标页面实现「粘性分节全屏 API 演示」。八节内容共用固定演示层；滚动驱动进度与章节子时间线，每节进入时播放、离开时暂停或复位。 数值与素材从 source/values.md、对应区块源码和原始资源中取得。保持触发、交接、反向滚动和原生入口关系。"
+}

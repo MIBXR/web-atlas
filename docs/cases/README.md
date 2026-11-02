@@ -1,6 +1,6 @@
 # 案例与代码索引
 
-由 entries/cases/ 自动生成，共 43 项。真实网站案例按原始网址与采集日期固定归档。国家/地区按具体机构与创作来源收录。详细比较见 [国别案例比较](../country-comparison.md)。
+由 entries/cases/ 自动生成，共 44 项。真实网站案例按原始网址与采集日期固定归档。国家/地区按具体机构与创作来源收录。详细比较见 [国别案例比较](../country-comparison.md)。
 
 | 顺序 | 案例 | 分类 | 国家/地区 | 类型 | 采集日期 | 可查询资料 |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -47,3 +47,4 @@
 | 74 | [Arc UI · 组件平台的产品官网](../../cases.html#style/uiarc-platform) | 产品 | 瑞士 | 原站局部复现 | 2026-11-01 | [原始案例](https://uiarc.dev/) · [研究](uiarc-platform.md) · [Prompt数据](../../entries/cases/uiarc-platform.json) · [Demo](../../demos/cases/uiarc-platform/index.html) |
 | 75 | [Hallmark · 设计 skill 官网与五十主题](../../cases.html#style/hallmark) | 产品 | 美国 | 原站局部复现 | 2026-11-01 | [原始案例](https://www.usehallmark.com/) · [研究](hallmark.md) · [Prompt数据](../../entries/cases/hallmark.json) · [Demo](../../demos/cases/hallmark/index.html) |
 | 76 | [HyperFrames · 为 Agent 打造的视频编辑器官网](../../cases.html#style/hyperframes-site) | 产品 | 未确认 | 原站局部复现 | 2026-11-02 | [原始案例](https://hyperframes.heygen.com/) · [研究](hyperframes-site.md) · [Prompt数据](../../entries/cases/hyperframes-site.json) · [Demo](../../demos/cases/hyperframes-site/index.html) |
+| 77 | [Anime.js · JavaScript 动画引擎官网](../../cases.html#style/animejs-site) | 产品 | 未确认 | 原站局部复现 | 2026-11-02 | [原始案例](https://animejs.com/) · [研究](animejs-site.md) · [Prompt数据](../../entries/cases/animejs-site.json) · [Demo](../../demos/cases/animejs-site/index.html) |
