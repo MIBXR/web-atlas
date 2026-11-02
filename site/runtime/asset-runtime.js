@@ -3,6 +3,12 @@
   'use strict';
   const boot = document.currentScript;
   const root = new URL('../../', boot?.src || location.href);
+  if (location.pathname.startsWith(new URL('demos/', root).pathname)) {
+    const scrollbars = document.createElement('link');
+    scrollbars.rel = 'stylesheet';
+    scrollbars.href = new URL('site/runtime/demo-scrollbars.css', root).href;
+    document.head.append(scrollbars);
+  }
   const registry = globalThis.AtlasAssetSources || { assets: {} };
   const modes = new Set(['local', 'github', 'auto']);
   const requested = new URL(location.href).searchParams.get('assets');
