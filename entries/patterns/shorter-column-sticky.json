@@ -65,7 +65,7 @@
       "locator": "entries/cases/atlas-sister-sites.json#interaction/3",
       "observation": "详情以 ResizeObserver 读取顶栏、操作栏、舞台列与说明栏：1160px 起舞台列始终 sticky，说明比舞台短时同时 sticky；top 为顶栏 68px 加操作栏实高加 24px，两栏在容器末尾按自然 sticky 边界结束；1159px 及以下单列。",
       "evidence": "adapted",
-      "referenceUrl": "https://mibxr-design-atlas.mibxranime.chatgpt.site/",
+      "referenceUrl": "https://web-atlas.mibxranime.chatgpt.site/",
       "capturedAt": "2026-10-31"
     },
     {

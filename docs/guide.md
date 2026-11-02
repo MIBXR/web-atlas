@@ -13,7 +13,7 @@
 - **素材库**：在代表性样例中试用组件与资源，按类型、用途与关键词筛选；详情保留参数、安装方式、源码、Prompt、版本、来源与许可证。Google Material Web、手绘 Wired Elements、复古 98.css、Recursive 可变字体与 Shaders 提供不同的组件语言、试排与视觉效果，按需载入并保留明确的兼容性后备；完整库与作者工具回到原始仓库。
 - **试验**：配色、字体、布局、留白、形状、图形、层级、质感与动效都能在设计实验室中直接改变画面；深浅主题按背景、表面、文字与强调角色一起变化，JSON和Prompt导出保留实际选择。
 - **复用**：复制案例 Prompt，将品牌、内容和资产换为自己的输入；约束与负向 Prompt 一起使用。
-- **Agent 选型**：调用 [web-atlas skill](https://github.com/MIBXR/mibxr-skills/tree/main/skills/web-atlas)，先了解最新目录，再围绕需求迭代筛选，自动取得完整说明、文档和源码。也可从 [Agent 入口](https://mibxr-design-atlas.mibxranime.chatgpt.site/agent.html) 直接取指定案例。
+- **Agent 选型**：调用 [web-atlas skill](https://github.com/MIBXR/mibxr-skills/tree/main/skills/web-atlas)，先了解最新目录，再围绕需求迭代筛选，自动取得完整说明、文档和源码。也可从 [Agent 入口](https://web-atlas.mibxranime.chatgpt.site/agent.html) 直接取指定案例。
 - **桌面与手机**：每个案例保留真实桌面与手机预览；手机页面目录默认收在顶栏，长页面提供浮动“回到顶部”。
 - **主题与声音**：案例库支持跟随系统／浅色／深色；每个案例说明原站的主题方式、音乐或媒体声音及其交互作用，固定品牌主题保留原貌。
 - **收藏**：收藏与备份见“[收藏与迁移](#收藏与迁移)”。
