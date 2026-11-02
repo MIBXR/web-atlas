@@ -17,7 +17,7 @@
 
 ## 参数与接入
 
-接入方式见结构化条目；独立演示通过 importmap 指向本地 `vendor/`，不依赖 React、CDN 或运行时构建。通过静态 HTTP/HTTPS 服务访问。
+接入方式见结构化条目；独立演示通过 importmap 指向本地 `vendor/`，不依赖 React、CDN 或运行时构建。通过静态 HTTP/HTTPS 服务访问。importmap 的依赖地址和 `three.core.js` 别名均将目录名中的 `@` 编码为 `%40`，与托管服务的规范化 URL 一致。
 
 默认入口为 `index.html?demo=lamp`，基础平面为 `index.html?demo=plane`。吊灯初始 `angle: 34`、`brightness: 1450`、`color: #ffb36b` 与五色色板来自参考项目 `config.ts`，场景与摆锤数值按 `MorsLightCanvas.tsx` 移植。平面最大倾斜 8° 是本地演示参数。
 
