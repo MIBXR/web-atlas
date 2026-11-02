@@ -1,10 +1,8 @@
 .materials-page .search svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.8;flex:none}
 .materials-page .atlas-page-menu>summary svg{width:16px;height:16px;fill:none;stroke:currentColor;stroke-width:1.8}
 .materials-page .atlas-page-menu[open]>summary svg{transform:rotate(180deg)}
-.materials-page .material-live-frame{overflow:auto;padding:0;background:var(--atlas-surface);border:1px solid var(--atlas-surface-line)}
+.materials-page .material-live-frame{overflow:hidden;padding:0;background:var(--atlas-surface);border:1px solid var(--atlas-surface-line)}
 .materials-page .material-live-frame .demo-frame{display:block;border-radius:var(--r);background:transparent}
-.materials-page .material-live-frame.wide .demo-frame{position:static;width:1440px;max-width:none;transform:none}
-.materials-page .material-live-frame.mobile .demo-frame{margin-inline:auto}
 .material-examples{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:24px 0}
 .material-examples a{display:block;border:1px solid var(--atlas-surface-line);border-radius:var(--r);padding:16px;color:var(--atlas-ink);text-decoration:none;font-size:16px;background:var(--atlas-surface-2)}
 .material-examples a:hover,.material-examples a[aria-current=true]{border-color:var(--accent-1)}

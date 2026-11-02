@@ -1,6 +1,6 @@
 (() => {
   'use strict';
-  function mount(wrap, controls, initialMode = 'desktop', { scaleWide = true } = {}) {
+  function mount(wrap, controls, initialMode = 'desktop') {
     let mode = initialMode;
     const panel = wrap.closest('.demo-panel');
     const header = document.querySelector('.atlas-site-header');
@@ -14,9 +14,12 @@
       const style = getComputedStyle(wrap);
       const inset = ['borderTopWidth', 'borderBottomWidth', 'paddingTop', 'paddingBottom'].reduce((total, property) => total + parseFloat(style[property]), 0);
       const contentHeight = Math.max(1, height - inset);
-      const scale = mode === 'wide' && scaleWide ? Math.min(1, (wrap.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight)) / 1440) : 1;
+      const width = mode === 'wide' ? 1440 : mode === 'mobile' ? 390 : 0;
+      const availableWidth = wrap.clientWidth - parseFloat(style.paddingLeft) - parseFloat(style.paddingRight);
+      const scale = width ? Math.min(1, availableWidth / width) : 1;
       wrap.style.height = `${height}px`;
       wrap.style.setProperty('--preview-scale', scale);
+      wrap.style.setProperty('--preview-width', `${width}px`);
       frame.style.height = `${contentHeight / scale}px`;
     };
     const setMode = value => {
