@@ -217,7 +217,7 @@ Prompt写结构、尺度、素材、关键状态及交接、音乐和主题行�
 
 ### 巧思
 
-`title`、`summary`、`mechanism`、`trigger`、`effect` 分别说明名称、价值、机制、触发和结果；`useCases`、`avoid`、`constraints`、`prompt` 支持任务适配。`parameters` 是 `{name,value,note}` 数组，数值用字符串并注明实测、公开代码或本地拟合依据。
+`title`、`summary`、`mechanism`、`effect` 分别说明名称、价值、机制和结果；`trigger` 在存在真实交互、时序或视口条件时填写，静态构成无需填写。`useCases`、`avoid`、`constraints`、`prompt` 支持任务适配。`parameters` 是 `{name,value,note}` 数组，数值用字符串并注明实测、公开代码或本地拟合依据。
 
 `category` 使用视觉构成、交互反馈、滚动叙事、导航与状态、加载与媒体、内容组织。`experienceTypes` 至少一项且不重复：
 
@@ -229,11 +229,11 @@ Prompt写结构、尺度、素材、关键状态及交接、音乐和主题行�
 | `sound` | 声音与音效 | 音乐、操作音、语音、主动媒体及启停衔接 |
 | `structure` | 信息与状态 | 内容组织、导航、筛选和状态协调 |
 
-`composition.role` 的 `foundation`、`support`、`accent` 表示骨架、衔接和反馈职责；`notes` 说明协作关系，`pairsWellWith`、`conflicts` 引用真实巧思 id。机制自身需要的操作与静态呈现方式写入 `mechanism`。
+`composition.role` 的 `foundation`、`support`、`accent` 表示骨架、衔接和反馈职责；可选的 `notes` 只记录具体协作条件，`pairsWellWith`、`conflicts` 引用真实巧思 id。机制自身需要的操作与静态呈现方式写入 `mechanism`。详情按机制、参数、约束与适用场景、组合、Prompt、来源的顺序展示，空章节及子项不显示。
 
 `sources[]` 包含 `caseId`、精确 `locator`、`observation`、`evidence`，可加 `referenceUrl` 和 `capturedAt`。`observed` 表示源端观察，`adapted` 表示本地迁移，`inferred` 表示公开资料推断。`locator` 可用 `entries/cases/<id>.json#interaction/0` 等 JSON 字段定位；`observation` 保存定位值完整原文，对象／数组用 JSON 序列化文本。来源改动后原文不符时构建报错。归档日期沿用来源案例。
 
-`useCases`、`constraints`、`sourceFiles` 为非空字符串数组；`composition.notes` 必填；`avoid`、`parameters`、`pairsWellWith`、`conflicts` 保留数组类型。
+`useCases`、`constraints`、`sourceFiles` 为非空字符串数组；`avoid`、`parameters`、`pairsWellWith`、`conflicts` 保留数组类型。
 
 `sourceFiles` 覆盖定位文件、研究、复现范围与相关源码，每个文件属于至少一个来源案例的文件清单。完整运行依赖由来源案例包提供；案例包中的 `patternIds` 提供反向关联。
 

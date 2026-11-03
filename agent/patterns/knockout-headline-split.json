@@ -11,7 +11,7 @@
     ],
     "summary": "同一标题横跨两块底色，文字色与底色边界精确对应。",
     "mechanism": "两份几何对齐的标题以同一栏界做互补clip-path，一侧墨色一侧反白；手机移除副本裁切。",
-    "trigger": "阅读跨色场标题或改变视口。",
+    "trigger": "视口进入手机断点",
     "effect": "字形连续，色场边界又保持清楚。",
     "useCases": [
       "编辑网格",
@@ -43,7 +43,7 @@
         "note": "固定提交源码／线上实测：style.css 手机媒体规则。"
       }
     ],
-    "prompt": "为目标页面实现「同一标题跨色场反白」：两份几何对齐的标题以同一栏界做互补clip-path，一侧墨色一侧反白；手机移除副本裁切。触发：阅读跨色场标题或改变视口。结果：字形连续，色场边界又保持清楚。参数：边界=--cols-7；手机=取消副本clip-path。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；副本aria-hidden，原文提供完整标题语义。裁切为静态布局，窄屏给完整单份标题。",
+    "prompt": "为目标页面实现「同一标题跨色场反白」：两份几何对齐的标题以同一栏界做互补clip-path，一侧墨色一侧反白；手机移除副本裁切。触发：视口进入手机断点。结果：字形连续，色场边界又保持清楚。参数：边界=--cols-7；手机=取消副本clip-path。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；副本aria-hidden，原文提供完整标题语义。裁切为静态布局，窄屏给完整单份标题。",
     "sources": [
       {
         "caseId": "hallmark",
@@ -76,7 +76,7 @@
     {
       "path": "prompts/patterns/knockout-headline-split.md",
       "role": "prompt",
-      "content": "# 同一标题跨色场反白 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/knockout-headline-split.json)\n\n为目标页面实现「同一标题跨色场反白」：两份几何对齐的标题以同一栏界做互补clip-path，一侧墨色一侧反白；手机移除副本裁切。触发：阅读跨色场标题或改变视口。结果：字形连续，色场边界又保持清楚。参数：边界=--cols-7；手机=取消副本clip-path。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；副本aria-hidden，原文提供完整标题语义。裁切为静态布局，窄屏给完整单份标题。\n\n## 制作约束\n\n- 固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。\n"
+      "content": "# 同一标题跨色场反白 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/knockout-headline-split.json)\n\n为目标页面实现「同一标题跨色场反白」：两份几何对齐的标题以同一栏界做互补clip-path，一侧墨色一侧反白；手机移除副本裁切。触发：视口进入手机断点。结果：字形连续，色场边界又保持清楚。参数：边界=--cols-7；手机=取消副本clip-path。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；副本aria-hidden，原文提供完整标题语义。裁切为静态布局，窄屏给完整单份标题。\n\n## 制作约束\n\n- 固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。\n"
     }
   ],
   "files": [

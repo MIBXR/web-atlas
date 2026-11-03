@@ -25,7 +25,6 @@
     ],
     "composition": {
       "role": "accent",
-      "notes": "该原子负责选择位置与可见方案一致，职责限定在当前区域。组合时按真实受众组织方案，未验证的源动态标明公共模块依据。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "single-open-accordion"
       ],

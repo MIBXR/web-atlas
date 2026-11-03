@@ -29,7 +29,6 @@
     ],
     "composition": {
       "role": "support",
-      "notes": "与同一案例的其他机制共同构成页面，源码与素材由来源案例提供。",
       "pairsWellWith": [
         "hf-video-shard-ribbon",
         "hf-video-wall-lazy-play"
