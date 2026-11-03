@@ -2,10 +2,13 @@ export function mountDirectory(nav, material, requested, activate) {
   const root = new URL('../../../../', import.meta.url);
   nav.innerHTML = `<button type="button" class="aj-toggle" aria-expanded="false"></button>
     <div class="aj-sources"><a href="${material.upstream.url}/tree/${material.upstream.commit}/examples" target="_blank" rel="noopener">仓库样例</a><a href="https://codepen.io/collection/Poerqa" target="_blank" rel="noopener">CodePen</a></div>
-    <div class="aj-branches"></div><a class="aj-code" target="_blank" rel="noopener">当前样例源码</a>`;
+    <input class="aj-search" type="search" aria-label="搜索样例" placeholder="搜索名称或 id">
+    <div class="aj-branches"><p class="aj-empty" hidden>没有匹配的样例</p></div><a class="aj-code" target="_blank" rel="noopener">当前样例源码</a>`;
   const groups = new Map();
   const examples = new Map();
   const toggle = nav.querySelector('.aj-toggle');
+  const search = nav.querySelector('.aj-search');
+  const empty = nav.querySelector('.aj-empty');
   let selected;
 
   function setOpen(open) {
@@ -49,6 +52,19 @@ export function mountDirectory(nav, material, requested, activate) {
     activate(example,path);
     if (wasOpen) toggle.focus({preventScroll:true});
   }
+  search.oninput = () => {
+    const query = search.value.trim().toLowerCase();
+    let matches = 0;
+    for (const [path, {example,link}] of examples) {
+      link.hidden = !(example.title + ' ' + path).toLowerCase().includes(query);
+      if (!link.hidden) matches++;
+    }
+    for (const group of groups.values()) {
+      group.hidden = ![...group.querySelectorAll('a')].some(link => !link.hidden);
+      if (query && !group.hidden) group.open = true;
+    }
+    empty.hidden = matches > 0;
+  };
   toggle.onclick = () => setOpen(!nav.classList.contains('open'));
   select(requested || 'animejs-v4-logo-animation');
 }
