@@ -31,7 +31,7 @@
   ],
   "theme": "纸白、炭黑、信号红；严格基线、粗线分隔、左对齐标题，主题是现代城市中的字与信息。",
   "constraints": [
-    "Swissted 官网明确使用 Berthold Akzidenz-Grotesk medium，并非 Helvetica；本 demo 用系统 Arial 近似结构，不声称字体等同。",
+    "Swissted 使用 Berthold Akzidenz-Grotesk medium；本例使用系统 Arial 近似结构。",
     "桌面 12 栏，移动端折为单列；文字不能为了维持海报形状被裁切。",
     "红色用于主视觉和状态，正文以黑字/纸白保持对比。",
     "字号差必须伴随语义标题层级，不能以超大字替代内容组织。",
@@ -109,7 +109,6 @@
   },
   "soundBehavior": {
     "kind": "none",
-    "control": "本练习无背景音乐。",
-    "interactionRole": "不按风格标签臆造音乐；若引入声音，应有真实来源、主动启用、停止控制与明确的交互作用。"
+    "control": "本练习无背景音乐。"
   }
 }

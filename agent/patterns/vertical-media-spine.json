@@ -38,10 +38,6 @@
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "纯装饰书脊aria-hidden，类别在可读标题/说明中重复；媒体按钮保留正常名称和键盘控制。",
-      "reducedMotion": "构成本身静态；若播放影片，另提供暂停并保留静态封面。"
-    },
     "parameters": [
       {
         "name": "类别与媒体边界",

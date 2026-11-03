@@ -10,7 +10,7 @@
       "micro-motion"
     ],
     "summary": "在观看状态让界面暂时让出画面。",
-    "mechanism": "指针移动或触摸唤醒控件，闲置短时间后模糊淡出；焦点仍在操作区时保持可见。",
+    "mechanism": "指针移动或触摸唤醒控件，闲置短时间后模糊淡出；焦点仍在操作区时保持可见。 Tab 可立即唤醒控件；减少动态时控件保持可见。",
     "trigger": "闲置、指针移动、触摸或聚焦",
     "effect": "纯观看与可操作状态有可逆切换。",
     "useCases": [
@@ -30,10 +30,6 @@
         "blurred-layered-video-handoff"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "焦点在控件时不退隐，Tab立即唤醒并保持明显焦点。",
-      "reducedMotion": "控件保持可见，不使用模糊退隐。"
     },
     "parameters": [
       {

@@ -32,10 +32,6 @@
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "提供独立暂停；若迁移成实际产品，用语义展开按钮保留回看过程的入口。",
-    "reducedMotion": "直接呈现可读结果与完成卡，保留执行说明。"
-  },
   "parameters": [
     {
       "name": "周期 / 故事数",

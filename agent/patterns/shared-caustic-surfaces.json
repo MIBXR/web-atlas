@@ -11,7 +11,7 @@
       "page-motion"
     ],
     "summary": "把同一水面材料用于场景、选中行和数据柱。",
-    "mechanism": "片元着色器共用焦散、色散和池砖折射，再按ground、row、bars配置尺度与强度；四个指针环波弯曲光线。",
+    "mechanism": "片元着色器共用焦散、色散和池砖折射，再按ground、row、bars配置尺度与强度；四个指针环波弯曲光线。 静态呈现可将时间参数固定为 14，数据切换直接更新目标高度。",
     "trigger": "进入水面区域、移动指针或切换日期组。",
     "effect": "不同界面对象来自同一套水材质，图表保留数据含义。",
     "useCases": [
@@ -31,10 +31,6 @@
         "viewport-animation-lifecycle"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "日期控件和说明为独立DOM，图表保留名称与读数。",
-      "reducedMotion": "固定时间14绘制静帧，数据切换直接给目标高度。"
     },
     "parameters": [
       {

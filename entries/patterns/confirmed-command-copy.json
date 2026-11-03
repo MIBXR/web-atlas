@@ -28,10 +28,6 @@
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "使用原生按钮、明确名称和状态播报，复制失败保留可选文本。",
-    "reducedMotion": "成功勾与文字即时变化，计时恢复保留。"
-  },
   "parameters": [
     {
       "name": "反馈时长",

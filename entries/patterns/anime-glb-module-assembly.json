@@ -26,10 +26,6 @@
     "pairsWellWith": [],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "链接、选择器和表单沿用原生 DOM 焦点与键盘操作。",
-    "reducedMotion": "来源首页保留连续动画；迁移时按目标页面的减少动态需求选择直接呈现状态。"
-  },
   "parameters": [
     {
       "name": "原作参数",

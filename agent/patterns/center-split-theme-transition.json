@@ -10,7 +10,7 @@
       "page-motion"
     ],
     "summary": "保留旧主题快照，让新主题从水平中线展开。",
-    "mechanism": "在 View Transition 更新回调中切换完整主题；旧根快照不动，新根快照由 inset(50% 0) 展开为 inset(0)，完成后移除临时过渡状态。",
+    "mechanism": "在 View Transition 更新回调中切换完整主题；旧根快照不动，新根快照由 inset(50% 0) 展开为 inset(0)，完成后移除临时过渡状态。 减少动态时直接切换主题，不创建展开动画。",
     "trigger": "激活主题按钮",
     "effect": "颜色角色一起交接，用户能看清主题更替的方向。",
     "useCases": [
@@ -29,10 +29,6 @@
         "theme-invariant-gradient-panel"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "原生主题按钮支持 Enter/Space，并提供下一主题的可访问名称；切换后保持焦点。",
-      "reducedMotion": "prefers-reduced-motion 下直接切换，不创建展开动画。"
     },
     "parameters": [
       {

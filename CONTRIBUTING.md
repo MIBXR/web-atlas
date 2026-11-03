@@ -155,7 +155,7 @@ Web Atlas 与 Motion Atlas 是姊妹站，内容互不交叉，界面骨架保�
 | 搜索与筛选 | 复用同一工具栏与控件高度。桌面空间足够时同排，窄屏按同一规则换行；巧思的体验类型、用途与来源筛选属于其功能差异。 |
 | 网格与卡片 | 卡片图片在上并占满卡片内容区宽度，说明在下；标题、正文、标签、边框、悬停下划线及操作区复用案例卡片样式。 |
 | 字体 | 站点正文、导航、标签、辅助信息与控件在桌面和手机最终渲染至少 `12px`；相同职责使用共享字号。案例、巧思、素材和嵌入 Demo 的画面内文字按作品设计确定。 |
-| 详情 | 案例、巧思与素材共用适应面板、桌面 1440px、手机 390px 与重播操作；固定宽度先排版再等比缩小到面板，保留 Demo 纵向滚动，高度按可用视口收敛。嵌入与独立打开的 Demo 使用公共细滚动条。巧思保留机制、参数、组合、Prompt 和来源等专属信息。 |
+| 详情 | 案例、巧思与素材共用适应面板、桌面 1440px、手机 390px 与重播操作；固定宽度先排版再等比缩小到面板，保留 Demo 纵向滚动，高度按可用视口收敛。嵌入与独立打开的 Demo 默认使用公共细滚动条，原作自定义样式或明确的系统滚动条设置优先。案例入口在作品样式前加载 `site/runtime/demo-scrollbars.css`；仅用 WebKit 规则自定义滚动条的页面在 `html` 上设置 `data-demo-scrollbars="original"`。案例的关联巧思位于右侧说明；巧思和可运行素材进入详情后自动载入当前 Demo，切换来源或样例时同步载入，展示框预先按可用视口占位。右栏章节标题只使用名称，不加序号。巧思保留机制、参数、组合、Prompt 与来源。 |
 | 体验示意 | 工具栏提供按需打开的体验入口，跟随当前体验类型切换；不占用首部与筛选之间的固定大块空间。搜索同类型内容保留模拟状态，关闭或离开时释放声音等资源。 |
 
 在相同桌面与手机宽度下并看案例库、巧思库和对应详情，核对列数、图片边缘、字体、标签、链接反馈、控件、目录及返回导航；字号与布局以浏览器计算样式为准。
@@ -203,11 +203,11 @@ Prompt写结构、尺度、素材、关键状态及交接、音乐和主题行�
 
 `id` 对齐文件名；`order` 决定默认顺序。`title`、`subtitle`、`category`、`tags`、`summary` 描述案例；`useCases`、`avoid`、`principles`、`constraints` 与 `exercise` 提供取材和练习依据。`constraints` 使用字符串数组；`prompt`、`negativePrompt` 为文本，分别生成正向 Prompt 和负向约束。
 
-`composition` 包含 `color`、`typography`、`layout`、`imagery`、`shape`、`hierarchy`、`motion`、`coherence`。`tokens` 保存颜色等设计参数，`interaction` 保存机制。`sources` 包含真实实例和理论／规范及各自支持的结论。
+`composition` 包含 `color`、`typography`、`layout`、`imagery`、`shape`、`hierarchy`、`motion`、`coherence`，可选的 `scroll` 记录滚动结构。`tokens` 保存颜色等设计参数，`interaction` 保存页面交互机制。`sources` 包含真实实例和理论／规范及各自支持的结论。
 
-`themeBehavior` 包含 `mode`（`fixed`、`system`、`manual`、`system-and-manual`）、`default`（`light`、`dark`、`system`）、`control`、`designReason`；`soundBehavior` 包含 `kind`（`none`、`background`、`video`、`external`、`interactive`）、`control`、`interactionRole`。参考库与独立 Demo 分别管理主题。
+`themeBehavior` 包含 `mode`（`fixed`、`system`、`manual`、`system-and-manual`）、`default`（`light`、`dark`、`system`）、`control`、`designReason`；`soundBehavior` 包含 `kind`（`none`、`background`、`video`、`external`、`interactive`）、`control`，可选的 `interactionRole` 说明声音与交互的实际关系。参考库与独立 Demo 分别管理主题。
 
-路径字段为 `research: docs/cases/<id>.md`、`demo`、`preview`，复刻作品另有 `fidelity` 和 `assetManifest`，可有 `referencePreview`。预览来自实际浏览器，桌面横向、手机纵向，扩展名与真实编码一致。
+路径字段为 `research: docs/cases/<id>.md`、`demo`、`preview`，复刻作品另有 `fidelity` 和 `assetManifest`，可有 `referencePreview`。案例右侧“相关文档”集中提供已有的调研、复现对照、素材来源清单与许可索引。预览来自实际浏览器，桌面横向、手机纵向，扩展名与真实编码一致。
 
 预览截图使用独立临时浏览器配置目录，禁用扩展并通过 `--hide-scrollbars` 隐藏滚动条；导航前用 `Emulation.setEmulatedMedia` 传递 `prefers-color-scheme: light`，保留 Demo 自身的固定主题与主题行为。等待页面资源、字体、可见图片解码和视频首帧就绪，有 `CaseLoading.ready` 时等待其完成，再等加载层退出、入场动画完成后截图；循环动画选择能完整展示内容的时刻。截图前查看实际画面，不以固定延时作为加载完成的依据。
 
@@ -229,11 +229,11 @@ Prompt写结构、尺度、素材、关键状态及交接、音乐和主题行�
 | `sound` | 声音与音效 | 音乐、操作音、语音、主动媒体及启停衔接 |
 | `structure` | 信息与状态 | 内容组织、导航、筛选和状态协调 |
 
-`composition.role` 的 `foundation`、`support`、`accent` 表示骨架、衔接和反馈职责；`notes` 说明协作关系，`pairsWellWith`、`conflicts` 引用真实巧思 id。`accessibility.keyboard`、`reducedMotion` 写可实施策略。
+`composition.role` 的 `foundation`、`support`、`accent` 表示骨架、衔接和反馈职责；`notes` 说明协作关系，`pairsWellWith`、`conflicts` 引用真实巧思 id。机制自身需要的操作与静态呈现方式写入 `mechanism`。
 
 `sources[]` 包含 `caseId`、精确 `locator`、`observation`、`evidence`，可加 `referenceUrl` 和 `capturedAt`。`observed` 表示源端观察，`adapted` 表示本地迁移，`inferred` 表示公开资料推断。`locator` 可用 `entries/cases/<id>.json#interaction/0` 等 JSON 字段定位；`observation` 保存定位值完整原文，对象／数组用 JSON 序列化文本。来源改动后原文不符时构建报错。归档日期沿用来源案例。
 
-`useCases`、`constraints`、`sourceFiles` 为非空字符串数组；`composition.notes`、`accessibility.keyboard`、`accessibility.reducedMotion` 必填；`avoid`、`parameters`、`pairsWellWith`、`conflicts` 保留数组类型。
+`useCases`、`constraints`、`sourceFiles` 为非空字符串数组；`composition.notes` 必填；`avoid`、`parameters`、`pairsWellWith`、`conflicts` 保留数组类型。
 
 `sourceFiles` 覆盖定位文件、研究、复现范围与相关源码，每个文件属于至少一个来源案例的文件清单。完整运行依赖由来源案例包提供；案例包中的 `patternIds` 提供反向关联。
 

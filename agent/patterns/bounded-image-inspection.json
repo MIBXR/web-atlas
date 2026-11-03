@@ -10,7 +10,7 @@
       "structure"
     ],
     "summary": "让图像从全貌到局部，再明确回到总览。",
-    "mechanism": "独立全视口画布使用真实DeepZoom瓦片与Leaflet坐标缩放、惯性拖动和加减控件；匿名缩放范围与登录提醒防止把低清CSS放大误称为高清。",
+    "mechanism": "独立全视口画布使用真实DeepZoom瓦片与Leaflet坐标缩放、惯性拖动和加减控件；匿名缩放范围与登录提醒防止把低清CSS放大误称为高清。 画布聚焦后可用方向键平移，加减按钮保留缩放边界的禁用状态。",
     "trigger": "主动加减、滚轮缩放、拖动或键盘平移",
     "effect": "用户按真实公开瓦片精度细察，并知道匿名浏览的缩放边界与更高清的官方入口。",
     "useCases": [
@@ -34,10 +34,6 @@
         "inline-detail-disclosure"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "Leaflet加减按钮有名称，画布可聚焦并用方向键平移；边界禁用状态保留，登录服务走官方。",
-      "reducedMotion": "取消自动轮换、计数过程和位移过渡；全部内容与手动选择保留。"
     },
     "parameters": [
       {

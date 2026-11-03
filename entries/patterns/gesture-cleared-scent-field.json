@@ -29,10 +29,6 @@
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "香型由可聚焦按钮选择，背景画布不截获主体操作。",
-    "reducedMotion": "保留静帧和即时换色，停用连续噪声与尾迹。"
-  },
   "parameters": [
     {
       "name": "渲染",

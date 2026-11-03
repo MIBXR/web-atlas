@@ -10,7 +10,7 @@
       "page-motion"
     ],
     "summary": "让镜头细节与读页进度对应。",
-    "mechanism": "暂停短片并把sticky段滚动进度映射到currentTime，标题在交接区让出画面；反向滚动可以回看。",
+    "mechanism": "暂停短片并把sticky段滚动进度映射到currentTime，标题在交接区让出画面；反向滚动可以回看。 静态呈现可用镜头静帧替代滚动 seek，并按文档顺序保留完整说明。",
     "trigger": "上下滚动镜头段",
     "effect": "用户以阅读速度控制产品展示。",
     "useCases": [
@@ -30,10 +30,6 @@
         "sticky-stage-handoff"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "取消滚动seek及大幅位移，静帧与完整镜头说明按文档顺序可读。"
     },
     "parameters": [
       {

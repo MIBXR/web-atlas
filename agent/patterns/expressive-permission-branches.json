@@ -31,10 +31,6 @@
       "pairsWellWith": [],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "Allow、Deny、重播和产品链接均为原生控件；原作到达权限阶段前仍需拖放。",
-      "reducedMotion": "原作保留分支表演；迁移时即时显示选择结果，保留重试与结束路径。"
-    },
     "parameters": [
       {
         "name": "允许",

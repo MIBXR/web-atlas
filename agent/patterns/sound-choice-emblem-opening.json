@@ -11,7 +11,7 @@
       "sound"
     ],
     "summary": "视觉打开世界与声音启用属于同一次选择。",
-    "mechanism": "入口先提供ON/OFF，选择后显示纹章并向外发光扩散；开场SE对应显现，移交影片时BGM接续。",
+    "mechanism": "入口先提供ON/OFF，选择后显示纹章并向外发光扩散；开场SE对应显现，移交影片时BGM接续。 静态呈现可保留 ON/OFF 选择，使用纹章静帧或直接转入影片静帧。",
     "trigger": "选择声音ON或OFF",
     "effect": "用户掌握声音且开场动作有一致节奏。",
     "useCases": [
@@ -33,10 +33,6 @@
         "blurred-layered-video-handoff"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "保留ON/OFF，纹章静态或直接移交可读影片静帧，主动声音选择仍有效。"
     },
     "parameters": [
       {

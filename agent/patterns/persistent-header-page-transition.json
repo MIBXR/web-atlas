@@ -10,7 +10,7 @@
       "page-motion"
     ],
     "summary": "为顶栏单独命名快照，主体短淡化切换，持续保留页面位置。",
-    "mechanism": "支持 View Transition 且不减少动态时，把 hash 路由的 DOM 更新包入 startViewTransition；根过渡 140ms ease-out，atlas-header 组与新快照无动画，隐藏旧顶栏快照。",
+    "mechanism": "支持 View Transition 且不减少动态时，把 hash 路由的 DOM 更新包入 startViewTransition；根过渡 140ms ease-out，atlas-header 组与新快照无动画，隐藏旧顶栏快照。 路由更新后将焦点放回正文，并避免额外滚动。",
     "trigger": "列表、详情与文档之间切换，或前后更换详情",
     "effect": "主体平顺交接，顶栏在同一位置保持连续。",
     "useCases": [
@@ -33,10 +33,6 @@
         "shorter-column-sticky"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "路由更新后将焦点放到正文容器并防止额外滚动；原生导航可由键盘激活，当前页同步 aria-current。",
-      "reducedMotion": "不调用 startViewTransition，直接执行同一个 DOM 更新函数。"
     },
     "parameters": [
       {

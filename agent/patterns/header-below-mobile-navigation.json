@@ -11,7 +11,7 @@
       "structure"
     ],
     "summary": "菜单与长档案在手机上暂时分离。",
-    "mechanism": "菜单从固定顶栏下方直接显示，汉堡图标单独形变；锁住背景并在关闭时恢复原滚动位置。",
+    "mechanism": "菜单从固定顶栏下方直接显示，汉堡图标单独形变；锁住背景并在关闭时恢复原滚动位置。 Escape 关闭菜单并将焦点还给触发按钮。",
     "trigger": "手机打开/关闭菜单",
     "effect": "机构入口可用，返回继续原内容。",
     "useCases": [
@@ -31,10 +31,6 @@
         "mixed-ratio-archive-columns"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "菜单限制焦点，Escape可关，关闭恢复触发焦点与原浏览位置。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
     },
     "parameters": [
       {

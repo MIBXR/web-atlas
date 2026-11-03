@@ -36,10 +36,6 @@
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "页面文字与下载链接独立于 Canvas，保留原生键盘入口。",
-      "reducedMotion": "停止创建地面 WebGL2 渲染器。"
-    },
     "parameters": [
       {
         "name": "管线",

@@ -31,10 +31,6 @@
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "装饰副本不参与朗读，文字保持单一可读名称。",
-      "reducedMotion": "保持静态套印与错位，停用套准入场动画。"
-    },
     "parameters": [
       {
         "name": "错版",

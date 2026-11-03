@@ -32,10 +32,6 @@
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "暂停按钮可键盘操作；图解内部不伪造可编辑输入或可点击安装。",
-    "reducedMotion": "呈现挂件与管理器已安装项的稳定终态，并给出过程说明。"
-  },
   "parameters": [
     {
       "name": "完整周期",

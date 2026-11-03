@@ -35,10 +35,6 @@
       "semantic-theme-roles"
     ]
   },
-  "accessibility": {
-    "keyboard": "保留原生章节链接与清晰的顺序，用 :focus-visible 提供可辨认的焦点样式，并在每种背景上检查焦点和文字对比。",
-    "reducedMotion": "差值混合无需运动；减少动态时移除顶栏淡入，直接保持导航可见。"
-  },
   "parameters": [
     {
       "name": "导航绘制色",

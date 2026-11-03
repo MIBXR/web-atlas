@@ -32,10 +32,6 @@
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "对象旁保留稳定说明，主要行动使用真实按钮。",
-      "reducedMotion": "直接呈现寄信后的可读场景。"
-    },
     "parameters": [
       {
         "name": "寄信",

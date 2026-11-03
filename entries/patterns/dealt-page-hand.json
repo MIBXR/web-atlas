@@ -30,10 +30,6 @@
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "卡片和重抽均可聚焦，卡片保留实际链接。",
-    "reducedMotion": "直接布局与换图，保留重抽、名称和打开动作。"
-  },
   "parameters": [
     {
       "name": "几何",

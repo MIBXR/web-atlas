@@ -89,7 +89,7 @@
       "title": "ustwo games：联系信息",
       "url": "https://ustwogames.co.uk/contact-us/",
       "type": "实例",
-      "note": "官方伦敦工作室地址是国家分类的依据，不代表英国页面有固定风格。"
+      "note": "官方伦敦工作室地址是创作来源地区的依据。"
     },
     {
       "title": "W3C WAI：Carousels Tutorial",
@@ -101,7 +101,7 @@
       "title": "W3C：Animation from Interactions",
       "url": "https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions.html",
       "type": "规范",
-      "note": "本地减少动态分支约束：停止自动推进与背景，取消非必要位移；不声称原站合规。"
+      "note": "本地减少动态分支停止自动推进与背景，取消非必要位移。"
     },
     {
       "title": "MV1 官方公开交互脚本",

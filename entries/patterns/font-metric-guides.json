@@ -29,10 +29,6 @@
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "字形和控件保持真实文本，参考线不替代标签。",
-    "reducedMotion": "参考线按最终几何直接放置。"
-  },
   "parameters": [
     {
       "name": "度量",

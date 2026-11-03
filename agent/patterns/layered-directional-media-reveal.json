@@ -41,10 +41,6 @@
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "前后/编号按钮有名称和可见焦点，端点disabled与aria同步；目标说明和页码在正常DOM中更新，稳定后只有当前媒体可操作，焦点不随视觉层漂移。",
-      "reducedMotion": "跳过三层位移与文字离场，立即显示目标媒体/编号/说明；视频另有暂停和静态封面，换项仍停止旧片。"
-    },
     "parameters": [
       {
         "name": "三层顺序",

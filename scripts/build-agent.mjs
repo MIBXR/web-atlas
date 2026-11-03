@@ -124,7 +124,7 @@ export function buildAgent({ root = defaultRoot, write = true } = {}) {
   const records = entries.map(({ entry, entryPath }) => {
     const patternIds = patterns.filter(pattern => pattern.sources.some(source => source.caseId === entry.id)).map(pattern => pattern.id);
     const bundle = makeBundle(root, entry, entryPath, patternIds);
-    const { notes } = renderDetailNotes({ entries: originalEntries, id: entry.id, rendererSource });
+    const { notes } = renderDetailNotes({ entries: originalEntries, patterns, id: entry.id, rendererSource });
     bundle.webNotes = { format: 'text/html', renderer: 'site/pages/cases/atlas.js', content: notes };
     const bundlePath = `agent/cases/${entry.id}.json`;
     const data = encode(bundle);

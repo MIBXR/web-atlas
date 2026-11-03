@@ -8,7 +8,7 @@
     "micro-motion"
   ],
   "summary": "翻看更多候选时，当前人物保持稳定。",
-  "mechanism": "分别保存缩略图窗口起点和当前选中人物；窗口箭头只移动可见候选，点击具体头像才换舞台，人物所有身份线索使用同一选中索引。",
+  "mechanism": "分别保存缩略图窗口起点和当前选中人物；窗口箭头只移动可见候选，点击具体头像才换舞台，人物所有身份线索使用同一选中索引。 头像支持方向键与 Home/End，缩略图窗口随焦点保持当前项可见。",
   "trigger": "点击缩略图窗口箭头或选择头像",
   "effect": "大名单可逐段浏览，同时保留当前人物上下文。",
   "useCases": [
@@ -29,10 +29,6 @@
       "character-stage-coordination"
     ],
     "conflicts": []
-  },
-  "accessibility": {
-    "keyboard": "头像使用按钮，方向键/Home/End提供等价选择；需要时移动窗口使焦点可见，当前项同步aria-pressed。",
-    "reducedMotion": "关闭窗口位移与角色过渡，窗口和选择状态仍分别更新。"
   },
   "parameters": [
     {

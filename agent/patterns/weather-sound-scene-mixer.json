@@ -11,7 +11,7 @@
       "micro-motion"
     ],
     "summary": "用同一组推子让天气画面与声音强度一起变化。",
-    "mechanism": "雨、风和列车共用level与穿越相位，推子同步多个面板；定时器前段保持，后段余弦淡出到静音与结束状态。",
+    "mechanism": "雨、风和列车共用level与穿越相位，推子同步多个面板；定时器前段保持，后段余弦淡出到静音与结束状态。 静态画面仍可调整强度并启停声音。",
     "trigger": "调整推子、淡出定时器或Listen/Stop。",
     "effect": "视觉材料帮助理解混音，启停和结束状态清楚。",
     "useCases": [
@@ -32,10 +32,6 @@
         "live-parameter-readout"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "推子支持方向键、PageUp/Down和Home/End，Listen是原生按钮。",
-      "reducedMotion": "显示静态夜景并即时更新强度，保留用户启停声音。"
     },
     "parameters": [
       {

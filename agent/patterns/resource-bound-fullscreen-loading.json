@@ -10,7 +10,7 @@
       "page-motion"
     ],
     "summary": "只等待入口关键资源，以真实完成数推进，再移交可用场景。",
-    "mechanism": "入口关键图片和必要字体完成数驱动全屏加载状态；全部任务结束不等于全部成功，失败保持明确重试/继续，成功后以短品牌遮层或wipe移交目标场景。",
+    "mechanism": "入口关键图片和必要字体完成数驱动全屏加载状态；全部任务结束不等于全部成功，失败保持明确重试/继续，成功后以短品牌遮层或wipe移交目标场景。 静态模式使用文本进度与品牌静帧，资源就绪后直接进入当前章节。",
     "trigger": "首次进入或缓存重载",
     "effect": "用户看懂资源准备与失败状态，入口交接有边界，正文不会被全站素材长期阻塞。",
     "useCases": [
@@ -33,10 +33,6 @@
         "synchronized-rolling-index"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "载入状态提供可读进度与重试/继续按钮；就绪后焦点进入当前章节。",
-      "reducedMotion": "载入进度保持文本和静止品牌图，取消装饰运动，资源就绪后即时进入。"
     },
     "parameters": [
       {
@@ -68,7 +64,7 @@
       {
         "caseId": "endfield-industrial",
         "locator": "entries/cases/endfield-industrial.json#interaction/0",
-        "observation": "载入与导航：使用原Updating图形和排版，本地必要首页图、干员图与字体的实际完成数推进；失败提供重试/继续。侧栏hover300ms展开，手机菜单、章节导航和自然滚动回程沿原结构。进度是任务完成比例，不声称网络字节百分比。",
+        "observation": "载入与导航：使用原Updating图形和排版，本地必要首页图、干员图与字体的实际完成数推进；失败提供重试/继续。侧栏hover300ms展开，手机菜单、章节导航和自然滚动回程沿原结构。进度按任务完成比例显示。",
         "evidence": "adapted",
         "referenceUrl": "https://endfield.hypergryph.com/",
         "capturedAt": "2026-10-09"

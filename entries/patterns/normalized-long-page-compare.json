@@ -29,10 +29,6 @@
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "比较标签和分隔线有键盘路径，外层保留正常滚动。",
-    "reducedMotion": "保留完整页面与手动阅读，停用自动扫线。"
-  },
   "parameters": [
     {
       "name": "外层行程",

@@ -507,8 +507,7 @@
       },
       "soundBehavior": {
         "kind": "none",
-        "control": "本练习无背景音乐。",
-        "interactionRole": "不按风格标签臆造音乐；若引入声音，应有真实来源、主动启用、停止控制与明确的交互作用。"
+        "control": "本练习无背景音乐。"
       },
       "paths": {
         "bundle": "agent/cases/hand-drawn.json",
@@ -581,8 +580,7 @@
       },
       "soundBehavior": {
         "kind": "none",
-        "control": "本练习无背景音乐。",
-        "interactionRole": "不按风格标签臆造音乐；若引入声音，应有真实来源、主动启用、停止控制与明确的交互作用。"
+        "control": "本练习无背景音乐。"
       },
       "paths": {
         "bundle": "agent/cases/isometric-3d.json",
@@ -653,8 +651,7 @@
       },
       "soundBehavior": {
         "kind": "none",
-        "control": "本练习无背景音乐。",
-        "interactionRole": "不按风格标签臆造音乐；若引入声音，应有真实来源、主动启用、停止控制与明确的交互作用。"
+        "control": "本练习无背景音乐。"
       },
       "paths": {
         "bundle": "agent/cases/line-art.json",
@@ -727,8 +724,7 @@
       },
       "soundBehavior": {
         "kind": "none",
-        "control": "本练习无背景音乐。",
-        "interactionRole": "不按风格标签臆造音乐；若引入声音，应有真实来源、主动启用、停止控制与明确的交互作用。"
+        "control": "本练习无背景音乐。"
       },
       "paths": {
         "bundle": "agent/cases/shape-morph.json",
@@ -797,8 +793,7 @@
       },
       "soundBehavior": {
         "kind": "none",
-        "control": "本练习无背景音乐。",
-        "interactionRole": "不按风格标签臆造音乐；若引入声音，应有真实来源、主动启用、停止控制与明确的交互作用。"
+        "control": "本练习无背景音乐。"
       },
       "paths": {
         "bundle": "agent/cases/swiss-grid.json",
@@ -870,8 +865,7 @@
       },
       "soundBehavior": {
         "kind": "none",
-        "control": "本练习无背景音乐。",
-        "interactionRole": "不按风格标签臆造音乐；若引入声音，应有真实来源、主动启用、停止控制与明确的交互作用。"
+        "control": "本练习无背景音乐。"
       },
       "paths": {
         "bundle": "agent/cases/bauhaus-geometry.json",
@@ -1020,8 +1014,7 @@
       },
       "soundBehavior": {
         "kind": "none",
-        "control": "本练习无背景音乐。",
-        "interactionRole": "不按风格标签臆造音乐；若引入声音，应有真实来源、主动启用、停止控制与明确的交互作用。"
+        "control": "本练习无背景音乐。"
       },
       "paths": {
         "bundle": "agent/cases/pixel-world.json",
@@ -1471,7 +1464,7 @@
       "soundBehavior": {
         "kind": "none",
         "control": "About 原始 top_about.mp4 只有视频轨道，没有音轨；播放/暂停、进度与关闭暂停可操作。官网其他 PV 外链声音未在本地核实，未发现独立 BGM。",
-        "interactionRole": "奔跑与比赛画面的剪辑建立观看节奏，无声影片保持普通阅读安静；站外播放器的声音不冒称本地已播放。"
+        "interactionRole": "奔跑与比赛画面的剪辑建立观看节奏，无声影片保持普通阅读安静。"
       },
       "paths": {
         "bundle": "agent/cases/uma-musume.json",
@@ -2423,7 +2416,7 @@
         "coherence": "档案身份建立在真实素材、数据/标签、字体与状态机制上；不同章节无需统一成白黄卡片，相同编号/标定/导航贯穿门户。"
       },
       "interaction": [
-        "载入与导航：使用原Updating图形和排版，本地必要首页图、干员图与字体的实际完成数推进；失败提供重试/继续。侧栏hover300ms展开，手机菜单、章节导航和自然滚动回程沿原结构。进度是任务完成比例，不声称网络字节百分比。",
+        "载入与导航：使用原Updating图形和排版，本地必要首页图、干员图与字体的实际完成数推进；失败提供重试/继续。侧栏hover300ms展开，手机菜单、章节导航和自然滚动回程沿原结构。进度按任务完成比例显示。",
         "干员：35项头像真实映射，箭头每次翻四个头像而不切角色，点击头像才更新名字/代号/阵营/种族/职业/属性/CV与星级；全部干员页按职业/属性AND筛选，返回正式档案。",
         "2D/3D：同35项立绘和70个原enter/idle视频。祀源影片3840×1080左右RGB/alpha，经原亮度权重0.3/0.59/0.11合成1920×1080透明canvas，enter结束切idle循环；不制造实时人物模型。",
         "世界观：帝江号/锚点/集成工业系统/天师桩/天使/裂地者六个原bin及模型参数，Float32 xyz、按Y跨度1900规范化；实际WebGL点云、扫描、转动、拖动、分页/标题与六指标同步。最终状态实测见fidelity，不因源码抽取而自动判通过。",

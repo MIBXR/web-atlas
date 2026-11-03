@@ -29,10 +29,6 @@
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "每词使用原生按钮与aria-pressed，读后焦点移向下一词。",
-    "reducedMotion": "显示已读完的静态花园，并保留重读入口。"
-  },
   "parameters": [
     {
       "name": "词与时间",

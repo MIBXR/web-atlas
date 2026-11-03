@@ -7,7 +7,7 @@
     "page-motion"
   ],
   "summary": "让章节空间方向与输入方向一致。",
-  "mechanism": "两个整屏场景以横向遮罩覆盖出入，旧场景退出与新场景进入共享方向；稳定后只有一章可交互。",
+  "mechanism": "两个整屏场景以横向遮罩覆盖出入，旧场景退出与新场景进入共享方向；稳定后只有一章可交互。 章节按钮及方向键、PageUp/PageDown、Home/End 可走完整个章节序列。",
   "trigger": "滚轮、章节导航或键盘换章",
   "effect": "整页档案保持单一舞台及方向线索。",
   "useCases": [
@@ -30,10 +30,6 @@
     "conflicts": [
       "native-document-reading"
     ]
-  },
-  "accessibility": {
-    "keyboard": "提供章节按钮以及方向键/PageUp/PageDown/Home/End，当前章标示清楚。",
-    "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
   },
   "parameters": [
     {

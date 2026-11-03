@@ -55,7 +55,6 @@ export function loadPatterns({ root = defaultRoot, entries } = {}) {
     if (!['foundation', 'support', 'accent'].includes(p.composition?.role)) throw new Error(`Unknown composition role: ${p.id}`);
     requireText(p.composition.notes, `${p.id}.composition.notes`);
     for (const key of ['pairsWellWith', 'conflicts']) textArray(p.composition[key], `${p.id}.composition.${key}`);
-    for (const key of ['keyboard', 'reducedMotion']) requireText(p.accessibility?.[key], `${p.id}.accessibility.${key}`);
     if (!Array.isArray(p.parameters)) throw new Error(`Expected parameters array: ${p.id}`);
     for (const parameter of p.parameters) for (const key of ['name', 'value', 'note']) requireText(parameter[key], `${p.id}.parameters.${key}`);
     if (!Array.isArray(p.sources) || !p.sources.length) throw new Error(`Missing provenance: ${p.id}`);

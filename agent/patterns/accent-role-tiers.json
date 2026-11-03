@@ -34,10 +34,6 @@
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "链接和按钮使用原生元素，焦点轮廓用 --accent-1；当前项同时提供 aria-current 和字重。",
-      "reducedMotion": "角色和值不依赖运动，减少动态时主题直接更新。"
-    },
     "parameters": [
       {
         "name": "Web 浅色角色",

@@ -27,10 +27,6 @@
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "链接与按钮保留原生键盘路径和可访问名称；标题的装饰分词不重复播报。",
-    "reducedMotion": "移除入场、交错和循环运动，保留所有文字、布局与复制结果。"
-  },
   "parameters": [
     {
       "name": "径向色场",

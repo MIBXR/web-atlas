@@ -28,10 +28,6 @@
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-    "reducedMotion": "显示静止光点或停在固定明度，保留主图和全部文字。"
-  },
   "parameters": [
     {
       "name": "来源KV",

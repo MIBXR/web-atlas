@@ -31,10 +31,6 @@
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "Canvas不进入Tab顺序；标题、CTA和工作台以DOM保持可读。",
-    "reducedMotion": "迁移时提供静态色场或停止时间推进；源页面GPU的减少动态行为需单独核验。"
-  },
   "parameters": [
     {
       "name": "帧率与DPR",

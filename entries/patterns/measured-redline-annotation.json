@@ -8,7 +8,7 @@
     "visual"
   ],
   "summary": "从真实字形和区块尺寸生成红线，而非放固定的装饰尺。",
-  "mechanism": "用DOM矩形寻找四向最近相交邻块，SVG显示边界与间距；用Range逐字量宽并按em千分之一标advance，高频指针输入合到一帧。",
+  "mechanism": "用DOM矩形寻找四向最近相交邻块，SVG显示边界与间距；用Range逐字量宽并按em千分之一标advance，高频指针输入合到一帧。 区块聚焦也触发同一测量，静态呈现直接显示尺寸线与读数。",
   "trigger": "指向、触摸或聚焦可测量区块。",
   "effect": "尺寸文字能解释当前对象及其排版关系。",
   "useCases": [
@@ -28,10 +28,6 @@
       "font-metric-guides"
     ],
     "conflicts": []
-  },
-  "accessibility": {
-    "keyboard": "区块focusin触发同一测量，标签有实际对象名称。",
-    "reducedMotion": "尺寸线和读数直接显示，保持几何准确。"
   },
   "parameters": [
     {

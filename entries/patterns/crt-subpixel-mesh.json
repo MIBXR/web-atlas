@@ -28,10 +28,6 @@
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "正文保持真实文本与清楚焦点，不靠字边颜色表达状态。",
-    "reducedMotion": "网格和字边是静态构成，悬停状态即时切换。"
-  },
   "parameters": [
     {
       "name": "网格",

@@ -1,1 +1,4 @@
-html,body *{scrollbar-width:thin;scrollbar-color:var(--atlas-line,#8888) transparent}
+@layer atlas-demo-scrollbars {
+  html:not([data-demo-scrollbars="original"]) { scrollbar-width:thin; scrollbar-color:var(--atlas-line,#8888) transparent; }
+  html:not([data-demo-scrollbars="original"]) :where(body,body *) { scrollbar-width:inherit; scrollbar-color:inherit; }
+}

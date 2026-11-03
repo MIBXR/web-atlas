@@ -31,10 +31,6 @@
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "副本aria-hidden，原文提供完整标题语义。",
-      "reducedMotion": "裁切为静态布局，窄屏给完整单份标题。"
-    },
     "parameters": [
       {
         "name": "边界",

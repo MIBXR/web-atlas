@@ -32,10 +32,6 @@
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "使用原生dialog、可命名iframe、Escape与焦点返回。",
-      "reducedMotion": "省略对话框入场运动，缩放与导航保留。"
-    },
     "parameters": [
       {
         "name": "排版宽度",

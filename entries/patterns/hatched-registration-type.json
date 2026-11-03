@@ -32,10 +32,6 @@
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "背景装饰不可聚焦；前景链接/按钮保持独立可见焦点与文字名称。",
-    "reducedMotion": "保持静态标定构成，不为巨大背景字添加循环移动或闪烁。"
-  },
   "parameters": [
     {
       "name": "源浅纹背景",

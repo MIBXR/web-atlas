@@ -7,7 +7,7 @@
     "page-motion"
   ],
   "summary": "静态立绘与RGB/alpha透明视频共享人物位置，进入短片结束后接续idle循环。",
-  "mechanism": "同一影片左半保存RGB颜色、右半保存亮度alpha遮罩，经WebGL合成为半宽透明canvas；2D立绘与3D影片模式独立于人物选择，enter完成后接idle，换人或退出时取消旧资源回调和帧调度。",
+  "mechanism": "同一影片左半保存RGB颜色、右半保存亮度alpha遮罩，经WebGL合成为半宽透明canvas；2D立绘与3D影片模式独立于人物选择，enter完成后接idle，换人或退出时取消旧资源回调和帧调度。 静态呈现保留人物立绘或 idle 的 1/30 秒帧，停止影片与 GPU 连续帧；恢复动态时沿用当前模式、前台状态与用户的暂停选择。",
   "trigger": "用户选择静态/动态模式，或在动态模式中切换人物",
   "effect": "人物运动融入档案背景，姓名与资料位置稳定，动态资源始终属于当前人物。",
   "useCases": [
@@ -37,10 +37,6 @@
       "hatched-registration-type"
     ],
     "conflicts": []
-  },
-  "accessibility": {
-    "keyboard": "静态/动态模式用有名称的按钮，aria-pressed跟随实际模式，切换不移动资料焦点；失败提供静态回退。人物名称和等价说明位于正常DOM，不只保存在canvas。",
-    "reducedMotion": "保留当前人物静态立绘或idle有效静帧，停止影片与GPU连续帧；本地实测idle 1/30秒静帧可见。恢复动态尊重当前模式、前台和用户暂停状态。"
   },
   "parameters": [
     {

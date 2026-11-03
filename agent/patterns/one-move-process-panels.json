@@ -32,10 +32,6 @@
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "说明文本始终可读，发牌图示旁保留步骤标题。",
-      "reducedMotion": "直接显示所有问题和修复结果，线框保持初态。"
-    },
     "parameters": [
       {
         "name": "入场",

@@ -84,7 +84,7 @@
       "title": "MDN — stroke-dashoffset",
       "url": "https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/stroke-dashoffset",
       "type": "规范",
-      "note": "核验 stroke-dashoffset 的偏移、可动画性和 pathLength 归一化；注意旧 Vivus README 的限制属于旧库实现，不代表当前 SVG 仅 path 支持。"
+      "note": "stroke-dashoffset 支持偏移动画，pathLength 用于归一化路径长度；旧版 Vivus README 中的限制属于该库实现。"
     },
     {
       "title": "Vivus 作者 · 公开作品集",
@@ -118,7 +118,6 @@
   },
   "soundBehavior": {
     "kind": "none",
-    "control": "本练习无背景音乐。",
-    "interactionRole": "不按风格标签臆造音乐；若引入声音，应有真实来源、主动启用、停止控制与明确的交互作用。"
+    "control": "本练习无背景音乐。"
   }
 }

@@ -15,7 +15,7 @@
     "近黑背景、暖白正文、少量琥珀强调和冷蓝数据标签通过 oklch 自定义属性协调。",
     "程序化月球、空间站、火星和银河属于页面内展示，不依赖外部摄影；编年史与预约票券继续提供阅读结构。"
   ],
-  "productFocus": "归档 garden-skills 固定提交的生成示范页面，研究其设计机制及与无 skill 基线的结构、字体、色彩、动效和信息层级差别。页面内 STELLARIA／星海博物馆、馆藏、地址、预约信息及未来任务均按示范文案保留，不作为真实机构事实。",
+  "productFocus": "归档 garden-skills 固定提交的生成示范页面，研究其设计机制及与无 skill 基线的结构、字体、色彩、动效和信息层级差别。页面内 STELLARIA／星海博物馆、馆藏、地址、预约信息及未来任务均为示范设定。",
   "interaction": [
     "首次进入：标题两行以 1.1 秒上移入场，第二行延迟 0.12 秒；Canvas 星空闪烁，首屏星球持续旋转，UTC 字符串每秒更新。UTC 是浏览器时钟，不是轨道实时数据。",
     "下滚超过 60px：固定导航加近黑半透明背景、16px 模糊与下边线；返回顶部恢复透明。页内锚点按目标位置减 60px 平滑滚动。",
@@ -31,7 +31,7 @@
     "归档对象是 ConardLi/garden-skills 的固定提交 2b9a89340b70f632d31c0f1c69fce94a7912423e，不是真实博物馆官网。主页面原文自称 STELLARIA／星海博物馆，基线自称星槎博物馆；归档标题按任务命名，不修改页内文案。",
     "主页面与基线均从固定提交 Git blob 复制，仅将 Google Fonts、preconnect 与 Three.js 外链替换为本地路径；逐项对应见 fidelity。HTML 内 CSS、JavaScript、占位链接及业务边界均保留来源。",
     "主页面需要支持 importmap、ESM 与 WebGL 的静态 HTTP 环境；Three.js 0.160.0、字体及各自许可随包保留。没有外部图片、音频或视频素材。",
-    "来源的减少动态分支限制 CSS 动画、停止对象旋转及背景星空闪烁，但着色器时间、UTC 和平滑锚点滚动仍保留；本地不修改该行为，不声称完全静止。",
+    "来源的减少动态分支限制 CSS 动画、停止对象旋转与背景星空闪烁，着色器时间、UTC 和平滑锚点滚动仍保留。",
     "README 第 427 行文件路径多出 demo2/ 一层；归档依据实际存在的 demo/web-design-demo/demo1.html 与 demo1-with-skill.html。生成模型、运行次数及生成参数没有对应证据，不作补充推断。"
   ],
   "useCases": ["文化主题示范页研究", "编辑式长页排版", "程序化三维展品展示", "同题生成基线对照"],
@@ -55,8 +55,8 @@
   "sources": [
     {"title": "garden-skills · 有 skill 的太空博物馆示范源码", "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/demo/web-design-demo/demo1-with-skill.html", "type": "实例", "note": "主页面全部 HTML、CSS 和 JavaScript 的固定版本依据；页内自称 STELLARIA／星海博物馆，内容按示范文案保留。"},
     {"title": "garden-skills · 无 skill 的基线源码", "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/demo/web-design-demo/demo1.html", "type": "实例", "note": "未使用 web-design-engineer skill 时的生成结果；版本身份依据 README 第 419、425–431 行，文件实际位置以该固定提交为准。"},
-    {"title": "web-design-engineer · 原始提示词与启用前后对照", "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-design-engineer/README.zh-CN.md#L417-L433", "type": "理论", "note": "第 419 行声明相同提示词下的有／无 skill 对照；第 423 行保存原始提示词，第 425–431 行列版本、字体与布局差别。作者的品质评价不作为本库实测结论。"},
-    {"title": "web-design-engineer · 设计机制分析维度", "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-design-engineer/SKILL.md#L61-L71", "type": "规范", "note": "来源技能要求从色彩、字体、间距、圆角、阴影、运动和密度分析参考；仅用于解释该示范的设计机制，不声称生成过程逐步执行了全部工作流。"},
+    {"title": "web-design-engineer · 原始提示词与启用前后对照", "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-design-engineer/README.zh-CN.md#L417-L433", "type": "理论", "note": "第 419 行声明相同提示词下的有／无 skill 对照；第 423 行保存原始提示词，第 425–431 行列版本、字体与布局差别。"},
+    {"title": "web-design-engineer · 设计机制分析维度", "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-design-engineer/SKILL.md#L61-L71", "type": "规范", "note": "来源技能从色彩、字体、间距、圆角、阴影、运动和密度分析参考，用于解释这页示范的设计机制。"},
     {"title": "示范源码作者 · 公开所在地", "url": "https://github.com/ConardLi", "type": "创作来源", "note": "固定来源仓库 garden-skills 的作者 ConardLi 在公开资料中标注所在地为北京；地区按实际作者来源标注，页内场馆为示范内容。"}
   ],
   "prompt": "帮我做一个'太空探索博物馆'的线上展览首页——全屏 Hero、4 个核心展览介绍、一个至少 6 个节点的时间线、参观预约 CTA、页脚。整体风格要沉浸感强、有宇宙的深邃感。\n\n出处：来源仓库固定提交 2b9a89340b70f632d31c0f1c69fce94a7912423e 的 skills/web-design-engineer/README.zh-CN.md 第 423 行，原始生成提示词照录。",

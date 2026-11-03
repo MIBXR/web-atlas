@@ -28,10 +28,6 @@
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "以完整数值更新aria-label，装饰数位不代替名称。",
-    "reducedMotion": "直接定位最终数位，跳过滚动。"
-  },
   "parameters": [
     {
       "name": "列高",

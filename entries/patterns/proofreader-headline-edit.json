@@ -28,10 +28,6 @@
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "最终标题保留真实文字与 aria-label。",
-    "reducedMotion": "跳过改词过程，直接显示最终标题。"
-  },
   "parameters": [
     {
       "name": "起点",

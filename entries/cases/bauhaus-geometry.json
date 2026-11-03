@@ -66,7 +66,7 @@
       "title": "Bauhaus Dessau — 官方首页",
       "url": "https://bauhaus-dessau.de/en/welcome/",
       "type": "实例",
-      "note": "2026-10-07阅读：展览信息结合图形、日期、场所、票务与无障碍入口；不冒称本demo复刻官网。"
+      "note": "展览信息结合图形、日期、场所、票务与无障碍入口。"
     },
     {
       "title": "Bauhaus Kooperation — Kandinsky 的基础课程",
@@ -112,7 +112,6 @@
   },
   "soundBehavior": {
     "kind": "none",
-    "control": "本练习无背景音乐。",
-    "interactionRole": "不按风格标签臆造音乐；若引入声音，应有真实来源、主动启用、停止控制与明确的交互作用。"
+    "control": "本练习无背景音乐。"
   }
 }

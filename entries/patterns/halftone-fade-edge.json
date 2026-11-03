@@ -28,10 +28,6 @@
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "网点不传递必要内容且不截获操作。",
-    "reducedMotion": "静态渐隐边界保持可见。"
-  },
   "parameters": [
     {
       "name": "过渡带",

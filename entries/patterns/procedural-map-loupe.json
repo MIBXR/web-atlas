@@ -29,10 +29,6 @@
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "日志保留可聚焦图钉与卡片，放大镜为细察辅助。",
-    "reducedMotion": "保留固定地图和停靠放大镜，选择即时完成。"
-  },
   "parameters": [
     {
       "name": "等高线",

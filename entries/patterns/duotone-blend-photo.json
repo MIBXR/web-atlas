@@ -28,10 +28,6 @@
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "原图保留替代文本，颜色处理不承载唯一信息。",
-    "reducedMotion": "双色处理为静态样式，保持原构成。"
-  },
   "parameters": [
     {
       "name": "图像处理",

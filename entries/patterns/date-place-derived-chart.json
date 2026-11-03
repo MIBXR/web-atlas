@@ -29,10 +29,6 @@
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "原生日期范围输入与港口按钮，极值和日照有文字读数。",
-    "reducedMotion": "输入后直接重绘目标数据和标注。"
-  },
   "parameters": [
     {
       "name": "潮汐周期",

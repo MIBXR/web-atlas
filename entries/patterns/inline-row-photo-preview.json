@@ -7,7 +7,7 @@
     "micro-motion"
   ],
   "summary": "在保持文字目录易于扫描的同时，为当前行补充一张摄影线索。",
-  "mechanism": "把照片绝对定位在目录行右侧，悬停时以透明度与轻微缩放显现，并让标题和箭头小幅右移；离开后还原。",
+  "mechanism": "把照片绝对定位在目录行右侧，悬停时以透明度与轻微缩放显现，并让标题和箭头小幅右移；离开后还原。 键盘聚焦目录行时也显示对应照片。",
   "trigger": "桌面指针进入或离开作品目录行",
   "effect": "只有当前行浮现固定位置的摄影预览，标题与箭头共同提示关注对象。",
   "useCases": [
@@ -34,10 +34,6 @@
     "conflicts": [
       "pointer-image-shader-preview"
     ]
-  },
-  "accessibility": {
-    "keyboard": "用 :focus-visible 给出同样的预览",
-    "reducedMotion": "保留预览的显示与隐藏，取消缩放、标题和箭头位移，以即时显隐代替过渡。"
   },
   "parameters": [
     {

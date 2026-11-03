@@ -34,10 +34,6 @@
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "装饰层不拦截指针和焦点，链接保持原生DOM。",
-      "reducedMotion": "迁移时直接给出目标标记或隐藏装饰，保留同一CTA；源GPU减少动态行为单列验证。"
-    },
     "parameters": [
       {
         "name": "立方体数量",

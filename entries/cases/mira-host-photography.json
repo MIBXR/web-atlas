@@ -5,7 +5,16 @@
   "subtitle": "公开技能仓库中的虚构摄影师示范页",
   "category": "示范作品",
   "country": "中国",
-  "tags": ["示范作品", "虚构摄影师", "摄影作品集", "编辑排版", "衬线斜体", "暖纸色", "全幅摄影", "悬停预览"],
+  "tags": [
+    "示范作品",
+    "虚构摄影师",
+    "摄影作品集",
+    "编辑排版",
+    "衬线斜体",
+    "暖纸色",
+    "全幅摄影",
+    "悬停预览"
+  ],
   "summary": "以全幅摄影、暖纸色与墨色、衬线斜体和编号章节组织虚构摄影师的作品集；保留来源页面的慢速推镜、非对称图组和目录悬停预览。",
   "accent": "#161513",
   "background": "#f2efe8",
@@ -32,13 +41,28 @@
     "来源 demo/web-design-demo/demo2/index.html 是林月摄影作品集，内容不同；README 未明确其为无技能版本，本案例不设基线。",
     "14 个图片 URL 对应 10 张 Unsplash 照片，不同宽度和质量参数分别下载，不重编码；出处、尺寸与归属核查边界见素材清单。",
     "人物肖像区域保留来源的渐变占位图；作品目录、文章详情与社交链接的 # 占位按原样保留，不补造业务页面。",
-    "独立 Demo 内小字号、文字箭头、加载与减少动态行为属于来源设计，按本轮忠实复制范围保留；不据此声称满足完整无障碍要求。",
+    "独立 Demo 保留来源设计的小字号、文字箭头、加载与减少动态行为。",
     "页面脚注中的全部摄影归属表述属于虚构示范文案；实际图片为来源引用的 Unsplash 素材，不能据此归属给 Mira Høst。"
   ],
-  "useCases": ["摄影作品集", "长篇专题展示", "独立创作者介绍", "杂志式作品目录"],
-  "avoid": ["将示范履历写成真实人物事实", "将所有章节改为等大卡片", "将占位链接包装成完整业务流程"],
+  "useCases": [
+    "摄影作品集",
+    "长篇专题展示",
+    "独立创作者介绍",
+    "杂志式作品目录"
+  ],
+  "avoid": [
+    "将示范履历写成真实人物事实",
+    "将所有章节改为等大卡片",
+    "将占位链接包装成完整业务流程"
+  ],
   "tokens": {
-    "palette": ["#f2efe8", "#e8e4d9", "#161513", "#3a3631", "#8a857d"],
+    "palette": [
+      "#f2efe8",
+      "#e8e4d9",
+      "#161513",
+      "#3a3631",
+      "#8a857d"
+    ],
     "type": "Instrument Serif 正体与斜体、Space Grotesk 300／400／500；主标题 clamp(54px, 9.2vw, 156px)，540px 以下改为 clamp(46px, 13vw, 80px)；正文约 13.5–15.5px。",
     "layout": "首屏 100dvh；章节内宽上限 1320px、桌面左右 48px；专题 5:7 双栏，右侧六列拼图；900px 以下改为单列、左右 22px。",
     "motion": "首图 24 秒交替推镜；标题 1.2 秒分词入场；章节显现 1.1 秒、组内 0.9 秒并错开 0.12 秒；目录预览 0.5／0.6 秒，图片悬停 1.4 秒。数值来自固定提交源码。"
@@ -72,7 +96,12 @@
       "type": "理论",
       "note": "来源技能讨论视觉层级、对齐、色彩和字体数量，用于理解其设计取向；不视为具体生成过程或本页无障碍实测证据。"
     },
-    {"title": "示范源码作者 · 公开所在地", "url": "https://github.com/ConardLi", "type": "创作来源", "note": "固定来源仓库 garden-skills 的作者 ConardLi 在公开资料中标注所在地为北京；地区按实际作者来源标注，Mira Høst 为示范页的虚构角色。"}
+    {
+      "title": "示范源码作者 · 公开所在地",
+      "url": "https://github.com/ConardLi",
+      "type": "创作来源",
+      "note": "固定来源仓库 garden-skills 的作者 ConardLi 在公开资料中标注所在地为北京；地区按实际作者来源标注，Mira Høst 为示范页的虚构角色。"
+    }
   ],
   "prompt": "帮我做一个独立摄影师的个人作品集网站首页。\n\n原始生成提示词，照录自 garden-skills 固定提交 2b9a89340b70f632d31c0f1c69fce94a7912423e 的 skills/web-design-engineer/README.zh-CN.md 第 436 行：https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-design-engineer/README.zh-CN.md#L436",
   "negativePrompt": "以下约束由 Web Atlas 撰写：不改来源设计与原文，不将示范人物、地点履历和图片署名当作真实机构事实，不增补来源没有的详情、后端、音乐或基线，不将源码判断写成浏览器实测。",
@@ -85,7 +114,11 @@
   "fidelity": "demos/cases/mira-host-photography/fidelity.md",
   "assetManifest": "demos/cases/mira-host-photography/assets-manifest.json",
   "capturedAt": "2026-10-27",
-  "patternIds": ["difference-blend-navigation", "inline-row-photo-preview", "photo-crossfade-cycle"],
+  "patternIds": [
+    "difference-blend-navigation",
+    "inline-row-photo-preview",
+    "photo-crossfade-cycle"
+  ],
   "themeBehavior": {
     "mode": "fixed",
     "default": "light",

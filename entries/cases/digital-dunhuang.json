@@ -103,25 +103,19 @@
       "title": "数字敦煌 · 第257窟主室西壁",
       "url": "https://www.e-dunhuang.com/showmural/10.0001/0001/0001/0257/0001/0003/01",
       "type": "实例",
-      "note": "现场点击Zoom in与Zoom out，核验独立深色影像视域与可逆放缩。"
+      "note": "独立深色影像视域支持加减、拖动与可逆缩放，采用 Leaflet/DeepZoom 和公开 Network 瓦片。"
     },
     {
       "title": "W3C WAI · Modal Dialog",
       "url": "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/",
       "type": "规范",
-      "note": "首页版权/Cookie/平台介绍说明窗口提供明确关闭、Escape和焦点归还；壁画查看器为独立页面，不能使用此规范冒称它是dialog。"
+      "note": "首页版权、Cookie 与平台介绍说明窗口提供明确关闭、Escape 与焦点归还；壁画查看器使用独立页面。"
     },
     {
       "title": "W3C WAI · Reflow",
       "url": "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html",
       "type": "规范",
       "note": "目录窄屏重排；图像二维平移限于独立画布，避免整页横向溢出。"
-    },
-    {
-      "title": "数字敦煌 · 257窟西壁公开查看器",
-      "url": "https://www.e-dunhuang.com/showmural/10.0001/0001/0001/0257/0001/0003/01",
-      "type": "实例",
-      "note": "实际加减、拖动，读取原Leaflet/DeepZoom脚本、地图缩放和公开Network瓦片，不读取登录后级别。"
     }
   ],
   "exercise": "用有使用权的真实瓦片图像和完整元数据替换档案；逐条件验证成员集、组合空态、URL返回以及查看器真实精度、平移和缩放边界。",

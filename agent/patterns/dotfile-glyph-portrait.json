@@ -32,10 +32,6 @@
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "图像之外保留可读品牌与实际安装命令。",
-      "reducedMotion": "直接绘制最终字符与色阶，停用解析和热度。"
-    },
     "parameters": [
       {
         "name": "图像数据",

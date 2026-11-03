@@ -28,10 +28,6 @@
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "加载说明可读，失败时继续/重试按钮可聚焦，不困住焦点。",
-    "reducedMotion": "旋转改为静止标识，就绪后即时显示主图。"
-  },
   "parameters": [
     {
       "name": "DESIGN SIGHT来源",

@@ -32,10 +32,6 @@
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "演示提供暂停和文字描述；实际交互迁移时每次调用需可键盘选中，关闭详情回到原调用。",
-    "reducedMotion": "保留时间线、日志和选中详情的稳定图解。"
-  },
   "parameters": [
     {
       "name": "泳道 / span",

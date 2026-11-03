@@ -32,10 +32,6 @@
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "入口与条件可键盘进入，焦点可见；本地菜单/披露支持Escape或明确关闭，真实业务链接有名称。",
-    "reducedMotion": "取消自动轮换、计数过程和位移过渡；全部内容与手动选择保留。"
-  },
   "parameters": [
     {
       "name": "源专题类别",

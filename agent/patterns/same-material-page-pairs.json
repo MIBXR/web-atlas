@@ -32,10 +32,6 @@
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "每张图保留有文字名称的真实链接。",
-      "reducedMotion": "成对比较为静态构成，内容保持可读。"
-    },
     "parameters": [
       {
         "name": "分组",
