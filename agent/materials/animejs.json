@@ -416,7 +416,7 @@
     {
       "path": "demos/materials/animejs/source/README.md",
       "role": "process",
-      "content": "# Anime.js 源码\n\n上游：https://github.com/juliangarnier/anime/tree/2c9cf8ea00329f6768c7d7902252ed977d75ce42 。版本 v4.5.0，归档日期 2026-11-02。\n\n`src/`、`package.json`、`package-lock.json` 与 `rollup.config.js` 保留上游内容。浏览器直接导入 `../vendor/animejs@4.5.0/dist/modules/index.js`；36 个样例通过 `../index.html?demo=<路径>` 打开。使用说明与样例索引见 `docs/materials/animejs.md`。\n"
+      "content": "# Anime.js 源码\n\n上游：https://github.com/juliangarnier/anime/tree/2c9cf8ea00329f6768c7d7902252ed977d75ce42 。版本 v4.5.0，归档日期 2026-11-02。\n\n`src/`、`package.json`、`package-lock.json`、`rollup.config.js`、`tsconfig.json` 与 `tsconfig.types.json` 保留上游内容。浏览器直接导入 `../vendor/animejs@4.5.0/dist/modules/index.js`；36 个样例通过 `../index.html?demo=<路径>` 打开。使用说明与样例索引见 `docs/materials/animejs.md`。\n"
     },
     {
       "path": "demos/materials/animejs/vendor/animejs@4.5.0/LICENSE.md",
@@ -1069,6 +1069,14 @@
     },
     {
       "path": "demos/materials/animejs/source/src/waapi/waapi.js",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/tsconfig.json",
+      "role": "process"
+    },
+    {
+      "path": "demos/materials/animejs/source/tsconfig.types.json",
       "role": "process"
     },
     {

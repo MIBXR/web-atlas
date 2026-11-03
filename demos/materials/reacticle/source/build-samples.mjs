@@ -24,7 +24,7 @@ for (const [slug, theme, component] of samples) {
   mkdirSync(entry, { recursive: true });
   const report = component === 'RateLimiterSpec' ? 'RateLimiter' : component;
   const path = target => relative(entry, resolve(source, target)).replaceAll('\\', '/');
-  const title = readFileSync(resolve(source, '..', slug, 'index.html'), 'utf8').match(/<title>(.*?)<\/title>/)[1];
+  const title = readFileSync(resolve(source, '..', 'demo', slug, 'index.html'), 'utf8').match(/<title>(.*?)<\/title>/)[1];
   writeFileSync(resolve(entry, 'index.html'), `<!doctype html><html lang="zh-CN" data-theme="${theme}"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>${title}</title><script>window.Prism = { manual: true };</script></head><body><div id="root"></div><script type="module" src="./entry.tsx"></script></body></html>`);
   writeFileSync(resolve(entry, 'entry.tsx'), `import { createRoot } from 'react-dom/client';
 import { ThemeProvider } from 'reacticle';
