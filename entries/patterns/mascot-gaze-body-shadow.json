@@ -49,7 +49,18 @@
       "observation": "等待态的眼睛朝指针或标题光标偏移，300px 达到最大 3 SVG 单位，身体按 0.33 倍偏移并联动影子。围绕角色连续同向两圈触发 6 秒眩晕、12 秒冷却；拖放和权限决定优先取消反应。",
       "evidence": "observed",
       "referenceUrl": "https://clawdondesk.com/",
-      "capturedAt": "2026-11-01"
+      "capturedAt": "2026-11-01",
+      "focus": {
+        "target": "#clawd",
+        "label": "视线、身体与影子",
+        "instruction": "围绕角色移动指针，看眼睛、身体和影子一起偏移；连续同向绕两圈可触发眩晕反应。",
+        "prepare": [
+          {
+            "key": "Escape",
+            "waitFor": "body[data-frame='4']"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -59,5 +70,6 @@
     "demos/cases/clawd-on-desk/source/website/scripts/eye-track.js",
     "demos/cases/clawd-on-desk/source/website/scripts/dizzy.js",
     "demos/cases/clawd-on-desk/index.html"
-  ]
+  ],
+  "preview": "previews/patterns/mascot-gaze-body-shadow.jpg"
 }

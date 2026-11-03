@@ -36,7 +36,13 @@
       "observation": "AI 章节进入视口 → 三列代理思考/回答以 5s 与后续交错时间演示，离开/后台停止；暂停按钮与减少动态分支可保持结果。",
       "evidence": "adapted",
       "referenceUrl": "https://linear.app/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".agent-workflows",
+        "label": "三列代理状态",
+        "instruction": "看三列代理依次出现思考与回答，用这一节的暂停按钮停在当前结果，再恢复观看。",
+        "viewport": "wide"
+      }
     }
   ],
   "sourceFiles": [
@@ -46,5 +52,6 @@
     "demos/cases/linear-workflow/script.js",
     "demos/cases/linear-workflow/style.css",
     "entries/cases/linear-workflow.json"
-  ]
+  ],
+  "preview": "previews/patterns/staggered-agent-columns.jpg"
 }

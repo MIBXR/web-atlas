@@ -54,7 +54,12 @@
         "observation": "工作流演示每11秒切换周报、销售汇总和项目测试三种故事；输入JSON先出现，替换为计划结果，再收起执行过程并留下任务卡。使用固定2026-09-01演示时间，不创建真实任务。",
         "evidence": "observed",
         "referenceUrl": "https://www.deepseek.com/harness/",
-        "capturedAt": "2026-10-11"
+        "capturedAt": "2026-10-11",
+        "focus": {
+          "target": "[class^=HarnessWorkflowPreview_canvas]",
+          "label": "执行过程收起与任务卡",
+          "instruction": "看输入、工具结果和执行过程依次出现，过程收起后留下任务卡；随后会切换下一种工作故事。"
+        }
       }
     ],
     "sourceFiles": [
@@ -84,7 +89,8 @@
       "demos/cases/deepseek-harness/vendor/deepseek-harness/8555-7c9518c428e988c2.js",
       "demos/cases/deepseek-harness/vendor/deepseek-harness/86b88eeb-5b86058878847f6a.js"
     ],
-    "prompt": "为【目标页面/组件】实现「执行过程折叠后保留结果」。先展开结构化输入，替换为任务结果，再折叠中间执行过程；完成文案和独立任务卡保留在原阅读位置，下一轮更换示例而不改变结构。 触发：演示任务由输入进入完成阶段。结果：用户能理解关键执行信息，又能清楚看到最终可用对象。 真实产品要由实际执行状态驱动；演示应明确固定故事与日期。 输入和结果使用同一任务标识，折叠只改变呈现而不改变事实。 负责过程与结果的层级交接，可与跨场景成果保留组合；日志详情属于独立深入查看职责。 键盘：提供独立暂停；若迁移成实际产品，用语义展开按钮保留回看过程的入口。 减少动态：直接呈现可读结果与完成卡，保留执行说明。 实施前读取来源源码、研究与复现边界，不以本Prompt替代代码。"
+    "prompt": "为【目标页面/组件】实现「执行过程折叠后保留结果」。先展开结构化输入，替换为任务结果，再折叠中间执行过程；完成文案和独立任务卡保留在原阅读位置，下一轮更换示例而不改变结构。 触发：演示任务由输入进入完成阶段。结果：用户能理解关键执行信息，又能清楚看到最终可用对象。 真实产品要由实际执行状态驱动；演示应明确固定故事与日期。 输入和结果使用同一任务标识，折叠只改变呈现而不改变事实。 负责过程与结果的层级交接，可与跨场景成果保留组合；日志详情属于独立深入查看职责。 键盘：提供独立暂停；若迁移成实际产品，用语义展开按钮保留回看过程的入口。 减少动态：直接呈现可读结果与完成卡，保留执行说明。 实施前读取来源源码、研究与复现边界，不以本Prompt替代代码。",
+    "preview": "previews/patterns/process-to-result-collapse.jpg"
   },
   "sourceCases": [
     {
@@ -334,6 +340,10 @@
     },
     {
       "path": "previews/cases/deepseek-harness.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/process-to-result-collapse.jpg",
       "role": "preview"
     },
     {

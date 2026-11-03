@@ -38,7 +38,13 @@
       "observation": "向下/向上滚动 → 周边素材随滚动带入/收束，随后淡出；同一窗口保持 sticky，越过交接阈值再向右下移动 → 从吸引注意过渡到解释产品；在首屏下面往返滚动。",
       "evidence": "observed",
       "referenceUrl": "https://chatgpt.com/zh-Hans-CN/overview/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#showcase",
+        "label": "主舞台交给说明",
+        "instruction": "在这节向上滚回首屏、再向下进入说明，观察同一个产品窗口保持悬停并移到右下方。",
+        "viewport": "wide"
+      }
     },
     {
       "caseId": "apple-product",
@@ -46,7 +52,23 @@
       "observation": "镜头长段向下/向上滚动 → 暂停的官方相机 WebM 按进度 seek，标题让出画面；后续性能和续航用官方静帧保持 sticky 媒体和前后文交接。",
       "evidence": "adapted",
       "referenceUrl": "https://www.apple.com/iphone-18-pro/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".performance-story .chapter-pin",
+        "label": "性能画面与说明交接",
+        "instruction": "在性能章节继续上下滚动，观察同一画面保持吸附、逐渐缩小，并把标题交给后续说明。",
+        "prepare": [
+          {
+            "scroll": ".performance-story"
+          },
+          {
+            "scroll": ".performance-story .chapter-back"
+          },
+          {
+            "images": ".performance-story"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -63,5 +85,6 @@
     "demos/cases/chatgpt-platform/style.css",
     "entries/cases/apple-product.json",
     "entries/cases/chatgpt-platform.json"
-  ]
+  ],
+  "preview": "previews/patterns/sticky-stage-handoff.jpg"
 }

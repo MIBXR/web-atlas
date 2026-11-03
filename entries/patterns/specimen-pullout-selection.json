@@ -61,7 +61,20 @@
       "observation": "本地教学改编：在原作多排立体档案的35秒原帧上提供五个观察热点及前后选择，同一状态同步观察编号、标题、正文并收起旧展开；阵列显隐仅隐藏背景阵列，保留按源端四角轮廓裁切的抬出板。五个热点不是原片中的五个可点击档案。",
       "evidence": "adapted",
       "referenceUrl": "https://www.bilibili.com/video/BV1rr4y1b7sz/",
-      "capturedAt": "2026-10-09"
+      "capturedAt": "2026-10-09",
+      "focus": {
+        "target": "#archive-picks",
+        "label": "阵列上的教学观察热点",
+        "instruction": "点五个观察热点或下方前后按钮，观察抽出板、编号与说明同步更新；“阵列”开关只改变背景阵列显隐。",
+        "prepare": [
+          {
+            "click": "[data-scene=archive]"
+          },
+          {
+            "click": "[data-record='1']"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -72,5 +85,6 @@
     "demos/cases/rhine-lab/assets-manifest.json",
     "entries/cases/rhine-lab.json",
     "docs/cases/rhine-lab.md"
-  ]
+  ],
+  "preview": "previews/patterns/specimen-pullout-selection.jpg"
 }

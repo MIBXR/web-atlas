@@ -34,7 +34,17 @@
       "caseId": "bauhaus-geometry",
       "locator": "entries/cases/bauhaus-geometry.json#interaction/3",
       "observation": "材料课程使用原生details展开具体学习内容。",
-      "evidence": "adapted"
+      "evidence": "adapted",
+      "focus": {
+        "target": "#materials",
+        "label": "材料课程原位展开",
+        "instruction": "点课程标题展开具体内容，正文留在原来的课程行内；再次点标题可以收起。",
+        "prepare": [
+          {
+            "click": "details.material:not([open]) summary"
+          }
+        ]
+      }
     },
     {
       "caseId": "philharmonie-music",
@@ -42,7 +52,12 @@
       "observation": "展开Horaires／Tarifs／Programme：信息即时展开，声乐／乐器阵容以文字分段。 不离开当前详情即可完成到访和节目判断。",
       "evidence": "observed",
       "referenceUrl": "https://philharmoniedeparis.fr/fr/activite/exposition/28822-video-games-music",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".article-column details, .program details",
+        "label": "时间、票价与节目原位展开",
+        "instruction": "点 Horaires、Tarifs 或 Programme 的标题，展开具体信息，再点同一标题收起。"
+      }
     },
     {
       "caseId": "design-sight",
@@ -50,7 +65,13 @@
       "observation": "手机展开栏目／页面回顶：四列分别先显示1／2／1／1项，“更多”即时展开；回顶按钮超过100px以200ms出现。 缩短首屏密度，档案仍可按需读全。",
       "evidence": "inferred",
       "referenceUrl": "https://www.2121designsight.jp/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#sight .read-more",
+        "label": "手机栏目内的更多内容",
+        "instruction": "点“もっと見る”展开这栏其余档案，再点“折りたたむ”收起，后面的栏目仍按原顺序阅读。",
+        "viewport": "mobile"
+      }
     },
     {
       "caseId": "hallmark",
@@ -58,7 +79,17 @@
       "observation": "主题网格初始显示十项，Show all 展开五十项并把焦点移到第十一项；七个 FAQ 使用原生 details 在文档流中独立展开与收起。",
       "evidence": "observed",
       "referenceUrl": "https://www.usehallmark.com/",
-      "capturedAt": "2026-11-01"
+      "capturedAt": "2026-11-01",
+      "focus": {
+        "target": "#faq",
+        "label": "原位展开的常见问题",
+        "instruction": "点击任一问题，说明会在原位置展开；其他问题可以保持各自的开合状态。",
+        "prepare": [
+          {
+            "click": "#faq details:not([open]):first-of-type > summary"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -83,5 +114,6 @@
     "demos/cases/hallmark/index.html",
     "demos/cases/hallmark/js/themes.js",
     "demos/cases/hallmark/style.css"
-  ]
+  ],
+  "preview": "previews/patterns/inline-detail-disclosure.jpg"
 }

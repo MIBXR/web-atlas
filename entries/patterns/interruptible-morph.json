@@ -35,13 +35,33 @@
       "caseId": "shape-morph",
       "locator": "entries/cases/shape-morph.json#constraints/2",
       "observation": "每次触发从当前中间状态继续，避免突然闪回",
-      "evidence": "adapted"
+      "evidence": "adapted",
+      "focus": {
+        "target": ".state-controls",
+        "label": "变形途中切换目标",
+        "instruction": "连续切换三种形态，在变形尚未结束时再选另一种；图形会从当前中间态继续，也可暂停和恢复。",
+        "prepare": [
+          {
+            "click": "[data-state='2']"
+          }
+        ]
+      }
     },
     {
       "caseId": "shape-morph",
       "locator": "entries/cases/shape-morph.json#interaction/3",
       "observation": "变形可暂停与恢复，重置恢复初始参数",
-      "evidence": "adapted"
+      "evidence": "adapted",
+      "focus": {
+        "target": ".state-controls",
+        "label": "变形途中切换目标",
+        "instruction": "连续切换三种形态，在变形尚未结束时再选另一种；图形会从当前中间态继续，也可暂停和恢复。",
+        "prepare": [
+          {
+            "click": "[data-state='2']"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -50,5 +70,6 @@
     "demos/cases/shape-morph/style.css",
     "entries/cases/shape-morph.json",
     "docs/cases/shape-morph.md"
-  ]
+  ],
+  "preview": "previews/patterns/interruptible-morph.jpg"
 }

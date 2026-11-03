@@ -47,7 +47,13 @@
       "observation": "Halftone 用 radial-gradient 生成规则网点，再以线性 mask 将网点从实到空，在主色场和纸面之间形成六十四像素的半色调过渡边界。",
       "evidence": "observed",
       "referenceUrl": "https://www.usehallmark.com/",
-      "capturedAt": "2026-11-01"
+      "capturedAt": "2026-11-01",
+      "focus": {
+        "target": ".hero",
+        "label": "主色场的网点边界",
+        "instruction": "观察红色区域与纸面相接处，网点由密到疏地渐隐。",
+        "entrypoint": "demos/cases/hallmark/themes/halftone/index.html"
+      }
     }
   ],
   "sourceFiles": [
@@ -56,5 +62,6 @@
     "demos/cases/hallmark/fidelity.md",
     "demos/cases/hallmark/themes/halftone/style.css",
     "demos/cases/hallmark/themes/halftone/index.html"
-  ]
+  ],
+  "preview": "previews/patterns/halftone-fade-edge.jpg"
 }

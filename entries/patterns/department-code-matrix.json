@@ -60,7 +60,17 @@
       "observation": "官方68秒原帧保留CMPT CTRL中心，以及DEF、HRI、BSN、ENG、STRU、SCIEN、ORIG、NRG、ECO九外围的环形连字、英文全称、黑白表面、透视倾斜及尺度差；网页控件使用系统字体，不替代原作字标。",
       "evidence": "observed",
       "referenceUrl": "https://www.bilibili.com/video/BV1rr4y1b7sz/",
-      "capturedAt": "2026-10-09"
+      "capturedAt": "2026-10-09",
+      "focus": {
+        "target": "#terminal[data-scene=matrix]",
+        "label": "中心与九个外围机构代码",
+        "instruction": "点画面中的机构热点或下方科室目录，对比 CMPT CTRL 中心、外围九个字标与说明的对应关系。",
+        "prepare": [
+          {
+            "click": "[data-scene=matrix]"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -71,5 +81,6 @@
     "demos/cases/rhine-lab/assets-manifest.json",
     "entries/cases/rhine-lab.json",
     "docs/cases/rhine-lab.md"
-  ]
+  ],
+  "preview": "previews/patterns/department-code-matrix.jpg"
 }

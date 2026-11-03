@@ -41,7 +41,18 @@
         "observation": "首屏悬停/聚焦/点击“聊天、工作、编程” → 当前中文逐字换强调色，中央图垂直退出/进入，20 个官方周边素材按模式替换 → 用动作表达三种用途；在首屏标题体验。",
         "evidence": "observed",
         "referenceUrl": "https://chatgpt.com/zh-Hans-CN/overview/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".hero h1",
+          "label": "能力词的逐字强调",
+          "instruction": "在“聊天、工作、编程”之间移动指针，观察当前中文词逐字改用对应强调色。",
+          "prepare": [
+            {
+              "click": "[data-select=code]"
+            }
+          ],
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -52,7 +63,8 @@
       "demos/cases/chatgpt-platform/script.js",
       "demos/cases/chatgpt-platform/style.css",
       "entries/cases/chatgpt-platform.json"
-    ]
+    ],
+    "preview": "previews/patterns/mode-character-accent.jpg"
   },
   "sourceCases": [
     {
@@ -302,6 +314,10 @@
     },
     {
       "path": "previews/cases/chatgpt-platform.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/mode-character-accent.jpg",
       "role": "preview"
     },
     {

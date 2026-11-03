@@ -38,7 +38,18 @@
       "observation": "手机使用三卡原生横向滚动，标题选择定位相应卡片；桌面 sticky rail 不出现在手机。导航保持桌面即时开关和手机全屏分层列表。",
       "evidence": "observed",
       "referenceUrl": "https://chatgpt.com/zh-Hans-CN/overview/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#showcase",
+        "label": "手机模式横向卡片",
+        "instruction": "在三张模式卡片上左右滑动；也可点上方“聊天、工作、编程”定位相应卡片。",
+        "prepare": [
+          {
+            "click": "[data-select=work]"
+          }
+        ],
+        "viewport": "mobile"
+      }
     }
   ],
   "sourceFiles": [
@@ -49,5 +60,6 @@
     "demos/cases/chatgpt-platform/script.js",
     "demos/cases/chatgpt-platform/style.css",
     "entries/cases/chatgpt-platform.json"
-  ]
+  ],
+  "preview": "previews/patterns/mobile-native-mode-cards.jpg"
 }

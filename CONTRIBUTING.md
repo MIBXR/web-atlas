@@ -69,7 +69,7 @@
 | `docs/` | 内容源：人读文档 | 根目录为通用文档；`{cases,patterns,materials}/<id>.md` 为单条文档；`readme/` 为 README 配图 |
 | `prompts/` | 生成的 Prompt | `{cases,patterns,materials}/<id>.md`，条目有 `prompt` 时生成 |
 | `agent/` | 生成的读取接口 | 根目录为 `catalog.json`；`{cases,patterns,materials}/index.json` 为单类索引，`<id>.json` 为资料包 |
-| `previews/` | 截图与生成预览 | `{cases,materials}/<id>.<ext>`；变体用 `-portrait`、`-mobile`、`-reference`；作者效果图放 `materials/<id>/` |
+| `previews/` | 截图与生成预览 | `{cases,patterns,materials}/<id>.<ext>`；变体用 `-portrait`、`-mobile`、`-reference`；作者效果图放 `materials/<id>/` |
 | `data/` | 生成的站点数据 | 按用途平铺 `cases.js`、`patterns.js`、`materials.js`、`docs.js`、`asset-sources.js` |
 | `site/` | 站点代码 | `shared/`、`pages/<页>/`、`runtime/`、`playground/`、`vendor/`、`icons/` |
 | `scripts/` | 构建、服务、取材和维护工具 | 按工具命名 |
@@ -232,6 +232,12 @@ Prompt写结构、尺度、素材、关键状态及交接、音乐和主题行�
 `composition.role` 的 `foundation`、`support`、`accent` 表示骨架、衔接和反馈职责；可选的 `notes` 只记录具体协作条件，`pairsWellWith`、`conflicts` 引用真实巧思 id。机制自身需要的操作与静态呈现方式写入 `mechanism`。详情按机制、参数、约束与适用场景、组合、Prompt、来源的顺序展示，空章节及子项不显示。
 
 `sources[]` 包含 `caseId`、精确 `locator`、`observation`、`evidence`，可加 `referenceUrl` 和 `capturedAt`。`observed` 表示源端观察，`adapted` 表示本地迁移，`inferred` 表示公开资料推断。`locator` 可用 `entries/cases/<id>.json#interaction/0` 等 JSON 字段定位；`observation` 保存定位值完整原文，对象／数组用 JSON 序列化文本。来源改动后原文不符时构建报错。归档日期沿用来源案例。
+
+`preview` 指向 `previews/patterns/<id>.jpg`，取自第一来源中对应机制的真实区域与交互状态。同一案例中的不同巧思各有自己的封面，封面进入巧思资料包的文件清单。
+
+每个来源的 `focus` 保存详情定位：`target` 是真实运行页面中的 CSS 选择器，`label` 是短暂框选标识，`instruction` 指向具体可见对象；`entrypoint` 可指向该案例已有子页，默认使用案例入口。同一案例的多份证据共享同一观察场景。桌面专属与手机专属机制可用 `viewport: wide|mobile` 设置推荐画幅。
+
+需要进入章节或展开内容时，`prepare` 按顺序操作原控件：`click`、`input` 与 `value`、`key`、`scroll`、`waitFor`；`images` 等待指定区域的真实图像载入并解码，`video` 等待原视频产生可显示帧。动作可用 `minWidth`／`maxWidth` 对应原作断点。普通定位保留当前选择，目标关闭或离开对应章节时通过原控件恢复。声音由用户启用；减少动态沿用来源分支。`replay` 可指定重新启动的原 CSS 动画元素，保留其逐项延迟；加载机制用 `phase: loading` 在原加载层出现时观察。
 
 `useCases`、`constraints`、`sourceFiles` 为非空字符串数组；`avoid`、`parameters`、`pairsWellWith`、`conflicts` 保留数组类型。
 

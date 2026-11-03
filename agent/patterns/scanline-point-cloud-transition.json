@@ -71,7 +71,32 @@
         "observation": "世界观：帝江号/锚点/集成工业系统/天师桩/天使/裂地者六个原bin及模型参数，Float32 xyz、按Y跨度1900规范化；实际WebGL点云、扫描、转动、拖动、分页/标题与六指标同步。最终状态实测见fidelity，不因源码抽取而自动判通过。",
         "evidence": "observed",
         "referenceUrl": "https://endfield.hypergryph.com/",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "#lore .lore-canvas-container",
+          "label": "世界观点云",
+          "instruction": "选择六个模型索引或前后按钮，看扫描线、射线和旋转如何交接点云；拖动可转动观察。",
+          "prepare": [
+            {
+              "waitFor": "body:has(#entry-loader[hidden])"
+            },
+            {
+              "click": ".header-inner-container > .header-nav-item[aria-label=\"世界观资料\"]",
+              "minWidth": 801
+            },
+            {
+              "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+              "maxWidth": 800
+            },
+            {
+              "click": ".header-menu-item[aria-label=\"世界观资料\"]",
+              "maxWidth": 800
+            },
+            {
+              "waitFor": ".lore-canvas-container[data-model]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -87,7 +112,8 @@
       "demos/cases/endfield-industrial/data.js",
       "demos/cases/endfield-industrial/lore.js",
       "demos/cases/endfield-industrial/shaders.js"
-    ]
+    ],
+    "preview": "previews/patterns/scanline-point-cloud-transition.jpg"
   },
   "sourceCases": [
     {
@@ -1629,6 +1655,10 @@
     },
     {
       "path": "previews/cases/endfield-industrial.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/scanline-point-cloud-transition.jpg",
       "role": "preview"
     },
     {

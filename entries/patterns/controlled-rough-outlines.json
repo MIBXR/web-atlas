@@ -33,7 +33,12 @@
       "caseId": "hand-drawn",
       "locator": "entries/cases/hand-drawn.json#composition/shape",
       "observation": "适度不规则笔触与纸页质感模拟手工；按钮仍有稳定边界。",
-      "evidence": "adapted"
+      "evidence": "adapted",
+      "focus": {
+        "target": ".notebook",
+        "label": "笔记页的不规则轮廓",
+        "instruction": "看笔记页、贴纸和按钮的轻微不规则边界；文字区域与点击边界仍保持稳定。"
+      }
     }
   ],
   "sourceFiles": [
@@ -42,5 +47,6 @@
     "demos/cases/hand-drawn/style.css",
     "entries/cases/hand-drawn.json",
     "docs/cases/hand-drawn.md"
-  ]
+  ],
+  "preview": "previews/patterns/controlled-rough-outlines.jpg"
 }

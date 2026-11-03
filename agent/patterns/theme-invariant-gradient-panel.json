@@ -49,7 +49,12 @@
         "observation": "主题按钮在系统默认与手动选择之间协调页面表面、文字、边界和导航；点击后通过 View Transition 让新主题从横向中线向上下展开，390ms、cubic-bezier(.22,1,.36,1)，完成后清理过渡状态。首尾粉蓝黄渐变面板和产品影片保持原色，减少动态直接完成切换。",
         "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".closing",
+          "label": "结尾恒定浅色面板",
+          "instruction": "用顶栏明暗按钮切换主题，再回到这个结尾面板；周围界面改变，粉蓝黄面板仍保留浅底深字。"
+        }
       }
     ],
     "sourceFiles": [
@@ -61,7 +66,8 @@
       "demos/cases/uiarc-platform/fidelity.md",
       "demos/cases/uiarc-platform/source/content.json",
       "demos/cases/uiarc-platform/source/components.tsx"
-    ]
+    ],
+    "preview": "previews/patterns/theme-invariant-gradient-panel.jpg"
   },
   "sourceCases": [
     {
@@ -615,6 +621,10 @@
     },
     {
       "path": "previews/cases/uiarc-platform.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/theme-invariant-gradient-panel.jpg",
       "role": "preview"
     },
     {

@@ -38,7 +38,13 @@
         "observation": "桌面官方产品视频静音循环，可暂停；手机保留上方七个头像 pile，当前页面隐藏 hero 媒体区而不是塞入桌面视频。",
         "evidence": "adapted",
         "referenceUrl": "https://www.notion.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".avatar-piles",
+          "label": "七组头像拼贴",
+          "instruction": "看标题上方七组真实头像怎样以不同倾角和重叠关系组成团队群像。",
+          "viewport": "mobile"
+        }
       }
     ],
     "sourceFiles": [
@@ -49,7 +55,8 @@
       "demos/cases/notion-editorial/style.css",
       "entries/cases/notion-editorial.json",
       "docs/cases/notion-editorial.md"
-    ]
+    ],
+    "preview": "previews/patterns/avatar-pile-personality.jpg"
   },
   "sourceCases": [
     {
@@ -207,6 +214,10 @@
     },
     {
       "path": "previews/cases/notion-editorial.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/avatar-pile-personality.jpg",
       "role": "preview"
     },
     {

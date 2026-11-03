@@ -39,7 +39,18 @@
         "observation": "Build → 编辑代码内容、六种 syntax 主题选择更新局部代码颜色和行数反馈；不改变官网的固定全局暗色。",
         "evidence": "observed",
         "referenceUrl": "https://linear.app/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".build-review",
+          "label": "局部代码主题",
+          "instruction": "在代码预览中修改内容，并切换 Code diff theme；代码颜色和行数改变，页面的整体暗色保持不变。",
+          "prepare": [
+            {
+              "input": "#diff-theme",
+              "value": "GitHub"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -49,7 +60,8 @@
       "demos/cases/linear-workflow/script.js",
       "demos/cases/linear-workflow/style.css",
       "entries/cases/linear-workflow.json"
-    ]
+    ],
+    "preview": "previews/patterns/local-code-theme-preview.jpg"
   },
   "sourceCases": [
     {
@@ -151,6 +163,10 @@
     },
     {
       "path": "previews/cases/linear-workflow.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/local-code-theme-preview.jpg",
       "role": "preview"
     },
     {

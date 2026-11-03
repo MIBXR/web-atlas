@@ -53,7 +53,13 @@
       "observation": "Cobalt 将数据包沿 8×16px 字格中的噪声束送过类型门，字符跨门后由原始 JSON 变为事件名，失败包经历抖动、等待和重试，指针使附近字符束偏开并增亮。",
       "evidence": "observed",
       "referenceUrl": "https://www.usehallmark.com/",
-      "capturedAt": "2026-11-01"
+      "capturedAt": "2026-11-01",
+      "focus": {
+        "target": ".hero .field",
+        "label": "数据字符流与类型门",
+        "instruction": "看中央蓝色竖向类型门：字符跨过它时由 JSON 变为事件名；移动指针可拨开附近字符束。",
+        "entrypoint": "demos/cases/hallmark/themes/cobalt/index.html"
+      }
     }
   ],
   "sourceFiles": [
@@ -63,5 +69,6 @@
     "demos/cases/hallmark/themes/cobalt/wire.js",
     "demos/cases/hallmark/themes/cobalt/index.html",
     "demos/cases/hallmark/themes/cobalt/style.css"
-  ]
+  ],
+  "preview": "previews/patterns/gated-character-stream.jpg"
 }

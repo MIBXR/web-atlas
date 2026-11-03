@@ -40,7 +40,12 @@
       "caseId": "line-art",
       "locator": "entries/cases/line-art.json#interaction/0",
       "observation": "重播按钮由基础到细节绘制线稿",
-      "evidence": "adapted"
+      "evidence": "adapted",
+      "focus": {
+        "target": "#architecture-drawing",
+        "label": "从基础到细节的描线",
+        "instruction": "点线稿下方 Replay，观察基础轮廓、结构与细节按顺序绘制。"
+      }
     }
   ],
   "sourceFiles": [
@@ -49,5 +54,6 @@
     "demos/cases/line-art/style.css",
     "entries/cases/line-art.json",
     "docs/cases/line-art.md"
-  ]
+  ],
+  "preview": "previews/patterns/sequential-stroke-reveal.jpg"
 }

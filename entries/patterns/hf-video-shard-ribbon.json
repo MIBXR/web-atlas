@@ -62,7 +62,17 @@
       "observation": "Hero：三行圆角挤出三角面共享视频分组，种子 7331 的 LCG 固定碎片形态；方向 166°、速度 1.6、扭转 6°，指针以 0.045 插值改变场景旋转，离开 Hero 后停止其帧循环和视频。",
       "evidence": "observed",
       "referenceUrl": "https://hyperframes.heygen.com/",
-      "capturedAt": "2026-11-02"
+      "capturedAt": "2026-11-02",
+      "focus": {
+        "target": ".hf-hero",
+        "label": "三角视频碎片与虹彩光带",
+        "instruction": "在首屏移动指针，观察三角视频碎片沿光带运动，以及整个场景的轻微转向。",
+        "prepare": [
+          {
+            "waitFor": "html[data-case-loading=ready] .hf-ribbon"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -74,5 +84,6 @@
     "demos/cases/hyperframes-site/vendor/three@0.185.0/three.module.js",
     "demos/cases/hyperframes-site/vendor/three@0.185.0/three.core.js",
     "demos/cases/hyperframes-site/fonts.css"
-  ]
+  ],
+  "preview": "previews/patterns/hf-video-shard-ribbon.jpg"
 }

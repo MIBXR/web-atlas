@@ -50,7 +50,18 @@
       "observation": "指针按下角色后保持握点偏移拖动，未命中时留在原地；以可见身体锚点命中 Drop here 后，400ms 吸附到与敲字位置共用的目标，随后升起终端。触摸和鼠标共用 Pointer Events。",
       "evidence": "observed",
       "referenceUrl": "https://clawdondesk.com/",
-      "capturedAt": "2026-11-01"
+      "capturedAt": "2026-11-01",
+      "focus": {
+        "target": "#drop-zone",
+        "label": "角色拖放目标",
+        "instruction": "把中央角色拖到左下角 Drop here；命中后角色吸附，终端随即升起。",
+        "prepare": [
+          {
+            "key": "Escape",
+            "waitFor": "body[data-frame='4']"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -61,5 +72,6 @@
     "demos/cases/clawd-on-desk/source/website/scripts/stage-geometry.js",
     "demos/cases/clawd-on-desk/source/website/styles/responsive.css",
     "demos/cases/clawd-on-desk/source/website/scripts/terminal.js"
-  ]
+  ],
+  "preview": "previews/patterns/drag-mascot-into-product-demo.jpg"
 }

@@ -76,7 +76,7 @@
     if(state.dir==='desc')results.reverse();
     $('#pattern-sort').value=state.sort;
     const direction=$('#pattern-sort-dir');direction.setAttribute('aria-label',state.dir==='desc'?'反序':'正序');direction.setAttribute('aria-pressed',String(state.dir==='desc'));direction.innerHTML=AtlasIcons.svg(state.dir==='desc'?'sortDesc':'sortAsc');
-    $('#pattern-cards').innerHTML = results.map(pattern => `<article class="card"><a class="card-preview" href="${patternHref(pattern.id)}" aria-label="查看${esc(pattern.title)}与实操"><img src="${esc(entries.find(entry => entry.id === pattern.sources[0].caseId)?.preview || '')}" alt="${esc(caseTitle(pattern.sources[0].caseId))}来源案例首屏" loading="lazy"></a><div class="card-body"><div class="card-title"><h2><a href="${patternHref(pattern.id)}">${esc(pattern.title)}</a></h2>${favoriteButton(pattern)}</div><p class="subtitle">来源 · ${esc(caseTitle(pattern.sources[0].caseId))}</p><p class="card-summary">${esc(pattern.summary)}</p><div class="tags">${badges(pattern)}<span class="tag">${esc(roleLabels[pattern.composition?.role] || '可复用机制')}</span></div><div class="card-bottom"><a href="${caseHref(pattern.sources[0].caseId)}">查看来源案例</a><a href="${patternHref(pattern.id)}">机制 & 实操</a></div></div></article>`).join('');
+    $('#pattern-cards').innerHTML = results.map(pattern => `<article class="card"><a class="card-preview" href="${patternHref(pattern.id)}" aria-label="查看${esc(pattern.title)}与实操"><img src="${esc(pattern.preview)}" alt="${esc(pattern.title)}的真实观察区域" loading="lazy"></a><div class="card-body"><div class="card-title"><h2><a href="${patternHref(pattern.id)}">${esc(pattern.title)}</a></h2>${favoriteButton(pattern)}</div><p class="subtitle">来源 · ${esc(caseTitle(pattern.sources[0].caseId))}</p><p class="card-summary">${esc(pattern.summary)}</p><div class="tags">${badges(pattern)}<span class="tag">${esc(roleLabels[pattern.composition?.role] || '可复用机制')}</span></div><div class="card-bottom"><a href="${caseHref(pattern.sources[0].caseId)}">查看来源案例</a><a href="${patternHref(pattern.id)}">机制 & 实操</a></div></div></article>`).join('');
     const title = state.favorites ? '我的收藏' + (state.type !== 'all' ? ' · ' + typeLabels[state.type] : '') : state.type !== 'all' ? typeLabels[state.type] : state.category === 'all' ? '全部设计巧思' : state.category;
     $('#pattern-results-label').textContent = `${title} / ${results.length} 个机制${state.source !== 'all' ? ' · ' + caseTitle(state.source) : ''}${state.query ? ' · ' + state.query : ''}`;
     $('#patterns-empty').hidden = !!results.length;
@@ -100,8 +100,9 @@
     renderCards();
     onStateChange({ type: state.type });
   }
-  let previewObserver;
+  let previewObserver, focusPreview;
   function clearDetail() {
+    focusPreview?.dispose();
     previewObserver?.disconnect();
     $('#pattern-detail').innerHTML = '';
   }
@@ -110,21 +111,41 @@
     const selected = sources.includes(state.source) ? state.source : sources[0];
     return '<div class="demo-panel"><label class="pattern-live-source">选择来源 Demo<select id="pattern-demo-source" aria-label="选择巧思来源 Demo">' + sources.map(id => '<option value="' + esc(id) + '"' + (id === selected ? ' selected' : '') + '>' + esc(caseTitle(id)) + '</option>').join('') + '</select></label><div class="demo-surface"><div class="demo-toolbar"><span>SOURCE DEMO / 巧思来源实操</span><div><button data-viewport="desktop" aria-pressed="false">适应面板</button><button data-viewport="wide" aria-pressed="false">桌面 1440px</button><button data-viewport="mobile" aria-pressed="false">手机 390px</button><button id="pattern-demo-replay">重播</button><a id="pattern-demo-open" class="copy-button" href="' + esc(entries.find(entry => entry.id === selected).demo) + '" target="_blank" rel="noopener">独立打开 Demo</a></div></div><div id="pattern-live-frame" class="frame-wrap pattern-live-frame"></div></div></div>';
   }
-  function initPreviewPanel() {
+  function initPreviewPanel(pattern) {
     previewObserver?.disconnect();
     const frame = $('#pattern-live-frame');
     const replay = $('#pattern-demo-replay');
     const source = () => entries.find(entry => entry.id === $('#pattern-demo-source').value);
+    const focus = () => pattern.sources.find(item => item.caseId === source().id).focus;
     const controls = document.querySelectorAll('#pattern-detail [data-viewport]');
-    previewObserver = window.AtlasPreview.mount(frame, controls, source().id === 'chatgpt-platform' ? 'wide' : 'desktop');
+    previewObserver = window.AtlasPreview.mount(frame, controls, focus().viewport || (source().id === 'chatgpt-platform' ? 'wide' : 'desktop'));
+    const locate = document.createElement('button');
+    locate.id = 'pattern-demo-locate';
+    locate.setAttribute('aria-label', '定位当前巧思');
+    locate.title = '定位当前巧思';
+    locate.innerHTML = '<svg class="atlas-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="6" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v4m0 12v4M2 12h4m12 0h4" fill="none" stroke="currentColor" stroke-width="1.8"/></svg><span>定位此处</span>';
+    replay.before(locate);
+    let generation = 0;
     const load = () => {
+      focusPreview?.dispose();
+      const turn = ++generation;
       const entry = source();
-      frame.innerHTML = '<iframe class="demo-frame" title="' + esc(entry.title) + '巧思来源交互 Demo" src="' + esc(entry.demo) + '"></iframe>';
-      previewObserver.refresh();
+      $('#pattern-focus-instruction').textContent = focus().instruction;
+      $('#pattern-demo-open').href = focus().entrypoint || entry.demo;
+      locate.disabled = true;
+      focusPreview = window.AtlasPatternFocus.mount(frame, entry, focus(), () => previewObserver.refresh());
+      focusPreview.ready.then(() => { if (turn === generation) locate.disabled = false; });
     };
+    locate.addEventListener('click', () => {
+      if (focus().viewport) document.querySelector(`#pattern-detail [data-viewport="${focus().viewport}"]`).click();
+      const doc = frame.querySelector('iframe').contentDocument;
+      const original = new URL(focus().entrypoint || source().demo, location.href);
+      if (focus().phase === 'loading' || !doc || new URL(doc.URL).pathname !== original.pathname) load();
+      else focusPreview.locate();
+    });
     replay.addEventListener('click', load);
     $('#pattern-demo-source').addEventListener('change', () => {
-      $('#pattern-demo-open').href = source().demo;
+      if (focus().viewport) document.querySelector(`#pattern-detail [data-viewport="${focus().viewport}"]`).click();
       load();
     });
     load();
@@ -142,6 +163,7 @@
       <div class="detail-title"><div><p class="eyebrow">DESIGN PATTERN / ${esc(pattern.category)} / ${esc(roleLabels[composition.role])}</p><h1>${esc(pattern.title)}</h1><p>${esc(pattern.summary)}</p></div><div class="tags">${badges(pattern)}</div></div>
       <div class="detail-layout">${previewPanel(pattern)}</div>
       <aside class="notes">
+        <section><h2>观察位置</h2><p id="pattern-focus-instruction"></p></section>
         <section><h2>机制</h2><p>${esc(pattern.mechanism)}</p><dl class="pattern-mechanism">${pattern.trigger ? `<div><dt>触发条件</dt><dd>${esc(pattern.trigger)}</dd></div>` : ''}<div><dt>设计效果</dt><dd>${esc(pattern.effect)}</dd></div></dl></section>
         ${parameters}
         <section><h2>约束与适用场景</h2><h3>适合</h3>${items(pattern.useCases)}${pattern.avoid.length ? `<h3>谨慎使用</h3>${items(pattern.avoid)}` : ''}<h3>实现约束</h3>${items(pattern.constraints)}</section>
@@ -176,7 +198,7 @@
     } else {
       const pattern = patterns.find(item => item.id === path.slice(8));
       $('#pattern-detail').hidden = false;
-      if (pattern) {renderDetail(pattern);window.AtlasDetail.mount($('#pattern-detail'),'巧思库');initPreviewPanel();}
+      if (pattern) {renderDetail(pattern);window.AtlasDetail.mount($('#pattern-detail'),'巧思库');initPreviewPanel(pattern);}
       else $('#pattern-detail').innerHTML = `<div class="detail-top"><a class="back" href="#patterns${stateQuery()}">返回巧思库</a></div><h1>没有找到这个设计巧思</h1><p>这个链接可能来自另一个归档版本。请回到巧思库重新选择。</p>`;
     }
     onStateChange({ type: state.type });

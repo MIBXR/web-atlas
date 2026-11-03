@@ -46,7 +46,12 @@
       "observation": "首次 ON/OFF → 原始纹章出现；2秒后向外发光扩散，3.6秒移交影片舞台。ON触发原开场 SE，随后原BGM接续。",
       "evidence": "observed",
       "referenceUrl": "https://www.nintendo.com/jp/zelda/totk/world/index.html",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#entry-gate:not([hidden]):not([data-phase]) .sound-choice, body:has(#entry-gate[hidden]) .sound-control",
+        "label": "ON / OFF 与纹章开场",
+        "instruction": "首次进入时选择 ON 或 OFF，随后出现纹章并移交影片；已进入时可在右上 SOUND 调整声音。"
+      }
     }
   ],
   "sourceFiles": [
@@ -56,5 +61,6 @@
     "demos/cases/zelda-world/style.css",
     "entries/cases/zelda-world.json",
     "docs/cases/zelda-world.md"
-  ]
+  ],
+  "preview": "previews/patterns/sound-choice-emblem-opening.jpg"
 }

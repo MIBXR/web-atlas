@@ -42,7 +42,13 @@
         "observation": "首屏悬停/聚焦/点击“聊天、工作、编程” → 当前中文逐字换强调色，中央图垂直退出/进入，20 个官方周边素材按模式替换 → 用动作表达三种用途；在首屏标题体验。",
         "evidence": "observed",
         "referenceUrl": "https://chatgpt.com/zh-Hans-CN/overview/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".hero h1",
+          "label": "聊天、工作、编程选择",
+          "instruction": "把指针移到“聊天、工作、编程”，或用 Tab 聚焦与点击，观察标题状态和中央窗口一起切换。",
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -53,7 +59,8 @@
       "demos/cases/chatgpt-platform/script.js",
       "demos/cases/chatgpt-platform/style.css",
       "entries/cases/chatgpt-platform.json"
-    ]
+    ],
+    "preview": "previews/patterns/hover-focus-mode-selection.jpg"
   },
   "sourceCases": [
     {
@@ -303,6 +310,10 @@
     },
     {
       "path": "previews/cases/chatgpt-platform.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/hover-focus-mode-selection.jpg",
       "role": "preview"
     },
     {

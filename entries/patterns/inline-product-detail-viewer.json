@@ -36,7 +36,24 @@
       "observation": "Design 点击七项胶囊 → 同一舞台内展开左侧说明卡，当前胶囊被卡替换、其他胶囊下移、右侧摄影变化；卡内前后与关闭可逆；Colors 的四个色点联动真实摄影。",
       "evidence": "observed",
       "referenceUrl": "https://www.apple.com/iphone-18-pro/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".viewer.detail-open",
+        "label": "原位展开的产品说明卡",
+        "instruction": "查看已展开的说明卡；用卡内前后按钮切换细节，或关闭说明再选择其他胶囊。",
+        "prepare": [
+          {
+            "scroll": ".viewer"
+          },
+          {
+            "click": "[data-feature=camera]",
+            "waitFor": ".viewer.detail-open .viewer-detail:not([hidden])"
+          },
+          {
+            "images": ".viewer"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -46,5 +63,6 @@
     "demos/cases/apple-product/script.js",
     "demos/cases/apple-product/style.css",
     "entries/cases/apple-product.json"
-  ]
+  ],
+  "preview": "previews/patterns/inline-product-detail-viewer.jpg"
 }

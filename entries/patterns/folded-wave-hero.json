@@ -37,7 +37,12 @@
       "observation": "进入 → 隔离的官方 SingleWave 网格/shader/调色渲染；提供暂停，菜单/弹窗/后台/离屏暂停，GPU 失败使用官方静帧。",
       "evidence": "adapted",
       "referenceUrl": "https://stripe.com/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".single-wave",
+        "label": "首屏折叠彩带",
+        "instruction": "看文字后方的折叠彩带与固定文字区；右下角暂停按钮可暂停和恢复背景。"
+      }
     }
   ],
   "sourceFiles": [
@@ -49,5 +54,6 @@
     "demos/cases/stripe-platform/wave.js",
     "entries/cases/stripe-platform.json",
     "docs/cases/stripe-platform.md"
-  ]
+  ],
+  "preview": "previews/patterns/folded-wave-hero.jpg"
 }

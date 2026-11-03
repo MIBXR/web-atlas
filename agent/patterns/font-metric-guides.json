@@ -52,7 +52,13 @@
         "observation": "Specimen 从字体实际轮廓与基线生成 cap、x-height、baseline 和 descender 参考线，字号、字重与正斜体控件直接更新可编辑试排和读数。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero__poster",
+          "label": "字体量度参考线",
+          "instruction": "对照字形上的 cap、x-height、baseline 与 descender 四条参考线。",
+          "entrypoint": "demos/cases/hallmark/themes/specimen/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -62,7 +68,8 @@
       "demos/cases/hallmark/themes/specimen/page.js",
       "demos/cases/hallmark/themes/specimen/index.html",
       "demos/cases/hallmark/themes/specimen/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/font-metric-guides.jpg"
   },
   "sourceCases": [
     {
@@ -5820,6 +5827,10 @@
     },
     {
       "path": "previews/cases/hallmark.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/font-metric-guides.jpg",
       "role": "preview"
     },
     {

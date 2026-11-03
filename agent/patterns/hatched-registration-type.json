@@ -54,7 +54,30 @@
         "observation": "巨大斜线背景字、十字标定、REC、小编号、淡网格与实心资料；AIC竖书脊保留在媒体边界，黑黄三层作为切换状态。",
         "evidence": "observed",
         "referenceUrl": "https://endfield.hypergryph.com/",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "body:not(.directory-open) #operator .operator-title-inner-container",
+          "label": "斜线大字与档案记录",
+          "instruction": "看姓名后方的斜线大字，以及前景资料中的 REC、编号和十字标记。",
+          "prepare": [
+            {
+              "waitFor": "body:has(#entry-loader[hidden])"
+            },
+            {
+              "click": ".header-inner-container > .header-nav-item[aria-label=\"干员情报\"]",
+              "minWidth": 801
+            },
+            {
+              "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+              "maxWidth": 800
+            },
+            {
+              "click": ".header-menu-item[aria-label=\"干员情报\"]",
+              "maxWidth": 800
+            }
+          ],
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -68,7 +91,8 @@
       "demos/cases/endfield-industrial/app.js",
       "demos/cases/endfield-industrial/source/state-matrix.md",
       "demos/cases/endfield-industrial/source/source-provenance.json"
-    ]
+    ],
+    "preview": "previews/patterns/hatched-registration-type.jpg"
   },
   "sourceCases": [
     {
@@ -1610,6 +1634,10 @@
     },
     {
       "path": "previews/cases/endfield-industrial.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/hatched-registration-type.jpg",
       "role": "preview"
     },
     {

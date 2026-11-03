@@ -43,7 +43,19 @@
       "observation": "手机打开菜单／关闭：64px栏下的白色导航立即显示，hamburger350ms形变；固定页面并恢复原浏览位置。 小屏将机构入口与长档案分开，关闭后继续阅读。",
       "evidence": "inferred",
       "referenceUrl": "https://www.2121designsight.jp/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#mobile-menu:not([hidden])",
+        "label": "顶栏下方的手机目录",
+        "instruction": "关闭菜单后上下滚动，再重新打开与关闭，观察目录从顶栏下展开，阅读位置会保留。",
+        "prepare": [
+          {
+            "click": "#menu-toggle[aria-expanded=false]",
+            "waitFor": "#mobile-menu:not([hidden])"
+          }
+        ],
+        "viewport": "mobile"
+      }
     }
   ],
   "sourceFiles": [
@@ -53,5 +65,6 @@
     "demos/cases/design-sight/style.css",
     "entries/cases/design-sight.json",
     "docs/cases/design-sight.md"
-  ]
+  ],
+  "preview": "previews/patterns/header-below-mobile-navigation.jpg"
 }

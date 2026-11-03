@@ -68,7 +68,33 @@
       "observation": "2D/3D：同35项立绘和70个原enter/idle视频。祀源影片3840×1080左右RGB/alpha，经原亮度权重0.3/0.59/0.11合成1920×1080透明canvas，enter结束切idle循环；不制造实时人物模型。",
       "evidence": "observed",
       "referenceUrl": "https://endfield.hypergryph.com/",
-      "capturedAt": "2026-10-09"
+      "capturedAt": "2026-10-09",
+      "focus": {
+        "target": "body:not(.directory-open) .operator-illustration-container.showing-3d",
+        "label": "干员 2D / 3D 舞台",
+        "instruction": "用 2D / 3D 开关在立绘与透明影片之间切换；再换干员，查看入场影片如何接到循环动作。",
+        "prepare": [
+          {
+            "waitFor": "body:has(#entry-loader[hidden])"
+          },
+          {
+            "click": ".header-inner-container > .header-nav-item[aria-label=\"干员情报\"]",
+            "minWidth": 801
+          },
+          {
+            "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+            "maxWidth": 800
+          },
+          {
+            "click": ".header-menu-item[aria-label=\"干员情报\"]",
+            "maxWidth": 800
+          },
+          {
+            "click": ".operator-switcher3d[data-mode=\"2D\"]",
+            "waitFor": ".operator-switcher3d[data-mode=\"3D\"][aria-pressed=\"true\"]"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -83,5 +109,6 @@
     "demos/cases/endfield-industrial/app.js",
     "demos/cases/endfield-industrial/data.js",
     "demos/cases/endfield-industrial/transparent-video.js"
-  ]
+  ],
+  "preview": "previews/patterns/transparent-video-mode-stage.jpg"
 }

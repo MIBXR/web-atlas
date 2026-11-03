@@ -40,7 +40,17 @@
         "observation": "进入 → 官方产品 MP4 在黑色全宽舞台登场；重播只重放这段，不代替影片。",
         "evidence": "observed",
         "referenceUrl": "https://www.apple.com/iphone-18-pro/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#hero",
+          "label": "静音产品登场影片",
+          "instruction": "观察产品影片与标题同时建立首屏；点击重播动画可重新观看这段登场。",
+          "prepare": [
+            {
+              "video": "#hero-video"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -50,7 +60,8 @@
       "demos/cases/apple-product/script.js",
       "demos/cases/apple-product/style.css",
       "entries/cases/apple-product.json"
-    ]
+    ],
+    "preview": "previews/patterns/product-entrance-film.jpg"
   },
   "sourceCases": [
     {
@@ -244,6 +255,10 @@
     },
     {
       "path": "previews/cases/apple-product.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/product-entrance-film.jpg",
       "role": "preview"
     },
     {

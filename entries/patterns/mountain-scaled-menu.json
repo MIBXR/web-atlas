@@ -42,7 +42,18 @@
       "observation": "打开／关闭山形菜单：菜单400ms scale(.88)+rotate3d(.5,0,0,1rad)进出，页面背景1秒淡到.25。 放大导览层级，同时保留现场的空间背景。",
       "evidence": "observed",
       "referenceUrl": "https://www.fujirockfestival.com/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#mega-menu:not([hidden]) .menu-panel",
+        "label": "缩放倾转的山形菜单",
+        "instruction": "用右上角关闭菜单，再重新打开，观察菜单缩放倾转、现场背景同时降低强调。",
+        "prepare": [
+          {
+            "click": "#menu-toggle[aria-expanded=false]",
+            "waitFor": "#mega-menu:not([hidden])"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -52,5 +63,6 @@
     "demos/cases/fuji-rock/style.css",
     "entries/cases/fuji-rock.json",
     "docs/cases/fuji-rock.md"
-  ]
+  ],
+  "preview": "previews/patterns/mountain-scaled-menu.jpg"
 }

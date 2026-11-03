@@ -37,7 +37,12 @@
       "observation": "客户标识原生连续横移，指针停留暂停；手机保持条带，不把标识排成多行墙。",
       "evidence": "observed",
       "referenceUrl": "https://www.notion.com/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".logo-wall",
+        "label": "客户标识的连续条带",
+        "instruction": "将指针停在客户标识条带上暂停，移开后继续移动，手机上也保持横向条带。"
+      }
     },
     {
       "caseId": "stripe-platform",
@@ -45,7 +50,12 @@
       "observation": "Payments 进入视口 → 终端文本在 mask 内纵向轮换，checkout 同步商户和金额；客户标识连续横移，悬停可停。",
       "evidence": "observed",
       "referenceUrl": "https://stripe.com/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".customers-viewport",
+        "label": "连续客户标识条带",
+        "instruction": "把指针停在客户标识上暂停，再移开，观察两份轨道怎样连续衔接。"
+      }
     },
     {
       "caseId": "uiarc-platform",
@@ -53,7 +63,12 @@
       "observation": "13 个客户标识组成两份同序轨道，以 52s 线性循环横移，左右渐隐；原站没有悬停暂停，减少动态时改为静态换行且隐藏重复组。",
       "evidence": "observed",
       "referenceUrl": "https://uiarc.dev/",
-      "capturedAt": "2026-11-01"
+      "capturedAt": "2026-11-01",
+      "focus": {
+        "target": ".logos",
+        "label": "连续客户标识",
+        "instruction": "看标识从右向左连续移动，轨道边缘逐渐隐去；这个来源保持自动移动。"
+      }
     }
   ],
   "sourceFiles": [
@@ -80,5 +95,6 @@
     "demos/cases/uiarc-platform/fidelity.md",
     "demos/cases/uiarc-platform/source/content.json",
     "demos/cases/uiarc-platform/source/components.tsx"
-  ]
+  ],
+  "preview": "previews/patterns/client-logo-marquee.jpg"
 }

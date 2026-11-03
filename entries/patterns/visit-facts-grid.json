@@ -36,7 +36,12 @@
       "observation": "建筑图像呈现实体空间，欢迎区提供行动，四列信息减轻到访决策，展览海报与馆藏引导浏览。",
       "evidence": "observed",
       "referenceUrl": "https://www.metmuseum.org/en",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#visit-info",
+        "label": "到访行动旁的四组事实",
+        "instruction": "比较开放时间、地点等到访事实怎样在同一组网格中排列，并与上方到访行动相邻。"
+      }
     }
   ],
   "sourceFiles": [
@@ -46,5 +51,6 @@
     "demos/cases/met-museum/style.css",
     "entries/cases/met-museum.json",
     "docs/cases/met-museum.md"
-  ]
+  ],
+  "preview": "previews/patterns/visit-facts-grid.jpg"
 }

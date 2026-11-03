@@ -34,12 +34,23 @@
       "caseId": "bauhaus-geometry",
       "locator": "entries/cases/bauhaus-geometry.json#interaction/2",
       "observation": "导出按钮下载当前原创构成的SVG文件。",
-      "evidence": "adapted"
+      "evidence": "adapted",
+      "focus": {
+        "target": "#export",
+        "label": "导出当前几何构成",
+        "instruction": "先用预设或旋转滑块改变构成，再点“导出 SVG”，导出的图形对应当前状态。",
+        "prepare": [
+          {
+            "click": "[data-preset='2']"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
     "demos/cases/bauhaus-geometry/index.html",
     "entries/cases/bauhaus-geometry.json",
     "docs/cases/bauhaus-geometry.md"
-  ]
+  ],
+  "preview": "previews/patterns/current-state-svg-export.jpg"
 }

@@ -51,7 +51,22 @@
         "observation": "点击章节 → 300ms输入锁；前片1秒模糊退场，后片1.6秒、延迟0.6秒进入；标题1.6秒、延迟1秒进入。快速选择保留最后请求。",
         "evidence": "observed",
         "referenceUrl": "https://www.nintendo.com/jp/zelda/totk/world/index.html",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".world-stage",
+          "label": "世界影片与标题交接",
+          "instruction": "点底部另一个章节，看旧片模糊退出、新片延后进入，标题再接上。",
+          "prepare": [
+            {
+              "click": "#entry-gate:not([hidden]):not([data-phase]) [data-enter=\"off\"]",
+              "waitFor": "body:has(#entry-gate[hidden])"
+            },
+            {
+              "click": ".chapters a[href=\"#world-2\"]:not([aria-current=\"true\"])",
+              "waitFor": ".world-stage[data-scene=\"2\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -61,7 +76,8 @@
       "demos/cases/zelda-world/style.css",
       "entries/cases/zelda-world.json",
       "docs/cases/zelda-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/blurred-layered-video-handoff.jpg"
   },
   "sourceCases": [
     {
@@ -295,6 +311,10 @@
     },
     {
       "path": "previews/cases/zelda-world.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/blurred-layered-video-handoff.jpg",
       "role": "preview"
     },
     {

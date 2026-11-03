@@ -56,7 +56,13 @@
       "observation": "hash 驱动列表、详情与文档的 DOM 更新；支持 startViewTransition 且不减少动态时开启 140ms ease-out 根过渡，atlas-header 快照无动画、旧快照隐藏；不支持或减少动态时直接更新。",
       "evidence": "adapted",
       "referenceUrl": "https://web-atlas.mibxranime.chatgpt.site/",
-      "capturedAt": "2026-10-31"
+      "capturedAt": "2026-10-31",
+      "focus": {
+        "target": ".site-nav",
+        "label": "主体切换与固定顶栏",
+        "instruction": "点顶栏“列表”“详情”“文档”等入口，观察主体交接，顶栏保持在同一位置。",
+        "entrypoint": "demos/cases/atlas-sister-sites/index.html#list"
+      }
     },
     {
       "caseId": "atlas-sister-sites",
@@ -64,7 +70,13 @@
       "observation": "{\"title\":\"Web Atlas · 固定提交源码\",\"url\":\"https://github.com/MIBXR/web-atlas/tree/2541e56a21d5321717b9397c14ae09462d562ee4/site\",\"type\":\"实例\",\"note\":\"Web 配色、字体、顶栏、侧栏、卡片、文档与详情吸附、过渡的数值来源。\"}",
       "evidence": "adapted",
       "referenceUrl": "https://github.com/MIBXR/web-atlas/tree/2541e56a21d5321717b9397c14ae09462d562ee4/site",
-      "capturedAt": "2026-10-31"
+      "capturedAt": "2026-10-31",
+      "focus": {
+        "target": ".site-nav",
+        "label": "主体切换与固定顶栏",
+        "instruction": "点顶栏“列表”“详情”“文档”等入口，观察主体交接，顶栏保持在同一位置。",
+        "entrypoint": "demos/cases/atlas-sister-sites/index.html#list"
+      }
     },
     {
       "caseId": "atlas-sister-sites",
@@ -72,7 +84,13 @@
       "observation": "{\"title\":\"Motion Atlas · 固定提交源码\",\"url\":\"https://github.com/MIBXR/motion-atlas/tree/80aac18cd2fcef4a97e53b1ef9227a223136ff60/site\",\"type\":\"实例\",\"note\":\"Motion 品牌路径、暖色主题、圆角和胶囊当前项及共享骨架来源。\"}",
       "evidence": "adapted",
       "referenceUrl": "https://github.com/MIBXR/motion-atlas/tree/80aac18cd2fcef4a97e53b1ef9227a223136ff60/site",
-      "capturedAt": "2026-10-31"
+      "capturedAt": "2026-10-31",
+      "focus": {
+        "target": ".site-nav",
+        "label": "主体切换与固定顶栏",
+        "instruction": "点顶栏“列表”“详情”“文档”等入口，观察主体交接，顶栏保持在同一位置。",
+        "entrypoint": "demos/cases/atlas-sister-sites/index.html#list"
+      }
     }
   ],
   "sourceFiles": [
@@ -83,5 +101,6 @@
     "demos/cases/atlas-sister-sites/app.js",
     "demos/cases/atlas-sister-sites/fidelity.md",
     "demos/cases/atlas-sister-sites/LICENSES.md"
-  ]
+  ],
+  "preview": "previews/patterns/persistent-header-page-transition.jpg"
 }

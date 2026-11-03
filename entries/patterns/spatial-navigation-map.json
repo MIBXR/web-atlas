@@ -35,12 +35,23 @@
       "caseId": "pixel-world",
       "locator": "entries/cases/pixel-world.json#interaction/0",
       "observation": "地点按钮移动角色并更新当前地点介绍。",
-      "evidence": "adapted"
+      "evidence": "adapted",
+      "focus": {
+        "target": "#stage",
+        "label": "地图地标就是导航",
+        "instruction": "点海滩、灯塔、树林或村庄的地标，角色会移动到对应位置，旁边地点介绍也会改变。",
+        "prepare": [
+          {
+            "click": "[data-site='2']"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
     "demos/cases/pixel-world/index.html",
     "entries/cases/pixel-world.json",
     "docs/cases/pixel-world.md"
-  ]
+  ],
+  "preview": "previews/patterns/spatial-navigation-map.jpg"
 }

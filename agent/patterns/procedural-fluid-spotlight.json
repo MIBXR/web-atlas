@@ -53,7 +53,12 @@
         "observation": "Hero使用官方WebGL2流体着色器，蓝灰五色场、暖色光核与低强度光晕持续演化；30fps、DPR上限1.5、离屏暂停。输入流场是1×1中性纹理，没有指针搅动逻辑。",
         "evidence": "observed",
         "referenceUrl": "https://www.deepseek.com/harness/",
-        "capturedAt": "2026-10-11"
+        "capturedAt": "2026-10-11",
+        "focus": {
+          "target": "section:has(h1) canvas",
+          "label": "流体色场与固定光核",
+          "instruction": "观察首屏蓝灰色场的持续演化与暖色光核；光核保持在画面中，指针不会搅动流场。"
+        }
       }
     ],
     "sourceFiles": [
@@ -83,7 +88,8 @@
       "demos/cases/deepseek-harness/vendor/deepseek-harness/8555-7c9518c428e988c2.js",
       "demos/cases/deepseek-harness/vendor/deepseek-harness/86b88eeb-5b86058878847f6a.js"
     ],
-    "prompt": "为【目标页面/组件】实现「流体色场中的固定光核」。以程序化多层扭曲形成流体色场，用位置固定的光核、光晕和暗角控制明暗；文本和工作台位于独立DOM层，不随纹理变形。 触发：进入首屏并保持可见。结果：背景提供空间和氛围，阅读与操作不受纹理运动影响。 GPU层只负责装饰，不遮挡点击、正文和焦点。 源案例flowmap为中性纹理，没有指针扰动；复用时应保留离屏停止和帧率上限。 作为首屏背景与稳定工作台组合，勿叠加同区域大幅粒子、文字变形和多套指针反馈。 键盘：Canvas不进入Tab顺序；标题、CTA和工作台以DOM保持可读。 减少动态：迁移时提供静态色场或停止时间推进；源页面GPU的减少动态行为需单独核验。 实施前读取来源源码、研究与复现边界，不以本Prompt替代代码。"
+    "prompt": "为【目标页面/组件】实现「流体色场中的固定光核」。以程序化多层扭曲形成流体色场，用位置固定的光核、光晕和暗角控制明暗；文本和工作台位于独立DOM层，不随纹理变形。 触发：进入首屏并保持可见。结果：背景提供空间和氛围，阅读与操作不受纹理运动影响。 GPU层只负责装饰，不遮挡点击、正文和焦点。 源案例flowmap为中性纹理，没有指针扰动；复用时应保留离屏停止和帧率上限。 作为首屏背景与稳定工作台组合，勿叠加同区域大幅粒子、文字变形和多套指针反馈。 键盘：Canvas不进入Tab顺序；标题、CTA和工作台以DOM保持可读。 减少动态：迁移时提供静态色场或停止时间推进；源页面GPU的减少动态行为需单独核验。 实施前读取来源源码、研究与复现边界，不以本Prompt替代代码。",
+    "preview": "previews/patterns/procedural-fluid-spotlight.jpg"
   },
   "sourceCases": [
     {
@@ -333,6 +339,10 @@
     },
     {
       "path": "previews/cases/deepseek-harness.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/procedural-fluid-spotlight.jpg",
       "role": "preview"
     },
     {

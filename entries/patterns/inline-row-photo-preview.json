@@ -75,7 +75,13 @@
       "observation": "桌面悬停作品目录行时，标题右移 8px、箭头右移 6px，对应照片缩略图从透明和 0.94 倍缩放进入；离开后回到初态。1100px 及以下隐藏缩略图。",
       "evidence": "observed",
       "referenceUrl": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/demo/web-design-demo/demo2-with-skill.html",
-      "capturedAt": "2026-10-27"
+      "capturedAt": "2026-10-27",
+      "focus": {
+        "target": "#works .toc",
+        "label": "作品目录行内的摄影预览",
+        "instruction": "把指针停在任一作品目录行上，观察标题和箭头轻移、对应摄影缩略图出现；移开回到初态。",
+        "viewport": "wide"
+      }
     }
   ],
   "sourceFiles": [
@@ -83,5 +89,6 @@
     "demos/cases/mira-host-photography/index.html",
     "entries/cases/mira-host-photography.json",
     "docs/cases/mira-host-photography.md"
-  ]
+  ],
+  "preview": "previews/patterns/inline-row-photo-preview.jpg"
 }

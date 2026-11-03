@@ -45,7 +45,19 @@
         "observation": "桌面指针进入/点击分类 → popup 高度/位移/透明度 300ms、clip/max-height 200ms，均采用源 cubic-bezier(.45,.05,.55,.95)；分类按自然高度衔接。快速反转取消旧动画，离开/外部点击/Escape 后 hidden/inert/aria 一致；减少动态直接完成，维持目录的空间关系。",
         "evidence": "adapted",
         "referenceUrl": "https://stripe.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".mega:not([hidden])",
+          "label": "随分类改变高度的目录",
+          "instruction": "在顶栏 Products、Solutions、Developers、Resources 之间移动，比较目录按各组内容连续改变高度。",
+          "prepare": [
+            {
+              "click": "[data-menu=Products]",
+              "waitFor": ".mega:not([hidden])"
+            }
+          ],
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -57,7 +69,8 @@
       "demos/cases/stripe-platform/wave.js",
       "entries/cases/stripe-platform.json",
       "docs/cases/stripe-platform.md"
-    ]
+    ],
+    "preview": "previews/patterns/natural-height-mega-menu.jpg"
   },
   "sourceCases": [
     {
@@ -211,6 +224,10 @@
     },
     {
       "path": "previews/cases/stripe-platform.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/natural-height-mega-menu.jpg",
       "role": "preview"
     },
     {

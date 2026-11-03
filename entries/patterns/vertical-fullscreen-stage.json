@@ -40,7 +40,21 @@
       "observation": "滚轮或竖向手势推进整屏舞台，反向返回；末尾以有限位移露出 footer，避免把正常长页当作源站 Swiper。",
       "evidence": "observed",
       "referenceUrl": "https://genshin.hoyoverse.com/en/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "body[data-chapter=\"0\"] #home",
+        "label": "纵向整屏章节舞台",
+        "instruction": "向下滚动或点 Characters，查看章节整屏推进；反向可回到首屏，末尾会露出页脚。",
+        "prepare": [
+          {
+            "click": "header a[href=\"#home\"]",
+            "waitFor": "body[data-chapter=\"0\"]"
+          },
+          {
+            "waitFor": "main[style*=\"transition: none\"]"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -50,5 +64,6 @@
     "demos/cases/genshin-world/style.css",
     "entries/cases/genshin-world.json",
     "docs/cases/genshin-world.md"
-  ]
+  ],
+  "preview": "previews/patterns/vertical-fullscreen-stage.jpg"
 }

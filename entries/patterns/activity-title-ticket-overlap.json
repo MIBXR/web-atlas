@@ -36,7 +36,12 @@
       "observation": "主视觉左下活动名，右侧票务面板上浮；长正文与侧栏分工，手机票务回到文档流。",
       "evidence": "observed",
       "referenceUrl": "https://philharmoniedeparis.fr/fr/activite/exposition/28822-video-games-music",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".hero-title",
+        "label": "活动名称与票务跨区并置",
+        "instruction": "对比主视觉左下的活动名称与右侧上浮票务，活动身份和来访行动在同一视野内出现。"
+      }
     }
   ],
   "sourceFiles": [
@@ -46,5 +51,6 @@
     "demos/cases/philharmonie-music/style.css",
     "entries/cases/philharmonie-music.json",
     "docs/cases/philharmonie-music.md"
-  ]
+  ],
+  "preview": "previews/patterns/activity-title-ticket-overlap.jpg"
 }

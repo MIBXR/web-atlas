@@ -52,7 +52,13 @@
         "observation": "Cobalt 检查器根据两侧同名字段的真实矩形生成带圆角的弯折连线，悬停字段时同步强调对应行与连线，容器变化后重新测量。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "[data-insp]",
+          "label": "字段到类型的连线",
+          "instruction": "将指针移到任一字段上，对照两列同名字段与弯折连线的同步强调。",
+          "entrypoint": "demos/cases/hallmark/themes/cobalt/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -62,7 +68,8 @@
       "demos/cases/hallmark/themes/cobalt/wire.js",
       "demos/cases/hallmark/themes/cobalt/index.html",
       "demos/cases/hallmark/themes/cobalt/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/field-linked-connectors.jpg"
   },
   "sourceCases": [
     {
@@ -5820,6 +5827,10 @@
     },
     {
       "path": "previews/cases/hallmark.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/field-linked-connectors.jpg",
       "role": "preview"
     },
     {

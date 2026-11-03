@@ -37,7 +37,21 @@
       "observation": "点击麦克风随机播放对应角色 3 条官方语音之一，再点暂停；换角色、离开角色章节与后台时停止，防止声线叠加。",
       "evidence": "adapted",
       "referenceUrl": "https://genshin.hoyoverse.com/en/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "body[data-chapter=\"1\"] #character-voice",
+        "label": "当前人物的语音按钮",
+        "instruction": "点麦克风播放当前人物语音，再次点击暂停；换人或离开角色章会停止旧语音。",
+        "prepare": [
+          {
+            "click": "header a[href=\"#characters\"]",
+            "waitFor": "body[data-chapter=\"1\"]"
+          },
+          {
+            "waitFor": "main[style*=\"transition: none\"]"
+          }
+        ]
+      }
     },
     {
       "caseId": "blue-archive",
@@ -45,7 +59,13 @@
       "observation": "角色 VOICE 麦克风播放该学生对应官方 WAV，再点暂停；换人或后台停止，声线归属明确。",
       "evidence": "adapted",
       "referenceUrl": "https://bluearchive.jp/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".ba-student[aria-hidden=\"false\"] .student-voice",
+        "label": "当前学生的 VOICE",
+        "instruction": "点当前学生的 VOICE 麦克风播放语音；换学生后旧语音停止。",
+        "entrypoint": "demos/cases/blue-archive/character.html"
+      }
     },
     {
       "caseId": "arknights-world",
@@ -53,7 +73,25 @@
       "observation": "真实BGM默认关闭，单独开关并使用官网600/300ms音量渐变；三人日语语音独立按需播放，换人物或离开干员章暂停旧语音。",
       "evidence": "adapted",
       "referenceUrl": "https://ak.hypergryph.com/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#operator.active .voice",
+        "label": "干员语音",
+        "instruction": "点语音按钮播放当前干员的声音，再换干员，旧语音会停止。",
+        "prepare": [
+          {
+            "waitFor": "#scene-deck[data-phase=\"idle\"]"
+          },
+          {
+            "click": "#menu-toggle[aria-expanded=\"false\"]",
+            "maxWidth": 800
+          },
+          {
+            "click": "#chapter-nav a[href=\"#operator\"]:not([aria-current=\"page\"])",
+            "waitFor": "#scene-deck[data-active=\"operator\"][data-phase=\"idle\"]"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -77,5 +115,6 @@
     "docs/cases/arknights-world.md",
     "docs/cases/blue-archive.md",
     "docs/cases/genshin-world.md"
-  ]
+  ],
+  "preview": "previews/patterns/character-voice-ownership.jpg"
 }

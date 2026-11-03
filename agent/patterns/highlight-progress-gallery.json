@@ -45,7 +45,20 @@
         "observation": "Highlights 进入视口 → 圆角摄影和进度控件带入，五项图库自动推进；手动选择/暂停/最后重播 → 按相机、续航、颜色、性能、Siri 依次建立产品重点。",
         "evidence": "observed",
         "referenceUrl": "https://www.apple.com/iphone-18-pro/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#highlights",
+          "label": "五项亮点与进度控件",
+          "instruction": "点击下方的镜头、续航、颜色等条目，或暂停自动推进，对照当前图像、说明与进度。",
+          "prepare": [
+            {
+              "scroll": "#highlights"
+            },
+            {
+              "images": "#highlights"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -55,7 +68,8 @@
       "demos/cases/apple-product/script.js",
       "demos/cases/apple-product/style.css",
       "entries/cases/apple-product.json"
-    ]
+    ],
+    "preview": "previews/patterns/highlight-progress-gallery.jpg"
   },
   "sourceCases": [
     {
@@ -249,6 +263,10 @@
     },
     {
       "path": "previews/cases/apple-product.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/highlight-progress-gallery.jpg",
       "role": "preview"
     },
     {

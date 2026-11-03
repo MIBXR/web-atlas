@@ -65,7 +65,23 @@
         "observation": "视频墙：22＋23 部影片各复制一遍形成 90 张卡片；两行按 -1／+1 方向以 40／34 px/s 移动。阈值 0.2 的观察器挂载并播放可见视频，离开时卸载；400px 预取海报，悬停缩放 1.03。",
         "evidence": "observed",
         "referenceUrl": "https://hyperframes.heygen.com/",
-        "capturedAt": "2026-11-02"
+        "capturedAt": "2026-11-02",
+        "focus": {
+          "target": ".hf-showcase",
+          "label": "两行反向移动的视频墙",
+          "instruction": "观察进入画面的视频卡自动播放；可拖动卡片横移，用底部暂停按钮停住两行，或点击卡片打开原播放器。",
+          "prepare": [
+            {
+              "waitFor": "html[data-case-loading=ready] .hf-showcase"
+            },
+            {
+              "scroll": ".hf-showcase"
+            },
+            {
+              "video": ".hf-row video"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -76,7 +92,8 @@
       "demos/cases/hyperframes-site/showcase.js",
       "demos/cases/hyperframes-site/index.html",
       "demos/cases/hyperframes-site/styles.css"
-    ]
+    ],
+    "preview": "previews/patterns/hf-video-wall-lazy-play.jpg"
   },
   "sourceCases": [
     {
@@ -734,6 +751,10 @@
     },
     {
       "path": "previews/cases/hyperframes-site.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/hf-video-wall-lazy-play.jpg",
       "role": "preview"
     },
     {

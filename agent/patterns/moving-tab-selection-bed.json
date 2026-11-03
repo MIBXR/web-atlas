@@ -39,7 +39,12 @@
         "observation": "Individual/Team and Enterprise → 移动选中底板，替换三/两张套餐卡；没有添加原页面没有的年/月账期控件。",
         "evidence": "inferred",
         "referenceUrl": "https://claude.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".plan-tabs",
+          "label": "个人与团队套餐",
+          "instruction": "切换 Individual 与 Team and Enterprise，观察选中底板移动和三张／两张套餐卡的替换。"
+        }
       },
       {
         "caseId": "uiarc-platform",
@@ -47,7 +52,12 @@
         "observation": "价格区的 Pro yearly / Free 使用原始 SegmentedControl 移动选中底板，整块说明、金额、清单和入口通过 AnimatePresence 交接，240ms 透明度、400ms 无回弹弹簧位移；金额使用原始 AnimatedCounter。右侧终身方案保持可见，手机保留年度卡在先。",
         "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "#flex-plan",
+          "label": "价格方案切换",
+          "instruction": "在 Pro yearly 与 Free 之间切换，对比选中底板、金额和套餐内容的交接。"
+        }
       }
     ],
     "sourceFiles": [
@@ -65,7 +75,8 @@
       "demos/cases/uiarc-platform/fidelity.md",
       "demos/cases/uiarc-platform/source/content.json",
       "demos/cases/uiarc-platform/source/components.tsx"
-    ]
+    ],
+    "preview": "previews/patterns/moving-tab-selection-bed.jpg"
   },
   "sourceCases": [
     {
@@ -691,6 +702,10 @@
     },
     {
       "path": "previews/cases/uiarc-platform.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/moving-tab-selection-bed.jpg",
       "role": "preview"
     },
     {

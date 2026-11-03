@@ -38,7 +38,25 @@
       "observation": "场景横向遮罩裁切：桌面1000ms、竖屏600ms；同方向重复轮输入锁定，快速反向和导航使用最后目标队列，单次仅一组出/入场景。",
       "evidence": "adapted",
       "referenceUrl": "https://ak.hypergryph.com/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#chapter-nav",
+        "label": "连续换章的最后目标",
+        "instruction": "连续点 WORLD、MEDIA、MORE，观察交接完成后停在哪个最后选择。",
+        "prepare": [
+          {
+            "waitFor": "#scene-deck[data-phase=\"idle\"]"
+          },
+          {
+            "click": "#menu-toggle[aria-expanded=\"false\"]",
+            "maxWidth": 800
+          },
+          {
+            "click": "#chapter-nav a[href=\"#media\"]:not([aria-current=\"page\"])",
+            "waitFor": "#scene-deck[data-active=\"media\"][data-phase=\"idle\"]"
+          }
+        ]
+      }
     },
     {
       "caseId": "zelda-world",
@@ -46,7 +64,22 @@
       "observation": "点击章节 → 300ms输入锁；前片1秒模糊退场，后片1.6秒、延迟0.6秒进入；标题1.6秒、延迟1秒进入。快速选择保留最后请求。",
       "evidence": "adapted",
       "referenceUrl": "https://www.nintendo.com/jp/zelda/totk/world/index.html",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".chapters",
+        "label": "影片章节的最后选择",
+        "instruction": "连续选择不同缩略图，查看交接后是否停在最后一次选择的章节。",
+        "prepare": [
+          {
+            "click": "#entry-gate:not([hidden]):not([data-phase]) [data-enter=\"off\"]",
+            "waitFor": "body:has(#entry-gate[hidden])"
+          },
+          {
+            "click": ".chapters a[href=\"#world-1\"]:not([aria-current=\"true\"])",
+            "waitFor": ".world-stage[data-scene=\"1\"]"
+          }
+        ]
+      }
     },
     {
       "caseId": "qoder-platform",
@@ -54,7 +87,17 @@
       "observation": "五平台 tab/点控/触摸 → 400ms 水平进退，20s 自动，悬停/手动暂停、后台停止；快速选择只保留一个场景。",
       "evidence": "adapted",
       "referenceUrl": "https://qoder.cn/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".platform-panel",
+        "label": "平台场景快速切换",
+        "instruction": "连续点 Desktop、Mobile、IDE 等平台，观察最后一次选择留下的场景，旧画面会退出。",
+        "prepare": [
+          {
+            "click": "[data-platform=ide]"
+          }
+        ]
+      }
     },
     {
       "caseId": "chatgpt-platform",
@@ -62,7 +105,18 @@
       "observation": "选择工作 → 工作的独立素材从四周进入，原模式素材离开；快速切换清理旧离场层 → 保持一套可读场景；移到“工作”再快速移到“编程”。",
       "evidence": "adapted",
       "referenceUrl": "https://chatgpt.com/zh-Hans-CN/overview/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".hero",
+        "label": "快速选择最后一个模式",
+        "instruction": "连续选择“工作”和“编程”，观察离场素材被清理，最后只保留当前模式的一套画面。",
+        "prepare": [
+          {
+            "click": "[data-select=work]"
+          }
+        ],
+        "viewport": "wide"
+      }
     }
   ],
   "sourceFiles": [
@@ -92,5 +146,6 @@
     "entries/cases/zelda-world.json",
     "docs/cases/arknights-world.md",
     "docs/cases/zelda-world.md"
-  ]
+  ],
+  "preview": "previews/patterns/last-request-transition.jpg"
 }

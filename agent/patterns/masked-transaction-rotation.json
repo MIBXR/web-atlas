@@ -39,7 +39,12 @@
         "observation": "Payments 进入视口 → 终端文本在 mask 内纵向轮换，checkout 同步商户和金额；客户标识连续横移，悬停可停。",
         "evidence": "observed",
         "referenceUrl": "https://stripe.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".payment-art",
+          "label": "终端与结账金额联动",
+          "instruction": "观察终端屏幕中的商户与金额纵向轮换，旁边的结账预览会同步换成对应交易。"
+        }
       }
     ],
     "sourceFiles": [
@@ -51,7 +56,8 @@
       "demos/cases/stripe-platform/wave.js",
       "entries/cases/stripe-platform.json",
       "docs/cases/stripe-platform.md"
-    ]
+    ],
+    "preview": "previews/patterns/masked-transaction-rotation.jpg"
   },
   "sourceCases": [
     {
@@ -205,6 +211,10 @@
     },
     {
       "path": "previews/cases/stripe-platform.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/masked-transaction-rotation.jpg",
       "role": "preview"
     },
     {

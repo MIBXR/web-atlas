@@ -42,7 +42,20 @@
         "observation": "Watch the film → 黑色全屏影片层与原片有声控件；Explore 导航、亮点暂停与手机重排支持正常滚动/键盘。",
         "evidence": "observed",
         "referenceUrl": "https://www.apple.com/iphone-18-pro/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#film-button",
+          "label": "Watch the film 影片入口",
+          "instruction": "点击 Watch the film 打开独立影片层，使用原生控件播放、暂停或调整音量；关闭后返回页面。",
+          "prepare": [
+            {
+              "scroll": "#highlights"
+            },
+            {
+              "images": "#highlights"
+            }
+          ]
+        }
       },
       {
         "caseId": "monument-valley-game",
@@ -50,7 +63,20 @@
         "observation": "前景预告：主动Play播放同一67.988秒官方MP4及原声轨；原生进度/暂停和实际声音开关有效，播放时暂停背景。",
         "evidence": "inferred",
         "referenceUrl": "https://www.monumentvalleygame.com/mv1",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#trailer-start",
+          "label": "官方预告片的播放入口",
+          "instruction": "点 PLAY TRAILER 主动播放官方影片，再使用原进度、暂停和声音开关。",
+          "prepare": [
+            {
+              "waitFor": "body[data-entry=\"ready\"]"
+            },
+            {
+              "click": ".section-nav a[href=\"#trailer\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "uma-musume",
@@ -58,7 +84,20 @@
         "observation": "点击 About 原缩略图，站内 dialog 播放原始 top_about.mp4；该文件只有视频轨道，没有音轨，关闭/后台暂停。",
         "evidence": "adapted",
         "referenceUrl": "https://umamusume.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#trailer-open",
+          "label": "About 影片入口",
+          "instruction": "点 About 原缩略图打开独立影片层，使用原生进度和暂停；关闭后影片停止。",
+          "prepare": [
+            {
+              "click": "#menu-button[aria-expanded=\"false\"]"
+            },
+            {
+              "click": "#study-menu a[href=\"#about\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -80,7 +119,8 @@
       "entries/cases/uma-musume.json",
       "docs/cases/monument-valley-game.md",
       "docs/cases/uma-musume.md"
-    ]
+    ],
+    "preview": "previews/patterns/film-overlay.jpg"
   },
   "sourceCases": [
     {
@@ -590,6 +630,10 @@
     },
     {
       "path": "previews/cases/uma-musume.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/film-overlay.jpg",
       "role": "preview"
     },
     {

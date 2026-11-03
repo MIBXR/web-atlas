@@ -42,7 +42,18 @@
         "observation": "选择工作 → 工作的独立素材从四周进入，原模式素材离开；快速切换清理旧离场层 → 保持一套可读场景；移到“工作”再快速移到“编程”。",
         "evidence": "observed",
         "referenceUrl": "https://chatgpt.com/zh-Hans-CN/overview/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".intro-art",
+          "label": "工作模式的独立拼贴",
+          "instruction": "选择“工作”后看四周素材如何成组进入；换到“编程”可对比它的独立素材组合。",
+          "prepare": [
+            {
+              "click": "[data-select=work]"
+            }
+          ],
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -53,7 +64,8 @@
       "demos/cases/chatgpt-platform/script.js",
       "demos/cases/chatgpt-platform/style.css",
       "entries/cases/chatgpt-platform.json"
-    ]
+    ],
+    "preview": "previews/patterns/mode-specific-collage.jpg"
   },
   "sourceCases": [
     {
@@ -303,6 +315,10 @@
     },
     {
       "path": "previews/cases/chatgpt-platform.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/mode-specific-collage.jpg",
       "role": "preview"
     },
     {

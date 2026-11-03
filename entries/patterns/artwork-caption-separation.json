@@ -37,7 +37,12 @@
       "observation": "官方建筑摄影、Sanity CDN展览海报与符合条件的Met API藏品图，本地保留比例、署名与原色。",
       "evidence": "adapted",
       "referenceUrl": "https://www.metmuseum.org/en",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#exhibitions-rail",
+        "label": "展览原图与图下题注",
+        "instruction": "看海报保留自己的比例和颜色，展名、日期和地点在图下排列，再横向浏览其他展览作比较。"
+      }
     },
     {
       "caseId": "met-museum",
@@ -45,7 +50,12 @@
       "observation": "展览海报保留原视觉，不在图片上重复绘制标题或大渐变遮罩。",
       "evidence": "observed",
       "referenceUrl": "https://www.metmuseum.org/en",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#exhibitions-rail",
+        "label": "展览原图与图下题注",
+        "instruction": "看海报保留自己的比例和颜色，展名、日期和地点在图下排列，再横向浏览其他展览作比较。"
+      }
     },
     {
       "caseId": "design-sight",
@@ -53,7 +63,12 @@
       "observation": "真实方丈记与TYPE-XVII海报、建筑照片、访问地图、研究照片本地化，保留原比例。",
       "evidence": "adapted",
       "referenceUrl": "https://www.2121designsight.jp/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#sight article:first-of-type",
+        "label": "原比例海报与图下说明",
+        "instruction": "看竖海报与下方文字保持分工；继续浏览旁边横照片，图像比例不会被统一拉成相同高度。"
+      }
     }
   ],
   "sourceFiles": [
@@ -69,5 +84,6 @@
     "entries/cases/met-museum.json",
     "docs/cases/design-sight.md",
     "docs/cases/met-museum.md"
-  ]
+  ],
+  "preview": "previews/patterns/artwork-caption-separation.jpg"
 }

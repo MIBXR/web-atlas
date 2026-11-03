@@ -42,7 +42,12 @@
       "observation": "进入 → 首屏产品 UI 延迟 1.3s 后 1.5s 带入，背景扫光/mask 配合；下滚让首屏遮罩交给后续章节。",
       "evidence": "observed",
       "referenceUrl": "https://linear.app/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".hero",
+        "label": "产品界面的延迟入场",
+        "instruction": "观察主标题先显示、产品界面随后由遮罩和扫光带入；点“重播”重新观看整段入场。"
+      }
     }
   ],
   "sourceFiles": [
@@ -52,5 +57,6 @@
     "demos/cases/linear-workflow/script.js",
     "demos/cases/linear-workflow/style.css",
     "entries/cases/linear-workflow.json"
-  ]
+  ],
+  "preview": "previews/patterns/staged-product-ui-entrance.jpg"
 }

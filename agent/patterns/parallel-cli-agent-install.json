@@ -43,7 +43,12 @@
         "observation": "shadcn CLI 与 MCP server 并排给出同一组件库的两个安装入口；原始 CopyButton 复制完整命令，以图标交叉淡化和描线勾号反馈，1900ms 后复位；第三张卡区分免费与 Pro 数量。",
         "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".installation",
+          "label": "CLI 与 MCP 安装入口",
+          "instruction": "对比 shadcn CLI 与 MCP server 两张安装卡；各自的复制按钮会复制该入口的完整命令。"
+        }
       }
     ],
     "sourceFiles": [
@@ -55,7 +60,8 @@
       "demos/cases/uiarc-platform/fidelity.md",
       "demos/cases/uiarc-platform/source/content.json",
       "demos/cases/uiarc-platform/source/components.tsx"
-    ]
+    ],
+    "preview": "previews/patterns/parallel-cli-agent-install.jpg"
   },
   "sourceCases": [
     {
@@ -609,6 +615,10 @@
     },
     {
       "path": "previews/cases/uiarc-platform.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/parallel-cli-agent-install.jpg",
       "role": "preview"
     },
     {

@@ -35,7 +35,17 @@
       "caseId": "hand-drawn",
       "locator": "entries/cases/hand-drawn.json#composition/imagery",
       "observation": "自绘植物、笔记页与贴纸解释记录生活的场景。",
-      "evidence": "adapted"
+      "evidence": "adapted",
+      "focus": {
+        "target": ".scrapbook",
+        "label": "笔记页、植物与贴纸",
+        "instruction": "看植物、铅笔、纸页和贴纸怎样共同表达记录生活的场景；可点贴纸旁的小按钮切换贴纸显隐。",
+        "prepare": [
+          {
+            "click": "#sticker-toggle[aria-pressed=false]"
+          }
+        ]
+      }
     },
     {
       "caseId": "hallmark",
@@ -43,7 +53,13 @@
       "observation": "Pasteup 以小角度旋转、真实纸面投影、复印图混合和压在肖像边缘的日期纸签组织信息，纸张叠放关系保持正文与操作可读。",
       "evidence": "observed",
       "referenceUrl": "https://www.usehallmark.com/",
-      "capturedAt": "2026-11-01"
+      "capturedAt": "2026-11-01",
+      "focus": {
+        "target": ".hero__visual",
+        "label": "纸页与日期纸签拼贴",
+        "instruction": "对照照片、纸页和压在边缘的日期纸签，观察旋转与投影形成的叠放关系。",
+        "entrypoint": "demos/cases/hallmark/themes/pasteup/index.html"
+      }
     }
   ],
   "sourceFiles": [
@@ -57,5 +73,6 @@
     "demos/cases/hallmark/fidelity.md",
     "demos/cases/hallmark/themes/pasteup/style.css",
     "demos/cases/hallmark/themes/pasteup/index.html"
-  ]
+  ],
+  "preview": "previews/patterns/paper-material-collage.jpg"
 }

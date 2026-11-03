@@ -40,7 +40,20 @@ window.ATLAS_PATTERNS = [
         "observation": "Watch the film → 黑色全屏影片层与原片有声控件；Explore 导航、亮点暂停与手机重排支持正常滚动/键盘。",
         "evidence": "observed",
         "referenceUrl": "https://www.apple.com/iphone-18-pro/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#film-button",
+          "label": "Watch the film 影片入口",
+          "instruction": "点击 Watch the film 打开独立影片层，使用原生控件播放、暂停或调整音量；关闭后返回页面。",
+          "prepare": [
+            {
+              "scroll": "#highlights"
+            },
+            {
+              "images": "#highlights"
+            }
+          ]
+        }
       },
       {
         "caseId": "monument-valley-game",
@@ -48,7 +61,20 @@ window.ATLAS_PATTERNS = [
         "observation": "前景预告：主动Play播放同一67.988秒官方MP4及原声轨；原生进度/暂停和实际声音开关有效，播放时暂停背景。",
         "evidence": "inferred",
         "referenceUrl": "https://www.monumentvalleygame.com/mv1",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#trailer-start",
+          "label": "官方预告片的播放入口",
+          "instruction": "点 PLAY TRAILER 主动播放官方影片，再使用原进度、暂停和声音开关。",
+          "prepare": [
+            {
+              "waitFor": "body[data-entry=\"ready\"]"
+            },
+            {
+              "click": ".section-nav a[href=\"#trailer\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "uma-musume",
@@ -56,7 +82,20 @@ window.ATLAS_PATTERNS = [
         "observation": "点击 About 原缩略图，站内 dialog 播放原始 top_about.mp4；该文件只有视频轨道，没有音轨，关闭/后台暂停。",
         "evidence": "adapted",
         "referenceUrl": "https://umamusume.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#trailer-open",
+          "label": "About 影片入口",
+          "instruction": "点 About 原缩略图打开独立影片层，使用原生进度和暂停；关闭后影片停止。",
+          "prepare": [
+            {
+              "click": "#menu-button[aria-expanded=\"false\"]"
+            },
+            {
+              "click": "#study-menu a[href=\"#about\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -78,7 +117,8 @@ window.ATLAS_PATTERNS = [
       "entries/cases/uma-musume.json",
       "docs/cases/monument-valley-game.md",
       "docs/cases/uma-musume.md"
-    ]
+    ],
+    "preview": "previews/patterns/film-overlay.jpg"
   },
   {
     "id": "highlight-progress-gallery",
@@ -124,7 +164,20 @@ window.ATLAS_PATTERNS = [
         "observation": "Highlights 进入视口 → 圆角摄影和进度控件带入，五项图库自动推进；手动选择/暂停/最后重播 → 按相机、续航、颜色、性能、Siri 依次建立产品重点。",
         "evidence": "observed",
         "referenceUrl": "https://www.apple.com/iphone-18-pro/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#highlights",
+          "label": "五项亮点与进度控件",
+          "instruction": "点击下方的镜头、续航、颜色等条目，或暂停自动推进，对照当前图像、说明与进度。",
+          "prepare": [
+            {
+              "scroll": "#highlights"
+            },
+            {
+              "images": "#highlights"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -134,7 +187,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/apple-product/script.js",
       "demos/cases/apple-product/style.css",
       "entries/cases/apple-product.json"
-    ]
+    ],
+    "preview": "previews/patterns/highlight-progress-gallery.jpg"
   },
   {
     "id": "inline-product-detail-viewer",
@@ -174,7 +228,24 @@ window.ATLAS_PATTERNS = [
         "observation": "Design 点击七项胶囊 → 同一舞台内展开左侧说明卡，当前胶囊被卡替换、其他胶囊下移、右侧摄影变化；卡内前后与关闭可逆；Colors 的四个色点联动真实摄影。",
         "evidence": "observed",
         "referenceUrl": "https://www.apple.com/iphone-18-pro/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".viewer.detail-open",
+          "label": "原位展开的产品说明卡",
+          "instruction": "查看已展开的说明卡；用卡内前后按钮切换细节，或关闭说明再选择其他胶囊。",
+          "prepare": [
+            {
+              "scroll": ".viewer"
+            },
+            {
+              "click": "[data-feature=camera]",
+              "waitFor": ".viewer.detail-open .viewer-detail:not([hidden])"
+            },
+            {
+              "images": ".viewer"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -184,7 +255,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/apple-product/script.js",
       "demos/cases/apple-product/style.css",
       "entries/cases/apple-product.json"
-    ]
+    ],
+    "preview": "previews/patterns/inline-product-detail-viewer.jpg"
   },
   {
     "id": "native-horizontal-shelf",
@@ -224,7 +296,13 @@ window.ATLAS_PATTERNS = [
         "observation": "用途架子保留原生横滑及左右按钮；后续价格、安全、结束行动与页尾为普通滚动。",
         "evidence": "observed",
         "referenceUrl": "https://chatgpt.com/zh-Hans-CN/overview/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".uses",
+          "label": "用途卡片横向架子",
+          "instruction": "在用途卡片上横向滚动，或用左右按钮移动，页面下方价格与隐私章节仍自然纵向阅读。",
+          "viewport": "wide"
+        }
       },
       {
         "caseId": "met-museum",
@@ -232,7 +310,17 @@ window.ATLAS_PATTERNS = [
         "observation": "横向浏览展览：原生水平溢出，scroll-snap:none，前后按钮与触摸可操作。",
         "evidence": "observed",
         "referenceUrl": "https://www.metmuseum.org/en",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#exhibitions-rail",
+          "label": "展览的原生横向浏览",
+          "instruction": "在展览图片区域横向滑动，或用标题旁的前后按钮浏览，主页面仍继续纵向滚动。",
+          "prepare": [
+            {
+              "click": "[data-rail=exhibitions-rail][data-direction='1']"
+            }
+          ]
+        }
       },
       {
         "caseId": "apple-product",
@@ -240,7 +328,20 @@ window.ATLAS_PATTERNS = [
         "observation": "景深四选项 → 官方 f/1.48、1.8、2.8、4.0 摄影交叉变化；旧机型 select 更新比较对象；横向摄影架子保留原生滑动。",
         "evidence": "observed",
         "referenceUrl": "https://www.apple.com/iphone-18-pro/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".product-shelf .native-shelf",
+          "label": "原生横向摄影架子",
+          "instruction": "在这一排摄影上横向滚动，或在手机上左右滑动；主页面仍可继续上下阅读。",
+          "prepare": [
+            {
+              "scroll": ".product-shelf .native-shelf"
+            },
+            {
+              "images": ".product-shelf .native-shelf"
+            }
+          ]
+        }
       },
       {
         "caseId": "stripe-platform",
@@ -248,7 +349,12 @@ window.ATLAS_PATTERNS = [
         "observation": "后半段原生横向架子、四平台选择、深色开发者章节、活动架子、结束行动和页尾；上下滚动保持普通文档，不加入无来源的整屏切幕。",
         "evidence": "observed",
         "referenceUrl": "https://stripe.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".stripe-later .stripe-shelf",
+          "label": "Startup 横向内容架子",
+          "instruction": "在 Atlas、Payments、Connect 卡片区域横向滚动，页面的上下阅读仍保持自然滚动。"
+        }
       }
     ],
     "sourceFiles": [
@@ -279,7 +385,8 @@ window.ATLAS_PATTERNS = [
       "entries/cases/stripe-platform.json",
       "docs/cases/met-museum.md",
       "docs/cases/stripe-platform.md"
-    ]
+    ],
+    "preview": "previews/patterns/native-horizontal-shelf.jpg"
   },
   {
     "id": "photography-option-selector",
@@ -319,7 +426,23 @@ window.ATLAS_PATTERNS = [
         "observation": "Design 点击七项胶囊 → 同一舞台内展开左侧说明卡，当前胶囊被卡替换、其他胶囊下移、右侧摄影变化；卡内前后与关闭可逆；Colors 的四个色点联动真实摄影。",
         "evidence": "observed",
         "referenceUrl": "https://www.apple.com/iphone-18-pro/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".aperture-image",
+          "label": "景深选项与真实摄影",
+          "instruction": "切换 f/1.48、f/1.8、f/2.8 和 f/4.0，对照同一构图里背景景深的变化。",
+          "prepare": [
+            {
+              "scroll": ".aperture-study"
+            },
+            {
+              "click": "[data-aperture='2']"
+            },
+            {
+              "images": ".aperture-image"
+            }
+          ]
+        }
       },
       {
         "caseId": "apple-product",
@@ -327,7 +450,23 @@ window.ATLAS_PATTERNS = [
         "observation": "景深四选项 → 官方 f/1.48、1.8、2.8、4.0 摄影交叉变化；旧机型 select 更新比较对象；横向摄影架子保留原生滑动。",
         "evidence": "observed",
         "referenceUrl": "https://www.apple.com/iphone-18-pro/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".aperture-image",
+          "label": "景深选项与真实摄影",
+          "instruction": "切换 f/1.48、f/1.8、f/2.8 和 f/4.0，对照同一构图里背景景深的变化。",
+          "prepare": [
+            {
+              "scroll": ".aperture-study"
+            },
+            {
+              "click": "[data-aperture='2']"
+            },
+            {
+              "images": ".aperture-image"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -337,7 +476,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/apple-product/script.js",
       "demos/cases/apple-product/style.css",
       "entries/cases/apple-product.json"
-    ]
+    ],
+    "preview": "previews/patterns/photography-option-selector.jpg"
   },
   {
     "id": "product-entrance-film",
@@ -378,7 +518,17 @@ window.ATLAS_PATTERNS = [
         "observation": "进入 → 官方产品 MP4 在黑色全宽舞台登场；重播只重放这段，不代替影片。",
         "evidence": "observed",
         "referenceUrl": "https://www.apple.com/iphone-18-pro/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#hero",
+          "label": "静音产品登场影片",
+          "instruction": "观察产品影片与标题同时建立首屏；点击重播动画可重新观看这段登场。",
+          "prepare": [
+            {
+              "video": "#hero-video"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -388,7 +538,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/apple-product/script.js",
       "demos/cases/apple-product/style.css",
       "entries/cases/apple-product.json"
-    ]
+    ],
+    "preview": "previews/patterns/product-entrance-film.jpg"
   },
   {
     "id": "scroll-video-scrub",
@@ -434,7 +585,20 @@ window.ATLAS_PATTERNS = [
         "observation": "镜头长段向下/向上滚动 → 暂停的官方相机 WebM 按进度 seek，标题让出画面；后续性能和续航用官方静帧保持 sticky 媒体和前后文交接。",
         "evidence": "inferred",
         "referenceUrl": "https://www.apple.com/iphone-18-pro/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#cameras .camera-sticky",
+          "label": "镜头系统滚动视频",
+          "instruction": "缓慢向下、向上滚动，观察镜头视频随滚动定位，以及标题让出画面的过程。",
+          "prepare": [
+            {
+              "scroll": "#cameras"
+            },
+            {
+              "video": "#camera-video"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -444,7 +608,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/apple-product/script.js",
       "demos/cases/apple-product/style.css",
       "entries/cases/apple-product.json"
-    ]
+    ],
+    "preview": "previews/patterns/scroll-video-scrub.jpg"
   },
   {
     "id": "section-color-rhythm",
@@ -483,7 +648,12 @@ window.ATLAS_PATTERNS = [
         "observation": "产品摄影章节固定黑/深灰；比较、购物和环境等后段切成浅色。没有全局深浅切换。",
         "evidence": "observed",
         "referenceUrl": "https://www.apple.com/iphone-18-pro/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".upgrade-study",
+          "label": "从深色摄影到浅色比较区",
+          "instruction": "上下滚动这一交界，对照前面的深色产品章节与浅色比较、购物区域如何交替。"
+        }
       },
       {
         "caseId": "stripe-platform",
@@ -491,7 +661,12 @@ window.ATLAS_PATTERNS = [
         "observation": "首屏固定浅色及官方波浪；Global/Developers 等章节使用品牌海军蓝，属于章节配色，没有全局主题切换。",
         "evidence": "observed",
         "referenceUrl": "https://stripe.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".stripe-developers",
+          "label": "海军蓝开发者章节",
+          "instruction": "从这块海军蓝开发者章节向上下滚动，对比它与相邻浅色内容的整节切换。"
+        }
       },
       {
         "caseId": "monument-valley-game",
@@ -499,7 +674,20 @@ window.ATLAS_PATTERNS = [
         "observation": "固定白导航、#221f20影像/下载/画廊、粉蓝奖项、奶油媒体、粉社区与紫页尾，以整幅色带改变观看节奏。",
         "evidence": "observed",
         "referenceUrl": "https://www.monumentvalleygame.com/mv1",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".community",
+          "label": "整节配色的阅读节奏",
+          "instruction": "沿长页比较奖项、媒体、画廊、社区与页尾，整节色带随内容切换。",
+          "prepare": [
+            {
+              "waitFor": "body[data-entry=\"ready\"]"
+            },
+            {
+              "click": ".section-nav a[href=\"#press\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -523,7 +711,8 @@ window.ATLAS_PATTERNS = [
       "entries/cases/stripe-platform.json",
       "docs/cases/monument-valley-game.md",
       "docs/cases/stripe-platform.md"
-    ]
+    ],
+    "preview": "previews/patterns/section-color-rhythm.jpg"
   },
   {
     "id": "sticky-stage-handoff",
@@ -565,7 +754,13 @@ window.ATLAS_PATTERNS = [
         "observation": "向下/向上滚动 → 周边素材随滚动带入/收束，随后淡出；同一窗口保持 sticky，越过交接阈值再向右下移动 → 从吸引注意过渡到解释产品；在首屏下面往返滚动。",
         "evidence": "observed",
         "referenceUrl": "https://chatgpt.com/zh-Hans-CN/overview/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#showcase",
+          "label": "主舞台交给说明",
+          "instruction": "在这节向上滚回首屏、再向下进入说明，观察同一个产品窗口保持悬停并移到右下方。",
+          "viewport": "wide"
+        }
       },
       {
         "caseId": "apple-product",
@@ -573,7 +768,23 @@ window.ATLAS_PATTERNS = [
         "observation": "镜头长段向下/向上滚动 → 暂停的官方相机 WebM 按进度 seek，标题让出画面；后续性能和续航用官方静帧保持 sticky 媒体和前后文交接。",
         "evidence": "adapted",
         "referenceUrl": "https://www.apple.com/iphone-18-pro/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".performance-story .chapter-pin",
+          "label": "性能画面与说明交接",
+          "instruction": "在性能章节继续上下滚动，观察同一画面保持吸附、逐渐缩小，并把标题交给后续说明。",
+          "prepare": [
+            {
+              "scroll": ".performance-story"
+            },
+            {
+              "scroll": ".performance-story .chapter-back"
+            },
+            {
+              "images": ".performance-story"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -590,7 +801,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/chatgpt-platform/style.css",
       "entries/cases/apple-product.json",
       "entries/cases/chatgpt-platform.json"
-    ]
+    ],
+    "preview": "previews/patterns/sticky-stage-handoff.jpg"
   },
   {
     "id": "capability-bento-hierarchy",
@@ -629,7 +841,12 @@ window.ATLAS_PATTERNS = [
         "observation": "1266px内容框；48px段落式首屏；产品矩阵首行Payments跨两列、Billing一列同高，随后不同产品区；4列指标与左右案例。",
         "evidence": "observed",
         "referenceUrl": "https://stripe.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".bento",
+          "label": "产品矩阵的主次比例",
+          "instruction": "对比 Payments 的跨列主卡与旁侧 Billing，再往下看其余产品怎样组成矩阵。"
+        }
       },
       {
         "caseId": "notion-editorial",
@@ -637,7 +854,12 @@ window.ATLAS_PATTERNS = [
         "observation": "语言提示/导航 → 动作胶囊/头像/桌面产品视频 → 标识条带 → 两列+通栏 Bento → 五用途 → 团队故事 → 结束行动 → 页尾。",
         "evidence": "observed",
         "referenceUrl": "https://www.notion.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#features",
+          "label": "两列与通栏能力卡",
+          "instruction": "对比 Capture、Find 两张并排卡与下方通栏 Automate，查看图文比例如何表达能力关系。"
+        }
       }
     ],
     "sourceFiles": [
@@ -656,7 +878,8 @@ window.ATLAS_PATTERNS = [
       "entries/cases/stripe-platform.json",
       "docs/cases/notion-editorial.md",
       "docs/cases/stripe-platform.md"
-    ]
+    ],
+    "preview": "previews/patterns/capability-bento-hierarchy.jpg"
   },
   {
     "id": "client-logo-marquee",
@@ -697,7 +920,12 @@ window.ATLAS_PATTERNS = [
         "observation": "客户标识原生连续横移，指针停留暂停；手机保持条带，不把标识排成多行墙。",
         "evidence": "observed",
         "referenceUrl": "https://www.notion.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".logo-wall",
+          "label": "客户标识的连续条带",
+          "instruction": "将指针停在客户标识条带上暂停，移开后继续移动，手机上也保持横向条带。"
+        }
       },
       {
         "caseId": "stripe-platform",
@@ -705,7 +933,12 @@ window.ATLAS_PATTERNS = [
         "observation": "Payments 进入视口 → 终端文本在 mask 内纵向轮换，checkout 同步商户和金额；客户标识连续横移，悬停可停。",
         "evidence": "observed",
         "referenceUrl": "https://stripe.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".customers-viewport",
+          "label": "连续客户标识条带",
+          "instruction": "把指针停在客户标识上暂停，再移开，观察两份轨道怎样连续衔接。"
+        }
       },
       {
         "caseId": "uiarc-platform",
@@ -713,7 +946,12 @@ window.ATLAS_PATTERNS = [
         "observation": "13 个客户标识组成两份同序轨道，以 52s 线性循环横移，左右渐隐；原站没有悬停暂停，减少动态时改为静态换行且隐藏重复组。",
         "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".logos",
+          "label": "连续客户标识",
+          "instruction": "看标识从右向左连续移动，轨道边缘逐渐隐去；这个来源保持自动移动。"
+        }
       }
     ],
     "sourceFiles": [
@@ -740,7 +978,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/uiarc-platform/fidelity.md",
       "demos/cases/uiarc-platform/source/content.json",
       "demos/cases/uiarc-platform/source/components.tsx"
-    ]
+    ],
+    "preview": "previews/patterns/client-logo-marquee.jpg"
   },
   {
     "id": "folded-wave-hero",
@@ -781,7 +1020,12 @@ window.ATLAS_PATTERNS = [
         "observation": "进入 → 隔离的官方 SingleWave 网格/shader/调色渲染；提供暂停，菜单/弹窗/后台/离屏暂停，GPU 失败使用官方静帧。",
         "evidence": "adapted",
         "referenceUrl": "https://stripe.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".single-wave",
+          "label": "首屏折叠彩带",
+          "instruction": "看文字后方的折叠彩带与固定文字区；右下角暂停按钮可暂停和恢复背景。"
+        }
       }
     ],
     "sourceFiles": [
@@ -793,7 +1037,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/stripe-platform/wave.js",
       "entries/cases/stripe-platform.json",
       "docs/cases/stripe-platform.md"
-    ]
+    ],
+    "preview": "previews/patterns/folded-wave-hero.jpg"
   },
   {
     "id": "masked-transaction-rotation",
@@ -833,7 +1078,12 @@ window.ATLAS_PATTERNS = [
         "observation": "Payments 进入视口 → 终端文本在 mask 内纵向轮换，checkout 同步商户和金额；客户标识连续横移，悬停可停。",
         "evidence": "observed",
         "referenceUrl": "https://stripe.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".payment-art",
+          "label": "终端与结账金额联动",
+          "instruction": "观察终端屏幕中的商户与金额纵向轮换，旁边的结账预览会同步换成对应交易。"
+        }
       }
     ],
     "sourceFiles": [
@@ -845,7 +1095,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/stripe-platform/wave.js",
       "entries/cases/stripe-platform.json",
       "docs/cases/stripe-platform.md"
-    ]
+    ],
+    "preview": "previews/patterns/masked-transaction-rotation.jpg"
   },
   {
     "id": "metric-explanation-selector",
@@ -885,7 +1136,12 @@ window.ATLAS_PATTERNS = [
         "observation": "Global 四统计选择 → 当前数字强调、底部细线进度和基础设施说明对应变化；自动推进与指针停留暂停。",
         "evidence": "observed",
         "referenceUrl": "https://stripe.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#global",
+          "label": "统计与基础设施说明",
+          "instruction": "点四个统计数字，对比强调项、底部进度线和下方基础设施说明怎样一起更新。"
+        }
       }
     ],
     "sourceFiles": [
@@ -897,7 +1153,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/stripe-platform/wave.js",
       "entries/cases/stripe-platform.json",
       "docs/cases/stripe-platform.md"
-    ]
+    ],
+    "preview": "previews/patterns/metric-explanation-selector.jpg"
   },
   {
     "id": "mobile-drilldown-menu",
@@ -938,7 +1195,19 @@ window.ATLAS_PATTERNS = [
         "observation": "手机汉堡菜单 → 全屏顶层 Products/Solutions/Developers/Resources；选择分类后二级页以源 CSS 500ms 侧向进入、250ms 透明度衔接，Back 返回顶层。Start now/Contact sales 固定底部；关闭/Escape 恢复滚动和焦点，让长目录保持方向与核心行动。",
         "evidence": "adapted",
         "referenceUrl": "https://stripe.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".stripe-phone[data-open=true]",
+          "label": "逐层进入的手机菜单",
+          "instruction": "点 Products 等分类进入二级页，用 Back 返回；底部 Start now 与 Contact sales 始终保留。",
+          "prepare": [
+            {
+              "click": ".mobile-menu[aria-expanded=false]",
+              "waitFor": ".stripe-phone[data-open=true]"
+            }
+          ],
+          "viewport": "mobile"
+        }
       }
     ],
     "sourceFiles": [
@@ -950,7 +1219,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/stripe-platform/wave.js",
       "entries/cases/stripe-platform.json",
       "docs/cases/stripe-platform.md"
-    ]
+    ],
+    "preview": "previews/patterns/mobile-drilldown-menu.jpg"
   },
   {
     "id": "natural-height-mega-menu",
@@ -996,7 +1266,19 @@ window.ATLAS_PATTERNS = [
         "observation": "桌面指针进入/点击分类 → popup 高度/位移/透明度 300ms、clip/max-height 200ms，均采用源 cubic-bezier(.45,.05,.55,.95)；分类按自然高度衔接。快速反转取消旧动画，离开/外部点击/Escape 后 hidden/inert/aria 一致；减少动态直接完成，维持目录的空间关系。",
         "evidence": "adapted",
         "referenceUrl": "https://stripe.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".mega:not([hidden])",
+          "label": "随分类改变高度的目录",
+          "instruction": "在顶栏 Products、Solutions、Developers、Resources 之间移动，比较目录按各组内容连续改变高度。",
+          "prepare": [
+            {
+              "click": "[data-menu=Products]",
+              "waitFor": ".mega:not([hidden])"
+            }
+          ],
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -1008,7 +1290,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/stripe-platform/wave.js",
       "entries/cases/stripe-platform.json",
       "docs/cases/stripe-platform.md"
-    ]
+    ],
+    "preview": "previews/patterns/natural-height-mega-menu.jpg"
   },
   {
     "id": "single-open-accordion",
@@ -1049,7 +1332,17 @@ window.ATLAS_PATTERNS = [
         "observation": "FAQ → 只开一项，grid 0fr→1fr 与 opacity 400ms，图标同步；连续选项关闭前项，避免文本突然跳变。",
         "evidence": "inferred",
         "referenceUrl": "https://claude.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".faq",
+          "label": "单开的问题列表",
+          "instruction": "点开一个问题后再选另一个，观察前项高度与图标收起、新项同时展开。",
+          "prepare": [
+            {
+              "click": ".claude-question[aria-expanded=false]"
+            }
+          ]
+        }
       },
       {
         "caseId": "stripe-platform",
@@ -1057,7 +1350,12 @@ window.ATLAS_PATTERNS = [
         "observation": "Hertz/URBN/Instacart/Le Monde → 当前故事行展开高度、其他行收起，真实官方摄影及说明同步替换；来源照片中的平行四边形呼应 Stripe 品牌。",
         "evidence": "observed",
         "referenceUrl": "https://stripe.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".case-layout",
+          "label": "客户切换与配图",
+          "instruction": "切换 Hertz、URBN、Instacart 或 Le Monde，客户摘要、数据与配图一起更新。手机上配图位于选项下方。"
+        }
       },
       {
         "caseId": "qoder-platform",
@@ -1065,7 +1363,17 @@ window.ATLAS_PATTERNS = [
         "observation": "后续 SDK 代码和 Cloud 任务列表 → Wake 场景选择/指针强调 → 企业 → 两侧连续证言条带 → 单开 FAQ → 页尾；所有章节使用正常滚动。",
         "evidence": "observed",
         "referenceUrl": "https://qoder.cn/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".qoder-faq",
+          "label": "单开 FAQ",
+          "instruction": "打开一个问题后再打开另一项，比较前项收起和当前正文展开。",
+          "prepare": [
+            {
+              "click": ".qoder-faq details:not([open]) summary"
+            }
+          ]
+        }
       },
       {
         "caseId": "uiarc-platform",
@@ -1073,7 +1381,12 @@ window.ATLAS_PATTERNS = [
         "observation": "六项 FAQ 默认展开第一项；使用原始 Accordion 的单开状态、400ms 无回弹高度弹簧、260ms 图标弹簧和 2px 轻模糊，打开另一项收起前项，当前项可再次收起；Radix 管理语义、焦点与折叠后可访问状态。",
         "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".faq-list",
+          "label": "FAQ 单开",
+          "instruction": "点开任意问题；新项展开时，上一项和箭头同步收起。"
+        }
       }
     ],
     "sourceFiles": [
@@ -1105,7 +1418,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/uiarc-platform/fidelity.md",
       "demos/cases/uiarc-platform/source/content.json",
       "demos/cases/uiarc-platform/source/components.tsx"
-    ]
+    ],
+    "preview": "previews/patterns/single-open-accordion.jpg"
   },
   {
     "id": "viewport-animation-lifecycle",
@@ -1158,7 +1472,13 @@ window.ATLAS_PATTERNS = [
         "observation": "AI 章节进入视口 → 三列代理思考/回答以 5s 与后续交错时间演示，离开/后台停止；暂停按钮与减少动态分支可保持结果。",
         "evidence": "adapted",
         "referenceUrl": "https://linear.app/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".journey-pause",
+          "label": "代理演示的暂停状态",
+          "instruction": "暂停后把这节滚出视口再返回，当前结果会保留；恢复播放后再观察列间的错峰响应。",
+          "viewport": "wide"
+        }
       },
       {
         "caseId": "stripe-platform",
@@ -1166,7 +1486,12 @@ window.ATLAS_PATTERNS = [
         "observation": "进入 → 隔离的官方 SingleWave 网格/shader/调色渲染；提供暂停，菜单/弹窗/后台/离屏暂停，GPU 失败使用官方静帧。",
         "evidence": "adapted",
         "referenceUrl": "https://stripe.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#wave-toggle",
+          "label": "背景动态的暂停控制",
+          "instruction": "点背景右下角的暂停按钮，再上下滚动离开和返回；手动暂停会保留，菜单与后台也会暂停背景。"
+        }
       },
       {
         "caseId": "qoder-platform",
@@ -1174,7 +1499,12 @@ window.ATLAS_PATTERNS = [
         "observation": "五平台 tab/点控/触摸 → 400ms 水平进退，20s 自动，悬停/手动暂停、后台停止；快速选择只保留一个场景。",
         "evidence": "adapted",
         "referenceUrl": "https://qoder.cn/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".carousel-pause",
+          "label": "平台轮换的生命周期",
+          "instruction": "暂停轮播后滚出这一节再返回，确认手动暂停仍保留；恢复后可观察平台自动轮换。"
+        }
       },
       {
         "caseId": "endfield-industrial",
@@ -1182,7 +1512,44 @@ window.ATLAS_PATTERNS = [
         "observation": "声音和业务：原BGM及四种原始操作音由桌面/手机共用声音开关启用，默认关闭；选干员与2D/3D切换播放机械短音，头像翻页和档案展开/收起分别反馈。10槽音频池保留快速重复操作的叠响；关闭声音或隐藏页面立即停止，返回不重放短效。登录、下载、云游戏、支付、社区与全文信息保留官方目的地，不复制后台或提交数据。",
         "evidence": "adapted",
         "referenceUrl": "https://endfield.hypergryph.com/",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "#gameplay",
+          "label": "玩法影片的视口播放",
+          "instruction": "让影片进入视口，再滚离或切到后台，查看它如何随可见状态暂停和恢复。",
+          "prepare": [
+            {
+              "waitFor": "body:has(#entry-loader[hidden])"
+            },
+            {
+              "click": ".header-inner-container > .header-nav-item[aria-label=\"版本日历\"]",
+              "minWidth": 801
+            },
+            {
+              "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+              "maxWidth": 800
+            },
+            {
+              "click": ".header-menu-item[aria-label=\"版本日历\"]",
+              "maxWidth": 800
+            },
+            {
+              "images": "#calendar"
+            },
+            {
+              "click": ".header-inner-container > .header-nav-item[aria-label=\"玩法介绍 & 集成工业知识\"]",
+              "minWidth": 801
+            },
+            {
+              "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+              "maxWidth": 800
+            },
+            {
+              "click": ".header-menu-item[aria-label=\"玩法介绍 & 集成工业知识\"]",
+              "maxWidth": 800
+            }
+          ]
+        }
       },
       {
         "caseId": "deepseek-harness",
@@ -1190,7 +1557,12 @@ window.ATLAS_PATTERNS = [
         "observation": "四组演示分别在进入视口后播放，手动暂停优先于重入；离屏或后台暂停。减少动态使用原版插件/轨迹静态回退和文件/工作流的可读状态。",
         "evidence": "observed",
         "referenceUrl": "https://www.deepseek.com/harness/",
-        "capturedAt": "2026-10-11"
+        "capturedAt": "2026-10-11",
+        "focus": {
+          "target": "article:has([class^=HarnessDeliverablesPreview_composition])",
+          "label": "交付物演示的播放范围",
+          "instruction": "上下滚动这张演示卡，离开视口会暂停；手动暂停后再返回仍保留结果，可用卡片右下角按钮恢复。"
+        }
       },
       {
         "caseId": "stellar-museum",
@@ -1198,7 +1570,12 @@ window.ATLAS_PATTERNS = [
         "observation": "首屏星球及月球、空间站、火星、银河窗口进入或离开扩展 120px 的视口范围：IntersectionObserver 以 rootMargin: '120px'、threshold: 0.0 更新各实例的 visible，统一帧循环跳过离屏实例，只渲染可见窗口；主循环和绝对时间仍持续推进，来源未实现页面后台可见性监听、用户暂停或离屏时间冻结，减少动态仅跳过对象旋转，仍更新着色器时间并渲染。",
         "evidence": "observed",
         "referenceUrl": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/demo/web-design-demo/demo1-with-skill.html",
-        "capturedAt": "2026-10-27"
+        "capturedAt": "2026-10-27",
+        "focus": {
+          "target": "#exhibits",
+          "label": "进入视口才渲染的三维窗口",
+          "instruction": "上下滚动月球、空间站、火星与银河窗口，观察可见窗口继续渲染；这个来源不会冻结全局时间。"
+        }
       },
       {
         "caseId": "uiarc-platform",
@@ -1206,7 +1583,12 @@ window.ATLAS_PATTERNS = [
         "observation": "六张 Pro 卡片与九张免费卡片分别排成桌面两列和三列；原始 WebP 海报与静音 WebM 在前后一屏预载，可见比例达到 35% 时播放，离屏或后台暂停并保留已显示的视频帧，同时最多播放 8 段。首入减少动态或节流模式使用海报和手动播放按钮；点击卡片进入对应原站页。手机为一列／两列。",
         "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "#pro-clips",
+          "label": "可见时播放的组件影片",
+          "instruction": "上下滚动这些组件卡，观察进入视口的影片播放、离开的影片暂停。减少动态下可用卡片播放按钮。"
+        }
       },
       {
         "caseId": "hallmark",
@@ -1214,7 +1596,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Atelier 根据显雾区域的视口交集和文档前台状态启停绘制，Coral 在纸面演示离屏时暂停 Web Animations，减少动态直接给各自可读的结果。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero[data-air-zone]",
+          "label": "随视口启停的香气场",
+          "instruction": "观察香气场；滚出香气区域或切到其他标签页后暂停，返回时继续绘制。",
+          "entrypoint": "demos/cases/hallmark/themes/atelier/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -1291,7 +1679,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/fidelity.md",
       "demos/cases/hallmark/themes/atelier/air.js",
       "demos/cases/hallmark/themes/coral/scene.js"
-    ]
+    ],
+    "preview": "previews/patterns/viewport-animation-lifecycle.jpg"
   },
   {
     "id": "local-code-theme-preview",
@@ -1331,7 +1720,18 @@ window.ATLAS_PATTERNS = [
         "observation": "Build → 编辑代码内容、六种 syntax 主题选择更新局部代码颜色和行数反馈；不改变官网的固定全局暗色。",
         "evidence": "observed",
         "referenceUrl": "https://linear.app/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".build-review",
+          "label": "局部代码主题",
+          "instruction": "在代码预览中修改内容，并切换 Code diff theme；代码颜色和行数改变，页面的整体暗色保持不变。",
+          "prepare": [
+            {
+              "input": "#diff-theme",
+              "value": "GitHub"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -1341,7 +1741,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/linear-workflow/script.js",
       "demos/cases/linear-workflow/style.css",
       "entries/cases/linear-workflow.json"
-    ]
+    ],
+    "preview": "previews/patterns/local-code-theme-preview.jpg"
   },
   {
     "id": "message-to-board-demonstration",
@@ -1382,7 +1783,17 @@ window.ATLAS_PATTERNS = [
         "observation": "Intake Send “create issues” → 2s 后 Linear 回复、再 1s 后 2 张卡插入 Todo；下一次 Send → 1.4s 回复、800ms 后卡从 Todo 移到 In progress；Replay 恢复初态 → 把自然语言请求变成可见工作。",
         "evidence": "observed",
         "referenceUrl": "https://linear.app/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#workflow",
+          "label": "消息变成任务卡",
+          "instruction": "点消息框旁的 Send，观察回复、Todo 新卡及再次发送后的 In progress 移动；左上角 Replay 可复位。",
+          "prepare": [
+            {
+              "click": "#intake-reset"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -1392,7 +1803,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/linear-workflow/script.js",
       "demos/cases/linear-workflow/style.css",
       "entries/cases/linear-workflow.json"
-    ]
+    ],
+    "preview": "previews/patterns/message-to-board-demonstration.jpg"
   },
   {
     "id": "mobile-media-prioritization",
@@ -1432,7 +1844,13 @@ window.ATLAS_PATTERNS = [
         "observation": "桌面官方产品视频静音循环，可暂停；手机保留上方七个头像 pile，当前页面隐藏 hero 媒体区而不是塞入桌面视频。",
         "evidence": "adapted",
         "referenceUrl": "https://www.notion.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".hero",
+          "label": "手机的头像与标题",
+          "instruction": "对照手机与桌面模式：手机保留头像、主张和入口，桌面的产品影片在手机上隐藏。",
+          "viewport": "mobile"
+        }
       },
       {
         "caseId": "linear-workflow",
@@ -1440,7 +1858,13 @@ window.ATLAS_PATTERNS = [
         "observation": "手机保留完整应用缩放裁切、Intake 消息线程；按原站隐藏 Planning/AI/Build 的复杂图示并保留标题正文。",
         "evidence": "observed",
         "referenceUrl": "https://linear.app/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#workflow",
+          "label": "手机保留消息线程",
+          "instruction": "向下查看手机的 Intake 消息线程，再对照桌面模式；复杂 Planning、AI、Build 图示在手机上让位给文字。",
+          "viewport": "mobile"
+        }
       }
     ],
     "sourceFiles": [
@@ -1457,7 +1881,8 @@ window.ATLAS_PATTERNS = [
       "entries/cases/linear-workflow.json",
       "entries/cases/notion-editorial.json",
       "docs/cases/notion-editorial.md"
-    ]
+    ],
+    "preview": "previews/patterns/mobile-media-prioritization.jpg"
   },
   {
     "id": "staged-product-ui-entrance",
@@ -1503,7 +1928,12 @@ window.ATLAS_PATTERNS = [
         "observation": "进入 → 首屏产品 UI 延迟 1.3s 后 1.5s 带入，背景扫光/mask 配合；下滚让首屏遮罩交给后续章节。",
         "evidence": "observed",
         "referenceUrl": "https://linear.app/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".hero",
+          "label": "产品界面的延迟入场",
+          "instruction": "观察主标题先显示、产品界面随后由遮罩和扫光带入；点“重播”重新观看整段入场。"
+        }
       }
     ],
     "sourceFiles": [
@@ -1513,7 +1943,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/linear-workflow/script.js",
       "demos/cases/linear-workflow/style.css",
       "entries/cases/linear-workflow.json"
-    ]
+    ],
+    "preview": "previews/patterns/staged-product-ui-entrance.jpg"
   },
   {
     "id": "staggered-agent-columns",
@@ -1553,7 +1984,13 @@ window.ATLAS_PATTERNS = [
         "observation": "AI 章节进入视口 → 三列代理思考/回答以 5s 与后续交错时间演示，离开/后台停止；暂停按钮与减少动态分支可保持结果。",
         "evidence": "adapted",
         "referenceUrl": "https://linear.app/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".agent-workflows",
+          "label": "三列代理状态",
+          "instruction": "看三列代理依次出现思考与回答，用这一节的暂停按钮停在当前结果，再恢复观看。",
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -1563,7 +2000,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/linear-workflow/script.js",
       "demos/cases/linear-workflow/style.css",
       "entries/cases/linear-workflow.json"
-    ]
+    ],
+    "preview": "previews/patterns/staggered-agent-columns.jpg"
   },
   {
     "id": "avatar-pile-personality",
@@ -1602,7 +2040,13 @@ window.ATLAS_PATTERNS = [
         "observation": "桌面官方产品视频静音循环，可暂停；手机保留上方七个头像 pile，当前页面隐藏 hero 媒体区而不是塞入桌面视频。",
         "evidence": "adapted",
         "referenceUrl": "https://www.notion.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".avatar-piles",
+          "label": "七组头像拼贴",
+          "instruction": "看标题上方七组真实头像怎样以不同倾角和重叠关系组成团队群像。",
+          "viewport": "mobile"
+        }
       }
     ],
     "sourceFiles": [
@@ -1613,7 +2057,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/notion-editorial/style.css",
       "entries/cases/notion-editorial.json",
       "docs/cases/notion-editorial.md"
-    ]
+    ],
+    "preview": "previews/patterns/avatar-pile-personality.jpg"
   },
   {
     "id": "instant-open-menu-category-switch",
@@ -1661,7 +2106,19 @@ window.ATLAS_PATTERNS = [
         "observation": "桌面 Product/Resources 指针进入与点击 → 首次 opacity/translateY(-16px) 250ms ease-out，退出 150ms ease-in、延迟 50ms；已打开分类按源 instantSwitch 直接切换，快速反转取消旧退出，减少动态直接完成；手机打开全屏菜单 → Product/AI/Resources 原地单开，切换收起前组，再点同组收起；其他分类变灰，底部 Download app/Log in 固定。源 CSS 子展开 300ms、入口 350ms，内容/底部延迟 200/250ms；关闭/Escape 恢复滚动和焦点，维持层级与行动位置。",
         "evidence": "adapted",
         "referenceUrl": "https://www.notion.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".menu:not([hidden])",
+          "label": "已打开的菜单分类",
+          "instruction": "在 Product 与 Resources 之间移动，比较首次展开与已经展开后的即时换组。",
+          "prepare": [
+            {
+              "click": "[data-menu=Product]",
+              "waitFor": ".menu:not([hidden])"
+            }
+          ],
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -1672,7 +2129,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/notion-editorial/style.css",
       "entries/cases/notion-editorial.json",
       "docs/cases/notion-editorial.md"
-    ]
+    ],
+    "preview": "previews/patterns/instant-open-menu-category-switch.jpg"
   },
   {
     "id": "measured-width-action-pill",
@@ -1718,7 +2176,12 @@ window.ATLAS_PATTERNS = [
         "observation": "2500ms 自动 Think/Ship/Create/Build/Jam/Scale → 词直接替换，测量 scrollWidth 后宽度以 300ms cubic-bezier(.86,0,.07,1) 变化，底色/圆点对应变化；这是源机制，没有给文字加不存在的飞入飞出。",
         "evidence": "observed",
         "referenceUrl": "https://www.notion.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".verb",
+          "label": "随动作词变宽的胶囊",
+          "instruction": "看 Think、Ship、Create 等词自动替换，胶囊按真实词宽改变尺寸，底色和圆点一起更新。"
+        }
       }
     ],
     "sourceFiles": [
@@ -1729,7 +2192,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/notion-editorial/style.css",
       "entries/cases/notion-editorial.json",
       "docs/cases/notion-editorial.md"
-    ]
+    ],
+    "preview": "previews/patterns/measured-width-action-pill.jpg"
   },
   {
     "id": "mobile-single-open-navigation",
@@ -1771,7 +2235,22 @@ window.ATLAS_PATTERNS = [
         "observation": "桌面 Product/Resources 指针进入与点击 → 首次 opacity/translateY(-16px) 250ms ease-out，退出 150ms ease-in、延迟 50ms；已打开分类按源 instantSwitch 直接切换，快速反转取消旧退出，减少动态直接完成；手机打开全屏菜单 → Product/AI/Resources 原地单开，切换收起前组，再点同组收起；其他分类变灰，底部 Download app/Log in 固定。源 CSS 子展开 300ms、入口 350ms，内容/底部延迟 200/250ms；关闭/Escape 恢复滚动和焦点，维持层级与行动位置。",
         "evidence": "adapted",
         "referenceUrl": "https://www.notion.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#notion-phone-nav:not([hidden])",
+          "label": "手机菜单原位单开",
+          "instruction": "点 Product、AI、Resources 分类，在原位展开当前组；再次点同组可收起，底部 Download app 与 Log in 保留。",
+          "prepare": [
+            {
+              "click": ".hamburger[aria-expanded=false]",
+              "waitFor": "#notion-phone-nav:not([hidden])"
+            },
+            {
+              "click": "[data-phone-group=Product][aria-expanded=false]"
+            }
+          ],
+          "viewport": "mobile"
+        }
       }
     ],
     "sourceFiles": [
@@ -1782,7 +2261,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/notion-editorial/style.css",
       "entries/cases/notion-editorial.json",
       "docs/cases/notion-editorial.md"
-    ]
+    ],
+    "preview": "previews/patterns/mobile-single-open-navigation.jpg"
   },
   {
     "id": "blurred-layered-video-handoff",
@@ -1834,7 +2314,22 @@ window.ATLAS_PATTERNS = [
         "observation": "点击章节 → 300ms输入锁；前片1秒模糊退场，后片1.6秒、延迟0.6秒进入；标题1.6秒、延迟1秒进入。快速选择保留最后请求。",
         "evidence": "observed",
         "referenceUrl": "https://www.nintendo.com/jp/zelda/totk/world/index.html",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".world-stage",
+          "label": "世界影片与标题交接",
+          "instruction": "点底部另一个章节，看旧片模糊退出、新片延后进入，标题再接上。",
+          "prepare": [
+            {
+              "click": "#entry-gate:not([hidden]):not([data-phase]) [data-enter=\"off\"]",
+              "waitFor": "body:has(#entry-gate[hidden])"
+            },
+            {
+              "click": ".chapters a[href=\"#world-2\"]:not([aria-current=\"true\"])",
+              "waitFor": ".world-stage[data-scene=\"2\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -1844,7 +2339,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/zelda-world/style.css",
       "entries/cases/zelda-world.json",
       "docs/cases/zelda-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/blurred-layered-video-handoff.jpg"
   },
   {
     "id": "clip-tail-advance",
@@ -1891,7 +2387,22 @@ window.ATLAS_PATTERNS = [
         "observation": "影片片尾前1秒推进下一章；暂停画面和减少动态分支关闭自动推进。",
         "evidence": "adapted",
         "referenceUrl": "https://www.nintendo.com/jp/zelda/totk/world/index.html",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".world-stage",
+          "label": "影片片尾前的章节交接",
+          "instruction": "让影片继续播放到尾段，留意片尾前自动交给下一章；暂停画面会停止推进。",
+          "prepare": [
+            {
+              "click": "#entry-gate:not([hidden]):not([data-phase]) [data-enter=\"off\"]",
+              "waitFor": "body:has(#entry-gate[hidden])"
+            },
+            {
+              "click": ".chapters a[href=\"#world-3\"]:not([aria-current=\"true\"])",
+              "waitFor": ".world-stage[data-scene=\"3\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -1901,7 +2412,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/zelda-world/style.css",
       "entries/cases/zelda-world.json",
       "docs/cases/zelda-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/clip-tail-advance.jpg"
   },
   {
     "id": "continuous-bgm-bridge",
@@ -1949,7 +2461,25 @@ window.ATLAS_PATTERNS = [
         "observation": "真实BGM默认关闭，单独开关并使用官网600/300ms音量渐变；三人日语语音独立按需播放，换人物或离开干员章暂停旧语音。",
         "evidence": "adapted",
         "referenceUrl": "https://ak.hypergryph.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#sound",
+          "label": "跨章节背景音乐",
+          "instruction": "用右上声音按钮主动开启音乐，再切换章节；音乐保持连续，关闭时渐弱。",
+          "prepare": [
+            {
+              "waitFor": "#scene-deck[data-phase=\"idle\"]"
+            },
+            {
+              "click": "#menu-toggle[aria-expanded=\"false\"]",
+              "maxWidth": 800
+            },
+            {
+              "click": "#chapter-nav a[href=\"#operator\"]:not([aria-current=\"page\"])",
+              "waitFor": "#scene-deck[data-active=\"operator\"][data-phase=\"idle\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "zelda-world",
@@ -1957,7 +2487,22 @@ window.ATLAS_PATTERNS = [
         "observation": "开场 SE 对应纹章发亮扩散，BGM在入口移交世界时接续；三段影片切换时音乐不断开，维持探索节奏。",
         "evidence": "observed",
         "referenceUrl": "https://www.nintendo.com/jp/zelda/totk/world/index.html",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".sound-control",
+          "label": "世界章节的连续 BGM",
+          "instruction": "用右上 SOUND 主动开启音乐，再切换三个世界章节，比较画面换章与音乐连续播放。",
+          "prepare": [
+            {
+              "click": "#entry-gate:not([hidden]):not([data-phase]) [data-enter=\"off\"]",
+              "waitFor": "body:has(#entry-gate[hidden])"
+            },
+            {
+              "click": ".chapters a[href=\"#world-1\"]:not([aria-current=\"true\"])",
+              "waitFor": ".world-stage[data-scene=\"1\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -1974,7 +2519,8 @@ window.ATLAS_PATTERNS = [
       "entries/cases/zelda-world.json",
       "docs/cases/arknights-world.md",
       "docs/cases/zelda-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/continuous-bgm-bridge.jpg"
   },
   {
     "id": "idle-interface-retreat",
@@ -2020,7 +2566,22 @@ window.ATLAS_PATTERNS = [
         "observation": "鼠标移动或触摸唤醒界面，3秒闲置后0.8秒模糊淡出；键盘焦点保留控件为本地补充。",
         "evidence": "adapted",
         "referenceUrl": "https://www.nintendo.com/jp/zelda/totk/world/index.html",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".chapters",
+          "label": "闲置退隐的章节控件",
+          "instruction": "移动指针唤醒底部目录，停止操作后看它模糊退隐；按 Tab 也能唤醒。",
+          "prepare": [
+            {
+              "click": "#entry-gate:not([hidden]):not([data-phase]) [data-enter=\"off\"]",
+              "waitFor": "body:has(#entry-gate[hidden])"
+            },
+            {
+              "click": ".chapters a[href=\"#world-3\"]:not([aria-current=\"true\"])",
+              "waitFor": ".world-stage[data-scene=\"3\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -2030,7 +2591,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/zelda-world/style.css",
       "entries/cases/zelda-world.json",
       "docs/cases/zelda-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/idle-interface-retreat.jpg"
   },
   {
     "id": "last-request-transition",
@@ -2072,7 +2634,25 @@ window.ATLAS_PATTERNS = [
         "observation": "场景横向遮罩裁切：桌面1000ms、竖屏600ms；同方向重复轮输入锁定，快速反向和导航使用最后目标队列，单次仅一组出/入场景。",
         "evidence": "adapted",
         "referenceUrl": "https://ak.hypergryph.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#chapter-nav",
+          "label": "连续换章的最后目标",
+          "instruction": "连续点 WORLD、MEDIA、MORE，观察交接完成后停在哪个最后选择。",
+          "prepare": [
+            {
+              "waitFor": "#scene-deck[data-phase=\"idle\"]"
+            },
+            {
+              "click": "#menu-toggle[aria-expanded=\"false\"]",
+              "maxWidth": 800
+            },
+            {
+              "click": "#chapter-nav a[href=\"#media\"]:not([aria-current=\"page\"])",
+              "waitFor": "#scene-deck[data-active=\"media\"][data-phase=\"idle\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "zelda-world",
@@ -2080,7 +2660,22 @@ window.ATLAS_PATTERNS = [
         "observation": "点击章节 → 300ms输入锁；前片1秒模糊退场，后片1.6秒、延迟0.6秒进入；标题1.6秒、延迟1秒进入。快速选择保留最后请求。",
         "evidence": "adapted",
         "referenceUrl": "https://www.nintendo.com/jp/zelda/totk/world/index.html",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".chapters",
+          "label": "影片章节的最后选择",
+          "instruction": "连续选择不同缩略图，查看交接后是否停在最后一次选择的章节。",
+          "prepare": [
+            {
+              "click": "#entry-gate:not([hidden]):not([data-phase]) [data-enter=\"off\"]",
+              "waitFor": "body:has(#entry-gate[hidden])"
+            },
+            {
+              "click": ".chapters a[href=\"#world-1\"]:not([aria-current=\"true\"])",
+              "waitFor": ".world-stage[data-scene=\"1\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "qoder-platform",
@@ -2088,7 +2683,17 @@ window.ATLAS_PATTERNS = [
         "observation": "五平台 tab/点控/触摸 → 400ms 水平进退，20s 自动，悬停/手动暂停、后台停止；快速选择只保留一个场景。",
         "evidence": "adapted",
         "referenceUrl": "https://qoder.cn/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".platform-panel",
+          "label": "平台场景快速切换",
+          "instruction": "连续点 Desktop、Mobile、IDE 等平台，观察最后一次选择留下的场景，旧画面会退出。",
+          "prepare": [
+            {
+              "click": "[data-platform=ide]"
+            }
+          ]
+        }
       },
       {
         "caseId": "chatgpt-platform",
@@ -2096,7 +2701,18 @@ window.ATLAS_PATTERNS = [
         "observation": "选择工作 → 工作的独立素材从四周进入，原模式素材离开；快速切换清理旧离场层 → 保持一套可读场景；移到“工作”再快速移到“编程”。",
         "evidence": "adapted",
         "referenceUrl": "https://chatgpt.com/zh-Hans-CN/overview/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".hero",
+          "label": "快速选择最后一个模式",
+          "instruction": "连续选择“工作”和“编程”，观察离场素材被清理，最后只保留当前模式的一套画面。",
+          "prepare": [
+            {
+              "click": "[data-select=work]"
+            }
+          ],
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -2126,7 +2742,8 @@ window.ATLAS_PATTERNS = [
       "entries/cases/zelda-world.json",
       "docs/cases/arknights-world.md",
       "docs/cases/zelda-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/last-request-transition.jpg"
   },
   {
     "id": "sound-choice-emblem-opening",
@@ -2176,7 +2793,12 @@ window.ATLAS_PATTERNS = [
         "observation": "首次 ON/OFF → 原始纹章出现；2秒后向外发光扩散，3.6秒移交影片舞台。ON触发原开场 SE，随后原BGM接续。",
         "evidence": "observed",
         "referenceUrl": "https://www.nintendo.com/jp/zelda/totk/world/index.html",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#entry-gate:not([hidden]):not([data-phase]) .sound-choice, body:has(#entry-gate[hidden]) .sound-control",
+          "label": "ON / OFF 与纹章开场",
+          "instruction": "首次进入时选择 ON 或 OFF，随后出现纹章并移交影片；已进入时可在右上 SOUND 调整声音。"
+        }
       }
     ],
     "sourceFiles": [
@@ -2186,7 +2808,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/zelda-world/style.css",
       "entries/cases/zelda-world.json",
       "docs/cases/zelda-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/sound-choice-emblem-opening.jpg"
   },
   {
     "id": "sound-opt-in",
@@ -2226,7 +2849,12 @@ window.ATLAS_PATTERNS = [
         "caseId": "retro-80s",
         "locator": "entries/cases/retro-80s.json#interaction/0",
         "observation": "只有主动开启声音后才初始化Web Audio；可随时关闭。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": "#power",
+          "label": "主动开启声音",
+          "instruction": "点“开启声音”后再演奏琴键；同一开关可随时关闭声音。"
+        }
       },
       {
         "caseId": "arknights-world",
@@ -2234,7 +2862,25 @@ window.ATLAS_PATTERNS = [
         "observation": "真实原站BGM独立开关，默认静音；600ms渐入/300ms渐出。三人官方日语配音由干员按钮单独播放；页面进入后台暂停音频。",
         "evidence": "adapted",
         "referenceUrl": "https://ak.hypergryph.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#sound",
+          "label": "主动开启声音",
+          "instruction": "点右上声音按钮开启或关闭 BGM；干员语音由各自的语音按钮单独播放。",
+          "prepare": [
+            {
+              "waitFor": "#scene-deck[data-phase=\"idle\"]"
+            },
+            {
+              "click": "#menu-toggle[aria-expanded=\"false\"]",
+              "maxWidth": 800
+            },
+            {
+              "click": "#chapter-nav a[href=\"#index\"]:not([aria-current=\"page\"])",
+              "waitFor": "#scene-deck[data-active=\"index\"][data-phase=\"idle\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "zelda-world",
@@ -2242,7 +2888,12 @@ window.ATLAS_PATTERNS = [
         "observation": "入口 ON/OFF 与顶栏 SOUND；默认静音，选择 ON 后播放原始 se.mp3 与 bgm.mp3。",
         "evidence": "observed",
         "referenceUrl": "https://www.nintendo.com/jp/zelda/totk/world/index.html",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#entry-gate:not([hidden]):not([data-phase]) .sound-choice, body:has(#entry-gate[hidden]) .sound-control",
+          "label": "入口与顶栏声音选择",
+          "instruction": "在入口选择 ON 或 OFF；进入后用右上 SOUND 随时开启或停止音乐。"
+        }
       },
       {
         "caseId": "endfield-industrial",
@@ -2250,7 +2901,29 @@ window.ATLAS_PATTERNS = [
         "observation": "桌面声音工具与手机喇叭共用状态，默认关闭、aria-pressed同步；用户开启后播放原BGM及选干员/2D↔3D、头像翻页、档案展开/收起四种原音。关闭或后台立即停止，返回只恢复已开启BGM；预览和角色影片静音，完整影像独立控制。",
         "evidence": "adapted",
         "referenceUrl": "https://endfield.hypergryph.com/",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": ".header-button[aria-label$=\"声音\"], .header-h5-header-container .header-icon-button",
+          "label": "终末地声音开关",
+          "instruction": "主动开启原声音工具后，BGM 与换干员、翻头像、展开档案的短音共用同一开关。",
+          "prepare": [
+            {
+              "waitFor": "body:has(#entry-loader[hidden])"
+            },
+            {
+              "click": ".header-inner-container > .header-nav-item[aria-label=\"干员情报\"]",
+              "minWidth": 801
+            },
+            {
+              "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+              "maxWidth": 800
+            },
+            {
+              "click": ".header-menu-item[aria-label=\"干员情报\"]",
+              "maxWidth": 800
+            }
+          ]
+        }
       },
       {
         "caseId": "hallmark",
@@ -2258,7 +2931,13 @@ window.ATLAS_PATTERNS = [
         "observation": "首页保持无声，Bloom 的 Play 和 Ribbon 的 Listen 只在用户激活后创建或恢复 AudioContext，按钮和 Escape 可停止声音并复位界面，Ribbon 停止后挂起上下文。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero [data-mixer]",
+          "label": "Listen 与 Stop 声音开关",
+          "instruction": "点击 Listen 才会启用声音；再次点击 Stop，或按 Escape，即可停止。",
+          "entrypoint": "demos/cases/hallmark/themes/ribbon/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -2291,7 +2970,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/themes/bloom/page.js",
       "demos/cases/hallmark/themes/bloom/arrange.js",
       "demos/cases/hallmark/themes/ribbon/night.js"
-    ]
+    ],
+    "preview": "previews/patterns/sound-opt-in.jpg"
   },
   {
     "id": "world-shaped-thumbnail-frame",
@@ -2331,7 +3011,22 @@ window.ATLAS_PATTERNS = [
         "observation": "原始 frame_thumbnail 古代角纹 + 8点削角白线；当前与 hover 加内框，避免普通矩形卡片。",
         "evidence": "observed",
         "referenceUrl": "https://www.nintendo.com/jp/zelda/totk/world/index.html",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".chapters",
+          "label": "古代角纹章节边框",
+          "instruction": "把指针移到章节缩略图上，比较古代角纹、削角轮廓和当前项内框。",
+          "prepare": [
+            {
+              "click": "#entry-gate:not([hidden]):not([data-phase]) [data-enter=\"off\"]",
+              "waitFor": "body:has(#entry-gate[hidden])"
+            },
+            {
+              "click": ".chapters a[href=\"#world-1\"]:not([aria-current=\"true\"])",
+              "waitFor": ".world-stage[data-scene=\"1\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -2341,7 +3036,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/zelda-world/style.css",
       "entries/cases/zelda-world.json",
       "docs/cases/zelda-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/world-shaped-thumbnail-frame.jpg"
   },
   {
     "id": "bounded-panel-track",
@@ -2384,7 +3080,20 @@ window.ATLAS_PATTERNS = [
         "observation": "三组 Gameplay 完整面板以 400ms cubic-bezier(.25,1,.5,1) 横移；按钮、编号、左右键与手势同步，首尾禁用而不循环。",
         "evidence": "adapted",
         "referenceUrl": "https://umamusume.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#gameplay .gameplay-stage",
+          "label": "三组 Gameplay 横向面板",
+          "instruction": "点 01 / 02 / 03 或前后箭头，看完整面板沿同一轨道换页，首尾按钮会停用。",
+          "prepare": [
+            {
+              "click": "#menu-button[aria-expanded=\"false\"]"
+            },
+            {
+              "click": "#study-menu a[href=\"#gameplay\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "persona-kinetic",
@@ -2392,7 +3101,17 @@ window.ATLAS_PATTERNS = [
         "observation": "三位角色横移500ms并在两端停止；学校/怪盗服装300ms换装入场。本地角色内容缩减为三位。",
         "evidence": "adapted",
         "referenceUrl": "https://persona.atlus.com/p5r/?lang=en#",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#characters",
+          "label": "有首尾边界的角色舞台",
+          "instruction": "选择三位角色或按左右键，看资料与立绘横向交接，并在首尾停止。",
+          "prepare": [
+            {
+              "click": "header nav a[href=\"#characters\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "blue-archive",
@@ -2400,7 +3119,13 @@ window.ATLAS_PATTERNS = [
         "observation": "阿比多斯四学生资料卡与完整立绘以 1000ms 整块水平移动；选择按钮、左右键及手势同步当前人物。",
         "evidence": "adapted",
         "referenceUrl": "https://bluearchive.jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#characters",
+          "label": "学生资料与立绘的横向轨道",
+          "instruction": "点下方学生名字或按左右键，看整块资料和立绘沿同一轨道移动。",
+          "entrypoint": "demos/cases/blue-archive/character.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -2423,7 +3148,8 @@ window.ATLAS_PATTERNS = [
       "docs/cases/blue-archive.md",
       "docs/cases/persona-kinetic.md",
       "docs/cases/uma-musume.md"
-    ]
+    ],
+    "preview": "previews/patterns/bounded-panel-track.jpg"
   },
   {
     "id": "centered-loop-gallery",
@@ -2466,7 +3192,20 @@ window.ATLAS_PATTERNS = [
         "observation": "十四图画廊：500ms整条水平轨道、3秒自动推进、无限首尾衔接；桌面三张、手机一张加20%侧图，箭头/14个索引/方向键与点击侧图有效。悬停、焦点、离屏和后台暂停。",
         "evidence": "adapted",
         "referenceUrl": "https://www.monumentvalleygame.com/mv1",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#images",
+          "label": "中央图与邻图预告的画廊",
+          "instruction": "点箭头或下方圆点切图，看中央图与两侧预告；首尾可以连续衔接。",
+          "prepare": [
+            {
+              "waitFor": "body[data-entry=\"ready\"]"
+            },
+            {
+              "click": ".section-nav a[href=\"#images\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "persona-kinetic",
@@ -2474,7 +3213,17 @@ window.ATLAS_PATTERNS = [
         "observation": "学校生活与怪盗行动分别采用无限中心轮播：箭头、左右键或横向触摸 → 500ms整条轨道滑动，相邻图露出；到末尾无缝接第一项。",
         "evidence": "adapted",
         "referenceUrl": "https://persona.atlus.com/p5r/?lang=en#",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#life .life-carousel",
+          "label": "学校生活与怪盗行动图集",
+          "instruction": "点各自图集的箭头，比较中央清晰画面与两侧预告，末尾继续回到第一项。",
+          "prepare": [
+            {
+              "click": "header nav a[href=\"#life\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "philharmonie-music",
@@ -2482,7 +3231,17 @@ window.ATLAS_PATTERNS = [
         "observation": "切换音乐会摄影：三幅署名摄影500ms横向轨道，克隆边界无缝循环；前后与暂停／触摸可操作。 用演出者肖像讲述阵容，邻接图像的运动维持观看连续。",
         "evidence": "observed",
         "referenceUrl": "https://philharmoniedeparis.fr/fr/activite/exposition/28822-video-games-music",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".concert-photo",
+          "label": "音乐会摄影循环轨道",
+          "instruction": "点摄影下方前后按钮，或左右滑动，对比中央摄影与相邻画面的连续横移；暂停按钮可保留当前照片。",
+          "prepare": [
+            {
+              "click": "#concert-next"
+            }
+          ]
+        }
       },
       {
         "caseId": "fuji-rock",
@@ -2490,7 +3249,17 @@ window.ATLAS_PATTERNS = [
         "observation": "照片或Featured自动／手动切换：照片3600ms间隔、800ms淡化；Featured600ms中心循环，3600ms自动，手机露出两侧邻项。 照片传递现场氛围，中心轨道突出活动主题且提示还有内容。",
         "evidence": "observed",
         "referenceUrl": "https://www.fujirockfestival.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".featured-window",
+          "label": "中央 Featured 与邻项预告",
+          "instruction": "点前后按钮，或在手机左右滑动，观察中央特集连续移动，左右邻项提示还有内容。",
+          "prepare": [
+            {
+              "click": "#feature-next"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -2518,7 +3287,8 @@ window.ATLAS_PATTERNS = [
       "docs/cases/monument-valley-game.md",
       "docs/cases/persona-kinetic.md",
       "docs/cases/philharmonie-music.md"
-    ]
+    ],
+    "preview": "previews/patterns/centered-loop-gallery.jpg"
   },
   {
     "id": "fixed-star-glow-layer",
@@ -2564,7 +3334,17 @@ window.ATLAS_PATTERNS = [
         "observation": "原站 desktop kv-canvas 只有5颗固定位置星光；本地使用相同六种图像和3秒明暗周期，用Canvas2D重建，未运行PIXI业务包。",
         "evidence": "adapted",
         "referenceUrl": "https://persona.atlus.com/p5r/?lang=en#",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#royal-kv-stars",
+          "label": "首屏固定星光",
+          "instruction": "看主角周围固定的五处星光；它们只明暗呼吸，位置不随指针改变。",
+          "prepare": [
+            {
+              "click": "header nav a[href=\"#top\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -2574,7 +3354,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/persona-kinetic/style.css",
       "entries/cases/persona-kinetic.json",
       "docs/cases/persona-kinetic.md"
-    ]
+    ],
+    "preview": "previews/patterns/fixed-star-glow-layer.jpg"
   },
   {
     "id": "inclined-motion-bands",
@@ -2613,7 +3394,20 @@ window.ATLAS_PATTERNS = [
         "observation": "向前倾斜的标题带、说明板与箭头复用斜切语言，平台下载徽章保持自己的标准轮廓。",
         "evidence": "observed",
         "referenceUrl": "https://umamusume.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#about",
+          "label": "About 的前倾条带",
+          "instruction": "看 ABOUT 标题与下方倾斜的按钮条；文字保持可读，斜边统一向前。",
+          "prepare": [
+            {
+              "click": "#menu-button[aria-expanded=\"false\"]"
+            },
+            {
+              "click": "#study-menu a[href=\"#about\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "persona-kinetic",
@@ -2621,7 +3415,17 @@ window.ATLAS_PATTERNS = [
         "observation": "斜切拼贴、金色边框、网点与剪贴字保持同一张海报的秩序。",
         "evidence": "observed",
         "referenceUrl": "https://persona.atlus.com/p5r/?lang=en#",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#characters",
+          "label": "角色档案的斜切拼贴",
+          "instruction": "看斜切的人物窗口、金色边框和剪贴字，比较各层共同的倾斜方向。",
+          "prepare": [
+            {
+              "click": "header nav a[href=\"#characters\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "zenless-zone-zero",
@@ -2629,7 +3433,17 @@ window.ATLAS_PATTERNS = [
         "observation": "胶片齿孔、斜切面板、斜向人物窗口、粗描边胶囊和边缘编号轨道。",
         "evidence": "observed",
         "referenceUrl": "https://zzz.mihoyo.com/main",
-        "capturedAt": "2026-10-11"
+        "capturedAt": "2026-10-11",
+        "focus": {
+          "target": "#character .home-character__main-panel",
+          "label": "斜向人物窗口与面板",
+          "instruction": "看角色窗口、粗描边面板和头像轨道如何沿同一倾斜方向组织。",
+          "prepare": [
+            {
+              "click": ".sidebar__pagers-num[aria-label=\"跳到角色介绍\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -2655,7 +3469,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/zenless-zone-zero/reference-mobile.css",
       "demos/cases/zenless-zone-zero/reference.css",
       "demos/cases/zenless-zone-zero/state.css"
-    ]
+    ],
+    "preview": "previews/patterns/inclined-motion-bands.jpg"
   },
   {
     "id": "independent-outfit-state",
@@ -2696,7 +3511,20 @@ window.ATLAS_PATTERNS = [
         "observation": "三位角色横移500ms并在两端停止；学校/怪盗服装300ms换装入场。本地角色内容缩减为三位。",
         "evidence": "adapted",
         "referenceUrl": "https://persona.atlus.com/p5r/?lang=en#",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#characters .costumes",
+          "label": "人物与服装两组选项",
+          "instruction": "先切 SCHOOL UNIFORM / PHANTOM THIEF，再选择人物，查看服装与人物如何分别保留状态。",
+          "prepare": [
+            {
+              "click": "header nav a[href=\"#characters\"]"
+            },
+            {
+              "click": "[data-costume=\"school\"]:not([aria-pressed=\"true\"])"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -2706,7 +3534,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/persona-kinetic/style.css",
       "entries/cases/persona-kinetic.json",
       "docs/cases/persona-kinetic.md"
-    ]
+    ],
+    "preview": "previews/patterns/independent-outfit-state.jpg"
   },
   {
     "id": "offsite-playlist-extension",
@@ -2747,7 +3576,12 @@ window.ATLAS_PATTERNS = [
         "observation": "打开Playlist：转到官方fanlink，选择个人音乐平台。 音乐是展览主题的延伸与回看媒介。",
         "evidence": "observed",
         "referenceUrl": "https://philharmoniedeparis.fr/fr/activite/exposition/28822-video-games-music",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".playlist",
+          "label": "展览的官方 Playlist 入口",
+          "instruction": "点 Playlist 前往官方 fanlink，再选择自己的音乐平台；网页本身保留这个外部收听入口。"
+        }
       },
       {
         "caseId": "fuji-rock",
@@ -2755,7 +3589,12 @@ window.ATLAS_PATTERNS = [
         "observation": "Aftermovie链接到官方YouTube；没有独立BGM开关。",
         "evidence": "observed",
         "referenceUrl": "https://www.fujirockfestival.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".aftermovie",
+          "label": "官方 Aftermovie 入口",
+          "instruction": "点 Aftermovie 打开官方 YouTube 影像，现场声音由官方影片承接，当前网页保留外部观看入口。"
+        }
       },
       {
         "caseId": "persona-kinetic",
@@ -2763,7 +3602,17 @@ window.ATLAS_PATTERNS = [
         "observation": "WATCH THE OFFICIAL TRAILER 点击打开原始YouTube宣传片。",
         "evidence": "observed",
         "referenceUrl": "https://persona.atlus.com/p5r/?lang=en#",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#top a[href*=\"youtu\"]",
+          "label": "官方预告片入口",
+          "instruction": "点 WATCH THE OFFICIAL TRAILER，打开原始 YouTube 宣传片。",
+          "prepare": [
+            {
+              "click": "header nav a[href=\"#top\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -2785,7 +3634,8 @@ window.ATLAS_PATTERNS = [
       "docs/cases/fuji-rock.md",
       "docs/cases/persona-kinetic.md",
       "docs/cases/philharmonie-music.md"
-    ]
+    ],
+    "preview": "previews/patterns/offsite-playlist-extension.jpg"
   },
   {
     "id": "scroll-differential-stars",
@@ -2832,7 +3682,20 @@ window.ATLAS_PATTERNS = [
         "observation": "背景15颗星光 → 原生滚动差值 / 1–3随机系数位移，超出边界重置；没有查到原站鼠标视差，本地不补造。",
         "evidence": "adapted",
         "referenceUrl": "https://persona.atlus.com/p5r/?lang=en#",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#royal-bg-stars",
+          "label": "随滚动不同速移动的背景星光",
+          "instruction": "上下自然滚动，观察背景星点以不同速度移动，与正文形成纵向深度。",
+          "prepare": [
+            {
+              "scroll": "#characters .cast"
+            },
+            {
+              "images": "#characters"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -2842,7 +3705,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/persona-kinetic/style.css",
       "entries/cases/persona-kinetic.json",
       "docs/cases/persona-kinetic.md"
-    ]
+    ],
+    "preview": "previews/patterns/scroll-differential-stars.jpg"
   },
   {
     "id": "checklist-progress",
@@ -2881,7 +3745,17 @@ window.ATLAS_PATTERNS = [
         "caseId": "hand-drawn",
         "locator": "entries/cases/hand-drawn.json#interaction/0",
         "observation": "三项原生复选框更新收集进度",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".checklist",
+          "label": "三项短清单与完成数",
+          "instruction": "勾选或取消清单项，观察完成数量即时更新；Reset 可重新开始。",
+          "prepare": [
+            {
+              "click": ".checklist input:not(:checked)"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -2890,7 +3764,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hand-drawn/style.css",
       "entries/cases/hand-drawn.json",
       "docs/cases/hand-drawn.md"
-    ]
+    ],
+    "preview": "previews/patterns/checklist-progress.jpg"
   },
   {
     "id": "controlled-rough-outlines",
@@ -2927,7 +3802,12 @@ window.ATLAS_PATTERNS = [
         "caseId": "hand-drawn",
         "locator": "entries/cases/hand-drawn.json#composition/shape",
         "observation": "适度不规则笔触与纸页质感模拟手工；按钮仍有稳定边界。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".notebook",
+          "label": "笔记页的不规则轮廓",
+          "instruction": "看笔记页、贴纸和按钮的轻微不规则边界；文字区域与点击边界仍保持稳定。"
+        }
       }
     ],
     "sourceFiles": [
@@ -2936,7 +3816,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hand-drawn/style.css",
       "entries/cases/hand-drawn.json",
       "docs/cases/hand-drawn.md"
-    ]
+    ],
+    "preview": "previews/patterns/controlled-rough-outlines.jpg"
   },
   {
     "id": "paper-material-collage",
@@ -2975,7 +3856,17 @@ window.ATLAS_PATTERNS = [
         "caseId": "hand-drawn",
         "locator": "entries/cases/hand-drawn.json#composition/imagery",
         "observation": "自绘植物、笔记页与贴纸解释记录生活的场景。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".scrapbook",
+          "label": "笔记页、植物与贴纸",
+          "instruction": "看植物、铅笔、纸页和贴纸怎样共同表达记录生活的场景；可点贴纸旁的小按钮切换贴纸显隐。",
+          "prepare": [
+            {
+              "click": "#sticker-toggle[aria-pressed=false]"
+            }
+          ]
+        }
       },
       {
         "caseId": "hallmark",
@@ -2983,7 +3874,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Pasteup 以小角度旋转、真实纸面投影、复印图混合和压在肖像边缘的日期纸签组织信息，纸张叠放关系保持正文与操作可读。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero__visual",
+          "label": "纸页与日期纸签拼贴",
+          "instruction": "对照照片、纸页和压在边缘的日期纸签，观察旋转与投影形成的叠放关系。",
+          "entrypoint": "demos/cases/hallmark/themes/pasteup/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -2997,7 +3894,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/fidelity.md",
       "demos/cases/hallmark/themes/pasteup/style.css",
       "demos/cases/hallmark/themes/pasteup/index.html"
-    ]
+    ],
+    "preview": "previews/patterns/paper-material-collage.jpg"
   },
   {
     "id": "exploded-layer-view",
@@ -3036,7 +3934,17 @@ window.ATLAS_PATTERNS = [
         "caseId": "isometric-3d",
         "locator": "entries/cases/isometric-3d.json#interaction/1",
         "observation": "展开按钮将基础、建筑、植物分层",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": "#island",
+          "label": "小岛的分层展开",
+          "instruction": "用下方“展开”与“整岛”切换，对比地基、建筑和植物怎样按原层次分离、合回。",
+          "prepare": [
+            {
+              "click": "[data-layer=exploded]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -3045,7 +3953,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/isometric-3d/style.css",
       "entries/cases/isometric-3d.json",
       "docs/cases/isometric-3d.md"
-    ]
+    ],
+    "preview": "previews/patterns/exploded-layer-view.jpg"
   },
   {
     "id": "layer-focus-dimming",
@@ -3084,7 +3993,17 @@ window.ATLAS_PATTERNS = [
         "caseId": "isometric-3d",
         "locator": "entries/cases/isometric-3d.json#interaction/0",
         "observation": "整岛、花园、建筑三种焦点切换",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": "#island",
+          "label": "花园与建筑层聚焦",
+          "instruction": "切换“整岛”“花园”“建筑”，观察目标层保持清楚，其余层减弱。",
+          "prepare": [
+            {
+              "click": "[data-layer=garden]"
+            }
+          ]
+        }
       },
       {
         "caseId": "hallmark",
@@ -3092,7 +4011,18 @@ window.ATLAS_PATTERNS = [
         "observation": "Ultraviolet 的 solo 按钮只强调当前通道，mute 降低对应通道，第二次点击撤销，通道按钮的按下状态和 is-dim 样式同步。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "[data-player]",
+          "label": "分轨 solo 与 mute",
+          "instruction": "点击一条音轨的 solo，观察其余音轨减弱；再次点击撤销，也可尝试 mute。",
+          "entrypoint": "demos/cases/hallmark/themes/ultraviolet/index.html",
+          "prepare": [
+            {
+              "click": "[aria-label='solo vocals'][aria-pressed=false]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -3106,7 +4036,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/fidelity.md",
       "demos/cases/hallmark/themes/ultraviolet/index.html",
       "demos/cases/hallmark/themes/ultraviolet/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/layer-focus-dimming.jpg"
   },
   {
     "id": "parallel-isometric-projection",
@@ -3144,7 +4075,17 @@ window.ATLAS_PATTERNS = [
         "caseId": "isometric-3d",
         "locator": "entries/cases/isometric-3d.json#composition/shape",
         "observation": "平行边、统一30°方向和几何积木建立一致空间规则。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": "#island",
+          "label": "等轴方向与三面明度",
+          "instruction": "比较建筑、地基与阶梯的平行边、统一斜向和三面明度，观察它们怎样共用同一空间规则。",
+          "prepare": [
+            {
+              "click": "[data-layer=all]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -3153,7 +4094,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/isometric-3d/style.css",
       "entries/cases/isometric-3d.json",
       "docs/cases/isometric-3d.md"
-    ]
+    ],
+    "preview": "previews/patterns/parallel-isometric-projection.jpg"
   },
   {
     "id": "scrubbable-animation-progress",
@@ -3192,13 +4134,35 @@ window.ATLAS_PATTERNS = [
         "caseId": "line-art",
         "locator": "entries/cases/line-art.json#interaction/1",
         "observation": "进度滑块允许主动描绘或回看",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".drawing-toolbar",
+          "label": "可拖动的线稿进度",
+          "instruction": "拖动进度滑块主动描绘或回看；绘制过程中拖动，会停在你选择的位置。",
+          "prepare": [
+            {
+              "input": "#progress",
+              "value": "55"
+            }
+          ]
+        }
       },
       {
         "caseId": "line-art",
         "locator": "entries/cases/line-art.json#interaction/2",
         "observation": "绘制过程中可拖动滑块中止动画",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".drawing-toolbar",
+          "label": "可拖动的线稿进度",
+          "instruction": "拖动进度滑块主动描绘或回看；绘制过程中拖动，会停在你选择的位置。",
+          "prepare": [
+            {
+              "input": "#progress",
+              "value": "55"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -3207,7 +4171,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/line-art/style.css",
       "entries/cases/line-art.json",
       "docs/cases/line-art.md"
-    ]
+    ],
+    "preview": "previews/patterns/scrubbable-animation-progress.jpg"
   },
   {
     "id": "sequential-stroke-reveal",
@@ -3251,7 +4216,12 @@ window.ATLAS_PATTERNS = [
         "caseId": "line-art",
         "locator": "entries/cases/line-art.json#interaction/0",
         "observation": "重播按钮由基础到细节绘制线稿",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": "#architecture-drawing",
+          "label": "从基础到细节的描线",
+          "instruction": "点线稿下方 Replay，观察基础轮廓、结构与细节按顺序绘制。"
+        }
       }
     ],
     "sourceFiles": [
@@ -3260,7 +4230,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/line-art/style.css",
       "entries/cases/line-art.json",
       "docs/cases/line-art.md"
-    ]
+    ],
+    "preview": "previews/patterns/sequential-stroke-reveal.jpg"
   },
   {
     "id": "fixed-topology-morph",
@@ -3305,7 +4276,17 @@ window.ATLAS_PATTERNS = [
         "caseId": "shape-morph",
         "locator": "entries/cases/shape-morph.json#interaction/0",
         "observation": "三种形态按钮切换 24 个三角片的位置",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": "#form",
+          "label": "同一批三角片的三种形态",
+          "instruction": "用下方三种形态按钮切换，观察同样的 24 个三角片移动到新位置，组成另一种形态。",
+          "prepare": [
+            {
+              "click": "[data-state='1']"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -3314,7 +4295,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/shape-morph/style.css",
       "entries/cases/shape-morph.json",
       "docs/cases/shape-morph.md"
-    ]
+    ],
+    "preview": "previews/patterns/fixed-topology-morph.jpg"
   },
   {
     "id": "interruptible-morph",
@@ -3353,13 +4335,33 @@ window.ATLAS_PATTERNS = [
         "caseId": "shape-morph",
         "locator": "entries/cases/shape-morph.json#constraints/2",
         "observation": "每次触发从当前中间状态继续，避免突然闪回",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".state-controls",
+          "label": "变形途中切换目标",
+          "instruction": "连续切换三种形态，在变形尚未结束时再选另一种；图形会从当前中间态继续，也可暂停和恢复。",
+          "prepare": [
+            {
+              "click": "[data-state='2']"
+            }
+          ]
+        }
       },
       {
         "caseId": "shape-morph",
         "locator": "entries/cases/shape-morph.json#interaction/3",
         "observation": "变形可暂停与恢复，重置恢复初始参数",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".state-controls",
+          "label": "变形途中切换目标",
+          "instruction": "连续切换三种形态，在变形尚未结束时再选另一种；图形会从当前中间态继续，也可暂停和恢复。",
+          "prepare": [
+            {
+              "click": "[data-state='2']"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -3368,7 +4370,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/shape-morph/style.css",
       "entries/cases/shape-morph.json",
       "docs/cases/shape-morph.md"
-    ]
+    ],
+    "preview": "previews/patterns/interruptible-morph.jpg"
   },
   {
     "id": "live-parameter-readout",
@@ -3408,19 +4411,52 @@ window.ATLAS_PATTERNS = [
         "caseId": "bauhaus-geometry",
         "locator": "entries/cases/bauhaus-geometry.json#interaction/1",
         "observation": "原生范围控件可用键盘旋转三角形并即时显示角度。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".range-wrap",
+          "label": "三角形旋转角度",
+          "instruction": "拖动旋转滑块或用方向键微调，观察三角形转动和角度读数同时更新。",
+          "prepare": [
+            {
+              "input": "#rotation",
+              "value": "65"
+            }
+          ]
+        }
       },
       {
         "caseId": "retro-80s",
         "locator": "entries/cases/retro-80s.json#interaction/2",
         "observation": "原生范围输入即时改变Cutoff、Attack、Output并更新读数。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".params",
+          "label": "Cutoff、Attack 与 Output",
+          "instruction": "拖动三个滑块，或用方向键微调，观察各自带单位的读数即时更新。",
+          "prepare": [
+            {
+              "input": "#cutoff",
+              "value": "2600"
+            }
+          ]
+        }
       },
       {
         "caseId": "shape-morph",
         "locator": "entries/cases/shape-morph.json#interaction/1",
         "observation": "间距滑块将单元从连续图案分离为碎片",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".parameters",
+          "label": "碎片间距与时长",
+          "instruction": "调节间距与时长滑块，看读数更新；向上返回几何图形，可比较分片之间的距离和变形速度。",
+          "prepare": [
+            {
+              "input": "#spread",
+              "value": "24"
+            }
+          ]
+        }
       },
       {
         "caseId": "hallmark",
@@ -3428,7 +4464,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Specimen 的字号与字重滑块同步写入试排 CSS 变量及带单位读数，Ribbon 的推子同步百分比、aria-valuenow、视觉强度和音量。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "#tester",
+          "label": "字号、字重与试排读数",
+          "instruction": "拖动字号与字重滑块，对照试排文字和旁边读数的同步变化。",
+          "entrypoint": "demos/cases/hallmark/themes/specimen/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -3449,7 +4491,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/themes/specimen/page.js",
       "demos/cases/hallmark/themes/specimen/index.html",
       "demos/cases/hallmark/themes/ribbon/night.js"
-    ]
+    ],
+    "preview": "previews/patterns/live-parameter-readout.jpg"
   },
   {
     "id": "aligned-metadata-rows",
@@ -3487,14 +4530,20 @@ window.ATLAS_PATTERNS = [
         "caseId": "swiss-grid",
         "locator": "entries/cases/swiss-grid.json#composition/hierarchy",
         "observation": "展览主题 → 日期地点 → 分类日程 → 理念。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".event",
+          "label": "编号、时间与活动行",
+          "instruction": "沿日程行横向阅读，比较编号、时间、活动名称与收藏按钮共享的对齐线。"
+        }
       }
     ],
     "sourceFiles": [
       "demos/cases/swiss-grid/index.html",
       "entries/cases/swiss-grid.json",
       "docs/cases/swiss-grid.md"
-    ]
+    ],
+    "preview": "previews/patterns/aligned-metadata-rows.jpg"
   },
   {
     "id": "editorial-alignment-grid",
@@ -3538,14 +4587,20 @@ window.ATLAS_PATTERNS = [
         "caseId": "swiss-grid",
         "locator": "entries/cases/swiss-grid.json#composition/layout",
         "observation": "12 栏、32px 基础间距、横向日程列表；手机为单列",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".hero",
+          "label": "编辑网格与基础间距",
+          "instruction": "比较主标题、右侧红色图版和底部元数据的共同对齐线，再向下看日程延续同一网格。"
+        }
       }
     ],
     "sourceFiles": [
       "demos/cases/swiss-grid/index.html",
       "entries/cases/swiss-grid.json",
       "docs/cases/swiss-grid.md"
-    ]
+    ],
+    "preview": "previews/patterns/editorial-alignment-grid.jpg"
   },
   {
     "id": "filter-count-feedback",
@@ -3583,7 +4638,17 @@ window.ATLAS_PATTERNS = [
         "caseId": "swiss-grid",
         "locator": "entries/cases/swiss-grid.json#interaction/0",
         "observation": "分类按钮筛选日程并宣布结果数。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".filters",
+          "label": "活动筛选与结果数",
+          "instruction": "点“全部”“对谈”或“工作坊”，看下方活动行与结果数量同步改变。",
+          "prepare": [
+            {
+              "click": "[data-filter=workshop]"
+            }
+          ]
+        }
       },
       {
         "caseId": "mori-art-museum",
@@ -3591,7 +4656,17 @@ window.ATLAS_PATTERNS = [
         "observation": "本地只还原首页几个区域并加教学新闻筛选；不复制多馆门户、购票账户与追踪脚本。",
         "evidence": "adapted",
         "referenceUrl": "https://www.mori.art.museum/jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#news .filter",
+          "label": "新闻筛选与结果数",
+          "instruction": "切换 All、Program、Notice，观察新闻卡片和显示件数同步变化。",
+          "prepare": [
+            {
+              "click": "[data-filter=program]"
+            }
+          ]
+        }
       },
       {
         "caseId": "hallmark",
@@ -3599,7 +4674,17 @@ window.ATLAS_PATTERNS = [
         "observation": "流派按钮同步 aria-pressed 与主题 hidden 状态，Editorial、Modern minimal、Atmospheric、Playful 分别显示 20、12、9、9 项，按钮计数与结果对应。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "[data-th-filter]",
+          "label": "主题流派筛选",
+          "instruction": "切换 Editorial、Atmospheric 等流派，对照按钮数量与下方主题结果。",
+          "prepare": [
+            {
+              "click": "[data-genre=atmospheric][aria-pressed=false]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -3618,7 +4703,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/js/themes.js",
       "demos/cases/hallmark/index.html",
       "demos/cases/hallmark/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/filter-count-feedback.jpg"
   },
   {
     "id": "local-save-toggle",
@@ -3654,14 +4740,20 @@ window.ATLAS_PATTERNS = [
         "caseId": "swiss-grid",
         "locator": "entries/cases/swiss-grid.json#interaction/1",
         "observation": "收藏按钮将展览编号存到当前浏览器，状态可再次取消。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".event .save",
+          "label": "活动行的收藏按钮",
+          "instruction": "点活动右侧的收藏按钮，再点一次取消；这个状态会保存在当前浏览器。"
+        }
       }
     ],
     "sourceFiles": [
       "demos/cases/swiss-grid/index.html",
       "entries/cases/swiss-grid.json",
       "docs/cases/swiss-grid.md"
-    ]
+    ],
+    "preview": "previews/patterns/local-save-toggle.jpg"
   },
   {
     "id": "restrained-signal-color",
@@ -3699,7 +4791,12 @@ window.ATLAS_PATTERNS = [
         "caseId": "swiss-grid",
         "locator": "entries/cases/swiss-grid.json#composition/color",
         "observation": "暖白纸面、黑色信息与少量红色海报形成清晰层级。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".visual",
+          "label": "暖白纸面上的红色图版",
+          "instruction": "看红色集中在主图版，其他标题、细线和日程保持黑白信息层级。"
+        }
       },
       {
         "caseId": "met-museum",
@@ -3707,7 +4804,12 @@ window.ATLAS_PATTERNS = [
         "observation": "白底黑灰字和红色操作层，图像保持展览自己的颜色。",
         "evidence": "observed",
         "referenceUrl": "https://www.metmuseum.org/en",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#visit .actions",
+          "label": "黑白信息与红色行动",
+          "instruction": "看红色集中在到访行动和机构标识，正文保留黑灰层级，展览图片保持自己的色彩。"
+        }
       },
       {
         "caseId": "mori-art-museum",
@@ -3715,7 +4817,12 @@ window.ATLAS_PATTERNS = [
         "observation": "#bf0d3e机构红贯穿Logo、展期、栏目、标签；粉色公告、白色底和艺术海报虹彩承担不同角色。",
         "evidence": "observed",
         "referenceUrl": "https://www.mori.art.museum/jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#exhibitions",
+          "label": "馆标、展期与栏目中的机构红",
+          "instruction": "比较栏目、展期和机构标识怎样持续使用同一种红，艺术海报和公告承担各自的颜色。"
+        }
       },
       {
         "caseId": "endfield-industrial",
@@ -3723,7 +4830,29 @@ window.ATLAS_PATTERNS = [
         "observation": "源干员与工业白底/黑标签/淡网格/亮黄局部信号；首页活动原色、深色世界观和影像各保留，彩色人物与标定条不被统一染黄。",
         "evidence": "observed",
         "referenceUrl": "https://endfield.hypergryph.com/",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "#operator",
+          "label": "干员档案的黄色信号",
+          "instruction": "比较黑白资料、彩色立绘与局部亮黄标记；黄色集中在状态和重点处。",
+          "prepare": [
+            {
+              "waitFor": "body:has(#entry-loader[hidden])"
+            },
+            {
+              "click": ".header-inner-container > .header-nav-item[aria-label=\"干员情报\"]",
+              "minWidth": 801
+            },
+            {
+              "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+              "maxWidth": 800
+            },
+            {
+              "click": ".header-menu-item[aria-label=\"干员情报\"]",
+              "maxWidth": 800
+            }
+          ]
+        }
       },
       {
         "caseId": "rhine-lab",
@@ -3731,7 +4860,17 @@ window.ATLAS_PATTERNS = [
         "observation": "源片米白透明档案与黑白机构字标保持原色，双环内缘及业务科焦点使用橙色；本地外围用米白、黑色和同源橙色节点，素材没有深绿/黄绿重着色。",
         "evidence": "adapted",
         "referenceUrl": "https://www.bilibili.com/video/BV1rr4y1b7sz/",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "#terminal[data-scene=permission]",
+          "label": "黑白环线中的橙色焦点",
+          "instruction": "看原帧黑白环线与少量橙色节点，再切“双环光学”比较橙色内缘怎样承接焦点。",
+          "prepare": [
+            {
+              "click": "[data-scene=permission]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -3764,7 +4903,8 @@ window.ATLAS_PATTERNS = [
       "docs/cases/mori-art-museum.md",
       "docs/cases/rhine-lab.md",
       "docs/cases/swiss-grid.md"
-    ]
+    ],
+    "preview": "previews/patterns/restrained-signal-color.jpg"
   },
   {
     "id": "current-state-svg-export",
@@ -3802,14 +4942,25 @@ window.ATLAS_PATTERNS = [
         "caseId": "bauhaus-geometry",
         "locator": "entries/cases/bauhaus-geometry.json#interaction/2",
         "observation": "导出按钮下载当前原创构成的SVG文件。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": "#export",
+          "label": "导出当前几何构成",
+          "instruction": "先用预设或旋转滑块改变构成，再点“导出 SVG”，导出的图形对应当前状态。",
+          "prepare": [
+            {
+              "click": "[data-preset='2']"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
       "demos/cases/bauhaus-geometry/index.html",
       "entries/cases/bauhaus-geometry.json",
       "docs/cases/bauhaus-geometry.md"
-    ]
+    ],
+    "preview": "previews/patterns/current-state-svg-export.jpg"
   },
   {
     "id": "geometric-balance-presets",
@@ -3848,14 +4999,25 @@ window.ATLAS_PATTERNS = [
         "caseId": "bauhaus-geometry",
         "locator": "entries/cases/bauhaus-geometry.json#interaction/0",
         "observation": "三个构成预设改变圆、三角和矩形之间的真实位置关系。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": "#composition",
+          "label": "三种几何关系预设",
+          "instruction": "点三种构成预设，对比圆、三角和矩形之间的位置关系，而不只看配色变化。",
+          "prepare": [
+            {
+              "click": "[data-preset='1']"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
       "demos/cases/bauhaus-geometry/index.html",
       "entries/cases/bauhaus-geometry.json",
       "docs/cases/bauhaus-geometry.md"
-    ]
+    ],
+    "preview": "previews/patterns/geometric-balance-presets.jpg"
   },
   {
     "id": "inline-detail-disclosure",
@@ -3893,7 +5055,17 @@ window.ATLAS_PATTERNS = [
         "caseId": "bauhaus-geometry",
         "locator": "entries/cases/bauhaus-geometry.json#interaction/3",
         "observation": "材料课程使用原生details展开具体学习内容。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": "#materials",
+          "label": "材料课程原位展开",
+          "instruction": "点课程标题展开具体内容，正文留在原来的课程行内；再次点标题可以收起。",
+          "prepare": [
+            {
+              "click": "details.material:not([open]) summary"
+            }
+          ]
+        }
       },
       {
         "caseId": "philharmonie-music",
@@ -3901,7 +5073,12 @@ window.ATLAS_PATTERNS = [
         "observation": "展开Horaires／Tarifs／Programme：信息即时展开，声乐／乐器阵容以文字分段。 不离开当前详情即可完成到访和节目判断。",
         "evidence": "observed",
         "referenceUrl": "https://philharmoniedeparis.fr/fr/activite/exposition/28822-video-games-music",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".article-column details, .program details",
+          "label": "时间、票价与节目原位展开",
+          "instruction": "点 Horaires、Tarifs 或 Programme 的标题，展开具体信息，再点同一标题收起。"
+        }
       },
       {
         "caseId": "design-sight",
@@ -3909,7 +5086,13 @@ window.ATLAS_PATTERNS = [
         "observation": "手机展开栏目／页面回顶：四列分别先显示1／2／1／1项，“更多”即时展开；回顶按钮超过100px以200ms出现。 缩短首屏密度，档案仍可按需读全。",
         "evidence": "inferred",
         "referenceUrl": "https://www.2121designsight.jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#sight .read-more",
+          "label": "手机栏目内的更多内容",
+          "instruction": "点“もっと見る”展开这栏其余档案，再点“折りたたむ”收起，后面的栏目仍按原顺序阅读。",
+          "viewport": "mobile"
+        }
       },
       {
         "caseId": "hallmark",
@@ -3917,7 +5100,17 @@ window.ATLAS_PATTERNS = [
         "observation": "主题网格初始显示十项，Show all 展开五十项并把焦点移到第十一项；七个 FAQ 使用原生 details 在文档流中独立展开与收起。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "#faq",
+          "label": "原位展开的常见问题",
+          "instruction": "点击任一问题，说明会在原位置展开；其他问题可以保持各自的开合状态。",
+          "prepare": [
+            {
+              "click": "#faq details:not([open]):first-of-type > summary"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -3942,7 +5135,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/index.html",
       "demos/cases/hallmark/js/themes.js",
       "demos/cases/hallmark/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/inline-detail-disclosure.jpg"
   },
   {
     "id": "audio-signal-panel",
@@ -3982,14 +5176,20 @@ window.ATLAS_PATTERNS = [
         "caseId": "retro-80s",
         "locator": "entries/cases/retro-80s.json#composition/layout",
         "observation": "硬件面板横向分区、预设/显示/参数/琴键；手机纵向排列",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".instrument",
+          "label": "合成器的信号分区",
+          "instruction": "按预设、显示、参数、琴键的顺序阅读面板，再对照下方信号流程图。声音需先用电源按钮主动开启。"
+        }
       }
     ],
     "sourceFiles": [
       "demos/cases/retro-80s/index.html",
       "entries/cases/retro-80s.json",
       "docs/cases/retro-80s.md"
-    ]
+    ],
+    "preview": "previews/patterns/audio-signal-panel.jpg"
   },
   {
     "id": "keyboard-playable-notes",
@@ -4028,14 +5228,20 @@ window.ATLAS_PATTERNS = [
         "caseId": "retro-80s",
         "locator": "entries/cases/retro-80s.json#interaction/3",
         "observation": "屏幕琴键为可聚焦按钮；A S D F G H J K 可演奏白键，切出页面时停止声音。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".keyboard",
+          "label": "屏幕琴键与物理键",
+          "instruction": "先点“开启声音”，再点琴键或按 A S D F G H J K 演奏；切出页面会停止声音。"
+        }
       }
     ],
     "sourceFiles": [
       "demos/cases/retro-80s/index.html",
       "entries/cases/retro-80s.json",
       "docs/cases/retro-80s.md"
-    ]
+    ],
+    "preview": "previews/patterns/keyboard-playable-notes.jpg"
   },
   {
     "id": "discovery-progress-journal",
@@ -4074,20 +5280,47 @@ window.ATLAS_PATTERNS = [
         "caseId": "pixel-world",
         "locator": "entries/cases/pixel-world.json#interaction/2",
         "observation": "靠近地点会记录发现进度，按钮状态不只通过颜色表达。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".journal",
+          "label": "发现进度与手账",
+          "instruction": "在地图中靠近地点后保存手账，查看这里新增的发现记录；“清除手账”可重新探索。",
+          "prepare": [
+            {
+              "click": "[data-site='1']"
+            },
+            {
+              "click": "#save-note"
+            }
+          ]
+        }
       },
       {
         "caseId": "pixel-world",
         "locator": "entries/cases/pixel-world.json#interaction/3",
         "observation": "手账仅保存当前浏览器，支持清除并重新探索。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".journal",
+          "label": "发现进度与手账",
+          "instruction": "在地图中靠近地点后保存手账，查看这里新增的发现记录；“清除手账”可重新探索。",
+          "prepare": [
+            {
+              "click": "[data-site='1']"
+            },
+            {
+              "click": "#save-note"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
       "demos/cases/pixel-world/index.html",
       "entries/cases/pixel-world.json",
       "docs/cases/pixel-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/discovery-progress-journal.jpg"
   },
   {
     "id": "integer-pixel-canvas",
@@ -4131,14 +5364,20 @@ window.ATLAS_PATTERNS = [
         "caseId": "pixel-world",
         "locator": "entries/cases/pixel-world.json#composition/imagery",
         "observation": "128×128原生Canvas与原创像素地点构成可探索世界。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": "#map",
+          "label": "128 像素的小岛",
+          "instruction": "看海岸、树木与建筑沿整数像素排列，再点击地图地点或用方向键移动角色。"
+        }
       }
     ],
     "sourceFiles": [
       "demos/cases/pixel-world/index.html",
       "entries/cases/pixel-world.json",
       "docs/cases/pixel-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/integer-pixel-canvas.jpg"
   },
   {
     "id": "spatial-navigation-map",
@@ -4177,14 +5416,25 @@ window.ATLAS_PATTERNS = [
         "caseId": "pixel-world",
         "locator": "entries/cases/pixel-world.json#interaction/0",
         "observation": "地点按钮移动角色并更新当前地点介绍。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": "#stage",
+          "label": "地图地标就是导航",
+          "instruction": "点海滩、灯塔、树林或村庄的地标，角色会移动到对应位置，旁边地点介绍也会改变。",
+          "prepare": [
+            {
+              "click": "[data-site='2']"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
       "demos/cases/pixel-world/index.html",
       "entries/cases/pixel-world.json",
       "docs/cases/pixel-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/spatial-navigation-map.jpg"
   },
   {
     "id": "hover-focus-mode-selection",
@@ -4227,7 +5477,13 @@ window.ATLAS_PATTERNS = [
         "observation": "首屏悬停/聚焦/点击“聊天、工作、编程” → 当前中文逐字换强调色，中央图垂直退出/进入，20 个官方周边素材按模式替换 → 用动作表达三种用途；在首屏标题体验。",
         "evidence": "observed",
         "referenceUrl": "https://chatgpt.com/zh-Hans-CN/overview/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".hero h1",
+          "label": "聊天、工作、编程选择",
+          "instruction": "把指针移到“聊天、工作、编程”，或用 Tab 聚焦与点击，观察标题状态和中央窗口一起切换。",
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -4238,7 +5494,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/chatgpt-platform/script.js",
       "demos/cases/chatgpt-platform/style.css",
       "entries/cases/chatgpt-platform.json"
-    ]
+    ],
+    "preview": "previews/patterns/hover-focus-mode-selection.jpg"
   },
   {
     "id": "mobile-native-mode-cards",
@@ -4280,7 +5537,18 @@ window.ATLAS_PATTERNS = [
         "observation": "手机使用三卡原生横向滚动，标题选择定位相应卡片；桌面 sticky rail 不出现在手机。导航保持桌面即时开关和手机全屏分层列表。",
         "evidence": "observed",
         "referenceUrl": "https://chatgpt.com/zh-Hans-CN/overview/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#showcase",
+          "label": "手机模式横向卡片",
+          "instruction": "在三张模式卡片上左右滑动；也可点上方“聊天、工作、编程”定位相应卡片。",
+          "prepare": [
+            {
+              "click": "[data-select=work]"
+            }
+          ],
+          "viewport": "mobile"
+        }
       }
     ],
     "sourceFiles": [
@@ -4291,7 +5559,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/chatgpt-platform/script.js",
       "demos/cases/chatgpt-platform/style.css",
       "entries/cases/chatgpt-platform.json"
-    ]
+    ],
+    "preview": "previews/patterns/mobile-native-mode-cards.jpg"
   },
   {
     "id": "mode-character-accent",
@@ -4333,7 +5602,18 @@ window.ATLAS_PATTERNS = [
         "observation": "首屏悬停/聚焦/点击“聊天、工作、编程” → 当前中文逐字换强调色，中央图垂直退出/进入，20 个官方周边素材按模式替换 → 用动作表达三种用途；在首屏标题体验。",
         "evidence": "observed",
         "referenceUrl": "https://chatgpt.com/zh-Hans-CN/overview/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".hero h1",
+          "label": "能力词的逐字强调",
+          "instruction": "在“聊天、工作、编程”之间移动指针，观察当前中文词逐字改用对应强调色。",
+          "prepare": [
+            {
+              "click": "[data-select=code]"
+            }
+          ],
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -4344,7 +5624,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/chatgpt-platform/script.js",
       "demos/cases/chatgpt-platform/style.css",
       "entries/cases/chatgpt-platform.json"
-    ]
+    ],
+    "preview": "previews/patterns/mode-character-accent.jpg"
   },
   {
     "id": "mode-specific-collage",
@@ -4387,7 +5668,18 @@ window.ATLAS_PATTERNS = [
         "observation": "选择工作 → 工作的独立素材从四周进入，原模式素材离开；快速切换清理旧离场层 → 保持一套可读场景；移到“工作”再快速移到“编程”。",
         "evidence": "observed",
         "referenceUrl": "https://chatgpt.com/zh-Hans-CN/overview/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".intro-art",
+          "label": "工作模式的独立拼贴",
+          "instruction": "选择“工作”后看四周素材如何成组进入；换到“编程”可对比它的独立素材组合。",
+          "prepare": [
+            {
+              "click": "[data-select=work]"
+            }
+          ],
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -4398,7 +5690,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/chatgpt-platform/script.js",
       "demos/cases/chatgpt-platform/style.css",
       "entries/cases/chatgpt-platform.json"
-    ]
+    ],
+    "preview": "previews/patterns/mode-specific-collage.jpg"
   },
   {
     "id": "scroll-synchronized-rail",
@@ -4438,7 +5731,13 @@ window.ATLAS_PATTERNS = [
         "observation": "桌面左侧 rail 出现后，滚动三段哨兵或点击/方向键 → 说明高度、标题缩放、窗口模式及进度对应更新；顶部标题模式和下段模式彼此独立。",
         "evidence": "adapted",
         "referenceUrl": "https://chatgpt.com/zh-Hans-CN/overview/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#showcase",
+          "label": "说明索引与产品窗口",
+          "instruction": "上下滚动这段说明，或点左侧聊天、工作、Codex 索引，对比当前说明、进度和窗口内容的对应变化。",
+          "viewport": "wide"
+        }
       },
       {
         "caseId": "hallmark",
@@ -4446,7 +5745,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Coral 的滚动说明面板在屏幕中央的窄观察带进入时选择对应发票状态，桌面说明与吸附发票同步，窄于 60rem 时直接显示完整的第三步。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".pin__panel[data-step=\"1\"]",
+          "label": "滚动说明与发票状态",
+          "instruction": "向下滚动三段说明，观察旁边发票依次进入提醒、回信与已付款状态。",
+          "entrypoint": "demos/cases/hallmark/themes/coral/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -4462,7 +5767,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/fidelity.md",
       "demos/cases/hallmark/themes/coral/scene.js",
       "demos/cases/hallmark/themes/coral/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/scroll-synchronized-rail.jpg"
   },
   {
     "id": "system-theme-without-toggle",
@@ -4502,7 +5808,13 @@ window.ATLAS_PATTERNS = [
         "observation": "跟随 prefers-color-scheme；页面没有全局手动主题按钮，桌面产品界面随系统换深浅，手机保持原站的浅色界面图。",
         "evidence": "observed",
         "referenceUrl": "https://chatgpt.com/zh-Hans-CN/overview/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#showcase",
+          "label": "跟随系统的产品截图",
+          "instruction": "切换系统明暗外观，观察桌面产品窗口的深浅截图；页面没有手动主题按钮，手机使用固定浅色界面。",
+          "viewport": "wide"
+        }
       },
       {
         "caseId": "claude-platform",
@@ -4510,7 +5822,12 @@ window.ATLAS_PATTERNS = [
         "observation": "公共 CSS root 根据 prefers-color-scheme 使用奶油浅色/近黑深色；首页没有核实到手动全局按钮。官方 Cowork 视频自身保持素材配色。",
         "evidence": "inferred",
         "referenceUrl": "https://claude.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".hero",
+          "label": "跟随系统的页面主题",
+          "instruction": "在系统中切换浅色与深色外观，对比页面表面和文字。这个来源没有手动主题按钮，Cowork 影片保持原色。"
+        }
       }
     ],
     "sourceFiles": [
@@ -4527,7 +5844,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/claude-platform/style.css",
       "entries/cases/chatgpt-platform.json",
       "entries/cases/claude-platform.json"
-    ]
+    ],
+    "preview": "previews/patterns/system-theme-without-toggle.jpg"
   },
   {
     "id": "vertical-card-swap",
@@ -4575,7 +5893,18 @@ window.ATLAS_PATTERNS = [
         "observation": "首屏悬停/聚焦/点击“聊天、工作、编程” → 当前中文逐字换强调色，中央图垂直退出/进入，20 个官方周边素材按模式替换 → 用动作表达三种用途；在首屏标题体验。",
         "evidence": "observed",
         "referenceUrl": "https://chatgpt.com/zh-Hans-CN/overview/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".hero",
+          "label": "中央窗口的垂直交接",
+          "instruction": "切换“聊天、工作、编程”，重点看中央产品窗口怎样向上退出、下一张从下方进入。",
+          "prepare": [
+            {
+              "click": "[data-select=code]"
+            }
+          ],
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -4586,7 +5915,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/chatgpt-platform/script.js",
       "demos/cases/chatgpt-platform/style.css",
       "entries/cases/chatgpt-platform.json"
-    ]
+    ],
+    "preview": "previews/patterns/vertical-card-swap.jpg"
   },
   {
     "id": "moving-tab-selection-bed",
@@ -4626,7 +5956,12 @@ window.ATLAS_PATTERNS = [
         "observation": "Individual/Team and Enterprise → 移动选中底板，替换三/两张套餐卡；没有添加原页面没有的年/月账期控件。",
         "evidence": "inferred",
         "referenceUrl": "https://claude.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".plan-tabs",
+          "label": "个人与团队套餐",
+          "instruction": "切换 Individual 与 Team and Enterprise，观察选中底板移动和三张／两张套餐卡的替换。"
+        }
       },
       {
         "caseId": "uiarc-platform",
@@ -4634,7 +5969,12 @@ window.ATLAS_PATTERNS = [
         "observation": "价格区的 Pro yearly / Free 使用原始 SegmentedControl 移动选中底板，整块说明、金额、清单和入口通过 AnimatePresence 交接，240ms 透明度、400ms 无回弹弹簧位移；金额使用原始 AnimatedCounter。右侧终身方案保持可见，手机保留年度卡在先。",
         "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "#flex-plan",
+          "label": "价格方案切换",
+          "instruction": "在 Pro yearly 与 Free 之间切换，对比选中底板、金额和套餐内容的交接。"
+        }
       }
     ],
     "sourceFiles": [
@@ -4652,7 +5992,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/uiarc-platform/fidelity.md",
       "demos/cases/uiarc-platform/source/content.json",
       "demos/cases/uiarc-platform/source/components.tsx"
-    ]
+    ],
+    "preview": "previews/patterns/moving-tab-selection-bed.jpg"
   },
   {
     "id": "top-down-clipped-menu",
@@ -4703,7 +6044,19 @@ window.ATLAS_PATTERNS = [
         "observation": "桌面菜单 pointer enter 展开，pointer leave 150ms 延迟关闭，其他导航降低强调；手机菜单 800ms 顶到下 clip 进入、400ms 退出，项目 320ms 起每项80ms交错。",
         "evidence": "inferred",
         "referenceUrl": "https://claude.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".menu.mobile-open:not([hidden])",
+          "label": "顶部裁切的手机菜单",
+          "instruction": "点右上角关闭，再重新打开菜单，观察面板向下展开和条目错峰进入。",
+          "prepare": [
+            {
+              "click": ".hamburger[aria-expanded=false]",
+              "waitFor": ".menu.mobile-open:not([hidden])"
+            }
+          ],
+          "viewport": "mobile"
+        }
       },
       {
         "caseId": "uiarc-platform",
@@ -4711,7 +6064,22 @@ window.ATLAS_PATTERNS = [
         "observation": "手机菜单通过 Radix Dialog 在顶栏下方展开，460ms 向下裁切，条目延迟 90ms 起、40ms 错峰；关闭使用 240ms 反向裁切，背景 320／240ms 淡化与 5px 模糊。Escape 返回触发按钮，Examples 关闭后滚动并聚焦展示区。",
         "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".mobile-menu[role=dialog][data-state=open]",
+          "label": "向下展开的手机菜单",
+          "instruction": "用右上角关闭按钮收起，再点顶栏菜单，观察面板向下裁切和条目依次进入。",
+          "prepare": [
+            {
+              "waitFor": "#menu-trigger[data-state]"
+            },
+            {
+              "click": "#menu-trigger[data-state=closed]",
+              "waitFor": ".mobile-menu[role=dialog][data-state=open]"
+            }
+          ],
+          "viewport": "mobile"
+        }
       }
     ],
     "sourceFiles": [
@@ -4728,7 +6096,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/uiarc-platform/style.css",
       "demos/cases/uiarc-platform/source/components.tsx",
       "demos/cases/uiarc-platform/fidelity.md"
-    ]
+    ],
+    "preview": "previews/patterns/top-down-clipped-menu.jpg"
   },
   {
     "id": "word-opacity-stagger",
@@ -4779,7 +6148,12 @@ window.ATLAS_PATTERNS = [
         "observation": "标题按单词 1s opacity 过渡，总交错跨度 .2s；内容组 750ms、10px、100ms 交错，在视口底部 −20% 触发 → 以较小运动保留阅读节奏。",
         "evidence": "inferred",
         "referenceUrl": "https://claude.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".plans>h2",
+          "label": "套餐标题的逐词淡入",
+          "instruction": "看套餐标题的单词按短间隔淡入；向上滚出这节后再返回，可再次观察。"
+        }
       }
     ],
     "sourceFiles": [
@@ -4789,7 +6163,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/claude-platform/script.js",
       "demos/cases/claude-platform/style.css",
       "entries/cases/claude-platform.json"
-    ]
+    ],
+    "preview": "previews/patterns/word-opacity-stagger.jpg"
   },
   {
     "id": "fixed-task-timeline",
@@ -4831,7 +6206,25 @@ window.ATLAS_PATTERNS = [
         "observation": "工作台使用公开固定任务示例，点击本地“新任务”可返回输入；本地输入/Enter/发送进入固定会话而非调用模型，九个阶段按 180/480/760/1000/1200/1400/1600/1900/2250ms 展开；交付文件开关显示旁栏。",
         "evidence": "adapted",
         "referenceUrl": "https://qoder.cn/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".qoder-session:not([hidden])",
+          "label": "固定任务的会话阶段",
+          "instruction": "观察工具步骤依次出现，完成后点交付文件开关查看旁栏；“新任务”可返回输入。",
+          "prepare": [
+            {
+              "click": "#new-task"
+            },
+            {
+              "input": "#task-input",
+              "value": "Add copy review brief action"
+            },
+            {
+              "click": "#task-form .send",
+              "waitFor": ".qoder-session:not([hidden])"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -4841,7 +6234,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/qoder-platform/script.js",
       "demos/cases/qoder-platform/style.css",
       "entries/cases/qoder-platform.json"
-    ]
+    ],
+    "preview": "previews/patterns/fixed-task-timeline.jpg"
   },
   {
     "id": "heatmap-focus-tooltip",
@@ -4885,7 +6279,12 @@ window.ATLAS_PATTERNS = [
         "observation": "活跃热图 pointer enter/focus 120ms 显示日期/对话提示，leave/blur 80ms 关闭 → 很小的元素也有可读状态。",
         "evidence": "observed",
         "referenceUrl": "https://qoder.cn/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".activity",
+          "label": "活跃热图的小格提示",
+          "instruction": "把指针移到任一热图小格，或用 Tab 聚焦小格，查看对应日期与对话数量。"
+        }
       }
     ],
     "sourceFiles": [
@@ -4895,7 +6294,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/qoder-platform/script.js",
       "demos/cases/qoder-platform/style.css",
       "entries/cases/qoder-platform.json"
-    ]
+    ],
+    "preview": "previews/patterns/heatmap-focus-tooltip.jpg"
   },
   {
     "id": "timed-platform-carousel",
@@ -4943,7 +6343,12 @@ window.ATLAS_PATTERNS = [
         "observation": "五平台 tab/点控/触摸 → 400ms 水平进退，20s 自动，悬停/手动暂停、后台停止；快速选择只保留一个场景。",
         "evidence": "observed",
         "referenceUrl": "https://qoder.cn/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#platforms",
+          "label": "五平台自动轮换",
+          "instruction": "点平台标签切换；把指针停在这节会暂停自动轮换，也可用右下角暂停按钮控制。"
+        }
       },
       {
         "caseId": "hallmark",
@@ -4951,7 +6356,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Studio 的三套系统在区域可见时每 4200ms 自动切换，悬停或聚焦时暂停，用户主动选项后停止自动切换，标签、board 和 aria 状态共同更新。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "#systems",
+          "label": "三套设计系统轮换",
+          "instruction": "观察三套系统自动轮换；移入或聚焦此区域会暂停，点击任一标签可固定查看。",
+          "entrypoint": "demos/cases/hallmark/themes/studio/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -4966,7 +6377,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/fidelity.md",
       "demos/cases/hallmark/themes/studio/spec.js",
       "demos/cases/hallmark/themes/studio/index.html"
-    ]
+    ],
+    "preview": "previews/patterns/timed-platform-carousel.jpg"
   },
   {
     "id": "character-stage-coordination",
@@ -5007,7 +6419,24 @@ window.ATLAS_PATTERNS = [
         "observation": "选择 Vesna/Vodyanitsa，100ms 交叉淡入立绘，并同步切换青绿/蓝色完整背景、姓名、简介、肖像状态与麦克风图。",
         "evidence": "observed",
         "referenceUrl": "https://genshin.hoyoverse.com/en/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "body[data-chapter=\"1\"] #characters",
+          "label": "人物与整幅背景换态",
+          "instruction": "点两个人物肖像，比较立绘、青绿或蓝色背景、姓名与简介如何同步更换。",
+          "prepare": [
+            {
+              "click": "header a[href=\"#characters\"]",
+              "waitFor": "body[data-chapter=\"1\"]"
+            },
+            {
+              "waitFor": "main[style*=\"transition: none\"]"
+            },
+            {
+              "click": "[data-character=\"1\"]:not([aria-pressed=\"true\"])"
+            }
+          ]
+        }
       },
       {
         "caseId": "blue-archive",
@@ -5015,7 +6444,13 @@ window.ATLAS_PATTERNS = [
         "observation": "阿比多斯四学生资料卡与完整立绘以 1000ms 整块水平移动；选择按钮、左右键及手势同步当前人物。",
         "evidence": "adapted",
         "referenceUrl": "https://bluearchive.jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#characters",
+          "label": "学生立绘与资料卡",
+          "instruction": "选择另一个学生，查看整块立绘、姓名、资料与选中名字如何一起更换。",
+          "entrypoint": "demos/cases/blue-archive/character.html"
+        }
       },
       {
         "caseId": "arknights-world",
@@ -5023,7 +6458,25 @@ window.ATLAS_PATTERNS = [
         "observation": "干员保留3名/每人E1与E2，原站6名且阿米娅含E0；灰度背景为本地同人物图层，未移植完整背景版/6人滚动肖像轨道。",
         "evidence": "adapted",
         "referenceUrl": "https://ak.hypergryph.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#operator.active",
+          "label": "干员立绘与档案",
+          "instruction": "选择右侧干员头像或精英阶段，比较立绘、背景姓名和资料如何一起变化。",
+          "prepare": [
+            {
+              "waitFor": "#scene-deck[data-phase=\"idle\"]"
+            },
+            {
+              "click": "#menu-toggle[aria-expanded=\"false\"]",
+              "maxWidth": 800
+            },
+            {
+              "click": "#chapter-nav a[href=\"#operator\"]:not([aria-current=\"page\"])",
+              "waitFor": "#scene-deck[data-active=\"operator\"][data-phase=\"idle\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "zenless-zone-zero",
@@ -5031,7 +6484,17 @@ window.ATLAS_PATTERNS = [
         "observation": "选择角色缩略图，同时切换62人中的立绘、阴影、阵营、中文名与英文背景；桌面角色图以500ms位移/透明度进入，阴影300ms，姓名与阵营延迟交接。",
         "evidence": "observed",
         "referenceUrl": "https://zzz.mihoyo.com/main",
-        "capturedAt": "2026-10-11"
+        "capturedAt": "2026-10-11",
+        "focus": {
+          "target": "#character .home-character__main",
+          "label": "角色立绘、姓名与阵营",
+          "instruction": "点不同人物头像，看立绘、阴影、阵营和背景英文名成组进入。",
+          "prepare": [
+            {
+              "click": ".sidebar__pagers-num[aria-label=\"跳到角色介绍\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -5065,7 +6528,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/zenless-zone-zero/reference-mobile.css",
       "demos/cases/zenless-zone-zero/reference.css",
       "demos/cases/zenless-zone-zero/state.css"
-    ]
+    ],
+    "preview": "previews/patterns/character-stage-coordination.jpg"
   },
   {
     "id": "character-voice-ownership",
@@ -5106,7 +6570,21 @@ window.ATLAS_PATTERNS = [
         "observation": "点击麦克风随机播放对应角色 3 条官方语音之一，再点暂停；换角色、离开角色章节与后台时停止，防止声线叠加。",
         "evidence": "adapted",
         "referenceUrl": "https://genshin.hoyoverse.com/en/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "body[data-chapter=\"1\"] #character-voice",
+          "label": "当前人物的语音按钮",
+          "instruction": "点麦克风播放当前人物语音，再次点击暂停；换人或离开角色章会停止旧语音。",
+          "prepare": [
+            {
+              "click": "header a[href=\"#characters\"]",
+              "waitFor": "body[data-chapter=\"1\"]"
+            },
+            {
+              "waitFor": "main[style*=\"transition: none\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "blue-archive",
@@ -5114,7 +6592,13 @@ window.ATLAS_PATTERNS = [
         "observation": "角色 VOICE 麦克风播放该学生对应官方 WAV，再点暂停；换人或后台停止，声线归属明确。",
         "evidence": "adapted",
         "referenceUrl": "https://bluearchive.jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".ba-student[aria-hidden=\"false\"] .student-voice",
+          "label": "当前学生的 VOICE",
+          "instruction": "点当前学生的 VOICE 麦克风播放语音；换学生后旧语音停止。",
+          "entrypoint": "demos/cases/blue-archive/character.html"
+        }
       },
       {
         "caseId": "arknights-world",
@@ -5122,7 +6606,25 @@ window.ATLAS_PATTERNS = [
         "observation": "真实BGM默认关闭，单独开关并使用官网600/300ms音量渐变；三人日语语音独立按需播放，换人物或离开干员章暂停旧语音。",
         "evidence": "adapted",
         "referenceUrl": "https://ak.hypergryph.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#operator.active .voice",
+          "label": "干员语音",
+          "instruction": "点语音按钮播放当前干员的声音，再换干员，旧语音会停止。",
+          "prepare": [
+            {
+              "waitFor": "#scene-deck[data-phase=\"idle\"]"
+            },
+            {
+              "click": "#menu-toggle[aria-expanded=\"false\"]",
+              "maxWidth": 800
+            },
+            {
+              "click": "#chapter-nav a[href=\"#operator\"]:not([aria-current=\"page\"])",
+              "waitFor": "#scene-deck[data-active=\"operator\"][data-phase=\"idle\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -5146,7 +6648,8 @@ window.ATLAS_PATTERNS = [
       "docs/cases/arknights-world.md",
       "docs/cases/blue-archive.md",
       "docs/cases/genshin-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/character-voice-ownership.jpg"
   },
   {
     "id": "vertical-fullscreen-stage",
@@ -5190,7 +6693,21 @@ window.ATLAS_PATTERNS = [
         "observation": "滚轮或竖向手势推进整屏舞台，反向返回；末尾以有限位移露出 footer，避免把正常长页当作源站 Swiper。",
         "evidence": "observed",
         "referenceUrl": "https://genshin.hoyoverse.com/en/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "body[data-chapter=\"0\"] #home",
+          "label": "纵向整屏章节舞台",
+          "instruction": "向下滚动或点 Characters，查看章节整屏推进；反向可回到首屏，末尾会露出页脚。",
+          "prepare": [
+            {
+              "click": "header a[href=\"#home\"]",
+              "waitFor": "body[data-chapter=\"0\"]"
+            },
+            {
+              "waitFor": "main[style*=\"transition: none\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -5200,7 +6717,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/genshin-world/style.css",
       "entries/cases/genshin-world.json",
       "docs/cases/genshin-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/vertical-fullscreen-stage.jpg"
   },
   {
     "id": "directional-section-wipe",
@@ -5250,7 +6768,25 @@ window.ATLAS_PATTERNS = [
         "observation": "场景横向遮罩裁切：桌面1000ms、竖屏600ms；同方向重复轮输入锁定，快速反向和导航使用最后目标队列，单次仅一组出/入场景。",
         "evidence": "adapted",
         "referenceUrl": "https://ak.hypergryph.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#scene-deck",
+          "label": "章节侧向交接",
+          "instruction": "点顶部 OPERATOR 或向下滚动，看整章沿切换方向裁切进入。",
+          "prepare": [
+            {
+              "waitFor": "#scene-deck[data-phase=\"idle\"]"
+            },
+            {
+              "click": "#menu-toggle[aria-expanded=\"false\"]",
+              "maxWidth": 800
+            },
+            {
+              "click": "#chapter-nav a[href=\"#information\"]:not([aria-current=\"page\"])",
+              "waitFor": "#scene-deck[data-active=\"information\"][data-phase=\"idle\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -5261,7 +6797,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/arknights-world/style.css",
       "entries/cases/arknights-world.json",
       "docs/cases/arknights-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/directional-section-wipe.jpg"
   },
   {
     "id": "particle-model-reformation",
@@ -5303,7 +6840,32 @@ window.ATLAS_PATTERNS = [
         "observation": "桌面WORLD先显示六术语目录与罗德岛点阵；悬停术语的原图预览跟随指针并使用同源形变/RGB偏移shader。点击进入详情，箭头/六段索引换模型，返回恢复目录。",
         "evidence": "observed",
         "referenceUrl": "https://ak.hypergryph.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#world.active[data-detail=\"true\"] #world-detail",
+          "label": "世界设定粒子模型",
+          "instruction": "点左右箭头或六段设定索引，看粒子模型与标题、设定文字一起换态。",
+          "prepare": [
+            {
+              "waitFor": "#scene-deck[data-phase=\"idle\"]"
+            },
+            {
+              "click": "#menu-toggle[aria-expanded=\"false\"]",
+              "maxWidth": 800
+            },
+            {
+              "click": "#chapter-nav a[href=\"#world\"]:not([aria-current=\"page\"])",
+              "waitFor": "#scene-deck[data-active=\"world\"][data-phase=\"idle\"]"
+            },
+            {
+              "click": "#world:not([data-detail=\"true\"]) [data-world=\"0\"]",
+              "waitFor": "#world[data-detail=\"true\"]"
+            },
+            {
+              "waitFor": "#world-particles[data-model]"
+            }
+          ]
+        }
       },
       {
         "caseId": "arknights-world",
@@ -5311,7 +6873,32 @@ window.ATLAS_PATTERNS = [
         "observation": "WORLD使用官网Three导出、七组原始点位、粒子贴图和排斥公式；10,000粒子池中当前模型使用1785–5652点。竖屏直接打开源石详情，粒子在上/文字在下。",
         "evidence": "observed",
         "referenceUrl": "https://ak.hypergryph.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#world.active[data-detail=\"true\"] #world-detail",
+          "label": "世界设定粒子模型",
+          "instruction": "点左右箭头或六段设定索引，看粒子模型与标题、设定文字一起换态。",
+          "prepare": [
+            {
+              "waitFor": "#scene-deck[data-phase=\"idle\"]"
+            },
+            {
+              "click": "#menu-toggle[aria-expanded=\"false\"]",
+              "maxWidth": 800
+            },
+            {
+              "click": "#chapter-nav a[href=\"#world\"]:not([aria-current=\"page\"])",
+              "waitFor": "#scene-deck[data-active=\"world\"][data-phase=\"idle\"]"
+            },
+            {
+              "click": "#world:not([data-detail=\"true\"]) [data-world=\"0\"]",
+              "waitFor": "#world[data-detail=\"true\"]"
+            },
+            {
+              "waitFor": "#world-particles[data-model]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -5322,7 +6909,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/arknights-world/style.css",
       "entries/cases/arknights-world.json",
       "docs/cases/arknights-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/particle-model-reformation.jpg"
   },
   {
     "id": "pointer-image-shader-preview",
@@ -5362,7 +6950,33 @@ window.ATLAS_PATTERNS = [
         "observation": "桌面WORLD先显示六术语目录与罗德岛点阵；悬停术语的原图预览跟随指针并使用同源形变/RGB偏移shader。点击进入详情，箭头/六段索引换模型，返回恢复目录。",
         "evidence": "observed",
         "referenceUrl": "https://ak.hypergryph.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#world.active:not([data-detail=\"true\"]) .world-list",
+          "label": "桌面术语图像预览",
+          "instruction": "把指针移到世界设定术语上并缓慢移动，查看跟随指针形变的原图。",
+          "prepare": [
+            {
+              "waitFor": "#scene-deck[data-phase=\"idle\"]"
+            },
+            {
+              "click": "#menu-toggle[aria-expanded=\"false\"]",
+              "maxWidth": 800
+            },
+            {
+              "click": "#chapter-nav a[href=\"#world\"]:not([aria-current=\"page\"])",
+              "waitFor": "#scene-deck[data-active=\"world\"][data-phase=\"idle\"]"
+            },
+            {
+              "click": "#world[data-detail=\"true\"] #world-back",
+              "minWidth": 801
+            },
+            {
+              "waitFor": "#world-particles[data-model]"
+            }
+          ],
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -5373,7 +6987,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/arknights-world/style.css",
       "entries/cases/arknights-world.json",
       "docs/cases/arknights-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/pointer-image-shader-preview.jpg"
   },
   {
     "id": "pointer-repulsion-particles",
@@ -5415,7 +7030,32 @@ window.ATLAS_PATTERNS = [
         "observation": "WORLD使用官网Three导出、七组原始点位、粒子贴图和排斥公式；10,000粒子池中当前模型使用1785–5652点。竖屏直接打开源石详情，粒子在上/文字在下。",
         "evidence": "observed",
         "referenceUrl": "https://ak.hypergryph.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#world.active #world-particles",
+          "label": "可推开的世界点阵",
+          "instruction": "把指针移入点阵，再移开，查看附近粒子被推开后回到模型。",
+          "prepare": [
+            {
+              "waitFor": "#scene-deck[data-phase=\"idle\"]"
+            },
+            {
+              "click": "#menu-toggle[aria-expanded=\"false\"]",
+              "maxWidth": 800
+            },
+            {
+              "click": "#chapter-nav a[href=\"#world\"]:not([aria-current=\"page\"])",
+              "waitFor": "#scene-deck[data-active=\"world\"][data-phase=\"idle\"]"
+            },
+            {
+              "click": "#world:not([data-detail=\"true\"]) [data-world=\"5\"]",
+              "waitFor": "#world[data-detail=\"true\"]"
+            },
+            {
+              "waitFor": "#world-particles[data-model]"
+            }
+          ]
+        }
       },
       {
         "caseId": "arknights-world",
@@ -5423,7 +7063,32 @@ window.ATLAS_PATTERNS = [
         "observation": "WORLD指针进入点阵 → 原始排斥公式推开附近点、移走后回聚 → 让静态工业标识可被触摸；选择术语会把点阵重组成对应原站形状。",
         "evidence": "observed",
         "referenceUrl": "https://ak.hypergryph.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#world.active #world-particles",
+          "label": "可推开的世界点阵",
+          "instruction": "把指针移入点阵，再移开，查看附近粒子被推开后回到模型。",
+          "prepare": [
+            {
+              "waitFor": "#scene-deck[data-phase=\"idle\"]"
+            },
+            {
+              "click": "#menu-toggle[aria-expanded=\"false\"]",
+              "maxWidth": 800
+            },
+            {
+              "click": "#chapter-nav a[href=\"#world\"]:not([aria-current=\"page\"])",
+              "waitFor": "#scene-deck[data-active=\"world\"][data-phase=\"idle\"]"
+            },
+            {
+              "click": "#world:not([data-detail=\"true\"]) [data-world=\"5\"]",
+              "waitFor": "#world[data-detail=\"true\"]"
+            },
+            {
+              "waitFor": "#world-particles[data-model]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -5434,7 +7099,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/arknights-world/style.css",
       "entries/cases/arknights-world.json",
       "docs/cases/arknights-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/pointer-repulsion-particles.jpg"
   },
   {
     "id": "resource-bound-fullscreen-loading",
@@ -5494,7 +7160,13 @@ window.ATLAS_PATTERNS = [
         "observation": "首次/缓存重载均先显示全屏LOADING；本地按五份实际图片完成数显示进度，再开放初始hash所指章节。",
         "evidence": "adapted",
         "referenceUrl": "https://ak.hypergryph.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#entry-loader:not([hidden])",
+          "label": "首屏资源载入",
+          "instruction": "重新载入时，看进度随首屏资源完成推进，再移交原章节。",
+          "phase": "loading"
+        }
       },
       {
         "caseId": "endfield-industrial",
@@ -5502,7 +7174,13 @@ window.ATLAS_PATTERNS = [
         "observation": "载入与导航：使用原Updating图形和排版，本地必要首页图、干员图与字体的实际完成数推进；失败提供重试/继续。侧栏hover300ms展开，手机菜单、章节导航和自然滚动回程沿原结构。进度按任务完成比例显示。",
         "evidence": "adapted",
         "referenceUrl": "https://endfield.hypergryph.com/",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "#entry-loader:not([hidden])",
+          "label": "Updating 资源载入",
+          "instruction": "重新载入时，看 Updating 图形与真实资源完成进度一起移交首页。",
+          "phase": "loading"
+        }
       }
     ],
     "sourceFiles": [
@@ -5522,7 +7200,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/endfield-industrial/reference.css",
       "demos/cases/endfield-industrial/state.css",
       "demos/cases/endfield-industrial/app.js"
-    ]
+    ],
+    "preview": "previews/patterns/resource-bound-fullscreen-loading.jpg"
   },
   {
     "id": "synchronized-rolling-index",
@@ -5568,7 +7247,26 @@ window.ATLAS_PATTERNS = [
         "observation": "右索引数字、计数和章节名分组滚出/换值/滚入，与换章方向联动；Home/End、PageUp/PageDown及上下方向键可走完六章与页脚。",
         "evidence": "adapted",
         "referenceUrl": "https://ak.hypergryph.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".side-index",
+          "label": "桌面章节编号与章名",
+          "instruction": "切换顶部章节，留意右侧编号、计数和章名按同一方向滚动。",
+          "prepare": [
+            {
+              "waitFor": "#scene-deck[data-phase=\"idle\"]"
+            },
+            {
+              "click": "#menu-toggle[aria-expanded=\"false\"]",
+              "maxWidth": 800
+            },
+            {
+              "click": "#chapter-nav a[href=\"#more\"]:not([aria-current=\"page\"])",
+              "waitFor": "#scene-deck[data-active=\"more\"][data-phase=\"idle\"]"
+            }
+          ],
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -5579,7 +7277,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/arknights-world/style.css",
       "entries/cases/arknights-world.json",
       "docs/cases/arknights-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/synchronized-rolling-index.jpg"
   },
   {
     "id": "native-document-reading",
@@ -5624,7 +7323,12 @@ window.ATLAS_PATTERNS = [
         "observation": "上下浏览：欢迎与到访信息、展览横轨、馆藏和会员按原生阅读节奏组织；不新增全屏转场。",
         "evidence": "observed",
         "referenceUrl": "https://www.metmuseum.org/en",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#membership",
+          "label": "展览、馆藏到会员的长页",
+          "instruction": "从会员区向上返回馆藏、展览与到访信息，观察页面沿正常文档顺序滚动，没有整屏切幕。"
+        }
       },
       {
         "caseId": "rijksmuseum-art",
@@ -5632,7 +7336,12 @@ window.ATLAS_PATTERNS = [
         "observation": "进入与连续上下浏览：巨大的官方字标覆盖全幅照片，浏览采用原生连续滚动。 图像先传递艺术馆的世界，后续展览逐渐替换观看内容。",
         "evidence": "observed",
         "referenceUrl": "https://www.rijksmuseum.nl/en",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#exhibitions",
+          "label": "摄影、展览与到访的连续阅读",
+          "instruction": "从这组展览往上返回全幅摄影，再向下进入到访信息，观察正常滚动与回程。"
+        }
       },
       {
         "caseId": "uma-musume",
@@ -5640,7 +7349,17 @@ window.ATLAS_PATTERNS = [
         "observation": "正常纵向浏览连接群像、新闻、About、Gameplay 和 footer，斜切条带延续赛道方向。",
         "evidence": "observed",
         "referenceUrl": "https://umamusume.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#news",
+          "label": "News 到 Gameplay 的正常长页",
+          "instruction": "从 News 向下滚到 About、Gameplay，再向上回看；章节都留在同一条长页里。",
+          "prepare": [
+            {
+              "click": ".official-nav a[href=\"#news\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "fuji-rock",
@@ -5648,7 +7367,12 @@ window.ATLAS_PATTERNS = [
         "observation": "超过Pickup后向上／向下滚动：导览条固定后按方向显隐；语言菜单400ms展开并在离开时收起。 长页浏览随时找回实用入口，同时减少遮挡。",
         "evidence": "observed",
         "referenceUrl": "https://www.fujirockfestival.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#news",
+          "label": "Featured 到日期新闻的长页",
+          "instruction": "从新闻向上返回 Featured 和实用导览，再向下继续阅读；页面保持原生长页与正常回程。"
+        }
       }
     ],
     "sourceFiles": [
@@ -5676,7 +7400,8 @@ window.ATLAS_PATTERNS = [
       "docs/cases/met-museum.md",
       "docs/cases/rijksmuseum-art.md",
       "docs/cases/uma-musume.md"
-    ]
+    ],
+    "preview": "previews/patterns/native-document-reading.jpg"
   },
   {
     "id": "responsive-art-direction",
@@ -5717,7 +7442,13 @@ window.ATLAS_PATTERNS = [
         "observation": "大屏主图1600×640，小屏使用450×450官方专用图，不直接裁剪桌面海报。",
         "evidence": "observed",
         "referenceUrl": "https://www.mori.art.museum/jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".exhibition-hero",
+          "label": "展览主图的手机专用方图",
+          "instruction": "切换桌面与手机模式，比较横向海报和官方手机方图，图像使用专门构图而非直接裁切。",
+          "viewport": "mobile"
+        }
       },
       {
         "caseId": "fuji-rock",
@@ -5725,7 +7456,13 @@ window.ATLAS_PATTERNS = [
         "observation": "手机使用官方1200×1200图片，不单纯裁切1400×700桌面照片。",
         "evidence": "observed",
         "referenceUrl": "https://www.fujirockfestival.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".photo-hero picture",
+          "label": "手机专用的现场主图",
+          "instruction": "在桌面与手机模式间切换，比较同一场景的专用横图与方图构图，主体位置随画幅重新安排。",
+          "viewport": "mobile"
+        }
       },
       {
         "caseId": "uma-musume",
@@ -5733,7 +7470,21 @@ window.ATLAS_PATTERNS = [
         "observation": "手机使用原站竖版 KV；菜单、触摸阈值与字体排布有本地适配，减少动态取消非必要过渡。",
         "evidence": "adapted",
         "referenceUrl": "https://umamusume.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#home .hero-art",
+          "label": "手机专用主视觉",
+          "instruction": "切换桌面与手机画幅，比较人物群像、图内标题与周围控件的重新排布。",
+          "prepare": [
+            {
+              "click": "#menu-button[aria-expanded=\"false\"]"
+            },
+            {
+              "click": "#study-menu a[href=\"#home\"]"
+            }
+          ],
+          "viewport": "mobile"
+        }
       }
     ],
     "sourceFiles": [
@@ -5755,7 +7506,8 @@ window.ATLAS_PATTERNS = [
       "docs/cases/fuji-rock.md",
       "docs/cases/mori-art-museum.md",
       "docs/cases/uma-musume.md"
-    ]
+    ],
+    "preview": "previews/patterns/responsive-art-direction.jpg"
   },
   {
     "id": "scroll-logo-contraction",
@@ -5807,7 +7559,17 @@ window.ATLAS_PATTERNS = [
         "observation": "滚过画布宽度 7% 后 Logo 从 2.8 倍缩回导航，反向回首恢复；300ms cubic-bezier(.19,1,.22,1)。手机 1.72 倍与菜单切换，Play Now 打开下载层。",
         "evidence": "observed",
         "referenceUrl": "https://umamusume.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".official-logo",
+          "label": "收回导航的 Logo",
+          "instruction": "先向上回到首屏，再下翻，观察左上 Logo 在主视觉大尺寸与导航尺寸之间变换。",
+          "prepare": [
+            {
+              "click": ".official-nav a[href=\"#news\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -5817,7 +7579,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/uma-musume/style.css",
       "entries/cases/uma-musume.json",
       "docs/cases/uma-musume.md"
-    ]
+    ],
+    "preview": "previews/patterns/scroll-logo-contraction.jpg"
   },
   {
     "id": "edge-action-world-composition",
@@ -5856,7 +7619,12 @@ window.ATLAS_PATTERNS = [
         "observation": "背景建立世界、Logo确认产品、竖排标语补充主题；下载与漫画入口形成左右分工。",
         "evidence": "observed",
         "referenceUrl": "https://bluearchive.jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#home",
+          "label": "中心世界与边缘入口",
+          "instruction": "看中央 Logo 与人物主视觉，下载、漫画和社交入口分布在两侧边缘。"
+        }
       }
     ],
     "sourceFiles": [
@@ -5867,7 +7635,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/blue-archive/style.css",
       "entries/cases/blue-archive.json",
       "docs/cases/blue-archive.md"
-    ]
+    ],
+    "preview": "previews/patterns/edge-action-world-composition.jpg"
   },
   {
     "id": "independent-character-page",
@@ -5908,7 +7677,13 @@ window.ATLAS_PATTERNS = [
         "observation": "首页导航 CHARACTER 打开本地独立 character.html；HOME 返回首页，首页仅 KV→footer，保留源站页面职责分离。",
         "evidence": "adapted",
         "referenceUrl": "https://bluearchive.jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#characters",
+          "label": "独立的学生档案页",
+          "instruction": "这里是独立 CHARACTER 页面；用顶部 HOME 回到主视觉，再从 CHARACTER 进入档案。",
+          "entrypoint": "demos/cases/blue-archive/character.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -5919,7 +7694,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/blue-archive/style.css",
       "entries/cases/blue-archive.json",
       "docs/cases/blue-archive.md"
-    ]
+    ],
+    "preview": "previews/patterns/independent-character-page.jpg"
   },
   {
     "id": "center-aligned-section-index",
@@ -5966,7 +7742,21 @@ window.ATLAS_PATTERNS = [
         "observation": "桌面左侧章节索引：点击以450ms swing将章节中心对齐视口中心；悬停或键盘进入索引时，标签350ms出现、内容降至0.2透明度。",
         "evidence": "adapted",
         "referenceUrl": "https://www.monumentvalleygame.com/mv1",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".section-nav.visible",
+          "label": "桌面章节侧边索引",
+          "instruction": "点桌面左侧章节名，看目标章的中心对齐视口；把指针移入索引，会展开标签并降低正文强调。",
+          "prepare": [
+            {
+              "waitFor": "body[data-entry=\"ready\"]"
+            },
+            {
+              "click": ".section-nav a[href=\"#download\"]"
+            }
+          ],
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -5976,7 +7766,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/monument-valley-game/style.css",
       "entries/cases/monument-valley-game.json",
       "docs/cases/monument-valley-game.md"
-    ]
+    ],
+    "preview": "previews/patterns/center-aligned-section-index.jpg"
   },
   {
     "id": "reversible-center-reveal",
@@ -6023,7 +7814,20 @@ window.ATLAS_PATTERNS = [
         "observation": "奖项：视口中心进入/离开时，350ms opacity 0↔1、translateY 20px↔0，双向有效；手机Show All/Hide通过350ms高度变化展开/收回六项。",
         "evidence": "observed",
         "referenceUrl": "https://www.monumentvalleygame.com/mv1",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#awards.awards-active",
+          "label": "穿越章节中心的奖项显现",
+          "instruction": "上下滚过奖项区中心，查看文字短移位显现与复原；手机可用 Show All / Hide 展开或收回。",
+          "prepare": [
+            {
+              "waitFor": "body[data-entry=\"ready\"]"
+            },
+            {
+              "click": ".section-nav a[href=\"#awards\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -6033,7 +7837,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/monument-valley-game/style.css",
       "entries/cases/monument-valley-game.json",
       "docs/cases/monument-valley-game.md"
-    ]
+    ],
+    "preview": "previews/patterns/reversible-center-reveal.jpg"
   },
   {
     "id": "artwork-caption-separation",
@@ -6074,7 +7879,12 @@ window.ATLAS_PATTERNS = [
         "observation": "官方建筑摄影、Sanity CDN展览海报与符合条件的Met API藏品图，本地保留比例、署名与原色。",
         "evidence": "adapted",
         "referenceUrl": "https://www.metmuseum.org/en",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#exhibitions-rail",
+          "label": "展览原图与图下题注",
+          "instruction": "看海报保留自己的比例和颜色，展名、日期和地点在图下排列，再横向浏览其他展览作比较。"
+        }
       },
       {
         "caseId": "met-museum",
@@ -6082,7 +7892,12 @@ window.ATLAS_PATTERNS = [
         "observation": "展览海报保留原视觉，不在图片上重复绘制标题或大渐变遮罩。",
         "evidence": "observed",
         "referenceUrl": "https://www.metmuseum.org/en",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#exhibitions-rail",
+          "label": "展览原图与图下题注",
+          "instruction": "看海报保留自己的比例和颜色，展名、日期和地点在图下排列，再横向浏览其他展览作比较。"
+        }
       },
       {
         "caseId": "design-sight",
@@ -6090,7 +7905,12 @@ window.ATLAS_PATTERNS = [
         "observation": "真实方丈记与TYPE-XVII海报、建筑照片、访问地图、研究照片本地化，保留原比例。",
         "evidence": "adapted",
         "referenceUrl": "https://www.2121designsight.jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#sight article:first-of-type",
+          "label": "原比例海报与图下说明",
+          "instruction": "看竖海报与下方文字保持分工；继续浏览旁边横照片，图像比例不会被统一拉成相同高度。"
+        }
       }
     ],
     "sourceFiles": [
@@ -6106,7 +7926,8 @@ window.ATLAS_PATTERNS = [
       "entries/cases/met-museum.json",
       "docs/cases/design-sight.md",
       "docs/cases/met-museum.md"
-    ]
+    ],
+    "preview": "previews/patterns/artwork-caption-separation.jpg"
   },
   {
     "id": "header-below-mobile-navigation",
@@ -6153,7 +7974,19 @@ window.ATLAS_PATTERNS = [
         "observation": "手机打开菜单／关闭：64px栏下的白色导航立即显示，hamburger350ms形变；固定页面并恢复原浏览位置。 小屏将机构入口与长档案分开，关闭后继续阅读。",
         "evidence": "inferred",
         "referenceUrl": "https://www.2121designsight.jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#mobile-menu:not([hidden])",
+          "label": "顶栏下方的手机目录",
+          "instruction": "关闭菜单后上下滚动，再重新打开与关闭，观察目录从顶栏下展开，阅读位置会保留。",
+          "prepare": [
+            {
+              "click": "#menu-toggle[aria-expanded=false]",
+              "waitFor": "#mobile-menu:not([hidden])"
+            }
+          ],
+          "viewport": "mobile"
+        }
       }
     ],
     "sourceFiles": [
@@ -6163,7 +7996,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/design-sight/style.css",
       "entries/cases/design-sight.json",
       "docs/cases/design-sight.md"
-    ]
+    ],
+    "preview": "previews/patterns/header-below-mobile-navigation.jpg"
   },
   {
     "id": "load-completion-brand-marker",
@@ -6214,7 +8048,13 @@ window.ATLAS_PATTERNS = [
         "observation": "首次加载完成：全屏白色与蓝色50px旋转标记，300ms退场。 在海报加载期间保持机构识别。",
         "evidence": "inferred",
         "referenceUrl": "https://www.2121designsight.jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#entry-loader:not([hidden])",
+          "label": "资源就绪前的蓝色品牌标记",
+          "instruction": "看海报准备期间的白色加载层与蓝色旋转标记，资源就绪后它会退出；点“重播”重新载入。",
+          "phase": "loading"
+        }
       },
       {
         "caseId": "fuji-rock",
@@ -6222,7 +8062,13 @@ window.ATLAS_PATTERNS = [
         "observation": "素材载入完成：32px橙色旋转标记退出，遮层与主图1200ms线性淡化。 让真实现场图准备完毕后平稳进入。",
         "evidence": "observed",
         "referenceUrl": "https://www.fujirockfestival.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#loader:not([hidden])",
+          "label": "现场照片前的橙色加载标记",
+          "instruction": "看现场照片准备期间的橙色旋转标记，素材就绪后遮层与主图一起淡入交接；点“重播”重新载入。",
+          "phase": "loading"
+        }
       }
     ],
     "sourceFiles": [
@@ -6238,7 +8084,8 @@ window.ATLAS_PATTERNS = [
       "entries/cases/fuji-rock.json",
       "docs/cases/design-sight.md",
       "docs/cases/fuji-rock.md"
-    ]
+    ],
+    "preview": "previews/patterns/load-completion-brand-marker.jpg"
   },
   {
     "id": "mixed-ratio-archive-columns",
@@ -6278,7 +8125,12 @@ window.ATLAS_PATTERNS = [
         "observation": "129px header、全幅16:9海报、4个等宽但内容不等高的竖列；手机单列。",
         "evidence": "observed",
         "referenceUrl": "https://www.2121designsight.jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#archive",
+          "label": "四个等宽、不等高的档案栏目",
+          "instruction": "比较四栏中的竖海报、横照片和文字，栏目等宽但保留各张图的原始比例；手机依次单列排列。"
+        }
       },
       {
         "caseId": "design-sight",
@@ -6286,7 +8138,12 @@ window.ATLAS_PATTERNS = [
         "observation": "档案图片包含竖海报与横照片，保留各自比例，不强行统一卡片高度。",
         "evidence": "observed",
         "referenceUrl": "https://www.2121designsight.jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#archive",
+          "label": "四个等宽、不等高的档案栏目",
+          "instruction": "比较四栏中的竖海报、横照片和文字，栏目等宽但保留各张图的原始比例；手机依次单列排列。"
+        }
       }
     ],
     "sourceFiles": [
@@ -6296,7 +8153,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/design-sight/style.css",
       "entries/cases/design-sight.json",
       "docs/cases/design-sight.md"
-    ]
+    ],
+    "preview": "previews/patterns/mixed-ratio-archive-columns.jpg"
   },
   {
     "id": "photo-crossfade-cycle",
@@ -6348,7 +8206,17 @@ window.ATLAS_PATTERNS = [
         "observation": "海报自动切换：6000ms间隔与1000ms淡化，指针经过不暂停。 保留展览视觉的完整阅读时间。",
         "evidence": "observed",
         "referenceUrl": "https://www.2121designsight.jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".poster",
+          "label": "展览海报的淡化轮换",
+          "instruction": "等待下一张海报淡化进入，也可点下方前后按钮切换；一张海报会保留足够的阅读时间。",
+          "prepare": [
+            {
+              "click": "[data-poster='1']"
+            }
+          ]
+        }
       },
       {
         "caseId": "fuji-rock",
@@ -6356,7 +8224,17 @@ window.ATLAS_PATTERNS = [
         "observation": "照片或Featured自动／手动切换：照片3600ms间隔、800ms淡化；Featured600ms中心循环，3600ms自动，手机露出两侧邻项。 照片传递现场氛围，中心轨道突出活动主题且提示还有内容。",
         "evidence": "observed",
         "referenceUrl": "https://www.fujirockfestival.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".photo-hero",
+          "label": "现场摄影的慢速淡化",
+          "instruction": "等下一张照片淡化进入，或点下方照片选择与前后按钮；手动选择后可用播放按钮恢复自动轮换。",
+          "prepare": [
+            {
+              "click": "[data-photo='1']"
+            }
+          ]
+        }
       },
       {
         "caseId": "mira-host-photography",
@@ -6364,7 +8242,12 @@ window.ATLAS_PATTERNS = [
         "observation": "首屏始终使用同一张摄影，图片加载后以 1.6 秒透明度过渡显现；CSS 中的 Ken Burns 动画设置 1.6 秒启动延迟，每个单程 24 秒，从 1.04 倍且无平移变为 1.12 倍并平移至横向 -1.5%、纵向 -1%，再交替反向往返。文字保持独立叠层；来源未实现照片切换、交叉淡化、暂停或离屏停止，减少动态时停用该动画。",
         "evidence": "observed",
         "referenceUrl": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/demo/web-design-demo/demo2-with-skill.html",
-        "capturedAt": "2026-10-27"
+        "capturedAt": "2026-10-27",
+        "focus": {
+          "target": ".hero__media",
+          "label": "同一张摄影的缓慢推移",
+          "instruction": "看首屏同一张摄影缓慢放大与平移，标题保持独立位置；这个来源不会切换照片。"
+        }
       }
     ],
     "sourceFiles": [
@@ -6384,7 +8267,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/mira-host-photography/fidelity.md",
       "entries/cases/mira-host-photography.json",
       "docs/cases/mira-host-photography.md"
-    ]
+    ],
+    "preview": "previews/patterns/photo-crossfade-cycle.jpg"
   },
   {
     "id": "compact-scroll-header",
@@ -6431,7 +8315,19 @@ window.ATLAS_PATTERNS = [
         "observation": "滚动超过大字标+130px／返回：50px红色紧凑导航120ms从上方进入，回到顶部80ms退出恢复大字标。 长页仍能访问机构入口；进入展览时品牌不被小导航抢占。",
         "evidence": "observed",
         "referenceUrl": "https://www.mori.art.museum/jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".head.is-compact",
+          "label": "滚过大字标后的紧凑导航",
+          "instruction": "向上返回大字标，再向下滚过它，观察红色紧凑导航进入；回到顶部时恢复大字标。",
+          "prepare": [
+            {
+              "scroll": "#exhibitions",
+              "waitFor": ".head.is-compact"
+            }
+          ],
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -6441,7 +8337,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/mori-art-museum/style.css",
       "entries/cases/mori-art-museum.json",
       "docs/cases/mori-art-museum.md"
-    ]
+    ],
+    "preview": "previews/patterns/compact-scroll-header.jpg"
   },
   {
     "id": "footer-aware-back-to-top",
@@ -6482,7 +8379,12 @@ window.ATLAS_PATTERNS = [
         "observation": "滚动到页面深处／页尾：回顶150ms显隐，接近页尾从fixed转为footer内定位。 回程入口可找且不挡页尾信息。",
         "evidence": "observed",
         "referenceUrl": "https://www.mori.art.museum/jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "footer",
+          "label": "回顶入口与页脚边界",
+          "instruction": "在页脚边界上下微滚动，观察右下角回顶入口从固定位置转入页脚，点它可以回到顶部。"
+        }
       }
     ],
     "sourceFiles": [
@@ -6492,7 +8394,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/mori-art-museum/style.css",
       "entries/cases/mori-art-museum.json",
       "docs/cases/mori-art-museum.md"
-    ]
+    ],
+    "preview": "previews/patterns/footer-aware-back-to-top.jpg"
   },
   {
     "id": "institution-overlap-logo",
@@ -6534,7 +8437,12 @@ window.ATLAS_PATTERNS = [
         "observation": "桌面左叠加240px方形馆标（x30/y130），宽2.5:1海报自y160开始；手机160px馆标与官方方图，后续四列展览、三列推荐、四列新闻。",
         "evidence": "observed",
         "referenceUrl": "https://www.mori.art.museum/jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".exhibition-hero",
+          "label": "跨海报边界的方形馆标",
+          "instruction": "比较左侧方形馆标与展览主图的重叠边界，馆标形成固定机构锚点，海报保留自己的视觉。"
+        }
       }
     ],
     "sourceFiles": [
@@ -6544,7 +8452,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/mori-art-museum/style.css",
       "entries/cases/mori-art-museum.json",
       "docs/cases/mori-art-museum.md"
-    ]
+    ],
+    "preview": "previews/patterns/institution-overlap-logo.jpg"
   },
   {
     "id": "directional-sticky-navigation",
@@ -6585,7 +8494,12 @@ window.ATLAS_PATTERNS = [
         "observation": "超过Pickup后向上／向下滚动：导览条固定后按方向显隐；语言菜单400ms展开并在离开时收起。 长页浏览随时找回实用入口，同时减少遮挡。",
         "evidence": "observed",
         "referenceUrl": "https://www.fujirockfestival.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".pickup",
+          "label": "随滚动方向显隐的实用导览",
+          "instruction": "向下滚过这组导览，再向上回一点，观察固定导览重新出现；继续向下时它会让出阅读空间。"
+        }
       }
     ],
     "sourceFiles": [
@@ -6595,7 +8509,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/fuji-rock/style.css",
       "entries/cases/fuji-rock.json",
       "docs/cases/fuji-rock.md"
-    ]
+    ],
+    "preview": "previews/patterns/directional-sticky-navigation.jpg"
   },
   {
     "id": "mountain-scaled-menu",
@@ -6641,7 +8556,18 @@ window.ATLAS_PATTERNS = [
         "observation": "打开／关闭山形菜单：菜单400ms scale(.88)+rotate3d(.5,0,0,1rad)进出，页面背景1秒淡到.25。 放大导览层级，同时保留现场的空间背景。",
         "evidence": "observed",
         "referenceUrl": "https://www.fujirockfestival.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#mega-menu:not([hidden]) .menu-panel",
+          "label": "缩放倾转的山形菜单",
+          "instruction": "用右上角关闭菜单，再重新打开，观察菜单缩放倾转、现场背景同时降低强调。",
+          "prepare": [
+            {
+              "click": "#menu-toggle[aria-expanded=false]",
+              "waitFor": "#mega-menu:not([hidden])"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -6651,7 +8577,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/fuji-rock/style.css",
       "entries/cases/fuji-rock.json",
       "docs/cases/fuji-rock.md"
-    ]
+    ],
+    "preview": "previews/patterns/mountain-scaled-menu.jpg"
   },
   {
     "id": "permanent-event-metadata",
@@ -6691,7 +8618,12 @@ window.ATLAS_PATTERNS = [
         "observation": "日期地点保持常驻，照片先传递场景，实用入口其次，Featured与按日期排列新闻承担浏览与回看。",
         "evidence": "observed",
         "referenceUrl": "https://www.fujirockfestival.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".photo-hero .ticket, .photo-hero",
+          "label": "常驻日期、地点与票据入口",
+          "instruction": "看现场摄影周围的日期、地点和边缘票据入口，再上下浏览，比较这些实用信息的持续位置。"
+        }
       }
     ],
     "sourceFiles": [
@@ -6701,7 +8633,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/fuji-rock/style.css",
       "entries/cases/fuji-rock.json",
       "docs/cases/fuji-rock.md"
-    ]
+    ],
+    "preview": "previews/patterns/permanent-event-metadata.jpg"
   },
   {
     "id": "full-bleed-photography-brand",
@@ -6742,7 +8675,12 @@ window.ATLAS_PATTERNS = [
         "observation": "进入与连续上下浏览：巨大的官方字标覆盖全幅照片，浏览采用原生连续滚动。 图像先传递艺术馆的世界，后续展览逐渐替换观看内容。",
         "evidence": "observed",
         "referenceUrl": "https://www.rijksmuseum.nl/en",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".hero",
+          "label": "全幅摄影上的巨大字标",
+          "instruction": "看完整机构字标覆盖全幅摄影，继续往下滚动，后续展览照片逐渐接替首屏。"
+        }
       }
     ],
     "sourceFiles": [
@@ -6752,7 +8690,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/rijksmuseum-art/style.css",
       "entries/cases/rijksmuseum-art.json",
       "docs/cases/rijksmuseum-art.md"
-    ]
+    ],
+    "preview": "previews/patterns/full-bleed-photography-brand.jpg"
   },
   {
     "id": "fullscreen-photography-menu",
@@ -6799,7 +8738,18 @@ window.ATLAS_PATTERNS = [
         "observation": "打开／关闭菜单：全屏菜单500ms线性淡入淡出，图像与分列链接同时建立目的地。 给导航独立的视觉场景，保持品牌和空间关系。",
         "evidence": "observed",
         "referenceUrl": "https://www.rijksmuseum.nl/en",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#menu:not([hidden])",
+          "label": "摄影与分列链接的全屏目录",
+          "instruction": "用左上角关闭后再打开菜单，观察整层摄影和分列链接淡入；每组链接提供具体目的地。",
+          "prepare": [
+            {
+              "click": "#menu-toggle[aria-expanded=false]",
+              "waitFor": "#menu:not([hidden])"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -6809,7 +8759,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/rijksmuseum-art/style.css",
       "entries/cases/rijksmuseum-art.json",
       "docs/cases/rijksmuseum-art.md"
-    ]
+    ],
+    "preview": "previews/patterns/fullscreen-photography-menu.jpg"
   },
   {
     "id": "photo-edge-text-contrast",
@@ -6849,7 +8800,12 @@ window.ATLAS_PATTERNS = [
         "observation": "照片底部加局部黑色渐变支撑文字对比；不对整张照片做滤镜风格化。",
         "evidence": "observed",
         "referenceUrl": "https://www.rijksmuseum.nl/en",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#family .caption",
+          "label": "照片边缘的文字对比",
+          "instruction": "看照片下缘文字周围的局部暗部，画面上方仍保留原始摄影的亮度与颜色。"
+        }
       }
     ],
     "sourceFiles": [
@@ -6859,7 +8815,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/rijksmuseum-art/style.css",
       "entries/cases/rijksmuseum-art.json",
       "docs/cases/rijksmuseum-art.md"
-    ]
+    ],
+    "preview": "previews/patterns/photo-edge-text-contrast.jpg"
   },
   {
     "id": "direct-purpose-navigation",
@@ -6902,7 +8859,22 @@ window.ATLAS_PATTERNS = [
         "observation": "打开导航：Visit等目的地立即展开；键盘焦点可操作，局部搜索与作品dialog为本地练习补充。",
         "evidence": "adapted",
         "referenceUrl": "https://www.metmuseum.org/en",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#nav-panel:not([hidden])",
+          "label": "Visit 等机构目的地",
+          "instruction": "在 Visit、Exhibitions、Art 之间切换，查看各目的地的即时展开；手机先用菜单按钮打开导航。",
+          "prepare": [
+            {
+              "click": "[data-menu=visit]",
+              "minWidth": 761
+            },
+            {
+              "click": "#mobile-menu[aria-expanded=false]",
+              "maxWidth": 760
+            }
+          ]
+        }
       },
       {
         "caseId": "philharmonie-music",
@@ -6910,7 +8882,18 @@ window.ATLAS_PATTERNS = [
         "observation": "打开主菜单和类别：浅灰全宽导航立即出现，类别切换为目的地列表；小屏菜单在页面流中展开。 机构多种活动保留层级，交互保持直接。",
         "evidence": "observed",
         "referenceUrl": "https://philharmoniedeparis.fr/fr/activite/exposition/28822-video-games-music",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#menu:not([hidden])",
+          "label": "机构目的地菜单",
+          "instruction": "点 Concerts、Musée 等类别，查看对应目的地列表；Retour 可回到总目录。",
+          "prepare": [
+            {
+              "click": "#menu-toggle[aria-expanded=false]",
+              "waitFor": "#menu:not([hidden])"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -6926,7 +8909,8 @@ window.ATLAS_PATTERNS = [
       "entries/cases/philharmonie-music.json",
       "docs/cases/met-museum.md",
       "docs/cases/philharmonie-music.md"
-    ]
+    ],
+    "preview": "previews/patterns/direct-purpose-navigation.jpg"
   },
   {
     "id": "visit-facts-grid",
@@ -6966,7 +8950,12 @@ window.ATLAS_PATTERNS = [
         "observation": "建筑图像呈现实体空间，欢迎区提供行动，四列信息减轻到访决策，展览海报与馆藏引导浏览。",
         "evidence": "observed",
         "referenceUrl": "https://www.metmuseum.org/en",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#visit-info",
+          "label": "到访行动旁的四组事实",
+          "instruction": "比较开放时间、地点等到访事实怎样在同一组网格中排列，并与上方到访行动相邻。"
+        }
       }
     ],
     "sourceFiles": [
@@ -6976,7 +8965,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/met-museum/style.css",
       "entries/cases/met-museum.json",
       "docs/cases/met-museum.md"
-    ]
+    ],
+    "preview": "previews/patterns/visit-facts-grid.jpg"
   },
   {
     "id": "activity-title-ticket-overlap",
@@ -7016,7 +9006,12 @@ window.ATLAS_PATTERNS = [
         "observation": "主视觉左下活动名，右侧票务面板上浮；长正文与侧栏分工，手机票务回到文档流。",
         "evidence": "observed",
         "referenceUrl": "https://philharmoniedeparis.fr/fr/activite/exposition/28822-video-games-music",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".hero-title",
+          "label": "活动名称与票务跨区并置",
+          "instruction": "对比主视觉左下的活动名称与右侧上浮票务，活动身份和来访行动在同一视野内出现。"
+        }
       }
     ],
     "sourceFiles": [
@@ -7026,7 +9021,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/philharmonie-music/style.css",
       "entries/cases/philharmonie-music.json",
       "docs/cases/philharmonie-music.md"
-    ]
+    ],
+    "preview": "previews/patterns/activity-title-ticket-overlap.jpg"
   },
   {
     "id": "sticky-action-sidebar",
@@ -7070,7 +9066,13 @@ window.ATLAS_PATTERNS = [
         "observation": "浏览展览／音乐会详情：原生长页与桌面sticky票务，小屏票务回文档流。 活动内容与来访决定并行，小屏避免固定面板遮挡正文。",
         "evidence": "observed",
         "referenceUrl": "https://philharmoniedeparis.fr/fr/activite/exposition/28822-video-games-music",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".booking",
+          "label": "随正文保留的票务侧栏",
+          "instruction": "上下滚动长正文，观察桌面票务栏保持可用；切手机模式后，票务回到正常文档流。",
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -7080,7 +9082,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/philharmonie-music/style.css",
       "entries/cases/philharmonie-music.json",
       "docs/cases/philharmonie-music.md"
-    ]
+    ],
+    "preview": "previews/patterns/sticky-action-sidebar.jpg"
   },
   {
     "id": "layered-navigation-drawer",
@@ -7126,7 +9129,23 @@ window.ATLAS_PATTERNS = [
         "observation": "进入目录或二级主题：300ms侧向抽屉；二级内容200ms延后再200ms淡入。 导航容器保持连续，内容层级在同一位置变化。",
         "evidence": "observed",
         "referenceUrl": "https://m3.material.io/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#directory[open]",
+          "label": "侧向目录与二级内容",
+          "instruction": "关闭后再打开目录，观察容器先进入；在手机主目录选择 Styles 等分类，可看二级内容在原位置后续进入。",
+          "prepare": [
+            {
+              "click": ".rail [data-directory=Styles]",
+              "minWidth": 601
+            },
+            {
+              "click": "#open-menu[aria-expanded=false]",
+              "waitFor": "#directory[open]",
+              "maxWidth": 600
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -7136,7 +9155,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/google-material/style.css",
       "entries/cases/google-material.json",
       "docs/cases/google-material.md"
-    ]
+    ],
+    "preview": "previews/patterns/layered-navigation-drawer.jpg"
   },
   {
     "id": "semantic-theme-roles",
@@ -7177,7 +9197,18 @@ window.ATLAS_PATTERNS = [
         "observation": "切换主题／系统主题变化：深浅语义角色切换；手动值保存，OS变化清除保存值。 让可读性适应环境，同时保持品牌图像与层级。",
         "evidence": "observed",
         "referenceUrl": "https://m3.material.io/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".rail [data-action=theme], #directory[open] [data-action=theme]",
+          "label": "语义角色的主题切换",
+          "instruction": "点侧栏明暗主题按钮，比较背景、文字、卡片和按钮一起切换，品牌媒体保持原色。",
+          "prepare": [
+            {
+              "click": "#open-menu[aria-expanded=false]",
+              "maxWidth": 600
+            }
+          ]
+        }
       },
       {
         "caseId": "uiarc-platform",
@@ -7185,7 +9216,12 @@ window.ATLAS_PATTERNS = [
         "observation": "主题按钮在系统默认与手动选择之间协调页面表面、文字、边界和导航；点击后通过 View Transition 让新主题从横向中线向上下展开，390ms、cubic-bezier(.22,1,.36,1)，完成后清理过渡状态。首尾粉蓝黄渐变面板和产品影片保持原色，减少动态直接完成切换。",
         "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "header",
+          "label": "明暗主题控件",
+          "instruction": "点顶栏的明暗按钮，对比正文、卡片和边框一起变化，影片与渐变面板保留原色。"
+        }
       }
     ],
     "sourceFiles": [
@@ -7203,7 +9239,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/uiarc-platform/fidelity.md",
       "demos/cases/uiarc-platform/source/content.json",
       "demos/cases/uiarc-platform/source/components.tsx"
-    ]
+    ],
+    "preview": "previews/patterns/semantic-theme-roles.jpg"
   },
   {
     "id": "state-shape-feedback",
@@ -7249,7 +9286,12 @@ window.ATLAS_PATTERNS = [
         "observation": "点击或键盘激活按钮／卡片：CTA圆角48→16px，资源卡24→48px；200/300ms cubic-bezier(.2,0,0,1)。 形状与状态层共同表达当前动作，界面表现力来自一致的反馈。",
         "evidence": "observed",
         "referenceUrl": "https://m3.material.io/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#io .cards-row",
+          "label": "卡片的按压与聚焦形状",
+          "instruction": "按住或用 Tab 聚焦资源卡，观察容器圆角与状态层；主行动按钮也使用对应的形状反馈。"
+        }
       }
     ],
     "sourceFiles": [
@@ -7259,7 +9301,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/google-material/style.css",
       "entries/cases/google-material.json",
       "docs/cases/google-material.md"
-    ]
+    ],
+    "preview": "previews/patterns/state-shape-feedback.jpg"
   },
   {
     "id": "architectural-fragment-anchor",
@@ -7312,7 +9355,12 @@ window.ATLAS_PATTERNS = [
         "observation": "建筑目录：朱红实物纹理与透明屋脊、独立圆形“建筑”题饰并置，八个建筑名称及更多建筑/地图均保留官方目的地。",
         "evidence": "observed",
         "referenceUrl": "https://www.dpm.org.cn/Explore.html",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": ".explore1",
+          "label": "建筑局部与八项名称目录",
+          "instruction": "看朱红建筑纹理、透明屋脊和圆形“建筑”题饰，再从八个建筑名称、“更多建筑”或地图选择真实目的地。"
+        }
       }
     ],
     "sourceFiles": [
@@ -7323,7 +9371,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/palace-museum/style.css",
       "demos/cases/palace-museum/app.js",
       "demos/cases/palace-museum/source/state-matrix.md"
-    ]
+    ],
+    "preview": "previews/patterns/architectural-fragment-anchor.jpg"
   },
   {
     "id": "half-paper-category-label",
@@ -7377,7 +9426,12 @@ window.ATLAS_PATTERNS = [
         "observation": "源端观察：矩形章节与专题图像上右半幅浅纸签并置，竖排类目为独立可读文字。",
         "evidence": "observed",
         "referenceUrl": "https://www.dpm.org.cn/Explore.html",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": ".explore2 .lt",
+          "label": "图像右半幅的纸签分类",
+          "instruction": "比较图像与右半幅浅纸签的并置，竖排类目作为独立文字承接图像内容。"
+        }
       }
     ],
     "sourceFiles": [
@@ -7388,7 +9442,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/palace-museum/style.css",
       "demos/cases/palace-museum/app.js",
       "demos/cases/palace-museum/source/state-matrix.md"
-    ]
+    ],
+    "preview": "previews/patterns/half-paper-category-label.jpg"
   },
   {
     "id": "bounded-image-inspection",
@@ -7443,7 +9498,18 @@ window.ATLAS_PATTERNS = [
         "observation": "壁画：莫高窟257窟主室西壁采用源站Leaflet 1.7.1与DeepZoom 2.0.0，21515×15796逻辑像素、1024瓦片，匿名minZoom9.75/maxZoom12，公开level10–12共9瓦片实际取得。",
         "evidence": "observed",
         "referenceUrl": "https://www.e-dunhuang.com/showmural/10.0001/0001/0001/0257/0001/0003/01",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "#mural",
+          "label": "第 257 窟西壁的瓦片细察",
+          "instruction": "拖动画面并用左上角加减按钮缩放，观察公开瓦片范围内的壁画细节；更高分辨率入口由原站提供。",
+          "entrypoint": "demos/cases/digital-dunhuang/viewer.html",
+          "prepare": [
+            {
+              "click": ".leaflet-control-zoom-in"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -7457,7 +9523,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/digital-dunhuang/viewer.html",
       "demos/cases/digital-dunhuang/viewer.css",
       "demos/cases/digital-dunhuang/viewer.js"
-    ]
+    ],
+    "preview": "previews/patterns/bounded-image-inspection.jpg"
   },
   {
     "id": "explicit-facet-summary",
@@ -7511,7 +9578,18 @@ window.ATLAS_PATTERNS = [
         "observation": "条件反馈：点击原条件可移除，已选条件行显示并可取消，折叠筛选耗时1000ms；北魏实测254、257、麦积127三项，叠加榆林窟为零项，浏览器返回恢复。",
         "evidence": "adapted",
         "referenceUrl": "https://www.e-dunhuang.com/section.htm",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "#ttsx",
+          "label": "列表上方的已选分面条件",
+          "instruction": "点“北魏”等筛选条件，观察已选条件行和列表数量；点击已选条件可移除，再叠加其他条件比较结果。",
+          "entrypoint": "demos/cases/digital-dunhuang/section.html",
+          "prepare": [
+            {
+              "click": "[data-facet-value=北魏]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -7525,7 +9603,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/digital-dunhuang/section.html",
       "demos/cases/digital-dunhuang/catalogue.js",
       "demos/cases/digital-dunhuang/filter-evidence.json"
-    ]
+    ],
+    "preview": "previews/patterns/explicit-facet-summary.jpg"
   },
   {
     "id": "architectural-outline-whitespace",
@@ -7579,7 +9658,12 @@ window.ATLAS_PATTERNS = [
         "observation": "四屏完整结构；50px左右外缘，1440×900时主画面1340×755；第三屏按原九项/75%与25%两区组织。",
         "evidence": "observed",
         "referenceUrl": "https://www.szmuseum.com/Home/Index",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": ".section1",
+          "label": "机构摄影周围的白色外缘",
+          "instruction": "比较主摄影与两侧白色外缘的比例，再切手机模式看画幅怎样调整；可用右侧章节点继续浏览。"
+        }
       }
     ],
     "sourceFiles": [
@@ -7590,7 +9674,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/suzhou-museum/style.css",
       "demos/cases/suzhou-museum/app.js",
       "demos/cases/suzhou-museum/source/state-matrix.md"
-    ]
+    ],
+    "preview": "previews/patterns/architectural-outline-whitespace.jpg"
   },
   {
     "id": "image-destination-mosaic",
@@ -7646,7 +9731,19 @@ window.ATLAS_PATTERNS = [
         "observation": "图像目的地：资讯、云课堂、馆藏、活动、文创、数字苏博、展览、游戏、建筑美图九项原图/常显类目均保留，左右75%/25%及每块尺寸按源CSS。",
         "evidence": "observed",
         "referenceUrl": "https://www.szmuseum.com/Home/Index",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "body:has(#fullPage-nav) .section3.active, body:not(:has(#fullPage-nav)) .section3",
+          "label": "九个图像目的地的拼接目录",
+          "instruction": "在第三屏比较资讯、馆藏、活动等九项原图和常显类目；左右两区采用不同尺度，各块仍是独立目的地。",
+          "prepare": [
+            {
+              "click": "#fullPage-nav li:nth-child(3) a",
+              "waitFor": ".section3.active",
+              "minWidth": 768
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -7657,7 +9754,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/suzhou-museum/style.css",
       "demos/cases/suzhou-museum/app.js",
       "demos/cases/suzhou-museum/source/state-matrix.md"
-    ]
+    ],
+    "preview": "previews/patterns/image-destination-mosaic.jpg"
   },
   {
     "id": "hatched-registration-type",
@@ -7712,7 +9810,30 @@ window.ATLAS_PATTERNS = [
         "observation": "巨大斜线背景字、十字标定、REC、小编号、淡网格与实心资料；AIC竖书脊保留在媒体边界，黑黄三层作为切换状态。",
         "evidence": "observed",
         "referenceUrl": "https://endfield.hypergryph.com/",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "body:not(.directory-open) #operator .operator-title-inner-container",
+          "label": "斜线大字与档案记录",
+          "instruction": "看姓名后方的斜线大字，以及前景资料中的 REC、编号和十字标记。",
+          "prepare": [
+            {
+              "waitFor": "body:has(#entry-loader[hidden])"
+            },
+            {
+              "click": ".header-inner-container > .header-nav-item[aria-label=\"干员情报\"]",
+              "minWidth": 801
+            },
+            {
+              "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+              "maxWidth": 800
+            },
+            {
+              "click": ".header-menu-item[aria-label=\"干员情报\"]",
+              "maxWidth": 800
+            }
+          ],
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -7726,7 +9847,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/endfield-industrial/app.js",
       "demos/cases/endfield-industrial/source/state-matrix.md",
       "demos/cases/endfield-industrial/source/source-provenance.json"
-    ]
+    ],
+    "preview": "previews/patterns/hatched-registration-type.jpg"
   },
   {
     "id": "vertical-media-spine",
@@ -7779,7 +9901,44 @@ window.ATLAS_PATTERNS = [
         "observation": "AIC书脊与媒体共同组织类别；4玩法/5AIC采用源三层黑→黄→媒体的方向揭示，不用单静态工厂图替代整个相册。",
         "evidence": "observed",
         "referenceUrl": "https://endfield.hypergryph.com/",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "#aic",
+          "label": "AIC 竖向书脊与媒体",
+          "instruction": "看媒体边缘竖排的 AIC 类别书脊，以及下方分页、编号和说明的对齐。",
+          "prepare": [
+            {
+              "waitFor": "body:has(#entry-loader[hidden])"
+            },
+            {
+              "click": ".header-inner-container > .header-nav-item[aria-label=\"版本日历\"]",
+              "minWidth": 801
+            },
+            {
+              "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+              "maxWidth": 800
+            },
+            {
+              "click": ".header-menu-item[aria-label=\"版本日历\"]",
+              "maxWidth": 800
+            },
+            {
+              "images": "#calendar"
+            },
+            {
+              "click": ".header-inner-container > .header-nav-item[aria-label=\"玩法介绍 & 集成工业知识\"]",
+              "minWidth": 801
+            },
+            {
+              "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+              "maxWidth": 800
+            },
+            {
+              "click": ".header-menu-item[aria-label=\"玩法介绍 & 集成工业知识\"]",
+              "maxWidth": 800
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -7793,7 +9952,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/endfield-industrial/app.js",
       "demos/cases/endfield-industrial/source/state-matrix.md",
       "demos/cases/endfield-industrial/source/source-provenance.json"
-    ]
+    ],
+    "preview": "previews/patterns/vertical-media-spine.jpg"
   },
   {
     "id": "department-code-matrix",
@@ -7857,7 +10017,17 @@ window.ATLAS_PATTERNS = [
         "observation": "官方68秒原帧保留CMPT CTRL中心，以及DEF、HRI、BSN、ENG、STRU、SCIEN、ORIG、NRG、ECO九外围的环形连字、英文全称、黑白表面、透视倾斜及尺度差；网页控件使用系统字体，不替代原作字标。",
         "evidence": "observed",
         "referenceUrl": "https://www.bilibili.com/video/BV1rr4y1b7sz/",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "#terminal[data-scene=matrix]",
+          "label": "中心与九个外围机构代码",
+          "instruction": "点画面中的机构热点或下方科室目录，对比 CMPT CTRL 中心、外围九个字标与说明的对应关系。",
+          "prepare": [
+            {
+              "click": "[data-scene=matrix]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -7868,7 +10038,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/rhine-lab/assets-manifest.json",
       "entries/cases/rhine-lab.json",
       "docs/cases/rhine-lab.md"
-    ]
+    ],
+    "preview": "previews/patterns/department-code-matrix.jpg"
   },
   {
     "id": "specimen-pullout-selection",
@@ -7933,7 +10104,20 @@ window.ATLAS_PATTERNS = [
         "observation": "本地教学改编：在原作多排立体档案的35秒原帧上提供五个观察热点及前后选择，同一状态同步观察编号、标题、正文并收起旧展开；阵列显隐仅隐藏背景阵列，保留按源端四角轮廓裁切的抬出板。五个热点不是原片中的五个可点击档案。",
         "evidence": "adapted",
         "referenceUrl": "https://www.bilibili.com/video/BV1rr4y1b7sz/",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "#archive-picks",
+          "label": "阵列上的教学观察热点",
+          "instruction": "点五个观察热点或下方前后按钮，观察抽出板、编号与说明同步更新；“阵列”开关只改变背景阵列显隐。",
+          "prepare": [
+            {
+              "click": "[data-scene=archive]"
+            },
+            {
+              "click": "[data-record='1']"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -7944,7 +10128,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/rhine-lab/assets-manifest.json",
       "entries/cases/rhine-lab.json",
       "docs/cases/rhine-lab.md"
-    ]
+    ],
+    "preview": "previews/patterns/specimen-pullout-selection.jpg"
   },
   {
     "id": "layered-directional-media-reveal",
@@ -8016,7 +10201,44 @@ window.ATLAS_PATTERNS = [
         "observation": "玩法/AIC：4段原玩法视频和5张原工业图；400ms三层方向揭示，黑层delay0/黄250/实际媒体500，总900ms；文字500ms退出/500ms进入，内容/编号/分页共同变化。",
         "evidence": "observed",
         "referenceUrl": "https://endfield.hypergryph.com/",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "#gameplay",
+          "label": "玩法影片的分层揭示",
+          "instruction": "点影片下方的前后按钮或编号，看黑层、黄层和实际画面依次揭示。",
+          "prepare": [
+            {
+              "waitFor": "body:has(#entry-loader[hidden])"
+            },
+            {
+              "click": ".header-inner-container > .header-nav-item[aria-label=\"版本日历\"]",
+              "minWidth": 801
+            },
+            {
+              "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+              "maxWidth": 800
+            },
+            {
+              "click": ".header-menu-item[aria-label=\"版本日历\"]",
+              "maxWidth": 800
+            },
+            {
+              "images": "#calendar"
+            },
+            {
+              "click": ".header-inner-container > .header-nav-item[aria-label=\"玩法介绍 & 集成工业知识\"]",
+              "minWidth": 801
+            },
+            {
+              "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+              "maxWidth": 800
+            },
+            {
+              "click": ".header-menu-item[aria-label=\"玩法介绍 & 集成工业知识\"]",
+              "maxWidth": 800
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -8030,7 +10252,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/endfield-industrial/state.css",
       "demos/cases/endfield-industrial/app.js",
       "demos/cases/endfield-industrial/data.js"
-    ]
+    ],
+    "preview": "previews/patterns/layered-directional-media-reveal.jpg"
   },
   {
     "id": "scanline-point-cloud-transition",
@@ -8102,7 +10325,32 @@ window.ATLAS_PATTERNS = [
         "observation": "世界观：帝江号/锚点/集成工业系统/天师桩/天使/裂地者六个原bin及模型参数，Float32 xyz、按Y跨度1900规范化；实际WebGL点云、扫描、转动、拖动、分页/标题与六指标同步。最终状态实测见fidelity，不因源码抽取而自动判通过。",
         "evidence": "observed",
         "referenceUrl": "https://endfield.hypergryph.com/",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "#lore .lore-canvas-container",
+          "label": "世界观点云",
+          "instruction": "选择六个模型索引或前后按钮，看扫描线、射线和旋转如何交接点云；拖动可转动观察。",
+          "prepare": [
+            {
+              "waitFor": "body:has(#entry-loader[hidden])"
+            },
+            {
+              "click": ".header-inner-container > .header-nav-item[aria-label=\"世界观资料\"]",
+              "minWidth": 801
+            },
+            {
+              "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+              "maxWidth": 800
+            },
+            {
+              "click": ".header-menu-item[aria-label=\"世界观资料\"]",
+              "maxWidth": 800
+            },
+            {
+              "waitFor": ".lore-canvas-container[data-model]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -8118,7 +10366,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/endfield-industrial/data.js",
       "demos/cases/endfield-industrial/lore.js",
       "demos/cases/endfield-industrial/shaders.js"
-    ]
+    ],
+    "preview": "previews/patterns/scanline-point-cloud-transition.jpg"
   },
   {
     "id": "transparent-video-mode-stage",
@@ -8190,7 +10439,33 @@ window.ATLAS_PATTERNS = [
         "observation": "2D/3D：同35项立绘和70个原enter/idle视频。祀源影片3840×1080左右RGB/alpha，经原亮度权重0.3/0.59/0.11合成1920×1080透明canvas，enter结束切idle循环；不制造实时人物模型。",
         "evidence": "observed",
         "referenceUrl": "https://endfield.hypergryph.com/",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "body:not(.directory-open) .operator-illustration-container.showing-3d",
+          "label": "干员 2D / 3D 舞台",
+          "instruction": "用 2D / 3D 开关在立绘与透明影片之间切换；再换干员，查看入场影片如何接到循环动作。",
+          "prepare": [
+            {
+              "waitFor": "body:has(#entry-loader[hidden])"
+            },
+            {
+              "click": ".header-inner-container > .header-nav-item[aria-label=\"干员情报\"]",
+              "minWidth": 801
+            },
+            {
+              "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+              "maxWidth": 800
+            },
+            {
+              "click": ".header-menu-item[aria-label=\"干员情报\"]",
+              "maxWidth": 800
+            },
+            {
+              "click": ".operator-switcher3d[data-mode=\"2D\"]",
+              "waitFor": ".operator-switcher3d[data-mode=\"3D\"][aria-pressed=\"true\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -8205,7 +10480,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/endfield-industrial/app.js",
       "demos/cases/endfield-industrial/data.js",
       "demos/cases/endfield-industrial/transparent-video.js"
-    ]
+    ],
+    "preview": "previews/patterns/transparent-video-mode-stage.jpg"
   },
   {
     "id": "separate-thumbnail-window",
@@ -8253,7 +10529,17 @@ window.ATLAS_PATTERNS = [
         "observation": "角色箭头每次移动三张缩略图，保持当前人物不变；点击缩略图才选择角色。影像箭头则同步改变当前视频、标题、日期和缩略图位置，9部影像不循环越界。",
         "evidence": "observed",
         "referenceUrl": "https://zzz.mihoyo.com/main",
-        "capturedAt": "2026-10-11"
+        "capturedAt": "2026-10-11",
+        "focus": {
+          "target": "#character .home-character__main-nav",
+          "label": "头像翻页与当前人物",
+          "instruction": "先点头像旁的翻页箭头，当前人物保持不变；再点具体头像，才切换人物舞台。",
+          "prepare": [
+            {
+              "click": ".sidebar__pagers-num[aria-label=\"跳到角色介绍\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -8268,7 +10554,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/zenless-zone-zero/reference.css",
       "demos/cases/zenless-zone-zero/state.css"
     ],
-    "prompt": "为【目标页面/组件】实现「头像翻页与舞台选择分离」。分别保存缩略图窗口起点和当前选中人物；窗口箭头只移动可见候选，点击具体头像才换舞台，人物所有身份线索使用同一选中索引。 触发：点击缩略图窗口箭头或选择头像。结果：大名单可逐段浏览，同时保留当前人物上下文。 最后一组不足整页时夹紧窗口边界；箭头禁用状态与真实可滚动范围一致。 影像箭头切换当前内容属于另一种导航语义，不能套用为所有轮播统一行为。 负责候选窗口和选中状态的分工；与人物换态组合时只共享选择事件，不让翻页事件直接触发换人。 键盘：头像使用按钮，方向键/Home/End提供等价选择；需要时移动窗口使焦点可见，当前项同步aria-pressed。 减少动态：关闭窗口位移与角色过渡，窗口和选择状态仍分别更新。 实施前读取来源源码、研究与复现边界，不以本Prompt替代代码。"
+    "prompt": "为【目标页面/组件】实现「头像翻页与舞台选择分离」。分别保存缩略图窗口起点和当前选中人物；窗口箭头只移动可见候选，点击具体头像才换舞台，人物所有身份线索使用同一选中索引。 触发：点击缩略图窗口箭头或选择头像。结果：大名单可逐段浏览，同时保留当前人物上下文。 最后一组不足整页时夹紧窗口边界；箭头禁用状态与真实可滚动范围一致。 影像箭头切换当前内容属于另一种导航语义，不能套用为所有轮播统一行为。 负责候选窗口和选中状态的分工；与人物换态组合时只共享选择事件，不让翻页事件直接触发换人。 键盘：头像使用按钮，方向键/Home/End提供等价选择；需要时移动窗口使焦点可见，当前项同步aria-pressed。 减少动态：关闭窗口位移与角色过渡，窗口和选择状态仍分别更新。 实施前读取来源源码、研究与复现边界，不以本Prompt替代代码。",
+    "preview": "previews/patterns/separate-thumbnail-window.jpg"
   },
   {
     "id": "execution-trace-drilldown",
@@ -8323,7 +10610,12 @@ window.ATLAS_PATTERNS = [
         "observation": "轨迹演示15秒：工具栏、三条泳道和37段时序先后进入，两轮日志上移，最后展开bash调用详情，在结果与计时之间交接，显示NAVIGATION_OK和34毫秒。",
         "evidence": "observed",
         "referenceUrl": "https://www.deepseek.com/harness/",
-        "capturedAt": "2026-10-11"
+        "capturedAt": "2026-10-11",
+        "focus": {
+          "target": "[class^=HarnessTracePreview_canvas]",
+          "label": "调用轨迹与详情",
+          "instruction": "看三条泳道、工具调用和日志依次出现，末段会展开 bash 结果与计时；这节的暂停按钮可停住画面。"
+        }
       }
     ],
     "sourceFiles": [
@@ -8353,7 +10645,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/deepseek-harness/vendor/deepseek-harness/8555-7c9518c428e988c2.js",
       "demos/cases/deepseek-harness/vendor/deepseek-harness/86b88eeb-5b86058878847f6a.js"
     ],
-    "prompt": "为【目标页面/组件】实现「时间线泳道定位调用详情」。输入、模型、工具分别占用时间线泳道；日志沿同一执行顺序展开，选定调用在侧栏显示结果和计时，使宏观节奏与局部证据互相定位。 触发：查看执行轨迹并深入单次工具调用。结果：用户从整段过程走到具体结果与耗时，不丢失调用所在轮次。 泳道时长、轮次和侧栏调用必须对应同一数据。 源页面自动演示切到详情与计时，本巧思的实际产品点击迁移属于adapted建议。 负责多尺度执行信息关联，可与过程折叠配合；保持时间线为概览，不在每个span里重复全文日志。 键盘：演示提供暂停和文字描述；实际交互迁移时每次调用需可键盘选中，关闭详情回到原调用。 减少动态：保留时间线、日志和选中详情的稳定图解。 实施前读取来源源码、研究与复现边界，不以本Prompt替代代码。"
+    "prompt": "为【目标页面/组件】实现「时间线泳道定位调用详情」。输入、模型、工具分别占用时间线泳道；日志沿同一执行顺序展开，选定调用在侧栏显示结果和计时，使宏观节奏与局部证据互相定位。 触发：查看执行轨迹并深入单次工具调用。结果：用户从整段过程走到具体结果与耗时，不丢失调用所在轮次。 泳道时长、轮次和侧栏调用必须对应同一数据。 源页面自动演示切到详情与计时，本巧思的实际产品点击迁移属于adapted建议。 负责多尺度执行信息关联，可与过程折叠配合；保持时间线为概览，不在每个span里重复全文日志。 键盘：演示提供暂停和文字描述；实际交互迁移时每次调用需可键盘选中，关闭详情回到原调用。 减少动态：保留时间线、日志和选中详情的稳定图解。 实施前读取来源源码、研究与复现边界，不以本Prompt替代代码。",
+    "preview": "previews/patterns/execution-trace-drilldown.jpg"
   },
   {
     "id": "persistent-created-widget",
@@ -8408,7 +10701,12 @@ window.ATLAS_PATTERNS = [
         "observation": "插件演示22秒：对话输入、10条工具步骤、过程折叠、番茄钟放大，再缩至右上角；插件管理器滚过7个官方插件并高亮已安装项，挂件贯穿场景交接。",
         "evidence": "observed",
         "referenceUrl": "https://www.deepseek.com/harness/",
-        "capturedAt": "2026-10-11"
+        "capturedAt": "2026-10-11",
+        "focus": {
+          "target": "[class^=HarnessPluginsPreview_canvas]",
+          "label": "跨场景保留的番茄钟",
+          "instruction": "看对话完成工具步骤后生成番茄钟，再留在右上角；插件管理器切入时挂件继续保留。"
+        }
       }
     ],
     "sourceFiles": [
@@ -8438,7 +10736,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/deepseek-harness/vendor/deepseek-harness/8555-7c9518c428e988c2.js",
       "demos/cases/deepseek-harness/vendor/deepseek-harness/86b88eeb-5b86058878847f6a.js"
     ],
-    "prompt": "为【目标页面/组件】实现「已创建挂件跨场景保留」。创建过程结束后将结果挂件先放大展示，再缩到固定角落；后台界面切换到管理列表时挂件持续存在，最后通过已安装项确认结果归属。 触发：创建过程完成并转入管理场景。结果：用户看到生成、可用与被管理的是同一个对象。 挂件状态不能在场景交接时重置；放大与紧凑形态共享同一内容。 手机保留挂件与管理器的对应关系，同时避免遮住列表的主要信息。 负责成果身份连续性，前序可搭配过程折叠，运行控制交给独立暂停生命周期。 键盘：暂停按钮可键盘操作；图解内部不伪造可编辑输入或可点击安装。 减少动态：呈现挂件与管理器已安装项的稳定终态，并给出过程说明。 实施前读取来源源码、研究与复现边界，不以本Prompt替代代码。"
+    "prompt": "为【目标页面/组件】实现「已创建挂件跨场景保留」。创建过程结束后将结果挂件先放大展示，再缩到固定角落；后台界面切换到管理列表时挂件持续存在，最后通过已安装项确认结果归属。 触发：创建过程完成并转入管理场景。结果：用户看到生成、可用与被管理的是同一个对象。 挂件状态不能在场景交接时重置；放大与紧凑形态共享同一内容。 手机保留挂件与管理器的对应关系，同时避免遮住列表的主要信息。 负责成果身份连续性，前序可搭配过程折叠，运行控制交给独立暂停生命周期。 键盘：暂停按钮可键盘操作；图解内部不伪造可编辑输入或可点击安装。 减少动态：呈现挂件与管理器已安装项的稳定终态，并给出过程说明。 实施前读取来源源码、研究与复现边界，不以本Prompt替代代码。",
+    "preview": "previews/patterns/persistent-created-widget.jpg"
   },
   {
     "id": "procedural-fluid-spotlight",
@@ -8492,7 +10791,12 @@ window.ATLAS_PATTERNS = [
         "observation": "Hero使用官方WebGL2流体着色器，蓝灰五色场、暖色光核与低强度光晕持续演化；30fps、DPR上限1.5、离屏暂停。输入流场是1×1中性纹理，没有指针搅动逻辑。",
         "evidence": "observed",
         "referenceUrl": "https://www.deepseek.com/harness/",
-        "capturedAt": "2026-10-11"
+        "capturedAt": "2026-10-11",
+        "focus": {
+          "target": "section:has(h1) canvas",
+          "label": "流体色场与固定光核",
+          "instruction": "观察首屏蓝灰色场的持续演化与暖色光核；光核保持在画面中，指针不会搅动流场。"
+        }
       }
     ],
     "sourceFiles": [
@@ -8522,7 +10826,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/deepseek-harness/vendor/deepseek-harness/8555-7c9518c428e988c2.js",
       "demos/cases/deepseek-harness/vendor/deepseek-harness/86b88eeb-5b86058878847f6a.js"
     ],
-    "prompt": "为【目标页面/组件】实现「流体色场中的固定光核」。以程序化多层扭曲形成流体色场，用位置固定的光核、光晕和暗角控制明暗；文本和工作台位于独立DOM层，不随纹理变形。 触发：进入首屏并保持可见。结果：背景提供空间和氛围，阅读与操作不受纹理运动影响。 GPU层只负责装饰，不遮挡点击、正文和焦点。 源案例flowmap为中性纹理，没有指针扰动；复用时应保留离屏停止和帧率上限。 作为首屏背景与稳定工作台组合，勿叠加同区域大幅粒子、文字变形和多套指针反馈。 键盘：Canvas不进入Tab顺序；标题、CTA和工作台以DOM保持可读。 减少动态：迁移时提供静态色场或停止时间推进；源页面GPU的减少动态行为需单独核验。 实施前读取来源源码、研究与复现边界，不以本Prompt替代代码。"
+    "prompt": "为【目标页面/组件】实现「流体色场中的固定光核」。以程序化多层扭曲形成流体色场，用位置固定的光核、光晕和暗角控制明暗；文本和工作台位于独立DOM层，不随纹理变形。 触发：进入首屏并保持可见。结果：背景提供空间和氛围，阅读与操作不受纹理运动影响。 GPU层只负责装饰，不遮挡点击、正文和焦点。 源案例flowmap为中性纹理，没有指针扰动；复用时应保留离屏停止和帧率上限。 作为首屏背景与稳定工作台组合，勿叠加同区域大幅粒子、文字变形和多套指针反馈。 键盘：Canvas不进入Tab顺序；标题、CTA和工作台以DOM保持可读。 减少动态：迁移时提供静态色场或停止时间推进；源页面GPU的减少动态行为需单独核验。 实施前读取来源源码、研究与复现边界，不以本Prompt替代代码。",
+    "preview": "previews/patterns/procedural-fluid-spotlight.jpg"
   },
   {
     "id": "process-to-result-collapse",
@@ -8577,7 +10882,12 @@ window.ATLAS_PATTERNS = [
         "observation": "工作流演示每11秒切换周报、销售汇总和项目测试三种故事；输入JSON先出现，替换为计划结果，再收起执行过程并留下任务卡。使用固定2026-09-01演示时间，不创建真实任务。",
         "evidence": "observed",
         "referenceUrl": "https://www.deepseek.com/harness/",
-        "capturedAt": "2026-10-11"
+        "capturedAt": "2026-10-11",
+        "focus": {
+          "target": "[class^=HarnessWorkflowPreview_canvas]",
+          "label": "执行过程收起与任务卡",
+          "instruction": "看输入、工具结果和执行过程依次出现，过程收起后留下任务卡；随后会切换下一种工作故事。"
+        }
       }
     ],
     "sourceFiles": [
@@ -8607,7 +10917,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/deepseek-harness/vendor/deepseek-harness/8555-7c9518c428e988c2.js",
       "demos/cases/deepseek-harness/vendor/deepseek-harness/86b88eeb-5b86058878847f6a.js"
     ],
-    "prompt": "为【目标页面/组件】实现「执行过程折叠后保留结果」。先展开结构化输入，替换为任务结果，再折叠中间执行过程；完成文案和独立任务卡保留在原阅读位置，下一轮更换示例而不改变结构。 触发：演示任务由输入进入完成阶段。结果：用户能理解关键执行信息，又能清楚看到最终可用对象。 真实产品要由实际执行状态驱动；演示应明确固定故事与日期。 输入和结果使用同一任务标识，折叠只改变呈现而不改变事实。 负责过程与结果的层级交接，可与跨场景成果保留组合；日志详情属于独立深入查看职责。 键盘：提供独立暂停；若迁移成实际产品，用语义展开按钮保留回看过程的入口。 减少动态：直接呈现可读结果与完成卡，保留执行说明。 实施前读取来源源码、研究与复现边界，不以本Prompt替代代码。"
+    "prompt": "为【目标页面/组件】实现「执行过程折叠后保留结果」。先展开结构化输入，替换为任务结果，再折叠中间执行过程；完成文案和独立任务卡保留在原阅读位置，下一轮更换示例而不改变结构。 触发：演示任务由输入进入完成阶段。结果：用户能理解关键执行信息，又能清楚看到最终可用对象。 真实产品要由实际执行状态驱动；演示应明确固定故事与日期。 输入和结果使用同一任务标识，折叠只改变呈现而不改变事实。 负责过程与结果的层级交接，可与跨场景成果保留组合；日志详情属于独立深入查看职责。 键盘：提供独立暂停；若迁移成实际产品，用语义展开按钮保留回看过程的入口。 减少动态：直接呈现可读结果与完成卡，保留执行说明。 实施前读取来源源码、研究与复现边界，不以本Prompt替代代码。",
+    "preview": "previews/patterns/process-to-result-collapse.jpg"
   },
   {
     "id": "scroll-gathered-pixel-mark",
@@ -8666,7 +10977,13 @@ window.ATLAS_PATTERNS = [
         "observation": "页尾196个Three.js立方体随滚动从球面散布聚合为像素标志；独立2D网格以90px间隔绘制断开线段和3.6px方点，手机隐藏三维层。",
         "evidence": "observed",
         "referenceUrl": "https://www.deepseek.com/harness/",
-        "capturedAt": "2026-10-11"
+        "capturedAt": "2026-10-11",
+        "focus": {
+          "target": "#products",
+          "label": "滚动聚合的立方体标志",
+          "instruction": "在这一节上下滚动，观察散布立方体聚合成标志；手机上隐藏三维层，可切桌面模式观看。",
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -8696,7 +11013,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/deepseek-harness/vendor/deepseek-harness/8555-7c9518c428e988c2.js",
       "demos/cases/deepseek-harness/vendor/deepseek-harness/86b88eeb-5b86058878847f6a.js"
     ],
-    "prompt": "为【目标页面/组件】实现「散布立方体随滚动聚合标记」。同一批立方体在球面起点和固定像素网格目标之间插值，滚动推进聚合量，反向滚动可散开；小幅旋转与漂浮在聚合期间减弱。 触发：滚动进入或离开页尾CTA。结果：抽象空间逐步收束成品牌标记，为内容结束提供可逆的视觉回应。 目标点位决定最终图形，必须与已确认的标记一致。 源页面手机隐藏三维层；正文与行动不能依赖GPU才能阅读。 负责页尾视觉收束，CTA文本保持独立；与首屏背景共享色彩即可，不需要共享粒子状态。 键盘：装饰层不拦截指针和焦点，链接保持原生DOM。 减少动态：迁移时直接给出目标标记或隐藏装饰，保留同一CTA；源GPU减少动态行为单列验证。 实施前读取来源源码、研究与复现边界，不以本Prompt替代代码。"
+    "prompt": "为【目标页面/组件】实现「散布立方体随滚动聚合标记」。同一批立方体在球面起点和固定像素网格目标之间插值，滚动推进聚合量，反向滚动可散开；小幅旋转与漂浮在聚合期间减弱。 触发：滚动进入或离开页尾CTA。结果：抽象空间逐步收束成品牌标记，为内容结束提供可逆的视觉回应。 目标点位决定最终图形，必须与已确认的标记一致。 源页面手机隐藏三维层；正文与行动不能依赖GPU才能阅读。 负责页尾视觉收束，CTA文本保持独立；与首屏背景共享色彩即可，不需要共享粒子状态。 键盘：装饰层不拦截指针和焦点，链接保持原生DOM。 减少动态：迁移时直接给出目标标记或隐藏装饰，保留同一CTA；源GPU减少动态行为单列验证。 实施前读取来源源码、研究与复现边界，不以本Prompt替代代码。",
+    "preview": "previews/patterns/scroll-gathered-pixel-mark.jpg"
   },
   {
     "id": "aspect-recomposed-3d-hero",
@@ -8772,7 +11090,12 @@ window.ATLAS_PATTERNS = [
         "observation": "首屏首次布局及容器尺寸改变：reposeHero() 按容器宽高比分五档设置同一星球的位置与缩放；宽高比大于 1.9 时为 [1.15, 0.30, 0]／0.68，大于 1.4 至 1.9 时为 [0.85, 0.30, 0]／0.58，大于 1.0 至 1.4 时为 [0.55, 0.45, 0]／0.48，大于 0.7 至 1.0 时为 [0.20, 0.80, 0]／0.45，其余为 [0.0, 0.95, 0]／0.42；大气层同步位置和比例，使横屏主角偏右、竖屏主角上移，为左下标题留白。",
         "evidence": "observed",
         "referenceUrl": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/demo/web-design-demo/demo1-with-skill.html",
-        "capturedAt": "2026-10-27"
+        "capturedAt": "2026-10-27",
+        "focus": {
+          "target": "#hero-planet",
+          "label": "随画幅重新安排的三维星球",
+          "instruction": "切换桌面与手机模式，观察同一星球在横屏偏右、竖屏上移，为标题留出空间。"
+        }
       }
     ],
     "sourceFiles": [
@@ -8780,7 +11103,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/stellar-museum/index.html",
       "entries/cases/stellar-museum.json",
       "docs/cases/stellar-museum.md"
-    ]
+    ],
+    "preview": "previews/patterns/aspect-recomposed-3d-hero.jpg"
   },
   {
     "id": "difference-blend-navigation",
@@ -8849,7 +11173,17 @@ window.ATLAS_PATTERNS = [
         "observation": "暖纸色 #f2efe8 与墨色 #161513 构成固定双色基调，联系和页脚反转为墨底浅字；固定顶栏和两侧竖排标记使用差值混合跨越深浅背景。",
         "evidence": "observed",
         "referenceUrl": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/demo/web-design-demo/demo2-with-skill.html",
-        "capturedAt": "2026-10-27"
+        "capturedAt": "2026-10-27",
+        "focus": {
+          "target": ".masthead",
+          "label": "跨越深浅背景的差值导航",
+          "instruction": "向下滚到深色 Contact，再返回浅色摄影与正文，观察固定导航的文字怎样随背景反转。",
+          "prepare": [
+            {
+              "scroll": "#contact"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -8857,7 +11191,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/mira-host-photography/index.html",
       "entries/cases/mira-host-photography.json",
       "docs/cases/mira-host-photography.md"
-    ]
+    ],
+    "preview": "previews/patterns/difference-blend-navigation.jpg"
   },
   {
     "id": "inline-row-photo-preview",
@@ -8936,7 +11271,13 @@ window.ATLAS_PATTERNS = [
         "observation": "桌面悬停作品目录行时，标题右移 8px、箭头右移 6px，对应照片缩略图从透明和 0.94 倍缩放进入；离开后回到初态。1100px 及以下隐藏缩略图。",
         "evidence": "observed",
         "referenceUrl": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/demo/web-design-demo/demo2-with-skill.html",
-        "capturedAt": "2026-10-27"
+        "capturedAt": "2026-10-27",
+        "focus": {
+          "target": "#works .toc",
+          "label": "作品目录行内的摄影预览",
+          "instruction": "把指针停在任一作品目录行上，观察标题和箭头轻移、对应摄影缩略图出现；移开回到初态。",
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -8944,7 +11285,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/mira-host-photography/index.html",
       "entries/cases/mira-host-photography.json",
       "docs/cases/mira-host-photography.md"
-    ]
+    ],
+    "preview": "previews/patterns/inline-row-photo-preview.jpg"
   },
   {
     "id": "accent-role-tiers",
@@ -9004,7 +11346,13 @@ window.ATLAS_PATTERNS = [
         "observation": "品牌切换在同一 DOM 上更新 data-brand；主题按跟随系统、深色、浅色循环，四组变量分别控制页面底、表面、文字、五层主题色、标志与圆角，页面不刷新。",
         "evidence": "adapted",
         "referenceUrl": "https://web-atlas.mibxranime.chatgpt.site/",
-        "capturedAt": "2026-10-31"
+        "capturedAt": "2026-10-31",
+        "focus": {
+          "target": ".panel:first-child",
+          "label": "五个主题色角色",
+          "instruction": "对比正文链接、强调字、实心操作、高亮条和柔和状态，再滚动比较 Web／Motion 的浅深四组配色。",
+          "entrypoint": "demos/cases/atlas-sister-sites/source/accent-tiers.html"
+        }
       },
       {
         "caseId": "atlas-sister-sites",
@@ -9012,7 +11360,13 @@ window.ATLAS_PATTERNS = [
         "observation": "{\"title\":\"Web Atlas · 固定提交源码\",\"url\":\"https://github.com/MIBXR/web-atlas/tree/2541e56a21d5321717b9397c14ae09462d562ee4/site\",\"type\":\"实例\",\"note\":\"Web 配色、字体、顶栏、侧栏、卡片、文档与详情吸附、过渡的数值来源。\"}",
         "evidence": "adapted",
         "referenceUrl": "https://github.com/MIBXR/web-atlas/tree/2541e56a21d5321717b9397c14ae09462d562ee4/site",
-        "capturedAt": "2026-10-31"
+        "capturedAt": "2026-10-31",
+        "focus": {
+          "target": ".panel:first-child",
+          "label": "五个主题色角色",
+          "instruction": "对比正文链接、强调字、实心操作、高亮条和柔和状态，再滚动比较 Web／Motion 的浅深四组配色。",
+          "entrypoint": "demos/cases/atlas-sister-sites/source/accent-tiers.html"
+        }
       },
       {
         "caseId": "atlas-sister-sites",
@@ -9020,7 +11374,13 @@ window.ATLAS_PATTERNS = [
         "observation": "{\"title\":\"Motion Atlas · 固定提交源码\",\"url\":\"https://github.com/MIBXR/motion-atlas/tree/80aac18cd2fcef4a97e53b1ef9227a223136ff60/site\",\"type\":\"实例\",\"note\":\"Motion 品牌路径、暖色主题、圆角和胶囊当前项及共享骨架来源。\"}",
         "evidence": "adapted",
         "referenceUrl": "https://github.com/MIBXR/motion-atlas/tree/80aac18cd2fcef4a97e53b1ef9227a223136ff60/site",
-        "capturedAt": "2026-10-31"
+        "capturedAt": "2026-10-31",
+        "focus": {
+          "target": ".panel:first-child",
+          "label": "五个主题色角色",
+          "instruction": "对比正文链接、强调字、实心操作、高亮条和柔和状态，再滚动比较 Web／Motion 的浅深四组配色。",
+          "entrypoint": "demos/cases/atlas-sister-sites/source/accent-tiers.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -9032,7 +11392,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/atlas-sister-sites/fidelity.md",
       "demos/cases/atlas-sister-sites/LICENSES.md",
       "demos/cases/atlas-sister-sites/source/accent-tiers.html"
-    ]
+    ],
+    "preview": "previews/patterns/accent-role-tiers.jpg"
   },
   {
     "id": "current-item-emphasis-tiers",
@@ -9093,7 +11454,13 @@ window.ATLAS_PATTERNS = [
         "observation": "顶栏当前页与手机全站导航当前页使用 --accent-3 底和 --accent-3-ink 字；侧栏和本文目录使用 --accent-4 底、--accent-2 字与 650 字重，非当前导航悬停使用次级面与正文色。",
         "evidence": "adapted",
         "referenceUrl": "https://web-atlas.mibxranime.chatgpt.site/",
-        "capturedAt": "2026-10-31"
+        "capturedAt": "2026-10-31",
+        "focus": {
+          "target": ".layout .rail, .menu-toggle",
+          "label": "顶栏与侧栏的当前项",
+          "instruction": "切换侧栏分类，再把指针停在其他分类；对比顶栏实心当前页、侧栏柔和当前项与中性悬停。",
+          "entrypoint": "demos/cases/atlas-sister-sites/index.html#list"
+        }
       },
       {
         "caseId": "atlas-sister-sites",
@@ -9101,7 +11468,13 @@ window.ATLAS_PATTERNS = [
         "observation": "{\"title\":\"Web Atlas · 固定提交源码\",\"url\":\"https://github.com/MIBXR/web-atlas/tree/2541e56a21d5321717b9397c14ae09462d562ee4/site\",\"type\":\"实例\",\"note\":\"Web 配色、字体、顶栏、侧栏、卡片、文档与详情吸附、过渡的数值来源。\"}",
         "evidence": "adapted",
         "referenceUrl": "https://github.com/MIBXR/web-atlas/tree/2541e56a21d5321717b9397c14ae09462d562ee4/site",
-        "capturedAt": "2026-10-31"
+        "capturedAt": "2026-10-31",
+        "focus": {
+          "target": ".layout .rail, .menu-toggle",
+          "label": "顶栏与侧栏的当前项",
+          "instruction": "切换侧栏分类，再把指针停在其他分类；对比顶栏实心当前页、侧栏柔和当前项与中性悬停。",
+          "entrypoint": "demos/cases/atlas-sister-sites/index.html#list"
+        }
       },
       {
         "caseId": "atlas-sister-sites",
@@ -9109,7 +11482,13 @@ window.ATLAS_PATTERNS = [
         "observation": "{\"title\":\"Motion Atlas · 固定提交源码\",\"url\":\"https://github.com/MIBXR/motion-atlas/tree/80aac18cd2fcef4a97e53b1ef9227a223136ff60/site\",\"type\":\"实例\",\"note\":\"Motion 品牌路径、暖色主题、圆角和胶囊当前项及共享骨架来源。\"}",
         "evidence": "adapted",
         "referenceUrl": "https://github.com/MIBXR/motion-atlas/tree/80aac18cd2fcef4a97e53b1ef9227a223136ff60/site",
-        "capturedAt": "2026-10-31"
+        "capturedAt": "2026-10-31",
+        "focus": {
+          "target": ".layout .rail, .menu-toggle",
+          "label": "顶栏与侧栏的当前项",
+          "instruction": "切换侧栏分类，再把指针停在其他分类；对比顶栏实心当前页、侧栏柔和当前项与中性悬停。",
+          "entrypoint": "demos/cases/atlas-sister-sites/index.html#list"
+        }
       }
     ],
     "sourceFiles": [
@@ -9121,7 +11500,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/atlas-sister-sites/fidelity.md",
       "demos/cases/atlas-sister-sites/LICENSES.md",
       "demos/cases/atlas-sister-sites/source/emphasis.html"
-    ]
+    ],
+    "preview": "previews/patterns/current-item-emphasis-tiers.jpg"
   },
   {
     "id": "persistent-header-page-transition",
@@ -9181,7 +11561,13 @@ window.ATLAS_PATTERNS = [
         "observation": "hash 驱动列表、详情与文档的 DOM 更新；支持 startViewTransition 且不减少动态时开启 140ms ease-out 根过渡，atlas-header 快照无动画、旧快照隐藏；不支持或减少动态时直接更新。",
         "evidence": "adapted",
         "referenceUrl": "https://web-atlas.mibxranime.chatgpt.site/",
-        "capturedAt": "2026-10-31"
+        "capturedAt": "2026-10-31",
+        "focus": {
+          "target": ".site-nav",
+          "label": "主体切换与固定顶栏",
+          "instruction": "点顶栏“列表”“详情”“文档”等入口，观察主体交接，顶栏保持在同一位置。",
+          "entrypoint": "demos/cases/atlas-sister-sites/index.html#list"
+        }
       },
       {
         "caseId": "atlas-sister-sites",
@@ -9189,7 +11575,13 @@ window.ATLAS_PATTERNS = [
         "observation": "{\"title\":\"Web Atlas · 固定提交源码\",\"url\":\"https://github.com/MIBXR/web-atlas/tree/2541e56a21d5321717b9397c14ae09462d562ee4/site\",\"type\":\"实例\",\"note\":\"Web 配色、字体、顶栏、侧栏、卡片、文档与详情吸附、过渡的数值来源。\"}",
         "evidence": "adapted",
         "referenceUrl": "https://github.com/MIBXR/web-atlas/tree/2541e56a21d5321717b9397c14ae09462d562ee4/site",
-        "capturedAt": "2026-10-31"
+        "capturedAt": "2026-10-31",
+        "focus": {
+          "target": ".site-nav",
+          "label": "主体切换与固定顶栏",
+          "instruction": "点顶栏“列表”“详情”“文档”等入口，观察主体交接，顶栏保持在同一位置。",
+          "entrypoint": "demos/cases/atlas-sister-sites/index.html#list"
+        }
       },
       {
         "caseId": "atlas-sister-sites",
@@ -9197,7 +11589,13 @@ window.ATLAS_PATTERNS = [
         "observation": "{\"title\":\"Motion Atlas · 固定提交源码\",\"url\":\"https://github.com/MIBXR/motion-atlas/tree/80aac18cd2fcef4a97e53b1ef9227a223136ff60/site\",\"type\":\"实例\",\"note\":\"Motion 品牌路径、暖色主题、圆角和胶囊当前项及共享骨架来源。\"}",
         "evidence": "adapted",
         "referenceUrl": "https://github.com/MIBXR/motion-atlas/tree/80aac18cd2fcef4a97e53b1ef9227a223136ff60/site",
-        "capturedAt": "2026-10-31"
+        "capturedAt": "2026-10-31",
+        "focus": {
+          "target": ".site-nav",
+          "label": "主体切换与固定顶栏",
+          "instruction": "点顶栏“列表”“详情”“文档”等入口，观察主体交接，顶栏保持在同一位置。",
+          "entrypoint": "demos/cases/atlas-sister-sites/index.html#list"
+        }
       }
     ],
     "sourceFiles": [
@@ -9208,7 +11606,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/atlas-sister-sites/app.js",
       "demos/cases/atlas-sister-sites/fidelity.md",
       "demos/cases/atlas-sister-sites/LICENSES.md"
-    ]
+    ],
+    "preview": "previews/patterns/persistent-header-page-transition.jpg"
   },
   {
     "id": "shorter-column-sticky",
@@ -9274,7 +11673,23 @@ window.ATLAS_PATTERNS = [
         "observation": "详情以 ResizeObserver 读取顶栏、操作栏、舞台列与说明栏：1160px 起舞台列始终 sticky，说明比舞台短时同时 sticky；top 为顶栏 68px 加操作栏实高加 24px，两栏在容器末尾按自然 sticky 边界结束；1159px 及以下单列。",
         "evidence": "adapted",
         "referenceUrl": "https://web-atlas.mibxranime.chatgpt.site/",
-        "capturedAt": "2026-10-31"
+        "capturedAt": "2026-10-31",
+        "focus": {
+          "target": ".detail-layout",
+          "label": "舞台与较短说明栏吸附",
+          "instruction": "点“右栏：较长／较短”切换说明长度，再上下滚动，对比舞台与较短说明栏的吸附；桌面 1440px 可看双栏。",
+          "entrypoint": "demos/cases/atlas-sister-sites/index.html#detail",
+          "prepare": [
+            {
+              "click": ".site-nav a[href=\"#detail\"]",
+              "waitFor": ".detail-layout"
+            },
+            {
+              "click": "#right-length[aria-pressed=false]"
+            }
+          ],
+          "viewport": "wide"
+        }
       },
       {
         "caseId": "atlas-sister-sites",
@@ -9282,7 +11697,23 @@ window.ATLAS_PATTERNS = [
         "observation": "{\"title\":\"Web Atlas · 固定提交源码\",\"url\":\"https://github.com/MIBXR/web-atlas/tree/2541e56a21d5321717b9397c14ae09462d562ee4/site\",\"type\":\"实例\",\"note\":\"Web 配色、字体、顶栏、侧栏、卡片、文档与详情吸附、过渡的数值来源。\"}",
         "evidence": "adapted",
         "referenceUrl": "https://github.com/MIBXR/web-atlas/tree/2541e56a21d5321717b9397c14ae09462d562ee4/site",
-        "capturedAt": "2026-10-31"
+        "capturedAt": "2026-10-31",
+        "focus": {
+          "target": ".detail-layout",
+          "label": "舞台与较短说明栏吸附",
+          "instruction": "点“右栏：较长／较短”切换说明长度，再上下滚动，对比舞台与较短说明栏的吸附；桌面 1440px 可看双栏。",
+          "entrypoint": "demos/cases/atlas-sister-sites/index.html#detail",
+          "prepare": [
+            {
+              "click": ".site-nav a[href=\"#detail\"]",
+              "waitFor": ".detail-layout"
+            },
+            {
+              "click": "#right-length[aria-pressed=false]"
+            }
+          ],
+          "viewport": "wide"
+        }
       },
       {
         "caseId": "atlas-sister-sites",
@@ -9290,7 +11721,23 @@ window.ATLAS_PATTERNS = [
         "observation": "{\"title\":\"Motion Atlas · 固定提交源码\",\"url\":\"https://github.com/MIBXR/motion-atlas/tree/80aac18cd2fcef4a97e53b1ef9227a223136ff60/site\",\"type\":\"实例\",\"note\":\"Motion 品牌路径、暖色主题、圆角和胶囊当前项及共享骨架来源。\"}",
         "evidence": "adapted",
         "referenceUrl": "https://github.com/MIBXR/motion-atlas/tree/80aac18cd2fcef4a97e53b1ef9227a223136ff60/site",
-        "capturedAt": "2026-10-31"
+        "capturedAt": "2026-10-31",
+        "focus": {
+          "target": ".detail-layout",
+          "label": "舞台与较短说明栏吸附",
+          "instruction": "点“右栏：较长／较短”切换说明长度，再上下滚动，对比舞台与较短说明栏的吸附；桌面 1440px 可看双栏。",
+          "entrypoint": "demos/cases/atlas-sister-sites/index.html#detail",
+          "prepare": [
+            {
+              "click": ".site-nav a[href=\"#detail\"]",
+              "waitFor": ".detail-layout"
+            },
+            {
+              "click": "#right-length[aria-pressed=false]"
+            }
+          ],
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -9301,7 +11748,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/atlas-sister-sites/app.js",
       "demos/cases/atlas-sister-sites/fidelity.md",
       "demos/cases/atlas-sister-sites/LICENSES.md"
-    ]
+    ],
+    "preview": "previews/patterns/shorter-column-sticky.jpg"
   },
   {
     "id": "drag-mascot-into-product-demo",
@@ -9355,7 +11803,18 @@ window.ATLAS_PATTERNS = [
         "observation": "指针按下角色后保持握点偏移拖动，未命中时留在原地；以可见身体锚点命中 Drop here 后，400ms 吸附到与敲字位置共用的目标，随后升起终端。触摸和鼠标共用 Pointer Events。",
         "evidence": "observed",
         "referenceUrl": "https://clawdondesk.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "#drop-zone",
+          "label": "角色拖放目标",
+          "instruction": "把中央角色拖到左下角 Drop here；命中后角色吸附，终端随即升起。",
+          "prepare": [
+            {
+              "key": "Escape",
+              "waitFor": "body[data-frame='4']"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -9366,7 +11825,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/clawd-on-desk/source/website/scripts/stage-geometry.js",
       "demos/cases/clawd-on-desk/source/website/styles/responsive.css",
       "demos/cases/clawd-on-desk/source/website/scripts/terminal.js"
-    ]
+    ],
+    "preview": "previews/patterns/drag-mascot-into-product-demo.jpg"
   },
   {
     "id": "expressive-permission-branches",
@@ -9418,7 +11878,18 @@ window.ATLAS_PATTERNS = [
         "observation": "Permission Request 的 Allow 淡出终端并进入六格动作画廊；首次 Deny 经过趴地、起身、挠头与撒娇后给出重试卡；重试可 Allow，也可再次 Deny 后戴墨镜、收回米色圆幕并逐字显示 Thanks for visiting.。末态点击角色七次显示作者彩蛋，5 秒后消失。",
         "evidence": "observed",
         "referenceUrl": "https://clawdondesk.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "body:not(.clawd-perm-show) #drop-zone, body.clawd-perm-show #clawd-perm-card",
+          "label": "角色权限选择入口",
+          "instruction": "先把角色拖到 Drop here。出现 Permission Request 后，选择 Allow 或 Deny，观察角色动作和页面分支；第一次 Deny 后还能重试。",
+          "prepare": [
+            {
+              "key": "Escape",
+              "waitFor": "body[data-frame='4']"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -9428,7 +11899,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/clawd-on-desk/source/website/scripts/terminal.js",
       "demos/cases/clawd-on-desk/index.html",
       "demos/cases/clawd-on-desk/assets/svg/clawd-shades.svg"
-    ]
+    ],
+    "preview": "previews/patterns/expressive-permission-branches.jpg"
   },
   {
     "id": "mascot-continuous-iris",
@@ -9479,7 +11951,12 @@ window.ATLAS_PATTERNS = [
         "observation": "开场先停留 500ms，再以 100ms/字输入 Clawd on Desk、闪烁两次、50ms/字倒删；角色移至中央后，米色花园以 800ms 圆形遮罩揭开。Escape 可跳到拖放等待态，普通点击与历史访问不跳过。",
         "evidence": "observed",
         "referenceUrl": "https://clawdondesk.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".stage",
+          "label": "角色与圆形揭幕",
+          "instruction": "看角色伴随标题输入、倒删和居中，然后米色花园由同一个中心展开。点“重播”可重新观看。"
+        }
       }
     ],
     "sourceFiles": [
@@ -9489,7 +11966,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/clawd-on-desk/index.html",
       "demos/cases/clawd-on-desk/source/website/scripts/scene.js",
       "demos/cases/clawd-on-desk/source/website/styles/responsive.css"
-    ]
+    ],
+    "preview": "previews/patterns/mascot-continuous-iris.jpg"
   },
   {
     "id": "mascot-gaze-body-shadow",
@@ -9542,7 +12020,18 @@ window.ATLAS_PATTERNS = [
         "observation": "等待态的眼睛朝指针或标题光标偏移，300px 达到最大 3 SVG 单位，身体按 0.33 倍偏移并联动影子。围绕角色连续同向两圈触发 6 秒眩晕、12 秒冷却；拖放和权限决定优先取消反应。",
         "evidence": "observed",
         "referenceUrl": "https://clawdondesk.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "#clawd",
+          "label": "视线、身体与影子",
+          "instruction": "围绕角色移动指针，看眼睛、身体和影子一起偏移；连续同向绕两圈可触发眩晕反应。",
+          "prepare": [
+            {
+              "key": "Escape",
+              "waitFor": "body[data-frame='4']"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -9552,7 +12041,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/clawd-on-desk/source/website/scripts/eye-track.js",
       "demos/cases/clawd-on-desk/source/website/scripts/dizzy.js",
       "demos/cases/clawd-on-desk/index.html"
-    ]
+    ],
+    "preview": "previews/patterns/mascot-gaze-body-shadow.jpg"
   },
   {
     "id": "pointer-proximity-pixel-garden",
@@ -9603,7 +12093,18 @@ window.ATLAS_PATTERNS = [
         "observation": "指针附近的 37px 网格生出像素花，90px 半径内按距离控制透明度与缩放；移开淡去，最多保留 96 个活动及淡出格子，装饰层不截获输入。",
         "evidence": "observed",
         "referenceUrl": "https://clawdondesk.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "#new-world",
+          "label": "指针附近的像素花园",
+          "instruction": "在米色空地移动指针，观察附近像素花按距离生长，移开后逐渐淡去。",
+          "prepare": [
+            {
+              "key": "Escape",
+              "waitFor": "body[data-frame='4']"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -9613,7 +12114,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/clawd-on-desk/source/website/scripts/pixel-flower.js",
       "demos/cases/clawd-on-desk/source/website/scripts/flower-layer.js",
       "demos/cases/clawd-on-desk/index.html"
-    ]
+    ],
+    "preview": "previews/patterns/pointer-proximity-pixel-garden.jpg"
   },
   {
     "id": "center-split-theme-transition",
@@ -9664,7 +12166,12 @@ window.ATLAS_PATTERNS = [
         "observation": "主题按钮在系统默认与手动选择之间协调页面表面、文字、边界和导航；点击后通过 View Transition 让新主题从横向中线向上下展开，390ms、cubic-bezier(.22,1,.36,1)，完成后清理过渡状态。首尾粉蓝黄渐变面板和产品影片保持原色，减少动态直接完成切换。",
         "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "header",
+          "label": "中央展开的主题切换",
+          "instruction": "点顶栏的明暗主题按钮，观察新主题从页面中线向上下展开。"
+        }
       }
     ],
     "sourceFiles": [
@@ -9675,7 +12182,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/uiarc-platform/style.css",
       "demos/cases/uiarc-platform/source/components.tsx",
       "demos/cases/uiarc-platform/fidelity.md"
-    ]
+    ],
+    "preview": "previews/patterns/center-split-theme-transition.jpg"
   },
   {
     "id": "clipped-word-rise",
@@ -9728,7 +12236,13 @@ window.ATLAS_PATTERNS = [
         "observation": "首屏标题按单词裁切向上显现，词间延迟 40ms，位移／透明度／模糊分别为 760／440／580ms；章节标题可见面积达到 45% 后从 112% 下方上升，860ms 位移与 481.6ms 透明度，结尾双行间隔 80ms；越过的标题直接显示，减少动态保留完整文字。",
         "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero h1",
+          "label": "首屏逐词标题",
+          "instruction": "看标题中的单词依次从下方显现。点“重播”可重新观看入场。",
+          "replay": ".hero .title-word"
+        }
       }
     ],
     "sourceFiles": [
@@ -9740,7 +12254,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/uiarc-platform/fidelity.md",
       "demos/cases/uiarc-platform/source/content.json",
       "demos/cases/uiarc-platform/source/components.tsx"
-    ]
+    ],
+    "preview": "previews/patterns/clipped-word-rise.jpg"
   },
   {
     "id": "parallel-cli-agent-install",
@@ -9784,7 +12299,12 @@ window.ATLAS_PATTERNS = [
         "observation": "shadcn CLI 与 MCP server 并排给出同一组件库的两个安装入口；原始 CopyButton 复制完整命令，以图标交叉淡化和描线勾号反馈，1900ms 后复位；第三张卡区分免费与 Pro 数量。",
         "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".installation",
+          "label": "CLI 与 MCP 安装入口",
+          "instruction": "对比 shadcn CLI 与 MCP server 两张安装卡；各自的复制按钮会复制该入口的完整命令。"
+        }
       }
     ],
     "sourceFiles": [
@@ -9796,7 +12316,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/uiarc-platform/fidelity.md",
       "demos/cases/uiarc-platform/source/content.json",
       "demos/cases/uiarc-platform/source/components.tsx"
-    ]
+    ],
+    "preview": "previews/patterns/parallel-cli-agent-install.jpg"
   },
   {
     "id": "theme-invariant-gradient-panel",
@@ -9846,7 +12367,12 @@ window.ATLAS_PATTERNS = [
         "observation": "主题按钮在系统默认与手动选择之间协调页面表面、文字、边界和导航；点击后通过 View Transition 让新主题从横向中线向上下展开，390ms、cubic-bezier(.22,1,.36,1)，完成后清理过渡状态。首尾粉蓝黄渐变面板和产品影片保持原色，减少动态直接完成切换。",
         "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".closing",
+          "label": "结尾恒定浅色面板",
+          "instruction": "用顶栏明暗按钮切换主题，再回到这个结尾面板；周围界面改变，粉蓝黄面板仍保留浅底深字。"
+        }
       }
     ],
     "sourceFiles": [
@@ -9858,7 +12384,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/uiarc-platform/fidelity.md",
       "demos/cases/uiarc-platform/source/content.json",
       "demos/cases/uiarc-platform/source/components.tsx"
-    ]
+    ],
+    "preview": "previews/patterns/theme-invariant-gradient-panel.jpg"
   },
   {
     "id": "proofreader-headline-edit",
@@ -9915,7 +12442,12 @@ window.ATLAS_PATTERNS = [
         "observation": "首屏标题在允许动态时先显示 A design skill，约 950ms 后以斜线划去 A、写入 The、放大落入行内并转为墨色；邻词用前后实测矩形补偿重排，真实文字接管，减少动态直接显示最终标题。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "#hero-title",
+          "label": "校对式标题改写",
+          "instruction": "标题开场将 A 划去并写成 The；点击工具栏重新载入可再看一次。"
+        }
       }
     ],
     "sourceFiles": [
@@ -9925,7 +12457,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/js/headline.js",
       "demos/cases/hallmark/index.html",
       "demos/cases/hallmark/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/proofreader-headline-edit.jpg"
   },
   {
     "id": "dealt-page-hand",
@@ -9984,7 +12517,12 @@ window.ATLAS_PATTERNS = [
         "observation": "首屏将五张桌面牌与四张手机牌沿浅弧交错发出，悬停或聚焦抬牌并让邻牌横移；Deal again 排除当前主题，随机抽取九个主题，等图片预解码与收牌完成后重发，busy 期间忽略重复点击。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "[data-fan]",
+          "label": "真实页面手牌",
+          "instruction": "将指针移到页面牌上，再点击 Deal again，观察抬牌、让位与重新发牌。"
+        }
       }
     ],
     "sourceFiles": [
@@ -9994,7 +12532,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/js/fan.js",
       "demos/cases/hallmark/index.html",
       "demos/cases/hallmark/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/dealt-page-hand.jpg"
   },
   {
     "id": "normalized-long-page-compare",
@@ -10052,7 +12591,17 @@ window.ATLAS_PATTERNS = [
         "observation": "比较区以同一归一化滚动进度分别计算两张整页图的溢出高度，使不等长页面同时到达各自底部；三组标签替换整页图、问题数和阅读行程。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "[data-cmp-scroll]",
+          "label": "不等长页面同步比较",
+          "instruction": "在比较框内向下滚动，两张长度不同的页面会按同一进度到达底部。",
+          "prepare": [
+            {
+              "click": "[data-pair='1']"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -10062,7 +12611,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/js/compare.js",
       "demos/cases/hallmark/index.html",
       "demos/cases/hallmark/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/normalized-long-page-compare.jpg"
   },
   {
     "id": "demo-once-then-yield-divider",
@@ -10119,7 +12669,12 @@ window.ATLAS_PATTERNS = [
         "observation": "比较分隔线首次进入视口后按 50→74→30→50 示范一次，拖动或键盘操作立即取消自动扫；方向键每次移动 2%，Shift 加速到 10%，Home 和 End 到达两端。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "[data-cmp]",
+          "label": "首轮分隔线示范",
+          "instruction": "分隔线进入画面后先示范一次；拖动中线即可接管比较。"
+        }
       }
     ],
     "sourceFiles": [
@@ -10129,7 +12684,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/js/compare.js",
       "demos/cases/hallmark/index.html",
       "demos/cases/hallmark/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/demo-once-then-yield-divider.jpg"
   },
   {
     "id": "one-move-process-panels",
@@ -10187,7 +12743,12 @@ window.ATLAS_PATTERNS = [
         "observation": "How 的四格分别只解释一个动作：问题依次出现、三张主题牌发出、三个线框预案每 1.9 秒切换、四条 lint 问题逐项修复；悬停发牌格会先收回再发出。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "[data-how]",
+          "label": "四格单动作流程",
+          "instruction": "依次观察提问、发牌、线框与修复四格，每格只演示当前步骤的一个动作。"
+        }
       }
     ],
     "sourceFiles": [
@@ -10197,7 +12758,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/js/how.js",
       "demos/cases/hallmark/index.html",
       "demos/cases/hallmark/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/one-move-process-panels.jpg"
   },
   {
     "id": "scaled-live-page-dialog",
@@ -10255,7 +12817,18 @@ window.ATLAS_PATTERNS = [
         "observation": "主题网格在原生对话框中打开真实主题页，iframe 按 1440px 排版并以容器宽度缩放，材料说明与当前主题同步，上一项和下一项沿筛选结果循环，Escape 关闭后焦点返回当前主题链接。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "[data-th-dlg]",
+          "label": "真实主题页预览对话框",
+          "instruction": "在对话框内滚动真实页面，并用右上角的前后按钮切换主题。",
+          "prepare": [
+            {
+              "click": ".th__link[data-slug=refract]",
+              "waitFor": "[data-th-dlg][open] iframe"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -10265,7 +12838,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/js/themes.js",
       "demos/cases/hallmark/index.html",
       "demos/cases/hallmark/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/scaled-live-page-dialog.jpg"
   },
   {
     "id": "inertial-page-wheel",
@@ -10323,7 +12897,12 @@ window.ATLAS_PATTERNS = [
         "observation": "Made 把十七张页面牌排在三维圆柱上，闲置时缓慢自转，拖动松手后按速度惯性衰减并吸附到整步角，新的拖动接管惯性，方向键选择相邻页，首次接触后停止闲置自转；Edge 155 中侧页点击被 pointer capture 重定向到轮容器，当前项保持。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "[data-wheel]",
+          "label": "Made 页面转轮",
+          "instruction": "左右拖动页面转轮后松手，观察惯性减速与整步吸附；也可用两侧按钮换页。"
+        }
       }
     ],
     "sourceFiles": [
@@ -10333,7 +12912,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/js/wheel.js",
       "demos/cases/hallmark/index.html",
       "demos/cases/hallmark/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/inertial-page-wheel.jpg"
   },
   {
     "id": "digit-odometer-count",
@@ -10390,7 +12970,12 @@ window.ATLAS_PATTERNS = [
         "observation": "GitHub 星标请求完成后，每位数字以 0–9 的竖列滚到目标数位，位间延迟 90ms，千以上显示 k；减少动态直接定位到最终数字。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "[data-gh]",
+          "label": "GitHub 星标数字",
+          "instruction": "观察导航右侧星标数的逐位滚入；数字在星标请求完成后更新。"
+        }
       }
     ],
     "sourceFiles": [
@@ -10400,7 +12985,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/js/core.js",
       "demos/cases/hallmark/style.css",
       "demos/cases/hallmark/index.html"
-    ]
+    ],
+    "preview": "previews/patterns/digit-odometer-count.jpg"
   },
   {
     "id": "same-material-page-pairs",
@@ -10447,7 +13033,12 @@ window.ATLAS_PATTERNS = [
         "observation": "Same 区把同属 Kiln 的两页和同属 Midnight 的两页分别并置，用相同材料下不同的内容与布局说明主题提供材料、构建决定页面结构。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "#same .pair:first-child",
+          "label": "同一 Kiln 材料的两张页面",
+          "instruction": "比较陶艺学校与陶器商店：同一套主题材料分别形成两种内容与布局。"
+        }
       }
     ],
     "sourceFiles": [
@@ -10456,7 +13047,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/fidelity.md",
       "demos/cases/hallmark/index.html",
       "demos/cases/hallmark/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/same-material-page-pairs.jpg"
   },
   {
     "id": "confirmed-command-copy",
@@ -10503,7 +13095,13 @@ window.ATLAS_PATTERNS = [
         "observation": "首页、Lumen 和 Terminal 的复制按钮复制对应命令或当前可见代码，成功后短暂显示勾或 Copied 并更新状态播报，反馈计时结束后恢复按钮。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".get",
+          "label": "安装命令与复制反馈",
+          "instruction": "切换 brew 或 cargo，点击命令右侧的复制按钮，观察完成反馈。",
+          "entrypoint": "demos/cases/hallmark/themes/terminal/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -10514,7 +13112,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/themes/lumen/page.js",
       "demos/cases/hallmark/themes/terminal/page.js",
       "demos/cases/hallmark/index.html"
-    ]
+    ],
+    "preview": "previews/patterns/confirmed-command-copy.jpg"
   },
   {
     "id": "gesture-cleared-scent-field",
@@ -10572,7 +13171,18 @@ window.ATLAS_PATTERNS = [
         "observation": "Atelier 用同一个半尺寸 WebGL 场绘制上升香气、试香纸羽流和指针尾迹，指针移动拨开雾，选择香型同时改变环境雾与羽流颜色，离开显雾区域或后台时停帧。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero__art",
+          "label": "香型试纸与香气场",
+          "instruction": "选择一张试香纸，再移动指针拨开香气；观察环境雾与试纸羽流一起换色。",
+          "entrypoint": "demos/cases/hallmark/themes/atelier/index.html",
+          "prepare": [
+            {
+              "click": ".hero [data-scent='3']"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -10582,7 +13192,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/themes/atelier/air.js",
       "demos/cases/hallmark/themes/atelier/page.js",
       "demos/cases/hallmark/themes/atelier/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/gesture-cleared-scent-field.jpg"
   },
   {
     "id": "gated-character-stream",
@@ -10639,7 +13250,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Cobalt 将数据包沿 8×16px 字格中的噪声束送过类型门，字符跨门后由原始 JSON 变为事件名，失败包经历抖动、等待和重试，指针使附近字符束偏开并增亮。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero .field",
+          "label": "数据字符流与类型门",
+          "instruction": "看中央蓝色竖向类型门：字符跨过它时由 JSON 变为事件名；移动指针可拨开附近字符束。",
+          "entrypoint": "demos/cases/hallmark/themes/cobalt/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -10649,7 +13266,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/themes/cobalt/wire.js",
       "demos/cases/hallmark/themes/cobalt/index.html",
       "demos/cases/hallmark/themes/cobalt/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/gated-character-stream.jpg"
   },
   {
     "id": "field-linked-connectors",
@@ -10702,7 +13320,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Cobalt 检查器根据两侧同名字段的真实矩形生成带圆角的弯折连线，悬停字段时同步强调对应行与连线，容器变化后重新测量。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "[data-insp]",
+          "label": "字段到类型的连线",
+          "instruction": "将指针移到任一字段上，对照两列同名字段与弯折连线的同步强调。",
+          "entrypoint": "demos/cases/hallmark/themes/cobalt/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -10712,7 +13336,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/themes/cobalt/wire.js",
       "demos/cases/hallmark/themes/cobalt/index.html",
       "demos/cases/hallmark/themes/cobalt/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/field-linked-connectors.jpg"
   },
   {
     "id": "procedural-map-loupe",
@@ -10770,7 +13395,14 @@ window.ATLAS_PATTERNS = [
         "observation": "Furrow 从固定噪声场以 marching squares 生成等高线，再绘地块、树篱与路线；放大镜跟随地图指针并以 1.9 倍重新绘制同一程序几何，移开后缓慢回到农场门边。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero__map",
+          "label": "程序地图与跟随放大镜",
+          "instruction": "在桌面地图上移动指针，用放大镜对照等高线、地块与路线的同一几何细节。",
+          "entrypoint": "demos/cases/hallmark/themes/furrow/index.html",
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -10780,7 +13412,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/themes/furrow/map.js",
       "demos/cases/hallmark/themes/furrow/style.css",
       "demos/cases/hallmark/themes/furrow/index.html"
-    ]
+    ],
+    "preview": "previews/patterns/procedural-map-loupe.jpg"
   },
   {
     "id": "measured-redline-annotation",
@@ -10838,7 +13471,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Studio 指向、触摸或聚焦版面区块时测量真实矩形和四向邻块间距并生成 SVG 红线，指向字母时用 DOM Range 逐字测量，以 em 千分之一显示 advance。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "[data-trim]",
+          "label": "版面实测红线",
+          "instruction": "将指针移到字母或版面区块上，查看当前字宽、区块尺寸和相邻间距。",
+          "entrypoint": "demos/cases/hallmark/themes/studio/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -10848,7 +13487,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/themes/studio/spec.js",
       "demos/cases/hallmark/themes/studio/index.html",
       "demos/cases/hallmark/themes/studio/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/measured-redline-annotation.jpg"
   },
   {
     "id": "reading-grows-glyph-garden",
@@ -10906,7 +13546,18 @@ window.ATLAS_PATTERNS = [
         "observation": "Hum 按顺序点击句中单词，每个已读词长出一株字形植物；越序点击提示下一词，焦点跟到下一词，五分钟时间带每五秒撕下一片纸屑，完成后可重读。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero",
+          "label": "读词后生长的字形植物",
+          "instruction": "按句子顺序点击单词，每读一个词，下面就长出一株字形植物。",
+          "entrypoint": "demos/cases/hallmark/themes/hum/index.html",
+          "prepare": [
+            {
+              "click": ".tile[data-i=\"0\"][aria-pressed=false]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -10916,7 +13567,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/themes/hum/round.js",
       "demos/cases/hallmark/themes/hum/index.html",
       "demos/cases/hallmark/themes/hum/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/reading-grows-glyph-garden.jpg"
   },
   {
     "id": "dotfile-glyph-portrait",
@@ -10974,7 +13626,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Terminal 以灰度格数据决定配置文本字符的大小、字重和色阶，逐行从扰动字符解析为兔与字标；指针附近字符加热变亮并逐帧冷却回到原字符。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero .art",
+          "label": "配置文本字符兔",
+          "instruction": "将指针移过兔子：附近字符会变亮，再逐渐冷却回配置文本。",
+          "entrypoint": "demos/cases/hallmark/themes/terminal/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -10984,7 +13642,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/themes/terminal/art.js",
       "demos/cases/hallmark/themes/terminal/page.js",
       "demos/cases/hallmark/themes/terminal/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/dotfile-glyph-portrait.jpg"
   },
   {
     "id": "shared-caustic-surfaces",
@@ -11042,7 +13701,18 @@ window.ATLAS_PATTERNS = [
         "observation": "Refract 的同一焦散着色器驱动池底、课表亮行和十五根客流水柱，指针触水留下最多四个扩散环，换工作日或周末时水柱、安静时段说明与时间标记一起更新。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "#quiet",
+          "label": "焦散水柱与安静时段",
+          "instruction": "切换 Weekdays 与 Weekends，观察水柱、时段说明与时间标记一起更新；移过水面可留下扩散环。",
+          "entrypoint": "demos/cases/hallmark/themes/refract/index.html",
+          "prepare": [
+            {
+              "click": "[data-days=weekend]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -11052,7 +13722,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/themes/refract/scene.js",
       "demos/cases/hallmark/themes/refract/index.html",
       "demos/cases/hallmark/themes/refract/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/shared-caustic-surfaces.jpg"
   },
   {
     "id": "two-scan-point-cloud-compare",
@@ -11110,7 +13781,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Vantage 在多个视图中复用同一测量场地点位，扫带照亮点云，图层开关控制地面、结构、树冠和变化区域，比较分隔线以 scissor 绘制两次扫描，截面控件同步更新平面切线与高程标注。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "#compare",
+          "label": "扫描 13 与扫描 14 点云比较",
+          "instruction": "拖动比较中线，对照两次扫描；亮色区域表示新增变化。",
+          "entrypoint": "demos/cases/hallmark/themes/vantage/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -11120,7 +13797,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/themes/vantage/scene.js",
       "demos/cases/hallmark/themes/vantage/index.html",
       "demos/cases/hallmark/themes/vantage/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/two-scan-point-cloud-compare.jpg"
   },
   {
     "id": "single-score-audio-visual",
@@ -11178,7 +13856,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Bloom 用一份十六拍谱面同时生成哼唱曲线、音符、四条乐器轨、波形包络和 Web Audio 合成事件，播放头、时码与音符高亮跟随同一音频时钟，切换磁带风格重排同一旋律。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "[data-stage=hero]",
+          "label": "同一谱面的哼唱与四轨编曲",
+          "instruction": "点击播放按钮启用声音，观察播放头、音符和波形如何跟随同一谱面。",
+          "entrypoint": "demos/cases/hallmark/themes/bloom/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -11189,7 +13873,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/themes/bloom/page.js",
       "demos/cases/hallmark/themes/bloom/index.html",
       "demos/cases/hallmark/themes/bloom/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/single-score-audio-visual.jpg"
   },
   {
     "id": "weather-sound-scene-mixer",
@@ -11248,7 +13933,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Ribbon 的雨、风、远处列车和淡出定时器共用控制量，推子同时改变 Web Audio 混音与夜景强度，列车画面和声音共用穿越相位，Listen 启用声音，Stop 淡出后挂起上下文。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero [data-mixer]",
+          "label": "夜景与三路混音推子",
+          "instruction": "拖动 Rain、Wind、Distant train，先看夜景变化；点击 Listen 后可同时听到混音变化。",
+          "entrypoint": "demos/cases/hallmark/themes/ribbon/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -11258,7 +13949,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/themes/ribbon/night.js",
       "demos/cases/hallmark/themes/ribbon/index.html",
       "demos/cases/hallmark/themes/ribbon/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/weather-sound-scene-mixer.jpg"
   },
   {
     "id": "date-place-derived-chart",
@@ -11316,7 +14008,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Almanac 按日期和港口的纬度、均值、潮差与时滞推导潮线及日照，在同一次重绘中更新 SVG 曲线、高低潮、日出日落、夜间遮罩和文字读数。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "#day",
+          "label": "潮汐与日照图",
+          "instruction": "切换潮差，再拖动日期；对照曲线、高低潮时间与日照读数的同步变化。",
+          "entrypoint": "demos/cases/hallmark/themes/almanac/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -11326,7 +14024,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/themes/almanac/page.js",
       "demos/cases/hallmark/themes/almanac/index.html",
       "demos/cases/hallmark/themes/almanac/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/date-place-derived-chart.jpg"
   },
   {
     "id": "paper-action-explainer",
@@ -11379,7 +14078,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Coral 按顺序把提醒信滑入窗口信封、贴资、放入回信并在发票上盖 Paid，用纸面对象的位移、遮挡和盖章解释催款流程，离屏时暂停开场。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".scene[data-slot=hero]",
+          "label": "信封、回信与 Paid 印章",
+          "instruction": "观察纸面流程：提醒信进入信封、贴资、收到回信，最后在发票上盖 Paid。",
+          "entrypoint": "demos/cases/hallmark/themes/coral/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -11389,7 +14094,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/themes/coral/scene.js",
       "demos/cases/hallmark/themes/coral/index.html",
       "demos/cases/hallmark/themes/coral/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/paper-action-explainer.jpg"
   },
   {
     "id": "font-metric-guides",
@@ -11442,7 +14148,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Specimen 从字体实际轮廓与基线生成 cap、x-height、baseline 和 descender 参考线，字号、字重与正斜体控件直接更新可编辑试排和读数。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero__poster",
+          "label": "字体量度参考线",
+          "instruction": "对照字形上的 cap、x-height、baseline 与 descender 四条参考线。",
+          "entrypoint": "demos/cases/hallmark/themes/specimen/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -11452,7 +14164,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/themes/specimen/page.js",
       "demos/cases/hallmark/themes/specimen/index.html",
       "demos/cases/hallmark/themes/specimen/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/font-metric-guides.jpg"
   },
   {
     "id": "crt-subpixel-mesh",
@@ -11504,7 +14217,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Arcade 以三像素周期的 RGB 竖条与横向扫描线覆盖显示面，并用红青偏移字边模拟 CRT 子像素色散，字标悬停扩大错位。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero__photo",
+          "label": "CRT 摄影与字标",
+          "instruction": "观察照片上的 RGB 细网与扫描线，再将指针移到字标上查看字边错位。",
+          "entrypoint": "demos/cases/hallmark/themes/arcade/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -11513,7 +14232,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/fidelity.md",
       "demos/cases/hallmark/themes/arcade/style.css",
       "demos/cases/hallmark/themes/arcade/index.html"
-    ]
+    ],
+    "preview": "previews/patterns/crt-subpixel-mesh.jpg"
   },
   {
     "id": "overprint-misregistration",
@@ -11564,7 +14284,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Overprint 的两个色版以混合模式叠印，Riso 将同一字形副本偏移 2px、3px 并以相交色圆表现错版与套色后的第三色。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "#passes",
+          "label": "双色分色与套印样张",
+          "instruction": "对照三张样张：蓝版字形、粉版色圆与两版套印后的第三色。",
+          "entrypoint": "demos/cases/hallmark/themes/riso/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -11575,7 +14301,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/themes/overprint/index.html",
       "demos/cases/hallmark/themes/riso/style.css",
       "demos/cases/hallmark/themes/riso/index.html"
-    ]
+    ],
+    "preview": "previews/patterns/overprint-misregistration.jpg"
   },
   {
     "id": "duotone-blend-photo",
@@ -11626,7 +14353,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Midnight 先将摄影灰度化并提高对比，再以 multiply 和同底色的 lighten 副层混合，使整张图片统一为双色印刷效果并保留细节。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero__visual",
+          "label": "双色摄影画框",
+          "instruction": "观察隧道照片的暗部与亮部：整张照片被统一到深蓝与浅蓝两个色层。",
+          "entrypoint": "demos/cases/hallmark/themes/midnight/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -11635,7 +14368,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/fidelity.md",
       "demos/cases/hallmark/themes/midnight/style.css",
       "demos/cases/hallmark/themes/midnight/index.html"
-    ]
+    ],
+    "preview": "previews/patterns/duotone-blend-photo.jpg"
   },
   {
     "id": "knockout-headline-split",
@@ -11687,7 +14421,14 @@ window.ATLAS_PATTERNS = [
         "observation": "Grid 将对齐的两份标题按第七栏边界互补裁切，使同一标题跨纸面和色场时分别使用对应文字色，窄屏取消副本裁切。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero__type",
+          "label": "跨纸面与蓝色场的同一标题",
+          "instruction": "观察桌面标题跨过蓝色场边界时如何反白；两边文字仍保持同一位置与排版。",
+          "entrypoint": "demos/cases/hallmark/themes/grid/index.html",
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -11696,7 +14437,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/fidelity.md",
       "demos/cases/hallmark/themes/grid/style.css",
       "demos/cases/hallmark/themes/grid/index.html"
-    ]
+    ],
+    "preview": "previews/patterns/knockout-headline-split.jpg"
   },
   {
     "id": "halftone-fade-edge",
@@ -11747,7 +14489,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Halftone 用 radial-gradient 生成规则网点，再以线性 mask 将网点从实到空，在主色场和纸面之间形成六十四像素的半色调过渡边界。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero",
+          "label": "主色场的网点边界",
+          "instruction": "观察红色区域与纸面相接处，网点由密到疏地渐隐。",
+          "entrypoint": "demos/cases/hallmark/themes/halftone/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -11756,7 +14504,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/fidelity.md",
       "demos/cases/hallmark/themes/halftone/style.css",
       "demos/cases/hallmark/themes/halftone/index.html"
-    ]
+    ],
+    "preview": "previews/patterns/halftone-fade-edge.jpg"
   },
   {
     "id": "hf-video-shard-ribbon",
@@ -11822,7 +14571,17 @@ window.ATLAS_PATTERNS = [
         "observation": "Hero：三行圆角挤出三角面共享视频分组，种子 7331 的 LCG 固定碎片形态；方向 166°、速度 1.6、扭转 6°，指针以 0.045 插值改变场景旋转，离开 Hero 后停止其帧循环和视频。",
         "evidence": "observed",
         "referenceUrl": "https://hyperframes.heygen.com/",
-        "capturedAt": "2026-11-02"
+        "capturedAt": "2026-11-02",
+        "focus": {
+          "target": ".hf-hero",
+          "label": "三角视频碎片与虹彩光带",
+          "instruction": "在首屏移动指针，观察三角视频碎片沿光带运动，以及整个场景的轻微转向。",
+          "prepare": [
+            {
+              "waitFor": "html[data-case-loading=ready] .hf-ribbon"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -11834,7 +14593,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hyperframes-site/vendor/three@0.185.0/three.module.js",
       "demos/cases/hyperframes-site/vendor/three@0.185.0/three.core.js",
       "demos/cases/hyperframes-site/fonts.css"
-    ]
+    ],
+    "preview": "previews/patterns/hf-video-shard-ribbon.jpg"
   },
   {
     "id": "hf-video-wall-lazy-play",
@@ -11900,7 +14660,23 @@ window.ATLAS_PATTERNS = [
         "observation": "视频墙：22＋23 部影片各复制一遍形成 90 张卡片；两行按 -1／+1 方向以 40／34 px/s 移动。阈值 0.2 的观察器挂载并播放可见视频，离开时卸载；400px 预取海报，悬停缩放 1.03。",
         "evidence": "observed",
         "referenceUrl": "https://hyperframes.heygen.com/",
-        "capturedAt": "2026-11-02"
+        "capturedAt": "2026-11-02",
+        "focus": {
+          "target": ".hf-showcase",
+          "label": "两行反向移动的视频墙",
+          "instruction": "观察进入画面的视频卡自动播放；可拖动卡片横移，用底部暂停按钮停住两行，或点击卡片打开原播放器。",
+          "prepare": [
+            {
+              "waitFor": "html[data-case-loading=ready] .hf-showcase"
+            },
+            {
+              "scroll": ".hf-showcase"
+            },
+            {
+              "video": ".hf-row video"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -11911,7 +14687,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hyperframes-site/showcase.js",
       "demos/cases/hyperframes-site/index.html",
       "demos/cases/hyperframes-site/styles.css"
-    ]
+    ],
+    "preview": "previews/patterns/hf-video-wall-lazy-play.jpg"
   },
   {
     "id": "hf-ground-canvas-close",
@@ -11977,7 +14754,20 @@ window.ATLAS_PATTERNS = [
         "observation": "地面：固定全屏 WebGL2 四顶点三角条带，uColorScale=10、uFrequency=7、白色基底、0.8 混合；#f7ecd3cc 遮罩覆盖光色，并贯穿下载和开源区。减少动态时保留 Canvas 节点并停止创建地面渲染器。",
         "evidence": "observed",
         "referenceUrl": "https://hyperframes.heygen.com/",
-        "capturedAt": "2026-11-02"
+        "capturedAt": "2026-11-02",
+        "focus": {
+          "target": ".sr-repo",
+          "label": "开源区背后的地面光色",
+          "instruction": "观察开源区与下载区背后的光色；上下滚动时，地面 Canvas 持续贯穿这些区域。",
+          "prepare": [
+            {
+              "waitFor": "html[data-case-loading=ready] .sr-ground-canvas"
+            },
+            {
+              "scroll": ".sr-repo"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -11988,7 +14778,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hyperframes-site/ground.js",
       "demos/cases/hyperframes-site/styles.css",
       "demos/cases/hyperframes-site/index.html"
-    ]
+    ],
+    "preview": "previews/patterns/hf-ground-canvas-close.jpg"
   },
   {
     "id": "anime-dial-hero",
@@ -12032,7 +14823,12 @@ window.ATLAS_PATTERNS = [
         "observation": "首屏用 Three.js 模块机芯、CSS3D SVG 弧线与五层二维 Canvas 组成仪表盘；4000ms 开场代理驱动主时间线，标题于 INTRO_ON 1400 进入，说明比标题延后 500ms，循环交错曲线、点列与环形刻度共同运行。",
         "evidence": "observed",
         "referenceUrl": "https://animejs.com/",
-        "capturedAt": "2026-11-02"
+        "capturedAt": "2026-11-02",
+        "focus": {
+          "target": "#intro > .section",
+          "label": "彩环、点阵与曲线仪表盘",
+          "instruction": "观察彩环仪表盘、点阵与曲线的共同开场；左下角保留安装命令与 Learn more 入口。"
+        }
       }
     ],
     "sourceFiles": [
@@ -12044,7 +14840,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/animejs-site/fidelity.md",
       "demos/cases/animejs-site/source/values.md"
     ],
-    "prompt": "读取 animejs-site 的完整来源包，为目标页面实现「彩环仪表盘开场」。三维机芯与 CSS3D 弧线承托 13×13 点阵、73 条曲线和 37 个点，标题与环形刻度按同一开场代理进入。 数值与素材从 source/values.md、对应区块源码和原始资源中取得。保持触发、交接、反向滚动和原生入口关系。"
+    "prompt": "读取 animejs-site 的完整来源包，为目标页面实现「彩环仪表盘开场」。三维机芯与 CSS3D 弧线承托 13×13 点阵、73 条曲线和 37 个点，标题与环形刻度按同一开场代理进入。 数值与素材从 source/values.md、对应区块源码和原始资源中取得。保持触发、交接、反向滚动和原生入口关系。",
+    "preview": "previews/patterns/anime-dial-hero.jpg"
   },
   {
     "id": "anime-pinned-feature-demos",
@@ -12087,7 +14884,18 @@ window.ATLAS_PATTERNS = [
         "observation": "页面通过一个线性主时间线连接 HEADING、TOOLBOX、FEATURES、MODULES、SPONSORS 与 GET_STARTED 标签；Scroll Observer 以 sync .9 跟随页面位置，八节 API 演示分别维护进入、离开与可同步的子时间线。",
         "evidence": "observed",
         "referenceUrl": "https://animejs.com/",
-        "capturedAt": "2026-11-02"
+        "capturedAt": "2026-11-02",
+        "focus": {
+          "target": "#draggable.is-in-view",
+          "label": "Springs and draggable 演示章节",
+          "instruction": "拖动圆形后松手，观察弹簧回弹；继续上下滚动，查看固定演示层怎样交给相邻 API 章节。",
+          "prepare": [
+            {
+              "scroll": "#draggable",
+              "waitFor": "#draggable.is-in-view"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -12099,7 +14907,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/animejs-site/fidelity.md",
       "demos/cases/animejs-site/source/values.md"
     ],
-    "prompt": "读取 animejs-site 的完整来源包，为目标页面实现「粘性分节全屏 API 演示」。八节内容共用固定演示层；滚动驱动进度与章节子时间线，每节进入时播放、离开时暂停或复位。 数值与素材从 source/values.md、对应区块源码和原始资源中取得。保持触发、交接、反向滚动和原生入口关系。"
+    "prompt": "读取 animejs-site 的完整来源包，为目标页面实现「粘性分节全屏 API 演示」。八节内容共用固定演示层；滚动驱动进度与章节子时间线，每节进入时播放、离开时暂停或复位。 数值与素材从 source/values.md、对应区块源码和原始资源中取得。保持触发、交接、反向滚动和原生入口关系。",
+    "preview": "previews/patterns/anime-pinned-feature-demos.jpg"
   },
   {
     "id": "anime-glb-module-assembly",
@@ -12143,7 +14952,17 @@ window.ATLAS_PATTERNS = [
         "observation": "22 个原始 GLB 构成动画引擎机芯；滚动进入 modules 后按 MODULES_TRANSFORM 590、MODULES_SHRINK 1250、MODULES_ROTATION 1750、MODULES_CASE 1900 展开、缩减与组装模块，Bundle size 和标签数值随同一时间线改变。",
         "evidence": "observed",
         "referenceUrl": "https://animejs.com/",
-        "capturedAt": "2026-11-02"
+        "capturedAt": "2026-11-02",
+        "focus": {
+          "target": "#modules > .fixed-section[style*=\"pointer-events: auto\"]",
+          "label": "机芯模块与 Bundle size",
+          "instruction": "在此处缓慢上下滚动，对照机芯的展开、缩减与装壳，以及右下角 Bundle size 的同步变化。",
+          "prepare": [
+            {
+              "scroll": "#modules > .section-spacer:nth-of-type(2)"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -12155,7 +14974,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/animejs-site/fidelity.md",
       "demos/cases/animejs-site/source/values.md"
     ],
-    "prompt": "读取 animejs-site 的完整来源包，为目标页面实现「滚动驱动的 GLB 模块组装」。真实模型在主时间线中展开、横移、缩减、旋转与装壳；模块标签和 Bundle size 使用同一组时间线位置。 数值与素材从 source/values.md、对应区块源码和原始资源中取得。保持触发、交接、反向滚动和原生入口关系。"
+    "prompt": "读取 animejs-site 的完整来源包，为目标页面实现「滚动驱动的 GLB 模块组装」。真实模型在主时间线中展开、横移、缩减、旋转与装壳；模块标签和 Bundle size 使用同一组时间线位置。 数值与素材从 source/values.md、对应区块源码和原始资源中取得。保持触发、交接、反向滚动和原生入口关系。",
+    "preview": "previews/patterns/anime-glb-module-assembly.jpg"
   },
   {
     "id": "anime-get-started-svg",
@@ -12198,7 +15018,17 @@ window.ATLAS_PATTERNS = [
         "observation": "Start animating 提供十二个带原始 SVG 箭头的文档入口，悬停箭头按原站 CSS 反馈；GET_STARTED 同时将三维场景沿 X 轴旋转至 100 度并向上退出，持续 4000ms。",
         "evidence": "observed",
         "referenceUrl": "https://animejs.com/",
-        "capturedAt": "2026-11-02"
+        "capturedAt": "2026-11-02",
+        "focus": {
+          "target": "#get-started > .section",
+          "label": "Start animating 文档入口",
+          "instruction": "将指针移到十二个文档入口上，观察 SVG 箭头反馈；上下滚动可看背景机芯旋转退出。",
+          "prepare": [
+            {
+              "scroll": "#get-started > .section"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -12210,6 +15040,7 @@ window.ATLAS_PATTERNS = [
       "demos/cases/animejs-site/fidelity.md",
       "demos/cases/animejs-site/source/values.md"
     ],
-    "prompt": "读取 animejs-site 的完整来源包，为目标页面实现「收尾文档入口与 SVG 反馈」。十二个文档入口保留原始 SVG 箭头与悬停反馈；背景机芯旋转并上移，形成进入文档前的视觉收束。 数值与素材从 source/values.md、对应区块源码和原始资源中取得。保持触发、交接、反向滚动和原生入口关系。"
+    "prompt": "读取 animejs-site 的完整来源包，为目标页面实现「收尾文档入口与 SVG 反馈」。十二个文档入口保留原始 SVG 箭头与悬停反馈；背景机芯旋转并上移，形成进入文档前的视觉收束。 数值与素材从 source/values.md、对应区块源码和原始资源中取得。保持触发、交接、反向滚动和原生入口关系。",
+    "preview": "previews/patterns/anime-get-started-svg.jpg"
   }
 ];

@@ -54,7 +54,18 @@
       "observation": "Atelier 用同一个半尺寸 WebGL 场绘制上升香气、试香纸羽流和指针尾迹，指针移动拨开雾，选择香型同时改变环境雾与羽流颜色，离开显雾区域或后台时停帧。",
       "evidence": "observed",
       "referenceUrl": "https://www.usehallmark.com/",
-      "capturedAt": "2026-11-01"
+      "capturedAt": "2026-11-01",
+      "focus": {
+        "target": ".hero__art",
+        "label": "香型试纸与香气场",
+        "instruction": "选择一张试香纸，再移动指针拨开香气；观察环境雾与试纸羽流一起换色。",
+        "entrypoint": "demos/cases/hallmark/themes/atelier/index.html",
+        "prepare": [
+          {
+            "click": ".hero [data-scent='3']"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -64,5 +75,6 @@
     "demos/cases/hallmark/themes/atelier/air.js",
     "demos/cases/hallmark/themes/atelier/page.js",
     "demos/cases/hallmark/themes/atelier/style.css"
-  ]
+  ],
+  "preview": "previews/patterns/gesture-cleared-scent-field.jpg"
 }

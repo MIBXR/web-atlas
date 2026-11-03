@@ -54,7 +54,12 @@
         "observation": "轨迹演示15秒：工具栏、三条泳道和37段时序先后进入，两轮日志上移，最后展开bash调用详情，在结果与计时之间交接，显示NAVIGATION_OK和34毫秒。",
         "evidence": "observed",
         "referenceUrl": "https://www.deepseek.com/harness/",
-        "capturedAt": "2026-10-11"
+        "capturedAt": "2026-10-11",
+        "focus": {
+          "target": "[class^=HarnessTracePreview_canvas]",
+          "label": "调用轨迹与详情",
+          "instruction": "看三条泳道、工具调用和日志依次出现，末段会展开 bash 结果与计时；这节的暂停按钮可停住画面。"
+        }
       }
     ],
     "sourceFiles": [
@@ -84,7 +89,8 @@
       "demos/cases/deepseek-harness/vendor/deepseek-harness/8555-7c9518c428e988c2.js",
       "demos/cases/deepseek-harness/vendor/deepseek-harness/86b88eeb-5b86058878847f6a.js"
     ],
-    "prompt": "为【目标页面/组件】实现「时间线泳道定位调用详情」。输入、模型、工具分别占用时间线泳道；日志沿同一执行顺序展开，选定调用在侧栏显示结果和计时，使宏观节奏与局部证据互相定位。 触发：查看执行轨迹并深入单次工具调用。结果：用户从整段过程走到具体结果与耗时，不丢失调用所在轮次。 泳道时长、轮次和侧栏调用必须对应同一数据。 源页面自动演示切到详情与计时，本巧思的实际产品点击迁移属于adapted建议。 负责多尺度执行信息关联，可与过程折叠配合；保持时间线为概览，不在每个span里重复全文日志。 键盘：演示提供暂停和文字描述；实际交互迁移时每次调用需可键盘选中，关闭详情回到原调用。 减少动态：保留时间线、日志和选中详情的稳定图解。 实施前读取来源源码、研究与复现边界，不以本Prompt替代代码。"
+    "prompt": "为【目标页面/组件】实现「时间线泳道定位调用详情」。输入、模型、工具分别占用时间线泳道；日志沿同一执行顺序展开，选定调用在侧栏显示结果和计时，使宏观节奏与局部证据互相定位。 触发：查看执行轨迹并深入单次工具调用。结果：用户从整段过程走到具体结果与耗时，不丢失调用所在轮次。 泳道时长、轮次和侧栏调用必须对应同一数据。 源页面自动演示切到详情与计时，本巧思的实际产品点击迁移属于adapted建议。 负责多尺度执行信息关联，可与过程折叠配合；保持时间线为概览，不在每个span里重复全文日志。 键盘：演示提供暂停和文字描述；实际交互迁移时每次调用需可键盘选中，关闭详情回到原调用。 减少动态：保留时间线、日志和选中详情的稳定图解。 实施前读取来源源码、研究与复现边界，不以本Prompt替代代码。",
+    "preview": "previews/patterns/execution-trace-drilldown.jpg"
   },
   "sourceCases": [
     {
@@ -334,6 +340,10 @@
     },
     {
       "path": "previews/cases/deepseek-harness.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/execution-trace-drilldown.jpg",
       "role": "preview"
     },
     {

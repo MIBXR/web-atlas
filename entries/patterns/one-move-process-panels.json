@@ -54,7 +54,12 @@
       "observation": "How 的四格分别只解释一个动作：问题依次出现、三张主题牌发出、三个线框预案每 1.9 秒切换、四条 lint 问题逐项修复；悬停发牌格会先收回再发出。",
       "evidence": "observed",
       "referenceUrl": "https://www.usehallmark.com/",
-      "capturedAt": "2026-11-01"
+      "capturedAt": "2026-11-01",
+      "focus": {
+        "target": "[data-how]",
+        "label": "四格单动作流程",
+        "instruction": "依次观察提问、发牌、线框与修复四格，每格只演示当前步骤的一个动作。"
+      }
     }
   ],
   "sourceFiles": [
@@ -64,5 +69,6 @@
     "demos/cases/hallmark/js/how.js",
     "demos/cases/hallmark/index.html",
     "demos/cases/hallmark/style.css"
-  ]
+  ],
+  "preview": "previews/patterns/one-move-process-panels.jpg"
 }

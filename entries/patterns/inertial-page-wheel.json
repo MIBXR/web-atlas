@@ -54,7 +54,12 @@
       "observation": "Made 把十七张页面牌排在三维圆柱上，闲置时缓慢自转，拖动松手后按速度惯性衰减并吸附到整步角，新的拖动接管惯性，方向键选择相邻页，首次接触后停止闲置自转；Edge 155 中侧页点击被 pointer capture 重定向到轮容器，当前项保持。",
       "evidence": "observed",
       "referenceUrl": "https://www.usehallmark.com/",
-      "capturedAt": "2026-11-01"
+      "capturedAt": "2026-11-01",
+      "focus": {
+        "target": "[data-wheel]",
+        "label": "Made 页面转轮",
+        "instruction": "左右拖动页面转轮后松手，观察惯性减速与整步吸附；也可用两侧按钮换页。"
+      }
     }
   ],
   "sourceFiles": [
@@ -64,5 +69,6 @@
     "demos/cases/hallmark/js/wheel.js",
     "demos/cases/hallmark/index.html",
     "demos/cases/hallmark/style.css"
-  ]
+  ],
+  "preview": "previews/patterns/inertial-page-wheel.jpg"
 }

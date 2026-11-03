@@ -36,7 +36,13 @@
       "observation": "用途架子保留原生横滑及左右按钮；后续价格、安全、结束行动与页尾为普通滚动。",
       "evidence": "observed",
       "referenceUrl": "https://chatgpt.com/zh-Hans-CN/overview/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".uses",
+        "label": "用途卡片横向架子",
+        "instruction": "在用途卡片上横向滚动，或用左右按钮移动，页面下方价格与隐私章节仍自然纵向阅读。",
+        "viewport": "wide"
+      }
     },
     {
       "caseId": "met-museum",
@@ -44,7 +50,17 @@
       "observation": "横向浏览展览：原生水平溢出，scroll-snap:none，前后按钮与触摸可操作。",
       "evidence": "observed",
       "referenceUrl": "https://www.metmuseum.org/en",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#exhibitions-rail",
+        "label": "展览的原生横向浏览",
+        "instruction": "在展览图片区域横向滑动，或用标题旁的前后按钮浏览，主页面仍继续纵向滚动。",
+        "prepare": [
+          {
+            "click": "[data-rail=exhibitions-rail][data-direction='1']"
+          }
+        ]
+      }
     },
     {
       "caseId": "apple-product",
@@ -52,7 +68,20 @@
       "observation": "景深四选项 → 官方 f/1.48、1.8、2.8、4.0 摄影交叉变化；旧机型 select 更新比较对象；横向摄影架子保留原生滑动。",
       "evidence": "observed",
       "referenceUrl": "https://www.apple.com/iphone-18-pro/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".product-shelf .native-shelf",
+        "label": "原生横向摄影架子",
+        "instruction": "在这一排摄影上横向滚动，或在手机上左右滑动；主页面仍可继续上下阅读。",
+        "prepare": [
+          {
+            "scroll": ".product-shelf .native-shelf"
+          },
+          {
+            "images": ".product-shelf .native-shelf"
+          }
+        ]
+      }
     },
     {
       "caseId": "stripe-platform",
@@ -60,7 +89,12 @@
       "observation": "后半段原生横向架子、四平台选择、深色开发者章节、活动架子、结束行动和页尾；上下滚动保持普通文档，不加入无来源的整屏切幕。",
       "evidence": "observed",
       "referenceUrl": "https://stripe.com/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".stripe-later .stripe-shelf",
+        "label": "Startup 横向内容架子",
+        "instruction": "在 Atlas、Payments、Connect 卡片区域横向滚动，页面的上下阅读仍保持自然滚动。"
+      }
     }
   ],
   "sourceFiles": [
@@ -91,5 +125,6 @@
     "entries/cases/stripe-platform.json",
     "docs/cases/met-museum.md",
     "docs/cases/stripe-platform.md"
-  ]
+  ],
+  "preview": "previews/patterns/native-horizontal-shelf.jpg"
 }

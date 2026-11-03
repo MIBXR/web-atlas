@@ -52,7 +52,44 @@
         "observation": "AIC书脊与媒体共同组织类别；4玩法/5AIC采用源三层黑→黄→媒体的方向揭示，不用单静态工厂图替代整个相册。",
         "evidence": "observed",
         "referenceUrl": "https://endfield.hypergryph.com/",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "#aic",
+          "label": "AIC 竖向书脊与媒体",
+          "instruction": "看媒体边缘竖排的 AIC 类别书脊，以及下方分页、编号和说明的对齐。",
+          "prepare": [
+            {
+              "waitFor": "body:has(#entry-loader[hidden])"
+            },
+            {
+              "click": ".header-inner-container > .header-nav-item[aria-label=\"版本日历\"]",
+              "minWidth": 801
+            },
+            {
+              "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+              "maxWidth": 800
+            },
+            {
+              "click": ".header-menu-item[aria-label=\"版本日历\"]",
+              "maxWidth": 800
+            },
+            {
+              "images": "#calendar"
+            },
+            {
+              "click": ".header-inner-container > .header-nav-item[aria-label=\"玩法介绍 & 集成工业知识\"]",
+              "minWidth": 801
+            },
+            {
+              "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+              "maxWidth": 800
+            },
+            {
+              "click": ".header-menu-item[aria-label=\"玩法介绍 & 集成工业知识\"]",
+              "maxWidth": 800
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -66,7 +103,8 @@
       "demos/cases/endfield-industrial/app.js",
       "demos/cases/endfield-industrial/source/state-matrix.md",
       "demos/cases/endfield-industrial/source/source-provenance.json"
-    ]
+    ],
+    "preview": "previews/patterns/vertical-media-spine.jpg"
   },
   "sourceCases": [
     {
@@ -1608,6 +1646,10 @@
     },
     {
       "path": "previews/cases/endfield-industrial.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/vertical-media-spine.jpg",
       "role": "preview"
     },
     {

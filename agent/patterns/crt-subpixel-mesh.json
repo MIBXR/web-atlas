@@ -51,7 +51,13 @@
         "observation": "Arcade 以三像素周期的 RGB 竖条与横向扫描线覆盖显示面，并用红青偏移字边模拟 CRT 子像素色散，字标悬停扩大错位。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero__photo",
+          "label": "CRT 摄影与字标",
+          "instruction": "观察照片上的 RGB 细网与扫描线，再将指针移到字标上查看字边错位。",
+          "entrypoint": "demos/cases/hallmark/themes/arcade/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -60,7 +66,8 @@
       "demos/cases/hallmark/fidelity.md",
       "demos/cases/hallmark/themes/arcade/style.css",
       "demos/cases/hallmark/themes/arcade/index.html"
-    ]
+    ],
+    "preview": "previews/patterns/crt-subpixel-mesh.jpg"
   },
   "sourceCases": [
     {
@@ -5818,6 +5825,10 @@
     },
     {
       "path": "previews/cases/hallmark.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/crt-subpixel-mesh.jpg",
       "role": "preview"
     },
     {

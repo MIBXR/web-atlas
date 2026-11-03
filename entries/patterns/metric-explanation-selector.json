@@ -36,7 +36,12 @@
       "observation": "Global 四统计选择 → 当前数字强调、底部细线进度和基础设施说明对应变化；自动推进与指针停留暂停。",
       "evidence": "observed",
       "referenceUrl": "https://stripe.com/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#global",
+        "label": "统计与基础设施说明",
+        "instruction": "点四个统计数字，对比强调项、底部进度线和下方基础设施说明怎样一起更新。"
+      }
     }
   ],
   "sourceFiles": [
@@ -48,5 +53,6 @@
     "demos/cases/stripe-platform/wave.js",
     "entries/cases/stripe-platform.json",
     "docs/cases/stripe-platform.md"
-  ]
+  ],
+  "preview": "previews/patterns/metric-explanation-selector.jpg"
 }

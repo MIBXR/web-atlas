@@ -46,7 +46,22 @@
         "observation": "影片片尾前1秒推进下一章；暂停画面和减少动态分支关闭自动推进。",
         "evidence": "adapted",
         "referenceUrl": "https://www.nintendo.com/jp/zelda/totk/world/index.html",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".world-stage",
+          "label": "影片片尾前的章节交接",
+          "instruction": "让影片继续播放到尾段，留意片尾前自动交给下一章；暂停画面会停止推进。",
+          "prepare": [
+            {
+              "click": "#entry-gate:not([hidden]):not([data-phase]) [data-enter=\"off\"]",
+              "waitFor": "body:has(#entry-gate[hidden])"
+            },
+            {
+              "click": ".chapters a[href=\"#world-3\"]:not([aria-current=\"true\"])",
+              "waitFor": ".world-stage[data-scene=\"3\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -56,7 +71,8 @@
       "demos/cases/zelda-world/style.css",
       "entries/cases/zelda-world.json",
       "docs/cases/zelda-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/clip-tail-advance.jpg"
   },
   "sourceCases": [
     {
@@ -290,6 +306,10 @@
     },
     {
       "path": "previews/cases/zelda-world.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/clip-tail-advance.jpg",
       "role": "preview"
     },
     {

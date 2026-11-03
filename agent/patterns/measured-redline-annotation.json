@@ -57,7 +57,13 @@
         "observation": "Studio 指向、触摸或聚焦版面区块时测量真实矩形和四向邻块间距并生成 SVG 红线，指向字母时用 DOM Range 逐字测量，以 em 千分之一显示 advance。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "[data-trim]",
+          "label": "版面实测红线",
+          "instruction": "将指针移到字母或版面区块上，查看当前字宽、区块尺寸和相邻间距。",
+          "entrypoint": "demos/cases/hallmark/themes/studio/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -67,7 +73,8 @@
       "demos/cases/hallmark/themes/studio/spec.js",
       "demos/cases/hallmark/themes/studio/index.html",
       "demos/cases/hallmark/themes/studio/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/measured-redline-annotation.jpg"
   },
   "sourceCases": [
     {
@@ -5825,6 +5832,10 @@
     },
     {
       "path": "previews/cases/hallmark.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/measured-redline-annotation.jpg",
       "role": "preview"
     },
     {

@@ -38,7 +38,12 @@
         "observation": "产品摄影章节固定黑/深灰；比较、购物和环境等后段切成浅色。没有全局深浅切换。",
         "evidence": "observed",
         "referenceUrl": "https://www.apple.com/iphone-18-pro/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".upgrade-study",
+          "label": "从深色摄影到浅色比较区",
+          "instruction": "上下滚动这一交界，对照前面的深色产品章节与浅色比较、购物区域如何交替。"
+        }
       },
       {
         "caseId": "stripe-platform",
@@ -46,7 +51,12 @@
         "observation": "首屏固定浅色及官方波浪；Global/Developers 等章节使用品牌海军蓝，属于章节配色，没有全局主题切换。",
         "evidence": "observed",
         "referenceUrl": "https://stripe.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".stripe-developers",
+          "label": "海军蓝开发者章节",
+          "instruction": "从这块海军蓝开发者章节向上下滚动，对比它与相邻浅色内容的整节切换。"
+        }
       },
       {
         "caseId": "monument-valley-game",
@@ -54,7 +64,20 @@
         "observation": "固定白导航、#221f20影像/下载/画廊、粉蓝奖项、奶油媒体、粉社区与紫页尾，以整幅色带改变观看节奏。",
         "evidence": "observed",
         "referenceUrl": "https://www.monumentvalleygame.com/mv1",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".community",
+          "label": "整节配色的阅读节奏",
+          "instruction": "沿长页比较奖项、媒体、画廊、社区与页尾，整节色带随内容切换。",
+          "prepare": [
+            {
+              "waitFor": "body[data-entry=\"ready\"]"
+            },
+            {
+              "click": ".section-nav a[href=\"#press\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -78,7 +101,8 @@
       "entries/cases/stripe-platform.json",
       "docs/cases/monument-valley-game.md",
       "docs/cases/stripe-platform.md"
-    ]
+    ],
+    "preview": "previews/patterns/section-color-rhythm.jpg"
   },
   "sourceCases": [
     {
@@ -560,6 +584,10 @@
     },
     {
       "path": "previews/cases/stripe-platform.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/section-color-rhythm.jpg",
       "role": "preview"
     },
     {

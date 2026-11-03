@@ -57,7 +57,13 @@
         "observation": "Bloom 用一份十六拍谱面同时生成哼唱曲线、音符、四条乐器轨、波形包络和 Web Audio 合成事件，播放头、时码与音符高亮跟随同一音频时钟，切换磁带风格重排同一旋律。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "[data-stage=hero]",
+          "label": "同一谱面的哼唱与四轨编曲",
+          "instruction": "点击播放按钮启用声音，观察播放头、音符和波形如何跟随同一谱面。",
+          "entrypoint": "demos/cases/hallmark/themes/bloom/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -68,7 +74,8 @@
       "demos/cases/hallmark/themes/bloom/page.js",
       "demos/cases/hallmark/themes/bloom/index.html",
       "demos/cases/hallmark/themes/bloom/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/single-score-audio-visual.jpg"
   },
   "sourceCases": [
     {
@@ -5826,6 +5833,10 @@
     },
     {
       "path": "previews/cases/hallmark.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/single-score-audio-visual.jpg",
       "role": "preview"
     },
     {

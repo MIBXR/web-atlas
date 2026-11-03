@@ -46,7 +46,19 @@
         "observation": "滚动超过大字标+130px／返回：50px红色紧凑导航120ms从上方进入，回到顶部80ms退出恢复大字标。 长页仍能访问机构入口；进入展览时品牌不被小导航抢占。",
         "evidence": "observed",
         "referenceUrl": "https://www.mori.art.museum/jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".head.is-compact",
+          "label": "滚过大字标后的紧凑导航",
+          "instruction": "向上返回大字标，再向下滚过它，观察红色紧凑导航进入；回到顶部时恢复大字标。",
+          "prepare": [
+            {
+              "scroll": "#exhibitions",
+              "waitFor": ".head.is-compact"
+            }
+          ],
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -56,7 +68,8 @@
       "demos/cases/mori-art-museum/style.css",
       "entries/cases/mori-art-museum.json",
       "docs/cases/mori-art-museum.md"
-    ]
+    ],
+    "preview": "previews/patterns/compact-scroll-header.jpg"
   },
   "sourceCases": [
     {
@@ -190,6 +203,10 @@
     },
     {
       "path": "previews/cases/mori-art-museum.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/compact-scroll-header.jpg",
       "role": "preview"
     },
     {

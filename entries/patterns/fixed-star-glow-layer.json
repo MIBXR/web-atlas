@@ -42,7 +42,17 @@
       "observation": "原站 desktop kv-canvas 只有5颗固定位置星光；本地使用相同六种图像和3秒明暗周期，用Canvas2D重建，未运行PIXI业务包。",
       "evidence": "adapted",
       "referenceUrl": "https://persona.atlus.com/p5r/?lang=en#",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#royal-kv-stars",
+        "label": "首屏固定星光",
+        "instruction": "看主角周围固定的五处星光；它们只明暗呼吸，位置不随指针改变。",
+        "prepare": [
+          {
+            "click": "header nav a[href=\"#top\"]"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -52,5 +62,6 @@
     "demos/cases/persona-kinetic/style.css",
     "entries/cases/persona-kinetic.json",
     "docs/cases/persona-kinetic.md"
-  ]
+  ],
+  "preview": "previews/patterns/fixed-star-glow-layer.jpg"
 }

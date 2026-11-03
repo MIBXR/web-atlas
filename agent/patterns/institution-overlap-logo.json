@@ -41,7 +41,12 @@
         "observation": "桌面左叠加240px方形馆标（x30/y130），宽2.5:1海报自y160开始；手机160px馆标与官方方图，后续四列展览、三列推荐、四列新闻。",
         "evidence": "observed",
         "referenceUrl": "https://www.mori.art.museum/jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".exhibition-hero",
+          "label": "跨海报边界的方形馆标",
+          "instruction": "比较左侧方形馆标与展览主图的重叠边界，馆标形成固定机构锚点，海报保留自己的视觉。"
+        }
       }
     ],
     "sourceFiles": [
@@ -51,7 +56,8 @@
       "demos/cases/mori-art-museum/style.css",
       "entries/cases/mori-art-museum.json",
       "docs/cases/mori-art-museum.md"
-    ]
+    ],
+    "preview": "previews/patterns/institution-overlap-logo.jpg"
   },
   "sourceCases": [
     {
@@ -185,6 +191,10 @@
     },
     {
       "path": "previews/cases/mori-art-museum.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/institution-overlap-logo.jpg",
       "role": "preview"
     },
     {

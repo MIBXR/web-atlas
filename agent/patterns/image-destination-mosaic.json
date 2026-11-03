@@ -55,7 +55,19 @@
         "observation": "图像目的地：资讯、云课堂、馆藏、活动、文创、数字苏博、展览、游戏、建筑美图九项原图/常显类目均保留，左右75%/25%及每块尺寸按源CSS。",
         "evidence": "observed",
         "referenceUrl": "https://www.szmuseum.com/Home/Index",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "body:has(#fullPage-nav) .section3.active, body:not(:has(#fullPage-nav)) .section3",
+          "label": "九个图像目的地的拼接目录",
+          "instruction": "在第三屏比较资讯、馆藏、活动等九项原图和常显类目；左右两区采用不同尺度，各块仍是独立目的地。",
+          "prepare": [
+            {
+              "click": "#fullPage-nav li:nth-child(3) a",
+              "waitFor": ".section3.active",
+              "minWidth": 768
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -66,7 +78,8 @@
       "demos/cases/suzhou-museum/style.css",
       "demos/cases/suzhou-museum/app.js",
       "demos/cases/suzhou-museum/source/state-matrix.md"
-    ]
+    ],
+    "preview": "previews/patterns/image-destination-mosaic.jpg"
   },
   "sourceCases": [
     {
@@ -332,6 +345,10 @@
     },
     {
       "path": "previews/cases/suzhou-museum.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/image-destination-mosaic.jpg",
       "role": "preview"
     },
     {

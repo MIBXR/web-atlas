@@ -45,7 +45,26 @@
         "observation": "右索引数字、计数和章节名分组滚出/换值/滚入，与换章方向联动；Home/End、PageUp/PageDown及上下方向键可走完六章与页脚。",
         "evidence": "adapted",
         "referenceUrl": "https://ak.hypergryph.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".side-index",
+          "label": "桌面章节编号与章名",
+          "instruction": "切换顶部章节，留意右侧编号、计数和章名按同一方向滚动。",
+          "prepare": [
+            {
+              "waitFor": "#scene-deck[data-phase=\"idle\"]"
+            },
+            {
+              "click": "#menu-toggle[aria-expanded=\"false\"]",
+              "maxWidth": 800
+            },
+            {
+              "click": "#chapter-nav a[href=\"#more\"]:not([aria-current=\"page\"])",
+              "waitFor": "#scene-deck[data-active=\"more\"][data-phase=\"idle\"]"
+            }
+          ],
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -56,7 +75,8 @@
       "demos/cases/arknights-world/style.css",
       "entries/cases/arknights-world.json",
       "docs/cases/arknights-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/synchronized-rolling-index.jpg"
   },
   "sourceCases": [
     {
@@ -358,6 +378,10 @@
     },
     {
       "path": "previews/cases/arknights-world.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/synchronized-rolling-index.jpg",
       "role": "preview"
     },
     {

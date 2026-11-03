@@ -42,7 +42,22 @@
         "observation": "打开导航：Visit等目的地立即展开；键盘焦点可操作，局部搜索与作品dialog为本地练习补充。",
         "evidence": "adapted",
         "referenceUrl": "https://www.metmuseum.org/en",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#nav-panel:not([hidden])",
+          "label": "Visit 等机构目的地",
+          "instruction": "在 Visit、Exhibitions、Art 之间切换，查看各目的地的即时展开；手机先用菜单按钮打开导航。",
+          "prepare": [
+            {
+              "click": "[data-menu=visit]",
+              "minWidth": 761
+            },
+            {
+              "click": "#mobile-menu[aria-expanded=false]",
+              "maxWidth": 760
+            }
+          ]
+        }
       },
       {
         "caseId": "philharmonie-music",
@@ -50,7 +65,18 @@
         "observation": "打开主菜单和类别：浅灰全宽导航立即出现，类别切换为目的地列表；小屏菜单在页面流中展开。 机构多种活动保留层级，交互保持直接。",
         "evidence": "observed",
         "referenceUrl": "https://philharmoniedeparis.fr/fr/activite/exposition/28822-video-games-music",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#menu:not([hidden])",
+          "label": "机构目的地菜单",
+          "instruction": "点 Concerts、Musée 等类别，查看对应目的地列表；Retour 可回到总目录。",
+          "prepare": [
+            {
+              "click": "#menu-toggle[aria-expanded=false]",
+              "waitFor": "#menu:not([hidden])"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -66,7 +92,8 @@
       "entries/cases/philharmonie-music.json",
       "docs/cases/met-museum.md",
       "docs/cases/philharmonie-music.md"
-    ]
+    ],
+    "preview": "previews/patterns/direct-purpose-navigation.jpg"
   },
   "sourceCases": [
     {
@@ -276,6 +303,10 @@
     },
     {
       "path": "previews/cases/philharmonie-music.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/direct-purpose-navigation.jpg",
       "role": "preview"
     },
     {

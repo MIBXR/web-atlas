@@ -37,7 +37,13 @@
       "observation": "大屏主图1600×640，小屏使用450×450官方专用图，不直接裁剪桌面海报。",
       "evidence": "observed",
       "referenceUrl": "https://www.mori.art.museum/jp/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".exhibition-hero",
+        "label": "展览主图的手机专用方图",
+        "instruction": "切换桌面与手机模式，比较横向海报和官方手机方图，图像使用专门构图而非直接裁切。",
+        "viewport": "mobile"
+      }
     },
     {
       "caseId": "fuji-rock",
@@ -45,7 +51,13 @@
       "observation": "手机使用官方1200×1200图片，不单纯裁切1400×700桌面照片。",
       "evidence": "observed",
       "referenceUrl": "https://www.fujirockfestival.com/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".photo-hero picture",
+        "label": "手机专用的现场主图",
+        "instruction": "在桌面与手机模式间切换，比较同一场景的专用横图与方图构图，主体位置随画幅重新安排。",
+        "viewport": "mobile"
+      }
     },
     {
       "caseId": "uma-musume",
@@ -53,7 +65,21 @@
       "observation": "手机使用原站竖版 KV；菜单、触摸阈值与字体排布有本地适配，减少动态取消非必要过渡。",
       "evidence": "adapted",
       "referenceUrl": "https://umamusume.com/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#home .hero-art",
+        "label": "手机专用主视觉",
+        "instruction": "切换桌面与手机画幅，比较人物群像、图内标题与周围控件的重新排布。",
+        "prepare": [
+          {
+            "click": "#menu-button[aria-expanded=\"false\"]"
+          },
+          {
+            "click": "#study-menu a[href=\"#home\"]"
+          }
+        ],
+        "viewport": "mobile"
+      }
     }
   ],
   "sourceFiles": [
@@ -75,5 +101,6 @@
     "docs/cases/fuji-rock.md",
     "docs/cases/mori-art-museum.md",
     "docs/cases/uma-musume.md"
-  ]
+  ],
+  "preview": "previews/patterns/responsive-art-direction.jpg"
 }

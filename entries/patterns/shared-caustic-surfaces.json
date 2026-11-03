@@ -54,7 +54,18 @@
       "observation": "Refract 的同一焦散着色器驱动池底、课表亮行和十五根客流水柱，指针触水留下最多四个扩散环，换工作日或周末时水柱、安静时段说明与时间标记一起更新。",
       "evidence": "observed",
       "referenceUrl": "https://www.usehallmark.com/",
-      "capturedAt": "2026-11-01"
+      "capturedAt": "2026-11-01",
+      "focus": {
+        "target": "#quiet",
+        "label": "焦散水柱与安静时段",
+        "instruction": "切换 Weekdays 与 Weekends，观察水柱、时段说明与时间标记一起更新；移过水面可留下扩散环。",
+        "entrypoint": "demos/cases/hallmark/themes/refract/index.html",
+        "prepare": [
+          {
+            "click": "[data-days=weekend]"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -64,5 +75,6 @@
     "demos/cases/hallmark/themes/refract/scene.js",
     "demos/cases/hallmark/themes/refract/index.html",
     "demos/cases/hallmark/themes/refract/style.css"
-  ]
+  ],
+  "preview": "previews/patterns/shared-caustic-surfaces.jpg"
 }

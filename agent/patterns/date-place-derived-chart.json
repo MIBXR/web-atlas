@@ -57,7 +57,13 @@
         "observation": "Almanac 按日期和港口的纬度、均值、潮差与时滞推导潮线及日照，在同一次重绘中更新 SVG 曲线、高低潮、日出日落、夜间遮罩和文字读数。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "#day",
+          "label": "潮汐与日照图",
+          "instruction": "切换潮差，再拖动日期；对照曲线、高低潮时间与日照读数的同步变化。",
+          "entrypoint": "demos/cases/hallmark/themes/almanac/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -67,7 +73,8 @@
       "demos/cases/hallmark/themes/almanac/page.js",
       "demos/cases/hallmark/themes/almanac/index.html",
       "demos/cases/hallmark/themes/almanac/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/date-place-derived-chart.jpg"
   },
   "sourceCases": [
     {
@@ -5825,6 +5832,10 @@
     },
     {
       "path": "previews/cases/hallmark.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/date-place-derived-chart.jpg",
       "role": "preview"
     },
     {

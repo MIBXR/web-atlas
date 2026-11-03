@@ -47,7 +47,12 @@
       "observation": "开场先停留 500ms，再以 100ms/字输入 Clawd on Desk、闪烁两次、50ms/字倒删；角色移至中央后，米色花园以 800ms 圆形遮罩揭开。Escape 可跳到拖放等待态，普通点击与历史访问不跳过。",
       "evidence": "observed",
       "referenceUrl": "https://clawdondesk.com/",
-      "capturedAt": "2026-11-01"
+      "capturedAt": "2026-11-01",
+      "focus": {
+        "target": ".stage",
+        "label": "角色与圆形揭幕",
+        "instruction": "看角色伴随标题输入、倒删和居中，然后米色花园由同一个中心展开。点“重播”可重新观看。"
+      }
     }
   ],
   "sourceFiles": [
@@ -57,5 +62,6 @@
     "demos/cases/clawd-on-desk/index.html",
     "demos/cases/clawd-on-desk/source/website/scripts/scene.js",
     "demos/cases/clawd-on-desk/source/website/styles/responsive.css"
-  ]
+  ],
+  "preview": "previews/patterns/mascot-continuous-iris.jpg"
 }

@@ -54,7 +54,18 @@
         "observation": "壁画：莫高窟257窟主室西壁采用源站Leaflet 1.7.1与DeepZoom 2.0.0，21515×15796逻辑像素、1024瓦片，匿名minZoom9.75/maxZoom12，公开level10–12共9瓦片实际取得。",
         "evidence": "observed",
         "referenceUrl": "https://www.e-dunhuang.com/showmural/10.0001/0001/0001/0257/0001/0003/01",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "#mural",
+          "label": "第 257 窟西壁的瓦片细察",
+          "instruction": "拖动画面并用左上角加减按钮缩放，观察公开瓦片范围内的壁画细节；更高分辨率入口由原站提供。",
+          "entrypoint": "demos/cases/digital-dunhuang/viewer.html",
+          "prepare": [
+            {
+              "click": ".leaflet-control-zoom-in"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -68,7 +79,8 @@
       "demos/cases/digital-dunhuang/viewer.html",
       "demos/cases/digital-dunhuang/viewer.css",
       "demos/cases/digital-dunhuang/viewer.js"
-    ]
+    ],
+    "preview": "previews/patterns/bounded-image-inspection.jpg"
   },
   "sourceCases": [
     {
@@ -566,6 +578,10 @@
     },
     {
       "path": "previews/cases/digital-dunhuang.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/bounded-image-inspection.jpg",
       "role": "preview"
     },
     {

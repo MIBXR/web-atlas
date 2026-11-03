@@ -50,7 +50,18 @@
       "observation": "条件反馈：点击原条件可移除，已选条件行显示并可取消，折叠筛选耗时1000ms；北魏实测254、257、麦积127三项，叠加榆林窟为零项，浏览器返回恢复。",
       "evidence": "adapted",
       "referenceUrl": "https://www.e-dunhuang.com/section.htm",
-      "capturedAt": "2026-10-09"
+      "capturedAt": "2026-10-09",
+      "focus": {
+        "target": "#ttsx",
+        "label": "列表上方的已选分面条件",
+        "instruction": "点“北魏”等筛选条件，观察已选条件行和列表数量；点击已选条件可移除，再叠加其他条件比较结果。",
+        "entrypoint": "demos/cases/digital-dunhuang/section.html",
+        "prepare": [
+          {
+            "click": "[data-facet-value=北魏]"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -64,5 +75,6 @@
     "demos/cases/digital-dunhuang/section.html",
     "demos/cases/digital-dunhuang/catalogue.js",
     "demos/cases/digital-dunhuang/filter-evidence.json"
-  ]
+  ],
+  "preview": "previews/patterns/explicit-facet-summary.jpg"
 }

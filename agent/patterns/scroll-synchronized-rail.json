@@ -39,7 +39,13 @@
         "observation": "桌面左侧 rail 出现后，滚动三段哨兵或点击/方向键 → 说明高度、标题缩放、窗口模式及进度对应更新；顶部标题模式和下段模式彼此独立。",
         "evidence": "adapted",
         "referenceUrl": "https://chatgpt.com/zh-Hans-CN/overview/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#showcase",
+          "label": "说明索引与产品窗口",
+          "instruction": "上下滚动这段说明，或点左侧聊天、工作、Codex 索引，对比当前说明、进度和窗口内容的对应变化。",
+          "viewport": "wide"
+        }
       },
       {
         "caseId": "hallmark",
@@ -47,7 +53,13 @@
         "observation": "Coral 的滚动说明面板在屏幕中央的窄观察带进入时选择对应发票状态，桌面说明与吸附发票同步，窄于 60rem 时直接显示完整的第三步。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".pin__panel[data-step=\"1\"]",
+          "label": "滚动说明与发票状态",
+          "instruction": "向下滚动三段说明，观察旁边发票依次进入提醒、回信与已付款状态。",
+          "entrypoint": "demos/cases/hallmark/themes/coral/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -63,7 +75,8 @@
       "demos/cases/hallmark/fidelity.md",
       "demos/cases/hallmark/themes/coral/scene.js",
       "demos/cases/hallmark/themes/coral/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/scroll-synchronized-rail.jpg"
   },
   "sourceCases": [
     {
@@ -6045,6 +6058,10 @@
     },
     {
       "path": "previews/cases/hallmark.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/scroll-synchronized-rail.jpg",
       "role": "preview"
     },
     {

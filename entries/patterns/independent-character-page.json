@@ -37,7 +37,13 @@
       "observation": "首页导航 CHARACTER 打开本地独立 character.html；HOME 返回首页，首页仅 KV→footer，保留源站页面职责分离。",
       "evidence": "adapted",
       "referenceUrl": "https://bluearchive.jp/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#characters",
+        "label": "独立的学生档案页",
+        "instruction": "这里是独立 CHARACTER 页面；用顶部 HOME 回到主视觉，再从 CHARACTER 进入档案。",
+        "entrypoint": "demos/cases/blue-archive/character.html"
+      }
     }
   ],
   "sourceFiles": [
@@ -48,5 +54,6 @@
     "demos/cases/blue-archive/style.css",
     "entries/cases/blue-archive.json",
     "docs/cases/blue-archive.md"
-  ]
+  ],
+  "preview": "previews/patterns/independent-character-page.jpg"
 }

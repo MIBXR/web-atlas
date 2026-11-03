@@ -62,7 +62,20 @@
       "observation": "地面：固定全屏 WebGL2 四顶点三角条带，uColorScale=10、uFrequency=7、白色基底、0.8 混合；#f7ecd3cc 遮罩覆盖光色，并贯穿下载和开源区。减少动态时保留 Canvas 节点并停止创建地面渲染器。",
       "evidence": "observed",
       "referenceUrl": "https://hyperframes.heygen.com/",
-      "capturedAt": "2026-11-02"
+      "capturedAt": "2026-11-02",
+      "focus": {
+        "target": ".sr-repo",
+        "label": "开源区背后的地面光色",
+        "instruction": "观察开源区与下载区背后的光色；上下滚动时，地面 Canvas 持续贯穿这些区域。",
+        "prepare": [
+          {
+            "waitFor": "html[data-case-loading=ready] .sr-ground-canvas"
+          },
+          {
+            "scroll": ".sr-repo"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -73,5 +86,6 @@
     "demos/cases/hyperframes-site/ground.js",
     "demos/cases/hyperframes-site/styles.css",
     "demos/cases/hyperframes-site/index.html"
-  ]
+  ],
+  "preview": "previews/patterns/hf-ground-canvas-close.jpg"
 }

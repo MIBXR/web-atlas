@@ -38,7 +38,25 @@
       "observation": "工作台使用公开固定任务示例，点击本地“新任务”可返回输入；本地输入/Enter/发送进入固定会话而非调用模型，九个阶段按 180/480/760/1000/1200/1400/1600/1900/2250ms 展开；交付文件开关显示旁栏。",
       "evidence": "adapted",
       "referenceUrl": "https://qoder.cn/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".qoder-session:not([hidden])",
+        "label": "固定任务的会话阶段",
+        "instruction": "观察工具步骤依次出现，完成后点交付文件开关查看旁栏；“新任务”可返回输入。",
+        "prepare": [
+          {
+            "click": "#new-task"
+          },
+          {
+            "input": "#task-input",
+            "value": "Add copy review brief action"
+          },
+          {
+            "click": "#task-form .send",
+            "waitFor": ".qoder-session:not([hidden])"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -48,5 +66,6 @@
     "demos/cases/qoder-platform/script.js",
     "demos/cases/qoder-platform/style.css",
     "entries/cases/qoder-platform.json"
-  ]
+  ],
+  "preview": "previews/patterns/fixed-task-timeline.jpg"
 }

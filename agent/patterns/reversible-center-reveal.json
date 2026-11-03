@@ -46,7 +46,20 @@
         "observation": "奖项：视口中心进入/离开时，350ms opacity 0↔1、translateY 20px↔0，双向有效；手机Show All/Hide通过350ms高度变化展开/收回六项。",
         "evidence": "observed",
         "referenceUrl": "https://www.monumentvalleygame.com/mv1",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#awards.awards-active",
+          "label": "穿越章节中心的奖项显现",
+          "instruction": "上下滚过奖项区中心，查看文字短移位显现与复原；手机可用 Show All / Hide 展开或收回。",
+          "prepare": [
+            {
+              "waitFor": "body[data-entry=\"ready\"]"
+            },
+            {
+              "click": ".section-nav a[href=\"#awards\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -56,7 +69,8 @@
       "demos/cases/monument-valley-game/style.css",
       "entries/cases/monument-valley-game.json",
       "docs/cases/monument-valley-game.md"
-    ]
+    ],
+    "preview": "previews/patterns/reversible-center-reveal.jpg"
   },
   "sourceCases": [
     {
@@ -242,6 +256,10 @@
     },
     {
       "path": "previews/cases/monument-valley-game.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/reversible-center-reveal.jpg",
       "role": "preview"
     },
     {

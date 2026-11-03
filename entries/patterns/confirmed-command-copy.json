@@ -43,7 +43,13 @@
       "observation": "首页、Lumen 和 Terminal 的复制按钮复制对应命令或当前可见代码，成功后短暂显示勾或 Copied 并更新状态播报，反馈计时结束后恢复按钮。",
       "evidence": "observed",
       "referenceUrl": "https://www.usehallmark.com/",
-      "capturedAt": "2026-11-01"
+      "capturedAt": "2026-11-01",
+      "focus": {
+        "target": ".get",
+        "label": "安装命令与复制反馈",
+        "instruction": "切换 brew 或 cargo，点击命令右侧的复制按钮，观察完成反馈。",
+        "entrypoint": "demos/cases/hallmark/themes/terminal/index.html"
+      }
     }
   ],
   "sourceFiles": [
@@ -54,5 +60,6 @@
     "demos/cases/hallmark/themes/lumen/page.js",
     "demos/cases/hallmark/themes/terminal/page.js",
     "demos/cases/hallmark/index.html"
-  ]
+  ],
+  "preview": "previews/patterns/confirmed-command-copy.jpg"
 }

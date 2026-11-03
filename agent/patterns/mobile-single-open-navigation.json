@@ -41,7 +41,22 @@
         "observation": "桌面 Product/Resources 指针进入与点击 → 首次 opacity/translateY(-16px) 250ms ease-out，退出 150ms ease-in、延迟 50ms；已打开分类按源 instantSwitch 直接切换，快速反转取消旧退出，减少动态直接完成；手机打开全屏菜单 → Product/AI/Resources 原地单开，切换收起前组，再点同组收起；其他分类变灰，底部 Download app/Log in 固定。源 CSS 子展开 300ms、入口 350ms，内容/底部延迟 200/250ms；关闭/Escape 恢复滚动和焦点，维持层级与行动位置。",
         "evidence": "adapted",
         "referenceUrl": "https://www.notion.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#notion-phone-nav:not([hidden])",
+          "label": "手机菜单原位单开",
+          "instruction": "点 Product、AI、Resources 分类，在原位展开当前组；再次点同组可收起，底部 Download app 与 Log in 保留。",
+          "prepare": [
+            {
+              "click": ".hamburger[aria-expanded=false]",
+              "waitFor": "#notion-phone-nav:not([hidden])"
+            },
+            {
+              "click": "[data-phone-group=Product][aria-expanded=false]"
+            }
+          ],
+          "viewport": "mobile"
+        }
       }
     ],
     "sourceFiles": [
@@ -52,7 +67,8 @@
       "demos/cases/notion-editorial/style.css",
       "entries/cases/notion-editorial.json",
       "docs/cases/notion-editorial.md"
-    ]
+    ],
+    "preview": "previews/patterns/mobile-single-open-navigation.jpg"
   },
   "sourceCases": [
     {
@@ -210,6 +226,10 @@
     },
     {
       "path": "previews/cases/notion-editorial.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/mobile-single-open-navigation.jpg",
       "role": "preview"
     },
     {

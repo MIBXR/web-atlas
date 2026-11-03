@@ -52,7 +52,13 @@
         "observation": "Coral 按顺序把提醒信滑入窗口信封、贴资、放入回信并在发票上盖 Paid，用纸面对象的位移、遮挡和盖章解释催款流程，离屏时暂停开场。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".scene[data-slot=hero]",
+          "label": "信封、回信与 Paid 印章",
+          "instruction": "观察纸面流程：提醒信进入信封、贴资、收到回信，最后在发票上盖 Paid。",
+          "entrypoint": "demos/cases/hallmark/themes/coral/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -62,7 +68,8 @@
       "demos/cases/hallmark/themes/coral/scene.js",
       "demos/cases/hallmark/themes/coral/index.html",
       "demos/cases/hallmark/themes/coral/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/paper-action-explainer.jpg"
   },
   "sourceCases": [
     {
@@ -5820,6 +5827,10 @@
     },
     {
       "path": "previews/cases/hallmark.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/paper-action-explainer.jpg",
       "role": "preview"
     },
     {

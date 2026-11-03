@@ -43,14 +43,20 @@
         "caseId": "pixel-world",
         "locator": "entries/cases/pixel-world.json#composition/imagery",
         "observation": "128×128原生Canvas与原创像素地点构成可探索世界。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": "#map",
+          "label": "128 像素的小岛",
+          "instruction": "看海岸、树木与建筑沿整数像素排列，再点击地图地点或用方向键移动角色。"
+        }
       }
     ],
     "sourceFiles": [
       "demos/cases/pixel-world/index.html",
       "entries/cases/pixel-world.json",
       "docs/cases/pixel-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/integer-pixel-canvas.jpg"
   },
   "sourceCases": [
     {
@@ -104,6 +110,10 @@
     },
     {
       "path": "previews/cases/pixel-world.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/integer-pixel-canvas.jpg",
       "role": "preview"
     },
     {

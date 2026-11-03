@@ -44,7 +44,17 @@
         "caseId": "shape-morph",
         "locator": "entries/cases/shape-morph.json#interaction/0",
         "observation": "三种形态按钮切换 24 个三角片的位置",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": "#form",
+          "label": "同一批三角片的三种形态",
+          "instruction": "用下方三种形态按钮切换，观察同样的 24 个三角片移动到新位置，组成另一种形态。",
+          "prepare": [
+            {
+              "click": "[data-state='1']"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -53,7 +63,8 @@
       "demos/cases/shape-morph/style.css",
       "entries/cases/shape-morph.json",
       "docs/cases/shape-morph.md"
-    ]
+    ],
+    "preview": "previews/patterns/fixed-topology-morph.jpg"
   },
   "sourceCases": [
     {
@@ -115,6 +126,10 @@
     },
     {
       "path": "previews/cases/shape-morph.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/fixed-topology-morph.jpg",
       "role": "preview"
     },
     {

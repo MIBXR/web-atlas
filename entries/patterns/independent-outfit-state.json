@@ -37,7 +37,20 @@
       "observation": "三位角色横移500ms并在两端停止；学校/怪盗服装300ms换装入场。本地角色内容缩减为三位。",
       "evidence": "adapted",
       "referenceUrl": "https://persona.atlus.com/p5r/?lang=en#",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#characters .costumes",
+        "label": "人物与服装两组选项",
+        "instruction": "先切 SCHOOL UNIFORM / PHANTOM THIEF，再选择人物，查看服装与人物如何分别保留状态。",
+        "prepare": [
+          {
+            "click": "header nav a[href=\"#characters\"]"
+          },
+          {
+            "click": "[data-costume=\"school\"]:not([aria-pressed=\"true\"])"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -47,5 +60,6 @@
     "demos/cases/persona-kinetic/style.css",
     "entries/cases/persona-kinetic.json",
     "docs/cases/persona-kinetic.md"
-  ]
+  ],
+  "preview": "previews/patterns/independent-outfit-state.jpg"
 }

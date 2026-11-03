@@ -42,7 +42,22 @@
       "observation": "鼠标移动或触摸唤醒界面，3秒闲置后0.8秒模糊淡出；键盘焦点保留控件为本地补充。",
       "evidence": "adapted",
       "referenceUrl": "https://www.nintendo.com/jp/zelda/totk/world/index.html",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".chapters",
+        "label": "闲置退隐的章节控件",
+        "instruction": "移动指针唤醒底部目录，停止操作后看它模糊退隐；按 Tab 也能唤醒。",
+        "prepare": [
+          {
+            "click": "#entry-gate:not([hidden]):not([data-phase]) [data-enter=\"off\"]",
+            "waitFor": "body:has(#entry-gate[hidden])"
+          },
+          {
+            "click": ".chapters a[href=\"#world-3\"]:not([aria-current=\"true\"])",
+            "waitFor": ".world-stage[data-scene=\"3\"]"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -52,5 +67,6 @@
     "demos/cases/zelda-world/style.css",
     "entries/cases/zelda-world.json",
     "docs/cases/zelda-world.md"
-  ]
+  ],
+  "preview": "previews/patterns/idle-interface-retreat.jpg"
 }

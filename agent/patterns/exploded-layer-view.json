@@ -38,7 +38,17 @@
         "caseId": "isometric-3d",
         "locator": "entries/cases/isometric-3d.json#interaction/1",
         "observation": "展开按钮将基础、建筑、植物分层",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": "#island",
+          "label": "小岛的分层展开",
+          "instruction": "用下方“展开”与“整岛”切换，对比地基、建筑和植物怎样按原层次分离、合回。",
+          "prepare": [
+            {
+              "click": "[data-layer=exploded]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -47,7 +57,8 @@
       "demos/cases/isometric-3d/style.css",
       "entries/cases/isometric-3d.json",
       "docs/cases/isometric-3d.md"
-    ]
+    ],
+    "preview": "previews/patterns/exploded-layer-view.jpg"
   },
   "sourceCases": [
     {
@@ -109,6 +120,10 @@
     },
     {
       "path": "previews/cases/isometric-3d.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/exploded-layer-view.jpg",
       "role": "preview"
     },
     {

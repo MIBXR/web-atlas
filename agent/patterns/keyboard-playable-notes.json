@@ -38,14 +38,20 @@
         "caseId": "retro-80s",
         "locator": "entries/cases/retro-80s.json#interaction/3",
         "observation": "屏幕琴键为可聚焦按钮；A S D F G H J K 可演奏白键，切出页面时停止声音。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".keyboard",
+          "label": "屏幕琴键与物理键",
+          "instruction": "先点“开启声音”，再点琴键或按 A S D F G H J K 演奏；切出页面会停止声音。"
+        }
       }
     ],
     "sourceFiles": [
       "demos/cases/retro-80s/index.html",
       "entries/cases/retro-80s.json",
       "docs/cases/retro-80s.md"
-    ]
+    ],
+    "preview": "previews/patterns/keyboard-playable-notes.jpg"
   },
   "sourceCases": [
     {
@@ -99,6 +105,10 @@
     },
     {
       "path": "previews/cases/retro-80s.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/keyboard-playable-notes.jpg",
       "role": "preview"
     },
     {

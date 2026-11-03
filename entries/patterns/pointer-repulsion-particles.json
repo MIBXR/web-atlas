@@ -38,7 +38,32 @@
       "observation": "WORLD使用官网Three导出、七组原始点位、粒子贴图和排斥公式；10,000粒子池中当前模型使用1785–5652点。竖屏直接打开源石详情，粒子在上/文字在下。",
       "evidence": "observed",
       "referenceUrl": "https://ak.hypergryph.com/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#world.active #world-particles",
+        "label": "可推开的世界点阵",
+        "instruction": "把指针移入点阵，再移开，查看附近粒子被推开后回到模型。",
+        "prepare": [
+          {
+            "waitFor": "#scene-deck[data-phase=\"idle\"]"
+          },
+          {
+            "click": "#menu-toggle[aria-expanded=\"false\"]",
+            "maxWidth": 800
+          },
+          {
+            "click": "#chapter-nav a[href=\"#world\"]:not([aria-current=\"page\"])",
+            "waitFor": "#scene-deck[data-active=\"world\"][data-phase=\"idle\"]"
+          },
+          {
+            "click": "#world:not([data-detail=\"true\"]) [data-world=\"5\"]",
+            "waitFor": "#world[data-detail=\"true\"]"
+          },
+          {
+            "waitFor": "#world-particles[data-model]"
+          }
+        ]
+      }
     },
     {
       "caseId": "arknights-world",
@@ -46,7 +71,32 @@
       "observation": "WORLD指针进入点阵 → 原始排斥公式推开附近点、移走后回聚 → 让静态工业标识可被触摸；选择术语会把点阵重组成对应原站形状。",
       "evidence": "observed",
       "referenceUrl": "https://ak.hypergryph.com/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#world.active #world-particles",
+        "label": "可推开的世界点阵",
+        "instruction": "把指针移入点阵，再移开，查看附近粒子被推开后回到模型。",
+        "prepare": [
+          {
+            "waitFor": "#scene-deck[data-phase=\"idle\"]"
+          },
+          {
+            "click": "#menu-toggle[aria-expanded=\"false\"]",
+            "maxWidth": 800
+          },
+          {
+            "click": "#chapter-nav a[href=\"#world\"]:not([aria-current=\"page\"])",
+            "waitFor": "#scene-deck[data-active=\"world\"][data-phase=\"idle\"]"
+          },
+          {
+            "click": "#world:not([data-detail=\"true\"]) [data-world=\"5\"]",
+            "waitFor": "#world[data-detail=\"true\"]"
+          },
+          {
+            "waitFor": "#world-particles[data-model]"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -57,5 +107,6 @@
     "demos/cases/arknights-world/style.css",
     "entries/cases/arknights-world.json",
     "docs/cases/arknights-world.md"
-  ]
+  ],
+  "preview": "previews/patterns/pointer-repulsion-particles.jpg"
 }

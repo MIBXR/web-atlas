@@ -46,7 +46,18 @@
         "observation": "打开／关闭菜单：全屏菜单500ms线性淡入淡出，图像与分列链接同时建立目的地。 给导航独立的视觉场景，保持品牌和空间关系。",
         "evidence": "observed",
         "referenceUrl": "https://www.rijksmuseum.nl/en",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#menu:not([hidden])",
+          "label": "摄影与分列链接的全屏目录",
+          "instruction": "用左上角关闭后再打开菜单，观察整层摄影和分列链接淡入；每组链接提供具体目的地。",
+          "prepare": [
+            {
+              "click": "#menu-toggle[aria-expanded=false]",
+              "waitFor": "#menu:not([hidden])"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -56,7 +67,8 @@
       "demos/cases/rijksmuseum-art/style.css",
       "entries/cases/rijksmuseum-art.json",
       "docs/cases/rijksmuseum-art.md"
-    ]
+    ],
+    "preview": "previews/patterns/fullscreen-photography-menu.jpg"
   },
   "sourceCases": [
     {
@@ -186,6 +198,10 @@
     },
     {
       "path": "previews/cases/rijksmuseum-art.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/fullscreen-photography-menu.jpg",
       "role": "preview"
     },
     {

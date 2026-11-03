@@ -35,12 +35,23 @@
       "caseId": "bauhaus-geometry",
       "locator": "entries/cases/bauhaus-geometry.json#interaction/0",
       "observation": "三个构成预设改变圆、三角和矩形之间的真实位置关系。",
-      "evidence": "adapted"
+      "evidence": "adapted",
+      "focus": {
+        "target": "#composition",
+        "label": "三种几何关系预设",
+        "instruction": "点三种构成预设，对比圆、三角和矩形之间的位置关系，而不只看配色变化。",
+        "prepare": [
+          {
+            "click": "[data-preset='1']"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
     "demos/cases/bauhaus-geometry/index.html",
     "entries/cases/bauhaus-geometry.json",
     "docs/cases/bauhaus-geometry.md"
-  ]
+  ],
+  "preview": "previews/patterns/geometric-balance-presets.jpg"
 }

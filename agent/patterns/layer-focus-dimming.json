@@ -38,7 +38,17 @@
         "caseId": "isometric-3d",
         "locator": "entries/cases/isometric-3d.json#interaction/0",
         "observation": "整岛、花园、建筑三种焦点切换",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": "#island",
+          "label": "花园与建筑层聚焦",
+          "instruction": "切换“整岛”“花园”“建筑”，观察目标层保持清楚，其余层减弱。",
+          "prepare": [
+            {
+              "click": "[data-layer=garden]"
+            }
+          ]
+        }
       },
       {
         "caseId": "hallmark",
@@ -46,7 +56,18 @@
         "observation": "Ultraviolet 的 solo 按钮只强调当前通道，mute 降低对应通道，第二次点击撤销，通道按钮的按下状态和 is-dim 样式同步。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "[data-player]",
+          "label": "分轨 solo 与 mute",
+          "instruction": "点击一条音轨的 solo，观察其余音轨减弱；再次点击撤销，也可尝试 mute。",
+          "entrypoint": "demos/cases/hallmark/themes/ultraviolet/index.html",
+          "prepare": [
+            {
+              "click": "[aria-label='solo vocals'][aria-pressed=false]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -60,7 +81,8 @@
       "demos/cases/hallmark/fidelity.md",
       "demos/cases/hallmark/themes/ultraviolet/index.html",
       "demos/cases/hallmark/themes/ultraviolet/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/layer-focus-dimming.jpg"
   },
   "sourceCases": [
     {
@@ -5854,6 +5876,10 @@
     },
     {
       "path": "previews/cases/isometric-3d.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/layer-focus-dimming.jpg",
       "role": "preview"
     },
     {

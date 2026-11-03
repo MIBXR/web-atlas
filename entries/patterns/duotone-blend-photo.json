@@ -47,7 +47,13 @@
       "observation": "Midnight 先将摄影灰度化并提高对比，再以 multiply 和同底色的 lighten 副层混合，使整张图片统一为双色印刷效果并保留细节。",
       "evidence": "observed",
       "referenceUrl": "https://www.usehallmark.com/",
-      "capturedAt": "2026-11-01"
+      "capturedAt": "2026-11-01",
+      "focus": {
+        "target": ".hero__visual",
+        "label": "双色摄影画框",
+        "instruction": "观察隧道照片的暗部与亮部：整张照片被统一到深蓝与浅蓝两个色层。",
+        "entrypoint": "demos/cases/hallmark/themes/midnight/index.html"
+      }
     }
   ],
   "sourceFiles": [
@@ -56,5 +62,6 @@
     "demos/cases/hallmark/fidelity.md",
     "demos/cases/hallmark/themes/midnight/style.css",
     "demos/cases/hallmark/themes/midnight/index.html"
-  ]
+  ],
+  "preview": "previews/patterns/duotone-blend-photo.jpg"
 }

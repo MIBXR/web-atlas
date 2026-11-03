@@ -46,7 +46,21 @@
         "observation": "桌面左侧章节索引：点击以450ms swing将章节中心对齐视口中心；悬停或键盘进入索引时，标签350ms出现、内容降至0.2透明度。",
         "evidence": "adapted",
         "referenceUrl": "https://www.monumentvalleygame.com/mv1",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".section-nav.visible",
+          "label": "桌面章节侧边索引",
+          "instruction": "点桌面左侧章节名，看目标章的中心对齐视口；把指针移入索引，会展开标签并降低正文强调。",
+          "prepare": [
+            {
+              "waitFor": "body[data-entry=\"ready\"]"
+            },
+            {
+              "click": ".section-nav a[href=\"#download\"]"
+            }
+          ],
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -56,7 +70,8 @@
       "demos/cases/monument-valley-game/style.css",
       "entries/cases/monument-valley-game.json",
       "docs/cases/monument-valley-game.md"
-    ]
+    ],
+    "preview": "previews/patterns/center-aligned-section-index.jpg"
   },
   "sourceCases": [
     {
@@ -242,6 +257,10 @@
     },
     {
       "path": "previews/cases/monument-valley-game.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/center-aligned-section-index.jpg",
       "role": "preview"
     },
     {

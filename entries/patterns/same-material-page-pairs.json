@@ -43,7 +43,12 @@
       "observation": "Same 区把同属 Kiln 的两页和同属 Midnight 的两页分别并置，用相同材料下不同的内容与布局说明主题提供材料、构建决定页面结构。",
       "evidence": "observed",
       "referenceUrl": "https://www.usehallmark.com/",
-      "capturedAt": "2026-11-01"
+      "capturedAt": "2026-11-01",
+      "focus": {
+        "target": "#same .pair:first-child",
+        "label": "同一 Kiln 材料的两张页面",
+        "instruction": "比较陶艺学校与陶器商店：同一套主题材料分别形成两种内容与布局。"
+      }
     }
   ],
   "sourceFiles": [
@@ -52,5 +57,6 @@
     "demos/cases/hallmark/fidelity.md",
     "demos/cases/hallmark/index.html",
     "demos/cases/hallmark/style.css"
-  ]
+  ],
+  "preview": "previews/patterns/same-material-page-pairs.jpg"
 }

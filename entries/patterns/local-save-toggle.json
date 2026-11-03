@@ -32,12 +32,18 @@
       "caseId": "swiss-grid",
       "locator": "entries/cases/swiss-grid.json#interaction/1",
       "observation": "收藏按钮将展览编号存到当前浏览器，状态可再次取消。",
-      "evidence": "adapted"
+      "evidence": "adapted",
+      "focus": {
+        "target": ".event .save",
+        "label": "活动行的收藏按钮",
+        "instruction": "点活动右侧的收藏按钮，再点一次取消；这个状态会保存在当前浏览器。"
+      }
     }
   ],
   "sourceFiles": [
     "demos/cases/swiss-grid/index.html",
     "entries/cases/swiss-grid.json",
     "docs/cases/swiss-grid.md"
-  ]
+  ],
+  "preview": "previews/patterns/local-save-toggle.jpg"
 }

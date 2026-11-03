@@ -47,7 +47,13 @@
       "observation": "Overprint 的两个色版以混合模式叠印，Riso 将同一字形副本偏移 2px、3px 并以相交色圆表现错版与套色后的第三色。",
       "evidence": "observed",
       "referenceUrl": "https://www.usehallmark.com/",
-      "capturedAt": "2026-11-01"
+      "capturedAt": "2026-11-01",
+      "focus": {
+        "target": "#passes",
+        "label": "双色分色与套印样张",
+        "instruction": "对照三张样张：蓝版字形、粉版色圆与两版套印后的第三色。",
+        "entrypoint": "demos/cases/hallmark/themes/riso/index.html"
+      }
     }
   ],
   "sourceFiles": [
@@ -58,5 +64,6 @@
     "demos/cases/hallmark/themes/overprint/index.html",
     "demos/cases/hallmark/themes/riso/style.css",
     "demos/cases/hallmark/themes/riso/index.html"
-  ]
+  ],
+  "preview": "previews/patterns/overprint-misregistration.jpg"
 }

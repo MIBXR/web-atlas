@@ -37,7 +37,12 @@
       "observation": "超过Pickup后向上／向下滚动：导览条固定后按方向显隐；语言菜单400ms展开并在离开时收起。 长页浏览随时找回实用入口，同时减少遮挡。",
       "evidence": "observed",
       "referenceUrl": "https://www.fujirockfestival.com/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".pickup",
+        "label": "随滚动方向显隐的实用导览",
+        "instruction": "向下滚过这组导览，再向上回一点，观察固定导览重新出现；继续向下时它会让出阅读空间。"
+      }
     }
   ],
   "sourceFiles": [
@@ -47,5 +52,6 @@
     "demos/cases/fuji-rock/style.css",
     "entries/cases/fuji-rock.json",
     "docs/cases/fuji-rock.md"
-  ]
+  ],
+  "preview": "previews/patterns/directional-sticky-navigation.jpg"
 }

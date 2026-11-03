@@ -39,7 +39,12 @@
         "observation": "日期地点保持常驻，照片先传递场景，实用入口其次，Featured与按日期排列新闻承担浏览与回看。",
         "evidence": "observed",
         "referenceUrl": "https://www.fujirockfestival.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".photo-hero .ticket, .photo-hero",
+          "label": "常驻日期、地点与票据入口",
+          "instruction": "看现场摄影周围的日期、地点和边缘票据入口，再上下浏览，比较这些实用信息的持续位置。"
+        }
       }
     ],
     "sourceFiles": [
@@ -49,7 +54,8 @@
       "demos/cases/fuji-rock/style.css",
       "entries/cases/fuji-rock.json",
       "docs/cases/fuji-rock.md"
-    ]
+    ],
+    "preview": "previews/patterns/permanent-event-metadata.jpg"
   },
   "sourceCases": [
     {
@@ -223,6 +229,10 @@
     },
     {
       "path": "previews/cases/fuji-rock.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/permanent-event-metadata.jpg",
       "role": "preview"
     },
     {

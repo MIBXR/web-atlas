@@ -39,7 +39,33 @@
         "observation": "桌面WORLD先显示六术语目录与罗德岛点阵；悬停术语的原图预览跟随指针并使用同源形变/RGB偏移shader。点击进入详情，箭头/六段索引换模型，返回恢复目录。",
         "evidence": "observed",
         "referenceUrl": "https://ak.hypergryph.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#world.active:not([data-detail=\"true\"]) .world-list",
+          "label": "桌面术语图像预览",
+          "instruction": "把指针移到世界设定术语上并缓慢移动，查看跟随指针形变的原图。",
+          "prepare": [
+            {
+              "waitFor": "#scene-deck[data-phase=\"idle\"]"
+            },
+            {
+              "click": "#menu-toggle[aria-expanded=\"false\"]",
+              "maxWidth": 800
+            },
+            {
+              "click": "#chapter-nav a[href=\"#world\"]:not([aria-current=\"page\"])",
+              "waitFor": "#scene-deck[data-active=\"world\"][data-phase=\"idle\"]"
+            },
+            {
+              "click": "#world[data-detail=\"true\"] #world-back",
+              "minWidth": 801
+            },
+            {
+              "waitFor": "#world-particles[data-model]"
+            }
+          ],
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -50,7 +76,8 @@
       "demos/cases/arknights-world/style.css",
       "entries/cases/arknights-world.json",
       "docs/cases/arknights-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/pointer-image-shader-preview.jpg"
   },
   "sourceCases": [
     {
@@ -352,6 +379,10 @@
     },
     {
       "path": "previews/cases/arknights-world.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/pointer-image-shader-preview.jpg",
       "role": "preview"
     },
     {

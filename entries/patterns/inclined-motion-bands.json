@@ -35,7 +35,20 @@
       "observation": "向前倾斜的标题带、说明板与箭头复用斜切语言，平台下载徽章保持自己的标准轮廓。",
       "evidence": "observed",
       "referenceUrl": "https://umamusume.com/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#about",
+        "label": "About 的前倾条带",
+        "instruction": "看 ABOUT 标题与下方倾斜的按钮条；文字保持可读，斜边统一向前。",
+        "prepare": [
+          {
+            "click": "#menu-button[aria-expanded=\"false\"]"
+          },
+          {
+            "click": "#study-menu a[href=\"#about\"]"
+          }
+        ]
+      }
     },
     {
       "caseId": "persona-kinetic",
@@ -43,7 +56,17 @@
       "observation": "斜切拼贴、金色边框、网点与剪贴字保持同一张海报的秩序。",
       "evidence": "observed",
       "referenceUrl": "https://persona.atlus.com/p5r/?lang=en#",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#characters",
+        "label": "角色档案的斜切拼贴",
+        "instruction": "看斜切的人物窗口、金色边框和剪贴字，比较各层共同的倾斜方向。",
+        "prepare": [
+          {
+            "click": "header nav a[href=\"#characters\"]"
+          }
+        ]
+      }
     },
     {
       "caseId": "zenless-zone-zero",
@@ -51,7 +74,17 @@
       "observation": "胶片齿孔、斜切面板、斜向人物窗口、粗描边胶囊和边缘编号轨道。",
       "evidence": "observed",
       "referenceUrl": "https://zzz.mihoyo.com/main",
-      "capturedAt": "2026-10-11"
+      "capturedAt": "2026-10-11",
+      "focus": {
+        "target": "#character .home-character__main-panel",
+        "label": "斜向人物窗口与面板",
+        "instruction": "看角色窗口、粗描边面板和头像轨道如何沿同一倾斜方向组织。",
+        "prepare": [
+          {
+            "click": ".sidebar__pagers-num[aria-label=\"跳到角色介绍\"]"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -77,5 +110,6 @@
     "demos/cases/zenless-zone-zero/reference-mobile.css",
     "demos/cases/zenless-zone-zero/reference.css",
     "demos/cases/zenless-zone-zero/state.css"
-  ]
+  ],
+  "preview": "previews/patterns/inclined-motion-bands.jpg"
 }

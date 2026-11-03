@@ -52,7 +52,12 @@
         "observation": "建筑目录：朱红实物纹理与透明屋脊、独立圆形“建筑”题饰并置，八个建筑名称及更多建筑/地图均保留官方目的地。",
         "evidence": "observed",
         "referenceUrl": "https://www.dpm.org.cn/Explore.html",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": ".explore1",
+          "label": "建筑局部与八项名称目录",
+          "instruction": "看朱红建筑纹理、透明屋脊和圆形“建筑”题饰，再从八个建筑名称、“更多建筑”或地图选择真实目的地。"
+        }
       }
     ],
     "sourceFiles": [
@@ -63,7 +68,8 @@
       "demos/cases/palace-museum/style.css",
       "demos/cases/palace-museum/app.js",
       "demos/cases/palace-museum/source/state-matrix.md"
-    ]
+    ],
+    "preview": "previews/patterns/architectural-fragment-anchor.jpg"
   },
   "sourceCases": [
     {
@@ -565,6 +571,10 @@
     },
     {
       "path": "previews/cases/palace-museum.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/architectural-fragment-anchor.jpg",
       "role": "preview"
     },
     {

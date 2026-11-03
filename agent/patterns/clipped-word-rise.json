@@ -52,7 +52,13 @@
         "observation": "首屏标题按单词裁切向上显现，词间延迟 40ms，位移／透明度／模糊分别为 760／440／580ms；章节标题可见面积达到 45% 后从 112% 下方上升，860ms 位移与 481.6ms 透明度，结尾双行间隔 80ms；越过的标题直接显示，减少动态保留完整文字。",
         "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero h1",
+          "label": "首屏逐词标题",
+          "instruction": "看标题中的单词依次从下方显现。点“重播”可重新观看入场。",
+          "replay": ".hero .title-word"
+        }
       }
     ],
     "sourceFiles": [
@@ -64,7 +70,8 @@
       "demos/cases/uiarc-platform/fidelity.md",
       "demos/cases/uiarc-platform/source/content.json",
       "demos/cases/uiarc-platform/source/components.tsx"
-    ]
+    ],
+    "preview": "previews/patterns/clipped-word-rise.jpg"
   },
   "sourceCases": [
     {
@@ -618,6 +625,10 @@
     },
     {
       "path": "previews/cases/uiarc-platform.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/clipped-word-rise.jpg",
       "role": "preview"
     },
     {

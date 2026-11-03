@@ -45,7 +45,12 @@
         "observation": "2500ms 自动 Think/Ship/Create/Build/Jam/Scale → 词直接替换，测量 scrollWidth 后宽度以 300ms cubic-bezier(.86,0,.07,1) 变化，底色/圆点对应变化；这是源机制，没有给文字加不存在的飞入飞出。",
         "evidence": "observed",
         "referenceUrl": "https://www.notion.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".verb",
+          "label": "随动作词变宽的胶囊",
+          "instruction": "看 Think、Ship、Create 等词自动替换，胶囊按真实词宽改变尺寸，底色和圆点一起更新。"
+        }
       }
     ],
     "sourceFiles": [
@@ -56,7 +61,8 @@
       "demos/cases/notion-editorial/style.css",
       "entries/cases/notion-editorial.json",
       "docs/cases/notion-editorial.md"
-    ]
+    ],
+    "preview": "previews/patterns/measured-width-action-pill.jpg"
   },
   "sourceCases": [
     {
@@ -214,6 +220,10 @@
     },
     {
       "path": "previews/cases/notion-editorial.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/measured-width-action-pill.jpg",
       "role": "preview"
     },
     {

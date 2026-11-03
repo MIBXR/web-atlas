@@ -42,7 +42,20 @@
         "observation": "十四图画廊：500ms整条水平轨道、3秒自动推进、无限首尾衔接；桌面三张、手机一张加20%侧图，箭头/14个索引/方向键与点击侧图有效。悬停、焦点、离屏和后台暂停。",
         "evidence": "adapted",
         "referenceUrl": "https://www.monumentvalleygame.com/mv1",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#images",
+          "label": "中央图与邻图预告的画廊",
+          "instruction": "点箭头或下方圆点切图，看中央图与两侧预告；首尾可以连续衔接。",
+          "prepare": [
+            {
+              "waitFor": "body[data-entry=\"ready\"]"
+            },
+            {
+              "click": ".section-nav a[href=\"#images\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "persona-kinetic",
@@ -50,7 +63,17 @@
         "observation": "学校生活与怪盗行动分别采用无限中心轮播：箭头、左右键或横向触摸 → 500ms整条轨道滑动，相邻图露出；到末尾无缝接第一项。",
         "evidence": "adapted",
         "referenceUrl": "https://persona.atlus.com/p5r/?lang=en#",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#life .life-carousel",
+          "label": "学校生活与怪盗行动图集",
+          "instruction": "点各自图集的箭头，比较中央清晰画面与两侧预告，末尾继续回到第一项。",
+          "prepare": [
+            {
+              "click": "header nav a[href=\"#life\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "philharmonie-music",
@@ -58,7 +81,17 @@
         "observation": "切换音乐会摄影：三幅署名摄影500ms横向轨道，克隆边界无缝循环；前后与暂停／触摸可操作。 用演出者肖像讲述阵容，邻接图像的运动维持观看连续。",
         "evidence": "observed",
         "referenceUrl": "https://philharmoniedeparis.fr/fr/activite/exposition/28822-video-games-music",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".concert-photo",
+          "label": "音乐会摄影循环轨道",
+          "instruction": "点摄影下方前后按钮，或左右滑动，对比中央摄影与相邻画面的连续横移；暂停按钮可保留当前照片。",
+          "prepare": [
+            {
+              "click": "#concert-next"
+            }
+          ]
+        }
       },
       {
         "caseId": "fuji-rock",
@@ -66,7 +99,17 @@
         "observation": "照片或Featured自动／手动切换：照片3600ms间隔、800ms淡化；Featured600ms中心循环，3600ms自动，手机露出两侧邻项。 照片传递现场氛围，中心轨道突出活动主题且提示还有内容。",
         "evidence": "observed",
         "referenceUrl": "https://www.fujirockfestival.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".featured-window",
+          "label": "中央 Featured 与邻项预告",
+          "instruction": "点前后按钮，或在手机左右滑动，观察中央特集连续移动，左右邻项提示还有内容。",
+          "prepare": [
+            {
+              "click": "#feature-next"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -94,7 +137,8 @@
       "docs/cases/monument-valley-game.md",
       "docs/cases/persona-kinetic.md",
       "docs/cases/philharmonie-music.md"
-    ]
+    ],
+    "preview": "previews/patterns/centered-loop-gallery.jpg"
   },
   "sourceCases": [
     {
@@ -708,6 +752,10 @@
     },
     {
       "path": "previews/cases/philharmonie-music.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/centered-loop-gallery.jpg",
       "role": "preview"
     },
     {

@@ -34,12 +34,18 @@
       "caseId": "swiss-grid",
       "locator": "entries/cases/swiss-grid.json#composition/hierarchy",
       "observation": "展览主题 → 日期地点 → 分类日程 → 理念。",
-      "evidence": "adapted"
+      "evidence": "adapted",
+      "focus": {
+        "target": ".event",
+        "label": "编号、时间与活动行",
+        "instruction": "沿日程行横向阅读，比较编号、时间、活动名称与收藏按钮共享的对齐线。"
+      }
     }
   ],
   "sourceFiles": [
     "demos/cases/swiss-grid/index.html",
     "entries/cases/swiss-grid.json",
     "docs/cases/swiss-grid.md"
-  ]
+  ],
+  "preview": "previews/patterns/aligned-metadata-rows.jpg"
 }

@@ -46,7 +46,25 @@
       "observation": "场景横向遮罩裁切：桌面1000ms、竖屏600ms；同方向重复轮输入锁定，快速反向和导航使用最后目标队列，单次仅一组出/入场景。",
       "evidence": "adapted",
       "referenceUrl": "https://ak.hypergryph.com/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#scene-deck",
+        "label": "章节侧向交接",
+        "instruction": "点顶部 OPERATOR 或向下滚动，看整章沿切换方向裁切进入。",
+        "prepare": [
+          {
+            "waitFor": "#scene-deck[data-phase=\"idle\"]"
+          },
+          {
+            "click": "#menu-toggle[aria-expanded=\"false\"]",
+            "maxWidth": 800
+          },
+          {
+            "click": "#chapter-nav a[href=\"#information\"]:not([aria-current=\"page\"])",
+            "waitFor": "#scene-deck[data-active=\"information\"][data-phase=\"idle\"]"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -57,5 +75,6 @@
     "demos/cases/arknights-world/style.css",
     "entries/cases/arknights-world.json",
     "docs/cases/arknights-world.md"
-  ]
+  ],
+  "preview": "previews/patterns/directional-section-wipe.jpg"
 }

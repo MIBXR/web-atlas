@@ -43,7 +43,12 @@
         "observation": "活跃热图 pointer enter/focus 120ms 显示日期/对话提示，leave/blur 80ms 关闭 → 很小的元素也有可读状态。",
         "evidence": "observed",
         "referenceUrl": "https://qoder.cn/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".activity",
+          "label": "活跃热图的小格提示",
+          "instruction": "把指针移到任一热图小格，或用 Tab 聚焦小格，查看对应日期与对话数量。"
+        }
       }
     ],
     "sourceFiles": [
@@ -53,7 +58,8 @@
       "demos/cases/qoder-platform/script.js",
       "demos/cases/qoder-platform/style.css",
       "entries/cases/qoder-platform.json"
-    ]
+    ],
+    "preview": "previews/patterns/heatmap-focus-tooltip.jpg"
   },
   "sourceCases": [
     {
@@ -167,6 +173,10 @@
     },
     {
       "path": "previews/cases/qoder-platform.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/heatmap-focus-tooltip.jpg",
       "role": "preview"
     },
     {

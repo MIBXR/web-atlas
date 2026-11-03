@@ -75,7 +75,12 @@
         "observation": "首屏首次布局及容器尺寸改变：reposeHero() 按容器宽高比分五档设置同一星球的位置与缩放；宽高比大于 1.9 时为 [1.15, 0.30, 0]／0.68，大于 1.4 至 1.9 时为 [0.85, 0.30, 0]／0.58，大于 1.0 至 1.4 时为 [0.55, 0.45, 0]／0.48，大于 0.7 至 1.0 时为 [0.20, 0.80, 0]／0.45，其余为 [0.0, 0.95, 0]／0.42；大气层同步位置和比例，使横屏主角偏右、竖屏主角上移，为左下标题留白。",
         "evidence": "observed",
         "referenceUrl": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/demo/web-design-demo/demo1-with-skill.html",
-        "capturedAt": "2026-10-27"
+        "capturedAt": "2026-10-27",
+        "focus": {
+          "target": "#hero-planet",
+          "label": "随画幅重新安排的三维星球",
+          "instruction": "切换桌面与手机模式，观察同一星球在横屏偏右、竖屏上移，为标题留出空间。"
+        }
       }
     ],
     "sourceFiles": [
@@ -83,7 +88,8 @@
       "demos/cases/stellar-museum/index.html",
       "entries/cases/stellar-museum.json",
       "docs/cases/stellar-museum.md"
-    ]
+    ],
+    "preview": "previews/patterns/aspect-recomposed-3d-hero.jpg"
   },
   "sourceCases": [
     {
@@ -653,6 +659,10 @@
     },
     {
       "path": "previews/cases/stellar-museum.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/aspect-recomposed-3d-hero.jpg",
       "role": "preview"
     },
     {

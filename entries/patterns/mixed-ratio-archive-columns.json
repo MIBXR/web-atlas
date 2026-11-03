@@ -36,7 +36,12 @@
       "observation": "129px header、全幅16:9海报、4个等宽但内容不等高的竖列；手机单列。",
       "evidence": "observed",
       "referenceUrl": "https://www.2121designsight.jp/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#archive",
+        "label": "四个等宽、不等高的档案栏目",
+        "instruction": "比较四栏中的竖海报、横照片和文字，栏目等宽但保留各张图的原始比例；手机依次单列排列。"
+      }
     },
     {
       "caseId": "design-sight",
@@ -44,7 +49,12 @@
       "observation": "档案图片包含竖海报与横照片，保留各自比例，不强行统一卡片高度。",
       "evidence": "observed",
       "referenceUrl": "https://www.2121designsight.jp/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#archive",
+        "label": "四个等宽、不等高的档案栏目",
+        "instruction": "比较四栏中的竖海报、横照片和文字，栏目等宽但保留各张图的原始比例；手机依次单列排列。"
+      }
     }
   ],
   "sourceFiles": [
@@ -54,5 +64,6 @@
     "demos/cases/design-sight/style.css",
     "entries/cases/design-sight.json",
     "docs/cases/design-sight.md"
-  ]
+  ],
+  "preview": "previews/patterns/mixed-ratio-archive-columns.jpg"
 }

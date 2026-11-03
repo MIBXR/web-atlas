@@ -58,7 +58,13 @@
         "observation": "Ribbon 的雨、风、远处列车和淡出定时器共用控制量，推子同时改变 Web Audio 混音与夜景强度，列车画面和声音共用穿越相位，Listen 启用声音，Stop 淡出后挂起上下文。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero [data-mixer]",
+          "label": "夜景与三路混音推子",
+          "instruction": "拖动 Rain、Wind、Distant train，先看夜景变化；点击 Listen 后可同时听到混音变化。",
+          "entrypoint": "demos/cases/hallmark/themes/ribbon/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -68,7 +74,8 @@
       "demos/cases/hallmark/themes/ribbon/night.js",
       "demos/cases/hallmark/themes/ribbon/index.html",
       "demos/cases/hallmark/themes/ribbon/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/weather-sound-scene-mixer.jpg"
   },
   "sourceCases": [
     {
@@ -5826,6 +5833,10 @@
     },
     {
       "path": "previews/cases/hallmark.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/weather-sound-scene-mixer.jpg",
       "role": "preview"
     },
     {

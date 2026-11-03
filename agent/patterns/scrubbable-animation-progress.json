@@ -38,13 +38,35 @@
         "caseId": "line-art",
         "locator": "entries/cases/line-art.json#interaction/1",
         "observation": "进度滑块允许主动描绘或回看",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".drawing-toolbar",
+          "label": "可拖动的线稿进度",
+          "instruction": "拖动进度滑块主动描绘或回看；绘制过程中拖动，会停在你选择的位置。",
+          "prepare": [
+            {
+              "input": "#progress",
+              "value": "55"
+            }
+          ]
+        }
       },
       {
         "caseId": "line-art",
         "locator": "entries/cases/line-art.json#interaction/2",
         "observation": "绘制过程中可拖动滑块中止动画",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".drawing-toolbar",
+          "label": "可拖动的线稿进度",
+          "instruction": "拖动进度滑块主动描绘或回看；绘制过程中拖动，会停在你选择的位置。",
+          "prepare": [
+            {
+              "input": "#progress",
+              "value": "55"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -53,7 +75,8 @@
       "demos/cases/line-art/style.css",
       "entries/cases/line-art.json",
       "docs/cases/line-art.md"
-    ]
+    ],
+    "preview": "previews/patterns/scrubbable-animation-progress.jpg"
   },
   "sourceCases": [
     {
@@ -115,6 +138,10 @@
     },
     {
       "path": "previews/cases/line-art.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/scrubbable-animation-progress.jpg",
       "role": "preview"
     },
     {

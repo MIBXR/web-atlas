@@ -45,7 +45,20 @@
         "observation": "镜头长段向下/向上滚动 → 暂停的官方相机 WebM 按进度 seek，标题让出画面；后续性能和续航用官方静帧保持 sticky 媒体和前后文交接。",
         "evidence": "inferred",
         "referenceUrl": "https://www.apple.com/iphone-18-pro/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#cameras .camera-sticky",
+          "label": "镜头系统滚动视频",
+          "instruction": "缓慢向下、向上滚动，观察镜头视频随滚动定位，以及标题让出画面的过程。",
+          "prepare": [
+            {
+              "scroll": "#cameras"
+            },
+            {
+              "video": "#camera-video"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -55,7 +68,8 @@
       "demos/cases/apple-product/script.js",
       "demos/cases/apple-product/style.css",
       "entries/cases/apple-product.json"
-    ]
+    ],
+    "preview": "previews/patterns/scroll-video-scrub.jpg"
   },
   "sourceCases": [
     {
@@ -249,6 +263,10 @@
     },
     {
       "path": "previews/cases/apple-product.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/scroll-video-scrub.jpg",
       "role": "preview"
     },
     {

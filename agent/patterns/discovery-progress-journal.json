@@ -38,20 +38,47 @@
         "caseId": "pixel-world",
         "locator": "entries/cases/pixel-world.json#interaction/2",
         "observation": "靠近地点会记录发现进度，按钮状态不只通过颜色表达。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".journal",
+          "label": "发现进度与手账",
+          "instruction": "在地图中靠近地点后保存手账，查看这里新增的发现记录；“清除手账”可重新探索。",
+          "prepare": [
+            {
+              "click": "[data-site='1']"
+            },
+            {
+              "click": "#save-note"
+            }
+          ]
+        }
       },
       {
         "caseId": "pixel-world",
         "locator": "entries/cases/pixel-world.json#interaction/3",
         "observation": "手账仅保存当前浏览器，支持清除并重新探索。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".journal",
+          "label": "发现进度与手账",
+          "instruction": "在地图中靠近地点后保存手账，查看这里新增的发现记录；“清除手账”可重新探索。",
+          "prepare": [
+            {
+              "click": "[data-site='1']"
+            },
+            {
+              "click": "#save-note"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
       "demos/cases/pixel-world/index.html",
       "entries/cases/pixel-world.json",
       "docs/cases/pixel-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/discovery-progress-journal.jpg"
   },
   "sourceCases": [
     {
@@ -105,6 +132,10 @@
     },
     {
       "path": "previews/cases/pixel-world.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/discovery-progress-journal.jpg",
       "role": "preview"
     },
     {

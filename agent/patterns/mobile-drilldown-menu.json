@@ -40,7 +40,19 @@
         "observation": "手机汉堡菜单 → 全屏顶层 Products/Solutions/Developers/Resources；选择分类后二级页以源 CSS 500ms 侧向进入、250ms 透明度衔接，Back 返回顶层。Start now/Contact sales 固定底部；关闭/Escape 恢复滚动和焦点，让长目录保持方向与核心行动。",
         "evidence": "adapted",
         "referenceUrl": "https://stripe.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".stripe-phone[data-open=true]",
+          "label": "逐层进入的手机菜单",
+          "instruction": "点 Products 等分类进入二级页，用 Back 返回；底部 Start now 与 Contact sales 始终保留。",
+          "prepare": [
+            {
+              "click": ".mobile-menu[aria-expanded=false]",
+              "waitFor": ".stripe-phone[data-open=true]"
+            }
+          ],
+          "viewport": "mobile"
+        }
       }
     ],
     "sourceFiles": [
@@ -52,7 +64,8 @@
       "demos/cases/stripe-platform/wave.js",
       "entries/cases/stripe-platform.json",
       "docs/cases/stripe-platform.md"
-    ]
+    ],
+    "preview": "previews/patterns/mobile-drilldown-menu.jpg"
   },
   "sourceCases": [
     {
@@ -206,6 +219,10 @@
     },
     {
       "path": "previews/cases/stripe-platform.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/mobile-drilldown-menu.jpg",
       "role": "preview"
     },
     {

@@ -38,7 +38,12 @@
         "observation": "1266px内容框；48px段落式首屏；产品矩阵首行Payments跨两列、Billing一列同高，随后不同产品区；4列指标与左右案例。",
         "evidence": "observed",
         "referenceUrl": "https://stripe.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".bento",
+          "label": "产品矩阵的主次比例",
+          "instruction": "对比 Payments 的跨列主卡与旁侧 Billing，再往下看其余产品怎样组成矩阵。"
+        }
       },
       {
         "caseId": "notion-editorial",
@@ -46,7 +51,12 @@
         "observation": "语言提示/导航 → 动作胶囊/头像/桌面产品视频 → 标识条带 → 两列+通栏 Bento → 五用途 → 团队故事 → 结束行动 → 页尾。",
         "evidence": "observed",
         "referenceUrl": "https://www.notion.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#features",
+          "label": "两列与通栏能力卡",
+          "instruction": "对比 Capture、Find 两张并排卡与下方通栏 Automate，查看图文比例如何表达能力关系。"
+        }
       }
     ],
     "sourceFiles": [
@@ -65,7 +75,8 @@
       "entries/cases/stripe-platform.json",
       "docs/cases/notion-editorial.md",
       "docs/cases/stripe-platform.md"
-    ]
+    ],
+    "preview": "previews/patterns/capability-bento-hierarchy.jpg"
   },
   "sourceCases": [
     {
@@ -351,6 +362,10 @@
     },
     {
       "path": "previews/cases/stripe-platform.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/capability-bento-hierarchy.jpg",
       "role": "preview"
     },
     {

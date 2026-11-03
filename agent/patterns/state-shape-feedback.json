@@ -45,7 +45,12 @@
         "observation": "点击或键盘激活按钮／卡片：CTA圆角48→16px，资源卡24→48px；200/300ms cubic-bezier(.2,0,0,1)。 形状与状态层共同表达当前动作，界面表现力来自一致的反馈。",
         "evidence": "observed",
         "referenceUrl": "https://m3.material.io/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#io .cards-row",
+          "label": "卡片的按压与聚焦形状",
+          "instruction": "按住或用 Tab 聚焦资源卡，观察容器圆角与状态层；主行动按钮也使用对应的形状反馈。"
+        }
       }
     ],
     "sourceFiles": [
@@ -55,7 +60,8 @@
       "demos/cases/google-material/style.css",
       "entries/cases/google-material.json",
       "docs/cases/google-material.md"
-    ]
+    ],
+    "preview": "previews/patterns/state-shape-feedback.jpg"
   },
   "sourceCases": [
     {
@@ -245,6 +251,10 @@
     },
     {
       "path": "previews/cases/google-material.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/state-shape-feedback.jpg",
       "role": "preview"
     },
     {

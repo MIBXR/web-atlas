@@ -44,7 +44,12 @@
         "observation": "上下浏览：欢迎与到访信息、展览横轨、馆藏和会员按原生阅读节奏组织；不新增全屏转场。",
         "evidence": "observed",
         "referenceUrl": "https://www.metmuseum.org/en",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#membership",
+          "label": "展览、馆藏到会员的长页",
+          "instruction": "从会员区向上返回馆藏、展览与到访信息，观察页面沿正常文档顺序滚动，没有整屏切幕。"
+        }
       },
       {
         "caseId": "rijksmuseum-art",
@@ -52,7 +57,12 @@
         "observation": "进入与连续上下浏览：巨大的官方字标覆盖全幅照片，浏览采用原生连续滚动。 图像先传递艺术馆的世界，后续展览逐渐替换观看内容。",
         "evidence": "observed",
         "referenceUrl": "https://www.rijksmuseum.nl/en",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#exhibitions",
+          "label": "摄影、展览与到访的连续阅读",
+          "instruction": "从这组展览往上返回全幅摄影，再向下进入到访信息，观察正常滚动与回程。"
+        }
       },
       {
         "caseId": "uma-musume",
@@ -60,7 +70,17 @@
         "observation": "正常纵向浏览连接群像、新闻、About、Gameplay 和 footer，斜切条带延续赛道方向。",
         "evidence": "observed",
         "referenceUrl": "https://umamusume.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#news",
+          "label": "News 到 Gameplay 的正常长页",
+          "instruction": "从 News 向下滚到 About、Gameplay，再向上回看；章节都留在同一条长页里。",
+          "prepare": [
+            {
+              "click": ".official-nav a[href=\"#news\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "fuji-rock",
@@ -68,7 +88,12 @@
         "observation": "超过Pickup后向上／向下滚动：导览条固定后按方向显隐；语言菜单400ms展开并在离开时收起。 长页浏览随时找回实用入口，同时减少遮挡。",
         "evidence": "observed",
         "referenceUrl": "https://www.fujirockfestival.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#news",
+          "label": "Featured 到日期新闻的长页",
+          "instruction": "从新闻向上返回 Featured 和实用导览，再向下继续阅读；页面保持原生长页与正常回程。"
+        }
       }
     ],
     "sourceFiles": [
@@ -96,7 +121,8 @@
       "docs/cases/met-museum.md",
       "docs/cases/rijksmuseum-art.md",
       "docs/cases/uma-musume.md"
-    ]
+    ],
+    "preview": "previews/patterns/native-document-reading.jpg"
   },
   "sourceCases": [
     {
@@ -626,6 +652,10 @@
     },
     {
       "path": "previews/cases/uma-musume.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/native-document-reading.jpg",
       "role": "preview"
     },
     {

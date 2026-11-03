@@ -126,6 +126,10 @@ export function buildPatterns({ root = defaultRoot, patterns, caseRecords, caseB
     const documents = documentPaths.map(relative => ({path:relative, role:relative === prompt ? 'prompt' : 'research', content:textFile(root, relative)}));
     const files = new Map(sourceCases.flatMap(source => bundlesById.get(source.id).files).map(file => [file.path, file]));
     for (const relative of [`entries/patterns/${pattern.id}.json`, ...documentPaths]) files.set(relative, {path:relative, role:'context'});
+    if (pattern.preview) {
+      repositoryFile(root, pattern.preview);
+      files.set(pattern.preview, {path:pattern.preview, role:'preview'});
+    }
     const bundle = { schemaVersion: 1, id: pattern.id, pattern, sourceCases, documents, files:[...files.values()].sort((a,b) => a.path.localeCompare(b.path)) };
     const relative = `agent/patterns/${pattern.id}.json`;
     const bytes = encode(bundle);

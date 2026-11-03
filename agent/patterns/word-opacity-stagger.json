@@ -50,7 +50,12 @@
         "observation": "标题按单词 1s opacity 过渡，总交错跨度 .2s；内容组 750ms、10px、100ms 交错，在视口底部 −20% 触发 → 以较小运动保留阅读节奏。",
         "evidence": "inferred",
         "referenceUrl": "https://claude.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".plans>h2",
+          "label": "套餐标题的逐词淡入",
+          "instruction": "看套餐标题的单词按短间隔淡入；向上滚出这节后再返回，可再次观察。"
+        }
       }
     ],
     "sourceFiles": [
@@ -60,7 +65,8 @@
       "demos/cases/claude-platform/script.js",
       "demos/cases/claude-platform/style.css",
       "entries/cases/claude-platform.json"
-    ]
+    ],
+    "preview": "previews/patterns/word-opacity-stagger.jpg"
   },
   "sourceCases": [
     {
@@ -158,6 +164,10 @@
     },
     {
       "path": "previews/cases/claude-platform.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/word-opacity-stagger.jpg",
       "role": "preview"
     },
     {

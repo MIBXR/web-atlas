@@ -50,7 +50,12 @@
       "observation": "源端观察：矩形章节与专题图像上右半幅浅纸签并置，竖排类目为独立可读文字。",
       "evidence": "observed",
       "referenceUrl": "https://www.dpm.org.cn/Explore.html",
-      "capturedAt": "2026-10-09"
+      "capturedAt": "2026-10-09",
+      "focus": {
+        "target": ".explore2 .lt",
+        "label": "图像右半幅的纸签分类",
+        "instruction": "比较图像与右半幅浅纸签的并置，竖排类目作为独立文字承接图像内容。"
+      }
     }
   ],
   "sourceFiles": [
@@ -61,5 +66,6 @@
     "demos/cases/palace-museum/style.css",
     "demos/cases/palace-museum/app.js",
     "demos/cases/palace-museum/source/state-matrix.md"
-  ]
+  ],
+  "preview": "previews/patterns/half-paper-category-label.jpg"
 }

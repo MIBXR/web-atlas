@@ -36,19 +36,52 @@
       "caseId": "bauhaus-geometry",
       "locator": "entries/cases/bauhaus-geometry.json#interaction/1",
       "observation": "原生范围控件可用键盘旋转三角形并即时显示角度。",
-      "evidence": "adapted"
+      "evidence": "adapted",
+      "focus": {
+        "target": ".range-wrap",
+        "label": "三角形旋转角度",
+        "instruction": "拖动旋转滑块或用方向键微调，观察三角形转动和角度读数同时更新。",
+        "prepare": [
+          {
+            "input": "#rotation",
+            "value": "65"
+          }
+        ]
+      }
     },
     {
       "caseId": "retro-80s",
       "locator": "entries/cases/retro-80s.json#interaction/2",
       "observation": "原生范围输入即时改变Cutoff、Attack、Output并更新读数。",
-      "evidence": "adapted"
+      "evidence": "adapted",
+      "focus": {
+        "target": ".params",
+        "label": "Cutoff、Attack 与 Output",
+        "instruction": "拖动三个滑块，或用方向键微调，观察各自带单位的读数即时更新。",
+        "prepare": [
+          {
+            "input": "#cutoff",
+            "value": "2600"
+          }
+        ]
+      }
     },
     {
       "caseId": "shape-morph",
       "locator": "entries/cases/shape-morph.json#interaction/1",
       "observation": "间距滑块将单元从连续图案分离为碎片",
-      "evidence": "adapted"
+      "evidence": "adapted",
+      "focus": {
+        "target": ".parameters",
+        "label": "碎片间距与时长",
+        "instruction": "调节间距与时长滑块，看读数更新；向上返回几何图形，可比较分片之间的距离和变形速度。",
+        "prepare": [
+          {
+            "input": "#spread",
+            "value": "24"
+          }
+        ]
+      }
     },
     {
       "caseId": "hallmark",
@@ -56,7 +89,13 @@
       "observation": "Specimen 的字号与字重滑块同步写入试排 CSS 变量及带单位读数，Ribbon 的推子同步百分比、aria-valuenow、视觉强度和音量。",
       "evidence": "observed",
       "referenceUrl": "https://www.usehallmark.com/",
-      "capturedAt": "2026-11-01"
+      "capturedAt": "2026-11-01",
+      "focus": {
+        "target": "#tester",
+        "label": "字号、字重与试排读数",
+        "instruction": "拖动字号与字重滑块，对照试排文字和旁边读数的同步变化。",
+        "entrypoint": "demos/cases/hallmark/themes/specimen/index.html"
+      }
     }
   ],
   "sourceFiles": [
@@ -77,5 +116,6 @@
     "demos/cases/hallmark/themes/specimen/page.js",
     "demos/cases/hallmark/themes/specimen/index.html",
     "demos/cases/hallmark/themes/ribbon/night.js"
-  ]
+  ],
+  "preview": "previews/patterns/live-parameter-readout.jpg"
 }

@@ -35,7 +35,17 @@
       "caseId": "hand-drawn",
       "locator": "entries/cases/hand-drawn.json#interaction/0",
       "observation": "三项原生复选框更新收集进度",
-      "evidence": "adapted"
+      "evidence": "adapted",
+      "focus": {
+        "target": ".checklist",
+        "label": "三项短清单与完成数",
+        "instruction": "勾选或取消清单项，观察完成数量即时更新；Reset 可重新开始。",
+        "prepare": [
+          {
+            "click": ".checklist input:not(:checked)"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -44,5 +54,6 @@
     "demos/cases/hand-drawn/style.css",
     "entries/cases/hand-drawn.json",
     "docs/cases/hand-drawn.md"
-  ]
+  ],
+  "preview": "previews/patterns/checklist-progress.jpg"
 }

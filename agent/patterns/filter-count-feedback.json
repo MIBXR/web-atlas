@@ -37,7 +37,17 @@
         "caseId": "swiss-grid",
         "locator": "entries/cases/swiss-grid.json#interaction/0",
         "observation": "分类按钮筛选日程并宣布结果数。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".filters",
+          "label": "活动筛选与结果数",
+          "instruction": "点“全部”“对谈”或“工作坊”，看下方活动行与结果数量同步改变。",
+          "prepare": [
+            {
+              "click": "[data-filter=workshop]"
+            }
+          ]
+        }
       },
       {
         "caseId": "mori-art-museum",
@@ -45,7 +55,17 @@
         "observation": "本地只还原首页几个区域并加教学新闻筛选；不复制多馆门户、购票账户与追踪脚本。",
         "evidence": "adapted",
         "referenceUrl": "https://www.mori.art.museum/jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#news .filter",
+          "label": "新闻筛选与结果数",
+          "instruction": "切换 All、Program、Notice，观察新闻卡片和显示件数同步变化。",
+          "prepare": [
+            {
+              "click": "[data-filter=program]"
+            }
+          ]
+        }
       },
       {
         "caseId": "hallmark",
@@ -53,7 +73,17 @@
         "observation": "流派按钮同步 aria-pressed 与主题 hidden 状态，Editorial、Modern minimal、Atmospheric、Playful 分别显示 20、12、9、9 项，按钮计数与结果对应。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "[data-th-filter]",
+          "label": "主题流派筛选",
+          "instruction": "切换 Editorial、Atmospheric 等流派，对照按钮数量与下方主题结果。",
+          "prepare": [
+            {
+              "click": "[data-genre=atmospheric][aria-pressed=false]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -72,7 +102,8 @@
       "demos/cases/hallmark/js/themes.js",
       "demos/cases/hallmark/index.html",
       "demos/cases/hallmark/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/filter-count-feedback.jpg"
   },
   "sourceCases": [
     {
@@ -5966,6 +5997,10 @@
     },
     {
       "path": "previews/cases/swiss-grid.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/filter-count-feedback.jpg",
       "role": "preview"
     },
     {

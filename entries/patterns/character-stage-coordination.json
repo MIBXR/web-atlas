@@ -37,7 +37,24 @@
       "observation": "选择 Vesna/Vodyanitsa，100ms 交叉淡入立绘，并同步切换青绿/蓝色完整背景、姓名、简介、肖像状态与麦克风图。",
       "evidence": "observed",
       "referenceUrl": "https://genshin.hoyoverse.com/en/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "body[data-chapter=\"1\"] #characters",
+        "label": "人物与整幅背景换态",
+        "instruction": "点两个人物肖像，比较立绘、青绿或蓝色背景、姓名与简介如何同步更换。",
+        "prepare": [
+          {
+            "click": "header a[href=\"#characters\"]",
+            "waitFor": "body[data-chapter=\"1\"]"
+          },
+          {
+            "waitFor": "main[style*=\"transition: none\"]"
+          },
+          {
+            "click": "[data-character=\"1\"]:not([aria-pressed=\"true\"])"
+          }
+        ]
+      }
     },
     {
       "caseId": "blue-archive",
@@ -45,7 +62,13 @@
       "observation": "阿比多斯四学生资料卡与完整立绘以 1000ms 整块水平移动；选择按钮、左右键及手势同步当前人物。",
       "evidence": "adapted",
       "referenceUrl": "https://bluearchive.jp/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#characters",
+        "label": "学生立绘与资料卡",
+        "instruction": "选择另一个学生，查看整块立绘、姓名、资料与选中名字如何一起更换。",
+        "entrypoint": "demos/cases/blue-archive/character.html"
+      }
     },
     {
       "caseId": "arknights-world",
@@ -53,7 +76,25 @@
       "observation": "干员保留3名/每人E1与E2，原站6名且阿米娅含E0；灰度背景为本地同人物图层，未移植完整背景版/6人滚动肖像轨道。",
       "evidence": "adapted",
       "referenceUrl": "https://ak.hypergryph.com/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#operator.active",
+        "label": "干员立绘与档案",
+        "instruction": "选择右侧干员头像或精英阶段，比较立绘、背景姓名和资料如何一起变化。",
+        "prepare": [
+          {
+            "waitFor": "#scene-deck[data-phase=\"idle\"]"
+          },
+          {
+            "click": "#menu-toggle[aria-expanded=\"false\"]",
+            "maxWidth": 800
+          },
+          {
+            "click": "#chapter-nav a[href=\"#operator\"]:not([aria-current=\"page\"])",
+            "waitFor": "#scene-deck[data-active=\"operator\"][data-phase=\"idle\"]"
+          }
+        ]
+      }
     },
     {
       "caseId": "zenless-zone-zero",
@@ -61,7 +102,17 @@
       "observation": "选择角色缩略图，同时切换62人中的立绘、阴影、阵营、中文名与英文背景；桌面角色图以500ms位移/透明度进入，阴影300ms，姓名与阵营延迟交接。",
       "evidence": "observed",
       "referenceUrl": "https://zzz.mihoyo.com/main",
-      "capturedAt": "2026-10-11"
+      "capturedAt": "2026-10-11",
+      "focus": {
+        "target": "#character .home-character__main",
+        "label": "角色立绘、姓名与阵营",
+        "instruction": "点不同人物头像，看立绘、阴影、阵营和背景英文名成组进入。",
+        "prepare": [
+          {
+            "click": ".sidebar__pagers-num[aria-label=\"跳到角色介绍\"]"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -95,5 +146,6 @@
     "demos/cases/zenless-zone-zero/reference-mobile.css",
     "demos/cases/zenless-zone-zero/reference.css",
     "demos/cases/zenless-zone-zero/state.css"
-  ]
+  ],
+  "preview": "previews/patterns/character-stage-coordination.jpg"
 }

@@ -55,7 +55,12 @@
       "observation": "首屏将五张桌面牌与四张手机牌沿浅弧交错发出，悬停或聚焦抬牌并让邻牌横移；Deal again 排除当前主题，随机抽取九个主题，等图片预解码与收牌完成后重发，busy 期间忽略重复点击。",
       "evidence": "observed",
       "referenceUrl": "https://www.usehallmark.com/",
-      "capturedAt": "2026-11-01"
+      "capturedAt": "2026-11-01",
+      "focus": {
+        "target": "[data-fan]",
+        "label": "真实页面手牌",
+        "instruction": "将指针移到页面牌上，再点击 Deal again，观察抬牌、让位与重新发牌。"
+      }
     }
   ],
   "sourceFiles": [
@@ -65,5 +70,6 @@
     "demos/cases/hallmark/js/fan.js",
     "demos/cases/hallmark/index.html",
     "demos/cases/hallmark/style.css"
-  ]
+  ],
+  "preview": "previews/patterns/dealt-page-hand.jpg"
 }

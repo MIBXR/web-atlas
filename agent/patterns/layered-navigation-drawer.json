@@ -45,7 +45,23 @@
         "observation": "进入目录或二级主题：300ms侧向抽屉；二级内容200ms延后再200ms淡入。 导航容器保持连续，内容层级在同一位置变化。",
         "evidence": "observed",
         "referenceUrl": "https://m3.material.io/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#directory[open]",
+          "label": "侧向目录与二级内容",
+          "instruction": "关闭后再打开目录，观察容器先进入；在手机主目录选择 Styles 等分类，可看二级内容在原位置后续进入。",
+          "prepare": [
+            {
+              "click": ".rail [data-directory=Styles]",
+              "minWidth": 601
+            },
+            {
+              "click": "#open-menu[aria-expanded=false]",
+              "waitFor": "#directory[open]",
+              "maxWidth": 600
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -55,7 +71,8 @@
       "demos/cases/google-material/style.css",
       "entries/cases/google-material.json",
       "docs/cases/google-material.md"
-    ]
+    ],
+    "preview": "previews/patterns/layered-navigation-drawer.jpg"
   },
   "sourceCases": [
     {
@@ -245,6 +262,10 @@
     },
     {
       "path": "previews/cases/google-material.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/layered-navigation-drawer.jpg",
       "role": "preview"
     },
     {

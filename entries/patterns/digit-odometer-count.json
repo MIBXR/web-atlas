@@ -53,7 +53,12 @@
       "observation": "GitHub 星标请求完成后，每位数字以 0–9 的竖列滚到目标数位，位间延迟 90ms，千以上显示 k；减少动态直接定位到最终数字。",
       "evidence": "observed",
       "referenceUrl": "https://www.usehallmark.com/",
-      "capturedAt": "2026-11-01"
+      "capturedAt": "2026-11-01",
+      "focus": {
+        "target": "[data-gh]",
+        "label": "GitHub 星标数字",
+        "instruction": "观察导航右侧星标数的逐位滚入；数字在星标请求完成后更新。"
+      }
     }
   ],
   "sourceFiles": [
@@ -63,5 +68,6 @@
     "demos/cases/hallmark/js/core.js",
     "demos/cases/hallmark/style.css",
     "demos/cases/hallmark/index.html"
-  ]
+  ],
+  "preview": "previews/patterns/digit-odometer-count.jpg"
 }

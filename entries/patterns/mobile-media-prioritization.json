@@ -36,7 +36,13 @@
       "observation": "桌面官方产品视频静音循环，可暂停；手机保留上方七个头像 pile，当前页面隐藏 hero 媒体区而不是塞入桌面视频。",
       "evidence": "adapted",
       "referenceUrl": "https://www.notion.com/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".hero",
+        "label": "手机的头像与标题",
+        "instruction": "对照手机与桌面模式：手机保留头像、主张和入口，桌面的产品影片在手机上隐藏。",
+        "viewport": "mobile"
+      }
     },
     {
       "caseId": "linear-workflow",
@@ -44,7 +50,13 @@
       "observation": "手机保留完整应用缩放裁切、Intake 消息线程；按原站隐藏 Planning/AI/Build 的复杂图示并保留标题正文。",
       "evidence": "observed",
       "referenceUrl": "https://linear.app/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#workflow",
+        "label": "手机保留消息线程",
+        "instruction": "向下查看手机的 Intake 消息线程，再对照桌面模式；复杂 Planning、AI、Build 图示在手机上让位给文字。",
+        "viewport": "mobile"
+      }
     }
   ],
   "sourceFiles": [
@@ -61,5 +73,6 @@
     "entries/cases/linear-workflow.json",
     "entries/cases/notion-editorial.json",
     "docs/cases/notion-editorial.md"
-  ]
+  ],
+  "preview": "previews/patterns/mobile-media-prioritization.jpg"
 }

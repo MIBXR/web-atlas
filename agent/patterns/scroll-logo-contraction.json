@@ -51,7 +51,17 @@
         "observation": "滚过画布宽度 7% 后 Logo 从 2.8 倍缩回导航，反向回首恢复；300ms cubic-bezier(.19,1,.22,1)。手机 1.72 倍与菜单切换，Play Now 打开下载层。",
         "evidence": "observed",
         "referenceUrl": "https://umamusume.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".official-logo",
+          "label": "收回导航的 Logo",
+          "instruction": "先向上回到首屏，再下翻，观察左上 Logo 在主视觉大尺寸与导航尺寸之间变换。",
+          "prepare": [
+            {
+              "click": ".official-nav a[href=\"#news\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -61,7 +71,8 @@
       "demos/cases/uma-musume/style.css",
       "entries/cases/uma-musume.json",
       "docs/cases/uma-musume.md"
-    ]
+    ],
+    "preview": "previews/patterns/scroll-logo-contraction.jpg"
   },
   "sourceCases": [
     {
@@ -243,6 +254,10 @@
     },
     {
       "path": "previews/cases/uma-musume.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/scroll-logo-contraction.jpg",
       "role": "preview"
     },
     {

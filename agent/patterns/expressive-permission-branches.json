@@ -51,7 +51,18 @@
         "observation": "Permission Request 的 Allow 淡出终端并进入六格动作画廊；首次 Deny 经过趴地、起身、挠头与撒娇后给出重试卡；重试可 Allow，也可再次 Deny 后戴墨镜、收回米色圆幕并逐字显示 Thanks for visiting.。末态点击角色七次显示作者彩蛋，5 秒后消失。",
         "evidence": "observed",
         "referenceUrl": "https://clawdondesk.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "body:not(.clawd-perm-show) #drop-zone, body.clawd-perm-show #clawd-perm-card",
+          "label": "角色权限选择入口",
+          "instruction": "先把角色拖到 Drop here。出现 Permission Request 后，选择 Allow 或 Deny，观察角色动作和页面分支；第一次 Deny 后还能重试。",
+          "prepare": [
+            {
+              "key": "Escape",
+              "waitFor": "body[data-frame='4']"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -61,7 +72,8 @@
       "demos/cases/clawd-on-desk/source/website/scripts/terminal.js",
       "demos/cases/clawd-on-desk/index.html",
       "demos/cases/clawd-on-desk/assets/svg/clawd-shades.svg"
-    ]
+    ],
+    "preview": "previews/patterns/expressive-permission-branches.jpg"
   },
   "sourceCases": [
     {
@@ -311,6 +323,10 @@
     },
     {
       "path": "previews/cases/clawd-on-desk.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/expressive-permission-branches.jpg",
       "role": "preview"
     },
     {

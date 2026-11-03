@@ -44,7 +44,25 @@
       "observation": "真实BGM默认关闭，单独开关并使用官网600/300ms音量渐变；三人日语语音独立按需播放，换人物或离开干员章暂停旧语音。",
       "evidence": "adapted",
       "referenceUrl": "https://ak.hypergryph.com/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#sound",
+        "label": "跨章节背景音乐",
+        "instruction": "用右上声音按钮主动开启音乐，再切换章节；音乐保持连续，关闭时渐弱。",
+        "prepare": [
+          {
+            "waitFor": "#scene-deck[data-phase=\"idle\"]"
+          },
+          {
+            "click": "#menu-toggle[aria-expanded=\"false\"]",
+            "maxWidth": 800
+          },
+          {
+            "click": "#chapter-nav a[href=\"#operator\"]:not([aria-current=\"page\"])",
+            "waitFor": "#scene-deck[data-active=\"operator\"][data-phase=\"idle\"]"
+          }
+        ]
+      }
     },
     {
       "caseId": "zelda-world",
@@ -52,7 +70,22 @@
       "observation": "开场 SE 对应纹章发亮扩散，BGM在入口移交世界时接续；三段影片切换时音乐不断开，维持探索节奏。",
       "evidence": "observed",
       "referenceUrl": "https://www.nintendo.com/jp/zelda/totk/world/index.html",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".sound-control",
+        "label": "世界章节的连续 BGM",
+        "instruction": "用右上 SOUND 主动开启音乐，再切换三个世界章节，比较画面换章与音乐连续播放。",
+        "prepare": [
+          {
+            "click": "#entry-gate:not([hidden]):not([data-phase]) [data-enter=\"off\"]",
+            "waitFor": "body:has(#entry-gate[hidden])"
+          },
+          {
+            "click": ".chapters a[href=\"#world-1\"]:not([aria-current=\"true\"])",
+            "waitFor": ".world-stage[data-scene=\"1\"]"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -69,5 +102,6 @@
     "entries/cases/zelda-world.json",
     "docs/cases/arknights-world.md",
     "docs/cases/zelda-world.md"
-  ]
+  ],
+  "preview": "previews/patterns/continuous-bgm-bridge.jpg"
 }

@@ -39,7 +39,12 @@
         "observation": "照片底部加局部黑色渐变支撑文字对比；不对整张照片做滤镜风格化。",
         "evidence": "observed",
         "referenceUrl": "https://www.rijksmuseum.nl/en",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#family .caption",
+          "label": "照片边缘的文字对比",
+          "instruction": "看照片下缘文字周围的局部暗部，画面上方仍保留原始摄影的亮度与颜色。"
+        }
       }
     ],
     "sourceFiles": [
@@ -49,7 +54,8 @@
       "demos/cases/rijksmuseum-art/style.css",
       "entries/cases/rijksmuseum-art.json",
       "docs/cases/rijksmuseum-art.md"
-    ]
+    ],
+    "preview": "previews/patterns/photo-edge-text-contrast.jpg"
   },
   "sourceCases": [
     {
@@ -179,6 +185,10 @@
     },
     {
       "path": "previews/cases/rijksmuseum-art.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/photo-edge-text-contrast.jpg",
       "role": "preview"
     },
     {

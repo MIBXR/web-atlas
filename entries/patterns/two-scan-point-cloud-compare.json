@@ -54,7 +54,13 @@
       "observation": "Vantage 在多个视图中复用同一测量场地点位，扫带照亮点云，图层开关控制地面、结构、树冠和变化区域，比较分隔线以 scissor 绘制两次扫描，截面控件同步更新平面切线与高程标注。",
       "evidence": "observed",
       "referenceUrl": "https://www.usehallmark.com/",
-      "capturedAt": "2026-11-01"
+      "capturedAt": "2026-11-01",
+      "focus": {
+        "target": "#compare",
+        "label": "扫描 13 与扫描 14 点云比较",
+        "instruction": "拖动比较中线，对照两次扫描；亮色区域表示新增变化。",
+        "entrypoint": "demos/cases/hallmark/themes/vantage/index.html"
+      }
     }
   ],
   "sourceFiles": [
@@ -64,5 +70,6 @@
     "demos/cases/hallmark/themes/vantage/scene.js",
     "demos/cases/hallmark/themes/vantage/index.html",
     "demos/cases/hallmark/themes/vantage/style.css"
-  ]
+  ],
+  "preview": "previews/patterns/two-scan-point-cloud-compare.jpg"
 }

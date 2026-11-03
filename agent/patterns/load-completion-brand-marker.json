@@ -50,7 +50,13 @@
         "observation": "首次加载完成：全屏白色与蓝色50px旋转标记，300ms退场。 在海报加载期间保持机构识别。",
         "evidence": "inferred",
         "referenceUrl": "https://www.2121designsight.jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#entry-loader:not([hidden])",
+          "label": "资源就绪前的蓝色品牌标记",
+          "instruction": "看海报准备期间的白色加载层与蓝色旋转标记，资源就绪后它会退出；点“重播”重新载入。",
+          "phase": "loading"
+        }
       },
       {
         "caseId": "fuji-rock",
@@ -58,7 +64,13 @@
         "observation": "素材载入完成：32px橙色旋转标记退出，遮层与主图1200ms线性淡化。 让真实现场图准备完毕后平稳进入。",
         "evidence": "observed",
         "referenceUrl": "https://www.fujirockfestival.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#loader:not([hidden])",
+          "label": "现场照片前的橙色加载标记",
+          "instruction": "看现场照片准备期间的橙色旋转标记，素材就绪后遮层与主图一起淡入交接；点“重播”重新载入。",
+          "phase": "loading"
+        }
       }
     ],
     "sourceFiles": [
@@ -74,7 +86,8 @@
       "entries/cases/fuji-rock.json",
       "docs/cases/design-sight.md",
       "docs/cases/fuji-rock.md"
-    ]
+    ],
+    "preview": "previews/patterns/load-completion-brand-marker.jpg"
   },
   "sourceCases": [
     {
@@ -356,6 +369,10 @@
     },
     {
       "path": "previews/cases/fuji-rock.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/load-completion-brand-marker.jpg",
       "role": "preview"
     },
     {

@@ -43,14 +43,20 @@
         "caseId": "swiss-grid",
         "locator": "entries/cases/swiss-grid.json#composition/layout",
         "observation": "12 栏、32px 基础间距、横向日程列表；手机为单列",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".hero",
+          "label": "编辑网格与基础间距",
+          "instruction": "比较主标题、右侧红色图版和底部元数据的共同对齐线，再向下看日程延续同一网格。"
+        }
       }
     ],
     "sourceFiles": [
       "demos/cases/swiss-grid/index.html",
       "entries/cases/swiss-grid.json",
       "docs/cases/swiss-grid.md"
-    ]
+    ],
+    "preview": "previews/patterns/editorial-alignment-grid.jpg"
   },
   "sourceCases": [
     {
@@ -104,6 +110,10 @@
     },
     {
       "path": "previews/cases/swiss-grid.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/editorial-alignment-grid.jpg",
       "role": "preview"
     },
     {

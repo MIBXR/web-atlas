@@ -50,7 +50,12 @@
       "observation": "四屏完整结构；50px左右外缘，1440×900时主画面1340×755；第三屏按原九项/75%与25%两区组织。",
       "evidence": "observed",
       "referenceUrl": "https://www.szmuseum.com/Home/Index",
-      "capturedAt": "2026-10-09"
+      "capturedAt": "2026-10-09",
+      "focus": {
+        "target": ".section1",
+        "label": "机构摄影周围的白色外缘",
+        "instruction": "比较主摄影与两侧白色外缘的比例，再切手机模式看画幅怎样调整；可用右侧章节点继续浏览。"
+      }
     }
   ],
   "sourceFiles": [
@@ -61,5 +66,6 @@
     "demos/cases/suzhou-museum/style.css",
     "demos/cases/suzhou-museum/app.js",
     "demos/cases/suzhou-museum/source/state-matrix.md"
-  ]
+  ],
+  "preview": "previews/patterns/architectural-outline-whitespace.jpg"
 }

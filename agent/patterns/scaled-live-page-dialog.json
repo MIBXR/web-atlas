@@ -57,7 +57,18 @@
         "observation": "主题网格在原生对话框中打开真实主题页，iframe 按 1440px 排版并以容器宽度缩放，材料说明与当前主题同步，上一项和下一项沿筛选结果循环，Escape 关闭后焦点返回当前主题链接。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "[data-th-dlg]",
+          "label": "真实主题页预览对话框",
+          "instruction": "在对话框内滚动真实页面，并用右上角的前后按钮切换主题。",
+          "prepare": [
+            {
+              "click": ".th__link[data-slug=refract]",
+              "waitFor": "[data-th-dlg][open] iframe"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -67,7 +78,8 @@
       "demos/cases/hallmark/js/themes.js",
       "demos/cases/hallmark/index.html",
       "demos/cases/hallmark/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/scaled-live-page-dialog.jpg"
   },
   "sourceCases": [
     {
@@ -5825,6 +5837,10 @@
     },
     {
       "path": "previews/cases/hallmark.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/scaled-live-page-dialog.jpg",
       "role": "preview"
     },
     {

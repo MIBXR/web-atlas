@@ -43,7 +43,13 @@
         "observation": "浏览展览／音乐会详情：原生长页与桌面sticky票务，小屏票务回文档流。 活动内容与来访决定并行，小屏避免固定面板遮挡正文。",
         "evidence": "observed",
         "referenceUrl": "https://philharmoniedeparis.fr/fr/activite/exposition/28822-video-games-music",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".booking",
+          "label": "随正文保留的票务侧栏",
+          "instruction": "上下滚动长正文，观察桌面票务栏保持可用；切手机模式后，票务回到正常文档流。",
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -53,7 +59,8 @@
       "demos/cases/philharmonie-music/style.css",
       "entries/cases/philharmonie-music.json",
       "docs/cases/philharmonie-music.md"
-    ]
+    ],
+    "preview": "previews/patterns/sticky-action-sidebar.jpg"
   },
   "sourceCases": [
     {
@@ -167,6 +174,10 @@
     },
     {
       "path": "previews/cases/philharmonie-music.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/sticky-action-sidebar.jpg",
       "role": "preview"
     },
     {

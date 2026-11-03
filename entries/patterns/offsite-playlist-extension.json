@@ -37,7 +37,12 @@
       "observation": "打开Playlist：转到官方fanlink，选择个人音乐平台。 音乐是展览主题的延伸与回看媒介。",
       "evidence": "observed",
       "referenceUrl": "https://philharmoniedeparis.fr/fr/activite/exposition/28822-video-games-music",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".playlist",
+        "label": "展览的官方 Playlist 入口",
+        "instruction": "点 Playlist 前往官方 fanlink，再选择自己的音乐平台；网页本身保留这个外部收听入口。"
+      }
     },
     {
       "caseId": "fuji-rock",
@@ -45,7 +50,12 @@
       "observation": "Aftermovie链接到官方YouTube；没有独立BGM开关。",
       "evidence": "observed",
       "referenceUrl": "https://www.fujirockfestival.com/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".aftermovie",
+        "label": "官方 Aftermovie 入口",
+        "instruction": "点 Aftermovie 打开官方 YouTube 影像，现场声音由官方影片承接，当前网页保留外部观看入口。"
+      }
     },
     {
       "caseId": "persona-kinetic",
@@ -53,7 +63,17 @@
       "observation": "WATCH THE OFFICIAL TRAILER 点击打开原始YouTube宣传片。",
       "evidence": "observed",
       "referenceUrl": "https://persona.atlus.com/p5r/?lang=en#",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#top a[href*=\"youtu\"]",
+        "label": "官方预告片入口",
+        "instruction": "点 WATCH THE OFFICIAL TRAILER，打开原始 YouTube 宣传片。",
+        "prepare": [
+          {
+            "click": "header nav a[href=\"#top\"]"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -75,5 +95,6 @@
     "docs/cases/fuji-rock.md",
     "docs/cases/persona-kinetic.md",
     "docs/cases/philharmonie-music.md"
-  ]
+  ],
+  "preview": "previews/patterns/offsite-playlist-extension.jpg"
 }

@@ -48,7 +48,14 @@
       "observation": "Grid 将对齐的两份标题按第七栏边界互补裁切，使同一标题跨纸面和色场时分别使用对应文字色，窄屏取消副本裁切。",
       "evidence": "observed",
       "referenceUrl": "https://www.usehallmark.com/",
-      "capturedAt": "2026-11-01"
+      "capturedAt": "2026-11-01",
+      "focus": {
+        "target": ".hero__type",
+        "label": "跨纸面与蓝色场的同一标题",
+        "instruction": "观察桌面标题跨过蓝色场边界时如何反白；两边文字仍保持同一位置与排版。",
+        "entrypoint": "demos/cases/hallmark/themes/grid/index.html",
+        "viewport": "wide"
+      }
     }
   ],
   "sourceFiles": [
@@ -57,5 +64,6 @@
     "demos/cases/hallmark/fidelity.md",
     "demos/cases/hallmark/themes/grid/style.css",
     "demos/cases/hallmark/themes/grid/index.html"
-  ]
+  ],
+  "preview": "previews/patterns/knockout-headline-split.jpg"
 }

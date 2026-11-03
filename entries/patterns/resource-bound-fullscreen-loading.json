@@ -56,7 +56,13 @@
       "observation": "首次/缓存重载均先显示全屏LOADING；本地按五份实际图片完成数显示进度，再开放初始hash所指章节。",
       "evidence": "adapted",
       "referenceUrl": "https://ak.hypergryph.com/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#entry-loader:not([hidden])",
+        "label": "首屏资源载入",
+        "instruction": "重新载入时，看进度随首屏资源完成推进，再移交原章节。",
+        "phase": "loading"
+      }
     },
     {
       "caseId": "endfield-industrial",
@@ -64,7 +70,13 @@
       "observation": "载入与导航：使用原Updating图形和排版，本地必要首页图、干员图与字体的实际完成数推进；失败提供重试/继续。侧栏hover300ms展开，手机菜单、章节导航和自然滚动回程沿原结构。进度按任务完成比例显示。",
       "evidence": "adapted",
       "referenceUrl": "https://endfield.hypergryph.com/",
-      "capturedAt": "2026-10-09"
+      "capturedAt": "2026-10-09",
+      "focus": {
+        "target": "#entry-loader:not([hidden])",
+        "label": "Updating 资源载入",
+        "instruction": "重新载入时，看 Updating 图形与真实资源完成进度一起移交首页。",
+        "phase": "loading"
+      }
     }
   ],
   "sourceFiles": [
@@ -84,5 +96,6 @@
     "demos/cases/endfield-industrial/reference.css",
     "demos/cases/endfield-industrial/state.css",
     "demos/cases/endfield-industrial/app.js"
-  ]
+  ],
+  "preview": "previews/patterns/resource-bound-fullscreen-loading.jpg"
 }

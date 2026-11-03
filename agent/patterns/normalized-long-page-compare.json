@@ -57,7 +57,17 @@
         "observation": "比较区以同一归一化滚动进度分别计算两张整页图的溢出高度，使不等长页面同时到达各自底部；三组标签替换整页图、问题数和阅读行程。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "[data-cmp-scroll]",
+          "label": "不等长页面同步比较",
+          "instruction": "在比较框内向下滚动，两张长度不同的页面会按同一进度到达底部。",
+          "prepare": [
+            {
+              "click": "[data-pair='1']"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -67,7 +77,8 @@
       "demos/cases/hallmark/js/compare.js",
       "demos/cases/hallmark/index.html",
       "demos/cases/hallmark/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/normalized-long-page-compare.jpg"
   },
   "sourceCases": [
     {
@@ -5825,6 +5836,10 @@
     },
     {
       "path": "previews/cases/hallmark.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/normalized-long-page-compare.jpg",
       "role": "preview"
     },
     {

@@ -38,7 +38,12 @@
         "observation": "背景建立世界、Logo确认产品、竖排标语补充主题；下载与漫画入口形成左右分工。",
         "evidence": "observed",
         "referenceUrl": "https://bluearchive.jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#home",
+          "label": "中心世界与边缘入口",
+          "instruction": "看中央 Logo 与人物主视觉，下载、漫画和社交入口分布在两侧边缘。"
+        }
       }
     ],
     "sourceFiles": [
@@ -49,7 +54,8 @@
       "demos/cases/blue-archive/style.css",
       "entries/cases/blue-archive.json",
       "docs/cases/blue-archive.md"
-    ]
+    ],
+    "preview": "previews/patterns/edge-action-world-composition.jpg"
   },
   "sourceCases": [
     {
@@ -267,6 +273,10 @@
     },
     {
       "path": "previews/cases/blue-archive.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/edge-action-world-composition.jpg",
       "role": "preview"
     },
     {

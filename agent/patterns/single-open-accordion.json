@@ -40,7 +40,17 @@
         "observation": "FAQ → 只开一项，grid 0fr→1fr 与 opacity 400ms，图标同步；连续选项关闭前项，避免文本突然跳变。",
         "evidence": "inferred",
         "referenceUrl": "https://claude.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".faq",
+          "label": "单开的问题列表",
+          "instruction": "点开一个问题后再选另一个，观察前项高度与图标收起、新项同时展开。",
+          "prepare": [
+            {
+              "click": ".claude-question[aria-expanded=false]"
+            }
+          ]
+        }
       },
       {
         "caseId": "stripe-platform",
@@ -48,7 +58,12 @@
         "observation": "Hertz/URBN/Instacart/Le Monde → 当前故事行展开高度、其他行收起，真实官方摄影及说明同步替换；来源照片中的平行四边形呼应 Stripe 品牌。",
         "evidence": "observed",
         "referenceUrl": "https://stripe.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".case-layout",
+          "label": "客户切换与配图",
+          "instruction": "切换 Hertz、URBN、Instacart 或 Le Monde，客户摘要、数据与配图一起更新。手机上配图位于选项下方。"
+        }
       },
       {
         "caseId": "qoder-platform",
@@ -56,7 +71,17 @@
         "observation": "后续 SDK 代码和 Cloud 任务列表 → Wake 场景选择/指针强调 → 企业 → 两侧连续证言条带 → 单开 FAQ → 页尾；所有章节使用正常滚动。",
         "evidence": "observed",
         "referenceUrl": "https://qoder.cn/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".qoder-faq",
+          "label": "单开 FAQ",
+          "instruction": "打开一个问题后再打开另一项，比较前项收起和当前正文展开。",
+          "prepare": [
+            {
+              "click": ".qoder-faq details:not([open]) summary"
+            }
+          ]
+        }
       },
       {
         "caseId": "uiarc-platform",
@@ -64,7 +89,12 @@
         "observation": "六项 FAQ 默认展开第一项；使用原始 Accordion 的单开状态、400ms 无回弹高度弹簧、260ms 图标弹簧和 2px 轻模糊，打开另一项收起前项，当前项可再次收起；Radix 管理语义、焦点与折叠后可访问状态。",
         "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".faq-list",
+          "label": "FAQ 单开",
+          "instruction": "点开任意问题；新项展开时，上一项和箭头同步收起。"
+        }
       }
     ],
     "sourceFiles": [
@@ -96,7 +126,8 @@
       "demos/cases/uiarc-platform/fidelity.md",
       "demos/cases/uiarc-platform/source/content.json",
       "demos/cases/uiarc-platform/source/components.tsx"
-    ]
+    ],
+    "preview": "previews/patterns/single-open-accordion.jpg"
   },
   "sourceCases": [
     {
@@ -938,6 +969,10 @@
     },
     {
       "path": "previews/cases/uiarc-platform.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/single-open-accordion.jpg",
       "role": "preview"
     },
     {

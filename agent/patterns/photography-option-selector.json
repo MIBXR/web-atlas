@@ -39,7 +39,23 @@
         "observation": "Design 点击七项胶囊 → 同一舞台内展开左侧说明卡，当前胶囊被卡替换、其他胶囊下移、右侧摄影变化；卡内前后与关闭可逆；Colors 的四个色点联动真实摄影。",
         "evidence": "observed",
         "referenceUrl": "https://www.apple.com/iphone-18-pro/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".aperture-image",
+          "label": "景深选项与真实摄影",
+          "instruction": "切换 f/1.48、f/1.8、f/2.8 和 f/4.0，对照同一构图里背景景深的变化。",
+          "prepare": [
+            {
+              "scroll": ".aperture-study"
+            },
+            {
+              "click": "[data-aperture='2']"
+            },
+            {
+              "images": ".aperture-image"
+            }
+          ]
+        }
       },
       {
         "caseId": "apple-product",
@@ -47,7 +63,23 @@
         "observation": "景深四选项 → 官方 f/1.48、1.8、2.8、4.0 摄影交叉变化；旧机型 select 更新比较对象；横向摄影架子保留原生滑动。",
         "evidence": "observed",
         "referenceUrl": "https://www.apple.com/iphone-18-pro/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".aperture-image",
+          "label": "景深选项与真实摄影",
+          "instruction": "切换 f/1.48、f/1.8、f/2.8 和 f/4.0，对照同一构图里背景景深的变化。",
+          "prepare": [
+            {
+              "scroll": ".aperture-study"
+            },
+            {
+              "click": "[data-aperture='2']"
+            },
+            {
+              "images": ".aperture-image"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -57,7 +89,8 @@
       "demos/cases/apple-product/script.js",
       "demos/cases/apple-product/style.css",
       "entries/cases/apple-product.json"
-    ]
+    ],
+    "preview": "previews/patterns/photography-option-selector.jpg"
   },
   "sourceCases": [
     {
@@ -251,6 +284,10 @@
     },
     {
       "path": "previews/cases/apple-product.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/photography-option-selector.jpg",
       "role": "preview"
     },
     {

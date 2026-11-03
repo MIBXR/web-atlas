@@ -40,7 +40,12 @@
         "observation": "滚动到页面深处／页尾：回顶150ms显隐，接近页尾从fixed转为footer内定位。 回程入口可找且不挡页尾信息。",
         "evidence": "observed",
         "referenceUrl": "https://www.mori.art.museum/jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "footer",
+          "label": "回顶入口与页脚边界",
+          "instruction": "在页脚边界上下微滚动，观察右下角回顶入口从固定位置转入页脚，点它可以回到顶部。"
+        }
       }
     ],
     "sourceFiles": [
@@ -50,7 +55,8 @@
       "demos/cases/mori-art-museum/style.css",
       "entries/cases/mori-art-museum.json",
       "docs/cases/mori-art-museum.md"
-    ]
+    ],
+    "preview": "previews/patterns/footer-aware-back-to-top.jpg"
   },
   "sourceCases": [
     {
@@ -184,6 +190,10 @@
     },
     {
       "path": "previews/cases/mori-art-museum.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/footer-aware-back-to-top.jpg",
       "role": "preview"
     },
     {
