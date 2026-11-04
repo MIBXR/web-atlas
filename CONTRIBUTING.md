@@ -259,9 +259,9 @@ Prompt 写明结构、尺度、素材、关键状态及交接、音乐和主题�
 
 `title`、`type`、`category`、`summary`、`prompt`、`research` 必填；`useCases`、`constraints`、`sourceFiles` 非空；`sourceFiles` 与 `demos[].entrypoint` 属于本素材文件清单，样例 id 不重复。
 
-可运行素材使用 `demo`、`demoNote` 和非空 `demos`；每个样例包含 `id`、`title`、`summary`、`entrypoint`，可有 `component` 与 `{name,value,note}` 参数数组。字体、图像、声音提供试排、构图或播放样例。
+可运行素材使用 `demo`、`demoNote` 和非空 `demos`；每个样例包含 `id`、`title`、`summary`、`entrypoint`，可有 `component` 与 `{name,value,note}` 参数数组。字体、声音提供试排或播放样例；图像可使用站内画廊。
 
-原文快照使用 `snapshotPath: demos/materials/<id>/` 与 `snapshotEntry`；`snapshotEntry` 指向主文档，Agent Skill 为 `SKILL.md`。Agent Skill 的 `workflow` 是非空中文步骤数组，`relatedEntries` 是 `{kind: case|material|pattern,id,note}` 数组且关联 id 存在。可选 `gallery` 是 `{path,caption,kind,sourceUrl,license,replicaPage}` 数组，`kind` 为 `work`、`style` 或 `theme`；图片比例不一致时用 `galleryRatio`（如 `16/9`）统一展示框，图片按比例裁切，点开查看原图；有本库复刻页时用 `replicaPage` 指向该页，显示入口链接。文字详情提供工作流、关联条目、原文主文档与 README；完整快照按目录递归纳入资料包，文件按第三方资源规则保存。
+资料目录使用 `snapshotPath: demos/materials/<id>/` 与 `snapshotEntry`；`snapshotEntry` 指向主文档，Agent Skill 为 `SKILL.md`。Agent Skill 的 `workflow` 是非空中文步骤数组，`relatedEntries` 是 `{kind: case|material|pattern,id,note}` 数组且关联 id 存在。可选 `gallery` 是 `{path,caption,kind,sourceUrl,license,replicaPage}` 数组，`kind` 为 `work`、`style` 或 `theme`；图片比例不一致时用 `galleryRatio`（如 `16/9`）统一展示框，图片按比例裁切，点开查看原图；有本库复刻页时用 `replicaPage` 指向该页，显示入口链接。`galleryFit` 取 `cover` 或 `contain`，需要完整显示作品时用 `contain`。`gallery[].compare` 保存 `{piece,original,sound}`，用于点击作品打开复刻与原作弹窗对比，`sound` 仅在原作有音轨时设为 `true`。文字详情提供工作流、关联条目、原文主文档与 README；资料目录按目录递归纳入资料包，文件按第三方资源规则保存；图像类型不显示原文快照入口。
 
 
 ## 新增流程

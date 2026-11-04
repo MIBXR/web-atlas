@@ -84,13 +84,19 @@ export function loadMaterials({ root = defaultRoot } = {}) {
         text(related.note, `${material.id}.relatedEntries.note`);
         if (JSON.parse(readFile(root, `${directory}/${related.id}.json`)).id !== related.id) throw new Error(`Unknown skill related entry: ${material.id}/${related.id}`);
       }
-      if (material.gallery !== undefined) {
-        if (!Array.isArray(material.gallery)) throw new Error(`Expected skill gallery: ${material.id}`);
-        for (const picture of material.gallery) {
-          if (!['work', 'style', 'theme'].includes(picture.kind)) throw new Error(`Invalid skill gallery kind: ${material.id}`);
-          text(picture.caption, `${material.id}.gallery.caption`);
-          readFile(root, picture.path);
-          if (picture.replicaPage !== undefined) readFile(root, picture.replicaPage.split('?')[0]);
+    }
+    if (material.galleryFit !== undefined && !['cover', 'contain'].includes(material.galleryFit)) throw new Error(`Invalid material gallery fit: ${material.id}`);
+    if (material.gallery !== undefined) {
+      if (!Array.isArray(material.gallery)) throw new Error(`Expected material gallery: ${material.id}`);
+      for (const picture of material.gallery) {
+        if (!['work', 'style', 'theme'].includes(picture.kind)) throw new Error(`Invalid material gallery kind: ${material.id}`);
+        text(picture.caption, `${material.id}.gallery.caption`);
+        readFile(root, picture.path);
+        if (picture.replicaPage !== undefined) readFile(root, picture.replicaPage.split('?')[0]);
+        if (picture.compare !== undefined) {
+          text(picture.compare.piece, `${material.id}.gallery.compare.piece`);
+          readFile(root, picture.compare.original);
+          if (picture.compare.sound !== undefined && typeof picture.compare.sound !== 'boolean') throw new Error(`Invalid material comparison sound: ${material.id}`);
         }
       }
     }
@@ -137,7 +143,7 @@ export function buildMaterials({ root = defaultRoot, materials, write = true } =
     const bytes = encode(bundle);
     outputs.set(relative, bytes);
     bundles.push(bundle);
-    return { ...Object.fromEntries(summaryFields.map(key => [key, material[key]])), paths: { bundle: relative, demo: material.demo, snapshot: material.snapshotPath, snapshotEntry: material.snapshotEntry, entry: `entries/materials/${material.id}.json`, preview: material.preview } };
+    return { ...Object.fromEntries(summaryFields.map(key => [key, material[key]])), paths: { bundle: relative, demo: material.demo, snapshot: material.type === 'image' ? undefined : material.snapshotPath, snapshotEntry: material.type === 'image' ? undefined : material.snapshotEntry, entry: `entries/materials/${material.id}.json`, preview: material.preview } };
   });
   const catalog = { schemaVersion: 1, repository: 'https://github.com/MIBXR/web-atlas', materialCount: records.length, materials: records };
   outputs.set('agent/materials/index.json', encode(catalog));

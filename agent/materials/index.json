@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "repository": "https://github.com/MIBXR/web-atlas",
-  "materialCount": 13,
+  "materialCount": 14,
   "materials": [
     {
       "id": "shaders",
@@ -551,6 +551,44 @@
         "snapshotEntry": "SKILL.md",
         "entry": "entries/materials/guizang-ppt-skill.json",
         "preview": "previews/materials/guizang-ppt-skill.jpg"
+      }
+    },
+    {
+      "id": "0010-vigil",
+      "title": "Vigil · 24 件点彩生成作品",
+      "type": "image",
+      "category": "组件与效果",
+      "summary": "作者生成艺术长线系列 Vigil 的 24 件近期 demo：同心带、波层、折带、阶地、鳞带和漩涡，加星球与日食；站内画廊提供原作与按原件分辨率绘制的 WebGL 复刻对照。",
+      "tags": [
+        "生成艺术",
+        "平面设计",
+        "点彩",
+        "同心带",
+        "星球",
+        "抽象几何",
+        "竖幅视频",
+        "0010",
+        "日食",
+        "行星",
+        "WebGL"
+      ],
+      "useCases": [
+        "作为海报或作品集封面的视觉参考",
+        "网页主视觉或章节背景的整体构图参考",
+        "讨论点彩质感、低饱和配色和单点落点时的样张"
+      ],
+      "avoid": [
+        "把视频当作本库作品或开放授权素材对外发布",
+        "拆成单独的颗粒或圆环效果使用，这组画面的价值在整体构成"
+      ],
+      "constraints": [
+        "Vigil 源码未公开，渲染器由本库按视频与静帧实现。",
+        "作者未声明开放许可，本库为个人学习参考保存。"
+      ],
+      "paths": {
+        "bundle": "agent/materials/0010-vigil.json",
+        "entry": "entries/materials/0010-vigil.json",
+        "preview": "previews/materials/0010-vigil.jpg"
       }
     }
   ]

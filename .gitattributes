@@ -28,3 +28,5 @@ demos/cases/hallmark/source/localize.mjs text eol=lf
 demos/materials/hallmark-skill/** -text -whitespace
 
 demos/materials/guizang-ppt-skill/** -text -whitespace
+
+demos/materials/0010-vigil/demo/media/** -text -whitespace
