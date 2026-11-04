@@ -20,6 +20,8 @@
 .materials-page .material-preview:hover .card-preview img{transform:scale(1.035)}
 .materials-page .material-gallery .card-preview{aspect-ratio:auto;height:auto}
 .materials-page .material-gallery .card-preview img{position:static;display:block;width:100%;height:auto}
+.materials-page .material-gallery[style] .card-preview{aspect-ratio:var(--gallery-ratio)}
+.materials-page .material-gallery[style] .card-preview img{height:100%;object-fit:cover;object-position:top}
 .materials-page .material-gallery .card-body{padding:0}
 .materials-page .material-gallery .tag{align-self:flex-start}
 .materials-page .material-gallery .card-summary{display:block;min-height:0;order:0}
