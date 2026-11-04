@@ -26,3 +26,5 @@ demos/cases/hallmark/assets-manifest.json text eol=lf
 demos/cases/hallmark/source/README.md text eol=lf
 demos/cases/hallmark/source/localize.mjs text eol=lf
 demos/materials/hallmark-skill/** -text -whitespace
+
+demos/materials/guizang-ppt-skill/** -text -whitespace

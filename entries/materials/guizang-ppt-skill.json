@@ -1,0 +1,199 @@
+{
+  "id": "guizang-ppt-skill",
+  "order": 13,
+  "title": "歸藏 PPT Skill · 杂志风与瑞士风网页演示",
+  "type": "agent-skill",
+  "category": "Agent 工作流",
+  "summary": "歸藏的网页 PPT 工作流：选择电子杂志或瑞士国际主义风格，澄清需求、复制模板、填入版式与演讲备注，交付可横向翻页的单文件 HTML；模板内置背景、索引、低功耗和演讲者运行时。",
+  "install": "运行 npx skills add https://github.com/op7418/guizang-ppt-skill --skill guizang-ppt-skill；或把 demos/materials/guizang-ppt-skill/ 完整复制到 .claude/skills/guizang-ppt-skill/。",
+  "tags": [
+    "Agent Skill",
+    "网页演示",
+    "电子杂志",
+    "瑞士国际主义",
+    "单文件 HTML",
+    "演讲者模式",
+    "版式库"
+  ],
+  "useCases": [
+    "线下分享、行业内部讲话与私享会",
+    "AI 产品发布与 demo day",
+    "将文章或 Markdown 整理为网页演讲稿",
+    "用同一套主题制作配图、封面与截图画布"
+  ],
+  "avoid": [
+    "大段表格数据和高信息密度培训课件",
+    "多人同时协作编辑演示文稿"
+  ],
+  "constraints": [
+    "上游 README 的演讲者视图图 https://github.com/user-attachments/assets/95db62b5-65bb-40af-ac0b-1d415682af88 与赞助图 https://github.com/user-attachments/assets/81138fad-31b9-49ab-8e38-23b2bc48edc4 两个附件地址匿名访问返回 Not Found，本库未存。",
+    "配图流程依赖 GPT-Image 2.0 / GPT-M 2.0 的宿主能力，本条目不提供在线生成。",
+    "两套风格使用各自的模板、主题与版式类；同一份 deck 采用一套风格。",
+    "gallery 保留 README 标注的主题名。"
+  ],
+  "upstream": {
+    "repository": "op7418/guizang-ppt-skill",
+    "url": "https://github.com/op7418/guizang-ppt-skill/tree/93d21bf4a73a851907a6eb00acbf30618236667a",
+    "commit": "93d21bf4a73a851907a6eb00acbf30618236667a",
+    "version": "93d21bf",
+    "verifiedAt": "2026-11-04"
+  },
+  "capturedAt": "2026-11-04",
+  "license": {
+    "name": "AGPL-3.0",
+    "url": "https://github.com/op7418/guizang-ppt-skill/blob/93d21bf4a73a851907a6eb00acbf30618236667a/LICENSE",
+    "scope": "仓库 skill、模板、参考、脚本与作者附图。",
+    "notes": "完整仓库快照保留原文与许可；案例的字体、Lucide 和 Motion 分别记录于 LICENSES.md。"
+  },
+  "sources": [
+    {
+      "title": "上游 README",
+      "url": "https://github.com/op7418/guizang-ppt-skill/blob/93d21bf4a73a851907a6eb00acbf30618236667a/README.md",
+      "note": "两套风格、安装命令、十步使用流程、主题画廊与演讲者模式。",
+      "evidence": "source"
+    },
+    {
+      "title": "Skill 主文件",
+      "url": "https://github.com/op7418/guizang-ppt-skill/blob/93d21bf4a73a851907a6eb00acbf30618236667a/SKILL.md",
+      "note": "七问、模板复制、主题和版式选择、配图及检查流程。",
+      "evidence": "source"
+    },
+    {
+      "title": "演讲备注契约",
+      "url": "https://github.com/op7418/guizang-ppt-skill/blob/93d21bf4a73a851907a6eb00acbf30618236667a/references/presenter-mode.md",
+      "note": "稳定页面 ID、必填备注、计划时长与双窗口同步。",
+      "evidence": "source"
+    }
+  ],
+  "snapshotPath": "demos/materials/guizang-ppt-skill/",
+  "snapshotEntry": "SKILL.md",
+  "workflow": [
+    "选择 Style A 电子杂志风或 Style B 瑞士国际主义。",
+    "按七问明确风格、受众、时长、素材、图片或截图需求、主题色与硬约束。",
+    "复制对应的 assets/template.html 或 assets/template-swiss.html。",
+    "先确定每页明暗节奏，再从对应 layouts 文件选版式并填入文案。",
+    "需要配图且用户确认时，在 Codex 中使用 GPT-Image 2.0 / GPT-M 2.0 生成，再按页面比例插入。",
+    "从大纲整理每页目的、讲述要点、转场和计划时长，省略未提供的现场信息。",
+    "按 references/checklist.md 自检，并分别运行瑞士风与演讲者模式校验器。",
+    "在浏览器打开 HTML 预览。",
+    "点击右下角 P 进入演讲者模式，检查观众屏同步并记录排练时长。",
+    "根据排练结果调整内容、字号、高度和间距。"
+  ],
+  "relatedEntries": [],
+  "preview": "previews/materials/guizang-ppt-skill.jpg",
+  "research": "docs/materials/guizang-ppt-skill.md",
+  "sourceFiles": [
+    "demos/materials/guizang-ppt-skill/SKILL.md",
+    "demos/materials/guizang-ppt-skill/README.md",
+    "demos/materials/guizang-ppt-skill/assets/template.html",
+    "demos/materials/guizang-ppt-skill/assets/template-swiss.html",
+    "demos/materials/guizang-ppt-skill/references/layouts.md",
+    "demos/materials/guizang-ppt-skill/references/layouts-swiss.md",
+    "demos/materials/guizang-ppt-skill/references/presenter-mode.md",
+    "demos/materials/guizang-ppt-skill/scripts/validate-presenter-mode.mjs",
+    "demos/materials/guizang-ppt-skill/scripts/validate-swiss-deck.mjs"
+  ],
+  "prompt": "阅读 guizang-ppt-skill 原文，按七问确定受众、时长、内容、图片、主题与约束。选择一套风格，复制对应模板，先规划明暗节奏，再从对应版式库填入页面。每页保留稳定 data-slide-id，按 presenter-mode.md 生成目的、讲述要点、转场和用户提供的计划时长。配图按宿主能力与用户要求生成，比例与槽位对应。按 checklist.md 和两个校验器检查，在浏览器逐页预览并排练演讲者与观众屏同步。",
+  "accessibility": {
+    "keyboard": "模板支持方向键、Home／End、底部页码圆点、ESC 总览与演讲者模式快捷键；原文通过真实链接打开。",
+    "reducedMotion": "模板读取 prefers-reduced-motion，并提供 B 静态模式；保留手动翻页与页面内容。"
+  },
+  "gallery": [
+    {
+      "path": "previews/materials/guizang-ppt-skill/style-a-editorial.png",
+      "caption": "Style A 四页拼图，静态图",
+      "kind": "style",
+      "replicated": false,
+      "license": "AGPL-3.0 仓库附图",
+      "sourceUrl": "https://github.com/user-attachments/assets/5dc316a2-401c-4e37-9123-ea081b6ae470"
+    },
+    {
+      "path": "previews/materials/guizang-ppt-skill/style-b-swiss.png",
+      "caption": "Style B 六页拼图，静态图",
+      "kind": "style",
+      "replicated": false,
+      "license": "AGPL-3.0 仓库附图",
+      "sourceUrl": "https://github.com/user-attachments/assets/8960e78c-69bb-4b7e-aa95-6fad64b70314"
+    },
+    {
+      "path": "previews/materials/guizang-ppt-skill/theme-a-1.png",
+      "caption": "墨水经典，静态图",
+      "kind": "theme",
+      "replicated": false,
+      "license": "AGPL-3.0 仓库附图",
+      "sourceUrl": "https://github.com/user-attachments/assets/df21dbcb-5fe4-4852-a91a-a9cf00aceeb4"
+    },
+    {
+      "path": "previews/materials/guizang-ppt-skill/theme-a-2.png",
+      "caption": "靛蓝瓷，静态图",
+      "kind": "theme",
+      "replicated": false,
+      "license": "AGPL-3.0 仓库附图",
+      "sourceUrl": "https://github.com/user-attachments/assets/99ce0fd2-72a6-4368-a75a-a8e21657a537"
+    },
+    {
+      "path": "previews/materials/guizang-ppt-skill/theme-a-3.png",
+      "caption": "森林墨，静态图",
+      "kind": "theme",
+      "replicated": false,
+      "license": "AGPL-3.0 仓库附图",
+      "sourceUrl": "https://github.com/user-attachments/assets/bcc1cc4c-5e8e-4467-ae8d-f5801ae73657"
+    },
+    {
+      "path": "previews/materials/guizang-ppt-skill/theme-a-4.png",
+      "caption": "牛皮纸，静态图",
+      "kind": "theme",
+      "replicated": false,
+      "license": "AGPL-3.0 仓库附图",
+      "sourceUrl": "https://github.com/user-attachments/assets/dfea080e-e916-417e-93cd-0a3628de84ca"
+    },
+    {
+      "path": "previews/materials/guizang-ppt-skill/theme-a-5.png",
+      "caption": "沙丘，静态图",
+      "kind": "theme",
+      "replicated": false,
+      "license": "AGPL-3.0 仓库附图",
+      "sourceUrl": "https://github.com/user-attachments/assets/f3705592-9a72-4dbc-9818-df3aea61bc75"
+    },
+    {
+      "path": "previews/materials/guizang-ppt-skill/theme-b-1.png",
+      "caption": "克莱因蓝 IKB，静态图",
+      "kind": "theme",
+      "replicated": false,
+      "license": "AGPL-3.0 仓库附图",
+      "sourceUrl": "https://github.com/user-attachments/assets/c02d02f7-ce6f-4e16-b8a6-778c96851f94"
+    },
+    {
+      "path": "previews/materials/guizang-ppt-skill/theme-b-2.png",
+      "caption": "柠檬黄，静态图",
+      "kind": "theme",
+      "replicated": false,
+      "license": "AGPL-3.0 仓库附图",
+      "sourceUrl": "https://github.com/user-attachments/assets/c310a8c4-5d28-450e-b49a-6ac5b6ba4785"
+    },
+    {
+      "path": "previews/materials/guizang-ppt-skill/theme-b-3.png",
+      "caption": "柠檬绿，静态图",
+      "kind": "theme",
+      "replicated": false,
+      "license": "AGPL-3.0 仓库附图",
+      "sourceUrl": "https://github.com/user-attachments/assets/65f7b3f9-3358-419e-b513-f7f2cc24ec76"
+    },
+    {
+      "path": "previews/materials/guizang-ppt-skill/theme-b-4.png",
+      "caption": "安全橙，静态图",
+      "kind": "theme",
+      "replicated": false,
+      "license": "AGPL-3.0 仓库附图",
+      "sourceUrl": "https://github.com/user-attachments/assets/9c3319c9-a134-4657-9a56-211c23411f7f"
+    },
+    {
+      "path": "previews/materials/guizang-ppt-skill/showcase.png",
+      "caption": "卡片与海报作品拼贴，静态图",
+      "kind": "work",
+      "replicated": false,
+      "license": "AGPL-3.0 仓库附图",
+      "sourceUrl": "https://raw.githubusercontent.com/op7418/guizang-ppt-skill/93d21bf4a73a851907a6eb00acbf30618236667a/assets/ppt-skill-showcase.png"
+    }
+  ]
+}

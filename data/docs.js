@@ -260,6 +260,11 @@ window.ATLAS_DOCUMENTS = [
     "group": "素材使用"
   },
   {
+    "path": "docs/materials/guizang-ppt-skill.md",
+    "title": "歸藏 PPT Skill：阅读与使用资料",
+    "group": "素材使用"
+  },
+  {
     "path": "docs/materials/README.md",
     "title": "内容素材使用说明",
     "group": "素材使用"
@@ -612,6 +617,11 @@ window.ATLAS_DOCUMENTS = [
   {
     "path": "prompts/patterns/inertial-page-wheel.md",
     "title": "惯性三维页面转轮 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
+    "path": "prompts/materials/guizang-ppt-skill.md",
+    "title": "歸藏 PPT Skill · 杂志风与瑞士风网页演示 · 复用 Prompt",
     "group": "复用 Prompt"
   },
   {
@@ -1764,6 +1774,21 @@ window.ATLAS_DOCUMENT_SOURCES = [
       "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/beautiful-article/theme-profiles/index.json",
       "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/beautiful-article/manifest.json",
       "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/covers/beautiful-article.webp"
+    ]
+  },
+  {
+    "path": "demos/materials/guizang-ppt-skill/",
+    "upstream": {
+      "repository": "op7418/guizang-ppt-skill",
+      "url": "https://github.com/op7418/guizang-ppt-skill/tree/93d21bf4a73a851907a6eb00acbf30618236667a",
+      "commit": "93d21bf4a73a851907a6eb00acbf30618236667a",
+      "version": "93d21bf",
+      "verifiedAt": "2026-11-04"
+    },
+    "sources": [
+      "https://github.com/op7418/guizang-ppt-skill/blob/93d21bf4a73a851907a6eb00acbf30618236667a/README.md",
+      "https://github.com/op7418/guizang-ppt-skill/blob/93d21bf4a73a851907a6eb00acbf30618236667a/SKILL.md",
+      "https://github.com/op7418/guizang-ppt-skill/blob/93d21bf4a73a851907a6eb00acbf30618236667a/references/presenter-mode.md"
     ]
   },
   {
