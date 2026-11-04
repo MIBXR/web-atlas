@@ -74,6 +74,13 @@
     iframe.className = 'demo-frame';
     iframe.title = entry.title + ' · ' + focus.label;
     iframe.src = focus.entrypoint || entry.demo;
+    function isSourcePage() {
+      const doc = iframe.contentDocument;
+      if (!doc) return false;
+      const current = new URL(doc.URL), original = new URL(iframe.src);
+      const pathname = url => url.pathname.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
+      return current.origin === original.origin && pathname(current) === pathname(original);
+    }
     async function locate(initial = false) {
       clearMarker();
       const win = iframe.contentWindow, doc = iframe.contentDocument;
@@ -155,13 +162,12 @@
         };
         requestAnimationFrame(find);
       } else iframe.addEventListener('load', () => {
-        const doc = iframe.contentDocument;
-        if (doc && new URL(doc.URL).pathname === new URL(iframe.src).pathname) start();
+        if (isSourcePage()) start();
       });
     });
     wrap.replaceChildren(iframe);
     refresh();
-    return { ready, locate, dispose() { disposed = true; clearMarker(); detachViewport(); } };
+    return { ready, locate, isSourcePage, dispose() { disposed = true; clearMarker(); detachViewport(); } };
   }
   window.AtlasPatternFocus = { mount };
 })();

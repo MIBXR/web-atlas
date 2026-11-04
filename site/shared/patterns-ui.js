@@ -138,9 +138,7 @@
     };
     locate.addEventListener('click', () => {
       if (focus().viewport) document.querySelector(`#pattern-detail [data-viewport="${focus().viewport}"]`).click();
-      const doc = frame.querySelector('iframe').contentDocument;
-      const original = new URL(focus().entrypoint || source().demo, location.href);
-      if (focus().phase === 'loading' || !doc || new URL(doc.URL).pathname !== original.pathname) load();
+      if (focus().phase === 'loading' || !focusPreview.isSourcePage()) load();
       else focusPreview.locate();
     });
     replay.addEventListener('click', load);
