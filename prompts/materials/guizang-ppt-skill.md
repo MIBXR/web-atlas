@@ -6,7 +6,6 @@
 
 ## 制作约束
 
-- 上游 README 的演讲者视图图 https://github.com/user-attachments/assets/95db62b5-65bb-40af-ac0b-1d415682af88 与赞助图 https://github.com/user-attachments/assets/81138fad-31b9-49ab-8e38-23b2bc48edc4 两个附件地址匿名访问返回 Not Found，本库未存。
+- 上游 README 的演讲者视图图与赞助图未收录，两个附件地址访问返回 Not Found。
 - 配图流程依赖 GPT-Image 2.0 / GPT-M 2.0 的宿主能力，本条目不提供在线生成。
 - 两套风格使用各自的模板、主题与版式类；同一份 deck 采用一套风格。
-- gallery 保留 README 标注的主题名。

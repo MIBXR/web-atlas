@@ -26,10 +26,9 @@
     "多人同时协作编辑演示文稿"
   ],
   "constraints": [
-    "上游 README 的演讲者视图图 https://github.com/user-attachments/assets/95db62b5-65bb-40af-ac0b-1d415682af88 与赞助图 https://github.com/user-attachments/assets/81138fad-31b9-49ab-8e38-23b2bc48edc4 两个附件地址匿名访问返回 Not Found，本库未存。",
+    "上游 README 的演讲者视图图与赞助图未收录，两个附件地址访问返回 Not Found。",
     "配图流程依赖 GPT-Image 2.0 / GPT-M 2.0 的宿主能力，本条目不提供在线生成。",
-    "两套风格使用各自的模板、主题与版式类；同一份 deck 采用一套风格。",
-    "gallery 保留 README 标注的主题名。"
+    "两套风格使用各自的模板、主题与版式类；同一份 deck 采用一套风格。"
   ],
   "upstream": {
     "repository": "op7418/guizang-ppt-skill",
@@ -43,7 +42,7 @@
     "name": "AGPL-3.0",
     "url": "https://github.com/op7418/guizang-ppt-skill/blob/93d21bf4a73a851907a6eb00acbf30618236667a/LICENSE",
     "scope": "仓库 skill、模板、参考、脚本与作者附图。",
-    "notes": "完整仓库快照保留原文与许可；案例的字体、Lucide 和 Motion 分别记录于 LICENSES.md。"
+    "notes": "完整仓库快照保留原文与许可。"
   },
   "sources": [
     {
