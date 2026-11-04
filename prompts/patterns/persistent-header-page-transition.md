@@ -7,4 +7,4 @@
 ## 制作约束
 
 - 固定的 view-transition-name 必须只对应一个顶栏元素；顶栏在首次切换前已经存在。
-- 不支持 startViewTransition 或命中减少动态时直接更新 DOM，滚动和焦点处理归路由。
+- 不支持 startViewTransition 或设置为减少动态时，直接更新 DOM，滚动和焦点由路由处理。

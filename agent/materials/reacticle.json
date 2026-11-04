@@ -7,9 +7,9 @@
     "title": "Reacticle · 长文排版组件库",
     "type": "component-library",
     "category": "组件与效果",
-    "summary": "一套用于 React 长文的语义化组件，配有 11 套主题，让同一份内容切换为不同的排版语言。",
+    "summary": "一套用于 React 长文的语义化组件，配有 11 套主题，同一份内容可切换不同的排版风格。",
     "install": "npm install reacticle",
-    "demoNote": "11 篇样文分别绑定原画廊主题，保留原文、图表与全部文章交互；每项打开一篇独立静态页面。",
+    "demoNote": "11 篇样文各自沿用原画廊绑定的主题，保留原文、图表与全部文章交互；每个样例打开一篇独立静态页面。",
     "tags": [
       "React",
       "长文排版",
@@ -28,13 +28,13 @@
     ],
     "avoid": [
       "用文章组件搭建复杂后台或完整应用",
-      "只更换颜色却忽略各主题的排版契约",
+      "只更换颜色却忽略各主题的排版规则",
       "把画廊中的样文结论当作独立核验后的事实"
     ],
     "constraints": [
       "固定 Reacticle 0.2.6 源码提交 dcfc4baf386bbc220cd1aa6274bed3b741108465；React 18.3 是上游声明的 peer 依赖，样例使用固定 lockfile 安装结果。",
       "每篇严格采用 apps/site/src/data/gallery.tsx 中的报告与主题组合；RateLimiter.tsx 导出的组件名为 RateLimiterSpec，11 个主题对应关系与任务表一致。",
-      "组件、文章与主题 CSS 不作修改；独立入口保留原画廊文章容器及原站 CSS，省略官网导航、浮动返回标签与上一篇／下一篇。入口禁用 Prism 自动全页扫描，由原 React 组件保留逐行代码高亮。",
+      "组件、文章与主题 CSS 不作修改；独立入口保留原画廊文章容器及原站 CSS，省略官网导航、浮动返回标签与上一篇／下一篇。入口禁用 Prism 自动全页扫描，逐行代码高亮仍由原 React 组件提供。",
       "原站 13 个 Google Fonts 家族的 76 个 WOFF2 文件已本地化并附 OFL；中文沿用原主题的系统字体回退，不增加官网没有的中文网络字体。",
       "通过 HTTP/HTTPS 打开样例目录，JS、CSS、公式字体与本地化字体均使用相对路径；文章外链保留原作指向。",
       "原始 package.json 声明 MIT，但该固定提交的仓库内没有 LICENSE 文件；许可声明与实际缺失情况同时记录，不虚构上游许可文本。",
@@ -97,7 +97,7 @@
         "id": "caffeine-half-life",
         "title": "Tufte · 咖啡因与睡眠：一份关于半衰期的笔记",
         "component": "CaffeineHalfLife",
-        "summary": "数据墨水风格：克制衬线、充裕页边、发丝参考线与低装饰图表，让论点和证据承载视觉层级。",
+        "summary": "数据墨水风格：用克制的衬线字体、充裕的页边、发丝参考线与低装饰图表组织视觉层级，突出论点和证据。",
         "entrypoint": "demos/materials/reacticle/index.html?demo=caffeine-half-life",
         "parameters": [
           {
@@ -153,7 +153,7 @@
         "id": "linear-attention",
         "title": "Knuth · 以核特征映射线性化自注意力：一个复杂度视角",
         "component": "LinearAttention",
-        "summary": "学术预印本风格：正式衬线、编号章节和图表、公式优先与密集引用，强调推导和可核查性。",
+        "summary": "学术预印本风格：采用正式的衬线字体，为章节和图表编号，优先呈现公式并保留密集引用，强调推导和可核查性。",
         "entrypoint": "demos/materials/reacticle/index.html?demo=linear-attention",
         "parameters": [
           {
@@ -223,7 +223,7 @@
         "id": "rate-limiter-spec",
         "title": "Fuller · 限流器设计规格",
         "component": "RateLimiterSpec",
-        "summary": "工程蓝图风格：深蓝底、青白墨、制图青与淡方格网，搭配等宽标注、虚线分节和发丝拓扑。",
+        "summary": "工程蓝图风格：深蓝底、青白墨、制图青与淡方格网，搭配等宽标注、虚线分节和发丝线条绘制的拓扑图。",
         "entrypoint": "demos/materials/reacticle/index.html?demo=rate-limiter-spec",
         "parameters": [
           {
@@ -237,7 +237,7 @@
         "id": "color-clash",
         "title": "Sottsass · 撞色不翻车",
         "component": "ColorClash",
-        "summary": "孟菲斯风格：奶油纸、黑墨与粉青黄蓝撞色，以硬投影、轻旋转、彩色药丸和几何彩屑制造节奏。",
+        "summary": "孟菲斯风格：奶油纸与黑墨搭配粉、青、黄、蓝撞色，以硬投影、轻旋转、彩色药丸和几何彩屑制造节奏。",
         "entrypoint": "demos/materials/reacticle/index.html?demo=color-clash",
         "parameters": [
           {
@@ -299,12 +299,12 @@
     {
       "path": "docs/materials/reacticle.md",
       "role": "research",
-      "content": "# Reacticle · 长文排版组件库\n\n[来源、版本、许可与使用边界](../../entries/materials/reacticle.json)\n\nReacticle 是用于文章、报告和交互长文的 React 语义化组件库，提供 11 套有独立排版契约的主题。内容通过同一套组件表达，主题决定文字层级、网格、留白、图表与代码的视觉语言。\n\n## 安装与取材\n\n上游 README 指向的开始使用页给出 `npm install reacticle`，React 18.3 是 peer 依赖。本地样例使用上游 `src/` 与 `apps/site` 的报告组件和主题 CSS。公共入口 `ThemeProvider` 包裹文章，再组合 `Article`、`Hero`、`Section`、公式、代码、决策和媒体组件；自定义 `Raw` 内容继续使用 `--ra-*` 主题变量。\n\n11 个独立入口位于 `demo/<样文 id>/`，复用原画廊的文章容器及原站 CSS，仅渲染对应文章。入口在模块加载前设置 `Prism.manual = true`，由原 React 组件逐行高亮，保留代码行容器与换行。样例索引按 `?demo=<id>` 选择后直接打开对应静态页；每篇的 JS、CSS 与公式字体由 Vite 以相对路径构建，Google Fonts 使用 `fonts/` 中的共享本地文件。\n\n## 11 套主题样文\n\n| 主题 | 文章 | 风格 |\n| --- | --- | --- |\n| Tufte | [咖啡因与睡眠：一份关于半衰期的笔记](../../demos/materials/reacticle/index.html?demo=caffeine-half-life) | 数据墨水风格：克制衬线、充裕页边、发丝参考线与低装饰图表，让论点和证据承载视觉层级。 |\n| Press | [活字之后](../../demos/materials/reacticle/index.html?demo=movable-type) | 出版书卷风格：暖纸与从容衬线，以线代框，保留数据墨水纪律，用更外放的字号和版式组织叙事。 |\n| Shannon | [连接池耗尽：一次结算级联故障复盘](../../demos/materials/reacticle/index.html?demo=pool-exhaustion) | 暗色工程风格：温暖石墨底、暖白墨与琥珀信号色，围绕日志、代码、事件与决策组织可核查证据。 |\n| Vignelli | [Orbit 设计系统 · 基础规范](../../demos/materials/reacticle/index.html?demo=orbit-spec) | 瑞士国际主义风格：冷中性纸面、无衬线字号层级、严密网格与一抹结构红，适合系统规范。 |\n| Knuth | [以核特征映射线性化自注意力：一个复杂度视角](../../demos/materials/reacticle/index.html?demo=linear-attention) | 学术预印本风格：正式衬线、编号章节和图表、公式优先与密集引用，强调推导和可核查性。 |\n| Freddie | [第一封 Newsletter：一份不端着的上手指南](../../demos/materials/reacticle/index.html?demo=first-newsletter) | 温暖人文风格：白纸黑墨与明黄荧光色块，俏皮衬线标题配干净无衬线正文，亲切且专业。 |\n| Andy | [把呼吸放慢：盒式呼吸与平静的神经科学](../../demos/materials/reacticle/index.html?demo=slow-breathing) | 静谧人文风格：暖奶油纸、南瓜橙、暖灰墨与圆润字体，大圆角、柔和阴影和留白帮助放慢节奏。 |\n| Bodoni | [头版的消亡](../../demos/materials/reacticle/index.html?demo=front-page) | 黑白报刊风格：纯白纸、真黑墨与发丝栏线，大字刊头、首字下沉和粗细双线建立印刷层级。 |\n| Bayer | [形、色、网格：看得懂的视觉语法](../../demos/materials/reacticle/index.html?demo=geometry-of-meaning) | 包豪斯构成风格：暖纸黑墨，以红蓝黄三原色、几何无衬线、硬边与圆形数字组织清晰结构。 |\n| Fuller | [限流器设计规格](../../demos/materials/reacticle/index.html?demo=rate-limiter-spec) | 工程蓝图风格：深蓝底、青白墨、制图青与淡方格网，搭配等宽标注、虚线分节和发丝拓扑。 |\n| Sottsass | [撞色不翻车](../../demos/materials/reacticle/index.html?demo=color-clash) | 孟菲斯风格：奶油纸、黑墨与粉青黄蓝撞色，以硬投影、轻旋转、彩色药丸和几何彩屑制造节奏。 |\n\n主题绑定与上游 `gallery.tsx` 完全一致。限流器文件名为 `RateLimiter.tsx`，实际组件导出为 `RateLimiterSpec`。样文保留原文、图形、公式、代码和交互；图库外壳中的官网导航、浮动返回信息和上一篇／下一篇不属于独立文章页面。\n\n## 关联工作流\n\n[beautiful-article](../../materials.html#material/beautiful-article) 提供来源整理、计划、写作、审阅、修复和交付流程，Reacticle 是它的组件与主题实现。主题写作资料见关联技能快照中的 `theme-profiles/`。\n\n## 本地资源与可访问性\n\n原站引入的 Newsreader、IBM Plex Sans、IBM Plex Mono、Source Serif 4、JetBrains Mono、Fraunces、Hanken Grotesk、Quicksand、Nunito、Playfair Display、Josefin Sans、Poppins 和 Space Grotesk 共 13 个字体家族、76 个 WOFF2 文件已本地化。保留原字重、样式与子集范围；中文继续使用原主题声明的系统字体回退。\n\n文章内目录、按钮、滑块与展开内容沿用原实现。减少动态使用原站 CSS；呼吸练习保留原始开始／暂停和计时逻辑。组件、主题、11 篇报告与依赖配置归档在 [制作源码](../../demos/materials/reacticle/source/README.md)，依赖按原 lockfile 安装；对照结论与接入差异见 [fidelity.md](../../demos/materials/reacticle/fidelity.md)。\n\n上游软件包声明保存在 `source/vendor/reacticle-package.json`，Google Fonts 原始 CSS 保存在 `source/vendor/fonts/google-fonts-original.css`。运行依赖与字体的许可原文见[许可索引](../../demos/materials/reacticle/LICENSES.md)。\n"
+      "content": "# Reacticle · 长文排版组件库\n\n[来源、版本、许可与使用边界](../../entries/materials/reacticle.json)\n\nReacticle 是用于文章、报告和交互长文的 React 语义化组件库，提供 11 套有独立排版契约的主题。内容通过同一套组件表达，主题决定文字层级、网格、留白、图表与代码的视觉语言。\n\n## 安装与取材\n\n上游 README 指向的开始使用页提供安装命令 `npm install reacticle`，React 18.3 是 peer 依赖。本地样例使用上游 `src/` 与 `apps/site` 的报告组件和主题 CSS。先用公共入口 `ThemeProvider` 包裹文章，再组合 `Article`、`Hero`、`Section`、公式、代码、决策和媒体组件；自定义 `Raw` 内容继续使用 `--ra-*` 主题变量。\n\n11 个独立入口位于 `demo/<样文 id>/`，复用原画廊的文章容器及原站 CSS，仅渲染对应文章。入口在模块加载前设置 `Prism.manual = true`，由原 React 组件逐行高亮，保留代码行容器与换行。样例索引按 `?demo=<id>` 选择样文后，直接打开对应静态页；每篇的 JS、CSS 与公式字体由 Vite 以相对路径构建，Google Fonts 使用 `fonts/` 中的共享本地文件。\n\n## 11 套主题样文\n\n| 主题 | 文章 | 风格 |\n| --- | --- | --- |\n| Tufte | [咖啡因与睡眠：一份关于半衰期的笔记](../../demos/materials/reacticle/index.html?demo=caffeine-half-life) | 数据墨水风格：克制衬线、充裕页边、发丝参考线与低装饰图表，让论点和证据承载视觉层级。 |\n| Press | [活字之后](../../demos/materials/reacticle/index.html?demo=movable-type) | 出版书卷风格：暖纸与从容衬线，以线代框，保留数据墨水纪律，用更外放的字号和版式组织叙事。 |\n| Shannon | [连接池耗尽：一次结算级联故障复盘](../../demos/materials/reacticle/index.html?demo=pool-exhaustion) | 暗色工程风格：温暖石墨底、暖白墨与琥珀信号色，围绕日志、代码、事件与决策组织可核查证据。 |\n| Vignelli | [Orbit 设计系统 · 基础规范](../../demos/materials/reacticle/index.html?demo=orbit-spec) | 瑞士国际主义风格：冷中性纸面、无衬线字号层级、严密网格与一抹结构红，适合系统规范。 |\n| Knuth | [以核特征映射线性化自注意力：一个复杂度视角](../../demos/materials/reacticle/index.html?demo=linear-attention) | 学术预印本风格：正式衬线、编号章节和图表、公式优先与密集引用，强调推导和可核查性。 |\n| Freddie | [第一封 Newsletter：一份不端着的上手指南](../../demos/materials/reacticle/index.html?demo=first-newsletter) | 温暖人文风格：白纸黑墨与明黄荧光色块，俏皮衬线标题配干净无衬线正文，亲切且专业。 |\n| Andy | [把呼吸放慢：盒式呼吸与平静的神经科学](../../demos/materials/reacticle/index.html?demo=slow-breathing) | 静谧人文风格：暖奶油纸、南瓜橙、暖灰墨与圆润字体，大圆角、柔和阴影和留白帮助放慢节奏。 |\n| Bodoni | [头版的消亡](../../demos/materials/reacticle/index.html?demo=front-page) | 黑白报刊风格：纯白纸、真黑墨与发丝栏线，大字刊头、首字下沉和粗细双线建立印刷层级。 |\n| Bayer | [形、色、网格：看得懂的视觉语法](../../demos/materials/reacticle/index.html?demo=geometry-of-meaning) | 包豪斯构成风格：暖纸黑墨，以红蓝黄三原色、几何无衬线、硬边与圆形数字组织清晰结构。 |\n| Fuller | [限流器设计规格](../../demos/materials/reacticle/index.html?demo=rate-limiter-spec) | 工程蓝图风格：深蓝底、青白墨、制图青与淡方格网，搭配等宽标注、虚线分节和发丝拓扑。 |\n| Sottsass | [撞色不翻车](../../demos/materials/reacticle/index.html?demo=color-clash) | 孟菲斯风格：奶油纸、黑墨与粉青黄蓝撞色，以硬投影、轻旋转、彩色药丸和几何彩屑制造节奏。 |\n\n主题绑定与上游 `gallery.tsx` 完全一致。限流器文件名为 `RateLimiter.tsx`，实际组件导出为 `RateLimiterSpec`。样文保留原文、图形、公式、代码和交互；图库外壳中的官网导航、浮动返回信息和上一篇／下一篇不属于独立文章页面。\n\n## 关联工作流\n\n[beautiful-article](../../materials.html#material/beautiful-article) 提供来源整理、计划、写作、审阅、修复和交付流程，Reacticle 提供其中的组件与主题实现。主题写作资料见关联技能快照中的 `theme-profiles/`。\n\n## 本地资源与可访问性\n\n原站引入的 Newsreader、IBM Plex Sans、IBM Plex Mono、Source Serif 4、JetBrains Mono、Fraunces、Hanken Grotesk、Quicksand、Nunito、Playfair Display、Josefin Sans、Poppins 和 Space Grotesk 共 13 个字体家族、76 个 WOFF2 文件已本地化。保留原字重、样式与子集范围；中文继续使用原主题声明的系统字体回退。\n\n文章内目录、按钮、滑块与展开内容沿用原实现。减少动态的处理沿用原站 CSS；呼吸练习保留原始开始／暂停和计时逻辑。组件、主题、11 篇报告与依赖配置归档在 [制作源码](../../demos/materials/reacticle/source/README.md)，依赖按原 lockfile 安装；对照结论与接入差异见 [fidelity.md](../../demos/materials/reacticle/fidelity.md)。\n\n上游软件包声明保存在 `source/vendor/reacticle-package.json`，Google Fonts 原始 CSS 保存在 `source/vendor/fonts/google-fonts-original.css`。运行依赖与字体的许可原文见[许可索引](../../demos/materials/reacticle/LICENSES.md)。\n"
     },
     {
       "path": "prompts/materials/reacticle.md",
       "role": "prompt",
-      "content": "# Reacticle · 长文排版组件库 · 复用 Prompt\n\n[结构化条目](../../entries/materials/reacticle.json)\n\n使用 Reacticle 0.2.6 的语义化 React 长文组件。先读 beautiful-article 对应主题的 profile，再从这 11 篇原作样文选择与文章目标一致的排版语言。通过公共入口导入 ThemeProvider、Article 与所需组件，沿用主题 token 与结构纪律；自绘 Raw 图形继续使用 --ra-* 变量。保持原始来源、论点与数据出处，图表只在帮助当前段落时加入，交互使用可访问的真实控件。参考样例时保留其完整组件与主题 CSS，不将主题简化为配色；需要离线分发时本地化字体并保留 MIT 声明和 OFL。\n\n## 制作约束\n\n- 固定 Reacticle 0.2.6 源码提交 dcfc4baf386bbc220cd1aa6274bed3b741108465；React 18.3 是上游声明的 peer 依赖，样例使用固定 lockfile 安装结果。\n- 每篇严格采用 apps/site/src/data/gallery.tsx 中的报告与主题组合；RateLimiter.tsx 导出的组件名为 RateLimiterSpec，11 个主题对应关系与任务表一致。\n- 组件、文章与主题 CSS 不作修改；独立入口保留原画廊文章容器及原站 CSS，省略官网导航、浮动返回标签与上一篇／下一篇。入口禁用 Prism 自动全页扫描，由原 React 组件保留逐行代码高亮。\n- 原站 13 个 Google Fonts 家族的 76 个 WOFF2 文件已本地化并附 OFL；中文沿用原主题的系统字体回退，不增加官网没有的中文网络字体。\n- 通过 HTTP/HTTPS 打开样例目录，JS、CSS、公式字体与本地化字体均使用相对路径；文章外链保留原作指向。\n- 原始 package.json 声明 MIT，但该固定提交的仓库内没有 LICENSE 文件；许可声明与实际缺失情况同时记录，不虚构上游许可文本。\n- 样文原文保持原样；主题风格说明为中文概括，依据 garden-skills 固定提交的 theme-profiles。\n- 样文中的交互、阅读辅助与动态行为沿用上游实现；source/ 归档公共组件、主题、11 篇报告、最小入口及原依赖配置，依赖按上游 lockfile 安装；逐篇对照结论见 fidelity.md。\n"
+      "content": "# Reacticle · 长文排版组件库 · 复用 Prompt\n\n[结构化条目](../../entries/materials/reacticle.json)\n\n使用 Reacticle 0.2.6 的语义化 React 长文组件。先读 beautiful-article 对应主题的 profile，再从这 11 篇原作样文选择与文章目标一致的排版语言。通过公共入口导入 ThemeProvider、Article 与所需组件，沿用主题 token 与结构纪律；自绘 Raw 图形继续使用 --ra-* 变量。保持原始来源、论点与数据出处，图表只在帮助当前段落时加入，交互使用可访问的真实控件。参考样例时保留其完整组件与主题 CSS，不将主题简化为配色；需要离线分发时本地化字体并保留 MIT 声明和 OFL。\n\n## 制作约束\n\n- 固定 Reacticle 0.2.6 源码提交 dcfc4baf386bbc220cd1aa6274bed3b741108465；React 18.3 是上游声明的 peer 依赖，样例使用固定 lockfile 安装结果。\n- 每篇严格采用 apps/site/src/data/gallery.tsx 中的报告与主题组合；RateLimiter.tsx 导出的组件名为 RateLimiterSpec，11 个主题对应关系与任务表一致。\n- 组件、文章与主题 CSS 不作修改；独立入口保留原画廊文章容器及原站 CSS，省略官网导航、浮动返回标签与上一篇／下一篇。入口禁用 Prism 自动全页扫描，逐行代码高亮仍由原 React 组件提供。\n- 原站 13 个 Google Fonts 家族的 76 个 WOFF2 文件已本地化并附 OFL；中文沿用原主题的系统字体回退，不增加官网没有的中文网络字体。\n- 通过 HTTP/HTTPS 打开样例目录，JS、CSS、公式字体与本地化字体均使用相对路径；文章外链保留原作指向。\n- 原始 package.json 声明 MIT，但该固定提交的仓库内没有 LICENSE 文件；许可声明与实际缺失情况同时记录，不虚构上游许可文本。\n- 样文原文保持原样；主题风格说明为中文概括，依据 garden-skills 固定提交的 theme-profiles。\n- 样文中的交互、阅读辅助与动态行为沿用上游实现；source/ 归档公共组件、主题、11 篇报告、最小入口及原依赖配置，依赖按上游 lockfile 安装；逐篇对照结论见 fidelity.md。\n"
     },
     {
       "path": "demos/materials/reacticle/LICENSES.md",

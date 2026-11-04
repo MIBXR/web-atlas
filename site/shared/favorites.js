@@ -15,7 +15,7 @@
     if (data?.format === format && Array.isArray(data.cases) && Array.isArray(data.patterns) && Array.isArray(data.materials)) {
       return { cases: clean('cases', data.cases), patterns: clean('patterns', data.patterns), materials: clean('materials', data.materials) };
     }
-    throw new Error('格式错误，请粘贴导出的收藏 JSON。');
+    throw new Error('格式错误，请选择导出的收藏 JSON 文件。');
   }
   try {
     const value = localStorage.getItem(key);

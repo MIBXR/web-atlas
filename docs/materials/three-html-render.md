@@ -13,11 +13,11 @@
 | 吊灯照亮网页 | HTML-in-Canvas polyfill、HTMLTexture、SpotLight | 将完整 MORS² 页面放入参考光照场景；左键或单指拉灯，松手自由摆动；右键拖动调光束角度、右键单击切颜色、双击复位 |
 | 基础平面 | HTML-in-Canvas polyfill、HTMLTexture、Three.js InteractionManager | 同一 MORS² 页面贴在 3D 平面上，指针移动产生最大 8° 倾斜；保留概念切换、面板、悬停和键盘焦点 |
 
-页面保留原标志、英文文案与 Space、Meta、Field、Rule、Latent 五个概念按钮及其说明。灯光面板保留光束角度、亮度、五色预设、自定义颜色、开关和复位，使用真实 DOM 控件承担键盘与触屏操作。画面内的排版、字号、色彩和装饰按参考保留。
+页面保留原标志、英文文案与 Space、Meta、Field、Rule、Latent 五个概念按钮及其说明。灯光面板保留光束角度、亮度、五色预设、自定义颜色、开关和复位，通过真实 DOM 控件支持键盘与触屏操作。画面内的排版、字号、色彩和装饰按参考保留。
 
 ## 参数与接入
 
-接入方式见结构化条目；独立演示通过 importmap 指向本地 `vendor/`，不依赖 React、CDN 或运行时构建。通过静态 HTTP/HTTPS 服务访问。importmap 的依赖地址和 `three.core.js` 别名均将目录名中的 `@` 编码为 `%40`，与托管服务的规范化 URL 一致。
+接入方式见结构化条目。独立演示通过静态 HTTP/HTTPS 服务访问，并通过 importmap 指向本地 `vendor/`，不依赖 React、CDN 或运行时构建。importmap 的依赖地址和 `three.core.js` 别名均将目录名中的 `@` 编码为 `%40`，与托管服务的规范化 URL 一致。
 
 默认入口为 `index.html?demo=lamp`，基础平面为 `index.html?demo=plane`。吊灯初始 `angle: 34`、`brightness: 1450`、`color: #ffb36b` 与五色色板来自参考项目 `config.ts`，场景与摆锤数值按 `MorsLightCanvas.tsx` 移植。平面最大倾斜 8° 是本地演示参数。
 
@@ -25,11 +25,11 @@
 
 本版本组合需要 `texElementImage2D` 兼容垫片：Three.js 根据函数的参数数量选择上传重载，polyfill 的函数签名会触发不适用的短重载。改写自参考实现的垫片仅在 polyfill 启用且签名符合条件时包装为六参数函数，原生实现保持原样。
 
-接入还通过 polyfill 的 `pageStyles` 仅向 SVG 快照注入 `html,body{overflow:visible!important}`，使高于视口的窄版灯光面板完整光栅化；不修改 vendor 原始文件。
+接入时，通过 polyfill 的 `pageStyles` 仅向 SVG 快照注入 `html,body{overflow:visible!important}`，使高于视口的窄版灯光面板完整光栅化；不修改 vendor 原始文件。
 
 ## 输入、动态与后备
 
-桌面 CSS 视口不小于 768px 时保留原作 1440×810 页面与参考 fit 取景。小于 768px 时采用原 mobile 上下排列，让页面宽度跟随视口，并以 `height: auto`、`min-height: 1180px` 容纳完整内容；窗口 resize 同步更新 HTMLTexture 尺寸与相机取景。画面内文字按原作设计保留。
+桌面 CSS 视口不小于 768px 时保留原作 1440×810 页面与参考 fit 取景。小于 768px 时采用原 mobile 上下排列，让页面宽度跟随视口，并以 `height: auto`、`min-height: 1180px` 容纳完整内容；窗口 resize 时同步更新 HTMLTexture 尺寸与相机取景。画面内文字按原作设计保留。
 
 正常模式下吊灯保留参考的 Verlet 摆锤与约束、指针瞄准与拉拽、松手动量、右键调节和双击复位，静止后停止渲染。`prefers-reduced-motion: reduce` 时灯固定在初始角度，平面不倾斜；面板照常即时生效，没有过渡动画。
 

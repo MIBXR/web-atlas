@@ -19,7 +19,7 @@
     openShowcase.setAttribute('aria-label','体验'+label);
     openShowcase.title='体验'+label;
     document.querySelector('#pattern-showcase-label').textContent = `体验示意 · ${label}${type === 'all' ? '（全部类型预览）' : ''}`;
-    document.querySelector('#pattern-showcase-description').textContent = `${type === 'all' ? '全部类型浏览时展示视觉构成示意；选择体验类型后同步切换。' : `当前为${label}示意。`}示意使用通用内容，原始样式与组合请在来源案例核对。`;
+    document.querySelector('#pattern-showcase-description').textContent = `${type === 'all' ? '浏览全部类型时展示视觉构成示意；选择体验类型后，示意随之切换。' : `当前为${label}示意。`}示意使用通用内容；请在来源案例中核对原始样式与组合。`;
     openShowcase.hidden = document.querySelector('#patterns-library').hidden;
     if (openShowcase.hidden && panel.open) panel.close();
     if (!panel.open) {

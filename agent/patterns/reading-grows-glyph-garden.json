@@ -11,9 +11,9 @@
       "structure"
     ],
     "summary": "把已读单词一一映射到花园里的植物。",
-    "mechanism": "按当前词序接受点击，越序给出下一词；更新aria-pressed、下一词焦点、植物和种子，时间带定期撕片。",
+    "mechanism": "按当前词序接受点击，越序点击时提示下一词；更新aria-pressed，将焦点移向下一词，并更新植物和种子；时间带定期撕片。",
     "trigger": "按句子顺序标记已读词或重新开始。",
-    "effect": "阅读进度是具体的生长结果，顺序与下一步清楚。",
+    "effect": "用具体的生长结果呈现阅读进度，让阅读顺序和下一步清楚可见。",
     "useCases": [
       "阅读练习",
       "逐项学习与轻量习惯工具"
@@ -26,7 +26,7 @@
     ],
     "composition": {
       "role": "foundation",
-      "notes": "词、植物与下一步焦点共用同一个完成数。",
+      "notes": "词、植物与下一步焦点由同一个完成数控制。",
       "pairsWellWith": [
         "inline-detail-disclosure"
       ],

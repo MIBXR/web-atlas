@@ -7,9 +7,9 @@
     "visual"
   ],
   "summary": "让参考线跟随当前字体与字号的真实轮廓。",
-  "mechanism": "Canvas measureText读取H、x、y的边界，以临时基线标记确定DOM基线，再放置cap、x-height、baseline和descender。",
-  "trigger": "字体就绪、视口或字号几何变化。",
-  "effect": "线与实际字体对应，能解释字高而非仅作装饰。",
+  "mechanism": "用 Canvas measureText 读取 H、x、y 的边界，以临时基线标记确定 DOM 基线，再放置 cap、x-height、baseline 和 descender 参考线。",
+  "trigger": "字体就绪，或视口、字号发生几何变化。",
+  "effect": "参考线与实际字体对应，能解释字高，而非仅作装饰。",
   "useCases": [
     "字体样本",
     "排印系统与字形研究"

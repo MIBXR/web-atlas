@@ -7,7 +7,7 @@
     "page-motion"
   ],
   "summary": "从基础到细节显示结构关系。",
-  "mechanism": "主体路径以stroke表示，用归一化pathLength将进度映射到dashoffset；按组成逻辑依次描绘。",
+  "mechanism": "主体路径用 stroke 表示，用归一化 pathLength 将进度映射到 dashoffset；按组成逻辑依次描绘。",
   "trigger": "用户主动重播",
   "effect": "线条出现顺序解释对象如何组成。",
   "useCases": [
@@ -17,7 +17,7 @@
     "让正文等动画结束才能出现"
   ],
   "constraints": [
-    "默认完整终态，填色不冒充可描绘的路径。",
+    "默认显示完整终态，不用填色冒充可描绘的路径。",
     "迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。"
   ],
   "composition": {

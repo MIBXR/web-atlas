@@ -15,10 +15,10 @@
 - 来源固定为 Nutlope/hallmark@4f6a46c6dc325d40ab268c93e25c7b96676ebccd 的 site/，保持原作布局、目录、脚本和示范内容。
 - 字体、Wikimedia 地址与预连接的本地化范围及双宽对照结果见 demos/cases/hallmark/fidelity.md。
 - js/core.js 的 api.github.com 星标请求保留，数量按真实响应更新。
-- Edge 155 中侧页点击的 pointer capture 行为及当前版本没有入口的色条、网格悬停材料、指针光斑与 Ultraviolet 试听按原作记录于 fidelity.md。
+- Edge 155 中侧页点击的 pointer capture 行为，以及当前版本没有入口的色条、网格悬停材料、指针光斑与 Ultraviolet 试听，均按原作记录于 fidelity.md。
 
 ## 检查方法
 
-在两宽各打开一张手牌、切换比较 pair 并读到底、用键盘移动分隔线、过滤主题并在对话框前后翻页；对照同材料的两种结构，再到 Bloom 与 Ribbon 主动启停声音。
+在两种宽度下各打开一张手牌、切换比较 pair 并读到底、用键盘移动分隔线、过滤主题并在对话框前后翻页；对照同材料的两种结构，再到 Bloom 与 Ribbon 主动启停声音。
 
 [查看 Demo](../../demos/cases/hallmark/index.html) · [返回案例库](../../cases.html#style/hallmark)

@@ -1,27 +1,27 @@
 # 瑞士设计：编辑网格
 
-调研日期：2026-10-07。以下记录来源事实、设计判断与原创 demo 的迁移，链接指向调研时阅读的来源。
+调研日期：2026-10-07。以下记录来源事实、设计判断与原创 Demo 的迁移方式，链接指向调研时阅读的来源。
 
 ## 已核实的真实案例
 
-[Swissted 官网](https://www.swissted.com/) 是 Mike Joyce 的海报项目商店，页面以海报、演出名称、年代和购买入口组成作品索引。[作者说明](https://www.swissted.com/pages/about-us) 将其定义为真实音乐演出传单与 Swiss Modernism 的重新组合；其字体是小写 Berthold Akzidenz-Grotesk medium，作者特意说明不是 Helvetica。这支持“字体本身承担主要视觉”的研究方向；12栏与收藏交互为本地实现。
+[Swissted 官网](https://www.swissted.com/) 是 Mike Joyce 的海报项目商店，页面以海报、演出名称、年代和购买入口组成作品索引。[作者说明](https://www.swissted.com/pages/about-us) 将其定义为真实音乐演出传单与 Swiss Modernism 的重新组合；其字体是小写 Berthold Akzidenz-Grotesk medium，作者特意说明不是 Helvetica。这支持“字体本身承担主要视觉”的研究方向；12 栏与收藏交互为本地实现。
 
-[MoMA 的 Müller-Brockmann 馆藏](https://www.moma.org/artists/4154-josef-muller-brockmann) 列有 1953 年音乐会海报与 1957/1958 年 Musica Viva。该馆藏用于确认历史作品与作者。没有下载馆藏原图作为 demo 素材。
+[MoMA 的 Müller-Brockmann 馆藏](https://www.moma.org/artists/4154-josef-muller-brockmann) 列有 1953 年音乐会海报与 1957/1958 年 Musica Viva。该馆藏用于确认历史作品与作者。没有下载馆藏原图作为 Demo 素材。
 
 ## 网页迁移的规范依据
 
-[IBM Carbon 2x Grid](https://www.carbondesignsystem.com/building-blocks/foundations/2x-grid/overview) 将对齐线、比例尺度和固定/流动网格作为一致性的基础，并讨论不同宽度的列数变化。我们迁移其“关键对齐线与响应式重排”原则；demo 的12栏与32px间距是自己的实现选择。
+[IBM Carbon 2x Grid](https://www.carbondesignsystem.com/building-blocks/foundations/2x-grid/overview) 将对齐线、比例尺度和固定/流动网格作为一致性的基础，并讨论不同宽度的列数变化。我们迁移其“关键对齐线与响应式重排”原则；Demo 的 12 栏与 32px 间距是本地实现的选择。
 
 ## 设计判断与产品重点
 
-我的判断：瑞士排版的可复用价值是信息关系的秩序。虚构机构 Margin Institute 的展览日程采用“主题 → 日期/地点 → 筛选列表 → 办展理念”。名称占据视觉重心，红色节奏图为城市主题提供识别，日程每一行共享名称、类别、日期与收藏按钮的对齐线。它更适合文化活动和编辑内容，不适合需要大量情绪化角色素材的IP页面。
+我的判断是，瑞士排版的可复用价值在于有序组织信息关系。虚构机构 Margin Institute 的展览日程采用“主题 → 日期/地点 → 筛选列表 → 办展理念”。名称占据视觉重心，红色节奏图为城市主题提供识别，每行日程中的名称、类别、日期与收藏按钮沿共同的对齐线排列。它更适合文化活动和编辑内容，不适合需要大量情绪化角色素材的 IP 页面。
 
 ## 交互与约束
 
-- 来源商店的分页/商品导航说明作品可按索引浏览；demo 改为可筛选日程，这是推断后的原创迁移。
-- 筛选不重新装载页面，按钮带状态，屏幕阅读器可得结果数。收藏是当前浏览器的本地状态，明确不发起购票。
-- 常规页内锚点与文档滚动；手机取消桌面跨栏，保留完整文字；减少动效偏好下停用平滑滚动。
-- 不使用外部字体、CDN或原作图片。Arial是部署便利的系统替代，字形和度量并不等同原作。
+- 来源商店的分页/商品导航说明作品可按索引浏览；Demo 改为可筛选日程，这是推断后的原创迁移。
+- 筛选不重新装载页面，按钮带有状态，屏幕阅读器可以获取结果数。收藏状态保存在当前浏览器中，不发起购票。
+- 使用常规页内锚点与文档滚动；手机取消桌面跨栏，保留完整文字；减少动效偏好下停用平滑滚动。
+- 不使用外部字体、CDN 或原作图片。Arial 是为方便部署选用的系统替代字体，字形和度量并不等同原作。
 - Swiss 与 Bauhaus 在历史上有关联，但本库将其分别用于“编辑信息秩序”和“形色/材料实验”。
 
 ## 复现映射
@@ -33,4 +33,4 @@
 | Carbon 对齐线 | 12栏首屏和四列日程 | 分类筛选仍保持信息层级 |
 | 索引浏览 | 工作坊/讲座筛选 | 结果计数与空状态语义 |
 
-可复用 Prompt、Token、反例和练习见 [结构化条目](../../entries/cases/swiss-grid.json)。入口为 [本地 demo](../../demos/cases/swiss-grid/index.html)。
+可复用 Prompt、Token、反例和练习见 [结构化条目](../../entries/cases/swiss-grid.json)。入口为 [本地 Demo](../../demos/cases/swiss-grid/index.html)。

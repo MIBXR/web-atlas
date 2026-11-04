@@ -20,7 +20,7 @@
   "demo": "demos/materials/arc-ui/index.html",
   "preview": "previews/materials/arc-ui.jpg",
   "research": "docs/materials/arc-ui.md",
-  "demoNote": "142 个免费预览按官网小分类组织为双语目录。外框保留底部目录抽屉、面包屑、快捷搜索、八色外观、四种主题转场、真实手机视口与全屏形变；代码区提供等宽高亮、行号、平滑展开与复制。",
+  "demoNote": "142 个免费预览按官网小分类组织为双语目录。外框保留底部目录抽屉、面包屑、快捷搜索、八色外观、四种主题转场、真实手机视口与全屏形变；代码区以等宽字体高亮显示代码，并提供行号、平滑展开与复制。",
   "install": "复制 source/upstream/ 中的组件与共享 tokens，保持 @/ 路径别名；本地样例已捆绑依赖。重建：进入 source/，运行 npm ci 与 npm run build。",
   "upstream": {
     "repository": "kuratlielia/arc-library",
@@ -54,7 +54,7 @@
     "预览覆盖固定快照全部 120 个组件与 22 个区块；每项代码区展示该 registry 条目的全部源文件。"
   ],
   "workflow": [
-    "按中英文名称搜索，展开官网小分类目录，打开预览操作实际效果。",
+    "按中英文名称搜索，展开官网小分类目录，打开预览并操作，查看实际效果。",
     "切到代码，选择 TypeScript、CSS 或关联文件并复制；依赖关系见固定 registry.json 与 public/r/<名称>.json。",
     "接入 foundation.css 和 motion-tokens，设置 @/ 路径别名，保留组件内部相对结构。",
     "按真实业务替换 props、标签与数据；明暗主题、键盘和减少动态由目标页面一起管理。"
@@ -63,7 +63,7 @@
     {
       "kind": "case",
       "id": "uiarc-platform",
-      "note": "同一产品的官网设计作为案例；本素材提供可取用的免费组件源码。"
+      "note": "同一产品的官网设计收录为案例；本素材提供可取用的免费组件源码。"
     }
   ],
   "sources": [

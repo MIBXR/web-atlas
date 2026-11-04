@@ -159,7 +159,7 @@ window.ATLAS_MATERIALS = [
         "id": "cursor-ripples",
         "title": "指针涟漪",
         "component": "CursorRipples",
-        "summary": "移动指针或触摸舞台，比较涟漪的半径、衰减与色散，把局部反馈限制在内容可读的范围。",
+        "summary": "移动指针或触摸舞台，比较涟漪的半径、衰减与色散，调节局部反馈时保留内容的可读性。",
         "entrypoint": "demos/materials/shaders/index.html?effect=cursor-ripples",
         "parameters": [
           {
@@ -212,7 +212,7 @@ window.ATLAS_MATERIALS = [
     "prompt": "在现有 HTML/CSS/JavaScript 页面中使用固定版本 shaders 4.0.4 的 createShader 接口，为一个有明确任务的区域选择 MeshGradient、FlutedGlass、CursorRipples 或 NoiseDissolve。先读取本地四种演示的参数与源码，在保留真实 DOM 文本和操作的情况下调整配色、强度与图层。保持同一舞台只运行当前选中的效果，支持参数重置和暂停；页面隐藏或减少动态时停止持续动画。WebGPU 不可用时显示能继续阅读和操作的静态后备。保留原软件许可与第三方声明，不复制官网平台预设。桌面与窄屏都检查文字至少 12px、焦点、触摸及资源加载。",
     "accessibility": {
       "keyboard": "使用真实按钮与带标签的参数控件切换、调节、重置和暂停；指针反馈作为可选视觉装饰，信息和操作由 DOM 提供。",
-      "reducedMotion": "遵循 prefers-reduced-motion 停止自动运行，以静态状态保留配色和参数学习；主动演示需有可用的停止控制。"
+      "reducedMotion": "遵循 prefers-reduced-motion 停止自动运行，仍可通过静态状态学习配色和参数；主动演示需有可用的停止控制。"
     },
     "demo": "demos/materials/shaders/index.html",
     "preview": "previews/materials/shaders.png",
@@ -238,7 +238,7 @@ window.ATLAS_MATERIALS = [
       "demos/materials/98-css/demo/demo.css",
       "demos/materials/98-css/demo/demo.js"
     ],
-    "summary": "以真实 Windows 98 风格 CSS 组合设置窗口、可筛选素材目录与可暂停进度；保留复古边框，同时提高文字与触控可用性。",
+    "summary": "用真实的 Windows 98 风格 CSS 组合设置窗口、可筛选素材目录与可暂停的进度演示；保留复古边框，同时提高文字与触控可用性。",
     "install": "npm install 98.css@0.1.21",
     "demoNote": "原库提供 CSS，本地代码提供标签切换、筛选与模拟进度；不会修改系统或执行下载。",
     "tags": [
@@ -264,10 +264,10 @@ window.ATLAS_MATERIALS = [
     ],
     "constraints": [
       "固定 98.css 0.1.21；原库仅有 CSS，本地 JavaScript 实现行为。",
-      "原库控件 11px 已在适配层提高为 14px，辅助信息不低于 12px；不以缩放还原旧屏幕。",
+      "适配层将原库控件字号从 11px 提高为 14px，辅助信息不低于 12px；不以缩放还原旧屏幕。",
       "CSS 为 MIT；随包 MS Sans Serif 与 Bold 字体来自 lou，采用 CC BY-SA 3.0，需保留独立署名与许可。",
       "模拟进度每 240ms 增加 2% 为本地参数，不产生文件；真实任务必须接真实进度。",
-      "页面隐藏或切换演示暂停，返回需用户继续；减少动态时手动步进。",
+      "页面隐藏或切换演示时，进度暂停，返回后需用户继续；减少动态时改为手动步进。",
       "静态后备保留样式和说明；没有 JavaScript 时应用、筛选和演示计时不执行。"
     ],
     "upstream": {
@@ -370,7 +370,7 @@ window.ATLAS_MATERIALS = [
           {
             "name": "value",
             "value": "0–100%",
-            "note": "通过宽度表现官方进度样式；数值与 ARIA 同步为本地代码。"
+            "note": "通过宽度表现官方进度样式；数值与 ARIA 由本地代码同步。"
           },
           {
             "name": "tick",
@@ -387,7 +387,7 @@ window.ATLAS_MATERIALS = [
     ],
     "prompt": "使用固定版本 98.css 0.1.21，为当前任务构建一个有实际用途的复古设置窗口、素材目录或进度界面。使用原库 window、title-bar、status-bar、sunken-panel、table 和 progress-indicator 样式，行为由小量原生 JavaScript 实现。所有控件保留语义与可访问名称，标签键盘方向导航，最终文本至少 12px，扩大触控区域，窄屏自然重排，不缩小整个界面。真实任务连接真实进度；若使用教学模拟须明确标注，允许暂停、重置、手动前进，后台与减少动态时停下持续变化。保存 MIT CSS 与 CC BY-SA 3.0 字体的独立署名许可，自托管所需文件，提供静态后备。",
     "accessibility": {
-      "keyboard": "原生按钮、输入、下拉与复选框；设置标签支持左右、Home、End；目录每行可用 Tab / Enter 选择。",
+      "keyboard": "原生按钮、输入、下拉与复选框；设置标签支持左右方向键、Home、End；目录每行可用 Tab / Enter 选择。",
       "reducedMotion": "减少动态时进度改为手动步进；正常模式仅主动开始计时，隐藏页面或切换示例暂停，返回不会自动继续。"
     }
   },
@@ -397,7 +397,7 @@ window.ATLAS_MATERIALS = [
     "title": "Google Material Web · Material 3 官方组件",
     "type": "component-library",
     "category": "组件与效果",
-    "summary": "Google Material Design 的官方 Web Components 实现：用色彩角色、圆角、浮动标签和状态层，体验操作层级、表单验证、偏好设置与确认对话框。",
+    "summary": "Google Material Design 的官方 Web Components 实现；本地 Demo 用色彩角色、圆角、浮动标签和状态层演示操作层级、表单验证、偏好设置与确认对话框。",
     "install": "npm install @material/web@2.5.0；本地 Demo 已捆绑运行依赖，直接以 HTTP/HTTPS 打开。",
     "demoNote": "四套原创业务组合使用真实官方组件，可调配色、明暗与按钮圆角。库处于维护模式，不代表完整 Material 3 Expressive；输入和状态仅留在当前页面。",
     "tags": [
@@ -429,12 +429,12 @@ window.ATLAS_MATERIALS = [
     ],
     "constraints": [
       "固定 @material/web 2.5.0；官方 README 在核验时仍标注维护模式、等待新维护者。",
-      "官方是 Web Components/Lit 实现，不等同于 Angular Material 或 MUI；本条目不覆盖整个 Material Design 规范。",
+      "官方组件采用 Web Components/Lit，不等同于 Angular Material 或 MUI；本条目不覆盖整个 Material Design 规范。",
       "本地 vendor 合并了所选官方组件、CSS-in-JS 及 Lit/tslib 依赖，保留许可和锁文件；更换版本须重新核验 API 与 Shadow DOM 适配。",
       "以 HTTP/HTTPS 提供 ES module；模块失败时仅显示明确标注的静态说明，不声称真实组件已运行。",
       "配色、4–28px 圆角范围、中文内容与四种业务组合为本地原创演示，未接入服务端、持久化或真实账户。",
-      "系统减少动态或手动选择时关闭局部过渡和 ripple，dialog 使用 quick；滑块值标签取消缩放过渡以保持文字至少12px；无持续动画或后台计时器。",
-      "实际浏览器验证限定于 Chromium 桌面及390px窄屏；Safari、Firefox、真实触屏与屏幕阅读器仍需目标项目验证。"
+      "启用系统的减少动态设置或手动选择减少动态时，关闭局部过渡和 ripple，dialog 使用 quick；滑块值标签取消缩放过渡以保持文字至少12px；无持续动画或后台计时器。",
+      "浏览器实测仅覆盖 Chromium 桌面及390px窄屏；Safari、Firefox、真实触屏与屏幕阅读器仍需在目标项目中验证。"
     ],
     "upstream": {
       "repository": "material-components/material-web",
@@ -516,13 +516,13 @@ window.ATLAS_MATERIALS = [
         "id": "actions",
         "title": "操作层级",
         "component": "MdFilledButton / MdOutlinedButton / MdTextButton",
-        "summary": "对比填充、描边与文字操作；添加后禁用主要按钮，查看安排保留次要层级，重置可重复体验。",
+        "summary": "对比填充、描边与文字操作；添加后禁用主要按钮，“查看安排”保留次要层级，重置后可重复体验。",
         "entrypoint": "demos/materials/material-web/index.html?sample=actions",
         "parameters": [
           {
             "name": "--md-*-button-container-shape",
             "value": "4–28px，步长2px",
-            "note": "接口见官方按钮tokens；本地调节filled、filled-tonal和outlined的container-shape，范围/默认20px为演示选择。"
+            "note": "接口见官方按钮tokens；本地调节filled、filled-tonal和outlined的container-shape，范围及默认值20px均为演示选择。"
           },
           {
             "name": "--md-sys-color-*",
@@ -540,7 +540,7 @@ window.ATLAS_MATERIALS = [
         "id": "form",
         "title": "表单验证",
         "component": "MdOutlinedTextField",
-        "summary": "保留浮动标签，比较空值、无效邮箱与校验通过；输入只在内存中，不发送或保存。",
+        "summary": "保留浮动标签，对比空值、无效邮箱与校验通过的状态；输入仅保留在内存中，不发送或保存。",
         "entrypoint": "demos/materials/material-web/index.html?sample=form",
         "parameters": [
           {
@@ -583,13 +583,13 @@ window.ATLAS_MATERIALS = [
         "id": "dialog",
         "title": "确认对话框",
         "component": "MdDialog / MdFilledTonalButton",
-        "summary": "打开确认、取消/Escape返回、确认归档和恢复计划；关注局部状态、焦点与撤回路径。",
+        "summary": "打开确认对话框、取消/Escape返回、确认归档和恢复计划；观察局部状态、焦点与撤回路径。",
         "entrypoint": "demos/materials/material-web/index.html?sample=dialog",
         "parameters": [
           {
             "name": "type",
             "value": "alert",
-            "note": "官方针对需要用户响应的重要确认的类型；本地说明可撤回影响。"
+            "note": "该官方类型用于需要用户响应的重要确认；本地说明操作影响可撤回。"
           },
           {
             "name": "returnValue",
@@ -606,8 +606,8 @@ window.ATLAS_MATERIALS = [
     ],
     "prompt": "在已有HTML/CSS/JavaScript页面中使用Google官方@material/web 2.5.0，先读取Material Web素材包的来源、维护模式边界、许可、四种样例与依赖锁定记录。依据页面任务选择操作层级、带验证的文本框、switch/slider偏好面板或确认对话框，不复制示例业务文案。沿用当前页面导航与布局，用官方CSS系统颜色角色和组件形状token统一主题。提供真实标签、SVG功能图标、错误纠正、取消/Escape与关闭后焦点返回；所有文本包括Shadow DOM浮动标签及slider值标签在实际渲染中至少12px，取消会缩小文字的过渡。模块失败显示标注的静态后备；系统减少动态或手动减少时关闭局部过渡/ripple，dialog使用quick，页面隐藏时停止当前短动画。保持输入本地或明确接入当前项目的真实提交逻辑，不宣称示例已联网保存。保留Apache-2.0、Lit BSD-3-Clause、tslib 0BSD及转换说明；通过HTTP运行并检查桌面、窄屏、键盘、触摸和资源加载。",
     "accessibility": {
-      "keyboard": "原生按钮切换样例，真实官方组件处理Tab、Enter/Space、滑块方向键/Home/End与Escape。所有输入和开关有标签，错误状态同步可见消息；对话框关闭后等待触发按钮渲染完成再恢复焦点。",
-      "reducedMotion": "遵循prefers-reduced-motion，并提供手动减少动效。以本地Shadow DOM样式关闭过渡、禁用ripple、dialog.quick跳过开关动画；slider值标签不使用缩放过渡。无自动循环、音频或计时器，隐藏页面结束当前短动画。"
+      "keyboard": "原生按钮切换样例，真实官方组件处理Tab、Enter/Space、滑块方向键/Home/End与Escape。所有输入和开关有标签，错误状态与可见消息同步；对话框关闭后等待触发按钮渲染完成再恢复焦点。",
+      "reducedMotion": "遵循prefers-reduced-motion，并提供手动减少动效选项。用本地Shadow DOM样式关闭过渡，禁用ripple，并用dialog.quick跳过打开和关闭动画；slider值标签不使用缩放过渡。无自动循环、音频或计时器，页面隐藏时结束当前短动画。"
     },
     "demo": "demos/materials/material-web/index.html",
     "preview": "previews/materials/material-web.png",
@@ -627,7 +627,7 @@ window.ATLAS_MATERIALS = [
     "category": "字体与排版",
     "summary": "在同一原始字体中切换比例与等宽字形，调节笔触、字重、倾斜和草写；用界面标题、代码及海报三种试排理解用途。",
     "install": "本地 @font-face 加载 Recursive_VF_1.085.woff2；随字体保留 OFL 1.1 许可。",
-    "demoNote": "真实原始字体与五轴调节；三种原创排版可编辑、重置及复制 CSS。中文使用系统后备，字体不可用时明确显示后备状态。",
+    "demoNote": "使用原始字体，提供五轴调节；三种原创排版均支持编辑、重置和复制 CSS。中文使用系统后备，字体不可用时明确显示后备状态。",
     "tags": [
       "字体",
       "可变字体",
@@ -642,7 +642,7 @@ window.ATLAS_MATERIALS = [
       "OFL"
     ],
     "useCases": [
-      "需要比例标题与等宽代码共享气质的产品",
+      "需要让比例标题与等宽代码保持统一风格的产品",
       "数据界面、技术文档与终端片段",
       "有手写招牌个性的拉丁短标题",
       "试验字体轴对层级、字形与换行的影响"
@@ -657,7 +657,7 @@ window.ATLAS_MATERIALS = [
       "固定使用 v1.085 的完整 WOFF2，718,680 字节；未修改、子集化或转码。",
       "自定义轴需要可变字体支持；加载失败时采用明确标注的系统字体后备。",
       "主要支持拉丁文字及相关符号；中文由系统字体回退，不响应 Recursive 的 MONO、CASL、CRSV 等轴。",
-      "MONO 会改变字宽；固定 MONO 下其他轴保持字体设计的横向度量，混排与实际换行仍需验证。",
+      "MONO 会改变字宽；MONO 固定时，其他轴保持字体设计的横向度量，混排与实际换行仍需验证。",
       "三套参数、文案和版式为本地原创组合；字号范围 16–88px 也是本地选择，不表示原作者推荐所有组合。",
       "本示例无自动动画和声音，不产生持续后台绘制；所有试排修改由用户输入触发。",
       "再分发保留版权和 OFL 1.1 完整文本，不单独出售字体；更换版本或生成字体子集时重新核对许可与字形范围。"
@@ -771,7 +771,7 @@ window.ATLAS_MATERIALS = [
           {
             "name": "MONO / CASL",
             "value": "0 / 1",
-            "note": "本地组合；CASL 大标题采用端点遵循官方设计建议。"
+            "note": "本地组合；大标题将 CASL 设为端点，遵循官方设计建议。"
           },
           {
             "name": "wght / slnt / CRSV",
@@ -841,9 +841,9 @@ window.ATLAS_MATERIALS = [
     ],
     "constraints": [
       "锁定最新非预发布版本 2.1.2；核验时 npm latest 指向 3.0.0-rc.6，不据此宣称 3.x 已验证。",
-      "需要 JavaScript、Custom Elements 和 Shadow DOM；自托管官方完整 ESM，运行无 CDN。",
+      "需要 JavaScript、Custom Elements 和 Shadow DOM；自托管官方完整 ESM，运行时不依赖 CDN。",
       "随机手绘线条来自原库；页面场景、文案、配色与联动为本地原创组合。",
-      "标签、复选框、滑块和开关保留键盘路径；内部开关和滑块补充可访问名称。",
+      "标签、复选框、滑块和开关可通过键盘操作；为内部开关和滑块补充可访问名称。",
       "无循环动画与声音；静态后备只解释用法，不代表组件运行。",
       "保留 Wired / RoughJS MIT 与 bundle 内 Lit / lit-html BSD 3-Clause 许可。"
     ],
@@ -915,13 +915,13 @@ window.ATLAS_MATERIALS = [
         "id": "checklist",
         "title": "任务清单",
         "component": "wired-checkbox / wired-progress / wired-button",
-        "summary": "勾选真实手绘复选框，计数同步进度条；可恢复默认。",
+        "summary": "勾选真实手绘复选框时，任务计数与进度条同步更新；可恢复默认状态。",
         "entrypoint": "demos/materials/wired-elements/index.html?demo=checklist",
         "parameters": [
           {
             "name": "checked",
             "value": "true / false",
-            "note": "官方布尔属性；三项任务默认完成第一项为本地选择。"
+            "note": "官方布尔属性；三项任务中默认完成第一项，这是本地设置。"
           },
           {
             "name": "value / max",
@@ -966,8 +966,8 @@ window.ATLAS_MATERIALS = [
     ],
     "prompt": "使用固定版本 wired-elements 2.1.2，在现有 HTML/CSS/JavaScript 项目里为可讨论的轻量流程选择任务清单、偏好面板或概念卡片。读取本地演示，把真实 wired-checkbox、wired-progress、wired-toggle、wired-card 和 wired-slider 接到当前页面的明确状态。使用原库 SVG 手绘边界，保持 DOM 文本、标签、键盘操作和至少 12px 的实际文字。卡片 elevation 遵循 1–5；配色与内容按任务选择。自托管官方 ESM，保留 MIT 与 BSD 许可；加载失败时显示明确静态说明，不声称组件仍已运行。无需求时不加入循环动画、声音、持久化或额外框架。",
     "accessibility": {
-      "keyboard": "标签支持左右、Home、End；真实组件内部原生复选框、滑块和按钮可键盘操作，开关与滑块补上内部名称。",
-      "reducedMotion": "没有自动动画或持续帧循环，参数和状态变化保留。随机线条重绘由实际内容与尺寸变化触发。"
+      "keyboard": "标签支持左右方向键、Home、End；真实组件内部的原生复选框、滑块和按钮可用键盘操作，开关与滑块补充了内部名称。",
+      "reducedMotion": "没有自动动画或持续帧循环，保留参数和状态变化。随机线条重绘由实际内容与尺寸变化触发。"
     }
   },
   {
@@ -976,7 +976,7 @@ window.ATLAS_MATERIALS = [
     "title": "three-html-render · HTML-in-Canvas polyfill",
     "type": "component-library",
     "category": "组件与效果",
-    "summary": "让 HTML-in-Canvas 标准 API 在所有浏览器可用，配合 three.js 内置的 HTMLTexture 和 InteractionManager，把实时、可交互的 HTML 画进 WebGL 贴图，并能在 3D 表面上继续点击。",
+    "summary": "让 HTML-in-Canvas 标准 API 在所有浏览器中可用，配合 three.js 内置的 HTMLTexture 和 InteractionManager，把实时、可交互的 HTML 绘制为 WebGL 贴图，并保留 3D 表面上的点击交互。",
     "install": "npm install three@0.185.1 three-html-render@0.1.2",
     "demoNote": "将 HTML-Light-Demo 的 MORS² 页面与吊灯机制移植为原生 HTML/CSS/JavaScript；两个样例共用该页面，以 Three.js HTMLTexture、InteractionManager 和浏览器 API polyfill 运行。",
     "tags": [
@@ -1004,11 +1004,11 @@ window.ATLAS_MATERIALS = [
       "HTML-in-Canvas 是 WICG 的浏览器标准提案，原生支持处于实验阶段；本条目收录 three-html-render 库，不是标准本身。HTMLTexture 与 InteractionManager 从 three r185 起由 Three.js 提供，本库补齐浏览器 API。",
       "浏览器有原生 texElementImage2D 时使用原生路径；缺少原生支持时退回 SVG foreignObject 光栅化。本地 HTTP 下，无头 Edge 155.0.4283.62 已实测运行真实 WebGL，实际使用 SVG foreignObject polyfill 路径；原生路径未验证。",
       "固定 three 0.185.1 与 three-html-render 0.1.2；0.1.x 存在版本风险，本组合需要 texElementImage2D 兼容垫片。npm 0.1.2 未提供 README 所述的 html-texture／interaction-manager 子路径，需使用 Three.js 自带接口。",
-      "通过 HTTP/HTTPS 访问；WebGL 不可用或初始化失败时保留同一 MORS² HTML 页面与 CSS 静态光照。禁用 WebGL 的独立 Edge 进程已验证 390px 后备说明、清除 polyfill host、源页面回到 scene，以及原面板开关点击。",
+      "通过 HTTP/HTTPS 访问；WebGL 不可用或初始化失败时保留同一 MORS² HTML 页面与 CSS 静态光照。已在禁用 WebGL 的独立 Edge 进程中验证：390px 下显示后备说明、清除 polyfill host、源页面回到 scene，原面板开关仍可点击。",
       "桌面 CSS 视口不小于 768px 时保留原作 1440×810 页面与参考 fit；小于 768px 时采用原 mobile 上下排列、页面宽度跟随视口，height: auto 与 min-height: 1180px 容纳完整内容。390px 实测源页面 390×1240；后备可用宽度 375px，无横向溢出。HTMLTexture 尺寸与相机随 resize 更新。",
-      "1440px 同条件对照中，初始页面投影、标题样式与面板边界相同，观察未见明显构图、黑位、材质或光照差异；摆动画面的光斑边缘有轻微偏移，取帧时间差为可能原因，未经独立验证。",
-      "正常模式已实测摆动后绘制计数保持 10150，等待 1.2 秒仍为 10150，确认停止渲染。减少动态时灯固定，绘制计数间隔 1 秒保持 10；plane 指针移动前后矩阵相同，正常模式矩阵会改变。面板仍即时生效。",
-      "本地 Edge 已验证五个概念真实点击、键盘调参、右键换色与调角度，以及 CDP 单触点拖灯和色板选择；原生路径、读屏器、真实触屏设备、其他浏览器、长期性能与电量表现未验证。",
+      "在 1440px 的同条件对照中，初始页面投影、标题样式与面板边界相同，观察未见明显构图、黑位、材质或光照差异；摆动画面的光斑边缘有轻微偏移，取帧时间差为可能原因，未经独立验证。",
+      "正常模式下，实测摆动后的绘制计数保持 10150，等待 1.2 秒仍为 10150，确认停止渲染。减少动态时灯固定，相隔 1 秒的绘制计数均为 10；plane 指针移动前后矩阵相同，正常模式矩阵会改变。面板仍即时生效。",
+      "本地 Edge 已验证五个概念的真实点击、键盘调参、右键换色与调角度，以及 CDP 单触点拖灯和色板选择；原生路径、读屏器、真实触屏设备、其他浏览器、长期性能与电量表现未验证。",
       "软件与参考实现代码保留独立 MIT 许可；MORS² 品牌、文案、标志与美术方向出自 @kaolti 原作，页面实现与光照代码改写自 jinruozai 的 HTML-Light-Demo，本仓库用于个人非商业参考。"
     ],
     "upstream": {
@@ -1152,7 +1152,7 @@ window.ATLAS_MATERIALS = [
     "title": "Beautiful Article · 长文编辑工作流",
     "type": "agent-skill",
     "category": "Agent 工作流",
-    "summary": "把已有材料经抽取、编辑规划、主题确认、逐节生成和审阅，制作成基于 Reacticle 的可分享网页文章。",
+    "summary": "通过材料抽取、编辑规划、主题确认、逐节生成和审阅，将已有材料制作成基于 Reacticle 的可分享网页文章。",
     "install": "将 demos/materials/beautiful-article/ 复制到项目的技能目录并按所用 Agent 的发现方式启用；创作文章时按原文调用 scripts/scaffold.sh 创建 React、TypeScript 与 Vite 工作区。",
     "tags": [
       "长文排版",
@@ -1178,7 +1178,7 @@ window.ATLAS_MATERIALS = [
       "本条目保存 garden-skills 固定提交中的技能原文、主题写作资料和脚手架，不直接运行技能或提供在线文章生成。",
       "技能默认保留完整信息；文章类型、信息保留比例、主题、宽度、配图与封面按原文的确认节点决定。",
       "11 份主题资料是给 Agent 阅读的写作指导，不是主题 CSS；对应运行时、组件和 11 篇样文见 Reacticle 素材。",
-      "原文脚手架安装执行时的最新 reacticle 发布版；本库 Reacticle 样例另行固定提交，不能把二者当作同一次构建。",
+      "执行原文脚手架时，会安装当时最新的 reacticle 发布版；本库 Reacticle 样例另行固定提交，不能把二者当作同一次构建。",
       "脚手架的默认标题、正文和封面是占位内容，需要按文章材料完成；单文件 HTML 的构建形式不自动保证外链字体已离线化。",
       "原文快照保留原语言与相对链接；外部效果图按 gallery 逐图记录来源，未复刻。"
     ],
@@ -1234,8 +1234,8 @@ window.ATLAS_MATERIALS = [
       "规划简报、大纲、主题与素材；按文章类型确定信息保留比例，默认保留完整信息。",
       "逐项请用户确认文章类型、主题、版式宽度、配图模式和封面。",
       "创建文章工程，制作封面、首屏、第一节和代表性视觉块，独立审阅后请用户确认首版与后续开发模式。",
-      "用 Reacticle 语义组件和主题约束的自由图文层逐节完成文章，每节独立文件并审阅。",
-      "从编辑、视觉和技术三个视角终审，按最小范围修复，避免为局部问题重写整篇。",
+      "用 Reacticle 语义组件和受主题约束的自由图文层逐节完成文章，每节均以独立文件保存并单独审阅。",
+      "从编辑、视觉和技术三个视角终审，在最小范围内修复问题，避免为局部问题重写整篇。",
       "请用户确认交付形式后导出单文件 HTML；仅在用户选择时另行导出 PDF，并附简短编辑说明。"
     ],
     "relatedEntries": [
@@ -1412,7 +1412,7 @@ window.ATLAS_MATERIALS = [
     ],
     "prompt": "先阅读 demos/materials/beautiful-article/SKILL.md，用我提供的材料制作网页文章。抽取材料并记录不确定项，提出编辑规划，逐项确认文章类型与信息保留、主题、宽度、配图和封面。先做首屏与第一节，确认后按节生成完整文章，保持文章阅读形态并使用 Reacticle 主题令牌。审阅和修复后再确认交付形式。主题选择可先打开 Reacticle 素材的 11 篇实际样文比较排版语言；未经确认不替我删减信息或导出 PDF。",
     "accessibility": {
-      "keyboard": "技能条目通过真实链接进入原文与 Reacticle 样例；创作文章时保留语义结构、可读目录，以及控件的键盘与焦点操作。",
+      "keyboard": "技能条目提供原文与 Reacticle 样例的真实链接；创作文章时保留语义结构、可读目录，以及控件的键盘与焦点操作。",
       "reducedMotion": "本资源为工作流与文本快照，没有自动播放的演示；文章内自由图文层若带动效，需要在技术终审中检查移动端与可访问性。"
     },
     "preview": "previews/materials/beautiful-article.webp",
@@ -1428,9 +1428,9 @@ window.ATLAS_MATERIALS = [
     "title": "Reacticle · 长文排版组件库",
     "type": "component-library",
     "category": "组件与效果",
-    "summary": "一套用于 React 长文的语义化组件，配有 11 套主题，让同一份内容切换为不同的排版语言。",
+    "summary": "一套用于 React 长文的语义化组件，配有 11 套主题，同一份内容可切换不同的排版风格。",
     "install": "npm install reacticle",
-    "demoNote": "11 篇样文分别绑定原画廊主题，保留原文、图表与全部文章交互；每项打开一篇独立静态页面。",
+    "demoNote": "11 篇样文各自沿用原画廊绑定的主题，保留原文、图表与全部文章交互；每个样例打开一篇独立静态页面。",
     "tags": [
       "React",
       "长文排版",
@@ -1449,13 +1449,13 @@ window.ATLAS_MATERIALS = [
     ],
     "avoid": [
       "用文章组件搭建复杂后台或完整应用",
-      "只更换颜色却忽略各主题的排版契约",
+      "只更换颜色却忽略各主题的排版规则",
       "把画廊中的样文结论当作独立核验后的事实"
     ],
     "constraints": [
       "固定 Reacticle 0.2.6 源码提交 dcfc4baf386bbc220cd1aa6274bed3b741108465；React 18.3 是上游声明的 peer 依赖，样例使用固定 lockfile 安装结果。",
       "每篇严格采用 apps/site/src/data/gallery.tsx 中的报告与主题组合；RateLimiter.tsx 导出的组件名为 RateLimiterSpec，11 个主题对应关系与任务表一致。",
-      "组件、文章与主题 CSS 不作修改；独立入口保留原画廊文章容器及原站 CSS，省略官网导航、浮动返回标签与上一篇／下一篇。入口禁用 Prism 自动全页扫描，由原 React 组件保留逐行代码高亮。",
+      "组件、文章与主题 CSS 不作修改；独立入口保留原画廊文章容器及原站 CSS，省略官网导航、浮动返回标签与上一篇／下一篇。入口禁用 Prism 自动全页扫描，逐行代码高亮仍由原 React 组件提供。",
       "原站 13 个 Google Fonts 家族的 76 个 WOFF2 文件已本地化并附 OFL；中文沿用原主题的系统字体回退，不增加官网没有的中文网络字体。",
       "通过 HTTP/HTTPS 打开样例目录，JS、CSS、公式字体与本地化字体均使用相对路径；文章外链保留原作指向。",
       "原始 package.json 声明 MIT，但该固定提交的仓库内没有 LICENSE 文件；许可声明与实际缺失情况同时记录，不虚构上游许可文本。",
@@ -1518,7 +1518,7 @@ window.ATLAS_MATERIALS = [
         "id": "caffeine-half-life",
         "title": "Tufte · 咖啡因与睡眠：一份关于半衰期的笔记",
         "component": "CaffeineHalfLife",
-        "summary": "数据墨水风格：克制衬线、充裕页边、发丝参考线与低装饰图表，让论点和证据承载视觉层级。",
+        "summary": "数据墨水风格：用克制的衬线字体、充裕的页边、发丝参考线与低装饰图表组织视觉层级，突出论点和证据。",
         "entrypoint": "demos/materials/reacticle/index.html?demo=caffeine-half-life",
         "parameters": [
           {
@@ -1574,7 +1574,7 @@ window.ATLAS_MATERIALS = [
         "id": "linear-attention",
         "title": "Knuth · 以核特征映射线性化自注意力：一个复杂度视角",
         "component": "LinearAttention",
-        "summary": "学术预印本风格：正式衬线、编号章节和图表、公式优先与密集引用，强调推导和可核查性。",
+        "summary": "学术预印本风格：采用正式的衬线字体，为章节和图表编号，优先呈现公式并保留密集引用，强调推导和可核查性。",
         "entrypoint": "demos/materials/reacticle/index.html?demo=linear-attention",
         "parameters": [
           {
@@ -1644,7 +1644,7 @@ window.ATLAS_MATERIALS = [
         "id": "rate-limiter-spec",
         "title": "Fuller · 限流器设计规格",
         "component": "RateLimiterSpec",
-        "summary": "工程蓝图风格：深蓝底、青白墨、制图青与淡方格网，搭配等宽标注、虚线分节和发丝拓扑。",
+        "summary": "工程蓝图风格：深蓝底、青白墨、制图青与淡方格网，搭配等宽标注、虚线分节和发丝线条绘制的拓扑图。",
         "entrypoint": "demos/materials/reacticle/index.html?demo=rate-limiter-spec",
         "parameters": [
           {
@@ -1658,7 +1658,7 @@ window.ATLAS_MATERIALS = [
         "id": "color-clash",
         "title": "Sottsass · 撞色不翻车",
         "component": "ColorClash",
-        "summary": "孟菲斯风格：奶油纸、黑墨与粉青黄蓝撞色，以硬投影、轻旋转、彩色药丸和几何彩屑制造节奏。",
+        "summary": "孟菲斯风格：奶油纸与黑墨搭配粉、青、黄、蓝撞色，以硬投影、轻旋转、彩色药丸和几何彩屑制造节奏。",
         "entrypoint": "demos/materials/reacticle/index.html?demo=color-clash",
         "parameters": [
           {
@@ -1740,7 +1740,7 @@ window.ATLAS_MATERIALS = [
     ],
     "avoid": [
       "后端接口、命令行工具和纯逻辑开发",
-      "把源材料转成完整长文文章",
+      "把源材料转成完整长文",
       "按旁白节拍制作视频演示",
       "把风格参考图当作已有的可运行网页源码"
     ],
@@ -1748,7 +1748,7 @@ window.ATLAS_MATERIALS = [
       "本条目保存 garden-skills 固定提交中的技能原文、参考配方与宿主元数据，不直接执行技能或提供在线生成服务。",
       "原文要求先核实不稳定事实、读取参考与现有设计；设计系统和可浏览首版分别经用户确认后再继续。",
       "原文只在用户明确要求浏览器验收、响应式检查或同类实测时运行浏览器验收流程；普通开发要求不等于已授权该流程。",
-      "快照包含 25 份具名风格配方；README 中引用的配方画廊页面源码未包含在固定提交中，外部效果图按 gallery 逐图记录来源，未复刻。",
+      "快照包含 25 份具名风格配方；固定提交未包含 README 所引用的配方画廊页面源码，外部效果图按 gallery 逐图记录来源，未复刻。",
       "原文快照保留原语言与相对链接；指向仓库根目录、画廊或外部资源的链接仍须结合上游仓库阅读。"
     ],
     "upstream": {
@@ -1792,7 +1792,7 @@ window.ATLAS_MATERIALS = [
       "梳理设计判断，校准视觉变化、动效强度、信息密度、素材依赖和品牌忠实度，并确定叙事角色、观看距离、视觉温度及内容容量。",
       "声明配色、字体、间距、圆角、阴影和运动规则，等待用户确认设计系统。",
       "制作可浏览的首版结构与关键模块，让用户确认方向，再完成组件、状态和动效。",
-      "执行交付前的代码与设计自查；用户明确要求实测时再运行浏览器验收，并按设计理念、层级、工艺、功能和独创性评议与修复。"
+      "交付前自查代码与设计；用户明确要求实测时再运行浏览器验收，并按设计理念、层级、工艺、功能和独创性评议与修复。"
     ],
     "relatedEntries": [
       {
@@ -2010,7 +2010,7 @@ window.ATLAS_MATERIALS = [
     ],
     "prompt": "先阅读 demos/materials/web-design-engineer/SKILL.md，依据任务选择现有界面延展、保留式重设计或完整重设计。核实事实并阅读已有代码、品牌素材和参考，明确受众与约束，给出设计判断和视觉校准，再声明设计系统并请用户确认。先展示可浏览首版，确认后完整实现并自查。需要参考结果时阅读星槎与米拉摄影案例，区分同题对照和单个有 skill 结果；不把案例品质推断为每次调用技能的保证。",
     "accessibility": {
-      "keyboard": "技能条目通过真实链接进入原文与关联案例；应用技能制作网页时，按原文交付清单检查语义标签、替代文本和键盘导航。",
+      "keyboard": "技能条目提供通往原文与关联案例的真实链接；应用技能制作网页时，按原文交付清单检查语义标签、替代文本和键盘导航。",
       "reducedMotion": "本资源为工作流与文本快照，没有自动播放的演示；应用技能时根据动效强度与用户环境处理减少动态。"
     },
     "preview": "previews/materials/web-design-engineer.jpg",
@@ -2042,7 +2042,7 @@ window.ATLAS_MATERIALS = [
     "demo": "demos/materials/arc-ui/index.html",
     "preview": "previews/materials/arc-ui.jpg",
     "research": "docs/materials/arc-ui.md",
-    "demoNote": "142 个免费预览按官网小分类组织为双语目录。外框保留底部目录抽屉、面包屑、快捷搜索、八色外观、四种主题转场、真实手机视口与全屏形变；代码区提供等宽高亮、行号、平滑展开与复制。",
+    "demoNote": "142 个免费预览按官网小分类组织为双语目录。外框保留底部目录抽屉、面包屑、快捷搜索、八色外观、四种主题转场、真实手机视口与全屏形变；代码区以等宽字体高亮显示代码，并提供行号、平滑展开与复制。",
     "install": "复制 source/upstream/ 中的组件与共享 tokens，保持 @/ 路径别名；本地样例已捆绑依赖。重建：进入 source/，运行 npm ci 与 npm run build。",
     "upstream": {
       "repository": "kuratlielia/arc-library",
@@ -2076,7 +2076,7 @@ window.ATLAS_MATERIALS = [
       "预览覆盖固定快照全部 120 个组件与 22 个区块；每项代码区展示该 registry 条目的全部源文件。"
     ],
     "workflow": [
-      "按中英文名称搜索，展开官网小分类目录，打开预览操作实际效果。",
+      "按中英文名称搜索，展开官网小分类目录，打开预览并操作，查看实际效果。",
       "切到代码，选择 TypeScript、CSS 或关联文件并复制；依赖关系见固定 registry.json 与 public/r/<名称>.json。",
       "接入 foundation.css 和 motion-tokens，设置 @/ 路径别名，保留组件内部相对结构。",
       "按真实业务替换 props、标签与数据；明暗主题、键盘和减少动态由目标页面一起管理。"
@@ -2085,7 +2085,7 @@ window.ATLAS_MATERIALS = [
       {
         "kind": "case",
         "id": "uiarc-platform",
-        "note": "同一产品的官网设计作为案例；本素材提供可取用的免费组件源码。"
+        "note": "同一产品的官网设计收录为案例；本素材提供可取用的免费组件源码。"
       }
     ],
     "sources": [
@@ -3161,7 +3161,7 @@ window.ATLAS_MATERIALS = [
     "title": "Hallmark · 反 AI 套路的网页设计 skill",
     "type": "agent-skill",
     "category": "Agent 工作流",
-    "summary": "用不可破例的底线、可记录破例的惯性检查和 50 套材料主题约束 Agent 做网页，先发主题、按页面用途定结构，再用真实浏览器检查和无上下文审查收尾；也能按名字重新设计或审计已有页面。",
+    "summary": "用不可破例的底线、可记录破例的惯性检查和 50 套材料主题规范 Agent 的网页设计流程：先发主题，按页面用途确定结构，再完成真实浏览器检查和无上下文审查；用户点名后，也能重新设计或审计已有页面。",
     "install": "npx skills add nutlope/hallmark -g 全局安装；或把 demos/materials/hallmark-skill/ 复制到 .claude/skills/hallmark/ 或 .agents/skills/hallmark/。在 Claude Code 用 /hallmark <提示词> 调用，在 Codex CLI 用 $hallmark <提示词>。",
     "tags": [
       "网页设计",
@@ -3175,7 +3175,7 @@ window.ATLAS_MATERIALS = [
     "useCases": [
       "从零制作落地页与产品页",
       "用开放授权照片和真实材料搭建品牌页面",
-      "按名字重新设计已有站点并保留内容与接线",
+      "用户点名后重新设计已有站点，保留内容与接线",
       "审计现有页面里的生成痕迹"
     ],
     "avoid": [
@@ -3226,12 +3226,12 @@ window.ATLAS_MATERIALS = [
     "snapshotPath": "demos/materials/hallmark-skill/",
     "snapshotEntry": "SKILL.md",
     "workflow": [
-      "预检读取项目的字体、配色、框架和锁定的 design.md，并向用户要一次照片、截图和真实数字，不编造内容。",
-      "先按材料与页面用途设计结构；没有锁定 design.md 且未指定主题时，用 theme.mjs deal 发出三个主题并看图选择，选定主题后 draw 抽取结构；custom 按提示词设计专属方向，已有锁定系统时跳过主题发牌。",
-      "用 scaffold 写入 tokens.css 和 base.css，先单独完成首屏，运行 --render --stage hero，再在新上下文审查首屏；Codex CLI 在当前线程完成审查并明说。",
-      "完成其余页面，行动入口放在该品类应有的位置，页面以它结束。",
-      "sloplint --render 在真实浏览器按多种宽度测量折叠线、对比度、焦点和节奏，修掉全部 FAIL，修复或记录破例每条 REFLEX。",
-      "在新上下文审查成品；支持子 Agent 的宿主使用子 Agent，Codex CLI 在当前线程完成审查并明说，CSS 首行保留决策戳；重新设计时额外用 --before 记录、--kept 比对全部链接、字段、处理器和标题。"
+      "预检时读取项目的字体、配色、框架和锁定的 design.md，一次性向用户索取照片、截图和真实数字，不编造内容。",
+      "先按材料与页面用途设计结构。没有锁定 design.md 且未指定主题时，用 theme.mjs deal 发出三个主题，看图选定后用 draw 抽取结构；custom 按提示词设计专属方向。已有锁定系统时跳过主题发牌。",
+      "用 scaffold 写入 tokens.css 和 base.css，先单独完成首屏，运行 --render --stage hero，再在新上下文审查首屏；Codex CLI 在当前线程完成审查，并说明这一点。",
+      "完成其余页面，把行动入口放在该品类应有的位置，并以该入口结束页面。",
+      "用 sloplint --render 在真实浏览器中按多种宽度测量折叠线、对比度、焦点和节奏；修复全部 FAIL，逐条修复 REFLEX 或记录破例。",
+      "在新上下文审查成品；支持子 Agent 的宿主使用子 Agent，Codex CLI 在当前线程完成审查并说明这一点。CSS 首行保留决策戳；重新设计时，额外用 --before 记录，用 --kept 比对全部链接、字段、处理器和标题。"
     ],
     "relatedEntries": [
       {
@@ -3840,7 +3840,7 @@ window.ATLAS_MATERIALS = [
         "id": "animatable-follow-cursor",
         "title": "平滑追随指针",
         "component": "createAnimatable",
-        "summary": "指针目标通过可更新的动画属性平滑跟随。",
+        "summary": "通过可更新的动画属性，让目标平滑跟随指针。",
         "entrypoint": "demos/materials/animejs/index.html?demo=animatable-follow-cursor",
         "group": "图形与运动"
       },
@@ -3944,7 +3944,7 @@ window.ATLAS_MATERIALS = [
         "id": "draggable-infinite-auto-carousel",
         "title": "无限轮播",
         "component": "createDraggable、createTimeline",
-        "summary": "轮播在自动播放与拖拽之间连续接管。",
+        "summary": "轮播的控制权在自动播放与拖拽之间连续交接。",
         "entrypoint": "demos/materials/animejs/index.html?demo=draggable-infinite-auto-carousel",
         "group": "拖拽与滚动"
       },
@@ -4040,7 +4040,7 @@ window.ATLAS_MATERIALS = [
         "id": "text-scramble-tl",
         "title": "文字扰乱时间线",
         "component": "scrambleText、createTimeline",
-        "summary": "将多屏文字扰乱、缩放与颜色串成时间线。",
+        "summary": "将多屏文字的扰乱、缩放与颜色变化串成时间线。",
         "entrypoint": "demos/materials/animejs/index.html?demo=text/scramble-tl",
         "group": "文字与矢量"
       },

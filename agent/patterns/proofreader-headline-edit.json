@@ -25,7 +25,7 @@
     ],
     "composition": {
       "role": "accent",
-      "notes": "与手牌入场共享首屏节拍，标题完成后交还稳定文本。",
+      "notes": "与手牌入场共享首屏节拍，标题动画完成后由稳定文本接管。",
       "pairsWellWith": [
         "dealt-page-hand"
       ],

@@ -7,7 +7,7 @@
     "title": "Beautiful Article · 长文编辑工作流",
     "type": "agent-skill",
     "category": "Agent 工作流",
-    "summary": "把已有材料经抽取、编辑规划、主题确认、逐节生成和审阅，制作成基于 Reacticle 的可分享网页文章。",
+    "summary": "通过材料抽取、编辑规划、主题确认、逐节生成和审阅，将已有材料制作成基于 Reacticle 的可分享网页文章。",
     "install": "将 demos/materials/beautiful-article/ 复制到项目的技能目录并按所用 Agent 的发现方式启用；创作文章时按原文调用 scripts/scaffold.sh 创建 React、TypeScript 与 Vite 工作区。",
     "tags": [
       "长文排版",
@@ -33,7 +33,7 @@
       "本条目保存 garden-skills 固定提交中的技能原文、主题写作资料和脚手架，不直接运行技能或提供在线文章生成。",
       "技能默认保留完整信息；文章类型、信息保留比例、主题、宽度、配图与封面按原文的确认节点决定。",
       "11 份主题资料是给 Agent 阅读的写作指导，不是主题 CSS；对应运行时、组件和 11 篇样文见 Reacticle 素材。",
-      "原文脚手架安装执行时的最新 reacticle 发布版；本库 Reacticle 样例另行固定提交，不能把二者当作同一次构建。",
+      "执行原文脚手架时，会安装当时最新的 reacticle 发布版；本库 Reacticle 样例另行固定提交，不能把二者当作同一次构建。",
       "脚手架的默认标题、正文和封面是占位内容，需要按文章材料完成；单文件 HTML 的构建形式不自动保证外链字体已离线化。",
       "原文快照保留原语言与相对链接；外部效果图按 gallery 逐图记录来源，未复刻。"
     ],
@@ -89,8 +89,8 @@
       "规划简报、大纲、主题与素材；按文章类型确定信息保留比例，默认保留完整信息。",
       "逐项请用户确认文章类型、主题、版式宽度、配图模式和封面。",
       "创建文章工程，制作封面、首屏、第一节和代表性视觉块，独立审阅后请用户确认首版与后续开发模式。",
-      "用 Reacticle 语义组件和主题约束的自由图文层逐节完成文章，每节独立文件并审阅。",
-      "从编辑、视觉和技术三个视角终审，按最小范围修复，避免为局部问题重写整篇。",
+      "用 Reacticle 语义组件和受主题约束的自由图文层逐节完成文章，每节均以独立文件保存并单独审阅。",
+      "从编辑、视觉和技术三个视角终审，在最小范围内修复问题，避免为局部问题重写整篇。",
       "请用户确认交付形式后导出单文件 HTML；仅在用户选择时另行导出 PDF，并附简短编辑说明。"
     ],
     "relatedEntries": [
@@ -267,7 +267,7 @@
     ],
     "prompt": "先阅读 demos/materials/beautiful-article/SKILL.md，用我提供的材料制作网页文章。抽取材料并记录不确定项，提出编辑规划，逐项确认文章类型与信息保留、主题、宽度、配图和封面。先做首屏与第一节，确认后按节生成完整文章，保持文章阅读形态并使用 Reacticle 主题令牌。审阅和修复后再确认交付形式。主题选择可先打开 Reacticle 素材的 11 篇实际样文比较排版语言；未经确认不替我删减信息或导出 PDF。",
     "accessibility": {
-      "keyboard": "技能条目通过真实链接进入原文与 Reacticle 样例；创作文章时保留语义结构、可读目录，以及控件的键盘与焦点操作。",
+      "keyboard": "技能条目提供原文与 Reacticle 样例的真实链接；创作文章时保留语义结构、可读目录，以及控件的键盘与焦点操作。",
       "reducedMotion": "本资源为工作流与文本快照，没有自动播放的演示；文章内自由图文层若带动效，需要在技术终审中检查移动端与可访问性。"
     },
     "preview": "previews/materials/beautiful-article.webp",
@@ -281,12 +281,12 @@
     {
       "path": "docs/materials/beautiful-article.md",
       "role": "research",
-      "content": "# Beautiful Article：阅读与使用资料\n\n[结构化条目](../../entries/materials/beautiful-article.json) 提供来源、版本、许可、中文工作流、安装方式、适用范围与关联作品。\n\n## 原文入口\n\n- [SKILL.md](../../demos/materials/beautiful-article/SKILL.md)：按任务读取工作指引。\n- [README](../../demos/materials/beautiful-article/README.md) 与 [中文 README](../../demos/materials/beautiful-article/README.zh-CN.md)：查看作者说明。\n- [许可证原文](../../demos/materials/beautiful-article/LICENSE)。\n\n## 文章主题与样文\n\n从 [Reacticle 的主题样文](reacticle.md#11-套主题样文) 比较相同组件体系中的排版语言，再读取快照的 `theme-profiles/`。其中 11 份主题 Markdown 与索引用于指导写作；样文的组件与 CSS 由 Reacticle 提供。\n\n需要创建工程时，按技能原文使用脚手架，把占位标题、正文与封面替换为源材料。脚手架生成 React、TypeScript 和 Vite 工程并安装 reacticle；文章的字体与离线资源按实际交付目标配置。\n\n原文中的仓库相对链接通过[上游固定提交](https://github.com/ConardLi/garden-skills/tree/2b9a89340b70f632d31c0f1c69fce94a7912423e)阅读上下文。\n\n效果图画廊收录作者的 8 篇文章实例截图和 11 套主题样品截图；主题样品可打开 Reacticle 素材的对应样例。\n"
+      "content": "# Beautiful Article：阅读与使用资料\n\n[结构化条目](../../entries/materials/beautiful-article.json) 提供来源、版本、许可、中文工作流、安装方式、适用范围与关联作品。\n\n## 原文入口\n\n- [SKILL.md](../../demos/materials/beautiful-article/SKILL.md)：按任务读取工作指引。\n- [README](../../demos/materials/beautiful-article/README.md) 与 [中文 README](../../demos/materials/beautiful-article/README.zh-CN.md)：查看作者说明。\n- [许可证原文](../../demos/materials/beautiful-article/LICENSE)。\n\n## 文章主题与样文\n\n通过 [Reacticle 的主题样文](reacticle.md#11-套主题样文) 比较同一套组件在不同主题下的排版，再读取快照的 `theme-profiles/`。其中 11 份主题 Markdown 与索引用于指导写作；样文的组件与 CSS 由 Reacticle 提供。\n\n需要创建工程时，按技能原文使用脚手架，把占位标题、正文与封面替换为源材料。脚手架生成 React、TypeScript 和 Vite 工程并安装 reacticle；文章的字体与离线资源按实际交付目标配置。\n\n查看原文中的仓库相对链接时，可在[上游固定提交](https://github.com/ConardLi/garden-skills/tree/2b9a89340b70f632d31c0f1c69fce94a7912423e)中阅读上下文。\n\n效果图画廊收录作者的 8 篇文章实例截图和 11 套主题样品截图；主题样品可打开 Reacticle 素材的对应样例。\n"
     },
     {
       "path": "prompts/materials/beautiful-article.md",
       "role": "prompt",
-      "content": "# Beautiful Article · 长文编辑工作流 · 复用 Prompt\n\n[结构化条目](../../entries/materials/beautiful-article.json)\n\n先阅读 demos/materials/beautiful-article/SKILL.md，用我提供的材料制作网页文章。抽取材料并记录不确定项，提出编辑规划，逐项确认文章类型与信息保留、主题、宽度、配图和封面。先做首屏与第一节，确认后按节生成完整文章，保持文章阅读形态并使用 Reacticle 主题令牌。审阅和修复后再确认交付形式。主题选择可先打开 Reacticle 素材的 11 篇实际样文比较排版语言；未经确认不替我删减信息或导出 PDF。\n\n## 制作约束\n\n- 本条目保存 garden-skills 固定提交中的技能原文、主题写作资料和脚手架，不直接运行技能或提供在线文章生成。\n- 技能默认保留完整信息；文章类型、信息保留比例、主题、宽度、配图与封面按原文的确认节点决定。\n- 11 份主题资料是给 Agent 阅读的写作指导，不是主题 CSS；对应运行时、组件和 11 篇样文见 Reacticle 素材。\n- 原文脚手架安装执行时的最新 reacticle 发布版；本库 Reacticle 样例另行固定提交，不能把二者当作同一次构建。\n- 脚手架的默认标题、正文和封面是占位内容，需要按文章材料完成；单文件 HTML 的构建形式不自动保证外链字体已离线化。\n- 原文快照保留原语言与相对链接；外部效果图按 gallery 逐图记录来源，未复刻。\n"
+      "content": "# Beautiful Article · 长文编辑工作流 · 复用 Prompt\n\n[结构化条目](../../entries/materials/beautiful-article.json)\n\n先阅读 demos/materials/beautiful-article/SKILL.md，用我提供的材料制作网页文章。抽取材料并记录不确定项，提出编辑规划，逐项确认文章类型与信息保留、主题、宽度、配图和封面。先做首屏与第一节，确认后按节生成完整文章，保持文章阅读形态并使用 Reacticle 主题令牌。审阅和修复后再确认交付形式。主题选择可先打开 Reacticle 素材的 11 篇实际样文比较排版语言；未经确认不替我删减信息或导出 PDF。\n\n## 制作约束\n\n- 本条目保存 garden-skills 固定提交中的技能原文、主题写作资料和脚手架，不直接运行技能或提供在线文章生成。\n- 技能默认保留完整信息；文章类型、信息保留比例、主题、宽度、配图与封面按原文的确认节点决定。\n- 11 份主题资料是给 Agent 阅读的写作指导，不是主题 CSS；对应运行时、组件和 11 篇样文见 Reacticle 素材。\n- 执行原文脚手架时，会安装当时最新的 reacticle 发布版；本库 Reacticle 样例另行固定提交，不能把二者当作同一次构建。\n- 脚手架的默认标题、正文和封面是占位内容，需要按文章材料完成；单文件 HTML 的构建形式不自动保证外链字体已离线化。\n- 原文快照保留原语言与相对链接；外部效果图按 gallery 逐图记录来源，未复刻。\n"
     },
     {
       "path": "demos/materials/beautiful-article/LICENSE",

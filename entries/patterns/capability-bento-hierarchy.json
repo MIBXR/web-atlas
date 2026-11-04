@@ -6,7 +6,7 @@
   "experienceTypes": [
     "visual"
   ],
-  "summary": "不同产品权重使用不同面积。",
+  "summary": "按产品权重分配不同面积。",
   "mechanism": "根据功能关系设置跨列主能力、并列辅助能力或通栏协作能力，图文各有稳定位置。",
   "effect": "面积与排列说明能力之间的层级。",
   "useCases": [

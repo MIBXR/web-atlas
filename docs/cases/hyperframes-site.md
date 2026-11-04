@@ -8,15 +8,15 @@
 
 键盘跳转入口 → 顶栏 → 全屏 Hero → 双行作品墙 → Get started 桌面下载 → Open source 四统计与安装命令。固定地面位于全页底层，页面没有独立页脚。
 
-Hero 右上放置 HyperFrames Studio，左下放置定位句与系统下载。Framey 与气泡在桌面触发 Film；Film 以原始影片为时钟，合成 SVG 光线、吉祥物、文字、闪光和页面切分。克隆页面中的 Canvas 以 captureStream(60) 替换为实时视频流，结束与 Skip 恢复页面。
+Hero 右上放置 HyperFrames Studio，左下放置定位句与系统下载。Framey 与气泡在桌面触发 Film；Film 以原始影片为时钟，合成 SVG 光线、吉祥物、文字、闪光和页面切分。克隆页面中的 Canvas 被替换为 captureStream(60) 生成的实时视频流；Film 结束或点击 Skip 后恢复页面。
 
-Film 五章为 Arrive（0–1.86s）、Draw（1.86–3.62s）、Cut（3.62–4.62s）、Worlds（4.62–14s）、Download（14–19s）。轨道拖动先暂停、定位，松开按原状态继续；声音按钮切换静音，开启声音采用 300ms 音量过渡。
+Film 五章为 Arrive（0–1.86s）、Draw（1.86–3.62s）、Cut（3.62–4.62s）、Worlds（4.62–14s）、Download（14–19s）。拖动轨道时先暂停、定位，松开后按原状态继续；声音按钮切换静音状态，开启声音时使用 300ms 音量过渡。
 
 ## 碎片光带 WebGL 机制
 
 管线为 Three.js WebGLRenderer → 圆角三角 Shape → 带斜角的 ExtrudeGeometry → 35° 折角法线 → 面与边两套 ShaderMaterial。挤出深度 0.09、斜角厚度 0.0405、大小 0.03645、4 段斜角与 24 段曲线保留原值。
 
-场景以 7331 为种子，使用乘数 16807、模数 2147483647 的 LCG。三行、triSize=3、gap=0.035、videoSpan=4；方向 166°、深度方向 23°、速度 1.6、扭转 6°。formation 使用 formSpan=8、formGap=15、scatter=5、looseRot=1.34，使分散片段回到拼组。代码纹理由等宽字体、原始片段与逐字符语法着色生成。
+场景以 7331 为种子，使用乘数 16807、模数 2147483647 的 LCG。三行、triSize=3、gap=0.035、videoSpan=4；方向 166°、深度方向 23°、速度 1.6、扭转 6°。formation 使用 formSpan=8、formGap=15、scatter=5、looseRot=1.34，让分散的片段重新组合。代码纹理由等宽字体、原始片段与逐字符语法着色生成。
 
 顶点着色器输出 UV、视空间法线、深度和前后盖标识；片元着色器按视频分组矩形与 fit 裁切视频，结合代码、噪声边界、撕裂、辉光、matcap、曲率和雾。完整 GLSL 与 uniforms 在 ribbon.js 中。DPR 上限为 1.75，逐帧 delta 上限为 0.05；指针旋转以 0.045 插值，摄像机以 0.03 插值。
 

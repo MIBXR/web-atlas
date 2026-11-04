@@ -25,7 +25,7 @@
     ],
     "avoid": [
       "后端接口、命令行工具和纯逻辑开发",
-      "把源材料转成完整长文文章",
+      "把源材料转成完整长文",
       "按旁白节拍制作视频演示",
       "把风格参考图当作已有的可运行网页源码"
     ],
@@ -33,7 +33,7 @@
       "本条目保存 garden-skills 固定提交中的技能原文、参考配方与宿主元数据，不直接执行技能或提供在线生成服务。",
       "原文要求先核实不稳定事实、读取参考与现有设计；设计系统和可浏览首版分别经用户确认后再继续。",
       "原文只在用户明确要求浏览器验收、响应式检查或同类实测时运行浏览器验收流程；普通开发要求不等于已授权该流程。",
-      "快照包含 25 份具名风格配方；README 中引用的配方画廊页面源码未包含在固定提交中，外部效果图按 gallery 逐图记录来源，未复刻。",
+      "快照包含 25 份具名风格配方；固定提交未包含 README 所引用的配方画廊页面源码，外部效果图按 gallery 逐图记录来源，未复刻。",
       "原文快照保留原语言与相对链接；指向仓库根目录、画廊或外部资源的链接仍须结合上游仓库阅读。"
     ],
     "upstream": {
@@ -77,7 +77,7 @@
       "梳理设计判断，校准视觉变化、动效强度、信息密度、素材依赖和品牌忠实度，并确定叙事角色、观看距离、视觉温度及内容容量。",
       "声明配色、字体、间距、圆角、阴影和运动规则，等待用户确认设计系统。",
       "制作可浏览的首版结构与关键模块，让用户确认方向，再完成组件、状态和动效。",
-      "执行交付前的代码与设计自查；用户明确要求实测时再运行浏览器验收，并按设计理念、层级、工艺、功能和独创性评议与修复。"
+      "交付前自查代码与设计；用户明确要求实测时再运行浏览器验收，并按设计理念、层级、工艺、功能和独创性评议与修复。"
     ],
     "relatedEntries": [
       {
@@ -295,7 +295,7 @@
     ],
     "prompt": "先阅读 demos/materials/web-design-engineer/SKILL.md，依据任务选择现有界面延展、保留式重设计或完整重设计。核实事实并阅读已有代码、品牌素材和参考，明确受众与约束，给出设计判断和视觉校准，再声明设计系统并请用户确认。先展示可浏览首版，确认后完整实现并自查。需要参考结果时阅读星槎与米拉摄影案例，区分同题对照和单个有 skill 结果；不把案例品质推断为每次调用技能的保证。",
     "accessibility": {
-      "keyboard": "技能条目通过真实链接进入原文与关联案例；应用技能制作网页时，按原文交付清单检查语义标签、替代文本和键盘导航。",
+      "keyboard": "技能条目提供通往原文与关联案例的真实链接；应用技能制作网页时，按原文交付清单检查语义标签、替代文本和键盘导航。",
       "reducedMotion": "本资源为工作流与文本快照，没有自动播放的演示；应用技能时根据动效强度与用户环境处理减少动态。"
     },
     "preview": "previews/materials/web-design-engineer.jpg",
@@ -309,12 +309,12 @@
     {
       "path": "docs/materials/web-design-engineer.md",
       "role": "research",
-      "content": "# Web Design Engineer：阅读与使用资料\n\n[结构化条目](../../entries/materials/web-design-engineer.json) 提供来源、版本、许可、中文工作流、安装方式、适用范围与关联作品。\n\n## 原文入口\n\n- [SKILL.md](../../demos/materials/web-design-engineer/SKILL.md)：按任务读取工作指引。\n- [README](../../demos/materials/web-design-engineer/README.md) 与 [中文 README](../../demos/materials/web-design-engineer/README.zh-CN.md)：查看作者说明。\n- [许可证原文](../../demos/materials/web-design-engineer/LICENSE)。\n\n## 风格资料与示范\n\n按当前页面任务选读快照中的 25 份具名风格配方，再在[星槎示范与基线](../cases/stellar-museum.md)及[米拉摄影页](../cases/mira-host-photography.md)观察机制。前者的研究按同题页面逐项比较，后者按单个示范页分析。\n\n快照 README 中的 `../../demo/web-design-demo` 和 `../../dist/prompt` 指向上游仓库的示范与配方上下文。通过[上游固定提交](https://github.com/ConardLi/garden-skills/tree/2b9a89340b70f632d31c0f1c69fce94a7912423e)阅读这些链接。\n\n效果图画廊收录 README 中 25 套风格配方的作者截图。\n"
+      "content": "# Web Design Engineer：阅读与使用资料\n\n[结构化条目](../../entries/materials/web-design-engineer.json) 提供来源、版本、许可、中文工作流、安装方式、适用范围与关联作品。\n\n## 原文入口\n\n- [SKILL.md](../../demos/materials/web-design-engineer/SKILL.md)：按任务读取工作指引。\n- [README](../../demos/materials/web-design-engineer/README.md) 与 [中文 README](../../demos/materials/web-design-engineer/README.zh-CN.md)：查看作者说明。\n- [许可证原文](../../demos/materials/web-design-engineer/LICENSE)。\n\n## 风格资料与示范\n\n按当前页面任务选读快照中的 25 份具名风格配方，再在[星槎示范与基线](../cases/stellar-museum.md)及[米拉摄影页](../cases/mira-host-photography.md)观察机制。前者的研究逐项比较同题页面，后者分析单个示范页。\n\n快照 README 中的 `../../demo/web-design-demo` 和 `../../dist/prompt` 指向上游仓库的示范与配方上下文。通过[上游固定提交](https://github.com/ConardLi/garden-skills/tree/2b9a89340b70f632d31c0f1c69fce94a7912423e)阅读这些链接。\n\n效果图画廊收录 README 中 25 套风格配方的作者截图。\n"
     },
     {
       "path": "prompts/materials/web-design-engineer.md",
       "role": "prompt",
-      "content": "# Web Design Engineer · 网页设计工作流 · 复用 Prompt\n\n[结构化条目](../../entries/materials/web-design-engineer.json)\n\n先阅读 demos/materials/web-design-engineer/SKILL.md，依据任务选择现有界面延展、保留式重设计或完整重设计。核实事实并阅读已有代码、品牌素材和参考，明确受众与约束，给出设计判断和视觉校准，再声明设计系统并请用户确认。先展示可浏览首版，确认后完整实现并自查。需要参考结果时阅读星槎与米拉摄影案例，区分同题对照和单个有 skill 结果；不把案例品质推断为每次调用技能的保证。\n\n## 制作约束\n\n- 本条目保存 garden-skills 固定提交中的技能原文、参考配方与宿主元数据，不直接执行技能或提供在线生成服务。\n- 原文要求先核实不稳定事实、读取参考与现有设计；设计系统和可浏览首版分别经用户确认后再继续。\n- 原文只在用户明确要求浏览器验收、响应式检查或同类实测时运行浏览器验收流程；普通开发要求不等于已授权该流程。\n- 快照包含 25 份具名风格配方；README 中引用的配方画廊页面源码未包含在固定提交中，外部效果图按 gallery 逐图记录来源，未复刻。\n- 原文快照保留原语言与相对链接；指向仓库根目录、画廊或外部资源的链接仍须结合上游仓库阅读。\n"
+      "content": "# Web Design Engineer · 网页设计工作流 · 复用 Prompt\n\n[结构化条目](../../entries/materials/web-design-engineer.json)\n\n先阅读 demos/materials/web-design-engineer/SKILL.md，依据任务选择现有界面延展、保留式重设计或完整重设计。核实事实并阅读已有代码、品牌素材和参考，明确受众与约束，给出设计判断和视觉校准，再声明设计系统并请用户确认。先展示可浏览首版，确认后完整实现并自查。需要参考结果时阅读星槎与米拉摄影案例，区分同题对照和单个有 skill 结果；不把案例品质推断为每次调用技能的保证。\n\n## 制作约束\n\n- 本条目保存 garden-skills 固定提交中的技能原文、参考配方与宿主元数据，不直接执行技能或提供在线生成服务。\n- 原文要求先核实不稳定事实、读取参考与现有设计；设计系统和可浏览首版分别经用户确认后再继续。\n- 原文只在用户明确要求浏览器验收、响应式检查或同类实测时运行浏览器验收流程；普通开发要求不等于已授权该流程。\n- 快照包含 25 份具名风格配方；固定提交未包含 README 所引用的配方画廊页面源码，外部效果图按 gallery 逐图记录来源，未复刻。\n- 原文快照保留原语言与相对链接；指向仓库根目录、画廊或外部资源的链接仍须结合上游仓库阅读。\n"
     },
     {
       "path": "demos/materials/web-design-engineer/LICENSE",

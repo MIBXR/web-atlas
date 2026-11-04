@@ -8,9 +8,9 @@
     "page-motion"
   ],
   "summary": "用可以打开的真实页面组成手牌，并在重抽时先备好新图。",
-  "mechanism": "桌面牌与手机牌沿浅弧交错布置，聚焦或悬停抬牌并让邻牌退让；重抽排除当前主题，等图像 decode 与收牌完成再替换，busy 防止连按再入。",
+  "mechanism": "桌面牌与手机牌沿浅弧交错布置，聚焦或悬停时抬牌，并让邻牌退让；重抽时排除当前主题，等图像 decode 与收牌完成后再替换，用 busy 防止连续点击重复触发。",
   "trigger": "首入、悬停或聚焦卡片、激活 Deal again。",
-  "effect": "页面证据可浏览，换牌过程连续且新牌有完整图像。",
+  "effect": "用作证据的页面可以浏览，换牌过程连续，新牌也有完整图像。",
   "useCases": [
     "主题库或模板产品",
     "以真实页面证明能力的官网"
@@ -23,7 +23,7 @@
   ],
   "composition": {
     "role": "foundation",
-    "notes": "首屏的产品证据与选项入口，共享主题目的地。",
+    "notes": "手牌既是首屏的产品证据，也是选项入口，两者指向同一主题目的地。",
     "pairsWellWith": [
       "proofreader-headline-edit",
       "scaled-live-page-dialog"

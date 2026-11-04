@@ -9,10 +9,10 @@
     "experienceTypes": [
       "visual"
     ],
-    "summary": "以细小的子像素网与双色字边定义显示器材料。",
-    "mechanism": "RGB竖条和横扫线叠在图面上，红青text-shadow错位字边，悬停字标放大错位。",
+    "summary": "以细小的子像素网和双色字边表现显示器质感。",
+    "mechanism": "在图面上叠加 RGB 竖条和横向扫描线，用红青 text-shadow 形成错位字边；悬停字标时加大错位。",
     "trigger": "悬停字标",
-    "effect": "图像和字标共享克制的CRT语汇。",
+    "effect": "图像和字标采用一致、克制的 CRT 风格。",
     "useCases": [
       "复古电子界面",
       "像素与显示器主题"

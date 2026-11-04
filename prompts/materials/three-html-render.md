@@ -9,9 +9,9 @@
 - HTML-in-Canvas 是 WICG 的浏览器标准提案，原生支持处于实验阶段；本条目收录 three-html-render 库，不是标准本身。HTMLTexture 与 InteractionManager 从 three r185 起由 Three.js 提供，本库补齐浏览器 API。
 - 浏览器有原生 texElementImage2D 时使用原生路径；缺少原生支持时退回 SVG foreignObject 光栅化。本地 HTTP 下，无头 Edge 155.0.4283.62 已实测运行真实 WebGL，实际使用 SVG foreignObject polyfill 路径；原生路径未验证。
 - 固定 three 0.185.1 与 three-html-render 0.1.2；0.1.x 存在版本风险，本组合需要 texElementImage2D 兼容垫片。npm 0.1.2 未提供 README 所述的 html-texture／interaction-manager 子路径，需使用 Three.js 自带接口。
-- 通过 HTTP/HTTPS 访问；WebGL 不可用或初始化失败时保留同一 MORS² HTML 页面与 CSS 静态光照。禁用 WebGL 的独立 Edge 进程已验证 390px 后备说明、清除 polyfill host、源页面回到 scene，以及原面板开关点击。
+- 通过 HTTP/HTTPS 访问；WebGL 不可用或初始化失败时保留同一 MORS² HTML 页面与 CSS 静态光照。已在禁用 WebGL 的独立 Edge 进程中验证：390px 下显示后备说明、清除 polyfill host、源页面回到 scene，原面板开关仍可点击。
 - 桌面 CSS 视口不小于 768px 时保留原作 1440×810 页面与参考 fit；小于 768px 时采用原 mobile 上下排列、页面宽度跟随视口，height: auto 与 min-height: 1180px 容纳完整内容。390px 实测源页面 390×1240；后备可用宽度 375px，无横向溢出。HTMLTexture 尺寸与相机随 resize 更新。
-- 1440px 同条件对照中，初始页面投影、标题样式与面板边界相同，观察未见明显构图、黑位、材质或光照差异；摆动画面的光斑边缘有轻微偏移，取帧时间差为可能原因，未经独立验证。
-- 正常模式已实测摆动后绘制计数保持 10150，等待 1.2 秒仍为 10150，确认停止渲染。减少动态时灯固定，绘制计数间隔 1 秒保持 10；plane 指针移动前后矩阵相同，正常模式矩阵会改变。面板仍即时生效。
-- 本地 Edge 已验证五个概念真实点击、键盘调参、右键换色与调角度，以及 CDP 单触点拖灯和色板选择；原生路径、读屏器、真实触屏设备、其他浏览器、长期性能与电量表现未验证。
+- 在 1440px 的同条件对照中，初始页面投影、标题样式与面板边界相同，观察未见明显构图、黑位、材质或光照差异；摆动画面的光斑边缘有轻微偏移，取帧时间差为可能原因，未经独立验证。
+- 正常模式下，实测摆动后的绘制计数保持 10150，等待 1.2 秒仍为 10150，确认停止渲染。减少动态时灯固定，相隔 1 秒的绘制计数均为 10；plane 指针移动前后矩阵相同，正常模式矩阵会改变。面板仍即时生效。
+- 本地 Edge 已验证五个概念的真实点击、键盘调参、右键换色与调角度，以及 CDP 单触点拖灯和色板选择；原生路径、读屏器、真实触屏设备、其他浏览器、长期性能与电量表现未验证。
 - 软件与参考实现代码保留独立 MIT 许可；MORS² 品牌、文案、标志与美术方向出自 @kaolti 原作，页面实现与光照代码改写自 jinruozai 的 HTML-Light-Demo，本仓库用于个人非商业参考。

@@ -39,9 +39,9 @@
   ],
   "constraints": [
     "锁定最新非预发布版本 2.1.2；核验时 npm latest 指向 3.0.0-rc.6，不据此宣称 3.x 已验证。",
-    "需要 JavaScript、Custom Elements 和 Shadow DOM；自托管官方完整 ESM，运行无 CDN。",
+    "需要 JavaScript、Custom Elements 和 Shadow DOM；自托管官方完整 ESM，运行时不依赖 CDN。",
     "随机手绘线条来自原库；页面场景、文案、配色与联动为本地原创组合。",
-    "标签、复选框、滑块和开关保留键盘路径；内部开关和滑块补充可访问名称。",
+    "标签、复选框、滑块和开关可通过键盘操作；为内部开关和滑块补充可访问名称。",
     "无循环动画与声音；静态后备只解释用法，不代表组件运行。",
     "保留 Wired / RoughJS MIT 与 bundle 内 Lit / lit-html BSD 3-Clause 许可。"
   ],
@@ -113,13 +113,13 @@
       "id": "checklist",
       "title": "任务清单",
       "component": "wired-checkbox / wired-progress / wired-button",
-      "summary": "勾选真实手绘复选框，计数同步进度条；可恢复默认。",
+      "summary": "勾选真实手绘复选框时，任务计数与进度条同步更新；可恢复默认状态。",
       "entrypoint": "demos/materials/wired-elements/index.html?demo=checklist",
       "parameters": [
         {
           "name": "checked",
           "value": "true / false",
-          "note": "官方布尔属性；三项任务默认完成第一项为本地选择。"
+          "note": "官方布尔属性；三项任务中默认完成第一项，这是本地设置。"
         },
         {
           "name": "value / max",
@@ -164,7 +164,7 @@
   ],
   "prompt": "使用固定版本 wired-elements 2.1.2，在现有 HTML/CSS/JavaScript 项目里为可讨论的轻量流程选择任务清单、偏好面板或概念卡片。读取本地演示，把真实 wired-checkbox、wired-progress、wired-toggle、wired-card 和 wired-slider 接到当前页面的明确状态。使用原库 SVG 手绘边界，保持 DOM 文本、标签、键盘操作和至少 12px 的实际文字。卡片 elevation 遵循 1–5；配色与内容按任务选择。自托管官方 ESM，保留 MIT 与 BSD 许可；加载失败时显示明确静态说明，不声称组件仍已运行。无需求时不加入循环动画、声音、持久化或额外框架。",
   "accessibility": {
-    "keyboard": "标签支持左右、Home、End；真实组件内部原生复选框、滑块和按钮可键盘操作，开关与滑块补上内部名称。",
-    "reducedMotion": "没有自动动画或持续帧循环，参数和状态变化保留。随机线条重绘由实际内容与尺寸变化触发。"
+    "keyboard": "标签支持左右方向键、Home、End；真实组件内部的原生复选框、滑块和按钮可用键盘操作，开关与滑块补充了内部名称。",
+    "reducedMotion": "没有自动动画或持续帧循环，保留参数和状态变化。随机线条重绘由实际内容与尺寸变化触发。"
   }
 }

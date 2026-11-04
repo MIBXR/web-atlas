@@ -9,17 +9,17 @@
 - Jake Archibald 的原始说明把虚线长度和偏移关联到路径长度，构成线条逐步出现的机制。[Animated line drawing](https://jakearchibald.com/2013/animated-line-drawing-svg/)
 - `stroke-dashoffset` 调整 dash array 偏移，可动画；长度可相对于 `pathLength` 解析。[MDN](https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/stroke-dashoffset)
 
-Vivus README 的特定实现要求先转为 path；SVG 的 dash 属性适用于多种形状。本 demo 的原创主体轮廓采用 path。
+Vivus README 的特定实现要求先转为 path；SVG 的 dash 属性适用于多种形状。本 Demo 的原创主体轮廓采用 path。
 
 ## 设计推断
 
 线条适合呈现轮廓、分解与构造。对建筑工作室而言，稳定的线宽、工程标签和空白能表达精确；合理绘制顺序可以让观看者逐步发现组成关系。这是本库的设计推断。
 
-本 demo 默认显示终态，支持手动重播与任意进度回看；正文持续可读。
+本 Demo 默认显示终态，支持手动重播与任意进度回看；正文持续可读。
 
 ## Demo 映射
 
-原创 Monoline 工作室使用宽标题、固定窄侧栏、通栏建筑线稿与细工具条，区别于通用营销卡片。SVG 画出院落住宅、玻璃墙、树和水面，蓝灰色只用于少量强调。
+原创 Monoline 工作室页面使用宽标题、固定窄侧栏、通栏建筑线稿与细工具条，区别于通用营销卡片。SVG 画出院落住宅、玻璃墙、树和水面，蓝灰色只用于少量强调。
 
 | 参考机制 | 原创迁移 |
 | --- | --- |
@@ -28,7 +28,7 @@ Vivus README 的特定实现要求先转为 path；SVG 的 dash 属性适用于�
 | stroke 偏移 | 每条路径 `pathLength=100`，用归一化进度设置 dashoffset |
 | 参数探索 | 滑块控制进度并中止进行中的动画 |
 
-另提供三种项目类型选择，改变咨询说明；该功能服务工作室语义，与线稿工具分开。
+页面另提供三种项目类型选择，用于切换工作室的咨询说明，与线稿工具分开。
 
 ## 约束与适用边界
 

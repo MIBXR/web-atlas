@@ -22,7 +22,7 @@
     const [file]=input.files;if(!file)return;
     try {
       const result=store.importBackup(await file.text());
-      notify('已新增 '+result.added.cases+' 个案例、'+result.added.patterns+' 个巧思、'+result.added.materials+' 个素材收藏。');
+      notify('已新增收藏：'+result.added.cases+' 个案例、'+result.added.patterns+' 个巧思、'+result.added.materials+' 个素材。');
     } catch(error) {notify(error.message);}
     input.value='';
   });

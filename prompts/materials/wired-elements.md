@@ -7,8 +7,8 @@
 ## 制作约束
 
 - 锁定最新非预发布版本 2.1.2；核验时 npm latest 指向 3.0.0-rc.6，不据此宣称 3.x 已验证。
-- 需要 JavaScript、Custom Elements 和 Shadow DOM；自托管官方完整 ESM，运行无 CDN。
+- 需要 JavaScript、Custom Elements 和 Shadow DOM；自托管官方完整 ESM，运行时不依赖 CDN。
 - 随机手绘线条来自原库；页面场景、文案、配色与联动为本地原创组合。
-- 标签、复选框、滑块和开关保留键盘路径；内部开关和滑块补充可访问名称。
+- 标签、复选框、滑块和开关可通过键盘操作；为内部开关和滑块补充可访问名称。
 - 无循环动画与声音；静态后备只解释用法，不代表组件运行。
 - 保留 Wired / RoughJS MIT 与 bundle 内 Lit / lit-html BSD 3-Clause 许可。
