@@ -6,8 +6,7 @@
 
 ## 制作约束
 
-- 本条目保存上游固定提交的技能原文、脚本与评测工具，不提供在线生成。
+- 本条目保存上游固定提交的技能原文、脚本与评测工具。
 - 浏览器检查需要 puppeteer-core 与 Chrome；缺少时只运行静态检查。
 - 图片生成只在设置 TOGETHER_API_KEY 且用户要求时使用，默认用 scripts/photos.json 登记的 755 张 Wikimedia Commons 开放授权照片，页面逐张署名。
 - redesign 和 audit 只在用户点名时运行；audit 只出报告。
-- 快照 README 的相对链接指向上游仓库结构，需结合固定提交阅读。

@@ -34,7 +34,7 @@ node scripts/validate-swiss-deck.mjs path/to/index.html
 | Style A 电子杂志 × 电子墨水 | 叙事、观点、分享、个人风格表达；产品分析文档也可按叙事节奏组织 | [10 种版式](../../demos/materials/guizang-ppt-skill/references/layouts.md) · [5 套主题](../../demos/materials/guizang-ppt-skill/references/themes.md) |
 | Style B 瑞士国际主义 | 事实、产品、分析、方法论；以锁定版式和网格组织信息 | [22 种登记版式](../../demos/materials/guizang-ppt-skill/references/layouts-swiss.md) · [4 套主题](../../demos/materials/guizang-ppt-skill/references/themes-swiss.md) |
 
-主题规定字体与颜色，页面结构由对应版式选择。图片按素材角色和模板槽位确定比例；上游还提供截图画布背景、配图提示词与多平台封面流程。配图能力和缺失附件见结构化条目的 constraints。
+主题规定字体与颜色，页面结构由对应版式选择。图片按素材角色和模板槽位确定比例；上游还提供截图画布背景、配图提示词与多平台封面流程。配图能力见结构化条目的 constraints。
 
 ## 演讲者模式
 
@@ -50,4 +50,4 @@ node scripts/validate-swiss-deck.mjs path/to/index.html
 
 ## 作者效果图
 
-画廊保存上游 README 的效果图和 `assets/ppt-skill-showcase.png`，均为作者产出。Style A、Style B 的拼图和九张主题图是静态截图，图内的品牌、观点、人物与数字是作者的示范内容。
+画廊保存上游 README 的效果图和 `assets/ppt-skill-showcase.png`。Style A、Style B 的拼图和九张主题图是静态截图。

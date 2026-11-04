@@ -55,7 +55,7 @@
       "name": "SIL OFL 1.1",
       "url": "https://github.com/arrowtype/recursive/blob/5f4be025122d72d4710267e959128e8986ebe435/OFL.txt",
       "scope": "Recursive 字体软件及本地保留的原始 WOFF2。",
-      "notes": "保留字体版权与完整 OFL；字体不可单独出售，修改和再分发遵循原许可。本地排版与代码是原创示例，不代表原作者背书。"
+      "notes": "保留字体版权与完整 OFL；字体不可单独出售，修改和再分发遵循原许可。本地排版与代码是原创示例。"
     },
     "sources": [
       {
@@ -169,10 +169,6 @@
       }
     ],
     "prompt": "为现有页面选择 Recursive v1.085 的一种具体排版用途：拉丁界面标题、等宽代码或个性海报。先读取字体试排源码与原始 OFL，保留完整 WOFF2 并通过本地 @font-face 声明 300–1000 字重范围。根据内容设置 MONO、CASL、wght、slnt 和 CRSV；CRSV 使用 0、0.5、1，展示标题优先 CASL/slnt 端点。以真实 DOM 文字排版，保留中文系统后备并检查混排行高、字重和换行，不将系统字体伪装成 Recursive。字体下载失败时继续阅读，固定字符宽度只在 MONO 1 的覆盖字形上判断。所有界面文字至少 12px，不通过缩放压小。尊重用户减少动态偏好，无需为静态试排制造自动动画。标明原创版式与上游字体的边界，完整导出时携带字体、许可和来源信息。",
-    "accessibility": {
-      "keyboard": "试排标签支持方向键和 Home/End，轴滑块、CRSV 下拉、文字输入、重置和复制均使用原生控件；焦点清晰，触摸使用原生输入。",
-      "reducedMotion": "没有自动动画、音频或持续绘制；减少动态和后台时保留静态试排，轴值仅随用户输入更新。"
-    },
     "demo": "demos/materials/recursive/index.html",
     "preview": "previews/materials/recursive.png",
     "research": "docs/materials/recursive.md",

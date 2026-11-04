@@ -245,7 +245,7 @@ Prompt 写明结构、尺度、素材、关键状态及交接、音乐和主题�
 
 ### 素材
 
-`id`、`title`、`type`、`category`、`summary`、`tags` 描述素材；`upstream` 保存 `url`、`verifiedAt` 以及存在时的 `repository`、`version`、完整 `commit`；`license` 保存 `name`、`url`、`scope`、`notes`；`sources` 保存出处与依据。`useCases`、`avoid`、`constraints`、`prompt`、`accessibility` 说明使用边界。`research` 指向同 id 的中文说明，`preview` 指向素材预览，`sourceFiles` 列主要取材文件。
+`id`、`title`、`type`、`category`、`summary`、`tags` 描述素材；`upstream` 保存 `url`、`verifiedAt` 以及存在时的 `repository`、`version`、完整 `commit`；`license` 保存 `name`、`url`、`scope`、`notes`；`sources` 保存出处与依据。`useCases`、`avoid`、`constraints`、`prompt` 说明使用边界。`research` 指向同 id 的中文说明，`preview` 指向素材预览，`sourceFiles` 列主要取材文件。
 
 | `type` | 显示名 |
 | --- | --- |
@@ -257,11 +257,11 @@ Prompt 写明结构、尺度、素材、关键状态及交接、音乐和主题�
 | `agent-skill` | Agent Skill |
 | `prompt-kit` | 提示词套件 |
 
-`title`、`type`、`category`、`summary`、`prompt`、`research` 必填；`useCases`、`constraints`、`sourceFiles` 非空；`sourceFiles` 与 `demos[].entrypoint` 属于本素材文件清单，样例 id 不重复；`accessibility` 的 `keyboard`、`reducedMotion` 必填。
+`title`、`type`、`category`、`summary`、`prompt`、`research` 必填；`useCases`、`constraints`、`sourceFiles` 非空；`sourceFiles` 与 `demos[].entrypoint` 属于本素材文件清单，样例 id 不重复。
 
 可运行素材使用 `demo`、`demoNote` 和非空 `demos`；每个样例包含 `id`、`title`、`summary`、`entrypoint`，可有 `component` 与 `{name,value,note}` 参数数组。字体、图像、声音提供试排、构图或播放样例。
 
-原文快照使用 `snapshotPath: demos/materials/<id>/` 与 `snapshotEntry`；`snapshotEntry` 指向主文档，Agent Skill 为 `SKILL.md`。Agent Skill 的 `workflow` 是非空中文步骤数组，`relatedEntries` 是 `{kind: case|material|pattern,id,note}` 数组且关联 id 存在。可选 `gallery` 是 `{path,caption,kind,replicated:false,sourceUrl,license,replicaPage}` 数组，`kind` 为 `work`、`style` 或 `theme`；图片比例不一致时用 `galleryRatio`（如 `16/9`）统一展示框，图片按比例裁切，点开查看原图；作者效果图显示“作者产出效果，未复刻”，有本库复刻页时用 `replicaPage` 指向该页，显示“作者产出效果”和入口链接。文字详情提供工作流、关联条目、原文主文档与 README；完整快照按目录递归纳入资料包，文件按第三方资源规则保存。
+原文快照使用 `snapshotPath: demos/materials/<id>/` 与 `snapshotEntry`；`snapshotEntry` 指向主文档，Agent Skill 为 `SKILL.md`。Agent Skill 的 `workflow` 是非空中文步骤数组，`relatedEntries` 是 `{kind: case|material|pattern,id,note}` 数组且关联 id 存在。可选 `gallery` 是 `{path,caption,kind,sourceUrl,license,replicaPage}` 数组，`kind` 为 `work`、`style` 或 `theme`；图片比例不一致时用 `galleryRatio`（如 `16/9`）统一展示框，图片按比例裁切，点开查看原图；有本库复刻页时用 `replicaPage` 指向该页，显示入口链接。文字详情提供工作流、关联条目、原文主文档与 README；完整快照按目录递归纳入资料包，文件按第三方资源规则保存。
 
 
 ## 新增流程

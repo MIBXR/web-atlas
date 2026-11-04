@@ -93,10 +93,6 @@
         "evidence": "source"
       }
     ],
-    "accessibility": {
-      "keyboard": "外框使用原生链接并保留焦点样式；样例控件遵循上游的键盘行为。",
-      "reducedMotion": "样例保留上游媒体查询与作用域行为；目标页面可用 createScope 连接 prefers-reduced-motion。"
-    },
     "sourceFiles": [
       "demos/materials/animejs/index.html",
       "demos/materials/animejs/demo/demo.js",

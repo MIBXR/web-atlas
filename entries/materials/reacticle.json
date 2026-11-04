@@ -246,10 +246,6 @@
     }
   ],
   "prompt": "使用 Reacticle 0.2.6 的语义化 React 长文组件。先读 beautiful-article 对应主题的 profile，再从这 11 篇原作样文选择与文章目标一致的排版语言。通过公共入口导入 ThemeProvider、Article 与所需组件，沿用主题 token 与结构纪律；自绘 Raw 图形继续使用 --ra-* 变量。保持原始来源、论点与数据出处，图表只在帮助当前段落时加入，交互使用可访问的真实控件。参考样例时保留其完整组件与主题 CSS，不将主题简化为配色；需要离线分发时本地化字体并保留 MIT 声明和 OFL。",
-  "accessibility": {
-    "keyboard": "保留原报告的语义化正文、目录、真实按钮、滑块、展开控件及图表标签；键盘操作和读屏器表现需按所选文章实测，源码复用不等于全部辅助技术验收。",
-    "reducedMotion": "沿用原站与主题中的 prefers-reduced-motion CSS；呼吸练习计时仍由原始开始／暂停控件控制，不增加额外动态行为。"
-  },
   "demo": "demos/materials/reacticle/index.html",
   "preview": "previews/materials/reacticle.jpeg",
   "research": "docs/materials/reacticle.md",

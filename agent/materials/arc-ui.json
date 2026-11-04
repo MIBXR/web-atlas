@@ -36,7 +36,7 @@
       "name": "MIT（免费组件与代码）；SIL OFL 1.1（字体）",
       "url": "https://github.com/kuratlielia/arc-library/blob/df3a600fd9ffca85ec8607438b599a4408ab8562/LICENSE",
       "scope": "免费 registry、lib、类型、文档与安装条目；不包含 Arc Pro 源码。",
-      "notes": "保留上游 MIT、运行依赖许可和 Inter / Geist OFL 原文；官网示例媒体的署名与权利见 demo/media/CREDITS.md，品牌标识不随软件许可转移。"
+      "notes": "保留上游 MIT、运行依赖许可和 Inter / Geist OFL 原文；官网示例媒体的署名与权利见 demo/media/CREDITS.md。"
     },
     "useCases": [
       "React 产品中的状态控件和微交互",
@@ -52,8 +52,7 @@
     "constraints": [
       "固定归档 df3a600 的 144 个 registry 条目：120 个 registry:ui、22 个 registry:block 和 2 个共享基础条目。",
       "上游要求 React 19、TypeScript 与 Next.js 或 Vite；本地使用固定依赖锁，六类预览按需加载。",
-      "source/upstream/ 的 registry、lib、types、public/r 与根使用说明保留原始结构和字节，未引入上游的维护检查脚本。",
-      "样例数据、状态与操作仅作用于当前页面，不接入账户、支付或持久化服务。",
+      "source/upstream/ 的 registry、lib、types、public/r 与根使用说明保留原始结构和字节。",
       "预览覆盖固定快照全部 120 个组件与 22 个区块；每项代码区展示该 registry 条目的全部源文件。"
     ],
     "workflow": [
@@ -1130,10 +1129,6 @@
       "demos/materials/arc-ui/source/render-preview.tsx",
       "demos/materials/arc-ui/source/frame.tsx"
     ],
-    "accessibility": {
-      "keyboard": "目录支持 Tab／方向键与中英搜索，Ctrl K 聚焦桌面目录，/ 聚焦目录搜索；抽屉与快捷搜索约束焦点，抽屉、搜索和全屏支持 Escape 返回；预览／代码支持方向键及 Home/End。",
-      "reducedMotion": "原组件、主题转场和外框动画遵循系统 prefers-reduced-motion；默认保留完整动效。"
-    },
     "prompt": "在 React 页面中取用 Arc UI 的免费组件或区块。先从完整目录操作预览，再到代码区读取对应的 TypeScript、CSS 和关联文件，按固定 registry 的依赖关系复制。保留上游组件结构、语义 tokens、动效参数、键盘模型与减少动态分支，只按真实任务调整 props、数据与组合。使用 source/upstream/ 的固定快照和当前项目明确固定的依赖版本，保留代码、运行依赖、字体与媒体的许可署名。官网首页布局从独立案例取得。"
   },
   "documents": [
@@ -1145,7 +1140,7 @@
     {
       "path": "prompts/materials/arc-ui.md",
       "role": "prompt",
-      "content": "# Arc UI · React 动效组件库（免费部分） · 复用 Prompt\n\n[结构化条目](../../entries/materials/arc-ui.json)\n\n在 React 页面中取用 Arc UI 的免费组件或区块。先从完整目录操作预览，再到代码区读取对应的 TypeScript、CSS 和关联文件，按固定 registry 的依赖关系复制。保留上游组件结构、语义 tokens、动效参数、键盘模型与减少动态分支，只按真实任务调整 props、数据与组合。使用 source/upstream/ 的固定快照和当前项目明确固定的依赖版本，保留代码、运行依赖、字体与媒体的许可署名。官网首页布局从独立案例取得。\n\n## 制作约束\n\n- 固定归档 df3a600 的 144 个 registry 条目：120 个 registry:ui、22 个 registry:block 和 2 个共享基础条目。\n- 上游要求 React 19、TypeScript 与 Next.js 或 Vite；本地使用固定依赖锁，六类预览按需加载。\n- source/upstream/ 的 registry、lib、types、public/r 与根使用说明保留原始结构和字节，未引入上游的维护检查脚本。\n- 样例数据、状态与操作仅作用于当前页面，不接入账户、支付或持久化服务。\n- 预览覆盖固定快照全部 120 个组件与 22 个区块；每项代码区展示该 registry 条目的全部源文件。\n"
+      "content": "# Arc UI · React 动效组件库（免费部分） · 复用 Prompt\n\n[结构化条目](../../entries/materials/arc-ui.json)\n\n在 React 页面中取用 Arc UI 的免费组件或区块。先从完整目录操作预览，再到代码区读取对应的 TypeScript、CSS 和关联文件，按固定 registry 的依赖关系复制。保留上游组件结构、语义 tokens、动效参数、键盘模型与减少动态分支，只按真实任务调整 props、数据与组合。使用 source/upstream/ 的固定快照和当前项目明确固定的依赖版本，保留代码、运行依赖、字体与媒体的许可署名。官网首页布局从独立案例取得。\n\n## 制作约束\n\n- 固定归档 df3a600 的 144 个 registry 条目：120 个 registry:ui、22 个 registry:block 和 2 个共享基础条目。\n- 上游要求 React 19、TypeScript 与 Next.js 或 Vite；本地使用固定依赖锁，六类预览按需加载。\n- source/upstream/ 的 registry、lib、types、public/r 与根使用说明保留原始结构和字节。\n- 预览覆盖固定快照全部 120 个组件与 22 个区块；每项代码区展示该 registry 条目的全部源文件。\n"
     },
     {
       "path": "demos/materials/arc-ui/LICENSES.md",

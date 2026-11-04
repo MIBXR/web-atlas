@@ -1773,7 +1773,8 @@ window.ATLAS_DOCUMENT_SOURCES = [
       "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/beautiful-article/README.md",
       "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/beautiful-article/theme-profiles/index.json",
       "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/beautiful-article/manifest.json",
-      "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/covers/beautiful-article.webp"
+      "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/dist/imgs/covers/beautiful-article.webp",
+      "https://github.com/ConardLi/assets/tree/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article"
     ]
   },
   {
@@ -1788,7 +1789,8 @@ window.ATLAS_DOCUMENT_SOURCES = [
     "sources": [
       "https://github.com/op7418/guizang-ppt-skill/blob/93d21bf4a73a851907a6eb00acbf30618236667a/README.md",
       "https://github.com/op7418/guizang-ppt-skill/blob/93d21bf4a73a851907a6eb00acbf30618236667a/SKILL.md",
-      "https://github.com/op7418/guizang-ppt-skill/blob/93d21bf4a73a851907a6eb00acbf30618236667a/references/presenter-mode.md"
+      "https://github.com/op7418/guizang-ppt-skill/blob/93d21bf4a73a851907a6eb00acbf30618236667a/references/presenter-mode.md",
+      "https://github.com/op7418/guizang-ppt-skill/tree/93d21bf4a73a851907a6eb00acbf30618236667a"
     ]
   },
   {
@@ -1803,7 +1805,8 @@ window.ATLAS_DOCUMENT_SOURCES = [
     "sources": [
       "https://github.com/Nutlope/hallmark/blob/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/SKILL.md",
       "https://github.com/Nutlope/hallmark/blob/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/flow.md",
-      "https://github.com/Nutlope/hallmark/blob/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/redesign.md"
+      "https://github.com/Nutlope/hallmark/blob/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/skills/hallmark/references/redesign.md",
+      "https://github.com/Nutlope/hallmark/tree/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk"
     ]
   },
   {
@@ -1916,7 +1919,8 @@ window.ATLAS_DOCUMENT_SOURCES = [
     "sources": [
       "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-design-engineer/SKILL.md",
       "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-design-engineer/README.zh-CN.md",
-      "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-design-engineer/manifest.json"
+      "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-design-engineer/manifest.json",
+      "https://github.com/ConardLi/assets/tree/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design"
     ]
   },
   {
