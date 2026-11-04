@@ -8,7 +8,6 @@
   ],
   "summary": "让类别像书脊一样固定在媒体边缘，编号和正文完成同一模块。",
   "mechanism": "把短类别名称沿媒体侧边竖向排布，横向图像占主面积，下方编号与说明共用对齐边界；方向差提供归属线索而不是额外装饰。",
-  "trigger": "呈现某一类别的图像/影片资料模块",
   "effect": "大图、类别、编号与说明被读作同一资料单元。",
   "useCases": [
     "技术知识媒体",
@@ -35,10 +34,6 @@
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "纯装饰书脊aria-hidden，类别在可读标题/说明中重复；媒体按钮保留正常名称和键盘控制。",
-    "reducedMotion": "构成本身静态；若播放影片，另提供暂停并保留静态封面。"
-  },
   "parameters": [
     {
       "name": "类别与媒体边界",
@@ -54,7 +49,44 @@
       "observation": "AIC书脊与媒体共同组织类别；4玩法/5AIC采用源三层黑→黄→媒体的方向揭示，不用单静态工厂图替代整个相册。",
       "evidence": "observed",
       "referenceUrl": "https://endfield.hypergryph.com/",
-      "capturedAt": "2026-10-09"
+      "capturedAt": "2026-10-09",
+      "focus": {
+        "target": "#aic",
+        "label": "AIC 竖向书脊与媒体",
+        "instruction": "看媒体边缘竖排的 AIC 类别书脊，以及下方分页、编号和说明的对齐。",
+        "prepare": [
+          {
+            "waitFor": "body:has(#entry-loader[hidden])"
+          },
+          {
+            "click": ".header-inner-container > .header-nav-item[aria-label=\"版本日历\"]",
+            "minWidth": 801
+          },
+          {
+            "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+            "maxWidth": 800
+          },
+          {
+            "click": ".header-menu-item[aria-label=\"版本日历\"]",
+            "maxWidth": 800
+          },
+          {
+            "images": "#calendar"
+          },
+          {
+            "click": ".header-inner-container > .header-nav-item[aria-label=\"玩法介绍 & 集成工业知识\"]",
+            "minWidth": 801
+          },
+          {
+            "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+            "maxWidth": 800
+          },
+          {
+            "click": ".header-menu-item[aria-label=\"玩法介绍 & 集成工业知识\"]",
+            "maxWidth": 800
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -68,5 +100,6 @@
     "demos/cases/endfield-industrial/app.js",
     "demos/cases/endfield-industrial/source/state-matrix.md",
     "demos/cases/endfield-industrial/source/source-provenance.json"
-  ]
+  ],
+  "preview": "previews/patterns/vertical-media-spine.jpg"
 }

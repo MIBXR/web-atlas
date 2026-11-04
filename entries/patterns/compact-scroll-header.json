@@ -22,16 +22,11 @@
   ],
   "composition": {
     "role": "support",
-    "notes": "该原子负责阅读长页时随时可访问机构入口，职责限定在当前区域。组合时转换不改变文档高度，快速反向以当前状态收束。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
     "pairsWellWith": [
       "institution-overlap-logo",
       "native-document-reading"
     ],
     "conflicts": []
-  },
-  "accessibility": {
-    "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-    "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
   },
   "parameters": [
     {
@@ -40,7 +35,7 @@
       "note": "50px紧凑导航"
     }
   ],
-  "prompt": "为【目标页面/组件】实现「跨过品牌区出现紧凑导航」。顶部保留大机构标志，超过标志高度加偏移后从上方出现紧凑导航，返回顶部退出恢复大标志。触发：跨越阈值或回到首屏。可见结果：阅读长页时随时可访问机构入口。适用任务：有大标识首图的机构长页。转换不改变文档高度，快速反向以当前状态收束。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责阅读长页时随时可访问机构入口，职责限定在当前区域。组合时转换不改变文档高度，快速反向以当前状态收束。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+  "prompt": "为【目标页面/组件】实现「跨过品牌区出现紧凑导航」。顶部保留大机构标志，超过标志高度加偏移后从上方出现紧凑导航，返回顶部退出恢复大标志。触发：跨越阈值或回到首屏。可见结果：阅读长页时随时可访问机构入口。适用任务：有大标识首图的机构长页。转换不改变文档高度，快速反向以当前状态收束。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
   "sources": [
     {
       "caseId": "mori-art-museum",
@@ -48,7 +43,19 @@
       "observation": "滚动超过大字标+130px／返回：50px红色紧凑导航120ms从上方进入，回到顶部80ms退出恢复大字标。 长页仍能访问机构入口；进入展览时品牌不被小导航抢占。",
       "evidence": "observed",
       "referenceUrl": "https://www.mori.art.museum/jp/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".head.is-compact",
+        "label": "滚过大字标后的紧凑导航",
+        "instruction": "向上返回大字标，再向下滚过它，观察红色紧凑导航进入；回到顶部时恢复大字标。",
+        "prepare": [
+          {
+            "scroll": "#exhibitions",
+            "waitFor": ".head.is-compact"
+          }
+        ],
+        "viewport": "wide"
+      }
     }
   ],
   "sourceFiles": [
@@ -58,5 +65,6 @@
     "demos/cases/mori-art-museum/style.css",
     "entries/cases/mori-art-museum.json",
     "docs/cases/mori-art-museum.md"
-  ]
+  ],
+  "preview": "previews/patterns/compact-scroll-header.jpg"
 }

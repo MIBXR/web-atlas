@@ -29,10 +29,6 @@
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-    "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-  },
   "parameters": [
     {
       "name": "来源时间",
@@ -48,7 +44,12 @@
       "observation": "五平台 tab/点控/触摸 → 400ms 水平进退，20s 自动，悬停/手动暂停、后台停止；快速选择只保留一个场景。",
       "evidence": "observed",
       "referenceUrl": "https://qoder.cn/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#platforms",
+        "label": "五平台自动轮换",
+        "instruction": "点平台标签切换；把指针停在这节会暂停自动轮换，也可用右下角暂停按钮控制。"
+      }
     },
     {
       "caseId": "hallmark",
@@ -56,7 +57,13 @@
       "observation": "Studio 的三套系统在区域可见时每 4200ms 自动切换，悬停或聚焦时暂停，用户主动选项后停止自动切换，标签、board 和 aria 状态共同更新。",
       "evidence": "observed",
       "referenceUrl": "https://www.usehallmark.com/",
-      "capturedAt": "2026-11-01"
+      "capturedAt": "2026-11-01",
+      "focus": {
+        "target": "#systems",
+        "label": "三套设计系统轮换",
+        "instruction": "观察三套系统自动轮换；移入或聚焦此区域会暂停，点击任一标签可固定查看。",
+        "entrypoint": "demos/cases/hallmark/themes/studio/index.html"
+      }
     }
   ],
   "sourceFiles": [
@@ -71,5 +78,6 @@
     "demos/cases/hallmark/fidelity.md",
     "demos/cases/hallmark/themes/studio/spec.js",
     "demos/cases/hallmark/themes/studio/index.html"
-  ]
+  ],
+  "preview": "previews/patterns/timed-platform-carousel.jpg"
 }

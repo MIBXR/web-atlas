@@ -30,10 +30,6 @@
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-    "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-  },
   "parameters": [],
   "prompt": "为【目标页面/组件】实现「按模式组织独立拼贴层」。每个模式拥有独立图层清单及坐标、比例、层级和出入轨迹，旧场景离开后新场景成组进入。触发：选择不同能力模式。可见结果：主窗口周边形成具有语义的场景。适用任务：需要多类型成果证明的产品。素材必须解释对应能力，不能盖住标题与控制。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：负责模式对应的成果场景，中央产品窗口负责产品身份，巨字负责选择。图层坐标按素材重设；不能将多来源拼贴叠成遮挡标题的无限装饰。",
   "sources": [
@@ -43,7 +39,18 @@
       "observation": "选择工作 → 工作的独立素材从四周进入，原模式素材离开；快速切换清理旧离场层 → 保持一套可读场景；移到“工作”再快速移到“编程”。",
       "evidence": "observed",
       "referenceUrl": "https://chatgpt.com/zh-Hans-CN/overview/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".intro-art",
+        "label": "工作模式的独立拼贴",
+        "instruction": "选择“工作”后看四周素材如何成组进入；换到“编程”可对比它的独立素材组合。",
+        "prepare": [
+          {
+            "click": "[data-select=work]"
+          }
+        ],
+        "viewport": "wide"
+      }
     }
   ],
   "sourceFiles": [
@@ -54,5 +61,6 @@
     "demos/cases/chatgpt-platform/script.js",
     "demos/cases/chatgpt-platform/style.css",
     "entries/cases/chatgpt-platform.json"
-  ]
+  ],
+  "preview": "previews/patterns/mode-specific-collage.jpg"
 }

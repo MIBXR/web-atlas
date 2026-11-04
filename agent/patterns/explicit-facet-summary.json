@@ -27,16 +27,11 @@
     ],
     "composition": {
       "role": "support",
-      "notes": "此机制对照指定页面的源HTML/CSS与真实交互；仅管理所描述的局部，不替代整个机构门户或后台服务。",
       "pairsWellWith": [
         "filter-count-feedback",
         "aligned-metadata-rows"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "入口与条件可键盘进入，焦点可见；本地菜单/披露支持Escape或明确关闭，真实业务链接有名称。",
-      "reducedMotion": "取消自动轮换、计数过程和位移过渡；全部内容与手动选择保留。"
     },
     "parameters": [
       {
@@ -50,7 +45,7 @@
         "note": "保留源目录与首页固定30统计的差异。"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「分面条件在列表前显式呈现」。遗址、形制、时代三个维度各保留一个条件，已选行可再次移除；URL保存选择，结果由19个公开源响应成员集交集决定，返回可恢复选择。 源分面维度：遗址4/形制4/时代11，共19项。每个单条件均取得源HTML/hash与成员集，见filter-evidence.json。 固定档案集：32项；北魏254/257/麦积127。保留源目录与首页固定30统计的差异。 以原站DOM/CSS/真实状态矩阵验证，素材本地化并保留出处/尺寸/hash；减少动态保留手动状态，业务与未验证状态明确。",
+    "prompt": "为【目标页面/组件】实现「分面条件在列表前显式呈现」。遗址、形制、时代三个维度各保留一个条件，已选行可再次移除；URL保存选择，结果由19个公开源响应成员集交集决定，返回可恢复选择。 源分面维度：遗址4/形制4/时代11，共19项。每个单条件均取得源HTML/hash与成员集，见filter-evidence.json。 固定档案集：32项；北魏254/257/麦积127。保留源目录与首页固定30统计的差异。 以原站DOM/CSS/真实状态矩阵验证，素材本地化并保留出处、尺寸与许可；减少动态保留手动状态，业务通过原站入口使用。",
     "sources": [
       {
         "caseId": "digital-dunhuang",
@@ -58,7 +53,18 @@
         "observation": "条件反馈：点击原条件可移除，已选条件行显示并可取消，折叠筛选耗时1000ms；北魏实测254、257、麦积127三项，叠加榆林窟为零项，浏览器返回恢复。",
         "evidence": "adapted",
         "referenceUrl": "https://www.e-dunhuang.com/section.htm",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "#ttsx",
+          "label": "列表上方的已选分面条件",
+          "instruction": "点“北魏”等筛选条件，观察已选条件行和列表数量；点击已选条件可移除，再叠加其他条件比较结果。",
+          "entrypoint": "demos/cases/digital-dunhuang/section.html",
+          "prepare": [
+            {
+              "click": "[data-facet-value=北魏]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -72,7 +78,8 @@
       "demos/cases/digital-dunhuang/section.html",
       "demos/cases/digital-dunhuang/catalogue.js",
       "demos/cases/digital-dunhuang/filter-evidence.json"
-    ]
+    ],
+    "preview": "previews/patterns/explicit-facet-summary.jpg"
   },
   "sourceCases": [
     {
@@ -88,7 +95,7 @@
     {
       "path": "prompts/patterns/explicit-facet-summary.md",
       "role": "prompt",
-      "content": "# 分面条件在列表前显式呈现 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/explicit-facet-summary.json)\n\n为【目标页面/组件】实现「分面条件在列表前显式呈现」。遗址、形制、时代三个维度各保留一个条件，已选行可再次移除；URL保存选择，结果由19个公开源响应成员集交集决定，返回可恢复选择。 源分面维度：遗址4/形制4/时代11，共19项。每个单条件均取得源HTML/hash与成员集，见filter-evidence.json。 固定档案集：32项；北魏254/257/麦积127。保留源目录与首页固定30统计的差异。 以原站DOM/CSS/真实状态矩阵验证，素材本地化并保留出处/尺寸/hash；减少动态保留手动状态，业务与未验证状态明确。\n\n## 制作约束\n\n- 以2026-10-09指定源页面为范围，来源观察、复现和迁移选择分开。\n- 保留图像真实来源/尺寸/hash与版权归属；不能用教学示意替代定义性机制。\n- 正式业务、未取到的状态和外部服务见对应案例fidelity与state-matrix。\n"
+      "content": "# 分面条件在列表前显式呈现 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/explicit-facet-summary.json)\n\n为【目标页面/组件】实现「分面条件在列表前显式呈现」。遗址、形制、时代三个维度各保留一个条件，已选行可再次移除；URL保存选择，结果由19个公开源响应成员集交集决定，返回可恢复选择。 源分面维度：遗址4/形制4/时代11，共19项。每个单条件均取得源HTML/hash与成员集，见filter-evidence.json。 固定档案集：32项；北魏254/257/麦积127。保留源目录与首页固定30统计的差异。 以原站DOM/CSS/真实状态矩阵验证，素材本地化并保留出处、尺寸与许可；减少动态保留手动状态，业务通过原站入口使用。\n\n## 制作约束\n\n- 以2026-10-09指定源页面为范围，来源观察、复现和迁移选择分开。\n- 保留图像真实来源/尺寸/hash与版权归属；不能用教学示意替代定义性机制。\n- 正式业务、未取到的状态和外部服务见对应案例fidelity与state-matrix。\n"
     }
   ],
   "files": [
@@ -570,6 +577,10 @@
     },
     {
       "path": "previews/cases/digital-dunhuang.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/explicit-facet-summary.jpg",
       "role": "preview"
     },
     {

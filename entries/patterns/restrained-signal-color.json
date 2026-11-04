@@ -8,7 +8,6 @@
   ],
   "summary": "用少量品牌色建立可识别的操作角色。",
   "mechanism": "正文采用稳定中性色，强调色只分配给行动、选中态或机构锚点；作品图像保持自己的原色。",
-  "trigger": "查看行动和状态",
   "effect": "行动入口与艺术内容各有明确职责。",
   "useCases": [
     "编辑页面与文化机构"
@@ -22,25 +21,25 @@
   ],
   "composition": {
     "role": "foundation",
-    "notes": "该原子负责行动入口与艺术内容各有明确职责，职责限定在当前区域。组合时同时提供文字、边界或图标状态，不能只靠颜色。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
     "pairsWellWith": [
       "editorial-alignment-grid",
       "artwork-caption-separation"
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-    "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-  },
   "parameters": [],
-  "prompt": "为【目标页面/组件】实现「单一信号色集中强调」。正文采用稳定中性色，强调色只分配给行动、选中态或机构锚点；作品图像保持自己的原色。触发：查看行动和状态。可见结果：行动入口与艺术内容各有明确职责。适用任务：编辑页面与文化机构。同时提供文字、边界或图标状态，不能只靠颜色。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责行动入口与艺术内容各有明确职责，职责限定在当前区域。组合时同时提供文字、边界或图标状态，不能只靠颜色。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+  "prompt": "为【目标页面/组件】实现「单一信号色集中强调」。正文采用稳定中性色，强调色只分配给行动、选中态或机构锚点；作品图像保持自己的原色。可见结果：行动入口与艺术内容各有明确职责。适用任务：编辑页面与文化机构。同时提供文字、边界或图标状态，不能只靠颜色。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
   "sources": [
     {
       "caseId": "swiss-grid",
       "locator": "entries/cases/swiss-grid.json#composition/color",
       "observation": "暖白纸面、黑色信息与少量红色海报形成清晰层级。",
-      "evidence": "adapted"
+      "evidence": "adapted",
+      "focus": {
+        "target": ".visual",
+        "label": "暖白纸面上的红色图版",
+        "instruction": "看红色集中在主图版，其他标题、细线和日程保持黑白信息层级。"
+      }
     },
     {
       "caseId": "met-museum",
@@ -48,7 +47,12 @@
       "observation": "白底黑灰字和红色操作层，图像保持展览自己的颜色。",
       "evidence": "observed",
       "referenceUrl": "https://www.metmuseum.org/en",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#visit .actions",
+        "label": "黑白信息与红色行动",
+        "instruction": "看红色集中在到访行动和机构标识，正文保留黑灰层级，展览图片保持自己的色彩。"
+      }
     },
     {
       "caseId": "mori-art-museum",
@@ -56,7 +60,12 @@
       "observation": "#bf0d3e机构红贯穿Logo、展期、栏目、标签；粉色公告、白色底和艺术海报虹彩承担不同角色。",
       "evidence": "observed",
       "referenceUrl": "https://www.mori.art.museum/jp/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#exhibitions",
+        "label": "馆标、展期与栏目中的机构红",
+        "instruction": "比较栏目、展期和机构标识怎样持续使用同一种红，艺术海报和公告承担各自的颜色。"
+      }
     },
     {
       "caseId": "endfield-industrial",
@@ -64,7 +73,29 @@
       "observation": "源干员与工业白底/黑标签/淡网格/亮黄局部信号；首页活动原色、深色世界观和影像各保留，彩色人物与标定条不被统一染黄。",
       "evidence": "observed",
       "referenceUrl": "https://endfield.hypergryph.com/",
-      "capturedAt": "2026-10-09"
+      "capturedAt": "2026-10-09",
+      "focus": {
+        "target": "#operator",
+        "label": "干员档案的黄色信号",
+        "instruction": "比较黑白资料、彩色立绘与局部亮黄标记；黄色集中在状态和重点处。",
+        "prepare": [
+          {
+            "waitFor": "body:has(#entry-loader[hidden])"
+          },
+          {
+            "click": ".header-inner-container > .header-nav-item[aria-label=\"干员情报\"]",
+            "minWidth": 801
+          },
+          {
+            "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+            "maxWidth": 800
+          },
+          {
+            "click": ".header-menu-item[aria-label=\"干员情报\"]",
+            "maxWidth": 800
+          }
+        ]
+      }
     },
     {
       "caseId": "rhine-lab",
@@ -72,7 +103,17 @@
       "observation": "源片米白透明档案与黑白机构字标保持原色，双环内缘及业务科焦点使用橙色；本地外围用米白、黑色和同源橙色节点，素材没有深绿/黄绿重着色。",
       "evidence": "adapted",
       "referenceUrl": "https://www.bilibili.com/video/BV1rr4y1b7sz/",
-      "capturedAt": "2026-10-09"
+      "capturedAt": "2026-10-09",
+      "focus": {
+        "target": "#terminal[data-scene=permission]",
+        "label": "黑白环线中的橙色焦点",
+        "instruction": "看原帧黑白环线与少量橙色节点，再切“双环光学”比较橙色内缘怎样承接焦点。",
+        "prepare": [
+          {
+            "click": "[data-scene=permission]"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -105,5 +146,6 @@
     "docs/cases/mori-art-museum.md",
     "docs/cases/rhine-lab.md",
     "docs/cases/swiss-grid.md"
-  ]
+  ],
+  "preview": "previews/patterns/restrained-signal-color.jpg"
 }

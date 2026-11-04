@@ -25,19 +25,14 @@
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责人物和海报在窄屏仍保持完整表达，职责限定在当前区域。组合时不同素材变体必须有真实来源与用途，不能把本地重排说成逐像素原版。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "full-bleed-photography-brand",
         "edge-action-world-composition"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「桌面与手机使用专门主图」。通过picture或响应式资源选择桌面宽图与手机专图，保留主体位置及图内文字，正文与控件按设备重新排。触发：视口进入手机断点。可见结果：人物和海报在窄屏仍保持完整表达。适用任务：有官方横竖图的展览与游戏。不同素材变体必须有真实来源与用途，不能把本地重排说成逐像素原版。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责人物和海报在窄屏仍保持完整表达，职责限定在当前区域。组合时不同素材变体必须有真实来源与用途，不能把本地重排说成逐像素原版。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「桌面与手机使用专门主图」。通过picture或响应式资源选择桌面宽图与手机专图，保留主体位置及图内文字，正文与控件按设备重新排。触发：视口进入手机断点。可见结果：人物和海报在窄屏仍保持完整表达。适用任务：有官方横竖图的展览与游戏。不同素材变体必须有真实来源与用途，不能把本地重排说成逐像素原版。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "mori-art-museum",
@@ -45,7 +40,13 @@
         "observation": "大屏主图1600×640，小屏使用450×450官方专用图，不直接裁剪桌面海报。",
         "evidence": "observed",
         "referenceUrl": "https://www.mori.art.museum/jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".exhibition-hero",
+          "label": "展览主图的手机专用方图",
+          "instruction": "切换桌面与手机模式，比较横向海报和官方手机方图，图像使用专门构图而非直接裁切。",
+          "viewport": "mobile"
+        }
       },
       {
         "caseId": "fuji-rock",
@@ -53,7 +54,13 @@
         "observation": "手机使用官方1200×1200图片，不单纯裁切1400×700桌面照片。",
         "evidence": "observed",
         "referenceUrl": "https://www.fujirockfestival.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".photo-hero picture",
+          "label": "手机专用的现场主图",
+          "instruction": "在桌面与手机模式间切换，比较同一场景的专用横图与方图构图，主体位置随画幅重新安排。",
+          "viewport": "mobile"
+        }
       },
       {
         "caseId": "uma-musume",
@@ -61,7 +68,21 @@
         "observation": "手机使用原站竖版 KV；菜单、触摸阈值与字体排布有本地适配，减少动态取消非必要过渡。",
         "evidence": "adapted",
         "referenceUrl": "https://umamusume.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#home .hero-art",
+          "label": "手机专用主视觉",
+          "instruction": "切换桌面与手机画幅，比较人物群像、图内标题与周围控件的重新排布。",
+          "prepare": [
+            {
+              "click": "#menu-button[aria-expanded=\"false\"]"
+            },
+            {
+              "click": "#study-menu a[href=\"#home\"]"
+            }
+          ],
+          "viewport": "mobile"
+        }
       }
     ],
     "sourceFiles": [
@@ -83,7 +104,8 @@
       "docs/cases/fuji-rock.md",
       "docs/cases/mori-art-museum.md",
       "docs/cases/uma-musume.md"
-    ]
+    ],
+    "preview": "previews/patterns/responsive-art-direction.jpg"
   },
   "sourceCases": [
     {
@@ -115,7 +137,7 @@
     {
       "path": "prompts/patterns/responsive-art-direction.md",
       "role": "prompt",
-      "content": "# 桌面与手机使用专门主图 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/responsive-art-direction.json)\n\n为【目标页面/组件】实现「桌面与手机使用专门主图」。通过picture或响应式资源选择桌面宽图与手机专图，保留主体位置及图内文字，正文与控件按设备重新排。触发：视口进入手机断点。可见结果：人物和海报在窄屏仍保持完整表达。适用任务：有官方横竖图的展览与游戏。不同素材变体必须有真实来源与用途，不能把本地重排说成逐像素原版。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责人物和海报在窄屏仍保持完整表达，职责限定在当前区域。组合时不同素材变体必须有真实来源与用途，不能把本地重排说成逐像素原版。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。\n\n## 制作约束\n\n- 不同素材变体必须有真实来源与用途，不能把本地重排说成逐像素原版。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
+      "content": "# 桌面与手机使用专门主图 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/responsive-art-direction.json)\n\n为【目标页面/组件】实现「桌面与手机使用专门主图」。通过picture或响应式资源选择桌面宽图与手机专图，保留主体位置及图内文字，正文与控件按设备重新排。触发：视口进入手机断点。可见结果：人物和海报在窄屏仍保持完整表达。适用任务：有官方横竖图的展览与游戏。不同素材变体必须有真实来源与用途，不能把本地重排说成逐像素原版。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。\n\n## 制作约束\n\n- 不同素材变体必须有真实来源与用途，不能把本地重排说成逐像素原版。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
     }
   ],
   "files": [
@@ -521,6 +543,10 @@
     },
     {
       "path": "previews/cases/uma-musume.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/responsive-art-direction.jpg",
       "role": "preview"
     },
     {

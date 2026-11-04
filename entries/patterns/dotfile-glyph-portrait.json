@@ -29,10 +29,6 @@
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "图像之外保留可读品牌与实际安装命令。",
-    "reducedMotion": "直接绘制最终字符与色阶，停用解析和热度。"
-  },
   "parameters": [
     {
       "name": "图像数据",
@@ -58,7 +54,13 @@
       "observation": "Terminal 以灰度格数据决定配置文本字符的大小、字重和色阶，逐行从扰动字符解析为兔与字标；指针附近字符加热变亮并逐帧冷却回到原字符。",
       "evidence": "observed",
       "referenceUrl": "https://www.usehallmark.com/",
-      "capturedAt": "2026-11-01"
+      "capturedAt": "2026-11-01",
+      "focus": {
+        "target": ".hero .art",
+        "label": "配置文本字符兔",
+        "instruction": "将指针移过兔子：附近字符会变亮，再逐渐冷却回配置文本。",
+        "entrypoint": "demos/cases/hallmark/themes/terminal/index.html"
+      }
     }
   ],
   "sourceFiles": [
@@ -68,5 +70,6 @@
     "demos/cases/hallmark/themes/terminal/art.js",
     "demos/cases/hallmark/themes/terminal/page.js",
     "demos/cases/hallmark/themes/terminal/style.css"
-  ]
+  ],
+  "preview": "previews/patterns/dotfile-glyph-portrait.jpg"
 }

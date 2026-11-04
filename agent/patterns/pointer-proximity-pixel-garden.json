@@ -10,7 +10,7 @@
       "micro-motion"
     ],
     "summary": "整片背景以稳定像素格回应用户，装饰层不截获拖放或按钮。",
-    "mechanism": "在固定网格格点按坐标散列选择花形与颜色；仅实例化指针半径内的花，按距离同步透明度和缩放，离开后淡去并回收超额节点。",
+    "mechanism": "在固定网格格点按坐标散列选择花形与颜色；仅实例化指针半径内的花，按距离同步透明度和缩放，离开后淡去并回收超额节点。 原作在减少动态时取消透明度和缩放过渡，保留花形响应。",
     "trigger": "指针移动或触摸按下。",
     "effect": "整片背景以稳定像素格回应用户，装饰层不截获拖放或按钮。",
     "useCases": [
@@ -29,10 +29,6 @@
       "notes": "以低对比装饰回应指针，不与角色和行动按钮争夺点击。",
       "pairsWellWith": [],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "花园为 aria-hidden 装饰，不改变键盘焦点或传达唯一状态。",
-      "reducedMotion": "原作只取消透明度/缩放过渡；可按目标需要停用花形响应。"
     },
     "parameters": [
       {
@@ -54,7 +50,18 @@
         "observation": "指针附近的 37px 网格生出像素花，90px 半径内按距离控制透明度与缩放；移开淡去，最多保留 96 个活动及淡出格子，装饰层不截获输入。",
         "evidence": "observed",
         "referenceUrl": "https://clawdondesk.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "#new-world",
+          "label": "指针附近的像素花园",
+          "instruction": "在米色空地移动指针，观察附近像素花按距离生长，移开后逐渐淡去。",
+          "prepare": [
+            {
+              "key": "Escape",
+              "waitFor": "body[data-frame='4']"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -64,7 +71,8 @@
       "demos/cases/clawd-on-desk/source/website/scripts/pixel-flower.js",
       "demos/cases/clawd-on-desk/source/website/scripts/flower-layer.js",
       "demos/cases/clawd-on-desk/index.html"
-    ]
+    ],
+    "preview": "previews/patterns/pointer-proximity-pixel-garden.jpg"
   },
   "sourceCases": [
     {
@@ -314,6 +322,10 @@
     },
     {
       "path": "previews/cases/clawd-on-desk.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/pointer-proximity-pixel-garden.jpg",
       "role": "preview"
     },
     {

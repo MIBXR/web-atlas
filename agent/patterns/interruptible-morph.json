@@ -25,31 +25,46 @@
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责动作连续且可以检查中间态，职责限定在当前区域。组合时时长参数说明何时生效，一次只有一个帧调度负责状态。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "fixed-topology-morph",
         "last-request-transition"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「从当前中间态继续变形」。新目标从当前顶点坐标出发；暂停保存插值位置，恢复校正计时，重置恢复初始参数。触发：中途改选、暂停或恢复。可见结果：动作连续且可以检查中间态。适用任务：几何实验与可中断品牌动效。时长参数说明何时生效，一次只有一个帧调度负责状态。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责动作连续且可以检查中间态，职责限定在当前区域。组合时时长参数说明何时生效，一次只有一个帧调度负责状态。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「从当前中间态继续变形」。新目标从当前顶点坐标出发；暂停保存插值位置，恢复校正计时，重置恢复初始参数。触发：中途改选、暂停或恢复。可见结果：动作连续且可以检查中间态。适用任务：几何实验与可中断品牌动效。时长参数说明何时生效，一次只有一个帧调度负责状态。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "shape-morph",
         "locator": "entries/cases/shape-morph.json#constraints/2",
         "observation": "每次触发从当前中间状态继续，避免突然闪回",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".state-controls",
+          "label": "变形途中切换目标",
+          "instruction": "连续切换三种形态，在变形尚未结束时再选另一种；图形会从当前中间态继续，也可暂停和恢复。",
+          "prepare": [
+            {
+              "click": "[data-state='2']"
+            }
+          ]
+        }
       },
       {
         "caseId": "shape-morph",
         "locator": "entries/cases/shape-morph.json#interaction/3",
         "observation": "变形可暂停与恢复，重置恢复初始参数",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".state-controls",
+          "label": "变形途中切换目标",
+          "instruction": "连续切换三种形态，在变形尚未结束时再选另一种；图形会从当前中间态继续，也可暂停和恢复。",
+          "prepare": [
+            {
+              "click": "[data-state='2']"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -58,7 +73,8 @@
       "demos/cases/shape-morph/style.css",
       "entries/cases/shape-morph.json",
       "docs/cases/shape-morph.md"
-    ]
+    ],
+    "preview": "previews/patterns/interruptible-morph.jpg"
   },
   "sourceCases": [
     {
@@ -74,7 +90,7 @@
     {
       "path": "prompts/patterns/interruptible-morph.md",
       "role": "prompt",
-      "content": "# 从当前中间态继续变形 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/interruptible-morph.json)\n\n为【目标页面/组件】实现「从当前中间态继续变形」。新目标从当前顶点坐标出发；暂停保存插值位置，恢复校正计时，重置恢复初始参数。触发：中途改选、暂停或恢复。可见结果：动作连续且可以检查中间态。适用任务：几何实验与可中断品牌动效。时长参数说明何时生效，一次只有一个帧调度负责状态。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责动作连续且可以检查中间态，职责限定在当前区域。组合时时长参数说明何时生效，一次只有一个帧调度负责状态。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。\n\n## 制作约束\n\n- 时长参数说明何时生效，一次只有一个帧调度负责状态。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
+      "content": "# 从当前中间态继续变形 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/interruptible-morph.json)\n\n为【目标页面/组件】实现「从当前中间态继续变形」。新目标从当前顶点坐标出发；暂停保存插值位置，恢复校正计时，重置恢复初始参数。触发：中途改选、暂停或恢复。可见结果：动作连续且可以检查中间态。适用任务：几何实验与可中断品牌动效。时长参数说明何时生效，一次只有一个帧调度负责状态。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。\n\n## 制作约束\n\n- 时长参数说明何时生效，一次只有一个帧调度负责状态。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
     }
   ],
   "files": [
@@ -120,6 +136,10 @@
     },
     {
       "path": "previews/cases/shape-morph.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/interruptible-morph.jpg",
       "role": "preview"
     },
     {

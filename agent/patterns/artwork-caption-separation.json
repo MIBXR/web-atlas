@@ -11,7 +11,6 @@
     ],
     "summary": "让作品保持自己的视觉，说明放在图外。",
     "mechanism": "海报、馆藏或艺术摄影保留原色及比例，名称、日期与来源放在图下正文，不在原图上重复绘制标题。",
-    "trigger": "浏览作品与展览目录",
     "effect": "作品表达与机构信息都可辨认。",
     "useCases": [
       "艺术作品与文化档案"
@@ -25,7 +24,6 @@
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责作品表达与机构信息都可辨认，职责限定在当前区域。组合时许可范围按具体素材确认，替代文字与署名随图保留。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "native-horizontal-shelf",
         "restrained-signal-color",
@@ -33,12 +31,8 @@
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「作品原图与图下题注分工」。海报、馆藏或艺术摄影保留原色及比例，名称、日期与来源放在图下正文，不在原图上重复绘制标题。触发：浏览作品与展览目录。可见结果：作品表达与机构信息都可辨认。适用任务：艺术作品与文化档案。许可范围按具体素材确认，替代文字与署名随图保留。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责作品表达与机构信息都可辨认，职责限定在当前区域。组合时许可范围按具体素材确认，替代文字与署名随图保留。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「作品原图与图下题注分工」。海报、馆藏或艺术摄影保留原色及比例，名称、日期与来源放在图下正文，不在原图上重复绘制标题。可见结果：作品表达与机构信息都可辨认。适用任务：艺术作品与文化档案。许可范围按具体素材确认，替代文字与署名随图保留。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "met-museum",
@@ -46,7 +40,12 @@
         "observation": "官方建筑摄影、Sanity CDN展览海报与符合条件的Met API藏品图，本地保留比例、署名与原色。",
         "evidence": "adapted",
         "referenceUrl": "https://www.metmuseum.org/en",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#exhibitions-rail",
+          "label": "展览原图与图下题注",
+          "instruction": "看海报保留自己的比例和颜色，展名、日期和地点在图下排列，再横向浏览其他展览作比较。"
+        }
       },
       {
         "caseId": "met-museum",
@@ -54,7 +53,12 @@
         "observation": "展览海报保留原视觉，不在图片上重复绘制标题或大渐变遮罩。",
         "evidence": "observed",
         "referenceUrl": "https://www.metmuseum.org/en",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#exhibitions-rail",
+          "label": "展览原图与图下题注",
+          "instruction": "看海报保留自己的比例和颜色，展名、日期和地点在图下排列，再横向浏览其他展览作比较。"
+        }
       },
       {
         "caseId": "design-sight",
@@ -62,7 +66,12 @@
         "observation": "真实方丈记与TYPE-XVII海报、建筑照片、访问地图、研究照片本地化，保留原比例。",
         "evidence": "adapted",
         "referenceUrl": "https://www.2121designsight.jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#sight article:first-of-type",
+          "label": "原比例海报与图下说明",
+          "instruction": "看竖海报与下方文字保持分工；继续浏览旁边横照片，图像比例不会被统一拉成相同高度。"
+        }
       }
     ],
     "sourceFiles": [
@@ -78,7 +87,8 @@
       "entries/cases/met-museum.json",
       "docs/cases/design-sight.md",
       "docs/cases/met-museum.md"
-    ]
+    ],
+    "preview": "previews/patterns/artwork-caption-separation.jpg"
   },
   "sourceCases": [
     {
@@ -102,7 +112,7 @@
     {
       "path": "prompts/patterns/artwork-caption-separation.md",
       "role": "prompt",
-      "content": "# 作品原图与图下题注分工 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/artwork-caption-separation.json)\n\n为【目标页面/组件】实现「作品原图与图下题注分工」。海报、馆藏或艺术摄影保留原色及比例，名称、日期与来源放在图下正文，不在原图上重复绘制标题。触发：浏览作品与展览目录。可见结果：作品表达与机构信息都可辨认。适用任务：艺术作品与文化档案。许可范围按具体素材确认，替代文字与署名随图保留。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责作品表达与机构信息都可辨认，职责限定在当前区域。组合时许可范围按具体素材确认，替代文字与署名随图保留。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。\n\n## 制作约束\n\n- 许可范围按具体素材确认，替代文字与署名随图保留。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
+      "content": "# 作品原图与图下题注分工 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/artwork-caption-separation.json)\n\n为【目标页面/组件】实现「作品原图与图下题注分工」。海报、馆藏或艺术摄影保留原色及比例，名称、日期与来源放在图下正文，不在原图上重复绘制标题。可见结果：作品表达与机构信息都可辨认。适用任务：艺术作品与文化档案。许可范围按具体素材确认，替代文字与署名随图保留。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。\n\n## 制作约束\n\n- 许可范围按具体素材确认，替代文字与署名随图保留。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
     }
   ],
   "files": [
@@ -308,6 +318,10 @@
     },
     {
       "path": "previews/cases/met-museum.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/artwork-caption-separation.jpg",
       "role": "preview"
     },
     {

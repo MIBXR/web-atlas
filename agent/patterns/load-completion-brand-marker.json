@@ -25,15 +25,10 @@
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责品牌识别贯穿短暂等待，职责限定在当前区域。组合时仅等待当前首图，旋转标记不是实际数值进度，避免再叠一套通用欢迎。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "photo-crossfade-cycle"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "加载说明可读，失败时继续/重试按钮可聚焦，不困住焦点。",
-      "reducedMotion": "旋转改为静止标识，就绪后即时显示主图。"
     },
     "parameters": [
       {
@@ -47,7 +42,7 @@
         "note": "load完成交接"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「资源完成后品牌标记退场」。关键图片加载期间显示轻量品牌旋转标记，load完成后载入层与主图淡化交接；失败可继续读页。触发：首屏资源完成。可见结果：品牌识别贯穿短暂等待。适用任务：海报与现场照片首屏。仅等待当前首图，旋转标记不是实际数值进度，避免再叠一套通用欢迎。键盘：加载说明可读，失败时继续/重试按钮可聚焦，不困住焦点。减少动态：旋转改为静止标识，就绪后即时显示主图。组合边界：该原子负责品牌识别贯穿短暂等待，职责限定在当前区域。组合时仅等待当前首图，旋转标记不是实际数值进度，避免再叠一套通用欢迎。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「资源完成后品牌标记退场」。关键图片加载期间显示轻量品牌旋转标记，load完成后载入层与主图淡化交接；失败可继续读页。触发：首屏资源完成。可见结果：品牌识别贯穿短暂等待。适用任务：海报与现场照片首屏。仅等待当前首图，旋转标记不是实际数值进度，避免再叠一套通用欢迎。键盘：加载说明可读，失败时继续/重试按钮可聚焦，不困住焦点。减少动态：旋转改为静止标识，就绪后即时显示主图。",
     "sources": [
       {
         "caseId": "design-sight",
@@ -55,7 +50,13 @@
         "observation": "首次加载完成：全屏白色与蓝色50px旋转标记，300ms退场。 在海报加载期间保持机构识别。",
         "evidence": "inferred",
         "referenceUrl": "https://www.2121designsight.jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#entry-loader:not([hidden])",
+          "label": "资源就绪前的蓝色品牌标记",
+          "instruction": "看海报准备期间的白色加载层与蓝色旋转标记，资源就绪后它会退出；点“重播”重新载入。",
+          "phase": "loading"
+        }
       },
       {
         "caseId": "fuji-rock",
@@ -63,7 +64,13 @@
         "observation": "素材载入完成：32px橙色旋转标记退出，遮层与主图1200ms线性淡化。 让真实现场图准备完毕后平稳进入。",
         "evidence": "observed",
         "referenceUrl": "https://www.fujirockfestival.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#loader:not([hidden])",
+          "label": "现场照片前的橙色加载标记",
+          "instruction": "看现场照片准备期间的橙色旋转标记，素材就绪后遮层与主图一起淡入交接；点“重播”重新载入。",
+          "phase": "loading"
+        }
       }
     ],
     "sourceFiles": [
@@ -79,7 +86,8 @@
       "entries/cases/fuji-rock.json",
       "docs/cases/design-sight.md",
       "docs/cases/fuji-rock.md"
-    ]
+    ],
+    "preview": "previews/patterns/load-completion-brand-marker.jpg"
   },
   "sourceCases": [
     {
@@ -103,7 +111,7 @@
     {
       "path": "prompts/patterns/load-completion-brand-marker.md",
       "role": "prompt",
-      "content": "# 资源完成后品牌标记退场 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/load-completion-brand-marker.json)\n\n为【目标页面/组件】实现「资源完成后品牌标记退场」。关键图片加载期间显示轻量品牌旋转标记，load完成后载入层与主图淡化交接；失败可继续读页。触发：首屏资源完成。可见结果：品牌识别贯穿短暂等待。适用任务：海报与现场照片首屏。仅等待当前首图，旋转标记不是实际数值进度，避免再叠一套通用欢迎。键盘：加载说明可读，失败时继续/重试按钮可聚焦，不困住焦点。减少动态：旋转改为静止标识，就绪后即时显示主图。组合边界：该原子负责品牌识别贯穿短暂等待，职责限定在当前区域。组合时仅等待当前首图，旋转标记不是实际数值进度，避免再叠一套通用欢迎。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。\n\n## 制作约束\n\n- 仅等待当前首图，旋转标记不是实际数值进度，避免再叠一套通用欢迎。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
+      "content": "# 资源完成后品牌标记退场 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/load-completion-brand-marker.json)\n\n为【目标页面/组件】实现「资源完成后品牌标记退场」。关键图片加载期间显示轻量品牌旋转标记，load完成后载入层与主图淡化交接；失败可继续读页。触发：首屏资源完成。可见结果：品牌识别贯穿短暂等待。适用任务：海报与现场照片首屏。仅等待当前首图，旋转标记不是实际数值进度，避免再叠一套通用欢迎。键盘：加载说明可读，失败时继续/重试按钮可聚焦，不困住焦点。减少动态：旋转改为静止标识，就绪后即时显示主图。\n\n## 制作约束\n\n- 仅等待当前首图，旋转标记不是实际数值进度，避免再叠一套通用欢迎。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
     }
   ],
   "files": [
@@ -361,6 +369,10 @@
     },
     {
       "path": "previews/cases/fuji-rock.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/load-completion-brand-marker.jpg",
       "role": "preview"
     },
     {

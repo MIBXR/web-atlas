@@ -26,10 +26,6 @@
     "pairsWellWith": [],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "链接、选择器和表单沿用原生 DOM 焦点与键盘操作。",
-    "reducedMotion": "来源首页保留连续动画；迁移时按目标页面的减少动态需求选择直接呈现状态。"
-  },
   "parameters": [
     {
       "name": "原作参数",
@@ -44,7 +40,17 @@
       "observation": "22 个原始 GLB 构成动画引擎机芯；滚动进入 modules 后按 MODULES_TRANSFORM 590、MODULES_SHRINK 1250、MODULES_ROTATION 1750、MODULES_CASE 1900 展开、缩减与组装模块，Bundle size 和标签数值随同一时间线改变。",
       "evidence": "observed",
       "referenceUrl": "https://animejs.com/",
-      "capturedAt": "2026-11-02"
+      "capturedAt": "2026-11-02",
+      "focus": {
+        "target": "#modules > .fixed-section[style*=\"pointer-events: auto\"]",
+        "label": "机芯模块与 Bundle size",
+        "instruction": "在此处缓慢上下滚动，对照机芯的展开、缩减与装壳，以及右下角 Bundle size 的同步变化。",
+        "prepare": [
+          {
+            "scroll": "#modules > .section-spacer:nth-of-type(2)"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -56,5 +62,6 @@
     "demos/cases/animejs-site/fidelity.md",
     "demos/cases/animejs-site/source/values.md"
   ],
-  "prompt": "读取 animejs-site 的完整来源包，为目标页面实现「滚动驱动的 GLB 模块组装」。真实模型在主时间线中展开、横移、缩减、旋转与装壳；模块标签和 Bundle size 使用同一组时间线位置。 数值与素材从 source/values.md、对应区块源码和原始资源中取得。保持触发、交接、反向滚动和原生入口关系。"
+  "prompt": "读取 animejs-site 的完整来源包，为目标页面实现「滚动驱动的 GLB 模块组装」。真实模型在主时间线中展开、横移、缩减、旋转与装壳；模块标签和 Bundle size 使用同一组时间线位置。 数值与素材从 source/values.md、对应区块源码和原始资源中取得。保持触发、交接、反向滚动和原生入口关系。",
+  "preview": "previews/patterns/anime-glb-module-assembly.jpg"
 }

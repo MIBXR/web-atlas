@@ -26,18 +26,13 @@
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责展览/演出主题可在读页之后继续体验，职责限定在当前区域。组合时链接可读且标明目标，图片轮播不当作音频播放。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "sound-opt-in"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "使用有明确目标名称的原生a，外部平台可按正常浏览器行为打开。",
-      "reducedMotion": "此机制只提供入口，页面内不需要动态；外部播放由用户选择。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「以官方播放列表延伸主题」。明确的Playlist或官方影片入口链接真实外部平台，不加载无授权播放器或自动音乐；说明目标与声音来源。触发：激活播放列表或官方影片链接。可见结果：展览/演出主题可在读页之后继续体验。适用任务：音乐展览与活动回顾。链接可读且标明目标，图片轮播不当作音频播放。键盘：使用有明确目标名称的原生a，外部平台可按正常浏览器行为打开。减少动态：此机制只提供入口，页面内不需要动态；外部播放由用户选择。组合边界：该原子负责展览/演出主题可在读页之后继续体验，职责限定在当前区域。组合时链接可读且标明目标，图片轮播不当作音频播放。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「以官方播放列表延伸主题」。明确的Playlist或官方影片入口链接真实外部平台，不加载无授权播放器或自动音乐；说明目标与声音来源。触发：激活播放列表或官方影片链接。可见结果：展览/演出主题可在读页之后继续体验。适用任务：音乐展览与活动回顾。链接可读且标明目标，图片轮播不当作音频播放。键盘：使用有明确目标名称的原生a，外部平台可按正常浏览器行为打开。减少动态：此机制只提供入口，页面内不需要动态；外部播放由用户选择。",
     "sources": [
       {
         "caseId": "philharmonie-music",
@@ -45,7 +40,12 @@
         "observation": "打开Playlist：转到官方fanlink，选择个人音乐平台。 音乐是展览主题的延伸与回看媒介。",
         "evidence": "observed",
         "referenceUrl": "https://philharmoniedeparis.fr/fr/activite/exposition/28822-video-games-music",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".playlist",
+          "label": "展览的官方 Playlist 入口",
+          "instruction": "点 Playlist 前往官方 fanlink，再选择自己的音乐平台；网页本身保留这个外部收听入口。"
+        }
       },
       {
         "caseId": "fuji-rock",
@@ -53,7 +53,12 @@
         "observation": "Aftermovie链接到官方YouTube；没有独立BGM开关。",
         "evidence": "observed",
         "referenceUrl": "https://www.fujirockfestival.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".aftermovie",
+          "label": "官方 Aftermovie 入口",
+          "instruction": "点 Aftermovie 打开官方 YouTube 影像，现场声音由官方影片承接，当前网页保留外部观看入口。"
+        }
       },
       {
         "caseId": "persona-kinetic",
@@ -61,7 +66,17 @@
         "observation": "WATCH THE OFFICIAL TRAILER 点击打开原始YouTube宣传片。",
         "evidence": "observed",
         "referenceUrl": "https://persona.atlus.com/p5r/?lang=en#",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#top a[href*=\"youtu\"]",
+          "label": "官方预告片入口",
+          "instruction": "点 WATCH THE OFFICIAL TRAILER，打开原始 YouTube 宣传片。",
+          "prepare": [
+            {
+              "click": "header nav a[href=\"#top\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -83,7 +98,8 @@
       "docs/cases/fuji-rock.md",
       "docs/cases/persona-kinetic.md",
       "docs/cases/philharmonie-music.md"
-    ]
+    ],
+    "preview": "previews/patterns/offsite-playlist-extension.jpg"
   },
   "sourceCases": [
     {
@@ -115,7 +131,7 @@
     {
       "path": "prompts/patterns/offsite-playlist-extension.md",
       "role": "prompt",
-      "content": "# 以官方播放列表延伸主题 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/offsite-playlist-extension.json)\n\n为【目标页面/组件】实现「以官方播放列表延伸主题」。明确的Playlist或官方影片入口链接真实外部平台，不加载无授权播放器或自动音乐；说明目标与声音来源。触发：激活播放列表或官方影片链接。可见结果：展览/演出主题可在读页之后继续体验。适用任务：音乐展览与活动回顾。链接可读且标明目标，图片轮播不当作音频播放。键盘：使用有明确目标名称的原生a，外部平台可按正常浏览器行为打开。减少动态：此机制只提供入口，页面内不需要动态；外部播放由用户选择。组合边界：该原子负责展览/演出主题可在读页之后继续体验，职责限定在当前区域。组合时链接可读且标明目标，图片轮播不当作音频播放。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。\n\n## 制作约束\n\n- 链接可读且标明目标，图片轮播不当作音频播放。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
+      "content": "# 以官方播放列表延伸主题 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/offsite-playlist-extension.json)\n\n为【目标页面/组件】实现「以官方播放列表延伸主题」。明确的Playlist或官方影片入口链接真实外部平台，不加载无授权播放器或自动音乐；说明目标与声音来源。触发：激活播放列表或官方影片链接。可见结果：展览/演出主题可在读页之后继续体验。适用任务：音乐展览与活动回顾。链接可读且标明目标，图片轮播不当作音频播放。键盘：使用有明确目标名称的原生a，外部平台可按正常浏览器行为打开。减少动态：此机制只提供入口，页面内不需要动态；外部播放由用户选择。\n\n## 制作约束\n\n- 链接可读且标明目标，图片轮播不当作音频播放。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
     }
   ],
   "files": [
@@ -537,6 +553,10 @@
     },
     {
       "path": "previews/cases/philharmonie-music.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/offsite-playlist-extension.jpg",
       "role": "preview"
     },
     {

@@ -22,15 +22,10 @@
   ],
   "composition": {
     "role": "support",
-    "notes": "该原子负责菜单作为有明确边界的导航场景，职责限定在当前区域。组合时时长为来源公共模块，源端手机实时未验证，实施时检查快速反向。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
     "pairsWellWith": [
       "last-request-transition"
     ],
     "conflicts": []
-  },
-  "accessibility": {
-    "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-    "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
   },
   "parameters": [
     {
@@ -52,7 +47,19 @@
       "observation": "桌面菜单 pointer enter 展开，pointer leave 150ms 延迟关闭，其他导航降低强调；手机菜单 800ms 顶到下 clip 进入、400ms 退出，项目 320ms 起每项80ms交错。",
       "evidence": "inferred",
       "referenceUrl": "https://claude.com/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".menu.mobile-open:not([hidden])",
+        "label": "顶部裁切的手机菜单",
+        "instruction": "点右上角关闭，再重新打开菜单，观察面板向下展开和条目错峰进入。",
+        "prepare": [
+          {
+            "click": ".hamburger[aria-expanded=false]",
+            "waitFor": ".menu.mobile-open:not([hidden])"
+          }
+        ],
+        "viewport": "mobile"
+      }
     },
     {
       "caseId": "uiarc-platform",
@@ -60,7 +67,22 @@
       "observation": "手机菜单通过 Radix Dialog 在顶栏下方展开，460ms 向下裁切，条目延迟 90ms 起、40ms 错峰；关闭使用 240ms 反向裁切，背景 320／240ms 淡化与 5px 模糊。Escape 返回触发按钮，Examples 关闭后滚动并聚焦展示区。",
       "evidence": "observed",
       "referenceUrl": "https://uiarc.dev/",
-      "capturedAt": "2026-11-01"
+      "capturedAt": "2026-11-01",
+      "focus": {
+        "target": ".mobile-menu[role=dialog][data-state=open]",
+        "label": "向下展开的手机菜单",
+        "instruction": "用右上角关闭按钮收起，再点顶栏菜单，观察面板向下裁切和条目依次进入。",
+        "prepare": [
+          {
+            "waitFor": "#menu-trigger[data-state]"
+          },
+          {
+            "click": "#menu-trigger[data-state=closed]",
+            "waitFor": ".mobile-menu[role=dialog][data-state=open]"
+          }
+        ],
+        "viewport": "mobile"
+      }
     }
   ],
   "sourceFiles": [
@@ -77,5 +99,6 @@
     "demos/cases/uiarc-platform/style.css",
     "demos/cases/uiarc-platform/source/components.tsx",
     "demos/cases/uiarc-platform/fidelity.md"
-  ]
+  ],
+  "preview": "previews/patterns/top-down-clipped-menu.jpg"
 }

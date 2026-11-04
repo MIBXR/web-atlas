@@ -22,16 +22,11 @@
   ],
   "composition": {
     "role": "support",
-    "notes": "该原子负责主题影片连续展示，职责限定在当前区域。组合时剩余阈值以实际媒体时长计算，本地截短片会导致循环更短。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
     "pairsWellWith": [
       "blurred-layered-video-handoff",
       "viewport-animation-lifecycle"
     ],
     "conflicts": []
-  },
-  "accessibility": {
-    "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-    "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
   },
   "parameters": [
     {
@@ -40,7 +35,7 @@
       "note": "影片交接触发，非定时整页切换"
     }
   ],
-  "prompt": "为【目标页面/组件】实现「在影片片尾前交给下一章」。监测当前影片剩余时间，在片尾前固定余量触发下一章，用户暂停或降低动态时关闭自动推进。触发：影片到达尾段。可见结果：主题影片连续展示。适用任务：短片组成的主题世界。剩余阈值以实际媒体时长计算，本地截短片会导致循环更短。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责主题影片连续展示，职责限定在当前区域。组合时剩余阈值以实际媒体时长计算，本地截短片会导致循环更短。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+  "prompt": "为【目标页面/组件】实现「在影片片尾前交给下一章」。监测当前影片剩余时间，在片尾前固定余量触发下一章，用户暂停或降低动态时关闭自动推进。触发：影片到达尾段。可见结果：主题影片连续展示。适用任务：短片组成的主题世界。剩余阈值以实际媒体时长计算，本地截短片会导致循环更短。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
   "sources": [
     {
       "caseId": "zelda-world",
@@ -48,7 +43,22 @@
       "observation": "影片片尾前1秒推进下一章；暂停画面和减少动态分支关闭自动推进。",
       "evidence": "adapted",
       "referenceUrl": "https://www.nintendo.com/jp/zelda/totk/world/index.html",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".world-stage",
+        "label": "影片片尾前的章节交接",
+        "instruction": "让影片继续播放到尾段，留意片尾前自动交给下一章；暂停画面会停止推进。",
+        "prepare": [
+          {
+            "click": "#entry-gate:not([hidden]):not([data-phase]) [data-enter=\"off\"]",
+            "waitFor": "body:has(#entry-gate[hidden])"
+          },
+          {
+            "click": ".chapters a[href=\"#world-3\"]:not([aria-current=\"true\"])",
+            "waitFor": ".world-stage[data-scene=\"3\"]"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -58,5 +68,6 @@
     "demos/cases/zelda-world/style.css",
     "entries/cases/zelda-world.json",
     "docs/cases/zelda-world.md"
-  ]
+  ],
+  "preview": "previews/patterns/clip-tail-advance.jpg"
 }

@@ -10,7 +10,7 @@
       "structure"
     ],
     "summary": "让角色位置、地点信息与目录同时变化。",
-    "mechanism": "地标选择移动角色并更新对应文本，地图上的空间状态与DOM地点索引保持一致。",
+    "mechanism": "地标选择移动角色并更新对应文本，地图上的空间状态与DOM地点索引保持一致。 地图聚焦后可用方向键或 WASD 移动，并保留地标按钮与手机方向按钮。",
     "trigger": "选择地标或移动到地点",
     "effect": "场景成为可操作的信息入口。",
     "useCases": [
@@ -25,32 +25,38 @@
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责场景成为可操作的信息入口，职责限定在当前区域。组合时提供地图外的可聚焦地标与说明，不依赖图形辨认。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "integer-pixel-canvas",
         "discovery-progress-journal"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "地图获得焦点后支持方向键/WASD；提供DOM地标按钮及手机方向按钮。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「场景地标作为导航」。地标选择移动角色并更新对应文本，地图上的空间状态与DOM地点索引保持一致。触发：选择地标或移动到地点。可见结果：场景成为可操作的信息入口。适用任务：地点导览与互动教育。提供地图外的可聚焦地标与说明，不依赖图形辨认。键盘：地图获得焦点后支持方向键/WASD；提供DOM地标按钮及手机方向按钮。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责场景成为可操作的信息入口，职责限定在当前区域。组合时提供地图外的可聚焦地标与说明，不依赖图形辨认。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「场景地标作为导航」。地标选择移动角色并更新对应文本，地图上的空间状态与DOM地点索引保持一致。触发：选择地标或移动到地点。可见结果：场景成为可操作的信息入口。适用任务：地点导览与互动教育。提供地图外的可聚焦地标与说明，不依赖图形辨认。键盘：地图获得焦点后支持方向键/WASD；提供DOM地标按钮及手机方向按钮。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "pixel-world",
         "locator": "entries/cases/pixel-world.json#interaction/0",
         "observation": "地点按钮移动角色并更新当前地点介绍。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": "#stage",
+          "label": "地图地标就是导航",
+          "instruction": "点海滩、灯塔、树林或村庄的地标，角色会移动到对应位置，旁边地点介绍也会改变。",
+          "prepare": [
+            {
+              "click": "[data-site='2']"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
       "demos/cases/pixel-world/index.html",
       "entries/cases/pixel-world.json",
       "docs/cases/pixel-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/spatial-navigation-map.jpg"
   },
   "sourceCases": [
     {
@@ -66,7 +72,7 @@
     {
       "path": "prompts/patterns/spatial-navigation-map.md",
       "role": "prompt",
-      "content": "# 场景地标作为导航 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/spatial-navigation-map.json)\n\n为【目标页面/组件】实现「场景地标作为导航」。地标选择移动角色并更新对应文本，地图上的空间状态与DOM地点索引保持一致。触发：选择地标或移动到地点。可见结果：场景成为可操作的信息入口。适用任务：地点导览与互动教育。提供地图外的可聚焦地标与说明，不依赖图形辨认。键盘：地图获得焦点后支持方向键/WASD；提供DOM地标按钮及手机方向按钮。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责场景成为可操作的信息入口，职责限定在当前区域。组合时提供地图外的可聚焦地标与说明，不依赖图形辨认。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。\n\n## 制作约束\n\n- 提供地图外的可聚焦地标与说明，不依赖图形辨认。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
+      "content": "# 场景地标作为导航 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/spatial-navigation-map.json)\n\n为【目标页面/组件】实现「场景地标作为导航」。地标选择移动角色并更新对应文本，地图上的空间状态与DOM地点索引保持一致。触发：选择地标或移动到地点。可见结果：场景成为可操作的信息入口。适用任务：地点导览与互动教育。提供地图外的可聚焦地标与说明，不依赖图形辨认。键盘：地图获得焦点后支持方向键/WASD；提供DOM地标按钮及手机方向按钮。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。\n\n## 制作约束\n\n- 提供地图外的可聚焦地标与说明，不依赖图形辨认。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
     }
   ],
   "files": [
@@ -104,6 +110,10 @@
     },
     {
       "path": "previews/cases/pixel-world.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/spatial-navigation-map.jpg",
       "role": "preview"
     },
     {

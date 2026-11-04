@@ -22,18 +22,13 @@
   ],
   "composition": {
     "role": "accent",
-    "notes": "该原子负责用户可比较真实代码预览状态，职责限定在当前区域。组合时代码示范不执行，颜色之外保留语法文本及主题名称。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
     "pairsWellWith": [
       "live-parameter-readout"
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-    "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-  },
   "parameters": [],
-  "prompt": "为【目标页面/组件】实现「代码主题只改变局部预览」。编辑代码更新行数与语法内容，主题选择更新局部token颜色；营销页面全局配色保持自己的语义。触发：编辑或选择语法主题。可见结果：用户可比较真实代码预览状态。适用任务：开发工具介绍与主题展示。代码示范不执行，颜色之外保留语法文本及主题名称。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责用户可比较真实代码预览状态，职责限定在当前区域。组合时代码示范不执行，颜色之外保留语法文本及主题名称。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+  "prompt": "为【目标页面/组件】实现「代码主题只改变局部预览」。编辑代码更新行数与语法内容，主题选择更新局部token颜色；营销页面全局配色保持自己的语义。触发：编辑或选择语法主题。可见结果：用户可比较真实代码预览状态。适用任务：开发工具介绍与主题展示。代码示范不执行，颜色之外保留语法文本及主题名称。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
   "sources": [
     {
       "caseId": "linear-workflow",
@@ -41,7 +36,18 @@
       "observation": "Build → 编辑代码内容、六种 syntax 主题选择更新局部代码颜色和行数反馈；不改变官网的固定全局暗色。",
       "evidence": "observed",
       "referenceUrl": "https://linear.app/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".build-review",
+        "label": "局部代码主题",
+        "instruction": "在代码预览中修改内容，并切换 Code diff theme；代码颜色和行数改变，页面的整体暗色保持不变。",
+        "prepare": [
+          {
+            "input": "#diff-theme",
+            "value": "GitHub"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -51,5 +57,6 @@
     "demos/cases/linear-workflow/script.js",
     "demos/cases/linear-workflow/style.css",
     "entries/cases/linear-workflow.json"
-  ]
+  ],
+  "preview": "previews/patterns/local-code-theme-preview.jpg"
 }

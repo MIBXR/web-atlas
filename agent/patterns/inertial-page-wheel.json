@@ -10,7 +10,7 @@
       "page-motion"
     ],
     "summary": "用深度、明暗和惯性让真实页面围绕当前页排列。",
-    "mechanism": "按卡数计算圆柱半径和步角，指针位移换算角度与速度，松手后摩擦衰减再吸附；新拖动取消目标和惯性，首次接触永久停止闲置自转。",
+    "mechanism": "按卡数计算圆柱半径和步角，指针位移换算角度与速度，松手后摩擦衰减再吸附；新拖动取消目标和惯性，首次接触永久停止闲置自转。 方向键与前后按钮也可换页；减少动态时使用即时选择，停止闲置自转。",
     "trigger": "拖动、松手、方向键或闲置等待。",
     "effect": "页面具有连续空间位置，主动浏览接管闲置演示。",
     "useCases": [
@@ -31,10 +31,6 @@
         "same-material-page-pairs"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "区域支持方向键和显式前后按钮，保留列表入口。",
-      "reducedMotion": "停用闲置自转，以即时选择替代惯性与吸附运动。"
     },
     "parameters": [
       {
@@ -61,7 +57,12 @@
         "observation": "Made 把十七张页面牌排在三维圆柱上，闲置时缓慢自转，拖动松手后按速度惯性衰减并吸附到整步角，新的拖动接管惯性，方向键选择相邻页，首次接触后停止闲置自转；Edge 155 中侧页点击被 pointer capture 重定向到轮容器，当前项保持。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "[data-wheel]",
+          "label": "Made 页面转轮",
+          "instruction": "左右拖动页面转轮后松手，观察惯性减速与整步吸附；也可用两侧按钮换页。"
+        }
       }
     ],
     "sourceFiles": [
@@ -71,7 +72,8 @@
       "demos/cases/hallmark/js/wheel.js",
       "demos/cases/hallmark/index.html",
       "demos/cases/hallmark/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/inertial-page-wheel.jpg"
   },
   "sourceCases": [
     {
@@ -5829,6 +5831,10 @@
     },
     {
       "path": "previews/cases/hallmark.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/inertial-page-wheel.jpg",
       "role": "preview"
     },
     {

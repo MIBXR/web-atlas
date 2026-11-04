@@ -22,19 +22,14 @@
   ],
   "composition": {
     "role": "foundation",
-    "notes": "该原子负责深浅环境中阅读与品牌层级都保持一致，职责限定在当前区域。组合时本例系统变化清除手动值的来源策略不必泛化；目标任务需说明优先级。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
     "pairsWellWith": [
       "state-shape-feedback",
       "system-theme-without-toggle"
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "主题开关可聚焦、有当前名称/状态；系统策略同时以文字说明。",
-    "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-  },
   "parameters": [],
-  "prompt": "为【目标页面/组件】实现「语义颜色角色整体切换」。按surface/on-surface、primary/on-primary等角色一起切换，保存手动值并明确系统变化时的优先规则，媒体保持原色。触发：手动选择或系统主题改变。可见结果：深浅环境中阅读与品牌层级都保持一致。适用任务：有双主题设计的系统与产品。本例系统变化清除手动值的来源策略不必泛化；目标任务需说明优先级。键盘：主题开关可聚焦、有当前名称/状态；系统策略同时以文字说明。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责深浅环境中阅读与品牌层级都保持一致，职责限定在当前区域。组合时本例系统变化清除手动值的来源策略不必泛化；目标任务需说明优先级。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+  "prompt": "为【目标页面/组件】实现「语义颜色角色整体切换」。按surface/on-surface、primary/on-primary等角色一起切换，保存手动值并明确系统变化时的优先规则，媒体保持原色。触发：手动选择或系统主题改变。可见结果：深浅环境中阅读与品牌层级都保持一致。适用任务：有双主题设计的系统与产品。本例系统变化清除手动值的来源策略不必泛化；目标任务需说明优先级。键盘：主题开关可聚焦、有当前名称/状态；系统策略同时以文字说明。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
   "sources": [
     {
       "caseId": "google-material",
@@ -42,7 +37,18 @@
       "observation": "切换主题／系统主题变化：深浅语义角色切换；手动值保存，OS变化清除保存值。 让可读性适应环境，同时保持品牌图像与层级。",
       "evidence": "observed",
       "referenceUrl": "https://m3.material.io/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".rail [data-action=theme], #directory[open] [data-action=theme]",
+        "label": "语义角色的主题切换",
+        "instruction": "点侧栏明暗主题按钮，比较背景、文字、卡片和按钮一起切换，品牌媒体保持原色。",
+        "prepare": [
+          {
+            "click": "#open-menu[aria-expanded=false]",
+            "maxWidth": 600
+          }
+        ]
+      }
     },
     {
       "caseId": "uiarc-platform",
@@ -50,7 +56,12 @@
       "observation": "主题按钮在系统默认与手动选择之间协调页面表面、文字、边界和导航；点击后通过 View Transition 让新主题从横向中线向上下展开，390ms、cubic-bezier(.22,1,.36,1)，完成后清理过渡状态。首尾粉蓝黄渐变面板和产品影片保持原色，减少动态直接完成切换。",
       "evidence": "observed",
       "referenceUrl": "https://uiarc.dev/",
-      "capturedAt": "2026-11-01"
+      "capturedAt": "2026-11-01",
+      "focus": {
+        "target": "header",
+        "label": "明暗主题控件",
+        "instruction": "点顶栏的明暗按钮，对比正文、卡片和边框一起变化，影片与渐变面板保留原色。"
+      }
     }
   ],
   "sourceFiles": [
@@ -68,5 +79,6 @@
     "demos/cases/uiarc-platform/fidelity.md",
     "demos/cases/uiarc-platform/source/content.json",
     "demos/cases/uiarc-platform/source/components.tsx"
-  ]
+  ],
+  "preview": "previews/patterns/semantic-theme-roles.jpg"
 }

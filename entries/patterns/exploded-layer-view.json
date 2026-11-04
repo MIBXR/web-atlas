@@ -22,25 +22,30 @@
   ],
   "composition": {
     "role": "accent",
-    "notes": "该原子负责对象之间的组成关系显露，职责限定在当前区域。组合时同步文字说明，减少动态即时改变位置。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
     "pairsWellWith": [
       "parallel-isometric-projection",
       "layer-focus-dimming"
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-    "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-  },
   "parameters": [],
-  "prompt": "为【目标页面/组件】实现「展开图层解释组成」。保持空间投影和图层顺序，用受控偏移将各组分离；再次选择整体恢复完整场景。触发：选择展开/整体。可见结果：对象之间的组成关系显露。适用任务：复杂系统与产品结构介绍。同步文字说明，减少动态即时改变位置。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责对象之间的组成关系显露，职责限定在当前区域。组合时同步文字说明，减少动态即时改变位置。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+  "prompt": "为【目标页面/组件】实现「展开图层解释组成」。保持空间投影和图层顺序，用受控偏移将各组分离；再次选择整体恢复完整场景。触发：选择展开/整体。可见结果：对象之间的组成关系显露。适用任务：复杂系统与产品结构介绍。同步文字说明，减少动态即时改变位置。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
   "sources": [
     {
       "caseId": "isometric-3d",
       "locator": "entries/cases/isometric-3d.json#interaction/1",
       "observation": "展开按钮将基础、建筑、植物分层",
-      "evidence": "adapted"
+      "evidence": "adapted",
+      "focus": {
+        "target": "#island",
+        "label": "小岛的分层展开",
+        "instruction": "用下方“展开”与“整岛”切换，对比地基、建筑和植物怎样按原层次分离、合回。",
+        "prepare": [
+          {
+            "click": "[data-layer=exploded]"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -49,5 +54,6 @@
     "demos/cases/isometric-3d/style.css",
     "entries/cases/isometric-3d.json",
     "docs/cases/isometric-3d.md"
-  ]
+  ],
+  "preview": "previews/patterns/exploded-layer-view.jpg"
 }

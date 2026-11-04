@@ -8,7 +8,7 @@
   ],
   "summary": "同一标题横跨两块底色，文字色与底色边界精确对应。",
   "mechanism": "两份几何对齐的标题以同一栏界做互补clip-path，一侧墨色一侧反白；手机移除副本裁切。",
-  "trigger": "阅读跨色场标题或改变视口。",
+  "trigger": "视口进入手机断点",
   "effect": "字形连续，色场边界又保持清楚。",
   "useCases": [
     "编辑网格",
@@ -28,10 +28,6 @@
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "副本aria-hidden，原文提供完整标题语义。",
-    "reducedMotion": "裁切为静态布局，窄屏给完整单份标题。"
-  },
   "parameters": [
     {
       "name": "边界",
@@ -44,7 +40,7 @@
       "note": "固定提交源码／线上实测：style.css 手机媒体规则。"
     }
   ],
-  "prompt": "为目标页面实现「同一标题跨色场反白」：两份几何对齐的标题以同一栏界做互补clip-path，一侧墨色一侧反白；手机移除副本裁切。触发：阅读跨色场标题或改变视口。结果：字形连续，色场边界又保持清楚。参数：边界=--cols-7；手机=取消副本clip-path。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；副本aria-hidden，原文提供完整标题语义。裁切为静态布局，窄屏给完整单份标题。",
+  "prompt": "为目标页面实现「同一标题跨色场反白」：两份几何对齐的标题以同一栏界做互补clip-path，一侧墨色一侧反白；手机移除副本裁切。触发：视口进入手机断点。结果：字形连续，色场边界又保持清楚。参数：边界=--cols-7；手机=取消副本clip-path。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；副本aria-hidden，原文提供完整标题语义。裁切为静态布局，窄屏给完整单份标题。",
   "sources": [
     {
       "caseId": "hallmark",
@@ -52,7 +48,14 @@
       "observation": "Grid 将对齐的两份标题按第七栏边界互补裁切，使同一标题跨纸面和色场时分别使用对应文字色，窄屏取消副本裁切。",
       "evidence": "observed",
       "referenceUrl": "https://www.usehallmark.com/",
-      "capturedAt": "2026-11-01"
+      "capturedAt": "2026-11-01",
+      "focus": {
+        "target": ".hero__type",
+        "label": "跨纸面与蓝色场的同一标题",
+        "instruction": "观察桌面标题跨过蓝色场边界时如何反白；两边文字仍保持同一位置与排版。",
+        "entrypoint": "demos/cases/hallmark/themes/grid/index.html",
+        "viewport": "wide"
+      }
     }
   ],
   "sourceFiles": [
@@ -61,5 +64,6 @@
     "demos/cases/hallmark/fidelity.md",
     "demos/cases/hallmark/themes/grid/style.css",
     "demos/cases/hallmark/themes/grid/index.html"
-  ]
+  ],
+  "preview": "previews/patterns/knockout-headline-split.jpg"
 }

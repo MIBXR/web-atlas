@@ -23,15 +23,10 @@
   ],
   "composition": {
     "role": "support",
-    "notes": "该原子负责长目录仍属于艺术馆的视觉世界，职责限定在当前区域。组合时全屏层焦点限制、Escape和关闭恢复完整，减少动态直接切换。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
     "pairsWellWith": [
       "full-bleed-photography-brand"
     ],
     "conflicts": []
-  },
-  "accessibility": {
-    "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-    "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
   },
   "parameters": [
     {
@@ -40,7 +35,7 @@
       "note": "当前CSS淡入/淡出"
     }
   ],
-  "prompt": "为【目标页面/组件】实现「摄影与分列链接组成全屏目录」。打开菜单时全屏摄影和目的地链接成组淡入，关闭淡出并返回原阅读位置；目录层和主页面层职责分开。触发：打开或关闭菜单。可见结果：长目录仍属于艺术馆的视觉世界。适用任务：摄影品牌的全屏导航。全屏层焦点限制、Escape和关闭恢复完整，减少动态直接切换。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责长目录仍属于艺术馆的视觉世界，职责限定在当前区域。组合时全屏层焦点限制、Escape和关闭恢复完整，减少动态直接切换。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+  "prompt": "为【目标页面/组件】实现「摄影与分列链接组成全屏目录」。打开菜单时全屏摄影和目的地链接成组淡入，关闭淡出并返回原阅读位置；目录层和主页面层职责分开。触发：打开或关闭菜单。可见结果：长目录仍属于艺术馆的视觉世界。适用任务：摄影品牌的全屏导航。全屏层焦点限制、Escape和关闭恢复完整，减少动态直接切换。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
   "sources": [
     {
       "caseId": "rijksmuseum-art",
@@ -48,7 +43,18 @@
       "observation": "打开／关闭菜单：全屏菜单500ms线性淡入淡出，图像与分列链接同时建立目的地。 给导航独立的视觉场景，保持品牌和空间关系。",
       "evidence": "observed",
       "referenceUrl": "https://www.rijksmuseum.nl/en",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#menu:not([hidden])",
+        "label": "摄影与分列链接的全屏目录",
+        "instruction": "用左上角关闭后再打开菜单，观察整层摄影和分列链接淡入；每组链接提供具体目的地。",
+        "prepare": [
+          {
+            "click": "#menu-toggle[aria-expanded=false]",
+            "waitFor": "#menu:not([hidden])"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -58,5 +64,6 @@
     "demos/cases/rijksmuseum-art/style.css",
     "entries/cases/rijksmuseum-art.json",
     "docs/cases/rijksmuseum-art.md"
-  ]
+  ],
+  "preview": "previews/patterns/fullscreen-photography-menu.jpg"
 }

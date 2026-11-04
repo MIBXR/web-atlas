@@ -10,7 +10,7 @@
       "page-motion"
     ],
     "summary": "保留旧主题快照，让新主题从水平中线展开。",
-    "mechanism": "在 View Transition 更新回调中切换完整主题；旧根快照不动，新根快照由 inset(50% 0) 展开为 inset(0)，完成后移除临时过渡状态。",
+    "mechanism": "在 View Transition 更新回调中切换完整主题；旧根快照不动，新根快照由 inset(50% 0) 展开为 inset(0)，完成后移除临时过渡状态。 减少动态时直接切换主题，不创建展开动画。",
     "trigger": "激活主题按钮",
     "effect": "颜色角色一起交接，用户能看清主题更替的方向。",
     "useCases": [
@@ -29,10 +29,6 @@
         "theme-invariant-gradient-panel"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "原生主题按钮支持 Enter/Space，并提供下一主题的可访问名称；切换后保持焦点。",
-      "reducedMotion": "prefers-reduced-motion 下直接切换，不创建展开动画。"
     },
     "parameters": [
       {
@@ -54,7 +50,12 @@
         "observation": "主题按钮在系统默认与手动选择之间协调页面表面、文字、边界和导航；点击后通过 View Transition 让新主题从横向中线向上下展开，390ms、cubic-bezier(.22,1,.36,1)，完成后清理过渡状态。首尾粉蓝黄渐变面板和产品影片保持原色，减少动态直接完成切换。",
         "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "header",
+          "label": "中央展开的主题切换",
+          "instruction": "点顶栏的明暗主题按钮，观察新主题从页面中线向上下展开。"
+        }
       }
     ],
     "sourceFiles": [
@@ -65,7 +66,8 @@
       "demos/cases/uiarc-platform/style.css",
       "demos/cases/uiarc-platform/source/components.tsx",
       "demos/cases/uiarc-platform/fidelity.md"
-    ]
+    ],
+    "preview": "previews/patterns/center-split-theme-transition.jpg"
   },
   "sourceCases": [
     {
@@ -619,6 +621,10 @@
     },
     {
       "path": "previews/cases/uiarc-platform.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/center-split-theme-transition.jpg",
       "role": "preview"
     },
     {

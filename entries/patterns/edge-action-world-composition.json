@@ -8,7 +8,6 @@
   ],
   "summary": "让世界视觉保持主角，下载入口仍直接可找。",
   "mechanism": "背景建立空间，中心Logo识别产品，竖排标语补充主题；下载与漫画等行动分布边缘，避免覆盖主视觉焦点。",
-  "trigger": "进入世界首页",
   "effect": "情绪、身份和行动各有位置。",
   "useCases": [
     "单屏游戏世界入口"
@@ -22,18 +21,13 @@
   ],
   "composition": {
     "role": "foundation",
-    "notes": "该原子负责情绪、身份和行动各有位置，职责限定在当前区域。组合时手机重排要保留触达，竖排装饰不得取代可读正文。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
     "pairsWellWith": [
       "independent-character-page"
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-    "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-  },
   "parameters": [],
-  "prompt": "为【目标页面/组件】实现「中心世界与边缘行动分工」。背景建立空间，中心Logo识别产品，竖排标语补充主题；下载与漫画等行动分布边缘，避免覆盖主视觉焦点。触发：进入世界首页。可见结果：情绪、身份和行动各有位置。适用任务：单屏游戏世界入口。手机重排要保留触达，竖排装饰不得取代可读正文。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责情绪、身份和行动各有位置，职责限定在当前区域。组合时手机重排要保留触达，竖排装饰不得取代可读正文。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+  "prompt": "为【目标页面/组件】实现「中心世界与边缘行动分工」。背景建立空间，中心Logo识别产品，竖排标语补充主题；下载与漫画等行动分布边缘，避免覆盖主视觉焦点。可见结果：情绪、身份和行动各有位置。适用任务：单屏游戏世界入口。手机重排要保留触达，竖排装饰不得取代可读正文。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
   "sources": [
     {
       "caseId": "blue-archive",
@@ -41,7 +35,12 @@
       "observation": "背景建立世界、Logo确认产品、竖排标语补充主题；下载与漫画入口形成左右分工。",
       "evidence": "observed",
       "referenceUrl": "https://bluearchive.jp/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#home",
+        "label": "中心世界与边缘入口",
+        "instruction": "看中央 Logo 与人物主视觉，下载、漫画和社交入口分布在两侧边缘。"
+      }
     }
   ],
   "sourceFiles": [
@@ -52,5 +51,6 @@
     "demos/cases/blue-archive/style.css",
     "entries/cases/blue-archive.json",
     "docs/cases/blue-archive.md"
-  ]
+  ],
+  "preview": "previews/patterns/edge-action-world-composition.jpg"
 }

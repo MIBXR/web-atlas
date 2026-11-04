@@ -12,7 +12,6 @@
     ],
     "summary": "把同一材料下的不同页面成对展示，解释材料与结构的分工。",
     "mechanism": "按材料分组，在每组并列两张真实页面，保留各自目的地、主体内容与不同构成。",
-    "trigger": "阅读同主题不同页面区域或打开页面。",
     "effect": "共同字体和色彩可辨认，结构差异也能直接看见。",
     "useCases": [
       "主题或设计系统展示",
@@ -32,10 +31,6 @@
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "每张图保留有文字名称的真实链接。",
-      "reducedMotion": "成对比较为静态构成，内容保持可读。"
-    },
     "parameters": [
       {
         "name": "分组",
@@ -43,7 +38,7 @@
         "note": "固定提交源码／线上实测：index.html:263 #same。"
       }
     ],
-    "prompt": "为目标页面实现「同一材料的异页并置」：按材料分组，在每组并列两张真实页面，保留各自目的地、主体内容与不同构成。触发：阅读同主题不同页面区域或打开页面。结果：共同字体和色彩可辨认，结构差异也能直接看见。参数：分组=Kiln与Midnight各两页。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；每张图保留有文字名称的真实链接。成对比较为静态构成，内容保持可读。",
+    "prompt": "为目标页面实现「同一材料的异页并置」：按材料分组，在每组并列两张真实页面，保留各自目的地、主体内容与不同构成。结果：共同字体和色彩可辨认，结构差异也能直接看见。参数：分组=Kiln与Midnight各两页。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；每张图保留有文字名称的真实链接。成对比较为静态构成，内容保持可读。",
     "sources": [
       {
         "caseId": "hallmark",
@@ -51,7 +46,12 @@
         "observation": "Same 区把同属 Kiln 的两页和同属 Midnight 的两页分别并置，用相同材料下不同的内容与布局说明主题提供材料、构建决定页面结构。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "#same .pair:first-child",
+          "label": "同一 Kiln 材料的两张页面",
+          "instruction": "比较陶艺学校与陶器商店：同一套主题材料分别形成两种内容与布局。"
+        }
       }
     ],
     "sourceFiles": [
@@ -60,7 +60,8 @@
       "demos/cases/hallmark/fidelity.md",
       "demos/cases/hallmark/index.html",
       "demos/cases/hallmark/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/same-material-page-pairs.jpg"
   },
   "sourceCases": [
     {
@@ -76,7 +77,7 @@
     {
       "path": "prompts/patterns/same-material-page-pairs.md",
       "role": "prompt",
-      "content": "# 同一材料的异页并置 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/same-material-page-pairs.json)\n\n为目标页面实现「同一材料的异页并置」：按材料分组，在每组并列两张真实页面，保留各自目的地、主体内容与不同构成。触发：阅读同主题不同页面区域或打开页面。结果：共同字体和色彩可辨认，结构差异也能直接看见。参数：分组=Kiln与Midnight各两页。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；每张图保留有文字名称的真实链接。成对比较为静态构成，内容保持可读。\n\n## 制作约束\n\n- 固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。\n"
+      "content": "# 同一材料的异页并置 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/same-material-page-pairs.json)\n\n为目标页面实现「同一材料的异页并置」：按材料分组，在每组并列两张真实页面，保留各自目的地、主体内容与不同构成。结果：共同字体和色彩可辨认，结构差异也能直接看见。参数：分组=Kiln与Midnight各两页。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；每张图保留有文字名称的真实链接。成对比较为静态构成，内容保持可读。\n\n## 制作约束\n\n- 固定提交源码与复刻范围见 demos/cases/hallmark/fidelity.md。\n"
     }
   ],
   "files": [
@@ -5818,6 +5819,10 @@
     },
     {
       "path": "previews/cases/hallmark.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/same-material-page-pairs.jpg",
       "role": "preview"
     },
     {

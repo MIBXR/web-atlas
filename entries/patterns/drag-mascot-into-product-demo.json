@@ -8,7 +8,7 @@
     "structure"
   ],
   "summary": "体验产品的入口变成与角色互动的一步，并以同一落点衔接功能演示。",
-  "mechanism": "按下时记录指针与角色容器的握点偏移，移动时以可见身体锚点判定目标；命中后吸附到与工作姿态共用的位置，再触发产品界面。未命中则停在松手位置。",
+  "mechanism": "按下时记录指针与角色容器的握点偏移，移动时以可见身体锚点判定目标；命中后吸附到与工作姿态共用的位置，再触发产品界面。未命中则停在松手位置。 原作在减少动态时仍保留吸附；静态迁移可直接显示落位后的产品界面。",
   "trigger": "将角色的身体拖入虚线目标。",
   "effect": "体验产品的入口变成与角色互动的一步，并以同一落点衔接功能演示。",
   "useCases": [
@@ -30,10 +30,6 @@
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "原作没有键盘拖放入口；迁移时提供原生按钮触发同一吸附与界面状态。",
-    "reducedMotion": "原作保留吸附；迁移时可直接落到工作位置，再显示可读的产品界面。"
-  },
   "parameters": [
     {
       "name": "吸附",
@@ -54,7 +50,18 @@
       "observation": "指针按下角色后保持握点偏移拖动，未命中时留在原地；以可见身体锚点命中 Drop here 后，400ms 吸附到与敲字位置共用的目标，随后升起终端。触摸和鼠标共用 Pointer Events。",
       "evidence": "observed",
       "referenceUrl": "https://clawdondesk.com/",
-      "capturedAt": "2026-11-01"
+      "capturedAt": "2026-11-01",
+      "focus": {
+        "target": "#drop-zone",
+        "label": "角色拖放目标",
+        "instruction": "把中央角色拖到左下角 Drop here；命中后角色吸附，终端随即升起。",
+        "prepare": [
+          {
+            "key": "Escape",
+            "waitFor": "body[data-frame='4']"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -65,5 +72,6 @@
     "demos/cases/clawd-on-desk/source/website/scripts/stage-geometry.js",
     "demos/cases/clawd-on-desk/source/website/styles/responsive.css",
     "demos/cases/clawd-on-desk/source/website/scripts/terminal.js"
-  ]
+  ],
+  "preview": "previews/patterns/drag-mascot-into-product-demo.jpg"
 }

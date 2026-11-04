@@ -7,8 +7,8 @@
     "visual"
   ],
   "summary": "保留特殊字标和非等宽的中心/外围关系，让代码同时表达机构身份和归属。",
-  "mechanism": "中心双行代码和九个外围短代码共享环形连字，黑白表面、倾斜与尺度差共同组织关系；细射线与小面积橙色节点连接焦点。完整名称与等价语义目录承担阅读，不将原字标重排成普通字体卡片。",
-  "trigger": "呈现机构代码目录",
+  "mechanism": "中心双行代码和九个外围短代码共享环形连字，黑白表面、倾斜与尺度差共同组织关系；细射线与小面积橙色节点连接焦点。完整名称与等价语义目录承担阅读，不将原字标重排成普通字体卡片。 网页静态呈现保留原帧和矩阵，取消 180ms 节点位移，说明即时更新；影片由用户主动播放并可暂停。",
+  "trigger": "选择机构代码节点或对应目录项",
   "effect": "中心关系、不同科室的身份字标及当前焦点在同一视野中保留。",
   "useCases": [
     "有专用字标的机构目录",
@@ -28,16 +28,12 @@
   ],
   "composition": {
     "role": "foundation",
-    "notes": "原画面保留字标与空间，DOM热点和可读目录共享一个选择状态；节点移动是适配，不伪造原片点击。矩阵与档案选择使用独立区域及状态。",
+    "notes": "原画面保留字标与空间，DOM热点和可读目录共享一个选择状态；节点移动为本地网页适配。矩阵与档案选择使用独立区域及状态。",
     "pairsWellWith": [
       "restrained-signal-color",
       "aligned-metadata-rows"
     ],
     "conflicts": []
-  },
-  "accessibility": {
-    "keyboard": "热点与等价目录均用语义按钮、可见焦点和aria-pressed，全称始终可读；手机可直接用正常字号目录。",
-    "reducedMotion": "原帧和矩阵静态保留；取消180ms节点移动，当前说明即时同步；片段由用户主动播放并可暂停。"
   },
   "parameters": [
     {
@@ -64,7 +60,17 @@
       "observation": "官方68秒原帧保留CMPT CTRL中心，以及DEF、HRI、BSN、ENG、STRU、SCIEN、ORIG、NRG、ECO九外围的环形连字、英文全称、黑白表面、透视倾斜及尺度差；网页控件使用系统字体，不替代原作字标。",
       "evidence": "observed",
       "referenceUrl": "https://www.bilibili.com/video/BV1rr4y1b7sz/",
-      "capturedAt": "2026-10-09"
+      "capturedAt": "2026-10-09",
+      "focus": {
+        "target": "#terminal[data-scene=matrix]",
+        "label": "中心与九个外围机构代码",
+        "instruction": "点画面中的机构热点或下方科室目录，对比 CMPT CTRL 中心、外围九个字标与说明的对应关系。",
+        "prepare": [
+          {
+            "click": "[data-scene=matrix]"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -75,5 +81,6 @@
     "demos/cases/rhine-lab/assets-manifest.json",
     "entries/cases/rhine-lab.json",
     "docs/cases/rhine-lab.md"
-  ]
+  ],
+  "preview": "previews/patterns/department-code-matrix.jpg"
 }

@@ -10,7 +10,7 @@
       "page-motion"
     ],
     "summary": "文字、窗口模式和进度共同指示当前段落。",
-    "mechanism": "长段内用多个内容哨兵更新侧栏展开、标题尺度、产品窗口与进度；点击或方向键定位同一状态。",
+    "mechanism": "长段内用多个内容哨兵更新侧栏展开、标题尺度、产品窗口与进度；点击或方向键定位同一状态。 Home/End 可定位首尾状态。",
     "trigger": "滚动或选择说明索引",
     "effect": "当前说明与界面演示对应。",
     "useCases": [
@@ -25,18 +25,13 @@
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责当前说明与界面演示对应，职责限定在当前区域。组合时首屏选择和说明rail独立管理；手机用原生横向卡片。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "sticky-stage-handoff"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "rail按钮支持方向键及Home/End，展开与当前状态文字同步。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「说明索引与窗口进度同步」。长段内用多个内容哨兵更新侧栏展开、标题尺度、产品窗口与进度；点击或方向键定位同一状态。触发：滚动或选择说明索引。可见结果：当前说明与界面演示对应。适用任务：多步骤能力说明。首屏选择和说明rail独立管理；手机用原生横向卡片。键盘：rail按钮支持方向键及Home/End，展开与当前状态文字同步。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责当前说明与界面演示对应，职责限定在当前区域。组合时首屏选择和说明rail独立管理；手机用原生横向卡片。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「说明索引与窗口进度同步」。长段内用多个内容哨兵更新侧栏展开、标题尺度、产品窗口与进度；点击或方向键定位同一状态。触发：滚动或选择说明索引。可见结果：当前说明与界面演示对应。适用任务：多步骤能力说明。首屏选择和说明rail独立管理；手机用原生横向卡片。键盘：rail按钮支持方向键及Home/End，展开与当前状态文字同步。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "chatgpt-platform",
@@ -44,7 +39,13 @@
         "observation": "桌面左侧 rail 出现后，滚动三段哨兵或点击/方向键 → 说明高度、标题缩放、窗口模式及进度对应更新；顶部标题模式和下段模式彼此独立。",
         "evidence": "adapted",
         "referenceUrl": "https://chatgpt.com/zh-Hans-CN/overview/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#showcase",
+          "label": "说明索引与产品窗口",
+          "instruction": "上下滚动这段说明，或点左侧聊天、工作、Codex 索引，对比当前说明、进度和窗口内容的对应变化。",
+          "viewport": "wide"
+        }
       },
       {
         "caseId": "hallmark",
@@ -52,7 +53,13 @@
         "observation": "Coral 的滚动说明面板在屏幕中央的窄观察带进入时选择对应发票状态，桌面说明与吸附发票同步，窄于 60rem 时直接显示完整的第三步。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".pin__panel[data-step=\"1\"]",
+          "label": "滚动说明与发票状态",
+          "instruction": "向下滚动三段说明，观察旁边发票依次进入提醒、回信与已付款状态。",
+          "entrypoint": "demos/cases/hallmark/themes/coral/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -68,7 +75,8 @@
       "demos/cases/hallmark/fidelity.md",
       "demos/cases/hallmark/themes/coral/scene.js",
       "demos/cases/hallmark/themes/coral/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/scroll-synchronized-rail.jpg"
   },
   "sourceCases": [
     {
@@ -92,7 +100,7 @@
     {
       "path": "prompts/patterns/scroll-synchronized-rail.md",
       "role": "prompt",
-      "content": "# 说明索引与窗口进度同步 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/scroll-synchronized-rail.json)\n\n为【目标页面/组件】实现「说明索引与窗口进度同步」。长段内用多个内容哨兵更新侧栏展开、标题尺度、产品窗口与进度；点击或方向键定位同一状态。触发：滚动或选择说明索引。可见结果：当前说明与界面演示对应。适用任务：多步骤能力说明。首屏选择和说明rail独立管理；手机用原生横向卡片。键盘：rail按钮支持方向键及Home/End，展开与当前状态文字同步。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责当前说明与界面演示对应，职责限定在当前区域。组合时首屏选择和说明rail独立管理；手机用原生横向卡片。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。\n\n## 制作约束\n\n- 首屏选择和说明rail独立管理；手机用原生横向卡片。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
+      "content": "# 说明索引与窗口进度同步 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/scroll-synchronized-rail.json)\n\n为【目标页面/组件】实现「说明索引与窗口进度同步」。长段内用多个内容哨兵更新侧栏展开、标题尺度、产品窗口与进度；点击或方向键定位同一状态。触发：滚动或选择说明索引。可见结果：当前说明与界面演示对应。适用任务：多步骤能力说明。首屏选择和说明rail独立管理；手机用原生横向卡片。键盘：rail按钮支持方向键及Home/End，展开与当前状态文字同步。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。\n\n## 制作约束\n\n- 首屏选择和说明rail独立管理；手机用原生横向卡片。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
     }
   ],
   "files": [
@@ -6050,6 +6058,10 @@
     },
     {
       "path": "previews/cases/hallmark.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/scroll-synchronized-rail.jpg",
       "role": "preview"
     },
     {

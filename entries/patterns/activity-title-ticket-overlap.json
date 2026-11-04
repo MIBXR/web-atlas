@@ -8,7 +8,6 @@
   ],
   "summary": "视觉主题与行动面板处于同一视线。",
   "mechanism": "大主视觉左下放活动名称，右侧白色票务面板跨越主图/内容边界，后续正文约两列，行动约一列。",
-  "trigger": "查看活动首屏并继续阅读",
   "effect": "情境、日期和预约入口关联。",
   "useCases": [
     "展览与演出详情"
@@ -22,19 +21,14 @@
   ],
   "composition": {
     "role": "foundation",
-    "notes": "该原子负责情境、日期和预约入口关联，职责限定在当前区域。组合时手机票务回文档流，作品署名与主图主题保留。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
     "pairsWellWith": [
       "sticky-action-sidebar",
       "responsive-art-direction"
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-    "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-  },
   "parameters": [],
-  "prompt": "为【目标页面/组件】实现「活动标题与票务跨区并置」。大主视觉左下放活动名称，右侧白色票务面板跨越主图/内容边界，后续正文约两列，行动约一列。触发：查看活动首屏并继续阅读。可见结果：情境、日期和预约入口关联。适用任务：展览与演出详情。手机票务回文档流，作品署名与主图主题保留。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责情境、日期和预约入口关联，职责限定在当前区域。组合时手机票务回文档流，作品署名与主图主题保留。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+  "prompt": "为【目标页面/组件】实现「活动标题与票务跨区并置」。大主视觉左下放活动名称，右侧白色票务面板跨越主图/内容边界，后续正文约两列，行动约一列。可见结果：情境、日期和预约入口关联。适用任务：展览与演出详情。手机票务回文档流，作品署名与主图主题保留。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
   "sources": [
     {
       "caseId": "philharmonie-music",
@@ -42,7 +36,12 @@
       "observation": "主视觉左下活动名，右侧票务面板上浮；长正文与侧栏分工，手机票务回到文档流。",
       "evidence": "observed",
       "referenceUrl": "https://philharmoniedeparis.fr/fr/activite/exposition/28822-video-games-music",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".hero-title",
+        "label": "活动名称与票务跨区并置",
+        "instruction": "对比主视觉左下的活动名称与右侧上浮票务，活动身份和来访行动在同一视野内出现。"
+      }
     }
   ],
   "sourceFiles": [
@@ -52,5 +51,6 @@
     "demos/cases/philharmonie-music/style.css",
     "entries/cases/philharmonie-music.json",
     "docs/cases/philharmonie-music.md"
-  ]
+  ],
+  "preview": "previews/patterns/activity-title-ticket-overlap.jpg"
 }

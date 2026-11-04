@@ -10,7 +10,7 @@
       "micro-motion"
     ],
     "summary": "静态标识因指针接近而获得可触感。",
-    "mechanism": "WebGL点阵以目标点位维持形状，指针附近点按距离受排斥，移开后回归原模型；文字位于独立稳定层。",
+    "mechanism": "WebGL点阵以目标点位维持形状，指针附近点按距离受排斥，移开后回归原模型；文字位于独立稳定层。 静态呈现可停止帧调度与指针排斥，保留同源静止点阵。",
     "trigger": "指针进入、移动或离开粒子区域",
     "effect": "工业标识有局部反馈而保持整体身份。",
     "useCases": [
@@ -32,10 +32,6 @@
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "粒子仅是装饰反馈，模型选择另有可聚焦文本按钮，所有设定说明可直接读取。",
-      "reducedMotion": "停止帧调度与指针排斥，保留同源静止点阵及完整文字。"
-    },
     "parameters": [],
     "prompt": "为【目标页面/组件】实现「指针排斥与回聚点阵」。WebGL点阵以目标点位维持形状，指针附近点按距离受排斥，移开后回归原模型；文字位于独立稳定层。触发：指针进入、移动或离开粒子区域。可见结果：工业标识有局部反馈而保持整体身份。适用任务：世界观与品牌形状探索。点位、shader与排斥方程有来源依据，额外firefly层未迁移；提供静态同源模型回退。键盘：粒子仅是装饰反馈，模型选择另有可聚焦文本按钮，所有设定说明可直接读取。减少动态：停止帧调度与指针排斥，保留同源静止点阵及完整文字。组合边界：作为一个图形区域的装饰反馈，正文与术语导航独立保持稳定。可与模型重组结合；需要正文密集阅读时缩小该舞台，不把粒子扩展到所有控件。",
     "sources": [
@@ -45,7 +41,32 @@
         "observation": "WORLD使用官网Three导出、七组原始点位、粒子贴图和排斥公式；10,000粒子池中当前模型使用1785–5652点。竖屏直接打开源石详情，粒子在上/文字在下。",
         "evidence": "observed",
         "referenceUrl": "https://ak.hypergryph.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#world.active #world-particles",
+          "label": "可推开的世界点阵",
+          "instruction": "把指针移入点阵，再移开，查看附近粒子被推开后回到模型。",
+          "prepare": [
+            {
+              "waitFor": "#scene-deck[data-phase=\"idle\"]"
+            },
+            {
+              "click": "#menu-toggle[aria-expanded=\"false\"]",
+              "maxWidth": 800
+            },
+            {
+              "click": "#chapter-nav a[href=\"#world\"]:not([aria-current=\"page\"])",
+              "waitFor": "#scene-deck[data-active=\"world\"][data-phase=\"idle\"]"
+            },
+            {
+              "click": "#world:not([data-detail=\"true\"]) [data-world=\"5\"]",
+              "waitFor": "#world[data-detail=\"true\"]"
+            },
+            {
+              "waitFor": "#world-particles[data-model]"
+            }
+          ]
+        }
       },
       {
         "caseId": "arknights-world",
@@ -53,7 +74,32 @@
         "observation": "WORLD指针进入点阵 → 原始排斥公式推开附近点、移走后回聚 → 让静态工业标识可被触摸；选择术语会把点阵重组成对应原站形状。",
         "evidence": "observed",
         "referenceUrl": "https://ak.hypergryph.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#world.active #world-particles",
+          "label": "可推开的世界点阵",
+          "instruction": "把指针移入点阵，再移开，查看附近粒子被推开后回到模型。",
+          "prepare": [
+            {
+              "waitFor": "#scene-deck[data-phase=\"idle\"]"
+            },
+            {
+              "click": "#menu-toggle[aria-expanded=\"false\"]",
+              "maxWidth": 800
+            },
+            {
+              "click": "#chapter-nav a[href=\"#world\"]:not([aria-current=\"page\"])",
+              "waitFor": "#scene-deck[data-active=\"world\"][data-phase=\"idle\"]"
+            },
+            {
+              "click": "#world:not([data-detail=\"true\"]) [data-world=\"5\"]",
+              "waitFor": "#world[data-detail=\"true\"]"
+            },
+            {
+              "waitFor": "#world-particles[data-model]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -64,7 +110,8 @@
       "demos/cases/arknights-world/style.css",
       "entries/cases/arknights-world.json",
       "docs/cases/arknights-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/pointer-repulsion-particles.jpg"
   },
   "sourceCases": [
     {
@@ -366,6 +413,10 @@
     },
     {
       "path": "previews/cases/arknights-world.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/pointer-repulsion-particles.jpg",
       "role": "preview"
     },
     {

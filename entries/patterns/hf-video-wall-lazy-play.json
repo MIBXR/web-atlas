@@ -8,7 +8,7 @@
     "structure"
   ],
   "summary": "让混合比例的作品持续经过视口，可见视频自动播放，离开后卸载。",
-  "mechanism": "视频墙：22＋23 部影片各复制一遍形成 90 张卡片；两行按 -1／+1 方向以 40／34 px/s 移动。阈值 0.2 的观察器挂载并播放可见视频，离开时卸载；400px 预取海报，悬停缩放 1.03。",
+  "mechanism": "视频墙：22＋23 部影片各复制一遍形成 90 张卡片；两行按 -1／+1 方向以 40／34 px/s 移动。阈值 0.2 的观察器挂载并播放可见视频，离开时卸载；400px 预取海报，悬停缩放 1.03。 减少动态时使用海报，保留拖动与点选，关闭自动移动和播放。",
   "trigger": "视频墙进入视口、拖动、横向滚轮、键盘焦点和暂停按钮",
   "effect": "保持完整作品数量与连续移动，同时将视频加载限定在可见区域。",
   "useCases": [
@@ -26,16 +26,11 @@
   ],
   "composition": {
     "role": "support",
-    "notes": "与同一案例的其他机制共同构成页面，源码与素材由来源案例提供。",
     "pairsWellWith": [
       "hf-video-shard-ribbon",
       "hf-ground-canvas-close"
     ],
     "conflicts": []
-  },
-  "accessibility": {
-    "keyboard": "卡片保留可见焦点与居中定位；弹层支持 Close 和 Esc。",
-    "reducedMotion": "视频墙停止自动移动和播放，保留海报、拖动与点击。"
   },
   "parameters": [
     {
@@ -67,7 +62,23 @@
       "observation": "视频墙：22＋23 部影片各复制一遍形成 90 张卡片；两行按 -1／+1 方向以 40／34 px/s 移动。阈值 0.2 的观察器挂载并播放可见视频，离开时卸载；400px 预取海报，悬停缩放 1.03。",
       "evidence": "observed",
       "referenceUrl": "https://hyperframes.heygen.com/",
-      "capturedAt": "2026-11-02"
+      "capturedAt": "2026-11-02",
+      "focus": {
+        "target": ".hf-showcase",
+        "label": "两行反向移动的视频墙",
+        "instruction": "观察进入画面的视频卡自动播放；可拖动卡片横移，用底部暂停按钮停住两行，或点击卡片打开原播放器。",
+        "prepare": [
+          {
+            "waitFor": "html[data-case-loading=ready] .hf-showcase"
+          },
+          {
+            "scroll": ".hf-showcase"
+          },
+          {
+            "video": ".hf-row video"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -78,5 +89,6 @@
     "demos/cases/hyperframes-site/showcase.js",
     "demos/cases/hyperframes-site/index.html",
     "demos/cases/hyperframes-site/styles.css"
-  ]
+  ],
+  "preview": "previews/patterns/hf-video-wall-lazy-play.jpg"
 }

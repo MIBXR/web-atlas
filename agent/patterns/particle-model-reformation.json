@@ -32,10 +32,6 @@
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "术语按钮和前后/返回可键盘操作，当前索引有文本与aria状态。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
     "prompt": "为【目标页面/组件】实现「术语选择重组同一粒子池」。术语目录进入详情后，同一粒子池重组为对应模型，箭头、索引和返回共享模型状态及设定文字。触发：选择术语、箭头或返回。可见结果：词义、形状和当前位置成为一条信息。适用任务：少量世界术语与概念教学。手机可直接进入首个详情并采用图上文下，模型数与正文对应。键盘：术语按钮和前后/返回可键盘操作，当前索引有文本与aria状态。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：负责术语与图形的一一对应；指针排斥只改变局部位置，模型目标仍由术语选择管理。语义导航优先于装饰动画，手机图上文下即可保留这条关系。",
     "sources": [
@@ -45,7 +41,32 @@
         "observation": "桌面WORLD先显示六术语目录与罗德岛点阵；悬停术语的原图预览跟随指针并使用同源形变/RGB偏移shader。点击进入详情，箭头/六段索引换模型，返回恢复目录。",
         "evidence": "observed",
         "referenceUrl": "https://ak.hypergryph.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#world.active[data-detail=\"true\"] #world-detail",
+          "label": "世界设定粒子模型",
+          "instruction": "点左右箭头或六段设定索引，看粒子模型与标题、设定文字一起换态。",
+          "prepare": [
+            {
+              "waitFor": "#scene-deck[data-phase=\"idle\"]"
+            },
+            {
+              "click": "#menu-toggle[aria-expanded=\"false\"]",
+              "maxWidth": 800
+            },
+            {
+              "click": "#chapter-nav a[href=\"#world\"]:not([aria-current=\"page\"])",
+              "waitFor": "#scene-deck[data-active=\"world\"][data-phase=\"idle\"]"
+            },
+            {
+              "click": "#world:not([data-detail=\"true\"]) [data-world=\"0\"]",
+              "waitFor": "#world[data-detail=\"true\"]"
+            },
+            {
+              "waitFor": "#world-particles[data-model]"
+            }
+          ]
+        }
       },
       {
         "caseId": "arknights-world",
@@ -53,7 +74,32 @@
         "observation": "WORLD使用官网Three导出、七组原始点位、粒子贴图和排斥公式；10,000粒子池中当前模型使用1785–5652点。竖屏直接打开源石详情，粒子在上/文字在下。",
         "evidence": "observed",
         "referenceUrl": "https://ak.hypergryph.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#world.active[data-detail=\"true\"] #world-detail",
+          "label": "世界设定粒子模型",
+          "instruction": "点左右箭头或六段设定索引，看粒子模型与标题、设定文字一起换态。",
+          "prepare": [
+            {
+              "waitFor": "#scene-deck[data-phase=\"idle\"]"
+            },
+            {
+              "click": "#menu-toggle[aria-expanded=\"false\"]",
+              "maxWidth": 800
+            },
+            {
+              "click": "#chapter-nav a[href=\"#world\"]:not([aria-current=\"page\"])",
+              "waitFor": "#scene-deck[data-active=\"world\"][data-phase=\"idle\"]"
+            },
+            {
+              "click": "#world:not([data-detail=\"true\"]) [data-world=\"0\"]",
+              "waitFor": "#world[data-detail=\"true\"]"
+            },
+            {
+              "waitFor": "#world-particles[data-model]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -64,7 +110,8 @@
       "demos/cases/arknights-world/style.css",
       "entries/cases/arknights-world.json",
       "docs/cases/arknights-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/particle-model-reformation.jpg"
   },
   "sourceCases": [
     {
@@ -366,6 +413,10 @@
     },
     {
       "path": "previews/cases/arknights-world.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/particle-model-reformation.jpg",
       "role": "preview"
     },
     {

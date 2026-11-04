@@ -11,7 +11,6 @@
     ],
     "summary": "通过有限倾斜建立运动或海报节奏。",
     "mechanism": "标题带、说明板与箭头重复同一倾斜方向，正文水平可读，下载徽章保留自己的标准轮廓。",
-    "trigger": "阅读章节分隔与行动入口",
     "effect": "方向感贯穿不同内容区域。",
     "useCases": [
       "运动游戏与强海报主题"
@@ -25,18 +24,13 @@
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责方向感贯穿不同内容区域，职责限定在当前区域。组合时倾斜仅用于短标题与装饰，文字和触控边界不被裁掉。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "section-color-rhythm"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「斜切条带延续运动方向」。标题带、说明板与箭头重复同一倾斜方向，正文水平可读，下载徽章保留自己的标准轮廓。触发：阅读章节分隔与行动入口。可见结果：方向感贯穿不同内容区域。适用任务：运动游戏与强海报主题。倾斜仅用于短标题与装饰，文字和触控边界不被裁掉。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责方向感贯穿不同内容区域，职责限定在当前区域。组合时倾斜仅用于短标题与装饰，文字和触控边界不被裁掉。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「斜切条带延续运动方向」。标题带、说明板与箭头重复同一倾斜方向，正文水平可读，下载徽章保留自己的标准轮廓。可见结果：方向感贯穿不同内容区域。适用任务：运动游戏与强海报主题。倾斜仅用于短标题与装饰，文字和触控边界不被裁掉。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "uma-musume",
@@ -44,7 +38,20 @@
         "observation": "向前倾斜的标题带、说明板与箭头复用斜切语言，平台下载徽章保持自己的标准轮廓。",
         "evidence": "observed",
         "referenceUrl": "https://umamusume.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#about",
+          "label": "About 的前倾条带",
+          "instruction": "看 ABOUT 标题与下方倾斜的按钮条；文字保持可读，斜边统一向前。",
+          "prepare": [
+            {
+              "click": "#menu-button[aria-expanded=\"false\"]"
+            },
+            {
+              "click": "#study-menu a[href=\"#about\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "persona-kinetic",
@@ -52,7 +59,17 @@
         "observation": "斜切拼贴、金色边框、网点与剪贴字保持同一张海报的秩序。",
         "evidence": "observed",
         "referenceUrl": "https://persona.atlus.com/p5r/?lang=en#",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#characters",
+          "label": "角色档案的斜切拼贴",
+          "instruction": "看斜切的人物窗口、金色边框和剪贴字，比较各层共同的倾斜方向。",
+          "prepare": [
+            {
+              "click": "header nav a[href=\"#characters\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "zenless-zone-zero",
@@ -60,7 +77,17 @@
         "observation": "胶片齿孔、斜切面板、斜向人物窗口、粗描边胶囊和边缘编号轨道。",
         "evidence": "observed",
         "referenceUrl": "https://zzz.mihoyo.com/main",
-        "capturedAt": "2026-10-11"
+        "capturedAt": "2026-10-11",
+        "focus": {
+          "target": "#character .home-character__main-panel",
+          "label": "斜向人物窗口与面板",
+          "instruction": "看角色窗口、粗描边面板和头像轨道如何沿同一倾斜方向组织。",
+          "prepare": [
+            {
+              "click": ".sidebar__pagers-num[aria-label=\"跳到角色介绍\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -86,7 +113,8 @@
       "demos/cases/zenless-zone-zero/reference-mobile.css",
       "demos/cases/zenless-zone-zero/reference.css",
       "demos/cases/zenless-zone-zero/state.css"
-    ]
+    ],
+    "preview": "previews/patterns/inclined-motion-bands.jpg"
   },
   "sourceCases": [
     {
@@ -118,7 +146,7 @@
     {
       "path": "prompts/patterns/inclined-motion-bands.md",
       "role": "prompt",
-      "content": "# 斜切条带延续运动方向 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/inclined-motion-bands.json)\n\n为【目标页面/组件】实现「斜切条带延续运动方向」。标题带、说明板与箭头重复同一倾斜方向，正文水平可读，下载徽章保留自己的标准轮廓。触发：阅读章节分隔与行动入口。可见结果：方向感贯穿不同内容区域。适用任务：运动游戏与强海报主题。倾斜仅用于短标题与装饰，文字和触控边界不被裁掉。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责方向感贯穿不同内容区域，职责限定在当前区域。组合时倾斜仅用于短标题与装饰，文字和触控边界不被裁掉。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。\n\n## 制作约束\n\n- 倾斜仅用于短标题与装饰，文字和触控边界不被裁掉。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
+      "content": "# 斜切条带延续运动方向 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/inclined-motion-bands.json)\n\n为【目标页面/组件】实现「斜切条带延续运动方向」。标题带、说明板与箭头重复同一倾斜方向，正文水平可读，下载徽章保留自己的标准轮廓。可见结果：方向感贯穿不同内容区域。适用任务：运动游戏与强海报主题。倾斜仅用于短标题与装饰，文字和触控边界不被裁掉。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。\n\n## 制作约束\n\n- 倾斜仅用于短标题与装饰，文字和触控边界不被裁掉。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
     }
   ],
   "files": [
@@ -1764,6 +1792,10 @@
     },
     {
       "path": "previews/cases/zenless-zone-zero.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/inclined-motion-bands.jpg",
       "role": "preview"
     },
     {

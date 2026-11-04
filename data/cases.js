@@ -385,7 +385,7 @@ window.ATLAS_CASES = [
     "theme": "营销首页固定白底、浅色 Bento 和蓝色 CTA；没有全局主题切换。产品编辑器内的主题不等于这个首页主题。",
     "constraints": [
       "保留当前来源的触发→响应→目的，不用通用淡入代替定义性交互。",
-      "七头像为官方原素材，组合间距、标识 24s 周期和菜单指针离开等待 150ms 是拟合；Bento 使用官方完整静帧而非全部独立浮层，三故事数量与正文缩短。详情对话框内的勾选/问答/agent 反馈是本地示范，并不声称是原站首页机制或真实模型执行。",
+      "七头像为官方原素材，组合间距、标识 24s 周期和菜单指针离开等待 150ms 是拟合；Bento 使用官方完整静帧，三故事数量与正文缩短。详情对话框内的勾选、问答和 Agent 反馈为本地交互示范。",
       "品牌与官方素材仅用于此个人参考库；归档来源与权利。",
       "减少动态保留可读内容、键盘焦点和手动选择。"
     ],
@@ -499,7 +499,7 @@ window.ATLAS_CASES = [
     ],
     "theme": "天空蓝、古代青绿、象牙色标题；自然、神秘与开放探索。",
     "constraints": [
-      "本次仅归档2026-10-07所见日文WORLD，官网后续变化不维护。",
+      "归档 2026-10-07 日文 WORLD 页面的固定快照。",
       "影片仍为每章前6段短片，保留同样片尾推进规则但循环更短；手机未取得竖版HLS，裁切同一短片。",
       "仅本页三章与声音入口；其它栏目以官网外链打开，未复制业务服务。",
       "键盘、画面持续暂停、焦点时不隐藏为本地无障碍补充；源站桌面滚轮没有翻章。",
@@ -612,8 +612,8 @@ window.ATLAS_CASES = [
     ],
     "theme": "黑金首屏表达 Royal；红黑网点、金框与大号切片标题表达都市怪盗风格。",
     "constraints": [
-      "2026-10-07英文官网单一快照；官网后续变化不维护。",
-      "本地Canvas2D依据公开PIXI星光算法重写；随机抽样与光混合不能声称逐帧一致。",
+      "2026-10-07 英文官网的固定快照。",
+      "本地 Canvas2D 根据公开 PIXI 星光算法实现，采用随机抽样与光混合。",
       "角色、日常与怪盗行动内容缩减；角色入场细节、字体尺寸与全部购买/规格栏目未逐像素复制。",
       "没有独立BGM，不用通用音乐冒充原曲；PV声音只在用户打开时播放。",
       "所有官方图片与商标权利归ATLUS/SEGA，仅个人学习；不运行追踪或账号服务。"
@@ -807,8 +807,7 @@ window.ATLAS_CASES = [
     },
     "soundBehavior": {
       "kind": "none",
-      "control": "本练习无背景音乐。",
-      "interactionRole": "不按风格标签臆造音乐；若引入声音，应有真实来源、主动启用、停止控制与明确的交互作用。"
+      "control": "本练习无背景音乐。"
     }
   },
   {
@@ -928,8 +927,7 @@ window.ATLAS_CASES = [
     },
     "soundBehavior": {
       "kind": "none",
-      "control": "本练习无背景音乐。",
-      "interactionRole": "不按风格标签臆造音乐；若引入声音，应有真实来源、主动启用、停止控制与明确的交互作用。"
+      "control": "本练习无背景音乐。"
     }
   },
   {
@@ -1018,7 +1016,7 @@ window.ATLAS_CASES = [
         "title": "MDN — stroke-dashoffset",
         "url": "https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/stroke-dashoffset",
         "type": "规范",
-        "note": "核验 stroke-dashoffset 的偏移、可动画性和 pathLength 归一化；注意旧 Vivus README 的限制属于旧库实现，不代表当前 SVG 仅 path 支持。"
+        "note": "stroke-dashoffset 支持偏移动画，pathLength 用于归一化路径长度；旧版 Vivus README 中的限制属于该库实现。"
       },
       {
         "title": "Vivus 作者 · 公开作品集",
@@ -1052,8 +1050,7 @@ window.ATLAS_CASES = [
     },
     "soundBehavior": {
       "kind": "none",
-      "control": "本练习无背景音乐。",
-      "interactionRole": "不按风格标签臆造音乐；若引入声音，应有真实来源、主动启用、停止控制与明确的交互作用。"
+      "control": "本练习无背景音乐。"
     }
   },
   {
@@ -1095,7 +1092,7 @@ window.ATLAS_CASES = [
       "每次触发从当前中间状态继续，避免突然闪回",
       "选择、暂停、参数都必须支持键盘",
       "动态视觉不能遮住标题或改变正文布局",
-      "不把原作者文章中的示范称为本次官网实访，明确来源状态"
+      "以原作者制作文章作为构成与动画实现的依据。"
     ],
     "useCases": [
       "创意工作室",
@@ -1126,7 +1123,7 @@ window.ATLAS_CASES = [
         "title": "In Pieces 项目官网",
         "url": "https://species-in-pieces.com/",
         "type": "实例",
-        "note": "2026-10-07 web 读取失败；不声称完成当日官网视觉核验。案例内容由下方原作者制作文章核实，本条为基于作者文章的经典风格练习。"
+        "note": "本案例基于原作者制作文章，作为经典风格构成练习。"
       },
       {
         "title": "Bryan James — The Making Of In Pieces",
@@ -1172,8 +1169,7 @@ window.ATLAS_CASES = [
     },
     "soundBehavior": {
       "kind": "none",
-      "control": "本练习无背景音乐。",
-      "interactionRole": "不按风格标签臆造音乐；若引入声音，应有真实来源、主动启用、停止控制与明确的交互作用。"
+      "control": "本练习无背景音乐。"
     }
   },
   {
@@ -1209,7 +1205,7 @@ window.ATLAS_CASES = [
     ],
     "theme": "纸白、炭黑、信号红；严格基线、粗线分隔、左对齐标题，主题是现代城市中的字与信息。",
     "constraints": [
-      "Swissted 官网明确使用 Berthold Akzidenz-Grotesk medium，并非 Helvetica；本 demo 用系统 Arial 近似结构，不声称字体等同。",
+      "Swissted 使用 Berthold Akzidenz-Grotesk medium；本例使用系统 Arial 近似结构。",
       "桌面 12 栏，移动端折为单列；文字不能为了维持海报形状被裁切。",
       "红色用于主视觉和状态，正文以黑字/纸白保持对比。",
       "字号差必须伴随语义标题层级，不能以超大字替代内容组织。",
@@ -1287,8 +1283,7 @@ window.ATLAS_CASES = [
     },
     "soundBehavior": {
       "kind": "none",
-      "control": "本练习无背景音乐。",
-      "interactionRole": "不按风格标签臆造音乐；若引入声音，应有真实来源、主动启用、停止控制与明确的交互作用。"
+      "control": "本练习无背景音乐。"
     }
   },
   {
@@ -1359,7 +1354,7 @@ window.ATLAS_CASES = [
         "title": "Bauhaus Dessau — 官方首页",
         "url": "https://bauhaus-dessau.de/en/welcome/",
         "type": "实例",
-        "note": "2026-10-07阅读：展览信息结合图形、日期、场所、票务与无障碍入口；不冒称本demo复刻官网。"
+        "note": "展览信息结合图形、日期、场所、票务与无障碍入口。"
       },
       {
         "title": "Bauhaus Kooperation — Kandinsky 的基础课程",
@@ -1405,8 +1400,7 @@ window.ATLAS_CASES = [
     },
     "soundBehavior": {
       "kind": "none",
-      "control": "本练习无背景音乐。",
-      "interactionRole": "不按风格标签臆造音乐；若引入声音，应有真实来源、主动启用、停止控制与明确的交互作用。"
+      "control": "本练习无背景音乐。"
     }
   },
   {
@@ -1443,7 +1437,7 @@ window.ATLAS_CASES = [
     "theme": "炭灰/海军灰哑光面板、暖白标签、橙色分区线、低亮度青色波形显示；虚构夜间音乐工作室。",
     "constraints": [
       "仅聚焦1981 Jupiter-8启发的合成器面板，不将其代表整个80年代。",
-      "官方2014手册描述的是旧版Arturia界面；用于历史面板结构证据，不冒称当前软件全部细节。",
+      "官方 2014 手册作为旧版 Arturia 面板结构的历史参考。",
       "demo 是单振荡器简化合成器，不能宣称精确模拟Jupiter-8音色或8复音。",
       "读数、滑块、预设都有文本标签，不只用颜色表达状态。",
       "声音默认关闭；无自动播放、原歌曲或外部音频素材。",
@@ -1659,8 +1653,7 @@ window.ATLAS_CASES = [
     },
     "soundBehavior": {
       "kind": "none",
-      "control": "本练习无背景音乐。",
-      "interactionRole": "不按风格标签臆造音乐；若引入声音，应有真实来源、主动启用、停止控制与明确的交互作用。"
+      "control": "本练习无背景音乐。"
     }
   },
   {
@@ -2053,7 +2046,7 @@ window.ATLAS_CASES = [
       "只归档 https://genshin.hoyoverse.com/en/ 在 2026-10-07 的单一快照，不跟随后续版本。",
       "源页 6 个章节缩为本地 3 个核心章节加 footer；领取、Xbox、登录、完整武器与 Wiki 不在本地范围。",
       "源垂直 Swiper 与角色 100ms 时序已确认；整屏的精确时长未核验，本地 600ms ease / 650ms 输入锁为明确近似。",
-      "3 秒首屏本地短片没有音轨；6 条台词是官方角色语音，不能称作原站 BGM。",
+      "3 秒首屏本地短片无音轨；6 条台词为官方角色语音。",
       "详情是摘要 dialog，手机人物排布及可触摸控件属于本地适配，并非逐像素移动版。",
       "官方品牌、美术、视频与语音权利归相应权利方，资产 manifest 记录直接来源；不复制账户或追踪服务。"
     ],
@@ -2095,7 +2088,7 @@ window.ATLAS_CASES = [
         "title": "W3C · Modal Dialog Pattern",
         "url": "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/",
         "type": "规范",
-        "note": "本地原生dialog的键盘、关闭与焦点语义参考，不代表原站完整遵循此模式。"
+        "note": "本地原生 dialog 的键盘、关闭与焦点语义参考。"
       },
       {
         "title": "官方公开交互脚本 · 2026-10-07",
@@ -2178,14 +2171,14 @@ window.ATLAS_CASES = [
     ],
     "theme": "暗灰网格、青色状态与灰度背景承接罗德岛工业系统；彩色立绘、白色点阵与档案文字保持焦点和可读性。",
     "constraints": [
-      "本次快照归档于2026-10-07；后续官网变动不自动维护。官方美术/音乐版权归鹰角网络，限授权私人设计学习。",
+      "快照归档于 2026-10-07。官方美术/音乐版权归鹰角网络，限授权私人设计学习。",
       "六章及页脚交接保留；情报只保留当前三条与单幅官方Banner，轮播及深层新闻页由官网外链承接。",
       "干员保留3名/每人E1与E2，原站6名且阿米娅含E0；灰度背景为本地同人物图层，未移植完整背景版/6人滚动肖像轨道。",
       "WORLD原始模型、Three导出、粒子shader和指针排斥方程迁移；独立场景控制器及帧调度是本地实现，未迁移原站额外20枚firefly层。",
       "媒体对象取原站图片并改为四入口格；完整办公桌构图、图库/动态干员/内嵌视频目录未迁移，点击返回官网相应入口。",
       "末章四张官方图与响应式素材保留，分类内部弹层不复制；页脚260px位移为本地收束。",
       "加载图片集与保底1300ms是本地适配；原站加载五背景图、每次进度用1000ms插值，完成后300ms再退出1000ms。",
-      "查询参数motion=reduce是可审阅分支；不声称模拟了操作系统偏好。"
+      "查询参数 motion=reduce 提供减少动态分支。"
     ],
     "useCases": [
       "工业科幻游戏",
@@ -2298,7 +2291,7 @@ window.ATLAS_CASES = [
     "constraints": [
       "只归档 https://umamusume.com/ 在 2026-10-07 的国际英文页，不混入日本门户布局或追随后续改版。",
       "群像、新闻、About 和 Gameplay 使用官方本地素材；新闻数量和后半部角色/媒体内容有缩减。",
-      "About 原始 top_about.mp4 无音轨，播放器未静音不代表有原声；官网其他 PV 外链的声音未在本地核实，未发现独立 BGM，不给滚动章节配通用音乐。",
+      "About 的 top_about.mp4 无音轨；本地未添加独立 BGM，其他 PV 通过原站入口播放。",
       "Gameplay 不自动推进、不循环；400ms cubic-bezier(.25,1,.5,1) 与首尾边界有源样式依据。",
       "手机使用原站竖版 KV；菜单、触摸阈值与字体排布有本地适配，减少动态取消非必要过渡。",
       "官方品牌、群像、美术和 PV 权利归相应权利方，manifest 留存 URL/尺寸/哈希；不复制运营服务。"
@@ -2348,7 +2341,7 @@ window.ATLAS_CASES = [
         "title": "W3C：Animation from Interactions",
         "url": "https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions.html",
         "type": "规范",
-        "note": "交互动效降级规范，条款为Level AAA；不据此声称整页无障碍认证。"
+        "note": "交互动效的减少动态规范，条款为 Level AAA。"
       },
       {
         "title": "官方公共导航组件样式/脚本",
@@ -2389,7 +2382,7 @@ window.ATLAS_CASES = [
     "soundBehavior": {
       "kind": "none",
       "control": "About 原始 top_about.mp4 只有视频轨道，没有音轨；播放/暂停、进度与关闭暂停可操作。官网其他 PV 外链声音未在本地核实，未发现独立 BGM。",
-      "interactionRole": "奔跑与比赛画面的剪辑建立观看节奏，无声影片保持普通阅读安静；站外播放器的声音不冒称本地已播放。"
+      "interactionRole": "奔跑与比赛画面的剪辑建立观看节奏，无声影片保持普通阅读安静。"
     },
     "capturedAt": "2026-10-07"
   },
@@ -2481,7 +2474,7 @@ window.ATLAS_CASES = [
         "title": "Blue Archive 日本官方创作指南",
         "url": "https://bluearchive.jp/fankit/guidelines",
         "type": "规范",
-        "note": "官方IP创作指南入口；本地学习不因此获得全部品牌与资产的再发布许可。"
+        "note": "官方 IP 创作指南。"
       },
       {
         "title": "W3C WAI：Carousels Tutorial",
@@ -2493,7 +2486,7 @@ window.ATLAS_CASES = [
         "title": "W3C：Animation from Interactions",
         "url": "https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions.html",
         "type": "规范",
-        "note": "非必要交互动效支持减少动态偏好，不据此声称完整合规。"
+        "note": "非必要交互动效支持减少动态偏好。"
       },
       {
         "title": "官方公开角色样式 · 2026-10-07",
@@ -2628,7 +2621,7 @@ window.ATLAS_CASES = [
         "title": "ustwo games：联系信息",
         "url": "https://ustwogames.co.uk/contact-us/",
         "type": "实例",
-        "note": "官方伦敦工作室地址是国家分类的依据，不代表英国页面有固定风格。"
+        "note": "官方伦敦工作室地址是创作来源地区的依据。"
       },
       {
         "title": "W3C WAI：Carousels Tutorial",
@@ -2640,7 +2633,7 @@ window.ATLAS_CASES = [
         "title": "W3C：Animation from Interactions",
         "url": "https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions.html",
         "type": "规范",
-        "note": "本地减少动态分支约束：停止自动推进与背景，取消非必要位移；不声称原站合规。"
+        "note": "本地减少动态分支停止自动推进与背景，取消非必要位移。"
       },
       {
         "title": "MV1 官方公开交互脚本",
@@ -2860,9 +2853,9 @@ window.ATLAS_CASES = [
       "大屏主图1600×640，小屏使用450×450官方专用图，不直接裁剪桌面海报。",
       "真实红方馆标：桌面240×240px、手机160×160px，在海报上方约30px开始叠置；中屏200px为本地可用性适配。",
       "Logo/艺术家作品版权归原权利人，仅作个人本地学习。",
-      "使用系统字体近似导航；官网Mori专属字体没有下载，不能声称像素级一致。",
+      "导航使用系统字体近似，未收录官网 Mori 专属字体。",
       "本地只还原首页几个区域并加教学新闻筛选；不复制多馆门户、购票账户与追踪脚本。",
-      "完整预约与馆藏数据库不复制；新闻分类与本地反馈属于练习补充，不能冒称官网所有服务。"
+      "新闻分类与本地反馈为练习补充。"
     ],
     "useCases": [
       "艺术馆与多展览机构",
@@ -3149,7 +3142,7 @@ window.ATLAS_CASES = [
         "title": "Rijksmuseum Accessibility Statement",
         "url": "https://www.rijksmuseum.nl/en/visit/accessibility/accessibility-statement",
         "type": "规范",
-        "note": "网站服务参观/票务和在线收藏；官方以WCAG2.2 AA为目标并列举未达项，不能称全面合规。"
+        "note": "网站服务参观、票务与在线收藏；官方以 WCAG 2.2 AA 为目标，并列出尚未满足的项目。"
       },
       {
         "title": "W3C WAI Disclosure Pattern",
@@ -3628,7 +3621,7 @@ window.ATLAS_CASES = [
       "固定中文探索页六章快照，不合并官网首页轮播、全景故宫或数字文物库的独立服务。",
       "完整检查并本地化本页适用图像、背景纹理与伪元素题饰；保留原字节、宽高和水印，权利归原机构/作者。",
       "原站业务链接回官方；第三方无障碍工具实际观察到15项入口，但语音/读屏服务未在本地克隆。",
-      "桌面六章盒模型与原站同值；390px手机前四章同值、医院高度约0.5px差；不声称全站业务或所有浏览器像素一致。",
+      "桌面六章盒模型与原站同值；390px 手机前四章同值，医院高度约有 0.5px 差异。",
       "减少动态时保持内容可见、手动轮播可用，取消自动播放和位移。"
     ],
     "useCases": [
@@ -3796,25 +3789,19 @@ window.ATLAS_CASES = [
         "title": "数字敦煌 · 第257窟主室西壁",
         "url": "https://www.e-dunhuang.com/showmural/10.0001/0001/0001/0257/0001/0003/01",
         "type": "实例",
-        "note": "现场点击Zoom in与Zoom out，核验独立深色影像视域与可逆放缩。"
+        "note": "独立深色影像视域支持加减、拖动与可逆缩放，采用 Leaflet/DeepZoom 和公开 Network 瓦片。"
       },
       {
         "title": "W3C WAI · Modal Dialog",
         "url": "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/",
         "type": "规范",
-        "note": "首页版权/Cookie/平台介绍说明窗口提供明确关闭、Escape和焦点归还；壁画查看器为独立页面，不能使用此规范冒称它是dialog。"
+        "note": "首页版权、Cookie 与平台介绍说明窗口提供明确关闭、Escape 与焦点归还；壁画查看器使用独立页面。"
       },
       {
         "title": "W3C WAI · Reflow",
         "url": "https://www.w3.org/WAI/WCAG22/Understanding/reflow.html",
         "type": "规范",
         "note": "目录窄屏重排；图像二维平移限于独立画布，避免整页横向溢出。"
-      },
-      {
-        "title": "数字敦煌 · 257窟西壁公开查看器",
-        "url": "https://www.e-dunhuang.com/showmural/10.0001/0001/0001/0257/0001/0003/01",
-        "type": "实例",
-        "note": "实际加减、拖动，读取原Leaflet/DeepZoom脚本、地图缩放和公开Network瓦片，不读取登录后级别。"
       }
     ],
     "exercise": "用有使用权的真实瓦片图像和完整元数据替换档案；逐条件验证成员集、组合空态、URL返回以及查看器真实精度、平移和缩放边界。",
@@ -3877,10 +3864,9 @@ window.ATLAS_CASES = [
     ],
     "theme": "原站白色外缘、黑灰机构文字、建筑及藏品原色、少量红色开放信息与方角画面。",
     "constraints": [
-      "固定同日四屏、当前七项展览及九个图像入口，不声称预约、留言、商店、课堂或账户业务复制。",
+      "本地收录同日四屏、七项展览与九个图像入口。",
       "公开摄影、机构字标、两类轮播和全部页面纹理/图饰检查本地化；保持原字节及水印。",
-      "原站初载第三方阻塞与受控jQuery.ready验证分开记录，正常访客加载效果不能由受控状态推断。",
-      "源PC最小1366px、移动UA跳到独立WAP；未取得WAP内容，因此手机响应适配明确不作为原站移动端像素复刻。",
+      "源 PC 页面最小宽度为 1366px；手机采用相同内容的长页适配。",
       "部分源CSS的未用背景或隐藏箭头URL返回HTML，记录失败，不用猜测图片替代可见主要素材。"
     ],
     "useCases": [
@@ -3980,7 +3966,7 @@ window.ATLAS_CASES = [
     ],
     "productFocus": "2026-10-09中国大陆公开官网八章快照：home、operator、lore、information、calendar、gameplay、aic、notice；35人目录、六世界模型、10影像、4玩法/5AIC、10公告。人物完整简介来自当前简中文本映射，逐角色核对原值与SHA256；账号、支付、下载/云游戏服务仍官方。",
     "interaction": [
-      "载入与导航：使用原Updating图形和排版，本地必要首页图、干员图与字体的实际完成数推进；失败提供重试/继续。侧栏hover300ms展开，手机菜单、章节导航和自然滚动回程沿原结构。进度是任务完成比例，不声称网络字节百分比。",
+      "载入与导航：使用原Updating图形和排版，本地必要首页图、干员图与字体的实际完成数推进；失败提供重试/继续。侧栏hover300ms展开，手机菜单、章节导航和自然滚动回程沿原结构。进度按任务完成比例显示。",
       "干员：35项头像真实映射，箭头每次翻四个头像而不切角色，点击头像才更新名字/代号/阵营/种族/职业/属性/CV与星级；全部干员页按职业/属性AND筛选，返回正式档案。",
       "2D/3D：同35项立绘和70个原enter/idle视频。祀源影片3840×1080左右RGB/alpha，经原亮度权重0.3/0.59/0.11合成1920×1080透明canvas，enter结束切idle循环；不制造实时人物模型。",
       "世界观：帝江号/锚点/集成工业系统/天师桩/天使/裂地者六个原bin及模型参数，Float32 xyz、按Y跨度1900规范化；实际WebGL点云、扫描、转动、拖动、分页/标题与六指标同步。最终状态实测见fidelity，不因源码抽取而自动判通过。",
@@ -4119,14 +4105,13 @@ window.ATLAS_CASES = [
     ],
     "theme": "原作米白透明档案、黑白机构字标、橙色光学内缘与小面积状态节点形成研究终端；本地保持原色与16:9比例，外围控制使用相同中性色，不额外添加深绿卡片或整页主题切换。",
     "constraints": [
-      "studyScope为visual-adaptation。标题、首屏和来源区均声明影像的网页转译；原作没有可核验的对应网页按钮。媒体保留与本地状态代码分别说明，不能称为官方品牌站复刻。",
+      "以官方影像为视觉来源，将媒体呈现与本地网页状态代码分开实现。",
       "2026-10-09实际观看官方Bilibili账号UID161775300发布的PV，通过video解码原尺寸帧与实际媒体轨道核验。原轨道HEVC、1920×1080、25fps、318.8秒，原文件hash/来源在清单，完整原轨道归档于仓库外。",
-      "仓库保存四个必要无声H264片段，截取19.20–23.40、27.00–39.20、39.20–51.52、59.60–73.40秒；保持1倍速度、原尺寸及25fps，CRF18转码会有压缩差异，不能声称视频字节与原轨道一致。 双环片段请求12.30秒，实际25fps输出308帧/12.32秒，范围按实际末端51.52秒记录。",
+      "仓库保存四个无声 H264 片段：19.20–23.40、27.00–39.20、39.20–51.52、59.60–73.40 秒；保持 1 倍速度、原尺寸与 25fps，使用 CRF18 转码。双环片段为 308 帧、12.32 秒。",
       "22、35、48、68秒原尺寸解码帧未缩放/改色；机构字标和透明材质由原作媒体保留，没有重写影片的3D渲染器或臆造字体名称。点选、档案遮罩、节点移动、范围条与连续章编排均为本地代码。",
-      "原片只检索并抬出X-001，本地五个观察样本属于教学目录；选中板的小位移与阵列显隐为adapted，不能说成原片悬停或档案数量。科室目录保留一中心加九外围，不扩写权限和完整游戏设定。",
+      "原片检索并抬出 X-001；本地五个观察热点、选中板位移与阵列显隐为网页交互改编。科室目录保留一中心加九外围。",
       "官方字体/标志细节在原帧中保留；外围网页文字用系统字体，未单独复制字体包。官方封面与孤星背景仅作来源卡。片段无音轨，完整声音留在官方播放器。",
-      "原画面使用等比例全幅展示，手机16:9构图仍保持完整，下方语义目录承担可读操作；这属于网页适配，不冒称原作有手机布局。",
-      "RhineLabUI 为外部第三方代码复刻参考，固定核验版本 12cc5e4013acb9408f753ff71de6b8492299b7c8；本地不载入其 Three.js 工程、GLB、字体或音频，不将其实现精度、移动端或性能描述为本次已运行验证。"
+      "原画面等比例全幅展示，手机保留完整的 16:9 构图；下方语义目录提供可读操作。"
     ],
     "useCases": [
       "机构影像转译为可操作资料",
@@ -4154,7 +4139,7 @@ window.ATLAS_CASES = [
         "title": "明日方舟官方 · 特别映像「莱茵生命：访问」",
         "url": "https://www.bilibili.com/video/BV1rr4y1b7sz/",
         "type": "实例",
-        "note": "官方UID161775300于2022-04-26发布。2026-10-09实际播放器观看并保存原尺寸关键帧/媒体轨道，核验1920×1080、25fps与四段许可/档案/光学/矩阵时序；网页点选是adapted。直接检索曾返回412，浏览器与公开媒体资源采集成功。"
+        "note": "官方 UID161775300 于 2022-04-26 发布。采集的原尺寸关键帧与媒体轨道为 1920×1080、25fps，覆盖许可、档案、光学与矩阵四段时序；网页点选为本地改编。"
       },
       {
         "title": "Hypergryph · 明日方舟四周年官方专题",
@@ -4166,13 +4151,13 @@ window.ATLAS_CASES = [
         "title": "RhineLabUI · LBEILC 的第三方代码复刻（用户 fork）",
         "url": "https://github.com/MIBXR/RhineLabUI",
         "type": "实例",
-        "note": "2026-10-11 核验 fork 与上游同为 12cc5e4013acb9408f753ff71de6b8492299b7c8。TypeScript、Three.js、Vite 实现 DOM/SVG 开场、档案阵列、解密及模型交互；搜索和收藏为开发者扩展。本库仅链接与说明，未运行或集成其三维工程。"
+        "note": "固定提交 12cc5e4013acb9408f753ff71de6b8492299b7c8 的第三方代码参考，以 TypeScript、Three.js、Vite 实现 DOM/SVG 开场、档案阵列、解密与模型交互；搜索和收藏为开发者扩展。"
       },
       {
         "title": "LBEILC/RhineLabUI · 作者原仓库与许可边界",
         "url": "https://github.com/LBEILC/RhineLabUI",
         "type": "实例",
-        "note": "作者原创代码采用 MIT；游戏名称、标志、原作媒体、第三方字体不因此获得 MIT 授权。源码阅读不等于完整视觉或性能实测。"
+        "note": "MIT 适用于作者原创代码。"
       },
       {
         "title": "W3C · Disclosure Pattern",
@@ -4190,7 +4175,7 @@ window.ATLAS_CASES = [
         "title": "W3C · Animation from Interactions",
         "url": "https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions.html",
         "type": "规范",
-        "note": "WCAG2.3.3为AAA；指导本地取消非必要档案位移和平滑滚动，不声称原片或专题满足该条。"
+        "note": "WCAG 2.3.3 为 AAA，指导本地取消非必要的档案位移与平滑滚动。"
       },
       {
         "title": "W3C · Pause, Stop, Hide",
@@ -4337,7 +4322,7 @@ window.ATLAS_CASES = [
         "title": "WAI Carousel Pattern",
         "url": "https://www.w3.org/WAI/ARIA/apg/patterns/carousel/",
         "type": "规范",
-        "note": "轮播控制、焦点及动态内容的无障碍参考；本地键盘适配不冒称原站观察。"
+        "note": "轮播控制、焦点与动态内容的参考，用于本地键盘适配。"
       }
     ],
     "prompt": "以绝区零中国官网2026-10-11首页快照为依据，实现【目标游戏】的完整六章首页。先读取本案例index.html、mobile.html、reference.css、reference-mobile.css、app.js、data.js、素材清单、研究与fidelity，再开始实现。保留主视觉、角色、影像、新闻、设定、特色的顺序与原有斜切胶片骨架，使用有权使用的真实角色与素材。角色的立绘、影子、阵营、中文名和英文背景必须同步；头像窗口翻三格不改变当前人物。视频箭头切换视频，新闻/世界/特色保留不同轮播结构。右侧编号定位章节顶部；手机使用7.5rem构图、真实移动素材、滚动后菜单和可收起下载栏。用户主动启用声音，视频与BGM互斥。保留加载、返回、反向快速操作、键盘焦点与减少动态状态。账号和独立内容页链接正式服务，不用演示假装执行。完整导出包含本地归档素材，影片为官方流式地址，需要网络；不把code-only说成完整离线包。",
@@ -4416,9 +4401,8 @@ window.ATLAS_CASES = [
       "本地挂载官方公开营销页面模块，保留必要React、Framer、Three/R3F依赖，限定在独立Demo的vendor目录；Web Atlas主站架构仍为原生HTML/CSS/JS。",
       "本地加载器只注册模块，不执行Next全站启动回调；替换路由、静态语言/区域、素材前缀及统计边界。国内快照不请求IP地区识别服务，也不自动导入账户或遥测。",
       "动画中的工具调用、JSON、文件和定时任务属于官网预设演示，不运行模型、脚本、插件安装或任务调度。下载/政策/产品功能仍通向正式网站。",
-      "保留官方字体与CSS；中文采用系统字体回退。Google Noto Sans SC外部CSS未打包，当前观察中未请求其字体子集，不能声称完整归档Noto字库。",
-      "产品仓库MIT许可不自动覆盖营销页、品牌和字体；原始vendor及素材保存SHA256和来源，迁移前需确认各自许可。",
-      "已在当前Chromium环境验收页面挂载；真实手机GPU、Safari/Firefox、下载安装和系统剪贴板跨应用结果不在本次已验证范围。"
+      "保留官方字体与 CSS；中文采用系统字体回退，未打包 Google Noto Sans SC 外部 CSS 与字体子集。",
+      "产品仓库MIT许可不自动覆盖营销页、品牌和字体；原始vendor及素材保存SHA256和来源，迁移前需确认各自许可。"
     ],
     "useCases": [
       "开发者工具落地页",
@@ -4459,7 +4443,7 @@ window.ATLAS_CASES = [
         "title": "DeepSeek Harness 官方产品仓库",
         "url": "https://github.com/deepseek-ai/deepseek-harness",
         "type": "实例",
-        "note": "产品代码和文档入口；仓库website为文档站，不冒称营销页由该目录构建。"
+        "note": "产品代码与文档入口；仓库 website 目录为文档站。"
       },
       {
         "title": "DeepSeek Harness 品牌规范",
@@ -4524,7 +4508,7 @@ window.ATLAS_CASES = [
       "近黑背景、暖白正文、少量琥珀强调和冷蓝数据标签通过 oklch 自定义属性协调。",
       "程序化月球、空间站、火星和银河属于页面内展示，不依赖外部摄影；编年史与预约票券继续提供阅读结构。"
     ],
-    "productFocus": "归档 garden-skills 固定提交的生成示范页面，研究其设计机制及与无 skill 基线的结构、字体、色彩、动效和信息层级差别。页面内 STELLARIA／星海博物馆、馆藏、地址、预约信息及未来任务均按示范文案保留，不作为真实机构事实。",
+    "productFocus": "归档 garden-skills 固定提交的生成示范页面，研究其设计机制及与无 skill 基线的结构、字体、色彩、动效和信息层级差别。页面内 STELLARIA／星海博物馆、馆藏、地址、预约信息及未来任务均为示范设定。",
     "interaction": [
       "首次进入：标题两行以 1.1 秒上移入场，第二行延迟 0.12 秒；Canvas 星空闪烁，首屏星球持续旋转，UTC 字符串每秒更新。UTC 是浏览器时钟，不是轨道实时数据。",
       "下滚超过 60px：固定导航加近黑半透明背景、16px 模糊与下边线；返回顶部恢复透明。页内锚点按目标位置减 60px 平滑滚动。",
@@ -4540,7 +4524,7 @@ window.ATLAS_CASES = [
       "归档对象是 ConardLi/garden-skills 的固定提交 2b9a89340b70f632d31c0f1c69fce94a7912423e，不是真实博物馆官网。主页面原文自称 STELLARIA／星海博物馆，基线自称星槎博物馆；归档标题按任务命名，不修改页内文案。",
       "主页面与基线均从固定提交 Git blob 复制，仅将 Google Fonts、preconnect 与 Three.js 外链替换为本地路径；逐项对应见 fidelity。HTML 内 CSS、JavaScript、占位链接及业务边界均保留来源。",
       "主页面需要支持 importmap、ESM 与 WebGL 的静态 HTTP 环境；Three.js 0.160.0、字体及各自许可随包保留。没有外部图片、音频或视频素材。",
-      "来源的减少动态分支限制 CSS 动画、停止对象旋转及背景星空闪烁，但着色器时间、UTC 和平滑锚点滚动仍保留；本地不修改该行为，不声称完全静止。",
+      "来源的减少动态分支限制 CSS 动画、停止对象旋转与背景星空闪烁，着色器时间、UTC 和平滑锚点滚动仍保留。",
       "README 第 427 行文件路径多出 demo2/ 一层；归档依据实际存在的 demo/web-design-demo/demo1.html 与 demo1-with-skill.html。生成模型、运行次数及生成参数没有对应证据，不作补充推断。"
     ],
     "useCases": [
@@ -4592,13 +4576,13 @@ window.ATLAS_CASES = [
         "title": "web-design-engineer · 原始提示词与启用前后对照",
         "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-design-engineer/README.zh-CN.md#L417-L433",
         "type": "理论",
-        "note": "第 419 行声明相同提示词下的有／无 skill 对照；第 423 行保存原始提示词，第 425–431 行列版本、字体与布局差别。作者的品质评价不作为本库实测结论。"
+        "note": "第 419 行声明相同提示词下的有／无 skill 对照；第 423 行保存原始提示词，第 425–431 行列版本、字体与布局差别。"
       },
       {
         "title": "web-design-engineer · 设计机制分析维度",
         "url": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-design-engineer/SKILL.md#L61-L71",
         "type": "规范",
-        "note": "来源技能要求从色彩、字体、间距、圆角、阴影、运动和密度分析参考；仅用于解释该示范的设计机制，不声称生成过程逐步执行了全部工作流。"
+        "note": "来源技能从色彩、字体、间距、圆角、阴影、运动和密度分析参考，用于解释这页示范的设计机制。"
       },
       {
         "title": "示范源码作者 · 公开所在地",
@@ -4677,7 +4661,7 @@ window.ATLAS_CASES = [
       "来源 demo/web-design-demo/demo2/index.html 是林月摄影作品集，内容不同；README 未明确其为无技能版本，本案例不设基线。",
       "14 个图片 URL 对应 10 张 Unsplash 照片，不同宽度和质量参数分别下载，不重编码；出处、尺寸与归属核查边界见素材清单。",
       "人物肖像区域保留来源的渐变占位图；作品目录、文章详情与社交链接的 # 占位按原样保留，不补造业务页面。",
-      "独立 Demo 内小字号、文字箭头、加载与减少动态行为属于来源设计，按本轮忠实复制范围保留；不据此声称满足完整无障碍要求。",
+      "独立 Demo 保留来源设计的小字号、文字箭头、加载与减少动态行为。",
       "页面脚注中的全部摄影归属表述属于虚构示范文案；实际图片为来源引用的 Unsplash 素材，不能据此归属给 Mira Høst。"
     ],
     "useCases": [
@@ -5017,7 +5001,7 @@ window.ATLAS_CASES = [
     },
     "constraints": [
       "保留官网已公开的 HTML/CSS/JavaScript 和 SVG；源码快照位于 source/website/，没有把整站截图或录屏放进页面。",
-      "官网未发现独立公开 Git 工程或许可；产品仓库固定提交仅用于来源与许可核查，不冒称网站来自该提交。品牌与美术保留各自权利。",
+      "网站布局与交互以 clawdondesk.com 为依据；产品仓库固定提交用于作者、产品入口与许可核查。品牌与美术保留各自权利。",
       "本地只接入字体与相对路径、去掉统计及开发调参入口，把两个文字功能图标替换成 SVG；原始脚本和素材不改。",
       "拖放入口没有原生键盘替代，减少动态只覆盖原作已有局部效果；这些限制保留并写入 fidelity.md。",
       "本案例是交互产品网页；终端脚本不是实际安装命令，不执行 shell、下载或应用安装。"
@@ -5043,7 +5027,7 @@ window.ATLAS_CASES = [
         "title": "产品应用固定源码",
         "url": "https://github.com/rullerzhou-afk/clawd-on-desk/tree/44507f6863e3837895368d62794992613873cce8",
         "type": "实例",
-        "note": "用于核查作者、产品入口与许可；未找到宣传站工程，不作为网站源码提交。"
+        "note": "作者、产品入口与许可资料。"
       },
       {
         "title": "产品美术许可",
@@ -5286,7 +5270,7 @@ window.ATLAS_CASES = [
       "浏览器合成声音"
     ],
     "summary": "Together AI 的设计 skill 官网：首屏发一手真实页面牌，标题以校对动作改字，对比区让两张不等长整页同步读完，主题网格在对话框内缩放真实页面；全站含 50 个主题示范页和 21 个成品页。",
-    "productFocus": "官网展示 skill 本身；50 个主题页和 21 个 Made 页是 skill 产出的示范作品，其中的品牌、人物、地址、价格和数据都是示范设定，不作为真实机构事实。",
+    "productFocus": "官网展示 skill 本身；50 个主题页和 21 个 Made 页是 skill 产出的示范作品，其中的品牌、人物、地址、价格和数据都是示范设定。",
     "accent": "#FC4C02",
     "background": "#FAFAF9",
     "principles": [

@@ -8,7 +8,7 @@
     "structure"
   ],
   "summary": "顶栏当前页实心、侧栏当前范围柔和，悬停用中性次级面表达短暂反馈。",
-  "mechanism": "按导航层级分配实心与柔和当前状态，非当前导航悬停改用次级面与正文色；当前项悬停维持原状态，动作按钮单独采用主题色悬停。",
+  "mechanism": "按导航层级分配实心与柔和当前状态，非当前导航悬停改用次级面与正文色；当前项悬停维持原状态，动作按钮单独采用主题色悬停。 Tab 焦点使用 --accent-1 轮廓，与当前项和悬停状态分开。",
   "trigger": "切换页面、分类或章节，并悬停非当前导航项",
   "effect": "全站位置、局部范围与短暂经过各有明确的视觉重量。",
   "useCases": [
@@ -31,10 +31,6 @@
       "accent-role-tiers"
     ],
     "conflicts": []
-  },
-  "accessibility": {
-    "keyboard": "使用 aria-current 表达页面、分类与章节位置；Tab 焦点用 --accent-1 轮廓，与悬停状态独立。",
-    "reducedMotion": "当前项和悬停即时更新，减少动态时保留字重、文字与颜色状态。"
   },
   "parameters": [
     {
@@ -61,7 +57,13 @@
       "observation": "顶栏当前页与手机全站导航当前页使用 --accent-3 底和 --accent-3-ink 字；侧栏和本文目录使用 --accent-4 底、--accent-2 字与 650 字重，非当前导航悬停使用次级面与正文色。",
       "evidence": "adapted",
       "referenceUrl": "https://web-atlas.mibxranime.chatgpt.site/",
-      "capturedAt": "2026-10-31"
+      "capturedAt": "2026-10-31",
+      "focus": {
+        "target": ".layout .rail, .menu-toggle",
+        "label": "顶栏与侧栏的当前项",
+        "instruction": "切换侧栏分类，再把指针停在其他分类；对比顶栏实心当前页、侧栏柔和当前项与中性悬停。",
+        "entrypoint": "demos/cases/atlas-sister-sites/index.html#list"
+      }
     },
     {
       "caseId": "atlas-sister-sites",
@@ -69,7 +71,13 @@
       "observation": "{\"title\":\"Web Atlas · 固定提交源码\",\"url\":\"https://github.com/MIBXR/web-atlas/tree/2541e56a21d5321717b9397c14ae09462d562ee4/site\",\"type\":\"实例\",\"note\":\"Web 配色、字体、顶栏、侧栏、卡片、文档与详情吸附、过渡的数值来源。\"}",
       "evidence": "adapted",
       "referenceUrl": "https://github.com/MIBXR/web-atlas/tree/2541e56a21d5321717b9397c14ae09462d562ee4/site",
-      "capturedAt": "2026-10-31"
+      "capturedAt": "2026-10-31",
+      "focus": {
+        "target": ".layout .rail, .menu-toggle",
+        "label": "顶栏与侧栏的当前项",
+        "instruction": "切换侧栏分类，再把指针停在其他分类；对比顶栏实心当前页、侧栏柔和当前项与中性悬停。",
+        "entrypoint": "demos/cases/atlas-sister-sites/index.html#list"
+      }
     },
     {
       "caseId": "atlas-sister-sites",
@@ -77,7 +85,13 @@
       "observation": "{\"title\":\"Motion Atlas · 固定提交源码\",\"url\":\"https://github.com/MIBXR/motion-atlas/tree/80aac18cd2fcef4a97e53b1ef9227a223136ff60/site\",\"type\":\"实例\",\"note\":\"Motion 品牌路径、暖色主题、圆角和胶囊当前项及共享骨架来源。\"}",
       "evidence": "adapted",
       "referenceUrl": "https://github.com/MIBXR/motion-atlas/tree/80aac18cd2fcef4a97e53b1ef9227a223136ff60/site",
-      "capturedAt": "2026-10-31"
+      "capturedAt": "2026-10-31",
+      "focus": {
+        "target": ".layout .rail, .menu-toggle",
+        "label": "顶栏与侧栏的当前项",
+        "instruction": "切换侧栏分类，再把指针停在其他分类；对比顶栏实心当前页、侧栏柔和当前项与中性悬停。",
+        "entrypoint": "demos/cases/atlas-sister-sites/index.html#list"
+      }
     }
   ],
   "sourceFiles": [
@@ -89,5 +103,6 @@
     "demos/cases/atlas-sister-sites/fidelity.md",
     "demos/cases/atlas-sister-sites/LICENSES.md",
     "demos/cases/atlas-sister-sites/source/emphasis.html"
-  ]
+  ],
+  "preview": "previews/patterns/current-item-emphasis-tiers.jpg"
 }

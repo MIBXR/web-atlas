@@ -7,7 +7,7 @@
     const actions = panel.closest('.detail-layout').parentElement.querySelector('.detail-top');
     const resize = () => {
       const frame = wrap.querySelector('iframe');
-      if (!frame || !wrap.clientWidth) return;
+      if (!wrap.clientWidth) return;
       const controlsHeight = wrap.getBoundingClientRect().top - panel.getBoundingClientRect().top;
       const panelTop = header.getBoundingClientRect().height + actions.getBoundingClientRect().height + 24;
       const height = Math.max(1, window.innerHeight - panelTop - controlsHeight - 24);
@@ -20,13 +20,12 @@
       wrap.style.height = `${height}px`;
       wrap.style.setProperty('--preview-scale', scale);
       wrap.style.setProperty('--preview-width', `${width}px`);
-      frame.style.height = `${contentHeight / scale}px`;
+      if (frame) frame.style.height = `${contentHeight / scale}px`;
     };
     const setMode = value => {
       mode = value;
-      const loaded = !!wrap.querySelector('iframe');
-      wrap.classList.toggle('mobile', loaded && mode === 'mobile');
-      wrap.classList.toggle('wide', loaded && mode === 'wide');
+      wrap.classList.toggle('mobile', mode === 'mobile');
+      wrap.classList.toggle('wide', mode === 'wide');
       controls.forEach(button => {
         const active = button.dataset.viewport === mode;
         button.classList.toggle('active', active);
@@ -37,6 +36,7 @@
     controls.forEach(button => button.addEventListener('click', () => setMode(button.dataset.viewport)));
     const observer = new ResizeObserver(resize);
     observer.observe(wrap);
+    observer.observe(panel);
     observer.observe(header);
     observer.observe(actions);
     observer.observe(panel.querySelector('.demo-toolbar'));

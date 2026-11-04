@@ -38,10 +38,6 @@
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "前后/编号按钮有名称和可见焦点，端点disabled与aria同步；目标说明和页码在正常DOM中更新，稳定后只有当前媒体可操作，焦点不随视觉层漂移。",
-    "reducedMotion": "跳过三层位移与文字离场，立即显示目标媒体/编号/说明；视频另有暂停和静态封面，换项仍停止旧片。"
-  },
   "parameters": [
     {
       "name": "三层顺序",
@@ -72,7 +68,44 @@
       "observation": "玩法/AIC：4段原玩法视频和5张原工业图；400ms三层方向揭示，黑层delay0/黄250/实际媒体500，总900ms；文字500ms退出/500ms进入，内容/编号/分页共同变化。",
       "evidence": "observed",
       "referenceUrl": "https://endfield.hypergryph.com/",
-      "capturedAt": "2026-10-09"
+      "capturedAt": "2026-10-09",
+      "focus": {
+        "target": "#gameplay",
+        "label": "玩法影片的分层揭示",
+        "instruction": "点影片下方的前后按钮或编号，看黑层、黄层和实际画面依次揭示。",
+        "prepare": [
+          {
+            "waitFor": "body:has(#entry-loader[hidden])"
+          },
+          {
+            "click": ".header-inner-container > .header-nav-item[aria-label=\"版本日历\"]",
+            "minWidth": 801
+          },
+          {
+            "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+            "maxWidth": 800
+          },
+          {
+            "click": ".header-menu-item[aria-label=\"版本日历\"]",
+            "maxWidth": 800
+          },
+          {
+            "images": "#calendar"
+          },
+          {
+            "click": ".header-inner-container > .header-nav-item[aria-label=\"玩法介绍 & 集成工业知识\"]",
+            "minWidth": 801
+          },
+          {
+            "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+            "maxWidth": 800
+          },
+          {
+            "click": ".header-menu-item[aria-label=\"玩法介绍 & 集成工业知识\"]",
+            "maxWidth": 800
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -86,5 +119,6 @@
     "demos/cases/endfield-industrial/state.css",
     "demos/cases/endfield-industrial/app.js",
     "demos/cases/endfield-industrial/data.js"
-  ]
+  ],
+  "preview": "previews/patterns/layered-directional-media-reveal.jpg"
 }

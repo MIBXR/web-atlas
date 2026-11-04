@@ -43,7 +43,8 @@ export function loadPatterns({ root = defaultRoot, entries } = {}) {
   const patterns = fs.readdirSync(directory).filter(n => n.endsWith('.json')).sort().map(name => {
     const p = JSON.parse(textFile(root, `entries/patterns/${name}`));
     if (typeof p.id !== 'string' || !idPattern.test(p.id) || name !== p.id + '.json') throw new Error(`Pattern filename/id mismatch: ${name}`);
-    for (const key of ['title', 'category', 'summary', 'mechanism', 'trigger', 'effect', 'prompt']) requireText(p[key], `${p.id}.${key}`);
+    for (const key of ['title', 'category', 'summary', 'mechanism', 'effect', 'prompt']) requireText(p[key], `${p.id}.${key}`);
+    if (p.trigger !== undefined) requireText(p.trigger, `${p.id}.trigger`);
     if (!categories.includes(p.category)) throw new Error(`Unknown pattern category: ${p.id}`);
     if (p.experienceTypes !== undefined) {
       textArray(p.experienceTypes, `${p.id}.experienceTypes`);
@@ -53,9 +54,8 @@ export function loadPatterns({ root = defaultRoot, entries } = {}) {
     for (const key of ['useCases', 'avoid', 'constraints', 'sourceFiles']) textArray(p[key], `${p.id}.${key}`);
     if (!p.useCases.length || !p.constraints.length || !p.sourceFiles.length) throw new Error(`Empty pattern guidance: ${p.id}`);
     if (!['foundation', 'support', 'accent'].includes(p.composition?.role)) throw new Error(`Unknown composition role: ${p.id}`);
-    requireText(p.composition.notes, `${p.id}.composition.notes`);
+    if (p.composition.notes !== undefined) requireText(p.composition.notes, `${p.id}.composition.notes`);
     for (const key of ['pairsWellWith', 'conflicts']) textArray(p.composition[key], `${p.id}.composition.${key}`);
-    for (const key of ['keyboard', 'reducedMotion']) requireText(p.accessibility?.[key], `${p.id}.accessibility.${key}`);
     if (!Array.isArray(p.parameters)) throw new Error(`Expected parameters array: ${p.id}`);
     for (const parameter of p.parameters) for (const key of ['name', 'value', 'note']) requireText(parameter[key], `${p.id}.parameters.${key}`);
     if (!Array.isArray(p.sources) || !p.sources.length) throw new Error(`Missing provenance: ${p.id}`);
@@ -126,6 +126,10 @@ export function buildPatterns({ root = defaultRoot, patterns, caseRecords, caseB
     const documents = documentPaths.map(relative => ({path:relative, role:relative === prompt ? 'prompt' : 'research', content:textFile(root, relative)}));
     const files = new Map(sourceCases.flatMap(source => bundlesById.get(source.id).files).map(file => [file.path, file]));
     for (const relative of [`entries/patterns/${pattern.id}.json`, ...documentPaths]) files.set(relative, {path:relative, role:'context'});
+    if (pattern.preview) {
+      repositoryFile(root, pattern.preview);
+      files.set(pattern.preview, {path:pattern.preview, role:'preview'});
+    }
     const bundle = { schemaVersion: 1, id: pattern.id, pattern, sourceCases, documents, files:[...files.values()].sort((a,b) => a.path.localeCompare(b.path)) };
     const relative = `agent/patterns/${pattern.id}.json`;
     const bytes = encode(bundle);

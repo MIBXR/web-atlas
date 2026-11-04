@@ -28,10 +28,6 @@
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "最终标题保留真实文字与 aria-label。",
-    "reducedMotion": "跳过改词过程，直接显示最终标题。"
-  },
   "parameters": [
     {
       "name": "起点",
@@ -57,7 +53,12 @@
       "observation": "首屏标题在允许动态时先显示 A design skill，约 950ms 后以斜线划去 A、写入 The、放大落入行内并转为墨色；邻词用前后实测矩形补偿重排，真实文字接管，减少动态直接显示最终标题。",
       "evidence": "observed",
       "referenceUrl": "https://www.usehallmark.com/",
-      "capturedAt": "2026-11-01"
+      "capturedAt": "2026-11-01",
+      "focus": {
+        "target": "#hero-title",
+        "label": "校对式标题改写",
+        "instruction": "标题开场将 A 划去并写成 The；点击工具栏重新载入可再看一次。"
+      }
     }
   ],
   "sourceFiles": [
@@ -67,5 +68,6 @@
     "demos/cases/hallmark/js/headline.js",
     "demos/cases/hallmark/index.html",
     "demos/cases/hallmark/style.css"
-  ]
+  ],
+  "preview": "previews/patterns/proofreader-headline-edit.jpg"
 }

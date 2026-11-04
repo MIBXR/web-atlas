@@ -8,7 +8,7 @@
   ],
   "summary": "让缩略目录属于同一个故事世界。",
   "mechanism": "缩略入口使用来源角纹与削角轮廓，hover/current增加内框，真实内容图与选中状态保持稳定。",
-  "trigger": "浏览、聚焦或选择缩略图",
+  "trigger": "缩略图悬停、聚焦或选中",
   "effect": "操作控件与主视觉共享身份。",
   "useCases": [
     "有明确图形语汇的游戏或展览"
@@ -22,18 +22,13 @@
   ],
   "composition": {
     "role": "foundation",
-    "notes": "该原子负责操作控件与主视觉共享身份，职责限定在当前区域。组合时可点击面积和可读标签保持规则，装饰不替代选择状态。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
     "pairsWellWith": [
       "blurred-layered-video-handoff"
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-    "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-  },
   "parameters": [],
-  "prompt": "为【目标页面/组件】实现「目录边框延续世界语汇」。缩略入口使用来源角纹与削角轮廓，hover/current增加内框，真实内容图与选中状态保持稳定。触发：浏览、聚焦或选择缩略图。可见结果：操作控件与主视觉共享身份。适用任务：有明确图形语汇的游戏或展览。可点击面积和可读标签保持规则，装饰不替代选择状态。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责操作控件与主视觉共享身份，职责限定在当前区域。组合时可点击面积和可读标签保持规则，装饰不替代选择状态。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+  "prompt": "为【目标页面/组件】实现「目录边框延续世界语汇」。缩略入口使用来源角纹与削角轮廓，hover/current增加内框，真实内容图与选中状态保持稳定。触发：缩略图悬停、聚焦或选中。可见结果：操作控件与主视觉共享身份。适用任务：有明确图形语汇的游戏或展览。可点击面积和可读标签保持规则，装饰不替代选择状态。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
   "sources": [
     {
       "caseId": "zelda-world",
@@ -41,7 +36,22 @@
       "observation": "原始 frame_thumbnail 古代角纹 + 8点削角白线；当前与 hover 加内框，避免普通矩形卡片。",
       "evidence": "observed",
       "referenceUrl": "https://www.nintendo.com/jp/zelda/totk/world/index.html",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".chapters",
+        "label": "古代角纹章节边框",
+        "instruction": "把指针移到章节缩略图上，比较古代角纹、削角轮廓和当前项内框。",
+        "prepare": [
+          {
+            "click": "#entry-gate:not([hidden]):not([data-phase]) [data-enter=\"off\"]",
+            "waitFor": "body:has(#entry-gate[hidden])"
+          },
+          {
+            "click": ".chapters a[href=\"#world-1\"]:not([aria-current=\"true\"])",
+            "waitFor": ".world-stage[data-scene=\"1\"]"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -51,5 +61,6 @@
     "demos/cases/zelda-world/style.css",
     "entries/cases/zelda-world.json",
     "docs/cases/zelda-world.md"
-  ]
+  ],
+  "preview": "previews/patterns/world-shaped-thumbnail-frame.jpg"
 }

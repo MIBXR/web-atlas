@@ -8,7 +8,6 @@
   ],
   "summary": "以同一纸色和墨色处理整组摄影。",
   "mechanism": "原图先灰度化并提高对比，用multiply混入底色，再叠同底色的lighten层，保持细节和统一印刷色调。",
-  "trigger": "浏览摄影与画框。",
   "effect": "不同来源照片形成同一材料系统。",
   "useCases": [
     "摄影与音乐活动页",
@@ -28,10 +27,6 @@
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "原图保留替代文本，颜色处理不承载唯一信息。",
-    "reducedMotion": "双色处理为静态样式，保持原构成。"
-  },
   "parameters": [
     {
       "name": "图像处理",
@@ -44,7 +39,7 @@
       "note": "固定提交源码／线上实测：style.css .frame::before等。"
     }
   ],
-  "prompt": "为目标页面实现「双层混合的双色摄影」：原图先灰度化并提高对比，用multiply混入底色，再叠同底色的lighten层，保持细节和统一印刷色调。触发：浏览摄影与画框。结果：不同来源照片形成同一材料系统。参数：图像处理=grayscale(1) contrast(1.08)与multiply；副层=同底色::before使用lighten。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；原图保留替代文本，颜色处理不承载唯一信息。双色处理为静态样式，保持原构成。",
+  "prompt": "为目标页面实现「双层混合的双色摄影」：原图先灰度化并提高对比，用multiply混入底色，再叠同底色的lighten层，保持细节和统一印刷色调。结果：不同来源照片形成同一材料系统。参数：图像处理=grayscale(1) contrast(1.08)与multiply；副层=同底色::before使用lighten。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；原图保留替代文本，颜色处理不承载唯一信息。双色处理为静态样式，保持原构成。",
   "sources": [
     {
       "caseId": "hallmark",
@@ -52,7 +47,13 @@
       "observation": "Midnight 先将摄影灰度化并提高对比，再以 multiply 和同底色的 lighten 副层混合，使整张图片统一为双色印刷效果并保留细节。",
       "evidence": "observed",
       "referenceUrl": "https://www.usehallmark.com/",
-      "capturedAt": "2026-11-01"
+      "capturedAt": "2026-11-01",
+      "focus": {
+        "target": ".hero__visual",
+        "label": "双色摄影画框",
+        "instruction": "观察隧道照片的暗部与亮部：整张照片被统一到深蓝与浅蓝两个色层。",
+        "entrypoint": "demos/cases/hallmark/themes/midnight/index.html"
+      }
     }
   ],
   "sourceFiles": [
@@ -61,5 +62,6 @@
     "demos/cases/hallmark/fidelity.md",
     "demos/cases/hallmark/themes/midnight/style.css",
     "demos/cases/hallmark/themes/midnight/index.html"
-  ]
+  ],
+  "preview": "previews/patterns/duotone-blend-photo.jpg"
 }

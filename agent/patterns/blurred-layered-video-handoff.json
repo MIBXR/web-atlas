@@ -25,16 +25,11 @@
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责镜头间更替保持观看连续，职责限定在当前区域。组合时切出影片必须暂停，降低动态直接显示当前片静帧与标题。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "last-request-transition",
         "clip-tail-advance"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
     },
     "parameters": [
       {
@@ -48,7 +43,7 @@
         "note": "标题晚于场景带入"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「旧片模糊退出、新片延后进入」。旧影片先模糊退出，新影片稍后进入，标题再延迟进入；同一舞台叠层和最后请求队列管理快选。触发：选择影片章节。可见结果：镜头间更替保持观看连续。适用任务：少量世界玩法章节。切出影片必须暂停，降低动态直接显示当前片静帧与标题。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责镜头间更替保持观看连续，职责限定在当前区域。组合时切出影片必须暂停，降低动态直接显示当前片静帧与标题。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「旧片模糊退出、新片延后进入」。旧影片先模糊退出，新影片稍后进入，标题再延迟进入；同一舞台叠层和最后请求队列管理快选。触发：选择影片章节。可见结果：镜头间更替保持观看连续。适用任务：少量世界玩法章节。切出影片必须暂停，降低动态直接显示当前片静帧与标题。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "zelda-world",
@@ -56,7 +51,22 @@
         "observation": "点击章节 → 300ms输入锁；前片1秒模糊退场，后片1.6秒、延迟0.6秒进入；标题1.6秒、延迟1秒进入。快速选择保留最后请求。",
         "evidence": "observed",
         "referenceUrl": "https://www.nintendo.com/jp/zelda/totk/world/index.html",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".world-stage",
+          "label": "世界影片与标题交接",
+          "instruction": "点底部另一个章节，看旧片模糊退出、新片延后进入，标题再接上。",
+          "prepare": [
+            {
+              "click": "#entry-gate:not([hidden]):not([data-phase]) [data-enter=\"off\"]",
+              "waitFor": "body:has(#entry-gate[hidden])"
+            },
+            {
+              "click": ".chapters a[href=\"#world-2\"]:not([aria-current=\"true\"])",
+              "waitFor": ".world-stage[data-scene=\"2\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -66,7 +76,8 @@
       "demos/cases/zelda-world/style.css",
       "entries/cases/zelda-world.json",
       "docs/cases/zelda-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/blurred-layered-video-handoff.jpg"
   },
   "sourceCases": [
     {
@@ -82,7 +93,7 @@
     {
       "path": "prompts/patterns/blurred-layered-video-handoff.md",
       "role": "prompt",
-      "content": "# 旧片模糊退出、新片延后进入 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/blurred-layered-video-handoff.json)\n\n为【目标页面/组件】实现「旧片模糊退出、新片延后进入」。旧影片先模糊退出，新影片稍后进入，标题再延迟进入；同一舞台叠层和最后请求队列管理快选。触发：选择影片章节。可见结果：镜头间更替保持观看连续。适用任务：少量世界玩法章节。切出影片必须暂停，降低动态直接显示当前片静帧与标题。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责镜头间更替保持观看连续，职责限定在当前区域。组合时切出影片必须暂停，降低动态直接显示当前片静帧与标题。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。\n\n## 制作约束\n\n- 切出影片必须暂停，降低动态直接显示当前片静帧与标题。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
+      "content": "# 旧片模糊退出、新片延后进入 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/blurred-layered-video-handoff.json)\n\n为【目标页面/组件】实现「旧片模糊退出、新片延后进入」。旧影片先模糊退出，新影片稍后进入，标题再延迟进入；同一舞台叠层和最后请求队列管理快选。触发：选择影片章节。可见结果：镜头间更替保持观看连续。适用任务：少量世界玩法章节。切出影片必须暂停，降低动态直接显示当前片静帧与标题。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。\n\n## 制作约束\n\n- 切出影片必须暂停，降低动态直接显示当前片静帧与标题。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
     }
   ],
   "files": [
@@ -300,6 +311,10 @@
     },
     {
       "path": "previews/cases/zelda-world.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/blurred-layered-video-handoff.jpg",
       "role": "preview"
     },
     {

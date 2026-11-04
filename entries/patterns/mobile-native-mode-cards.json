@@ -22,7 +22,6 @@
   ],
   "composition": {
     "role": "support",
-    "notes": "该原子负责手指可直接浏览同样三种能力，职责限定在当前区域。组合时保留模式标签和完整说明，页面纵向滚动不被卡片劫持。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
     "pairsWellWith": [
       "hover-focus-mode-selection"
     ],
@@ -30,12 +29,8 @@
       "scroll-synchronized-rail"
     ]
   },
-  "accessibility": {
-    "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-    "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-  },
   "parameters": [],
-  "prompt": "为【目标页面/组件】实现「手机以原生模式卡替代桌面长舞台」。窄屏把桌面sticky模式舞台转换为三张原生水平卡；标题选择将对应卡定位到视口。触发：手机横滑或选择能力词。可见结果：手指可直接浏览同样三种能力。适用任务：多模式产品的移动版。保留模式标签和完整说明，页面纵向滚动不被卡片劫持。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责手指可直接浏览同样三种能力，职责限定在当前区域。组合时保留模式标签和完整说明，页面纵向滚动不被卡片劫持。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+  "prompt": "为【目标页面/组件】实现「手机以原生模式卡替代桌面长舞台」。窄屏把桌面sticky模式舞台转换为三张原生水平卡；标题选择将对应卡定位到视口。触发：手机横滑或选择能力词。可见结果：手指可直接浏览同样三种能力。适用任务：多模式产品的移动版。保留模式标签和完整说明，页面纵向滚动不被卡片劫持。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
   "sources": [
     {
       "caseId": "chatgpt-platform",
@@ -43,7 +38,18 @@
       "observation": "手机使用三卡原生横向滚动，标题选择定位相应卡片；桌面 sticky rail 不出现在手机。导航保持桌面即时开关和手机全屏分层列表。",
       "evidence": "observed",
       "referenceUrl": "https://chatgpt.com/zh-Hans-CN/overview/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#showcase",
+        "label": "手机模式横向卡片",
+        "instruction": "在三张模式卡片上左右滑动；也可点上方“聊天、工作、编程”定位相应卡片。",
+        "prepare": [
+          {
+            "click": "[data-select=work]"
+          }
+        ],
+        "viewport": "mobile"
+      }
     }
   ],
   "sourceFiles": [
@@ -54,5 +60,6 @@
     "demos/cases/chatgpt-platform/script.js",
     "demos/cases/chatgpt-platform/style.css",
     "entries/cases/chatgpt-platform.json"
-  ]
+  ],
+  "preview": "previews/patterns/mobile-native-mode-cards.jpg"
 }

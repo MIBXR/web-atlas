@@ -22,31 +22,48 @@
   ],
   "composition": {
     "role": "accent",
-    "notes": "该原子负责动态过程可检查而不是只能等待，职责限定在当前区域。组合时中断后以当前进度为准，减少动态直接显示完成内容。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
     "pairsWellWith": [
       "sequential-stroke-reveal",
       "interruptible-morph"
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "原生range带进度标签，按钮可重播；完成状态有文字。",
-    "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-  },
   "parameters": [],
-  "prompt": "为【目标页面/组件】实现「可拖动回看的动画进度」。进度滑块直接控制绘制完成度，手动输入取消当前自动帧调度，重播则重新开始。触发：拖动进度或选择重播。可见结果：动态过程可检查而不是只能等待。适用任务：教学演示与结构分析。中断后以当前进度为准，减少动态直接显示完成内容。键盘：原生range带进度标签，按钮可重播；完成状态有文字。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责动态过程可检查而不是只能等待，职责限定在当前区域。组合时中断后以当前进度为准，减少动态直接显示完成内容。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+  "prompt": "为【目标页面/组件】实现「可拖动回看的动画进度」。进度滑块直接控制绘制完成度，手动输入取消当前自动帧调度，重播则重新开始。触发：拖动进度或选择重播。可见结果：动态过程可检查而不是只能等待。适用任务：教学演示与结构分析。中断后以当前进度为准，减少动态直接显示完成内容。键盘：原生range带进度标签，按钮可重播；完成状态有文字。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
   "sources": [
     {
       "caseId": "line-art",
       "locator": "entries/cases/line-art.json#interaction/1",
       "observation": "进度滑块允许主动描绘或回看",
-      "evidence": "adapted"
+      "evidence": "adapted",
+      "focus": {
+        "target": ".drawing-toolbar",
+        "label": "可拖动的线稿进度",
+        "instruction": "拖动进度滑块主动描绘或回看；绘制过程中拖动，会停在你选择的位置。",
+        "prepare": [
+          {
+            "input": "#progress",
+            "value": "55"
+          }
+        ]
+      }
     },
     {
       "caseId": "line-art",
       "locator": "entries/cases/line-art.json#interaction/2",
       "observation": "绘制过程中可拖动滑块中止动画",
-      "evidence": "adapted"
+      "evidence": "adapted",
+      "focus": {
+        "target": ".drawing-toolbar",
+        "label": "可拖动的线稿进度",
+        "instruction": "拖动进度滑块主动描绘或回看；绘制过程中拖动，会停在你选择的位置。",
+        "prepare": [
+          {
+            "input": "#progress",
+            "value": "55"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -55,5 +72,6 @@
     "demos/cases/line-art/style.css",
     "entries/cases/line-art.json",
     "docs/cases/line-art.md"
-  ]
+  ],
+  "preview": "previews/patterns/scrubbable-animation-progress.jpg"
 }

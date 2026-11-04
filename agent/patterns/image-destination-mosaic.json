@@ -12,7 +12,7 @@
     ],
     "summary": "让每张图像直接成为进入一类内容的窗口。",
     "mechanism": "九个图像区域按75%主区和25%侧区组织不同宽高比，以窄白缝分隔真实目的地；类别文字常显，源CSS与脚本共同产生悬停扩张。",
-    "trigger": "浏览、聚焦或选择机构目的地",
+    "trigger": "悬停、聚焦或选择图像目的地",
     "effect": "图像保持文化内容的辨识度，选择目标在观看时即可明确。",
     "useCases": [
       "馆藏、展览、课堂并行的文化门户",
@@ -29,16 +29,11 @@
     ],
     "composition": {
       "role": "foundation",
-      "notes": "此机制对照指定页面的源HTML/CSS与真实交互；仅管理所描述的局部，不替代整个机构门户或后台服务。",
       "pairsWellWith": [
         "mixed-ratio-archive-columns",
         "photo-edge-text-contrast"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "入口与条件可键盘进入，焦点可见；本地菜单/披露支持Escape或明确关闭，真实业务链接有名称。",
-      "reducedMotion": "取消自动轮换、计数过程和位移过渡；全部内容与手动选择保留。"
     },
     "parameters": [
       {
@@ -52,7 +47,7 @@
         "note": "保留两层独立动作；数字苏博同时调整高度。"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「多尺度图像目的地目录」。九个图像区域按75%主区和25%侧区组织不同宽高比，以窄白缝分隔真实目的地；类别文字常显，源CSS与脚本共同产生悬停扩张。 源主区/侧区：75% / 25%，共九项。资讯/云课堂/馆藏/活动/文创/数字苏博、展览/游戏/建筑美图。 源hover：CSS scale1.1/500ms + 图宽1.1/300ms。保留两层独立动作；数字苏博同时调整高度。 以原站DOM/CSS/真实状态矩阵验证，素材本地化并保留出处/尺寸/hash；减少动态保留手动状态，业务与未验证状态明确。",
+    "prompt": "为【目标页面/组件】实现「多尺度图像目的地目录」。九个图像区域按75%主区和25%侧区组织不同宽高比，以窄白缝分隔真实目的地；类别文字常显，源CSS与脚本共同产生悬停扩张。 源主区/侧区：75% / 25%，共九项。资讯/云课堂/馆藏/活动/文创/数字苏博、展览/游戏/建筑美图。 源hover：CSS scale1.1/500ms + 图宽1.1/300ms。保留两层独立动作；数字苏博同时调整高度。 以原站DOM/CSS/真实状态矩阵验证，素材本地化并保留出处、尺寸与许可；减少动态保留手动状态，业务通过原站入口使用。",
     "sources": [
       {
         "caseId": "suzhou-museum",
@@ -60,7 +55,19 @@
         "observation": "图像目的地：资讯、云课堂、馆藏、活动、文创、数字苏博、展览、游戏、建筑美图九项原图/常显类目均保留，左右75%/25%及每块尺寸按源CSS。",
         "evidence": "observed",
         "referenceUrl": "https://www.szmuseum.com/Home/Index",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "body:has(#fullPage-nav) .section3.active, body:not(:has(#fullPage-nav)) .section3",
+          "label": "九个图像目的地的拼接目录",
+          "instruction": "在第三屏比较资讯、馆藏、活动等九项原图和常显类目；左右两区采用不同尺度，各块仍是独立目的地。",
+          "prepare": [
+            {
+              "click": "#fullPage-nav li:nth-child(3) a",
+              "waitFor": ".section3.active",
+              "minWidth": 768
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -71,7 +78,8 @@
       "demos/cases/suzhou-museum/style.css",
       "demos/cases/suzhou-museum/app.js",
       "demos/cases/suzhou-museum/source/state-matrix.md"
-    ]
+    ],
+    "preview": "previews/patterns/image-destination-mosaic.jpg"
   },
   "sourceCases": [
     {
@@ -87,7 +95,7 @@
     {
       "path": "prompts/patterns/image-destination-mosaic.md",
       "role": "prompt",
-      "content": "# 多尺度图像目的地目录 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/image-destination-mosaic.json)\n\n为【目标页面/组件】实现「多尺度图像目的地目录」。九个图像区域按75%主区和25%侧区组织不同宽高比，以窄白缝分隔真实目的地；类别文字常显，源CSS与脚本共同产生悬停扩张。 源主区/侧区：75% / 25%，共九项。资讯/云课堂/馆藏/活动/文创/数字苏博、展览/游戏/建筑美图。 源hover：CSS scale1.1/500ms + 图宽1.1/300ms。保留两层独立动作；数字苏博同时调整高度。 以原站DOM/CSS/真实状态矩阵验证，素材本地化并保留出处/尺寸/hash；减少动态保留手动状态，业务与未验证状态明确。\n\n## 制作约束\n\n- 以2026-10-09指定源页面为范围，来源观察、复现和迁移选择分开。\n- 保留图像真实来源/尺寸/hash与版权归属；不能用教学示意替代定义性机制。\n- 正式业务、未取到的状态和外部服务见对应案例fidelity与state-matrix。\n"
+      "content": "# 多尺度图像目的地目录 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/image-destination-mosaic.json)\n\n为【目标页面/组件】实现「多尺度图像目的地目录」。九个图像区域按75%主区和25%侧区组织不同宽高比，以窄白缝分隔真实目的地；类别文字常显，源CSS与脚本共同产生悬停扩张。 源主区/侧区：75% / 25%，共九项。资讯/云课堂/馆藏/活动/文创/数字苏博、展览/游戏/建筑美图。 源hover：CSS scale1.1/500ms + 图宽1.1/300ms。保留两层独立动作；数字苏博同时调整高度。 以原站DOM/CSS/真实状态矩阵验证，素材本地化并保留出处、尺寸与许可；减少动态保留手动状态，业务通过原站入口使用。\n\n## 制作约束\n\n- 以2026-10-09指定源页面为范围，来源观察、复现和迁移选择分开。\n- 保留图像真实来源/尺寸/hash与版权归属；不能用教学示意替代定义性机制。\n- 正式业务、未取到的状态和外部服务见对应案例fidelity与state-matrix。\n"
     }
   ],
   "files": [
@@ -337,6 +345,10 @@
     },
     {
       "path": "previews/cases/suzhou-museum.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/image-destination-mosaic.jpg",
       "role": "preview"
     },
     {

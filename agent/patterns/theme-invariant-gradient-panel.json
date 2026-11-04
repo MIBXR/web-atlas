@@ -24,15 +24,10 @@
     ],
     "composition": {
       "role": "foundation",
-      "notes": "与页面的信息层级协调；保持正文、操作与当前状态可读。",
       "pairsWellWith": [
         "semantic-theme-roles"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "链接与按钮保留原生键盘路径和可访问名称；标题的装饰分词不重复播报。",
-      "reducedMotion": "移除入场、交错和循环运动，保留所有文字、布局与复制结果。"
     },
     "parameters": [
       {
@@ -46,7 +41,7 @@
         "note": "原站首屏 min-height；标题与正文独立重排。"
       }
     ],
-    "prompt": "为目标页面实现「主题切换中的恒定浅色品牌面板」。正文界面跟随明暗主题，首尾面板固定浅底深字；三处径向色场分布在边角，中心留给主张。触发：进入页面或切换主题。结果：品牌、文案对比与阅读主线保持稳定。。沿用页面既有层级与真实内容；链接、复制按钮和状态提供可访问名称，减少动态直接显示稳定结果。",
+    "prompt": "为目标页面实现「主题切换中的恒定浅色品牌面板」。正文界面跟随明暗主题，首尾面板固定浅底深字；三处径向色场分布在边角，中心留给主张。触发：进入页面或切换主题。结果：品牌、文案对比与阅读主线保持稳定。沿用页面既有层级与真实内容；链接、复制按钮和状态提供可访问名称，减少动态直接显示稳定结果。",
     "sources": [
       {
         "caseId": "uiarc-platform",
@@ -54,7 +49,12 @@
         "observation": "主题按钮在系统默认与手动选择之间协调页面表面、文字、边界和导航；点击后通过 View Transition 让新主题从横向中线向上下展开，390ms、cubic-bezier(.22,1,.36,1)，完成后清理过渡状态。首尾粉蓝黄渐变面板和产品影片保持原色，减少动态直接完成切换。",
         "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".closing",
+          "label": "结尾恒定浅色面板",
+          "instruction": "用顶栏明暗按钮切换主题，再回到这个结尾面板；周围界面改变，粉蓝黄面板仍保留浅底深字。"
+        }
       }
     ],
     "sourceFiles": [
@@ -66,7 +66,8 @@
       "demos/cases/uiarc-platform/fidelity.md",
       "demos/cases/uiarc-platform/source/content.json",
       "demos/cases/uiarc-platform/source/components.tsx"
-    ]
+    ],
+    "preview": "previews/patterns/theme-invariant-gradient-panel.jpg"
   },
   "sourceCases": [
     {
@@ -82,7 +83,7 @@
     {
       "path": "prompts/patterns/theme-invariant-gradient-panel.md",
       "role": "prompt",
-      "content": "# 主题切换中的恒定浅色品牌面板 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/theme-invariant-gradient-panel.json)\n\n为目标页面实现「主题切换中的恒定浅色品牌面板」。正文界面跟随明暗主题，首尾面板固定浅底深字；三处径向色场分布在边角，中心留给主张。触发：进入页面或切换主题。结果：品牌、文案对比与阅读主线保持稳定。。沿用页面既有层级与真实内容；链接、复制按钮和状态提供可访问名称，减少动态直接显示稳定结果。\n\n## 制作约束\n\n- 使用目标产品的真实文案与可用入口，原站数值只作为本例依据。\n"
+      "content": "# 主题切换中的恒定浅色品牌面板 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/theme-invariant-gradient-panel.json)\n\n为目标页面实现「主题切换中的恒定浅色品牌面板」。正文界面跟随明暗主题，首尾面板固定浅底深字；三处径向色场分布在边角，中心留给主张。触发：进入页面或切换主题。结果：品牌、文案对比与阅读主线保持稳定。沿用页面既有层级与真实内容；链接、复制按钮和状态提供可访问名称，减少动态直接显示稳定结果。\n\n## 制作约束\n\n- 使用目标产品的真实文案与可用入口，原站数值只作为本例依据。\n"
     }
   ],
   "files": [
@@ -620,6 +621,10 @@
     },
     {
       "path": "previews/cases/uiarc-platform.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/theme-invariant-gradient-panel.jpg",
       "role": "preview"
     },
     {

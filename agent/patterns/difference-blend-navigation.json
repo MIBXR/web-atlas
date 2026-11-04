@@ -38,10 +38,6 @@
         "semantic-theme-roles"
       ]
     },
-    "accessibility": {
-      "keyboard": "保留原生章节链接与清晰的顺序，用 :focus-visible 提供可辨认的焦点样式，并在每种背景上检查焦点和文字对比。",
-      "reducedMotion": "差值混合无需运动；减少动态时移除顶栏淡入，直接保持导航可见。"
-    },
     "parameters": [
       {
         "name": "导航绘制色",
@@ -72,7 +68,17 @@
         "observation": "暖纸色 #f2efe8 与墨色 #161513 构成固定双色基调，联系和页脚反转为墨底浅字；固定顶栏和两侧竖排标记使用差值混合跨越深浅背景。",
         "evidence": "observed",
         "referenceUrl": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/demo/web-design-demo/demo2-with-skill.html",
-        "capturedAt": "2026-10-27"
+        "capturedAt": "2026-10-27",
+        "focus": {
+          "target": ".masthead",
+          "label": "跨越深浅背景的差值导航",
+          "instruction": "向下滚到深色 Contact，再返回浅色摄影与正文，观察固定导航的文字怎样随背景反转。",
+          "prepare": [
+            {
+              "scroll": "#contact"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -80,7 +86,8 @@
       "demos/cases/mira-host-photography/index.html",
       "entries/cases/mira-host-photography.json",
       "docs/cases/mira-host-photography.md"
-    ]
+    ],
+    "preview": "previews/patterns/difference-blend-navigation.jpg"
   },
   "sourceCases": [
     {
@@ -246,6 +253,10 @@
     },
     {
       "path": "previews/cases/mira-host-photography.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/difference-blend-navigation.jpg",
       "role": "preview"
     },
     {

@@ -25,19 +25,14 @@
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责台词为人物身份补充听觉线索，职责限定在当前区域。组合时语音对应关系按素材核验，播放状态由真实音频事件更新。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "character-stage-coordination",
         "sound-opt-in"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "麦克风用有角色名的button，aria-pressed与实际播放/暂停一致。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「声线主动播放并归属于当前人物」。麦克风主动播放当前人物对应音轨，再次点击暂停；换人、离开角色区域或后台停止旧声音。触发：点击人物VOICE或换人。可见结果：台词为人物身份补充听觉线索。适用任务：有真实授权语音的角色档案。语音对应关系按素材核验，播放状态由真实音频事件更新。键盘：麦克风用有角色名的button，aria-pressed与实际播放/暂停一致。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责台词为人物身份补充听觉线索，职责限定在当前区域。组合时语音对应关系按素材核验，播放状态由真实音频事件更新。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「声线主动播放并归属于当前人物」。麦克风主动播放当前人物对应音轨，再次点击暂停；换人、离开角色区域或后台停止旧声音。触发：点击人物VOICE或换人。可见结果：台词为人物身份补充听觉线索。适用任务：有真实授权语音的角色档案。语音对应关系按素材核验，播放状态由真实音频事件更新。键盘：麦克风用有角色名的button，aria-pressed与实际播放/暂停一致。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "genshin-world",
@@ -45,7 +40,21 @@
         "observation": "点击麦克风随机播放对应角色 3 条官方语音之一，再点暂停；换角色、离开角色章节与后台时停止，防止声线叠加。",
         "evidence": "adapted",
         "referenceUrl": "https://genshin.hoyoverse.com/en/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "body[data-chapter=\"1\"] #character-voice",
+          "label": "当前人物的语音按钮",
+          "instruction": "点麦克风播放当前人物语音，再次点击暂停；换人或离开角色章会停止旧语音。",
+          "prepare": [
+            {
+              "click": "header a[href=\"#characters\"]",
+              "waitFor": "body[data-chapter=\"1\"]"
+            },
+            {
+              "waitFor": "main[style*=\"transition: none\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "blue-archive",
@@ -53,7 +62,13 @@
         "observation": "角色 VOICE 麦克风播放该学生对应官方 WAV，再点暂停；换人或后台停止，声线归属明确。",
         "evidence": "adapted",
         "referenceUrl": "https://bluearchive.jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".ba-student[aria-hidden=\"false\"] .student-voice",
+          "label": "当前学生的 VOICE",
+          "instruction": "点当前学生的 VOICE 麦克风播放语音；换学生后旧语音停止。",
+          "entrypoint": "demos/cases/blue-archive/character.html"
+        }
       },
       {
         "caseId": "arknights-world",
@@ -61,7 +76,25 @@
         "observation": "真实BGM默认关闭，单独开关并使用官网600/300ms音量渐变；三人日语语音独立按需播放，换人物或离开干员章暂停旧语音。",
         "evidence": "adapted",
         "referenceUrl": "https://ak.hypergryph.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#operator.active .voice",
+          "label": "干员语音",
+          "instruction": "点语音按钮播放当前干员的声音，再换干员，旧语音会停止。",
+          "prepare": [
+            {
+              "waitFor": "#scene-deck[data-phase=\"idle\"]"
+            },
+            {
+              "click": "#menu-toggle[aria-expanded=\"false\"]",
+              "maxWidth": 800
+            },
+            {
+              "click": "#chapter-nav a[href=\"#operator\"]:not([aria-current=\"page\"])",
+              "waitFor": "#scene-deck[data-active=\"operator\"][data-phase=\"idle\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -85,7 +118,8 @@
       "docs/cases/arknights-world.md",
       "docs/cases/blue-archive.md",
       "docs/cases/genshin-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/character-voice-ownership.jpg"
   },
   "sourceCases": [
     {
@@ -117,7 +151,7 @@
     {
       "path": "prompts/patterns/character-voice-ownership.md",
       "role": "prompt",
-      "content": "# 声线主动播放并归属于当前人物 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/character-voice-ownership.json)\n\n为【目标页面/组件】实现「声线主动播放并归属于当前人物」。麦克风主动播放当前人物对应音轨，再次点击暂停；换人、离开角色区域或后台停止旧声音。触发：点击人物VOICE或换人。可见结果：台词为人物身份补充听觉线索。适用任务：有真实授权语音的角色档案。语音对应关系按素材核验，播放状态由真实音频事件更新。键盘：麦克风用有角色名的button，aria-pressed与实际播放/暂停一致。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责台词为人物身份补充听觉线索，职责限定在当前区域。组合时语音对应关系按素材核验，播放状态由真实音频事件更新。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。\n\n## 制作约束\n\n- 语音对应关系按素材核验，播放状态由真实音频事件更新。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
+      "content": "# 声线主动播放并归属于当前人物 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/character-voice-ownership.json)\n\n为【目标页面/组件】实现「声线主动播放并归属于当前人物」。麦克风主动播放当前人物对应音轨，再次点击暂停；换人、离开角色区域或后台停止旧声音。触发：点击人物VOICE或换人。可见结果：台词为人物身份补充听觉线索。适用任务：有真实授权语音的角色档案。语音对应关系按素材核验，播放状态由真实音频事件更新。键盘：麦克风用有角色名的button，aria-pressed与实际播放/暂停一致。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。\n\n## 制作约束\n\n- 语音对应关系按素材核验，播放状态由真实音频事件更新。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
     }
   ],
   "files": [
@@ -719,6 +753,10 @@
     },
     {
       "path": "previews/cases/genshin-world.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/character-voice-ownership.jpg",
       "role": "preview"
     },
     {

@@ -8,7 +8,6 @@
   ],
   "summary": "让巨大背景字承担技术身份，让实心前景文字承担阅读。",
   "mechanism": "用低对比斜线纹理填充巨大背景字，并以小编号、十字标定点和淡网格定位；前景姓名与资料保持实心、清楚边界和独立留白。",
-  "trigger": "呈现角色或技术档案首屏",
   "effect": "背景建立机构身份和尺度，前景仍可快速阅读。",
   "useCases": [
     "工业/科研档案首屏",
@@ -32,10 +31,6 @@
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "背景装饰不可聚焦；前景链接/按钮保持独立可见焦点与文字名称。",
-    "reducedMotion": "保持静态标定构成，不为巨大背景字添加循环移动或闪烁。"
-  },
   "parameters": [
     {
       "name": "源浅纹背景",
@@ -56,7 +51,30 @@
       "observation": "巨大斜线背景字、十字标定、REC、小编号、淡网格与实心资料；AIC竖书脊保留在媒体边界，黑黄三层作为切换状态。",
       "evidence": "observed",
       "referenceUrl": "https://endfield.hypergryph.com/",
-      "capturedAt": "2026-10-09"
+      "capturedAt": "2026-10-09",
+      "focus": {
+        "target": "body:not(.directory-open) #operator .operator-title-inner-container",
+        "label": "斜线大字与档案记录",
+        "instruction": "看姓名后方的斜线大字，以及前景资料中的 REC、编号和十字标记。",
+        "prepare": [
+          {
+            "waitFor": "body:has(#entry-loader[hidden])"
+          },
+          {
+            "click": ".header-inner-container > .header-nav-item[aria-label=\"干员情报\"]",
+            "minWidth": 801
+          },
+          {
+            "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+            "maxWidth": 800
+          },
+          {
+            "click": ".header-menu-item[aria-label=\"干员情报\"]",
+            "maxWidth": 800
+          }
+        ],
+        "viewport": "wide"
+      }
     }
   ],
   "sourceFiles": [
@@ -70,5 +88,6 @@
     "demos/cases/endfield-industrial/app.js",
     "demos/cases/endfield-industrial/source/state-matrix.md",
     "demos/cases/endfield-industrial/source/source-provenance.json"
-  ]
+  ],
+  "preview": "previews/patterns/hatched-registration-type.jpg"
 }

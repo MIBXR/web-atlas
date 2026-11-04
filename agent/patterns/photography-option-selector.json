@@ -25,18 +25,13 @@
     ],
     "composition": {
       "role": "accent",
-      "notes": "该原子负责差异通过真实画面可见，职责限定在当前区域。组合时每个选项有可读名称与参数，不能只用色点。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "inline-product-detail-viewer"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "使用带aria-label与aria-pressed的原生button，读屏可得颜色或参数名。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「选项与真实摄影对应」。离散色点或参数选项对应一张真实摄影，选择状态与图像同步，图片比例及观察角度尽量稳定。触发：选择颜色或景深值。可见结果：差异通过真实画面可见。适用任务：材质、配色与摄影参数比较。每个选项有可读名称与参数，不能只用色点。键盘：使用带aria-label与aria-pressed的原生button，读屏可得颜色或参数名。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责差异通过真实画面可见，职责限定在当前区域。组合时每个选项有可读名称与参数，不能只用色点。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「选项与真实摄影对应」。离散色点或参数选项对应一张真实摄影，选择状态与图像同步，图片比例及观察角度尽量稳定。触发：选择颜色或景深值。可见结果：差异通过真实画面可见。适用任务：材质、配色与摄影参数比较。每个选项有可读名称与参数，不能只用色点。键盘：使用带aria-label与aria-pressed的原生button，读屏可得颜色或参数名。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "apple-product",
@@ -44,7 +39,23 @@
         "observation": "Design 点击七项胶囊 → 同一舞台内展开左侧说明卡，当前胶囊被卡替换、其他胶囊下移、右侧摄影变化；卡内前后与关闭可逆；Colors 的四个色点联动真实摄影。",
         "evidence": "observed",
         "referenceUrl": "https://www.apple.com/iphone-18-pro/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".aperture-image",
+          "label": "景深选项与真实摄影",
+          "instruction": "切换 f/1.48、f/1.8、f/2.8 和 f/4.0，对照同一构图里背景景深的变化。",
+          "prepare": [
+            {
+              "scroll": ".aperture-study"
+            },
+            {
+              "click": "[data-aperture='2']"
+            },
+            {
+              "images": ".aperture-image"
+            }
+          ]
+        }
       },
       {
         "caseId": "apple-product",
@@ -52,7 +63,23 @@
         "observation": "景深四选项 → 官方 f/1.48、1.8、2.8、4.0 摄影交叉变化；旧机型 select 更新比较对象；横向摄影架子保留原生滑动。",
         "evidence": "observed",
         "referenceUrl": "https://www.apple.com/iphone-18-pro/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".aperture-image",
+          "label": "景深选项与真实摄影",
+          "instruction": "切换 f/1.48、f/1.8、f/2.8 和 f/4.0，对照同一构图里背景景深的变化。",
+          "prepare": [
+            {
+              "scroll": ".aperture-study"
+            },
+            {
+              "click": "[data-aperture='2']"
+            },
+            {
+              "images": ".aperture-image"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -62,7 +89,8 @@
       "demos/cases/apple-product/script.js",
       "demos/cases/apple-product/style.css",
       "entries/cases/apple-product.json"
-    ]
+    ],
+    "preview": "previews/patterns/photography-option-selector.jpg"
   },
   "sourceCases": [
     {
@@ -78,7 +106,7 @@
     {
       "path": "prompts/patterns/photography-option-selector.md",
       "role": "prompt",
-      "content": "# 选项与真实摄影对应 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/photography-option-selector.json)\n\n为【目标页面/组件】实现「选项与真实摄影对应」。离散色点或参数选项对应一张真实摄影，选择状态与图像同步，图片比例及观察角度尽量稳定。触发：选择颜色或景深值。可见结果：差异通过真实画面可见。适用任务：材质、配色与摄影参数比较。每个选项有可读名称与参数，不能只用色点。键盘：使用带aria-label与aria-pressed的原生button，读屏可得颜色或参数名。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责差异通过真实画面可见，职责限定在当前区域。组合时每个选项有可读名称与参数，不能只用色点。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。\n\n## 制作约束\n\n- 每个选项有可读名称与参数，不能只用色点。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
+      "content": "# 选项与真实摄影对应 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/photography-option-selector.json)\n\n为【目标页面/组件】实现「选项与真实摄影对应」。离散色点或参数选项对应一张真实摄影，选择状态与图像同步，图片比例及观察角度尽量稳定。触发：选择颜色或景深值。可见结果：差异通过真实画面可见。适用任务：材质、配色与摄影参数比较。每个选项有可读名称与参数，不能只用色点。键盘：使用带aria-label与aria-pressed的原生button，读屏可得颜色或参数名。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。\n\n## 制作约束\n\n- 每个选项有可读名称与参数，不能只用色点。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
     }
   ],
   "files": [
@@ -256,6 +284,10 @@
     },
     {
       "path": "previews/cases/apple-product.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/photography-option-selector.jpg",
       "role": "preview"
     },
     {

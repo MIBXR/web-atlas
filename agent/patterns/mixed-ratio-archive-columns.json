@@ -11,7 +11,6 @@
     ],
     "summary": "统一栏目线索，不强行统一作品高度。",
     "mechanism": "栏目有共同宽度与标题规则，内部竖海报、横摄影按各自比例排列；不同内容长度产生不同列高，手机逐列阅读。",
-    "trigger": "浏览机构档案",
     "effect": "分类稳定而作品保持完整。",
     "useCases": [
       "多类型文化资料库"
@@ -25,19 +24,14 @@
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责分类稳定而作品保持完整，职责限定在当前区域。组合时阅读顺序按DOM栏目组织，手机避免视觉顺序与语义顺序不同。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "artwork-caption-separation",
         "inline-detail-disclosure"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「等宽栏目保留不同图像比例」。栏目有共同宽度与标题规则，内部竖海报、横摄影按各自比例排列；不同内容长度产生不同列高，手机逐列阅读。触发：浏览机构档案。可见结果：分类稳定而作品保持完整。适用任务：多类型文化资料库。阅读顺序按DOM栏目组织，手机避免视觉顺序与语义顺序不同。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责分类稳定而作品保持完整，职责限定在当前区域。组合时阅读顺序按DOM栏目组织，手机避免视觉顺序与语义顺序不同。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「等宽栏目保留不同图像比例」。栏目有共同宽度与标题规则，内部竖海报、横摄影按各自比例排列；不同内容长度产生不同列高，手机逐列阅读。可见结果：分类稳定而作品保持完整。适用任务：多类型文化资料库。阅读顺序按DOM栏目组织，手机避免视觉顺序与语义顺序不同。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "design-sight",
@@ -45,7 +39,12 @@
         "observation": "129px header、全幅16:9海报、4个等宽但内容不等高的竖列；手机单列。",
         "evidence": "observed",
         "referenceUrl": "https://www.2121designsight.jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#archive",
+          "label": "四个等宽、不等高的档案栏目",
+          "instruction": "比较四栏中的竖海报、横照片和文字，栏目等宽但保留各张图的原始比例；手机依次单列排列。"
+        }
       },
       {
         "caseId": "design-sight",
@@ -53,7 +52,12 @@
         "observation": "档案图片包含竖海报与横照片，保留各自比例，不强行统一卡片高度。",
         "evidence": "observed",
         "referenceUrl": "https://www.2121designsight.jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#archive",
+          "label": "四个等宽、不等高的档案栏目",
+          "instruction": "比较四栏中的竖海报、横照片和文字，栏目等宽但保留各张图的原始比例；手机依次单列排列。"
+        }
       }
     ],
     "sourceFiles": [
@@ -63,7 +67,8 @@
       "demos/cases/design-sight/style.css",
       "entries/cases/design-sight.json",
       "docs/cases/design-sight.md"
-    ]
+    ],
+    "preview": "previews/patterns/mixed-ratio-archive-columns.jpg"
   },
   "sourceCases": [
     {
@@ -79,7 +84,7 @@
     {
       "path": "prompts/patterns/mixed-ratio-archive-columns.md",
       "role": "prompt",
-      "content": "# 等宽栏目保留不同图像比例 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/mixed-ratio-archive-columns.json)\n\n为【目标页面/组件】实现「等宽栏目保留不同图像比例」。栏目有共同宽度与标题规则，内部竖海报、横摄影按各自比例排列；不同内容长度产生不同列高，手机逐列阅读。触发：浏览机构档案。可见结果：分类稳定而作品保持完整。适用任务：多类型文化资料库。阅读顺序按DOM栏目组织，手机避免视觉顺序与语义顺序不同。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责分类稳定而作品保持完整，职责限定在当前区域。组合时阅读顺序按DOM栏目组织，手机避免视觉顺序与语义顺序不同。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。\n\n## 制作约束\n\n- 阅读顺序按DOM栏目组织，手机避免视觉顺序与语义顺序不同。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
+      "content": "# 等宽栏目保留不同图像比例 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/mixed-ratio-archive-columns.json)\n\n为【目标页面/组件】实现「等宽栏目保留不同图像比例」。栏目有共同宽度与标题规则，内部竖海报、横摄影按各自比例排列；不同内容长度产生不同列高，手机逐列阅读。可见结果：分类稳定而作品保持完整。适用任务：多类型文化资料库。阅读顺序按DOM栏目组织，手机避免视觉顺序与语义顺序不同。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。\n\n## 制作约束\n\n- 阅读顺序按DOM栏目组织，手机避免视觉顺序与语义顺序不同。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
     }
   ],
   "files": [
@@ -197,6 +202,10 @@
     },
     {
       "path": "previews/cases/design-sight.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/mixed-ratio-archive-columns.jpg",
       "role": "preview"
     },
     {

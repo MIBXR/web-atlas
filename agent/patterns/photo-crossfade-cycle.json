@@ -31,10 +31,6 @@
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [
       {
         "name": "来源DESIGN SIGHT",
@@ -55,7 +51,17 @@
         "observation": "海报自动切换：6000ms间隔与1000ms淡化，指针经过不暂停。 保留展览视觉的完整阅读时间。",
         "evidence": "observed",
         "referenceUrl": "https://www.2121designsight.jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".poster",
+          "label": "展览海报的淡化轮换",
+          "instruction": "等待下一张海报淡化进入，也可点下方前后按钮切换；一张海报会保留足够的阅读时间。",
+          "prepare": [
+            {
+              "click": "[data-poster='1']"
+            }
+          ]
+        }
       },
       {
         "caseId": "fuji-rock",
@@ -63,7 +69,17 @@
         "observation": "照片或Featured自动／手动切换：照片3600ms间隔、800ms淡化；Featured600ms中心循环，3600ms自动，手机露出两侧邻项。 照片传递现场氛围，中心轨道突出活动主题且提示还有内容。",
         "evidence": "observed",
         "referenceUrl": "https://www.fujirockfestival.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".photo-hero",
+          "label": "现场摄影的慢速淡化",
+          "instruction": "等下一张照片淡化进入，或点下方照片选择与前后按钮；手动选择后可用播放按钮恢复自动轮换。",
+          "prepare": [
+            {
+              "click": "[data-photo='1']"
+            }
+          ]
+        }
       },
       {
         "caseId": "mira-host-photography",
@@ -71,7 +87,12 @@
         "observation": "首屏始终使用同一张摄影，图片加载后以 1.6 秒透明度过渡显现；CSS 中的 Ken Burns 动画设置 1.6 秒启动延迟，每个单程 24 秒，从 1.04 倍且无平移变为 1.12 倍并平移至横向 -1.5%、纵向 -1%，再交替反向往返。文字保持独立叠层；来源未实现照片切换、交叉淡化、暂停或离屏停止，减少动态时停用该动画。",
         "evidence": "observed",
         "referenceUrl": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/demo/web-design-demo/demo2-with-skill.html",
-        "capturedAt": "2026-10-27"
+        "capturedAt": "2026-10-27",
+        "focus": {
+          "target": ".hero__media",
+          "label": "同一张摄影的缓慢推移",
+          "instruction": "看首屏同一张摄影缓慢放大与平移，标题保持独立位置；这个来源不会切换照片。"
+        }
       }
     ],
     "sourceFiles": [
@@ -91,7 +112,8 @@
       "demos/cases/mira-host-photography/fidelity.md",
       "entries/cases/mira-host-photography.json",
       "docs/cases/mira-host-photography.md"
-    ]
+    ],
+    "preview": "previews/patterns/photo-crossfade-cycle.jpg"
   },
   "sourceCases": [
     {
@@ -513,6 +535,10 @@
     },
     {
       "path": "previews/cases/mira-host-photography.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/photo-crossfade-cycle.jpg",
       "role": "preview"
     },
     {

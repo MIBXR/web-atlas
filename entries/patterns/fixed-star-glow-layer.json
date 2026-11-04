@@ -8,7 +8,7 @@
   ],
   "summary": "少量光点为群像提供节奏。",
   "mechanism": "固定位置的星图使用低密度明暗周期与错峰延迟，保持正文和人物轮廓稳定。",
-  "trigger": "观看首屏",
+  "trigger": "首屏显示时启动明暗周期",
   "effect": "主图有轻微光感而不更换主体。",
   "useCases": [
     "已有星光视觉语汇的IP首屏"
@@ -22,15 +22,10 @@
   ],
   "composition": {
     "role": "foundation",
-    "notes": "该原子负责主图有轻微光感而不更换主体，职责限定在当前区域。组合时本地Canvas2D为PIXI算法迁移，随机抽样与混合非逐帧相同。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
     "pairsWellWith": [
       "scroll-differential-stars"
     ],
     "conflicts": []
-  },
-  "accessibility": {
-    "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-    "reducedMotion": "显示静止光点或停在固定明度，保留主图和全部文字。"
   },
   "parameters": [
     {
@@ -39,7 +34,7 @@
       "note": "不等于背景15颗随机星"
     }
   ],
-  "prompt": "为【目标页面/组件】实现「固定星光的明暗呼吸层」。固定位置的星图使用低密度明暗周期与错峰延迟，保持正文和人物轮廓稳定。触发：观看首屏。可见结果：主图有轻微光感而不更换主体。适用任务：已有星光视觉语汇的IP首屏。本地Canvas2D为PIXI算法迁移，随机抽样与混合非逐帧相同。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：显示静止光点或停在固定明度，保留主图和全部文字。组合边界：该原子负责主图有轻微光感而不更换主体，职责限定在当前区域。组合时本地Canvas2D为PIXI算法迁移，随机抽样与混合非逐帧相同。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+  "prompt": "为【目标页面/组件】实现「固定星光的明暗呼吸层」。固定位置的星图使用低密度明暗周期与错峰延迟，保持正文和人物轮廓稳定。触发：首屏显示时启动明暗周期。可见结果：主图有轻微光感而不更换主体。适用任务：已有星光视觉语汇的IP首屏。本地Canvas2D为PIXI算法迁移，随机抽样与混合非逐帧相同。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：显示静止光点或停在固定明度，保留主图和全部文字。",
   "sources": [
     {
       "caseId": "persona-kinetic",
@@ -47,7 +42,17 @@
       "observation": "原站 desktop kv-canvas 只有5颗固定位置星光；本地使用相同六种图像和3秒明暗周期，用Canvas2D重建，未运行PIXI业务包。",
       "evidence": "adapted",
       "referenceUrl": "https://persona.atlus.com/p5r/?lang=en#",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#royal-kv-stars",
+        "label": "首屏固定星光",
+        "instruction": "看主角周围固定的五处星光；它们只明暗呼吸，位置不随指针改变。",
+        "prepare": [
+          {
+            "click": "header nav a[href=\"#top\"]"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -57,5 +62,6 @@
     "demos/cases/persona-kinetic/style.css",
     "entries/cases/persona-kinetic.json",
     "docs/cases/persona-kinetic.md"
-  ]
+  ],
+  "preview": "previews/patterns/fixed-star-glow-layer.jpg"
 }

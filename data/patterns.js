@@ -9,7 +9,7 @@ window.ATLAS_PATTERNS = [
       "structure"
     ],
     "summary": "将有声观看与普通读页分别组织。",
-    "mechanism": "用户激活播放入口后打开独立影片层，提供原生进度、暂停和音量；关闭即暂停，背景媒体让出。",
+    "mechanism": "用户激活播放入口后打开独立影片层，提供原生进度、暂停和音量；关闭即暂停，背景媒体让出。 Escape 关闭影片层后，焦点回到播放入口。",
     "trigger": "主动观看/关闭影片",
     "effect": "观看变成明确选择的专注状态。",
     "useCases": [
@@ -31,10 +31,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "dialog提供关闭按钮、Escape及焦点恢复，原生媒体控件可操作。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
     "prompt": "为【目标页面/组件】实现「主动观看的独立影片层」。用户激活播放入口后打开独立影片层，提供原生进度、暂停和音量；关闭即暂停，背景媒体让出。触发：主动观看/关闭影片。可见结果：观看变成明确选择的专注状态。适用任务：产品或游戏宣传片。是否有音轨按实际文件确认；Uma Musume影片无声，MV1当次源播放未通过。键盘：dialog提供关闭按钮、Escape及焦点恢复，原生媒体控件可操作。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：只在主动观看时占据独立层，打开后暂停背景媒体，关闭停止前景影片并恢复触发焦点。静音首屏演示、BGM与完整影片分别标明职责及音轨。",
     "sources": [
@@ -44,7 +40,20 @@ window.ATLAS_PATTERNS = [
         "observation": "Watch the film → 黑色全屏影片层与原片有声控件；Explore 导航、亮点暂停与手机重排支持正常滚动/键盘。",
         "evidence": "observed",
         "referenceUrl": "https://www.apple.com/iphone-18-pro/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#film-button",
+          "label": "Watch the film 影片入口",
+          "instruction": "点击 Watch the film 打开独立影片层，使用原生控件播放、暂停或调整音量；关闭后返回页面。",
+          "prepare": [
+            {
+              "scroll": "#highlights"
+            },
+            {
+              "images": "#highlights"
+            }
+          ]
+        }
       },
       {
         "caseId": "monument-valley-game",
@@ -52,7 +61,20 @@ window.ATLAS_PATTERNS = [
         "observation": "前景预告：主动Play播放同一67.988秒官方MP4及原声轨；原生进度/暂停和实际声音开关有效，播放时暂停背景。",
         "evidence": "inferred",
         "referenceUrl": "https://www.monumentvalleygame.com/mv1",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#trailer-start",
+          "label": "官方预告片的播放入口",
+          "instruction": "点 PLAY TRAILER 主动播放官方影片，再使用原进度、暂停和声音开关。",
+          "prepare": [
+            {
+              "waitFor": "body[data-entry=\"ready\"]"
+            },
+            {
+              "click": ".section-nav a[href=\"#trailer\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "uma-musume",
@@ -60,7 +82,20 @@ window.ATLAS_PATTERNS = [
         "observation": "点击 About 原缩略图，站内 dialog 播放原始 top_about.mp4；该文件只有视频轨道，没有音轨，关闭/后台暂停。",
         "evidence": "adapted",
         "referenceUrl": "https://umamusume.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#trailer-open",
+          "label": "About 影片入口",
+          "instruction": "点 About 原缩略图打开独立影片层，使用原生进度和暂停；关闭后影片停止。",
+          "prepare": [
+            {
+              "click": "#menu-button[aria-expanded=\"false\"]"
+            },
+            {
+              "click": "#study-menu a[href=\"#about\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -82,7 +117,8 @@ window.ATLAS_PATTERNS = [
       "entries/cases/uma-musume.json",
       "docs/cases/monument-valley-game.md",
       "docs/cases/uma-musume.md"
-    ]
+    ],
+    "preview": "previews/patterns/film-overlay.jpg"
   },
   {
     "id": "highlight-progress-gallery",
@@ -108,15 +144,10 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责当前重点、剩余时间与结束状态清楚，职责限定在当前区域。组合时手动选择停止自动推进，进度有文本/选择状态，避免只靠细条。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "viewport-animation-lifecycle"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
     },
     "parameters": [
       {
@@ -125,7 +156,7 @@ window.ATLAS_PATTERNS = [
         "note": "拟合的学习演示数值"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「逐项亮点与可暂停进度」。每个亮点有独立图像、标题与进度，进入视口后推进；用户可以跳选、暂停，结束后重播。触发：进入亮点区域或选择条目。可见结果：当前重点、剩余时间与结束状态清楚。适用任务：少量顺序产品亮点。手动选择停止自动推进，进度有文本/选择状态，避免只靠细条。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责当前重点、剩余时间与结束状态清楚，职责限定在当前区域。组合时手动选择停止自动推进，进度有文本/选择状态，避免只靠细条。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「逐项亮点与可暂停进度」。每个亮点有独立图像、标题与进度，进入视口后推进；用户可以跳选、暂停，结束后重播。触发：进入亮点区域或选择条目。可见结果：当前重点、剩余时间与结束状态清楚。适用任务：少量顺序产品亮点。手动选择停止自动推进，进度有文本/选择状态，避免只靠细条。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "apple-product",
@@ -133,7 +164,20 @@ window.ATLAS_PATTERNS = [
         "observation": "Highlights 进入视口 → 圆角摄影和进度控件带入，五项图库自动推进；手动选择/暂停/最后重播 → 按相机、续航、颜色、性能、Siri 依次建立产品重点。",
         "evidence": "observed",
         "referenceUrl": "https://www.apple.com/iphone-18-pro/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#highlights",
+          "label": "五项亮点与进度控件",
+          "instruction": "点击下方的镜头、续航、颜色等条目，或暂停自动推进，对照当前图像、说明与进度。",
+          "prepare": [
+            {
+              "scroll": "#highlights"
+            },
+            {
+              "images": "#highlights"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -143,7 +187,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/apple-product/script.js",
       "demos/cases/apple-product/style.css",
       "entries/cases/apple-product.json"
-    ]
+    ],
+    "preview": "previews/patterns/highlight-progress-gallery.jpg"
   },
   {
     "id": "inline-product-detail-viewer",
@@ -164,23 +209,18 @@ window.ATLAS_PATTERNS = [
       "每次都跳入全屏弹窗丢掉对象"
     ],
     "constraints": [
-      "展开前后焦点可预期，关闭返回触发项，静帧不冒称实时3D。",
+      "展开前后焦点保持可预期，关闭返回触发项，图像使用静帧。",
       "迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。"
     ],
     "composition": {
       "role": "accent",
-      "notes": "该原子负责不离开产品舞台即可逐项探索，职责限定在当前区域。组合时展开前后焦点可预期，关闭返回触发项，静帧不冒称实时3D。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "photography-option-selector"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「胶囊原位展开产品说明」。选择胶囊后原位出现说明卡，其他胶囊让位下移，右侧图像更新；卡内前后与关闭能恢复原态。触发：选择细节胶囊。可见结果：不离开产品舞台即可逐项探索。适用任务：硬件特性与设计细节。展开前后焦点可预期，关闭返回触发项，静帧不冒称实时3D。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责不离开产品舞台即可逐项探索，职责限定在当前区域。组合时展开前后焦点可预期，关闭返回触发项，静帧不冒称实时3D。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「胶囊原位展开产品说明」。选择胶囊后原位出现说明卡，其他胶囊让位下移，右侧图像更新；卡内前后与关闭能恢复原态。触发：选择细节胶囊。可见结果：不离开产品舞台即可逐项探索。适用任务：硬件特性与设计细节。展开前后焦点保持可预期，关闭返回触发项，图像使用静帧。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "apple-product",
@@ -188,7 +228,24 @@ window.ATLAS_PATTERNS = [
         "observation": "Design 点击七项胶囊 → 同一舞台内展开左侧说明卡，当前胶囊被卡替换、其他胶囊下移、右侧摄影变化；卡内前后与关闭可逆；Colors 的四个色点联动真实摄影。",
         "evidence": "observed",
         "referenceUrl": "https://www.apple.com/iphone-18-pro/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".viewer.detail-open",
+          "label": "原位展开的产品说明卡",
+          "instruction": "查看已展开的说明卡；用卡内前后按钮切换细节，或关闭说明再选择其他胶囊。",
+          "prepare": [
+            {
+              "scroll": ".viewer"
+            },
+            {
+              "click": "[data-feature=camera]",
+              "waitFor": ".viewer.detail-open .viewer-detail:not([hidden])"
+            },
+            {
+              "images": ".viewer"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -198,7 +255,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/apple-product/script.js",
       "demos/cases/apple-product/style.css",
       "entries/cases/apple-product.json"
-    ]
+    ],
+    "preview": "previews/patterns/inline-product-detail-viewer.jpg"
   },
   {
     "id": "native-horizontal-shelf",
@@ -224,18 +282,13 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责在有限空间浏览多个并列内容，职责限定在当前区域。组合时按钮与触摸可共存，来源Met轨道不使用scroll-snap，迁移时明确吸附选择。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "artwork-caption-separation"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "可聚焦条目和前后button均可达，焦点进入时保持条目可见。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「原生横向内容架子」。内容只在局部容器水平overflow，保留浏览器原生滚动，前后按钮提供同等入口；主页面继续自然纵向阅读。触发：横滑或点击前后按钮。可见结果：在有限空间浏览多个并列内容。适用任务：用途、摄影与展览索引。按钮与触摸可共存，来源Met轨道不使用scroll-snap，迁移时明确吸附选择。键盘：可聚焦条目和前后button均可达，焦点进入时保持条目可见。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责在有限空间浏览多个并列内容，职责限定在当前区域。组合时按钮与触摸可共存，来源Met轨道不使用scroll-snap，迁移时明确吸附选择。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「原生横向内容架子」。内容只在局部容器水平overflow，保留浏览器原生滚动，前后按钮提供同等入口；主页面继续自然纵向阅读。触发：横滑或点击前后按钮。可见结果：在有限空间浏览多个并列内容。适用任务：用途、摄影与展览索引。按钮与触摸可共存，来源Met轨道不使用scroll-snap，迁移时明确吸附选择。键盘：可聚焦条目和前后button均可达，焦点进入时保持条目可见。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "chatgpt-platform",
@@ -243,7 +296,13 @@ window.ATLAS_PATTERNS = [
         "observation": "用途架子保留原生横滑及左右按钮；后续价格、安全、结束行动与页尾为普通滚动。",
         "evidence": "observed",
         "referenceUrl": "https://chatgpt.com/zh-Hans-CN/overview/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".uses",
+          "label": "用途卡片横向架子",
+          "instruction": "在用途卡片上横向滚动，或用左右按钮移动，页面下方价格与隐私章节仍自然纵向阅读。",
+          "viewport": "wide"
+        }
       },
       {
         "caseId": "met-museum",
@@ -251,7 +310,17 @@ window.ATLAS_PATTERNS = [
         "observation": "横向浏览展览：原生水平溢出，scroll-snap:none，前后按钮与触摸可操作。",
         "evidence": "observed",
         "referenceUrl": "https://www.metmuseum.org/en",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#exhibitions-rail",
+          "label": "展览的原生横向浏览",
+          "instruction": "在展览图片区域横向滑动，或用标题旁的前后按钮浏览，主页面仍继续纵向滚动。",
+          "prepare": [
+            {
+              "click": "[data-rail=exhibitions-rail][data-direction='1']"
+            }
+          ]
+        }
       },
       {
         "caseId": "apple-product",
@@ -259,7 +328,20 @@ window.ATLAS_PATTERNS = [
         "observation": "景深四选项 → 官方 f/1.48、1.8、2.8、4.0 摄影交叉变化；旧机型 select 更新比较对象；横向摄影架子保留原生滑动。",
         "evidence": "observed",
         "referenceUrl": "https://www.apple.com/iphone-18-pro/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".product-shelf .native-shelf",
+          "label": "原生横向摄影架子",
+          "instruction": "在这一排摄影上横向滚动，或在手机上左右滑动；主页面仍可继续上下阅读。",
+          "prepare": [
+            {
+              "scroll": ".product-shelf .native-shelf"
+            },
+            {
+              "images": ".product-shelf .native-shelf"
+            }
+          ]
+        }
       },
       {
         "caseId": "stripe-platform",
@@ -267,7 +349,12 @@ window.ATLAS_PATTERNS = [
         "observation": "后半段原生横向架子、四平台选择、深色开发者章节、活动架子、结束行动和页尾；上下滚动保持普通文档，不加入无来源的整屏切幕。",
         "evidence": "observed",
         "referenceUrl": "https://stripe.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".stripe-later .stripe-shelf",
+          "label": "Startup 横向内容架子",
+          "instruction": "在 Atlas、Payments、Connect 卡片区域横向滚动，页面的上下阅读仍保持自然滚动。"
+        }
       }
     ],
     "sourceFiles": [
@@ -298,7 +385,8 @@ window.ATLAS_PATTERNS = [
       "entries/cases/stripe-platform.json",
       "docs/cases/met-museum.md",
       "docs/cases/stripe-platform.md"
-    ]
+    ],
+    "preview": "previews/patterns/native-horizontal-shelf.jpg"
   },
   {
     "id": "photography-option-selector",
@@ -324,18 +412,13 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "accent",
-      "notes": "该原子负责差异通过真实画面可见，职责限定在当前区域。组合时每个选项有可读名称与参数，不能只用色点。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "inline-product-detail-viewer"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "使用带aria-label与aria-pressed的原生button，读屏可得颜色或参数名。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「选项与真实摄影对应」。离散色点或参数选项对应一张真实摄影，选择状态与图像同步，图片比例及观察角度尽量稳定。触发：选择颜色或景深值。可见结果：差异通过真实画面可见。适用任务：材质、配色与摄影参数比较。每个选项有可读名称与参数，不能只用色点。键盘：使用带aria-label与aria-pressed的原生button，读屏可得颜色或参数名。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责差异通过真实画面可见，职责限定在当前区域。组合时每个选项有可读名称与参数，不能只用色点。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「选项与真实摄影对应」。离散色点或参数选项对应一张真实摄影，选择状态与图像同步，图片比例及观察角度尽量稳定。触发：选择颜色或景深值。可见结果：差异通过真实画面可见。适用任务：材质、配色与摄影参数比较。每个选项有可读名称与参数，不能只用色点。键盘：使用带aria-label与aria-pressed的原生button，读屏可得颜色或参数名。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "apple-product",
@@ -343,7 +426,23 @@ window.ATLAS_PATTERNS = [
         "observation": "Design 点击七项胶囊 → 同一舞台内展开左侧说明卡，当前胶囊被卡替换、其他胶囊下移、右侧摄影变化；卡内前后与关闭可逆；Colors 的四个色点联动真实摄影。",
         "evidence": "observed",
         "referenceUrl": "https://www.apple.com/iphone-18-pro/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".aperture-image",
+          "label": "景深选项与真实摄影",
+          "instruction": "切换 f/1.48、f/1.8、f/2.8 和 f/4.0，对照同一构图里背景景深的变化。",
+          "prepare": [
+            {
+              "scroll": ".aperture-study"
+            },
+            {
+              "click": "[data-aperture='2']"
+            },
+            {
+              "images": ".aperture-image"
+            }
+          ]
+        }
       },
       {
         "caseId": "apple-product",
@@ -351,7 +450,23 @@ window.ATLAS_PATTERNS = [
         "observation": "景深四选项 → 官方 f/1.48、1.8、2.8、4.0 摄影交叉变化；旧机型 select 更新比较对象；横向摄影架子保留原生滑动。",
         "evidence": "observed",
         "referenceUrl": "https://www.apple.com/iphone-18-pro/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".aperture-image",
+          "label": "景深选项与真实摄影",
+          "instruction": "切换 f/1.48、f/1.8、f/2.8 和 f/4.0，对照同一构图里背景景深的变化。",
+          "prepare": [
+            {
+              "scroll": ".aperture-study"
+            },
+            {
+              "click": "[data-aperture='2']"
+            },
+            {
+              "images": ".aperture-image"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -361,7 +476,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/apple-product/script.js",
       "demos/cases/apple-product/style.css",
       "entries/cases/apple-product.json"
-    ]
+    ],
+    "preview": "previews/patterns/photography-option-selector.jpg"
   },
   {
     "id": "product-entrance-film",
@@ -387,19 +503,14 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责用户先感知产品实体与细节，职责限定在当前区域。组合时减少动态使用完整静帧；影片失败时主内容与行动仍可用。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "highlight-progress-gallery",
         "film-overlay"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「真实产品影片建立首屏主角」。静音产品影片置于全宽舞台，主标题与行动不等待影片结束；重播只重放这一段。触发：首次进入或选择重播。可见结果：用户先感知产品实体与细节。适用任务：有授权摄影/影片的硬件介绍。减少动态使用完整静帧；影片失败时主内容与行动仍可用。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责用户先感知产品实体与细节，职责限定在当前区域。组合时减少动态使用完整静帧；影片失败时主内容与行动仍可用。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「真实产品影片建立首屏主角」。静音产品影片置于全宽舞台，主标题与行动不等待影片结束；重播只重放这一段。触发：首次进入或选择重播。可见结果：用户先感知产品实体与细节。适用任务：有授权摄影/影片的硬件介绍。减少动态使用完整静帧；影片失败时主内容与行动仍可用。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "apple-product",
@@ -407,7 +518,17 @@ window.ATLAS_PATTERNS = [
         "observation": "进入 → 官方产品 MP4 在黑色全宽舞台登场；重播只重放这段，不代替影片。",
         "evidence": "observed",
         "referenceUrl": "https://www.apple.com/iphone-18-pro/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#hero",
+          "label": "静音产品登场影片",
+          "instruction": "观察产品影片与标题同时建立首屏；点击重播动画可重新观看这段登场。",
+          "prepare": [
+            {
+              "video": "#hero-video"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -417,7 +538,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/apple-product/script.js",
       "demos/cases/apple-product/style.css",
       "entries/cases/apple-product.json"
-    ]
+    ],
+    "preview": "previews/patterns/product-entrance-film.jpg"
   },
   {
     "id": "scroll-video-scrub",
@@ -428,7 +550,7 @@ window.ATLAS_PATTERNS = [
       "page-motion"
     ],
     "summary": "让镜头细节与读页进度对应。",
-    "mechanism": "暂停短片并把sticky段滚动进度映射到currentTime，标题在交接区让出画面；反向滚动可以回看。",
+    "mechanism": "暂停短片并把sticky段滚动进度映射到currentTime，标题在交接区让出画面；反向滚动可以回看。 静态呈现可用镜头静帧替代滚动 seek，并按文档顺序保留完整说明。",
     "trigger": "上下滚动镜头段",
     "effect": "用户以阅读速度控制产品展示。",
     "useCases": [
@@ -443,15 +565,10 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责用户以阅读速度控制产品展示，职责限定在当前区域。组合时来源Apple增强滚动分支当次未现场通过；此处为公共代码依据的迁移，静帧作为降低动态与失败回退。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "sticky-stage-handoff"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "取消滚动seek及大幅位移，静帧与完整镜头说明按文档顺序可读。"
     },
     "parameters": [
       {
@@ -460,7 +577,7 @@ window.ATLAS_PATTERNS = [
         "note": "来源视频与本地拟合滚动段"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「滚动进度驱动视频帧」。暂停短片并把sticky段滚动进度映射到currentTime，标题在交接区让出画面；反向滚动可以回看。触发：上下滚动镜头段。可见结果：用户以阅读速度控制产品展示。适用任务：有稳定短片的镜头或结构介绍。来源Apple增强滚动分支当次未现场通过；此处为公共代码依据的迁移，静帧作为降低动态与失败回退。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：取消滚动seek及大幅位移，静帧与完整镜头说明按文档顺序可读。组合边界：该原子负责用户以阅读速度控制产品展示，职责限定在当前区域。组合时来源Apple增强滚动分支当次未现场通过；此处为公共代码依据的迁移，静帧作为降低动态与失败回退。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「滚动进度驱动视频帧」。暂停短片并把sticky段滚动进度映射到currentTime，标题在交接区让出画面；反向滚动可以回看。触发：上下滚动镜头段。可见结果：用户以阅读速度控制产品展示。适用任务：有稳定短片的镜头或结构介绍。来源Apple增强滚动分支当次未现场通过；此处为公共代码依据的迁移，静帧作为降低动态与失败回退。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：取消滚动seek及大幅位移，静帧与完整镜头说明按文档顺序可读。",
     "sources": [
       {
         "caseId": "apple-product",
@@ -468,7 +585,20 @@ window.ATLAS_PATTERNS = [
         "observation": "镜头长段向下/向上滚动 → 暂停的官方相机 WebM 按进度 seek，标题让出画面；后续性能和续航用官方静帧保持 sticky 媒体和前后文交接。",
         "evidence": "inferred",
         "referenceUrl": "https://www.apple.com/iphone-18-pro/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#cameras .camera-sticky",
+          "label": "镜头系统滚动视频",
+          "instruction": "缓慢向下、向上滚动，观察镜头视频随滚动定位，以及标题让出画面的过程。",
+          "prepare": [
+            {
+              "scroll": "#cameras"
+            },
+            {
+              "video": "#camera-video"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -478,7 +608,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/apple-product/script.js",
       "demos/cases/apple-product/style.css",
       "entries/cases/apple-product.json"
-    ]
+    ],
+    "preview": "previews/patterns/scroll-video-scrub.jpg"
   },
   {
     "id": "section-color-rhythm",
@@ -490,7 +621,6 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "通过章节背景切换划分不同内容任务。",
     "mechanism": "产品摄影、技术说明或行动区域各用明确的整节色带；文字与表面在每节成对定义，图像不反色。",
-    "trigger": "依次阅读不同章节",
     "effect": "章节职责变化可被感知。",
     "useCases": [
       "长产品页与作品介绍"
@@ -504,18 +634,13 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责章节职责变化可被感知，职责限定在当前区域。组合时每节单独验证对比和焦点，主题模式与章节配色分别描述。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "sticky-stage-handoff"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「整节配色形成阅读节奏」。产品摄影、技术说明或行动区域各用明确的整节色带；文字与表面在每节成对定义，图像不反色。触发：依次阅读不同章节。可见结果：章节职责变化可被感知。适用任务：长产品页与作品介绍。每节单独验证对比和焦点，主题模式与章节配色分别描述。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责章节职责变化可被感知，职责限定在当前区域。组合时每节单独验证对比和焦点，主题模式与章节配色分别描述。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「整节配色形成阅读节奏」。产品摄影、技术说明或行动区域各用明确的整节色带；文字与表面在每节成对定义，图像不反色。可见结果：章节职责变化可被感知。适用任务：长产品页与作品介绍。每节单独验证对比和焦点，主题模式与章节配色分别描述。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "apple-product",
@@ -523,7 +648,12 @@ window.ATLAS_PATTERNS = [
         "observation": "产品摄影章节固定黑/深灰；比较、购物和环境等后段切成浅色。没有全局深浅切换。",
         "evidence": "observed",
         "referenceUrl": "https://www.apple.com/iphone-18-pro/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".upgrade-study",
+          "label": "从深色摄影到浅色比较区",
+          "instruction": "上下滚动这一交界，对照前面的深色产品章节与浅色比较、购物区域如何交替。"
+        }
       },
       {
         "caseId": "stripe-platform",
@@ -531,7 +661,12 @@ window.ATLAS_PATTERNS = [
         "observation": "首屏固定浅色及官方波浪；Global/Developers 等章节使用品牌海军蓝，属于章节配色，没有全局主题切换。",
         "evidence": "observed",
         "referenceUrl": "https://stripe.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".stripe-developers",
+          "label": "海军蓝开发者章节",
+          "instruction": "从这块海军蓝开发者章节向上下滚动，对比它与相邻浅色内容的整节切换。"
+        }
       },
       {
         "caseId": "monument-valley-game",
@@ -539,7 +674,20 @@ window.ATLAS_PATTERNS = [
         "observation": "固定白导航、#221f20影像/下载/画廊、粉蓝奖项、奶油媒体、粉社区与紫页尾，以整幅色带改变观看节奏。",
         "evidence": "observed",
         "referenceUrl": "https://www.monumentvalleygame.com/mv1",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".community",
+          "label": "整节配色的阅读节奏",
+          "instruction": "沿长页比较奖项、媒体、画廊、社区与页尾，整节色带随内容切换。",
+          "prepare": [
+            {
+              "waitFor": "body[data-entry=\"ready\"]"
+            },
+            {
+              "click": ".section-nav a[href=\"#press\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -563,7 +711,8 @@ window.ATLAS_PATTERNS = [
       "entries/cases/stripe-platform.json",
       "docs/cases/monument-valley-game.md",
       "docs/cases/stripe-platform.md"
-    ]
+    ],
+    "preview": "previews/patterns/section-color-rhythm.jpg"
   },
   {
     "id": "sticky-stage-handoff",
@@ -596,10 +745,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
     "prompt": "为【目标页面/组件】实现「同一媒体从主舞台交给说明」。媒体保持sticky，随可逆滚动收束装饰并移动/缩放到说明侧，为另一侧文字腾出空间。触发：上下穿越交接段。可见结果：注意力从看产品转向理解产品。适用任务：产品长页与功能解释。不劫持自然滚动，移动端可替换为顺序内容，完整说明始终可达。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：负责同一媒体从吸引到解释的连续关系；说明rail可以同步其阶段。使用自然滚动为主时更适合，整页全屏章切需另设计段内滚动，不能直接叠加两个控制器。",
     "sources": [
@@ -609,7 +754,13 @@ window.ATLAS_PATTERNS = [
         "observation": "向下/向上滚动 → 周边素材随滚动带入/收束，随后淡出；同一窗口保持 sticky，越过交接阈值再向右下移动 → 从吸引注意过渡到解释产品；在首屏下面往返滚动。",
         "evidence": "observed",
         "referenceUrl": "https://chatgpt.com/zh-Hans-CN/overview/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#showcase",
+          "label": "主舞台交给说明",
+          "instruction": "在这节向上滚回首屏、再向下进入说明，观察同一个产品窗口保持悬停并移到右下方。",
+          "viewport": "wide"
+        }
       },
       {
         "caseId": "apple-product",
@@ -617,7 +768,23 @@ window.ATLAS_PATTERNS = [
         "observation": "镜头长段向下/向上滚动 → 暂停的官方相机 WebM 按进度 seek，标题让出画面；后续性能和续航用官方静帧保持 sticky 媒体和前后文交接。",
         "evidence": "adapted",
         "referenceUrl": "https://www.apple.com/iphone-18-pro/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".performance-story .chapter-pin",
+          "label": "性能画面与说明交接",
+          "instruction": "在性能章节继续上下滚动，观察同一画面保持吸附、逐渐缩小，并把标题交给后续说明。",
+          "prepare": [
+            {
+              "scroll": ".performance-story"
+            },
+            {
+              "scroll": ".performance-story .chapter-back"
+            },
+            {
+              "images": ".performance-story"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -634,7 +801,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/chatgpt-platform/style.css",
       "entries/cases/apple-product.json",
       "entries/cases/chatgpt-platform.json"
-    ]
+    ],
+    "preview": "previews/patterns/sticky-stage-handoff.jpg"
   },
   {
     "id": "capability-bento-hierarchy",
@@ -646,7 +814,6 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "不同产品权重使用不同面积。",
     "mechanism": "根据功能关系设置跨列主能力、并列辅助能力或通栏协作能力，图文各有稳定位置。",
-    "trigger": "阅读能力矩阵",
     "effect": "面积与排列说明能力之间的层级。",
     "useCases": [
       "多能力产品介绍"
@@ -660,18 +827,13 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责面积与排列说明能力之间的层级，职责限定在当前区域。组合时手机重排仍保留能力顺序，不把面积当唯一信息提示。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "native-horizontal-shelf"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「以跨列比例表达能力层次」。根据功能关系设置跨列主能力、并列辅助能力或通栏协作能力，图文各有稳定位置。触发：阅读能力矩阵。可见结果：面积与排列说明能力之间的层级。适用任务：多能力产品介绍。手机重排仍保留能力顺序，不把面积当唯一信息提示。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责面积与排列说明能力之间的层级，职责限定在当前区域。组合时手机重排仍保留能力顺序，不把面积当唯一信息提示。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「以跨列比例表达能力层次」。根据功能关系设置跨列主能力、并列辅助能力或通栏协作能力，图文各有稳定位置。可见结果：面积与排列说明能力之间的层级。适用任务：多能力产品介绍。手机重排仍保留能力顺序，不把面积当唯一信息提示。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "stripe-platform",
@@ -679,7 +841,12 @@ window.ATLAS_PATTERNS = [
         "observation": "1266px内容框；48px段落式首屏；产品矩阵首行Payments跨两列、Billing一列同高，随后不同产品区；4列指标与左右案例。",
         "evidence": "observed",
         "referenceUrl": "https://stripe.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".bento",
+          "label": "产品矩阵的主次比例",
+          "instruction": "对比 Payments 的跨列主卡与旁侧 Billing，再往下看其余产品怎样组成矩阵。"
+        }
       },
       {
         "caseId": "notion-editorial",
@@ -687,7 +854,12 @@ window.ATLAS_PATTERNS = [
         "observation": "语言提示/导航 → 动作胶囊/头像/桌面产品视频 → 标识条带 → 两列+通栏 Bento → 五用途 → 团队故事 → 结束行动 → 页尾。",
         "evidence": "observed",
         "referenceUrl": "https://www.notion.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#features",
+          "label": "两列与通栏能力卡",
+          "instruction": "对比 Capture、Find 两张并排卡与下方通栏 Automate，查看图文比例如何表达能力关系。"
+        }
       }
     ],
     "sourceFiles": [
@@ -706,7 +878,8 @@ window.ATLAS_PATTERNS = [
       "entries/cases/stripe-platform.json",
       "docs/cases/notion-editorial.md",
       "docs/cases/stripe-platform.md"
-    ]
+    ],
+    "preview": "previews/patterns/capability-bento-hierarchy.jpg"
   },
   {
     "id": "client-logo-marquee",
@@ -718,7 +891,7 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "用连续条带提供客户范围线索。",
     "mechanism": "重复标识轨道缓慢横移以形成连续序列，指针停留暂停；重复视觉不增加重复读屏内容。",
-    "trigger": "查看条带或停留",
+    "trigger": "条带首次显示或指针停留",
     "effect": "客户事实以低密度节奏出现。",
     "useCases": [
       "已有真实客户依据的品牌介绍"
@@ -732,18 +905,14 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责客户事实以低密度节奏出现，职责限定在当前区域。组合时提供暂停，减少动态展示静态可读标识，不能把滚动当证言验证。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。 Arc 来源为 52s 连续轨道；原站没有悬停暂停，减少动态改为静态换行。迁移时按当前任务提供暂停入口。",
+      "notes": "Arc 来源为 52s 连续轨道；原站没有悬停暂停，减少动态改为静态换行。迁移时按当前任务提供暂停入口。",
       "pairsWellWith": [
         "viewport-animation-lifecycle"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "提供可聚焦暂停入口，重复轨道设aria-hidden；真实标识有替代文字。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「可停的连续客户标识条带」。重复标识轨道缓慢横移以形成连续序列，指针停留暂停；重复视觉不增加重复读屏内容。触发：查看条带或停留。可见结果：客户事实以低密度节奏出现。适用任务：已有真实客户依据的品牌介绍。提供暂停，减少动态展示静态可读标识，不能把滚动当证言验证。键盘：提供可聚焦暂停入口，重复轨道设aria-hidden；真实标识有替代文字。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责客户事实以低密度节奏出现，职责限定在当前区域。组合时提供暂停，减少动态展示静态可读标识，不能把滚动当证言验证。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「可停的连续客户标识条带」。重复标识轨道缓慢横移以形成连续序列，指针停留暂停；重复视觉不增加重复读屏内容。触发：条带首次显示或指针停留。可见结果：客户事实以低密度节奏出现。适用任务：已有真实客户依据的品牌介绍。提供暂停，减少动态展示静态可读标识，不能把滚动当证言验证。键盘：提供可聚焦暂停入口，重复轨道设aria-hidden；真实标识有替代文字。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "notion-editorial",
@@ -751,7 +920,12 @@ window.ATLAS_PATTERNS = [
         "observation": "客户标识原生连续横移，指针停留暂停；手机保持条带，不把标识排成多行墙。",
         "evidence": "observed",
         "referenceUrl": "https://www.notion.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".logo-wall",
+          "label": "客户标识的连续条带",
+          "instruction": "将指针停在客户标识条带上暂停，移开后继续移动，手机上也保持横向条带。"
+        }
       },
       {
         "caseId": "stripe-platform",
@@ -759,7 +933,12 @@ window.ATLAS_PATTERNS = [
         "observation": "Payments 进入视口 → 终端文本在 mask 内纵向轮换，checkout 同步商户和金额；客户标识连续横移，悬停可停。",
         "evidence": "observed",
         "referenceUrl": "https://stripe.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".customers-viewport",
+          "label": "连续客户标识条带",
+          "instruction": "把指针停在客户标识上暂停，再移开，观察两份轨道怎样连续衔接。"
+        }
       },
       {
         "caseId": "uiarc-platform",
@@ -767,7 +946,12 @@ window.ATLAS_PATTERNS = [
         "observation": "13 个客户标识组成两份同序轨道，以 52s 线性循环横移，左右渐隐；原站没有悬停暂停，减少动态时改为静态换行且隐藏重复组。",
         "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".logos",
+          "label": "连续客户标识",
+          "instruction": "看标识从右向左连续移动，轨道边缘逐渐隐去；这个来源保持自动移动。"
+        }
       }
     ],
     "sourceFiles": [
@@ -794,7 +978,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/uiarc-platform/fidelity.md",
       "demos/cases/uiarc-platform/source/content.json",
       "demos/cases/uiarc-platform/source/components.tsx"
-    ]
+    ],
+    "preview": "previews/patterns/client-logo-marquee.jpg"
   },
   {
     "id": "folded-wave-hero",
@@ -820,19 +1005,14 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责品牌流动感与金融主张并存，职责限定在当前区域。组合时波带不影响正文布局，提供暂停与离屏停止，素材保持来源范围。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "viewport-animation-lifecycle",
         "capability-bento-hierarchy"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「折叠波带与文字共同构成首屏」。独立WebGL网格与shader产生折叠彩带，主张位于稳定文本区；GPU失败使用同源静帧。触发：进入首屏。可见结果：品牌流动感与金融主张并存。适用任务：有明确品牌形态的产品首屏。波带不影响正文布局，提供暂停与离屏停止，素材保持来源范围。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责品牌流动感与金融主张并存，职责限定在当前区域。组合时波带不影响正文布局，提供暂停与离屏停止，素材保持来源范围。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「折叠波带与文字共同构成首屏」。独立WebGL网格与shader产生折叠彩带，主张位于稳定文本区；GPU失败使用同源静帧。触发：进入首屏。可见结果：品牌流动感与金融主张并存。适用任务：有明确品牌形态的产品首屏。波带不影响正文布局，提供暂停与离屏停止，素材保持来源范围。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "stripe-platform",
@@ -840,7 +1020,12 @@ window.ATLAS_PATTERNS = [
         "observation": "进入 → 隔离的官方 SingleWave 网格/shader/调色渲染；提供暂停，菜单/弹窗/后台/离屏暂停，GPU 失败使用官方静帧。",
         "evidence": "adapted",
         "referenceUrl": "https://stripe.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".single-wave",
+          "label": "首屏折叠彩带",
+          "instruction": "看文字后方的折叠彩带与固定文字区；右下角暂停按钮可暂停和恢复背景。"
+        }
       }
     ],
     "sourceFiles": [
@@ -852,7 +1037,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/stripe-platform/wave.js",
       "entries/cases/stripe-platform.json",
       "docs/cases/stripe-platform.md"
-    ]
+    ],
+    "preview": "previews/patterns/folded-wave-hero.jpg"
   },
   {
     "id": "masked-transaction-rotation",
@@ -878,18 +1064,13 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "accent",
-      "notes": "该原子负责复杂业务通过具体小场景可见，职责限定在当前区域。组合时明确是固定示例，不能呈现真实付款成功。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "viewport-animation-lifecycle"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「裁切文字与交易预览同步」。商户文本在mask内纵向交接，结账示例同时更新对应商户和金额；关联字段统一由一个状态驱动。触发：交易演示轮换。可见结果：复杂业务通过具体小场景可见。适用任务：支付与流程产品说明。明确是固定示例，不能呈现真实付款成功。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责复杂业务通过具体小场景可见，职责限定在当前区域。组合时明确是固定示例，不能呈现真实付款成功。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「裁切文字与交易预览同步」。商户文本在mask内纵向交接，结账示例同时更新对应商户和金额；关联字段统一由一个状态驱动。触发：交易演示轮换。可见结果：复杂业务通过具体小场景可见。适用任务：支付与流程产品说明。明确是固定示例，不能呈现真实付款成功。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "stripe-platform",
@@ -897,7 +1078,12 @@ window.ATLAS_PATTERNS = [
         "observation": "Payments 进入视口 → 终端文本在 mask 内纵向轮换，checkout 同步商户和金额；客户标识连续横移，悬停可停。",
         "evidence": "observed",
         "referenceUrl": "https://stripe.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".payment-art",
+          "label": "终端与结账金额联动",
+          "instruction": "观察终端屏幕中的商户与金额纵向轮换，旁边的结账预览会同步换成对应交易。"
+        }
       }
     ],
     "sourceFiles": [
@@ -909,7 +1095,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/stripe-platform/wave.js",
       "entries/cases/stripe-platform.json",
       "docs/cases/stripe-platform.md"
-    ]
+    ],
+    "preview": "previews/patterns/masked-transaction-rotation.jpg"
   },
   {
     "id": "metric-explanation-selector",
@@ -935,18 +1122,13 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "accent",
-      "notes": "该原子负责用户知道数字所解释的能力，职责限定在当前区域。组合时数字需要真实出处，示范缩短说明不能冒充完整测量。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "viewport-animation-lifecycle"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「指标选择与解释联动」。选择统计项强调当前数字并更新细线进度及基础设施解释，自动周期与指针暂停共享当前索引。触发：选择指标或自动推进。可见结果：用户知道数字所解释的能力。适用任务：基础设施与数据产品。数字需要真实出处，示范缩短说明不能冒充完整测量。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责用户知道数字所解释的能力，职责限定在当前区域。组合时数字需要真实出处，示范缩短说明不能冒充完整测量。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「指标选择与解释联动」。选择统计项强调当前数字并更新细线进度及基础设施解释，自动周期与指针暂停共享当前索引。触发：选择指标或自动推进。可见结果：用户知道数字所解释的能力。适用任务：基础设施与数据产品。数字需要真实出处，示范缩短说明不能冒充完整测量。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "stripe-platform",
@@ -954,7 +1136,12 @@ window.ATLAS_PATTERNS = [
         "observation": "Global 四统计选择 → 当前数字强调、底部细线进度和基础设施说明对应变化；自动推进与指针停留暂停。",
         "evidence": "observed",
         "referenceUrl": "https://stripe.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#global",
+          "label": "统计与基础设施说明",
+          "instruction": "点四个统计数字，对比强调项、底部进度线和下方基础设施说明怎样一起更新。"
+        }
       }
     ],
     "sourceFiles": [
@@ -966,7 +1153,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/stripe-platform/wave.js",
       "entries/cases/stripe-platform.json",
       "docs/cases/stripe-platform.md"
-    ]
+    ],
+    "preview": "previews/patterns/metric-explanation-selector.jpg"
   },
   {
     "id": "mobile-drilldown-menu",
@@ -992,19 +1180,14 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责层级与行动位置始终可定位，职责限定在当前区域。组合时关闭恢复阅读位置与焦点，长列表只在菜单内滚动。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "natural-height-mega-menu",
         "last-request-transition"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「手机菜单逐层进入与返回」。全屏菜单先显示顶层分类，选择分类让二级页侧向进入；Back返回顶层，核心行动固定在底部。触发：手机打开分类或返回。可见结果：层级与行动位置始终可定位。适用任务：多层产品导航。关闭恢复阅读位置与焦点，长列表只在菜单内滚动。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责层级与行动位置始终可定位，职责限定在当前区域。组合时关闭恢复阅读位置与焦点，长列表只在菜单内滚动。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「手机菜单逐层进入与返回」。全屏菜单先显示顶层分类，选择分类让二级页侧向进入；Back返回顶层，核心行动固定在底部。触发：手机打开分类或返回。可见结果：层级与行动位置始终可定位。适用任务：多层产品导航。关闭恢复阅读位置与焦点，长列表只在菜单内滚动。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "stripe-platform",
@@ -1012,7 +1195,19 @@ window.ATLAS_PATTERNS = [
         "observation": "手机汉堡菜单 → 全屏顶层 Products/Solutions/Developers/Resources；选择分类后二级页以源 CSS 500ms 侧向进入、250ms 透明度衔接，Back 返回顶层。Start now/Contact sales 固定底部；关闭/Escape 恢复滚动和焦点，让长目录保持方向与核心行动。",
         "evidence": "adapted",
         "referenceUrl": "https://stripe.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".stripe-phone[data-open=true]",
+          "label": "逐层进入的手机菜单",
+          "instruction": "点 Products 等分类进入二级页，用 Back 返回；底部 Start now 与 Contact sales 始终保留。",
+          "prepare": [
+            {
+              "click": ".mobile-menu[aria-expanded=false]",
+              "waitFor": ".stripe-phone[data-open=true]"
+            }
+          ],
+          "viewport": "mobile"
+        }
       }
     ],
     "sourceFiles": [
@@ -1024,7 +1219,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/stripe-platform/wave.js",
       "entries/cases/stripe-platform.json",
       "docs/cases/stripe-platform.md"
-    ]
+    ],
+    "preview": "previews/patterns/mobile-drilldown-menu.jpg"
   },
   {
     "id": "natural-height-mega-menu",
@@ -1050,15 +1246,10 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责长短目录之间保持空间连续，职责限定在当前区域。组合时Escape和外部点击可关，减少动态直接完成终态。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "last-request-transition"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
     },
     "parameters": [
       {
@@ -1067,7 +1258,7 @@ window.ATLAS_PATTERNS = [
         "note": "容器运动/裁切，cubic-bezier(.45,.05,.55,.95)"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「自然高度连续衔接的目录」。桌面目录随分类真实内容改变高度，位移、透明度与裁切同步，快速反向取消旧动画；关闭后hidden/inert与aria一致。触发：指针进入、点击分类或关闭。可见结果：长短目录之间保持空间连续。适用任务：复杂产品与资源导航。Escape和外部点击可关，减少动态直接完成终态。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责长短目录之间保持空间连续，职责限定在当前区域。组合时Escape和外部点击可关，减少动态直接完成终态。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「自然高度连续衔接的目录」。桌面目录随分类真实内容改变高度，位移、透明度与裁切同步，快速反向取消旧动画；关闭后hidden/inert与aria一致。触发：指针进入、点击分类或关闭。可见结果：长短目录之间保持空间连续。适用任务：复杂产品与资源导航。Escape和外部点击可关，减少动态直接完成终态。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "stripe-platform",
@@ -1075,7 +1266,19 @@ window.ATLAS_PATTERNS = [
         "observation": "桌面指针进入/点击分类 → popup 高度/位移/透明度 300ms、clip/max-height 200ms，均采用源 cubic-bezier(.45,.05,.55,.95)；分类按自然高度衔接。快速反转取消旧动画，离开/外部点击/Escape 后 hidden/inert/aria 一致；减少动态直接完成，维持目录的空间关系。",
         "evidence": "adapted",
         "referenceUrl": "https://stripe.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".mega:not([hidden])",
+          "label": "随分类改变高度的目录",
+          "instruction": "在顶栏 Products、Solutions、Developers、Resources 之间移动，比较目录按各组内容连续改变高度。",
+          "prepare": [
+            {
+              "click": "[data-menu=Products]",
+              "waitFor": ".mega:not([hidden])"
+            }
+          ],
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -1087,7 +1290,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/stripe-platform/wave.js",
       "entries/cases/stripe-platform.json",
       "docs/cases/stripe-platform.md"
-    ]
+    ],
+    "preview": "previews/patterns/natural-height-mega-menu.jpg"
   },
   {
     "id": "single-open-accordion",
@@ -1114,18 +1318,13 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责长文本按需阅读，当前焦点明确，职责限定在当前区域。组合时按实际内容计算高度，关闭区域不可保留可聚焦控件。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "editorial-alignment-grid"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "按钮带aria-expanded/aria-controls，折叠内容hidden或inert；焦点保留在标题。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「单开内容与图像联动」。激活一项收起前项并展开当前正文；内容高度与图标同步，案例故事还可同时替换旁侧摄影。触发：展开FAQ或故事行。可见结果：长文本按需阅读，当前焦点明确。适用任务：问答与客户故事。按实际内容计算高度，关闭区域不可保留可聚焦控件。键盘：按钮带aria-expanded/aria-controls，折叠内容hidden或inert；焦点保留在标题。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责长文本按需阅读，当前焦点明确，职责限定在当前区域。组合时按实际内容计算高度，关闭区域不可保留可聚焦控件。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「单开内容与图像联动」。激活一项收起前项并展开当前正文；内容高度与图标同步，案例故事还可同时替换旁侧摄影。触发：展开FAQ或故事行。可见结果：长文本按需阅读，当前焦点明确。适用任务：问答与客户故事。按实际内容计算高度，关闭区域不可保留可聚焦控件。键盘：按钮带aria-expanded/aria-controls，折叠内容hidden或inert；焦点保留在标题。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "claude-platform",
@@ -1133,7 +1332,17 @@ window.ATLAS_PATTERNS = [
         "observation": "FAQ → 只开一项，grid 0fr→1fr 与 opacity 400ms，图标同步；连续选项关闭前项，避免文本突然跳变。",
         "evidence": "inferred",
         "referenceUrl": "https://claude.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".faq",
+          "label": "单开的问题列表",
+          "instruction": "点开一个问题后再选另一个，观察前项高度与图标收起、新项同时展开。",
+          "prepare": [
+            {
+              "click": ".claude-question[aria-expanded=false]"
+            }
+          ]
+        }
       },
       {
         "caseId": "stripe-platform",
@@ -1141,7 +1350,12 @@ window.ATLAS_PATTERNS = [
         "observation": "Hertz/URBN/Instacart/Le Monde → 当前故事行展开高度、其他行收起，真实官方摄影及说明同步替换；来源照片中的平行四边形呼应 Stripe 品牌。",
         "evidence": "observed",
         "referenceUrl": "https://stripe.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".case-layout",
+          "label": "客户切换与配图",
+          "instruction": "切换 Hertz、URBN、Instacart 或 Le Monde，客户摘要、数据与配图一起更新。手机上配图位于选项下方。"
+        }
       },
       {
         "caseId": "qoder-platform",
@@ -1149,7 +1363,17 @@ window.ATLAS_PATTERNS = [
         "observation": "后续 SDK 代码和 Cloud 任务列表 → Wake 场景选择/指针强调 → 企业 → 两侧连续证言条带 → 单开 FAQ → 页尾；所有章节使用正常滚动。",
         "evidence": "observed",
         "referenceUrl": "https://qoder.cn/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".qoder-faq",
+          "label": "单开 FAQ",
+          "instruction": "打开一个问题后再打开另一项，比较前项收起和当前正文展开。",
+          "prepare": [
+            {
+              "click": ".qoder-faq details:not([open]) summary"
+            }
+          ]
+        }
       },
       {
         "caseId": "uiarc-platform",
@@ -1157,7 +1381,12 @@ window.ATLAS_PATTERNS = [
         "observation": "六项 FAQ 默认展开第一项；使用原始 Accordion 的单开状态、400ms 无回弹高度弹簧、260ms 图标弹簧和 2px 轻模糊，打开另一项收起前项，当前项可再次收起；Radix 管理语义、焦点与折叠后可访问状态。",
         "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".faq-list",
+          "label": "FAQ 单开",
+          "instruction": "点开任意问题；新项展开时，上一项和箭头同步收起。"
+        }
       }
     ],
     "sourceFiles": [
@@ -1189,7 +1418,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/uiarc-platform/fidelity.md",
       "demos/cases/uiarc-platform/source/content.json",
       "demos/cases/uiarc-platform/source/components.tsx"
-    ]
+    ],
+    "preview": "previews/patterns/single-open-accordion.jpg"
   },
   {
     "id": "viewport-animation-lifecycle",
@@ -1227,10 +1457,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "暂停/播放按钮文字与实际媒体事件同步，状态可读；所有手动选择保留。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [
       {
         "name": "终末地本地真实后台检查",
@@ -1246,7 +1472,13 @@ window.ATLAS_PATTERNS = [
         "observation": "AI 章节进入视口 → 三列代理思考/回答以 5s 与后续交错时间演示，离开/后台停止；暂停按钮与减少动态分支可保持结果。",
         "evidence": "adapted",
         "referenceUrl": "https://linear.app/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".journey-pause",
+          "label": "代理演示的暂停状态",
+          "instruction": "暂停后把这节滚出视口再返回，当前结果会保留；恢复播放后再观察列间的错峰响应。",
+          "viewport": "wide"
+        }
       },
       {
         "caseId": "stripe-platform",
@@ -1254,7 +1486,12 @@ window.ATLAS_PATTERNS = [
         "observation": "进入 → 隔离的官方 SingleWave 网格/shader/调色渲染；提供暂停，菜单/弹窗/后台/离屏暂停，GPU 失败使用官方静帧。",
         "evidence": "adapted",
         "referenceUrl": "https://stripe.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#wave-toggle",
+          "label": "背景动态的暂停控制",
+          "instruction": "点背景右下角的暂停按钮，再上下滚动离开和返回；手动暂停会保留，菜单与后台也会暂停背景。"
+        }
       },
       {
         "caseId": "qoder-platform",
@@ -1262,7 +1499,12 @@ window.ATLAS_PATTERNS = [
         "observation": "五平台 tab/点控/触摸 → 400ms 水平进退，20s 自动，悬停/手动暂停、后台停止；快速选择只保留一个场景。",
         "evidence": "adapted",
         "referenceUrl": "https://qoder.cn/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".carousel-pause",
+          "label": "平台轮换的生命周期",
+          "instruction": "暂停轮播后滚出这一节再返回，确认手动暂停仍保留；恢复后可观察平台自动轮换。"
+        }
       },
       {
         "caseId": "endfield-industrial",
@@ -1270,7 +1512,44 @@ window.ATLAS_PATTERNS = [
         "observation": "声音和业务：原BGM及四种原始操作音由桌面/手机共用声音开关启用，默认关闭；选干员与2D/3D切换播放机械短音，头像翻页和档案展开/收起分别反馈。10槽音频池保留快速重复操作的叠响；关闭声音或隐藏页面立即停止，返回不重放短效。登录、下载、云游戏、支付、社区与全文信息保留官方目的地，不复制后台或提交数据。",
         "evidence": "adapted",
         "referenceUrl": "https://endfield.hypergryph.com/",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "#gameplay",
+          "label": "玩法影片的视口播放",
+          "instruction": "让影片进入视口，再滚离或切到后台，查看它如何随可见状态暂停和恢复。",
+          "prepare": [
+            {
+              "waitFor": "body:has(#entry-loader[hidden])"
+            },
+            {
+              "click": ".header-inner-container > .header-nav-item[aria-label=\"版本日历\"]",
+              "minWidth": 801
+            },
+            {
+              "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+              "maxWidth": 800
+            },
+            {
+              "click": ".header-menu-item[aria-label=\"版本日历\"]",
+              "maxWidth": 800
+            },
+            {
+              "images": "#calendar"
+            },
+            {
+              "click": ".header-inner-container > .header-nav-item[aria-label=\"玩法介绍 & 集成工业知识\"]",
+              "minWidth": 801
+            },
+            {
+              "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+              "maxWidth": 800
+            },
+            {
+              "click": ".header-menu-item[aria-label=\"玩法介绍 & 集成工业知识\"]",
+              "maxWidth": 800
+            }
+          ]
+        }
       },
       {
         "caseId": "deepseek-harness",
@@ -1278,7 +1557,12 @@ window.ATLAS_PATTERNS = [
         "observation": "四组演示分别在进入视口后播放，手动暂停优先于重入；离屏或后台暂停。减少动态使用原版插件/轨迹静态回退和文件/工作流的可读状态。",
         "evidence": "observed",
         "referenceUrl": "https://www.deepseek.com/harness/",
-        "capturedAt": "2026-10-11"
+        "capturedAt": "2026-10-11",
+        "focus": {
+          "target": "article:has([class^=HarnessDeliverablesPreview_composition])",
+          "label": "交付物演示的播放范围",
+          "instruction": "上下滚动这张演示卡，离开视口会暂停；手动暂停后再返回仍保留结果，可用卡片右下角按钮恢复。"
+        }
       },
       {
         "caseId": "stellar-museum",
@@ -1286,7 +1570,12 @@ window.ATLAS_PATTERNS = [
         "observation": "首屏星球及月球、空间站、火星、银河窗口进入或离开扩展 120px 的视口范围：IntersectionObserver 以 rootMargin: '120px'、threshold: 0.0 更新各实例的 visible，统一帧循环跳过离屏实例，只渲染可见窗口；主循环和绝对时间仍持续推进，来源未实现页面后台可见性监听、用户暂停或离屏时间冻结，减少动态仅跳过对象旋转，仍更新着色器时间并渲染。",
         "evidence": "observed",
         "referenceUrl": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/demo/web-design-demo/demo1-with-skill.html",
-        "capturedAt": "2026-10-27"
+        "capturedAt": "2026-10-27",
+        "focus": {
+          "target": "#exhibits",
+          "label": "进入视口才渲染的三维窗口",
+          "instruction": "上下滚动月球、空间站、火星与银河窗口，观察可见窗口继续渲染；这个来源不会冻结全局时间。"
+        }
       },
       {
         "caseId": "uiarc-platform",
@@ -1294,7 +1583,12 @@ window.ATLAS_PATTERNS = [
         "observation": "六张 Pro 卡片与九张免费卡片分别排成桌面两列和三列；原始 WebP 海报与静音 WebM 在前后一屏预载，可见比例达到 35% 时播放，离屏或后台暂停并保留已显示的视频帧，同时最多播放 8 段。首入减少动态或节流模式使用海报和手动播放按钮；点击卡片进入对应原站页。手机为一列／两列。",
         "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "#pro-clips",
+          "label": "可见时播放的组件影片",
+          "instruction": "上下滚动这些组件卡，观察进入视口的影片播放、离开的影片暂停。减少动态下可用卡片播放按钮。"
+        }
       },
       {
         "caseId": "hallmark",
@@ -1302,7 +1596,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Atelier 根据显雾区域的视口交集和文档前台状态启停绘制，Coral 在纸面演示离屏时暂停 Web Animations，减少动态直接给各自可读的结果。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero[data-air-zone]",
+          "label": "随视口启停的香气场",
+          "instruction": "观察香气场；滚出香气区域或切到其他标签页后暂停，返回时继续绘制。",
+          "entrypoint": "demos/cases/hallmark/themes/atelier/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -1379,7 +1679,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/fidelity.md",
       "demos/cases/hallmark/themes/atelier/air.js",
       "demos/cases/hallmark/themes/coral/scene.js"
-    ]
+    ],
+    "preview": "previews/patterns/viewport-animation-lifecycle.jpg"
   },
   {
     "id": "local-code-theme-preview",
@@ -1405,18 +1706,13 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "accent",
-      "notes": "该原子负责用户可比较真实代码预览状态，职责限定在当前区域。组合时代码示范不执行，颜色之外保留语法文本及主题名称。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "live-parameter-readout"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「代码主题只改变局部预览」。编辑代码更新行数与语法内容，主题选择更新局部token颜色；营销页面全局配色保持自己的语义。触发：编辑或选择语法主题。可见结果：用户可比较真实代码预览状态。适用任务：开发工具介绍与主题展示。代码示范不执行，颜色之外保留语法文本及主题名称。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责用户可比较真实代码预览状态，职责限定在当前区域。组合时代码示范不执行，颜色之外保留语法文本及主题名称。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「代码主题只改变局部预览」。编辑代码更新行数与语法内容，主题选择更新局部token颜色；营销页面全局配色保持自己的语义。触发：编辑或选择语法主题。可见结果：用户可比较真实代码预览状态。适用任务：开发工具介绍与主题展示。代码示范不执行，颜色之外保留语法文本及主题名称。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "linear-workflow",
@@ -1424,7 +1720,18 @@ window.ATLAS_PATTERNS = [
         "observation": "Build → 编辑代码内容、六种 syntax 主题选择更新局部代码颜色和行数反馈；不改变官网的固定全局暗色。",
         "evidence": "observed",
         "referenceUrl": "https://linear.app/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".build-review",
+          "label": "局部代码主题",
+          "instruction": "在代码预览中修改内容，并切换 Code diff theme；代码颜色和行数改变，页面的整体暗色保持不变。",
+          "prepare": [
+            {
+              "input": "#diff-theme",
+              "value": "GitHub"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -1434,7 +1741,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/linear-workflow/script.js",
       "demos/cases/linear-workflow/style.css",
       "entries/cases/linear-workflow.json"
-    ]
+    ],
+    "preview": "previews/patterns/local-code-theme-preview.jpg"
   },
   {
     "id": "message-to-board-demonstration",
@@ -1460,19 +1768,14 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "accent",
-      "notes": "该原子负责用户能看到请求如何转为Todo/In progress，职责限定在当前区域。组合时固定示例与真正后端能力明确区分，减少动态保留完整终态。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "viewport-animation-lifecycle",
         "last-request-transition"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「消息到任务板的可重播演示」。按请求、回复、卡片插入和状态移动分阶段展示同一任务；Replay恢复初态，消息与任务数量同步。触发：发送示例请求或重播。可见结果：用户能看到请求如何转为Todo/In progress。适用任务：自动化与团队工具说明。固定示例与真正后端能力明确区分，减少动态保留完整终态。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责用户能看到请求如何转为Todo/In progress，职责限定在当前区域。组合时固定示例与真正后端能力明确区分，减少动态保留完整终态。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「消息到任务板的可重播演示」。按请求、回复、卡片插入和状态移动分阶段展示同一任务；Replay恢复初态，消息与任务数量同步。触发：发送示例请求或重播。可见结果：用户能看到请求如何转为Todo/In progress。适用任务：自动化与团队工具说明。固定示例与真正后端能力明确区分，减少动态保留完整终态。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "linear-workflow",
@@ -1480,7 +1783,17 @@ window.ATLAS_PATTERNS = [
         "observation": "Intake Send “create issues” → 2s 后 Linear 回复、再 1s 后 2 张卡插入 Todo；下一次 Send → 1.4s 回复、800ms 后卡从 Todo 移到 In progress；Replay 恢复初态 → 把自然语言请求变成可见工作。",
         "evidence": "observed",
         "referenceUrl": "https://linear.app/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#workflow",
+          "label": "消息变成任务卡",
+          "instruction": "点消息框旁的 Send，观察回复、Todo 新卡及再次发送后的 In progress 移动；左上角 Replay 可复位。",
+          "prepare": [
+            {
+              "click": "#intake-reset"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -1490,7 +1803,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/linear-workflow/script.js",
       "demos/cases/linear-workflow/style.css",
       "entries/cases/linear-workflow.json"
-    ]
+    ],
+    "preview": "previews/patterns/message-to-board-demonstration.jpg"
   },
   {
     "id": "mobile-media-prioritization",
@@ -1516,18 +1830,13 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责核心信息无需理解极小界面也可读，职责限定在当前区域。组合时Notion手机隐藏hero媒体，Linear保留首屏应用裁切；具体变体须按任务决定。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "capability-bento-hierarchy"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「按手机信息任务裁减复杂演示」。窄屏保留主张、操作和说明，按来源变体隐藏重型演示或仅保留消息线程，避免把桌面全部缩到不可读。触发：进入窄屏布局。可见结果：核心信息无需理解极小界面也可读。适用任务：密集工具产品的移动营销页。Notion手机隐藏hero媒体，Linear保留首屏应用裁切；具体变体须按任务决定。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责核心信息无需理解极小界面也可读，职责限定在当前区域。组合时Notion手机隐藏hero媒体，Linear保留首屏应用裁切；具体变体须按任务决定。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「按手机信息任务裁减复杂演示」。窄屏保留主张、操作和说明，按来源变体隐藏重型演示或仅保留消息线程，避免把桌面全部缩到不可读。触发：进入窄屏布局。可见结果：核心信息无需理解极小界面也可读。适用任务：密集工具产品的移动营销页。Notion手机隐藏hero媒体，Linear保留首屏应用裁切；具体变体须按任务决定。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "notion-editorial",
@@ -1535,7 +1844,13 @@ window.ATLAS_PATTERNS = [
         "observation": "桌面官方产品视频静音循环，可暂停；手机保留上方七个头像 pile，当前页面隐藏 hero 媒体区而不是塞入桌面视频。",
         "evidence": "adapted",
         "referenceUrl": "https://www.notion.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".hero",
+          "label": "手机的头像与标题",
+          "instruction": "对照手机与桌面模式：手机保留头像、主张和入口，桌面的产品影片在手机上隐藏。",
+          "viewport": "mobile"
+        }
       },
       {
         "caseId": "linear-workflow",
@@ -1543,7 +1858,13 @@ window.ATLAS_PATTERNS = [
         "observation": "手机保留完整应用缩放裁切、Intake 消息线程；按原站隐藏 Planning/AI/Build 的复杂图示并保留标题正文。",
         "evidence": "observed",
         "referenceUrl": "https://linear.app/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#workflow",
+          "label": "手机保留消息线程",
+          "instruction": "向下查看手机的 Intake 消息线程，再对照桌面模式；复杂 Planning、AI、Build 图示在手机上让位给文字。",
+          "viewport": "mobile"
+        }
       }
     ],
     "sourceFiles": [
@@ -1560,7 +1881,8 @@ window.ATLAS_PATTERNS = [
       "entries/cases/linear-workflow.json",
       "entries/cases/notion-editorial.json",
       "docs/cases/notion-editorial.md"
-    ]
+    ],
+    "preview": "previews/patterns/mobile-media-prioritization.jpg"
   },
   {
     "id": "staged-product-ui-entrance",
@@ -1586,15 +1908,10 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责界面密度逐步出现而不遮住主张，职责限定在当前区域。组合时动作不阻止阅读与操作，减少动态直接显示终态界面。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "mobile-media-prioritization"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
     },
     "parameters": [
       {
@@ -1603,7 +1920,7 @@ window.ATLAS_PATTERNS = [
         "note": "Linear当前归档公开模块参数"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「延迟产品界面与扫光入场」。稳定主标题先可读，产品UI在短延迟后由mask与扫光带入，向下滚动让遮罩衔接下一节。触发：进入页面及继续下滚。可见结果：界面密度逐步出现而不遮住主张。适用任务：工作系统营销首屏。动作不阻止阅读与操作，减少动态直接显示终态界面。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责界面密度逐步出现而不遮住主张，职责限定在当前区域。组合时动作不阻止阅读与操作，减少动态直接显示终态界面。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「延迟产品界面与扫光入场」。稳定主标题先可读，产品UI在短延迟后由mask与扫光带入，向下滚动让遮罩衔接下一节。触发：进入页面及继续下滚。可见结果：界面密度逐步出现而不遮住主张。适用任务：工作系统营销首屏。动作不阻止阅读与操作，减少动态直接显示终态界面。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "linear-workflow",
@@ -1611,7 +1928,12 @@ window.ATLAS_PATTERNS = [
         "observation": "进入 → 首屏产品 UI 延迟 1.3s 后 1.5s 带入，背景扫光/mask 配合；下滚让首屏遮罩交给后续章节。",
         "evidence": "observed",
         "referenceUrl": "https://linear.app/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".hero",
+          "label": "产品界面的延迟入场",
+          "instruction": "观察主标题先显示、产品界面随后由遮罩和扫光带入；点“重播”重新观看整段入场。"
+        }
       }
     ],
     "sourceFiles": [
@@ -1621,7 +1943,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/linear-workflow/script.js",
       "demos/cases/linear-workflow/style.css",
       "entries/cases/linear-workflow.json"
-    ]
+    ],
+    "preview": "previews/patterns/staged-product-ui-entrance.jpg"
   },
   {
     "id": "staggered-agent-columns",
@@ -1647,18 +1970,13 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "accent",
-      "notes": "该原子负责并行工作过程逐步可读，职责限定在当前区域。组合时演示必须给具体结果，状态不能误导为实际远程任务。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "viewport-animation-lifecycle"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「交错代理状态展示」。代理列按交错时序显示思考与回答，进入视口启动，离开或后台停止，暂停保持已出现结果。触发：AI章节进入视口。可见结果：并行工作过程逐步可读。适用任务：多代理产品说明。演示必须给具体结果，状态不能误导为实际远程任务。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责并行工作过程逐步可读，职责限定在当前区域。组合时演示必须给具体结果，状态不能误导为实际远程任务。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「交错代理状态展示」。代理列按交错时序显示思考与回答，进入视口启动，离开或后台停止，暂停保持已出现结果。触发：AI章节进入视口。可见结果：并行工作过程逐步可读。适用任务：多代理产品说明。演示必须给具体结果，状态不能误导为实际远程任务。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "linear-workflow",
@@ -1666,7 +1984,13 @@ window.ATLAS_PATTERNS = [
         "observation": "AI 章节进入视口 → 三列代理思考/回答以 5s 与后续交错时间演示，离开/后台停止；暂停按钮与减少动态分支可保持结果。",
         "evidence": "adapted",
         "referenceUrl": "https://linear.app/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".agent-workflows",
+          "label": "三列代理状态",
+          "instruction": "看三列代理依次出现思考与回答，用这一节的暂停按钮停在当前结果，再恢复观看。",
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -1676,7 +2000,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/linear-workflow/script.js",
       "demos/cases/linear-workflow/style.css",
       "entries/cases/linear-workflow.json"
-    ]
+    ],
+    "preview": "previews/patterns/staggered-agent-columns.jpg"
   },
   {
     "id": "avatar-pile-personality",
@@ -1688,7 +2013,6 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "用一组独立头像为工具加入团队气质。",
     "mechanism": "多张真实授权头像以小范围叠放组成一个稳定装饰层，手机调整到标题上方，文字仍是主要信息。",
-    "trigger": "浏览团队主张",
     "effect": "团队主题有可识别的人格化线索。",
     "useCases": [
       "协作与创作产品"
@@ -1702,18 +2026,13 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责团队主题有可识别的人格化线索，职责限定在当前区域。组合时头像只作装饰时不重复读屏，使用真实对应的授权素材。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "measured-width-action-pill"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「组合头像表达团队人格」。多张真实授权头像以小范围叠放组成一个稳定装饰层，手机调整到标题上方，文字仍是主要信息。触发：浏览团队主张。可见结果：团队主题有可识别的人格化线索。适用任务：协作与创作产品。头像只作装饰时不重复读屏，使用真实对应的授权素材。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责团队主题有可识别的人格化线索，职责限定在当前区域。组合时头像只作装饰时不重复读屏，使用真实对应的授权素材。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「组合头像表达团队人格」。多张真实授权头像以小范围叠放组成一个稳定装饰层，手机调整到标题上方，文字仍是主要信息。可见结果：团队主题有可识别的人格化线索。适用任务：协作与创作产品。头像只作装饰时不重复读屏，使用真实对应的授权素材。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "notion-editorial",
@@ -1721,7 +2040,13 @@ window.ATLAS_PATTERNS = [
         "observation": "桌面官方产品视频静音循环，可暂停；手机保留上方七个头像 pile，当前页面隐藏 hero 媒体区而不是塞入桌面视频。",
         "evidence": "adapted",
         "referenceUrl": "https://www.notion.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".avatar-piles",
+          "label": "七组头像拼贴",
+          "instruction": "看标题上方七组真实头像怎样以不同倾角和重叠关系组成团队群像。",
+          "viewport": "mobile"
+        }
       }
     ],
     "sourceFiles": [
@@ -1732,7 +2057,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/notion-editorial/style.css",
       "entries/cases/notion-editorial.json",
       "docs/cases/notion-editorial.md"
-    ]
+    ],
+    "preview": "previews/patterns/avatar-pile-personality.jpg"
   },
   {
     "id": "instant-open-menu-category-switch",
@@ -1758,17 +2084,12 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责频繁探索目录保持快速连贯，职责限定在当前区域。组合时关闭后hidden/inert与aria同步，键盘路径同样可选择类别。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "last-request-transition"
       ],
       "conflicts": [
         "natural-height-mega-menu"
       ]
-    },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
     },
     "parameters": [
       {
@@ -1777,7 +2098,7 @@ window.ATLAS_PATTERNS = [
         "note": "已打开分类为instantSwitch"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「已打开菜单分类即时切换」。菜单首次带入，容器打开期间切换分类直接换内容；退出有短延迟且旧关闭计时在新打开时失效。触发：首次打开、改分类或离开。可见结果：频繁探索目录保持快速连贯。适用任务：浅层产品与资源导航。关闭后hidden/inert与aria同步，键盘路径同样可选择类别。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责频繁探索目录保持快速连贯，职责限定在当前区域。组合时关闭后hidden/inert与aria同步，键盘路径同样可选择类别。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「已打开菜单分类即时切换」。菜单首次带入，容器打开期间切换分类直接换内容；退出有短延迟且旧关闭计时在新打开时失效。触发：首次打开、改分类或离开。可见结果：频繁探索目录保持快速连贯。适用任务：浅层产品与资源导航。关闭后hidden/inert与aria同步，键盘路径同样可选择类别。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "notion-editorial",
@@ -1785,7 +2106,19 @@ window.ATLAS_PATTERNS = [
         "observation": "桌面 Product/Resources 指针进入与点击 → 首次 opacity/translateY(-16px) 250ms ease-out，退出 150ms ease-in、延迟 50ms；已打开分类按源 instantSwitch 直接切换，快速反转取消旧退出，减少动态直接完成；手机打开全屏菜单 → Product/AI/Resources 原地单开，切换收起前组，再点同组收起；其他分类变灰，底部 Download app/Log in 固定。源 CSS 子展开 300ms、入口 350ms，内容/底部延迟 200/250ms；关闭/Escape 恢复滚动和焦点，维持层级与行动位置。",
         "evidence": "adapted",
         "referenceUrl": "https://www.notion.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".menu:not([hidden])",
+          "label": "已打开的菜单分类",
+          "instruction": "在 Product 与 Resources 之间移动，比较首次展开与已经展开后的即时换组。",
+          "prepare": [
+            {
+              "click": "[data-menu=Product]",
+              "waitFor": ".menu:not([hidden])"
+            }
+          ],
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -1796,7 +2129,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/notion-editorial/style.css",
       "entries/cases/notion-editorial.json",
       "docs/cases/notion-editorial.md"
-    ]
+    ],
+    "preview": "previews/patterns/instant-open-menu-category-switch.jpg"
   },
   {
     "id": "measured-width-action-pill",
@@ -1822,15 +2156,10 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "accent",
-      "notes": "该原子负责主张保持一行连续，词长变化可读，职责限定在当前区域。组合时保留完整静态句子供读屏，减少动态固定一个可读词。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "avatar-pile-personality"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
     },
     "parameters": [
       {
@@ -1839,7 +2168,7 @@ window.ATLAS_PATTERNS = [
         "note": "文字直接替换，仅宽度过渡"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「测量文字宽度的动作胶囊」。动作词直接替换，再测量内容宽度并过渡胶囊inline-size；颜色与圆点随语义同步，不给字加额外飞入。触发：固定词轮换周期。可见结果：主张保持一行连续，词长变化可读。适用任务：多个等价动作的产品主张。保留完整静态句子供读屏，减少动态固定一个可读词。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责主张保持一行连续，词长变化可读，职责限定在当前区域。组合时保留完整静态句子供读屏，减少动态固定一个可读词。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「测量文字宽度的动作胶囊」。动作词直接替换，再测量内容宽度并过渡胶囊inline-size；颜色与圆点随语义同步，不给字加额外飞入。触发：固定词轮换周期。可见结果：主张保持一行连续，词长变化可读。适用任务：多个等价动作的产品主张。保留完整静态句子供读屏，减少动态固定一个可读词。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "notion-editorial",
@@ -1847,7 +2176,12 @@ window.ATLAS_PATTERNS = [
         "observation": "2500ms 自动 Think/Ship/Create/Build/Jam/Scale → 词直接替换，测量 scrollWidth 后宽度以 300ms cubic-bezier(.86,0,.07,1) 变化，底色/圆点对应变化；这是源机制，没有给文字加不存在的飞入飞出。",
         "evidence": "observed",
         "referenceUrl": "https://www.notion.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".verb",
+          "label": "随动作词变宽的胶囊",
+          "instruction": "看 Think、Ship、Create 等词自动替换，胶囊按真实词宽改变尺寸，底色和圆点一起更新。"
+        }
       }
     ],
     "sourceFiles": [
@@ -1858,7 +2192,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/notion-editorial/style.css",
       "entries/cases/notion-editorial.json",
       "docs/cases/notion-editorial.md"
-    ]
+    ],
+    "preview": "previews/patterns/measured-width-action-pill.jpg"
   },
   {
     "id": "mobile-single-open-navigation",
@@ -1884,7 +2219,6 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责全部顶层结构仍可看见，当前子目录清楚，职责限定在当前区域。组合时焦点限制在菜单，关闭恢复原位置，底部行动不遮住子链接。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "instant-open-menu-category-switch"
       ],
@@ -1892,12 +2226,8 @@ window.ATLAS_PATTERNS = [
         "mobile-drilldown-menu"
       ]
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「手机菜单原位单开分类」。在全屏导航中原位展开当前分类，其他分类降低强调，同一分类再点收起，下载与登录入口固定底部。触发：手机选择导航分类。可见结果：全部顶层结构仍可看见，当前子目录清楚。适用任务：分类不深的移动导航。焦点限制在菜单，关闭恢复原位置，底部行动不遮住子链接。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责全部顶层结构仍可看见，当前子目录清楚，职责限定在当前区域。组合时焦点限制在菜单，关闭恢复原位置，底部行动不遮住子链接。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「手机菜单原位单开分类」。在全屏导航中原位展开当前分类，其他分类降低强调，同一分类再点收起，下载与登录入口固定底部。触发：手机选择导航分类。可见结果：全部顶层结构仍可看见，当前子目录清楚。适用任务：分类不深的移动导航。焦点限制在菜单，关闭恢复原位置，底部行动不遮住子链接。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "notion-editorial",
@@ -1905,7 +2235,22 @@ window.ATLAS_PATTERNS = [
         "observation": "桌面 Product/Resources 指针进入与点击 → 首次 opacity/translateY(-16px) 250ms ease-out，退出 150ms ease-in、延迟 50ms；已打开分类按源 instantSwitch 直接切换，快速反转取消旧退出，减少动态直接完成；手机打开全屏菜单 → Product/AI/Resources 原地单开，切换收起前组，再点同组收起；其他分类变灰，底部 Download app/Log in 固定。源 CSS 子展开 300ms、入口 350ms，内容/底部延迟 200/250ms；关闭/Escape 恢复滚动和焦点，维持层级与行动位置。",
         "evidence": "adapted",
         "referenceUrl": "https://www.notion.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#notion-phone-nav:not([hidden])",
+          "label": "手机菜单原位单开",
+          "instruction": "点 Product、AI、Resources 分类，在原位展开当前组；再次点同组可收起，底部 Download app 与 Log in 保留。",
+          "prepare": [
+            {
+              "click": ".hamburger[aria-expanded=false]",
+              "waitFor": "#notion-phone-nav:not([hidden])"
+            },
+            {
+              "click": "[data-phone-group=Product][aria-expanded=false]"
+            }
+          ],
+          "viewport": "mobile"
+        }
       }
     ],
     "sourceFiles": [
@@ -1916,7 +2261,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/notion-editorial/style.css",
       "entries/cases/notion-editorial.json",
       "docs/cases/notion-editorial.md"
-    ]
+    ],
+    "preview": "previews/patterns/mobile-single-open-navigation.jpg"
   },
   {
     "id": "blurred-layered-video-handoff",
@@ -1942,16 +2288,11 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责镜头间更替保持观看连续，职责限定在当前区域。组合时切出影片必须暂停，降低动态直接显示当前片静帧与标题。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "last-request-transition",
         "clip-tail-advance"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
     },
     "parameters": [
       {
@@ -1965,7 +2306,7 @@ window.ATLAS_PATTERNS = [
         "note": "标题晚于场景带入"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「旧片模糊退出、新片延后进入」。旧影片先模糊退出，新影片稍后进入，标题再延迟进入；同一舞台叠层和最后请求队列管理快选。触发：选择影片章节。可见结果：镜头间更替保持观看连续。适用任务：少量世界玩法章节。切出影片必须暂停，降低动态直接显示当前片静帧与标题。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责镜头间更替保持观看连续，职责限定在当前区域。组合时切出影片必须暂停，降低动态直接显示当前片静帧与标题。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「旧片模糊退出、新片延后进入」。旧影片先模糊退出，新影片稍后进入，标题再延迟进入；同一舞台叠层和最后请求队列管理快选。触发：选择影片章节。可见结果：镜头间更替保持观看连续。适用任务：少量世界玩法章节。切出影片必须暂停，降低动态直接显示当前片静帧与标题。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "zelda-world",
@@ -1973,7 +2314,22 @@ window.ATLAS_PATTERNS = [
         "observation": "点击章节 → 300ms输入锁；前片1秒模糊退场，后片1.6秒、延迟0.6秒进入；标题1.6秒、延迟1秒进入。快速选择保留最后请求。",
         "evidence": "observed",
         "referenceUrl": "https://www.nintendo.com/jp/zelda/totk/world/index.html",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".world-stage",
+          "label": "世界影片与标题交接",
+          "instruction": "点底部另一个章节，看旧片模糊退出、新片延后进入，标题再接上。",
+          "prepare": [
+            {
+              "click": "#entry-gate:not([hidden]):not([data-phase]) [data-enter=\"off\"]",
+              "waitFor": "body:has(#entry-gate[hidden])"
+            },
+            {
+              "click": ".chapters a[href=\"#world-2\"]:not([aria-current=\"true\"])",
+              "waitFor": ".world-stage[data-scene=\"2\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -1983,7 +2339,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/zelda-world/style.css",
       "entries/cases/zelda-world.json",
       "docs/cases/zelda-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/blurred-layered-video-handoff.jpg"
   },
   {
     "id": "clip-tail-advance",
@@ -2009,16 +2366,11 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责主题影片连续展示，职责限定在当前区域。组合时剩余阈值以实际媒体时长计算，本地截短片会导致循环更短。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "blurred-layered-video-handoff",
         "viewport-animation-lifecycle"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
     },
     "parameters": [
       {
@@ -2027,7 +2379,7 @@ window.ATLAS_PATTERNS = [
         "note": "影片交接触发，非定时整页切换"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「在影片片尾前交给下一章」。监测当前影片剩余时间，在片尾前固定余量触发下一章，用户暂停或降低动态时关闭自动推进。触发：影片到达尾段。可见结果：主题影片连续展示。适用任务：短片组成的主题世界。剩余阈值以实际媒体时长计算，本地截短片会导致循环更短。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责主题影片连续展示，职责限定在当前区域。组合时剩余阈值以实际媒体时长计算，本地截短片会导致循环更短。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「在影片片尾前交给下一章」。监测当前影片剩余时间，在片尾前固定余量触发下一章，用户暂停或降低动态时关闭自动推进。触发：影片到达尾段。可见结果：主题影片连续展示。适用任务：短片组成的主题世界。剩余阈值以实际媒体时长计算，本地截短片会导致循环更短。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "zelda-world",
@@ -2035,7 +2387,22 @@ window.ATLAS_PATTERNS = [
         "observation": "影片片尾前1秒推进下一章；暂停画面和减少动态分支关闭自动推进。",
         "evidence": "adapted",
         "referenceUrl": "https://www.nintendo.com/jp/zelda/totk/world/index.html",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".world-stage",
+          "label": "影片片尾前的章节交接",
+          "instruction": "让影片继续播放到尾段，留意片尾前自动交给下一章；暂停画面会停止推进。",
+          "prepare": [
+            {
+              "click": "#entry-gate:not([hidden]):not([data-phase]) [data-enter=\"off\"]",
+              "waitFor": "body:has(#entry-gate[hidden])"
+            },
+            {
+              "click": ".chapters a[href=\"#world-3\"]:not([aria-current=\"true\"])",
+              "waitFor": ".world-stage[data-scene=\"3\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -2045,7 +2412,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/zelda-world/style.css",
       "entries/cases/zelda-world.json",
       "docs/cases/zelda-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/clip-tail-advance.jpg"
   },
   {
     "id": "continuous-bgm-bridge",
@@ -2071,16 +2439,12 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "只连接环境氛围，人物台词仍单独启停，前景影片开启时需要制定混音或暂停策略。声音必须主动启用，动态减少不等于撤销用户的声音选择。",
+      "notes": "只连接环境氛围，人物台词仍单独启停，前景影片开启时需要制定混音或暂停策略。声音必须主动启用，减少动态时保留用户的声音选择。",
       "pairsWellWith": [
         "sound-opt-in",
         "character-voice-ownership"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "独立BGM按钮有当前启用/静音状态，可随时停止。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
     },
     "parameters": [
       {
@@ -2089,7 +2453,7 @@ window.ATLAS_PATTERNS = [
         "note": "原站BGM参数；其他来源另行选择"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「跨章节连续的环境声音」。用户开启后BGM跨章节保持同一播放位置，启停使用有依据的音量渐变；人物语音与环境音乐分开管理。触发：主动开启或关闭BGM、切换章节。可见结果：章切保留世界氛围，声音职责可辨认。适用任务：有真实授权音轨的游戏世界。默认静音，后台暂停，动态暂停独立于声音选择。键盘：独立BGM按钮有当前启用/静音状态，可随时停止。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：只连接环境氛围，人物台词仍单独启停，前景影片开启时需要制定混音或暂停策略。声音必须主动启用，动态减少不等于撤销用户的声音选择。",
+    "prompt": "为【目标页面/组件】实现「跨章节连续的环境声音」。用户开启后BGM跨章节保持同一播放位置，启停使用有依据的音量渐变；人物语音与环境音乐分开管理。触发：主动开启或关闭BGM、切换章节。可见结果：章切保留世界氛围，声音职责可辨认。适用任务：有真实授权音轨的游戏世界。默认静音，后台暂停，动态暂停独立于声音选择。键盘：独立BGM按钮有当前启用/静音状态，可随时停止。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：只连接环境氛围，人物台词仍单独启停，前景影片开启时需要制定混音或暂停策略。声音必须主动启用，减少动态时保留用户的声音选择。",
     "sources": [
       {
         "caseId": "arknights-world",
@@ -2097,7 +2461,25 @@ window.ATLAS_PATTERNS = [
         "observation": "真实BGM默认关闭，单独开关并使用官网600/300ms音量渐变；三人日语语音独立按需播放，换人物或离开干员章暂停旧语音。",
         "evidence": "adapted",
         "referenceUrl": "https://ak.hypergryph.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#sound",
+          "label": "跨章节背景音乐",
+          "instruction": "用右上声音按钮主动开启音乐，再切换章节；音乐保持连续，关闭时渐弱。",
+          "prepare": [
+            {
+              "waitFor": "#scene-deck[data-phase=\"idle\"]"
+            },
+            {
+              "click": "#menu-toggle[aria-expanded=\"false\"]",
+              "maxWidth": 800
+            },
+            {
+              "click": "#chapter-nav a[href=\"#operator\"]:not([aria-current=\"page\"])",
+              "waitFor": "#scene-deck[data-active=\"operator\"][data-phase=\"idle\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "zelda-world",
@@ -2105,7 +2487,22 @@ window.ATLAS_PATTERNS = [
         "observation": "开场 SE 对应纹章发亮扩散，BGM在入口移交世界时接续；三段影片切换时音乐不断开，维持探索节奏。",
         "evidence": "observed",
         "referenceUrl": "https://www.nintendo.com/jp/zelda/totk/world/index.html",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".sound-control",
+          "label": "世界章节的连续 BGM",
+          "instruction": "用右上 SOUND 主动开启音乐，再切换三个世界章节，比较画面换章与音乐连续播放。",
+          "prepare": [
+            {
+              "click": "#entry-gate:not([hidden]):not([data-phase]) [data-enter=\"off\"]",
+              "waitFor": "body:has(#entry-gate[hidden])"
+            },
+            {
+              "click": ".chapters a[href=\"#world-1\"]:not([aria-current=\"true\"])",
+              "waitFor": ".world-stage[data-scene=\"1\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -2122,7 +2519,8 @@ window.ATLAS_PATTERNS = [
       "entries/cases/zelda-world.json",
       "docs/cases/arknights-world.md",
       "docs/cases/zelda-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/continuous-bgm-bridge.jpg"
   },
   {
     "id": "idle-interface-retreat",
@@ -2133,7 +2531,7 @@ window.ATLAS_PATTERNS = [
       "micro-motion"
     ],
     "summary": "在观看状态让界面暂时让出画面。",
-    "mechanism": "指针移动或触摸唤醒控件，闲置短时间后模糊淡出；焦点仍在操作区时保持可见。",
+    "mechanism": "指针移动或触摸唤醒控件，闲置短时间后模糊淡出；焦点仍在操作区时保持可见。 Tab 可立即唤醒控件；减少动态时控件保持可见。",
     "trigger": "闲置、指针移动、触摸或聚焦",
     "effect": "纯观看与可操作状态有可逆切换。",
     "useCases": [
@@ -2148,15 +2546,10 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责纯观看与可操作状态有可逆切换，职责限定在当前区域。组合时聚焦不隐藏为本地可达性补充，触摸至少能唤醒再操作。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "blurred-layered-video-handoff"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "焦点在控件时不退隐，Tab立即唤醒并保持明显焦点。",
-      "reducedMotion": "控件保持可见，不使用模糊退隐。"
     },
     "parameters": [
       {
@@ -2165,7 +2558,7 @@ window.ATLAS_PATTERNS = [
         "note": "控制层时间"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「闲置时控件退隐、操作时恢复」。指针移动或触摸唤醒控件，闲置短时间后模糊淡出；焦点仍在操作区时保持可见。触发：闲置、指针移动、触摸或聚焦。可见结果：纯观看与可操作状态有可逆切换。适用任务：沉浸影片舞台。聚焦不隐藏为本地可达性补充，触摸至少能唤醒再操作。键盘：焦点在控件时不退隐，Tab立即唤醒并保持明显焦点。减少动态：控件保持可见，不使用模糊退隐。组合边界：该原子负责纯观看与可操作状态有可逆切换，职责限定在当前区域。组合时聚焦不隐藏为本地可达性补充，触摸至少能唤醒再操作。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「闲置时控件退隐、操作时恢复」。指针移动或触摸唤醒控件，闲置短时间后模糊淡出；焦点仍在操作区时保持可见。触发：闲置、指针移动、触摸或聚焦。可见结果：纯观看与可操作状态有可逆切换。适用任务：沉浸影片舞台。聚焦不隐藏为本地可达性补充，触摸至少能唤醒再操作。键盘：焦点在控件时不退隐，Tab立即唤醒并保持明显焦点。减少动态：控件保持可见，不使用模糊退隐。",
     "sources": [
       {
         "caseId": "zelda-world",
@@ -2173,7 +2566,22 @@ window.ATLAS_PATTERNS = [
         "observation": "鼠标移动或触摸唤醒界面，3秒闲置后0.8秒模糊淡出；键盘焦点保留控件为本地补充。",
         "evidence": "adapted",
         "referenceUrl": "https://www.nintendo.com/jp/zelda/totk/world/index.html",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".chapters",
+          "label": "闲置退隐的章节控件",
+          "instruction": "移动指针唤醒底部目录，停止操作后看它模糊退隐；按 Tab 也能唤醒。",
+          "prepare": [
+            {
+              "click": "#entry-gate:not([hidden]):not([data-phase]) [data-enter=\"off\"]",
+              "waitFor": "body:has(#entry-gate[hidden])"
+            },
+            {
+              "click": ".chapters a[href=\"#world-3\"]:not([aria-current=\"true\"])",
+              "waitFor": ".world-stage[data-scene=\"3\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -2183,7 +2591,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/zelda-world/style.css",
       "entries/cases/zelda-world.json",
       "docs/cases/zelda-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/idle-interface-retreat.jpg"
   },
   {
     "id": "last-request-transition",
@@ -2209,7 +2618,6 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责不堆积离场层，也不会被旧回调覆盖，职责限定在当前区域。组合时方向与目标分别记录，减少动态直接落到最新稳定状态。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "vertical-card-swap",
         "directional-section-wipe",
@@ -2217,12 +2625,8 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「快速切换保留最后目标」。单一状态控制器记录最新目标，取消旧退出回调并限制同时交互层；交接结束继续最后请求。触发：转场期间再次选择或反向。可见结果：不堆积离场层，也不会被旧回调覆盖。适用任务：多场景与多模式切换。方向与目标分别记录，减少动态直接落到最新稳定状态。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责不堆积离场层，也不会被旧回调覆盖，职责限定在当前区域。组合时方向与目标分别记录，减少动态直接落到最新稳定状态。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「快速切换保留最后目标」。单一状态控制器记录最新目标，取消旧退出回调并限制同时交互层；交接结束继续最后请求。触发：转场期间再次选择或反向。可见结果：不堆积离场层，也不会被旧回调覆盖。适用任务：多场景与多模式切换。方向与目标分别记录，减少动态直接落到最新稳定状态。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "arknights-world",
@@ -2230,7 +2634,25 @@ window.ATLAS_PATTERNS = [
         "observation": "场景横向遮罩裁切：桌面1000ms、竖屏600ms；同方向重复轮输入锁定，快速反向和导航使用最后目标队列，单次仅一组出/入场景。",
         "evidence": "adapted",
         "referenceUrl": "https://ak.hypergryph.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#chapter-nav",
+          "label": "连续换章的最后目标",
+          "instruction": "连续点 WORLD、MEDIA、MORE，观察交接完成后停在哪个最后选择。",
+          "prepare": [
+            {
+              "waitFor": "#scene-deck[data-phase=\"idle\"]"
+            },
+            {
+              "click": "#menu-toggle[aria-expanded=\"false\"]",
+              "maxWidth": 800
+            },
+            {
+              "click": "#chapter-nav a[href=\"#media\"]:not([aria-current=\"page\"])",
+              "waitFor": "#scene-deck[data-active=\"media\"][data-phase=\"idle\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "zelda-world",
@@ -2238,7 +2660,22 @@ window.ATLAS_PATTERNS = [
         "observation": "点击章节 → 300ms输入锁；前片1秒模糊退场，后片1.6秒、延迟0.6秒进入；标题1.6秒、延迟1秒进入。快速选择保留最后请求。",
         "evidence": "adapted",
         "referenceUrl": "https://www.nintendo.com/jp/zelda/totk/world/index.html",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".chapters",
+          "label": "影片章节的最后选择",
+          "instruction": "连续选择不同缩略图，查看交接后是否停在最后一次选择的章节。",
+          "prepare": [
+            {
+              "click": "#entry-gate:not([hidden]):not([data-phase]) [data-enter=\"off\"]",
+              "waitFor": "body:has(#entry-gate[hidden])"
+            },
+            {
+              "click": ".chapters a[href=\"#world-1\"]:not([aria-current=\"true\"])",
+              "waitFor": ".world-stage[data-scene=\"1\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "qoder-platform",
@@ -2246,7 +2683,17 @@ window.ATLAS_PATTERNS = [
         "observation": "五平台 tab/点控/触摸 → 400ms 水平进退，20s 自动，悬停/手动暂停、后台停止；快速选择只保留一个场景。",
         "evidence": "adapted",
         "referenceUrl": "https://qoder.cn/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".platform-panel",
+          "label": "平台场景快速切换",
+          "instruction": "连续点 Desktop、Mobile、IDE 等平台，观察最后一次选择留下的场景，旧画面会退出。",
+          "prepare": [
+            {
+              "click": "[data-platform=ide]"
+            }
+          ]
+        }
       },
       {
         "caseId": "chatgpt-platform",
@@ -2254,7 +2701,18 @@ window.ATLAS_PATTERNS = [
         "observation": "选择工作 → 工作的独立素材从四周进入，原模式素材离开；快速切换清理旧离场层 → 保持一套可读场景；移到“工作”再快速移到“编程”。",
         "evidence": "adapted",
         "referenceUrl": "https://chatgpt.com/zh-Hans-CN/overview/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".hero",
+          "label": "快速选择最后一个模式",
+          "instruction": "连续选择“工作”和“编程”，观察离场素材被清理，最后只保留当前模式的一套画面。",
+          "prepare": [
+            {
+              "click": "[data-select=work]"
+            }
+          ],
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -2284,7 +2742,8 @@ window.ATLAS_PATTERNS = [
       "entries/cases/zelda-world.json",
       "docs/cases/arknights-world.md",
       "docs/cases/zelda-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/last-request-transition.jpg"
   },
   {
     "id": "sound-choice-emblem-opening",
@@ -2296,7 +2755,7 @@ window.ATLAS_PATTERNS = [
       "sound"
     ],
     "summary": "视觉打开世界与声音启用属于同一次选择。",
-    "mechanism": "入口先提供ON/OFF，选择后显示纹章并向外发光扩散；开场SE对应显现，移交影片时BGM接续。",
+    "mechanism": "入口先提供ON/OFF，选择后显示纹章并向外发光扩散；开场SE对应显现，移交影片时BGM接续。 静态呈现可保留 ON/OFF 选择，使用纹章静帧或直接转入影片静帧。",
     "trigger": "选择声音ON或OFF",
     "effect": "用户掌握声音且开场动作有一致节奏。",
     "useCases": [
@@ -2319,10 +2778,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "保留ON/OFF，纹章静态或直接移交可读影片静帧，主动声音选择仍有效。"
-    },
     "parameters": [
       {
         "name": "来源开场",
@@ -2338,7 +2793,12 @@ window.ATLAS_PATTERNS = [
         "observation": "首次 ON/OFF → 原始纹章出现；2秒后向外发光扩散，3.6秒移交影片舞台。ON触发原开场 SE，随后原BGM接续。",
         "evidence": "observed",
         "referenceUrl": "https://www.nintendo.com/jp/zelda/totk/world/index.html",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#entry-gate:not([hidden]):not([data-phase]) .sound-choice, body:has(#entry-gate[hidden]) .sound-control",
+          "label": "ON / OFF 与纹章开场",
+          "instruction": "首次进入时选择 ON 或 OFF，随后出现纹章并移交影片；已进入时可在右上 SOUND 调整声音。"
+        }
       }
     ],
     "sourceFiles": [
@@ -2348,7 +2808,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/zelda-world/style.css",
       "entries/cases/zelda-world.json",
       "docs/cases/zelda-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/sound-choice-emblem-opening.jpg"
   },
   {
     "id": "sound-opt-in",
@@ -2375,25 +2836,25 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责用户掌握听觉环境，浏览正文不被自动出声打断，职责限定在当前区域。组合时声音和动态暂停分别管理，降低动态偏好不剥夺主动声音选择。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "continuous-bgm-bridge",
         "character-voice-ownership"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "开启、静音与停止均用有明确可访问名称的按钮，图标按钮提供aria-label，aria-pressed与实际声音状态一致。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「声音主动启用与随时停止」。声音初始关闭，用户明确开启后才初始化或播放；关闭与离开前台都能停止当前声音。触发：开启/关闭声音。可见结果：用户掌握听觉环境，浏览正文不被自动出声打断。适用任务：互动乐器、游戏世界与品牌影片。声音和动态暂停分别管理，降低动态偏好不剥夺主动声音选择。键盘：开启、静音与停止均用有明确可访问名称的按钮，图标按钮提供aria-label，aria-pressed与实际声音状态一致。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责用户掌握听觉环境，浏览正文不被自动出声打断，职责限定在当前区域。组合时声音和动态暂停分别管理，降低动态偏好不剥夺主动声音选择。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。 操作短音在实际选择或切换时立即触发，跟随同一声音开关；返回前台不重放过期短效。",
+    "prompt": "为【目标页面/组件】实现「声音主动启用与随时停止」。声音初始关闭，用户明确开启后才初始化或播放；关闭与离开前台都能停止当前声音。触发：开启/关闭声音。可见结果：用户掌握听觉环境，浏览正文不被自动出声打断。适用任务：互动乐器、游戏世界与品牌影片。声音和动态暂停分别管理，降低动态偏好不剥夺主动声音选择。键盘：开启、静音与停止均用有明确可访问名称的按钮，图标按钮提供aria-label，aria-pressed与实际声音状态一致。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。 操作短音在实际选择或切换时立即触发，跟随同一声音开关；返回前台不重放过期短效。",
     "sources": [
       {
         "caseId": "retro-80s",
         "locator": "entries/cases/retro-80s.json#interaction/0",
         "observation": "只有主动开启声音后才初始化Web Audio；可随时关闭。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": "#power",
+          "label": "主动开启声音",
+          "instruction": "点“开启声音”后再演奏琴键；同一开关可随时关闭声音。"
+        }
       },
       {
         "caseId": "arknights-world",
@@ -2401,7 +2862,25 @@ window.ATLAS_PATTERNS = [
         "observation": "真实原站BGM独立开关，默认静音；600ms渐入/300ms渐出。三人官方日语配音由干员按钮单独播放；页面进入后台暂停音频。",
         "evidence": "adapted",
         "referenceUrl": "https://ak.hypergryph.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#sound",
+          "label": "主动开启声音",
+          "instruction": "点右上声音按钮开启或关闭 BGM；干员语音由各自的语音按钮单独播放。",
+          "prepare": [
+            {
+              "waitFor": "#scene-deck[data-phase=\"idle\"]"
+            },
+            {
+              "click": "#menu-toggle[aria-expanded=\"false\"]",
+              "maxWidth": 800
+            },
+            {
+              "click": "#chapter-nav a[href=\"#index\"]:not([aria-current=\"page\"])",
+              "waitFor": "#scene-deck[data-active=\"index\"][data-phase=\"idle\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "zelda-world",
@@ -2409,7 +2888,12 @@ window.ATLAS_PATTERNS = [
         "observation": "入口 ON/OFF 与顶栏 SOUND；默认静音，选择 ON 后播放原始 se.mp3 与 bgm.mp3。",
         "evidence": "observed",
         "referenceUrl": "https://www.nintendo.com/jp/zelda/totk/world/index.html",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#entry-gate:not([hidden]):not([data-phase]) .sound-choice, body:has(#entry-gate[hidden]) .sound-control",
+          "label": "入口与顶栏声音选择",
+          "instruction": "在入口选择 ON 或 OFF；进入后用右上 SOUND 随时开启或停止音乐。"
+        }
       },
       {
         "caseId": "endfield-industrial",
@@ -2417,7 +2901,29 @@ window.ATLAS_PATTERNS = [
         "observation": "桌面声音工具与手机喇叭共用状态，默认关闭、aria-pressed同步；用户开启后播放原BGM及选干员/2D↔3D、头像翻页、档案展开/收起四种原音。关闭或后台立即停止，返回只恢复已开启BGM；预览和角色影片静音，完整影像独立控制。",
         "evidence": "adapted",
         "referenceUrl": "https://endfield.hypergryph.com/",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": ".header-button[aria-label$=\"声音\"], .header-h5-header-container .header-icon-button",
+          "label": "终末地声音开关",
+          "instruction": "主动开启原声音工具后，BGM 与换干员、翻头像、展开档案的短音共用同一开关。",
+          "prepare": [
+            {
+              "waitFor": "body:has(#entry-loader[hidden])"
+            },
+            {
+              "click": ".header-inner-container > .header-nav-item[aria-label=\"干员情报\"]",
+              "minWidth": 801
+            },
+            {
+              "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+              "maxWidth": 800
+            },
+            {
+              "click": ".header-menu-item[aria-label=\"干员情报\"]",
+              "maxWidth": 800
+            }
+          ]
+        }
       },
       {
         "caseId": "hallmark",
@@ -2425,7 +2931,13 @@ window.ATLAS_PATTERNS = [
         "observation": "首页保持无声，Bloom 的 Play 和 Ribbon 的 Listen 只在用户激活后创建或恢复 AudioContext，按钮和 Escape 可停止声音并复位界面，Ribbon 停止后挂起上下文。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero [data-mixer]",
+          "label": "Listen 与 Stop 声音开关",
+          "instruction": "点击 Listen 才会启用声音；再次点击 Stop，或按 Escape，即可停止。",
+          "entrypoint": "demos/cases/hallmark/themes/ribbon/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -2458,7 +2970,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/themes/bloom/page.js",
       "demos/cases/hallmark/themes/bloom/arrange.js",
       "demos/cases/hallmark/themes/ribbon/night.js"
-    ]
+    ],
+    "preview": "previews/patterns/sound-opt-in.jpg"
   },
   {
     "id": "world-shaped-thumbnail-frame",
@@ -2470,7 +2983,7 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "让缩略目录属于同一个故事世界。",
     "mechanism": "缩略入口使用来源角纹与削角轮廓，hover/current增加内框，真实内容图与选中状态保持稳定。",
-    "trigger": "浏览、聚焦或选择缩略图",
+    "trigger": "缩略图悬停、聚焦或选中",
     "effect": "操作控件与主视觉共享身份。",
     "useCases": [
       "有明确图形语汇的游戏或展览"
@@ -2484,18 +2997,13 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责操作控件与主视觉共享身份，职责限定在当前区域。组合时可点击面积和可读标签保持规则，装饰不替代选择状态。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "blurred-layered-video-handoff"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「目录边框延续世界语汇」。缩略入口使用来源角纹与削角轮廓，hover/current增加内框，真实内容图与选中状态保持稳定。触发：浏览、聚焦或选择缩略图。可见结果：操作控件与主视觉共享身份。适用任务：有明确图形语汇的游戏或展览。可点击面积和可读标签保持规则，装饰不替代选择状态。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责操作控件与主视觉共享身份，职责限定在当前区域。组合时可点击面积和可读标签保持规则，装饰不替代选择状态。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「目录边框延续世界语汇」。缩略入口使用来源角纹与削角轮廓，hover/current增加内框，真实内容图与选中状态保持稳定。触发：缩略图悬停、聚焦或选中。可见结果：操作控件与主视觉共享身份。适用任务：有明确图形语汇的游戏或展览。可点击面积和可读标签保持规则，装饰不替代选择状态。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "zelda-world",
@@ -2503,7 +3011,22 @@ window.ATLAS_PATTERNS = [
         "observation": "原始 frame_thumbnail 古代角纹 + 8点削角白线；当前与 hover 加内框，避免普通矩形卡片。",
         "evidence": "observed",
         "referenceUrl": "https://www.nintendo.com/jp/zelda/totk/world/index.html",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".chapters",
+          "label": "古代角纹章节边框",
+          "instruction": "把指针移到章节缩略图上，比较古代角纹、削角轮廓和当前项内框。",
+          "prepare": [
+            {
+              "click": "#entry-gate:not([hidden]):not([data-phase]) [data-enter=\"off\"]",
+              "waitFor": "body:has(#entry-gate[hidden])"
+            },
+            {
+              "click": ".chapters a[href=\"#world-1\"]:not([aria-current=\"true\"])",
+              "waitFor": ".world-stage[data-scene=\"1\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -2513,7 +3036,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/zelda-world/style.css",
       "entries/cases/zelda-world.json",
       "docs/cases/zelda-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/world-shaped-thumbnail-frame.jpg"
   },
   {
     "id": "bounded-panel-track",
@@ -2547,10 +3071,6 @@ window.ATLAS_PATTERNS = [
         "centered-loop-gallery"
       ]
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
     "prompt": "为【目标页面/组件】实现「有界的完整面板横向轨道」。每次选择使整块相关内容沿单一轨道平移，首尾禁用前后按钮并停止；人物或玩法状态同步更新。触发：选择编号、箭头或手势。可见结果：相关信息保持组合关系，边界可预期。适用任务：角色资料与玩法演示。一次只一个稳定场景可交互，移动时保留当前选中说明。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：负责有顺序面板的整体移动，人物语音按当前面板停止/切换。首尾是内容边界；若改为无限图集，应同时改变提示、禁用与焦点模型。",
     "sources": [
@@ -2560,7 +3080,20 @@ window.ATLAS_PATTERNS = [
         "observation": "三组 Gameplay 完整面板以 400ms cubic-bezier(.25,1,.5,1) 横移；按钮、编号、左右键与手势同步，首尾禁用而不循环。",
         "evidence": "adapted",
         "referenceUrl": "https://umamusume.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#gameplay .gameplay-stage",
+          "label": "三组 Gameplay 横向面板",
+          "instruction": "点 01 / 02 / 03 或前后箭头，看完整面板沿同一轨道换页，首尾按钮会停用。",
+          "prepare": [
+            {
+              "click": "#menu-button[aria-expanded=\"false\"]"
+            },
+            {
+              "click": "#study-menu a[href=\"#gameplay\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "persona-kinetic",
@@ -2568,7 +3101,17 @@ window.ATLAS_PATTERNS = [
         "observation": "三位角色横移500ms并在两端停止；学校/怪盗服装300ms换装入场。本地角色内容缩减为三位。",
         "evidence": "adapted",
         "referenceUrl": "https://persona.atlus.com/p5r/?lang=en#",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#characters",
+          "label": "有首尾边界的角色舞台",
+          "instruction": "选择三位角色或按左右键，看资料与立绘横向交接，并在首尾停止。",
+          "prepare": [
+            {
+              "click": "header nav a[href=\"#characters\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "blue-archive",
@@ -2576,7 +3119,13 @@ window.ATLAS_PATTERNS = [
         "observation": "阿比多斯四学生资料卡与完整立绘以 1000ms 整块水平移动；选择按钮、左右键及手势同步当前人物。",
         "evidence": "adapted",
         "referenceUrl": "https://bluearchive.jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#characters",
+          "label": "学生资料与立绘的横向轨道",
+          "instruction": "点下方学生名字或按左右键，看整块资料和立绘沿同一轨道移动。",
+          "entrypoint": "demos/cases/blue-archive/character.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -2599,7 +3148,8 @@ window.ATLAS_PATTERNS = [
       "docs/cases/blue-archive.md",
       "docs/cases/persona-kinetic.md",
       "docs/cases/uma-musume.md"
-    ]
+    ],
+    "preview": "previews/patterns/bounded-panel-track.jpg"
   },
   {
     "id": "centered-loop-gallery",
@@ -2633,10 +3183,6 @@ window.ATLAS_PATTERNS = [
         "bounded-panel-track"
       ]
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
     "prompt": "为【目标页面/组件】实现「中心图与邻图预告的循环轨道」。同一水平轨道移位，中心图清晰、邻图部分露出；首尾以克隆衔接后复位，手动与自动状态共享索引。触发：箭头、索引、触摸或自动周期。可见结果：浏览连续且下一项有可见预告。适用任务：作品与演出摄影画廊。克隆仅用于视觉，真实焦点与索引按内容ID管理，自动推进提供暂停。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：负责视觉连续与邻图预告，适合没有明确首尾次序的作品集合。与有界人物/玩法轨道的边界规则不同；同一轨道不能同时循环与首尾禁用。",
     "sources": [
@@ -2646,7 +3192,20 @@ window.ATLAS_PATTERNS = [
         "observation": "十四图画廊：500ms整条水平轨道、3秒自动推进、无限首尾衔接；桌面三张、手机一张加20%侧图，箭头/14个索引/方向键与点击侧图有效。悬停、焦点、离屏和后台暂停。",
         "evidence": "adapted",
         "referenceUrl": "https://www.monumentvalleygame.com/mv1",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#images",
+          "label": "中央图与邻图预告的画廊",
+          "instruction": "点箭头或下方圆点切图，看中央图与两侧预告；首尾可以连续衔接。",
+          "prepare": [
+            {
+              "waitFor": "body[data-entry=\"ready\"]"
+            },
+            {
+              "click": ".section-nav a[href=\"#images\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "persona-kinetic",
@@ -2654,7 +3213,17 @@ window.ATLAS_PATTERNS = [
         "observation": "学校生活与怪盗行动分别采用无限中心轮播：箭头、左右键或横向触摸 → 500ms整条轨道滑动，相邻图露出；到末尾无缝接第一项。",
         "evidence": "adapted",
         "referenceUrl": "https://persona.atlus.com/p5r/?lang=en#",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#life .life-carousel",
+          "label": "学校生活与怪盗行动图集",
+          "instruction": "点各自图集的箭头，比较中央清晰画面与两侧预告，末尾继续回到第一项。",
+          "prepare": [
+            {
+              "click": "header nav a[href=\"#life\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "philharmonie-music",
@@ -2662,7 +3231,17 @@ window.ATLAS_PATTERNS = [
         "observation": "切换音乐会摄影：三幅署名摄影500ms横向轨道，克隆边界无缝循环；前后与暂停／触摸可操作。 用演出者肖像讲述阵容，邻接图像的运动维持观看连续。",
         "evidence": "observed",
         "referenceUrl": "https://philharmoniedeparis.fr/fr/activite/exposition/28822-video-games-music",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".concert-photo",
+          "label": "音乐会摄影循环轨道",
+          "instruction": "点摄影下方前后按钮，或左右滑动，对比中央摄影与相邻画面的连续横移；暂停按钮可保留当前照片。",
+          "prepare": [
+            {
+              "click": "#concert-next"
+            }
+          ]
+        }
       },
       {
         "caseId": "fuji-rock",
@@ -2670,7 +3249,17 @@ window.ATLAS_PATTERNS = [
         "observation": "照片或Featured自动／手动切换：照片3600ms间隔、800ms淡化；Featured600ms中心循环，3600ms自动，手机露出两侧邻项。 照片传递现场氛围，中心轨道突出活动主题且提示还有内容。",
         "evidence": "observed",
         "referenceUrl": "https://www.fujirockfestival.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".featured-window",
+          "label": "中央 Featured 与邻项预告",
+          "instruction": "点前后按钮，或在手机左右滑动，观察中央特集连续移动，左右邻项提示还有内容。",
+          "prepare": [
+            {
+              "click": "#feature-next"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -2698,7 +3287,8 @@ window.ATLAS_PATTERNS = [
       "docs/cases/monument-valley-game.md",
       "docs/cases/persona-kinetic.md",
       "docs/cases/philharmonie-music.md"
-    ]
+    ],
+    "preview": "previews/patterns/centered-loop-gallery.jpg"
   },
   {
     "id": "fixed-star-glow-layer",
@@ -2710,7 +3300,7 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "少量光点为群像提供节奏。",
     "mechanism": "固定位置的星图使用低密度明暗周期与错峰延迟，保持正文和人物轮廓稳定。",
-    "trigger": "观看首屏",
+    "trigger": "首屏显示时启动明暗周期",
     "effect": "主图有轻微光感而不更换主体。",
     "useCases": [
       "已有星光视觉语汇的IP首屏"
@@ -2724,15 +3314,10 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责主图有轻微光感而不更换主体，职责限定在当前区域。组合时本地Canvas2D为PIXI算法迁移，随机抽样与混合非逐帧相同。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "scroll-differential-stars"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-      "reducedMotion": "显示静止光点或停在固定明度，保留主图和全部文字。"
     },
     "parameters": [
       {
@@ -2741,7 +3326,7 @@ window.ATLAS_PATTERNS = [
         "note": "不等于背景15颗随机星"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「固定星光的明暗呼吸层」。固定位置的星图使用低密度明暗周期与错峰延迟，保持正文和人物轮廓稳定。触发：观看首屏。可见结果：主图有轻微光感而不更换主体。适用任务：已有星光视觉语汇的IP首屏。本地Canvas2D为PIXI算法迁移，随机抽样与混合非逐帧相同。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：显示静止光点或停在固定明度，保留主图和全部文字。组合边界：该原子负责主图有轻微光感而不更换主体，职责限定在当前区域。组合时本地Canvas2D为PIXI算法迁移，随机抽样与混合非逐帧相同。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「固定星光的明暗呼吸层」。固定位置的星图使用低密度明暗周期与错峰延迟，保持正文和人物轮廓稳定。触发：首屏显示时启动明暗周期。可见结果：主图有轻微光感而不更换主体。适用任务：已有星光视觉语汇的IP首屏。本地Canvas2D为PIXI算法迁移，随机抽样与混合非逐帧相同。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：显示静止光点或停在固定明度，保留主图和全部文字。",
     "sources": [
       {
         "caseId": "persona-kinetic",
@@ -2749,7 +3334,17 @@ window.ATLAS_PATTERNS = [
         "observation": "原站 desktop kv-canvas 只有5颗固定位置星光；本地使用相同六种图像和3秒明暗周期，用Canvas2D重建，未运行PIXI业务包。",
         "evidence": "adapted",
         "referenceUrl": "https://persona.atlus.com/p5r/?lang=en#",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#royal-kv-stars",
+          "label": "首屏固定星光",
+          "instruction": "看主角周围固定的五处星光；它们只明暗呼吸，位置不随指针改变。",
+          "prepare": [
+            {
+              "click": "header nav a[href=\"#top\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -2759,7 +3354,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/persona-kinetic/style.css",
       "entries/cases/persona-kinetic.json",
       "docs/cases/persona-kinetic.md"
-    ]
+    ],
+    "preview": "previews/patterns/fixed-star-glow-layer.jpg"
   },
   {
     "id": "inclined-motion-bands",
@@ -2771,7 +3367,6 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "通过有限倾斜建立运动或海报节奏。",
     "mechanism": "标题带、说明板与箭头重复同一倾斜方向，正文水平可读，下载徽章保留自己的标准轮廓。",
-    "trigger": "阅读章节分隔与行动入口",
     "effect": "方向感贯穿不同内容区域。",
     "useCases": [
       "运动游戏与强海报主题"
@@ -2785,18 +3380,13 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责方向感贯穿不同内容区域，职责限定在当前区域。组合时倾斜仅用于短标题与装饰，文字和触控边界不被裁掉。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "section-color-rhythm"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「斜切条带延续运动方向」。标题带、说明板与箭头重复同一倾斜方向，正文水平可读，下载徽章保留自己的标准轮廓。触发：阅读章节分隔与行动入口。可见结果：方向感贯穿不同内容区域。适用任务：运动游戏与强海报主题。倾斜仅用于短标题与装饰，文字和触控边界不被裁掉。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责方向感贯穿不同内容区域，职责限定在当前区域。组合时倾斜仅用于短标题与装饰，文字和触控边界不被裁掉。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「斜切条带延续运动方向」。标题带、说明板与箭头重复同一倾斜方向，正文水平可读，下载徽章保留自己的标准轮廓。可见结果：方向感贯穿不同内容区域。适用任务：运动游戏与强海报主题。倾斜仅用于短标题与装饰，文字和触控边界不被裁掉。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "uma-musume",
@@ -2804,7 +3394,20 @@ window.ATLAS_PATTERNS = [
         "observation": "向前倾斜的标题带、说明板与箭头复用斜切语言，平台下载徽章保持自己的标准轮廓。",
         "evidence": "observed",
         "referenceUrl": "https://umamusume.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#about",
+          "label": "About 的前倾条带",
+          "instruction": "看 ABOUT 标题与下方倾斜的按钮条；文字保持可读，斜边统一向前。",
+          "prepare": [
+            {
+              "click": "#menu-button[aria-expanded=\"false\"]"
+            },
+            {
+              "click": "#study-menu a[href=\"#about\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "persona-kinetic",
@@ -2812,7 +3415,17 @@ window.ATLAS_PATTERNS = [
         "observation": "斜切拼贴、金色边框、网点与剪贴字保持同一张海报的秩序。",
         "evidence": "observed",
         "referenceUrl": "https://persona.atlus.com/p5r/?lang=en#",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#characters",
+          "label": "角色档案的斜切拼贴",
+          "instruction": "看斜切的人物窗口、金色边框和剪贴字，比较各层共同的倾斜方向。",
+          "prepare": [
+            {
+              "click": "header nav a[href=\"#characters\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "zenless-zone-zero",
@@ -2820,7 +3433,17 @@ window.ATLAS_PATTERNS = [
         "observation": "胶片齿孔、斜切面板、斜向人物窗口、粗描边胶囊和边缘编号轨道。",
         "evidence": "observed",
         "referenceUrl": "https://zzz.mihoyo.com/main",
-        "capturedAt": "2026-10-11"
+        "capturedAt": "2026-10-11",
+        "focus": {
+          "target": "#character .home-character__main-panel",
+          "label": "斜向人物窗口与面板",
+          "instruction": "看角色窗口、粗描边面板和头像轨道如何沿同一倾斜方向组织。",
+          "prepare": [
+            {
+              "click": ".sidebar__pagers-num[aria-label=\"跳到角色介绍\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -2846,7 +3469,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/zenless-zone-zero/reference-mobile.css",
       "demos/cases/zenless-zone-zero/reference.css",
       "demos/cases/zenless-zone-zero/state.css"
-    ]
+    ],
+    "preview": "previews/patterns/inclined-motion-bands.jpg"
   },
   {
     "id": "independent-outfit-state",
@@ -2872,19 +3496,14 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "accent",
-      "notes": "该原子负责人物连续性与不同形态都可见，职责限定在当前区域。组合时各人物缺少某形态时给明确可用状态，不制造不存在资产。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "character-stage-coordination",
         "bounded-panel-track"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「人物与服装分别管理」。人物选择与学校/怪盗服装使用独立状态，换装只切换对应立绘与入场，不误改当前人物。触发：切换人物或服装。可见结果：人物连续性与不同形态都可见。适用任务：角色双形态与职业展示。各人物缺少某形态时给明确可用状态，不制造不存在资产。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责人物连续性与不同形态都可见，职责限定在当前区域。组合时各人物缺少某形态时给明确可用状态，不制造不存在资产。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「人物与服装分别管理」。人物选择与学校/怪盗服装使用独立状态，换装只切换对应立绘与入场，不误改当前人物。触发：切换人物或服装。可见结果：人物连续性与不同形态都可见。适用任务：角色双形态与职业展示。各人物缺少某形态时给明确可用状态，不制造不存在资产。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "persona-kinetic",
@@ -2892,7 +3511,20 @@ window.ATLAS_PATTERNS = [
         "observation": "三位角色横移500ms并在两端停止；学校/怪盗服装300ms换装入场。本地角色内容缩减为三位。",
         "evidence": "adapted",
         "referenceUrl": "https://persona.atlus.com/p5r/?lang=en#",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#characters .costumes",
+          "label": "人物与服装两组选项",
+          "instruction": "先切 SCHOOL UNIFORM / PHANTOM THIEF，再选择人物，查看服装与人物如何分别保留状态。",
+          "prepare": [
+            {
+              "click": "header nav a[href=\"#characters\"]"
+            },
+            {
+              "click": "[data-costume=\"school\"]:not([aria-pressed=\"true\"])"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -2902,7 +3534,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/persona-kinetic/style.css",
       "entries/cases/persona-kinetic.json",
       "docs/cases/persona-kinetic.md"
-    ]
+    ],
+    "preview": "previews/patterns/independent-outfit-state.jpg"
   },
   {
     "id": "offsite-playlist-extension",
@@ -2929,18 +3562,13 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责展览/演出主题可在读页之后继续体验，职责限定在当前区域。组合时链接可读且标明目标，图片轮播不当作音频播放。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "sound-opt-in"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "使用有明确目标名称的原生a，外部平台可按正常浏览器行为打开。",
-      "reducedMotion": "此机制只提供入口，页面内不需要动态；外部播放由用户选择。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「以官方播放列表延伸主题」。明确的Playlist或官方影片入口链接真实外部平台，不加载无授权播放器或自动音乐；说明目标与声音来源。触发：激活播放列表或官方影片链接。可见结果：展览/演出主题可在读页之后继续体验。适用任务：音乐展览与活动回顾。链接可读且标明目标，图片轮播不当作音频播放。键盘：使用有明确目标名称的原生a，外部平台可按正常浏览器行为打开。减少动态：此机制只提供入口，页面内不需要动态；外部播放由用户选择。组合边界：该原子负责展览/演出主题可在读页之后继续体验，职责限定在当前区域。组合时链接可读且标明目标，图片轮播不当作音频播放。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「以官方播放列表延伸主题」。明确的Playlist或官方影片入口链接真实外部平台，不加载无授权播放器或自动音乐；说明目标与声音来源。触发：激活播放列表或官方影片链接。可见结果：展览/演出主题可在读页之后继续体验。适用任务：音乐展览与活动回顾。链接可读且标明目标，图片轮播不当作音频播放。键盘：使用有明确目标名称的原生a，外部平台可按正常浏览器行为打开。减少动态：此机制只提供入口，页面内不需要动态；外部播放由用户选择。",
     "sources": [
       {
         "caseId": "philharmonie-music",
@@ -2948,7 +3576,12 @@ window.ATLAS_PATTERNS = [
         "observation": "打开Playlist：转到官方fanlink，选择个人音乐平台。 音乐是展览主题的延伸与回看媒介。",
         "evidence": "observed",
         "referenceUrl": "https://philharmoniedeparis.fr/fr/activite/exposition/28822-video-games-music",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".playlist",
+          "label": "展览的官方 Playlist 入口",
+          "instruction": "点 Playlist 前往官方 fanlink，再选择自己的音乐平台；网页本身保留这个外部收听入口。"
+        }
       },
       {
         "caseId": "fuji-rock",
@@ -2956,7 +3589,12 @@ window.ATLAS_PATTERNS = [
         "observation": "Aftermovie链接到官方YouTube；没有独立BGM开关。",
         "evidence": "observed",
         "referenceUrl": "https://www.fujirockfestival.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".aftermovie",
+          "label": "官方 Aftermovie 入口",
+          "instruction": "点 Aftermovie 打开官方 YouTube 影像，现场声音由官方影片承接，当前网页保留外部观看入口。"
+        }
       },
       {
         "caseId": "persona-kinetic",
@@ -2964,7 +3602,17 @@ window.ATLAS_PATTERNS = [
         "observation": "WATCH THE OFFICIAL TRAILER 点击打开原始YouTube宣传片。",
         "evidence": "observed",
         "referenceUrl": "https://persona.atlus.com/p5r/?lang=en#",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#top a[href*=\"youtu\"]",
+          "label": "官方预告片入口",
+          "instruction": "点 WATCH THE OFFICIAL TRAILER，打开原始 YouTube 宣传片。",
+          "prepare": [
+            {
+              "click": "header nav a[href=\"#top\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -2986,7 +3634,8 @@ window.ATLAS_PATTERNS = [
       "docs/cases/fuji-rock.md",
       "docs/cases/persona-kinetic.md",
       "docs/cases/philharmonie-music.md"
-    ]
+    ],
+    "preview": "previews/patterns/offsite-playlist-extension.jpg"
   },
   {
     "id": "scroll-differential-stars",
@@ -3012,16 +3661,11 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责背景层有不同速度的纵向深度，职责限定在当前区域。组合时背景装饰不承担正文位置，减少动态停止背景位移。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "fixed-star-glow-layer",
         "native-document-reading"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
     },
     "parameters": [
       {
@@ -3030,7 +3674,7 @@ window.ATLAS_PATTERNS = [
         "note": "随机延迟与系数属于来源算法"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「滚动差值驱动背景不同速光点」。背景星按前后滚动位置差值除以不同系数移动，越界重置；主图仍沿自然文档滚动。触发：向下或向上自然滚动。可见结果：背景层有不同速度的纵向深度。适用任务：有明确来源运动层的IP长页。背景装饰不承担正文位置，减少动态停止背景位移。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责背景层有不同速度的纵向深度，职责限定在当前区域。组合时背景装饰不承担正文位置，减少动态停止背景位移。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「滚动差值驱动背景不同速光点」。背景星按前后滚动位置差值除以不同系数移动，越界重置；主图仍沿自然文档滚动。触发：向下或向上自然滚动。可见结果：背景层有不同速度的纵向深度。适用任务：有明确来源运动层的IP长页。背景装饰不承担正文位置，减少动态停止背景位移。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "persona-kinetic",
@@ -3038,7 +3682,20 @@ window.ATLAS_PATTERNS = [
         "observation": "背景15颗星光 → 原生滚动差值 / 1–3随机系数位移，超出边界重置；没有查到原站鼠标视差，本地不补造。",
         "evidence": "adapted",
         "referenceUrl": "https://persona.atlus.com/p5r/?lang=en#",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#royal-bg-stars",
+          "label": "随滚动不同速移动的背景星光",
+          "instruction": "上下自然滚动，观察背景星点以不同速度移动，与正文形成纵向深度。",
+          "prepare": [
+            {
+              "scroll": "#characters .cast"
+            },
+            {
+              "images": "#characters"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -3048,7 +3705,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/persona-kinetic/style.css",
       "entries/cases/persona-kinetic.json",
       "docs/cases/persona-kinetic.md"
-    ]
+    ],
+    "preview": "previews/patterns/scroll-differential-stars.jpg"
   },
   {
     "id": "checklist-progress",
@@ -3074,25 +3732,30 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "accent",
-      "notes": "该原子负责用户可看到自己的参与结果，职责限定在当前区域。组合时任务文字具体，重置可见且仅影响清单。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "paper-material-collage",
         "discovery-progress-journal"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "带文本label的原生checkbox，状态与完成数同步。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「短清单与即时完成进度」。原生复选框代表真实步骤，改变勾选即更新完成数，并提供清单重置。触发：勾选/取消或重置。可见结果：用户可看到自己的参与结果。适用任务：入门仪式与轻任务引导。任务文字具体，重置可见且仅影响清单。键盘：带文本label的原生checkbox，状态与完成数同步。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责用户可看到自己的参与结果，职责限定在当前区域。组合时任务文字具体，重置可见且仅影响清单。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「短清单与即时完成进度」。原生复选框代表真实步骤，改变勾选即更新完成数，并提供清单重置。触发：勾选/取消或重置。可见结果：用户可看到自己的参与结果。适用任务：入门仪式与轻任务引导。任务文字具体，重置可见且仅影响清单。键盘：带文本label的原生checkbox，状态与完成数同步。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "hand-drawn",
         "locator": "entries/cases/hand-drawn.json#interaction/0",
         "observation": "三项原生复选框更新收集进度",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".checklist",
+          "label": "三项短清单与完成数",
+          "instruction": "勾选或取消清单项，观察完成数量即时更新；Reset 可重新开始。",
+          "prepare": [
+            {
+              "click": ".checklist input:not(:checked)"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -3101,7 +3764,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hand-drawn/style.css",
       "entries/cases/hand-drawn.json",
       "docs/cases/hand-drawn.md"
-    ]
+    ],
+    "preview": "previews/patterns/checklist-progress.jpg"
   },
   {
     "id": "controlled-rough-outlines",
@@ -3113,7 +3777,6 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "以稳定骨架承托草稿感轮廓。",
     "mechanism": "用固定SVG曲线、有限双线与统一排线密度制造手绘感；正文和操作边界保持清楚稳定。",
-    "trigger": "浏览插画与短批注",
     "effect": "可感受到手工气质而不失去阅读秩序。",
     "useCases": [
       "创作、文具与教育入口"
@@ -3127,24 +3790,24 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责可感受到手工气质而不失去阅读秩序，职责限定在当前区域。组合时不规则只作用于插画与短批注，不能侵入触控区。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "paper-material-collage"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「受控不规则轮廓」。用固定SVG曲线、有限双线与统一排线密度制造手绘感；正文和操作边界保持清楚稳定。触发：浏览插画与短批注。可见结果：可感受到手工气质而不失去阅读秩序。适用任务：创作、文具与教育入口。不规则只作用于插画与短批注，不能侵入触控区。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责可感受到手工气质而不失去阅读秩序，职责限定在当前区域。组合时不规则只作用于插画与短批注，不能侵入触控区。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「受控不规则轮廓」。用固定SVG曲线、有限双线与统一排线密度制造手绘感；正文和操作边界保持清楚稳定。可见结果：可感受到手工气质而不失去阅读秩序。适用任务：创作、文具与教育入口。不规则只作用于插画与短批注，不能侵入触控区。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "hand-drawn",
         "locator": "entries/cases/hand-drawn.json#composition/shape",
         "observation": "适度不规则笔触与纸页质感模拟手工；按钮仍有稳定边界。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".notebook",
+          "label": "笔记页的不规则轮廓",
+          "instruction": "看笔记页、贴纸和按钮的轻微不规则边界；文字区域与点击边界仍保持稳定。"
+        }
       }
     ],
     "sourceFiles": [
@@ -3153,7 +3816,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hand-drawn/style.css",
       "entries/cases/hand-drawn.json",
       "docs/cases/hand-drawn.md"
-    ]
+    ],
+    "preview": "previews/patterns/controlled-rough-outlines.jpg"
   },
   {
     "id": "paper-material-collage",
@@ -3165,7 +3829,7 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "用纸页、胶带与贴纸解释记录活动。",
     "mechanism": "原创记录页和植物线稿与记录任务并置，材料只做小角度倾斜；装饰开关不会改变主要文字布局。",
-    "trigger": "阅读纸页示范或切换贴纸",
+    "trigger": "切换纸页装饰开关",
     "effect": "视觉材料支持亲手记录的产品主题。",
     "useCases": [
       "手账与轻量复盘工具"
@@ -3179,25 +3843,30 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责视觉材料支持亲手记录的产品主题，职责限定在当前区域。组合时手机纸页完整缩放，贴纸不遮住核心信息。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "controlled-rough-outlines",
         "checklist-progress"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「纸页与贴纸的任务隐喻」。原创记录页和植物线稿与记录任务并置，材料只做小角度倾斜；装饰开关不会改变主要文字布局。触发：阅读纸页示范或切换贴纸。可见结果：视觉材料支持亲手记录的产品主题。适用任务：手账与轻量复盘工具。手机纸页完整缩放，贴纸不遮住核心信息。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责视觉材料支持亲手记录的产品主题，职责限定在当前区域。组合时手机纸页完整缩放，贴纸不遮住核心信息。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「纸页与贴纸的任务隐喻」。原创记录页和植物线稿与记录任务并置，材料只做小角度倾斜；装饰开关不会改变主要文字布局。触发：切换纸页装饰开关。可见结果：视觉材料支持亲手记录的产品主题。适用任务：手账与轻量复盘工具。手机纸页完整缩放，贴纸不遮住核心信息。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "hand-drawn",
         "locator": "entries/cases/hand-drawn.json#composition/imagery",
         "observation": "自绘植物、笔记页与贴纸解释记录生活的场景。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".scrapbook",
+          "label": "笔记页、植物与贴纸",
+          "instruction": "看植物、铅笔、纸页和贴纸怎样共同表达记录生活的场景；可点贴纸旁的小按钮切换贴纸显隐。",
+          "prepare": [
+            {
+              "click": "#sticker-toggle[aria-pressed=false]"
+            }
+          ]
+        }
       },
       {
         "caseId": "hallmark",
@@ -3205,7 +3874,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Pasteup 以小角度旋转、真实纸面投影、复印图混合和压在肖像边缘的日期纸签组织信息，纸张叠放关系保持正文与操作可读。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero__visual",
+          "label": "纸页与日期纸签拼贴",
+          "instruction": "对照照片、纸页和压在边缘的日期纸签，观察旋转与投影形成的叠放关系。",
+          "entrypoint": "demos/cases/hallmark/themes/pasteup/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -3219,7 +3894,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/fidelity.md",
       "demos/cases/hallmark/themes/pasteup/style.css",
       "demos/cases/hallmark/themes/pasteup/index.html"
-    ]
+    ],
+    "preview": "previews/patterns/paper-material-collage.jpg"
   },
   {
     "id": "exploded-layer-view",
@@ -3245,25 +3921,30 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "accent",
-      "notes": "该原子负责对象之间的组成关系显露，职责限定在当前区域。组合时同步文字说明，减少动态即时改变位置。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "parallel-isometric-projection",
         "layer-focus-dimming"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「展开图层解释组成」。保持空间投影和图层顺序，用受控偏移将各组分离；再次选择整体恢复完整场景。触发：选择展开/整体。可见结果：对象之间的组成关系显露。适用任务：复杂系统与产品结构介绍。同步文字说明，减少动态即时改变位置。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责对象之间的组成关系显露，职责限定在当前区域。组合时同步文字说明，减少动态即时改变位置。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「展开图层解释组成」。保持空间投影和图层顺序，用受控偏移将各组分离；再次选择整体恢复完整场景。触发：选择展开/整体。可见结果：对象之间的组成关系显露。适用任务：复杂系统与产品结构介绍。同步文字说明，减少动态即时改变位置。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "isometric-3d",
         "locator": "entries/cases/isometric-3d.json#interaction/1",
         "observation": "展开按钮将基础、建筑、植物分层",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": "#island",
+          "label": "小岛的分层展开",
+          "instruction": "用下方“展开”与“整岛”切换，对比地基、建筑和植物怎样按原层次分离、合回。",
+          "prepare": [
+            {
+              "click": "[data-layer=exploded]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -3272,7 +3953,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/isometric-3d/style.css",
       "entries/cases/isometric-3d.json",
       "docs/cases/isometric-3d.md"
-    ]
+    ],
+    "preview": "previews/patterns/exploded-layer-view.jpg"
   },
   {
     "id": "layer-focus-dimming",
@@ -3298,25 +3980,30 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "accent",
-      "notes": "该原子负责用户理解局部及其整体位置，职责限定在当前区域。组合时透明度只作用于图形，正文始终保持对比。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "parallel-isometric-projection",
         "exploded-layer-view"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「聚焦一层并减弱其余层」。选定图层保持清晰，其余图层降低透明度但仍留在原位，文字说明与选中按钮同步。触发：选择花园/建筑/整体。可见结果：用户理解局部及其整体位置。适用任务：空间与技术系统介绍。透明度只作用于图形，正文始终保持对比。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责用户理解局部及其整体位置，职责限定在当前区域。组合时透明度只作用于图形，正文始终保持对比。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「聚焦一层并减弱其余层」。选定图层保持清晰，其余图层降低透明度但仍留在原位，文字说明与选中按钮同步。触发：选择花园/建筑/整体。可见结果：用户理解局部及其整体位置。适用任务：空间与技术系统介绍。透明度只作用于图形，正文始终保持对比。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "isometric-3d",
         "locator": "entries/cases/isometric-3d.json#interaction/0",
         "observation": "整岛、花园、建筑三种焦点切换",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": "#island",
+          "label": "花园与建筑层聚焦",
+          "instruction": "切换“整岛”“花园”“建筑”，观察目标层保持清楚，其余层减弱。",
+          "prepare": [
+            {
+              "click": "[data-layer=garden]"
+            }
+          ]
+        }
       },
       {
         "caseId": "hallmark",
@@ -3324,7 +4011,18 @@ window.ATLAS_PATTERNS = [
         "observation": "Ultraviolet 的 solo 按钮只强调当前通道，mute 降低对应通道，第二次点击撤销，通道按钮的按下状态和 is-dim 样式同步。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "[data-player]",
+          "label": "分轨 solo 与 mute",
+          "instruction": "点击一条音轨的 solo，观察其余音轨减弱；再次点击撤销，也可尝试 mute。",
+          "entrypoint": "demos/cases/hallmark/themes/ultraviolet/index.html",
+          "prepare": [
+            {
+              "click": "[aria-label='solo vocals'][aria-pressed=false]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -3338,7 +4036,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/fidelity.md",
       "demos/cases/hallmark/themes/ultraviolet/index.html",
       "demos/cases/hallmark/themes/ultraviolet/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/layer-focus-dimming.jpg"
   },
   {
     "id": "parallel-isometric-projection",
@@ -3350,7 +4049,6 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "用一个坐标规则构成整个微型世界。",
     "mechanism": "全部体块共享30°平行轴与比例，顶/左/右使用统一明度方向，路径与植物提供尺度。",
-    "trigger": "查看系统场景",
     "effect": "多个对象属于同一可理解空间。",
     "useCases": [
       "基础设施与园区系统示意"
@@ -3364,25 +4062,30 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责多个对象属于同一可理解空间，职责限定在当前区域。组合时固定二维SVG不能代替可旋转3D或工程验收图。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "exploded-layer-view",
         "layer-focus-dimming"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「统一等轴投影与三面明度」。全部体块共享30°平行轴与比例，顶/左/右使用统一明度方向，路径与植物提供尺度。触发：查看系统场景。可见结果：多个对象属于同一可理解空间。适用任务：基础设施与园区系统示意。固定二维SVG不能代替可旋转3D或工程验收图。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责多个对象属于同一可理解空间，职责限定在当前区域。组合时固定二维SVG不能代替可旋转3D或工程验收图。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「统一等轴投影与三面明度」。全部体块共享30°平行轴与比例，顶/左/右使用统一明度方向，路径与植物提供尺度。可见结果：多个对象属于同一可理解空间。适用任务：基础设施与园区系统示意。固定二维SVG不能代替可旋转3D或工程验收图。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "isometric-3d",
         "locator": "entries/cases/isometric-3d.json#composition/shape",
         "observation": "平行边、统一30°方向和几何积木建立一致空间规则。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": "#island",
+          "label": "等轴方向与三面明度",
+          "instruction": "比较建筑、地基与阶梯的平行边、统一斜向和三面明度，观察它们怎样共用同一空间规则。",
+          "prepare": [
+            {
+              "click": "[data-layer=all]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -3391,7 +4094,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/isometric-3d/style.css",
       "entries/cases/isometric-3d.json",
       "docs/cases/isometric-3d.md"
-    ]
+    ],
+    "preview": "previews/patterns/parallel-isometric-projection.jpg"
   },
   {
     "id": "scrubbable-animation-progress",
@@ -3417,31 +4121,48 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "accent",
-      "notes": "该原子负责动态过程可检查而不是只能等待，职责限定在当前区域。组合时中断后以当前进度为准，减少动态直接显示完成内容。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "sequential-stroke-reveal",
         "interruptible-morph"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "原生range带进度标签，按钮可重播；完成状态有文字。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「可拖动回看的动画进度」。进度滑块直接控制绘制完成度，手动输入取消当前自动帧调度，重播则重新开始。触发：拖动进度或选择重播。可见结果：动态过程可检查而不是只能等待。适用任务：教学演示与结构分析。中断后以当前进度为准，减少动态直接显示完成内容。键盘：原生range带进度标签，按钮可重播；完成状态有文字。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责动态过程可检查而不是只能等待，职责限定在当前区域。组合时中断后以当前进度为准，减少动态直接显示完成内容。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「可拖动回看的动画进度」。进度滑块直接控制绘制完成度，手动输入取消当前自动帧调度，重播则重新开始。触发：拖动进度或选择重播。可见结果：动态过程可检查而不是只能等待。适用任务：教学演示与结构分析。中断后以当前进度为准，减少动态直接显示完成内容。键盘：原生range带进度标签，按钮可重播；完成状态有文字。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "line-art",
         "locator": "entries/cases/line-art.json#interaction/1",
         "observation": "进度滑块允许主动描绘或回看",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".drawing-toolbar",
+          "label": "可拖动的线稿进度",
+          "instruction": "拖动进度滑块主动描绘或回看；绘制过程中拖动，会停在你选择的位置。",
+          "prepare": [
+            {
+              "input": "#progress",
+              "value": "55"
+            }
+          ]
+        }
       },
       {
         "caseId": "line-art",
         "locator": "entries/cases/line-art.json#interaction/2",
         "observation": "绘制过程中可拖动滑块中止动画",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".drawing-toolbar",
+          "label": "可拖动的线稿进度",
+          "instruction": "拖动进度滑块主动描绘或回看；绘制过程中拖动，会停在你选择的位置。",
+          "prepare": [
+            {
+              "input": "#progress",
+              "value": "55"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -3450,7 +4171,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/line-art/style.css",
       "entries/cases/line-art.json",
       "docs/cases/line-art.md"
-    ]
+    ],
+    "preview": "previews/patterns/scrubbable-animation-progress.jpg"
   },
   {
     "id": "sequential-stroke-reveal",
@@ -3476,15 +4198,10 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "accent",
-      "notes": "该原子负责线条出现顺序解释对象如何组成，职责限定在当前区域。组合时默认完整终态，填色不冒充可描绘的路径。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "scrubbable-animation-progress"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
     },
     "parameters": [
       {
@@ -3493,13 +4210,18 @@ window.ATLAS_PATTERNS = [
         "note": "原创结构示范参数"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「按构造顺序描绘线稿」。主体路径以stroke表示，用归一化pathLength将进度映射到dashoffset；按组成逻辑依次描绘。触发：用户主动重播。可见结果：线条出现顺序解释对象如何组成。适用任务：建筑、机械与工艺介绍。默认完整终态，填色不冒充可描绘的路径。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责线条出现顺序解释对象如何组成，职责限定在当前区域。组合时默认完整终态，填色不冒充可描绘的路径。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「按构造顺序描绘线稿」。主体路径以stroke表示，用归一化pathLength将进度映射到dashoffset；按组成逻辑依次描绘。触发：用户主动重播。可见结果：线条出现顺序解释对象如何组成。适用任务：建筑、机械与工艺介绍。默认完整终态，填色不冒充可描绘的路径。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "line-art",
         "locator": "entries/cases/line-art.json#interaction/0",
         "observation": "重播按钮由基础到细节绘制线稿",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": "#architecture-drawing",
+          "label": "从基础到细节的描线",
+          "instruction": "点线稿下方 Replay，观察基础轮廓、结构与细节按顺序绘制。"
+        }
       }
     ],
     "sourceFiles": [
@@ -3508,7 +4230,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/line-art/style.css",
       "entries/cases/line-art.json",
       "docs/cases/line-art.md"
-    ]
+    ],
+    "preview": "previews/patterns/sequential-stroke-reveal.jpg"
   },
   {
     "id": "fixed-topology-morph",
@@ -3534,16 +4257,11 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "accent",
-      "notes": "该原子负责图形改变表达，用户仍辨认同一身份，职责限定在当前区域。组合时图形变化不能改变正文布局，形态与真实内容语义对应。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "interruptible-morph",
         "live-parameter-readout"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
     },
     "parameters": [
       {
@@ -3552,13 +4270,23 @@ window.ATLAS_PATTERNS = [
         "note": "不同于原作30片，非原作坐标"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「同拓扑碎片形态转换」。每种状态保留相同片数和顶点次序，在同一拓扑上插值位置；形态同步解释不同内容语义。触发：选择形态按钮。可见结果：图形改变表达，用户仍辨认同一身份。适用任务：动态品牌与概念教学。图形变化不能改变正文布局，形态与真实内容语义对应。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责图形改变表达，用户仍辨认同一身份，职责限定在当前区域。组合时图形变化不能改变正文布局，形态与真实内容语义对应。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「同拓扑碎片形态转换」。每种状态保留相同片数和顶点次序，在同一拓扑上插值位置；形态同步解释不同内容语义。触发：选择形态按钮。可见结果：图形改变表达，用户仍辨认同一身份。适用任务：动态品牌与概念教学。图形变化不能改变正文布局，形态与真实内容语义对应。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "shape-morph",
         "locator": "entries/cases/shape-morph.json#interaction/0",
         "observation": "三种形态按钮切换 24 个三角片的位置",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": "#form",
+          "label": "同一批三角片的三种形态",
+          "instruction": "用下方三种形态按钮切换，观察同样的 24 个三角片移动到新位置，组成另一种形态。",
+          "prepare": [
+            {
+              "click": "[data-state='1']"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -3567,7 +4295,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/shape-morph/style.css",
       "entries/cases/shape-morph.json",
       "docs/cases/shape-morph.md"
-    ]
+    ],
+    "preview": "previews/patterns/fixed-topology-morph.jpg"
   },
   {
     "id": "interruptible-morph",
@@ -3593,31 +4322,46 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责动作连续且可以检查中间态，职责限定在当前区域。组合时时长参数说明何时生效，一次只有一个帧调度负责状态。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "fixed-topology-morph",
         "last-request-transition"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「从当前中间态继续变形」。新目标从当前顶点坐标出发；暂停保存插值位置，恢复校正计时，重置恢复初始参数。触发：中途改选、暂停或恢复。可见结果：动作连续且可以检查中间态。适用任务：几何实验与可中断品牌动效。时长参数说明何时生效，一次只有一个帧调度负责状态。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责动作连续且可以检查中间态，职责限定在当前区域。组合时时长参数说明何时生效，一次只有一个帧调度负责状态。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「从当前中间态继续变形」。新目标从当前顶点坐标出发；暂停保存插值位置，恢复校正计时，重置恢复初始参数。触发：中途改选、暂停或恢复。可见结果：动作连续且可以检查中间态。适用任务：几何实验与可中断品牌动效。时长参数说明何时生效，一次只有一个帧调度负责状态。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "shape-morph",
         "locator": "entries/cases/shape-morph.json#constraints/2",
         "observation": "每次触发从当前中间状态继续，避免突然闪回",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".state-controls",
+          "label": "变形途中切换目标",
+          "instruction": "连续切换三种形态，在变形尚未结束时再选另一种；图形会从当前中间态继续，也可暂停和恢复。",
+          "prepare": [
+            {
+              "click": "[data-state='2']"
+            }
+          ]
+        }
       },
       {
         "caseId": "shape-morph",
         "locator": "entries/cases/shape-morph.json#interaction/3",
         "observation": "变形可暂停与恢复，重置恢复初始参数",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".state-controls",
+          "label": "变形途中切换目标",
+          "instruction": "连续切换三种形态，在变形尚未结束时再选另一种；图形会从当前中间态继续，也可暂停和恢复。",
+          "prepare": [
+            {
+              "click": "[data-state='2']"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -3626,7 +4370,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/shape-morph/style.css",
       "entries/cases/shape-morph.json",
       "docs/cases/shape-morph.md"
-    ]
+    ],
+    "preview": "previews/patterns/interruptible-morph.jpg"
   },
   {
     "id": "live-parameter-readout",
@@ -3652,7 +4397,6 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "accent",
-      "notes": "该原子负责参数变化与可见/可听结果一一对应，职责限定在当前区域。组合时读数有文本单位，范围控件不截获正常方向键。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "geometric-balance-presets",
         "audio-signal-panel",
@@ -3660,30 +4404,59 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "使用有label的原生range，方向键/Home/End可操作；读数与控件关联。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「滑块与带单位读数联动」。原生范围输入直接更新目标属性和相邻读数；明确单位、范围以及参数立即生效还是影响下一次变化。触发：拖动或键盘调整滑块。可见结果：参数变化与可见/可听结果一一对应。适用任务：设计实验与工具演示。读数有文本单位，范围控件不截获正常方向键。键盘：使用有label的原生range，方向键/Home/End可操作；读数与控件关联。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责参数变化与可见/可听结果一一对应，职责限定在当前区域。组合时读数有文本单位，范围控件不截获正常方向键。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「滑块与带单位读数联动」。原生范围输入直接更新目标属性和相邻读数；明确单位、范围以及参数立即生效还是影响下一次变化。触发：拖动或键盘调整滑块。可见结果：参数变化与可见/可听结果一一对应。适用任务：设计实验与工具演示。读数有文本单位，范围控件不截获正常方向键。键盘：使用有label的原生range，方向键/Home/End可操作；读数与控件关联。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "bauhaus-geometry",
         "locator": "entries/cases/bauhaus-geometry.json#interaction/1",
         "observation": "原生范围控件可用键盘旋转三角形并即时显示角度。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".range-wrap",
+          "label": "三角形旋转角度",
+          "instruction": "拖动旋转滑块或用方向键微调，观察三角形转动和角度读数同时更新。",
+          "prepare": [
+            {
+              "input": "#rotation",
+              "value": "65"
+            }
+          ]
+        }
       },
       {
         "caseId": "retro-80s",
         "locator": "entries/cases/retro-80s.json#interaction/2",
         "observation": "原生范围输入即时改变Cutoff、Attack、Output并更新读数。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".params",
+          "label": "Cutoff、Attack 与 Output",
+          "instruction": "拖动三个滑块，或用方向键微调，观察各自带单位的读数即时更新。",
+          "prepare": [
+            {
+              "input": "#cutoff",
+              "value": "2600"
+            }
+          ]
+        }
       },
       {
         "caseId": "shape-morph",
         "locator": "entries/cases/shape-morph.json#interaction/1",
         "observation": "间距滑块将单元从连续图案分离为碎片",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".parameters",
+          "label": "碎片间距与时长",
+          "instruction": "调节间距与时长滑块，看读数更新；向上返回几何图形，可比较分片之间的距离和变形速度。",
+          "prepare": [
+            {
+              "input": "#spread",
+              "value": "24"
+            }
+          ]
+        }
       },
       {
         "caseId": "hallmark",
@@ -3691,7 +4464,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Specimen 的字号与字重滑块同步写入试排 CSS 变量及带单位读数，Ribbon 的推子同步百分比、aria-valuenow、视觉强度和音量。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "#tester",
+          "label": "字号、字重与试排读数",
+          "instruction": "拖动字号与字重滑块，对照试排文字和旁边读数的同步变化。",
+          "entrypoint": "demos/cases/hallmark/themes/specimen/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -3712,7 +4491,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/themes/specimen/page.js",
       "demos/cases/hallmark/themes/specimen/index.html",
       "demos/cases/hallmark/themes/ribbon/night.js"
-    ]
+    ],
+    "preview": "previews/patterns/live-parameter-readout.jpg"
   },
   {
     "id": "aligned-metadata-rows",
@@ -3724,7 +4504,6 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "让编号、名称、日期和操作横向可比。",
     "mechanism": "用稳定列宽组织每行的编号、名称、类别、日期与收藏；手机将次级元数据折到名称下方。",
-    "trigger": "逐行浏览目录",
     "effect": "同类事实沿纵向落在固定位置。",
     "useCases": [
       "多日期活动与资源清单"
@@ -3738,32 +4517,33 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责同类事实沿纵向落在固定位置，职责限定在当前区域。组合时小屏操作仍可触达，筛选后不得失去字段标签。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "editorial-alignment-grid",
         "filter-count-feedback"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「编号与元数据对齐列表」。用稳定列宽组织每行的编号、名称、类别、日期与收藏；手机将次级元数据折到名称下方。触发：逐行浏览目录。可见结果：同类事实沿纵向落在固定位置。适用任务：多日期活动与资源清单。小屏操作仍可触达，筛选后不得失去字段标签。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责同类事实沿纵向落在固定位置，职责限定在当前区域。组合时小屏操作仍可触达，筛选后不得失去字段标签。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「编号与元数据对齐列表」。用稳定列宽组织每行的编号、名称、类别、日期与收藏；手机将次级元数据折到名称下方。可见结果：同类事实沿纵向落在固定位置。适用任务：多日期活动与资源清单。小屏操作仍可触达，筛选后不得失去字段标签。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "swiss-grid",
         "locator": "entries/cases/swiss-grid.json#composition/hierarchy",
         "observation": "展览主题 → 日期地点 → 分类日程 → 理念。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".event",
+          "label": "编号、时间与活动行",
+          "instruction": "沿日程行横向阅读，比较编号、时间、活动名称与收藏按钮共享的对齐线。"
+        }
       }
     ],
     "sourceFiles": [
       "demos/cases/swiss-grid/index.html",
       "entries/cases/swiss-grid.json",
       "docs/cases/swiss-grid.md"
-    ]
+    ],
+    "preview": "previews/patterns/aligned-metadata-rows.jpg"
   },
   {
     "id": "editorial-alignment-grid",
@@ -3775,7 +4555,6 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "用共同基线连接标题、日期和行动。",
     "mechanism": "先按内容角色建立列网格，再让标题、日期、类别和行动反复对齐；非对称留白仍服从共同线。",
-    "trigger": "阅读首屏及列表",
     "effect": "不同密度的信息保持可扫描关系。",
     "useCases": [
       "日程、展览与课程索引"
@@ -3789,16 +4568,11 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责不同密度的信息保持可扫描关系，职责限定在当前区域。组合时手机从跨栏折为单列，保留完整日期和行动。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "restrained-signal-color",
         "aligned-metadata-rows"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
     },
     "parameters": [
       {
@@ -3807,20 +4581,26 @@ window.ATLAS_PATTERNS = [
         "note": "原创示范选择，非历史固定规范"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「共享对齐线的编辑网格」。先按内容角色建立列网格，再让标题、日期、类别和行动反复对齐；非对称留白仍服从共同线。触发：阅读首屏及列表。可见结果：不同密度的信息保持可扫描关系。适用任务：日程、展览与课程索引。手机从跨栏折为单列，保留完整日期和行动。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责不同密度的信息保持可扫描关系，职责限定在当前区域。组合时手机从跨栏折为单列，保留完整日期和行动。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「共享对齐线的编辑网格」。先按内容角色建立列网格，再让标题、日期、类别和行动反复对齐；非对称留白仍服从共同线。可见结果：不同密度的信息保持可扫描关系。适用任务：日程、展览与课程索引。手机从跨栏折为单列，保留完整日期和行动。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "swiss-grid",
         "locator": "entries/cases/swiss-grid.json#composition/layout",
         "observation": "12 栏、32px 基础间距、横向日程列表；手机为单列",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".hero",
+          "label": "编辑网格与基础间距",
+          "instruction": "比较主标题、右侧红色图版和底部元数据的共同对齐线，再向下看日程延续同一网格。"
+        }
       }
     ],
     "sourceFiles": [
       "demos/cases/swiss-grid/index.html",
       "entries/cases/swiss-grid.json",
       "docs/cases/swiss-grid.md"
-    ]
+    ],
+    "preview": "previews/patterns/editorial-alignment-grid.jpg"
   },
   {
     "id": "filter-count-feedback",
@@ -3846,24 +4626,29 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "accent",
-      "notes": "该原子负责用户知道条件是否生效及还剩多少内容，职责限定在当前区域。组合时结果区域用温和的状态宣布，焦点留在触发按钮。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "aligned-metadata-rows"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "原生按钮带aria-pressed，Tab可达；结果计数使用role=status或aria-live=polite。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「筛选与结果计数同步」。改变筛选按钮状态与列表可见性，同时在独立状态区域显示当前结果数。触发：激活分类按钮。可见结果：用户知道条件是否生效及还剩多少内容。适用任务：活动与新闻目录。结果区域用温和的状态宣布，焦点留在触发按钮。键盘：原生按钮带aria-pressed，Tab可达；结果计数使用role=status或aria-live=polite。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责用户知道条件是否生效及还剩多少内容，职责限定在当前区域。组合时结果区域用温和的状态宣布，焦点留在触发按钮。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「筛选与结果计数同步」。改变筛选按钮状态与列表可见性，同时在独立状态区域显示当前结果数。触发：激活分类按钮。可见结果：用户知道条件是否生效及还剩多少内容。适用任务：活动与新闻目录。结果区域用温和的状态宣布，焦点留在触发按钮。键盘：原生按钮带aria-pressed，Tab可达；结果计数使用role=status或aria-live=polite。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "swiss-grid",
         "locator": "entries/cases/swiss-grid.json#interaction/0",
         "observation": "分类按钮筛选日程并宣布结果数。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".filters",
+          "label": "活动筛选与结果数",
+          "instruction": "点“全部”“对谈”或“工作坊”，看下方活动行与结果数量同步改变。",
+          "prepare": [
+            {
+              "click": "[data-filter=workshop]"
+            }
+          ]
+        }
       },
       {
         "caseId": "mori-art-museum",
@@ -3871,7 +4656,17 @@ window.ATLAS_PATTERNS = [
         "observation": "本地只还原首页几个区域并加教学新闻筛选；不复制多馆门户、购票账户与追踪脚本。",
         "evidence": "adapted",
         "referenceUrl": "https://www.mori.art.museum/jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#news .filter",
+          "label": "新闻筛选与结果数",
+          "instruction": "切换 All、Program、Notice，观察新闻卡片和显示件数同步变化。",
+          "prepare": [
+            {
+              "click": "[data-filter=program]"
+            }
+          ]
+        }
       },
       {
         "caseId": "hallmark",
@@ -3879,7 +4674,17 @@ window.ATLAS_PATTERNS = [
         "observation": "流派按钮同步 aria-pressed 与主题 hidden 状态，Editorial、Modern minimal、Atmospheric、Playful 分别显示 20、12、9、9 项，按钮计数与结果对应。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "[data-th-filter]",
+          "label": "主题流派筛选",
+          "instruction": "切换 Editorial、Atmospheric 等流派，对照按钮数量与下方主题结果。",
+          "prepare": [
+            {
+              "click": "[data-genre=atmospheric][aria-pressed=false]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -3898,7 +4703,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/js/themes.js",
       "demos/cases/hallmark/index.html",
       "demos/cases/hallmark/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/filter-count-feedback.jpg"
   },
   {
     "id": "local-save-toggle",
@@ -3924,29 +4730,30 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "accent",
-      "notes": "该原子负责列表中的选择可在回访时继续使用，职责限定在当前区域。组合时隔离存储键，失败时仍能操作，按钮文字明确显示收藏或取消。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "收藏按钮提供完整内容名称与aria-pressed；键盘激活等同点击。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「可取消的本地收藏」。每条内容使用可反复切换的收藏按钮，记录条目ID并恢复当前浏览器的状态。触发：收藏或取消收藏。可见结果：列表中的选择可在回访时继续使用。适用任务：轻量资料收藏与学习清单。隔离存储键，失败时仍能操作，按钮文字明确显示收藏或取消。键盘：收藏按钮提供完整内容名称与aria-pressed；键盘激活等同点击。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责列表中的选择可在回访时继续使用，职责限定在当前区域。组合时隔离存储键，失败时仍能操作，按钮文字明确显示收藏或取消。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「可取消的本地收藏」。每条内容使用可反复切换的收藏按钮，记录条目ID并恢复当前浏览器的状态。触发：收藏或取消收藏。可见结果：列表中的选择可在回访时继续使用。适用任务：轻量资料收藏与学习清单。隔离存储键，失败时仍能操作，按钮文字明确显示收藏或取消。键盘：收藏按钮提供完整内容名称与aria-pressed；键盘激活等同点击。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "swiss-grid",
         "locator": "entries/cases/swiss-grid.json#interaction/1",
         "observation": "收藏按钮将展览编号存到当前浏览器，状态可再次取消。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".event .save",
+          "label": "活动行的收藏按钮",
+          "instruction": "点活动右侧的收藏按钮，再点一次取消；这个状态会保存在当前浏览器。"
+        }
       }
     ],
     "sourceFiles": [
       "demos/cases/swiss-grid/index.html",
       "entries/cases/swiss-grid.json",
       "docs/cases/swiss-grid.md"
-    ]
+    ],
+    "preview": "previews/patterns/local-save-toggle.jpg"
   },
   {
     "id": "restrained-signal-color",
@@ -3958,7 +4765,6 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "用少量品牌色建立可识别的操作角色。",
     "mechanism": "正文采用稳定中性色，强调色只分配给行动、选中态或机构锚点；作品图像保持自己的原色。",
-    "trigger": "查看行动和状态",
     "effect": "行动入口与艺术内容各有明确职责。",
     "useCases": [
       "编辑页面与文化机构"
@@ -3972,25 +4778,25 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责行动入口与艺术内容各有明确职责，职责限定在当前区域。组合时同时提供文字、边界或图标状态，不能只靠颜色。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "editorial-alignment-grid",
         "artwork-caption-separation"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「单一信号色集中强调」。正文采用稳定中性色，强调色只分配给行动、选中态或机构锚点；作品图像保持自己的原色。触发：查看行动和状态。可见结果：行动入口与艺术内容各有明确职责。适用任务：编辑页面与文化机构。同时提供文字、边界或图标状态，不能只靠颜色。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责行动入口与艺术内容各有明确职责，职责限定在当前区域。组合时同时提供文字、边界或图标状态，不能只靠颜色。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「单一信号色集中强调」。正文采用稳定中性色，强调色只分配给行动、选中态或机构锚点；作品图像保持自己的原色。可见结果：行动入口与艺术内容各有明确职责。适用任务：编辑页面与文化机构。同时提供文字、边界或图标状态，不能只靠颜色。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "swiss-grid",
         "locator": "entries/cases/swiss-grid.json#composition/color",
         "observation": "暖白纸面、黑色信息与少量红色海报形成清晰层级。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".visual",
+          "label": "暖白纸面上的红色图版",
+          "instruction": "看红色集中在主图版，其他标题、细线和日程保持黑白信息层级。"
+        }
       },
       {
         "caseId": "met-museum",
@@ -3998,7 +4804,12 @@ window.ATLAS_PATTERNS = [
         "observation": "白底黑灰字和红色操作层，图像保持展览自己的颜色。",
         "evidence": "observed",
         "referenceUrl": "https://www.metmuseum.org/en",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#visit .actions",
+          "label": "黑白信息与红色行动",
+          "instruction": "看红色集中在到访行动和机构标识，正文保留黑灰层级，展览图片保持自己的色彩。"
+        }
       },
       {
         "caseId": "mori-art-museum",
@@ -4006,7 +4817,12 @@ window.ATLAS_PATTERNS = [
         "observation": "#bf0d3e机构红贯穿Logo、展期、栏目、标签；粉色公告、白色底和艺术海报虹彩承担不同角色。",
         "evidence": "observed",
         "referenceUrl": "https://www.mori.art.museum/jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#exhibitions",
+          "label": "馆标、展期与栏目中的机构红",
+          "instruction": "比较栏目、展期和机构标识怎样持续使用同一种红，艺术海报和公告承担各自的颜色。"
+        }
       },
       {
         "caseId": "endfield-industrial",
@@ -4014,7 +4830,29 @@ window.ATLAS_PATTERNS = [
         "observation": "源干员与工业白底/黑标签/淡网格/亮黄局部信号；首页活动原色、深色世界观和影像各保留，彩色人物与标定条不被统一染黄。",
         "evidence": "observed",
         "referenceUrl": "https://endfield.hypergryph.com/",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "#operator",
+          "label": "干员档案的黄色信号",
+          "instruction": "比较黑白资料、彩色立绘与局部亮黄标记；黄色集中在状态和重点处。",
+          "prepare": [
+            {
+              "waitFor": "body:has(#entry-loader[hidden])"
+            },
+            {
+              "click": ".header-inner-container > .header-nav-item[aria-label=\"干员情报\"]",
+              "minWidth": 801
+            },
+            {
+              "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+              "maxWidth": 800
+            },
+            {
+              "click": ".header-menu-item[aria-label=\"干员情报\"]",
+              "maxWidth": 800
+            }
+          ]
+        }
       },
       {
         "caseId": "rhine-lab",
@@ -4022,7 +4860,17 @@ window.ATLAS_PATTERNS = [
         "observation": "源片米白透明档案与黑白机构字标保持原色，双环内缘及业务科焦点使用橙色；本地外围用米白、黑色和同源橙色节点，素材没有深绿/黄绿重着色。",
         "evidence": "adapted",
         "referenceUrl": "https://www.bilibili.com/video/BV1rr4y1b7sz/",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "#terminal[data-scene=permission]",
+          "label": "黑白环线中的橙色焦点",
+          "instruction": "看原帧黑白环线与少量橙色节点，再切“双环光学”比较橙色内缘怎样承接焦点。",
+          "prepare": [
+            {
+              "click": "[data-scene=permission]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -4055,7 +4903,8 @@ window.ATLAS_PATTERNS = [
       "docs/cases/mori-art-museum.md",
       "docs/cases/rhine-lab.md",
       "docs/cases/swiss-grid.md"
-    ]
+    ],
+    "preview": "previews/patterns/restrained-signal-color.jpg"
   },
   {
     "id": "current-state-svg-export",
@@ -4081,31 +4930,37 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责探索结果可以保存与继续编辑，职责限定在当前区域。组合时只导出当前原创构成，不发起远端服务。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "geometric-balance-presets"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「导出当前构成」。导出时读取当前几何位置与角度，生成与画布一致的SVG文件；文件内容包含当前状态。触发：激活导出按钮。可见结果：探索结果可以保存与继续编辑。适用任务：图形工具与教学作品。只导出当前原创构成，不发起远端服务。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责探索结果可以保存与继续编辑，职责限定在当前区域。组合时只导出当前原创构成，不发起远端服务。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「导出当前构成」。导出时读取当前几何位置与角度，生成与画布一致的SVG文件；文件内容包含当前状态。触发：激活导出按钮。可见结果：探索结果可以保存与继续编辑。适用任务：图形工具与教学作品。只导出当前原创构成，不发起远端服务。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "bauhaus-geometry",
         "locator": "entries/cases/bauhaus-geometry.json#interaction/2",
         "observation": "导出按钮下载当前原创构成的SVG文件。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": "#export",
+          "label": "导出当前几何构成",
+          "instruction": "先用预设或旋转滑块改变构成，再点“导出 SVG”，导出的图形对应当前状态。",
+          "prepare": [
+            {
+              "click": "[data-preset='2']"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
       "demos/cases/bauhaus-geometry/index.html",
       "entries/cases/bauhaus-geometry.json",
       "docs/cases/bauhaus-geometry.md"
-    ]
+    ],
+    "preview": "previews/patterns/current-state-svg-export.jpg"
   },
   {
     "id": "geometric-balance-presets",
@@ -4131,32 +4986,38 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "accent",
-      "notes": "该原子负责用户可并列理解同一组元素的不同关系，职责限定在当前区域。组合时图形为原创，不能遮住正文或焦点。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "live-parameter-readout",
         "current-state-svg-export"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「几何关系预设实验」。保持同一组圆、三角与矩形，让不同预设改变比例和位置；图形之外保留稳定操作区。触发：选择构成预设。可见结果：用户可并列理解同一组元素的不同关系。适用任务：构成教学与品牌探索。图形为原创，不能遮住正文或焦点。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责用户可并列理解同一组元素的不同关系，职责限定在当前区域。组合时图形为原创，不能遮住正文或焦点。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「几何关系预设实验」。保持同一组圆、三角与矩形，让不同预设改变比例和位置；图形之外保留稳定操作区。触发：选择构成预设。可见结果：用户可并列理解同一组元素的不同关系。适用任务：构成教学与品牌探索。图形为原创，不能遮住正文或焦点。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "bauhaus-geometry",
         "locator": "entries/cases/bauhaus-geometry.json#interaction/0",
         "observation": "三个构成预设改变圆、三角和矩形之间的真实位置关系。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": "#composition",
+          "label": "三种几何关系预设",
+          "instruction": "点三种构成预设，对比圆、三角和矩形之间的位置关系，而不只看配色变化。",
+          "prepare": [
+            {
+              "click": "[data-preset='1']"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
       "demos/cases/bauhaus-geometry/index.html",
       "entries/cases/bauhaus-geometry.json",
       "docs/cases/bauhaus-geometry.md"
-    ]
+    ],
+    "preview": "previews/patterns/geometric-balance-presets.jpg"
   },
   {
     "id": "inline-detail-disclosure",
@@ -4182,24 +5043,29 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责用户保留当前上下文并控制阅读密度，职责限定在当前区域。组合时标题能独立说明内容，展开后焦点和滚动位置可预期。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "sticky-action-sidebar"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "优先原生details/summary，或按钮配aria-expanded/aria-controls；键盘可展开收回。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「原位展开次级信息」。将概览保持在文档流，较长事实放在原位展开区域；手机先显示核心条目，再允许读取全部。触发：展开时间/价格/课程或更多内容。可见结果：用户保留当前上下文并控制阅读密度。适用任务：活动详情与长档案。标题能独立说明内容，展开后焦点和滚动位置可预期。键盘：优先原生details/summary，或按钮配aria-expanded/aria-controls；键盘可展开收回。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责用户保留当前上下文并控制阅读密度，职责限定在当前区域。组合时标题能独立说明内容，展开后焦点和滚动位置可预期。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「原位展开次级信息」。将概览保持在文档流，较长事实放在原位展开区域；手机先显示核心条目，再允许读取全部。触发：展开时间/价格/课程或更多内容。可见结果：用户保留当前上下文并控制阅读密度。适用任务：活动详情与长档案。标题能独立说明内容，展开后焦点和滚动位置可预期。键盘：优先原生details/summary，或按钮配aria-expanded/aria-controls；键盘可展开收回。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "bauhaus-geometry",
         "locator": "entries/cases/bauhaus-geometry.json#interaction/3",
         "observation": "材料课程使用原生details展开具体学习内容。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": "#materials",
+          "label": "材料课程原位展开",
+          "instruction": "点课程标题展开具体内容，正文留在原来的课程行内；再次点标题可以收起。",
+          "prepare": [
+            {
+              "click": "details.material:not([open]) summary"
+            }
+          ]
+        }
       },
       {
         "caseId": "philharmonie-music",
@@ -4207,7 +5073,12 @@ window.ATLAS_PATTERNS = [
         "observation": "展开Horaires／Tarifs／Programme：信息即时展开，声乐／乐器阵容以文字分段。 不离开当前详情即可完成到访和节目判断。",
         "evidence": "observed",
         "referenceUrl": "https://philharmoniedeparis.fr/fr/activite/exposition/28822-video-games-music",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".article-column details, .program details",
+          "label": "时间、票价与节目原位展开",
+          "instruction": "点 Horaires、Tarifs 或 Programme 的标题，展开具体信息，再点同一标题收起。"
+        }
       },
       {
         "caseId": "design-sight",
@@ -4215,7 +5086,13 @@ window.ATLAS_PATTERNS = [
         "observation": "手机展开栏目／页面回顶：四列分别先显示1／2／1／1项，“更多”即时展开；回顶按钮超过100px以200ms出现。 缩短首屏密度，档案仍可按需读全。",
         "evidence": "inferred",
         "referenceUrl": "https://www.2121designsight.jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#sight .read-more",
+          "label": "手机栏目内的更多内容",
+          "instruction": "点“もっと見る”展开这栏其余档案，再点“折りたたむ”收起，后面的栏目仍按原顺序阅读。",
+          "viewport": "mobile"
+        }
       },
       {
         "caseId": "hallmark",
@@ -4223,7 +5100,17 @@ window.ATLAS_PATTERNS = [
         "observation": "主题网格初始显示十项，Show all 展开五十项并把焦点移到第十一项；七个 FAQ 使用原生 details 在文档流中独立展开与收起。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "#faq",
+          "label": "原位展开的常见问题",
+          "instruction": "点击任一问题，说明会在原位置展开；其他问题可以保持各自的开合状态。",
+          "prepare": [
+            {
+              "click": "#faq details:not([open]):first-of-type > summary"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -4248,7 +5135,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/index.html",
       "demos/cases/hallmark/js/themes.js",
       "demos/cases/hallmark/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/inline-detail-disclosure.jpg"
   },
   {
     "id": "audio-signal-panel",
@@ -4261,7 +5149,7 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "让功能邻接关系解释声音制作流程。",
     "mechanism": "将预设、波形显示、滤波/包络/输出和演奏按实际信号链组织，改变控件确实改变音频节点。",
-    "trigger": "查看并操作合成器面板",
+    "trigger": "调整预设、滤波、包络或输出控件",
     "effect": "复古外观与可用功能形成同一逻辑。",
     "useCases": [
       "乐器与参数化工具展示"
@@ -4270,37 +5158,38 @@ window.ATLAS_PATTERNS = [
       "没有功能的假旋钮"
     ],
     "constraints": [
-      "此例为简化单振荡器，不能声称原硬件声学复刻。",
+      "此例使用简化的单振荡器。",
       "迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。"
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责复古外观与可用功能形成同一逻辑，职责限定在当前区域。组合时此例为简化单振荡器，不能声称原硬件声学复刻。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "live-parameter-readout",
         "sound-opt-in"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「按信号流程组织声音面板」。将预设、波形显示、滤波/包络/输出和演奏按实际信号链组织，改变控件确实改变音频节点。触发：查看并操作合成器面板。可见结果：复古外观与可用功能形成同一逻辑。适用任务：乐器与参数化工具展示。此例为简化单振荡器，不能声称原硬件声学复刻。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责复古外观与可用功能形成同一逻辑，职责限定在当前区域。组合时此例为简化单振荡器，不能声称原硬件声学复刻。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「按信号流程组织声音面板」。将预设、波形显示、滤波/包络/输出和演奏按实际信号链组织，改变控件确实改变音频节点。触发：调整预设、滤波、包络或输出控件。可见结果：复古外观与可用功能形成同一逻辑。适用任务：乐器与参数化工具展示。此例使用简化的单振荡器。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "retro-80s",
         "locator": "entries/cases/retro-80s.json#composition/layout",
         "observation": "硬件面板横向分区、预设/显示/参数/琴键；手机纵向排列",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".instrument",
+          "label": "合成器的信号分区",
+          "instruction": "按预设、显示、参数、琴键的顺序阅读面板，再对照下方信号流程图。声音需先用电源按钮主动开启。"
+        }
       }
     ],
     "sourceFiles": [
       "demos/cases/retro-80s/index.html",
       "entries/cases/retro-80s.json",
       "docs/cases/retro-80s.md"
-    ]
+    ],
+    "preview": "previews/patterns/audio-signal-panel.jpg"
   },
   {
     "id": "keyboard-playable-notes",
@@ -4326,32 +5215,33 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "accent",
-      "notes": "该原子负责动作、激活态与声音形成直接反馈，职责限定在当前区域。组合时只在声音启用且不干扰表单时处理物理键，后台立即停止。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "audio-signal-panel",
         "sound-opt-in"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "音键为原生button，提供可读音名；物理键映射有文字提示并避开输入控件。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「可聚焦音键与物理键演奏」。屏幕按键包含音名，按下或指定物理键启动音符，释放、失焦或关闭声音停止声音。触发：按住屏幕或键盘音键。可见结果：动作、激活态与声音形成直接反馈。适用任务：乐器学习与声音试玩。只在声音启用且不干扰表单时处理物理键，后台立即停止。键盘：音键为原生button，提供可读音名；物理键映射有文字提示并避开输入控件。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责动作、激活态与声音形成直接反馈，职责限定在当前区域。组合时只在声音启用且不干扰表单时处理物理键，后台立即停止。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「可聚焦音键与物理键演奏」。屏幕按键包含音名，按下或指定物理键启动音符，释放、失焦或关闭声音停止声音。触发：按住屏幕或键盘音键。可见结果：动作、激活态与声音形成直接反馈。适用任务：乐器学习与声音试玩。只在声音启用且不干扰表单时处理物理键，后台立即停止。键盘：音键为原生button，提供可读音名；物理键映射有文字提示并避开输入控件。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "retro-80s",
         "locator": "entries/cases/retro-80s.json#interaction/3",
         "observation": "屏幕琴键为可聚焦按钮；A S D F G H J K 可演奏白键，切出页面时停止声音。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".keyboard",
+          "label": "屏幕琴键与物理键",
+          "instruction": "先点“开启声音”，再点琴键或按 A S D F G H J K 演奏；切出页面会停止声音。"
+        }
       }
     ],
     "sourceFiles": [
       "demos/cases/retro-80s/index.html",
       "entries/cases/retro-80s.json",
       "docs/cases/retro-80s.md"
-    ]
+    ],
+    "preview": "previews/patterns/keyboard-playable-notes.jpg"
   },
   {
     "id": "discovery-progress-journal",
@@ -4377,38 +5267,60 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责探索行为有持续反馈与回看线索，职责限定在当前区域。组合时本地存储限定此页专用键，重置只影响该手账。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "spatial-navigation-map",
         "checklist-progress"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「探索进度与可重置手账」。访问地点时记录发现集合，同步地点按钮、进度文本与旅行手账，并允许清除后重新探索。触发：首次抵达地点或重置。可见结果：探索行为有持续反馈与回看线索。适用任务：教学地图与小型任务旅程。本地存储限定此页专用键，重置只影响该手账。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责探索行为有持续反馈与回看线索，职责限定在当前区域。组合时本地存储限定此页专用键，重置只影响该手账。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「探索进度与可重置手账」。访问地点时记录发现集合，同步地点按钮、进度文本与旅行手账，并允许清除后重新探索。触发：首次抵达地点或重置。可见结果：探索行为有持续反馈与回看线索。适用任务：教学地图与小型任务旅程。本地存储限定此页专用键，重置只影响该手账。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "pixel-world",
         "locator": "entries/cases/pixel-world.json#interaction/2",
         "observation": "靠近地点会记录发现进度，按钮状态不只通过颜色表达。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".journal",
+          "label": "发现进度与手账",
+          "instruction": "在地图中靠近地点后保存手账，查看这里新增的发现记录；“清除手账”可重新探索。",
+          "prepare": [
+            {
+              "click": "[data-site='1']"
+            },
+            {
+              "click": "#save-note"
+            }
+          ]
+        }
       },
       {
         "caseId": "pixel-world",
         "locator": "entries/cases/pixel-world.json#interaction/3",
         "observation": "手账仅保存当前浏览器，支持清除并重新探索。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": ".journal",
+          "label": "发现进度与手账",
+          "instruction": "在地图中靠近地点后保存手账，查看这里新增的发现记录；“清除手账”可重新探索。",
+          "prepare": [
+            {
+              "click": "[data-site='1']"
+            },
+            {
+              "click": "#save-note"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
       "demos/cases/pixel-world/index.html",
       "entries/cases/pixel-world.json",
       "docs/cases/pixel-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/discovery-progress-journal.jpg"
   },
   {
     "id": "integer-pixel-canvas",
@@ -4420,7 +5332,7 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "从绘制尺度建立像素世界的统一性。",
     "mechanism": "在小画布内用整数坐标与有限色板绘制轮廓，放大保持pixelated边缘；正文单独用可读字体。",
-    "trigger": "查看与缩放场景",
+    "trigger": "场景以整数倍率缩放时",
     "effect": "像素边缘与地图物件保持清楚。",
     "useCases": [
       "微型世界与游戏风格导览"
@@ -4434,15 +5346,10 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责像素边缘与地图物件保持清楚，职责限定在当前区域。组合时窄屏以完整地图优先，不将中文长文压为像素小字。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "spatial-navigation-map"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
     },
     "parameters": [
       {
@@ -4451,20 +5358,26 @@ window.ATLAS_PATTERNS = [
         "note": "参考PICO-8的明确约束，非全部像素艺术定义"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「整数像素与有限色板」。在小画布内用整数坐标与有限色板绘制轮廓，放大保持pixelated边缘；正文单独用可读字体。触发：查看与缩放场景。可见结果：像素边缘与地图物件保持清楚。适用任务：微型世界与游戏风格导览。窄屏以完整地图优先，不将中文长文压为像素小字。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责像素边缘与地图物件保持清楚，职责限定在当前区域。组合时窄屏以完整地图优先，不将中文长文压为像素小字。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「整数像素与有限色板」。在小画布内用整数坐标与有限色板绘制轮廓，放大保持pixelated边缘；正文单独用可读字体。触发：场景以整数倍率缩放时。可见结果：像素边缘与地图物件保持清楚。适用任务：微型世界与游戏风格导览。窄屏以完整地图优先，不将中文长文压为像素小字。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "pixel-world",
         "locator": "entries/cases/pixel-world.json#composition/imagery",
         "observation": "128×128原生Canvas与原创像素地点构成可探索世界。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": "#map",
+          "label": "128 像素的小岛",
+          "instruction": "看海岸、树木与建筑沿整数像素排列，再点击地图地点或用方向键移动角色。"
+        }
       }
     ],
     "sourceFiles": [
       "demos/cases/pixel-world/index.html",
       "entries/cases/pixel-world.json",
       "docs/cases/pixel-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/integer-pixel-canvas.jpg"
   },
   {
     "id": "spatial-navigation-map",
@@ -4475,7 +5388,7 @@ window.ATLAS_PATTERNS = [
       "structure"
     ],
     "summary": "让角色位置、地点信息与目录同时变化。",
-    "mechanism": "地标选择移动角色并更新对应文本，地图上的空间状态与DOM地点索引保持一致。",
+    "mechanism": "地标选择移动角色并更新对应文本，地图上的空间状态与DOM地点索引保持一致。 地图聚焦后可用方向键或 WASD 移动，并保留地标按钮与手机方向按钮。",
     "trigger": "选择地标或移动到地点",
     "effect": "场景成为可操作的信息入口。",
     "useCases": [
@@ -4490,32 +5403,38 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责场景成为可操作的信息入口，职责限定在当前区域。组合时提供地图外的可聚焦地标与说明，不依赖图形辨认。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "integer-pixel-canvas",
         "discovery-progress-journal"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "地图获得焦点后支持方向键/WASD；提供DOM地标按钮及手机方向按钮。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「场景地标作为导航」。地标选择移动角色并更新对应文本，地图上的空间状态与DOM地点索引保持一致。触发：选择地标或移动到地点。可见结果：场景成为可操作的信息入口。适用任务：地点导览与互动教育。提供地图外的可聚焦地标与说明，不依赖图形辨认。键盘：地图获得焦点后支持方向键/WASD；提供DOM地标按钮及手机方向按钮。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责场景成为可操作的信息入口，职责限定在当前区域。组合时提供地图外的可聚焦地标与说明，不依赖图形辨认。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「场景地标作为导航」。地标选择移动角色并更新对应文本，地图上的空间状态与DOM地点索引保持一致。触发：选择地标或移动到地点。可见结果：场景成为可操作的信息入口。适用任务：地点导览与互动教育。提供地图外的可聚焦地标与说明，不依赖图形辨认。键盘：地图获得焦点后支持方向键/WASD；提供DOM地标按钮及手机方向按钮。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "pixel-world",
         "locator": "entries/cases/pixel-world.json#interaction/0",
         "observation": "地点按钮移动角色并更新当前地点介绍。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": "#stage",
+          "label": "地图地标就是导航",
+          "instruction": "点海滩、灯塔、树林或村庄的地标，角色会移动到对应位置，旁边地点介绍也会改变。",
+          "prepare": [
+            {
+              "click": "[data-site='2']"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
       "demos/cases/pixel-world/index.html",
       "entries/cases/pixel-world.json",
       "docs/cases/pixel-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/spatial-navigation-map.jpg"
   },
   {
     "id": "hover-focus-mode-selection",
@@ -4549,10 +5468,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "能力词用原生button，focus与hover同等响应，aria-pressed标明当前模式。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
     "prompt": "为【目标页面/组件】实现「标题悬停与聚焦选择模式」。把主标题中的能力词做成可操作控制，悬停、键盘聚焦与点击选择同一模式，离开后保留最后选择。触发：悬停/聚焦/点击能力词。可见结果：用户直接用主张探索产品用途。适用任务：多能力产品首屏。手动选择不被自动周期立刻覆盖，首屏模式与后段说明状态分别管理。键盘：能力词用原生button，focus与hover同等响应，aria-pressed标明当前模式。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：只决定首屏当前能力；可以驱动字色、中央窗口与拼贴图层。后段说明rail另有状态，避免滚动把用户刚选择的首屏模式反复覆盖。",
     "sources": [
@@ -4562,7 +5477,13 @@ window.ATLAS_PATTERNS = [
         "observation": "首屏悬停/聚焦/点击“聊天、工作、编程” → 当前中文逐字换强调色，中央图垂直退出/进入，20 个官方周边素材按模式替换 → 用动作表达三种用途；在首屏标题体验。",
         "evidence": "observed",
         "referenceUrl": "https://chatgpt.com/zh-Hans-CN/overview/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".hero h1",
+          "label": "聊天、工作、编程选择",
+          "instruction": "把指针移到“聊天、工作、编程”，或用 Tab 聚焦与点击，观察标题状态和中央窗口一起切换。",
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -4573,7 +5494,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/chatgpt-platform/script.js",
       "demos/cases/chatgpt-platform/style.css",
       "entries/cases/chatgpt-platform.json"
-    ]
+    ],
+    "preview": "previews/patterns/hover-focus-mode-selection.jpg"
   },
   {
     "id": "mobile-native-mode-cards",
@@ -4599,7 +5521,6 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责手指可直接浏览同样三种能力，职责限定在当前区域。组合时保留模式标签和完整说明，页面纵向滚动不被卡片劫持。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "hover-focus-mode-selection"
       ],
@@ -4607,12 +5528,8 @@ window.ATLAS_PATTERNS = [
         "scroll-synchronized-rail"
       ]
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「手机以原生模式卡替代桌面长舞台」。窄屏把桌面sticky模式舞台转换为三张原生水平卡；标题选择将对应卡定位到视口。触发：手机横滑或选择能力词。可见结果：手指可直接浏览同样三种能力。适用任务：多模式产品的移动版。保留模式标签和完整说明，页面纵向滚动不被卡片劫持。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责手指可直接浏览同样三种能力，职责限定在当前区域。组合时保留模式标签和完整说明，页面纵向滚动不被卡片劫持。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「手机以原生模式卡替代桌面长舞台」。窄屏把桌面sticky模式舞台转换为三张原生水平卡；标题选择将对应卡定位到视口。触发：手机横滑或选择能力词。可见结果：手指可直接浏览同样三种能力。适用任务：多模式产品的移动版。保留模式标签和完整说明，页面纵向滚动不被卡片劫持。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "chatgpt-platform",
@@ -4620,7 +5537,18 @@ window.ATLAS_PATTERNS = [
         "observation": "手机使用三卡原生横向滚动，标题选择定位相应卡片；桌面 sticky rail 不出现在手机。导航保持桌面即时开关和手机全屏分层列表。",
         "evidence": "observed",
         "referenceUrl": "https://chatgpt.com/zh-Hans-CN/overview/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#showcase",
+          "label": "手机模式横向卡片",
+          "instruction": "在三张模式卡片上左右滑动；也可点上方“聊天、工作、编程”定位相应卡片。",
+          "prepare": [
+            {
+              "click": "[data-select=work]"
+            }
+          ],
+          "viewport": "mobile"
+        }
       }
     ],
     "sourceFiles": [
@@ -4631,7 +5559,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/chatgpt-platform/script.js",
       "demos/cases/chatgpt-platform/style.css",
       "entries/cases/chatgpt-platform.json"
-    ]
+    ],
+    "preview": "previews/patterns/mobile-native-mode-cards.jpg"
   },
   {
     "id": "mode-character-accent",
@@ -4664,10 +5593,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "词整体为可聚焦button，字符装饰对读屏隐藏，aria-pressed与文字状态同步。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
     "prompt": "为【目标页面/组件】实现「当前能力词逐字强调色」。将能力词分成保持阅读顺序的字符层，选中模式更新该词的逐字强调色，其余标题维持稳定。触发：能力模式改变。可见结果：用户能在巨字标题中识别当前用途。适用任务：可选择的多模式中文主张。保留一个完整可读词名及选择状态，字层不改变语义顺序。键盘：词整体为可聚焦button，字符装饰对读屏隐藏，aria-pressed与文字状态同步。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：负责选择反馈，能力词button负责语义和焦点，中央窗口负责内容证明。字色只是一个提示；保留aria-pressed与完整词名，避免让读屏逐字碎读。",
     "sources": [
@@ -4677,7 +5602,18 @@ window.ATLAS_PATTERNS = [
         "observation": "首屏悬停/聚焦/点击“聊天、工作、编程” → 当前中文逐字换强调色，中央图垂直退出/进入，20 个官方周边素材按模式替换 → 用动作表达三种用途；在首屏标题体验。",
         "evidence": "observed",
         "referenceUrl": "https://chatgpt.com/zh-Hans-CN/overview/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".hero h1",
+          "label": "能力词的逐字强调",
+          "instruction": "在“聊天、工作、编程”之间移动指针，观察当前中文词逐字改用对应强调色。",
+          "prepare": [
+            {
+              "click": "[data-select=code]"
+            }
+          ],
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -4688,7 +5624,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/chatgpt-platform/script.js",
       "demos/cases/chatgpt-platform/style.css",
       "entries/cases/chatgpt-platform.json"
-    ]
+    ],
+    "preview": "previews/patterns/mode-character-accent.jpg"
   },
   {
     "id": "mode-specific-collage",
@@ -4722,10 +5659,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-    },
     "parameters": [],
     "prompt": "为【目标页面/组件】实现「按模式组织独立拼贴层」。每个模式拥有独立图层清单及坐标、比例、层级和出入轨迹，旧场景离开后新场景成组进入。触发：选择不同能力模式。可见结果：主窗口周边形成具有语义的场景。适用任务：需要多类型成果证明的产品。素材必须解释对应能力，不能盖住标题与控制。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：负责模式对应的成果场景，中央产品窗口负责产品身份，巨字负责选择。图层坐标按素材重设；不能将多来源拼贴叠成遮挡标题的无限装饰。",
     "sources": [
@@ -4735,7 +5668,18 @@ window.ATLAS_PATTERNS = [
         "observation": "选择工作 → 工作的独立素材从四周进入，原模式素材离开；快速切换清理旧离场层 → 保持一套可读场景；移到“工作”再快速移到“编程”。",
         "evidence": "observed",
         "referenceUrl": "https://chatgpt.com/zh-Hans-CN/overview/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".intro-art",
+          "label": "工作模式的独立拼贴",
+          "instruction": "选择“工作”后看四周素材如何成组进入；换到“编程”可对比它的独立素材组合。",
+          "prepare": [
+            {
+              "click": "[data-select=work]"
+            }
+          ],
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -4746,7 +5690,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/chatgpt-platform/script.js",
       "demos/cases/chatgpt-platform/style.css",
       "entries/cases/chatgpt-platform.json"
-    ]
+    ],
+    "preview": "previews/patterns/mode-specific-collage.jpg"
   },
   {
     "id": "scroll-synchronized-rail",
@@ -4757,7 +5702,7 @@ window.ATLAS_PATTERNS = [
       "page-motion"
     ],
     "summary": "文字、窗口模式和进度共同指示当前段落。",
-    "mechanism": "长段内用多个内容哨兵更新侧栏展开、标题尺度、产品窗口与进度；点击或方向键定位同一状态。",
+    "mechanism": "长段内用多个内容哨兵更新侧栏展开、标题尺度、产品窗口与进度；点击或方向键定位同一状态。 Home/End 可定位首尾状态。",
     "trigger": "滚动或选择说明索引",
     "effect": "当前说明与界面演示对应。",
     "useCases": [
@@ -4772,18 +5717,13 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责当前说明与界面演示对应，职责限定在当前区域。组合时首屏选择和说明rail独立管理；手机用原生横向卡片。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "sticky-stage-handoff"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "rail按钮支持方向键及Home/End，展开与当前状态文字同步。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「说明索引与窗口进度同步」。长段内用多个内容哨兵更新侧栏展开、标题尺度、产品窗口与进度；点击或方向键定位同一状态。触发：滚动或选择说明索引。可见结果：当前说明与界面演示对应。适用任务：多步骤能力说明。首屏选择和说明rail独立管理；手机用原生横向卡片。键盘：rail按钮支持方向键及Home/End，展开与当前状态文字同步。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责当前说明与界面演示对应，职责限定在当前区域。组合时首屏选择和说明rail独立管理；手机用原生横向卡片。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「说明索引与窗口进度同步」。长段内用多个内容哨兵更新侧栏展开、标题尺度、产品窗口与进度；点击或方向键定位同一状态。触发：滚动或选择说明索引。可见结果：当前说明与界面演示对应。适用任务：多步骤能力说明。首屏选择和说明rail独立管理；手机用原生横向卡片。键盘：rail按钮支持方向键及Home/End，展开与当前状态文字同步。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "chatgpt-platform",
@@ -4791,7 +5731,13 @@ window.ATLAS_PATTERNS = [
         "observation": "桌面左侧 rail 出现后，滚动三段哨兵或点击/方向键 → 说明高度、标题缩放、窗口模式及进度对应更新；顶部标题模式和下段模式彼此独立。",
         "evidence": "adapted",
         "referenceUrl": "https://chatgpt.com/zh-Hans-CN/overview/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#showcase",
+          "label": "说明索引与产品窗口",
+          "instruction": "上下滚动这段说明，或点左侧聊天、工作、Codex 索引，对比当前说明、进度和窗口内容的对应变化。",
+          "viewport": "wide"
+        }
       },
       {
         "caseId": "hallmark",
@@ -4799,7 +5745,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Coral 的滚动说明面板在屏幕中央的窄观察带进入时选择对应发票状态，桌面说明与吸附发票同步，窄于 60rem 时直接显示完整的第三步。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".pin__panel[data-step=\"1\"]",
+          "label": "滚动说明与发票状态",
+          "instruction": "向下滚动三段说明，观察旁边发票依次进入提醒、回信与已付款状态。",
+          "entrypoint": "demos/cases/hallmark/themes/coral/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -4815,7 +5767,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/fidelity.md",
       "demos/cases/hallmark/themes/coral/scene.js",
       "demos/cases/hallmark/themes/coral/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/scroll-synchronized-rail.jpg"
   },
   {
     "id": "system-theme-without-toggle",
@@ -4836,23 +5789,18 @@ window.ATLAS_PATTERNS = [
       "给来源没提供的页面宣称手动主题"
     ],
     "constraints": [
-      "ChatGPT手机保持浅色界面图，Claude主题为公共CSS依据，范围不等于所有媒体。",
+      "ChatGPT 手机保留浅色界面图；Claude 主题的数值依据为公共 CSS。",
       "迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。"
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责界面适应环境且图像保持合理配色，职责限定在当前区域。组合时ChatGPT手机保持浅色界面图，Claude主题为公共CSS依据，范围不等于所有媒体。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "semantic-theme-roles"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「跟随系统的媒体与文字主题」。根据prefers-color-scheme选用对应的表面、文字与产品截图；主题范围明确到实际有变体的区域。触发：系统深浅偏好改变。可见结果：界面适应环境且图像保持合理配色。适用任务：已有双版本资产的营销页。ChatGPT手机保持浅色界面图，Claude主题为公共CSS依据，范围不等于所有媒体。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责界面适应环境且图像保持合理配色，职责限定在当前区域。组合时ChatGPT手机保持浅色界面图，Claude主题为公共CSS依据，范围不等于所有媒体。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「跟随系统的媒体与文字主题」。根据prefers-color-scheme选用对应的表面、文字与产品截图；主题范围明确到实际有变体的区域。触发：系统深浅偏好改变。可见结果：界面适应环境且图像保持合理配色。适用任务：已有双版本资产的营销页。ChatGPT 手机保留浅色界面图；Claude 主题的数值依据为公共 CSS。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "chatgpt-platform",
@@ -4860,7 +5808,13 @@ window.ATLAS_PATTERNS = [
         "observation": "跟随 prefers-color-scheme；页面没有全局手动主题按钮，桌面产品界面随系统换深浅，手机保持原站的浅色界面图。",
         "evidence": "observed",
         "referenceUrl": "https://chatgpt.com/zh-Hans-CN/overview/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#showcase",
+          "label": "跟随系统的产品截图",
+          "instruction": "切换系统明暗外观，观察桌面产品窗口的深浅截图；页面没有手动主题按钮，手机使用固定浅色界面。",
+          "viewport": "wide"
+        }
       },
       {
         "caseId": "claude-platform",
@@ -4868,7 +5822,12 @@ window.ATLAS_PATTERNS = [
         "observation": "公共 CSS root 根据 prefers-color-scheme 使用奶油浅色/近黑深色；首页没有核实到手动全局按钮。官方 Cowork 视频自身保持素材配色。",
         "evidence": "inferred",
         "referenceUrl": "https://claude.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".hero",
+          "label": "跟随系统的页面主题",
+          "instruction": "在系统中切换浅色与深色外观，对比页面表面和文字。这个来源没有手动主题按钮，Cowork 影片保持原色。"
+        }
       }
     ],
     "sourceFiles": [
@@ -4885,7 +5844,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/claude-platform/style.css",
       "entries/cases/chatgpt-platform.json",
       "entries/cases/claude-platform.json"
-    ]
+    ],
+    "preview": "previews/patterns/system-theme-without-toggle.jpg"
   },
   {
     "id": "vertical-card-swap",
@@ -4918,10 +5878,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [
       {
         "name": "本地拟合",
@@ -4937,7 +5893,18 @@ window.ATLAS_PATTERNS = [
         "observation": "首屏悬停/聚焦/点击“聊天、工作、编程” → 当前中文逐字换强调色，中央图垂直退出/进入，20 个官方周边素材按模式替换 → 用动作表达三种用途；在首屏标题体验。",
         "evidence": "observed",
         "referenceUrl": "https://chatgpt.com/zh-Hans-CN/overview/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".hero",
+          "label": "中央窗口的垂直交接",
+          "instruction": "切换“聊天、工作、编程”，重点看中央产品窗口怎样向上退出、下一张从下方进入。",
+          "prepare": [
+            {
+              "click": "[data-select=code]"
+            }
+          ],
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -4948,7 +5915,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/chatgpt-platform/script.js",
       "demos/cases/chatgpt-platform/style.css",
       "entries/cases/chatgpt-platform.json"
-    ]
+    ],
+    "preview": "previews/patterns/vertical-card-swap.jpg"
   },
   {
     "id": "moving-tab-selection-bed",
@@ -4974,15 +5942,10 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "accent",
-      "notes": "该原子负责选择位置与可见方案一致，职责限定在当前区域。组合时按真实受众组织方案，未验证的源动态标明公共模块依据。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "single-open-accordion"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
     },
     "parameters": [],
     "prompt": "为目标页面实现「选中底板与套餐内容联动」。一个选中底板沿选项位置移动，同时替换当前选项对应的套餐内容；不同卡数仍由内容区域自然布局。选择受众或套餐类型后，选中位置、价格、说明、功能和行动保持一致。沿用来源真实的选项与计费方式，不添加来源不存在的账期。按钮提供键盘路径、aria-pressed 与明确焦点，方向键定位对应选项；减少动态即时完成切换。",
@@ -4993,7 +5956,12 @@ window.ATLAS_PATTERNS = [
         "observation": "Individual/Team and Enterprise → 移动选中底板，替换三/两张套餐卡；没有添加原页面没有的年/月账期控件。",
         "evidence": "inferred",
         "referenceUrl": "https://claude.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".plan-tabs",
+          "label": "个人与团队套餐",
+          "instruction": "切换 Individual 与 Team and Enterprise，观察选中底板移动和三张／两张套餐卡的替换。"
+        }
       },
       {
         "caseId": "uiarc-platform",
@@ -5001,7 +5969,12 @@ window.ATLAS_PATTERNS = [
         "observation": "价格区的 Pro yearly / Free 使用原始 SegmentedControl 移动选中底板，整块说明、金额、清单和入口通过 AnimatePresence 交接，240ms 透明度、400ms 无回弹弹簧位移；金额使用原始 AnimatedCounter。右侧终身方案保持可见，手机保留年度卡在先。",
         "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "#flex-plan",
+          "label": "价格方案切换",
+          "instruction": "在 Pro yearly 与 Free 之间切换，对比选中底板、金额和套餐内容的交接。"
+        }
       }
     ],
     "sourceFiles": [
@@ -5019,7 +5992,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/uiarc-platform/fidelity.md",
       "demos/cases/uiarc-platform/source/content.json",
       "demos/cases/uiarc-platform/source/components.tsx"
-    ]
+    ],
+    "preview": "previews/patterns/moving-tab-selection-bed.jpg"
   },
   {
     "id": "top-down-clipped-menu",
@@ -5045,15 +6019,10 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责菜单作为有明确边界的导航场景，职责限定在当前区域。组合时时长为来源公共模块，源端手机实时未验证，实施时检查快速反向。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "last-request-transition"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
     },
     "parameters": [
       {
@@ -5075,7 +6044,19 @@ window.ATLAS_PATTERNS = [
         "observation": "桌面菜单 pointer enter 展开，pointer leave 150ms 延迟关闭，其他导航降低强调；手机菜单 800ms 顶到下 clip 进入、400ms 退出，项目 320ms 起每项80ms交错。",
         "evidence": "inferred",
         "referenceUrl": "https://claude.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".menu.mobile-open:not([hidden])",
+          "label": "顶部裁切的手机菜单",
+          "instruction": "点右上角关闭，再重新打开菜单，观察面板向下展开和条目错峰进入。",
+          "prepare": [
+            {
+              "click": ".hamburger[aria-expanded=false]",
+              "waitFor": ".menu.mobile-open:not([hidden])"
+            }
+          ],
+          "viewport": "mobile"
+        }
       },
       {
         "caseId": "uiarc-platform",
@@ -5083,7 +6064,22 @@ window.ATLAS_PATTERNS = [
         "observation": "手机菜单通过 Radix Dialog 在顶栏下方展开，460ms 向下裁切，条目延迟 90ms 起、40ms 错峰；关闭使用 240ms 反向裁切，背景 320／240ms 淡化与 5px 模糊。Escape 返回触发按钮，Examples 关闭后滚动并聚焦展示区。",
         "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".mobile-menu[role=dialog][data-state=open]",
+          "label": "向下展开的手机菜单",
+          "instruction": "用右上角关闭按钮收起，再点顶栏菜单，观察面板向下裁切和条目依次进入。",
+          "prepare": [
+            {
+              "waitFor": "#menu-trigger[data-state]"
+            },
+            {
+              "click": "#menu-trigger[data-state=closed]",
+              "waitFor": ".mobile-menu[role=dialog][data-state=open]"
+            }
+          ],
+          "viewport": "mobile"
+        }
       }
     ],
     "sourceFiles": [
@@ -5100,7 +6096,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/uiarc-platform/style.css",
       "demos/cases/uiarc-platform/source/components.tsx",
       "demos/cases/uiarc-platform/fidelity.md"
-    ]
+    ],
+    "preview": "previews/patterns/top-down-clipped-menu.jpg"
   },
   {
     "id": "word-opacity-stagger",
@@ -5121,20 +6118,15 @@ window.ATLAS_PATTERNS = [
       "无依据的飞字、旋转或缩放"
     ],
     "constraints": [
-      "来源依据公开模块，未完成源浏览器逐节实访；不能升级为现场观察事实。",
+      "参数依据来源公开模块。",
       "迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。"
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责信息依次可见，移动幅度克制，职责限定在当前区域。组合时来源依据公开模块，未完成源浏览器逐节实访；不能升级为现场观察事实。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "system-theme-without-toggle"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
     },
     "parameters": [
       {
@@ -5148,7 +6140,7 @@ window.ATLAS_PATTERNS = [
         "note": "公共AnimatedReveal依据"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「单词透明度的低幅交错」。单词只过渡透明度并以短总跨度交错，正文组用小位移带入；标题文字保持原排版。触发：标题或正文组进入阈值。可见结果：信息依次可见，移动幅度克制。适用任务：文字主导产品页。来源依据公开模块，未完成源浏览器逐节实访；不能升级为现场观察事实。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责信息依次可见，移动幅度克制，职责限定在当前区域。组合时来源依据公开模块，未完成源浏览器逐节实访；不能升级为现场观察事实。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「单词透明度的低幅交错」。单词只过渡透明度并以短总跨度交错，正文组用小位移带入；标题文字保持原排版。触发：标题或正文组进入阈值。可见结果：信息依次可见，移动幅度克制。适用任务：文字主导产品页。参数依据来源公开模块。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "claude-platform",
@@ -5156,7 +6148,12 @@ window.ATLAS_PATTERNS = [
         "observation": "标题按单词 1s opacity 过渡，总交错跨度 .2s；内容组 750ms、10px、100ms 交错，在视口底部 −20% 触发 → 以较小运动保留阅读节奏。",
         "evidence": "inferred",
         "referenceUrl": "https://claude.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".plans>h2",
+          "label": "套餐标题的逐词淡入",
+          "instruction": "看套餐标题的单词按短间隔淡入；向上滚出这节后再返回，可再次观察。"
+        }
       }
     ],
     "sourceFiles": [
@@ -5166,7 +6163,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/claude-platform/script.js",
       "demos/cases/claude-platform/style.css",
       "entries/cases/claude-platform.json"
-    ]
+    ],
+    "preview": "previews/patterns/word-opacity-stagger.jpg"
   },
   {
     "id": "fixed-task-timeline",
@@ -5193,19 +6191,14 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "accent",
-      "notes": "该原子负责用户理解工具到交付的工作顺序，职责限定在当前区域。组合时源端发送状态未验证，此原子只抽象已验证的本地固定演示。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "viewport-animation-lifecycle",
         "last-request-transition"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「固定任务按阶段揭示交付」。用预设时间线展开会话阶段，输入/发送进入明确固定演示，文件开关显示关联旁栏，新任务可复位。触发：启动固定示例或查看交付文件。可见结果：用户理解工具到交付的工作顺序。适用任务：智能体与工具平台介绍。源端发送状态未验证，此原子只抽象已验证的本地固定演示。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责用户理解工具到交付的工作顺序，职责限定在当前区域。组合时源端发送状态未验证，此原子只抽象已验证的本地固定演示。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「固定任务按阶段揭示交付」。用预设时间线展开会话阶段，输入/发送进入明确固定演示，文件开关显示关联旁栏，新任务可复位。触发：启动固定示例或查看交付文件。可见结果：用户理解工具到交付的工作顺序。适用任务：智能体与工具平台介绍。源端发送状态未验证，此原子只抽象已验证的本地固定演示。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "qoder-platform",
@@ -5213,7 +6206,25 @@ window.ATLAS_PATTERNS = [
         "observation": "工作台使用公开固定任务示例，点击本地“新任务”可返回输入；本地输入/Enter/发送进入固定会话而非调用模型，九个阶段按 180/480/760/1000/1200/1400/1600/1900/2250ms 展开；交付文件开关显示旁栏。",
         "evidence": "adapted",
         "referenceUrl": "https://qoder.cn/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".qoder-session:not([hidden])",
+          "label": "固定任务的会话阶段",
+          "instruction": "观察工具步骤依次出现，完成后点交付文件开关查看旁栏；“新任务”可返回输入。",
+          "prepare": [
+            {
+              "click": "#new-task"
+            },
+            {
+              "input": "#task-input",
+              "value": "Add copy review brief action"
+            },
+            {
+              "click": "#task-form .send",
+              "waitFor": ".qoder-session:not([hidden])"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -5223,7 +6234,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/qoder-platform/script.js",
       "demos/cases/qoder-platform/style.css",
       "entries/cases/qoder-platform.json"
-    ]
+    ],
+    "preview": "previews/patterns/fixed-task-timeline.jpg"
   },
   {
     "id": "heatmap-focus-tooltip",
@@ -5249,13 +6261,8 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "accent",
-      "notes": "该原子负责微小可视化可以逐项读取，职责限定在当前区域。组合时格子可聚焦并有可读名称，提示不覆盖当前目标。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "格子可通过键盘聚焦，焦点触发等同指针，关联日期/数值说明。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
     },
     "parameters": [
       {
@@ -5264,7 +6271,7 @@ window.ATLAS_PATTERNS = [
         "note": "公开热图模块时间"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「热图指针与焦点提示」。格子悬停或获得焦点后短延迟显示日期/对话提示，离开或失焦关闭；文字提示不只依赖格子色深。触发：pointer enter/focus或leave/blur。可见结果：微小可视化可以逐项读取。适用任务：活跃度与日期数据图。格子可聚焦并有可读名称，提示不覆盖当前目标。键盘：格子可通过键盘聚焦，焦点触发等同指针，关联日期/数值说明。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责微小可视化可以逐项读取，职责限定在当前区域。组合时格子可聚焦并有可读名称，提示不覆盖当前目标。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「热图指针与焦点提示」。格子悬停或获得焦点后短延迟显示日期/对话提示，离开或失焦关闭；文字提示不只依赖格子色深。触发：pointer enter/focus或leave/blur。可见结果：微小可视化可以逐项读取。适用任务：活跃度与日期数据图。格子可聚焦并有可读名称，提示不覆盖当前目标。键盘：格子可通过键盘聚焦，焦点触发等同指针，关联日期/数值说明。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "qoder-platform",
@@ -5272,7 +6279,12 @@ window.ATLAS_PATTERNS = [
         "observation": "活跃热图 pointer enter/focus 120ms 显示日期/对话提示，leave/blur 80ms 关闭 → 很小的元素也有可读状态。",
         "evidence": "observed",
         "referenceUrl": "https://qoder.cn/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".activity",
+          "label": "活跃热图的小格提示",
+          "instruction": "把指针移到任一热图小格，或用 Tab 聚焦小格，查看对应日期与对话数量。"
+        }
       }
     ],
     "sourceFiles": [
@@ -5282,7 +6294,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/qoder-platform/script.js",
       "demos/cases/qoder-platform/style.css",
       "entries/cases/qoder-platform.json"
-    ]
+    ],
+    "preview": "previews/patterns/heatmap-focus-tooltip.jpg"
   },
   {
     "id": "timed-platform-carousel",
@@ -5315,10 +6328,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [
       {
         "name": "来源时间",
@@ -5334,7 +6343,12 @@ window.ATLAS_PATTERNS = [
         "observation": "五平台 tab/点控/触摸 → 400ms 水平进退，20s 自动，悬停/手动暂停、后台停止；快速选择只保留一个场景。",
         "evidence": "observed",
         "referenceUrl": "https://qoder.cn/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#platforms",
+          "label": "五平台自动轮换",
+          "instruction": "点平台标签切换；把指针停在这节会暂停自动轮换，也可用右下角暂停按钮控制。"
+        }
       },
       {
         "caseId": "hallmark",
@@ -5342,7 +6356,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Studio 的三套系统在区域可见时每 4200ms 自动切换，悬停或聚焦时暂停，用户主动选项后停止自动切换，标签、board 和 aria 状态共同更新。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "#systems",
+          "label": "三套设计系统轮换",
+          "instruction": "观察三套系统自动轮换；移入或聚焦此区域会暂停，点击任一标签可固定查看。",
+          "entrypoint": "demos/cases/hallmark/themes/studio/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -5357,7 +6377,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/fidelity.md",
       "demos/cases/hallmark/themes/studio/spec.js",
       "demos/cases/hallmark/themes/studio/index.html"
-    ]
+    ],
+    "preview": "previews/patterns/timed-platform-carousel.jpg"
   },
   {
     "id": "character-stage-coordination",
@@ -5383,19 +6404,14 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "accent",
-      "notes": "该原子负责人物身份与当前场景共同可读，职责限定在当前区域。组合时保留完整立绘比例，阶段内容子集明确，不能把原学院或全角色库说成已迁移。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "character-voice-ownership",
         "bounded-panel-track"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「人物、背景与资料成组换态」。选中人物统一更新立绘、姓名、简介、肖像与背景/资料卡；人物阶段或服装作为独立状态，避免图片和声音归属错位。触发：选择人物或阶段。可见结果：人物身份与当前场景共同可读。适用任务：角色档案与人物作品展示。保留完整立绘比例，阶段内容子集明确，不能把原学院或全角色库说成已迁移。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责人物身份与当前场景共同可读，职责限定在当前区域。组合时保留完整立绘比例，阶段内容子集明确，不能把原学院或全角色库说成已迁移。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「人物、背景与资料成组换态」。选中人物统一更新立绘、姓名、简介、肖像与背景/资料卡；人物阶段或服装作为独立状态，避免图片和声音归属错位。触发：选择人物或阶段。可见结果：人物身份与当前场景共同可读。适用任务：角色档案与人物作品展示。保留完整立绘比例，阶段内容子集明确，不能把原学院或全角色库说成已迁移。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "genshin-world",
@@ -5403,7 +6419,24 @@ window.ATLAS_PATTERNS = [
         "observation": "选择 Vesna/Vodyanitsa，100ms 交叉淡入立绘，并同步切换青绿/蓝色完整背景、姓名、简介、肖像状态与麦克风图。",
         "evidence": "observed",
         "referenceUrl": "https://genshin.hoyoverse.com/en/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "body[data-chapter=\"1\"] #characters",
+          "label": "人物与整幅背景换态",
+          "instruction": "点两个人物肖像，比较立绘、青绿或蓝色背景、姓名与简介如何同步更换。",
+          "prepare": [
+            {
+              "click": "header a[href=\"#characters\"]",
+              "waitFor": "body[data-chapter=\"1\"]"
+            },
+            {
+              "waitFor": "main[style*=\"transition: none\"]"
+            },
+            {
+              "click": "[data-character=\"1\"]:not([aria-pressed=\"true\"])"
+            }
+          ]
+        }
       },
       {
         "caseId": "blue-archive",
@@ -5411,7 +6444,13 @@ window.ATLAS_PATTERNS = [
         "observation": "阿比多斯四学生资料卡与完整立绘以 1000ms 整块水平移动；选择按钮、左右键及手势同步当前人物。",
         "evidence": "adapted",
         "referenceUrl": "https://bluearchive.jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#characters",
+          "label": "学生立绘与资料卡",
+          "instruction": "选择另一个学生，查看整块立绘、姓名、资料与选中名字如何一起更换。",
+          "entrypoint": "demos/cases/blue-archive/character.html"
+        }
       },
       {
         "caseId": "arknights-world",
@@ -5419,7 +6458,25 @@ window.ATLAS_PATTERNS = [
         "observation": "干员保留3名/每人E1与E2，原站6名且阿米娅含E0；灰度背景为本地同人物图层，未移植完整背景版/6人滚动肖像轨道。",
         "evidence": "adapted",
         "referenceUrl": "https://ak.hypergryph.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#operator.active",
+          "label": "干员立绘与档案",
+          "instruction": "选择右侧干员头像或精英阶段，比较立绘、背景姓名和资料如何一起变化。",
+          "prepare": [
+            {
+              "waitFor": "#scene-deck[data-phase=\"idle\"]"
+            },
+            {
+              "click": "#menu-toggle[aria-expanded=\"false\"]",
+              "maxWidth": 800
+            },
+            {
+              "click": "#chapter-nav a[href=\"#operator\"]:not([aria-current=\"page\"])",
+              "waitFor": "#scene-deck[data-active=\"operator\"][data-phase=\"idle\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "zenless-zone-zero",
@@ -5427,7 +6484,17 @@ window.ATLAS_PATTERNS = [
         "observation": "选择角色缩略图，同时切换62人中的立绘、阴影、阵营、中文名与英文背景；桌面角色图以500ms位移/透明度进入，阴影300ms，姓名与阵营延迟交接。",
         "evidence": "observed",
         "referenceUrl": "https://zzz.mihoyo.com/main",
-        "capturedAt": "2026-10-11"
+        "capturedAt": "2026-10-11",
+        "focus": {
+          "target": "#character .home-character__main",
+          "label": "角色立绘、姓名与阵营",
+          "instruction": "点不同人物头像，看立绘、阴影、阵营和背景英文名成组进入。",
+          "prepare": [
+            {
+              "click": ".sidebar__pagers-num[aria-label=\"跳到角色介绍\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -5461,7 +6528,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/zenless-zone-zero/reference-mobile.css",
       "demos/cases/zenless-zone-zero/reference.css",
       "demos/cases/zenless-zone-zero/state.css"
-    ]
+    ],
+    "preview": "previews/patterns/character-stage-coordination.jpg"
   },
   {
     "id": "character-voice-ownership",
@@ -5487,19 +6555,14 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责台词为人物身份补充听觉线索，职责限定在当前区域。组合时语音对应关系按素材核验，播放状态由真实音频事件更新。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "character-stage-coordination",
         "sound-opt-in"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "麦克风用有角色名的button，aria-pressed与实际播放/暂停一致。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「声线主动播放并归属于当前人物」。麦克风主动播放当前人物对应音轨，再次点击暂停；换人、离开角色区域或后台停止旧声音。触发：点击人物VOICE或换人。可见结果：台词为人物身份补充听觉线索。适用任务：有真实授权语音的角色档案。语音对应关系按素材核验，播放状态由真实音频事件更新。键盘：麦克风用有角色名的button，aria-pressed与实际播放/暂停一致。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责台词为人物身份补充听觉线索，职责限定在当前区域。组合时语音对应关系按素材核验，播放状态由真实音频事件更新。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「声线主动播放并归属于当前人物」。麦克风主动播放当前人物对应音轨，再次点击暂停；换人、离开角色区域或后台停止旧声音。触发：点击人物VOICE或换人。可见结果：台词为人物身份补充听觉线索。适用任务：有真实授权语音的角色档案。语音对应关系按素材核验，播放状态由真实音频事件更新。键盘：麦克风用有角色名的button，aria-pressed与实际播放/暂停一致。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "genshin-world",
@@ -5507,7 +6570,21 @@ window.ATLAS_PATTERNS = [
         "observation": "点击麦克风随机播放对应角色 3 条官方语音之一，再点暂停；换角色、离开角色章节与后台时停止，防止声线叠加。",
         "evidence": "adapted",
         "referenceUrl": "https://genshin.hoyoverse.com/en/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "body[data-chapter=\"1\"] #character-voice",
+          "label": "当前人物的语音按钮",
+          "instruction": "点麦克风播放当前人物语音，再次点击暂停；换人或离开角色章会停止旧语音。",
+          "prepare": [
+            {
+              "click": "header a[href=\"#characters\"]",
+              "waitFor": "body[data-chapter=\"1\"]"
+            },
+            {
+              "waitFor": "main[style*=\"transition: none\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "blue-archive",
@@ -5515,7 +6592,13 @@ window.ATLAS_PATTERNS = [
         "observation": "角色 VOICE 麦克风播放该学生对应官方 WAV，再点暂停；换人或后台停止，声线归属明确。",
         "evidence": "adapted",
         "referenceUrl": "https://bluearchive.jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".ba-student[aria-hidden=\"false\"] .student-voice",
+          "label": "当前学生的 VOICE",
+          "instruction": "点当前学生的 VOICE 麦克风播放语音；换学生后旧语音停止。",
+          "entrypoint": "demos/cases/blue-archive/character.html"
+        }
       },
       {
         "caseId": "arknights-world",
@@ -5523,7 +6606,25 @@ window.ATLAS_PATTERNS = [
         "observation": "真实BGM默认关闭，单独开关并使用官网600/300ms音量渐变；三人日语语音独立按需播放，换人物或离开干员章暂停旧语音。",
         "evidence": "adapted",
         "referenceUrl": "https://ak.hypergryph.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#operator.active .voice",
+          "label": "干员语音",
+          "instruction": "点语音按钮播放当前干员的声音，再换干员，旧语音会停止。",
+          "prepare": [
+            {
+              "waitFor": "#scene-deck[data-phase=\"idle\"]"
+            },
+            {
+              "click": "#menu-toggle[aria-expanded=\"false\"]",
+              "maxWidth": 800
+            },
+            {
+              "click": "#chapter-nav a[href=\"#operator\"]:not([aria-current=\"page\"])",
+              "waitFor": "#scene-deck[data-active=\"operator\"][data-phase=\"idle\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -5547,7 +6648,8 @@ window.ATLAS_PATTERNS = [
       "docs/cases/arknights-world.md",
       "docs/cases/blue-archive.md",
       "docs/cases/genshin-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/character-voice-ownership.jpg"
   },
   {
     "id": "vertical-fullscreen-stage",
@@ -5582,10 +6684,6 @@ window.ATLAS_PATTERNS = [
         "native-document-reading"
       ]
     },
-    "accessibility": {
-      "keyboard": "章节导航和方向键可走完整路径，当前章同步aria状态，末端能回程。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
     "prompt": "为【目标页面/组件】实现「有限章节的垂直整屏舞台」。多个场景由同一垂直translate3d舞台控制，滚轮/手势前后切换，最后以有限位移露出页脚。触发：向前或反向输入。可见结果：当前章节和末端边界清楚。适用任务：少量主视觉强的版本介绍。完整正文及操作可达，精确时长按来源与本地拟合分开。键盘：章节导航和方向键可走完整路径，当前章同步aria状态，末端能回程。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：负责有限章节的主浏览模型。人物舞台与语音可以作为章内状态；长段sticky或大量正文需在独立文档区提供，避免同时争夺主滚动输入。",
     "sources": [
@@ -5595,7 +6693,21 @@ window.ATLAS_PATTERNS = [
         "observation": "滚轮或竖向手势推进整屏舞台，反向返回；末尾以有限位移露出 footer，避免把正常长页当作源站 Swiper。",
         "evidence": "observed",
         "referenceUrl": "https://genshin.hoyoverse.com/en/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "body[data-chapter=\"0\"] #home",
+          "label": "纵向整屏章节舞台",
+          "instruction": "向下滚动或点 Characters，查看章节整屏推进；反向可回到首屏，末尾会露出页脚。",
+          "prepare": [
+            {
+              "click": "header a[href=\"#home\"]",
+              "waitFor": "body[data-chapter=\"0\"]"
+            },
+            {
+              "waitFor": "main[style*=\"transition: none\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -5605,7 +6717,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/genshin-world/style.css",
       "entries/cases/genshin-world.json",
       "docs/cases/genshin-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/vertical-fullscreen-stage.jpg"
   },
   {
     "id": "directional-section-wipe",
@@ -5616,7 +6729,7 @@ window.ATLAS_PATTERNS = [
       "page-motion"
     ],
     "summary": "让章节空间方向与输入方向一致。",
-    "mechanism": "两个整屏场景以横向遮罩覆盖出入，旧场景退出与新场景进入共享方向；稳定后只有一章可交互。",
+    "mechanism": "两个整屏场景以横向遮罩覆盖出入，旧场景退出与新场景进入共享方向；稳定后只有一章可交互。 章节按钮及方向键、PageUp/PageDown、Home/End 可走完整个章节序列。",
     "trigger": "滚轮、章节导航或键盘换章",
     "effect": "整页档案保持单一舞台及方向线索。",
     "useCases": [
@@ -5640,10 +6753,6 @@ window.ATLAS_PATTERNS = [
         "native-document-reading"
       ]
     },
-    "accessibility": {
-      "keyboard": "提供章节按钮以及方向键/PageUp/PageDown/Home/End，当前章标示清楚。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [
       {
         "name": "来源章切",
@@ -5659,7 +6768,25 @@ window.ATLAS_PATTERNS = [
         "observation": "场景横向遮罩裁切：桌面1000ms、竖屏600ms；同方向重复轮输入锁定，快速反向和导航使用最后目标队列，单次仅一组出/入场景。",
         "evidence": "adapted",
         "referenceUrl": "https://ak.hypergryph.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#scene-deck",
+          "label": "章节侧向交接",
+          "instruction": "点顶部 OPERATOR 或向下滚动，看整章沿切换方向裁切进入。",
+          "prepare": [
+            {
+              "waitFor": "#scene-deck[data-phase=\"idle\"]"
+            },
+            {
+              "click": "#menu-toggle[aria-expanded=\"false\"]",
+              "maxWidth": 800
+            },
+            {
+              "click": "#chapter-nav a[href=\"#information\"]:not([aria-current=\"page\"])",
+              "waitFor": "#scene-deck[data-active=\"information\"][data-phase=\"idle\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -5670,7 +6797,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/arknights-world/style.css",
       "entries/cases/arknights-world.json",
       "docs/cases/arknights-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/directional-section-wipe.jpg"
   },
   {
     "id": "particle-model-reformation",
@@ -5703,10 +6831,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "术语按钮和前后/返回可键盘操作，当前索引有文本与aria状态。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
     "prompt": "为【目标页面/组件】实现「术语选择重组同一粒子池」。术语目录进入详情后，同一粒子池重组为对应模型，箭头、索引和返回共享模型状态及设定文字。触发：选择术语、箭头或返回。可见结果：词义、形状和当前位置成为一条信息。适用任务：少量世界术语与概念教学。手机可直接进入首个详情并采用图上文下，模型数与正文对应。键盘：术语按钮和前后/返回可键盘操作，当前索引有文本与aria状态。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：负责术语与图形的一一对应；指针排斥只改变局部位置，模型目标仍由术语选择管理。语义导航优先于装饰动画，手机图上文下即可保留这条关系。",
     "sources": [
@@ -5716,7 +6840,32 @@ window.ATLAS_PATTERNS = [
         "observation": "桌面WORLD先显示六术语目录与罗德岛点阵；悬停术语的原图预览跟随指针并使用同源形变/RGB偏移shader。点击进入详情，箭头/六段索引换模型，返回恢复目录。",
         "evidence": "observed",
         "referenceUrl": "https://ak.hypergryph.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#world.active[data-detail=\"true\"] #world-detail",
+          "label": "世界设定粒子模型",
+          "instruction": "点左右箭头或六段设定索引，看粒子模型与标题、设定文字一起换态。",
+          "prepare": [
+            {
+              "waitFor": "#scene-deck[data-phase=\"idle\"]"
+            },
+            {
+              "click": "#menu-toggle[aria-expanded=\"false\"]",
+              "maxWidth": 800
+            },
+            {
+              "click": "#chapter-nav a[href=\"#world\"]:not([aria-current=\"page\"])",
+              "waitFor": "#scene-deck[data-active=\"world\"][data-phase=\"idle\"]"
+            },
+            {
+              "click": "#world:not([data-detail=\"true\"]) [data-world=\"0\"]",
+              "waitFor": "#world[data-detail=\"true\"]"
+            },
+            {
+              "waitFor": "#world-particles[data-model]"
+            }
+          ]
+        }
       },
       {
         "caseId": "arknights-world",
@@ -5724,7 +6873,32 @@ window.ATLAS_PATTERNS = [
         "observation": "WORLD使用官网Three导出、七组原始点位、粒子贴图和排斥公式；10,000粒子池中当前模型使用1785–5652点。竖屏直接打开源石详情，粒子在上/文字在下。",
         "evidence": "observed",
         "referenceUrl": "https://ak.hypergryph.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#world.active[data-detail=\"true\"] #world-detail",
+          "label": "世界设定粒子模型",
+          "instruction": "点左右箭头或六段设定索引，看粒子模型与标题、设定文字一起换态。",
+          "prepare": [
+            {
+              "waitFor": "#scene-deck[data-phase=\"idle\"]"
+            },
+            {
+              "click": "#menu-toggle[aria-expanded=\"false\"]",
+              "maxWidth": 800
+            },
+            {
+              "click": "#chapter-nav a[href=\"#world\"]:not([aria-current=\"page\"])",
+              "waitFor": "#scene-deck[data-active=\"world\"][data-phase=\"idle\"]"
+            },
+            {
+              "click": "#world:not([data-detail=\"true\"]) [data-world=\"0\"]",
+              "waitFor": "#world[data-detail=\"true\"]"
+            },
+            {
+              "waitFor": "#world-particles[data-model]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -5735,7 +6909,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/arknights-world/style.css",
       "entries/cases/arknights-world.json",
       "docs/cases/arknights-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/particle-model-reformation.jpg"
   },
   {
     "id": "pointer-image-shader-preview",
@@ -5746,7 +6921,7 @@ window.ATLAS_PATTERNS = [
       "micro-motion"
     ],
     "summary": "在目录层先给设定一个视觉线索。",
-    "mechanism": "悬停术语时让对应原图随指针定位，并以同源形变和RGB偏移shader反馈移动；点击再进入完整详情。",
+    "mechanism": "悬停术语时让对应原图随指针定位，并以同源形变和RGB偏移shader反馈移动；点击再进入完整详情。 键盘激活术语可直接进入详情，静态预览可使用固定原图。",
     "trigger": "悬停与移动术语",
     "effect": "目录可探索而不用立刻离开。",
     "useCases": [
@@ -5761,18 +6936,13 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "accent",
-      "notes": "该原子负责目录可探索而不用立刻离开，职责限定在当前区域。组合时焦点或点击提供同等图像与文字入口，小屏直接使用详情。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "particle-model-reformation"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "文本术语可聚焦，键盘激活直接进入对应详情，不要求模拟鼠标轨迹。",
-      "reducedMotion": "使用固定图像预览，停用形变和RGB偏移；详情继续可读。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「术语图像随指针形变预览」。悬停术语时让对应原图随指针定位，并以同源形变和RGB偏移shader反馈移动；点击再进入完整详情。触发：悬停与移动术语。可见结果：目录可探索而不用立刻离开。适用任务：概念目录与图像作品索引。焦点或点击提供同等图像与文字入口，小屏直接使用详情。键盘：文本术语可聚焦，键盘激活直接进入对应详情，不要求模拟鼠标轨迹。减少动态：使用固定图像预览，停用形变和RGB偏移；详情继续可读。组合边界：该原子负责目录可探索而不用立刻离开，职责限定在当前区域。组合时焦点或点击提供同等图像与文字入口，小屏直接使用详情。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「术语图像随指针形变预览」。悬停术语时让对应原图随指针定位，并以同源形变和RGB偏移shader反馈移动；点击再进入完整详情。触发：悬停与移动术语。可见结果：目录可探索而不用立刻离开。适用任务：概念目录与图像作品索引。焦点或点击提供同等图像与文字入口，小屏直接使用详情。键盘：文本术语可聚焦，键盘激活直接进入对应详情，不要求模拟鼠标轨迹。减少动态：使用固定图像预览，停用形变和RGB偏移；详情继续可读。",
     "sources": [
       {
         "caseId": "arknights-world",
@@ -5780,7 +6950,33 @@ window.ATLAS_PATTERNS = [
         "observation": "桌面WORLD先显示六术语目录与罗德岛点阵；悬停术语的原图预览跟随指针并使用同源形变/RGB偏移shader。点击进入详情，箭头/六段索引换模型，返回恢复目录。",
         "evidence": "observed",
         "referenceUrl": "https://ak.hypergryph.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#world.active:not([data-detail=\"true\"]) .world-list",
+          "label": "桌面术语图像预览",
+          "instruction": "把指针移到世界设定术语上并缓慢移动，查看跟随指针形变的原图。",
+          "prepare": [
+            {
+              "waitFor": "#scene-deck[data-phase=\"idle\"]"
+            },
+            {
+              "click": "#menu-toggle[aria-expanded=\"false\"]",
+              "maxWidth": 800
+            },
+            {
+              "click": "#chapter-nav a[href=\"#world\"]:not([aria-current=\"page\"])",
+              "waitFor": "#scene-deck[data-active=\"world\"][data-phase=\"idle\"]"
+            },
+            {
+              "click": "#world[data-detail=\"true\"] #world-back",
+              "minWidth": 801
+            },
+            {
+              "waitFor": "#world-particles[data-model]"
+            }
+          ],
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -5791,7 +6987,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/arknights-world/style.css",
       "entries/cases/arknights-world.json",
       "docs/cases/arknights-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/pointer-image-shader-preview.jpg"
   },
   {
     "id": "pointer-repulsion-particles",
@@ -5802,7 +6999,7 @@ window.ATLAS_PATTERNS = [
       "micro-motion"
     ],
     "summary": "静态标识因指针接近而获得可触感。",
-    "mechanism": "WebGL点阵以目标点位维持形状，指针附近点按距离受排斥，移开后回归原模型；文字位于独立稳定层。",
+    "mechanism": "WebGL点阵以目标点位维持形状，指针附近点按距离受排斥，移开后回归原模型；文字位于独立稳定层。 静态呈现可停止帧调度与指针排斥，保留同源静止点阵。",
     "trigger": "指针进入、移动或离开粒子区域",
     "effect": "工业标识有局部反馈而保持整体身份。",
     "useCases": [
@@ -5824,10 +7021,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "粒子仅是装饰反馈，模型选择另有可聚焦文本按钮，所有设定说明可直接读取。",
-      "reducedMotion": "停止帧调度与指针排斥，保留同源静止点阵及完整文字。"
-    },
     "parameters": [],
     "prompt": "为【目标页面/组件】实现「指针排斥与回聚点阵」。WebGL点阵以目标点位维持形状，指针附近点按距离受排斥，移开后回归原模型；文字位于独立稳定层。触发：指针进入、移动或离开粒子区域。可见结果：工业标识有局部反馈而保持整体身份。适用任务：世界观与品牌形状探索。点位、shader与排斥方程有来源依据，额外firefly层未迁移；提供静态同源模型回退。键盘：粒子仅是装饰反馈，模型选择另有可聚焦文本按钮，所有设定说明可直接读取。减少动态：停止帧调度与指针排斥，保留同源静止点阵及完整文字。组合边界：作为一个图形区域的装饰反馈，正文与术语导航独立保持稳定。可与模型重组结合；需要正文密集阅读时缩小该舞台，不把粒子扩展到所有控件。",
     "sources": [
@@ -5837,7 +7030,32 @@ window.ATLAS_PATTERNS = [
         "observation": "WORLD使用官网Three导出、七组原始点位、粒子贴图和排斥公式；10,000粒子池中当前模型使用1785–5652点。竖屏直接打开源石详情，粒子在上/文字在下。",
         "evidence": "observed",
         "referenceUrl": "https://ak.hypergryph.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#world.active #world-particles",
+          "label": "可推开的世界点阵",
+          "instruction": "把指针移入点阵，再移开，查看附近粒子被推开后回到模型。",
+          "prepare": [
+            {
+              "waitFor": "#scene-deck[data-phase=\"idle\"]"
+            },
+            {
+              "click": "#menu-toggle[aria-expanded=\"false\"]",
+              "maxWidth": 800
+            },
+            {
+              "click": "#chapter-nav a[href=\"#world\"]:not([aria-current=\"page\"])",
+              "waitFor": "#scene-deck[data-active=\"world\"][data-phase=\"idle\"]"
+            },
+            {
+              "click": "#world:not([data-detail=\"true\"]) [data-world=\"5\"]",
+              "waitFor": "#world[data-detail=\"true\"]"
+            },
+            {
+              "waitFor": "#world-particles[data-model]"
+            }
+          ]
+        }
       },
       {
         "caseId": "arknights-world",
@@ -5845,7 +7063,32 @@ window.ATLAS_PATTERNS = [
         "observation": "WORLD指针进入点阵 → 原始排斥公式推开附近点、移走后回聚 → 让静态工业标识可被触摸；选择术语会把点阵重组成对应原站形状。",
         "evidence": "observed",
         "referenceUrl": "https://ak.hypergryph.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#world.active #world-particles",
+          "label": "可推开的世界点阵",
+          "instruction": "把指针移入点阵，再移开，查看附近粒子被推开后回到模型。",
+          "prepare": [
+            {
+              "waitFor": "#scene-deck[data-phase=\"idle\"]"
+            },
+            {
+              "click": "#menu-toggle[aria-expanded=\"false\"]",
+              "maxWidth": 800
+            },
+            {
+              "click": "#chapter-nav a[href=\"#world\"]:not([aria-current=\"page\"])",
+              "waitFor": "#scene-deck[data-active=\"world\"][data-phase=\"idle\"]"
+            },
+            {
+              "click": "#world:not([data-detail=\"true\"]) [data-world=\"5\"]",
+              "waitFor": "#world[data-detail=\"true\"]"
+            },
+            {
+              "waitFor": "#world-particles[data-model]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -5856,7 +7099,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/arknights-world/style.css",
       "entries/cases/arknights-world.json",
       "docs/cases/arknights-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/pointer-repulsion-particles.jpg"
   },
   {
     "id": "resource-bound-fullscreen-loading",
@@ -5867,7 +7111,7 @@ window.ATLAS_PATTERNS = [
       "page-motion"
     ],
     "summary": "只等待入口关键资源，以真实完成数推进，再移交可用场景。",
-    "mechanism": "入口关键图片和必要字体完成数驱动全屏加载状态；全部任务结束不等于全部成功，失败保持明确重试/继续，成功后以短品牌遮层或wipe移交目标场景。",
+    "mechanism": "入口关键图片和必要字体完成数驱动全屏加载状态；全部任务结束不等于全部成功，失败保持明确重试/继续，成功后以短品牌遮层或wipe移交目标场景。 静态模式使用文本进度与品牌静帧，资源就绪后直接进入当前章节。",
     "trigger": "首次进入或缓存重载",
     "effect": "用户看懂资源准备与失败状态，入口交接有边界，正文不会被全站素材长期阻塞。",
     "useCases": [
@@ -5879,7 +7123,7 @@ window.ATLAS_PATTERNS = [
     "constraints": [
       "失败提供重试/继续路径，只等待首屏必要资源；来源与本地图片集及保底等待分开标注。",
       "迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。",
-      "终末地的公开Updating图形与黄wipe沿源CSS；本地关键首页/干员图及字体集、任务比例、重试/继续属于适配，不声称复用了官网完整资源枚举或网络字节进度。",
+      "终末地的公开 Updating 图形与黄色 wipe 沿用源 CSS；本地关键首页、干员图与字体任务集，以及按任务完成比例显示的进度和重试/继续路径为本地适配。",
       "任务完成与成功分开：关键图失败即使显示100%也保持error/ready pending，直到重试成功或用户明确继续；目前失败重试已有实测，“继续”未单独验收。"
     ],
     "composition": {
@@ -5890,10 +7134,6 @@ window.ATLAS_PATTERNS = [
         "synchronized-rolling-index"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "载入状态提供可读进度与重试/继续按钮；就绪后焦点进入当前章节。",
-      "reducedMotion": "载入进度保持文本和静止品牌图，取消装饰运动，资源就绪后即时进入。"
     },
     "parameters": [
       {
@@ -5909,10 +7149,10 @@ window.ATLAS_PATTERNS = [
       {
         "name": "终末地入口退出",
         "value": "黄wipe scale0→1；正文1500ms序列/退出2400ms",
-        "note": "源外观与本地状态时序；本地冷载43→100、86→100，scale0/.0251998/.302011/1及opacity.625881已采帧，不冒称源同帧相等。"
+        "note": "源外观与本地状态时序；本地冷载43→100、86→100，scale0/.0251998/.302011/1及opacity.625881已采帧。"
       }
     ],
-    "prompt": "为【资源较重的入口】实现真实资源驱动的全屏载入。列出当前入口必需图片/字体，按完成任务显示进度，不按时间伪造百分比或等待全站影片/BGM；完成比例与成功条件分开。关键任务失败即使100%也显示可读错误和重试/继续，只有成功或用户明确继续才移交场景。可用静态品牌/短wipe承接退出，正文和目标章节可达；同一入口不叠第二套欢迎。明日方舟五图与终末地本地关键任务只是各自适配基线，不代表官网完整资源枚举、网络bytes或通用等待阈值。键盘可操作失败路径，加载状态用文本可读；减少动态保留真实进度并即时移交终态。分别验证冷/暖载、失败/重试和入口退出时序，源码外观、本地任务集和实测范围明确区分。",
+    "prompt": "为【资源较重的入口】实现真实资源驱动的全屏载入。列出当前入口必需图片/字体，按完成任务显示进度，不按时间伪造百分比或等待全站影片/BGM；完成比例与成功条件分开。关键任务失败即使100%也显示可读错误和重试/继续，只有成功或用户明确继续才移交场景。可用静态品牌/短wipe承接退出，正文和目标章节可达；同一入口不叠第二套欢迎。明日方舟使用五图基线，终末地使用本地关键首页、干员图与字体任务集。键盘可操作失败路径，加载状态用文本可读；减少动态保留真实进度并即时移交终态。分别验证冷/暖载、失败/重试和入口退出时序，源码外观、本地任务集和实测范围明确区分。",
     "sources": [
       {
         "caseId": "arknights-world",
@@ -5920,15 +7160,27 @@ window.ATLAS_PATTERNS = [
         "observation": "首次/缓存重载均先显示全屏LOADING；本地按五份实际图片完成数显示进度，再开放初始hash所指章节。",
         "evidence": "adapted",
         "referenceUrl": "https://ak.hypergryph.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#entry-loader:not([hidden])",
+          "label": "首屏资源载入",
+          "instruction": "重新载入时，看进度随首屏资源完成推进，再移交原章节。",
+          "phase": "loading"
+        }
       },
       {
         "caseId": "endfield-industrial",
         "locator": "entries/cases/endfield-industrial.json#interaction/0",
-        "observation": "载入与导航：使用原Updating图形和排版，本地必要首页图、干员图与字体的实际完成数推进；失败提供重试/继续。侧栏hover300ms展开，手机菜单、章节导航和自然滚动回程沿原结构。进度是任务完成比例，不声称网络字节百分比。",
+        "observation": "载入与导航：使用原Updating图形和排版，本地必要首页图、干员图与字体的实际完成数推进；失败提供重试/继续。侧栏hover300ms展开，手机菜单、章节导航和自然滚动回程沿原结构。进度按任务完成比例显示。",
         "evidence": "adapted",
         "referenceUrl": "https://endfield.hypergryph.com/",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "#entry-loader:not([hidden])",
+          "label": "Updating 资源载入",
+          "instruction": "重新载入时，看 Updating 图形与真实资源完成进度一起移交首页。",
+          "phase": "loading"
+        }
       }
     ],
     "sourceFiles": [
@@ -5948,7 +7200,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/endfield-industrial/reference.css",
       "demos/cases/endfield-industrial/state.css",
       "demos/cases/endfield-industrial/app.js"
-    ]
+    ],
+    "preview": "previews/patterns/resource-bound-fullscreen-loading.jpg"
   },
   {
     "id": "synchronized-rolling-index",
@@ -5974,15 +7227,10 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "accent",
-      "notes": "该原子负责用户从方向与编号同时识别阅读位置，职责限定在当前区域。组合时计数语义与视觉值共用当前章，减少动态直接换成稳定值。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "directional-section-wipe"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
     },
     "parameters": [
       {
@@ -5991,7 +7239,7 @@ window.ATLAS_PATTERNS = [
         "note": "各索引组的归档时序"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「编号、计数与章名分组滚动」。将编号、总数与章名放入独立裁切框，按换章方向滚出、换值、滚入，组间使用小时间差。触发：当前章节改变。可见结果：用户从方向与编号同时识别阅读位置。适用任务：全屏章切与档案系统。计数语义与视觉值共用当前章，减少动态直接换成稳定值。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责用户从方向与编号同时识别阅读位置，职责限定在当前区域。组合时计数语义与视觉值共用当前章，减少动态直接换成稳定值。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「编号、计数与章名分组滚动」。将编号、总数与章名放入独立裁切框，按换章方向滚出、换值、滚入，组间使用小时间差。触发：当前章节改变。可见结果：用户从方向与编号同时识别阅读位置。适用任务：全屏章切与档案系统。计数语义与视觉值共用当前章，减少动态直接换成稳定值。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "arknights-world",
@@ -5999,7 +7247,26 @@ window.ATLAS_PATTERNS = [
         "observation": "右索引数字、计数和章节名分组滚出/换值/滚入，与换章方向联动；Home/End、PageUp/PageDown及上下方向键可走完六章与页脚。",
         "evidence": "adapted",
         "referenceUrl": "https://ak.hypergryph.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".side-index",
+          "label": "桌面章节编号与章名",
+          "instruction": "切换顶部章节，留意右侧编号、计数和章名按同一方向滚动。",
+          "prepare": [
+            {
+              "waitFor": "#scene-deck[data-phase=\"idle\"]"
+            },
+            {
+              "click": "#menu-toggle[aria-expanded=\"false\"]",
+              "maxWidth": 800
+            },
+            {
+              "click": "#chapter-nav a[href=\"#more\"]:not([aria-current=\"page\"])",
+              "waitFor": "#scene-deck[data-active=\"more\"][data-phase=\"idle\"]"
+            }
+          ],
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -6010,7 +7277,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/arknights-world/style.css",
       "entries/cases/arknights-world.json",
       "docs/cases/arknights-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/synchronized-rolling-index.jpg"
   },
   {
     "id": "native-document-reading",
@@ -6036,7 +7304,6 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责长正文及页脚保持连续可读，职责限定在当前区域。组合时局部交互不得阻断主页面，移动与减少动态仍能走完整路径。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "native-horizontal-shelf",
         "scroll-differential-stars",
@@ -6047,12 +7314,8 @@ window.ATLAS_PATTERNS = [
         "directional-section-wipe"
       ]
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「原生长页与正常回程」。章节处于普通文档流，浏览器处理上下滚动和锚点；局部轨道、sticky或菜单各自管理状态。触发：自然滚动、反向返回或页内链接。可见结果：长正文及页脚保持连续可读。适用任务：文化、产品与活动长页。局部交互不得阻断主页面，移动与减少动态仍能走完整路径。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责长正文及页脚保持连续可读，职责限定在当前区域。组合时局部交互不得阻断主页面，移动与减少动态仍能走完整路径。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「原生长页与正常回程」。章节处于普通文档流，浏览器处理上下滚动和锚点；局部轨道、sticky或菜单各自管理状态。触发：自然滚动、反向返回或页内链接。可见结果：长正文及页脚保持连续可读。适用任务：文化、产品与活动长页。局部交互不得阻断主页面，移动与减少动态仍能走完整路径。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "met-museum",
@@ -6060,7 +7323,12 @@ window.ATLAS_PATTERNS = [
         "observation": "上下浏览：欢迎与到访信息、展览横轨、馆藏和会员按原生阅读节奏组织；不新增全屏转场。",
         "evidence": "observed",
         "referenceUrl": "https://www.metmuseum.org/en",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#membership",
+          "label": "展览、馆藏到会员的长页",
+          "instruction": "从会员区向上返回馆藏、展览与到访信息，观察页面沿正常文档顺序滚动，没有整屏切幕。"
+        }
       },
       {
         "caseId": "rijksmuseum-art",
@@ -6068,7 +7336,12 @@ window.ATLAS_PATTERNS = [
         "observation": "进入与连续上下浏览：巨大的官方字标覆盖全幅照片，浏览采用原生连续滚动。 图像先传递艺术馆的世界，后续展览逐渐替换观看内容。",
         "evidence": "observed",
         "referenceUrl": "https://www.rijksmuseum.nl/en",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#exhibitions",
+          "label": "摄影、展览与到访的连续阅读",
+          "instruction": "从这组展览往上返回全幅摄影，再向下进入到访信息，观察正常滚动与回程。"
+        }
       },
       {
         "caseId": "uma-musume",
@@ -6076,7 +7349,17 @@ window.ATLAS_PATTERNS = [
         "observation": "正常纵向浏览连接群像、新闻、About、Gameplay 和 footer，斜切条带延续赛道方向。",
         "evidence": "observed",
         "referenceUrl": "https://umamusume.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#news",
+          "label": "News 到 Gameplay 的正常长页",
+          "instruction": "从 News 向下滚到 About、Gameplay，再向上回看；章节都留在同一条长页里。",
+          "prepare": [
+            {
+              "click": ".official-nav a[href=\"#news\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "fuji-rock",
@@ -6084,7 +7367,12 @@ window.ATLAS_PATTERNS = [
         "observation": "超过Pickup后向上／向下滚动：导览条固定后按方向显隐；语言菜单400ms展开并在离开时收起。 长页浏览随时找回实用入口，同时减少遮挡。",
         "evidence": "observed",
         "referenceUrl": "https://www.fujirockfestival.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#news",
+          "label": "Featured 到日期新闻的长页",
+          "instruction": "从新闻向上返回 Featured 和实用导览，再向下继续阅读；页面保持原生长页与正常回程。"
+        }
       }
     ],
     "sourceFiles": [
@@ -6112,7 +7400,8 @@ window.ATLAS_PATTERNS = [
       "docs/cases/met-museum.md",
       "docs/cases/rijksmuseum-art.md",
       "docs/cases/uma-musume.md"
-    ]
+    ],
+    "preview": "previews/patterns/native-document-reading.jpg"
   },
   {
     "id": "responsive-art-direction",
@@ -6138,19 +7427,14 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责人物和海报在窄屏仍保持完整表达，职责限定在当前区域。组合时不同素材变体必须有真实来源与用途，不能把本地重排说成逐像素原版。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "full-bleed-photography-brand",
         "edge-action-world-composition"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「桌面与手机使用专门主图」。通过picture或响应式资源选择桌面宽图与手机专图，保留主体位置及图内文字，正文与控件按设备重新排。触发：视口进入手机断点。可见结果：人物和海报在窄屏仍保持完整表达。适用任务：有官方横竖图的展览与游戏。不同素材变体必须有真实来源与用途，不能把本地重排说成逐像素原版。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责人物和海报在窄屏仍保持完整表达，职责限定在当前区域。组合时不同素材变体必须有真实来源与用途，不能把本地重排说成逐像素原版。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「桌面与手机使用专门主图」。通过picture或响应式资源选择桌面宽图与手机专图，保留主体位置及图内文字，正文与控件按设备重新排。触发：视口进入手机断点。可见结果：人物和海报在窄屏仍保持完整表达。适用任务：有官方横竖图的展览与游戏。不同素材变体必须有真实来源与用途，不能把本地重排说成逐像素原版。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "mori-art-museum",
@@ -6158,7 +7442,13 @@ window.ATLAS_PATTERNS = [
         "observation": "大屏主图1600×640，小屏使用450×450官方专用图，不直接裁剪桌面海报。",
         "evidence": "observed",
         "referenceUrl": "https://www.mori.art.museum/jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".exhibition-hero",
+          "label": "展览主图的手机专用方图",
+          "instruction": "切换桌面与手机模式，比较横向海报和官方手机方图，图像使用专门构图而非直接裁切。",
+          "viewport": "mobile"
+        }
       },
       {
         "caseId": "fuji-rock",
@@ -6166,7 +7456,13 @@ window.ATLAS_PATTERNS = [
         "observation": "手机使用官方1200×1200图片，不单纯裁切1400×700桌面照片。",
         "evidence": "observed",
         "referenceUrl": "https://www.fujirockfestival.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".photo-hero picture",
+          "label": "手机专用的现场主图",
+          "instruction": "在桌面与手机模式间切换，比较同一场景的专用横图与方图构图，主体位置随画幅重新安排。",
+          "viewport": "mobile"
+        }
       },
       {
         "caseId": "uma-musume",
@@ -6174,7 +7470,21 @@ window.ATLAS_PATTERNS = [
         "observation": "手机使用原站竖版 KV；菜单、触摸阈值与字体排布有本地适配，减少动态取消非必要过渡。",
         "evidence": "adapted",
         "referenceUrl": "https://umamusume.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#home .hero-art",
+          "label": "手机专用主视觉",
+          "instruction": "切换桌面与手机画幅，比较人物群像、图内标题与周围控件的重新排布。",
+          "prepare": [
+            {
+              "click": "#menu-button[aria-expanded=\"false\"]"
+            },
+            {
+              "click": "#study-menu a[href=\"#home\"]"
+            }
+          ],
+          "viewport": "mobile"
+        }
       }
     ],
     "sourceFiles": [
@@ -6196,7 +7506,8 @@ window.ATLAS_PATTERNS = [
       "docs/cases/fuji-rock.md",
       "docs/cases/mori-art-museum.md",
       "docs/cases/uma-musume.md"
-    ]
+    ],
+    "preview": "previews/patterns/responsive-art-direction.jpg"
   },
   {
     "id": "scroll-logo-contraction",
@@ -6228,10 +7539,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [
       {
         "name": "来源桌面",
@@ -6252,7 +7559,17 @@ window.ATLAS_PATTERNS = [
         "observation": "滚过画布宽度 7% 后 Logo 从 2.8 倍缩回导航，反向回首恢复；300ms cubic-bezier(.19,1,.22,1)。手机 1.72 倍与菜单切换，Play Now 打开下载层。",
         "evidence": "observed",
         "referenceUrl": "https://umamusume.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".official-logo",
+          "label": "收回导航的 Logo",
+          "instruction": "先向上回到首屏，再下翻，观察左上 Logo 在主视觉大尺寸与导航尺寸之间变换。",
+          "prepare": [
+            {
+              "click": ".official-nav a[href=\"#news\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -6262,7 +7579,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/uma-musume/style.css",
       "entries/cases/uma-musume.json",
       "docs/cases/uma-musume.md"
-    ]
+    ],
+    "preview": "previews/patterns/scroll-logo-contraction.jpg"
   },
   {
     "id": "edge-action-world-composition",
@@ -6274,7 +7592,6 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "让世界视觉保持主角，下载入口仍直接可找。",
     "mechanism": "背景建立空间，中心Logo识别产品，竖排标语补充主题；下载与漫画等行动分布边缘，避免覆盖主视觉焦点。",
-    "trigger": "进入世界首页",
     "effect": "情绪、身份和行动各有位置。",
     "useCases": [
       "单屏游戏世界入口"
@@ -6288,18 +7605,13 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责情绪、身份和行动各有位置，职责限定在当前区域。组合时手机重排要保留触达，竖排装饰不得取代可读正文。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "independent-character-page"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「中心世界与边缘行动分工」。背景建立空间，中心Logo识别产品，竖排标语补充主题；下载与漫画等行动分布边缘，避免覆盖主视觉焦点。触发：进入世界首页。可见结果：情绪、身份和行动各有位置。适用任务：单屏游戏世界入口。手机重排要保留触达，竖排装饰不得取代可读正文。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责情绪、身份和行动各有位置，职责限定在当前区域。组合时手机重排要保留触达，竖排装饰不得取代可读正文。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「中心世界与边缘行动分工」。背景建立空间，中心Logo识别产品，竖排标语补充主题；下载与漫画等行动分布边缘，避免覆盖主视觉焦点。可见结果：情绪、身份和行动各有位置。适用任务：单屏游戏世界入口。手机重排要保留触达，竖排装饰不得取代可读正文。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "blue-archive",
@@ -6307,7 +7619,12 @@ window.ATLAS_PATTERNS = [
         "observation": "背景建立世界、Logo确认产品、竖排标语补充主题；下载与漫画入口形成左右分工。",
         "evidence": "observed",
         "referenceUrl": "https://bluearchive.jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#home",
+          "label": "中心世界与边缘入口",
+          "instruction": "看中央 Logo 与人物主视觉，下载、漫画和社交入口分布在两侧边缘。"
+        }
       }
     ],
     "sourceFiles": [
@@ -6318,7 +7635,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/blue-archive/style.css",
       "entries/cases/blue-archive.json",
       "docs/cases/blue-archive.md"
-    ]
+    ],
+    "preview": "previews/patterns/edge-action-world-composition.jpg"
   },
   {
     "id": "independent-character-page",
@@ -6344,19 +7662,14 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责世界观看与资料查阅各有明确入口，职责限定在当前区域。组合时保留正常链接和页面标题，不添加无来源路由淡化。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "edge-action-world-composition",
         "character-stage-coordination"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「首页世界与人物档案分别成页」。首页专注KV与页脚，CHARACTER进入独立人物文档，HOME返回世界入口；人物目录不用扩充首页长卷。触发：选择角色导航或返回HOME。可见结果：世界观看与资料查阅各有明确入口。适用任务：单屏世界首页加多角色档案。保留正常链接和页面标题，不添加无来源路由淡化。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责世界观看与资料查阅各有明确入口，职责限定在当前区域。组合时保留正常链接和页面标题，不添加无来源路由淡化。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「首页世界与人物档案分别成页」。首页专注KV与页脚，CHARACTER进入独立人物文档，HOME返回世界入口；人物目录不用扩充首页长卷。触发：选择角色导航或返回HOME。可见结果：世界观看与资料查阅各有明确入口。适用任务：单屏世界首页加多角色档案。保留正常链接和页面标题，不添加无来源路由淡化。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "blue-archive",
@@ -6364,7 +7677,13 @@ window.ATLAS_PATTERNS = [
         "observation": "首页导航 CHARACTER 打开本地独立 character.html；HOME 返回首页，首页仅 KV→footer，保留源站页面职责分离。",
         "evidence": "adapted",
         "referenceUrl": "https://bluearchive.jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#characters",
+          "label": "独立的学生档案页",
+          "instruction": "这里是独立 CHARACTER 页面；用顶部 HOME 回到主视觉，再从 CHARACTER 进入档案。",
+          "entrypoint": "demos/cases/blue-archive/character.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -6375,7 +7694,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/blue-archive/style.css",
       "entries/cases/blue-archive.json",
       "docs/cases/blue-archive.md"
-    ]
+    ],
+    "preview": "previews/patterns/independent-character-page.jpg"
   },
   {
     "id": "center-aligned-section-index",
@@ -6402,15 +7722,10 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责跳转位置和当前章节清楚，职责限定在当前区域。组合时索引强调时正文仍可辨认，小屏改为可读菜单。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "native-document-reading"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "索引button或链接有完整章节名，焦点显示标签，键盘可跳到每章。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
     },
     "parameters": [
       {
@@ -6419,7 +7734,7 @@ window.ATLAS_PATTERNS = [
         "note": "内容透明度降为0.2"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「章节中心定位的侧边索引」。侧边索引按视口中心更新，点击将目标章中心对齐；指针/焦点进入索引显示标签并降低内容强调。触发：点击索引或聚焦索引区。可见结果：跳转位置和当前章节清楚。适用任务：章节高度明确的作品长页。索引强调时正文仍可辨认，小屏改为可读菜单。键盘：索引button或链接有完整章节名，焦点显示标签，键盘可跳到每章。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责跳转位置和当前章节清楚，职责限定在当前区域。组合时索引强调时正文仍可辨认，小屏改为可读菜单。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「章节中心定位的侧边索引」。侧边索引按视口中心更新，点击将目标章中心对齐；指针/焦点进入索引显示标签并降低内容强调。触发：点击索引或聚焦索引区。可见结果：跳转位置和当前章节清楚。适用任务：章节高度明确的作品长页。索引强调时正文仍可辨认，小屏改为可读菜单。键盘：索引button或链接有完整章节名，焦点显示标签，键盘可跳到每章。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "monument-valley-game",
@@ -6427,7 +7742,21 @@ window.ATLAS_PATTERNS = [
         "observation": "桌面左侧章节索引：点击以450ms swing将章节中心对齐视口中心；悬停或键盘进入索引时，标签350ms出现、内容降至0.2透明度。",
         "evidence": "adapted",
         "referenceUrl": "https://www.monumentvalleygame.com/mv1",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".section-nav.visible",
+          "label": "桌面章节侧边索引",
+          "instruction": "点桌面左侧章节名，看目标章的中心对齐视口；把指针移入索引，会展开标签并降低正文强调。",
+          "prepare": [
+            {
+              "waitFor": "body[data-entry=\"ready\"]"
+            },
+            {
+              "click": ".section-nav a[href=\"#download\"]"
+            }
+          ],
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -6437,7 +7766,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/monument-valley-game/style.css",
       "entries/cases/monument-valley-game.json",
       "docs/cases/monument-valley-game.md"
-    ]
+    ],
+    "preview": "previews/patterns/center-aligned-section-index.jpg"
   },
   {
     "id": "reversible-center-reveal",
@@ -6463,16 +7793,11 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责奖项在阅读位置出现，回程行为一致，职责限定在当前区域。组合时减少动态始终显示全部事实，不能让隐藏状态阻挡语义阅读。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "center-aligned-section-index",
         "inline-detail-disclosure"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
     },
     "parameters": [
       {
@@ -6481,7 +7806,7 @@ window.ATLAS_PATTERNS = [
         "note": "奖项进入与离开均生效"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「穿越章节中心的双向显现」。章节中心进入视口时以短位移/透明度显示事实，中心离开恢复；手机额外事实用可收回展开替代密集首屏。触发：正向或反向穿越章节中心。可见结果：奖项在阅读位置出现，回程行为一致。适用任务：少量奖项与事实陈列。减少动态始终显示全部事实，不能让隐藏状态阻挡语义阅读。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责奖项在阅读位置出现，回程行为一致，职责限定在当前区域。组合时减少动态始终显示全部事实，不能让隐藏状态阻挡语义阅读。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「穿越章节中心的双向显现」。章节中心进入视口时以短位移/透明度显示事实，中心离开恢复；手机额外事实用可收回展开替代密集首屏。触发：正向或反向穿越章节中心。可见结果：奖项在阅读位置出现，回程行为一致。适用任务：少量奖项与事实陈列。减少动态始终显示全部事实，不能让隐藏状态阻挡语义阅读。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "monument-valley-game",
@@ -6489,7 +7814,20 @@ window.ATLAS_PATTERNS = [
         "observation": "奖项：视口中心进入/离开时，350ms opacity 0↔1、translateY 20px↔0，双向有效；手机Show All/Hide通过350ms高度变化展开/收回六项。",
         "evidence": "observed",
         "referenceUrl": "https://www.monumentvalleygame.com/mv1",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#awards.awards-active",
+          "label": "穿越章节中心的奖项显现",
+          "instruction": "上下滚过奖项区中心，查看文字短移位显现与复原；手机可用 Show All / Hide 展开或收回。",
+          "prepare": [
+            {
+              "waitFor": "body[data-entry=\"ready\"]"
+            },
+            {
+              "click": ".section-nav a[href=\"#awards\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -6499,7 +7837,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/monument-valley-game/style.css",
       "entries/cases/monument-valley-game.json",
       "docs/cases/monument-valley-game.md"
-    ]
+    ],
+    "preview": "previews/patterns/reversible-center-reveal.jpg"
   },
   {
     "id": "artwork-caption-separation",
@@ -6511,7 +7850,6 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "让作品保持自己的视觉，说明放在图外。",
     "mechanism": "海报、馆藏或艺术摄影保留原色及比例，名称、日期与来源放在图下正文，不在原图上重复绘制标题。",
-    "trigger": "浏览作品与展览目录",
     "effect": "作品表达与机构信息都可辨认。",
     "useCases": [
       "艺术作品与文化档案"
@@ -6525,7 +7863,6 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责作品表达与机构信息都可辨认，职责限定在当前区域。组合时许可范围按具体素材确认，替代文字与署名随图保留。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "native-horizontal-shelf",
         "restrained-signal-color",
@@ -6533,12 +7870,8 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「作品原图与图下题注分工」。海报、馆藏或艺术摄影保留原色及比例，名称、日期与来源放在图下正文，不在原图上重复绘制标题。触发：浏览作品与展览目录。可见结果：作品表达与机构信息都可辨认。适用任务：艺术作品与文化档案。许可范围按具体素材确认，替代文字与署名随图保留。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责作品表达与机构信息都可辨认，职责限定在当前区域。组合时许可范围按具体素材确认，替代文字与署名随图保留。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「作品原图与图下题注分工」。海报、馆藏或艺术摄影保留原色及比例，名称、日期与来源放在图下正文，不在原图上重复绘制标题。可见结果：作品表达与机构信息都可辨认。适用任务：艺术作品与文化档案。许可范围按具体素材确认，替代文字与署名随图保留。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "met-museum",
@@ -6546,7 +7879,12 @@ window.ATLAS_PATTERNS = [
         "observation": "官方建筑摄影、Sanity CDN展览海报与符合条件的Met API藏品图，本地保留比例、署名与原色。",
         "evidence": "adapted",
         "referenceUrl": "https://www.metmuseum.org/en",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#exhibitions-rail",
+          "label": "展览原图与图下题注",
+          "instruction": "看海报保留自己的比例和颜色，展名、日期和地点在图下排列，再横向浏览其他展览作比较。"
+        }
       },
       {
         "caseId": "met-museum",
@@ -6554,7 +7892,12 @@ window.ATLAS_PATTERNS = [
         "observation": "展览海报保留原视觉，不在图片上重复绘制标题或大渐变遮罩。",
         "evidence": "observed",
         "referenceUrl": "https://www.metmuseum.org/en",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#exhibitions-rail",
+          "label": "展览原图与图下题注",
+          "instruction": "看海报保留自己的比例和颜色，展名、日期和地点在图下排列，再横向浏览其他展览作比较。"
+        }
       },
       {
         "caseId": "design-sight",
@@ -6562,7 +7905,12 @@ window.ATLAS_PATTERNS = [
         "observation": "真实方丈记与TYPE-XVII海报、建筑照片、访问地图、研究照片本地化，保留原比例。",
         "evidence": "adapted",
         "referenceUrl": "https://www.2121designsight.jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#sight article:first-of-type",
+          "label": "原比例海报与图下说明",
+          "instruction": "看竖海报与下方文字保持分工；继续浏览旁边横照片，图像比例不会被统一拉成相同高度。"
+        }
       }
     ],
     "sourceFiles": [
@@ -6578,7 +7926,8 @@ window.ATLAS_PATTERNS = [
       "entries/cases/met-museum.json",
       "docs/cases/design-sight.md",
       "docs/cases/met-museum.md"
-    ]
+    ],
+    "preview": "previews/patterns/artwork-caption-separation.jpg"
   },
   {
     "id": "header-below-mobile-navigation",
@@ -6590,7 +7939,7 @@ window.ATLAS_PATTERNS = [
       "structure"
     ],
     "summary": "菜单与长档案在手机上暂时分离。",
-    "mechanism": "菜单从固定顶栏下方直接显示，汉堡图标单独形变；锁住背景并在关闭时恢复原滚动位置。",
+    "mechanism": "菜单从固定顶栏下方直接显示，汉堡图标单独形变；锁住背景并在关闭时恢复原滚动位置。 Escape 关闭菜单并将焦点还给触发按钮。",
     "trigger": "手机打开/关闭菜单",
     "effect": "机构入口可用，返回继续原内容。",
     "useCases": [
@@ -6605,15 +7954,10 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责机构入口可用，返回继续原内容，职责限定在当前区域。组合时源手机结构由公开响应式代码确认，非当次源手机现场操作。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "mixed-ratio-archive-columns"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "菜单限制焦点，Escape可关，关闭恢复触发焦点与原浏览位置。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
     },
     "parameters": [
       {
@@ -6622,7 +7966,7 @@ window.ATLAS_PATTERNS = [
         "note": "内容直接显示，汉堡形变"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「顶栏下展开并恢复阅读位置」。菜单从固定顶栏下方直接显示，汉堡图标单独形变；锁住背景并在关闭时恢复原滚动位置。触发：手机打开/关闭菜单。可见结果：机构入口可用，返回继续原内容。适用任务：浅层机构档案导航。源手机结构由公开响应式代码确认，非当次源手机现场操作。键盘：菜单限制焦点，Escape可关，关闭恢复触发焦点与原浏览位置。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责机构入口可用，返回继续原内容，职责限定在当前区域。组合时源手机结构由公开响应式代码确认，非当次源手机现场操作。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「顶栏下展开并恢复阅读位置」。菜单从固定顶栏下方直接显示，汉堡图标单独形变；锁住背景并在关闭时恢复原滚动位置。触发：手机打开/关闭菜单。可见结果：机构入口可用，返回继续原内容。适用任务：浅层机构档案导航。源手机结构由公开响应式代码确认，非当次源手机现场操作。键盘：菜单限制焦点，Escape可关，关闭恢复触发焦点与原浏览位置。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "design-sight",
@@ -6630,7 +7974,19 @@ window.ATLAS_PATTERNS = [
         "observation": "手机打开菜单／关闭：64px栏下的白色导航立即显示，hamburger350ms形变；固定页面并恢复原浏览位置。 小屏将机构入口与长档案分开，关闭后继续阅读。",
         "evidence": "inferred",
         "referenceUrl": "https://www.2121designsight.jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#mobile-menu:not([hidden])",
+          "label": "顶栏下方的手机目录",
+          "instruction": "关闭菜单后上下滚动，再重新打开与关闭，观察目录从顶栏下展开，阅读位置会保留。",
+          "prepare": [
+            {
+              "click": "#menu-toggle[aria-expanded=false]",
+              "waitFor": "#mobile-menu:not([hidden])"
+            }
+          ],
+          "viewport": "mobile"
+        }
       }
     ],
     "sourceFiles": [
@@ -6640,7 +7996,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/design-sight/style.css",
       "entries/cases/design-sight.json",
       "docs/cases/design-sight.md"
-    ]
+    ],
+    "preview": "previews/patterns/header-below-mobile-navigation.jpg"
   },
   {
     "id": "load-completion-brand-marker",
@@ -6666,15 +8023,10 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责品牌识别贯穿短暂等待，职责限定在当前区域。组合时仅等待当前首图，旋转标记不是实际数值进度，避免再叠一套通用欢迎。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "photo-crossfade-cycle"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "加载说明可读，失败时继续/重试按钮可聚焦，不困住焦点。",
-      "reducedMotion": "旋转改为静止标识，就绪后即时显示主图。"
     },
     "parameters": [
       {
@@ -6688,7 +8040,7 @@ window.ATLAS_PATTERNS = [
         "note": "load完成交接"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「资源完成后品牌标记退场」。关键图片加载期间显示轻量品牌旋转标记，load完成后载入层与主图淡化交接；失败可继续读页。触发：首屏资源完成。可见结果：品牌识别贯穿短暂等待。适用任务：海报与现场照片首屏。仅等待当前首图，旋转标记不是实际数值进度，避免再叠一套通用欢迎。键盘：加载说明可读，失败时继续/重试按钮可聚焦，不困住焦点。减少动态：旋转改为静止标识，就绪后即时显示主图。组合边界：该原子负责品牌识别贯穿短暂等待，职责限定在当前区域。组合时仅等待当前首图，旋转标记不是实际数值进度，避免再叠一套通用欢迎。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「资源完成后品牌标记退场」。关键图片加载期间显示轻量品牌旋转标记，load完成后载入层与主图淡化交接；失败可继续读页。触发：首屏资源完成。可见结果：品牌识别贯穿短暂等待。适用任务：海报与现场照片首屏。仅等待当前首图，旋转标记不是实际数值进度，避免再叠一套通用欢迎。键盘：加载说明可读，失败时继续/重试按钮可聚焦，不困住焦点。减少动态：旋转改为静止标识，就绪后即时显示主图。",
     "sources": [
       {
         "caseId": "design-sight",
@@ -6696,7 +8048,13 @@ window.ATLAS_PATTERNS = [
         "observation": "首次加载完成：全屏白色与蓝色50px旋转标记，300ms退场。 在海报加载期间保持机构识别。",
         "evidence": "inferred",
         "referenceUrl": "https://www.2121designsight.jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#entry-loader:not([hidden])",
+          "label": "资源就绪前的蓝色品牌标记",
+          "instruction": "看海报准备期间的白色加载层与蓝色旋转标记，资源就绪后它会退出；点“重播”重新载入。",
+          "phase": "loading"
+        }
       },
       {
         "caseId": "fuji-rock",
@@ -6704,7 +8062,13 @@ window.ATLAS_PATTERNS = [
         "observation": "素材载入完成：32px橙色旋转标记退出，遮层与主图1200ms线性淡化。 让真实现场图准备完毕后平稳进入。",
         "evidence": "observed",
         "referenceUrl": "https://www.fujirockfestival.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#loader:not([hidden])",
+          "label": "现场照片前的橙色加载标记",
+          "instruction": "看现场照片准备期间的橙色旋转标记，素材就绪后遮层与主图一起淡入交接；点“重播”重新载入。",
+          "phase": "loading"
+        }
       }
     ],
     "sourceFiles": [
@@ -6720,7 +8084,8 @@ window.ATLAS_PATTERNS = [
       "entries/cases/fuji-rock.json",
       "docs/cases/design-sight.md",
       "docs/cases/fuji-rock.md"
-    ]
+    ],
+    "preview": "previews/patterns/load-completion-brand-marker.jpg"
   },
   {
     "id": "mixed-ratio-archive-columns",
@@ -6732,7 +8097,6 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "统一栏目线索，不强行统一作品高度。",
     "mechanism": "栏目有共同宽度与标题规则，内部竖海报、横摄影按各自比例排列；不同内容长度产生不同列高，手机逐列阅读。",
-    "trigger": "浏览机构档案",
     "effect": "分类稳定而作品保持完整。",
     "useCases": [
       "多类型文化资料库"
@@ -6746,19 +8110,14 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责分类稳定而作品保持完整，职责限定在当前区域。组合时阅读顺序按DOM栏目组织，手机避免视觉顺序与语义顺序不同。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "artwork-caption-separation",
         "inline-detail-disclosure"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「等宽栏目保留不同图像比例」。栏目有共同宽度与标题规则，内部竖海报、横摄影按各自比例排列；不同内容长度产生不同列高，手机逐列阅读。触发：浏览机构档案。可见结果：分类稳定而作品保持完整。适用任务：多类型文化资料库。阅读顺序按DOM栏目组织，手机避免视觉顺序与语义顺序不同。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责分类稳定而作品保持完整，职责限定在当前区域。组合时阅读顺序按DOM栏目组织，手机避免视觉顺序与语义顺序不同。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「等宽栏目保留不同图像比例」。栏目有共同宽度与标题规则，内部竖海报、横摄影按各自比例排列；不同内容长度产生不同列高，手机逐列阅读。可见结果：分类稳定而作品保持完整。适用任务：多类型文化资料库。阅读顺序按DOM栏目组织，手机避免视觉顺序与语义顺序不同。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "design-sight",
@@ -6766,7 +8125,12 @@ window.ATLAS_PATTERNS = [
         "observation": "129px header、全幅16:9海报、4个等宽但内容不等高的竖列；手机单列。",
         "evidence": "observed",
         "referenceUrl": "https://www.2121designsight.jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#archive",
+          "label": "四个等宽、不等高的档案栏目",
+          "instruction": "比较四栏中的竖海报、横照片和文字，栏目等宽但保留各张图的原始比例；手机依次单列排列。"
+        }
       },
       {
         "caseId": "design-sight",
@@ -6774,7 +8138,12 @@ window.ATLAS_PATTERNS = [
         "observation": "档案图片包含竖海报与横照片，保留各自比例，不强行统一卡片高度。",
         "evidence": "observed",
         "referenceUrl": "https://www.2121designsight.jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#archive",
+          "label": "四个等宽、不等高的档案栏目",
+          "instruction": "比较四栏中的竖海报、横照片和文字，栏目等宽但保留各张图的原始比例；手机依次单列排列。"
+        }
       }
     ],
     "sourceFiles": [
@@ -6784,7 +8153,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/design-sight/style.css",
       "entries/cases/design-sight.json",
       "docs/cases/design-sight.md"
-    ]
+    ],
+    "preview": "previews/patterns/mixed-ratio-archive-columns.jpg"
   },
   {
     "id": "photo-crossfade-cycle",
@@ -6816,10 +8186,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [
       {
         "name": "来源DESIGN SIGHT",
@@ -6840,7 +8206,17 @@ window.ATLAS_PATTERNS = [
         "observation": "海报自动切换：6000ms间隔与1000ms淡化，指针经过不暂停。 保留展览视觉的完整阅读时间。",
         "evidence": "observed",
         "referenceUrl": "https://www.2121designsight.jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".poster",
+          "label": "展览海报的淡化轮换",
+          "instruction": "等待下一张海报淡化进入，也可点下方前后按钮切换；一张海报会保留足够的阅读时间。",
+          "prepare": [
+            {
+              "click": "[data-poster='1']"
+            }
+          ]
+        }
       },
       {
         "caseId": "fuji-rock",
@@ -6848,7 +8224,17 @@ window.ATLAS_PATTERNS = [
         "observation": "照片或Featured自动／手动切换：照片3600ms间隔、800ms淡化；Featured600ms中心循环，3600ms自动，手机露出两侧邻项。 照片传递现场氛围，中心轨道突出活动主题且提示还有内容。",
         "evidence": "observed",
         "referenceUrl": "https://www.fujirockfestival.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".photo-hero",
+          "label": "现场摄影的慢速淡化",
+          "instruction": "等下一张照片淡化进入，或点下方照片选择与前后按钮；手动选择后可用播放按钮恢复自动轮换。",
+          "prepare": [
+            {
+              "click": "[data-photo='1']"
+            }
+          ]
+        }
       },
       {
         "caseId": "mira-host-photography",
@@ -6856,7 +8242,12 @@ window.ATLAS_PATTERNS = [
         "observation": "首屏始终使用同一张摄影，图片加载后以 1.6 秒透明度过渡显现；CSS 中的 Ken Burns 动画设置 1.6 秒启动延迟，每个单程 24 秒，从 1.04 倍且无平移变为 1.12 倍并平移至横向 -1.5%、纵向 -1%，再交替反向往返。文字保持独立叠层；来源未实现照片切换、交叉淡化、暂停或离屏停止，减少动态时停用该动画。",
         "evidence": "observed",
         "referenceUrl": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/demo/web-design-demo/demo2-with-skill.html",
-        "capturedAt": "2026-10-27"
+        "capturedAt": "2026-10-27",
+        "focus": {
+          "target": ".hero__media",
+          "label": "同一张摄影的缓慢推移",
+          "instruction": "看首屏同一张摄影缓慢放大与平移，标题保持独立位置；这个来源不会切换照片。"
+        }
       }
     ],
     "sourceFiles": [
@@ -6876,7 +8267,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/mira-host-photography/fidelity.md",
       "entries/cases/mira-host-photography.json",
       "docs/cases/mira-host-photography.md"
-    ]
+    ],
+    "preview": "previews/patterns/photo-crossfade-cycle.jpg"
   },
   {
     "id": "compact-scroll-header",
@@ -6902,16 +8294,11 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责阅读长页时随时可访问机构入口，职责限定在当前区域。组合时转换不改变文档高度，快速反向以当前状态收束。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "institution-overlap-logo",
         "native-document-reading"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
     },
     "parameters": [
       {
@@ -6920,7 +8307,7 @@ window.ATLAS_PATTERNS = [
         "note": "50px紧凑导航"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「跨过品牌区出现紧凑导航」。顶部保留大机构标志，超过标志高度加偏移后从上方出现紧凑导航，返回顶部退出恢复大标志。触发：跨越阈值或回到首屏。可见结果：阅读长页时随时可访问机构入口。适用任务：有大标识首图的机构长页。转换不改变文档高度，快速反向以当前状态收束。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责阅读长页时随时可访问机构入口，职责限定在当前区域。组合时转换不改变文档高度，快速反向以当前状态收束。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「跨过品牌区出现紧凑导航」。顶部保留大机构标志，超过标志高度加偏移后从上方出现紧凑导航，返回顶部退出恢复大标志。触发：跨越阈值或回到首屏。可见结果：阅读长页时随时可访问机构入口。适用任务：有大标识首图的机构长页。转换不改变文档高度，快速反向以当前状态收束。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "mori-art-museum",
@@ -6928,7 +8315,19 @@ window.ATLAS_PATTERNS = [
         "observation": "滚动超过大字标+130px／返回：50px红色紧凑导航120ms从上方进入，回到顶部80ms退出恢复大字标。 长页仍能访问机构入口；进入展览时品牌不被小导航抢占。",
         "evidence": "observed",
         "referenceUrl": "https://www.mori.art.museum/jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".head.is-compact",
+          "label": "滚过大字标后的紧凑导航",
+          "instruction": "向上返回大字标，再向下滚过它，观察红色紧凑导航进入；回到顶部时恢复大字标。",
+          "prepare": [
+            {
+              "scroll": "#exhibitions",
+              "waitFor": ".head.is-compact"
+            }
+          ],
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -6938,7 +8337,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/mori-art-museum/style.css",
       "entries/cases/mori-art-museum.json",
       "docs/cases/mori-art-museum.md"
-    ]
+    ],
+    "preview": "previews/patterns/compact-scroll-header.jpg"
   },
   {
     "id": "footer-aware-back-to-top",
@@ -6964,19 +8364,14 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责回程入口始终可找，页脚信息仍完整，职责限定在当前区域。组合时对桌面/手机分别设置出现阈值，减少动态直接定位。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "compact-scroll-header",
         "native-document-reading"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「回顶入口避让页脚」。达到阅读深度后显示回顶按钮，接近页脚由fixed转为footer内部定位；返回页首后消失。触发：深入页面、接近页脚或回顶。可见结果：回程入口始终可找，页脚信息仍完整。适用任务：文化档案与长说明页。对桌面/手机分别设置出现阈值，减少动态直接定位。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责回程入口始终可找，页脚信息仍完整，职责限定在当前区域。组合时对桌面/手机分别设置出现阈值，减少动态直接定位。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「回顶入口避让页脚」。达到阅读深度后显示回顶按钮，接近页脚由fixed转为footer内部定位；返回页首后消失。触发：深入页面、接近页脚或回顶。可见结果：回程入口始终可找，页脚信息仍完整。适用任务：文化档案与长说明页。对桌面/手机分别设置出现阈值，减少动态直接定位。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "mori-art-museum",
@@ -6984,7 +8379,12 @@ window.ATLAS_PATTERNS = [
         "observation": "滚动到页面深处／页尾：回顶150ms显隐，接近页尾从fixed转为footer内定位。 回程入口可找且不挡页尾信息。",
         "evidence": "observed",
         "referenceUrl": "https://www.mori.art.museum/jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "footer",
+          "label": "回顶入口与页脚边界",
+          "instruction": "在页脚边界上下微滚动，观察右下角回顶入口从固定位置转入页脚，点它可以回到顶部。"
+        }
       }
     ],
     "sourceFiles": [
@@ -6994,7 +8394,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/mori-art-museum/style.css",
       "entries/cases/mori-art-museum.json",
       "docs/cases/mori-art-museum.md"
-    ]
+    ],
+    "preview": "previews/patterns/footer-aware-back-to-top.jpg"
   },
   {
     "id": "institution-overlap-logo",
@@ -7006,7 +8407,7 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "在艺术海报之外持续确认机构身份。",
     "mechanism": "方形机构标志叠在海报边界上，尺寸和上浮位置按断点变化；艺术图保持自身色彩与比例。",
-    "trigger": "进入展览主图",
+    "trigger": "视口进入手机断点",
     "effect": "机构身份与作品主题同时存在。",
     "useCases": [
       "展览机构的品牌首屏"
@@ -7020,7 +8421,6 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责机构身份与作品主题同时存在，职责限定在当前区域。组合时手机使用专图和合适标志尺寸，重叠区域不侵入作品关键内容。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "responsive-art-direction",
         "compact-scroll-header",
@@ -7028,12 +8428,8 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「方形机构锚点跨主图边界」。方形机构标志叠在海报边界上，尺寸和上浮位置按断点变化；艺术图保持自身色彩与比例。触发：进入展览主图。可见结果：机构身份与作品主题同时存在。适用任务：展览机构的品牌首屏。手机使用专图和合适标志尺寸，重叠区域不侵入作品关键内容。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责机构身份与作品主题同时存在，职责限定在当前区域。组合时手机使用专图和合适标志尺寸，重叠区域不侵入作品关键内容。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「方形机构锚点跨主图边界」。方形机构标志叠在海报边界上，尺寸和上浮位置按断点变化；艺术图保持自身色彩与比例。触发：视口进入手机断点。可见结果：机构身份与作品主题同时存在。适用任务：展览机构的品牌首屏。手机使用专图和合适标志尺寸，重叠区域不侵入作品关键内容。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "mori-art-museum",
@@ -7041,7 +8437,12 @@ window.ATLAS_PATTERNS = [
         "observation": "桌面左叠加240px方形馆标（x30/y130），宽2.5:1海报自y160开始；手机160px馆标与官方方图，后续四列展览、三列推荐、四列新闻。",
         "evidence": "observed",
         "referenceUrl": "https://www.mori.art.museum/jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".exhibition-hero",
+          "label": "跨海报边界的方形馆标",
+          "instruction": "比较左侧方形馆标与展览主图的重叠边界，馆标形成固定机构锚点，海报保留自己的视觉。"
+        }
       }
     ],
     "sourceFiles": [
@@ -7051,7 +8452,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/mori-art-museum/style.css",
       "entries/cases/mori-art-museum.json",
       "docs/cases/mori-art-museum.md"
-    ]
+    ],
+    "preview": "previews/patterns/institution-overlap-logo.jpg"
   },
   {
     "id": "directional-sticky-navigation",
@@ -7077,19 +8479,14 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责用户回找时能导航，继续读时减少遮挡，职责限定在当前区域。组合时设置合理方向阈值，焦点或打开目录时保持可见。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "native-document-reading",
         "mountain-scaled-menu"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「向上找回、向下让位的导览条」。跨过指定内容区后导览固定，向上滚动显现、向下收起；语言目录在离开时合拢。触发：阈值后上下滚动。可见结果：用户回找时能导航，继续读时减少遮挡。适用任务：较长活动与内容门户。设置合理方向阈值，焦点或打开目录时保持可见。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责用户回找时能导航，继续读时减少遮挡，职责限定在当前区域。组合时设置合理方向阈值，焦点或打开目录时保持可见。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「向上找回、向下让位的导览条」。跨过指定内容区后导览固定，向上滚动显现、向下收起；语言目录在离开时合拢。触发：阈值后上下滚动。可见结果：用户回找时能导航，继续读时减少遮挡。适用任务：较长活动与内容门户。设置合理方向阈值，焦点或打开目录时保持可见。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "fuji-rock",
@@ -7097,7 +8494,12 @@ window.ATLAS_PATTERNS = [
         "observation": "超过Pickup后向上／向下滚动：导览条固定后按方向显隐；语言菜单400ms展开并在离开时收起。 长页浏览随时找回实用入口，同时减少遮挡。",
         "evidence": "observed",
         "referenceUrl": "https://www.fujirockfestival.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".pickup",
+          "label": "随滚动方向显隐的实用导览",
+          "instruction": "向下滚过这组导览，再向上回一点，观察固定导览重新出现；继续向下时它会让出阅读空间。"
+        }
       }
     ],
     "sourceFiles": [
@@ -7107,7 +8509,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/fuji-rock/style.css",
       "entries/cases/fuji-rock.json",
       "docs/cases/fuji-rock.md"
-    ]
+    ],
+    "preview": "previews/patterns/directional-sticky-navigation.jpg"
   },
   {
     "id": "mountain-scaled-menu",
@@ -7133,15 +8536,10 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责导航成为前景，现场照片仍可感知，职责限定在当前区域。组合时焦点与滚动锁只在菜单开启时有效，减少动态直接显示目录。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "last-request-transition"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
     },
     "parameters": [
       {
@@ -7150,7 +8548,7 @@ window.ATLAS_PATTERNS = [
         "note": "背景1s淡到0.25"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「菜单缩放倾转与背景降强调」。山形菜单控制打开目录，菜单由缩小/倾转状态进入，背景缓慢降低透明度；反向关闭从当前变换继续。触发：打开、关闭或快速反向菜单。可见结果：导航成为前景，现场照片仍可感知。适用任务：有具体品牌形态的活动导航。焦点与滚动锁只在菜单开启时有效，减少动态直接显示目录。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责导航成为前景，现场照片仍可感知，职责限定在当前区域。组合时焦点与滚动锁只在菜单开启时有效，减少动态直接显示目录。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「菜单缩放倾转与背景降强调」。山形菜单控制打开目录，菜单由缩小/倾转状态进入，背景缓慢降低透明度；反向关闭从当前变换继续。触发：打开、关闭或快速反向菜单。可见结果：导航成为前景，现场照片仍可感知。适用任务：有具体品牌形态的活动导航。焦点与滚动锁只在菜单开启时有效，减少动态直接显示目录。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "fuji-rock",
@@ -7158,7 +8556,18 @@ window.ATLAS_PATTERNS = [
         "observation": "打开／关闭山形菜单：菜单400ms scale(.88)+rotate3d(.5,0,0,1rad)进出，页面背景1秒淡到.25。 放大导览层级，同时保留现场的空间背景。",
         "evidence": "observed",
         "referenceUrl": "https://www.fujirockfestival.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#mega-menu:not([hidden]) .menu-panel",
+          "label": "缩放倾转的山形菜单",
+          "instruction": "用右上角关闭菜单，再重新打开，观察菜单缩放倾转、现场背景同时降低强调。",
+          "prepare": [
+            {
+              "click": "#menu-toggle[aria-expanded=false]",
+              "waitFor": "#mega-menu:not([hidden])"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -7168,7 +8577,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/fuji-rock/style.css",
       "entries/cases/fuji-rock.json",
       "docs/cases/fuji-rock.md"
-    ]
+    ],
+    "preview": "previews/patterns/mountain-scaled-menu.jpg"
   },
   {
     "id": "permanent-event-metadata",
@@ -7180,7 +8590,6 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "场景摄影变化时实用信息仍有位置。",
     "mechanism": "日期、地点与导览保持稳定位置，边缘票据入口独立于照片；Featured与新闻各承担不同后续任务。",
-    "trigger": "照片更替和长页浏览",
     "effect": "用户不必反复寻找活动事实。",
     "useCases": [
       "节日与活动首页"
@@ -7194,19 +8603,14 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责用户不必反复寻找活动事实，职责限定在当前区域。组合时快照日期与活动状态明确，实际票务链接不能伪造成功。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "photo-crossfade-cycle",
         "directional-sticky-navigation"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「常驻日期与边缘票据入口」。日期、地点与导览保持稳定位置，边缘票据入口独立于照片；Featured与新闻各承担不同后续任务。触发：照片更替和长页浏览。可见结果：用户不必反复寻找活动事实。适用任务：节日与活动首页。快照日期与活动状态明确，实际票务链接不能伪造成功。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责用户不必反复寻找活动事实，职责限定在当前区域。组合时快照日期与活动状态明确，实际票务链接不能伪造成功。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「常驻日期与边缘票据入口」。日期、地点与导览保持稳定位置，边缘票据入口独立于照片；Featured与新闻各承担不同后续任务。可见结果：用户不必反复寻找活动事实。适用任务：节日与活动首页。快照日期与活动状态明确，实际票务链接不能伪造成功。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "fuji-rock",
@@ -7214,7 +8618,12 @@ window.ATLAS_PATTERNS = [
         "observation": "日期地点保持常驻，照片先传递场景，实用入口其次，Featured与按日期排列新闻承担浏览与回看。",
         "evidence": "observed",
         "referenceUrl": "https://www.fujirockfestival.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".photo-hero .ticket, .photo-hero",
+          "label": "常驻日期、地点与票据入口",
+          "instruction": "看现场摄影周围的日期、地点和边缘票据入口，再上下浏览，比较这些实用信息的持续位置。"
+        }
       }
     ],
     "sourceFiles": [
@@ -7224,7 +8633,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/fuji-rock/style.css",
       "entries/cases/fuji-rock.json",
       "docs/cases/fuji-rock.md"
-    ]
+    ],
+    "preview": "previews/patterns/permanent-event-metadata.jpg"
   },
   {
     "id": "full-bleed-photography-brand",
@@ -7236,7 +8646,6 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "图像建立情境，字标建立身份。",
     "mechanism": "摄影铺满约一个视口，完整品牌字标叠于图上，简短专题文字与行动定位边缘；普通滚动更换专题。",
-    "trigger": "首次观看或滚到下一专题",
     "effect": "作品世界成为首要感受。",
     "useCases": [
       "强摄影艺术馆与作品集"
@@ -7250,7 +8659,6 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责作品世界成为首要感受，职责限定在当前区域。组合时手机使用稳定视口单位和正确图像版本，字标保持原比例，行动有足够对比。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "photo-edge-text-contrast",
         "fullscreen-photography-menu",
@@ -7258,12 +8666,8 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「全幅摄影与巨大完整字标」。摄影铺满约一个视口，完整品牌字标叠于图上，简短专题文字与行动定位边缘；普通滚动更换专题。触发：首次观看或滚到下一专题。可见结果：作品世界成为首要感受。适用任务：强摄影艺术馆与作品集。手机使用稳定视口单位和正确图像版本，字标保持原比例，行动有足够对比。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责作品世界成为首要感受，职责限定在当前区域。组合时手机使用稳定视口单位和正确图像版本，字标保持原比例，行动有足够对比。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「全幅摄影与巨大完整字标」。摄影铺满约一个视口，完整品牌字标叠于图上，简短专题文字与行动定位边缘；普通滚动更换专题。可见结果：作品世界成为首要感受。适用任务：强摄影艺术馆与作品集。手机使用稳定视口单位和正确图像版本，字标保持原比例，行动有足够对比。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "rijksmuseum-art",
@@ -7271,7 +8675,12 @@ window.ATLAS_PATTERNS = [
         "observation": "进入与连续上下浏览：巨大的官方字标覆盖全幅照片，浏览采用原生连续滚动。 图像先传递艺术馆的世界，后续展览逐渐替换观看内容。",
         "evidence": "observed",
         "referenceUrl": "https://www.rijksmuseum.nl/en",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".hero",
+          "label": "全幅摄影上的巨大字标",
+          "instruction": "看完整机构字标覆盖全幅摄影，继续往下滚动，后续展览照片逐渐接替首屏。"
+        }
       }
     ],
     "sourceFiles": [
@@ -7281,7 +8690,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/rijksmuseum-art/style.css",
       "entries/cases/rijksmuseum-art.json",
       "docs/cases/rijksmuseum-art.md"
-    ]
+    ],
+    "preview": "previews/patterns/full-bleed-photography-brand.jpg"
   },
   {
     "id": "fullscreen-photography-menu",
@@ -7308,15 +8718,10 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责长目录仍属于艺术馆的视觉世界，职责限定在当前区域。组合时全屏层焦点限制、Escape和关闭恢复完整，减少动态直接切换。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "full-bleed-photography-brand"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
     },
     "parameters": [
       {
@@ -7325,7 +8730,7 @@ window.ATLAS_PATTERNS = [
         "note": "当前CSS淡入/淡出"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「摄影与分列链接组成全屏目录」。打开菜单时全屏摄影和目的地链接成组淡入，关闭淡出并返回原阅读位置；目录层和主页面层职责分开。触发：打开或关闭菜单。可见结果：长目录仍属于艺术馆的视觉世界。适用任务：摄影品牌的全屏导航。全屏层焦点限制、Escape和关闭恢复完整，减少动态直接切换。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责长目录仍属于艺术馆的视觉世界，职责限定在当前区域。组合时全屏层焦点限制、Escape和关闭恢复完整，减少动态直接切换。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「摄影与分列链接组成全屏目录」。打开菜单时全屏摄影和目的地链接成组淡入，关闭淡出并返回原阅读位置；目录层和主页面层职责分开。触发：打开或关闭菜单。可见结果：长目录仍属于艺术馆的视觉世界。适用任务：摄影品牌的全屏导航。全屏层焦点限制、Escape和关闭恢复完整，减少动态直接切换。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "rijksmuseum-art",
@@ -7333,7 +8738,18 @@ window.ATLAS_PATTERNS = [
         "observation": "打开／关闭菜单：全屏菜单500ms线性淡入淡出，图像与分列链接同时建立目的地。 给导航独立的视觉场景，保持品牌和空间关系。",
         "evidence": "observed",
         "referenceUrl": "https://www.rijksmuseum.nl/en",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#menu:not([hidden])",
+          "label": "摄影与分列链接的全屏目录",
+          "instruction": "用左上角关闭后再打开菜单，观察整层摄影和分列链接淡入；每组链接提供具体目的地。",
+          "prepare": [
+            {
+              "click": "#menu-toggle[aria-expanded=false]",
+              "waitFor": "#menu:not([hidden])"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -7343,7 +8759,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/rijksmuseum-art/style.css",
       "entries/cases/rijksmuseum-art.json",
       "docs/cases/rijksmuseum-art.md"
-    ]
+    ],
+    "preview": "previews/patterns/fullscreen-photography-menu.jpg"
   },
   {
     "id": "photo-edge-text-contrast",
@@ -7355,7 +8772,6 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "局部文字能读，整张照片保持原色。",
     "mechanism": "在底缘文字所在区域加有限黑色渐变，白字、橙色行动与摄影形成稳定角色，其他图像区域不整体滤镜化。",
-    "trigger": "查看照片底部标题和行动",
     "effect": "文字清楚但作品未被全图调色。",
     "useCases": [
       "全幅摄影和主视觉"
@@ -7369,19 +8785,14 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责文字清楚但作品未被全图调色，职责限定在当前区域。组合时针对每张照片测试对比，必要时给动作独立表面。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "full-bleed-photography-brand",
         "restrained-signal-color"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「仅在照片文字边缘增强对比」。在底缘文字所在区域加有限黑色渐变，白字、橙色行动与摄影形成稳定角色，其他图像区域不整体滤镜化。触发：查看照片底部标题和行动。可见结果：文字清楚但作品未被全图调色。适用任务：全幅摄影和主视觉。针对每张照片测试对比，必要时给动作独立表面。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责文字清楚但作品未被全图调色，职责限定在当前区域。组合时针对每张照片测试对比，必要时给动作独立表面。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「仅在照片文字边缘增强对比」。在底缘文字所在区域加有限黑色渐变，白字、橙色行动与摄影形成稳定角色，其他图像区域不整体滤镜化。可见结果：文字清楚但作品未被全图调色。适用任务：全幅摄影和主视觉。针对每张照片测试对比，必要时给动作独立表面。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "rijksmuseum-art",
@@ -7389,7 +8800,12 @@ window.ATLAS_PATTERNS = [
         "observation": "照片底部加局部黑色渐变支撑文字对比；不对整张照片做滤镜风格化。",
         "evidence": "observed",
         "referenceUrl": "https://www.rijksmuseum.nl/en",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#family .caption",
+          "label": "照片边缘的文字对比",
+          "instruction": "看照片下缘文字周围的局部暗部，画面上方仍保留原始摄影的亮度与颜色。"
+        }
       }
     ],
     "sourceFiles": [
@@ -7399,7 +8815,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/rijksmuseum-art/style.css",
       "entries/cases/rijksmuseum-art.json",
       "docs/cases/rijksmuseum-art.md"
-    ]
+    ],
+    "preview": "previews/patterns/photo-edge-text-contrast.jpg"
   },
   {
     "id": "direct-purpose-navigation",
@@ -7425,7 +8842,6 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责任务路径直接可读，职责限定在当前区域。组合时真实目的地和链接保留，搜索/作品dialog为本地练习时明确边界。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "visit-facts-grid",
         "sticky-action-sidebar"
@@ -7434,12 +8850,8 @@ window.ATLAS_PATTERNS = [
         "top-down-clipped-menu"
       ]
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「机构目的地即时展开」。点击目的类别立即显示相应目的地列表，层级结构留在同一导航区域；小屏可以在文档流展开。触发：打开Visit或主菜单类别。可见结果：任务路径直接可读。适用任务：文化机构与实用内容门户。真实目的地和链接保留，搜索/作品dialog为本地练习时明确边界。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责任务路径直接可读，职责限定在当前区域。组合时真实目的地和链接保留，搜索/作品dialog为本地练习时明确边界。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「机构目的地即时展开」。点击目的类别立即显示相应目的地列表，层级结构留在同一导航区域；小屏可以在文档流展开。触发：打开Visit或主菜单类别。可见结果：任务路径直接可读。适用任务：文化机构与实用内容门户。真实目的地和链接保留，搜索/作品dialog为本地练习时明确边界。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "met-museum",
@@ -7447,7 +8859,22 @@ window.ATLAS_PATTERNS = [
         "observation": "打开导航：Visit等目的地立即展开；键盘焦点可操作，局部搜索与作品dialog为本地练习补充。",
         "evidence": "adapted",
         "referenceUrl": "https://www.metmuseum.org/en",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#nav-panel:not([hidden])",
+          "label": "Visit 等机构目的地",
+          "instruction": "在 Visit、Exhibitions、Art 之间切换，查看各目的地的即时展开；手机先用菜单按钮打开导航。",
+          "prepare": [
+            {
+              "click": "[data-menu=visit]",
+              "minWidth": 761
+            },
+            {
+              "click": "#mobile-menu[aria-expanded=false]",
+              "maxWidth": 760
+            }
+          ]
+        }
       },
       {
         "caseId": "philharmonie-music",
@@ -7455,7 +8882,18 @@ window.ATLAS_PATTERNS = [
         "observation": "打开主菜单和类别：浅灰全宽导航立即出现，类别切换为目的地列表；小屏菜单在页面流中展开。 机构多种活动保留层级，交互保持直接。",
         "evidence": "observed",
         "referenceUrl": "https://philharmoniedeparis.fr/fr/activite/exposition/28822-video-games-music",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#menu:not([hidden])",
+          "label": "机构目的地菜单",
+          "instruction": "点 Concerts、Musée 等类别，查看对应目的地列表；Retour 可回到总目录。",
+          "prepare": [
+            {
+              "click": "#menu-toggle[aria-expanded=false]",
+              "waitFor": "#menu:not([hidden])"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -7471,7 +8909,8 @@ window.ATLAS_PATTERNS = [
       "entries/cases/philharmonie-music.json",
       "docs/cases/met-museum.md",
       "docs/cases/philharmonie-music.md"
-    ]
+    ],
+    "preview": "previews/patterns/direct-purpose-navigation.jpg"
   },
   {
     "id": "visit-facts-grid",
@@ -7483,7 +8922,6 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "实体机构介绍后直接给到访依据。",
     "mechanism": "建筑或展览视觉确认机构后，欢迎区用稳定小列组织日期、开放、地点和行动；手机按事实顺序堆叠。",
-    "trigger": "从首图继续阅读",
     "effect": "访客无需穿越宣传段落就能找到实用信息。",
     "useCases": [
       "博物馆与活动入口"
@@ -7497,19 +8935,14 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责访客无需穿越宣传段落就能找到实用信息，职责限定在当前区域。组合时归档日期与现场运营事实分开，真实预约入口外链或连接真实服务。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "artwork-caption-separation",
         "sticky-action-sidebar"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「到访事实在行动旁成组呈现」。建筑或展览视觉确认机构后，欢迎区用稳定小列组织日期、开放、地点和行动；手机按事实顺序堆叠。触发：从首图继续阅读。可见结果：访客无需穿越宣传段落就能找到实用信息。适用任务：博物馆与活动入口。归档日期与现场运营事实分开，真实预约入口外链或连接真实服务。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责访客无需穿越宣传段落就能找到实用信息，职责限定在当前区域。组合时归档日期与现场运营事实分开，真实预约入口外链或连接真实服务。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「到访事实在行动旁成组呈现」。建筑或展览视觉确认机构后，欢迎区用稳定小列组织日期、开放、地点和行动；手机按事实顺序堆叠。可见结果：访客无需穿越宣传段落就能找到实用信息。适用任务：博物馆与活动入口。归档日期与现场运营事实分开，真实预约入口外链或连接真实服务。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "met-museum",
@@ -7517,7 +8950,12 @@ window.ATLAS_PATTERNS = [
         "observation": "建筑图像呈现实体空间，欢迎区提供行动，四列信息减轻到访决策，展览海报与馆藏引导浏览。",
         "evidence": "observed",
         "referenceUrl": "https://www.metmuseum.org/en",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#visit-info",
+          "label": "到访行动旁的四组事实",
+          "instruction": "比较开放时间、地点等到访事实怎样在同一组网格中排列，并与上方到访行动相邻。"
+        }
       }
     ],
     "sourceFiles": [
@@ -7527,7 +8965,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/met-museum/style.css",
       "entries/cases/met-museum.json",
       "docs/cases/met-museum.md"
-    ]
+    ],
+    "preview": "previews/patterns/visit-facts-grid.jpg"
   },
   {
     "id": "activity-title-ticket-overlap",
@@ -7539,7 +8978,6 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "视觉主题与行动面板处于同一视线。",
     "mechanism": "大主视觉左下放活动名称，右侧白色票务面板跨越主图/内容边界，后续正文约两列，行动约一列。",
-    "trigger": "查看活动首屏并继续阅读",
     "effect": "情境、日期和预约入口关联。",
     "useCases": [
       "展览与演出详情"
@@ -7553,19 +8991,14 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责情境、日期和预约入口关联，职责限定在当前区域。组合时手机票务回文档流，作品署名与主图主题保留。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "sticky-action-sidebar",
         "responsive-art-direction"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「活动标题与票务跨区并置」。大主视觉左下放活动名称，右侧白色票务面板跨越主图/内容边界，后续正文约两列，行动约一列。触发：查看活动首屏并继续阅读。可见结果：情境、日期和预约入口关联。适用任务：展览与演出详情。手机票务回文档流，作品署名与主图主题保留。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责情境、日期和预约入口关联，职责限定在当前区域。组合时手机票务回文档流，作品署名与主图主题保留。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「活动标题与票务跨区并置」。大主视觉左下放活动名称，右侧白色票务面板跨越主图/内容边界，后续正文约两列，行动约一列。可见结果：情境、日期和预约入口关联。适用任务：展览与演出详情。手机票务回文档流，作品署名与主图主题保留。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "philharmonie-music",
@@ -7573,7 +9006,12 @@ window.ATLAS_PATTERNS = [
         "observation": "主视觉左下活动名，右侧票务面板上浮；长正文与侧栏分工，手机票务回到文档流。",
         "evidence": "observed",
         "referenceUrl": "https://philharmoniedeparis.fr/fr/activite/exposition/28822-video-games-music",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".hero-title",
+          "label": "活动名称与票务跨区并置",
+          "instruction": "对比主视觉左下的活动名称与右侧上浮票务，活动身份和来访行动在同一视野内出现。"
+        }
       }
     ],
     "sourceFiles": [
@@ -7583,7 +9021,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/philharmonie-music/style.css",
       "entries/cases/philharmonie-music.json",
       "docs/cases/philharmonie-music.md"
-    ]
+    ],
+    "preview": "previews/patterns/activity-title-ticket-overlap.jpg"
   },
   {
     "id": "sticky-action-sidebar",
@@ -7595,7 +9034,7 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "内容阅读和到访决定并行。",
     "mechanism": "桌面正文旁的票务/行动面板保持sticky，时间与价格在面板内展开；窄屏把面板置回内容流前部。",
-    "trigger": "阅读长详情",
+    "trigger": "长页滚动或视口进入手机断点",
     "effect": "用户无需找回行动，小屏正文不被遮挡。",
     "useCases": [
       "活动详情与可行动长文"
@@ -7609,7 +9048,6 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责用户无需找回行动，小屏正文不被遮挡，职责限定在当前区域。组合时粘性区域不超过可用视口，行动连接真实服务，归档信息标注观察日。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "inline-detail-disclosure",
         "visit-facts-grid"
@@ -7619,12 +9057,8 @@ window.ATLAS_PATTERNS = [
         "directional-section-wipe"
       ]
     },
-    "accessibility": {
-      "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「桌面粘性行动栏、手机回文档流」。桌面正文旁的票务/行动面板保持sticky，时间与价格在面板内展开；窄屏把面板置回内容流前部。触发：阅读长详情。可见结果：用户无需找回行动，小屏正文不被遮挡。适用任务：活动详情与可行动长文。粘性区域不超过可用视口，行动连接真实服务，归档信息标注观察日。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责用户无需找回行动，小屏正文不被遮挡，职责限定在当前区域。组合时粘性区域不超过可用视口，行动连接真实服务，归档信息标注观察日。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「桌面粘性行动栏、手机回文档流」。桌面正文旁的票务/行动面板保持sticky，时间与价格在面板内展开；窄屏把面板置回内容流前部。触发：长页滚动或视口进入手机断点。可见结果：用户无需找回行动，小屏正文不被遮挡。适用任务：活动详情与可行动长文。粘性区域不超过可用视口，行动连接真实服务，归档信息标注观察日。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "philharmonie-music",
@@ -7632,7 +9066,13 @@ window.ATLAS_PATTERNS = [
         "observation": "浏览展览／音乐会详情：原生长页与桌面sticky票务，小屏票务回文档流。 活动内容与来访决定并行，小屏避免固定面板遮挡正文。",
         "evidence": "observed",
         "referenceUrl": "https://philharmoniedeparis.fr/fr/activite/exposition/28822-video-games-music",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".booking",
+          "label": "随正文保留的票务侧栏",
+          "instruction": "上下滚动长正文，观察桌面票务栏保持可用；切手机模式后，票务回到正常文档流。",
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -7642,7 +9082,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/philharmonie-music/style.css",
       "entries/cases/philharmonie-music.json",
       "docs/cases/philharmonie-music.md"
-    ]
+    ],
+    "preview": "previews/patterns/sticky-action-sidebar.jpg"
   },
   {
     "id": "layered-navigation-drawer",
@@ -7668,15 +9109,10 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责用户看懂层级变化发生在哪里，职责限定在当前区域。组合时二级内容出现前不允许焦点进入隐藏层，降低动态即时完成。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "mobile-drilldown-menu"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
     },
     "parameters": [
       {
@@ -7685,7 +9121,7 @@ window.ATLAS_PATTERNS = [
         "note": "固定页面公开样式参数"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「导航容器先行、内容后入」。先让侧向导航容器进入，再延迟显示二级内容；返回保留相同空间位置，关闭恢复触发焦点。触发：进入目录或二级主题。可见结果：用户看懂层级变化发生在哪里。适用任务：文档目录与组件学习站。二级内容出现前不允许焦点进入隐藏层，降低动态即时完成。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责用户看懂层级变化发生在哪里，职责限定在当前区域。组合时二级内容出现前不允许焦点进入隐藏层，降低动态即时完成。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「导航容器先行、内容后入」。先让侧向导航容器进入，再延迟显示二级内容；返回保留相同空间位置，关闭恢复触发焦点。触发：进入目录或二级主题。可见结果：用户看懂层级变化发生在哪里。适用任务：文档目录与组件学习站。二级内容出现前不允许焦点进入隐藏层，降低动态即时完成。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "google-material",
@@ -7693,7 +9129,23 @@ window.ATLAS_PATTERNS = [
         "observation": "进入目录或二级主题：300ms侧向抽屉；二级内容200ms延后再200ms淡入。 导航容器保持连续，内容层级在同一位置变化。",
         "evidence": "observed",
         "referenceUrl": "https://m3.material.io/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#directory[open]",
+          "label": "侧向目录与二级内容",
+          "instruction": "关闭后再打开目录，观察容器先进入；在手机主目录选择 Styles 等分类，可看二级内容在原位置后续进入。",
+          "prepare": [
+            {
+              "click": ".rail [data-directory=Styles]",
+              "minWidth": 601
+            },
+            {
+              "click": "#open-menu[aria-expanded=false]",
+              "waitFor": "#directory[open]",
+              "maxWidth": 600
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -7703,7 +9155,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/google-material/style.css",
       "entries/cases/google-material.json",
       "docs/cases/google-material.md"
-    ]
+    ],
+    "preview": "previews/patterns/layered-navigation-drawer.jpg"
   },
   {
     "id": "semantic-theme-roles",
@@ -7729,19 +9182,14 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责深浅环境中阅读与品牌层级都保持一致，职责限定在当前区域。组合时本例系统变化清除手动值的来源策略不必泛化；目标任务需说明优先级。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "state-shape-feedback",
         "system-theme-without-toggle"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "主题开关可聚焦、有当前名称/状态；系统策略同时以文字说明。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「语义颜色角色整体切换」。按surface/on-surface、primary/on-primary等角色一起切换，保存手动值并明确系统变化时的优先规则，媒体保持原色。触发：手动选择或系统主题改变。可见结果：深浅环境中阅读与品牌层级都保持一致。适用任务：有双主题设计的系统与产品。本例系统变化清除手动值的来源策略不必泛化；目标任务需说明优先级。键盘：主题开关可聚焦、有当前名称/状态；系统策略同时以文字说明。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责深浅环境中阅读与品牌层级都保持一致，职责限定在当前区域。组合时本例系统变化清除手动值的来源策略不必泛化；目标任务需说明优先级。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「语义颜色角色整体切换」。按surface/on-surface、primary/on-primary等角色一起切换，保存手动值并明确系统变化时的优先规则，媒体保持原色。触发：手动选择或系统主题改变。可见结果：深浅环境中阅读与品牌层级都保持一致。适用任务：有双主题设计的系统与产品。本例系统变化清除手动值的来源策略不必泛化；目标任务需说明优先级。键盘：主题开关可聚焦、有当前名称/状态；系统策略同时以文字说明。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "google-material",
@@ -7749,7 +9197,18 @@ window.ATLAS_PATTERNS = [
         "observation": "切换主题／系统主题变化：深浅语义角色切换；手动值保存，OS变化清除保存值。 让可读性适应环境，同时保持品牌图像与层级。",
         "evidence": "observed",
         "referenceUrl": "https://m3.material.io/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".rail [data-action=theme], #directory[open] [data-action=theme]",
+          "label": "语义角色的主题切换",
+          "instruction": "点侧栏明暗主题按钮，比较背景、文字、卡片和按钮一起切换，品牌媒体保持原色。",
+          "prepare": [
+            {
+              "click": "#open-menu[aria-expanded=false]",
+              "maxWidth": 600
+            }
+          ]
+        }
       },
       {
         "caseId": "uiarc-platform",
@@ -7757,7 +9216,12 @@ window.ATLAS_PATTERNS = [
         "observation": "主题按钮在系统默认与手动选择之间协调页面表面、文字、边界和导航；点击后通过 View Transition 让新主题从横向中线向上下展开，390ms、cubic-bezier(.22,1,.36,1)，完成后清理过渡状态。首尾粉蓝黄渐变面板和产品影片保持原色，减少动态直接完成切换。",
         "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "header",
+          "label": "明暗主题控件",
+          "instruction": "点顶栏的明暗按钮，对比正文、卡片和边框一起变化，影片与渐变面板保留原色。"
+        }
       }
     ],
     "sourceFiles": [
@@ -7775,7 +9239,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/uiarc-platform/fidelity.md",
       "demos/cases/uiarc-platform/source/content.json",
       "demos/cases/uiarc-platform/source/components.tsx"
-    ]
+    ],
+    "preview": "previews/patterns/semantic-theme-roles.jpg"
   },
   {
     "id": "state-shape-feedback",
@@ -7801,15 +9266,10 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "accent",
-      "notes": "该原子负责操作有可辨识的形态反馈，职责限定在当前区域。组合时原首页为具体时间曲线，不能以物理弹簧理论冒充页面证据。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "semantic-theme-roles"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
     },
     "parameters": [
       {
@@ -7818,7 +9278,7 @@ window.ATLAS_PATTERNS = [
         "note": "200/300ms cubic-bezier(.2,0,0,1)"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「按压与聚焦改变容器形状」。控件按压/键盘激活时按角色改变圆角，状态层同时改变；反馈留在稳定布局与触控边界内。触发：激活按钮或资源卡。可见结果：操作有可辨识的形态反馈。适用任务：设计系统与表现力组件。原首页为具体时间曲线，不能以物理弹簧理论冒充页面证据。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责操作有可辨识的形态反馈，职责限定在当前区域。组合时原首页为具体时间曲线，不能以物理弹簧理论冒充页面证据。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「按压与聚焦改变容器形状」。控件按压/键盘激活时按角色改变圆角，状态层同时改变；反馈留在稳定布局与触控边界内。触发：激活按钮或资源卡。可见结果：操作有可辨识的形态反馈。适用任务：设计系统与表现力组件。原首页为具体时间曲线，不能以物理弹簧理论冒充页面证据。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "google-material",
@@ -7826,7 +9286,12 @@ window.ATLAS_PATTERNS = [
         "observation": "点击或键盘激活按钮／卡片：CTA圆角48→16px，资源卡24→48px；200/300ms cubic-bezier(.2,0,0,1)。 形状与状态层共同表达当前动作，界面表现力来自一致的反馈。",
         "evidence": "observed",
         "referenceUrl": "https://m3.material.io/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#io .cards-row",
+          "label": "卡片的按压与聚焦形状",
+          "instruction": "按住或用 Tab 聚焦资源卡，观察容器圆角与状态层；主行动按钮也使用对应的形状反馈。"
+        }
       }
     ],
     "sourceFiles": [
@@ -7836,7 +9301,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/google-material/style.css",
       "entries/cases/google-material.json",
       "docs/cases/google-material.md"
-    ]
+    ],
+    "preview": "previews/patterns/state-shape-feedback.jpg"
   },
   {
     "id": "architectural-fragment-anchor",
@@ -7848,7 +9314,6 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "用真实建筑的一角让大色面具有地点身份。",
     "mechanism": "朱红实物纹理内以真实透明屋脊和独立圆形题饰定位建筑身份，左侧说明与八项名称目录承担检索；图像不替代文字入口。",
-    "trigger": "进入建筑或文化章节",
     "effect": "色面获得具体文化对象，文字入口仍然可扫描。",
     "useCases": [
       "古建筑与文化遗产机构",
@@ -7864,16 +9329,11 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "foundation",
-      "notes": "此机制对照指定页面的源HTML/CSS与真实交互；仅管理所描述的局部，不替代整个机构门户或后台服务。",
       "pairsWellWith": [
         "section-color-rhythm",
         "direct-purpose-navigation"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "入口与条件可键盘进入，焦点可见；本地菜单/披露支持Escape或明确关闭，真实业务链接有名称。",
-      "reducedMotion": "取消自动轮换、计数过程和位移过渡；全部内容与手动选择保留。"
     },
     "parameters": [
       {
@@ -7887,7 +9347,7 @@ window.ATLAS_PATTERNS = [
         "note": "源CSS布局比例；手机有独立断点。"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「建筑局部与名称目录锚点」。朱红实物纹理内以真实透明屋脊和独立圆形题饰定位建筑身份，左侧说明与八项名称目录承担检索；图像不替代文字入口。 源建筑容器：1258px主内容，min-height590px，padding100px 0。来自探索页适用CSS与DOM。 源屋脊/题饰：屋脊宽74.721%；圆形题饰13.276%。源CSS布局比例；手机有独立断点。 以原站DOM/CSS/真实状态矩阵验证，素材本地化并保留出处/尺寸/hash；减少动态保留手动状态，业务与未验证状态明确。",
+    "prompt": "为【目标页面/组件】实现「建筑局部与名称目录锚点」。朱红实物纹理内以真实透明屋脊和独立圆形题饰定位建筑身份，左侧说明与八项名称目录承担检索；图像不替代文字入口。 源建筑容器：1258px主内容，min-height590px，padding100px 0。来自探索页适用CSS与DOM。 源屋脊/题饰：屋脊宽74.721%；圆形题饰13.276%。源CSS布局比例；手机有独立断点。 以原站DOM/CSS/真实状态矩阵验证，素材本地化并保留出处、尺寸与许可；减少动态保留手动状态，业务通过原站入口使用。",
     "sources": [
       {
         "caseId": "palace-museum",
@@ -7895,7 +9355,12 @@ window.ATLAS_PATTERNS = [
         "observation": "建筑目录：朱红实物纹理与透明屋脊、独立圆形“建筑”题饰并置，八个建筑名称及更多建筑/地图均保留官方目的地。",
         "evidence": "observed",
         "referenceUrl": "https://www.dpm.org.cn/Explore.html",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": ".explore1",
+          "label": "建筑局部与八项名称目录",
+          "instruction": "看朱红建筑纹理、透明屋脊和圆形“建筑”题饰，再从八个建筑名称、“更多建筑”或地图选择真实目的地。"
+        }
       }
     ],
     "sourceFiles": [
@@ -7906,7 +9371,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/palace-museum/style.css",
       "demos/cases/palace-museum/app.js",
       "demos/cases/palace-museum/source/state-matrix.md"
-    ]
+    ],
+    "preview": "previews/patterns/architectural-fragment-anchor.jpg"
   },
   {
     "id": "half-paper-category-label",
@@ -7918,7 +9384,6 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "作品负责观看，半幅浅纸签负责读清类别。",
     "mechanism": "完整五类专题将左半作品图像与右半淡纸标签并置，类别独立竖排；手机按源站换图并重新编排，图像与标签作为同一真实目的地。",
-    "trigger": "浏览或聚焦文化专题目录",
     "effect": "图像风格和类别名称同时可辨认，文字不依赖复杂纹样的局部对比。",
     "useCases": [
       "器物/书画/人物等文化专题",
@@ -7935,16 +9400,11 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "此机制对照指定页面的源HTML/CSS与真实交互；仅管理所描述的局部，不替代整个机构门户或后台服务。",
       "pairsWellWith": [
         "artwork-caption-separation",
         "restrained-signal-color"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "入口与条件可键盘进入，焦点可见；本地菜单/披露支持Escape或明确关闭，真实业务链接有名称。",
-      "reducedMotion": "取消自动轮换、计数过程和位移过渡；全部内容与手动选择保留。"
     },
     "parameters": [
       {
@@ -7958,7 +9418,7 @@ window.ATLAS_PATTERNS = [
         "note": "源CSS与实际桌面/手机图片。"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「图像与半幅纸签分类」。完整五类专题将左半作品图像与右半淡纸标签并置，类别独立竖排；手机按源站换图并重新编排，图像与标签作为同一真实目的地。 源专题类别：陶瓷、书画、文化、青铜器、工艺。准确类目以本页可读文字为准；五类全部保留。 标签范围：右半纸签，文字竖排。源CSS与实际桌面/手机图片。 以原站DOM/CSS/真实状态矩阵验证，素材本地化并保留出处/尺寸/hash；减少动态保留手动状态，业务与未验证状态明确。",
+    "prompt": "为【目标页面/组件】实现「图像与半幅纸签分类」。完整五类专题将左半作品图像与右半淡纸标签并置，类别独立竖排；手机按源站换图并重新编排，图像与标签作为同一真实目的地。 源专题类别：陶瓷、书画、文化、青铜器、工艺。准确类目以本页可读文字为准；五类全部保留。 标签范围：右半纸签，文字竖排。源CSS与实际桌面/手机图片。 以原站DOM/CSS/真实状态矩阵验证，素材本地化并保留出处、尺寸与许可；减少动态保留手动状态，业务通过原站入口使用。",
     "sources": [
       {
         "caseId": "palace-museum",
@@ -7966,7 +9426,12 @@ window.ATLAS_PATTERNS = [
         "observation": "源端观察：矩形章节与专题图像上右半幅浅纸签并置，竖排类目为独立可读文字。",
         "evidence": "observed",
         "referenceUrl": "https://www.dpm.org.cn/Explore.html",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": ".explore2 .lt",
+          "label": "图像右半幅的纸签分类",
+          "instruction": "比较图像与右半幅浅纸签的并置，竖排类目作为独立文字承接图像内容。"
+        }
       }
     ],
     "sourceFiles": [
@@ -7977,7 +9442,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/palace-museum/style.css",
       "demos/cases/palace-museum/app.js",
       "demos/cases/palace-museum/source/state-matrix.md"
-    ]
+    ],
+    "preview": "previews/patterns/half-paper-category-label.jpg"
   },
   {
     "id": "bounded-image-inspection",
@@ -7988,7 +9454,7 @@ window.ATLAS_PATTERNS = [
       "structure"
     ],
     "summary": "让图像从全貌到局部，再明确回到总览。",
-    "mechanism": "独立全视口画布使用真实DeepZoom瓦片与Leaflet坐标缩放、惯性拖动和加减控件；匿名缩放范围与登录提醒防止把低清CSS放大误称为高清。",
+    "mechanism": "独立全视口画布使用真实DeepZoom瓦片与Leaflet坐标缩放、惯性拖动和加减控件；匿名缩放范围与登录提醒防止把低清CSS放大误称为高清。 画布聚焦后可用方向键平移，加减按钮保留缩放边界的禁用状态。",
     "trigger": "主动加减、滚轮缩放、拖动或键盘平移",
     "effect": "用户按真实公开瓦片精度细察，并知道匿名浏览的缩放边界与更高清的官方入口。",
     "useCases": [
@@ -8006,16 +9472,11 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "此机制对照指定页面的源HTML/CSS与真实交互；仅管理所描述的局部，不替代整个机构门户或后台服务。",
       "pairsWellWith": [
         "artwork-caption-separation",
         "inline-detail-disclosure"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "Leaflet加减按钮有名称，画布可聚焦并用方向键平移；边界禁用状态保留，登录服务走官方。",
-      "reducedMotion": "取消自动轮换、计数过程和位移过渡；全部内容与手动选择保留。"
     },
     "parameters": [
       {
@@ -8026,10 +9487,10 @@ window.ATLAS_PATTERNS = [
       {
         "name": "源瓦片/逻辑尺寸",
         "value": "1024px；21515×15796逻辑像素",
-        "note": "仅实取公开level10/11/12的9瓦片，不能据此声称完整原分辨率已归档。"
+        "note": "本地包含公开 level10/11/12 的 9 张瓦片。"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「公开边界内的瓦片细察」。独立全视口画布使用真实DeepZoom瓦片与Leaflet坐标缩放、惯性拖动和加减控件；匿名缩放范围与登录提醒防止把低清CSS放大误称为高清。 源匿名地图范围：minZoom9.75 / maxZoom12。源maxNativeZoom15的65%/80%；不访问更高匿名未授权级别。 源瓦片/逻辑尺寸：1024px；21515×15796逻辑像素。仅实取公开level10/11/12的9瓦片，不能据此声称完整原分辨率已归档。 以原站DOM/CSS/真实状态矩阵验证，素材本地化并保留出处/尺寸/hash；减少动态保留手动状态，业务与未验证状态明确。",
+    "prompt": "为【目标页面/组件】实现「公开边界内的瓦片细察」。独立全视口画布使用真实DeepZoom瓦片与Leaflet坐标缩放、惯性拖动和加减控件；匿名缩放范围与登录提醒防止把低清CSS放大误称为高清。 源匿名地图范围：minZoom9.75 / maxZoom12。源maxNativeZoom15的65%/80%；不访问更高匿名未授权级别。 源瓦片/逻辑尺寸：1024px；21515×15796逻辑像素。本地包含公开 level10/11/12 的 9 张瓦片。 以原站DOM/CSS/真实状态矩阵验证，素材本地化并保留出处、尺寸与许可；减少动态保留手动状态，业务通过原站入口使用。",
     "sources": [
       {
         "caseId": "digital-dunhuang",
@@ -8037,7 +9498,18 @@ window.ATLAS_PATTERNS = [
         "observation": "壁画：莫高窟257窟主室西壁采用源站Leaflet 1.7.1与DeepZoom 2.0.0，21515×15796逻辑像素、1024瓦片，匿名minZoom9.75/maxZoom12，公开level10–12共9瓦片实际取得。",
         "evidence": "observed",
         "referenceUrl": "https://www.e-dunhuang.com/showmural/10.0001/0001/0001/0257/0001/0003/01",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "#mural",
+          "label": "第 257 窟西壁的瓦片细察",
+          "instruction": "拖动画面并用左上角加减按钮缩放，观察公开瓦片范围内的壁画细节；更高分辨率入口由原站提供。",
+          "entrypoint": "demos/cases/digital-dunhuang/viewer.html",
+          "prepare": [
+            {
+              "click": ".leaflet-control-zoom-in"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -8051,7 +9523,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/digital-dunhuang/viewer.html",
       "demos/cases/digital-dunhuang/viewer.css",
       "demos/cases/digital-dunhuang/viewer.js"
-    ]
+    ],
+    "preview": "previews/patterns/bounded-image-inspection.jpg"
   },
   {
     "id": "explicit-facet-summary",
@@ -8079,16 +9552,11 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "此机制对照指定页面的源HTML/CSS与真实交互；仅管理所描述的局部，不替代整个机构门户或后台服务。",
       "pairsWellWith": [
         "filter-count-feedback",
         "aligned-metadata-rows"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "入口与条件可键盘进入，焦点可见；本地菜单/披露支持Escape或明确关闭，真实业务链接有名称。",
-      "reducedMotion": "取消自动轮换、计数过程和位移过渡；全部内容与手动选择保留。"
     },
     "parameters": [
       {
@@ -8102,7 +9570,7 @@ window.ATLAS_PATTERNS = [
         "note": "保留源目录与首页固定30统计的差异。"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「分面条件在列表前显式呈现」。遗址、形制、时代三个维度各保留一个条件，已选行可再次移除；URL保存选择，结果由19个公开源响应成员集交集决定，返回可恢复选择。 源分面维度：遗址4/形制4/时代11，共19项。每个单条件均取得源HTML/hash与成员集，见filter-evidence.json。 固定档案集：32项；北魏254/257/麦积127。保留源目录与首页固定30统计的差异。 以原站DOM/CSS/真实状态矩阵验证，素材本地化并保留出处/尺寸/hash；减少动态保留手动状态，业务与未验证状态明确。",
+    "prompt": "为【目标页面/组件】实现「分面条件在列表前显式呈现」。遗址、形制、时代三个维度各保留一个条件，已选行可再次移除；URL保存选择，结果由19个公开源响应成员集交集决定，返回可恢复选择。 源分面维度：遗址4/形制4/时代11，共19项。每个单条件均取得源HTML/hash与成员集，见filter-evidence.json。 固定档案集：32项；北魏254/257/麦积127。保留源目录与首页固定30统计的差异。 以原站DOM/CSS/真实状态矩阵验证，素材本地化并保留出处、尺寸与许可；减少动态保留手动状态，业务通过原站入口使用。",
     "sources": [
       {
         "caseId": "digital-dunhuang",
@@ -8110,7 +9578,18 @@ window.ATLAS_PATTERNS = [
         "observation": "条件反馈：点击原条件可移除，已选条件行显示并可取消，折叠筛选耗时1000ms；北魏实测254、257、麦积127三项，叠加榆林窟为零项，浏览器返回恢复。",
         "evidence": "adapted",
         "referenceUrl": "https://www.e-dunhuang.com/section.htm",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "#ttsx",
+          "label": "列表上方的已选分面条件",
+          "instruction": "点“北魏”等筛选条件，观察已选条件行和列表数量；点击已选条件可移除，再叠加其他条件比较结果。",
+          "entrypoint": "demos/cases/digital-dunhuang/section.html",
+          "prepare": [
+            {
+              "click": "[data-facet-value=北魏]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -8124,7 +9603,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/digital-dunhuang/section.html",
       "demos/cases/digital-dunhuang/catalogue.js",
       "demos/cases/digital-dunhuang/filter-evidence.json"
-    ]
+    ],
+    "preview": "previews/patterns/explicit-facet-summary.jpg"
   },
   {
     "id": "architectural-outline-whitespace",
@@ -8136,7 +9616,6 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "以白色外缘、窄缝和访问白板组织真实机构摄影。",
     "mechanism": "用50px白色外缘围住矩形建筑与馆藏影像，窄白缝划分入口、细灰章节条标记浏览阶段；建筑黑灰轮廓保留在真实摄影内，不额外制造框线组件。",
-    "trigger": "阅读建筑说明或相关文化章节",
     "effect": "深色边饰与浅色空间建立清楚轮廓，地域识别保持与真实建筑的联系。",
     "useCases": [
       "建筑文化、现代博物馆与空间介绍",
@@ -8153,16 +9632,11 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "此机制对照指定页面的源HTML/CSS与真实交互；仅管理所描述的局部，不替代整个机构门户或后台服务。",
       "pairsWellWith": [
         "editorial-alignment-grid",
         "image-destination-mosaic"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "入口与条件可键盘进入，焦点可见；本地菜单/披露支持Escape或明确关闭，真实业务链接有名称。",
-      "reducedMotion": "取消自动轮换、计数过程和位移过渡；全部内容与手动选择保留。"
     },
     "parameters": [
       {
@@ -8176,7 +9650,7 @@ window.ATLAS_PATTERNS = [
         "note": "源主页三种实际空间关系。"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「机构摄影的白色外缘」。用50px白色外缘围住矩形建筑与馆藏影像，窄白缝划分入口、细灰章节条标记浏览阶段；建筑黑灰轮廓保留在真实摄影内，不额外制造框线组件。 源桌面外缘：left/right50px；top9px，bottom30px。1440×900时主内容1340×755，来自源计算样式。 白色层级：页面外缘/入口白缝/访问70%半透明白板。源主页三种实际空间关系。 以原站DOM/CSS/真实状态矩阵验证，素材本地化并保留出处/尺寸/hash；减少动态保留手动状态，业务与未验证状态明确。",
+    "prompt": "为【目标页面/组件】实现「机构摄影的白色外缘」。用50px白色外缘围住矩形建筑与馆藏影像，窄白缝划分入口、细灰章节条标记浏览阶段；建筑黑灰轮廓保留在真实摄影内，不额外制造框线组件。 源桌面外缘：left/right50px；top9px，bottom30px。1440×900时主内容1340×755，来自源计算样式。 白色层级：页面外缘/入口白缝/访问70%半透明白板。源主页三种实际空间关系。 以原站DOM/CSS/真实状态矩阵验证，素材本地化并保留出处、尺寸与许可；减少动态保留手动状态，业务通过原站入口使用。",
     "sources": [
       {
         "caseId": "suzhou-museum",
@@ -8184,7 +9658,12 @@ window.ATLAS_PATTERNS = [
         "observation": "四屏完整结构；50px左右外缘，1440×900时主画面1340×755；第三屏按原九项/75%与25%两区组织。",
         "evidence": "observed",
         "referenceUrl": "https://www.szmuseum.com/Home/Index",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": ".section1",
+          "label": "机构摄影周围的白色外缘",
+          "instruction": "比较主摄影与两侧白色外缘的比例，再切手机模式看画幅怎样调整；可用右侧章节点继续浏览。"
+        }
       }
     ],
     "sourceFiles": [
@@ -8195,7 +9674,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/suzhou-museum/style.css",
       "demos/cases/suzhou-museum/app.js",
       "demos/cases/suzhou-museum/source/state-matrix.md"
-    ]
+    ],
+    "preview": "previews/patterns/architectural-outline-whitespace.jpg"
   },
   {
     "id": "image-destination-mosaic",
@@ -8208,7 +9688,7 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "让每张图像直接成为进入一类内容的窗口。",
     "mechanism": "九个图像区域按75%主区和25%侧区组织不同宽高比，以窄白缝分隔真实目的地；类别文字常显，源CSS与脚本共同产生悬停扩张。",
-    "trigger": "浏览、聚焦或选择机构目的地",
+    "trigger": "悬停、聚焦或选择图像目的地",
     "effect": "图像保持文化内容的辨识度，选择目标在观看时即可明确。",
     "useCases": [
       "馆藏、展览、课堂并行的文化门户",
@@ -8225,16 +9705,11 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "foundation",
-      "notes": "此机制对照指定页面的源HTML/CSS与真实交互；仅管理所描述的局部，不替代整个机构门户或后台服务。",
       "pairsWellWith": [
         "mixed-ratio-archive-columns",
         "photo-edge-text-contrast"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "入口与条件可键盘进入，焦点可见；本地菜单/披露支持Escape或明确关闭，真实业务链接有名称。",
-      "reducedMotion": "取消自动轮换、计数过程和位移过渡；全部内容与手动选择保留。"
     },
     "parameters": [
       {
@@ -8248,7 +9723,7 @@ window.ATLAS_PATTERNS = [
         "note": "保留两层独立动作；数字苏博同时调整高度。"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「多尺度图像目的地目录」。九个图像区域按75%主区和25%侧区组织不同宽高比，以窄白缝分隔真实目的地；类别文字常显，源CSS与脚本共同产生悬停扩张。 源主区/侧区：75% / 25%，共九项。资讯/云课堂/馆藏/活动/文创/数字苏博、展览/游戏/建筑美图。 源hover：CSS scale1.1/500ms + 图宽1.1/300ms。保留两层独立动作；数字苏博同时调整高度。 以原站DOM/CSS/真实状态矩阵验证，素材本地化并保留出处/尺寸/hash；减少动态保留手动状态，业务与未验证状态明确。",
+    "prompt": "为【目标页面/组件】实现「多尺度图像目的地目录」。九个图像区域按75%主区和25%侧区组织不同宽高比，以窄白缝分隔真实目的地；类别文字常显，源CSS与脚本共同产生悬停扩张。 源主区/侧区：75% / 25%，共九项。资讯/云课堂/馆藏/活动/文创/数字苏博、展览/游戏/建筑美图。 源hover：CSS scale1.1/500ms + 图宽1.1/300ms。保留两层独立动作；数字苏博同时调整高度。 以原站DOM/CSS/真实状态矩阵验证，素材本地化并保留出处、尺寸与许可；减少动态保留手动状态，业务通过原站入口使用。",
     "sources": [
       {
         "caseId": "suzhou-museum",
@@ -8256,7 +9731,19 @@ window.ATLAS_PATTERNS = [
         "observation": "图像目的地：资讯、云课堂、馆藏、活动、文创、数字苏博、展览、游戏、建筑美图九项原图/常显类目均保留，左右75%/25%及每块尺寸按源CSS。",
         "evidence": "observed",
         "referenceUrl": "https://www.szmuseum.com/Home/Index",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "body:has(#fullPage-nav) .section3.active, body:not(:has(#fullPage-nav)) .section3",
+          "label": "九个图像目的地的拼接目录",
+          "instruction": "在第三屏比较资讯、馆藏、活动等九项原图和常显类目；左右两区采用不同尺度，各块仍是独立目的地。",
+          "prepare": [
+            {
+              "click": "#fullPage-nav li:nth-child(3) a",
+              "waitFor": ".section3.active",
+              "minWidth": 768
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -8267,7 +9754,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/suzhou-museum/style.css",
       "demos/cases/suzhou-museum/app.js",
       "demos/cases/suzhou-museum/source/state-matrix.md"
-    ]
+    ],
+    "preview": "previews/patterns/image-destination-mosaic.jpg"
   },
   {
     "id": "hatched-registration-type",
@@ -8279,7 +9767,6 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "让巨大背景字承担技术身份，让实心前景文字承担阅读。",
     "mechanism": "用低对比斜线纹理填充巨大背景字，并以小编号、十字标定点和淡网格定位；前景姓名与资料保持实心、清楚边界和独立留白。",
-    "trigger": "呈现角色或技术档案首屏",
     "effect": "背景建立机构身份和尺度，前景仍可快速阅读。",
     "useCases": [
       "工业/科研档案首屏",
@@ -8303,10 +9790,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "背景装饰不可聚焦；前景链接/按钮保持独立可见焦点与文字名称。",
-      "reducedMotion": "保持静态标定构成，不为巨大背景字添加循环移动或闪烁。"
-    },
     "parameters": [
       {
         "name": "源浅纹背景",
@@ -8327,7 +9810,30 @@ window.ATLAS_PATTERNS = [
         "observation": "巨大斜线背景字、十字标定、REC、小编号、淡网格与实心资料；AIC竖书脊保留在媒体边界，黑黄三层作为切换状态。",
         "evidence": "observed",
         "referenceUrl": "https://endfield.hypergryph.com/",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "body:not(.directory-open) #operator .operator-title-inner-container",
+          "label": "斜线大字与档案记录",
+          "instruction": "看姓名后方的斜线大字，以及前景资料中的 REC、编号和十字标记。",
+          "prepare": [
+            {
+              "waitFor": "body:has(#entry-loader[hidden])"
+            },
+            {
+              "click": ".header-inner-container > .header-nav-item[aria-label=\"干员情报\"]",
+              "minWidth": 801
+            },
+            {
+              "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+              "maxWidth": 800
+            },
+            {
+              "click": ".header-menu-item[aria-label=\"干员情报\"]",
+              "maxWidth": 800
+            }
+          ],
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -8341,7 +9847,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/endfield-industrial/app.js",
       "demos/cases/endfield-industrial/source/state-matrix.md",
       "demos/cases/endfield-industrial/source/source-provenance.json"
-    ]
+    ],
+    "preview": "previews/patterns/hatched-registration-type.jpg"
   },
   {
     "id": "vertical-media-spine",
@@ -8353,7 +9860,6 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "让类别像书脊一样固定在媒体边缘，编号和正文完成同一模块。",
     "mechanism": "把短类别名称沿媒体侧边竖向排布，横向图像占主面积，下方编号与说明共用对齐边界；方向差提供归属线索而不是额外装饰。",
-    "trigger": "呈现某一类别的图像/影片资料模块",
     "effect": "大图、类别、编号与说明被读作同一资料单元。",
     "useCases": [
       "技术知识媒体",
@@ -8380,10 +9886,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "纯装饰书脊aria-hidden，类别在可读标题/说明中重复；媒体按钮保留正常名称和键盘控制。",
-      "reducedMotion": "构成本身静态；若播放影片，另提供暂停并保留静态封面。"
-    },
     "parameters": [
       {
         "name": "类别与媒体边界",
@@ -8399,7 +9901,44 @@ window.ATLAS_PATTERNS = [
         "observation": "AIC书脊与媒体共同组织类别；4玩法/5AIC采用源三层黑→黄→媒体的方向揭示，不用单静态工厂图替代整个相册。",
         "evidence": "observed",
         "referenceUrl": "https://endfield.hypergryph.com/",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "#aic",
+          "label": "AIC 竖向书脊与媒体",
+          "instruction": "看媒体边缘竖排的 AIC 类别书脊，以及下方分页、编号和说明的对齐。",
+          "prepare": [
+            {
+              "waitFor": "body:has(#entry-loader[hidden])"
+            },
+            {
+              "click": ".header-inner-container > .header-nav-item[aria-label=\"版本日历\"]",
+              "minWidth": 801
+            },
+            {
+              "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+              "maxWidth": 800
+            },
+            {
+              "click": ".header-menu-item[aria-label=\"版本日历\"]",
+              "maxWidth": 800
+            },
+            {
+              "images": "#calendar"
+            },
+            {
+              "click": ".header-inner-container > .header-nav-item[aria-label=\"玩法介绍 & 集成工业知识\"]",
+              "minWidth": 801
+            },
+            {
+              "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+              "maxWidth": 800
+            },
+            {
+              "click": ".header-menu-item[aria-label=\"玩法介绍 & 集成工业知识\"]",
+              "maxWidth": 800
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -8413,7 +9952,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/endfield-industrial/app.js",
       "demos/cases/endfield-industrial/source/state-matrix.md",
       "demos/cases/endfield-industrial/source/source-provenance.json"
-    ]
+    ],
+    "preview": "previews/patterns/vertical-media-spine.jpg"
   },
   {
     "id": "department-code-matrix",
@@ -8424,8 +9964,8 @@ window.ATLAS_PATTERNS = [
       "visual"
     ],
     "summary": "保留特殊字标和非等宽的中心/外围关系，让代码同时表达机构身份和归属。",
-    "mechanism": "中心双行代码和九个外围短代码共享环形连字，黑白表面、倾斜与尺度差共同组织关系；细射线与小面积橙色节点连接焦点。完整名称与等价语义目录承担阅读，不将原字标重排成普通字体卡片。",
-    "trigger": "呈现机构代码目录",
+    "mechanism": "中心双行代码和九个外围短代码共享环形连字，黑白表面、倾斜与尺度差共同组织关系；细射线与小面积橙色节点连接焦点。完整名称与等价语义目录承担阅读，不将原字标重排成普通字体卡片。 网页静态呈现保留原帧和矩阵，取消 180ms 节点位移，说明即时更新；影片由用户主动播放并可暂停。",
+    "trigger": "选择机构代码节点或对应目录项",
     "effect": "中心关系、不同科室的身份字标及当前焦点在同一视野中保留。",
     "useCases": [
       "有专用字标的机构目录",
@@ -8445,16 +9985,12 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "foundation",
-      "notes": "原画面保留字标与空间，DOM热点和可读目录共享一个选择状态；节点移动是适配，不伪造原片点击。矩阵与档案选择使用独立区域及状态。",
+      "notes": "原画面保留字标与空间，DOM热点和可读目录共享一个选择状态；节点移动为本地网页适配。矩阵与档案选择使用独立区域及状态。",
       "pairsWellWith": [
         "restrained-signal-color",
         "aligned-metadata-rows"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "热点与等价目录均用语义按钮、可见焦点和aria-pressed，全称始终可读；手机可直接用正常字号目录。",
-      "reducedMotion": "原帧和矩阵静态保留；取消180ms节点移动，当前说明即时同步；片段由用户主动播放并可暂停。"
     },
     "parameters": [
       {
@@ -8481,7 +10017,17 @@ window.ATLAS_PATTERNS = [
         "observation": "官方68秒原帧保留CMPT CTRL中心，以及DEF、HRI、BSN、ENG、STRU、SCIEN、ORIG、NRG、ECO九外围的环形连字、英文全称、黑白表面、透视倾斜及尺度差；网页控件使用系统字体，不替代原作字标。",
         "evidence": "observed",
         "referenceUrl": "https://www.bilibili.com/video/BV1rr4y1b7sz/",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "#terminal[data-scene=matrix]",
+          "label": "中心与九个外围机构代码",
+          "instruction": "点画面中的机构热点或下方科室目录，对比 CMPT CTRL 中心、外围九个字标与说明的对应关系。",
+          "prepare": [
+            {
+              "click": "[data-scene=matrix]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -8492,7 +10038,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/rhine-lab/assets-manifest.json",
       "entries/cases/rhine-lab.json",
       "docs/cases/rhine-lab.md"
-    ]
+    ],
+    "preview": "previews/patterns/department-code-matrix.jpg"
   },
   {
     "id": "specimen-pullout-selection",
@@ -8504,7 +10051,7 @@ window.ATLAS_PATTERNS = [
       "structure"
     ],
     "summary": "在真实立体阵列中保留单件抽出，用独立网页状态同步观察与阅读。",
-    "mechanism": "大量平行立体档案与被抬出的焦点板保留来源透视/材质；本地以同一选择状态同步热点、观察编号、标题和正文，背景阵列可隐藏而焦点板保留。影片抽出运动与网页点击分别归档。",
+    "mechanism": "大量平行立体档案与被抬出的焦点板保留来源透视/材质；本地以同一选择状态同步热点、观察编号、标题和正文，背景阵列可隐藏而焦点板保留。影片抽出运动与网页点击分别归档。 网页静态呈现保留原帧、焦点板与选中说明，取消 220ms 微移；影片默认静止，主动观看可暂停。",
     "trigger": "点选本地观察热点、前后按钮或阵列显隐",
     "effect": "当前观察与焦点状态同时更新，显隐后焦点板和正文仍可阅读。",
     "useCases": [
@@ -8532,10 +10079,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "原生热点/前后按钮可键盘操作，左右方向键移动选择并保持焦点，aria-pressed与观察文字同步；展开按钮使用aria-expanded。",
-      "reducedMotion": "保留静态原帧、焦点板、选中和阅读；关闭220ms本地微移，影片默认静止，主动观看有暂停。"
-    },
     "parameters": [
       {
         "name": "原片档案片段",
@@ -8561,7 +10104,20 @@ window.ATLAS_PATTERNS = [
         "observation": "本地教学改编：在原作多排立体档案的35秒原帧上提供五个观察热点及前后选择，同一状态同步观察编号、标题、正文并收起旧展开；阵列显隐仅隐藏背景阵列，保留按源端四角轮廓裁切的抬出板。五个热点不是原片中的五个可点击档案。",
         "evidence": "adapted",
         "referenceUrl": "https://www.bilibili.com/video/BV1rr4y1b7sz/",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "#archive-picks",
+          "label": "阵列上的教学观察热点",
+          "instruction": "点五个观察热点或下方前后按钮，观察抽出板、编号与说明同步更新；“阵列”开关只改变背景阵列显隐。",
+          "prepare": [
+            {
+              "click": "[data-scene=archive]"
+            },
+            {
+              "click": "[data-record='1']"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -8572,7 +10128,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/rhine-lab/assets-manifest.json",
       "entries/cases/rhine-lab.json",
       "docs/cases/rhine-lab.md"
-    ]
+    ],
+    "preview": "previews/patterns/specimen-pullout-selection.jpg"
   },
   {
     "id": "layered-directional-media-reveal",
@@ -8614,10 +10171,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "前后/编号按钮有名称和可见焦点，端点disabled与aria同步；目标说明和页码在正常DOM中更新，稳定后只有当前媒体可操作，焦点不随视觉层漂移。",
-      "reducedMotion": "跳过三层位移与文字离场，立即显示目标媒体/编号/说明；视频另有暂停和静态封面，换项仍停止旧片。"
-    },
     "parameters": [
       {
         "name": "三层顺序",
@@ -8648,7 +10201,44 @@ window.ATLAS_PATTERNS = [
         "observation": "玩法/AIC：4段原玩法视频和5张原工业图；400ms三层方向揭示，黑层delay0/黄250/实际媒体500，总900ms；文字500ms退出/500ms进入，内容/编号/分页共同变化。",
         "evidence": "observed",
         "referenceUrl": "https://endfield.hypergryph.com/",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "#gameplay",
+          "label": "玩法影片的分层揭示",
+          "instruction": "点影片下方的前后按钮或编号，看黑层、黄层和实际画面依次揭示。",
+          "prepare": [
+            {
+              "waitFor": "body:has(#entry-loader[hidden])"
+            },
+            {
+              "click": ".header-inner-container > .header-nav-item[aria-label=\"版本日历\"]",
+              "minWidth": 801
+            },
+            {
+              "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+              "maxWidth": 800
+            },
+            {
+              "click": ".header-menu-item[aria-label=\"版本日历\"]",
+              "maxWidth": 800
+            },
+            {
+              "images": "#calendar"
+            },
+            {
+              "click": ".header-inner-container > .header-nav-item[aria-label=\"玩法介绍 & 集成工业知识\"]",
+              "minWidth": 801
+            },
+            {
+              "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+              "maxWidth": 800
+            },
+            {
+              "click": ".header-menu-item[aria-label=\"玩法介绍 & 集成工业知识\"]",
+              "maxWidth": 800
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -8662,7 +10252,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/endfield-industrial/state.css",
       "demos/cases/endfield-industrial/app.js",
       "demos/cases/endfield-industrial/data.js"
-    ]
+    ],
+    "preview": "previews/patterns/layered-directional-media-reveal.jpg"
   },
   {
     "id": "scanline-point-cloud-transition",
@@ -8673,7 +10264,7 @@ window.ATLAS_PATTERNS = [
       "page-motion"
     ],
     "summary": "真实xyz点云在扫描带中显现与退场，射线和短暂旋转共同提示模型交接。",
-    "mechanism": "读取Float32 xyz二进制点位，规范化后为旧、新模型分别建立点云actor；多条扫描线改变点的可见与扰动，射线指向扫描附近点，旋转短暂加速后恢复，模型选择与标题/编号同步，交接期间限制再入。",
+    "mechanism": "读取Float32 xyz二进制点位，规范化后为旧、新模型分别建立点云actor；多条扫描线改变点的可见与扰动，射线指向扫描附近点，旋转短暂加速后恢复，模型选择与标题/编号同步，交接期间限制再入。 画布聚焦后可用左右键调整角度，手机拖动保留纵向阅读；静态呈现可直接显示选中模型的终态点云，停止扫描射线、自转与 glitch。",
     "trigger": "选择世界观模型、前后按钮或六段索引；拖动改变观察方向",
     "effect": "模型有可辨认的构形过程，资料状态与真实三维形态共同变化。",
     "useCases": [
@@ -8704,10 +10295,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "前后和模型索引用可命名按钮，当前标题/编号/pressed同步；焦点在画布时左右键调整角度并有等价文字，不让装饰射线进入Tab。手机拖动区域保留pan-y纵向阅读。",
-      "reducedMotion": "直接显示选中模型的终态点云，停止扫描射线、自动旋转与glitch，保留手动选择和说明；偏好动态变化时清除旧脉冲与计时。"
-    },
     "parameters": [
       {
         "name": "点位格式与尺度",
@@ -8730,7 +10317,7 @@ window.ATLAS_PATTERNS = [
         "note": "按扫描附近点生成随机射线，源/本地活动数有随机差异；停止/离屏需清理调度。"
       }
     ],
-    "prompt": "为【真实模型档案】实现扫描线与射线驱动的点云交接。用有使用权的Float32 xyz点位，验证格式和边界，再以来源Y跨度1900及各模型offset/pivot/scale作研究基线。旧、新模型各自actor在多线扫描中退出/显现，射线只指向扫描附近点并设容量上限；有限旋转加速后回基速，完成后释放旧GPU资源。目录、前后、编号与DOM说明由同一模型选择驱动，转场再入策略明确，不把该机制错写成同池顶点morph。支持水平拖动与聚焦方向键，手机保留pan-y纵滚。减少动态直接给可见终态、停止自动旋转/射线/glitch；后台暂停与资源失败回退分别处理。保留有限源码/运行证据，随机射线不能声称像素逐帧相等。",
+    "prompt": "为【真实模型档案】实现扫描线与射线驱动的点云交接。用有使用权的Float32 xyz点位，验证格式和边界，再以来源Y跨度1900及各模型offset/pivot/scale作研究基线。旧、新模型各自actor在多线扫描中退出/显现，射线只指向扫描附近点并设容量上限；有限旋转加速后回基速，完成后释放旧GPU资源。目录、前后、编号与DOM说明由同一模型选择驱动，转场再入策略明确，不把该机制错写成同池顶点morph。支持水平拖动与聚焦方向键，手机保留pan-y纵滚。减少动态直接给可见终态、停止自动旋转/射线/glitch；后台暂停与资源失败回退分别处理。",
     "sources": [
       {
         "caseId": "endfield-industrial",
@@ -8738,7 +10325,32 @@ window.ATLAS_PATTERNS = [
         "observation": "世界观：帝江号/锚点/集成工业系统/天师桩/天使/裂地者六个原bin及模型参数，Float32 xyz、按Y跨度1900规范化；实际WebGL点云、扫描、转动、拖动、分页/标题与六指标同步。最终状态实测见fidelity，不因源码抽取而自动判通过。",
         "evidence": "observed",
         "referenceUrl": "https://endfield.hypergryph.com/",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "#lore .lore-canvas-container",
+          "label": "世界观点云",
+          "instruction": "选择六个模型索引或前后按钮，看扫描线、射线和旋转如何交接点云；拖动可转动观察。",
+          "prepare": [
+            {
+              "waitFor": "body:has(#entry-loader[hidden])"
+            },
+            {
+              "click": ".header-inner-container > .header-nav-item[aria-label=\"世界观资料\"]",
+              "minWidth": 801
+            },
+            {
+              "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+              "maxWidth": 800
+            },
+            {
+              "click": ".header-menu-item[aria-label=\"世界观资料\"]",
+              "maxWidth": 800
+            },
+            {
+              "waitFor": ".lore-canvas-container[data-model]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -8754,7 +10366,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/endfield-industrial/data.js",
       "demos/cases/endfield-industrial/lore.js",
       "demos/cases/endfield-industrial/shaders.js"
-    ]
+    ],
+    "preview": "previews/patterns/scanline-point-cloud-transition.jpg"
   },
   {
     "id": "transparent-video-mode-stage",
@@ -8765,7 +10378,7 @@ window.ATLAS_PATTERNS = [
       "page-motion"
     ],
     "summary": "静态立绘与RGB/alpha透明视频共享人物位置，进入短片结束后接续idle循环。",
-    "mechanism": "同一影片左半保存RGB颜色、右半保存亮度alpha遮罩，经WebGL合成为半宽透明canvas；2D立绘与3D影片模式独立于人物选择，enter完成后接idle，换人或退出时取消旧资源回调和帧调度。",
+    "mechanism": "同一影片左半保存RGB颜色、右半保存亮度alpha遮罩，经WebGL合成为半宽透明canvas；2D立绘与3D影片模式独立于人物选择，enter完成后接idle，换人或退出时取消旧资源回调和帧调度。 静态呈现保留人物立绘或 idle 的 1/30 秒帧，停止影片与 GPU 连续帧；恢复动态时沿用当前模式、前台状态与用户的暂停选择。",
     "trigger": "用户选择静态/动态模式，或在动态模式中切换人物",
     "effect": "人物运动融入档案背景，姓名与资料位置稳定，动态资源始终属于当前人物。",
     "useCases": [
@@ -8788,17 +10401,13 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "此原子负责透明媒体解码和静态/动态模式的交接；人物身份、姓名、目录和资料同步由人物舞台原子承担。与世界观点云是两个独立渲染器，不争夺拖动语义；页面可见性统一提供暂停信号，用户选择仍独立保存。",
+      "notes": "本机制负责透明媒体解码和静态/动态模式的交接；人物身份、姓名、目录和资料同步由人物舞台机制承担。与世界观点云是两个独立渲染器，不争夺拖动语义；页面可见性统一提供暂停信号，用户选择仍独立保存。",
       "pairsWellWith": [
         "character-stage-coordination",
         "viewport-animation-lifecycle",
         "hatched-registration-type"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "静态/动态模式用有名称的按钮，aria-pressed跟随实际模式，切换不移动资料焦点；失败提供静态回退。人物名称和等价说明位于正常DOM，不只保存在canvas。",
-      "reducedMotion": "保留当前人物静态立绘或idle有效静帧，停止影片与GPU连续帧；本地实测idle 1/30秒静帧可见。恢复动态尊重当前模式、前台和用户暂停状态。"
     },
     "parameters": [
       {
@@ -8830,7 +10439,33 @@ window.ATLAS_PATTERNS = [
         "observation": "2D/3D：同35项立绘和70个原enter/idle视频。祀源影片3840×1080左右RGB/alpha，经原亮度权重0.3/0.59/0.11合成1920×1080透明canvas，enter结束切idle循环；不制造实时人物模型。",
         "evidence": "observed",
         "referenceUrl": "https://endfield.hypergryph.com/",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "body:not(.directory-open) .operator-illustration-container.showing-3d",
+          "label": "干员 2D / 3D 舞台",
+          "instruction": "用 2D / 3D 开关在立绘与透明影片之间切换；再换干员，查看入场影片如何接到循环动作。",
+          "prepare": [
+            {
+              "waitFor": "body:has(#entry-loader[hidden])"
+            },
+            {
+              "click": ".header-inner-container > .header-nav-item[aria-label=\"干员情报\"]",
+              "minWidth": 801
+            },
+            {
+              "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+              "maxWidth": 800
+            },
+            {
+              "click": ".header-menu-item[aria-label=\"干员情报\"]",
+              "maxWidth": 800
+            },
+            {
+              "click": ".operator-switcher3d[data-mode=\"2D\"]",
+              "waitFor": ".operator-switcher3d[data-mode=\"3D\"][aria-pressed=\"true\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -8845,7 +10480,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/endfield-industrial/app.js",
       "demos/cases/endfield-industrial/data.js",
       "demos/cases/endfield-industrial/transparent-video.js"
-    ]
+    ],
+    "preview": "previews/patterns/transparent-video-mode-stage.jpg"
   },
   {
     "id": "separate-thumbnail-window",
@@ -8857,7 +10493,7 @@ window.ATLAS_PATTERNS = [
       "micro-motion"
     ],
     "summary": "翻看更多候选时，当前人物保持稳定。",
-    "mechanism": "分别保存缩略图窗口起点和当前选中人物；窗口箭头只移动可见候选，点击具体头像才换舞台，人物所有身份线索使用同一选中索引。",
+    "mechanism": "分别保存缩略图窗口起点和当前选中人物；窗口箭头只移动可见候选，点击具体头像才换舞台，人物所有身份线索使用同一选中索引。 头像支持方向键与 Home/End，缩略图窗口随焦点保持当前项可见。",
     "trigger": "点击缩略图窗口箭头或选择头像",
     "effect": "大名单可逐段浏览，同时保留当前人物上下文。",
     "useCases": [
@@ -8879,10 +10515,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "头像使用按钮，方向键/Home/End提供等价选择；需要时移动窗口使焦点可见，当前项同步aria-pressed。",
-      "reducedMotion": "关闭窗口位移与角色过渡，窗口和选择状态仍分别更新。"
-    },
     "parameters": [
       {
         "name": "窗口步长",
@@ -8897,7 +10529,17 @@ window.ATLAS_PATTERNS = [
         "observation": "角色箭头每次移动三张缩略图，保持当前人物不变；点击缩略图才选择角色。影像箭头则同步改变当前视频、标题、日期和缩略图位置，9部影像不循环越界。",
         "evidence": "observed",
         "referenceUrl": "https://zzz.mihoyo.com/main",
-        "capturedAt": "2026-10-11"
+        "capturedAt": "2026-10-11",
+        "focus": {
+          "target": "#character .home-character__main-nav",
+          "label": "头像翻页与当前人物",
+          "instruction": "先点头像旁的翻页箭头，当前人物保持不变；再点具体头像，才切换人物舞台。",
+          "prepare": [
+            {
+              "click": ".sidebar__pagers-num[aria-label=\"跳到角色介绍\"]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -8912,7 +10554,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/zenless-zone-zero/reference.css",
       "demos/cases/zenless-zone-zero/state.css"
     ],
-    "prompt": "为【目标页面/组件】实现「头像翻页与舞台选择分离」。分别保存缩略图窗口起点和当前选中人物；窗口箭头只移动可见候选，点击具体头像才换舞台，人物所有身份线索使用同一选中索引。 触发：点击缩略图窗口箭头或选择头像。结果：大名单可逐段浏览，同时保留当前人物上下文。 最后一组不足整页时夹紧窗口边界；箭头禁用状态与真实可滚动范围一致。 影像箭头切换当前内容属于另一种导航语义，不能套用为所有轮播统一行为。 负责候选窗口和选中状态的分工；与人物换态组合时只共享选择事件，不让翻页事件直接触发换人。 键盘：头像使用按钮，方向键/Home/End提供等价选择；需要时移动窗口使焦点可见，当前项同步aria-pressed。 减少动态：关闭窗口位移与角色过渡，窗口和选择状态仍分别更新。 实施前读取来源源码、研究与复现边界，不以本Prompt替代代码。"
+    "prompt": "为【目标页面/组件】实现「头像翻页与舞台选择分离」。分别保存缩略图窗口起点和当前选中人物；窗口箭头只移动可见候选，点击具体头像才换舞台，人物所有身份线索使用同一选中索引。 触发：点击缩略图窗口箭头或选择头像。结果：大名单可逐段浏览，同时保留当前人物上下文。 最后一组不足整页时夹紧窗口边界；箭头禁用状态与真实可滚动范围一致。 影像箭头切换当前内容属于另一种导航语义，不能套用为所有轮播统一行为。 负责候选窗口和选中状态的分工；与人物换态组合时只共享选择事件，不让翻页事件直接触发换人。 键盘：头像使用按钮，方向键/Home/End提供等价选择；需要时移动窗口使焦点可见，当前项同步aria-pressed。 减少动态：关闭窗口位移与角色过渡，窗口和选择状态仍分别更新。 实施前读取来源源码、研究与复现边界，不以本Prompt替代代码。",
+    "preview": "previews/patterns/separate-thumbnail-window.jpg"
   },
   {
     "id": "execution-trace-drilldown",
@@ -8948,10 +10591,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "演示提供暂停和文字描述；实际交互迁移时每次调用需可键盘选中，关闭详情回到原调用。",
-      "reducedMotion": "保留时间线、日志和选中详情的稳定图解。"
-    },
     "parameters": [
       {
         "name": "泳道 / span",
@@ -8971,7 +10610,12 @@ window.ATLAS_PATTERNS = [
         "observation": "轨迹演示15秒：工具栏、三条泳道和37段时序先后进入，两轮日志上移，最后展开bash调用详情，在结果与计时之间交接，显示NAVIGATION_OK和34毫秒。",
         "evidence": "observed",
         "referenceUrl": "https://www.deepseek.com/harness/",
-        "capturedAt": "2026-10-11"
+        "capturedAt": "2026-10-11",
+        "focus": {
+          "target": "[class^=HarnessTracePreview_canvas]",
+          "label": "调用轨迹与详情",
+          "instruction": "看三条泳道、工具调用和日志依次出现，末段会展开 bash 结果与计时；这节的暂停按钮可停住画面。"
+        }
       }
     ],
     "sourceFiles": [
@@ -9001,7 +10645,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/deepseek-harness/vendor/deepseek-harness/8555-7c9518c428e988c2.js",
       "demos/cases/deepseek-harness/vendor/deepseek-harness/86b88eeb-5b86058878847f6a.js"
     ],
-    "prompt": "为【目标页面/组件】实现「时间线泳道定位调用详情」。输入、模型、工具分别占用时间线泳道；日志沿同一执行顺序展开，选定调用在侧栏显示结果和计时，使宏观节奏与局部证据互相定位。 触发：查看执行轨迹并深入单次工具调用。结果：用户从整段过程走到具体结果与耗时，不丢失调用所在轮次。 泳道时长、轮次和侧栏调用必须对应同一数据。 源页面自动演示切到详情与计时，本巧思的实际产品点击迁移属于adapted建议。 负责多尺度执行信息关联，可与过程折叠配合；保持时间线为概览，不在每个span里重复全文日志。 键盘：演示提供暂停和文字描述；实际交互迁移时每次调用需可键盘选中，关闭详情回到原调用。 减少动态：保留时间线、日志和选中详情的稳定图解。 实施前读取来源源码、研究与复现边界，不以本Prompt替代代码。"
+    "prompt": "为【目标页面/组件】实现「时间线泳道定位调用详情」。输入、模型、工具分别占用时间线泳道；日志沿同一执行顺序展开，选定调用在侧栏显示结果和计时，使宏观节奏与局部证据互相定位。 触发：查看执行轨迹并深入单次工具调用。结果：用户从整段过程走到具体结果与耗时，不丢失调用所在轮次。 泳道时长、轮次和侧栏调用必须对应同一数据。 源页面自动演示切到详情与计时，本巧思的实际产品点击迁移属于adapted建议。 负责多尺度执行信息关联，可与过程折叠配合；保持时间线为概览，不在每个span里重复全文日志。 键盘：演示提供暂停和文字描述；实际交互迁移时每次调用需可键盘选中，关闭详情回到原调用。 减少动态：保留时间线、日志和选中详情的稳定图解。 实施前读取来源源码、研究与复现边界，不以本Prompt替代代码。",
+    "preview": "previews/patterns/execution-trace-drilldown.jpg"
   },
   {
     "id": "persistent-created-widget",
@@ -9037,10 +10682,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "暂停按钮可键盘操作；图解内部不伪造可编辑输入或可点击安装。",
-      "reducedMotion": "呈现挂件与管理器已安装项的稳定终态，并给出过程说明。"
-    },
     "parameters": [
       {
         "name": "完整周期",
@@ -9060,7 +10701,12 @@ window.ATLAS_PATTERNS = [
         "observation": "插件演示22秒：对话输入、10条工具步骤、过程折叠、番茄钟放大，再缩至右上角；插件管理器滚过7个官方插件并高亮已安装项，挂件贯穿场景交接。",
         "evidence": "observed",
         "referenceUrl": "https://www.deepseek.com/harness/",
-        "capturedAt": "2026-10-11"
+        "capturedAt": "2026-10-11",
+        "focus": {
+          "target": "[class^=HarnessPluginsPreview_canvas]",
+          "label": "跨场景保留的番茄钟",
+          "instruction": "看对话完成工具步骤后生成番茄钟，再留在右上角；插件管理器切入时挂件继续保留。"
+        }
       }
     ],
     "sourceFiles": [
@@ -9090,7 +10736,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/deepseek-harness/vendor/deepseek-harness/8555-7c9518c428e988c2.js",
       "demos/cases/deepseek-harness/vendor/deepseek-harness/86b88eeb-5b86058878847f6a.js"
     ],
-    "prompt": "为【目标页面/组件】实现「已创建挂件跨场景保留」。创建过程结束后将结果挂件先放大展示，再缩到固定角落；后台界面切换到管理列表时挂件持续存在，最后通过已安装项确认结果归属。 触发：创建过程完成并转入管理场景。结果：用户看到生成、可用与被管理的是同一个对象。 挂件状态不能在场景交接时重置；放大与紧凑形态共享同一内容。 手机保留挂件与管理器的对应关系，同时避免遮住列表的主要信息。 负责成果身份连续性，前序可搭配过程折叠，运行控制交给独立暂停生命周期。 键盘：暂停按钮可键盘操作；图解内部不伪造可编辑输入或可点击安装。 减少动态：呈现挂件与管理器已安装项的稳定终态，并给出过程说明。 实施前读取来源源码、研究与复现边界，不以本Prompt替代代码。"
+    "prompt": "为【目标页面/组件】实现「已创建挂件跨场景保留」。创建过程结束后将结果挂件先放大展示，再缩到固定角落；后台界面切换到管理列表时挂件持续存在，最后通过已安装项确认结果归属。 触发：创建过程完成并转入管理场景。结果：用户看到生成、可用与被管理的是同一个对象。 挂件状态不能在场景交接时重置；放大与紧凑形态共享同一内容。 手机保留挂件与管理器的对应关系，同时避免遮住列表的主要信息。 负责成果身份连续性，前序可搭配过程折叠，运行控制交给独立暂停生命周期。 键盘：暂停按钮可键盘操作；图解内部不伪造可编辑输入或可点击安装。 减少动态：呈现挂件与管理器已安装项的稳定终态，并给出过程说明。 实施前读取来源源码、研究与复现边界，不以本Prompt替代代码。",
+    "preview": "previews/patterns/persistent-created-widget.jpg"
   },
   {
     "id": "procedural-fluid-spotlight",
@@ -9125,10 +10772,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "Canvas不进入Tab顺序；标题、CTA和工作台以DOM保持可读。",
-      "reducedMotion": "迁移时提供静态色场或停止时间推进；源页面GPU的减少动态行为需单独核验。"
-    },
     "parameters": [
       {
         "name": "帧率与DPR",
@@ -9148,7 +10791,12 @@ window.ATLAS_PATTERNS = [
         "observation": "Hero使用官方WebGL2流体着色器，蓝灰五色场、暖色光核与低强度光晕持续演化；30fps、DPR上限1.5、离屏暂停。输入流场是1×1中性纹理，没有指针搅动逻辑。",
         "evidence": "observed",
         "referenceUrl": "https://www.deepseek.com/harness/",
-        "capturedAt": "2026-10-11"
+        "capturedAt": "2026-10-11",
+        "focus": {
+          "target": "section:has(h1) canvas",
+          "label": "流体色场与固定光核",
+          "instruction": "观察首屏蓝灰色场的持续演化与暖色光核；光核保持在画面中，指针不会搅动流场。"
+        }
       }
     ],
     "sourceFiles": [
@@ -9178,7 +10826,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/deepseek-harness/vendor/deepseek-harness/8555-7c9518c428e988c2.js",
       "demos/cases/deepseek-harness/vendor/deepseek-harness/86b88eeb-5b86058878847f6a.js"
     ],
-    "prompt": "为【目标页面/组件】实现「流体色场中的固定光核」。以程序化多层扭曲形成流体色场，用位置固定的光核、光晕和暗角控制明暗；文本和工作台位于独立DOM层，不随纹理变形。 触发：进入首屏并保持可见。结果：背景提供空间和氛围，阅读与操作不受纹理运动影响。 GPU层只负责装饰，不遮挡点击、正文和焦点。 源案例flowmap为中性纹理，没有指针扰动；复用时应保留离屏停止和帧率上限。 作为首屏背景与稳定工作台组合，勿叠加同区域大幅粒子、文字变形和多套指针反馈。 键盘：Canvas不进入Tab顺序；标题、CTA和工作台以DOM保持可读。 减少动态：迁移时提供静态色场或停止时间推进；源页面GPU的减少动态行为需单独核验。 实施前读取来源源码、研究与复现边界，不以本Prompt替代代码。"
+    "prompt": "为【目标页面/组件】实现「流体色场中的固定光核」。以程序化多层扭曲形成流体色场，用位置固定的光核、光晕和暗角控制明暗；文本和工作台位于独立DOM层，不随纹理变形。 触发：进入首屏并保持可见。结果：背景提供空间和氛围，阅读与操作不受纹理运动影响。 GPU层只负责装饰，不遮挡点击、正文和焦点。 源案例flowmap为中性纹理，没有指针扰动；复用时应保留离屏停止和帧率上限。 作为首屏背景与稳定工作台组合，勿叠加同区域大幅粒子、文字变形和多套指针反馈。 键盘：Canvas不进入Tab顺序；标题、CTA和工作台以DOM保持可读。 减少动态：迁移时提供静态色场或停止时间推进；源页面GPU的减少动态行为需单独核验。 实施前读取来源源码、研究与复现边界，不以本Prompt替代代码。",
+    "preview": "previews/patterns/procedural-fluid-spotlight.jpg"
   },
   {
     "id": "process-to-result-collapse",
@@ -9214,10 +10863,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "提供独立暂停；若迁移成实际产品，用语义展开按钮保留回看过程的入口。",
-      "reducedMotion": "直接呈现可读结果与完成卡，保留执行说明。"
-    },
     "parameters": [
       {
         "name": "周期 / 故事数",
@@ -9237,7 +10882,12 @@ window.ATLAS_PATTERNS = [
         "observation": "工作流演示每11秒切换周报、销售汇总和项目测试三种故事；输入JSON先出现，替换为计划结果，再收起执行过程并留下任务卡。使用固定2026-09-01演示时间，不创建真实任务。",
         "evidence": "observed",
         "referenceUrl": "https://www.deepseek.com/harness/",
-        "capturedAt": "2026-10-11"
+        "capturedAt": "2026-10-11",
+        "focus": {
+          "target": "[class^=HarnessWorkflowPreview_canvas]",
+          "label": "执行过程收起与任务卡",
+          "instruction": "看输入、工具结果和执行过程依次出现，过程收起后留下任务卡；随后会切换下一种工作故事。"
+        }
       }
     ],
     "sourceFiles": [
@@ -9267,7 +10917,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/deepseek-harness/vendor/deepseek-harness/8555-7c9518c428e988c2.js",
       "demos/cases/deepseek-harness/vendor/deepseek-harness/86b88eeb-5b86058878847f6a.js"
     ],
-    "prompt": "为【目标页面/组件】实现「执行过程折叠后保留结果」。先展开结构化输入，替换为任务结果，再折叠中间执行过程；完成文案和独立任务卡保留在原阅读位置，下一轮更换示例而不改变结构。 触发：演示任务由输入进入完成阶段。结果：用户能理解关键执行信息，又能清楚看到最终可用对象。 真实产品要由实际执行状态驱动；演示应明确固定故事与日期。 输入和结果使用同一任务标识，折叠只改变呈现而不改变事实。 负责过程与结果的层级交接，可与跨场景成果保留组合；日志详情属于独立深入查看职责。 键盘：提供独立暂停；若迁移成实际产品，用语义展开按钮保留回看过程的入口。 减少动态：直接呈现可读结果与完成卡，保留执行说明。 实施前读取来源源码、研究与复现边界，不以本Prompt替代代码。"
+    "prompt": "为【目标页面/组件】实现「执行过程折叠后保留结果」。先展开结构化输入，替换为任务结果，再折叠中间执行过程；完成文案和独立任务卡保留在原阅读位置，下一轮更换示例而不改变结构。 触发：演示任务由输入进入完成阶段。结果：用户能理解关键执行信息，又能清楚看到最终可用对象。 真实产品要由实际执行状态驱动；演示应明确固定故事与日期。 输入和结果使用同一任务标识，折叠只改变呈现而不改变事实。 负责过程与结果的层级交接，可与跨场景成果保留组合；日志详情属于独立深入查看职责。 键盘：提供独立暂停；若迁移成实际产品，用语义展开按钮保留回看过程的入口。 减少动态：直接呈现可读结果与完成卡，保留执行说明。 实施前读取来源源码、研究与复现边界，不以本Prompt替代代码。",
+    "preview": "previews/patterns/process-to-result-collapse.jpg"
   },
   {
     "id": "scroll-gathered-pixel-mark",
@@ -9302,10 +10953,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "装饰层不拦截指针和焦点，链接保持原生DOM。",
-      "reducedMotion": "迁移时直接给出目标标记或隐藏装饰，保留同一CTA；源GPU减少动态行为单列验证。"
-    },
     "parameters": [
       {
         "name": "立方体数量",
@@ -9330,7 +10977,13 @@ window.ATLAS_PATTERNS = [
         "observation": "页尾196个Three.js立方体随滚动从球面散布聚合为像素标志；独立2D网格以90px间隔绘制断开线段和3.6px方点，手机隐藏三维层。",
         "evidence": "observed",
         "referenceUrl": "https://www.deepseek.com/harness/",
-        "capturedAt": "2026-10-11"
+        "capturedAt": "2026-10-11",
+        "focus": {
+          "target": "#products",
+          "label": "滚动聚合的立方体标志",
+          "instruction": "在这一节上下滚动，观察散布立方体聚合成标志；手机上隐藏三维层，可切桌面模式观看。",
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -9360,7 +11013,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/deepseek-harness/vendor/deepseek-harness/8555-7c9518c428e988c2.js",
       "demos/cases/deepseek-harness/vendor/deepseek-harness/86b88eeb-5b86058878847f6a.js"
     ],
-    "prompt": "为【目标页面/组件】实现「散布立方体随滚动聚合标记」。同一批立方体在球面起点和固定像素网格目标之间插值，滚动推进聚合量，反向滚动可散开；小幅旋转与漂浮在聚合期间减弱。 触发：滚动进入或离开页尾CTA。结果：抽象空间逐步收束成品牌标记，为内容结束提供可逆的视觉回应。 目标点位决定最终图形，必须与已确认的标记一致。 源页面手机隐藏三维层；正文与行动不能依赖GPU才能阅读。 负责页尾视觉收束，CTA文本保持独立；与首屏背景共享色彩即可，不需要共享粒子状态。 键盘：装饰层不拦截指针和焦点，链接保持原生DOM。 减少动态：迁移时直接给出目标标记或隐藏装饰，保留同一CTA；源GPU减少动态行为单列验证。 实施前读取来源源码、研究与复现边界，不以本Prompt替代代码。"
+    "prompt": "为【目标页面/组件】实现「散布立方体随滚动聚合标记」。同一批立方体在球面起点和固定像素网格目标之间插值，滚动推进聚合量，反向滚动可散开；小幅旋转与漂浮在聚合期间减弱。 触发：滚动进入或离开页尾CTA。结果：抽象空间逐步收束成品牌标记，为内容结束提供可逆的视觉回应。 目标点位决定最终图形，必须与已确认的标记一致。 源页面手机隐藏三维层；正文与行动不能依赖GPU才能阅读。 负责页尾视觉收束，CTA文本保持独立；与首屏背景共享色彩即可，不需要共享粒子状态。 键盘：装饰层不拦截指针和焦点，链接保持原生DOM。 减少动态：迁移时直接给出目标标记或隐藏装饰，保留同一CTA；源GPU减少动态行为单列验证。 实施前读取来源源码、研究与复现边界，不以本Prompt替代代码。",
+    "preview": "previews/patterns/scroll-gathered-pixel-mark.jpg"
   },
   {
     "id": "aspect-recomposed-3d-hero",
@@ -9395,10 +11049,6 @@ window.ATLAS_PATTERNS = [
         "viewport-animation-lifecycle"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "将标题、说明与行动保留为可顺序读取的语义内容，装饰性画布不进入键盘焦点顺序；若增加模型操作，提供可聚焦控件。",
-      "reducedMotion": "保留按画幅重新构图，关闭持续旋转与着色器时间推进，并提供静止场景及可键盘操作的暂停控制；这是实施建议，来源未实现完整静止与暂停。"
     },
     "parameters": [
       {
@@ -9440,7 +11090,12 @@ window.ATLAS_PATTERNS = [
         "observation": "首屏首次布局及容器尺寸改变：reposeHero() 按容器宽高比分五档设置同一星球的位置与缩放；宽高比大于 1.9 时为 [1.15, 0.30, 0]／0.68，大于 1.4 至 1.9 时为 [0.85, 0.30, 0]／0.58，大于 1.0 至 1.4 时为 [0.55, 0.45, 0]／0.48，大于 0.7 至 1.0 时为 [0.20, 0.80, 0]／0.45，其余为 [0.0, 0.95, 0]／0.42；大气层同步位置和比例，使横屏主角偏右、竖屏主角上移，为左下标题留白。",
         "evidence": "observed",
         "referenceUrl": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/demo/web-design-demo/demo1-with-skill.html",
-        "capturedAt": "2026-10-27"
+        "capturedAt": "2026-10-27",
+        "focus": {
+          "target": "#hero-planet",
+          "label": "随画幅重新安排的三维星球",
+          "instruction": "切换桌面与手机模式，观察同一星球在横屏偏右、竖屏上移，为标题留出空间。"
+        }
       }
     ],
     "sourceFiles": [
@@ -9448,7 +11103,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/stellar-museum/index.html",
       "entries/cases/stellar-museum.json",
       "docs/cases/stellar-museum.md"
-    ]
+    ],
+    "preview": "previews/patterns/aspect-recomposed-3d-hero.jpg"
   },
   {
     "id": "difference-blend-navigation",
@@ -9487,10 +11143,6 @@ window.ATLAS_PATTERNS = [
         "semantic-theme-roles"
       ]
     },
-    "accessibility": {
-      "keyboard": "保留原生章节链接与清晰的顺序，用 :focus-visible 提供可辨认的焦点样式，并在每种背景上检查焦点和文字对比。",
-      "reducedMotion": "差值混合无需运动；减少动态时移除顶栏淡入，直接保持导航可见。"
-    },
     "parameters": [
       {
         "name": "导航绘制色",
@@ -9521,7 +11173,17 @@ window.ATLAS_PATTERNS = [
         "observation": "暖纸色 #f2efe8 与墨色 #161513 构成固定双色基调，联系和页脚反转为墨底浅字；固定顶栏和两侧竖排标记使用差值混合跨越深浅背景。",
         "evidence": "observed",
         "referenceUrl": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/demo/web-design-demo/demo2-with-skill.html",
-        "capturedAt": "2026-10-27"
+        "capturedAt": "2026-10-27",
+        "focus": {
+          "target": ".masthead",
+          "label": "跨越深浅背景的差值导航",
+          "instruction": "向下滚到深色 Contact，再返回浅色摄影与正文，观察固定导航的文字怎样随背景反转。",
+          "prepare": [
+            {
+              "scroll": "#contact"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -9529,7 +11191,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/mira-host-photography/index.html",
       "entries/cases/mira-host-photography.json",
       "docs/cases/mira-host-photography.md"
-    ]
+    ],
+    "preview": "previews/patterns/difference-blend-navigation.jpg"
   },
   {
     "id": "inline-row-photo-preview",
@@ -9540,7 +11203,7 @@ window.ATLAS_PATTERNS = [
       "micro-motion"
     ],
     "summary": "在保持文字目录易于扫描的同时，为当前行补充一张摄影线索。",
-    "mechanism": "把照片绝对定位在目录行右侧，悬停时以透明度与轻微缩放显现，并让标题和箭头小幅右移；离开后还原。",
+    "mechanism": "把照片绝对定位在目录行右侧，悬停时以透明度与轻微缩放显现，并让标题和箭头小幅右移；离开后还原。 键盘聚焦目录行时也显示对应照片。",
     "trigger": "桌面指针进入或离开作品目录行",
     "effect": "只有当前行浮现固定位置的摄影预览，标题与箭头共同提示关注对象。",
     "useCases": [
@@ -9567,10 +11230,6 @@ window.ATLAS_PATTERNS = [
       "conflicts": [
         "pointer-image-shader-preview"
       ]
-    },
-    "accessibility": {
-      "keyboard": "用 :focus-visible 给出同样的预览",
-      "reducedMotion": "保留预览的显示与隐藏，取消缩放、标题和箭头位移，以即时显隐代替过渡。"
     },
     "parameters": [
       {
@@ -9612,7 +11271,13 @@ window.ATLAS_PATTERNS = [
         "observation": "桌面悬停作品目录行时，标题右移 8px、箭头右移 6px，对应照片缩略图从透明和 0.94 倍缩放进入；离开后回到初态。1100px 及以下隐藏缩略图。",
         "evidence": "observed",
         "referenceUrl": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/demo/web-design-demo/demo2-with-skill.html",
-        "capturedAt": "2026-10-27"
+        "capturedAt": "2026-10-27",
+        "focus": {
+          "target": "#works .toc",
+          "label": "作品目录行内的摄影预览",
+          "instruction": "把指针停在任一作品目录行上，观察标题和箭头轻移、对应摄影缩略图出现；移开回到初态。",
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -9620,7 +11285,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/mira-host-photography/index.html",
       "entries/cases/mira-host-photography.json",
       "docs/cases/mira-host-photography.md"
-    ]
+    ],
+    "preview": "previews/patterns/inline-row-photo-preview.jpg"
   },
   {
     "id": "accent-role-tiers",
@@ -9632,7 +11298,7 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "让同一品牌色按链接、强调字、实心底、高亮条与柔和底分别工作。",
     "mechanism": "先规定五个配色职责，再按品牌与深浅主题赋值；实心底配独立墨色，高亮条可在深色主题单独降低明度，品牌标志与装饰色独立保存。",
-    "trigger": "阅读链接、标题、当前项与主操作，或切换品牌和主题",
+    "trigger": "切换品牌或主题",
     "effect": "相同功能在不同品牌与主题中保留稳定的颜色语义。",
     "useCases": [
       "品牌主题系统",
@@ -9654,10 +11320,6 @@ window.ATLAS_PATTERNS = [
         "current-item-emphasis-tiers"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "链接和按钮使用原生元素，焦点轮廓用 --accent-1；当前项同时提供 aria-current 和字重。",
-      "reducedMotion": "角色和值不依赖运动，减少动态时主题直接更新。"
     },
     "parameters": [
       {
@@ -9684,7 +11346,13 @@ window.ATLAS_PATTERNS = [
         "observation": "品牌切换在同一 DOM 上更新 data-brand；主题按跟随系统、深色、浅色循环，四组变量分别控制页面底、表面、文字、五层主题色、标志与圆角，页面不刷新。",
         "evidence": "adapted",
         "referenceUrl": "https://web-atlas.mibxranime.chatgpt.site/",
-        "capturedAt": "2026-10-31"
+        "capturedAt": "2026-10-31",
+        "focus": {
+          "target": ".panel:first-child",
+          "label": "五个主题色角色",
+          "instruction": "对比正文链接、强调字、实心操作、高亮条和柔和状态，再滚动比较 Web／Motion 的浅深四组配色。",
+          "entrypoint": "demos/cases/atlas-sister-sites/source/accent-tiers.html"
+        }
       },
       {
         "caseId": "atlas-sister-sites",
@@ -9692,7 +11360,13 @@ window.ATLAS_PATTERNS = [
         "observation": "{\"title\":\"Web Atlas · 固定提交源码\",\"url\":\"https://github.com/MIBXR/web-atlas/tree/2541e56a21d5321717b9397c14ae09462d562ee4/site\",\"type\":\"实例\",\"note\":\"Web 配色、字体、顶栏、侧栏、卡片、文档与详情吸附、过渡的数值来源。\"}",
         "evidence": "adapted",
         "referenceUrl": "https://github.com/MIBXR/web-atlas/tree/2541e56a21d5321717b9397c14ae09462d562ee4/site",
-        "capturedAt": "2026-10-31"
+        "capturedAt": "2026-10-31",
+        "focus": {
+          "target": ".panel:first-child",
+          "label": "五个主题色角色",
+          "instruction": "对比正文链接、强调字、实心操作、高亮条和柔和状态，再滚动比较 Web／Motion 的浅深四组配色。",
+          "entrypoint": "demos/cases/atlas-sister-sites/source/accent-tiers.html"
+        }
       },
       {
         "caseId": "atlas-sister-sites",
@@ -9700,7 +11374,13 @@ window.ATLAS_PATTERNS = [
         "observation": "{\"title\":\"Motion Atlas · 固定提交源码\",\"url\":\"https://github.com/MIBXR/motion-atlas/tree/80aac18cd2fcef4a97e53b1ef9227a223136ff60/site\",\"type\":\"实例\",\"note\":\"Motion 品牌路径、暖色主题、圆角和胶囊当前项及共享骨架来源。\"}",
         "evidence": "adapted",
         "referenceUrl": "https://github.com/MIBXR/motion-atlas/tree/80aac18cd2fcef4a97e53b1ef9227a223136ff60/site",
-        "capturedAt": "2026-10-31"
+        "capturedAt": "2026-10-31",
+        "focus": {
+          "target": ".panel:first-child",
+          "label": "五个主题色角色",
+          "instruction": "对比正文链接、强调字、实心操作、高亮条和柔和状态，再滚动比较 Web／Motion 的浅深四组配色。",
+          "entrypoint": "demos/cases/atlas-sister-sites/source/accent-tiers.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -9712,7 +11392,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/atlas-sister-sites/fidelity.md",
       "demos/cases/atlas-sister-sites/LICENSES.md",
       "demos/cases/atlas-sister-sites/source/accent-tiers.html"
-    ]
+    ],
+    "preview": "previews/patterns/accent-role-tiers.jpg"
   },
   {
     "id": "current-item-emphasis-tiers",
@@ -9724,7 +11405,7 @@ window.ATLAS_PATTERNS = [
       "structure"
     ],
     "summary": "顶栏当前页实心、侧栏当前范围柔和，悬停用中性次级面表达短暂反馈。",
-    "mechanism": "按导航层级分配实心与柔和当前状态，非当前导航悬停改用次级面与正文色；当前项悬停维持原状态，动作按钮单独采用主题色悬停。",
+    "mechanism": "按导航层级分配实心与柔和当前状态，非当前导航悬停改用次级面与正文色；当前项悬停维持原状态，动作按钮单独采用主题色悬停。 Tab 焦点使用 --accent-1 轮廓，与当前项和悬停状态分开。",
     "trigger": "切换页面、分类或章节，并悬停非当前导航项",
     "effect": "全站位置、局部范围与短暂经过各有明确的视觉重量。",
     "useCases": [
@@ -9747,10 +11428,6 @@ window.ATLAS_PATTERNS = [
         "accent-role-tiers"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "使用 aria-current 表达页面、分类与章节位置；Tab 焦点用 --accent-1 轮廓，与悬停状态独立。",
-      "reducedMotion": "当前项和悬停即时更新，减少动态时保留字重、文字与颜色状态。"
     },
     "parameters": [
       {
@@ -9777,7 +11454,13 @@ window.ATLAS_PATTERNS = [
         "observation": "顶栏当前页与手机全站导航当前页使用 --accent-3 底和 --accent-3-ink 字；侧栏和本文目录使用 --accent-4 底、--accent-2 字与 650 字重，非当前导航悬停使用次级面与正文色。",
         "evidence": "adapted",
         "referenceUrl": "https://web-atlas.mibxranime.chatgpt.site/",
-        "capturedAt": "2026-10-31"
+        "capturedAt": "2026-10-31",
+        "focus": {
+          "target": ".layout .rail, .menu-toggle",
+          "label": "顶栏与侧栏的当前项",
+          "instruction": "切换侧栏分类，再把指针停在其他分类；对比顶栏实心当前页、侧栏柔和当前项与中性悬停。",
+          "entrypoint": "demos/cases/atlas-sister-sites/index.html#list"
+        }
       },
       {
         "caseId": "atlas-sister-sites",
@@ -9785,7 +11468,13 @@ window.ATLAS_PATTERNS = [
         "observation": "{\"title\":\"Web Atlas · 固定提交源码\",\"url\":\"https://github.com/MIBXR/web-atlas/tree/2541e56a21d5321717b9397c14ae09462d562ee4/site\",\"type\":\"实例\",\"note\":\"Web 配色、字体、顶栏、侧栏、卡片、文档与详情吸附、过渡的数值来源。\"}",
         "evidence": "adapted",
         "referenceUrl": "https://github.com/MIBXR/web-atlas/tree/2541e56a21d5321717b9397c14ae09462d562ee4/site",
-        "capturedAt": "2026-10-31"
+        "capturedAt": "2026-10-31",
+        "focus": {
+          "target": ".layout .rail, .menu-toggle",
+          "label": "顶栏与侧栏的当前项",
+          "instruction": "切换侧栏分类，再把指针停在其他分类；对比顶栏实心当前页、侧栏柔和当前项与中性悬停。",
+          "entrypoint": "demos/cases/atlas-sister-sites/index.html#list"
+        }
       },
       {
         "caseId": "atlas-sister-sites",
@@ -9793,7 +11482,13 @@ window.ATLAS_PATTERNS = [
         "observation": "{\"title\":\"Motion Atlas · 固定提交源码\",\"url\":\"https://github.com/MIBXR/motion-atlas/tree/80aac18cd2fcef4a97e53b1ef9227a223136ff60/site\",\"type\":\"实例\",\"note\":\"Motion 品牌路径、暖色主题、圆角和胶囊当前项及共享骨架来源。\"}",
         "evidence": "adapted",
         "referenceUrl": "https://github.com/MIBXR/motion-atlas/tree/80aac18cd2fcef4a97e53b1ef9227a223136ff60/site",
-        "capturedAt": "2026-10-31"
+        "capturedAt": "2026-10-31",
+        "focus": {
+          "target": ".layout .rail, .menu-toggle",
+          "label": "顶栏与侧栏的当前项",
+          "instruction": "切换侧栏分类，再把指针停在其他分类；对比顶栏实心当前页、侧栏柔和当前项与中性悬停。",
+          "entrypoint": "demos/cases/atlas-sister-sites/index.html#list"
+        }
       }
     ],
     "sourceFiles": [
@@ -9805,7 +11500,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/atlas-sister-sites/fidelity.md",
       "demos/cases/atlas-sister-sites/LICENSES.md",
       "demos/cases/atlas-sister-sites/source/emphasis.html"
-    ]
+    ],
+    "preview": "previews/patterns/current-item-emphasis-tiers.jpg"
   },
   {
     "id": "persistent-header-page-transition",
@@ -9816,7 +11512,7 @@ window.ATLAS_PATTERNS = [
       "page-motion"
     ],
     "summary": "为顶栏单独命名快照，主体短淡化切换，持续保留页面位置。",
-    "mechanism": "支持 View Transition 且不减少动态时，把 hash 路由的 DOM 更新包入 startViewTransition；根过渡 140ms ease-out，atlas-header 组与新快照无动画，隐藏旧顶栏快照。",
+    "mechanism": "支持 View Transition 且不减少动态时，把 hash 路由的 DOM 更新包入 startViewTransition；根过渡 140ms ease-out，atlas-header 组与新快照无动画，隐藏旧顶栏快照。 路由更新后将焦点放回正文，并避免额外滚动。",
     "trigger": "列表、详情与文档之间切换，或前后更换详情",
     "effect": "主体平顺交接，顶栏在同一位置保持连续。",
     "useCases": [
@@ -9839,10 +11535,6 @@ window.ATLAS_PATTERNS = [
         "shorter-column-sticky"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "路由更新后将焦点放到正文容器并防止额外滚动；原生导航可由键盘激活，当前页同步 aria-current。",
-      "reducedMotion": "不调用 startViewTransition，直接执行同一个 DOM 更新函数。"
     },
     "parameters": [
       {
@@ -9869,7 +11561,13 @@ window.ATLAS_PATTERNS = [
         "observation": "hash 驱动列表、详情与文档的 DOM 更新；支持 startViewTransition 且不减少动态时开启 140ms ease-out 根过渡，atlas-header 快照无动画、旧快照隐藏；不支持或减少动态时直接更新。",
         "evidence": "adapted",
         "referenceUrl": "https://web-atlas.mibxranime.chatgpt.site/",
-        "capturedAt": "2026-10-31"
+        "capturedAt": "2026-10-31",
+        "focus": {
+          "target": ".site-nav",
+          "label": "主体切换与固定顶栏",
+          "instruction": "点顶栏“列表”“详情”“文档”等入口，观察主体交接，顶栏保持在同一位置。",
+          "entrypoint": "demos/cases/atlas-sister-sites/index.html#list"
+        }
       },
       {
         "caseId": "atlas-sister-sites",
@@ -9877,7 +11575,13 @@ window.ATLAS_PATTERNS = [
         "observation": "{\"title\":\"Web Atlas · 固定提交源码\",\"url\":\"https://github.com/MIBXR/web-atlas/tree/2541e56a21d5321717b9397c14ae09462d562ee4/site\",\"type\":\"实例\",\"note\":\"Web 配色、字体、顶栏、侧栏、卡片、文档与详情吸附、过渡的数值来源。\"}",
         "evidence": "adapted",
         "referenceUrl": "https://github.com/MIBXR/web-atlas/tree/2541e56a21d5321717b9397c14ae09462d562ee4/site",
-        "capturedAt": "2026-10-31"
+        "capturedAt": "2026-10-31",
+        "focus": {
+          "target": ".site-nav",
+          "label": "主体切换与固定顶栏",
+          "instruction": "点顶栏“列表”“详情”“文档”等入口，观察主体交接，顶栏保持在同一位置。",
+          "entrypoint": "demos/cases/atlas-sister-sites/index.html#list"
+        }
       },
       {
         "caseId": "atlas-sister-sites",
@@ -9885,7 +11589,13 @@ window.ATLAS_PATTERNS = [
         "observation": "{\"title\":\"Motion Atlas · 固定提交源码\",\"url\":\"https://github.com/MIBXR/motion-atlas/tree/80aac18cd2fcef4a97e53b1ef9227a223136ff60/site\",\"type\":\"实例\",\"note\":\"Motion 品牌路径、暖色主题、圆角和胶囊当前项及共享骨架来源。\"}",
         "evidence": "adapted",
         "referenceUrl": "https://github.com/MIBXR/motion-atlas/tree/80aac18cd2fcef4a97e53b1ef9227a223136ff60/site",
-        "capturedAt": "2026-10-31"
+        "capturedAt": "2026-10-31",
+        "focus": {
+          "target": ".site-nav",
+          "label": "主体切换与固定顶栏",
+          "instruction": "点顶栏“列表”“详情”“文档”等入口，观察主体交接，顶栏保持在同一位置。",
+          "entrypoint": "demos/cases/atlas-sister-sites/index.html#list"
+        }
       }
     ],
     "sourceFiles": [
@@ -9896,7 +11606,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/atlas-sister-sites/app.js",
       "demos/cases/atlas-sister-sites/fidelity.md",
       "demos/cases/atlas-sister-sites/LICENSES.md"
-    ]
+    ],
+    "preview": "previews/patterns/persistent-header-page-transition.jpg"
   },
   {
     "id": "shorter-column-sticky",
@@ -9932,10 +11643,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "操作按钮使用原生 button；Tab 按文档顺序经过舞台控制和说明，焦点轮廓清楚。",
-      "reducedMotion": "吸附依靠布局，减少动态时保留滚动与可达内容，取消画面动画和视图宽度过渡。"
-    },
     "parameters": [
       {
         "name": "桌面网格",
@@ -9966,7 +11673,23 @@ window.ATLAS_PATTERNS = [
         "observation": "详情以 ResizeObserver 读取顶栏、操作栏、舞台列与说明栏：1160px 起舞台列始终 sticky，说明比舞台短时同时 sticky；top 为顶栏 68px 加操作栏实高加 24px，两栏在容器末尾按自然 sticky 边界结束；1159px 及以下单列。",
         "evidence": "adapted",
         "referenceUrl": "https://web-atlas.mibxranime.chatgpt.site/",
-        "capturedAt": "2026-10-31"
+        "capturedAt": "2026-10-31",
+        "focus": {
+          "target": ".detail-layout",
+          "label": "舞台与较短说明栏吸附",
+          "instruction": "点“右栏：较长／较短”切换说明长度，再上下滚动，对比舞台与较短说明栏的吸附；桌面 1440px 可看双栏。",
+          "entrypoint": "demos/cases/atlas-sister-sites/index.html#detail",
+          "prepare": [
+            {
+              "click": ".site-nav a[href=\"#detail\"]",
+              "waitFor": ".detail-layout"
+            },
+            {
+              "click": "#right-length[aria-pressed=false]"
+            }
+          ],
+          "viewport": "wide"
+        }
       },
       {
         "caseId": "atlas-sister-sites",
@@ -9974,7 +11697,23 @@ window.ATLAS_PATTERNS = [
         "observation": "{\"title\":\"Web Atlas · 固定提交源码\",\"url\":\"https://github.com/MIBXR/web-atlas/tree/2541e56a21d5321717b9397c14ae09462d562ee4/site\",\"type\":\"实例\",\"note\":\"Web 配色、字体、顶栏、侧栏、卡片、文档与详情吸附、过渡的数值来源。\"}",
         "evidence": "adapted",
         "referenceUrl": "https://github.com/MIBXR/web-atlas/tree/2541e56a21d5321717b9397c14ae09462d562ee4/site",
-        "capturedAt": "2026-10-31"
+        "capturedAt": "2026-10-31",
+        "focus": {
+          "target": ".detail-layout",
+          "label": "舞台与较短说明栏吸附",
+          "instruction": "点“右栏：较长／较短”切换说明长度，再上下滚动，对比舞台与较短说明栏的吸附；桌面 1440px 可看双栏。",
+          "entrypoint": "demos/cases/atlas-sister-sites/index.html#detail",
+          "prepare": [
+            {
+              "click": ".site-nav a[href=\"#detail\"]",
+              "waitFor": ".detail-layout"
+            },
+            {
+              "click": "#right-length[aria-pressed=false]"
+            }
+          ],
+          "viewport": "wide"
+        }
       },
       {
         "caseId": "atlas-sister-sites",
@@ -9982,7 +11721,23 @@ window.ATLAS_PATTERNS = [
         "observation": "{\"title\":\"Motion Atlas · 固定提交源码\",\"url\":\"https://github.com/MIBXR/motion-atlas/tree/80aac18cd2fcef4a97e53b1ef9227a223136ff60/site\",\"type\":\"实例\",\"note\":\"Motion 品牌路径、暖色主题、圆角和胶囊当前项及共享骨架来源。\"}",
         "evidence": "adapted",
         "referenceUrl": "https://github.com/MIBXR/motion-atlas/tree/80aac18cd2fcef4a97e53b1ef9227a223136ff60/site",
-        "capturedAt": "2026-10-31"
+        "capturedAt": "2026-10-31",
+        "focus": {
+          "target": ".detail-layout",
+          "label": "舞台与较短说明栏吸附",
+          "instruction": "点“右栏：较长／较短”切换说明长度，再上下滚动，对比舞台与较短说明栏的吸附；桌面 1440px 可看双栏。",
+          "entrypoint": "demos/cases/atlas-sister-sites/index.html#detail",
+          "prepare": [
+            {
+              "click": ".site-nav a[href=\"#detail\"]",
+              "waitFor": ".detail-layout"
+            },
+            {
+              "click": "#right-length[aria-pressed=false]"
+            }
+          ],
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -9993,7 +11748,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/atlas-sister-sites/app.js",
       "demos/cases/atlas-sister-sites/fidelity.md",
       "demos/cases/atlas-sister-sites/LICENSES.md"
-    ]
+    ],
+    "preview": "previews/patterns/shorter-column-sticky.jpg"
   },
   {
     "id": "drag-mascot-into-product-demo",
@@ -10005,7 +11761,7 @@ window.ATLAS_PATTERNS = [
       "structure"
     ],
     "summary": "体验产品的入口变成与角色互动的一步，并以同一落点衔接功能演示。",
-    "mechanism": "按下时记录指针与角色容器的握点偏移，移动时以可见身体锚点判定目标；命中后吸附到与工作姿态共用的位置，再触发产品界面。未命中则停在松手位置。",
+    "mechanism": "按下时记录指针与角色容器的握点偏移，移动时以可见身体锚点判定目标；命中后吸附到与工作姿态共用的位置，再触发产品界面。未命中则停在松手位置。 原作在减少动态时仍保留吸附；静态迁移可直接显示落位后的产品界面。",
     "trigger": "将角色的身体拖入虚线目标。",
     "effect": "体验产品的入口变成与角色互动的一步，并以同一落点衔接功能演示。",
     "useCases": [
@@ -10027,10 +11783,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "原作没有键盘拖放入口；迁移时提供原生按钮触发同一吸附与界面状态。",
-      "reducedMotion": "原作保留吸附；迁移时可直接落到工作位置，再显示可读的产品界面。"
-    },
     "parameters": [
       {
         "name": "吸附",
@@ -10051,7 +11803,18 @@ window.ATLAS_PATTERNS = [
         "observation": "指针按下角色后保持握点偏移拖动，未命中时留在原地；以可见身体锚点命中 Drop here 后，400ms 吸附到与敲字位置共用的目标，随后升起终端。触摸和鼠标共用 Pointer Events。",
         "evidence": "observed",
         "referenceUrl": "https://clawdondesk.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "#drop-zone",
+          "label": "角色拖放目标",
+          "instruction": "把中央角色拖到左下角 Drop here；命中后角色吸附，终端随即升起。",
+          "prepare": [
+            {
+              "key": "Escape",
+              "waitFor": "body[data-frame='4']"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -10062,7 +11825,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/clawd-on-desk/source/website/scripts/stage-geometry.js",
       "demos/cases/clawd-on-desk/source/website/styles/responsive.css",
       "demos/cases/clawd-on-desk/source/website/scripts/terminal.js"
-    ]
+    ],
+    "preview": "previews/patterns/drag-mascot-into-product-demo.jpg"
   },
   {
     "id": "expressive-permission-branches",
@@ -10094,10 +11858,6 @@ window.ATLAS_PATTERNS = [
       "pairsWellWith": [],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "Allow、Deny、重播和产品链接均为原生控件；原作到达权限阶段前仍需拖放。",
-      "reducedMotion": "原作保留分支表演；迁移时即时显示选择结果，保留重试与结束路径。"
-    },
     "parameters": [
       {
         "name": "允许",
@@ -10118,7 +11878,18 @@ window.ATLAS_PATTERNS = [
         "observation": "Permission Request 的 Allow 淡出终端并进入六格动作画廊；首次 Deny 经过趴地、起身、挠头与撒娇后给出重试卡；重试可 Allow，也可再次 Deny 后戴墨镜、收回米色圆幕并逐字显示 Thanks for visiting.。末态点击角色七次显示作者彩蛋，5 秒后消失。",
         "evidence": "observed",
         "referenceUrl": "https://clawdondesk.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "body:not(.clawd-perm-show) #drop-zone, body.clawd-perm-show #clawd-perm-card",
+          "label": "角色权限选择入口",
+          "instruction": "先把角色拖到 Drop here。出现 Permission Request 后，选择 Allow 或 Deny，观察角色动作和页面分支；第一次 Deny 后还能重试。",
+          "prepare": [
+            {
+              "key": "Escape",
+              "waitFor": "body[data-frame='4']"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -10128,7 +11899,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/clawd-on-desk/source/website/scripts/terminal.js",
       "demos/cases/clawd-on-desk/index.html",
       "demos/cases/clawd-on-desk/assets/svg/clawd-shades.svg"
-    ]
+    ],
+    "preview": "previews/patterns/expressive-permission-branches.jpg"
   },
   {
     "id": "mascot-continuous-iris",
@@ -10139,7 +11911,7 @@ window.ATLAS_PATTERNS = [
       "page-motion"
     ],
     "summary": "深浅场景切换时保留同一个视觉锚点。",
-    "mechanism": "把主角放在圆形背景遮罩之上；标题倒删后先将主角移到揭幕中心，再扩张背景并缩小角色，退出时反向收幕而角色持续可见。",
+    "mechanism": "把主角放在圆形背景遮罩之上；标题倒删后先将主角移到揭幕中心，再扩张背景并缩小角色，退出时反向收幕而角色持续可见。 Escape 可跳至等待态；原作在减少动态时仍保留圆幕，静态迁移可直接换背景并保留主角位置。",
     "trigger": "标题结束或二次拒绝后收场。",
     "effect": "深浅场景切换时保留同一个视觉锚点。",
     "useCases": [
@@ -10158,10 +11930,6 @@ window.ATLAS_PATTERNS = [
       "notes": "只管理背景的交接，主角和交互保持独立层。",
       "pairsWellWith": [],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "原作 Escape 可跳至等待态；移植时保持可直接进入内容的按钮。",
-      "reducedMotion": "原作未停用圆幕；移植时可即时换底色并保留角色位置。"
     },
     "parameters": [
       {
@@ -10183,7 +11951,12 @@ window.ATLAS_PATTERNS = [
         "observation": "开场先停留 500ms，再以 100ms/字输入 Clawd on Desk、闪烁两次、50ms/字倒删；角色移至中央后，米色花园以 800ms 圆形遮罩揭开。Escape 可跳到拖放等待态，普通点击与历史访问不跳过。",
         "evidence": "observed",
         "referenceUrl": "https://clawdondesk.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".stage",
+          "label": "角色与圆形揭幕",
+          "instruction": "看角色伴随标题输入、倒删和居中，然后米色花园由同一个中心展开。点“重播”可重新观看。"
+        }
       }
     ],
     "sourceFiles": [
@@ -10193,7 +11966,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/clawd-on-desk/index.html",
       "demos/cases/clawd-on-desk/source/website/scripts/scene.js",
       "demos/cases/clawd-on-desk/source/website/styles/responsive.css"
-    ]
+    ],
+    "preview": "previews/patterns/mascot-continuous-iris.jpg"
   },
   {
     "id": "mascot-gaze-body-shadow",
@@ -10204,7 +11978,7 @@ window.ATLAS_PATTERNS = [
       "micro-motion"
     ],
     "summary": "角色回应用户，并在剧情动作发生时避免眼神与身体争抢方向。",
-    "mechanism": "将指针相对眼睛的方向转为限幅 SVG 偏移，眼睛、身体和影子按不同倍率联动；演示阶段把目标交给标题光标或暂时回正。",
+    "mechanism": "将指针相对眼睛的方向转为限幅 SVG 偏移，眼睛、身体和影子按不同倍率联动；演示阶段把目标交给标题光标或暂时回正。 原作在减少动态时仍保持视线跟随；静态呈现可固定为前视。",
     "trigger": "指针移动或场景切换注视目标。",
     "effect": "角色回应用户，并在剧情动作发生时避免眼神与身体争抢方向。",
     "useCases": [
@@ -10226,10 +12000,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "注视只是装饰，不承担按钮、提示或关键信息。",
-      "reducedMotion": "原作视线继续跟随；移植时可固定前视并保留所有操作。"
-    },
     "parameters": [
       {
         "name": "眼睛限幅",
@@ -10250,7 +12020,18 @@ window.ATLAS_PATTERNS = [
         "observation": "等待态的眼睛朝指针或标题光标偏移，300px 达到最大 3 SVG 单位，身体按 0.33 倍偏移并联动影子。围绕角色连续同向两圈触发 6 秒眩晕、12 秒冷却；拖放和权限决定优先取消反应。",
         "evidence": "observed",
         "referenceUrl": "https://clawdondesk.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "#clawd",
+          "label": "视线、身体与影子",
+          "instruction": "围绕角色移动指针，看眼睛、身体和影子一起偏移；连续同向绕两圈可触发眩晕反应。",
+          "prepare": [
+            {
+              "key": "Escape",
+              "waitFor": "body[data-frame='4']"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -10260,7 +12041,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/clawd-on-desk/source/website/scripts/eye-track.js",
       "demos/cases/clawd-on-desk/source/website/scripts/dizzy.js",
       "demos/cases/clawd-on-desk/index.html"
-    ]
+    ],
+    "preview": "previews/patterns/mascot-gaze-body-shadow.jpg"
   },
   {
     "id": "pointer-proximity-pixel-garden",
@@ -10271,7 +12053,7 @@ window.ATLAS_PATTERNS = [
       "micro-motion"
     ],
     "summary": "整片背景以稳定像素格回应用户，装饰层不截获拖放或按钮。",
-    "mechanism": "在固定网格格点按坐标散列选择花形与颜色；仅实例化指针半径内的花，按距离同步透明度和缩放，离开后淡去并回收超额节点。",
+    "mechanism": "在固定网格格点按坐标散列选择花形与颜色；仅实例化指针半径内的花，按距离同步透明度和缩放，离开后淡去并回收超额节点。 原作在减少动态时取消透明度和缩放过渡，保留花形响应。",
     "trigger": "指针移动或触摸按下。",
     "effect": "整片背景以稳定像素格回应用户，装饰层不截获拖放或按钮。",
     "useCases": [
@@ -10290,10 +12072,6 @@ window.ATLAS_PATTERNS = [
       "notes": "以低对比装饰回应指针，不与角色和行动按钮争夺点击。",
       "pairsWellWith": [],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "花园为 aria-hidden 装饰，不改变键盘焦点或传达唯一状态。",
-      "reducedMotion": "原作只取消透明度/缩放过渡；可按目标需要停用花形响应。"
     },
     "parameters": [
       {
@@ -10315,7 +12093,18 @@ window.ATLAS_PATTERNS = [
         "observation": "指针附近的 37px 网格生出像素花，90px 半径内按距离控制透明度与缩放；移开淡去，最多保留 96 个活动及淡出格子，装饰层不截获输入。",
         "evidence": "observed",
         "referenceUrl": "https://clawdondesk.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "#new-world",
+          "label": "指针附近的像素花园",
+          "instruction": "在米色空地移动指针，观察附近像素花按距离生长，移开后逐渐淡去。",
+          "prepare": [
+            {
+              "key": "Escape",
+              "waitFor": "body[data-frame='4']"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -10325,7 +12114,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/clawd-on-desk/source/website/scripts/pixel-flower.js",
       "demos/cases/clawd-on-desk/source/website/scripts/flower-layer.js",
       "demos/cases/clawd-on-desk/index.html"
-    ]
+    ],
+    "preview": "previews/patterns/pointer-proximity-pixel-garden.jpg"
   },
   {
     "id": "center-split-theme-transition",
@@ -10336,7 +12126,7 @@ window.ATLAS_PATTERNS = [
       "page-motion"
     ],
     "summary": "保留旧主题快照，让新主题从水平中线展开。",
-    "mechanism": "在 View Transition 更新回调中切换完整主题；旧根快照不动，新根快照由 inset(50% 0) 展开为 inset(0)，完成后移除临时过渡状态。",
+    "mechanism": "在 View Transition 更新回调中切换完整主题；旧根快照不动，新根快照由 inset(50% 0) 展开为 inset(0)，完成后移除临时过渡状态。 减少动态时直接切换主题，不创建展开动画。",
     "trigger": "激活主题按钮",
     "effect": "颜色角色一起交接，用户能看清主题更替的方向。",
     "useCases": [
@@ -10355,10 +12145,6 @@ window.ATLAS_PATTERNS = [
         "theme-invariant-gradient-panel"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "原生主题按钮支持 Enter/Space，并提供下一主题的可访问名称；切换后保持焦点。",
-      "reducedMotion": "prefers-reduced-motion 下直接切换，不创建展开动画。"
     },
     "parameters": [
       {
@@ -10380,7 +12166,12 @@ window.ATLAS_PATTERNS = [
         "observation": "主题按钮在系统默认与手动选择之间协调页面表面、文字、边界和导航；点击后通过 View Transition 让新主题从横向中线向上下展开，390ms、cubic-bezier(.22,1,.36,1)，完成后清理过渡状态。首尾粉蓝黄渐变面板和产品影片保持原色，减少动态直接完成切换。",
         "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "header",
+          "label": "中央展开的主题切换",
+          "instruction": "点顶栏的明暗主题按钮，观察新主题从页面中线向上下展开。"
+        }
       }
     ],
     "sourceFiles": [
@@ -10391,7 +12182,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/uiarc-platform/style.css",
       "demos/cases/uiarc-platform/source/components.tsx",
       "demos/cases/uiarc-platform/fidelity.md"
-    ]
+    ],
+    "preview": "previews/patterns/center-split-theme-transition.jpg"
   },
   {
     "id": "clipped-word-rise",
@@ -10416,13 +12208,8 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "accent",
-      "notes": "与页面的信息层级协调；保持正文、操作与当前状态可读。",
       "pairsWellWith": [],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "链接与按钮保留原生键盘路径和可访问名称；标题的装饰分词不重复播报。",
-      "reducedMotion": "移除入场、交错和循环运动，保留所有文字、布局与复制结果。"
     },
     "parameters": [
       {
@@ -10441,7 +12228,7 @@ window.ATLAS_PATTERNS = [
         "note": "原站发布 CSS 的三条 text-reveal 动画。"
       }
     ],
-    "prompt": "为目标页面实现「逐词裁切上升的标题显现」。标题保留完整可访问名称，每个词位于独立裁切框内；词的位移、透明度和轻模糊按短间隔交错，完成后保持原排版。触发：首屏进入。结果：主张按阅读顺序显现，整行位置保持稳定。。沿用页面既有层级与真实内容；链接、复制按钮和状态提供可访问名称，减少动态直接显示稳定结果。",
+    "prompt": "为目标页面实现「逐词裁切上升的标题显现」。标题保留完整可访问名称，每个词位于独立裁切框内；词的位移、透明度和轻模糊按短间隔交错，完成后保持原排版。触发：首屏进入。结果：主张按阅读顺序显现，整行位置保持稳定。沿用页面既有层级与真实内容；链接、复制按钮和状态提供可访问名称，减少动态直接显示稳定结果。",
     "sources": [
       {
         "caseId": "uiarc-platform",
@@ -10449,7 +12236,13 @@ window.ATLAS_PATTERNS = [
         "observation": "首屏标题按单词裁切向上显现，词间延迟 40ms，位移／透明度／模糊分别为 760／440／580ms；章节标题可见面积达到 45% 后从 112% 下方上升，860ms 位移与 481.6ms 透明度，结尾双行间隔 80ms；越过的标题直接显示，减少动态保留完整文字。",
         "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero h1",
+          "label": "首屏逐词标题",
+          "instruction": "看标题中的单词依次从下方显现。点“重播”可重新观看入场。",
+          "replay": ".hero .title-word"
+        }
       }
     ],
     "sourceFiles": [
@@ -10461,7 +12254,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/uiarc-platform/fidelity.md",
       "demos/cases/uiarc-platform/source/content.json",
       "demos/cases/uiarc-platform/source/components.tsx"
-    ]
+    ],
+    "preview": "previews/patterns/clipped-word-rise.jpg"
   },
   {
     "id": "parallel-cli-agent-install",
@@ -10487,13 +12281,8 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "与页面的信息层级协调；保持正文、操作与当前状态可读。",
       "pairsWellWith": [],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "链接与按钮保留原生键盘路径和可访问名称；标题的装饰分词不重复播报。",
-      "reducedMotion": "移除入场、交错和循环运动，保留所有文字、布局与复制结果。"
     },
     "parameters": [
       {
@@ -10502,7 +12291,7 @@ window.ATLAS_PATTERNS = [
         "note": "前两张为安装方式，第三张解释内容层级。"
       }
     ],
-    "prompt": "为目标页面实现「面向开发者与 Agent 的并行安装入口」。并排放置 CLI 与 MCP 安装卡，各自说明适用入口并复制完整命令；相邻数量卡说明免费核心与 Pro 内容的边界。触发：选择安装方式并复制。结果：用户能按自己的工作方式取得同一组件产品。。沿用页面既有层级与真实内容；链接、复制按钮和状态提供可访问名称，减少动态直接显示稳定结果。",
+    "prompt": "为目标页面实现「面向开发者与 Agent 的并行安装入口」。并排放置 CLI 与 MCP 安装卡，各自说明适用入口并复制完整命令；相邻数量卡说明免费核心与 Pro 内容的边界。触发：选择安装方式并复制。结果：用户能按自己的工作方式取得同一组件产品。沿用页面既有层级与真实内容；链接、复制按钮和状态提供可访问名称，减少动态直接显示稳定结果。",
     "sources": [
       {
         "caseId": "uiarc-platform",
@@ -10510,7 +12299,12 @@ window.ATLAS_PATTERNS = [
         "observation": "shadcn CLI 与 MCP server 并排给出同一组件库的两个安装入口；原始 CopyButton 复制完整命令，以图标交叉淡化和描线勾号反馈，1900ms 后复位；第三张卡区分免费与 Pro 数量。",
         "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".installation",
+          "label": "CLI 与 MCP 安装入口",
+          "instruction": "对比 shadcn CLI 与 MCP server 两张安装卡；各自的复制按钮会复制该入口的完整命令。"
+        }
       }
     ],
     "sourceFiles": [
@@ -10522,7 +12316,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/uiarc-platform/fidelity.md",
       "demos/cases/uiarc-platform/source/content.json",
       "demos/cases/uiarc-platform/source/components.tsx"
-    ]
+    ],
+    "preview": "previews/patterns/parallel-cli-agent-install.jpg"
   },
   {
     "id": "theme-invariant-gradient-panel",
@@ -10547,15 +12342,10 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "foundation",
-      "notes": "与页面的信息层级协调；保持正文、操作与当前状态可读。",
       "pairsWellWith": [
         "semantic-theme-roles"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "链接与按钮保留原生键盘路径和可访问名称；标题的装饰分词不重复播报。",
-      "reducedMotion": "移除入场、交错和循环运动，保留所有文字、布局与复制结果。"
     },
     "parameters": [
       {
@@ -10569,7 +12359,7 @@ window.ATLAS_PATTERNS = [
         "note": "原站首屏 min-height；标题与正文独立重排。"
       }
     ],
-    "prompt": "为目标页面实现「主题切换中的恒定浅色品牌面板」。正文界面跟随明暗主题，首尾面板固定浅底深字；三处径向色场分布在边角，中心留给主张。触发：进入页面或切换主题。结果：品牌、文案对比与阅读主线保持稳定。。沿用页面既有层级与真实内容；链接、复制按钮和状态提供可访问名称，减少动态直接显示稳定结果。",
+    "prompt": "为目标页面实现「主题切换中的恒定浅色品牌面板」。正文界面跟随明暗主题，首尾面板固定浅底深字；三处径向色场分布在边角，中心留给主张。触发：进入页面或切换主题。结果：品牌、文案对比与阅读主线保持稳定。沿用页面既有层级与真实内容；链接、复制按钮和状态提供可访问名称，减少动态直接显示稳定结果。",
     "sources": [
       {
         "caseId": "uiarc-platform",
@@ -10577,7 +12367,12 @@ window.ATLAS_PATTERNS = [
         "observation": "主题按钮在系统默认与手动选择之间协调页面表面、文字、边界和导航；点击后通过 View Transition 让新主题从横向中线向上下展开，390ms、cubic-bezier(.22,1,.36,1)，完成后清理过渡状态。首尾粉蓝黄渐变面板和产品影片保持原色，减少动态直接完成切换。",
         "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".closing",
+          "label": "结尾恒定浅色面板",
+          "instruction": "用顶栏明暗按钮切换主题，再回到这个结尾面板；周围界面改变，粉蓝黄面板仍保留浅底深字。"
+        }
       }
     ],
     "sourceFiles": [
@@ -10589,7 +12384,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/uiarc-platform/fidelity.md",
       "demos/cases/uiarc-platform/source/content.json",
       "demos/cases/uiarc-platform/source/components.tsx"
-    ]
+    ],
+    "preview": "previews/patterns/theme-invariant-gradient-panel.jpg"
   },
   {
     "id": "proofreader-headline-edit",
@@ -10621,10 +12417,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "最终标题保留真实文字与 aria-label。",
-      "reducedMotion": "跳过改词过程，直接显示最终标题。"
-    },
     "parameters": [
       {
         "name": "起点",
@@ -10650,7 +12442,12 @@ window.ATLAS_PATTERNS = [
         "observation": "首屏标题在允许动态时先显示 A design skill，约 950ms 后以斜线划去 A、写入 The、放大落入行内并转为墨色；邻词用前后实测矩形补偿重排，真实文字接管，减少动态直接显示最终标题。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "#hero-title",
+          "label": "校对式标题改写",
+          "instruction": "标题开场将 A 划去并写成 The；点击工具栏重新载入可再看一次。"
+        }
       }
     ],
     "sourceFiles": [
@@ -10660,7 +12457,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/js/headline.js",
       "demos/cases/hallmark/index.html",
       "demos/cases/hallmark/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/proofreader-headline-edit.jpg"
   },
   {
     "id": "dealt-page-hand",
@@ -10694,10 +12492,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "卡片和重抽均可聚焦，卡片保留实际链接。",
-      "reducedMotion": "直接布局与换图，保留重抽、名称和打开动作。"
-    },
     "parameters": [
       {
         "name": "几何",
@@ -10723,7 +12517,12 @@ window.ATLAS_PATTERNS = [
         "observation": "首屏将五张桌面牌与四张手机牌沿浅弧交错发出，悬停或聚焦抬牌并让邻牌横移；Deal again 排除当前主题，随机抽取九个主题，等图片预解码与收牌完成后重发，busy 期间忽略重复点击。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "[data-fan]",
+          "label": "真实页面手牌",
+          "instruction": "将指针移到页面牌上，再点击 Deal again，观察抬牌、让位与重新发牌。"
+        }
       }
     ],
     "sourceFiles": [
@@ -10733,7 +12532,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/js/fan.js",
       "demos/cases/hallmark/index.html",
       "demos/cases/hallmark/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/dealt-page-hand.jpg"
   },
   {
     "id": "normalized-long-page-compare",
@@ -10766,10 +12566,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "比较标签和分隔线有键盘路径，外层保留正常滚动。",
-      "reducedMotion": "保留完整页面与手动阅读，停用自动扫线。"
-    },
     "parameters": [
       {
         "name": "外层行程",
@@ -10795,7 +12591,17 @@ window.ATLAS_PATTERNS = [
         "observation": "比较区以同一归一化滚动进度分别计算两张整页图的溢出高度，使不等长页面同时到达各自底部；三组标签替换整页图、问题数和阅读行程。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "[data-cmp-scroll]",
+          "label": "不等长页面同步比较",
+          "instruction": "在比较框内向下滚动，两张长度不同的页面会按同一进度到达底部。",
+          "prepare": [
+            {
+              "click": "[data-pair='1']"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -10805,7 +12611,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/js/compare.js",
       "demos/cases/hallmark/index.html",
       "demos/cases/hallmark/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/normalized-long-page-compare.jpg"
   },
   {
     "id": "demo-once-then-yield-divider",
@@ -10816,7 +12623,7 @@ window.ATLAS_PATTERNS = [
       "micro-motion"
     ],
     "summary": "先用一次短扫说明比较方式，首次主动输入后保持用户选择。",
-    "mechanism": "首次进入阈值后播放分隔比例关键帧；拖动或键盘调用同一个set，并由mine取消自动RAF和标记已接管。",
+    "mechanism": "首次进入阈值后播放分隔比例关键帧；拖动或键盘调用同一个set，并由mine取消自动RAF和标记已接管。 分隔线支持方向键与 Home/End；跳过自动示范后仍可手动调整。",
     "trigger": "比较区初次出现，随后拖动或键盘操作。",
     "effect": "一次示范让控制可发现，手动操作有持续所有权。",
     "useCases": [
@@ -10836,10 +12643,6 @@ window.ATLAS_PATTERNS = [
         "normalized-long-page-compare"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "用role=slider与aria值表达比例，方向键和Home/End可用。",
-      "reducedMotion": "跳过示范，保持手动分隔线。"
     },
     "parameters": [
       {
@@ -10866,7 +12669,12 @@ window.ATLAS_PATTERNS = [
         "observation": "比较分隔线首次进入视口后按 50→74→30→50 示范一次，拖动或键盘操作立即取消自动扫；方向键每次移动 2%，Shift 加速到 10%，Home 和 End 到达两端。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "[data-cmp]",
+          "label": "首轮分隔线示范",
+          "instruction": "分隔线进入画面后先示范一次；拖动中线即可接管比较。"
+        }
       }
     ],
     "sourceFiles": [
@@ -10876,7 +12684,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/js/compare.js",
       "demos/cases/hallmark/index.html",
       "demos/cases/hallmark/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/demo-once-then-yield-divider.jpg"
   },
   {
     "id": "one-move-process-panels",
@@ -10909,10 +12718,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "说明文本始终可读，发牌图示旁保留步骤标题。",
-      "reducedMotion": "直接显示所有问题和修复结果，线框保持初态。"
-    },
     "parameters": [
       {
         "name": "入场",
@@ -10938,7 +12743,12 @@ window.ATLAS_PATTERNS = [
         "observation": "How 的四格分别只解释一个动作：问题依次出现、三张主题牌发出、三个线框预案每 1.9 秒切换、四条 lint 问题逐项修复；悬停发牌格会先收回再发出。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "[data-how]",
+          "label": "四格单动作流程",
+          "instruction": "依次观察提问、发牌、线框与修复四格，每格只演示当前步骤的一个动作。"
+        }
       }
     ],
     "sourceFiles": [
@@ -10948,7 +12758,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/js/how.js",
       "demos/cases/hallmark/index.html",
       "demos/cases/hallmark/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/one-move-process-panels.jpg"
   },
   {
     "id": "scaled-live-page-dialog",
@@ -10981,10 +12792,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "使用原生dialog、可命名iframe、Escape与焦点返回。",
-      "reducedMotion": "省略对话框入场运动，缩放与导航保留。"
-    },
     "parameters": [
       {
         "name": "排版宽度",
@@ -11010,7 +12817,18 @@ window.ATLAS_PATTERNS = [
         "observation": "主题网格在原生对话框中打开真实主题页，iframe 按 1440px 排版并以容器宽度缩放，材料说明与当前主题同步，上一项和下一项沿筛选结果循环，Escape 关闭后焦点返回当前主题链接。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "[data-th-dlg]",
+          "label": "真实主题页预览对话框",
+          "instruction": "在对话框内滚动真实页面，并用右上角的前后按钮切换主题。",
+          "prepare": [
+            {
+              "click": ".th__link[data-slug=refract]",
+              "waitFor": "[data-th-dlg][open] iframe"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -11020,7 +12838,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/js/themes.js",
       "demos/cases/hallmark/index.html",
       "demos/cases/hallmark/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/scaled-live-page-dialog.jpg"
   },
   {
     "id": "inertial-page-wheel",
@@ -11031,7 +12850,7 @@ window.ATLAS_PATTERNS = [
       "page-motion"
     ],
     "summary": "用深度、明暗和惯性让真实页面围绕当前页排列。",
-    "mechanism": "按卡数计算圆柱半径和步角，指针位移换算角度与速度，松手后摩擦衰减再吸附；新拖动取消目标和惯性，首次接触永久停止闲置自转。",
+    "mechanism": "按卡数计算圆柱半径和步角，指针位移换算角度与速度，松手后摩擦衰减再吸附；新拖动取消目标和惯性，首次接触永久停止闲置自转。 方向键与前后按钮也可换页；减少动态时使用即时选择，停止闲置自转。",
     "trigger": "拖动、松手、方向键或闲置等待。",
     "effect": "页面具有连续空间位置，主动浏览接管闲置演示。",
     "useCases": [
@@ -11052,10 +12871,6 @@ window.ATLAS_PATTERNS = [
         "same-material-page-pairs"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "区域支持方向键和显式前后按钮，保留列表入口。",
-      "reducedMotion": "停用闲置自转，以即时选择替代惯性与吸附运动。"
     },
     "parameters": [
       {
@@ -11082,7 +12897,12 @@ window.ATLAS_PATTERNS = [
         "observation": "Made 把十七张页面牌排在三维圆柱上，闲置时缓慢自转，拖动松手后按速度惯性衰减并吸附到整步角，新的拖动接管惯性，方向键选择相邻页，首次接触后停止闲置自转；Edge 155 中侧页点击被 pointer capture 重定向到轮容器，当前项保持。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "[data-wheel]",
+          "label": "Made 页面转轮",
+          "instruction": "左右拖动页面转轮后松手，观察惯性减速与整步吸附；也可用两侧按钮换页。"
+        }
       }
     ],
     "sourceFiles": [
@@ -11092,7 +12912,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/js/wheel.js",
       "demos/cases/hallmark/index.html",
       "demos/cases/hallmark/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/inertial-page-wheel.jpg"
   },
   {
     "id": "digit-odometer-count",
@@ -11124,10 +12945,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "以完整数值更新aria-label，装饰数位不代替名称。",
-      "reducedMotion": "直接定位最终数位，跳过滚动。"
-    },
     "parameters": [
       {
         "name": "列高",
@@ -11153,7 +12970,12 @@ window.ATLAS_PATTERNS = [
         "observation": "GitHub 星标请求完成后，每位数字以 0–9 的竖列滚到目标数位，位间延迟 90ms，千以上显示 k；减少动态直接定位到最终数字。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "[data-gh]",
+          "label": "GitHub 星标数字",
+          "instruction": "观察导航右侧星标数的逐位滚入；数字在星标请求完成后更新。"
+        }
       }
     ],
     "sourceFiles": [
@@ -11163,7 +12985,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/js/core.js",
       "demos/cases/hallmark/style.css",
       "demos/cases/hallmark/index.html"
-    ]
+    ],
+    "preview": "previews/patterns/digit-odometer-count.jpg"
   },
   {
     "id": "same-material-page-pairs",
@@ -11176,7 +12999,6 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "把同一材料下的不同页面成对展示，解释材料与结构的分工。",
     "mechanism": "按材料分组，在每组并列两张真实页面，保留各自目的地、主体内容与不同构成。",
-    "trigger": "阅读同主题不同页面区域或打开页面。",
     "effect": "共同字体和色彩可辨认，结构差异也能直接看见。",
     "useCases": [
       "主题或设计系统展示",
@@ -11196,10 +13018,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "每张图保留有文字名称的真实链接。",
-      "reducedMotion": "成对比较为静态构成，内容保持可读。"
-    },
     "parameters": [
       {
         "name": "分组",
@@ -11207,7 +13025,7 @@ window.ATLAS_PATTERNS = [
         "note": "固定提交源码／线上实测：index.html:263 #same。"
       }
     ],
-    "prompt": "为目标页面实现「同一材料的异页并置」：按材料分组，在每组并列两张真实页面，保留各自目的地、主体内容与不同构成。触发：阅读同主题不同页面区域或打开页面。结果：共同字体和色彩可辨认，结构差异也能直接看见。参数：分组=Kiln与Midnight各两页。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；每张图保留有文字名称的真实链接。成对比较为静态构成，内容保持可读。",
+    "prompt": "为目标页面实现「同一材料的异页并置」：按材料分组，在每组并列两张真实页面，保留各自目的地、主体内容与不同构成。结果：共同字体和色彩可辨认，结构差异也能直接看见。参数：分组=Kiln与Midnight各两页。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；每张图保留有文字名称的真实链接。成对比较为静态构成，内容保持可读。",
     "sources": [
       {
         "caseId": "hallmark",
@@ -11215,7 +13033,12 @@ window.ATLAS_PATTERNS = [
         "observation": "Same 区把同属 Kiln 的两页和同属 Midnight 的两页分别并置，用相同材料下不同的内容与布局说明主题提供材料、构建决定页面结构。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "#same .pair:first-child",
+          "label": "同一 Kiln 材料的两张页面",
+          "instruction": "比较陶艺学校与陶器商店：同一套主题材料分别形成两种内容与布局。"
+        }
       }
     ],
     "sourceFiles": [
@@ -11224,7 +13047,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/fidelity.md",
       "demos/cases/hallmark/index.html",
       "demos/cases/hallmark/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/same-material-page-pairs.jpg"
   },
   {
     "id": "confirmed-command-copy",
@@ -11256,10 +13080,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "使用原生按钮、明确名称和状态播报，复制失败保留可选文本。",
-      "reducedMotion": "成功勾与文字即时变化，计时恢复保留。"
-    },
     "parameters": [
       {
         "name": "反馈时长",
@@ -11275,7 +13095,13 @@ window.ATLAS_PATTERNS = [
         "observation": "首页、Lumen 和 Terminal 的复制按钮复制对应命令或当前可见代码，成功后短暂显示勾或 Copied 并更新状态播报，反馈计时结束后恢复按钮。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".get",
+          "label": "安装命令与复制反馈",
+          "instruction": "切换 brew 或 cargo，点击命令右侧的复制按钮，观察完成反馈。",
+          "entrypoint": "demos/cases/hallmark/themes/terminal/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -11286,7 +13112,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/themes/lumen/page.js",
       "demos/cases/hallmark/themes/terminal/page.js",
       "demos/cases/hallmark/index.html"
-    ]
+    ],
+    "preview": "previews/patterns/confirmed-command-copy.jpg"
   },
   {
     "id": "gesture-cleared-scent-field",
@@ -11319,10 +13146,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "香型由可聚焦按钮选择，背景画布不截获主体操作。",
-      "reducedMotion": "保留静帧和即时换色，停用连续噪声与尾迹。"
-    },
     "parameters": [
       {
         "name": "渲染",
@@ -11348,7 +13171,18 @@ window.ATLAS_PATTERNS = [
         "observation": "Atelier 用同一个半尺寸 WebGL 场绘制上升香气、试香纸羽流和指针尾迹，指针移动拨开雾，选择香型同时改变环境雾与羽流颜色，离开显雾区域或后台时停帧。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero__art",
+          "label": "香型试纸与香气场",
+          "instruction": "选择一张试香纸，再移动指针拨开香气；观察环境雾与试纸羽流一起换色。",
+          "entrypoint": "demos/cases/hallmark/themes/atelier/index.html",
+          "prepare": [
+            {
+              "click": ".hero [data-scent='3']"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -11358,7 +13192,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/themes/atelier/air.js",
       "demos/cases/hallmark/themes/atelier/page.js",
       "demos/cases/hallmark/themes/atelier/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/gesture-cleared-scent-field.jpg"
   },
   {
     "id": "gated-character-stream",
@@ -11369,7 +13204,7 @@ window.ATLAS_PATTERNS = [
       "page-motion"
     ],
     "summary": "用字符本身显示原始数据如何变成规范事件。",
-    "mechanism": "噪声束按字符格输送数据包，记录每字越门时刻，从原JSON改为事件名；失败包停顿、等待和重试，标题周围按实测文本留出安静区。",
+    "mechanism": "噪声束按字符格输送数据包，记录每字越门时刻，从原JSON改为事件名；失败包停顿、等待和重试，标题周围按实测文本留出安静区。 静态呈现可固定时间参数为 37，保留原始、越门与已类型化状态。",
     "trigger": "进入场景或移动指针。",
     "effect": "流、类型转换和重试被放进同一张可读场景。",
     "useCases": [
@@ -11389,10 +13224,6 @@ window.ATLAS_PATTERNS = [
         "field-linked-connectors"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "正文与事件说明为稳定DOM，画布为辅助证据。",
-      "reducedMotion": "渲染固定时间37的可读字符场，保留原始、越门与已类型化状态。"
     },
     "parameters": [
       {
@@ -11419,7 +13250,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Cobalt 将数据包沿 8×16px 字格中的噪声束送过类型门，字符跨门后由原始 JSON 变为事件名，失败包经历抖动、等待和重试，指针使附近字符束偏开并增亮。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero .field",
+          "label": "数据字符流与类型门",
+          "instruction": "看中央蓝色竖向类型门：字符跨过它时由 JSON 变为事件名；移动指针可拨开附近字符束。",
+          "entrypoint": "demos/cases/hallmark/themes/cobalt/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -11429,7 +13266,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/themes/cobalt/wire.js",
       "demos/cases/hallmark/themes/cobalt/index.html",
       "demos/cases/hallmark/themes/cobalt/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/gated-character-stream.jpg"
   },
   {
     "id": "field-linked-connectors",
@@ -11441,7 +13279,7 @@ window.ATLAS_PATTERNS = [
       "structure"
     ],
     "summary": "用同名字段的几何连线显示两份记录的对应关系。",
-    "mechanism": "读取两侧字段矩形，选择中间折线通道，生成水平段、圆角和端点；以共同data-k同步行与线，ResizeObserver重算位置。",
+    "mechanism": "读取两侧字段矩形，选择中间折线通道，生成水平段、圆角和端点；以共同data-k同步行与线，ResizeObserver重算位置。 迁移时，字段聚焦可沿用 data-k 高亮；静态呈现直接绘制连线。",
     "trigger": "悬停字段或容器尺寸变化。",
     "effect": "用户能沿同一高亮找出源字段与结果字段。",
     "useCases": [
@@ -11461,10 +13299,6 @@ window.ATLAS_PATTERNS = [
         "gated-character-stream"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "字段名称保持稳定，迁移时为聚焦提供同一data-k高亮。",
-      "reducedMotion": "直接生成静态连线，选中高亮即时完成。"
     },
     "parameters": [
       {
@@ -11486,7 +13320,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Cobalt 检查器根据两侧同名字段的真实矩形生成带圆角的弯折连线，悬停字段时同步强调对应行与连线，容器变化后重新测量。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "[data-insp]",
+          "label": "字段到类型的连线",
+          "instruction": "将指针移到任一字段上，对照两列同名字段与弯折连线的同步强调。",
+          "entrypoint": "demos/cases/hallmark/themes/cobalt/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -11496,7 +13336,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/themes/cobalt/wire.js",
       "demos/cases/hallmark/themes/cobalt/index.html",
       "demos/cases/hallmark/themes/cobalt/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/field-linked-connectors.jpg"
   },
   {
     "id": "procedural-map-loupe",
@@ -11529,10 +13370,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "日志保留可聚焦图钉与卡片，放大镜为细察辅助。",
-      "reducedMotion": "保留固定地图和停靠放大镜，选择即时完成。"
-    },
     "parameters": [
       {
         "name": "等高线",
@@ -11558,7 +13395,14 @@ window.ATLAS_PATTERNS = [
         "observation": "Furrow 从固定噪声场以 marching squares 生成等高线，再绘地块、树篱与路线；放大镜跟随地图指针并以 1.9 倍重新绘制同一程序几何，移开后缓慢回到农场门边。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero__map",
+          "label": "程序地图与跟随放大镜",
+          "instruction": "在桌面地图上移动指针，用放大镜对照等高线、地块与路线的同一几何细节。",
+          "entrypoint": "demos/cases/hallmark/themes/furrow/index.html",
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -11568,7 +13412,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/themes/furrow/map.js",
       "demos/cases/hallmark/themes/furrow/style.css",
       "demos/cases/hallmark/themes/furrow/index.html"
-    ]
+    ],
+    "preview": "previews/patterns/procedural-map-loupe.jpg"
   },
   {
     "id": "measured-redline-annotation",
@@ -11580,7 +13425,7 @@ window.ATLAS_PATTERNS = [
       "visual"
     ],
     "summary": "从真实字形和区块尺寸生成红线，而非放固定的装饰尺。",
-    "mechanism": "用DOM矩形寻找四向最近相交邻块，SVG显示边界与间距；用Range逐字量宽并按em千分之一标advance，高频指针输入合到一帧。",
+    "mechanism": "用DOM矩形寻找四向最近相交邻块，SVG显示边界与间距；用Range逐字量宽并按em千分之一标advance，高频指针输入合到一帧。 区块聚焦也触发同一测量，静态呈现直接显示尺寸线与读数。",
     "trigger": "指向、触摸或聚焦可测量区块。",
     "effect": "尺寸文字能解释当前对象及其排版关系。",
     "useCases": [
@@ -11600,10 +13445,6 @@ window.ATLAS_PATTERNS = [
         "font-metric-guides"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "区块focusin触发同一测量，标签有实际对象名称。",
-      "reducedMotion": "尺寸线和读数直接显示，保持几何准确。"
     },
     "parameters": [
       {
@@ -11630,7 +13471,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Studio 指向、触摸或聚焦版面区块时测量真实矩形和四向邻块间距并生成 SVG 红线，指向字母时用 DOM Range 逐字测量，以 em 千分之一显示 advance。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "[data-trim]",
+          "label": "版面实测红线",
+          "instruction": "将指针移到字母或版面区块上，查看当前字宽、区块尺寸和相邻间距。",
+          "entrypoint": "demos/cases/hallmark/themes/studio/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -11640,7 +13487,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/themes/studio/spec.js",
       "demos/cases/hallmark/themes/studio/index.html",
       "demos/cases/hallmark/themes/studio/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/measured-redline-annotation.jpg"
   },
   {
     "id": "reading-grows-glyph-garden",
@@ -11673,10 +13521,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "每词使用原生按钮与aria-pressed，读后焦点移向下一词。",
-      "reducedMotion": "显示已读完的静态花园，并保留重读入口。"
-    },
     "parameters": [
       {
         "name": "词与时间",
@@ -11702,7 +13546,18 @@ window.ATLAS_PATTERNS = [
         "observation": "Hum 按顺序点击句中单词，每个已读词长出一株字形植物；越序点击提示下一词，焦点跟到下一词，五分钟时间带每五秒撕下一片纸屑，完成后可重读。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero",
+          "label": "读词后生长的字形植物",
+          "instruction": "按句子顺序点击单词，每读一个词，下面就长出一株字形植物。",
+          "entrypoint": "demos/cases/hallmark/themes/hum/index.html",
+          "prepare": [
+            {
+              "click": ".tile[data-i=\"0\"][aria-pressed=false]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -11712,7 +13567,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/themes/hum/round.js",
       "demos/cases/hallmark/themes/hum/index.html",
       "demos/cases/hallmark/themes/hum/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/reading-grows-glyph-garden.jpg"
   },
   {
     "id": "dotfile-glyph-portrait",
@@ -11745,10 +13601,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "图像之外保留可读品牌与实际安装命令。",
-      "reducedMotion": "直接绘制最终字符与色阶，停用解析和热度。"
-    },
     "parameters": [
       {
         "name": "图像数据",
@@ -11774,7 +13626,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Terminal 以灰度格数据决定配置文本字符的大小、字重和色阶，逐行从扰动字符解析为兔与字标；指针附近字符加热变亮并逐帧冷却回到原字符。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero .art",
+          "label": "配置文本字符兔",
+          "instruction": "将指针移过兔子：附近字符会变亮，再逐渐冷却回配置文本。",
+          "entrypoint": "demos/cases/hallmark/themes/terminal/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -11784,7 +13642,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/themes/terminal/art.js",
       "demos/cases/hallmark/themes/terminal/page.js",
       "demos/cases/hallmark/themes/terminal/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/dotfile-glyph-portrait.jpg"
   },
   {
     "id": "shared-caustic-surfaces",
@@ -11796,7 +13655,7 @@ window.ATLAS_PATTERNS = [
       "page-motion"
     ],
     "summary": "把同一水面材料用于场景、选中行和数据柱。",
-    "mechanism": "片元着色器共用焦散、色散和池砖折射，再按ground、row、bars配置尺度与强度；四个指针环波弯曲光线。",
+    "mechanism": "片元着色器共用焦散、色散和池砖折射，再按ground、row、bars配置尺度与强度；四个指针环波弯曲光线。 静态呈现可将时间参数固定为 14，数据切换直接更新目标高度。",
     "trigger": "进入水面区域、移动指针或切换日期组。",
     "effect": "不同界面对象来自同一套水材质，图表保留数据含义。",
     "useCases": [
@@ -11816,10 +13675,6 @@ window.ATLAS_PATTERNS = [
         "viewport-animation-lifecycle"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "日期控件和说明为独立DOM，图表保留名称与读数。",
-      "reducedMotion": "固定时间14绘制静帧，数据切换直接给目标高度。"
     },
     "parameters": [
       {
@@ -11846,7 +13701,18 @@ window.ATLAS_PATTERNS = [
         "observation": "Refract 的同一焦散着色器驱动池底、课表亮行和十五根客流水柱，指针触水留下最多四个扩散环，换工作日或周末时水柱、安静时段说明与时间标记一起更新。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "#quiet",
+          "label": "焦散水柱与安静时段",
+          "instruction": "切换 Weekdays 与 Weekends，观察水柱、时段说明与时间标记一起更新；移过水面可留下扩散环。",
+          "entrypoint": "demos/cases/hallmark/themes/refract/index.html",
+          "prepare": [
+            {
+              "click": "[data-days=weekend]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -11856,7 +13722,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/themes/refract/scene.js",
       "demos/cases/hallmark/themes/refract/index.html",
       "demos/cases/hallmark/themes/refract/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/shared-caustic-surfaces.jpg"
   },
   {
     "id": "two-scan-point-cloud-compare",
@@ -11868,7 +13735,7 @@ window.ATLAS_PATTERNS = [
       "structure"
     ],
     "summary": "在同一个测量场内比较时点、图层和截面。",
-    "mechanism": "多视图复用同一点位数据，以分类权重显隐层，以scissor在分隔线两侧绘两个扫描状态，平面选择与截面共用z值和投影。",
+    "mechanism": "多视图复用同一点位数据，以分类权重显隐层，以scissor在分隔线两侧绘两个扫描状态，平面选择与截面共用z值和投影。 静态呈现可固定扫带与视角，图层、比较和截面仍按输入更新。",
     "trigger": "图层开关、分隔线或截面输入。",
     "effect": "变化区、组成层和测量高度能在同一场地中核对。",
     "useCases": [
@@ -11888,10 +13755,6 @@ window.ATLAS_PATTERNS = [
         "measured-redline-annotation"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "开关与分隔线有语义名称、aria值和键盘输入。",
-      "reducedMotion": "固定扫带与视角，图层、比较和截面按输入直接更新。"
     },
     "parameters": [
       {
@@ -11918,7 +13781,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Vantage 在多个视图中复用同一测量场地点位，扫带照亮点云，图层开关控制地面、结构、树冠和变化区域，比较分隔线以 scissor 绘制两次扫描，截面控件同步更新平面切线与高程标注。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "#compare",
+          "label": "扫描 13 与扫描 14 点云比较",
+          "instruction": "拖动比较中线，对照两次扫描；亮色区域表示新增变化。",
+          "entrypoint": "demos/cases/hallmark/themes/vantage/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -11928,7 +13797,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/themes/vantage/scene.js",
       "demos/cases/hallmark/themes/vantage/index.html",
       "demos/cases/hallmark/themes/vantage/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/two-scan-point-cloud-compare.jpg"
   },
   {
     "id": "single-score-audio-visual",
@@ -11940,7 +13810,7 @@ window.ATLAS_PATTERNS = [
       "page-motion"
     ],
     "summary": "让音符、波形、clip和声音具有同一个数据来源。",
-    "mechanism": "谱面事件生成哼唱曲线、量化音符、四轨包络与合成调度；播放头和高亮读音频时钟，切风格重排同一旋律。",
+    "mechanism": "谱面事件生成哼唱曲线、量化音符、四轨包络与合成调度；播放头和高亮读音频时钟，切风格重排同一旋律。 静态呈现可显示已编曲画面，保留主动播放与手动风格选择。",
     "trigger": "主动播放或选择磁带风格。",
     "effect": "听到的段落、看到的播放位置和分轨内容一致。",
     "useCases": [
@@ -11960,10 +13830,6 @@ window.ATLAS_PATTERNS = [
         "sound-opt-in"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "播放按钮有名称，停止复位状态，谱面之外保留文字说明。",
-      "reducedMotion": "直接给已编曲画面，主动声音和手动风格选择保留。"
     },
     "parameters": [
       {
@@ -11990,7 +13856,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Bloom 用一份十六拍谱面同时生成哼唱曲线、音符、四条乐器轨、波形包络和 Web Audio 合成事件，播放头、时码与音符高亮跟随同一音频时钟，切换磁带风格重排同一旋律。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "[data-stage=hero]",
+          "label": "同一谱面的哼唱与四轨编曲",
+          "instruction": "点击播放按钮启用声音，观察播放头、音符和波形如何跟随同一谱面。",
+          "entrypoint": "demos/cases/hallmark/themes/bloom/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -12001,7 +13873,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/themes/bloom/page.js",
       "demos/cases/hallmark/themes/bloom/index.html",
       "demos/cases/hallmark/themes/bloom/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/single-score-audio-visual.jpg"
   },
   {
     "id": "weather-sound-scene-mixer",
@@ -12013,7 +13886,7 @@ window.ATLAS_PATTERNS = [
       "micro-motion"
     ],
     "summary": "用同一组推子让天气画面与声音强度一起变化。",
-    "mechanism": "雨、风和列车共用level与穿越相位，推子同步多个面板；定时器前段保持，后段余弦淡出到静音与结束状态。",
+    "mechanism": "雨、风和列车共用level与穿越相位，推子同步多个面板；定时器前段保持，后段余弦淡出到静音与结束状态。 静态画面仍可调整强度并启停声音。",
     "trigger": "调整推子、淡出定时器或Listen/Stop。",
     "effect": "视觉材料帮助理解混音，启停和结束状态清楚。",
     "useCases": [
@@ -12034,10 +13907,6 @@ window.ATLAS_PATTERNS = [
         "live-parameter-readout"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "推子支持方向键、PageUp/Down和Home/End，Listen是原生按钮。",
-      "reducedMotion": "显示静态夜景并即时更新强度，保留用户启停声音。"
     },
     "parameters": [
       {
@@ -12064,7 +13933,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Ribbon 的雨、风、远处列车和淡出定时器共用控制量，推子同时改变 Web Audio 混音与夜景强度，列车画面和声音共用穿越相位，Listen 启用声音，Stop 淡出后挂起上下文。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero [data-mixer]",
+          "label": "夜景与三路混音推子",
+          "instruction": "拖动 Rain、Wind、Distant train，先看夜景变化；点击 Listen 后可同时听到混音变化。",
+          "entrypoint": "demos/cases/hallmark/themes/ribbon/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -12074,7 +13949,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/themes/ribbon/night.js",
       "demos/cases/hallmark/themes/ribbon/index.html",
       "demos/cases/hallmark/themes/ribbon/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/weather-sound-scene-mixer.jpg"
   },
   {
     "id": "date-place-derived-chart",
@@ -12107,10 +13983,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "原生日期范围输入与港口按钮，极值和日照有文字读数。",
-      "reducedMotion": "输入后直接重绘目标数据和标注。"
-    },
     "parameters": [
       {
         "name": "潮汐周期",
@@ -12136,7 +14008,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Almanac 按日期和港口的纬度、均值、潮差与时滞推导潮线及日照，在同一次重绘中更新 SVG 曲线、高低潮、日出日落、夜间遮罩和文字读数。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "#day",
+          "label": "潮汐与日照图",
+          "instruction": "切换潮差，再拖动日期；对照曲线、高低潮时间与日照读数的同步变化。",
+          "entrypoint": "demos/cases/hallmark/themes/almanac/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -12146,7 +14024,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/themes/almanac/page.js",
       "demos/cases/hallmark/themes/almanac/index.html",
       "demos/cases/hallmark/themes/almanac/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/date-place-derived-chart.jpg"
   },
   {
     "id": "paper-action-explainer",
@@ -12179,10 +14058,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "对象旁保留稳定说明，主要行动使用真实按钮。",
-      "reducedMotion": "直接呈现寄信后的可读场景。"
-    },
     "parameters": [
       {
         "name": "寄信",
@@ -12203,7 +14078,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Coral 按顺序把提醒信滑入窗口信封、贴资、放入回信并在发票上盖 Paid，用纸面对象的位移、遮挡和盖章解释催款流程，离屏时暂停开场。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".scene[data-slot=hero]",
+          "label": "信封、回信与 Paid 印章",
+          "instruction": "观察纸面流程：提醒信进入信封、贴资、收到回信，最后在发票上盖 Paid。",
+          "entrypoint": "demos/cases/hallmark/themes/coral/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -12213,7 +14094,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/themes/coral/scene.js",
       "demos/cases/hallmark/themes/coral/index.html",
       "demos/cases/hallmark/themes/coral/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/paper-action-explainer.jpg"
   },
   {
     "id": "font-metric-guides",
@@ -12246,10 +14128,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "字形和控件保持真实文本，参考线不替代标签。",
-      "reducedMotion": "参考线按最终几何直接放置。"
-    },
     "parameters": [
       {
         "name": "度量",
@@ -12270,7 +14148,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Specimen 从字体实际轮廓与基线生成 cap、x-height、baseline 和 descender 参考线，字号、字重与正斜体控件直接更新可编辑试排和读数。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero__poster",
+          "label": "字体量度参考线",
+          "instruction": "对照字形上的 cap、x-height、baseline 与 descender 四条参考线。",
+          "entrypoint": "demos/cases/hallmark/themes/specimen/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -12280,7 +14164,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/themes/specimen/page.js",
       "demos/cases/hallmark/themes/specimen/index.html",
       "demos/cases/hallmark/themes/specimen/style.css"
-    ]
+    ],
+    "preview": "previews/patterns/font-metric-guides.jpg"
   },
   {
     "id": "crt-subpixel-mesh",
@@ -12292,7 +14177,7 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "以细小的子像素网与双色字边定义显示器材料。",
     "mechanism": "RGB竖条和横扫线叠在图面上，红青text-shadow错位字边，悬停字标放大错位。",
-    "trigger": "浏览显示面或悬停字标。",
+    "trigger": "悬停字标",
     "effect": "图像和字标共享克制的CRT语汇。",
     "useCases": [
       "复古电子界面",
@@ -12312,10 +14197,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "正文保持真实文本与清楚焦点，不靠字边颜色表达状态。",
-      "reducedMotion": "网格和字边是静态构成，悬停状态即时切换。"
-    },
     "parameters": [
       {
         "name": "网格",
@@ -12328,7 +14209,7 @@ window.ATLAS_PATTERNS = [
         "note": "固定提交源码／线上实测：style.css h1/.bar__mark。"
       }
     ],
-    "prompt": "为目标页面实现「CRT 子像素网与字边色散」：RGB竖条和横扫线叠在图面上，红青text-shadow错位字边，悬停字标放大错位。触发：浏览显示面或悬停字标。结果：图像和字标共享克制的CRT语汇。参数：网格=RGB竖向3px周期，横线3px周期；字边=标题±1.5px；字标悬停±2px。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；正文保持真实文本与清楚焦点，不靠字边颜色表达状态。网格和字边是静态构成，悬停状态即时切换。",
+    "prompt": "为目标页面实现「CRT 子像素网与字边色散」：RGB竖条和横扫线叠在图面上，红青text-shadow错位字边，悬停字标放大错位。触发：悬停字标。结果：图像和字标共享克制的CRT语汇。参数：网格=RGB竖向3px周期，横线3px周期；字边=标题±1.5px；字标悬停±2px。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；正文保持真实文本与清楚焦点，不靠字边颜色表达状态。网格和字边是静态构成，悬停状态即时切换。",
     "sources": [
       {
         "caseId": "hallmark",
@@ -12336,7 +14217,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Arcade 以三像素周期的 RGB 竖条与横向扫描线覆盖显示面，并用红青偏移字边模拟 CRT 子像素色散，字标悬停扩大错位。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero__photo",
+          "label": "CRT 摄影与字标",
+          "instruction": "观察照片上的 RGB 细网与扫描线，再将指针移到字标上查看字边错位。",
+          "entrypoint": "demos/cases/hallmark/themes/arcade/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -12345,7 +14232,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/fidelity.md",
       "demos/cases/hallmark/themes/arcade/style.css",
       "demos/cases/hallmark/themes/arcade/index.html"
-    ]
+    ],
+    "preview": "previews/patterns/crt-subpixel-mesh.jpg"
   },
   {
     "id": "overprint-misregistration",
@@ -12357,7 +14245,6 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "用色版相交和注册偏差形成印刷材料。",
     "mechanism": "两块独立色版按混合模式叠印；文字用相同内容的彩色副本偏移，相交圆继续以multiply产生第三色。",
-    "trigger": "阅读双色印刷构成。",
     "effect": "共享内容的错版露边与叠色可以直接辨认。",
     "useCases": [
       "印刷与出版主题",
@@ -12377,10 +14264,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "装饰副本不参与朗读，文字保持单一可读名称。",
-      "reducedMotion": "保持静态套印与错位，停用套准入场动画。"
-    },
     "parameters": [
       {
         "name": "错版",
@@ -12393,7 +14276,7 @@ window.ATLAS_PATTERNS = [
         "note": "固定提交源码／线上实测：themes/overprint/style.css .pass-1/.pass-2；riso .plate__disc--over。"
       }
     ],
-    "prompt": "为目标页面实现「两版套印与错版字形」：两块独立色版按混合模式叠印；文字用相同内容的彩色副本偏移，相交圆继续以multiply产生第三色。触发：阅读双色印刷构成。结果：共享内容的错版露边与叠色可以直接辨认。参数：错版=translate(2px,3px)；混合=两色版var(--blend)，重叠圆multiply。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；装饰副本不参与朗读，文字保持单一可读名称。保持静态套印与错位，停用套准入场动画。",
+    "prompt": "为目标页面实现「两版套印与错版字形」：两块独立色版按混合模式叠印；文字用相同内容的彩色副本偏移，相交圆继续以multiply产生第三色。结果：共享内容的错版露边与叠色可以直接辨认。参数：错版=translate(2px,3px)；混合=两色版var(--blend)，重叠圆multiply。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；装饰副本不参与朗读，文字保持单一可读名称。保持静态套印与错位，停用套准入场动画。",
     "sources": [
       {
         "caseId": "hallmark",
@@ -12401,7 +14284,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Overprint 的两个色版以混合模式叠印，Riso 将同一字形副本偏移 2px、3px 并以相交色圆表现错版与套色后的第三色。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "#passes",
+          "label": "双色分色与套印样张",
+          "instruction": "对照三张样张：蓝版字形、粉版色圆与两版套印后的第三色。",
+          "entrypoint": "demos/cases/hallmark/themes/riso/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -12412,7 +14301,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/themes/overprint/index.html",
       "demos/cases/hallmark/themes/riso/style.css",
       "demos/cases/hallmark/themes/riso/index.html"
-    ]
+    ],
+    "preview": "previews/patterns/overprint-misregistration.jpg"
   },
   {
     "id": "duotone-blend-photo",
@@ -12424,7 +14314,6 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "以同一纸色和墨色处理整组摄影。",
     "mechanism": "原图先灰度化并提高对比，用multiply混入底色，再叠同底色的lighten层，保持细节和统一印刷色调。",
-    "trigger": "浏览摄影与画框。",
     "effect": "不同来源照片形成同一材料系统。",
     "useCases": [
       "摄影与音乐活动页",
@@ -12444,10 +14333,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "原图保留替代文本，颜色处理不承载唯一信息。",
-      "reducedMotion": "双色处理为静态样式，保持原构成。"
-    },
     "parameters": [
       {
         "name": "图像处理",
@@ -12460,7 +14345,7 @@ window.ATLAS_PATTERNS = [
         "note": "固定提交源码／线上实测：style.css .frame::before等。"
       }
     ],
-    "prompt": "为目标页面实现「双层混合的双色摄影」：原图先灰度化并提高对比，用multiply混入底色，再叠同底色的lighten层，保持细节和统一印刷色调。触发：浏览摄影与画框。结果：不同来源照片形成同一材料系统。参数：图像处理=grayscale(1) contrast(1.08)与multiply；副层=同底色::before使用lighten。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；原图保留替代文本，颜色处理不承载唯一信息。双色处理为静态样式，保持原构成。",
+    "prompt": "为目标页面实现「双层混合的双色摄影」：原图先灰度化并提高对比，用multiply混入底色，再叠同底色的lighten层，保持细节和统一印刷色调。结果：不同来源照片形成同一材料系统。参数：图像处理=grayscale(1) contrast(1.08)与multiply；副层=同底色::before使用lighten。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；原图保留替代文本，颜色处理不承载唯一信息。双色处理为静态样式，保持原构成。",
     "sources": [
       {
         "caseId": "hallmark",
@@ -12468,7 +14353,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Midnight 先将摄影灰度化并提高对比，再以 multiply 和同底色的 lighten 副层混合，使整张图片统一为双色印刷效果并保留细节。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero__visual",
+          "label": "双色摄影画框",
+          "instruction": "观察隧道照片的暗部与亮部：整张照片被统一到深蓝与浅蓝两个色层。",
+          "entrypoint": "demos/cases/hallmark/themes/midnight/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -12477,7 +14368,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/fidelity.md",
       "demos/cases/hallmark/themes/midnight/style.css",
       "demos/cases/hallmark/themes/midnight/index.html"
-    ]
+    ],
+    "preview": "previews/patterns/duotone-blend-photo.jpg"
   },
   {
     "id": "knockout-headline-split",
@@ -12489,7 +14381,7 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "同一标题横跨两块底色，文字色与底色边界精确对应。",
     "mechanism": "两份几何对齐的标题以同一栏界做互补clip-path，一侧墨色一侧反白；手机移除副本裁切。",
-    "trigger": "阅读跨色场标题或改变视口。",
+    "trigger": "视口进入手机断点",
     "effect": "字形连续，色场边界又保持清楚。",
     "useCases": [
       "编辑网格",
@@ -12509,10 +14401,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "副本aria-hidden，原文提供完整标题语义。",
-      "reducedMotion": "裁切为静态布局，窄屏给完整单份标题。"
-    },
     "parameters": [
       {
         "name": "边界",
@@ -12525,7 +14413,7 @@ window.ATLAS_PATTERNS = [
         "note": "固定提交源码／线上实测：style.css 手机媒体规则。"
       }
     ],
-    "prompt": "为目标页面实现「同一标题跨色场反白」：两份几何对齐的标题以同一栏界做互补clip-path，一侧墨色一侧反白；手机移除副本裁切。触发：阅读跨色场标题或改变视口。结果：字形连续，色场边界又保持清楚。参数：边界=--cols-7；手机=取消副本clip-path。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；副本aria-hidden，原文提供完整标题语义。裁切为静态布局，窄屏给完整单份标题。",
+    "prompt": "为目标页面实现「同一标题跨色场反白」：两份几何对齐的标题以同一栏界做互补clip-path，一侧墨色一侧反白；手机移除副本裁切。触发：视口进入手机断点。结果：字形连续，色场边界又保持清楚。参数：边界=--cols-7；手机=取消副本clip-path。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；副本aria-hidden，原文提供完整标题语义。裁切为静态布局，窄屏给完整单份标题。",
     "sources": [
       {
         "caseId": "hallmark",
@@ -12533,7 +14421,14 @@ window.ATLAS_PATTERNS = [
         "observation": "Grid 将对齐的两份标题按第七栏边界互补裁切，使同一标题跨纸面和色场时分别使用对应文字色，窄屏取消副本裁切。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero__type",
+          "label": "跨纸面与蓝色场的同一标题",
+          "instruction": "观察桌面标题跨过蓝色场边界时如何反白；两边文字仍保持同一位置与排版。",
+          "entrypoint": "demos/cases/hallmark/themes/grid/index.html",
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -12542,7 +14437,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/fidelity.md",
       "demos/cases/hallmark/themes/grid/style.css",
       "demos/cases/hallmark/themes/grid/index.html"
-    ]
+    ],
+    "preview": "previews/patterns/knockout-headline-split.jpg"
   },
   {
     "id": "halftone-fade-edge",
@@ -12554,7 +14450,6 @@ window.ATLAS_PATTERNS = [
     ],
     "summary": "以规则网点连接实色场和纸面。",
     "mechanism": "radial-gradient生成可调半径与周期的网点，再用线性mask让网点从实到空；边界层独立于文字和摄影。",
-    "trigger": "阅读色场边界。",
     "effect": "印刷颗粒成为色面衔接，而非普通透明渐变。",
     "useCases": [
       "印刷与饮品主题",
@@ -12574,10 +14469,6 @@ window.ATLAS_PATTERNS = [
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "网点不传递必要内容且不截获操作。",
-      "reducedMotion": "静态渐隐边界保持可见。"
-    },
     "parameters": [
       {
         "name": "过渡带",
@@ -12590,7 +14481,7 @@ window.ATLAS_PATTERNS = [
         "note": "固定提交源码／线上实测：style.css .screen::before。"
       }
     ],
-    "prompt": "为目标页面实现「半色调渐隐边界」：radial-gradient生成可调半径与周期的网点，再用线性mask让网点从实到空；边界层独立于文字和摄影。触发：阅读色场边界。结果：印刷颗粒成为色面衔接，而非普通透明渐变。参数：过渡带=64px；网点与遮罩=--halftone-dot/--halftone-size；110° mask。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；网点不传递必要内容且不截获操作。静态渐隐边界保持可见。",
+    "prompt": "为目标页面实现「半色调渐隐边界」：radial-gradient生成可调半径与周期的网点，再用线性mask让网点从实到空；边界层独立于文字和摄影。结果：印刷颗粒成为色面衔接，而非普通透明渐变。参数：过渡带=64px；网点与遮罩=--halftone-dot/--halftone-size；110° mask。先读来源实际源码与 fidelity.md，以目标内容替换原作材料；网点不传递必要内容且不截获操作。静态渐隐边界保持可见。",
     "sources": [
       {
         "caseId": "hallmark",
@@ -12598,7 +14489,13 @@ window.ATLAS_PATTERNS = [
         "observation": "Halftone 用 radial-gradient 生成规则网点，再以线性 mask 将网点从实到空，在主色场和纸面之间形成六十四像素的半色调过渡边界。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero",
+          "label": "主色场的网点边界",
+          "instruction": "观察红色区域与纸面相接处，网点由密到疏地渐隐。",
+          "entrypoint": "demos/cases/hallmark/themes/halftone/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -12607,7 +14504,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hallmark/fidelity.md",
       "demos/cases/hallmark/themes/halftone/style.css",
       "demos/cases/hallmark/themes/halftone/index.html"
-    ]
+    ],
+    "preview": "previews/patterns/halftone-fade-edge.jpg"
   },
   {
     "id": "hf-video-shard-ribbon",
@@ -12619,7 +14517,7 @@ window.ATLAS_PATTERNS = [
       "page-motion"
     ],
     "summary": "把代码与视频切成相连的三角面，用统一路径、拼组和散开建立编辑器识别。",
-    "mechanism": "Hero：三行圆角挤出三角面共享视频分组，种子 7331 的 LCG 固定碎片形态；方向 166°、速度 1.6、扭转 6°，指针以 0.045 插值改变场景旋转，离开 Hero 后停止其帧循环和视频。",
+    "mechanism": "Hero：三行圆角挤出三角面共享视频分组，种子 7331 的 LCG 固定碎片形态；方向 166°、速度 1.6、扭转 6°，指针以 0.045 插值改变场景旋转，离开 Hero 后停止其帧循环和视频。 减少动态时保留静态三角场，停止自动视频与指针场景循环。",
     "trigger": "首屏进入、指针移动与 Hero 出入视口",
     "effect": "圆角三角面在松散空间与连续视频面之间过渡。",
     "useCases": [
@@ -12637,16 +14535,11 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "accent",
-      "notes": "与同一案例的其他机制共同构成页面，源码与素材由来源案例提供。",
       "pairsWellWith": [
         "hf-video-wall-lazy-play",
         "hf-ground-canvas-close"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "页面文字与下载链接独立于 Canvas，保留原生键盘入口。",
-      "reducedMotion": "Hero 保留静态三角场，停止自动视频与指针场景循环。"
     },
     "parameters": [
       {
@@ -12678,7 +14571,17 @@ window.ATLAS_PATTERNS = [
         "observation": "Hero：三行圆角挤出三角面共享视频分组，种子 7331 的 LCG 固定碎片形态；方向 166°、速度 1.6、扭转 6°，指针以 0.045 插值改变场景旋转，离开 Hero 后停止其帧循环和视频。",
         "evidence": "observed",
         "referenceUrl": "https://hyperframes.heygen.com/",
-        "capturedAt": "2026-11-02"
+        "capturedAt": "2026-11-02",
+        "focus": {
+          "target": ".hf-hero",
+          "label": "三角视频碎片与虹彩光带",
+          "instruction": "在首屏移动指针，观察三角视频碎片沿光带运动，以及整个场景的轻微转向。",
+          "prepare": [
+            {
+              "waitFor": "html[data-case-loading=ready] .hf-ribbon"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -12690,7 +14593,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hyperframes-site/vendor/three@0.185.0/three.module.js",
       "demos/cases/hyperframes-site/vendor/three@0.185.0/three.core.js",
       "demos/cases/hyperframes-site/fonts.css"
-    ]
+    ],
+    "preview": "previews/patterns/hf-video-shard-ribbon.jpg"
   },
   {
     "id": "hf-video-wall-lazy-play",
@@ -12702,7 +14606,7 @@ window.ATLAS_PATTERNS = [
       "structure"
     ],
     "summary": "让混合比例的作品持续经过视口，可见视频自动播放，离开后卸载。",
-    "mechanism": "视频墙：22＋23 部影片各复制一遍形成 90 张卡片；两行按 -1／+1 方向以 40／34 px/s 移动。阈值 0.2 的观察器挂载并播放可见视频，离开时卸载；400px 预取海报，悬停缩放 1.03。",
+    "mechanism": "视频墙：22＋23 部影片各复制一遍形成 90 张卡片；两行按 -1／+1 方向以 40／34 px/s 移动。阈值 0.2 的观察器挂载并播放可见视频，离开时卸载；400px 预取海报，悬停缩放 1.03。 减少动态时使用海报，保留拖动与点选，关闭自动移动和播放。",
     "trigger": "视频墙进入视口、拖动、横向滚轮、键盘焦点和暂停按钮",
     "effect": "保持完整作品数量与连续移动，同时将视频加载限定在可见区域。",
     "useCases": [
@@ -12720,16 +14624,11 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "与同一案例的其他机制共同构成页面，源码与素材由来源案例提供。",
       "pairsWellWith": [
         "hf-video-shard-ribbon",
         "hf-ground-canvas-close"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "卡片保留可见焦点与居中定位；弹层支持 Close 和 Esc。",
-      "reducedMotion": "视频墙停止自动移动和播放，保留海报、拖动与点击。"
     },
     "parameters": [
       {
@@ -12761,7 +14660,23 @@ window.ATLAS_PATTERNS = [
         "observation": "视频墙：22＋23 部影片各复制一遍形成 90 张卡片；两行按 -1／+1 方向以 40／34 px/s 移动。阈值 0.2 的观察器挂载并播放可见视频，离开时卸载；400px 预取海报，悬停缩放 1.03。",
         "evidence": "observed",
         "referenceUrl": "https://hyperframes.heygen.com/",
-        "capturedAt": "2026-11-02"
+        "capturedAt": "2026-11-02",
+        "focus": {
+          "target": ".hf-showcase",
+          "label": "两行反向移动的视频墙",
+          "instruction": "观察进入画面的视频卡自动播放；可拖动卡片横移，用底部暂停按钮停住两行，或点击卡片打开原播放器。",
+          "prepare": [
+            {
+              "waitFor": "html[data-case-loading=ready] .hf-showcase"
+            },
+            {
+              "scroll": ".hf-showcase"
+            },
+            {
+              "video": ".hf-row video"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -12772,7 +14687,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hyperframes-site/showcase.js",
       "demos/cases/hyperframes-site/index.html",
       "demos/cases/hyperframes-site/styles.css"
-    ]
+    ],
+    "preview": "previews/patterns/hf-video-wall-lazy-play.jpg"
   },
   {
     "id": "hf-ground-canvas-close",
@@ -12802,16 +14718,11 @@ window.ATLAS_PATTERNS = [
     ],
     "composition": {
       "role": "support",
-      "notes": "与同一案例的其他机制共同构成页面，源码与素材由来源案例提供。",
       "pairsWellWith": [
         "hf-video-shard-ribbon",
         "hf-video-wall-lazy-play"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "页面文字与下载链接独立于 Canvas，保留原生键盘入口。",
-      "reducedMotion": "停止创建地面 WebGL2 渲染器。"
     },
     "parameters": [
       {
@@ -12843,7 +14754,20 @@ window.ATLAS_PATTERNS = [
         "observation": "地面：固定全屏 WebGL2 四顶点三角条带，uColorScale=10、uFrequency=7、白色基底、0.8 混合；#f7ecd3cc 遮罩覆盖光色，并贯穿下载和开源区。减少动态时保留 Canvas 节点并停止创建地面渲染器。",
         "evidence": "observed",
         "referenceUrl": "https://hyperframes.heygen.com/",
-        "capturedAt": "2026-11-02"
+        "capturedAt": "2026-11-02",
+        "focus": {
+          "target": ".sr-repo",
+          "label": "开源区背后的地面光色",
+          "instruction": "观察开源区与下载区背后的光色；上下滚动时，地面 Canvas 持续贯穿这些区域。",
+          "prepare": [
+            {
+              "waitFor": "html[data-case-loading=ready] .sr-ground-canvas"
+            },
+            {
+              "scroll": ".sr-repo"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -12854,7 +14778,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/hyperframes-site/ground.js",
       "demos/cases/hyperframes-site/styles.css",
       "demos/cases/hyperframes-site/index.html"
-    ]
+    ],
+    "preview": "previews/patterns/hf-ground-canvas-close.jpg"
   },
   {
     "id": "anime-dial-hero",
@@ -12884,10 +14809,6 @@ window.ATLAS_PATTERNS = [
       "pairsWellWith": [],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "链接、选择器和表单沿用原生 DOM 焦点与键盘操作。",
-      "reducedMotion": "来源首页保留连续动画；迁移时按目标页面的减少动态需求选择直接呈现状态。"
-    },
     "parameters": [
       {
         "name": "原作参数",
@@ -12902,7 +14823,12 @@ window.ATLAS_PATTERNS = [
         "observation": "首屏用 Three.js 模块机芯、CSS3D SVG 弧线与五层二维 Canvas 组成仪表盘；4000ms 开场代理驱动主时间线，标题于 INTRO_ON 1400 进入，说明比标题延后 500ms，循环交错曲线、点列与环形刻度共同运行。",
         "evidence": "observed",
         "referenceUrl": "https://animejs.com/",
-        "capturedAt": "2026-11-02"
+        "capturedAt": "2026-11-02",
+        "focus": {
+          "target": "#intro > .section",
+          "label": "彩环、点阵与曲线仪表盘",
+          "instruction": "观察彩环仪表盘、点阵与曲线的共同开场；左下角保留安装命令与 Learn more 入口。"
+        }
       }
     ],
     "sourceFiles": [
@@ -12914,7 +14840,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/animejs-site/fidelity.md",
       "demos/cases/animejs-site/source/values.md"
     ],
-    "prompt": "读取 animejs-site 的完整来源包，为目标页面实现「彩环仪表盘开场」。三维机芯与 CSS3D 弧线承托 13×13 点阵、73 条曲线和 37 个点，标题与环形刻度按同一开场代理进入。 数值与素材从 source/values.md、对应区块源码和原始资源中取得。保持触发、交接、反向滚动和原生入口关系。"
+    "prompt": "读取 animejs-site 的完整来源包，为目标页面实现「彩环仪表盘开场」。三维机芯与 CSS3D 弧线承托 13×13 点阵、73 条曲线和 37 个点，标题与环形刻度按同一开场代理进入。 数值与素材从 source/values.md、对应区块源码和原始资源中取得。保持触发、交接、反向滚动和原生入口关系。",
+    "preview": "previews/patterns/anime-dial-hero.jpg"
   },
   {
     "id": "anime-pinned-feature-demos",
@@ -12943,10 +14870,6 @@ window.ATLAS_PATTERNS = [
       "pairsWellWith": [],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "链接、选择器和表单沿用原生 DOM 焦点与键盘操作。",
-      "reducedMotion": "来源首页保留连续动画；迁移时按目标页面的减少动态需求选择直接呈现状态。"
-    },
     "parameters": [
       {
         "name": "原作参数",
@@ -12961,7 +14884,18 @@ window.ATLAS_PATTERNS = [
         "observation": "页面通过一个线性主时间线连接 HEADING、TOOLBOX、FEATURES、MODULES、SPONSORS 与 GET_STARTED 标签；Scroll Observer 以 sync .9 跟随页面位置，八节 API 演示分别维护进入、离开与可同步的子时间线。",
         "evidence": "observed",
         "referenceUrl": "https://animejs.com/",
-        "capturedAt": "2026-11-02"
+        "capturedAt": "2026-11-02",
+        "focus": {
+          "target": "#draggable.is-in-view",
+          "label": "Springs and draggable 演示章节",
+          "instruction": "拖动圆形后松手，观察弹簧回弹；继续上下滚动，查看固定演示层怎样交给相邻 API 章节。",
+          "prepare": [
+            {
+              "scroll": "#draggable",
+              "waitFor": "#draggable.is-in-view"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -12973,7 +14907,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/animejs-site/fidelity.md",
       "demos/cases/animejs-site/source/values.md"
     ],
-    "prompt": "读取 animejs-site 的完整来源包，为目标页面实现「粘性分节全屏 API 演示」。八节内容共用固定演示层；滚动驱动进度与章节子时间线，每节进入时播放、离开时暂停或复位。 数值与素材从 source/values.md、对应区块源码和原始资源中取得。保持触发、交接、反向滚动和原生入口关系。"
+    "prompt": "读取 animejs-site 的完整来源包，为目标页面实现「粘性分节全屏 API 演示」。八节内容共用固定演示层；滚动驱动进度与章节子时间线，每节进入时播放、离开时暂停或复位。 数值与素材从 source/values.md、对应区块源码和原始资源中取得。保持触发、交接、反向滚动和原生入口关系。",
+    "preview": "previews/patterns/anime-pinned-feature-demos.jpg"
   },
   {
     "id": "anime-glb-module-assembly",
@@ -13003,10 +14938,6 @@ window.ATLAS_PATTERNS = [
       "pairsWellWith": [],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "链接、选择器和表单沿用原生 DOM 焦点与键盘操作。",
-      "reducedMotion": "来源首页保留连续动画；迁移时按目标页面的减少动态需求选择直接呈现状态。"
-    },
     "parameters": [
       {
         "name": "原作参数",
@@ -13021,7 +14952,17 @@ window.ATLAS_PATTERNS = [
         "observation": "22 个原始 GLB 构成动画引擎机芯；滚动进入 modules 后按 MODULES_TRANSFORM 590、MODULES_SHRINK 1250、MODULES_ROTATION 1750、MODULES_CASE 1900 展开、缩减与组装模块，Bundle size 和标签数值随同一时间线改变。",
         "evidence": "observed",
         "referenceUrl": "https://animejs.com/",
-        "capturedAt": "2026-11-02"
+        "capturedAt": "2026-11-02",
+        "focus": {
+          "target": "#modules > .fixed-section[style*=\"pointer-events: auto\"]",
+          "label": "机芯模块与 Bundle size",
+          "instruction": "在此处缓慢上下滚动，对照机芯的展开、缩减与装壳，以及右下角 Bundle size 的同步变化。",
+          "prepare": [
+            {
+              "scroll": "#modules > .section-spacer:nth-of-type(2)"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -13033,7 +14974,8 @@ window.ATLAS_PATTERNS = [
       "demos/cases/animejs-site/fidelity.md",
       "demos/cases/animejs-site/source/values.md"
     ],
-    "prompt": "读取 animejs-site 的完整来源包，为目标页面实现「滚动驱动的 GLB 模块组装」。真实模型在主时间线中展开、横移、缩减、旋转与装壳；模块标签和 Bundle size 使用同一组时间线位置。 数值与素材从 source/values.md、对应区块源码和原始资源中取得。保持触发、交接、反向滚动和原生入口关系。"
+    "prompt": "读取 animejs-site 的完整来源包，为目标页面实现「滚动驱动的 GLB 模块组装」。真实模型在主时间线中展开、横移、缩减、旋转与装壳；模块标签和 Bundle size 使用同一组时间线位置。 数值与素材从 source/values.md、对应区块源码和原始资源中取得。保持触发、交接、反向滚动和原生入口关系。",
+    "preview": "previews/patterns/anime-glb-module-assembly.jpg"
   },
   {
     "id": "anime-get-started-svg",
@@ -13062,10 +15004,6 @@ window.ATLAS_PATTERNS = [
       "pairsWellWith": [],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "链接、选择器和表单沿用原生 DOM 焦点与键盘操作。",
-      "reducedMotion": "来源首页保留连续动画；迁移时按目标页面的减少动态需求选择直接呈现状态。"
-    },
     "parameters": [
       {
         "name": "原作参数",
@@ -13080,7 +15018,17 @@ window.ATLAS_PATTERNS = [
         "observation": "Start animating 提供十二个带原始 SVG 箭头的文档入口，悬停箭头按原站 CSS 反馈；GET_STARTED 同时将三维场景沿 X 轴旋转至 100 度并向上退出，持续 4000ms。",
         "evidence": "observed",
         "referenceUrl": "https://animejs.com/",
-        "capturedAt": "2026-11-02"
+        "capturedAt": "2026-11-02",
+        "focus": {
+          "target": "#get-started > .section",
+          "label": "Start animating 文档入口",
+          "instruction": "将指针移到十二个文档入口上，观察 SVG 箭头反馈；上下滚动可看背景机芯旋转退出。",
+          "prepare": [
+            {
+              "scroll": "#get-started > .section"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -13092,6 +15040,7 @@ window.ATLAS_PATTERNS = [
       "demos/cases/animejs-site/fidelity.md",
       "demos/cases/animejs-site/source/values.md"
     ],
-    "prompt": "读取 animejs-site 的完整来源包，为目标页面实现「收尾文档入口与 SVG 反馈」。十二个文档入口保留原始 SVG 箭头与悬停反馈；背景机芯旋转并上移，形成进入文档前的视觉收束。 数值与素材从 source/values.md、对应区块源码和原始资源中取得。保持触发、交接、反向滚动和原生入口关系。"
+    "prompt": "读取 animejs-site 的完整来源包，为目标页面实现「收尾文档入口与 SVG 反馈」。十二个文档入口保留原始 SVG 箭头与悬停反馈；背景机芯旋转并上移，形成进入文档前的视觉收束。 数值与素材从 source/values.md、对应区块源码和原始资源中取得。保持触发、交接、反向滚动和原生入口关系。",
+    "preview": "previews/patterns/anime-get-started-svg.jpg"
   }
 ];

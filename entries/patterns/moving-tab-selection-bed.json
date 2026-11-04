@@ -22,15 +22,10 @@
   ],
   "composition": {
     "role": "accent",
-    "notes": "该原子负责选择位置与可见方案一致，职责限定在当前区域。组合时按真实受众组织方案，未验证的源动态标明公共模块依据。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
     "pairsWellWith": [
       "single-open-accordion"
     ],
     "conflicts": []
-  },
-  "accessibility": {
-    "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-    "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
   },
   "parameters": [],
   "prompt": "为目标页面实现「选中底板与套餐内容联动」。一个选中底板沿选项位置移动，同时替换当前选项对应的套餐内容；不同卡数仍由内容区域自然布局。选择受众或套餐类型后，选中位置、价格、说明、功能和行动保持一致。沿用来源真实的选项与计费方式，不添加来源不存在的账期。按钮提供键盘路径、aria-pressed 与明确焦点，方向键定位对应选项；减少动态即时完成切换。",
@@ -41,7 +36,12 @@
       "observation": "Individual/Team and Enterprise → 移动选中底板，替换三/两张套餐卡；没有添加原页面没有的年/月账期控件。",
       "evidence": "inferred",
       "referenceUrl": "https://claude.com/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".plan-tabs",
+        "label": "个人与团队套餐",
+        "instruction": "切换 Individual 与 Team and Enterprise，观察选中底板移动和三张／两张套餐卡的替换。"
+      }
     },
     {
       "caseId": "uiarc-platform",
@@ -49,7 +49,12 @@
       "observation": "价格区的 Pro yearly / Free 使用原始 SegmentedControl 移动选中底板，整块说明、金额、清单和入口通过 AnimatePresence 交接，240ms 透明度、400ms 无回弹弹簧位移；金额使用原始 AnimatedCounter。右侧终身方案保持可见，手机保留年度卡在先。",
       "evidence": "observed",
       "referenceUrl": "https://uiarc.dev/",
-      "capturedAt": "2026-11-01"
+      "capturedAt": "2026-11-01",
+      "focus": {
+        "target": "#flex-plan",
+        "label": "价格方案切换",
+        "instruction": "在 Pro yearly 与 Free 之间切换，对比选中底板、金额和套餐内容的交接。"
+      }
     }
   ],
   "sourceFiles": [
@@ -67,5 +72,6 @@
     "demos/cases/uiarc-platform/fidelity.md",
     "demos/cases/uiarc-platform/source/content.json",
     "demos/cases/uiarc-platform/source/components.tsx"
-  ]
+  ],
+  "preview": "previews/patterns/moving-tab-selection-bed.jpg"
 }

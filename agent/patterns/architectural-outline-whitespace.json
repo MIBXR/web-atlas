@@ -11,7 +11,6 @@
     ],
     "summary": "以白色外缘、窄缝和访问白板组织真实机构摄影。",
     "mechanism": "用50px白色外缘围住矩形建筑与馆藏影像，窄白缝划分入口、细灰章节条标记浏览阶段；建筑黑灰轮廓保留在真实摄影内，不额外制造框线组件。",
-    "trigger": "阅读建筑说明或相关文化章节",
     "effect": "深色边饰与浅色空间建立清楚轮廓，地域识别保持与真实建筑的联系。",
     "useCases": [
       "建筑文化、现代博物馆与空间介绍",
@@ -28,16 +27,11 @@
     ],
     "composition": {
       "role": "support",
-      "notes": "此机制对照指定页面的源HTML/CSS与真实交互；仅管理所描述的局部，不替代整个机构门户或后台服务。",
       "pairsWellWith": [
         "editorial-alignment-grid",
         "image-destination-mosaic"
       ],
       "conflicts": []
-    },
-    "accessibility": {
-      "keyboard": "入口与条件可键盘进入，焦点可见；本地菜单/披露支持Escape或明确关闭，真实业务链接有名称。",
-      "reducedMotion": "取消自动轮换、计数过程和位移过渡；全部内容与手动选择保留。"
     },
     "parameters": [
       {
@@ -51,7 +45,7 @@
         "note": "源主页三种实际空间关系。"
       }
     ],
-    "prompt": "为【目标页面/组件】实现「机构摄影的白色外缘」。用50px白色外缘围住矩形建筑与馆藏影像，窄白缝划分入口、细灰章节条标记浏览阶段；建筑黑灰轮廓保留在真实摄影内，不额外制造框线组件。 源桌面外缘：left/right50px；top9px，bottom30px。1440×900时主内容1340×755，来自源计算样式。 白色层级：页面外缘/入口白缝/访问70%半透明白板。源主页三种实际空间关系。 以原站DOM/CSS/真实状态矩阵验证，素材本地化并保留出处/尺寸/hash；减少动态保留手动状态，业务与未验证状态明确。",
+    "prompt": "为【目标页面/组件】实现「机构摄影的白色外缘」。用50px白色外缘围住矩形建筑与馆藏影像，窄白缝划分入口、细灰章节条标记浏览阶段；建筑黑灰轮廓保留在真实摄影内，不额外制造框线组件。 源桌面外缘：left/right50px；top9px，bottom30px。1440×900时主内容1340×755，来自源计算样式。 白色层级：页面外缘/入口白缝/访问70%半透明白板。源主页三种实际空间关系。 以原站DOM/CSS/真实状态矩阵验证，素材本地化并保留出处、尺寸与许可；减少动态保留手动状态，业务通过原站入口使用。",
     "sources": [
       {
         "caseId": "suzhou-museum",
@@ -59,7 +53,12 @@
         "observation": "四屏完整结构；50px左右外缘，1440×900时主画面1340×755；第三屏按原九项/75%与25%两区组织。",
         "evidence": "observed",
         "referenceUrl": "https://www.szmuseum.com/Home/Index",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": ".section1",
+          "label": "机构摄影周围的白色外缘",
+          "instruction": "比较主摄影与两侧白色外缘的比例，再切手机模式看画幅怎样调整；可用右侧章节点继续浏览。"
+        }
       }
     ],
     "sourceFiles": [
@@ -70,7 +69,8 @@
       "demos/cases/suzhou-museum/style.css",
       "demos/cases/suzhou-museum/app.js",
       "demos/cases/suzhou-museum/source/state-matrix.md"
-    ]
+    ],
+    "preview": "previews/patterns/architectural-outline-whitespace.jpg"
   },
   "sourceCases": [
     {
@@ -86,7 +86,7 @@
     {
       "path": "prompts/patterns/architectural-outline-whitespace.md",
       "role": "prompt",
-      "content": "# 机构摄影的白色外缘 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/architectural-outline-whitespace.json)\n\n为【目标页面/组件】实现「机构摄影的白色外缘」。用50px白色外缘围住矩形建筑与馆藏影像，窄白缝划分入口、细灰章节条标记浏览阶段；建筑黑灰轮廓保留在真实摄影内，不额外制造框线组件。 源桌面外缘：left/right50px；top9px，bottom30px。1440×900时主内容1340×755，来自源计算样式。 白色层级：页面外缘/入口白缝/访问70%半透明白板。源主页三种实际空间关系。 以原站DOM/CSS/真实状态矩阵验证，素材本地化并保留出处/尺寸/hash；减少动态保留手动状态，业务与未验证状态明确。\n\n## 制作约束\n\n- 以2026-10-09指定源页面为范围，来源观察、复现和迁移选择分开。\n- 保留图像真实来源/尺寸/hash与版权归属；不能用教学示意替代定义性机制。\n- 正式业务、未取到的状态和外部服务见对应案例fidelity与state-matrix。\n"
+      "content": "# 机构摄影的白色外缘 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/architectural-outline-whitespace.json)\n\n为【目标页面/组件】实现「机构摄影的白色外缘」。用50px白色外缘围住矩形建筑与馆藏影像，窄白缝划分入口、细灰章节条标记浏览阶段；建筑黑灰轮廓保留在真实摄影内，不额外制造框线组件。 源桌面外缘：left/right50px；top9px，bottom30px。1440×900时主内容1340×755，来自源计算样式。 白色层级：页面外缘/入口白缝/访问70%半透明白板。源主页三种实际空间关系。 以原站DOM/CSS/真实状态矩阵验证，素材本地化并保留出处、尺寸与许可；减少动态保留手动状态，业务通过原站入口使用。\n\n## 制作约束\n\n- 以2026-10-09指定源页面为范围，来源观察、复现和迁移选择分开。\n- 保留图像真实来源/尺寸/hash与版权归属；不能用教学示意替代定义性机制。\n- 正式业务、未取到的状态和外部服务见对应案例fidelity与state-matrix。\n"
     }
   ],
   "files": [
@@ -336,6 +336,10 @@
     },
     {
       "path": "previews/cases/suzhou-museum.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/architectural-outline-whitespace.jpg",
       "role": "preview"
     },
     {

@@ -35,10 +35,6 @@
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "暂停按钮可键盘操作；图解内部不伪造可编辑输入或可点击安装。",
-      "reducedMotion": "呈现挂件与管理器已安装项的稳定终态，并给出过程说明。"
-    },
     "parameters": [
       {
         "name": "完整周期",
@@ -58,7 +54,12 @@
         "observation": "插件演示22秒：对话输入、10条工具步骤、过程折叠、番茄钟放大，再缩至右上角；插件管理器滚过7个官方插件并高亮已安装项，挂件贯穿场景交接。",
         "evidence": "observed",
         "referenceUrl": "https://www.deepseek.com/harness/",
-        "capturedAt": "2026-10-11"
+        "capturedAt": "2026-10-11",
+        "focus": {
+          "target": "[class^=HarnessPluginsPreview_canvas]",
+          "label": "跨场景保留的番茄钟",
+          "instruction": "看对话完成工具步骤后生成番茄钟，再留在右上角；插件管理器切入时挂件继续保留。"
+        }
       }
     ],
     "sourceFiles": [
@@ -88,7 +89,8 @@
       "demos/cases/deepseek-harness/vendor/deepseek-harness/8555-7c9518c428e988c2.js",
       "demos/cases/deepseek-harness/vendor/deepseek-harness/86b88eeb-5b86058878847f6a.js"
     ],
-    "prompt": "为【目标页面/组件】实现「已创建挂件跨场景保留」。创建过程结束后将结果挂件先放大展示，再缩到固定角落；后台界面切换到管理列表时挂件持续存在，最后通过已安装项确认结果归属。 触发：创建过程完成并转入管理场景。结果：用户看到生成、可用与被管理的是同一个对象。 挂件状态不能在场景交接时重置；放大与紧凑形态共享同一内容。 手机保留挂件与管理器的对应关系，同时避免遮住列表的主要信息。 负责成果身份连续性，前序可搭配过程折叠，运行控制交给独立暂停生命周期。 键盘：暂停按钮可键盘操作；图解内部不伪造可编辑输入或可点击安装。 减少动态：呈现挂件与管理器已安装项的稳定终态，并给出过程说明。 实施前读取来源源码、研究与复现边界，不以本Prompt替代代码。"
+    "prompt": "为【目标页面/组件】实现「已创建挂件跨场景保留」。创建过程结束后将结果挂件先放大展示，再缩到固定角落；后台界面切换到管理列表时挂件持续存在，最后通过已安装项确认结果归属。 触发：创建过程完成并转入管理场景。结果：用户看到生成、可用与被管理的是同一个对象。 挂件状态不能在场景交接时重置；放大与紧凑形态共享同一内容。 手机保留挂件与管理器的对应关系，同时避免遮住列表的主要信息。 负责成果身份连续性，前序可搭配过程折叠，运行控制交给独立暂停生命周期。 键盘：暂停按钮可键盘操作；图解内部不伪造可编辑输入或可点击安装。 减少动态：呈现挂件与管理器已安装项的稳定终态，并给出过程说明。 实施前读取来源源码、研究与复现边界，不以本Prompt替代代码。",
+    "preview": "previews/patterns/persistent-created-widget.jpg"
   },
   "sourceCases": [
     {
@@ -338,6 +340,10 @@
     },
     {
       "path": "previews/cases/deepseek-harness.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/persistent-created-widget.jpg",
       "role": "preview"
     },
     {

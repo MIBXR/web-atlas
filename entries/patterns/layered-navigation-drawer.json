@@ -22,15 +22,10 @@
   ],
   "composition": {
     "role": "support",
-    "notes": "该原子负责用户看懂层级变化发生在哪里，职责限定在当前区域。组合时二级内容出现前不允许焦点进入隐藏层，降低动态即时完成。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
     "pairsWellWith": [
       "mobile-drilldown-menu"
     ],
     "conflicts": []
-  },
-  "accessibility": {
-    "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-    "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
   },
   "parameters": [
     {
@@ -39,7 +34,7 @@
       "note": "固定页面公开样式参数"
     }
   ],
-  "prompt": "为【目标页面/组件】实现「导航容器先行、内容后入」。先让侧向导航容器进入，再延迟显示二级内容；返回保留相同空间位置，关闭恢复触发焦点。触发：进入目录或二级主题。可见结果：用户看懂层级变化发生在哪里。适用任务：文档目录与组件学习站。二级内容出现前不允许焦点进入隐藏层，降低动态即时完成。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责用户看懂层级变化发生在哪里，职责限定在当前区域。组合时二级内容出现前不允许焦点进入隐藏层，降低动态即时完成。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+  "prompt": "为【目标页面/组件】实现「导航容器先行、内容后入」。先让侧向导航容器进入，再延迟显示二级内容；返回保留相同空间位置，关闭恢复触发焦点。触发：进入目录或二级主题。可见结果：用户看懂层级变化发生在哪里。适用任务：文档目录与组件学习站。二级内容出现前不允许焦点进入隐藏层，降低动态即时完成。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
   "sources": [
     {
       "caseId": "google-material",
@@ -47,7 +42,23 @@
       "observation": "进入目录或二级主题：300ms侧向抽屉；二级内容200ms延后再200ms淡入。 导航容器保持连续，内容层级在同一位置变化。",
       "evidence": "observed",
       "referenceUrl": "https://m3.material.io/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#directory[open]",
+        "label": "侧向目录与二级内容",
+        "instruction": "关闭后再打开目录，观察容器先进入；在手机主目录选择 Styles 等分类，可看二级内容在原位置后续进入。",
+        "prepare": [
+          {
+            "click": ".rail [data-directory=Styles]",
+            "minWidth": 601
+          },
+          {
+            "click": "#open-menu[aria-expanded=false]",
+            "waitFor": "#directory[open]",
+            "maxWidth": 600
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -57,5 +68,6 @@
     "demos/cases/google-material/style.css",
     "entries/cases/google-material.json",
     "docs/cases/google-material.md"
-  ]
+  ],
+  "preview": "previews/patterns/layered-navigation-drawer.jpg"
 }

@@ -33,10 +33,6 @@
         "centered-loop-gallery"
       ]
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
     "prompt": "为【目标页面/组件】实现「有界的完整面板横向轨道」。每次选择使整块相关内容沿单一轨道平移，首尾禁用前后按钮并停止；人物或玩法状态同步更新。触发：选择编号、箭头或手势。可见结果：相关信息保持组合关系，边界可预期。适用任务：角色资料与玩法演示。一次只一个稳定场景可交互，移动时保留当前选中说明。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：负责有顺序面板的整体移动，人物语音按当前面板停止/切换。首尾是内容边界；若改为无限图集，应同时改变提示、禁用与焦点模型。",
     "sources": [
@@ -46,7 +42,20 @@
         "observation": "三组 Gameplay 完整面板以 400ms cubic-bezier(.25,1,.5,1) 横移；按钮、编号、左右键与手势同步，首尾禁用而不循环。",
         "evidence": "adapted",
         "referenceUrl": "https://umamusume.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#gameplay .gameplay-stage",
+          "label": "三组 Gameplay 横向面板",
+          "instruction": "点 01 / 02 / 03 或前后箭头，看完整面板沿同一轨道换页，首尾按钮会停用。",
+          "prepare": [
+            {
+              "click": "#menu-button[aria-expanded=\"false\"]"
+            },
+            {
+              "click": "#study-menu a[href=\"#gameplay\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "persona-kinetic",
@@ -54,7 +63,17 @@
         "observation": "三位角色横移500ms并在两端停止；学校/怪盗服装300ms换装入场。本地角色内容缩减为三位。",
         "evidence": "adapted",
         "referenceUrl": "https://persona.atlus.com/p5r/?lang=en#",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#characters",
+          "label": "有首尾边界的角色舞台",
+          "instruction": "选择三位角色或按左右键，看资料与立绘横向交接，并在首尾停止。",
+          "prepare": [
+            {
+              "click": "header nav a[href=\"#characters\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "blue-archive",
@@ -62,7 +81,13 @@
         "observation": "阿比多斯四学生资料卡与完整立绘以 1000ms 整块水平移动；选择按钮、左右键及手势同步当前人物。",
         "evidence": "adapted",
         "referenceUrl": "https://bluearchive.jp/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#characters",
+          "label": "学生资料与立绘的横向轨道",
+          "instruction": "点下方学生名字或按左右键，看整块资料和立绘沿同一轨道移动。",
+          "entrypoint": "demos/cases/blue-archive/character.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -85,7 +110,8 @@
       "docs/cases/blue-archive.md",
       "docs/cases/persona-kinetic.md",
       "docs/cases/uma-musume.md"
-    ]
+    ],
+    "preview": "previews/patterns/bounded-panel-track.jpg"
   },
   "sourceCases": [
     {
@@ -651,6 +677,10 @@
     },
     {
       "path": "previews/cases/uma-musume.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/bounded-panel-track.jpg",
       "role": "preview"
     },
     {

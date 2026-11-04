@@ -8,7 +8,6 @@
   ],
   "summary": "以稳定骨架承托草稿感轮廓。",
   "mechanism": "用固定SVG曲线、有限双线与统一排线密度制造手绘感；正文和操作边界保持清楚稳定。",
-  "trigger": "浏览插画与短批注",
   "effect": "可感受到手工气质而不失去阅读秩序。",
   "useCases": [
     "创作、文具与教育入口"
@@ -22,24 +21,24 @@
   ],
   "composition": {
     "role": "foundation",
-    "notes": "该原子负责可感受到手工气质而不失去阅读秩序，职责限定在当前区域。组合时不规则只作用于插画与短批注，不能侵入触控区。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
     "pairsWellWith": [
       "paper-material-collage"
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-    "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-  },
   "parameters": [],
-  "prompt": "为【目标页面/组件】实现「受控不规则轮廓」。用固定SVG曲线、有限双线与统一排线密度制造手绘感；正文和操作边界保持清楚稳定。触发：浏览插画与短批注。可见结果：可感受到手工气质而不失去阅读秩序。适用任务：创作、文具与教育入口。不规则只作用于插画与短批注，不能侵入触控区。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责可感受到手工气质而不失去阅读秩序，职责限定在当前区域。组合时不规则只作用于插画与短批注，不能侵入触控区。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+  "prompt": "为【目标页面/组件】实现「受控不规则轮廓」。用固定SVG曲线、有限双线与统一排线密度制造手绘感；正文和操作边界保持清楚稳定。可见结果：可感受到手工气质而不失去阅读秩序。适用任务：创作、文具与教育入口。不规则只作用于插画与短批注，不能侵入触控区。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
   "sources": [
     {
       "caseId": "hand-drawn",
       "locator": "entries/cases/hand-drawn.json#composition/shape",
       "observation": "适度不规则笔触与纸页质感模拟手工；按钮仍有稳定边界。",
-      "evidence": "adapted"
+      "evidence": "adapted",
+      "focus": {
+        "target": ".notebook",
+        "label": "笔记页的不规则轮廓",
+        "instruction": "看笔记页、贴纸和按钮的轻微不规则边界；文字区域与点击边界仍保持稳定。"
+      }
     }
   ],
   "sourceFiles": [
@@ -48,5 +47,6 @@
     "demos/cases/hand-drawn/style.css",
     "entries/cases/hand-drawn.json",
     "docs/cases/hand-drawn.md"
-  ]
+  ],
+  "preview": "previews/patterns/controlled-rough-outlines.jpg"
 }

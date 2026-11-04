@@ -16,7 +16,7 @@
 
 ## 制作约束
 
-- Swissted 官网明确使用 Berthold Akzidenz-Grotesk medium，并非 Helvetica；本 demo 用系统 Arial 近似结构，不声称字体等同。
+- Swissted 使用 Berthold Akzidenz-Grotesk medium；本例使用系统 Arial 近似结构。
 - 桌面 12 栏，移动端折为单列；文字不能为了维持海报形状被裁切。
 - 红色用于主视觉和状态，正文以黑字/纸白保持对比。
 - 字号差必须伴随语义标题层级，不能以超大字替代内容组织。

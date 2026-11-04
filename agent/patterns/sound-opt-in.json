@@ -26,25 +26,25 @@
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责用户掌握听觉环境，浏览正文不被自动出声打断，职责限定在当前区域。组合时声音和动态暂停分别管理，降低动态偏好不剥夺主动声音选择。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "continuous-bgm-bridge",
         "character-voice-ownership"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "开启、静音与停止均用有明确可访问名称的按钮，图标按钮提供aria-label，aria-pressed与实际声音状态一致。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「声音主动启用与随时停止」。声音初始关闭，用户明确开启后才初始化或播放；关闭与离开前台都能停止当前声音。触发：开启/关闭声音。可见结果：用户掌握听觉环境，浏览正文不被自动出声打断。适用任务：互动乐器、游戏世界与品牌影片。声音和动态暂停分别管理，降低动态偏好不剥夺主动声音选择。键盘：开启、静音与停止均用有明确可访问名称的按钮，图标按钮提供aria-label，aria-pressed与实际声音状态一致。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责用户掌握听觉环境，浏览正文不被自动出声打断，职责限定在当前区域。组合时声音和动态暂停分别管理，降低动态偏好不剥夺主动声音选择。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。 操作短音在实际选择或切换时立即触发，跟随同一声音开关；返回前台不重放过期短效。",
+    "prompt": "为【目标页面/组件】实现「声音主动启用与随时停止」。声音初始关闭，用户明确开启后才初始化或播放；关闭与离开前台都能停止当前声音。触发：开启/关闭声音。可见结果：用户掌握听觉环境，浏览正文不被自动出声打断。适用任务：互动乐器、游戏世界与品牌影片。声音和动态暂停分别管理，降低动态偏好不剥夺主动声音选择。键盘：开启、静音与停止均用有明确可访问名称的按钮，图标按钮提供aria-label，aria-pressed与实际声音状态一致。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。 操作短音在实际选择或切换时立即触发，跟随同一声音开关；返回前台不重放过期短效。",
     "sources": [
       {
         "caseId": "retro-80s",
         "locator": "entries/cases/retro-80s.json#interaction/0",
         "observation": "只有主动开启声音后才初始化Web Audio；可随时关闭。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": "#power",
+          "label": "主动开启声音",
+          "instruction": "点“开启声音”后再演奏琴键；同一开关可随时关闭声音。"
+        }
       },
       {
         "caseId": "arknights-world",
@@ -52,7 +52,25 @@
         "observation": "真实原站BGM独立开关，默认静音；600ms渐入/300ms渐出。三人官方日语配音由干员按钮单独播放；页面进入后台暂停音频。",
         "evidence": "adapted",
         "referenceUrl": "https://ak.hypergryph.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#sound",
+          "label": "主动开启声音",
+          "instruction": "点右上声音按钮开启或关闭 BGM；干员语音由各自的语音按钮单独播放。",
+          "prepare": [
+            {
+              "waitFor": "#scene-deck[data-phase=\"idle\"]"
+            },
+            {
+              "click": "#menu-toggle[aria-expanded=\"false\"]",
+              "maxWidth": 800
+            },
+            {
+              "click": "#chapter-nav a[href=\"#index\"]:not([aria-current=\"page\"])",
+              "waitFor": "#scene-deck[data-active=\"index\"][data-phase=\"idle\"]"
+            }
+          ]
+        }
       },
       {
         "caseId": "zelda-world",
@@ -60,7 +78,12 @@
         "observation": "入口 ON/OFF 与顶栏 SOUND；默认静音，选择 ON 后播放原始 se.mp3 与 bgm.mp3。",
         "evidence": "observed",
         "referenceUrl": "https://www.nintendo.com/jp/zelda/totk/world/index.html",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#entry-gate:not([hidden]):not([data-phase]) .sound-choice, body:has(#entry-gate[hidden]) .sound-control",
+          "label": "入口与顶栏声音选择",
+          "instruction": "在入口选择 ON 或 OFF；进入后用右上 SOUND 随时开启或停止音乐。"
+        }
       },
       {
         "caseId": "endfield-industrial",
@@ -68,7 +91,29 @@
         "observation": "桌面声音工具与手机喇叭共用状态，默认关闭、aria-pressed同步；用户开启后播放原BGM及选干员/2D↔3D、头像翻页、档案展开/收起四种原音。关闭或后台立即停止，返回只恢复已开启BGM；预览和角色影片静音，完整影像独立控制。",
         "evidence": "adapted",
         "referenceUrl": "https://endfield.hypergryph.com/",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": ".header-button[aria-label$=\"声音\"], .header-h5-header-container .header-icon-button",
+          "label": "终末地声音开关",
+          "instruction": "主动开启原声音工具后，BGM 与换干员、翻头像、展开档案的短音共用同一开关。",
+          "prepare": [
+            {
+              "waitFor": "body:has(#entry-loader[hidden])"
+            },
+            {
+              "click": ".header-inner-container > .header-nav-item[aria-label=\"干员情报\"]",
+              "minWidth": 801
+            },
+            {
+              "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+              "maxWidth": 800
+            },
+            {
+              "click": ".header-menu-item[aria-label=\"干员情报\"]",
+              "maxWidth": 800
+            }
+          ]
+        }
       },
       {
         "caseId": "hallmark",
@@ -76,7 +121,13 @@
         "observation": "首页保持无声，Bloom 的 Play 和 Ribbon 的 Listen 只在用户激活后创建或恢复 AudioContext，按钮和 Escape 可停止声音并复位界面，Ribbon 停止后挂起上下文。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero [data-mixer]",
+          "label": "Listen 与 Stop 声音开关",
+          "instruction": "点击 Listen 才会启用声音；再次点击 Stop，或按 Escape，即可停止。",
+          "entrypoint": "demos/cases/hallmark/themes/ribbon/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -109,7 +160,8 @@
       "demos/cases/hallmark/themes/bloom/page.js",
       "demos/cases/hallmark/themes/bloom/arrange.js",
       "demos/cases/hallmark/themes/ribbon/night.js"
-    ]
+    ],
+    "preview": "previews/patterns/sound-opt-in.jpg"
   },
   "sourceCases": [
     {
@@ -157,7 +209,7 @@
     {
       "path": "prompts/patterns/sound-opt-in.md",
       "role": "prompt",
-      "content": "# 声音主动启用与随时停止 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/sound-opt-in.json)\n\n为【目标页面/组件】实现「声音主动启用与随时停止」。声音初始关闭，用户明确开启后才初始化或播放；关闭与离开前台都能停止当前声音。触发：开启/关闭声音。可见结果：用户掌握听觉环境，浏览正文不被自动出声打断。适用任务：互动乐器、游戏世界与品牌影片。声音和动态暂停分别管理，降低动态偏好不剥夺主动声音选择。键盘：开启、静音与停止均用有明确可访问名称的按钮，图标按钮提供aria-label，aria-pressed与实际声音状态一致。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责用户掌握听觉环境，浏览正文不被自动出声打断，职责限定在当前区域。组合时声音和动态暂停分别管理，降低动态偏好不剥夺主动声音选择。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。 操作短音在实际选择或切换时立即触发，跟随同一声音开关；返回前台不重放过期短效。\n\n## 制作约束\n\n- 声音和动态暂停分别管理，降低动态偏好不剥夺主动声音选择。\n- 操作短音绑定实际点击/键盘选择，悬停与聚焦不额外发声；关闭或后台停止短效，返回不续播过期反馈。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
+      "content": "# 声音主动启用与随时停止 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/sound-opt-in.json)\n\n为【目标页面/组件】实现「声音主动启用与随时停止」。声音初始关闭，用户明确开启后才初始化或播放；关闭与离开前台都能停止当前声音。触发：开启/关闭声音。可见结果：用户掌握听觉环境，浏览正文不被自动出声打断。适用任务：互动乐器、游戏世界与品牌影片。声音和动态暂停分别管理，降低动态偏好不剥夺主动声音选择。键盘：开启、静音与停止均用有明确可访问名称的按钮，图标按钮提供aria-label，aria-pressed与实际声音状态一致。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。 操作短音在实际选择或切换时立即触发，跟随同一声音开关；返回前台不重放过期短效。\n\n## 制作约束\n\n- 声音和动态暂停分别管理，降低动态偏好不剥夺主动声音选择。\n- 操作短音绑定实际点击/键盘选择，悬停与聚焦不额外发声；关闭或后台停止短效，返回不续播过期反馈。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
     }
   ],
   "files": [
@@ -7895,6 +7947,10 @@
     },
     {
       "path": "previews/cases/zelda-world.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/sound-opt-in.jpg",
       "role": "preview"
     },
     {

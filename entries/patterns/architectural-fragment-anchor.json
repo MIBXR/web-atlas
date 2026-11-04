@@ -8,7 +8,6 @@
   ],
   "summary": "用真实建筑的一角让大色面具有地点身份。",
   "mechanism": "朱红实物纹理内以真实透明屋脊和独立圆形题饰定位建筑身份，左侧说明与八项名称目录承担检索；图像不替代文字入口。",
-  "trigger": "进入建筑或文化章节",
   "effect": "色面获得具体文化对象，文字入口仍然可扫描。",
   "useCases": [
     "古建筑与文化遗产机构",
@@ -24,16 +23,11 @@
   ],
   "composition": {
     "role": "foundation",
-    "notes": "此机制对照指定页面的源HTML/CSS与真实交互；仅管理所描述的局部，不替代整个机构门户或后台服务。",
     "pairsWellWith": [
       "section-color-rhythm",
       "direct-purpose-navigation"
     ],
     "conflicts": []
-  },
-  "accessibility": {
-    "keyboard": "入口与条件可键盘进入，焦点可见；本地菜单/披露支持Escape或明确关闭，真实业务链接有名称。",
-    "reducedMotion": "取消自动轮换、计数过程和位移过渡；全部内容与手动选择保留。"
   },
   "parameters": [
     {
@@ -47,7 +41,7 @@
       "note": "源CSS布局比例；手机有独立断点。"
     }
   ],
-  "prompt": "为【目标页面/组件】实现「建筑局部与名称目录锚点」。朱红实物纹理内以真实透明屋脊和独立圆形题饰定位建筑身份，左侧说明与八项名称目录承担检索；图像不替代文字入口。 源建筑容器：1258px主内容，min-height590px，padding100px 0。来自探索页适用CSS与DOM。 源屋脊/题饰：屋脊宽74.721%；圆形题饰13.276%。源CSS布局比例；手机有独立断点。 以原站DOM/CSS/真实状态矩阵验证，素材本地化并保留出处/尺寸/hash；减少动态保留手动状态，业务与未验证状态明确。",
+  "prompt": "为【目标页面/组件】实现「建筑局部与名称目录锚点」。朱红实物纹理内以真实透明屋脊和独立圆形题饰定位建筑身份，左侧说明与八项名称目录承担检索；图像不替代文字入口。 源建筑容器：1258px主内容，min-height590px，padding100px 0。来自探索页适用CSS与DOM。 源屋脊/题饰：屋脊宽74.721%；圆形题饰13.276%。源CSS布局比例；手机有独立断点。 以原站DOM/CSS/真实状态矩阵验证，素材本地化并保留出处、尺寸与许可；减少动态保留手动状态，业务通过原站入口使用。",
   "sources": [
     {
       "caseId": "palace-museum",
@@ -55,7 +49,12 @@
       "observation": "建筑目录：朱红实物纹理与透明屋脊、独立圆形“建筑”题饰并置，八个建筑名称及更多建筑/地图均保留官方目的地。",
       "evidence": "observed",
       "referenceUrl": "https://www.dpm.org.cn/Explore.html",
-      "capturedAt": "2026-10-09"
+      "capturedAt": "2026-10-09",
+      "focus": {
+        "target": ".explore1",
+        "label": "建筑局部与八项名称目录",
+        "instruction": "看朱红建筑纹理、透明屋脊和圆形“建筑”题饰，再从八个建筑名称、“更多建筑”或地图选择真实目的地。"
+      }
     }
   ],
   "sourceFiles": [
@@ -66,5 +65,6 @@
     "demos/cases/palace-museum/style.css",
     "demos/cases/palace-museum/app.js",
     "demos/cases/palace-museum/source/state-matrix.md"
-  ]
+  ],
+  "preview": "previews/patterns/architectural-fragment-anchor.jpg"
 }

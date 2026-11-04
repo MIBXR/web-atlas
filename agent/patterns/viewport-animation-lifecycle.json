@@ -37,10 +37,6 @@
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "暂停/播放按钮文字与实际媒体事件同步，状态可读；所有手动选择保留。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [
       {
         "name": "终末地本地真实后台检查",
@@ -56,7 +52,13 @@
         "observation": "AI 章节进入视口 → 三列代理思考/回答以 5s 与后续交错时间演示，离开/后台停止；暂停按钮与减少动态分支可保持结果。",
         "evidence": "adapted",
         "referenceUrl": "https://linear.app/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".journey-pause",
+          "label": "代理演示的暂停状态",
+          "instruction": "暂停后把这节滚出视口再返回，当前结果会保留；恢复播放后再观察列间的错峰响应。",
+          "viewport": "wide"
+        }
       },
       {
         "caseId": "stripe-platform",
@@ -64,7 +66,12 @@
         "observation": "进入 → 隔离的官方 SingleWave 网格/shader/调色渲染；提供暂停，菜单/弹窗/后台/离屏暂停，GPU 失败使用官方静帧。",
         "evidence": "adapted",
         "referenceUrl": "https://stripe.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#wave-toggle",
+          "label": "背景动态的暂停控制",
+          "instruction": "点背景右下角的暂停按钮，再上下滚动离开和返回；手动暂停会保留，菜单与后台也会暂停背景。"
+        }
       },
       {
         "caseId": "qoder-platform",
@@ -72,7 +79,12 @@
         "observation": "五平台 tab/点控/触摸 → 400ms 水平进退，20s 自动，悬停/手动暂停、后台停止；快速选择只保留一个场景。",
         "evidence": "adapted",
         "referenceUrl": "https://qoder.cn/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".carousel-pause",
+          "label": "平台轮换的生命周期",
+          "instruction": "暂停轮播后滚出这一节再返回，确认手动暂停仍保留；恢复后可观察平台自动轮换。"
+        }
       },
       {
         "caseId": "endfield-industrial",
@@ -80,7 +92,44 @@
         "observation": "声音和业务：原BGM及四种原始操作音由桌面/手机共用声音开关启用，默认关闭；选干员与2D/3D切换播放机械短音，头像翻页和档案展开/收起分别反馈。10槽音频池保留快速重复操作的叠响；关闭声音或隐藏页面立即停止，返回不重放短效。登录、下载、云游戏、支付、社区与全文信息保留官方目的地，不复制后台或提交数据。",
         "evidence": "adapted",
         "referenceUrl": "https://endfield.hypergryph.com/",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "#gameplay",
+          "label": "玩法影片的视口播放",
+          "instruction": "让影片进入视口，再滚离或切到后台，查看它如何随可见状态暂停和恢复。",
+          "prepare": [
+            {
+              "waitFor": "body:has(#entry-loader[hidden])"
+            },
+            {
+              "click": ".header-inner-container > .header-nav-item[aria-label=\"版本日历\"]",
+              "minWidth": 801
+            },
+            {
+              "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+              "maxWidth": 800
+            },
+            {
+              "click": ".header-menu-item[aria-label=\"版本日历\"]",
+              "maxWidth": 800
+            },
+            {
+              "images": "#calendar"
+            },
+            {
+              "click": ".header-inner-container > .header-nav-item[aria-label=\"玩法介绍 & 集成工业知识\"]",
+              "minWidth": 801
+            },
+            {
+              "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+              "maxWidth": 800
+            },
+            {
+              "click": ".header-menu-item[aria-label=\"玩法介绍 & 集成工业知识\"]",
+              "maxWidth": 800
+            }
+          ]
+        }
       },
       {
         "caseId": "deepseek-harness",
@@ -88,7 +137,12 @@
         "observation": "四组演示分别在进入视口后播放，手动暂停优先于重入；离屏或后台暂停。减少动态使用原版插件/轨迹静态回退和文件/工作流的可读状态。",
         "evidence": "observed",
         "referenceUrl": "https://www.deepseek.com/harness/",
-        "capturedAt": "2026-10-11"
+        "capturedAt": "2026-10-11",
+        "focus": {
+          "target": "article:has([class^=HarnessDeliverablesPreview_composition])",
+          "label": "交付物演示的播放范围",
+          "instruction": "上下滚动这张演示卡，离开视口会暂停；手动暂停后再返回仍保留结果，可用卡片右下角按钮恢复。"
+        }
       },
       {
         "caseId": "stellar-museum",
@@ -96,7 +150,12 @@
         "observation": "首屏星球及月球、空间站、火星、银河窗口进入或离开扩展 120px 的视口范围：IntersectionObserver 以 rootMargin: '120px'、threshold: 0.0 更新各实例的 visible，统一帧循环跳过离屏实例，只渲染可见窗口；主循环和绝对时间仍持续推进，来源未实现页面后台可见性监听、用户暂停或离屏时间冻结，减少动态仅跳过对象旋转，仍更新着色器时间并渲染。",
         "evidence": "observed",
         "referenceUrl": "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/demo/web-design-demo/demo1-with-skill.html",
-        "capturedAt": "2026-10-27"
+        "capturedAt": "2026-10-27",
+        "focus": {
+          "target": "#exhibits",
+          "label": "进入视口才渲染的三维窗口",
+          "instruction": "上下滚动月球、空间站、火星与银河窗口，观察可见窗口继续渲染；这个来源不会冻结全局时间。"
+        }
       },
       {
         "caseId": "uiarc-platform",
@@ -104,7 +163,12 @@
         "observation": "六张 Pro 卡片与九张免费卡片分别排成桌面两列和三列；原始 WebP 海报与静音 WebM 在前后一屏预载，可见比例达到 35% 时播放，离屏或后台暂停并保留已显示的视频帧，同时最多播放 8 段。首入减少动态或节流模式使用海报和手动播放按钮；点击卡片进入对应原站页。手机为一列／两列。",
         "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": "#pro-clips",
+          "label": "可见时播放的组件影片",
+          "instruction": "上下滚动这些组件卡，观察进入视口的影片播放、离开的影片暂停。减少动态下可用卡片播放按钮。"
+        }
       },
       {
         "caseId": "hallmark",
@@ -112,7 +176,13 @@
         "observation": "Atelier 根据显雾区域的视口交集和文档前台状态启停绘制，Coral 在纸面演示离屏时暂停 Web Animations，减少动态直接给各自可读的结果。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero[data-air-zone]",
+          "label": "随视口启停的香气场",
+          "instruction": "观察香气场；滚出香气区域或切到其他标签页后暂停，返回时继续绘制。",
+          "entrypoint": "demos/cases/hallmark/themes/atelier/index.html"
+        }
       }
     ],
     "sourceFiles": [
@@ -189,7 +259,8 @@
       "demos/cases/hallmark/fidelity.md",
       "demos/cases/hallmark/themes/atelier/air.js",
       "demos/cases/hallmark/themes/coral/scene.js"
-    ]
+    ],
+    "preview": "previews/patterns/viewport-animation-lifecycle.jpg"
   },
   "sourceCases": [
     {
@@ -9051,6 +9122,10 @@
     },
     {
       "path": "previews/cases/uiarc-platform.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/viewport-animation-lifecycle.jpg",
       "role": "preview"
     },
     {

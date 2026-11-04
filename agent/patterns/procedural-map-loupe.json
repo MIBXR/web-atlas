@@ -32,10 +32,6 @@
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "日志保留可聚焦图钉与卡片，放大镜为细察辅助。",
-      "reducedMotion": "保留固定地图和停靠放大镜，选择即时完成。"
-    },
     "parameters": [
       {
         "name": "等高线",
@@ -61,7 +57,14 @@
         "observation": "Furrow 从固定噪声场以 marching squares 生成等高线，再绘地块、树篱与路线；放大镜跟随地图指针并以 1.9 倍重新绘制同一程序几何，移开后缓慢回到农场门边。",
         "evidence": "observed",
         "referenceUrl": "https://www.usehallmark.com/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".hero__map",
+          "label": "程序地图与跟随放大镜",
+          "instruction": "在桌面地图上移动指针，用放大镜对照等高线、地块与路线的同一几何细节。",
+          "entrypoint": "demos/cases/hallmark/themes/furrow/index.html",
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -71,7 +74,8 @@
       "demos/cases/hallmark/themes/furrow/map.js",
       "demos/cases/hallmark/themes/furrow/style.css",
       "demos/cases/hallmark/themes/furrow/index.html"
-    ]
+    ],
+    "preview": "previews/patterns/procedural-map-loupe.jpg"
   },
   "sourceCases": [
     {
@@ -5829,6 +5833,10 @@
     },
     {
       "path": "previews/cases/hallmark.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/procedural-map-loupe.jpg",
       "role": "preview"
     },
     {

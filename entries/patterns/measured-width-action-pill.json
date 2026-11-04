@@ -22,15 +22,10 @@
   ],
   "composition": {
     "role": "accent",
-    "notes": "该原子负责主张保持一行连续，词长变化可读，职责限定在当前区域。组合时保留完整静态句子供读屏，减少动态固定一个可读词。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
     "pairsWellWith": [
       "avatar-pile-personality"
     ],
     "conflicts": []
-  },
-  "accessibility": {
-    "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-    "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
   },
   "parameters": [
     {
@@ -39,7 +34,7 @@
       "note": "文字直接替换，仅宽度过渡"
     }
   ],
-  "prompt": "为【目标页面/组件】实现「测量文字宽度的动作胶囊」。动作词直接替换，再测量内容宽度并过渡胶囊inline-size；颜色与圆点随语义同步，不给字加额外飞入。触发：固定词轮换周期。可见结果：主张保持一行连续，词长变化可读。适用任务：多个等价动作的产品主张。保留完整静态句子供读屏，减少动态固定一个可读词。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责主张保持一行连续，词长变化可读，职责限定在当前区域。组合时保留完整静态句子供读屏，减少动态固定一个可读词。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+  "prompt": "为【目标页面/组件】实现「测量文字宽度的动作胶囊」。动作词直接替换，再测量内容宽度并过渡胶囊inline-size；颜色与圆点随语义同步，不给字加额外飞入。触发：固定词轮换周期。可见结果：主张保持一行连续，词长变化可读。适用任务：多个等价动作的产品主张。保留完整静态句子供读屏，减少动态固定一个可读词。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
   "sources": [
     {
       "caseId": "notion-editorial",
@@ -47,7 +42,12 @@
       "observation": "2500ms 自动 Think/Ship/Create/Build/Jam/Scale → 词直接替换，测量 scrollWidth 后宽度以 300ms cubic-bezier(.86,0,.07,1) 变化，底色/圆点对应变化；这是源机制，没有给文字加不存在的飞入飞出。",
       "evidence": "observed",
       "referenceUrl": "https://www.notion.com/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".verb",
+        "label": "随动作词变宽的胶囊",
+        "instruction": "看 Think、Ship、Create 等词自动替换，胶囊按真实词宽改变尺寸，底色和圆点一起更新。"
+      }
     }
   ],
   "sourceFiles": [
@@ -58,5 +58,6 @@
     "demos/cases/notion-editorial/style.css",
     "entries/cases/notion-editorial.json",
     "docs/cases/notion-editorial.md"
-  ]
+  ],
+  "preview": "previews/patterns/measured-width-action-pill.jpg"
 }

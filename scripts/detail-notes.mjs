@@ -6,7 +6,7 @@ import fs from 'node:fs';
 // rather than a possibly stale generated data/cases.js. Browser services unrelated
 // to rendering are stubbed; route(), renderDetail(), composition() and
 // behaviors() execute unchanged and produce the production #detail.innerHTML.
-export function renderDetailNotes({ entries, id, rendererSource }) {
+export function renderDetailNotes({ entries, patterns, id, rendererSource }) {
   const nodes = new Map();
   function node(selector) {
     if (nodes.has(selector)) return nodes.get(selector);
@@ -21,10 +21,11 @@ export function renderDetailNotes({ entries, id, rendererSource }) {
   }
   const location = new URL(`http://atlas.local/cases.html#style/${id}`);
   const document = { querySelector: node, querySelectorAll: () => [], createElement: tag => node(`created:${tag}`), body: node('body'), activeElement: { tagName: 'BODY' }, addEventListener() {} };
-  const window = { ATLAS_CASES: entries, AtlasPreview: { mount: () => ({ refresh() {}, disconnect() {} }) }, addEventListener() {}, scrollTo() {} };
-  const sandbox = { window, document, location, URL, console, localStorage: { getItem: () => null, setItem() {} }, history: { replaceState() {}, pushState() {} }, navigator: { clipboard: { writeText: async () => {} } }, ResizeObserver: class { observe() {} disconnect() {} }, setTimeout: () => 0, clearTimeout() {}, Blob };
+  const window = { ATLAS_CASES: entries, ATLAS_PATTERNS: patterns, AtlasPreview: { mount: () => ({ refresh() {}, disconnect() {} }) }, addEventListener() {}, scrollTo() {} };
+  const sandbox = { window, document, location, URL, console, AtlasIcons: { svg: () => '' }, localStorage: { getItem: () => null, setItem() {} }, history: { replaceState() {}, pushState() {} }, navigator: { clipboard: { writeText: async () => {} } }, ResizeObserver: class { observe() {} disconnect() {} }, setTimeout: () => 0, clearTimeout() {}, Blob };
   const context = vm.createContext(sandbox);
   new vm.Script(fs.readFileSync(new URL('../site/shared/favorites.js', import.meta.url), 'utf8')).runInContext(context, { timeout: 2000 });
+  new vm.Script(fs.readFileSync(new URL('../site/shared/patterns-ui.js', import.meta.url), 'utf8')).runInContext(context, { timeout: 2000 });
   new vm.Script(rendererSource, { filename: 'site/pages/cases/atlas.js' }).runInContext(context, { timeout: 2000 });
   assert.equal(node('#detail').hidden, false, `${id}: detail route was not rendered`);
   const html = node('#detail').innerHTML;

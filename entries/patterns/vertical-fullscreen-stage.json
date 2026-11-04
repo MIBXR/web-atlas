@@ -31,10 +31,6 @@
       "native-document-reading"
     ]
   },
-  "accessibility": {
-    "keyboard": "章节导航和方向键可走完整路径，当前章同步aria状态，末端能回程。",
-    "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-  },
   "parameters": [],
   "prompt": "为【目标页面/组件】实现「有限章节的垂直整屏舞台」。多个场景由同一垂直translate3d舞台控制，滚轮/手势前后切换，最后以有限位移露出页脚。触发：向前或反向输入。可见结果：当前章节和末端边界清楚。适用任务：少量主视觉强的版本介绍。完整正文及操作可达，精确时长按来源与本地拟合分开。键盘：章节导航和方向键可走完整路径，当前章同步aria状态，末端能回程。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：负责有限章节的主浏览模型。人物舞台与语音可以作为章内状态；长段sticky或大量正文需在独立文档区提供，避免同时争夺主滚动输入。",
   "sources": [
@@ -44,7 +40,21 @@
       "observation": "滚轮或竖向手势推进整屏舞台，反向返回；末尾以有限位移露出 footer，避免把正常长页当作源站 Swiper。",
       "evidence": "observed",
       "referenceUrl": "https://genshin.hoyoverse.com/en/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "body[data-chapter=\"0\"] #home",
+        "label": "纵向整屏章节舞台",
+        "instruction": "向下滚动或点 Characters，查看章节整屏推进；反向可回到首屏，末尾会露出页脚。",
+        "prepare": [
+          {
+            "click": "header a[href=\"#home\"]",
+            "waitFor": "body[data-chapter=\"0\"]"
+          },
+          {
+            "waitFor": "main[style*=\"transition: none\"]"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -54,5 +64,6 @@
     "demos/cases/genshin-world/style.css",
     "entries/cases/genshin-world.json",
     "docs/cases/genshin-world.md"
-  ]
+  ],
+  "preview": "previews/patterns/vertical-fullscreen-stage.jpg"
 }

@@ -11,7 +11,7 @@
     ],
     "summary": "用连续条带提供客户范围线索。",
     "mechanism": "重复标识轨道缓慢横移以形成连续序列，指针停留暂停；重复视觉不增加重复读屏内容。",
-    "trigger": "查看条带或停留",
+    "trigger": "条带首次显示或指针停留",
     "effect": "客户事实以低密度节奏出现。",
     "useCases": [
       "已有真实客户依据的品牌介绍"
@@ -25,18 +25,14 @@
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责客户事实以低密度节奏出现，职责限定在当前区域。组合时提供暂停，减少动态展示静态可读标识，不能把滚动当证言验证。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。 Arc 来源为 52s 连续轨道；原站没有悬停暂停，减少动态改为静态换行。迁移时按当前任务提供暂停入口。",
+      "notes": "Arc 来源为 52s 连续轨道；原站没有悬停暂停，减少动态改为静态换行。迁移时按当前任务提供暂停入口。",
       "pairsWellWith": [
         "viewport-animation-lifecycle"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "提供可聚焦暂停入口，重复轨道设aria-hidden；真实标识有替代文字。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「可停的连续客户标识条带」。重复标识轨道缓慢横移以形成连续序列，指针停留暂停；重复视觉不增加重复读屏内容。触发：查看条带或停留。可见结果：客户事实以低密度节奏出现。适用任务：已有真实客户依据的品牌介绍。提供暂停，减少动态展示静态可读标识，不能把滚动当证言验证。键盘：提供可聚焦暂停入口，重复轨道设aria-hidden；真实标识有替代文字。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责客户事实以低密度节奏出现，职责限定在当前区域。组合时提供暂停，减少动态展示静态可读标识，不能把滚动当证言验证。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「可停的连续客户标识条带」。重复标识轨道缓慢横移以形成连续序列，指针停留暂停；重复视觉不增加重复读屏内容。触发：条带首次显示或指针停留。可见结果：客户事实以低密度节奏出现。适用任务：已有真实客户依据的品牌介绍。提供暂停，减少动态展示静态可读标识，不能把滚动当证言验证。键盘：提供可聚焦暂停入口，重复轨道设aria-hidden；真实标识有替代文字。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "notion-editorial",
@@ -44,7 +40,12 @@
         "observation": "客户标识原生连续横移，指针停留暂停；手机保持条带，不把标识排成多行墙。",
         "evidence": "observed",
         "referenceUrl": "https://www.notion.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".logo-wall",
+          "label": "客户标识的连续条带",
+          "instruction": "将指针停在客户标识条带上暂停，移开后继续移动，手机上也保持横向条带。"
+        }
       },
       {
         "caseId": "stripe-platform",
@@ -52,7 +53,12 @@
         "observation": "Payments 进入视口 → 终端文本在 mask 内纵向轮换，checkout 同步商户和金额；客户标识连续横移，悬停可停。",
         "evidence": "observed",
         "referenceUrl": "https://stripe.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".customers-viewport",
+          "label": "连续客户标识条带",
+          "instruction": "把指针停在客户标识上暂停，再移开，观察两份轨道怎样连续衔接。"
+        }
       },
       {
         "caseId": "uiarc-platform",
@@ -60,7 +66,12 @@
         "observation": "13 个客户标识组成两份同序轨道，以 52s 线性循环横移，左右渐隐；原站没有悬停暂停，减少动态时改为静态换行且隐藏重复组。",
         "evidence": "observed",
         "referenceUrl": "https://uiarc.dev/",
-        "capturedAt": "2026-11-01"
+        "capturedAt": "2026-11-01",
+        "focus": {
+          "target": ".logos",
+          "label": "连续客户标识",
+          "instruction": "看标识从右向左连续移动，轨道边缘逐渐隐去；这个来源保持自动移动。"
+        }
       }
     ],
     "sourceFiles": [
@@ -87,7 +98,8 @@
       "demos/cases/uiarc-platform/fidelity.md",
       "demos/cases/uiarc-platform/source/content.json",
       "demos/cases/uiarc-platform/source/components.tsx"
-    ]
+    ],
+    "preview": "previews/patterns/client-logo-marquee.jpg"
   },
   "sourceCases": [
     {
@@ -119,7 +131,7 @@
     {
       "path": "prompts/patterns/client-logo-marquee.md",
       "role": "prompt",
-      "content": "# 可停的连续客户标识条带 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/client-logo-marquee.json)\n\n为【目标页面/组件】实现「可停的连续客户标识条带」。重复标识轨道缓慢横移以形成连续序列，指针停留暂停；重复视觉不增加重复读屏内容。触发：查看条带或停留。可见结果：客户事实以低密度节奏出现。适用任务：已有真实客户依据的品牌介绍。提供暂停，减少动态展示静态可读标识，不能把滚动当证言验证。键盘：提供可聚焦暂停入口，重复轨道设aria-hidden；真实标识有替代文字。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责客户事实以低密度节奏出现，职责限定在当前区域。组合时提供暂停，减少动态展示静态可读标识，不能把滚动当证言验证。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。\n\n## 制作约束\n\n- 提供暂停，减少动态展示静态可读标识，不能把滚动当证言验证。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
+      "content": "# 可停的连续客户标识条带 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/client-logo-marquee.json)\n\n为【目标页面/组件】实现「可停的连续客户标识条带」。重复标识轨道缓慢横移以形成连续序列，指针停留暂停；重复视觉不增加重复读屏内容。触发：条带首次显示或指针停留。可见结果：客户事实以低密度节奏出现。适用任务：已有真实客户依据的品牌介绍。提供暂停，减少动态展示静态可读标识，不能把滚动当证言验证。键盘：提供可聚焦暂停入口，重复轨道设aria-hidden；真实标识有替代文字。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。\n\n## 制作约束\n\n- 提供暂停，减少动态展示静态可读标识，不能把滚动当证言验证。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
     }
   ],
   "files": [
@@ -901,6 +913,10 @@
     },
     {
       "path": "previews/cases/uiarc-platform.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/client-logo-marquee.jpg",
       "role": "preview"
     },
     {

@@ -8,7 +8,6 @@
   ],
   "summary": "不同产品权重使用不同面积。",
   "mechanism": "根据功能关系设置跨列主能力、并列辅助能力或通栏协作能力，图文各有稳定位置。",
-  "trigger": "阅读能力矩阵",
   "effect": "面积与排列说明能力之间的层级。",
   "useCases": [
     "多能力产品介绍"
@@ -22,18 +21,13 @@
   ],
   "composition": {
     "role": "foundation",
-    "notes": "该原子负责面积与排列说明能力之间的层级，职责限定在当前区域。组合时手机重排仍保留能力顺序，不把面积当唯一信息提示。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
     "pairsWellWith": [
       "native-horizontal-shelf"
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-    "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-  },
   "parameters": [],
-  "prompt": "为【目标页面/组件】实现「以跨列比例表达能力层次」。根据功能关系设置跨列主能力、并列辅助能力或通栏协作能力，图文各有稳定位置。触发：阅读能力矩阵。可见结果：面积与排列说明能力之间的层级。适用任务：多能力产品介绍。手机重排仍保留能力顺序，不把面积当唯一信息提示。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责面积与排列说明能力之间的层级，职责限定在当前区域。组合时手机重排仍保留能力顺序，不把面积当唯一信息提示。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+  "prompt": "为【目标页面/组件】实现「以跨列比例表达能力层次」。根据功能关系设置跨列主能力、并列辅助能力或通栏协作能力，图文各有稳定位置。可见结果：面积与排列说明能力之间的层级。适用任务：多能力产品介绍。手机重排仍保留能力顺序，不把面积当唯一信息提示。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
   "sources": [
     {
       "caseId": "stripe-platform",
@@ -41,7 +35,12 @@
       "observation": "1266px内容框；48px段落式首屏；产品矩阵首行Payments跨两列、Billing一列同高，随后不同产品区；4列指标与左右案例。",
       "evidence": "observed",
       "referenceUrl": "https://stripe.com/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".bento",
+        "label": "产品矩阵的主次比例",
+        "instruction": "对比 Payments 的跨列主卡与旁侧 Billing，再往下看其余产品怎样组成矩阵。"
+      }
     },
     {
       "caseId": "notion-editorial",
@@ -49,7 +48,12 @@
       "observation": "语言提示/导航 → 动作胶囊/头像/桌面产品视频 → 标识条带 → 两列+通栏 Bento → 五用途 → 团队故事 → 结束行动 → 页尾。",
       "evidence": "observed",
       "referenceUrl": "https://www.notion.com/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": "#features",
+        "label": "两列与通栏能力卡",
+        "instruction": "对比 Capture、Find 两张并排卡与下方通栏 Automate，查看图文比例如何表达能力关系。"
+      }
     }
   ],
   "sourceFiles": [
@@ -68,5 +72,6 @@
     "entries/cases/stripe-platform.json",
     "docs/cases/notion-editorial.md",
     "docs/cases/stripe-platform.md"
-  ]
+  ],
+  "preview": "previews/patterns/capability-bento-hierarchy.jpg"
 }

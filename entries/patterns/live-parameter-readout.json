@@ -22,7 +22,6 @@
   ],
   "composition": {
     "role": "accent",
-    "notes": "该原子负责参数变化与可见/可听结果一一对应，职责限定在当前区域。组合时读数有文本单位，范围控件不截获正常方向键。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
     "pairsWellWith": [
       "geometric-balance-presets",
       "audio-signal-panel",
@@ -30,30 +29,59 @@
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "使用有label的原生range，方向键/Home/End可操作；读数与控件关联。",
-    "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-  },
   "parameters": [],
-  "prompt": "为【目标页面/组件】实现「滑块与带单位读数联动」。原生范围输入直接更新目标属性和相邻读数；明确单位、范围以及参数立即生效还是影响下一次变化。触发：拖动或键盘调整滑块。可见结果：参数变化与可见/可听结果一一对应。适用任务：设计实验与工具演示。读数有文本单位，范围控件不截获正常方向键。键盘：使用有label的原生range，方向键/Home/End可操作；读数与控件关联。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责参数变化与可见/可听结果一一对应，职责限定在当前区域。组合时读数有文本单位，范围控件不截获正常方向键。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+  "prompt": "为【目标页面/组件】实现「滑块与带单位读数联动」。原生范围输入直接更新目标属性和相邻读数；明确单位、范围以及参数立即生效还是影响下一次变化。触发：拖动或键盘调整滑块。可见结果：参数变化与可见/可听结果一一对应。适用任务：设计实验与工具演示。读数有文本单位，范围控件不截获正常方向键。键盘：使用有label的原生range，方向键/Home/End可操作；读数与控件关联。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
   "sources": [
     {
       "caseId": "bauhaus-geometry",
       "locator": "entries/cases/bauhaus-geometry.json#interaction/1",
       "observation": "原生范围控件可用键盘旋转三角形并即时显示角度。",
-      "evidence": "adapted"
+      "evidence": "adapted",
+      "focus": {
+        "target": ".range-wrap",
+        "label": "三角形旋转角度",
+        "instruction": "拖动旋转滑块或用方向键微调，观察三角形转动和角度读数同时更新。",
+        "prepare": [
+          {
+            "input": "#rotation",
+            "value": "65"
+          }
+        ]
+      }
     },
     {
       "caseId": "retro-80s",
       "locator": "entries/cases/retro-80s.json#interaction/2",
       "observation": "原生范围输入即时改变Cutoff、Attack、Output并更新读数。",
-      "evidence": "adapted"
+      "evidence": "adapted",
+      "focus": {
+        "target": ".params",
+        "label": "Cutoff、Attack 与 Output",
+        "instruction": "拖动三个滑块，或用方向键微调，观察各自带单位的读数即时更新。",
+        "prepare": [
+          {
+            "input": "#cutoff",
+            "value": "2600"
+          }
+        ]
+      }
     },
     {
       "caseId": "shape-morph",
       "locator": "entries/cases/shape-morph.json#interaction/1",
       "observation": "间距滑块将单元从连续图案分离为碎片",
-      "evidence": "adapted"
+      "evidence": "adapted",
+      "focus": {
+        "target": ".parameters",
+        "label": "碎片间距与时长",
+        "instruction": "调节间距与时长滑块，看读数更新；向上返回几何图形，可比较分片之间的距离和变形速度。",
+        "prepare": [
+          {
+            "input": "#spread",
+            "value": "24"
+          }
+        ]
+      }
     },
     {
       "caseId": "hallmark",
@@ -61,7 +89,13 @@
       "observation": "Specimen 的字号与字重滑块同步写入试排 CSS 变量及带单位读数，Ribbon 的推子同步百分比、aria-valuenow、视觉强度和音量。",
       "evidence": "observed",
       "referenceUrl": "https://www.usehallmark.com/",
-      "capturedAt": "2026-11-01"
+      "capturedAt": "2026-11-01",
+      "focus": {
+        "target": "#tester",
+        "label": "字号、字重与试排读数",
+        "instruction": "拖动字号与字重滑块，对照试排文字和旁边读数的同步变化。",
+        "entrypoint": "demos/cases/hallmark/themes/specimen/index.html"
+      }
     }
   ],
   "sourceFiles": [
@@ -82,5 +116,6 @@
     "demos/cases/hallmark/themes/specimen/page.js",
     "demos/cases/hallmark/themes/specimen/index.html",
     "demos/cases/hallmark/themes/ribbon/night.js"
-  ]
+  ],
+  "preview": "previews/patterns/live-parameter-readout.jpg"
 }

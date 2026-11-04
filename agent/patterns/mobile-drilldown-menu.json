@@ -25,19 +25,14 @@
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责层级与行动位置始终可定位，职责限定在当前区域。组合时关闭恢复阅读位置与焦点，长列表只在菜单内滚动。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "natural-height-mega-menu",
         "last-request-transition"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「手机菜单逐层进入与返回」。全屏菜单先显示顶层分类，选择分类让二级页侧向进入；Back返回顶层，核心行动固定在底部。触发：手机打开分类或返回。可见结果：层级与行动位置始终可定位。适用任务：多层产品导航。关闭恢复阅读位置与焦点，长列表只在菜单内滚动。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责层级与行动位置始终可定位，职责限定在当前区域。组合时关闭恢复阅读位置与焦点，长列表只在菜单内滚动。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「手机菜单逐层进入与返回」。全屏菜单先显示顶层分类，选择分类让二级页侧向进入；Back返回顶层，核心行动固定在底部。触发：手机打开分类或返回。可见结果：层级与行动位置始终可定位。适用任务：多层产品导航。关闭恢复阅读位置与焦点，长列表只在菜单内滚动。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "stripe-platform",
@@ -45,7 +40,19 @@
         "observation": "手机汉堡菜单 → 全屏顶层 Products/Solutions/Developers/Resources；选择分类后二级页以源 CSS 500ms 侧向进入、250ms 透明度衔接，Back 返回顶层。Start now/Contact sales 固定底部；关闭/Escape 恢复滚动和焦点，让长目录保持方向与核心行动。",
         "evidence": "adapted",
         "referenceUrl": "https://stripe.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".stripe-phone[data-open=true]",
+          "label": "逐层进入的手机菜单",
+          "instruction": "点 Products 等分类进入二级页，用 Back 返回；底部 Start now 与 Contact sales 始终保留。",
+          "prepare": [
+            {
+              "click": ".mobile-menu[aria-expanded=false]",
+              "waitFor": ".stripe-phone[data-open=true]"
+            }
+          ],
+          "viewport": "mobile"
+        }
       }
     ],
     "sourceFiles": [
@@ -57,7 +64,8 @@
       "demos/cases/stripe-platform/wave.js",
       "entries/cases/stripe-platform.json",
       "docs/cases/stripe-platform.md"
-    ]
+    ],
+    "preview": "previews/patterns/mobile-drilldown-menu.jpg"
   },
   "sourceCases": [
     {
@@ -73,7 +81,7 @@
     {
       "path": "prompts/patterns/mobile-drilldown-menu.md",
       "role": "prompt",
-      "content": "# 手机菜单逐层进入与返回 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/mobile-drilldown-menu.json)\n\n为【目标页面/组件】实现「手机菜单逐层进入与返回」。全屏菜单先显示顶层分类，选择分类让二级页侧向进入；Back返回顶层，核心行动固定在底部。触发：手机打开分类或返回。可见结果：层级与行动位置始终可定位。适用任务：多层产品导航。关闭恢复阅读位置与焦点，长列表只在菜单内滚动。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责层级与行动位置始终可定位，职责限定在当前区域。组合时关闭恢复阅读位置与焦点，长列表只在菜单内滚动。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。\n\n## 制作约束\n\n- 关闭恢复阅读位置与焦点，长列表只在菜单内滚动。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
+      "content": "# 手机菜单逐层进入与返回 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/mobile-drilldown-menu.json)\n\n为【目标页面/组件】实现「手机菜单逐层进入与返回」。全屏菜单先显示顶层分类，选择分类让二级页侧向进入；Back返回顶层，核心行动固定在底部。触发：手机打开分类或返回。可见结果：层级与行动位置始终可定位。适用任务：多层产品导航。关闭恢复阅读位置与焦点，长列表只在菜单内滚动。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。\n\n## 制作约束\n\n- 关闭恢复阅读位置与焦点，长列表只在菜单内滚动。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
     }
   ],
   "files": [
@@ -211,6 +219,10 @@
     },
     {
       "path": "previews/cases/stripe-platform.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/mobile-drilldown-menu.jpg",
       "role": "preview"
     },
     {

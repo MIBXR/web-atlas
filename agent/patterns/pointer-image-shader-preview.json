@@ -10,7 +10,7 @@
       "micro-motion"
     ],
     "summary": "在目录层先给设定一个视觉线索。",
-    "mechanism": "悬停术语时让对应原图随指针定位，并以同源形变和RGB偏移shader反馈移动；点击再进入完整详情。",
+    "mechanism": "悬停术语时让对应原图随指针定位，并以同源形变和RGB偏移shader反馈移动；点击再进入完整详情。 键盘激活术语可直接进入详情，静态预览可使用固定原图。",
     "trigger": "悬停与移动术语",
     "effect": "目录可探索而不用立刻离开。",
     "useCases": [
@@ -25,18 +25,13 @@
     ],
     "composition": {
       "role": "accent",
-      "notes": "该原子负责目录可探索而不用立刻离开，职责限定在当前区域。组合时焦点或点击提供同等图像与文字入口，小屏直接使用详情。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "particle-model-reformation"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "文本术语可聚焦，键盘激活直接进入对应详情，不要求模拟鼠标轨迹。",
-      "reducedMotion": "使用固定图像预览，停用形变和RGB偏移；详情继续可读。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「术语图像随指针形变预览」。悬停术语时让对应原图随指针定位，并以同源形变和RGB偏移shader反馈移动；点击再进入完整详情。触发：悬停与移动术语。可见结果：目录可探索而不用立刻离开。适用任务：概念目录与图像作品索引。焦点或点击提供同等图像与文字入口，小屏直接使用详情。键盘：文本术语可聚焦，键盘激活直接进入对应详情，不要求模拟鼠标轨迹。减少动态：使用固定图像预览，停用形变和RGB偏移；详情继续可读。组合边界：该原子负责目录可探索而不用立刻离开，职责限定在当前区域。组合时焦点或点击提供同等图像与文字入口，小屏直接使用详情。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「术语图像随指针形变预览」。悬停术语时让对应原图随指针定位，并以同源形变和RGB偏移shader反馈移动；点击再进入完整详情。触发：悬停与移动术语。可见结果：目录可探索而不用立刻离开。适用任务：概念目录与图像作品索引。焦点或点击提供同等图像与文字入口，小屏直接使用详情。键盘：文本术语可聚焦，键盘激活直接进入对应详情，不要求模拟鼠标轨迹。减少动态：使用固定图像预览，停用形变和RGB偏移；详情继续可读。",
     "sources": [
       {
         "caseId": "arknights-world",
@@ -44,7 +39,33 @@
         "observation": "桌面WORLD先显示六术语目录与罗德岛点阵；悬停术语的原图预览跟随指针并使用同源形变/RGB偏移shader。点击进入详情，箭头/六段索引换模型，返回恢复目录。",
         "evidence": "observed",
         "referenceUrl": "https://ak.hypergryph.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#world.active:not([data-detail=\"true\"]) .world-list",
+          "label": "桌面术语图像预览",
+          "instruction": "把指针移到世界设定术语上并缓慢移动，查看跟随指针形变的原图。",
+          "prepare": [
+            {
+              "waitFor": "#scene-deck[data-phase=\"idle\"]"
+            },
+            {
+              "click": "#menu-toggle[aria-expanded=\"false\"]",
+              "maxWidth": 800
+            },
+            {
+              "click": "#chapter-nav a[href=\"#world\"]:not([aria-current=\"page\"])",
+              "waitFor": "#scene-deck[data-active=\"world\"][data-phase=\"idle\"]"
+            },
+            {
+              "click": "#world[data-detail=\"true\"] #world-back",
+              "minWidth": 801
+            },
+            {
+              "waitFor": "#world-particles[data-model]"
+            }
+          ],
+          "viewport": "wide"
+        }
       }
     ],
     "sourceFiles": [
@@ -55,7 +76,8 @@
       "demos/cases/arknights-world/style.css",
       "entries/cases/arknights-world.json",
       "docs/cases/arknights-world.md"
-    ]
+    ],
+    "preview": "previews/patterns/pointer-image-shader-preview.jpg"
   },
   "sourceCases": [
     {
@@ -71,7 +93,7 @@
     {
       "path": "prompts/patterns/pointer-image-shader-preview.md",
       "role": "prompt",
-      "content": "# 术语图像随指针形变预览 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/pointer-image-shader-preview.json)\n\n为【目标页面/组件】实现「术语图像随指针形变预览」。悬停术语时让对应原图随指针定位，并以同源形变和RGB偏移shader反馈移动；点击再进入完整详情。触发：悬停与移动术语。可见结果：目录可探索而不用立刻离开。适用任务：概念目录与图像作品索引。焦点或点击提供同等图像与文字入口，小屏直接使用详情。键盘：文本术语可聚焦，键盘激活直接进入对应详情，不要求模拟鼠标轨迹。减少动态：使用固定图像预览，停用形变和RGB偏移；详情继续可读。组合边界：该原子负责目录可探索而不用立刻离开，职责限定在当前区域。组合时焦点或点击提供同等图像与文字入口，小屏直接使用详情。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。\n\n## 制作约束\n\n- 焦点或点击提供同等图像与文字入口，小屏直接使用详情。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
+      "content": "# 术语图像随指针形变预览 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/pointer-image-shader-preview.json)\n\n为【目标页面/组件】实现「术语图像随指针形变预览」。悬停术语时让对应原图随指针定位，并以同源形变和RGB偏移shader反馈移动；点击再进入完整详情。触发：悬停与移动术语。可见结果：目录可探索而不用立刻离开。适用任务：概念目录与图像作品索引。焦点或点击提供同等图像与文字入口，小屏直接使用详情。键盘：文本术语可聚焦，键盘激活直接进入对应详情，不要求模拟鼠标轨迹。减少动态：使用固定图像预览，停用形变和RGB偏移；详情继续可读。\n\n## 制作约束\n\n- 焦点或点击提供同等图像与文字入口，小屏直接使用详情。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
     }
   ],
   "files": [
@@ -357,6 +379,10 @@
     },
     {
       "path": "previews/cases/arknights-world.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/pointer-image-shader-preview.jpg",
       "role": "preview"
     },
     {

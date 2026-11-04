@@ -29,10 +29,6 @@
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "每词使用原生按钮与aria-pressed，读后焦点移向下一词。",
-    "reducedMotion": "显示已读完的静态花园，并保留重读入口。"
-  },
   "parameters": [
     {
       "name": "词与时间",
@@ -58,7 +54,18 @@
       "observation": "Hum 按顺序点击句中单词，每个已读词长出一株字形植物；越序点击提示下一词，焦点跟到下一词，五分钟时间带每五秒撕下一片纸屑，完成后可重读。",
       "evidence": "observed",
       "referenceUrl": "https://www.usehallmark.com/",
-      "capturedAt": "2026-11-01"
+      "capturedAt": "2026-11-01",
+      "focus": {
+        "target": ".hero",
+        "label": "读词后生长的字形植物",
+        "instruction": "按句子顺序点击单词，每读一个词，下面就长出一株字形植物。",
+        "entrypoint": "demos/cases/hallmark/themes/hum/index.html",
+        "prepare": [
+          {
+            "click": ".tile[data-i=\"0\"][aria-pressed=false]"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -68,5 +75,6 @@
     "demos/cases/hallmark/themes/hum/round.js",
     "demos/cases/hallmark/themes/hum/index.html",
     "demos/cases/hallmark/themes/hum/style.css"
-  ]
+  ],
+  "preview": "previews/patterns/reading-grows-glyph-garden.jpg"
 }

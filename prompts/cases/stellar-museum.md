@@ -17,7 +17,7 @@
 - 归档对象是 ConardLi/garden-skills 的固定提交 2b9a89340b70f632d31c0f1c69fce94a7912423e，不是真实博物馆官网。主页面原文自称 STELLARIA／星海博物馆，基线自称星槎博物馆；归档标题按任务命名，不修改页内文案。
 - 主页面与基线均从固定提交 Git blob 复制，仅将 Google Fonts、preconnect 与 Three.js 外链替换为本地路径；逐项对应见 fidelity。HTML 内 CSS、JavaScript、占位链接及业务边界均保留来源。
 - 主页面需要支持 importmap、ESM 与 WebGL 的静态 HTTP 环境；Three.js 0.160.0、字体及各自许可随包保留。没有外部图片、音频或视频素材。
-- 来源的减少动态分支限制 CSS 动画、停止对象旋转及背景星空闪烁，但着色器时间、UTC 和平滑锚点滚动仍保留；本地不修改该行为，不声称完全静止。
+- 来源的减少动态分支限制 CSS 动画、停止对象旋转与背景星空闪烁，着色器时间、UTC 和平滑锚点滚动仍保留。
 - README 第 427 行文件路径多出 demo2/ 一层；归档依据实际存在的 demo/web-design-demo/demo1.html 与 demo1-with-skill.html。生成模型、运行次数及生成参数没有对应证据，不作补充推断。
 
 ## 检查方法

@@ -11,7 +11,6 @@
     ],
     "summary": "用一个坐标规则构成整个微型世界。",
     "mechanism": "全部体块共享30°平行轴与比例，顶/左/右使用统一明度方向，路径与植物提供尺度。",
-    "trigger": "查看系统场景",
     "effect": "多个对象属于同一可理解空间。",
     "useCases": [
       "基础设施与园区系统示意"
@@ -25,25 +24,30 @@
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责多个对象属于同一可理解空间，职责限定在当前区域。组合时固定二维SVG不能代替可旋转3D或工程验收图。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "exploded-layer-view",
         "layer-focus-dimming"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「统一等轴投影与三面明度」。全部体块共享30°平行轴与比例，顶/左/右使用统一明度方向，路径与植物提供尺度。触发：查看系统场景。可见结果：多个对象属于同一可理解空间。适用任务：基础设施与园区系统示意。固定二维SVG不能代替可旋转3D或工程验收图。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责多个对象属于同一可理解空间，职责限定在当前区域。组合时固定二维SVG不能代替可旋转3D或工程验收图。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「统一等轴投影与三面明度」。全部体块共享30°平行轴与比例，顶/左/右使用统一明度方向，路径与植物提供尺度。可见结果：多个对象属于同一可理解空间。适用任务：基础设施与园区系统示意。固定二维SVG不能代替可旋转3D或工程验收图。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "isometric-3d",
         "locator": "entries/cases/isometric-3d.json#composition/shape",
         "observation": "平行边、统一30°方向和几何积木建立一致空间规则。",
-        "evidence": "adapted"
+        "evidence": "adapted",
+        "focus": {
+          "target": "#island",
+          "label": "等轴方向与三面明度",
+          "instruction": "比较建筑、地基与阶梯的平行边、统一斜向和三面明度，观察它们怎样共用同一空间规则。",
+          "prepare": [
+            {
+              "click": "[data-layer=all]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -52,7 +56,8 @@
       "demos/cases/isometric-3d/style.css",
       "entries/cases/isometric-3d.json",
       "docs/cases/isometric-3d.md"
-    ]
+    ],
+    "preview": "previews/patterns/parallel-isometric-projection.jpg"
   },
   "sourceCases": [
     {
@@ -68,7 +73,7 @@
     {
       "path": "prompts/patterns/parallel-isometric-projection.md",
       "role": "prompt",
-      "content": "# 统一等轴投影与三面明度 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/parallel-isometric-projection.json)\n\n为【目标页面/组件】实现「统一等轴投影与三面明度」。全部体块共享30°平行轴与比例，顶/左/右使用统一明度方向，路径与植物提供尺度。触发：查看系统场景。可见结果：多个对象属于同一可理解空间。适用任务：基础设施与园区系统示意。固定二维SVG不能代替可旋转3D或工程验收图。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责多个对象属于同一可理解空间，职责限定在当前区域。组合时固定二维SVG不能代替可旋转3D或工程验收图。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。\n\n## 制作约束\n\n- 固定二维SVG不能代替可旋转3D或工程验收图。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
+      "content": "# 统一等轴投影与三面明度 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/parallel-isometric-projection.json)\n\n为【目标页面/组件】实现「统一等轴投影与三面明度」。全部体块共享30°平行轴与比例，顶/左/右使用统一明度方向，路径与植物提供尺度。可见结果：多个对象属于同一可理解空间。适用任务：基础设施与园区系统示意。固定二维SVG不能代替可旋转3D或工程验收图。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。\n\n## 制作约束\n\n- 固定二维SVG不能代替可旋转3D或工程验收图。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
     }
   ],
   "files": [
@@ -114,6 +119,10 @@
     },
     {
       "path": "previews/cases/isometric-3d.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/parallel-isometric-projection.jpg",
       "role": "preview"
     },
     {

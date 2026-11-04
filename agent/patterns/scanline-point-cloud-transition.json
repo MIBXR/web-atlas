@@ -10,7 +10,7 @@
       "page-motion"
     ],
     "summary": "真实xyz点云在扫描带中显现与退场，射线和短暂旋转共同提示模型交接。",
-    "mechanism": "读取Float32 xyz二进制点位，规范化后为旧、新模型分别建立点云actor；多条扫描线改变点的可见与扰动，射线指向扫描附近点，旋转短暂加速后恢复，模型选择与标题/编号同步，交接期间限制再入。",
+    "mechanism": "读取Float32 xyz二进制点位，规范化后为旧、新模型分别建立点云actor；多条扫描线改变点的可见与扰动，射线指向扫描附近点，旋转短暂加速后恢复，模型选择与标题/编号同步，交接期间限制再入。 画布聚焦后可用左右键调整角度，手机拖动保留纵向阅读；静态呈现可直接显示选中模型的终态点云，停止扫描射线、自转与 glitch。",
     "trigger": "选择世界观模型、前后按钮或六段索引；拖动改变观察方向",
     "effect": "模型有可辨认的构形过程，资料状态与真实三维形态共同变化。",
     "useCases": [
@@ -41,10 +41,6 @@
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "前后和模型索引用可命名按钮，当前标题/编号/pressed同步；焦点在画布时左右键调整角度并有等价文字，不让装饰射线进入Tab。手机拖动区域保留pan-y纵向阅读。",
-      "reducedMotion": "直接显示选中模型的终态点云，停止扫描射线、自动旋转与glitch，保留手动选择和说明；偏好动态变化时清除旧脉冲与计时。"
-    },
     "parameters": [
       {
         "name": "点位格式与尺度",
@@ -67,7 +63,7 @@
         "note": "按扫描附近点生成随机射线，源/本地活动数有随机差异；停止/离屏需清理调度。"
       }
     ],
-    "prompt": "为【真实模型档案】实现扫描线与射线驱动的点云交接。用有使用权的Float32 xyz点位，验证格式和边界，再以来源Y跨度1900及各模型offset/pivot/scale作研究基线。旧、新模型各自actor在多线扫描中退出/显现，射线只指向扫描附近点并设容量上限；有限旋转加速后回基速，完成后释放旧GPU资源。目录、前后、编号与DOM说明由同一模型选择驱动，转场再入策略明确，不把该机制错写成同池顶点morph。支持水平拖动与聚焦方向键，手机保留pan-y纵滚。减少动态直接给可见终态、停止自动旋转/射线/glitch；后台暂停与资源失败回退分别处理。保留有限源码/运行证据，随机射线不能声称像素逐帧相等。",
+    "prompt": "为【真实模型档案】实现扫描线与射线驱动的点云交接。用有使用权的Float32 xyz点位，验证格式和边界，再以来源Y跨度1900及各模型offset/pivot/scale作研究基线。旧、新模型各自actor在多线扫描中退出/显现，射线只指向扫描附近点并设容量上限；有限旋转加速后回基速，完成后释放旧GPU资源。目录、前后、编号与DOM说明由同一模型选择驱动，转场再入策略明确，不把该机制错写成同池顶点morph。支持水平拖动与聚焦方向键，手机保留pan-y纵滚。减少动态直接给可见终态、停止自动旋转/射线/glitch；后台暂停与资源失败回退分别处理。",
     "sources": [
       {
         "caseId": "endfield-industrial",
@@ -75,7 +71,32 @@
         "observation": "世界观：帝江号/锚点/集成工业系统/天师桩/天使/裂地者六个原bin及模型参数，Float32 xyz、按Y跨度1900规范化；实际WebGL点云、扫描、转动、拖动、分页/标题与六指标同步。最终状态实测见fidelity，不因源码抽取而自动判通过。",
         "evidence": "observed",
         "referenceUrl": "https://endfield.hypergryph.com/",
-        "capturedAt": "2026-10-09"
+        "capturedAt": "2026-10-09",
+        "focus": {
+          "target": "#lore .lore-canvas-container",
+          "label": "世界观点云",
+          "instruction": "选择六个模型索引或前后按钮，看扫描线、射线和旋转如何交接点云；拖动可转动观察。",
+          "prepare": [
+            {
+              "waitFor": "body:has(#entry-loader[hidden])"
+            },
+            {
+              "click": ".header-inner-container > .header-nav-item[aria-label=\"世界观资料\"]",
+              "minWidth": 801
+            },
+            {
+              "click": ".header-h5-header-container:not(.header-menu-active) .header-menu-icon",
+              "maxWidth": 800
+            },
+            {
+              "click": ".header-menu-item[aria-label=\"世界观资料\"]",
+              "maxWidth": 800
+            },
+            {
+              "waitFor": ".lore-canvas-container[data-model]"
+            }
+          ]
+        }
       }
     ],
     "sourceFiles": [
@@ -91,7 +112,8 @@
       "demos/cases/endfield-industrial/data.js",
       "demos/cases/endfield-industrial/lore.js",
       "demos/cases/endfield-industrial/shaders.js"
-    ]
+    ],
+    "preview": "previews/patterns/scanline-point-cloud-transition.jpg"
   },
   "sourceCases": [
     {
@@ -107,7 +129,7 @@
     {
       "path": "prompts/patterns/scanline-point-cloud-transition.md",
       "role": "prompt",
-      "content": "# 扫描线与射线驱动的点云交接 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/scanline-point-cloud-transition.json)\n\n为【真实模型档案】实现扫描线与射线驱动的点云交接。用有使用权的Float32 xyz点位，验证格式和边界，再以来源Y跨度1900及各模型offset/pivot/scale作研究基线。旧、新模型各自actor在多线扫描中退出/显现，射线只指向扫描附近点并设容量上限；有限旋转加速后回基速，完成后释放旧GPU资源。目录、前后、编号与DOM说明由同一模型选择驱动，转场再入策略明确，不把该机制错写成同池顶点morph。支持水平拖动与聚焦方向键，手机保留pan-y纵滚。减少动态直接给可见终态、停止自动旋转/射线/glitch；后台暂停与资源失败回退分别处理。保留有限源码/运行证据，随机射线不能声称像素逐帧相等。\n\n## 制作约束\n\n- 使用有来源的xyz点位与模型配置，先校验Float32数量可被3整除、有限值及实际边界；归一化、offset/pivot/scale与摄像机共同决定原形，不能只下载bin便声称还原。\n- 本来源为两actor扫描入/出和清理，区别于particle-model-reformation的同池目标插值；旧模型完成退出后释放geometry/material及噪声纹理，不能无限叠加。\n- 扫描、射线、旋转与转场锁属于同一交接状态；随机射线保留上限，循环索引和标题同步；手机水平触摸观察须保留纵向页面滚动。\n- 六模型可见形态、索引循环、交接锁、双向拖动和真实手机触摸已有源/本地实测；四段shader字符串对应。射线活动峰源105/本地144为随机输出，不是像素差异结论。\n- 减少动态保留终态模型与DOM说明，停自动旋转、扫描和射线；WebGL或数据失败提供可读说明/合法静帧，不能阻塞整份档案。\n"
+      "content": "# 扫描线与射线驱动的点云交接 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/scanline-point-cloud-transition.json)\n\n为【真实模型档案】实现扫描线与射线驱动的点云交接。用有使用权的Float32 xyz点位，验证格式和边界，再以来源Y跨度1900及各模型offset/pivot/scale作研究基线。旧、新模型各自actor在多线扫描中退出/显现，射线只指向扫描附近点并设容量上限；有限旋转加速后回基速，完成后释放旧GPU资源。目录、前后、编号与DOM说明由同一模型选择驱动，转场再入策略明确，不把该机制错写成同池顶点morph。支持水平拖动与聚焦方向键，手机保留pan-y纵滚。减少动态直接给可见终态、停止自动旋转/射线/glitch；后台暂停与资源失败回退分别处理。\n\n## 制作约束\n\n- 使用有来源的xyz点位与模型配置，先校验Float32数量可被3整除、有限值及实际边界；归一化、offset/pivot/scale与摄像机共同决定原形，不能只下载bin便声称还原。\n- 本来源为两actor扫描入/出和清理，区别于particle-model-reformation的同池目标插值；旧模型完成退出后释放geometry/material及噪声纹理，不能无限叠加。\n- 扫描、射线、旋转与转场锁属于同一交接状态；随机射线保留上限，循环索引和标题同步；手机水平触摸观察须保留纵向页面滚动。\n- 六模型可见形态、索引循环、交接锁、双向拖动和真实手机触摸已有源/本地实测；四段shader字符串对应。射线活动峰源105/本地144为随机输出，不是像素差异结论。\n- 减少动态保留终态模型与DOM说明，停自动旋转、扫描和射线；WebGL或数据失败提供可读说明/合法静帧，不能阻塞整份档案。\n"
     }
   ],
   "files": [
@@ -1633,6 +1655,10 @@
     },
     {
       "path": "previews/cases/endfield-industrial.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/scanline-point-cloud-transition.jpg",
       "role": "preview"
     },
     {

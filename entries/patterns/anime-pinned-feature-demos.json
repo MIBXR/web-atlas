@@ -25,10 +25,6 @@
     "pairsWellWith": [],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "链接、选择器和表单沿用原生 DOM 焦点与键盘操作。",
-    "reducedMotion": "来源首页保留连续动画；迁移时按目标页面的减少动态需求选择直接呈现状态。"
-  },
   "parameters": [
     {
       "name": "原作参数",
@@ -43,7 +39,18 @@
       "observation": "页面通过一个线性主时间线连接 HEADING、TOOLBOX、FEATURES、MODULES、SPONSORS 与 GET_STARTED 标签；Scroll Observer 以 sync .9 跟随页面位置，八节 API 演示分别维护进入、离开与可同步的子时间线。",
       "evidence": "observed",
       "referenceUrl": "https://animejs.com/",
-      "capturedAt": "2026-11-02"
+      "capturedAt": "2026-11-02",
+      "focus": {
+        "target": "#draggable.is-in-view",
+        "label": "Springs and draggable 演示章节",
+        "instruction": "拖动圆形后松手，观察弹簧回弹；继续上下滚动，查看固定演示层怎样交给相邻 API 章节。",
+        "prepare": [
+          {
+            "scroll": "#draggable",
+            "waitFor": "#draggable.is-in-view"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -55,5 +62,6 @@
     "demos/cases/animejs-site/fidelity.md",
     "demos/cases/animejs-site/source/values.md"
   ],
-  "prompt": "读取 animejs-site 的完整来源包，为目标页面实现「粘性分节全屏 API 演示」。八节内容共用固定演示层；滚动驱动进度与章节子时间线，每节进入时播放、离开时暂停或复位。 数值与素材从 source/values.md、对应区块源码和原始资源中取得。保持触发、交接、反向滚动和原生入口关系。"
+  "prompt": "读取 animejs-site 的完整来源包，为目标页面实现「粘性分节全屏 API 演示」。八节内容共用固定演示层；滚动驱动进度与章节子时间线，每节进入时播放、离开时暂停或复位。 数值与素材从 source/values.md、对应区块源码和原始资源中取得。保持触发、交接、反向滚动和原生入口关系。",
+  "preview": "previews/patterns/anime-pinned-feature-demos.jpg"
 }

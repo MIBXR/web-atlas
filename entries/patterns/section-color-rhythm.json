@@ -8,7 +8,6 @@
   ],
   "summary": "通过章节背景切换划分不同内容任务。",
   "mechanism": "产品摄影、技术说明或行动区域各用明确的整节色带；文字与表面在每节成对定义，图像不反色。",
-  "trigger": "依次阅读不同章节",
   "effect": "章节职责变化可被感知。",
   "useCases": [
     "长产品页与作品介绍"
@@ -22,18 +21,13 @@
   ],
   "composition": {
     "role": "foundation",
-    "notes": "该原子负责章节职责变化可被感知，职责限定在当前区域。组合时每节单独验证对比和焦点，主题模式与章节配色分别描述。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
     "pairsWellWith": [
       "sticky-stage-handoff"
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-    "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-  },
   "parameters": [],
-  "prompt": "为【目标页面/组件】实现「整节配色形成阅读节奏」。产品摄影、技术说明或行动区域各用明确的整节色带；文字与表面在每节成对定义，图像不反色。触发：依次阅读不同章节。可见结果：章节职责变化可被感知。适用任务：长产品页与作品介绍。每节单独验证对比和焦点，主题模式与章节配色分别描述。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责章节职责变化可被感知，职责限定在当前区域。组合时每节单独验证对比和焦点，主题模式与章节配色分别描述。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+  "prompt": "为【目标页面/组件】实现「整节配色形成阅读节奏」。产品摄影、技术说明或行动区域各用明确的整节色带；文字与表面在每节成对定义，图像不反色。可见结果：章节职责变化可被感知。适用任务：长产品页与作品介绍。每节单独验证对比和焦点，主题模式与章节配色分别描述。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
   "sources": [
     {
       "caseId": "apple-product",
@@ -41,7 +35,12 @@
       "observation": "产品摄影章节固定黑/深灰；比较、购物和环境等后段切成浅色。没有全局深浅切换。",
       "evidence": "observed",
       "referenceUrl": "https://www.apple.com/iphone-18-pro/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".upgrade-study",
+        "label": "从深色摄影到浅色比较区",
+        "instruction": "上下滚动这一交界，对照前面的深色产品章节与浅色比较、购物区域如何交替。"
+      }
     },
     {
       "caseId": "stripe-platform",
@@ -49,7 +48,12 @@
       "observation": "首屏固定浅色及官方波浪；Global/Developers 等章节使用品牌海军蓝，属于章节配色，没有全局主题切换。",
       "evidence": "observed",
       "referenceUrl": "https://stripe.com/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".stripe-developers",
+        "label": "海军蓝开发者章节",
+        "instruction": "从这块海军蓝开发者章节向上下滚动，对比它与相邻浅色内容的整节切换。"
+      }
     },
     {
       "caseId": "monument-valley-game",
@@ -57,7 +61,20 @@
       "observation": "固定白导航、#221f20影像/下载/画廊、粉蓝奖项、奶油媒体、粉社区与紫页尾，以整幅色带改变观看节奏。",
       "evidence": "observed",
       "referenceUrl": "https://www.monumentvalleygame.com/mv1",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".community",
+        "label": "整节配色的阅读节奏",
+        "instruction": "沿长页比较奖项、媒体、画廊、社区与页尾，整节色带随内容切换。",
+        "prepare": [
+          {
+            "waitFor": "body[data-entry=\"ready\"]"
+          },
+          {
+            "click": ".section-nav a[href=\"#press\"]"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
@@ -81,5 +98,6 @@
     "entries/cases/stripe-platform.json",
     "docs/cases/monument-valley-game.md",
     "docs/cases/stripe-platform.md"
-  ]
+  ],
+  "preview": "previews/patterns/section-color-rhythm.jpg"
 }

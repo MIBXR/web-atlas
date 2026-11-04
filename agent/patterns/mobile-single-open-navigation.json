@@ -25,7 +25,6 @@
     ],
     "composition": {
       "role": "support",
-      "notes": "该原子负责全部顶层结构仍可看见，当前子目录清楚，职责限定在当前区域。组合时焦点限制在菜单，关闭恢复原位置，底部行动不遮住子链接。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "instant-open-menu-category-switch"
       ],
@@ -33,12 +32,8 @@
         "mobile-drilldown-menu"
       ]
     },
-    "accessibility": {
-      "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-      "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「手机菜单原位单开分类」。在全屏导航中原位展开当前分类，其他分类降低强调，同一分类再点收起，下载与登录入口固定底部。触发：手机选择导航分类。可见结果：全部顶层结构仍可看见，当前子目录清楚。适用任务：分类不深的移动导航。焦点限制在菜单，关闭恢复原位置，底部行动不遮住子链接。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责全部顶层结构仍可看见，当前子目录清楚，职责限定在当前区域。组合时焦点限制在菜单，关闭恢复原位置，底部行动不遮住子链接。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「手机菜单原位单开分类」。在全屏导航中原位展开当前分类，其他分类降低强调，同一分类再点收起，下载与登录入口固定底部。触发：手机选择导航分类。可见结果：全部顶层结构仍可看见，当前子目录清楚。适用任务：分类不深的移动导航。焦点限制在菜单，关闭恢复原位置，底部行动不遮住子链接。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
     "sources": [
       {
         "caseId": "notion-editorial",
@@ -46,7 +41,22 @@
         "observation": "桌面 Product/Resources 指针进入与点击 → 首次 opacity/translateY(-16px) 250ms ease-out，退出 150ms ease-in、延迟 50ms；已打开分类按源 instantSwitch 直接切换，快速反转取消旧退出，减少动态直接完成；手机打开全屏菜单 → Product/AI/Resources 原地单开，切换收起前组，再点同组收起；其他分类变灰，底部 Download app/Log in 固定。源 CSS 子展开 300ms、入口 350ms，内容/底部延迟 200/250ms；关闭/Escape 恢复滚动和焦点，维持层级与行动位置。",
         "evidence": "adapted",
         "referenceUrl": "https://www.notion.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": "#notion-phone-nav:not([hidden])",
+          "label": "手机菜单原位单开",
+          "instruction": "点 Product、AI、Resources 分类，在原位展开当前组；再次点同组可收起，底部 Download app 与 Log in 保留。",
+          "prepare": [
+            {
+              "click": ".hamburger[aria-expanded=false]",
+              "waitFor": "#notion-phone-nav:not([hidden])"
+            },
+            {
+              "click": "[data-phone-group=Product][aria-expanded=false]"
+            }
+          ],
+          "viewport": "mobile"
+        }
       }
     ],
     "sourceFiles": [
@@ -57,7 +67,8 @@
       "demos/cases/notion-editorial/style.css",
       "entries/cases/notion-editorial.json",
       "docs/cases/notion-editorial.md"
-    ]
+    ],
+    "preview": "previews/patterns/mobile-single-open-navigation.jpg"
   },
   "sourceCases": [
     {
@@ -73,7 +84,7 @@
     {
       "path": "prompts/patterns/mobile-single-open-navigation.md",
       "role": "prompt",
-      "content": "# 手机菜单原位单开分类 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/mobile-single-open-navigation.json)\n\n为【目标页面/组件】实现「手机菜单原位单开分类」。在全屏导航中原位展开当前分类，其他分类降低强调，同一分类再点收起，下载与登录入口固定底部。触发：手机选择导航分类。可见结果：全部顶层结构仍可看见，当前子目录清楚。适用任务：分类不深的移动导航。焦点限制在菜单，关闭恢复原位置，底部行动不遮住子链接。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责全部顶层结构仍可看见，当前子目录清楚，职责限定在当前区域。组合时焦点限制在菜单，关闭恢复原位置，底部行动不遮住子链接。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。\n\n## 制作约束\n\n- 焦点限制在菜单，关闭恢复原位置，底部行动不遮住子链接。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
+      "content": "# 手机菜单原位单开分类 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/mobile-single-open-navigation.json)\n\n为【目标页面/组件】实现「手机菜单原位单开分类」。在全屏导航中原位展开当前分类，其他分类降低强调，同一分类再点收起，下载与登录入口固定底部。触发：手机选择导航分类。可见结果：全部顶层结构仍可看见，当前子目录清楚。适用任务：分类不深的移动导航。焦点限制在菜单，关闭恢复原位置，底部行动不遮住子链接。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。\n\n## 制作约束\n\n- 焦点限制在菜单，关闭恢复原位置，底部行动不遮住子链接。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
     }
   ],
   "files": [
@@ -215,6 +226,10 @@
     },
     {
       "path": "previews/cases/notion-editorial.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/mobile-single-open-navigation.jpg",
       "role": "preview"
     },
     {

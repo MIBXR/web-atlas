@@ -86,7 +86,7 @@
       "title": "Blue Archive 日本官方创作指南",
       "url": "https://bluearchive.jp/fankit/guidelines",
       "type": "规范",
-      "note": "官方IP创作指南入口；本地学习不因此获得全部品牌与资产的再发布许可。"
+      "note": "官方 IP 创作指南。"
     },
     {
       "title": "W3C WAI：Carousels Tutorial",
@@ -98,7 +98,7 @@
       "title": "W3C：Animation from Interactions",
       "url": "https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions.html",
       "type": "规范",
-      "note": "非必要交互动效支持减少动态偏好，不据此声称完整合规。"
+      "note": "非必要交互动效支持减少动态偏好。"
     },
     {
       "title": "官方公开角色样式 · 2026-10-07",

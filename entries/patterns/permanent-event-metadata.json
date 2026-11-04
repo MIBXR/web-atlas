@@ -8,7 +8,6 @@
   ],
   "summary": "场景摄影变化时实用信息仍有位置。",
   "mechanism": "日期、地点与导览保持稳定位置，边缘票据入口独立于照片；Featured与新闻各承担不同后续任务。",
-  "trigger": "照片更替和长页浏览",
   "effect": "用户不必反复寻找活动事实。",
   "useCases": [
     "节日与活动首页"
@@ -22,19 +21,14 @@
   ],
   "composition": {
     "role": "foundation",
-    "notes": "该原子负责用户不必反复寻找活动事实，职责限定在当前区域。组合时快照日期与活动状态明确，实际票务链接不能伪造成功。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
     "pairsWellWith": [
       "photo-crossfade-cycle",
       "directional-sticky-navigation"
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-    "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-  },
   "parameters": [],
-  "prompt": "为【目标页面/组件】实现「常驻日期与边缘票据入口」。日期、地点与导览保持稳定位置，边缘票据入口独立于照片；Featured与新闻各承担不同后续任务。触发：照片更替和长页浏览。可见结果：用户不必反复寻找活动事实。适用任务：节日与活动首页。快照日期与活动状态明确，实际票务链接不能伪造成功。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责用户不必反复寻找活动事实，职责限定在当前区域。组合时快照日期与活动状态明确，实际票务链接不能伪造成功。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+  "prompt": "为【目标页面/组件】实现「常驻日期与边缘票据入口」。日期、地点与导览保持稳定位置，边缘票据入口独立于照片；Featured与新闻各承担不同后续任务。可见结果：用户不必反复寻找活动事实。适用任务：节日与活动首页。快照日期与活动状态明确，实际票务链接不能伪造成功。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
   "sources": [
     {
       "caseId": "fuji-rock",
@@ -42,7 +36,12 @@
       "observation": "日期地点保持常驻，照片先传递场景，实用入口其次，Featured与按日期排列新闻承担浏览与回看。",
       "evidence": "observed",
       "referenceUrl": "https://www.fujirockfestival.com/",
-      "capturedAt": "2026-10-07"
+      "capturedAt": "2026-10-07",
+      "focus": {
+        "target": ".photo-hero .ticket, .photo-hero",
+        "label": "常驻日期、地点与票据入口",
+        "instruction": "看现场摄影周围的日期、地点和边缘票据入口，再上下浏览，比较这些实用信息的持续位置。"
+      }
     }
   ],
   "sourceFiles": [
@@ -52,5 +51,6 @@
     "demos/cases/fuji-rock/style.css",
     "entries/cases/fuji-rock.json",
     "docs/cases/fuji-rock.md"
-  ]
+  ],
+  "preview": "previews/patterns/permanent-event-metadata.jpg"
 }

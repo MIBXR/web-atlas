@@ -7,7 +7,7 @@
     "micro-motion"
   ],
   "summary": "先用一次短扫说明比较方式，首次主动输入后保持用户选择。",
-  "mechanism": "首次进入阈值后播放分隔比例关键帧；拖动或键盘调用同一个set，并由mine取消自动RAF和标记已接管。",
+  "mechanism": "首次进入阈值后播放分隔比例关键帧；拖动或键盘调用同一个set，并由mine取消自动RAF和标记已接管。 分隔线支持方向键与 Home/End；跳过自动示范后仍可手动调整。",
   "trigger": "比较区初次出现，随后拖动或键盘操作。",
   "effect": "一次示范让控制可发现，手动操作有持续所有权。",
   "useCases": [
@@ -27,10 +27,6 @@
       "normalized-long-page-compare"
     ],
     "conflicts": []
-  },
-  "accessibility": {
-    "keyboard": "用role=slider与aria值表达比例，方向键和Home/End可用。",
-    "reducedMotion": "跳过示范，保持手动分隔线。"
   },
   "parameters": [
     {
@@ -57,7 +53,12 @@
       "observation": "比较分隔线首次进入视口后按 50→74→30→50 示范一次，拖动或键盘操作立即取消自动扫；方向键每次移动 2%，Shift 加速到 10%，Home 和 End 到达两端。",
       "evidence": "observed",
       "referenceUrl": "https://www.usehallmark.com/",
-      "capturedAt": "2026-11-01"
+      "capturedAt": "2026-11-01",
+      "focus": {
+        "target": "[data-cmp]",
+        "label": "首轮分隔线示范",
+        "instruction": "分隔线进入画面后先示范一次；拖动中线即可接管比较。"
+      }
     }
   ],
   "sourceFiles": [
@@ -67,5 +68,6 @@
     "demos/cases/hallmark/js/compare.js",
     "demos/cases/hallmark/index.html",
     "demos/cases/hallmark/style.css"
-  ]
+  ],
+  "preview": "previews/patterns/demo-once-then-yield-divider.jpg"
 }

@@ -22,30 +22,36 @@
   ],
   "composition": {
     "role": "accent",
-    "notes": "该原子负责用户可并列理解同一组元素的不同关系，职责限定在当前区域。组合时图形为原创，不能遮住正文或焦点。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
     "pairsWellWith": [
       "live-parameter-readout",
       "current-state-svg-export"
     ],
     "conflicts": []
   },
-  "accessibility": {
-    "keyboard": "触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。",
-    "reducedMotion": "停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。"
-  },
   "parameters": [],
-  "prompt": "为【目标页面/组件】实现「几何关系预设实验」。保持同一组圆、三角与矩形，让不同预设改变比例和位置；图形之外保留稳定操作区。触发：选择构成预设。可见结果：用户可并列理解同一组元素的不同关系。适用任务：构成教学与品牌探索。图形为原创，不能遮住正文或焦点。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。组合边界：该原子负责用户可并列理解同一组元素的不同关系，职责限定在当前区域。组合时图形为原创，不能遮住正文或焦点。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+  "prompt": "为【目标页面/组件】实现「几何关系预设实验」。保持同一组圆、三角与矩形，让不同预设改变比例和位置；图形之外保留稳定操作区。触发：选择构成预设。可见结果：用户可并列理解同一组元素的不同关系。适用任务：构成教学与品牌探索。图形为原创，不能遮住正文或焦点。键盘：触发控件用原生按钮或链接，显示焦点并同步选择/展开状态；提供可取消或返回的路径。减少动态：停用自动推进与大幅运动，手动选择即时完成，终态内容及状态说明保持可见。",
   "sources": [
     {
       "caseId": "bauhaus-geometry",
       "locator": "entries/cases/bauhaus-geometry.json#interaction/0",
       "observation": "三个构成预设改变圆、三角和矩形之间的真实位置关系。",
-      "evidence": "adapted"
+      "evidence": "adapted",
+      "focus": {
+        "target": "#composition",
+        "label": "三种几何关系预设",
+        "instruction": "点三种构成预设，对比圆、三角和矩形之间的位置关系，而不只看配色变化。",
+        "prepare": [
+          {
+            "click": "[data-preset='1']"
+          }
+        ]
+      }
     }
   ],
   "sourceFiles": [
     "demos/cases/bauhaus-geometry/index.html",
     "entries/cases/bauhaus-geometry.json",
     "docs/cases/bauhaus-geometry.md"
-  ]
+  ],
+  "preview": "previews/patterns/geometric-balance-presets.jpg"
 }

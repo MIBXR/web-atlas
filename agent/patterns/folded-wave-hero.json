@@ -25,19 +25,14 @@
     ],
     "composition": {
       "role": "foundation",
-      "notes": "该原子负责品牌流动感与金融主张并存，职责限定在当前区域。组合时波带不影响正文布局，提供暂停与离屏停止，素材保持来源范围。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
       "pairsWellWith": [
         "viewport-animation-lifecycle",
         "capability-bento-hierarchy"
       ],
       "conflicts": []
     },
-    "accessibility": {
-      "keyboard": "保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。",
-      "reducedMotion": "布局与内容保持可读；不为静态构成增加自动运动。"
-    },
     "parameters": [],
-    "prompt": "为【目标页面/组件】实现「折叠波带与文字共同构成首屏」。独立WebGL网格与shader产生折叠彩带，主张位于稳定文本区；GPU失败使用同源静帧。触发：进入首屏。可见结果：品牌流动感与金融主张并存。适用任务：有明确品牌形态的产品首屏。波带不影响正文布局，提供暂停与离屏停止，素材保持来源范围。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责品牌流动感与金融主张并存，职责限定在当前区域。组合时波带不影响正文布局，提供暂停与离屏停止，素材保持来源范围。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。",
+    "prompt": "为【目标页面/组件】实现「折叠波带与文字共同构成首屏」。独立WebGL网格与shader产生折叠彩带，主张位于稳定文本区；GPU失败使用同源静帧。触发：进入首屏。可见结果：品牌流动感与金融主张并存。适用任务：有明确品牌形态的产品首屏。波带不影响正文布局，提供暂停与离屏停止，素材保持来源范围。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。",
     "sources": [
       {
         "caseId": "stripe-platform",
@@ -45,7 +40,12 @@
         "observation": "进入 → 隔离的官方 SingleWave 网格/shader/调色渲染；提供暂停，菜单/弹窗/后台/离屏暂停，GPU 失败使用官方静帧。",
         "evidence": "adapted",
         "referenceUrl": "https://stripe.com/",
-        "capturedAt": "2026-10-07"
+        "capturedAt": "2026-10-07",
+        "focus": {
+          "target": ".single-wave",
+          "label": "首屏折叠彩带",
+          "instruction": "看文字后方的折叠彩带与固定文字区；右下角暂停按钮可暂停和恢复背景。"
+        }
       }
     ],
     "sourceFiles": [
@@ -57,7 +57,8 @@
       "demos/cases/stripe-platform/wave.js",
       "entries/cases/stripe-platform.json",
       "docs/cases/stripe-platform.md"
-    ]
+    ],
+    "preview": "previews/patterns/folded-wave-hero.jpg"
   },
   "sourceCases": [
     {
@@ -73,7 +74,7 @@
     {
       "path": "prompts/patterns/folded-wave-hero.md",
       "role": "prompt",
-      "content": "# 折叠波带与文字共同构成首屏 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/folded-wave-hero.json)\n\n为【目标页面/组件】实现「折叠波带与文字共同构成首屏」。独立WebGL网格与shader产生折叠彩带，主张位于稳定文本区；GPU失败使用同源静帧。触发：进入首屏。可见结果：品牌流动感与金融主张并存。适用任务：有明确品牌形态的产品首屏。波带不影响正文布局，提供暂停与离屏停止，素材保持来源范围。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。组合边界：该原子负责品牌流动感与金融主张并存，职责限定在当前区域。组合时波带不影响正文布局，提供暂停与离屏停止，素材保持来源范围。角色表示局部职责，配对与冲突是适配建议，需按目标任务判断。\n\n## 制作约束\n\n- 波带不影响正文布局，提供暂停与离屏停止，素材保持来源范围。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
+      "content": "# 折叠波带与文字共同构成首屏 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/folded-wave-hero.json)\n\n为【目标页面/组件】实现「折叠波带与文字共同构成首屏」。独立WebGL网格与shader产生折叠彩带，主张位于稳定文本区；GPU失败使用同源静帧。触发：进入首屏。可见结果：品牌流动感与金融主张并存。适用任务：有明确品牌形态的产品首屏。波带不影响正文布局，提供暂停与离屏停止，素材保持来源范围。键盘：保留语义标题、顺序阅读与图像替代文字；装饰不进入Tab顺序。减少动态：布局与内容保持可读；不为静态构成增加自动运动。\n\n## 制作约束\n\n- 波带不影响正文布局，提供暂停与离屏停止，素材保持来源范围。\n- 迁移时替换为有使用权的素材与真实内容，来源快照的数值需按目标任务重新验证。\n"
     }
   ],
   "files": [
@@ -211,6 +212,10 @@
     },
     {
       "path": "previews/cases/stripe-platform.jpg",
+      "role": "preview"
+    },
+    {
+      "path": "previews/patterns/folded-wave-hero.jpg",
       "role": "preview"
     },
     {
