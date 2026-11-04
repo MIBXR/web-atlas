@@ -10,7 +10,7 @@
   elementPanel.before(workspace);
   workspace.append(elementPanel,document.querySelector('.experiment'));
   elementPanel.insertAdjacentHTML('beforeend', '<div class="graphic-control"><label for="graphic-choice">⑥ 图形素材</label><select id="graphic-choice"><option value="line">线描 / 轮廓表达</option><option value="geometry">几何 / 抽象构成</option><option value="product">产品 / 记录工具</option></select><small>三幅本地原创SVG，使用当前配色与线条规则。</small></div><div class="hierarchy-control"><label for="hierarchy-choice">⑦ 信息层级</label><select id="hierarchy-choice"><option value="clear">清楚主次 / 大标题</option><option value="flat">相近平级 / 观察比较</option></select><small>改变标题比例与字重，语义标题和内容保持不变。</small></div><div class="texture-control"><label for="texture-choice">⑧ 质感</label><select id="texture-choice"><option value="flat">平面 / 无额外质感</option><option value="grain">颗粒 / 轻微纸感</option><option value="lift">阴影 / 表面层次</option></select><small>装饰只做轻量示范，不降低正文对比。</small></div><div class="motion-control"><label class="motion-switch" for="motion-choice"><input id="motion-choice" type="checkbox" checked>⑨ 微动效</label><small>用示例下方“体验操作反馈”按钮观察。关闭动效后仍有文字反馈；减少动态偏好优先。</small></div>');
-  elementPanel.insertAdjacentHTML('beforeend','<div class="theme-control"><label for="sample-theme">⑩ 深浅色 / 颜色角色一起切换</label><select id="sample-theme"><option value="reference">保留方案 / 原案例主题</option><option value="system">跟随系统</option><option value="light">浅色</option><option value="dark">深色</option></select><small>这是教学迁移，原站 demo 不会被改色。比较表面、文字、按钮与边界，图片不反色。</small><p id="theme-note" role="status"></p><p id="reference-sound-note"></p></div>');
+  elementPanel.insertAdjacentHTML('beforeend','<div class="theme-control"><label for="sample-theme">⑩ 深浅色 / 颜色角色一起切换</label><select id="sample-theme"><option value="reference">保留方案 / 原案例主题</option><option value="system">跟随系统</option><option value="light">浅色</option><option value="dark">深色</option></select><small>这是教学迁移，来源 Demo 保留原色。切换主题时，比较表面、文字、按钮与边界；图片不反色。</small><p id="theme-note" role="status"></p><p id="reference-sound-note"></p></div>');
   const systemTheme=matchMedia('(prefers-color-scheme:dark)');
   const graphic = document.createElement('div');
   graphic.className='sample-graphic';
@@ -105,7 +105,7 @@
     sample.style.colorScheme=dark?'dark':'light';
     sample.dataset.theme=dark?'dark':'light';
     const origin=referenceEntry?.themeBehavior;
-    el('theme-note').textContent='当前示例：'+(dark?'深色':'浅色')+'；'+((state.themeChoice||'reference')==='system'?'随系统变化。':'可切换比较。')+(origin?'原案例：'+origin.control+'；'+origin.designReason:'背景、表面、正文、强调和边界按角色协同变化，不对图片施加反色。');
+    el('theme-note').textContent='当前示例：'+(dark?'深色':'浅色')+'；'+((state.themeChoice||'reference')==='system'?'随系统变化。':'可切换比较。')+(origin?'原案例：'+origin.control+'；'+origin.designReason:'背景、表面、正文、强调和边界按各自角色一起切换，不对图片施加反色。');
     const sound=referenceEntry?.soundBehavior;
     el('reference-sound-note').textContent=sound?'协调实验无声音。原案例声音：'+sound.control+' '+sound.interactionRole:'协调实验无声音；下方声音机制实验可单独启用合成操作音。';
     setVar('bg',bg);setVar('ink',ink);setVar('accent',accent);setVar('on-accent',bestText(accent));
@@ -142,7 +142,7 @@
   function setScheme(id){
     state=clone(schemes[id]);groupOrigins={palette:names[id],type:names[id],shape:names[id],space:names[id]};referenceEntry=null;
     document.querySelectorAll('[data-scheme]').forEach(button=>button.setAttribute('aria-pressed',String(button.dataset.scheme===id)));
-    el('reference-style').value='';el('style-context').textContent='已恢复完整协调方案。下方每个控件仍可单独调整，产品文案保持相同。';el('style-source-links').replaceChildren();
+    el('reference-style').value='';el('style-context').textContent='已恢复完整协调方案。各控件仍可单独调整，产品文案不变。';el('style-source-links').replaceChildren();
     el('current-plan').textContent='当前：'+names[id]+'完整方案';syncInputs();render();message(names[id]+'完整方案',schemes[id].description);
   }
   document.querySelectorAll('[data-scheme]').forEach(button=>button.addEventListener('click',()=>{setScheme(button.dataset.scheme);try{const url=new URL(location.href);url.searchParams.delete('style');history.replaceState(null,'',url)}catch{}}));
@@ -157,14 +157,14 @@
   [['color-bg','bg','背景'],['color-ink','ink','文字'],['color-accent','accent','强调']].forEach(([id,key,label])=>el(id).addEventListener('input',event=>{
     state.palette={...resolvedPalette()};state.themeChoice='reference';state.palette[key]=hex(event.target.value);changed('palette','调整'+label+'色','只改动这个颜色角色；字体、布局、形状与留白保持当前值。','观察：视线先落在哪里？请同时查看文字与背景对比读数；亮丽的颜色也可能降低可读性。');
   }));
-  el('type-choice').addEventListener('change',event=>{state.type=event.target.value;changed('type','调整字体','标题与正文切换为“'+fontNames[state.type]+'”关系，产品文字保持不变。','观察：字形、字重和换行是否改变阅读气质？与现有线条、形状的关系是否清晰？')});
+  el('type-choice').addEventListener('change',event=>{state.type=event.target.value;changed('type','调整字体','标题与正文改用“'+fontNames[state.type]+'”字体方案，产品文字保持不变。','观察：字形、字重和换行是否改变阅读气质？与现有线条、形状的关系是否清晰？')});
   el('layout-choice').addEventListener('change',event=>{state.layout=event.target.value;clearSchemeButtons();render();el('current-plan').textContent='当前：'+state.name+' + 布局调整';message('调整布局','切换为“'+layoutNames[state.layout]+'”。手机会重排为纵向，但图文顺序仍体现这个选择。','观察：先看到的是文案还是示例笔记？布局是否将产品重点带到了更明确的位置？')});
   el('shape-choice').addEventListener('change',event=>{state.shape=event.target.value;changed('shape','调整形状与圆角','采用“'+shapeNames[state.shape]+'”，笔记卡片与边线处理一起更新，行动按钮保留统一圆角。','观察：多个元素重复同一种形状规则后，是否更容易被理解为一个整体？')});
   el('space-choice').addEventListener('input',event=>{state.space=Number(event.target.value);changed('space','调整留白','基准间距改为'+state.space+'px；外边距、组间距与内距按同一尺度变化。手机外边距有28px上限。','观察：哪些内容成了一组？重点周围是否有空间？密集与疏朗会如何改变阅读速度？')});
   el('graphic-choice').addEventListener('change',event=>{state.graphic=event.target.value;clearSchemeButtons();render();el('current-plan').textContent='当前：'+state.name+' + 图形调整';message('调整图形素材','换成“'+graphicNames[state.graphic]+'”呈现方式；三幅SVG沿用当前配色与线条规则，文字卖点保持相同。','观察：线描、抽象构成与具体产品图分别强调了什么？哪一种更适合解释当前卖点？')});
   el('hierarchy-choice').addEventListener('change',event=>{state.hierarchy=event.target.value;clearSchemeButtons();render();el('current-plan').textContent='当前：'+state.name+' + 层级调整';message('调整信息层级',state.hierarchy==='clear'?'恢复明显的标题尺度与字重差。':'把标题尺度和字重拉近正文，观察视觉更趋平级时的阅读变化。','观察：第一眼先看到什么？标题和主要行动还容易找到吗？语义标题没有改变，只改变视觉关系。')});
   el('texture-choice').addEventListener('change',event=>{state.texture=event.target.value;clearSchemeButtons();render();el('current-plan').textContent='当前：'+state.name+' + 质感调整';message('调整质感',{flat:'去掉额外颗粒和阴影，保持平面。',grain:'加入轻微颗粒，示范纸面感觉；文字区域保留可读性。',lift:'用阴影区分表面层次，不移动实际布局。'}[state.texture],'观察：质感有没有帮助理解层次？如果去掉它，产品重点仍然清楚吗？')});
-  el('sample-theme').addEventListener('change',event=>{state.themeChoice=event.target.value;clearSchemeButtons();render();message('切换显示主题','比较同一内容在浅深色中的背景、表面、文字、按钮与分组边界。不是把所有颜色直接反转。','观察：主行动是否仍突出？文字、边框、图形是否仍可读？强主题原站是否值得提供切换？');});
+  el('sample-theme').addEventListener('change',event=>{state.themeChoice=event.target.value;clearSchemeButtons();render();message('切换显示主题','比较同一内容在深浅主题下的背景、表面、文字、按钮与分组边界；颜色按角色调整，并非直接反转。','观察：主行动是否仍突出？文字、边框、图形是否仍可读？强主题原站是否适合提供切换？');});
   systemTheme.addEventListener('change',()=>{if(state?.themeChoice==='system')render();});
   el('motion-choice').addEventListener('change',event=>{state.motion=event.target.checked;clearSchemeButtons();render();el('current-plan').textContent='当前：'+state.name+' + 动效调整';message('调整微动效',state.motion?'已允许短暂反馈动效；系统减少动态偏好仍优先。':'已关闭非必要动效，点击反馈按钮仍会显示结果文字。','用示例下方按钮体验：动效可以帮助确认操作，但不能成为反馈的唯一方式。')});
   el('feedback-demo').addEventListener('click',()=>{const button=el('feedback-demo');button.classList.remove('feedback-pulse');if(state.motion&&!matchMedia('(prefers-reduced-motion:reduce)').matches)requestAnimationFrame(()=>button.classList.add('feedback-pulse'));el('feedback-message').innerHTML='<svg class="atlas-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m5 12 4 4L19 6"/></svg> 操作已完成。'+(state.motion&&!matchMedia('(prefers-reduced-motion:reduce)').matches?'同时提供短暂视觉反馈。':'当前使用静态文字反馈。')});
@@ -185,9 +185,9 @@
     state={name:entry.title,palette:{bg:hex(bg),ink:hex(ink),accent:hex(accent)},type:mono?'mono':serif?'serif':'sans',layout:center?'center':editorial?'editorial':'split',shape:sharp?'sharp':entry.category==='产品'?'round':'soft',space,graphic:/line-art|hand-drawn/.test(entry.id)?'line':/swiss-grid|bauhaus-geometry|shape-morph/.test(entry.id)?'geometry':'product',hierarchy:'clear',texture:/hand-drawn|zelda-world/.test(entry.id)?'grain':entry.category==='产品'?'lift':'flat',motion:true};
     referenceEntry=entry;groupOrigins={palette:'条目色板',type:'教学映射',shape:'教学映射',space:'教学映射'};clearSchemeButtons();syncInputs();render();
     el('reference-style').value=entry.id;el('current-plan').textContent='当前：'+entry.title+' / 教学迁移';
-    el('style-context').textContent='“'+entry.title+'”已带入：色板来自本地条目；字体、布局、形状与间距按条目ID/类别归纳为可比较的教学配置。不是官网或原demo的像素复刻。';
+    el('style-context').textContent='“'+entry.title+'”已带入：色板来自本地条目；字体、布局、形状与间距按条目ID/类别归纳为教学配置，供比较使用。这是元素迁移示例，并非官网或来源 Demo 的像素复刻。';
     const links=el('style-source-links');links.replaceChildren();for(const source of entry.sources.slice(0,2)){const a=document.createElement('a');a.href=source.url;a.textContent=source.title;a.target='_blank';a.rel='noreferrer';if(isExternalLink(a.href)){const icon=document.createElement('span');icon.className='atlas-external-icon';icon.setAttribute('aria-hidden','true');icon.innerHTML='' + AtlasIcons.svg('external') + '';a.append(' ',icon)}links.append(a)}
-    message('从风格库迁移','保持“拾光笔记”的同一产品内容，借用“'+entry.title+'”的元素特征。若要学习其完整信息架构与核心交互，请回到该条目的独立demo。','观察：同一内容借用不同风格后，气质、视觉重点与阅读密度有什么变化？再单独改一项，检验它与其他元素的关系。');
+    message('从风格库迁移','保持“拾光笔记”的产品内容，借用“'+entry.title+'”的元素特征。完整信息架构与核心交互见该条目的独立 Demo。','观察：同一内容借用不同风格后，气质、视觉重点与阅读密度有什么变化？再单独改一项，检验它与其他元素的关系。');
   }
   el('reference-style').addEventListener('change',event=>{const entry=catalog.find(item=>item.id===event.target.value);if(entry)applyReference(entry);else setScheme('paper');try{const url=new URL(location.href);if(entry)url.searchParams.set('style',entry.id);else url.searchParams.delete('style');history.replaceState(null,'',url)}catch{}});
   async function copy(text,feedback,fallback){
@@ -207,7 +207,7 @@
   el('sample-compose').addEventListener('submit',event=>{event.preventDefault();const text=el('sample-note').value.trim();if(!text){el('sample-message').textContent='先写一句发现，再保存。';el('sample-note').focus();return}document.querySelector('.note-preview h4').textContent=text;el('sample-message').textContent='已在本次页面保存。示例笔记已更新；刷新后不会保留。'});
   setScheme('paper');
   const requested=new URLSearchParams(location.search).get('style');
-  if(requested){const entry=catalog.find(item=>item.id===requested);if(entry)applyReference(entry);else el('style-context').textContent='未找到这个风格编号，已保留纸页基础方案。请从选择器重新选择。'}
+  if(requested){const entry=catalog.find(item=>item.id===requested);if(entry)applyReference(entry);else el('style-context').textContent='未找到这个风格编号，当前使用纸页基础方案。请重新选择风格。'}
   const sectionLinks=[...document.querySelectorAll('.atlas-section-nav>a')];
   function setCurrentSection(hash){
     for(const link of sectionLinks){

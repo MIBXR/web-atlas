@@ -10,7 +10,7 @@
       "page-motion"
     ],
     "summary": "滚动时让同一对象继续承担叙事。",
-    "mechanism": "媒体保持sticky，随可逆滚动收束装饰并移动/缩放到说明侧，为另一侧文字腾出空间。",
+    "mechanism": "媒体保持 sticky，随可逆滚动收束装饰，并移动/缩放到说明侧，为另一侧文字腾出空间。",
     "trigger": "上下穿越交接段",
     "effect": "注意力从看产品转向理解产品。",
     "useCases": [
@@ -25,7 +25,7 @@
     ],
     "composition": {
       "role": "support",
-      "notes": "负责同一媒体从吸引到解释的连续关系；说明rail可以同步其阶段。使用自然滚动为主时更适合，整页全屏章切需另设计段内滚动，不能直接叠加两个控制器。",
+      "notes": "保持同一媒体从吸引注意到解释内容的连续性；说明 rail 可以同步相应阶段。更适合以自然滚动为主的页面；用于整页全屏章切时，需另行设计段内滚动，不能直接叠加两个控制器。",
       "pairsWellWith": [
         "scroll-synchronized-rail",
         "mode-specific-collage"

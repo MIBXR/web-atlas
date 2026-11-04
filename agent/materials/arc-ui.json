@@ -23,7 +23,7 @@
     "demo": "demos/materials/arc-ui/index.html",
     "preview": "previews/materials/arc-ui.jpg",
     "research": "docs/materials/arc-ui.md",
-    "demoNote": "142 个免费预览按官网小分类组织为双语目录。外框保留底部目录抽屉、面包屑、快捷搜索、八色外观、四种主题转场、真实手机视口与全屏形变；代码区提供等宽高亮、行号、平滑展开与复制。",
+    "demoNote": "142 个免费预览按官网小分类组织为双语目录。外框保留底部目录抽屉、面包屑、快捷搜索、八色外观、四种主题转场、真实手机视口与全屏形变；代码区以等宽字体高亮显示代码，并提供行号、平滑展开与复制。",
     "install": "复制 source/upstream/ 中的组件与共享 tokens，保持 @/ 路径别名；本地样例已捆绑依赖。重建：进入 source/，运行 npm ci 与 npm run build。",
     "upstream": {
       "repository": "kuratlielia/arc-library",
@@ -57,7 +57,7 @@
       "预览覆盖固定快照全部 120 个组件与 22 个区块；每项代码区展示该 registry 条目的全部源文件。"
     ],
     "workflow": [
-      "按中英文名称搜索，展开官网小分类目录，打开预览操作实际效果。",
+      "按中英文名称搜索，展开官网小分类目录，打开预览并操作，查看实际效果。",
       "切到代码，选择 TypeScript、CSS 或关联文件并复制；依赖关系见固定 registry.json 与 public/r/<名称>.json。",
       "接入 foundation.css 和 motion-tokens，设置 @/ 路径别名，保留组件内部相对结构。",
       "按真实业务替换 props、标签与数据；明暗主题、键盘和减少动态由目标页面一起管理。"
@@ -66,7 +66,7 @@
       {
         "kind": "case",
         "id": "uiarc-platform",
-        "note": "同一产品的官网设计作为案例；本素材提供可取用的免费组件源码。"
+        "note": "同一产品的官网设计收录为案例；本素材提供可取用的免费组件源码。"
       }
     ],
     "sources": [
@@ -1140,7 +1140,7 @@
     {
       "path": "docs/materials/arc-ui.md",
       "role": "research",
-      "content": "# Arc UI · React 动效组件库\n\n[运行目录](../../demos/materials/arc-ui/index.html) · [素材条目](../../entries/materials/arc-ui.json) · [对照结果](../../demos/materials/arc-ui/fidelity.md)\n\n## 预览与代码\n\n目录覆盖固定免费快照中的 120 个组件和 22 个区块。目录按官网的小分类分级，名称同时显示中文与英文，可按任一语言搜索；每项可在预览和代码之间切换。代码区使用等宽字体、语法高亮和行号，列出该条目的 TypeScript、CSS 与关联文件，支持逐文件复制。\n\n预览运行真实上游组件，区块优先使用上游自带样例。按钮包含样式、尺寸、图标、加载与结果状态；图表可更新数据，输入与浮层保留键盘操作。外框提供带原生转场的主题切换、八色外观、主题 CSS 复制，以及适应／真实手机视口／全屏预览。手机目录由顶部左侧按钮打开为可拖拽底部抽屉；桌面和手机都显示面包屑。减少动态遵循系统设置。状态仅用于本地演示，官网布局另见 [官网案例](../../cases.html#style/uiarc-platform)。\n\n## 源码与重建\n\n原始组件与区块在 `source/upstream/registry/`，依赖关系在 `registry.json` 和 `public/r/`。目录外框在 `source/main.tsx`，六类预览组合在 `source/previews/`，外框样式在 `demo/demo.css`。复制组件时保留内部目录、共享 tokens 和 `@/` 路径别名。\n\n在本体的 `source/` 中运行：\n\n```sh\nnpm ci\nnpm run build\n```\n\n构建生成目录数据、按需加载的运行文件与依赖许可。以 HTTP 服务打开本体入口即可使用；制作资料见 [source/README.md](../../demos/materials/arc-ui/source/README.md)，许可和媒体署名见 [LICENSES.md](../../demos/materials/arc-ui/LICENSES.md)。\n"
+      "content": "# Arc UI · React 动效组件库\n\n[运行目录](../../demos/materials/arc-ui/index.html) · [素材条目](../../entries/materials/arc-ui.json) · [对照结果](../../demos/materials/arc-ui/fidelity.md)\n\n## 预览与代码\n\n目录覆盖固定免费快照中的 120 个组件和 22 个区块。目录按官网的小分类分级，名称同时显示中文与英文，可按任一语言搜索；每项可在预览和代码之间切换。代码区使用等宽字体、语法高亮和行号，列出该条目的 TypeScript、CSS 与关联文件，支持逐文件复制。\n\n预览运行真实上游组件，区块优先使用上游自带样例。按钮包含样式、尺寸、图标、加载与结果状态；图表可更新数据，输入与浮层保留键盘操作。外框提供带原生转场的主题切换、八色外观、主题 CSS 复制，以及适应／真实手机视口／全屏预览。手机目录通过顶部左侧按钮打开，以可拖拽的底部抽屉显示；桌面和手机都显示面包屑。减少动态遵循系统设置。状态仅用于本地演示，官网布局另见 [官网案例](../../cases.html#style/uiarc-platform)。\n\n## 源码与重建\n\n原始组件与区块在 `source/upstream/registry/`，依赖关系在 `registry.json` 和 `public/r/`。目录外框在 `source/main.tsx`，六类预览组合在 `source/previews/`，外框样式在 `demo/demo.css`。复制组件时保留内部目录、共享 tokens 和 `@/` 路径别名。\n\n在本体的 `source/` 中运行：\n\n```sh\nnpm ci\nnpm run build\n```\n\n构建生成目录数据、按需加载的运行文件与依赖许可。以 HTTP 服务打开本体入口即可使用；制作资料见 [source/README.md](../../demos/materials/arc-ui/source/README.md)，许可和媒体署名见 [LICENSES.md](../../demos/materials/arc-ui/LICENSES.md)。\n"
     },
     {
       "path": "prompts/materials/arc-ui.md",

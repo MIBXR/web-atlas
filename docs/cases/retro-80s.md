@@ -6,15 +6,15 @@
 
 [Arturia Jup-8 V 官方产品页](https://www.arturia.com/products/software-instruments/jup-8-v/overview) 以复古乐器的声音、直接控制、预设和现代增强功能解释产品；该页说明原始 Jupiter-8 在1981年推出。其产品价值是可以演奏和调整的音色，不只是设备的外观。
 
-[Arturia 官方2014年手册](https://downloads.arturia.com/products/jupiter8-v/manual/Jupiter-8V_Manual_2_6_0_EN.pdf) 第59页（PDF索引58）分出原始面板、预设管理、扩展控制、效果四部分，并说明振荡器、滤波器、放大器和包络模块。这是本例信息分区的依据。分区依据为该版手册。
+[Arturia 官方2014年手册](https://downloads.arturia.com/products/jupiter8-v/manual/Jupiter-8V_Manual_2_6_0_EN.pdf) 第59页（PDF索引58）分出原始面板、预设管理、扩展控制、效果四部分，并说明振荡器、滤波器、放大器和包络模块。这是本例信息分区的依据。
 
-[MDN Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) 提供浏览器音频节点的实现模型。本 demo 通过 OscillatorNode → BiquadFilterNode → GainNode 构建简化链路，采用用户主动开启声音的方式。
+[MDN Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) 提供浏览器音频节点的实现模型。本 Demo 通过 OscillatorNode → BiquadFilterNode → GainNode 构建简化链路，由用户主动开启声音。
 
 ## 我的设计判断
 
-设备面板的价值是把功能关系变为可看见的空间关系。用户的路径应是“找到一个声音 → 理解关键参数 → 演奏 → 知道可继续调整什么”。因此 Nightshift 的首屏不是一个普通营销卡片墙，而是可操作的仪器。橙色分区和米白标签建立年代感；青色波形和读数提供状态，色彩亮度受控，不用霓虹遮盖文字。
+设备面板的价值是把功能关系变为可看见的空间关系。用户的路径应是“找到一个声音 → 理解关键参数 → 演奏 → 知道可继续调整什么”。因此，Nightshift 的首屏采用可操作的仪器面板，而非普通营销卡片墙。橙色分区和米白标签建立年代感；青色波形和读数显示状态，色彩亮度受控，不让霓虹色遮盖文字。
 
-本 demo 将设备面板迁移为现代网页，使用一个振荡器和三组原创预设参数。
+本 Demo 将设备面板迁移为现代网页，使用一个振荡器和三组原创预设参数。
 
 ## 复现映射
 
@@ -27,6 +27,6 @@
 
 ## 约束
 
-面板使用原生范围控件，数字显示具体单位。屏幕键都有可读音名；物理键演奏只在声音开启后生效，滑块获得焦点时保留正常键盘操作。切出页面、关闭声音或离开页面时停止当前音符。手机上先预设，再显示与参数，最后琴键；不把密集标签压到不可读。没有外部音频、字体或CDN。
+面板使用原生范围控件，数字显示具体单位。屏幕键都有可读音名；物理键演奏只在声音开启后生效，滑块获得焦点时保留正常键盘操作。切出页面、关闭声音或离开页面时停止当前音符。手机上依次排列预设、显示与参数、琴键，密集标签也要保持可读。没有外部音频、字体或CDN。
 
-品牌、产品名称、预设和文案均为原创虚构。[结构化Prompt](../../entries/cases/retro-80s.json)；[本地demo](../../demos/cases/retro-80s/index.html)。
+品牌、产品名称、预设和文案均为原创虚构。[结构化 Prompt](../../entries/cases/retro-80s.json)；[本地 Demo](../../demos/cases/retro-80s/index.html)。

@@ -117,7 +117,7 @@
     "imagery": "128×128原生Canvas与原创像素地点构成可探索世界。",
     "shape": "离散方格、阶梯边缘与像素按钮保持同一尺度体系。",
     "hierarchy": "世界地图 → 地点索引 → 步进操作 → 探索手账。",
-    "motion": "移动以tile步进、静态地图；reduced-motion保留即时状态更新",
+    "motion": "角色以tile步进移动，地图保持静态；reduced-motion保留即时状态更新",
     "coherence": "低分辨率地景、有限调色与清楚状态共同形成游戏感；中文说明保留正常可读字体，不强行像素化。"
   },
   "themeBehavior": {

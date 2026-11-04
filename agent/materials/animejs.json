@@ -134,7 +134,7 @@
         "id": "animatable-follow-cursor",
         "title": "平滑追随指针",
         "component": "createAnimatable",
-        "summary": "指针目标通过可更新的动画属性平滑跟随。",
+        "summary": "通过可更新的动画属性，让目标平滑跟随指针。",
         "entrypoint": "demos/materials/animejs/index.html?demo=animatable-follow-cursor",
         "group": "图形与运动"
       },
@@ -238,7 +238,7 @@
         "id": "draggable-infinite-auto-carousel",
         "title": "无限轮播",
         "component": "createDraggable、createTimeline",
-        "summary": "轮播在自动播放与拖拽之间连续接管。",
+        "summary": "轮播的控制权在自动播放与拖拽之间连续交接。",
         "entrypoint": "demos/materials/animejs/index.html?demo=draggable-infinite-auto-carousel",
         "group": "拖拽与滚动"
       },
@@ -334,7 +334,7 @@
         "id": "text-scramble-tl",
         "title": "文字扰乱时间线",
         "component": "scrambleText、createTimeline",
-        "summary": "将多屏文字扰乱、缩放与颜色串成时间线。",
+        "summary": "将多屏文字的扰乱、缩放与颜色变化串成时间线。",
         "entrypoint": "demos/materials/animejs/index.html?demo=text/scramble-tl",
         "group": "文字与矢量"
       },

@@ -15,7 +15,7 @@
       "demos/materials/98-css/demo/demo.css",
       "demos/materials/98-css/demo/demo.js"
     ],
-    "summary": "以真实 Windows 98 风格 CSS 组合设置窗口、可筛选素材目录与可暂停进度；保留复古边框，同时提高文字与触控可用性。",
+    "summary": "用真实的 Windows 98 风格 CSS 组合设置窗口、可筛选素材目录与可暂停的进度演示；保留复古边框，同时提高文字与触控可用性。",
     "install": "npm install 98.css@0.1.21",
     "demoNote": "原库提供 CSS，本地代码提供标签切换、筛选与模拟进度；不会修改系统或执行下载。",
     "tags": [
@@ -41,10 +41,10 @@
     ],
     "constraints": [
       "固定 98.css 0.1.21；原库仅有 CSS，本地 JavaScript 实现行为。",
-      "原库控件 11px 已在适配层提高为 14px，辅助信息不低于 12px；不以缩放还原旧屏幕。",
+      "适配层将原库控件字号从 11px 提高为 14px，辅助信息不低于 12px；不以缩放还原旧屏幕。",
       "CSS 为 MIT；随包 MS Sans Serif 与 Bold 字体来自 lou，采用 CC BY-SA 3.0，需保留独立署名与许可。",
       "模拟进度每 240ms 增加 2% 为本地参数，不产生文件；真实任务必须接真实进度。",
-      "页面隐藏或切换演示暂停，返回需用户继续；减少动态时手动步进。",
+      "页面隐藏或切换演示时，进度暂停，返回后需用户继续；减少动态时改为手动步进。",
       "静态后备保留样式和说明；没有 JavaScript 时应用、筛选和演示计时不执行。"
     ],
     "upstream": {
@@ -147,7 +147,7 @@
           {
             "name": "value",
             "value": "0–100%",
-            "note": "通过宽度表现官方进度样式；数值与 ARIA 同步为本地代码。"
+            "note": "通过宽度表现官方进度样式；数值与 ARIA 由本地代码同步。"
           },
           {
             "name": "tick",
@@ -164,7 +164,7 @@
     ],
     "prompt": "使用固定版本 98.css 0.1.21，为当前任务构建一个有实际用途的复古设置窗口、素材目录或进度界面。使用原库 window、title-bar、status-bar、sunken-panel、table 和 progress-indicator 样式，行为由小量原生 JavaScript 实现。所有控件保留语义与可访问名称，标签键盘方向导航，最终文本至少 12px，扩大触控区域，窄屏自然重排，不缩小整个界面。真实任务连接真实进度；若使用教学模拟须明确标注，允许暂停、重置、手动前进，后台与减少动态时停下持续变化。保存 MIT CSS 与 CC BY-SA 3.0 字体的独立署名许可，自托管所需文件，提供静态后备。",
     "accessibility": {
-      "keyboard": "原生按钮、输入、下拉与复选框；设置标签支持左右、Home、End；目录每行可用 Tab / Enter 选择。",
+      "keyboard": "原生按钮、输入、下拉与复选框；设置标签支持左右方向键、Home、End；目录每行可用 Tab / Enter 选择。",
       "reducedMotion": "减少动态时进度改为手动步进；正常模式仅主动开始计时，隐藏页面或切换示例暂停，返回不会自动继续。"
     }
   },
@@ -172,12 +172,12 @@
     {
       "path": "docs/materials/98-css.md",
       "role": "research",
-      "content": "# 98.css：带有桌面记忆的 CSS 组件\n\n[来源、版本、许可与使用边界](../../entries/materials/98-css.json)\n\n[本地工作台](../../demos/materials/98-css/index.html) · [结构化资料](../../entries/materials/98-css.json) · [官方完整文档](https://jdan.github.io/98.css/)\n\n## 能力与演示范围\n\n[官方文档](https://jdan.github.io/98.css/)明确以语义化 HTML 配合 CSS，不提供 JavaScript 行为。窗口边框、蓝色标题栏、凹陷面板、表单、表格和进度条是资源能力；本地标签切换、筛选、应用设置与模拟进度为原创代码。\n\n| 用法 | 原库构成 | 本地组合与可操作状态 |\n| --- | --- | --- |\n| 设置窗口 | window / title-bar / status-bar、原生表单 | 外观和选项两页；应用配色、说明与留白；恢复默认 |\n| 素材目录 | sunken-panel、table、highlighted | 名称筛选、选中摘要、无结果分支；示例名称不是实际库存 |\n| 传输进度 | progress-indicator、segmented | 实心和分段切换、开始、暂停、10% 步进、重置与完成 |\n\n官方浏览器观察确认标准复选框可选中。源码显示默认控件为 11px；本地适配 CSS 将控件提高到 14px、辅助文字至少 12px，按钮至少 36px 高，并扩大标签点击区域。\n\n## 参数与接入\n\n接入方式见结构化条目；将样式及相邻字体一并部署；本页无 CDN、框架或构建器依赖。每个独立目录包含 HTML、适配 CSS、原创 JavaScript、官方 CSS 与字体，Agent 构建提供完整文件路径与角色。\n\n`index.html?demo=settings`、`?demo=catalog`、`?demo=progress` 定位三种用法。`theme=light`／`theme=dark` 指定外层说明主题；同源嵌入跟随 Atlas 主题，窗口舞台保持青绿与灰色。\n\n窗口类和分段进度来自[固定版本样式](https://github.com/jdan/98.css/blob/517d174b30392d39e068ef4eca457da66a189f8f/style.css)。三套桌面颜色、留白开关、每 240ms 增加 2% 和手动每次 10% 都是本地演示参数。进度来自本地计时器与手动步进。\n\n## 输入、动态与后备\n\n标签支持左右、Home、End；表单和目录条目使用标准控件，指针与触摸点击触发相同操作。减少动态时进度由手动步进推进；页面隐藏或切换用法时暂停，返回后不自动续播。没有声音，窗口舞台保留固定配色，外层说明跟随 Atlas 主题。\n\n`..?fallback=1` 可查看主动关闭交互的静态首屏；无 JavaScript 时保留样式、原生设置首屏和来源说明，应用等操作不执行。CSS 缺失时仍可阅读语义化内容，但复古外观不成立。\n\n字体与 CSS 的许可分别收录在 [许可索引](../../demos/materials/98-css/LICENSES.md)。\n"
+      "content": "# 98.css：带有桌面记忆的 CSS 组件\n\n[来源、版本、许可与使用边界](../../entries/materials/98-css.json)\n\n[本地工作台](../../demos/materials/98-css/index.html) · [结构化资料](../../entries/materials/98-css.json) · [官方完整文档](https://jdan.github.io/98.css/)\n\n## 能力与演示范围\n\n[官方文档](https://jdan.github.io/98.css/)明确说明，98.css 以语义化 HTML 配合 CSS，不提供 JavaScript 行为。窗口边框、蓝色标题栏、凹陷面板、表单、表格和进度条由 98.css 提供；本地标签切换、筛选、应用设置与模拟进度由原创代码实现。\n\n| 用法 | 原库构成 | 本地组合与可操作状态 |\n| --- | --- | --- |\n| 设置窗口 | window / title-bar / status-bar、原生表单 | 外观和选项两页；应用配色、说明与留白；恢复默认 |\n| 素材目录 | sunken-panel、table、highlighted | 名称筛选、选中摘要、无结果分支；示例名称不是实际库存 |\n| 传输进度 | progress-indicator、segmented | 实心和分段切换、开始、暂停、10% 步进、重置与完成 |\n\n官方浏览器观察确认标准复选框可选中。源码显示默认控件为 11px；本地适配 CSS 将控件提高到 14px、辅助文字至少 12px，按钮至少 36px 高，并扩大标签点击区域。\n\n## 参数与接入\n\n接入方式见结构化条目；将样式及相邻字体一并部署；本页无 CDN、框架或构建器依赖。每个独立目录包含 HTML、适配 CSS、原创 JavaScript、官方 CSS 与字体，Agent 构建提供完整文件路径与角色。\n\n`index.html?demo=settings`、`?demo=catalog`、`?demo=progress` 定位三种用法。`theme=light`／`theme=dark` 指定外层说明主题；同源嵌入跟随 Atlas 主题，窗口舞台保持青绿与灰色。\n\n窗口类和分段进度来自[固定版本样式](https://github.com/jdan/98.css/blob/517d174b30392d39e068ef4eca457da66a189f8f/style.css)。三套桌面颜色、留白开关、每 240ms 增加 2% 和手动每次 10% 都是本地演示参数。进度来自本地计时器与手动步进。\n\n## 输入、动态与后备\n\n标签支持左右、Home、End；表单和目录条目使用标准控件，指针与触摸点击触发相同操作。减少动态时，进度通过手动步进更新；页面隐藏或切换用法时暂停，返回后不自动续播。没有声音，窗口舞台保留固定配色，外层说明跟随 Atlas 主题。\n\n`..?fallback=1` 可查看主动关闭交互的静态首屏；无 JavaScript 时保留样式、原生设置首屏和来源说明，应用等操作不执行。CSS 缺失时仍可阅读语义化内容，但无法呈现复古外观。\n\n字体与 CSS 的许可分别收录在 [许可索引](../../demos/materials/98-css/LICENSES.md)。\n"
     },
     {
       "path": "prompts/materials/98-css.md",
       "role": "prompt",
-      "content": "# 98.css · 复古桌面组件 · 复用 Prompt\n\n[结构化条目](../../entries/materials/98-css.json)\n\n使用固定版本 98.css 0.1.21，为当前任务构建一个有实际用途的复古设置窗口、素材目录或进度界面。使用原库 window、title-bar、status-bar、sunken-panel、table 和 progress-indicator 样式，行为由小量原生 JavaScript 实现。所有控件保留语义与可访问名称，标签键盘方向导航，最终文本至少 12px，扩大触控区域，窄屏自然重排，不缩小整个界面。真实任务连接真实进度；若使用教学模拟须明确标注，允许暂停、重置、手动前进，后台与减少动态时停下持续变化。保存 MIT CSS 与 CC BY-SA 3.0 字体的独立署名许可，自托管所需文件，提供静态后备。\n\n## 制作约束\n\n- 固定 98.css 0.1.21；原库仅有 CSS，本地 JavaScript 实现行为。\n- 原库控件 11px 已在适配层提高为 14px，辅助信息不低于 12px；不以缩放还原旧屏幕。\n- CSS 为 MIT；随包 MS Sans Serif 与 Bold 字体来自 lou，采用 CC BY-SA 3.0，需保留独立署名与许可。\n- 模拟进度每 240ms 增加 2% 为本地参数，不产生文件；真实任务必须接真实进度。\n- 页面隐藏或切换演示暂停，返回需用户继续；减少动态时手动步进。\n- 静态后备保留样式和说明；没有 JavaScript 时应用、筛选和演示计时不执行。\n"
+      "content": "# 98.css · 复古桌面组件 · 复用 Prompt\n\n[结构化条目](../../entries/materials/98-css.json)\n\n使用固定版本 98.css 0.1.21，为当前任务构建一个有实际用途的复古设置窗口、素材目录或进度界面。使用原库 window、title-bar、status-bar、sunken-panel、table 和 progress-indicator 样式，行为由小量原生 JavaScript 实现。所有控件保留语义与可访问名称，标签键盘方向导航，最终文本至少 12px，扩大触控区域，窄屏自然重排，不缩小整个界面。真实任务连接真实进度；若使用教学模拟须明确标注，允许暂停、重置、手动前进，后台与减少动态时停下持续变化。保存 MIT CSS 与 CC BY-SA 3.0 字体的独立署名许可，自托管所需文件，提供静态后备。\n\n## 制作约束\n\n- 固定 98.css 0.1.21；原库仅有 CSS，本地 JavaScript 实现行为。\n- 适配层将原库控件字号从 11px 提高为 14px，辅助信息不低于 12px；不以缩放还原旧屏幕。\n- CSS 为 MIT；随包 MS Sans Serif 与 Bold 字体来自 lou，采用 CC BY-SA 3.0，需保留独立署名与许可。\n- 模拟进度每 240ms 增加 2% 为本地参数，不产生文件；真实任务必须接真实进度。\n- 页面隐藏或切换演示时，进度暂停，返回后需用户继续；减少动态时改为手动步进。\n- 静态后备保留样式和说明；没有 JavaScript 时应用、筛选和演示计时不执行。\n"
     },
     {
       "path": "demos/materials/98-css/LICENSES.md",

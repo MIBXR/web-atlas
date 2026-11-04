@@ -9,8 +9,8 @@
     "experienceTypes": [
       "page-motion"
     ],
-    "summary": "把业务动作放进有遮挡和物理顺序的纸面对象中。",
-    "mechanism": "信件滑进窗口信封，贴资后回信进入，最后在发票盖Paid；每步只动画transform和opacity，离屏暂停。",
+    "summary": "用纸面对象的遮挡关系和物理顺序表现业务动作。",
+    "mechanism": "信件滑进窗口信封，贴资后回信进入，最后在发票上盖 Paid；每步动画只改变 transform 和 opacity，离屏时暂停。",
     "trigger": "首屏纸面场景进入视口。",
     "effect": "用户从对象处理顺序理解提醒、寄出、回信与付款。",
     "useCases": [

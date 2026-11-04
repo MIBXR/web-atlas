@@ -1,6 +1,6 @@
 # 用国别查找案例，再用设计任务作比较
 
-各样本的采集日期与地区出处见对应条目，取值规则见 [维护规范](../CONTRIBUTING.md#案例)。碧蓝档案是韩国开发来源、观察日本官网；赛马娘观察国际英文版；Qoder 按“中国大陆版 Qoder.cn”收录。以下比较选定样本的设计任务与机制。
+各样本的采集日期与地区出处见对应条目，取值规则见 [维护规范](../CONTRIBUTING.md#案例)。碧蓝档案是韩国开发来源、观察日本官网；赛马娘观察国际英文版；Qoder 按“中国大陆版 Qoder.cn”收录。下文按设计任务与机制比较这些样本。
 
 经典练习中的“瑞士设计”主要参考 Swissted，按纽约创作者归入美国；包豪斯练习按德绍参考机构归入德国。两个 garden-skills 示范页按实际作者 ConardLi 的公开所在地归入中国，页内虚构人物和场馆保留为作品内容。每个地区值的直接证据写在条目的来源中。
 
@@ -19,7 +19,7 @@
 | [森美术馆](cases/mori-art-museum.md) | 机构红、白底；海报与正文分工 | 叠加馆标、宽海报、展期带 | 当前展览、新闻与购票 |
 | [Fuji Rock](cases/fuji-rock.md) | 橙蓝、灰米；窄高 Logo | 现场摄影、山形菜单、竖票据 | 实用导览与特集浏览 |
 
-美国样本中，[Apple](https://www.apple.com/iphone-18-pro/) 的黑底、无衬线巨字和硬件特写，通过滚动缩放与文案交接解释细节；[Claude](https://claude.com/) 的奶油底、衬线标题和 Cowork 视频，形成更接近编辑阅读的语气。前者让材质成为证据，后者让工作过程成为证据。见 [Apple 拆解](../demos/cases/apple-product/fidelity.md)、[Claude 拆解](../demos/cases/claude-platform/fidelity.md)。
+美国样本中，[Apple](https://www.apple.com/iphone-18-pro/) 用黑底、无衬线巨字和硬件特写，配合滚动缩放与文案交接解释细节；[Claude](https://claude.com/) 的奶油底、衬线标题和 Cowork 视频，形成更接近编辑阅读的语气。前者以材质为证据，后者以工作过程为证据。见 [Apple 拆解](../demos/cases/apple-product/fidelity.md)、[Claude 拆解](../demos/cases/claude-platform/fidelity.md)。
 
 中国的[原神](https://genshin.hoyoverse.com/en/) 采用红色版本群像、装饰标题与青绿角色舞台；[明日方舟](https://ak.hypergryph.com/) 使用黑灰网格、青色索引、裁切巨字及人物档案。[中国大陆版 Qoder.cn](https://qoder.cn/) 则以绿色工作台和形态标签展示软件任务。共同可学的是视觉与产品证据的对应关系。见 [原神](cases/genshin-world.md)、[方舟](cases/arknights-world.md)、[Qoder](../demos/cases/qoder-platform/fidelity.md)。
 
@@ -31,7 +31,7 @@
 | 数字敦煌 | 石窟与壁画图像、编号与时代索引 | 朝代条件、洞窟档案与细节查看 | 保留影像主体，筛选条件与当前结果可回看 |
 | 苏州博物馆 | 白底、建筑影像中的黑灰轮廓、大小不同的图像入口 | 建筑介绍、展览与参观目的地 | 多尺度图像组织目的地，文字保证入口可识别 |
 
-[终末地官网](https://endfield.hypergryph.com/) 使用明亮白底、亮黄信号、技术编号与 AIC 工业内容。这更接近通常所描述的“白底黄绿工业风”；本轮已读取原CSS，例如加载器信号色为`#fffa00`，具体颜色按对应组件记录。透明人物影片、点云扫描和三层媒体揭示是网页的定义性机制。[莱茵生命官方特别映像](https://www.bilibili.com/video/BV1rr4y1b7sz/) 展示米白透明档案阵列、黑白科室矩阵与橙色信号；它的机构叙事和终末地的工业系统有区别。本库把影像构成转译为可操作的教学档案，网页点击、选中和返回属于改编，官方影像中不存在这些网页行为。见 [终末地](cases/endfield-industrial.md)、[莱茵生命](cases/rhine-lab.md)。
+[终末地官网](https://endfield.hypergryph.com/) 使用明亮白底、亮黄信号、技术编号与 AIC 工业内容。这更接近通常所描述的“白底黄绿工业风”；已读取的原CSS显示，加载器信号色为`#fffa00`，具体颜色按对应组件记录。透明人物影片、点云扫描和三层媒体揭示是网页的定义性机制。[莱茵生命官方特别映像](https://www.bilibili.com/video/BV1rr4y1b7sz/) 展示米白透明档案阵列、黑白科室矩阵与橙色信号；它的机构叙事和终末地的工业系统有区别。本库把影像构成转译为可操作的教学档案，网页点击、选中和返回属于改编，官方影像中不存在这些网页行为。见 [终末地](cases/endfield-industrial.md)、[莱茵生命](cases/rhine-lab.md)。
 
 韩国来源的[碧蓝档案日本页](https://bluearchive.jp/) 把青白 Logo 放在学园都市视频中心，日文竖排标语与横向导航形成方向对比，下载和漫画位于角落。它与赛马娘都使用角色 IP，却把首屏焦点交给天空和城市；这首先是作品主题与市场版本的差异。见 [案例](cases/blue-archive.md)。
 

@@ -1,6 +1,6 @@
 # 几何形状变化：让单元保持连续
 
-核验日期：2026-10-07。将用户的“集合形状变化”解释为几何单元组成和变形。依据为 [Bryan James 原作者制作文章](https://www.smashingmagazine.com/2015/06/the-making-of-in-pieces/) 与 [CSSconf EU 原作者访谈](https://blog.cssconf.eu/2015/09/24/introducing-bryan-james/)；原作 [In Pieces](https://species-in-pieces.com/) 的当日视觉与实时交互未验证。
+核验日期：2026-10-07。将用户的“集合形状变化”解释为几何单元的组成和变形。依据为 [Bryan James 原作者制作文章](https://www.smashingmagazine.com/2015/06/the-making-of-in-pieces/) 与 [CSSconf EU 原作者访谈](https://blog.cssconf.eu/2015/09/24/introducing-bryan-james/)；原作 [In Pieces](https://species-in-pieces.com/) 的当日视觉与实时交互未验证。
 
 ## 已核验事实
 
@@ -14,13 +14,13 @@ CSSconf 访谈再次解释从 CSS 多边形实验到核心概念的形成。[原
 
 多边形由有序顶点定义。[MDN polygon()](https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Values/basic-shape/polygon)。让同一几何片保持顶点数量与顺序，才有明确的连续插值关系。
 
-本条推断：形态变化应跟随语义变化；相同单元可让多个状态共享身份。当变形只为炫技且持续自动播放，主体信息可能被压过。
+本条推断：形态变化应跟随语义变化；多个状态使用相同单元，可以保持身份连续。变形若只为炫技且持续自动播放，可能掩盖主体信息。
 
 ## Demo 映射
 
-原创 Form / Shift 将身份连续迁移到设计工作室：24 个三角片分别形成 Connect 的环状、Expand 的星形、Focus 的菱形；状态同步解释品牌的连接、开放与聚焦。
+原创 Form / Shift 将保持身份连续的思路用于设计工作室：24 个三角片分别形成 Connect 的环状、Expand 的星形、Focus 的菱形；各状态同步解释品牌的连接、开放与聚焦。
 
-与原项目不同，本 demo 使用 SVG 顶点插值而非 CSS clip-path，并且不使用物种造型。`requestAnimationFrame` 和 smoothstep 只在用户选择形态时运行；新状态从当前坐标继续。
+与原项目不同，本 Demo 使用 SVG 顶点插值而非 CSS clip-path，并且不使用物种造型。`requestAnimationFrame` 和 smoothstep 只在用户选择形态时运行；切换新状态时，从当前坐标继续插值。
 
 | 控制 | 行为 | 内容关系 |
 | --- | --- | --- |
@@ -43,4 +43,4 @@ CSSconf 访谈再次解释从 CSS 多边形实验到核心概念的形成。[原
 
 [结构化条目与完整 Prompt](../../entries/cases/shape-morph.json) · [独立 Demo](../../demos/cases/shape-morph/index.html)
 
-改造练习：将三状态对应产品的收集、处理和输出阶段，让形态变化同步承载任务解释。
+改造练习：将三状态分别对应产品的收集、处理和输出阶段，在形态变化时同步解释任务。

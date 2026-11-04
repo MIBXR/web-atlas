@@ -4,7 +4,7 @@
   "title": "Hallmark · 反 AI 套路的网页设计 skill",
   "type": "agent-skill",
   "category": "Agent 工作流",
-  "summary": "用不可破例的底线、可记录破例的惯性检查和 50 套材料主题约束 Agent 做网页，先发主题、按页面用途定结构，再用真实浏览器检查和无上下文审查收尾；也能按名字重新设计或审计已有页面。",
+  "summary": "用不可破例的底线、可记录破例的惯性检查和 50 套材料主题规范 Agent 的网页设计流程：先发主题，按页面用途确定结构，再完成真实浏览器检查和无上下文审查；用户点名后，也能重新设计或审计已有页面。",
   "install": "npx skills add nutlope/hallmark -g 全局安装；或把 demos/materials/hallmark-skill/ 复制到 .claude/skills/hallmark/ 或 .agents/skills/hallmark/。在 Claude Code 用 /hallmark <提示词> 调用，在 Codex CLI 用 $hallmark <提示词>。",
   "tags": [
     "网页设计",
@@ -18,7 +18,7 @@
   "useCases": [
     "从零制作落地页与产品页",
     "用开放授权照片和真实材料搭建品牌页面",
-    "按名字重新设计已有站点并保留内容与接线",
+    "用户点名后重新设计已有站点，保留内容与接线",
     "审计现有页面里的生成痕迹"
   ],
   "avoid": [
@@ -69,12 +69,12 @@
   "snapshotPath": "demos/materials/hallmark-skill/",
   "snapshotEntry": "SKILL.md",
   "workflow": [
-    "预检读取项目的字体、配色、框架和锁定的 design.md，并向用户要一次照片、截图和真实数字，不编造内容。",
-    "先按材料与页面用途设计结构；没有锁定 design.md 且未指定主题时，用 theme.mjs deal 发出三个主题并看图选择，选定主题后 draw 抽取结构；custom 按提示词设计专属方向，已有锁定系统时跳过主题发牌。",
-    "用 scaffold 写入 tokens.css 和 base.css，先单独完成首屏，运行 --render --stage hero，再在新上下文审查首屏；Codex CLI 在当前线程完成审查并明说。",
-    "完成其余页面，行动入口放在该品类应有的位置，页面以它结束。",
-    "sloplint --render 在真实浏览器按多种宽度测量折叠线、对比度、焦点和节奏，修掉全部 FAIL，修复或记录破例每条 REFLEX。",
-    "在新上下文审查成品；支持子 Agent 的宿主使用子 Agent，Codex CLI 在当前线程完成审查并明说，CSS 首行保留决策戳；重新设计时额外用 --before 记录、--kept 比对全部链接、字段、处理器和标题。"
+    "预检时读取项目的字体、配色、框架和锁定的 design.md，一次性向用户索取照片、截图和真实数字，不编造内容。",
+    "先按材料与页面用途设计结构。没有锁定 design.md 且未指定主题时，用 theme.mjs deal 发出三个主题，看图选定后用 draw 抽取结构；custom 按提示词设计专属方向。已有锁定系统时跳过主题发牌。",
+    "用 scaffold 写入 tokens.css 和 base.css，先单独完成首屏，运行 --render --stage hero，再在新上下文审查首屏；Codex CLI 在当前线程完成审查，并说明这一点。",
+    "完成其余页面，把行动入口放在该品类应有的位置，并以该入口结束页面。",
+    "用 sloplint --render 在真实浏览器中按多种宽度测量折叠线、对比度、焦点和节奏；修复全部 FAIL，逐条修复 REFLEX 或记录破例。",
+    "在新上下文审查成品；支持子 Agent 的宿主使用子 Agent，Codex CLI 在当前线程完成审查并说明这一点。CSS 首行保留决策戳；重新设计时，额外用 --before 记录，用 --kept 比对全部链接、字段、处理器和标题。"
   ],
   "relatedEntries": [
     {

@@ -10,7 +10,7 @@
 
 ## 风格资料与示范
 
-按当前页面任务选读快照中的 25 份具名风格配方，再在[星槎示范与基线](../cases/stellar-museum.md)及[米拉摄影页](../cases/mira-host-photography.md)观察机制。前者的研究按同题页面逐项比较，后者按单个示范页分析。
+按当前页面任务选读快照中的 25 份具名风格配方，再在[星槎示范与基线](../cases/stellar-museum.md)及[米拉摄影页](../cases/mira-host-photography.md)观察机制。前者的研究逐项比较同题页面，后者分析单个示范页。
 
 快照 README 中的 `../../demo/web-design-demo` 和 `../../dist/prompt` 指向上游仓库的示范与配方上下文。通过[上游固定提交](https://github.com/ConardLi/garden-skills/tree/2b9a89340b70f632d31c0f1c69fce94a7912423e)阅读这些链接。
 

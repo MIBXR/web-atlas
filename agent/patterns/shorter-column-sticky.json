@@ -9,8 +9,8 @@
     "experienceTypes": [
       "structure"
     ],
-    "summary": "一个页面滚动条中保持舞台可见，说明更短时也吸附，最终随容器结束。",
-    "mechanism": "ResizeObserver 读取操作栏和两栏实高，舞台列始终设为 sticky；说明比舞台短时同时 sticky。两栏共享正 top 与网格容器，末尾由自然 sticky 边界收束。",
+    "summary": "两栏共用页面滚动条，舞台保持可见；说明比舞台短时也吸附，两栏的吸附都在容器末尾结束。",
+    "mechanism": "ResizeObserver 读取操作栏和两栏的实际高度，舞台列始终设为 sticky；说明比舞台短时也设为 sticky。两栏使用同一正 top 值，并受同一网格容器约束，滚动到容器末尾时按自然 sticky 边界结束。",
     "trigger": "上下滚动双栏详情，或改变说明长度与视口尺寸",
     "effect": "阅读说明时能持续观看舞台，较短说明也保留在阅读范围。",
     "useCases": [
@@ -23,12 +23,12 @@
       "让左右栏分别内部滚动"
     ],
     "constraints": [
-      "舞台始终吸附，说明较短时也吸附；top 为顶栏加操作栏实高加留白。",
+      "舞台始终吸附，说明较短时也吸附；top 为顶栏高度、操作栏实高与留白之和。",
       "网格 align-items:start，两栏及最后子项无下外边距；单列时取消吸附。"
     ],
     "composition": {
       "role": "support",
-      "notes": "负责舞台与说明的空间协调，保留原生页面滚动；与页面过渡组合时路由离开要释放观察器。",
+      "notes": "协调舞台与说明的空间关系，保留原生页面滚动；与页面过渡组合时，路由离开要释放观察器。",
       "pairsWellWith": [
         "native-document-reading",
         "persistent-header-page-transition"
@@ -157,7 +157,7 @@
     {
       "path": "prompts/patterns/shorter-column-sticky.md",
       "role": "prompt",
-      "content": "# 较短一栏吸附的两栏详情 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/shorter-column-sticky.json)\n\n为作品详情实现共享页面滚动的 2:1 双栏，间距 32px、align-items:start，说明栏最小 340px。舞台列在 1160px 起始终 position:sticky；读取顶栏、操作栏、舞台、说明的实际高度，top 为顶栏高加操作栏高加 24px。说明比舞台短时也使用同一 sticky 偏移。用 ResizeObserver 和 resize 重算，路由离开断开观察器；两栏不加固定高或内部滚动。末尾由网格容器自然约束 sticky，两栏和最后子项下外边距为 0，容器后留 48px 接页脚。≤1159px 回单列并取消吸附。用 8 节与 2 节说明按钮演示长短关系，保留键盘操作和减少动态下的内容。\n\n## 制作约束\n\n- 舞台始终吸附，说明较短时也吸附；top 为顶栏加操作栏实高加留白。\n- 网格 align-items:start，两栏及最后子项无下外边距；单列时取消吸附。\n"
+      "content": "# 较短一栏吸附的两栏详情 · 复用 Prompt\n\n[结构化条目](../../entries/patterns/shorter-column-sticky.json)\n\n为作品详情实现共享页面滚动的 2:1 双栏，间距 32px、align-items:start，说明栏最小 340px。舞台列在 1160px 起始终 position:sticky；读取顶栏、操作栏、舞台、说明的实际高度，top 为顶栏高加操作栏高加 24px。说明比舞台短时也使用同一 sticky 偏移。用 ResizeObserver 和 resize 重算，路由离开断开观察器；两栏不加固定高或内部滚动。末尾由网格容器自然约束 sticky，两栏和最后子项下外边距为 0，容器后留 48px 接页脚。≤1159px 回单列并取消吸附。用 8 节与 2 节说明按钮演示长短关系，保留键盘操作和减少动态下的内容。\n\n## 制作约束\n\n- 舞台始终吸附，说明较短时也吸附；top 为顶栏高度、操作栏实高与留白之和。\n- 网格 align-items:start，两栏及最后子项无下外边距；单列时取消吸附。\n"
     }
   ],
   "files": [

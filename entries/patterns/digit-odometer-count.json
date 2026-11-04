@@ -6,8 +6,8 @@
   "experienceTypes": [
     "micro-motion"
   ],
-  "summary": "真实数据到达时，让各数位从同一竖列停靠到目标。",
-  "mechanism": "每位创建0–9的纵向列，用目标数字乘行高计算translateY，以位序延迟滚入；非数字字符单独保留。",
+  "summary": "真实数据到达时，让各数位从同一竖列滚动到目标。",
+  "mechanism": "为每个数位创建0–9的纵向列，用目标数字乘行高计算translateY，按数位顺序延迟滚入；非数字字符单独保留。",
   "trigger": "星标API返回有效数字。",
   "effect": "数值到达有清楚的轻量反馈，最终文字与实际数据一致。",
   "useCases": [

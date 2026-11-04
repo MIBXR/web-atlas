@@ -9,10 +9,10 @@
     "experienceTypes": [
       "micro-motion"
     ],
-    "summary": "让微小格子具有可读事实。",
-    "mechanism": "格子悬停或获得焦点后短延迟显示日期/对话提示，离开或失焦关闭；文字提示不只依赖格子色深。",
+    "summary": "让微小格子对应的信息清楚可读。",
+    "mechanism": "指针悬停在格子上或格子获得焦点后，经过短暂延迟显示日期/对话提示；指针离开或格子失焦后关闭，文字提示不只依赖格子色深。",
     "trigger": "pointer enter/focus或leave/blur",
-    "effect": "微小可视化可以逐项读取。",
+    "effect": "微小可视化中的信息可以逐项读取。",
     "useCases": [
       "活跃度与日期数据图"
     ],

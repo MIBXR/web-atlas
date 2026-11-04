@@ -4,22 +4,22 @@
 
 ## 生成方式与提示词
 
-[来源 README 第 419 行](https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-design-engineer/README.zh-CN.md#L419) 声明此组页面使用相同提示词，在有 skill 和无 skill 条件下生成。[第 425–431 行](https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-design-engineer/README.zh-CN.md#L425-L431) 的表格明确无 skill 与有 skill 两列，因此 `baseline.html` 是**未使用 web-design-engineer skill 时的生成结果**。第 427 行表格路径多出 `demo2/` 一层，实际页面位置以固定提交中的文件为准。没有足够证据说明具体生成模型、生成次数、随机参数或人工编辑过程。
+[来源 README 第 419 行](https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-design-engineer/README.zh-CN.md#L419) 声明这组页面使用相同提示词，在有 skill 和无 skill 条件下生成。[第 425–431 行](https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-design-engineer/README.zh-CN.md#L425-L431) 的表格分为无 skill 与有 skill 两列，因此 `baseline.html` 是**未使用 web-design-engineer skill 时的生成结果**。第 427 行表格路径多出 `demo2/` 一层，实际页面位置以固定提交中的文件为准。没有足够证据说明具体生成模型、生成次数、随机参数或人工编辑过程。
 
-[第 423 行](https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-design-engineer/README.zh-CN.md#L423) 的原始提示词为：
+原始提示词见[第 423 行](https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/skills/web-design-engineer/README.zh-CN.md#L423)。
 
-条目的 `prompt` 照录该原文并注明出处。条目的负向约束由 Web Atlas 撰写。来源 README 保存作者对两版品质的评价。
+条目的 `prompt` 照录该原文并注明出处。条目的负向约束由 Web Atlas 撰写。作者对两版品质的评价见来源 README。
 
 ## 页面结构与设计机制
 
 主页面为自然滚动长页：固定导航与全屏首部 → 馆长寄语 → 四展厅 → 八节点编年史 → 预约说明与票券 → 联系、订阅与巨幅字标页脚。
 
-- **版式**：来源 `.container` 最大宽度 1400px，横向间距 `clamp(24px, 5vw, 80px)`；展厅用 `80px 1fr 1.1fr` 的编号／文字／场景三列，列隙 48px。章节标题、说明、编号和细横线负责节奏，960px 以下展厅转为单列。
+- **版式**：来源 `.container` 最大宽度 1400px，横向间距 `clamp(24px, 5vw, 80px)`；展厅用 `80px 1fr 1.1fr` 的编号／文字／场景三列，列隙 48px。章节标题、说明、编号和细横线组织阅读节奏，960px 以下展厅转为单列。
 - **字体层级**：Instrument Serif 负责展示字与斜体，Space Grotesk 负责段落和界面，JetBrains Mono 负责坐标、时间、编号与票券字段。主标题为 `clamp(60px, 11vw, 168px)`；中文沿原字体栈使用后备字形。
-- **色彩**：`--ink: oklch(0.10 0.015 250)`、`--bone: oklch(0.94 0.012 80)`、`--ember: oklch(0.78 0.13 65)`、`--cosmic: oklch(0.66 0.085 220)` 分担背景、主要文字、强调和冷色标签。低亮度边框维持章节区分。
+- **色彩**：`--ink: oklch(0.10 0.015 250)`、`--bone: oklch(0.94 0.012 80)`、`--ember: oklch(0.78 0.13 65)`、`--cosmic: oklch(0.66 0.085 220)` 分别用于背景、主要文字、强调和冷色标签。低亮度边框维持章节区分。
 - **三维展示**：首部星球、月球和火星由球体几何与噪声着色器绘制；空间站由圆柱、盒体和球体组合；银河由 12000 个粒子及中心发光体组成。没有外部摄影、三维模型下载或声音依赖。所有场景使用 Three.js 0.160.0，本地完整保留其模块。
-- **交互**：标题按 1.1 秒／0.12 秒交错上移；展厅 hover 改留白、颜色、缩放与箭头位移。导航在 `scrollY > 60` 时改变表面，锚点滚动扣除 60px。IntersectionObserver 以 120px 外边距控制场景渲染。UTC 为浏览器时间；不是空间站或轨道接口。
-- **主题与声音**：固定深色，没有切换主题。源码没有音频、视频或声音播放流程。减少动态分支限制 CSS 动画并停止对象旋转与背景闪烁，但着色器时间、UTC 更新及平滑锚点仍保留；本地不另改设计。
+- **交互**：标题以 1.1 秒时长、0.12 秒交错延迟上移；展厅 hover 时改变留白、颜色、缩放与箭头位移。导航在 `scrollY > 60` 时改变表面，锚点滚动扣除 60px。IntersectionObserver 以 120px 外边距控制场景渲染。UTC 为浏览器时间；不是空间站或轨道接口。
+- **主题与声音**：固定深色，不提供主题切换。源码没有音频、视频或声音播放流程。减少动态分支限制 CSS 动画并停止对象旋转与背景闪烁，但着色器时间、UTC 更新及平滑锚点仍保留；本地不另改设计。
 
 这些数值来自固定提交源码，浏览器实际结果和对照证据见 [fidelity](../../demos/cases/stellar-museum/fidelity.md)。
 
@@ -37,7 +37,7 @@
 
 ## 模块与状态矩阵
 
-下表定位为固定提交主源码；浏览器对照结果见复现范围。
+下表按固定提交的主页面源码定位；浏览器对照结果见复现范围。
 
 | 模块／状态 | 原站定位 | 起始条件与触发 | 源码定义的响应 |
 | --- | --- | --- | --- |

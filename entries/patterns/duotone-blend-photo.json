@@ -7,7 +7,7 @@
     "visual"
   ],
   "summary": "以同一纸色和墨色处理整组摄影。",
-  "mechanism": "原图先灰度化并提高对比，用multiply混入底色，再叠同底色的lighten层，保持细节和统一印刷色调。",
+  "mechanism": "原图先灰度化并提高对比，用multiply混入底色，再叠加同底色的lighten层，保留细节并统一印刷色调。",
   "effect": "不同来源照片形成同一材料系统。",
   "useCases": [
     "摄影与音乐活动页",
@@ -21,7 +21,7 @@
   ],
   "composition": {
     "role": "foundation",
-    "notes": "摄影原图与色调处理分离，构成由画框和题注组织。",
+    "notes": "摄影原图与色调处理分离，用画框和题注组织画面。",
     "pairsWellWith": [
       "overprint-misregistration"
     ],

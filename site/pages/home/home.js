@@ -83,7 +83,7 @@
       function paused() { return manualHold || focusedContent() || (active === 1 && pointerInLab); }
       function updateControls(isPaused) {
         stage.dataset.paused = String(isPaused);
-        setStatus(isPaused ? '画面已停留。完成操作后，继续下一步。' : '滚动探索，也可选择左侧入口。');
+        setStatus(isPaused ? '画面已暂停切换。完成操作后，可继续下一步。' : '滚动探索，也可选择左侧入口。');
         nextButton.textContent = active === 0 ? '继续调配元素' : active === 1 ? '继续参考构建' : '继续往下了解';
       }
       function renderSelection() {
@@ -253,7 +253,7 @@
     } catch {
       prompt.focus();
       prompt.select();
-      copyStatus.textContent = '示例已选中，请手动复制；随后在 Agent 对话中使用。';
+      copyStatus.textContent = '示例已选中，手动复制后可在 Agent 对话中使用。';
     }
   });
 })();

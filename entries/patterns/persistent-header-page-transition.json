@@ -6,10 +6,10 @@
   "experienceTypes": [
     "page-motion"
   ],
-  "summary": "为顶栏单独命名快照，主体短淡化切换，持续保留页面位置。",
-  "mechanism": "支持 View Transition 且不减少动态时，把 hash 路由的 DOM 更新包入 startViewTransition；根过渡 140ms ease-out，atlas-header 组与新快照无动画，隐藏旧顶栏快照。 路由更新后将焦点放回正文，并避免额外滚动。",
+  "summary": "为顶栏快照单独命名，主体短暂淡化切换，持续保留页面位置。",
+  "mechanism": "支持 View Transition 且不减少动态时，用 startViewTransition 包住 hash 路由的 DOM 更新；根过渡为 140ms ease-out，atlas-header 组与新快照无动画，旧顶栏快照隐藏。路由更新后，将焦点放回正文，并避免额外滚动。",
   "trigger": "列表、详情与文档之间切换，或前后更换详情",
-  "effect": "主体平顺交接，顶栏在同一位置保持连续。",
+  "effect": "主体平顺切换，顶栏在同一位置连续显示。",
   "useCases": [
     "多页参考库",
     "同文档 hash 路由",
@@ -21,11 +21,11 @@
   ],
   "constraints": [
     "固定的 view-transition-name 必须只对应一个顶栏元素；顶栏在首次切换前已经存在。",
-    "不支持 startViewTransition 或命中减少动态时直接更新 DOM，滚动和焦点处理归路由。"
+    "不支持 startViewTransition 或设置为减少动态时，直接更新 DOM，滚动和焦点由路由处理。"
   ],
   "composition": {
     "role": "support",
-    "notes": "负责主体交接时保留顶栏，布局和作品内部播放保持独立；与吸附双栏组合时先释放旧页观察器。",
+    "notes": "主体切换时保留顶栏，布局和作品内部播放保持独立；与吸附双栏组合时，先释放旧页观察器。",
     "pairsWellWith": [
       "shorter-column-sticky"
     ],

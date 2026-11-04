@@ -35,7 +35,7 @@
     "本地 Canvas2D 根据公开 PIXI 星光算法实现，采用随机抽样与光混合。",
     "角色、日常与怪盗行动内容缩减；角色入场细节、字体尺寸与全部购买/规格栏目未逐像素复制。",
     "没有独立BGM，不用通用音乐冒充原曲；PV声音只在用户打开时播放。",
-    "所有官方图片与商标权利归ATLUS/SEGA，仅个人学习；不运行追踪或账号服务。"
+    "所有官方图片与商标权利归ATLUS/SEGA，仅供个人学习；不运行追踪或账号服务。"
   ],
   "useCases": [
     "角色游戏",
@@ -97,7 +97,7 @@
     "shape": "斜切拼贴、金色边框、网点与剪贴字保持同一张海报的秩序。",
     "hierarchy": "Royal群像与发行信息 → 角色身份与形态 → 昼夜生活 → 官方平台入口。",
     "motion": "六种官方星图，SCREEN叠加，3秒正弦明暗、0–5秒随机延迟；背景15颗随滚动差分移动；角色500ms有界，生活轮播500ms无限中心轨道。",
-    "coherence": "真实角色形态和Persona让视觉表达产品身份；金黑与红金按叙事阶段转换，水平正文约束强烈动势。"
+    "coherence": "真实角色形态和Persona呈现产品身份；金黑与红金按叙事阶段转换，水平排版的正文约束强烈动势。"
   },
   "referenceUrl": "https://persona.atlus.com/p5r/?lang=en#",
   "implementation": "reference-study",
@@ -114,6 +114,6 @@
   "soundBehavior": {
     "kind": "external",
     "control": "WATCH THE OFFICIAL TRAILER 点击打开原始YouTube宣传片。",
-    "interactionRole": "音乐跟随PV镜头和字幕剪辑叙事；普通滚动和角色选择不添加原站未发现的BGM或点击声。"
+    "interactionRole": "音乐随PV镜头和字幕的剪辑推进叙事；普通滚动和角色选择不添加原站未发现的BGM或点击声。"
   }
 }

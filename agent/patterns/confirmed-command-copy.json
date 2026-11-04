@@ -9,8 +9,8 @@
     "experienceTypes": [
       "micro-motion"
     ],
-    "summary": "把复制结果立即反馈给按钮和状态区。",
-    "mechanism": "复制当前命令或可见代码，成功后设置勾与Copied，计时后恢复；主页面用Clipboard API并保留选区复制分支。",
+    "summary": "在按钮和状态区即时显示复制结果。",
+    "mechanism": "复制当前命令或可见代码，成功后显示勾与 Copied，计时结束后恢复按钮；主页面使用 Clipboard API，并保留选区复制分支。",
     "trigger": "激活复制按钮。",
     "effect": "用户知道复制的是哪段内容以及操作是否成功。",
     "useCases": [

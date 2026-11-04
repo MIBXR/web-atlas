@@ -29,9 +29,9 @@
 
 **How** 解释制作过程。四格分别呈现提问、方向、构成和检查，每格只做一个局部动作；三套线框循环说明布局不是固定模板，逐项修复把抽象检查变成可读状态。
 
-**Themes** 证明材料范围。四流派计数与结果对应，初始十项让首轮选择收敛。打开主题后，原生对话框显示该材料的说明与真实页面，固定 1440px 排版宽度再缩放；前后项沿当前过滤结果，关闭返回当前主题。
+**Themes** 证明材料范围。四流派计数与结果对应，初始只显示十项，缩小首轮选择范围。打开主题后，原生对话框显示该材料的说明与真实页面，固定 1440px 排版宽度再缩放；前后项按当前过滤结果切换，关闭后返回当前主题。
 
-**Same** 证明同材料下仍能产生不同结构。Kiln 的陶艺学校和器物商店、Midnight 的视频工具和爵士场所分别成对展示，共同配色与字体连接同组，页面内容及构成保持各自用途。
+**Same** 证明同材料下仍能产生不同结构。Kiln 的陶艺学校和器物商店、Midnight 的视频工具和爵士场所分别成对展示，同组页面共用配色与字体，内容和构成则按各自用途组织。
 
 **FAQ** 把安装条件、已有站点、主题选择、真实产品、设计系统、照片和重复结果等问题放在原位开合区。原生 details 让用户自行决定阅读量。
 
@@ -41,7 +41,7 @@
 
 ## 主题页与 Made 页
 
-材料主题把配色、字体与尺度放在 `themes/<id>/tokens.css`，公共基础放在 `base.css`，具体页面构成放在 `style.css`，状态与绘制按需要加载独立或内联脚本。十四个主要交互示范如下，Bloom 与 Ribbon 的视听示范单列在其后。
+材料主题把配色、字体与尺度放在 `themes/<id>/tokens.css`，公共基础放在 `base.css`，具体页面构成放在 `style.css`，状态与绘制由按需加载的独立脚本或内联脚本管理。十四个主要交互示范如下，Bloom 与 Ribbon 的视听示范单列在其后。
 
 | 主题 | 核心机制 |
 | --- | --- |
@@ -62,9 +62,9 @@
 
 Bloom 的一份十六拍谱面生成哼唱曲线、量化音符、四轨包络和合成事件；Ribbon 的推子同时控制雨、风、列车画面和声音，Listen 主动启用，Stop 淡出后挂起。Ultraviolet 用内联脚本管理 solo／mute 的视觉层次和本地音频峰值轮廓。
 
-无外链脚本主题的 CSS 形成另一组材料：Arcade 的子像素网和字边色散、Grid 的互补裁切反白、Halftone 的网点渐隐、Midnight 的双色摄影、Overprint／Riso 的套印与错版、Pasteup 的微倾斜纸片和纤维。它们以共同颜色、排版或成像规则建立材料身份。
+无外链脚本主题的 CSS 形成另一组材料：Arcade 的子像素网和字边色散、Grid 的互补裁切反白、Halftone 的网点渐隐、Midnight 的双色摄影、Overprint／Riso 的套印与错版、Pasteup 的微倾斜纸片和纤维。各主题通过统一的颜色、排版或成像规则形成可辨识的材料特征。
 
-Made 的四个 custom 页面分别是 [伴侣预算](../../demos/cases/hallmark/made/custom-couples-budget/index.html)、[上门修车](../../demos/cases/hallmark/made/custom-mobile-bike-repair/index.html)、[照片改名 CLI](../../demos/cases/hallmark/made/custom-photo-rename-cli/index.html) 和 [拉面柜台](../../demos/cases/hallmark/made/custom-ramen-counter/index.html)，以各自用途选择构成，与主题材料生成页共同进入成品范围。
+Made 的四个 custom 页面分别是 [伴侣预算](../../demos/cases/hallmark/made/custom-couples-budget/index.html)、[上门修车](../../demos/cases/hallmark/made/custom-mobile-bike-repair/index.html)、[照片改名 CLI](../../demos/cases/hallmark/made/custom-photo-rename-cli/index.html) 和 [拉面柜台](../../demos/cases/hallmark/made/custom-ramen-counter/index.html)，根据各自用途组织页面，并与主题材料生成页一同构成成品展示。
 
 ## 全部页面清单
 

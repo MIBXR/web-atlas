@@ -99,7 +99,7 @@
       "id": "cursor-ripples",
       "title": "指针涟漪",
       "component": "CursorRipples",
-      "summary": "移动指针或触摸舞台，比较涟漪的半径、衰减与色散，把局部反馈限制在内容可读的范围。",
+      "summary": "移动指针或触摸舞台，比较涟漪的半径、衰减与色散，调节局部反馈时保留内容的可读性。",
       "entrypoint": "demos/materials/shaders/index.html?effect=cursor-ripples",
       "parameters": [
         {"name": "intensity", "value": "0–20", "note": "源码 UI 建议范围；改变反馈强度。"},
@@ -124,7 +124,7 @@
   "prompt": "在现有 HTML/CSS/JavaScript 页面中使用固定版本 shaders 4.0.4 的 createShader 接口，为一个有明确任务的区域选择 MeshGradient、FlutedGlass、CursorRipples 或 NoiseDissolve。先读取本地四种演示的参数与源码，在保留真实 DOM 文本和操作的情况下调整配色、强度与图层。保持同一舞台只运行当前选中的效果，支持参数重置和暂停；页面隐藏或减少动态时停止持续动画。WebGPU 不可用时显示能继续阅读和操作的静态后备。保留原软件许可与第三方声明，不复制官网平台预设。桌面与窄屏都检查文字至少 12px、焦点、触摸及资源加载。",
   "accessibility": {
     "keyboard": "使用真实按钮与带标签的参数控件切换、调节、重置和暂停；指针反馈作为可选视觉装饰，信息和操作由 DOM 提供。",
-    "reducedMotion": "遵循 prefers-reduced-motion 停止自动运行，以静态状态保留配色和参数学习；主动演示需有可用的停止控制。"
+    "reducedMotion": "遵循 prefers-reduced-motion 停止自动运行，仍可通过静态状态学习配色和参数；主动演示需有可用的停止控制。"
   },
   "demo": "demos/materials/shaders/index.html",
   "preview": "previews/materials/shaders.png",

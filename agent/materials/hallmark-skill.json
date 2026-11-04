@@ -7,7 +7,7 @@
     "title": "Hallmark · 反 AI 套路的网页设计 skill",
     "type": "agent-skill",
     "category": "Agent 工作流",
-    "summary": "用不可破例的底线、可记录破例的惯性检查和 50 套材料主题约束 Agent 做网页，先发主题、按页面用途定结构，再用真实浏览器检查和无上下文审查收尾；也能按名字重新设计或审计已有页面。",
+    "summary": "用不可破例的底线、可记录破例的惯性检查和 50 套材料主题规范 Agent 的网页设计流程：先发主题，按页面用途确定结构，再完成真实浏览器检查和无上下文审查；用户点名后，也能重新设计或审计已有页面。",
     "install": "npx skills add nutlope/hallmark -g 全局安装；或把 demos/materials/hallmark-skill/ 复制到 .claude/skills/hallmark/ 或 .agents/skills/hallmark/。在 Claude Code 用 /hallmark <提示词> 调用，在 Codex CLI 用 $hallmark <提示词>。",
     "tags": [
       "网页设计",
@@ -21,7 +21,7 @@
     "useCases": [
       "从零制作落地页与产品页",
       "用开放授权照片和真实材料搭建品牌页面",
-      "按名字重新设计已有站点并保留内容与接线",
+      "用户点名后重新设计已有站点，保留内容与接线",
       "审计现有页面里的生成痕迹"
     ],
     "avoid": [
@@ -72,12 +72,12 @@
     "snapshotPath": "demos/materials/hallmark-skill/",
     "snapshotEntry": "SKILL.md",
     "workflow": [
-      "预检读取项目的字体、配色、框架和锁定的 design.md，并向用户要一次照片、截图和真实数字，不编造内容。",
-      "先按材料与页面用途设计结构；没有锁定 design.md 且未指定主题时，用 theme.mjs deal 发出三个主题并看图选择，选定主题后 draw 抽取结构；custom 按提示词设计专属方向，已有锁定系统时跳过主题发牌。",
-      "用 scaffold 写入 tokens.css 和 base.css，先单独完成首屏，运行 --render --stage hero，再在新上下文审查首屏；Codex CLI 在当前线程完成审查并明说。",
-      "完成其余页面，行动入口放在该品类应有的位置，页面以它结束。",
-      "sloplint --render 在真实浏览器按多种宽度测量折叠线、对比度、焦点和节奏，修掉全部 FAIL，修复或记录破例每条 REFLEX。",
-      "在新上下文审查成品；支持子 Agent 的宿主使用子 Agent，Codex CLI 在当前线程完成审查并明说，CSS 首行保留决策戳；重新设计时额外用 --before 记录、--kept 比对全部链接、字段、处理器和标题。"
+      "预检时读取项目的字体、配色、框架和锁定的 design.md，一次性向用户索取照片、截图和真实数字，不编造内容。",
+      "先按材料与页面用途设计结构。没有锁定 design.md 且未指定主题时，用 theme.mjs deal 发出三个主题，看图选定后用 draw 抽取结构；custom 按提示词设计专属方向。已有锁定系统时跳过主题发牌。",
+      "用 scaffold 写入 tokens.css 和 base.css，先单独完成首屏，运行 --render --stage hero，再在新上下文审查首屏；Codex CLI 在当前线程完成审查，并说明这一点。",
+      "完成其余页面，把行动入口放在该品类应有的位置，并以该入口结束页面。",
+      "用 sloplint --render 在真实浏览器中按多种宽度测量折叠线、对比度、焦点和节奏；修复全部 FAIL，逐条修复 REFLEX 或记录破例。",
+      "在新上下文审查成品；支持子 Agent 的宿主使用子 Agent，Codex CLI 在当前线程完成审查并说明这一点。CSS 首行保留决策戳；重新设计时，额外用 --before 记录，用 --kept 比对全部链接、字段、处理器和标题。"
     ],
     "relatedEntries": [
       {
@@ -557,7 +557,7 @@
     {
       "path": "docs/materials/hallmark-skill.md",
       "role": "research",
-      "content": "# Hallmark：阅读与使用资料\n\n[结构化条目](../../entries/materials/hallmark-skill.json) 提供固定版本、安装方式、六步工作流、适用范围和关联案例。\n\n## 它做什么\n\nHallmark 用规则、材料主题和检查压住模型的默认审美：标题上方的小标签、大写且拉开字距的标注、标题中单词染色、紫蓝渐变、卡片套卡片和页尾邮箱订阅等套路都有对应约束。页面先读取真实材料和项目系统，再决定内容结构与表现方式。\n\n## 三级检查\n\n- **Floor**：不可破例的底线，涵盖正确性、可访问性、内容真实和明确禁用的生成套路。\n- **Reflex**：模型常用的惯性做法，有当前页面的具体理由时逐条记录破例。\n- **Finish**：远看不显眼的工艺细节，检查并回答，对应最终审阅。\n\n规则、等级和破例格式见 [references/gates.md](../../demos/materials/hallmark-skill/references/gates.md)。\n\n## 主题\n\n五十个主题规定纸面、配色、字体、表面和可用材料，主题不规定页面的内容及先后。每份主题文件不超过 8 KB，构建选定后只读一份及对应图片。`theme.mjs deal` 发三个候选，Agent 看图选择；`theme.mjs draw` 按照片／产品／文字材料与页面用途抽取形状、首屏、导航和页脚。已有锁定的 `design.md` 时沿用系统并跳过发牌。\n\n用户说 custom 时，从提示词与真实材料中建立该客户的专属方向，入口为 [references/direction.md](../../demos/materials/hallmark-skill/references/direction.md)。\n\n效果图画廊展示 50 个主题的官网桌面截图，每张可打开案例中的对应页面。\n\n## 图片\n\n默认图库在 [scripts/photos.json](../../demos/materials/hallmark-skill/scripts/photos.json)，登记 755 张 Wikimedia Commons 的开放授权照片及其署名；`theme.mjs photos` 按主体和主题选图，成品页面逐图署名。\n\n设置 `TOGETHER_API_KEY` 且用户要求生成图片时，使用 [scripts/imagegen.mjs](../../demos/materials/hallmark-skill/scripts/imagegen.mjs)，默认模型为 `black-forest-labs/FLUX.1.1-pro`。真实产品能运行或访问时，先用 `scripts/capture.mjs` 取得产品截图。\n\n## 重新设计与审计\n\n用户点名 Hallmark 后，`/hallmark redesign <目标>` 重新设计已有页面；`/hallmark audit <目标>` 生成报告。Codex CLI 以 `$hallmark` 调用。目标可以是文件、目录或已有应用路由；只有线上 URL 而没有源码时使用 `audit` 和 `--url`。\n\n| 深度 | 保留 | 改变 | 触发说法 |\n| --- | --- | --- | --- |\n| full | 内容、业务接线和已有品牌；锁定 design.md 的系统 | 系统及构成：页面形状、首屏、章节对象、导航与页脚 | 默认 redesign |\n| restyle | 内容、接线与布局 | 字体、颜色、半径、阴影、动效和控件系统 | keep the layout、restyle、reskin、only the colours and type |\n| polish | 内容、接线、系统与布局 | 检查指出的生成痕迹、对比度、状态、动效和 token 等局部问题 | polish、keep our look、only fix what looks generated |\n\n重新设计先用 `sloplint --render --before` 保存当前链接、表单、字段、处理器、脚本、标题与截图，完成后以 `--kept` 对照。流程和保留清单见 [references/redesign.md](../../demos/materials/hallmark-skill/references/redesign.md)。\n\n首屏和完成页均有新上下文审查。支持子 Agent 的宿主使用子 Agent；[flow.md 的 Harnesses](../../demos/materials/hallmark-skill/references/flow.md#harnesses) 规定 Codex CLI 在当前线程审查并明说。\n\n## 原文入口\n\n- [SKILL.md](../../demos/materials/hallmark-skill/SKILL.md)：底线、预检、选题、构建与审查主流程。\n- [README](../../demos/materials/hallmark-skill/README.md)：上游安装说明、主题和示范；其中相对链接按[固定提交](https://github.com/Nutlope/hallmark/tree/4f6a46c6dc325d40ab268c93e25c7b96676ebccd)阅读。\n- [references 入口](../../demos/materials/hallmark-skill/references/flow.md)：流程分支与宿主；同目录包含 gates、主题、构成、材料和重新设计资料。\n- [scripts 入口](../../demos/materials/hallmark-skill/scripts/theme.mjs)：主题操作；同目录包含 sloplint、capture、imagegen 与图库数据。\n- [eval 入口](../../demos/materials/hallmark-skill/eval/README.md)：评测工具与案例。\n\n## 与案例的关系\n\n[Hallmark 官网与主题页研究](../cases/hallmark.md) 收录技能产品的官网、50 个主题示范页和 21 个 Made 页。案例保留可运行页面、素材与对照结果，技能素材保存生成方法、参考、脚本和评测工具。\n"
+      "content": "# Hallmark：阅读与使用资料\n\n[结构化条目](../../entries/materials/hallmark-skill.json) 提供固定版本、安装方式、六步工作流、适用范围和关联案例。\n\n## 它做什么\n\nHallmark 用规则、材料主题和检查限制模型惯用的设计方式：标题上方的小标签、大写且拉开字距的标注、标题中单词染色、紫蓝渐变、卡片套卡片和页尾邮箱订阅等套路都有对应约束。设计页面时，先读取真实材料和项目系统，再决定内容结构与表现方式。\n\n## 三级检查\n\n- **Floor**：不可破例的底线，涵盖正确性、可访问性、内容真实和明确禁用的生成套路。\n- **Reflex**：模型常用的惯性做法，若当前页面有采用这些做法的具体理由，逐条记录破例。\n- **Finish**：远看不显眼的工艺细节，最终审阅时检查并回答。\n\n规则、等级和破例格式见 [references/gates.md](../../demos/materials/hallmark-skill/references/gates.md)。\n\n## 主题\n\n五十个主题规定纸面、配色、字体、表面和可用材料，主题不规定页面的内容及先后。每份主题文件不超过 8 KB，构建时只读选定的一份及对应图片。`theme.mjs deal` 发三个候选，Agent 看图选择；`theme.mjs draw` 按照片／产品／文字材料与页面用途抽取形状、首屏、导航和页脚。已有锁定的 `design.md` 时沿用系统并跳过发牌。\n\n用户说 custom 时，从提示词与真实材料中建立该客户的专属方向，入口为 [references/direction.md](../../demos/materials/hallmark-skill/references/direction.md)。\n\n效果图画廊展示 50 个主题的官网桌面截图，每张可打开案例中的对应页面。\n\n## 图片\n\n默认图库在 [scripts/photos.json](../../demos/materials/hallmark-skill/scripts/photos.json)，登记 755 张 Wikimedia Commons 的开放授权照片及其署名；`theme.mjs photos` 按主体和主题选图，成品页面逐图署名。\n\n设置 `TOGETHER_API_KEY` 且用户要求生成图片时，使用 [scripts/imagegen.mjs](../../demos/materials/hallmark-skill/scripts/imagegen.mjs)，默认模型为 `black-forest-labs/FLUX.1.1-pro`。真实产品能运行或访问时，先用 `scripts/capture.mjs` 取得产品截图。\n\n## 重新设计与审计\n\n用户点名 Hallmark 后，`/hallmark redesign <目标>` 重新设计已有页面；`/hallmark audit <目标>` 生成报告。Codex CLI 以 `$hallmark` 调用。目标可以是文件、目录或已有应用路由；只有线上 URL 而没有源码时使用 `audit` 和 `--url`。\n\n| 深度 | 保留 | 改变 | 触发说法 |\n| --- | --- | --- | --- |\n| full | 内容、业务接线和已有品牌；锁定 design.md 的系统 | 系统及构成：页面形状、首屏、章节对象、导航与页脚 | 默认 redesign |\n| restyle | 内容、接线与布局 | 字体、颜色、半径、阴影、动效和控件系统 | keep the layout、restyle、reskin、only the colours and type |\n| polish | 内容、接线、系统与布局 | 检查指出的生成痕迹、对比度、状态、动效和 token 等局部问题 | polish、keep our look、only fix what looks generated |\n\n重新设计先用 `sloplint --render --before` 保存当前链接、表单、字段、处理器、脚本、标题与截图，完成后以 `--kept` 对照。流程和保留清单见 [references/redesign.md](../../demos/materials/hallmark-skill/references/redesign.md)。\n\n首屏和完成页均有新上下文审查。支持子 Agent 的宿主使用子 Agent；[flow.md 的 Harnesses](../../demos/materials/hallmark-skill/references/flow.md#harnesses) 规定 Codex CLI 在当前线程审查并明说。\n\n## 原文入口\n\n- [SKILL.md](../../demos/materials/hallmark-skill/SKILL.md)：底线、预检、选题、构建与审查主流程。\n- [README](../../demos/materials/hallmark-skill/README.md)：上游安装说明、主题和示范；其中相对链接按[固定提交](https://github.com/Nutlope/hallmark/tree/4f6a46c6dc325d40ab268c93e25c7b96676ebccd)阅读。\n- [references 入口](../../demos/materials/hallmark-skill/references/flow.md)：流程分支与宿主；同目录包含 gates、主题、构成、材料和重新设计资料。\n- [scripts 入口](../../demos/materials/hallmark-skill/scripts/theme.mjs)：主题操作；同目录包含 sloplint、capture、imagegen 与图库数据。\n- [eval 入口](../../demos/materials/hallmark-skill/eval/README.md)：评测工具与案例。\n\n## 与案例的关系\n\n[Hallmark 官网与主题页研究](../cases/hallmark.md) 收录技能产品的官网、50 个主题示范页和 21 个 Made 页。案例保留可运行页面、素材与对照结果，技能素材保存生成方法、参考、脚本和评测工具。\n"
     },
     {
       "path": "prompts/materials/hallmark-skill.md",

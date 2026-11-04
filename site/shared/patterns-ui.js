@@ -207,7 +207,7 @@
   function caseLinks(id) {
     const related = patterns.filter(pattern => pattern.sources.some(source => source.caseId === id));
     if (!related.length) return '';
-    return `<section class="case-patterns" aria-labelledby="case-patterns-heading"><div class="prompt-head"><h2 id="case-patterns-heading">关联巧思</h2><a href="patterns.html#patterns?source=${encodeURIComponent(id)}">按来源浏览全部 ${related.length} 项</a></div><p>这些机制可以独立借用；查看每项的触发、约束与组合建议。</p><ul>${related.map(pattern => `<li><a href="patterns.html#pattern/${encodeURIComponent(pattern.id)}?source=${encodeURIComponent(id)}">${esc(pattern.title)}</a><span>${(pattern.experienceTypes || []).map(type => esc(typeLabels[type])).join(' · ') || esc(pattern.category)}</span></li>`).join('')}</ul></section>`;
+    return `<section class="case-patterns" aria-labelledby="case-patterns-heading"><div class="prompt-head"><h2 id="case-patterns-heading">关联巧思</h2><a href="patterns.html#patterns?source=${encodeURIComponent(id)}">按来源浏览全部 ${related.length} 项</a></div><p>这些机制可独立借用，触发条件、约束与组合建议见各项详情。</p><ul>${related.map(pattern => `<li><a href="patterns.html#pattern/${encodeURIComponent(pattern.id)}?source=${encodeURIComponent(id)}">${esc(pattern.title)}</a><span>${(pattern.experienceTypes || []).map(type => esc(typeLabels[type])).join(' · ') || esc(pattern.category)}</span></li>`).join('')}</ul></section>`;
   }
   function init(options = {}) {
     notify = options.toast || notify;

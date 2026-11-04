@@ -13,7 +13,7 @@
 ## 制作约束
 
 - 归档 https://bluearchive.jp/ 在 2026-10-07 的单一快照；其可见 CHARACTER 导航进入 /character，作为同次采集的关联子页。
-- 原首页只含 KV→footer，独立 character.html 仅复现 /character 的阿比多斯；本地使用文档导航，源为 Vue router.push，未添加无证据的入场淡化。
+- 原首页只含 KV→footer，独立 character.html 仅复现 /character 的阿比多斯；本地使用文档导航，源站使用 Vue router.push，未添加无证据的入场淡化。
 - 4 位学生姓名、CV、学年、生日、身高、立绘和 WAV 已核验；其他学院、全部人物和运营页面用官方入口。
 - 角色整轨 1000ms 有来源依据；缓动、键盘、触摸阈值、声线暂停与减少动态为本地补充或近似。
 - 城市视频保持静音；角色台词不是 BGM，完整 PV 使用官方外链，未添加通用音乐。
@@ -22,6 +22,6 @@
 
 ## 检查方法
 
-改变背景映像的一个静态画面，保持Logo和下载位置，观察天空、建筑和高光是否遮挡标语，再记录允许控件落点的安全区域。
+改变背景映像中的一个静态画面，保持Logo和下载位置，观察天空、建筑和高光是否遮挡标语，再记录控件可以放置的安全区域。
 
 [查看 Demo](../../demos/cases/blue-archive/index.html) · [返回案例库](../../cases.html#style/blue-archive)

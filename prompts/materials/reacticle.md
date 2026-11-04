@@ -8,7 +8,7 @@
 
 - 固定 Reacticle 0.2.6 源码提交 dcfc4baf386bbc220cd1aa6274bed3b741108465；React 18.3 是上游声明的 peer 依赖，样例使用固定 lockfile 安装结果。
 - 每篇严格采用 apps/site/src/data/gallery.tsx 中的报告与主题组合；RateLimiter.tsx 导出的组件名为 RateLimiterSpec，11 个主题对应关系与任务表一致。
-- 组件、文章与主题 CSS 不作修改；独立入口保留原画廊文章容器及原站 CSS，省略官网导航、浮动返回标签与上一篇／下一篇。入口禁用 Prism 自动全页扫描，由原 React 组件保留逐行代码高亮。
+- 组件、文章与主题 CSS 不作修改；独立入口保留原画廊文章容器及原站 CSS，省略官网导航、浮动返回标签与上一篇／下一篇。入口禁用 Prism 自动全页扫描，逐行代码高亮仍由原 React 组件提供。
 - 原站 13 个 Google Fonts 家族的 76 个 WOFF2 文件已本地化并附 OFL；中文沿用原主题的系统字体回退，不增加官网没有的中文网络字体。
 - 通过 HTTP/HTTPS 打开样例目录，JS、CSS、公式字体与本地化字体均使用相对路径；文章外链保留原作指向。
 - 原始 package.json 声明 MIT，但该固定提交的仓库内没有 LICENSE 文件；许可声明与实际缺失情况同时记录，不虚构上游许可文本。

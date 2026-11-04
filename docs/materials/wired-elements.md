@@ -16,8 +16,8 @@
 
 ## 接入与适配
 
-按条目中的安装方式导入包。这里直接自托管官方 `lib/wired-elements-esm.js`，其中已包含组件和 Lit 运行时，不依赖 CDN。通过 HTTP/HTTPS 服务目录，保留其相对文件路径和许可；Agent 构建提供完整文件路径与角色。
+按条目中的安装方式导入包。这里直接自托管官方 `lib/wired-elements-esm.js`，其中已包含组件和 Lit 运行时，不依赖 CDN。通过 HTTP/HTTPS 提供目录访问，保留其相对文件路径和许可；Agent 构建提供完整文件路径与角色。
 
 `index.html?demo=checklist`、`?demo=preferences`、`?demo=card` 定位三种场景。`demo/demo.js` 按需加载 `vendor/wired-elements@2.1.2/wired-elements-2.1.2.js`；许可原文见[许可索引](../../demos/materials/wired-elements/LICENSES.md)。`theme=light`／`theme=dark` 指定说明面板主题，同源嵌入继承 Atlas 主题。
 
-说明面板继承 Atlas 主题，手绘舞台固定浅纸面。所有文本至少 12px，不缩小整个 Demo。标签支持方向键；组件内部复选框提供原生键盘操作，滑块和开关补齐内部名称。无自动动画或声音；减少动态仍可改变参数。模块无法加载时显示明确的静态说明，`..?fallback=1` 可查看该分支。静态后备显示结构说明，模块加载后显示手绘组件。
+手绘舞台固定浅纸面。所有文本至少 12px，不缩小整个 Demo。标签支持方向键；组件内部复选框提供原生键盘操作，滑块和开关补齐内部名称。无自动动画或声音；开启减少动态后仍可改变参数。模块无法加载时，静态后备显示结构说明，`..?fallback=1` 可查看该分支。模块加载后显示手绘组件。

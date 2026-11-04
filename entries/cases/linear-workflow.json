@@ -13,16 +13,16 @@
     "工作流",
     "低对比边框"
   ],
-  "summary": "固定暗色的工作系统通过首屏面板、Intake 消息到任务板、AI 代理状态和可编辑代码说明产品价值。",
+  "summary": "固定暗色的工作系统通过首屏面板、Intake 从消息到任务板的变化、AI 代理状态和可编辑代码说明产品价值。",
   "accent": "#a79ad6",
   "background": "#08090a",
   "principles": [
-    "固定暗色的工作系统通过首屏面板、Intake 消息到任务板、AI 代理状态和可编辑代码说明产品价值。",
+    "固定暗色的工作系统通过首屏面板、Intake 从消息到任务板的变化、AI 代理状态和可编辑代码说明产品价值。",
     "配色、文字密度、边框与选中状态共同表达本页面的产品语气。",
-    "动作有明确触发与状态关系，采用同一源 URL 的当前页面，近似和未验证状态分别说明。",
+    "动作有明确的触发与状态关系；以同一源 URL 的当前页面为依据，分别说明近似和未验证的状态。",
     "第一方素材保持比例；手机保留原站实际变体。"
   ],
-  "productFocus": "通过真实官网issue结构展示团队与智能体协作：侧栏、任务正文、活动评论、属性及状态，随后把收件和规划纳入同一流程。",
+  "productFocus": "通过真实官网的 issue 结构展示团队与智能体协作：侧栏、任务正文、活动评论、属性及状态，随后把收件和规划纳入同一流程。",
   "interaction": [
     "进入 → 首屏产品 UI 延迟 1.3s 后 1.5s 带入，背景扫光/mask 配合；下滚让首屏遮罩交给后续章节。",
     "Favorites → 独立 issue、看板、统计项目表和项目 overview；内部任务状态、收藏与 Run agent 是本地工作示例。",
@@ -34,7 +34,7 @@
   "theme": "营销页固定近黑。Build 中的六种代码主题是局部语法预览控件，不改变全页主题。",
   "constraints": [
     "保留当前来源的触发→响应→目的，不用通用淡入代替定义性交互。",
-    "消息文本和任务数量缩短；后续板的布局/卡高 spring 用 CSS 拟合，原源码中的全部 spring 物理参数未逐一移植。AI 为固定演示，代码不会执行；Run agent 与 Favorites 并非可登录的完整 Linear。未复制 Changelog 和后段用户故事卡与完整产品后端。",
+    "消息文本有所缩短，任务数量有所减少；后续板的布局/卡高 spring 用 CSS 拟合，未逐一移植原源码中的全部 spring 物理参数。AI 为固定演示，代码不会执行；Run agent 与 Favorites 并非可登录的完整 Linear。Changelog、后段用户故事卡与完整产品后端未复制。",
     "品牌与官方素材仅用于此个人参考库；归档来源与权利。",
     "减少动态保留可读内容、键盘焦点和手动选择。"
   ],
@@ -63,13 +63,13 @@
   "composition": {
     "color": "营销页固定近黑。Build 中的六种代码主题是局部语法预览控件，不改变全页主题。",
     "typography": "官方 Inter variable 本地字体；桌面64px主标题、紧行高、任务22px、UI12–14px。",
-    "layout": "首屏 UI → 客户标识与三个价值点 → Intake → Planning → AI → Build → 结束行动 → 页尾；本地压缩后段数量。手机保持源站的内容/复杂图示区别。",
-    "imagery": "固定暗色的工作系统通过首屏面板、Intake 消息到任务板、AI 代理状态和可编辑代码说明产品价值。",
+    "layout": "首屏 UI → 客户标识与三个价值点 → Intake → Planning → AI → Build → 结束行动 → 页尾；本地缩减后段数量。手机保留源站对内容/复杂图示的区分。",
+    "imagery": "固定暗色的工作系统通过首屏面板、Intake 从消息到任务板的变化、AI 代理状态和可编辑代码说明产品价值。",
     "shape": "细边框、10–15px窗口、5px行项与小圆胶囊。",
-    "hierarchy": "固定暗色的工作系统通过首屏面板、Intake 消息到任务板、AI 代理状态和可编辑代码说明产品价值。",
-    "motion": "进入 → 首屏产品 UI 延迟 1.3s 后 1.5s 带入，背景扫光/mask 配合；下滚让首屏遮罩交给后续章节。；Favorites → 独立 issue、看板、统计项目表和项目 overview；内部任务状态、收藏与 Run agent 是本地工作示例。；Intake Send “create issues” → 2s 后 Linear 回复、再 1s 后 2 张卡插入 Todo；下一次 Send → 1.4s 回复、800ms 后卡从 Todo 移到 In progress；Replay 恢复初态 → 把自然语言请求变成可见工作。；AI 章节进入视口 → 三列代理思考/回答以 5s 与后续交错时间演示，离开/后台停止；暂停按钮与减少动态分支可保持结果。",
-    "coherence": "消息文本和任务数量缩短；后续板的布局/卡高 spring 用 CSS 拟合，原源码中的全部 spring 物理参数未逐一移植。AI 为固定演示，代码不会执行；Run agent 与 Favorites 并非可登录的完整 Linear。未复制 Changelog 和后段用户故事卡与完整产品后端。",
-    "scroll": "首屏 UI → 客户标识与三个价值点 → Intake → Planning → AI → Build → 结束行动 → 页尾；本地压缩后段数量。手机保持源站的内容/复杂图示区别。"
+    "hierarchy": "固定暗色的工作系统通过首屏面板、Intake 从消息到任务板的变化、AI 代理状态和可编辑代码说明产品价值。",
+    "motion": "进入 → 首屏产品 UI 延迟 1.3s 后 1.5s 带入，背景扫光/mask 配合；下滚让首屏遮罩交给后续章节；Favorites → 独立 issue、看板、统计项目表和项目 overview；内部任务状态、收藏与 Run agent 是本地工作示例；Intake Send “create issues” → 2s 后 Linear 回复、再 1s 后 2 张卡插入 Todo；下一次 Send → 1.4s 回复、800ms 后卡从 Todo 移到 In progress；Replay 恢复初态 → 把自然语言请求变成可见工作；AI 章节进入视口 → 三列代理思考/回答以 5s 与后续交错时间演示，离开/后台停止；暂停按钮与减少动态分支可保持结果。",
+    "coherence": "消息文本有所缩短，任务数量有所减少；后续板的布局/卡高 spring 用 CSS 拟合，未逐一移植原源码中的全部 spring 物理参数。AI 为固定演示，代码不会执行；Run agent 与 Favorites 并非可登录的完整 Linear。Changelog、后段用户故事卡与完整产品后端未复制。",
+    "scroll": "首屏 UI → 客户标识与三个价值点 → Intake → Planning → AI → Build → 结束行动 → 页尾；本地缩减后段数量。手机保留源站对内容/复杂图示的区分。"
   },
   "sources": [
     {
@@ -113,7 +113,7 @@
     "mode": "fixed",
     "default": "dark",
     "control": "营销页固定近黑。Build 中的六种代码主题是局部语法预览控件，不改变全页主题。",
-    "designReason": "固定暗色的工作系统通过首屏面板、Intake 消息到任务板、AI 代理状态和可编辑代码说明产品价值。"
+    "designReason": "固定暗色的工作系统通过首屏面板、Intake 从消息到任务板的变化、AI 代理状态和可编辑代码说明产品价值。"
   },
   "soundBehavior": {
     "kind": "none",

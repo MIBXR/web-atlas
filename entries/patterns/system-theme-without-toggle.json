@@ -7,14 +7,14 @@
     "visual"
   ],
   "summary": "按系统偏好换配色，不虚构手动按钮。",
-  "mechanism": "根据prefers-color-scheme选用对应的表面、文字与产品截图；主题范围明确到实际有变体的区域。",
+  "mechanism": "根据 prefers-color-scheme 选用对应的表面、文字与产品截图；主题范围以实际有变体的区域为准。",
   "trigger": "系统深浅偏好改变",
   "effect": "界面适应环境且图像保持合理配色。",
   "useCases": [
     "已有双版本资产的营销页"
   ],
   "avoid": [
-    "给来源没提供的页面宣称手动主题"
+    "宣称来源页面支持其未提供的手动主题功能"
   ],
   "constraints": [
     "ChatGPT 手机保留浅色界面图；Claude 主题的数值依据为公共 CSS。",

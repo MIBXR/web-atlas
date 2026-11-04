@@ -42,9 +42,9 @@
     ],
     "constraints": [
       "锁定最新非预发布版本 2.1.2；核验时 npm latest 指向 3.0.0-rc.6，不据此宣称 3.x 已验证。",
-      "需要 JavaScript、Custom Elements 和 Shadow DOM；自托管官方完整 ESM，运行无 CDN。",
+      "需要 JavaScript、Custom Elements 和 Shadow DOM；自托管官方完整 ESM，运行时不依赖 CDN。",
       "随机手绘线条来自原库；页面场景、文案、配色与联动为本地原创组合。",
-      "标签、复选框、滑块和开关保留键盘路径；内部开关和滑块补充可访问名称。",
+      "标签、复选框、滑块和开关可通过键盘操作；为内部开关和滑块补充可访问名称。",
       "无循环动画与声音；静态后备只解释用法，不代表组件运行。",
       "保留 Wired / RoughJS MIT 与 bundle 内 Lit / lit-html BSD 3-Clause 许可。"
     ],
@@ -116,13 +116,13 @@
         "id": "checklist",
         "title": "任务清单",
         "component": "wired-checkbox / wired-progress / wired-button",
-        "summary": "勾选真实手绘复选框，计数同步进度条；可恢复默认。",
+        "summary": "勾选真实手绘复选框时，任务计数与进度条同步更新；可恢复默认状态。",
         "entrypoint": "demos/materials/wired-elements/index.html?demo=checklist",
         "parameters": [
           {
             "name": "checked",
             "value": "true / false",
-            "note": "官方布尔属性；三项任务默认完成第一项为本地选择。"
+            "note": "官方布尔属性；三项任务中默认完成第一项，这是本地设置。"
           },
           {
             "name": "value / max",
@@ -167,20 +167,20 @@
     ],
     "prompt": "使用固定版本 wired-elements 2.1.2，在现有 HTML/CSS/JavaScript 项目里为可讨论的轻量流程选择任务清单、偏好面板或概念卡片。读取本地演示，把真实 wired-checkbox、wired-progress、wired-toggle、wired-card 和 wired-slider 接到当前页面的明确状态。使用原库 SVG 手绘边界，保持 DOM 文本、标签、键盘操作和至少 12px 的实际文字。卡片 elevation 遵循 1–5；配色与内容按任务选择。自托管官方 ESM，保留 MIT 与 BSD 许可；加载失败时显示明确静态说明，不声称组件仍已运行。无需求时不加入循环动画、声音、持久化或额外框架。",
     "accessibility": {
-      "keyboard": "标签支持左右、Home、End；真实组件内部原生复选框、滑块和按钮可键盘操作，开关与滑块补上内部名称。",
-      "reducedMotion": "没有自动动画或持续帧循环，参数和状态变化保留。随机线条重绘由实际内容与尺寸变化触发。"
+      "keyboard": "标签支持左右方向键、Home、End；真实组件内部的原生复选框、滑块和按钮可用键盘操作，开关与滑块补充了内部名称。",
+      "reducedMotion": "没有自动动画或持续帧循环，保留参数和状态变化。随机线条重绘由实际内容与尺寸变化触发。"
     }
   },
   "documents": [
     {
       "path": "docs/materials/wired-elements.md",
       "role": "research",
-      "content": "# Wired Elements：有手绘语言的可操作组件\n\n[来源、版本、许可与使用边界](../../entries/materials/wired-elements.json)\n\n[本地工作台](../../demos/materials/wired-elements/index.html) · [结构化资料](../../entries/materials/wired-elements.json) · [作者完整示例](https://wiredjs.com/showcase)\n\n## 三种可借用组合\n\n| 场景 | 组件与参数依据 | 本地职责 |\n| --- | --- | --- |\n| 任务清单 | [checkbox 的 checked / change](https://github.com/rough-stuff/wired-elements/blob/04756df72181e08b4255f8b6dfefea130398e24b/packages/wired-checkbox/README.md)、[progress 的 value / max](https://github.com/rough-stuff/wired-elements/blob/04756df72181e08b4255f8b6dfefea130398e24b/packages/wired-progress/README.md) | 三项任务和 1/3 默认进度为本地示例；勾选实时同步并可重置 |\n| 偏好面板 | [toggle 的 checked](https://github.com/rough-stuff/wired-elements/blob/04756df72181e08b4255f8b6dfefea130398e24b/packages/wired-toggle/README.md) | 将模式和摘要选项应用到当前预览，不保存设置 |\n| 概念卡片 | [card 的 elevation 1–5 / fill](https://github.com/rough-stuff/wired-elements/blob/04756df72181e08b4255f8b6dfefea130398e24b/packages/wired-card/README.md)、[slider 的 value / min / max](https://github.com/rough-stuff/wired-elements/blob/04756df72181e08b4255f8b6dfefea130398e24b/packages/wired-slider/README.md) | 默认层级 3、纸面与填色为本地选择，变化时重绘边界 |\n\n三者都使用真实库组件；场景布局、文案、主题与状态联动是 Web Atlas 原创组合。\n\n## 接入与适配\n\n按条目中的安装方式导入包。这里直接自托管官方 `lib/wired-elements-esm.js`，其中已包含组件和 Lit 运行时，不依赖 CDN。通过 HTTP/HTTPS 服务目录，保留其相对文件路径和许可；Agent 构建提供完整文件路径与角色。\n\n`index.html?demo=checklist`、`?demo=preferences`、`?demo=card` 定位三种场景。`demo/demo.js` 按需加载 `vendor/wired-elements@2.1.2/wired-elements-2.1.2.js`；许可原文见[许可索引](../../demos/materials/wired-elements/LICENSES.md)。`theme=light`／`theme=dark` 指定说明面板主题，同源嵌入继承 Atlas 主题。\n\n说明面板继承 Atlas 主题，手绘舞台固定浅纸面。所有文本至少 12px，不缩小整个 Demo。标签支持方向键；组件内部复选框提供原生键盘操作，滑块和开关补齐内部名称。无自动动画或声音；减少动态仍可改变参数。模块无法加载时显示明确的静态说明，`..?fallback=1` 可查看该分支。静态后备显示结构说明，模块加载后显示手绘组件。\n"
+      "content": "# Wired Elements：有手绘语言的可操作组件\n\n[来源、版本、许可与使用边界](../../entries/materials/wired-elements.json)\n\n[本地工作台](../../demos/materials/wired-elements/index.html) · [结构化资料](../../entries/materials/wired-elements.json) · [作者完整示例](https://wiredjs.com/showcase)\n\n## 三种可借用组合\n\n| 场景 | 组件与参数依据 | 本地职责 |\n| --- | --- | --- |\n| 任务清单 | [checkbox 的 checked / change](https://github.com/rough-stuff/wired-elements/blob/04756df72181e08b4255f8b6dfefea130398e24b/packages/wired-checkbox/README.md)、[progress 的 value / max](https://github.com/rough-stuff/wired-elements/blob/04756df72181e08b4255f8b6dfefea130398e24b/packages/wired-progress/README.md) | 三项任务和 1/3 默认进度为本地示例；勾选实时同步并可重置 |\n| 偏好面板 | [toggle 的 checked](https://github.com/rough-stuff/wired-elements/blob/04756df72181e08b4255f8b6dfefea130398e24b/packages/wired-toggle/README.md) | 将模式和摘要选项应用到当前预览，不保存设置 |\n| 概念卡片 | [card 的 elevation 1–5 / fill](https://github.com/rough-stuff/wired-elements/blob/04756df72181e08b4255f8b6dfefea130398e24b/packages/wired-card/README.md)、[slider 的 value / min / max](https://github.com/rough-stuff/wired-elements/blob/04756df72181e08b4255f8b6dfefea130398e24b/packages/wired-slider/README.md) | 默认层级 3、纸面与填色为本地选择，变化时重绘边界 |\n\n三者都使用真实库组件；场景布局、文案、主题与状态联动是 Web Atlas 原创组合。\n\n## 接入与适配\n\n按条目中的安装方式导入包。这里直接自托管官方 `lib/wired-elements-esm.js`，其中已包含组件和 Lit 运行时，不依赖 CDN。通过 HTTP/HTTPS 提供目录访问，保留其相对文件路径和许可；Agent 构建提供完整文件路径与角色。\n\n`index.html?demo=checklist`、`?demo=preferences`、`?demo=card` 定位三种场景。`demo/demo.js` 按需加载 `vendor/wired-elements@2.1.2/wired-elements-2.1.2.js`；许可原文见[许可索引](../../demos/materials/wired-elements/LICENSES.md)。`theme=light`／`theme=dark` 指定说明面板主题，同源嵌入继承 Atlas 主题。\n\n手绘舞台固定浅纸面。所有文本至少 12px，不缩小整个 Demo。标签支持方向键；组件内部复选框提供原生键盘操作，滑块和开关补齐内部名称。无自动动画或声音；开启减少动态后仍可改变参数。模块无法加载时，静态后备显示结构说明，`..?fallback=1` 可查看该分支。模块加载后显示手绘组件。\n"
     },
     {
       "path": "prompts/materials/wired-elements.md",
       "role": "prompt",
-      "content": "# Wired Elements · 可操作的手绘草稿 · 复用 Prompt\n\n[结构化条目](../../entries/materials/wired-elements.json)\n\n使用固定版本 wired-elements 2.1.2，在现有 HTML/CSS/JavaScript 项目里为可讨论的轻量流程选择任务清单、偏好面板或概念卡片。读取本地演示，把真实 wired-checkbox、wired-progress、wired-toggle、wired-card 和 wired-slider 接到当前页面的明确状态。使用原库 SVG 手绘边界，保持 DOM 文本、标签、键盘操作和至少 12px 的实际文字。卡片 elevation 遵循 1–5；配色与内容按任务选择。自托管官方 ESM，保留 MIT 与 BSD 许可；加载失败时显示明确静态说明，不声称组件仍已运行。无需求时不加入循环动画、声音、持久化或额外框架。\n\n## 制作约束\n\n- 锁定最新非预发布版本 2.1.2；核验时 npm latest 指向 3.0.0-rc.6，不据此宣称 3.x 已验证。\n- 需要 JavaScript、Custom Elements 和 Shadow DOM；自托管官方完整 ESM，运行无 CDN。\n- 随机手绘线条来自原库；页面场景、文案、配色与联动为本地原创组合。\n- 标签、复选框、滑块和开关保留键盘路径；内部开关和滑块补充可访问名称。\n- 无循环动画与声音；静态后备只解释用法，不代表组件运行。\n- 保留 Wired / RoughJS MIT 与 bundle 内 Lit / lit-html BSD 3-Clause 许可。\n"
+      "content": "# Wired Elements · 可操作的手绘草稿 · 复用 Prompt\n\n[结构化条目](../../entries/materials/wired-elements.json)\n\n使用固定版本 wired-elements 2.1.2，在现有 HTML/CSS/JavaScript 项目里为可讨论的轻量流程选择任务清单、偏好面板或概念卡片。读取本地演示，把真实 wired-checkbox、wired-progress、wired-toggle、wired-card 和 wired-slider 接到当前页面的明确状态。使用原库 SVG 手绘边界，保持 DOM 文本、标签、键盘操作和至少 12px 的实际文字。卡片 elevation 遵循 1–5；配色与内容按任务选择。自托管官方 ESM，保留 MIT 与 BSD 许可；加载失败时显示明确静态说明，不声称组件仍已运行。无需求时不加入循环动画、声音、持久化或额外框架。\n\n## 制作约束\n\n- 锁定最新非预发布版本 2.1.2；核验时 npm latest 指向 3.0.0-rc.6，不据此宣称 3.x 已验证。\n- 需要 JavaScript、Custom Elements 和 Shadow DOM；自托管官方完整 ESM，运行时不依赖 CDN。\n- 随机手绘线条来自原库；页面场景、文案、配色与联动为本地原创组合。\n- 标签、复选框、滑块和开关可通过键盘操作；为内部开关和滑块补充可访问名称。\n- 无循环动画与声音；静态后备只解释用法，不代表组件运行。\n- 保留 Wired / RoughJS MIT 与 bundle 内 Lit / lit-html BSD 3-Clause 许可。\n"
     },
     {
       "path": "demos/materials/wired-elements/LICENSES.md",
