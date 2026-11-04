@@ -195,7 +195,7 @@ Web Atlas 与 Motion Atlas 是姊妹站，内容互不交叉，界面骨架保�
 
 主负责人独立重走定义性机制，并核对全部模块的到达性与主要布局。
 
-Prompt 写明结构、尺度、素材、关键状态及交接、音乐和主题行为、响应式与减少动态处理。`prefers-reduced-motion` 保留内容、操作和状态；声音由用户启用，停止／静音控制可用。
+Prompt 写明结构、尺度、素材、关键状态及交接、音乐和主题行为与响应式。声音由用户启用，停止／静音控制可用。
 
 ## 条目字段
 
@@ -287,7 +287,7 @@ npm run check
 
 ### 素材
 
-锁定上游版本和许可。可运行素材从 `scripts/templates/material-demo/` 创建 `demos/materials/<id>/`；文字素材在该目录保存上游快照。写入 `entries/materials/<id>.json`、`docs/materials/<id>.md` 和 `previews/materials/`；按第三方资源规则保存文件，文字素材遵循固定提交快照规则。在相同桌面和手机宽度对照素材库与详情。实际操作样例参数、输入、减少动态和后备；文字素材打开 `snapshotEntry` 与关联条目。运行构建与检查（见“[构建与检查](#构建与检查)”）。
+锁定上游版本和许可。可运行素材从 `scripts/templates/material-demo/` 创建 `demos/materials/<id>/`；文字素材在该目录保存上游快照。写入 `entries/materials/<id>.json`、`docs/materials/<id>.md` 和 `previews/materials/`；按第三方资源规则保存文件，文字素材遵循固定提交快照规则。在相同桌面和手机宽度对照素材库与详情。实际操作样例参数、输入和后备；文字素材打开 `snapshotEntry` 与关联条目。运行构建与检查（见“[构建与检查](#构建与检查)”）。
 
 ## 验收与交付
 
