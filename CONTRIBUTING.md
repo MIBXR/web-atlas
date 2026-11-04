@@ -261,7 +261,7 @@ Prompt 写明结构、尺度、素材、关键状态及交接、音乐和主题�
 
 可运行素材使用 `demo`、`demoNote` 和非空 `demos`；每个样例包含 `id`、`title`、`summary`、`entrypoint`，可有 `component` 与 `{name,value,note}` 参数数组。字体、图像、声音提供试排、构图或播放样例。
 
-原文快照使用 `snapshotPath: demos/materials/<id>/` 与 `snapshotEntry`；`snapshotEntry` 指向主文档，Agent Skill 为 `SKILL.md`。Agent Skill 的 `workflow` 是非空中文步骤数组，`relatedEntries` 是 `{kind: case|material|pattern,id,note}` 数组且关联 id 存在。可选 `gallery` 是 `{path,caption,kind,replicated:false,sourceUrl,license,replicaPage}` 数组，`kind` 为 `work`、`style` 或 `theme`；作者效果图显示“作者产出效果，未复刻”，有本库复刻页时用 `replicaPage` 指向该页，显示“作者产出效果”和入口链接。文字详情提供工作流、关联条目、原文主文档与 README；完整快照按目录递归纳入资料包，文件按第三方资源规则保存。
+原文快照使用 `snapshotPath: demos/materials/<id>/` 与 `snapshotEntry`；`snapshotEntry` 指向主文档，Agent Skill 为 `SKILL.md`。Agent Skill 的 `workflow` 是非空中文步骤数组，`relatedEntries` 是 `{kind: case|material|pattern,id,note}` 数组且关联 id 存在。可选 `gallery` 是 `{path,caption,kind,replicated:false,sourceUrl,license,replicaPage}` 数组，`kind` 为 `work`、`style` 或 `theme`；图片比例不一致时用 `galleryRatio`（如 `16/9`）统一展示框，图片按比例裁切，点开查看原图；作者效果图显示“作者产出效果，未复刻”，有本库复刻页时用 `replicaPage` 指向该页，显示“作者产出效果”和入口链接。文字详情提供工作流、关联条目、原文主文档与 README；完整快照按目录递归纳入资料包，文件按第三方资源规则保存。
 
 
 ## 新增流程

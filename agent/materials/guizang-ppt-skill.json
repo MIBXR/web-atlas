@@ -197,7 +197,8 @@
         "license": "AGPL-3.0 仓库附图",
         "sourceUrl": "https://raw.githubusercontent.com/op7418/guizang-ppt-skill/93d21bf4a73a851907a6eb00acbf30618236667a/assets/ppt-skill-showcase.png"
       }
-    ]
+    ],
+    "galleryRatio": "16/9"
   },
   "documents": [
     {

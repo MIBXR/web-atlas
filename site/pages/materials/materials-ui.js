@@ -55,7 +55,7 @@
     const collections = {case:window.ATLAS_CASES, material:materials, pattern:window.ATLAS_PATTERNS};
     const prefixes = {case:'cases.html#style/', material:'materials.html#material/', pattern:'patterns.html#pattern/'};
     const galleryKinds = {style:'风格样张', work:'作品节选', theme:'主题预览'};
-    const gallery = material.gallery?.length ? `<section><h2>效果图画廊</h2><div class="cards material-gallery">${material.gallery.map(picture => {
+    const gallery = material.gallery?.length ? `<section><h2>效果图画廊</h2><div class="cards material-gallery"${material.galleryRatio ? ` style="--gallery-ratio:${esc(material.galleryRatio)}"` : ''}>${material.gallery.map(picture => {
       const sourceUrl = picture.sourceUrl || picture.url;
       const license = typeof picture.license === 'string' ? picture.license : picture.license?.notes || picture.license?.name;
       return `<figure class="material-preview"><a class="card-preview" href="${esc(picture.path)}" target="_blank" rel="noopener" aria-label="查看原图：${esc(picture.caption)}"><img src="${esc(picture.path)}" alt="${esc(picture.caption)}" loading="lazy"></a><figcaption class="card-body"><span class="tag">${galleryKinds[picture.kind]}</span><p class="card-summary">${esc(picture.caption)}</p><p class="material-credit">${picture.replicaPage ? `作者产出效果 · <a href="${esc(picture.replicaPage)}">打开本库页面</a>` : '作者产出效果，未复刻'}</p>${sourceUrl ? `<a class="material-credit" href="${esc(sourceUrl)}" target="_blank" rel="noopener">原图来源</a>` : ''}${license ? `<p class="material-credit">${esc(license)}</p>` : ''}</figcaption></figure>`;
