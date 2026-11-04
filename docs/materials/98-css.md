@@ -11,7 +11,7 @@
 | 用法 | 原库构成 | 本地组合与可操作状态 |
 | --- | --- | --- |
 | 设置窗口 | window / title-bar / status-bar、原生表单 | 外观和选项两页；应用配色、说明与留白；恢复默认 |
-| 素材目录 | sunken-panel、table、highlighted | 名称筛选、选中摘要、无结果分支；示例名称不是实际库存 |
+| 素材目录 | sunken-panel、table、highlighted | 名称筛选、选中摘要、无结果分支 |
 | 传输进度 | progress-indicator、segmented | 实心和分段切换、开始、暂停、10% 步进、重置与完成 |
 
 官方浏览器观察确认标准复选框可选中。源码显示默认控件为 11px；本地适配 CSS 将控件提高到 14px、辅助文字至少 12px，按钮至少 36px 高，并扩大标签点击区域。

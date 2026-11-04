@@ -26,8 +26,7 @@
     "多人同时协作编辑演示文稿"
   ],
   "constraints": [
-    "上游 README 的演讲者视图图与赞助图未收录，两个附件地址访问返回 Not Found。",
-    "配图流程依赖 GPT-Image 2.0 / GPT-M 2.0 的宿主能力，本条目不提供在线生成。",
+    "配图流程依赖 GPT-Image 2.0 / GPT-M 2.0 的宿主能力。",
     "两套风格使用各自的模板、主题与版式类；同一份 deck 采用一套风格。"
   ],
   "upstream": {
@@ -62,6 +61,12 @@
       "url": "https://github.com/op7418/guizang-ppt-skill/blob/93d21bf4a73a851907a6eb00acbf30618236667a/references/presenter-mode.md",
       "note": "稳定页面 ID、必填备注、计划时长与双窗口同步。",
       "evidence": "source"
+    },
+    {
+      "title": "效果图",
+      "url": "https://github.com/op7418/guizang-ppt-skill/tree/93d21bf4a73a851907a6eb00acbf30618236667a",
+      "note": "画廊图片托管于上游 README 引用的 GitHub 附件及仓库 assets/ppt-skill-showcase.png。",
+      "evidence": "source"
     }
   ],
   "snapshotPath": "demos/materials/guizang-ppt-skill/",
@@ -93,16 +98,11 @@
     "demos/materials/guizang-ppt-skill/scripts/validate-swiss-deck.mjs"
   ],
   "prompt": "阅读 guizang-ppt-skill 原文，按七问确定受众、时长、内容、图片、主题与约束。选择一套风格，复制对应模板，先规划明暗节奏，再从对应版式库填入页面。每页保留稳定 data-slide-id，按 presenter-mode.md 生成目的、讲述要点、转场和用户提供的计划时长。配图按宿主能力与用户要求生成，比例与槽位对应。按 checklist.md 和两个校验器检查，在浏览器逐页预览并排练演讲者与观众屏同步。",
-  "accessibility": {
-    "keyboard": "模板支持方向键、Home／End、底部页码圆点、ESC 总览与演讲者模式快捷键；原文通过真实链接打开。",
-    "reducedMotion": "模板读取 prefers-reduced-motion，并提供 B 静态模式；保留手动翻页与页面内容。"
-  },
   "gallery": [
     {
       "path": "previews/materials/guizang-ppt-skill/style-a-editorial.png",
       "caption": "Style A 四页拼图，静态图",
       "kind": "style",
-      "replicated": false,
       "license": "AGPL-3.0 仓库附图",
       "sourceUrl": "https://github.com/user-attachments/assets/5dc316a2-401c-4e37-9123-ea081b6ae470"
     },
@@ -110,7 +110,6 @@
       "path": "previews/materials/guizang-ppt-skill/style-b-swiss.png",
       "caption": "Style B 六页拼图，静态图",
       "kind": "style",
-      "replicated": false,
       "license": "AGPL-3.0 仓库附图",
       "sourceUrl": "https://github.com/user-attachments/assets/8960e78c-69bb-4b7e-aa95-6fad64b70314"
     },
@@ -118,7 +117,6 @@
       "path": "previews/materials/guizang-ppt-skill/theme-a-1.png",
       "caption": "墨水经典，静态图",
       "kind": "theme",
-      "replicated": false,
       "license": "AGPL-3.0 仓库附图",
       "sourceUrl": "https://github.com/user-attachments/assets/df21dbcb-5fe4-4852-a91a-a9cf00aceeb4"
     },
@@ -126,7 +124,6 @@
       "path": "previews/materials/guizang-ppt-skill/theme-a-2.png",
       "caption": "靛蓝瓷，静态图",
       "kind": "theme",
-      "replicated": false,
       "license": "AGPL-3.0 仓库附图",
       "sourceUrl": "https://github.com/user-attachments/assets/99ce0fd2-72a6-4368-a75a-a8e21657a537"
     },
@@ -134,7 +131,6 @@
       "path": "previews/materials/guizang-ppt-skill/theme-a-3.png",
       "caption": "森林墨，静态图",
       "kind": "theme",
-      "replicated": false,
       "license": "AGPL-3.0 仓库附图",
       "sourceUrl": "https://github.com/user-attachments/assets/bcc1cc4c-5e8e-4467-ae8d-f5801ae73657"
     },
@@ -142,7 +138,6 @@
       "path": "previews/materials/guizang-ppt-skill/theme-a-4.png",
       "caption": "牛皮纸，静态图",
       "kind": "theme",
-      "replicated": false,
       "license": "AGPL-3.0 仓库附图",
       "sourceUrl": "https://github.com/user-attachments/assets/dfea080e-e916-417e-93cd-0a3628de84ca"
     },
@@ -150,7 +145,6 @@
       "path": "previews/materials/guizang-ppt-skill/theme-a-5.png",
       "caption": "沙丘，静态图",
       "kind": "theme",
-      "replicated": false,
       "license": "AGPL-3.0 仓库附图",
       "sourceUrl": "https://github.com/user-attachments/assets/f3705592-9a72-4dbc-9818-df3aea61bc75"
     },
@@ -158,7 +152,6 @@
       "path": "previews/materials/guizang-ppt-skill/theme-b-1.png",
       "caption": "克莱因蓝 IKB，静态图",
       "kind": "theme",
-      "replicated": false,
       "license": "AGPL-3.0 仓库附图",
       "sourceUrl": "https://github.com/user-attachments/assets/c02d02f7-ce6f-4e16-b8a6-778c96851f94"
     },
@@ -166,7 +159,6 @@
       "path": "previews/materials/guizang-ppt-skill/theme-b-2.png",
       "caption": "柠檬黄，静态图",
       "kind": "theme",
-      "replicated": false,
       "license": "AGPL-3.0 仓库附图",
       "sourceUrl": "https://github.com/user-attachments/assets/c310a8c4-5d28-450e-b49a-6ac5b6ba4785"
     },
@@ -174,7 +166,6 @@
       "path": "previews/materials/guizang-ppt-skill/theme-b-3.png",
       "caption": "柠檬绿，静态图",
       "kind": "theme",
-      "replicated": false,
       "license": "AGPL-3.0 仓库附图",
       "sourceUrl": "https://github.com/user-attachments/assets/65f7b3f9-3358-419e-b513-f7f2cc24ec76"
     },
@@ -182,7 +173,6 @@
       "path": "previews/materials/guizang-ppt-skill/theme-b-4.png",
       "caption": "安全橙，静态图",
       "kind": "theme",
-      "replicated": false,
       "license": "AGPL-3.0 仓库附图",
       "sourceUrl": "https://github.com/user-attachments/assets/9c3319c9-a134-4657-9a56-211c23411f7f"
     },
@@ -190,7 +180,6 @@
       "path": "previews/materials/guizang-ppt-skill/showcase.png",
       "caption": "卡片与海报作品拼贴，静态图",
       "kind": "work",
-      "replicated": false,
       "license": "AGPL-3.0 仓库附图",
       "sourceUrl": "https://raw.githubusercontent.com/op7418/guizang-ppt-skill/93d21bf4a73a851907a6eb00acbf30618236667a/assets/ppt-skill-showcase.png"
     }

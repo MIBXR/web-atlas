@@ -60,7 +60,7 @@ node scripts/atlas.mjs material-export web-design-engineer --out ../design-skill
 
 内容素材用于组件、图像、声音、字体、视觉资源及 Agent Skill 的选择。读取固定提交的 `agent/materials/index.json`，再按 `paths.bundle` 取得完整包。摘要提供类型、分类、标签、用途、避用项与约束；素材独立于案例，包中 `material` 保留来源版本、许可、使用方法和 Prompt，`documents` 保留原文，`files` 列出完整资源与依赖。`sourceFiles` 只指向该包清单中的主要取材源码或技能原文入口。
 
-本地命令和配套 skill 使用 `material-search`（查询／分类／类型）、`material-show`（完整资料，可加 `--source`）与 `material-export`（新目录，可加 `--code-only`）。素材目录、包与文件沿用同一固定会话 SHA。先核对 `upstream`、`license`、`constraints` 和可访问性。普通素材通过 `demos` 调节实际参数；静态后备展示构成，运行状态显示实际能力是否就绪。`agent-skill` 通过 `snapshotPath` 与 `snapshotEntry`、`workflow` 和 `relatedEntries` 阅读工作流、原文快照与关联结果，可选 `gallery` 标记为作者产出效果、未复刻。素材软件与上游官网内容各自的许可见 [素材库](materials/README.md)。
+本地命令和配套 skill 使用 `material-search`（查询／分类／类型）、`material-show`（完整资料，可加 `--source`）与 `material-export`（新目录，可加 `--code-only`）。素材目录、包与文件沿用同一固定会话 SHA。先核对 `upstream`、`license` 和 `constraints`。普通素材通过 `demos` 调节实际参数；静态后备展示构成，运行状态显示实际能力是否就绪。`agent-skill` 通过 `snapshotPath` 与 `snapshotEntry`、`workflow` 和 `relatedEntries` 阅读工作流、原文快照与关联结果，可选 `gallery` 展示效果图。素材软件与上游官网内容各自的许可见 [素材库](materials/README.md)。
 
 ## 从案例适配真实任务
 

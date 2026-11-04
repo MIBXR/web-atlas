@@ -62,7 +62,6 @@ export function loadMaterials({ root = defaultRoot } = {}) {
     for (const key of ['repository', 'version', 'commit']) if (material.upstream[key] !== undefined) text(material.upstream[key], `${material.id}.upstream.${key}`);
     if (!/^https?:\/\//.test(material.upstream.url) || !/^\d{4}-\d{2}-\d{2}$/.test(material.upstream.verifiedAt) || material.upstream.commit !== undefined && !/^[a-f0-9]{40}$/.test(material.upstream.commit)) throw new Error(`Invalid material snapshot: ${material.id}`);
     for (const key of ['name', 'url', 'scope', 'notes']) text(material.license?.[key], `${material.id}.license.${key}`);
-    for (const key of ['keyboard', 'reducedMotion']) text(material.accessibility?.[key], `${material.id}.accessibility.${key}`);
     if (!Array.isArray(material.sources) || !material.sources.length) throw new Error(`Missing material provenance: ${material.id}`);
     for (const source of material.sources) {
       for (const key of ['title', 'url', 'note']) text(source[key], `${material.id}.sources.${key}`);
@@ -90,7 +89,6 @@ export function loadMaterials({ root = defaultRoot } = {}) {
         for (const picture of material.gallery) {
           if (!['work', 'style', 'theme'].includes(picture.kind)) throw new Error(`Invalid skill gallery kind: ${material.id}`);
           text(picture.caption, `${material.id}.gallery.caption`);
-          if (picture.replicated !== false) throw new Error(`Skill gallery must declare replicated: false: ${material.id}`);
           readFile(root, picture.path);
           if (picture.replicaPage !== undefined) readFile(root, picture.replicaPage.split('?')[0]);
         }

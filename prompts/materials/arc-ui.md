@@ -8,6 +8,5 @@
 
 - 固定归档 df3a600 的 144 个 registry 条目：120 个 registry:ui、22 个 registry:block 和 2 个共享基础条目。
 - 上游要求 React 19、TypeScript 与 Next.js 或 Vite；本地使用固定依赖锁，六类预览按需加载。
-- source/upstream/ 的 registry、lib、types、public/r 与根使用说明保留原始结构和字节，未引入上游的维护检查脚本。
-- 样例数据、状态与操作仅作用于当前页面，不接入账户、支付或持久化服务。
+- source/upstream/ 的 registry、lib、types、public/r 与根使用说明保留原始结构和字节。
 - 预览覆盖固定快照全部 120 个组件与 22 个区块；每项代码区展示该 registry 条目的全部源文件。
