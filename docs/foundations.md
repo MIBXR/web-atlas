@@ -7,11 +7,9 @@
 | 实际阅读的来源 | 可支持的观点 | 来源范围 |
 |---|---|---|
 | [IBM Design Language — Layout overview](https://www.ibm.com/design/language/layout/overview/) | 布局使沟通元素共同工作；构成涉及层级、尺度、比例、对比、和谐、节奏、重复；内容目标影响组织。 | “Essential / Dynamic / Engineered”属于 IBM 品牌表达。 |
-| [IBM Design Language — Color](https://www.ibm.com/design/language/color/) | 为颜色规定角色并保持跨界面一致；可读性和不只靠颜色传达状态很重要。 | 核心蓝色、特定色系和组合规则属于 IBM 自身系统。 |
+| [IBM Design Language — Color](https://www.ibm.com/design/language/color/) | 为颜色规定角色并保持跨界面一致。 | 核心蓝色、特定色系和组合规则属于 IBM 自身系统。 |
 | [Carbon — Spacing](https://www.carbondesignsystem.com/building-blocks/foundations/spacing/overview) | 距离会形成分组和层级；有节奏的间距尺度可帮助保持一致。 | 具体 Token 数值属于 Carbon 的实现。 |
 | [NN/g — 5 Principles of Visual Design in UX](https://www.nngroup.com/articles/principles-visual-design/) | 尺度、视觉层级、平衡、对比和Gestalt帮助解释元素关系；邻近使相关信息更易被看作一组。 | 文章面向初学者介绍视觉设计原则。 |
-| [W3C — Contrast Minimum](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html) | 普通文本通常至少4.5:1，大号文本至少3:1；需结合字重、用途和例外理解。 | 该准则规定文本对比度，适用条件包含字号、字重、用途和例外。 |
-| [W3C — Animation from Interactions](https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions.html) | 非必要交互动效应可停用；尊重用户减少动态的偏好。该成功准则为Level AAA。 | 该准则讨论交互触发的非必要动画。 |
 
 NN/g文章作者为Kelley Gordon，本次读取显示原始发布日期2020-03-01、最近审阅2026-09-01。Carbon Spacing显示更新日期2026-09-30；IBM Layout显示2026-10-01。来源按上述日期记录。
 
