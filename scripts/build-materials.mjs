@@ -61,7 +61,8 @@ export function loadMaterials({ root = defaultRoot } = {}) {
     for (const key of ['url', 'verifiedAt']) text(material.upstream?.[key], `${material.id}.upstream.${key}`);
     for (const key of ['repository', 'version', 'commit']) if (material.upstream[key] !== undefined) text(material.upstream[key], `${material.id}.upstream.${key}`);
     if (!/^https?:\/\//.test(material.upstream.url) || !/^\d{4}-\d{2}-\d{2}$/.test(material.upstream.verifiedAt) || material.upstream.commit !== undefined && !/^[a-f0-9]{40}$/.test(material.upstream.commit)) throw new Error(`Invalid material snapshot: ${material.id}`);
-    for (const key of ['name', 'url', 'scope', 'notes']) text(material.license?.[key], `${material.id}.license.${key}`);
+    for (const key of ['name', 'scope']) text(material.license?.[key], `${material.id}.license.${key}`);
+    for (const key of ['url', 'notes']) if (material.license[key] !== undefined) text(material.license[key], `${material.id}.license.${key}`);
     if (!Array.isArray(material.sources) || !material.sources.length) throw new Error(`Missing material provenance: ${material.id}`);
     for (const source of material.sources) {
       for (const key of ['title', 'url', 'note']) text(source[key], `${material.id}.sources.${key}`);
@@ -89,6 +90,9 @@ export function loadMaterials({ root = defaultRoot } = {}) {
     if (material.gallery !== undefined) {
       if (!Array.isArray(material.gallery)) throw new Error(`Expected material gallery: ${material.id}`);
       for (const picture of material.gallery) {
+        if (!material.galleryRatio) for (const key of ['width', 'height']) {
+          if (!Number.isInteger(picture[key]) || picture[key] <= 0) throw new Error(`Missing material image dimension: ${material.id}/${picture.path}/${key}`);
+        }
         if (!['work', 'style', 'theme'].includes(picture.kind)) throw new Error(`Invalid material gallery kind: ${material.id}`);
         text(picture.caption, `${material.id}.gallery.caption`);
         readFile(root, picture.path);

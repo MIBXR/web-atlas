@@ -6,6 +6,8 @@
 
 内容更新后运行 `npm run build`，再运行 `npm run check`。
 
+新增测试代码、自动检查脚本或额外哈希机制，须先获仓库所有者明确授权。
+
 `prompts/`、`agent/`、`data/`、`docs/cases/README.md` 和 README 计数块由构建生成，不手改；预览和原文素材按 CONTRIBUTING 管理。
 
 修改站点页面、组件或交互前，阅读 [站点设计与交互约束](CONTRIBUTING.md#站点设计与交互约束)，查看现有页面与 `site/shared/` 的实际样式；按 [验收与交付](CONTRIBUTING.md#验收与交付) 对照原作、既有页面和干净副本。
