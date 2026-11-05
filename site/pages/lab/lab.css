@@ -24,7 +24,7 @@ body{font-family:var(--atlas-font-sans)}
 .scheme-btn{border-radius:var(--r);border-color:var(--atlas-surface-line);background:var(--atlas-surface);min-height:57px}
 .scheme-btn[aria-pressed=true]{background:var(--accent-4);border-color:var(--accent-1);box-shadow:none}
 .plain-btn{min-height:44px;border:1px solid var(--atlas-surface-line);border-radius:var(--r);background:var(--atlas-surface);color:var(--atlas-ink)}
-.plain-btn:hover{background:var(--accent-4);border-color:var(--accent-1);color:var(--accent-1)}
+.plain-btn:hover,.scheme-btn:not([aria-pressed=true]):hover{background:var(--accent-4);border-color:var(--accent-1);color:var(--accent-1)}
 .element-controls{background:var(--atlas-surface);border-color:var(--atlas-surface-line)}
 :root[data-atlas-theme=dark] .lab-controls,:root[data-atlas-theme=dark] .observation,:root[data-atlas-theme=dark] .configuration-tools{background:transparent}
 .element-controls select,.single-control select{min-height:44px;border-radius:var(--r);border-color:var(--atlas-surface-line);background-color:var(--atlas-surface);color:var(--atlas-ink)}

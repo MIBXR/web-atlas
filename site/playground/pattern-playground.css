@@ -12,6 +12,7 @@
 .pg-controls{display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;margin:16px 0 0}
 .pg-controls label{display:flex;align-items:center;gap:8px;font-size:12px;flex-wrap:wrap;min-width:0}
 .pg-controls select,.pg-controls button,.pg-stage button{box-sizing:border-box;min-height:44px;padding:9px 14px;border:1px solid var(--line,var(--atlas-shell-line,#b8bdae));border-radius:7px;background:var(--card,var(--atlas-shell-field,#fff));color:inherit;font:inherit;font-size:13px;cursor:pointer}
+.pg-controls :is(button,select):hover:not(:disabled){background:var(--accent-4,#eef6d2);border-color:var(--accent-1,#4b6118);color:var(--accent-1,#4b6118)}
 .pg-controls input[type=range]{max-width:140px;accent-color:var(--pg-accent)}
 .pg-controls span{font-size:12px;color:var(--muted,var(--atlas-shell-muted,#606757))}
 .pg-status,.pg-caption{font-size:12px!important;line-height:1.7!important;margin:12px 0 0!important;color:var(--muted,var(--atlas-shell-muted,#606757))}

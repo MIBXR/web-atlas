@@ -8,6 +8,7 @@
   --atlas-page:#f4f5ee;
   --atlas-surface:#ffffff;
   --atlas-surface-2:#f4f5ee;
+  --atlas-nav-hover:#e6e9d7;
   --atlas-line:#dcded4;
   --atlas-surface-line:#dfe1d7;
   --atlas-brand-mark:#657d2b;
@@ -39,6 +40,7 @@
   --atlas-page:#121313;
   --atlas-surface:#1c201b;
   --atlas-surface-2:#252b23;
+  --atlas-nav-hover:#252b23;
   --atlas-line:#2c2f2b;
   --atlas-surface-line:#343b31;
   --atlas-brand-mark:#d4ef76;
@@ -154,7 +156,7 @@ html{scrollbar-gutter:stable;scroll-padding-top:calc(var(--atlas-header-height) 
   touch-action:manipulation;
   transition:background-color 150ms ease,border-color 150ms ease;
 }
-.atlas-site-header .atlas-site-nav>a:hover{background:var(--atlas-surface-2);color:var(--atlas-ink)}
+.atlas-site-header .atlas-site-nav>a:hover{background:var(--atlas-nav-hover);color:var(--atlas-ink)}
 .atlas-site-header .atlas-site-nav>a[aria-current=page]{background:var(--accent-3);color:var(--accent-3-ink);font-weight:600}
 .atlas-site-header .atlas-site-theme{
   display:flex;
@@ -281,6 +283,7 @@ a.atlas-ui-button,button.atlas-ui-button{
   touch-action:manipulation;
 }
 a.atlas-ui-button:hover,button.atlas-ui-button:hover{border-color:var(--accent-1);background:var(--accent-4);color:var(--accent-1)}
+html body :is(.sort-dir,.text-button,.dialog-close):hover:not(:disabled),body.cases-page .case-layout main .sort-dir:hover:not(:disabled){background:var(--accent-4);border-color:var(--accent-1);color:var(--accent-1)}
 .atlas-back-to-top{position:fixed;right:calc(16px + env(safe-area-inset-right));bottom:calc(16px + env(safe-area-inset-bottom));z-index:65;box-shadow:0 4px 16px color-mix(in srgb,var(--atlas-shadow-ink) 13%,transparent)}
 body button.atlas-ui-button.atlas-back-to-top{min-height:44px}
 .atlas-back-to-top[hidden]{display:none!important}

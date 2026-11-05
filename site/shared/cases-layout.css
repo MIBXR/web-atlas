@@ -155,7 +155,7 @@ body.atlas-detail .detail-more-menu>a.copy-button{justify-content:flex-start;bor
 body.atlas-detail .detail-more-menu>a.copy-button:hover{background:var(--accent-4);color:var(--accent-1);border-color:var(--accent-1)}
 body.atlas-detail .detail-layout .primary-button{background:var(--atlas-surface);color:var(--atlas-ink);border-color:var(--atlas-surface-line)}
 body.atlas-detail .detail-layout .primary-button:focus-visible{outline-color:var(--accent-1)}
-body.atlas-detail :is(.detail-top,.detail-layout) :is(.copy-button,.demo-view-controls>button,.demo-play-controls>button):hover:not(:disabled){background:var(--accent-4);border-color:var(--accent-1);color:var(--accent-1)}
+body.atlas-detail :is(.detail-top,.detail-layout) :is(.copy-button,.primary-button,.demo-view-controls>button,.demo-play-controls>button):hover:not(:disabled){background:var(--accent-4);border-color:var(--accent-1);color:var(--accent-1)}
 body.atlas-detail .demo-toolbar .demo-view-controls [data-viewport].active:hover{background:var(--atlas-ink);color:var(--atlas-surface);border-color:transparent}
 body.atlas-detail :is(.detail-top,.detail-layout) :is(.copy-button,.demo-view-controls>button,.demo-play-controls>button):focus-visible{outline-color:var(--accent-1)}
 body.atlas-detail .detail-notes{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;min-width:0;padding:0;border:0;border-radius:0;background:transparent;box-shadow:none}
