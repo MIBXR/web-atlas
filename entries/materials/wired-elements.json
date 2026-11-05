@@ -12,9 +12,9 @@
     "demos/materials/wired-elements/demo/demo.css",
     "demos/materials/wired-elements/demo/demo.js"
   ],
-  "summary": "用真实手绘 Web Components 组合任务清单、偏好面板与概念卡片；让草图在保留讨论感的同时具备可验证的状态。",
+  "summary": "用手绘 Web Components 组合任务清单、偏好面板与概念卡片，让草图的勾选、切换和层级都能实际操作。",
   "install": "npm install wired-elements@2.1.2",
-  "demoNote": "三个本地原创场景直接运行官方组件。无自动动画。",
+  "demoNote": "三个场景演示任务勾选、偏好设置和概念卡片。",
   "tags": [
     "Wired Elements",
     "Web Components",
@@ -40,7 +40,6 @@
   "constraints": [
     "锁定最新非预发布版本 2.1.2。",
     "需要 JavaScript、Custom Elements 和 Shadow DOM；自托管官方完整 ESM，运行时不依赖 CDN。",
-    "随机手绘线条来自原库；页面场景、文案、配色与联动为本地原创组合。",
     "标签、复选框、滑块和开关可通过键盘操作；为内部开关和滑块补充可访问名称。",
     "保留 Wired / RoughJS MIT 与 bundle 内 Lit / lit-html BSD 3-Clause 许可。"
   ],
@@ -73,7 +72,7 @@
     {
       "title": "Wired Elements 官方组件演示",
       "url": "https://wiredjs.com/showcase",
-      "note": "浏览器实际操作 wired-checkbox，从未选中到选中；不能据此宣称整套组件均已验证。",
+      "note": "wired-checkbox 的未选中与选中状态。",
       "evidence": "observed"
     },
     {
@@ -112,7 +111,7 @@
       "id": "checklist",
       "title": "任务清单",
       "component": "wired-checkbox / wired-progress / wired-button",
-      "summary": "勾选真实手绘复选框时，任务计数与进度条同步更新；可恢复默认状态。",
+      "summary": "勾选手绘复选框时，任务计数与进度条同步更新；可恢复默认状态。",
       "entrypoint": "demos/materials/wired-elements/index.html?demo=checklist",
       "parameters": [
         {
@@ -131,7 +130,7 @@
       "id": "preferences",
       "title": "偏好面板",
       "component": "wired-toggle / wired-checkbox",
-      "summary": "设置专注模式与摘要，再应用到当前示例；不修改系统或保存偏好。",
+      "summary": "设置专注模式与摘要，再应用到当前预览。",
       "entrypoint": "demos/materials/wired-elements/index.html?demo=preferences",
       "parameters": [
         {
@@ -145,7 +144,7 @@
       "id": "card",
       "title": "概念卡片",
       "component": "wired-card / wired-slider",
-      "summary": "调整真实手绘卡片的层级与填色，比较概念信息的主次。",
+      "summary": "调整手绘卡片的层级与填色，比较概念信息的主次。",
       "entrypoint": "demos/materials/wired-elements/index.html?demo=card",
       "parameters": [
         {

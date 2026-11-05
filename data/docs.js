@@ -1783,7 +1783,6 @@ window.ATLAS_DOCUMENT_SOURCES = [
       "repository": "kuratlielia/arc-library",
       "url": "https://github.com/kuratlielia/arc-library",
       "commit": "df3a600fd9ffca85ec8607438b599a4408ab8562",
-      "version": "提交 df3a600（package.json 为 0.0.0）",
       "verifiedAt": "2026-11-01"
     },
     "sources": [
@@ -1819,7 +1818,6 @@ window.ATLAS_DOCUMENT_SOURCES = [
       "repository": "op7418/guizang-ppt-skill",
       "url": "https://github.com/op7418/guizang-ppt-skill/tree/93d21bf4a73a851907a6eb00acbf30618236667a",
       "commit": "93d21bf4a73a851907a6eb00acbf30618236667a",
-      "version": "93d21bf",
       "verifiedAt": "2026-11-04"
     },
     "sources": [

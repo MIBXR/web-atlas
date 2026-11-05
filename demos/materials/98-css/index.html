@@ -11,9 +11,9 @@
 </head>
 <body>
   <main class="demo-shell">
-    <header class="demo-header"><div><p class="eyebrow">98.CSS / ORIGINAL COMPOSITIONS</p><h1>回到桌面隐喻</h1></div><span class="version">0.1.21 · CSS / MIT</span></header>
+    <header class="demo-header"><div><p class="eyebrow">98.CSS</p><h1>回到桌面隐喻</h1></div><span class="version">0.1.21 · CSS / MIT</span></header>
     <nav class="demo-tabs" aria-label="代表用法"><button data-demo="settings" aria-pressed="true">设置窗口</button><button data-demo="catalog" aria-pressed="false">素材目录</button><button data-demo="progress" aria-pressed="false">传输进度</button></nav>
-    <p id="runtime-status" class="runtime-status" role="status">静态样式预览 · 本地交互正在准备。</p>
+    <p id="runtime-status" class="runtime-status" role="status">正在载入交互。</p>
     <section id="settings" class="example">
       <div class="desktop">
         <div class="window">
@@ -26,14 +26,13 @@
             </div>
             <div class="settings-panel" id="options" role="tabpanel" aria-labelledby="options-tab" hidden>
               <fieldset><legend>显示偏好</legend><div class="field-row"><input id="show-caption" type="checkbox" checked><label for="show-caption">显示桌面说明</label></div><div class="field-row"><input id="compact-spacing" type="checkbox"><label for="compact-spacing">使用紧凑的窗口留白</label></div></fieldset>
-              <p>这里的选项只改变本页示例，不修改系统设置。</p>
             </div>
             <div class="actions"><button id="apply-settings" class="default">应用</button><button id="reset-settings">恢复默认</button></div>
           </div>
           <div class="status-bar"><p id="settings-status" class="status-bar-field" aria-live="polite">经典青绿 · 默认留白</p></div>
         </div>
       </div>
-      <aside><p class="eyebrow">WINDOW + TABS + FORM</p><h2>让设置有明确的边界</h2><p>试用原生下拉框、复选框与两页设置。窗口、边框来自真实 98.css；标签键盘导航与预览联动由本地 JavaScript 提供。</p><p>适合怀旧作品、桌面隐喻工具与交互展品；不用它冒充操作系统或现代完整组件框架。</p><dl><dt>参数依据</dt><dd>官方 <code>window / title-bar / status-bar</code>；本地配色与触控留白。</dd><dt>键盘</dt><dd>Tab 进入标签，左右键切页，空格勾选。</dd></dl></aside>
+      <aside><p class="eyebrow">WINDOW + TABS + FORM</p><h2>让设置有明确的边界</h2><p>试用下拉框、复选框与两页设置，比较配色和选中状态。</p><p>适合怀旧作品、桌面工具与交互展品。</p><dl><dt>参数</dt><dd><code>window / title-bar / status-bar</code>；配色与控件留白。</dd><dt>键盘</dt><dd>Tab 进入标签，左右键切页，空格勾选。</dd></dl></aside>
     </section>
     <section id="catalog" class="example" hidden>
       <div class="desktop">
@@ -51,7 +50,7 @@
           <div class="status-bar"><p id="catalog-count" class="status-bar-field" aria-live="polite">3 项示例</p></div>
         </div>
       </div>
-      <aside><p class="eyebrow">TABLE + SUNKEN PANEL + SELECTION</p><h2>把内容组织成可探索目录</h2><p>凹陷的列表与选中行沿用原库。筛选、选中摘要及键盘按钮是本地实现；这里的三项名称是示例数据。</p><p>适合私人档案、游戏道具和小型作品目录；条目很多时仍需分页与真实数据层。</p><dl><dt>参数依据</dt><dd><code>sunken-panel</code> 容器与 <code>highlighted</code> 行样式来自官方文档。</dd><dt>操作</dt><dd>输入筛选，选择条目，再清空输入恢复目录。</dd></dl></aside>
+      <aside><p class="eyebrow">TABLE + SUNKEN PANEL + SELECTION</p><h2>把内容组织成可探索目录</h2><p>凹陷列表、选中行与摘要共同标明当前位置。</p><p>适合私人档案、游戏道具和小型作品目录。</p><dl><dt>参数</dt><dd><code>sunken-panel</code> 容器与 <code>highlighted</code> 行样式。</dd><dt>操作</dt><dd>输入筛选，选择条目，再清空输入恢复目录。</dd></dl></aside>
     </section>
     <section id="progress" class="example" hidden>
       <div class="desktop">
@@ -59,7 +58,7 @@
           <div class="title-bar"><div class="title-bar-text">打包示例资料</div><span class="window-marker">LOCAL DEMO</span></div>
           <div class="window-body transfer-body">
             <svg class="archive-icon" viewBox="0 0 64 64" aria-hidden="true"><path d="M10 9h35l9 9v39H10z" fill="#fff" stroke="#111" stroke-width="2"/><path d="M45 9v10h9M22 9v48M29 9v48" fill="none" stroke="#111" stroke-width="2"/><path d="M22 16h7m-7 8h7m-7 8h7m-7 8h7" stroke="#004987" stroke-width="5"/></svg>
-            <h2>准备离线参考包</h2><p>演示反馈层级，不执行真实下载或安装。</p>
+            <h2>准备离线参考包</h2>
             <div id="transfer-progress" role="progressbar" aria-label="模拟打包进度" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" class="progress-indicator segmented"><span id="progress-fill" class="progress-indicator-bar" style="width:0%"></span></div>
             <p id="progress-status" aria-live="polite">等待开始 · 0%</p>
             <div class="field-row"><input id="segmented" type="checkbox" checked><label for="segmented">使用分段进度条</label></div>
@@ -68,15 +67,15 @@
           <div class="status-bar"><p class="status-bar-field">后台自动暂停</p><p class="status-bar-field">无需联网</p></div>
         </div>
       </div>
-      <aside><p class="eyebrow">PROGRESS + ACTIONS + STATUS</p><h2>把等待变成可控状态</h2><p>比较实心与分段进度，启动、暂停、重置；也可以手动前进。进度数值来自本地计时器，原库只提供样式。</p><p>减少动态时采用手动步进；切换用法或页面进入后台立即暂停，返回后由用户继续。</p><dl><dt>可调参数</dt><dd>进度 0–100%，每步 10%；自动每 240ms 增加 2%，均为本地演示值。</dd><dt>适配</dt><dd>真实项目应连接真实任务进度，禁止把模拟进度当作完成证明。</dd></dl></aside>
+      <aside><p class="eyebrow">PROGRESS + ACTIONS + STATUS</p><h2>把等待变成可控状态</h2><p>比较实心与分段进度，启动、暂停、重置；也可以手动前进。</p><p>减少动态时采用手动步进；切换用法或页面进入后台立即暂停，返回后由用户继续。</p><dl><dt>可调参数</dt><dd>进度 0–100%，每步 10%；自动每 240ms 增加 2%。</dd><dt>适配</dt><dd>接入项目时，将数值连接到任务进度。</dd></dl></aside>
     </section>
     <details class="integration"><summary>接入、来源与后备</summary><pre><code>npm install 98.css@0.1.21
 &lt;link rel="stylesheet" href="vendor/98.css@0.1.21/98.css"&gt;
 &lt;div class="window"&gt;
   &lt;div class="title-bar"&gt;窗口标题&lt;/div&gt;
   &lt;div class="window-body"&gt;语义化 HTML&lt;/div&gt;
-&lt;/div&gt;</code></pre><p>原库只提供 CSS。此示例把原有 11px 控件提高到至少 12px，并扩大触控区域。无 JavaScript 时保留设置首屏与来源说明；可用 <code>?fallback=1</code> 查看交互关闭的静态后备。</p><p>CSS：Jordan Scales，MIT。随包字体：lou 的 MS Sans Serif / Bold，CC BY-SA 3.0；原始许可随 vendor 保留。</p></details>
-    <footer><span>真实 CSS · 本地原创场景 · 复古舞台保持固定配色</span><a href="https://jdan.github.io/98.css/">官方组件文档</a><a href="https://github.com/jdan/98.css/tree/517d174b30392d39e068ef4eca457da66a189f8f">固定版本源码</a></footer>
+&lt;/div&gt;</code></pre><p>加载 CSS 和脚本后可切换用法；<code>?fallback=1</code> 显示静态样式。</p><p>CSS：Jordan Scales，MIT。随包字体：lou 的 MS Sans Serif / Bold，CC BY-SA 3.0；原始许可随 vendor 保留。</p></details>
+    <footer><a href="https://jdan.github.io/98.css/">官方组件文档</a><a href="https://github.com/jdan/98.css/tree/517d174b30392d39e068ef4eca457da66a189f8f">固定版本源码</a></footer>
   </main>
 </body>
 </html>

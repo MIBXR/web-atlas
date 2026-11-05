@@ -10,14 +10,14 @@
 </head>
 <body>
   <main class="demo-shell">
-    <header><div><p class="eyebrow">WIRED ELEMENTS / ORIGINAL COMPOSITIONS</p><h1>让草稿保持可操作</h1></div><span class="version">2.1.2 · MIT</span></header>
+    <header><div><p class="eyebrow">WIRED ELEMENTS</p><h1>让草稿保持可操作</h1></div><span class="version">2.1.2 · MIT</span></header>
     <div class="tabs" role="tablist" aria-label="代表用法">
       <button id="tab-checklist" role="tab" aria-controls="checklist" aria-selected="true" data-demo="checklist">任务清单</button>
       <button id="tab-preferences" role="tab" aria-controls="preferences" aria-selected="false" tabindex="-1" data-demo="preferences">偏好面板</button>
       <button id="tab-card" role="tab" aria-controls="card" aria-selected="false" tabindex="-1" data-demo="card">概念卡片</button>
     </div>
-    <p id="runtime-status" class="status" role="status">静态后备 · 正在载入本地组件；下方说明可直接阅读。</p>
-    <div id="fallback" class="fallback"><strong>三种组合的静态说明</strong><p>任务清单把复选状态连到进度；偏好面板把开关连到摘要；概念卡片通过层级与填色区分主次。真实手绘控件需要 JavaScript、Custom Elements 和 Shadow DOM。</p><a href="https://wiredjs.com/showcase">查看作者完整组件</a></div>
+    <p id="runtime-status" class="status" role="status">正在载入组件。</p>
+    <div id="fallback" class="fallback"><strong>三种组合的静态说明</strong><p>任务清单把复选状态连到进度；偏好面板把开关连到摘要；概念卡片通过层级与填色区分主次。交互控件需要 JavaScript、Custom Elements 和 Shadow DOM。</p><a href="https://wiredjs.com/showcase">查看作者完整组件</a></div>
     <div id="examples" hidden>
       <section id="checklist" class="example" role="tabpanel" aria-labelledby="tab-checklist">
         <div class="paper">
@@ -33,7 +33,7 @@
             <wired-button id="reset-tasks" elevation="2">重置清单</wired-button>
           </wired-card>
         </div>
-        <aside><p class="label">CHECKBOX + PROGRESS + BUTTON</p><h2>把讨论变成可勾选的下一步</h2><p>点击任务，真实 <code>wired-checkbox</code> 更新手绘进度条。清单内容和联动逻辑是本地原创组合。</p><p>适合工作坊、引导步骤和轻量原型；不用于需要成熟表单校验的复杂业务。</p><dl><dt>可调参数</dt><dd><code>checked</code>；<code>value / max</code></dd><dt>操作</dt><dd>Tab 聚焦，空格勾选，按钮可重置。</dd></dl></aside>
+        <aside><p class="label">CHECKBOX + PROGRESS + BUTTON</p><h2>把讨论变成可勾选的下一步</h2><p>勾选任务，观察手绘进度条随已完成数量更新。</p><p>适合工作坊、引导步骤和轻量原型；不用于需要成熟表单校验的复杂业务。</p><dl><dt>可调参数</dt><dd><code>checked</code>；<code>value / max</code></dd><dt>操作</dt><dd>Tab 聚焦，空格勾选，按钮可重置。</dd></dl></aside>
       </section>
       <section id="preferences" class="example" role="tabpanel" aria-labelledby="tab-preferences" hidden>
         <div class="paper">
@@ -43,10 +43,10 @@
             <wired-checkbox id="digest-check" checked>在面板中显示每日摘要</wired-checkbox>
             <div id="preference-preview" class="note"><strong id="mode-name">专注视图</strong><p id="digest-preview">今日摘要：3 项待办，先完成最重要的一项。</p></div>
             <wired-button id="save-preferences" elevation="2">应用到此示例</wired-button>
-            <p id="preference-status" class="feedback" aria-live="polite">仅改变本页示例，不保存设置。</p>
+            <p id="preference-status" class="feedback" aria-live="polite">调整后应用到预览。</p>
           </wired-card>
         </div>
-        <aside><p class="label">TOGGLE + CHECKBOX + FEEDBACK</p><h2>用草图语言讨论状态</h2><p>切换专注模式和摘要，再应用到下方预览。真实组件提供勾选与切换，状态说明由本地代码同步。</p><p>适合用户访谈、设置流程验证和学习工具；手绘线条不等同于完整的可访问性保证。</p><dl><dt>可调参数</dt><dd><code>checked</code> 布尔值</dd><dt>操作</dt><dd>Tab 和空格操作开关；应用按钮显示明确反馈。</dd></dl></aside>
+        <aside><p class="label">TOGGLE + CHECKBOX + FEEDBACK</p><h2>用草图语言讨论状态</h2><p>切换专注模式和摘要，再应用到下方预览。</p><p>适合用户访谈、设置流程验证和学习工具。</p><dl><dt>可调参数</dt><dd><code>checked</code> 布尔值</dd><dt>操作</dt><dd>Tab 和空格操作开关；应用按钮显示明确反馈。</dd></dl></aside>
       </section>
       <section id="card" class="example" role="tabpanel" aria-labelledby="tab-card" hidden>
         <div class="paper">
@@ -54,7 +54,7 @@
             <p class="label">IDEA / 03</p><h2>留一块地方给新想法</h2><p>用粗略边缘表达“仍可讨论”，同时让内容、层级和操作保持清楚。</p><span class="stamp">可编辑的概念</span>
           </wired-card>
         </div>
-        <aside><p class="label">CARD + SLIDER + FILL</p><h2>比较层级与填色</h2><p>调节真实 <code>wired-card</code> 的层级与斜线填色；随机线条来自原库，不是 CSS 仿画。</p><div class="control"><label id="elevation-label" for="elevation">卡片层级 <output id="elevation-value">3</output></label><wired-slider id="elevation" min="1" max="5" value="3" aria-labelledby="elevation-label"></wired-slider></div><div class="control"><label for="fill-color">填充颜色</label><input id="fill-color" type="color" value="#f8e9a1"></div><p>层级 1–5 来自官方 API；颜色和初始值是本地选择。卡片随宽度变化重新绘制。</p></aside>
+        <aside><p class="label">CARD + SLIDER + FILL</p><h2>比较层级与填色</h2><p>调节 <code>wired-card</code> 的层级与斜线填色。</p><div class="control"><label id="elevation-label" for="elevation">卡片层级 <output id="elevation-value">3</output></label><wired-slider id="elevation" min="1" max="5" value="3" aria-labelledby="elevation-label"></wired-slider></div><div class="control"><label for="fill-color">填充颜色</label><input id="fill-color" type="color" value="#f8e9a1"></div><p>层级范围为 1–5，卡片会随宽度变化重新绘制。</p></aside>
       </section>
     </div>
     <details><summary>接入与适配</summary><pre><code>npm install wired-elements@2.1.2
@@ -62,8 +62,8 @@ import 'wired-elements';
 
 &lt;wired-card elevation="3"&gt;
   &lt;wired-checkbox&gt;检查关键状态&lt;/wired-checkbox&gt;
-&lt;/wired-card&gt;</code></pre><p>本页加载随包发布的完整 ESM，已包含运行依赖。无自动动画，无声音；不需要播放控制。减少动态时保留所有状态操作。</p></details>
-    <footer><span>真实原库 · 本地原创组合 · 手绘舞台固定为浅色纸面</span><a href="https://wiredjs.com/showcase">完整组件</a><a href="https://github.com/rough-stuff/wired-elements/tree/04756df72181e08b4255f8b6dfefea130398e24b">固定版本源码</a></footer>
+&lt;/wired-card&gt;</code></pre><p>本地 ESM 包含运行依赖。</p></details>
+    <footer><a href="https://wiredjs.com/showcase">完整组件</a><a href="https://github.com/rough-stuff/wired-elements/tree/04756df72181e08b4255f8b6dfefea130398e24b">固定版本源码</a></footer>
   </main>
 </body>
 </html>

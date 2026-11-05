@@ -12,7 +12,7 @@
 <body>
   <main class="demo-shell">
     <header class="demo-header"><div><p class="eyebrow">GOOGLE / MATERIAL WEB</p><h1>有层级的日常界面</h1></div><span class="version">2.5.0 · Material 3</span></header>
-    <p class="intro">色彩角色、圆角与状态层，让一套控件拥有共同语言。四个组合均为本地原创，实际控件来自 Google 官方库。</p>
+    <p class="intro">色彩角色、圆角与状态层，让一套控件拥有共同语言。</p>
     <nav class="sample-tabs" aria-label="选择组件样例">
       <button type="button" data-sample="actions" aria-pressed="true">操作层级</button>
       <button type="button" data-sample="form" aria-pressed="false">表单验证</button>
@@ -48,10 +48,10 @@
       <aside class="controls"><p class="eyebrow">TRY THE TOKENS</p><h2>同一种语言，不同气质</h2><label for="palette">色彩方案</label><select id="palette"><option value="violet">鸢尾紫</option><option value="teal">深海绿</option></select><label for="theme">明暗主题</label><select id="theme"><option value="auto">跟随站点 / 系统</option><option value="light">浅色</option><option value="dark">深色</option></select><label class="range-label" for="shape">按钮圆角 <output id="shape-value">20px</output></label><input id="shape" type="range" min="4" max="28" step="2" value="20"><label class="motion-control"><input id="reduce-motion" type="checkbox">减少动效</label><p class="control-note">色彩使用系统角色，圆角使用组件 token；范围与配色为本地选型。没有自动循环或后台任务。</p><button id="reset" type="button">重置当前样例</button><p id="runtime-status" role="status">组件加载中</p><a href="https://material-web.dev/" target="_blank" rel="noreferrer">完整官方文档</a></aside>
     </div>
     <details class="code-panel"><summary>查看当前样例接入代码</summary><pre><code id="example-code">import '../vendor/material-web@2.5.0/material-web.js';</code></pre><p>运行时已随包保存。业务数据、配色和演示组合属于本地示例。</p></details>
-    <footer><span>Apache-2.0 · 官方库处于维护模式；不代表完整 Material 3 Expressive。</span><a href="https://github.com/material-components/material-web" target="_blank" rel="noreferrer">来源仓库</a><a href="LICENSES.md">依赖与许可</a></footer>
+    <footer><span>Apache-2.0 · 官方库处于维护模式。</span><a href="https://github.com/material-components/material-web" target="_blank" rel="noreferrer">原始出处</a><a href="LICENSES.md">依赖与许可</a></footer>
   </main>
   <md-dialog id="archive-dialog" type="alert" aria-label="归档城市观察计划">
-    <div slot="headline">归档这个计划？</div><div slot="content">计划会标记为已完成，仍可通过「恢复计划」撤回。本演示不会修改真实资料。</div><div slot="actions"><md-text-button id="cancel-dialog" type="button">继续编辑</md-text-button><md-filled-button id="confirm-dialog" type="button">确认归档</md-filled-button></div>
+    <div slot="headline">归档这个计划？</div><div slot="content">计划会标记为已完成，仍可通过「恢复计划」撤回。</div><div slot="actions"><md-text-button id="cancel-dialog" type="button">继续编辑</md-text-button><md-filled-button id="confirm-dialog" type="button">确认归档</md-filled-button></div>
   </md-dialog>
   <script type="module" src="demo/demo.js"></script>
 </body>

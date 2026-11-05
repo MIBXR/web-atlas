@@ -6,11 +6,11 @@
   "category": "组件与效果",
   "summary": "Google Material Design 的官方 Web Components 实现；本地 Demo 用色彩角色、圆角、浮动标签和状态层演示操作层级、表单验证、偏好设置与确认对话框。",
   "install": "npm install @material/web@2.5.0；本地 Demo 已捆绑运行依赖，直接以 HTTP/HTTPS 打开。",
-  "demoNote": "四套原创业务组合使用真实官方组件，可调配色、明暗与按钮圆角。库处于维护模式；输入和状态仅留在当前页面。",
+  "demoNote": "四种组合演示官方组件的按钮层级、表单验证、偏好设置与对话框，可调配色、明暗和按钮圆角。库处于维护模式。",
   "tags": ["Google", "Google Material Design", "Material Design", "Material 3", "Material Web", "Web Components", "Lit", "设计系统", "浮动标签", "色彩角色", "表单", "对话框"],
   "useCases": ["有明确主次操作的产品工具", "需要持续显示字段含义的表单", "有即时结果预览的偏好面板", "需要确认与撤回路径的任务流程", "希望以 CSS tokens 统一色彩与形状的原生 Web 页面"],
   "avoid": ["把本版本当作完整 Material 3 Expressive 实现", "依赖持续新增组件或官方快速响应的长期路线", "仅为套用外观而丢弃现有网站的信息结构", "需要旧浏览器而不准备原生 DOM 后备的关键流程"],
-  "constraints": ["固定 @material/web 2.5.0；官方 README 在核验时仍标注维护模式、等待新维护者。", "官方组件采用 Web Components/Lit，不等同于 Angular Material 或 MUI；本条目不覆盖整个 Material Design 规范。", "本地 vendor 合并了所选官方组件、CSS-in-JS 及 Lit/tslib 依赖，保留许可和锁文件；更换版本须重新核验 API 与 Shadow DOM 适配。", "以 HTTP/HTTPS 提供 ES module；模块失败时仅显示明确标注的静态说明，不声称真实组件已运行。", "配色、4–28px 圆角范围、中文内容与四种业务组合为本地原创演示，未接入服务端、持久化或真实账户。", "启用系统的减少动态设置或手动选择减少动态时，关闭局部过渡和 ripple，dialog 使用 quick；滑块值标签取消缩放过渡以保持文字至少12px；无持续动画或后台计时器。", "浏览器实测仅覆盖 Chromium 桌面及390px窄屏；Safari、Firefox、真实触屏与屏幕阅读器仍需在目标项目中验证。"],
+  "constraints": ["固定 @material/web 2.5.0；官方库处于维护模式，等待新维护者。", "提供 Material 3 Web Components，采用 Lit 运行时。", "本地 vendor 合并了所选官方组件、CSS-in-JS 及 Lit/tslib 依赖，保留许可和锁文件；更换版本须重新核验 API 与 Shadow DOM 适配。", "以 HTTP/HTTPS 提供 ES module；模块加载失败时显示静态说明。", "按钮圆角调节范围为 4–28px。", "启用系统的减少动态设置或手动选择减少动态时，关闭局部过渡和 ripple，dialog 使用 quick；滑块值标签取消缩放过渡以保持文字至少12px；无持续动画或后台计时器。"],
   "upstream": {
     "repository": "material-components/material-web",
     "url": "https://github.com/material-components/material-web",
@@ -26,15 +26,15 @@
   },
   "sources": [
     {"title": "Google Material Web 固定版本仓库", "url": "https://github.com/material-components/material-web/tree/b4de401eb665ec63474f39319a4ba8f2145974cc", "note": "官方 Web Components 实现、Material 3 定位与源码；不将其和同名设计案例或第三方 MUI 混同。", "evidence": "source"},
-    {"title": "@material/web 2.5.0 npm 元数据", "url": "https://registry.npmjs.org/@material/web/2.5.0", "note": "版本、gitHead、依赖范围、官方 tarball 与 integrity。核验时 latest 为2.5.0。", "evidence": "source"},
+    {"title": "@material/web 2.5.0 npm 元数据", "url": "https://registry.npmjs.org/@material/web/2.5.0", "note": "版本、gitHead、依赖范围与官方发布包的依据。", "evidence": "source"},
     {"title": "官方维护模式公告", "url": "https://github.com/material-components/material-web/discussions/5642", "note": "官方 README 当前仍指向此公告；选型时需独立评估维护能力，不推断未来支持计划。", "evidence": "source"},
-    {"title": "按钮文档与实际交互样例", "url": "https://material-web.dev/components/button/", "note": "读取五种按钮层级、SVG icon slot、disabled及形状token；浏览器打开官方stories并点击真实按钮。本地计划卡不是官网样例复刻。", "evidence": "observed"},
-    {"title": "文本框与验证接口", "url": "https://material-web.dev/components/text-field/", "note": "required、type=email、maxlength、checkValidity、error和errorText；本地校验流程与中文错误文案为原创组合。", "evidence": "source"},
+    {"title": "按钮文档与实际交互样例", "url": "https://material-web.dev/components/button/", "note": "五种按钮层级、SVG icon slot、disabled 与形状 token 的依据。", "evidence": "observed"},
+    {"title": "文本框与验证接口", "url": "https://material-web.dev/components/text-field/", "note": "required、type=email、maxlength、checkValidity、error 与 errorText 的用法。", "evidence": "source"},
     {"title": "开关接口", "url": "https://material-web.dev/components/switch/", "note": "selected、icons、change及aria-label用法；本地完成标记用途为演示选择。", "evidence": "source"},
     {"title": "滑块接口", "url": "https://material-web.dev/components/slider/", "note": "min、max、step、value、ticks和labeled；1–8范围与每日目标用途为本地选择。", "evidence": "source"},
     {"title": "对话框接口与可访问性", "url": "https://material-web.dev/components/dialog/", "note": "show、close、returnValue、closed及quick；按归档/取消区分结果，关闭后等待Lit更新再恢复焦点。", "evidence": "source"},
     {"title": "官方 Material Theming", "url": "https://material-web.dev/theming/material-theming/", "note": "系统颜色与组件形状token的层级；官方未支持通用md-sys-motion token，本地减少动态另外处理。", "evidence": "source"},
-    {"title": "固定版本浏览器支持声明", "url": "https://github.com/material-components/material-web/blob/b4de401eb665ec63474f39319a4ba8f2145974cc/docs/support.md", "note": "上游支持目标为Chrome/Edge120+、Firefox119+、Safari16.4+；这是官方声明，不等于本次跨浏览器实测。", "evidence": "source"}
+    {"title": "固定版本浏览器支持声明", "url": "https://github.com/material-components/material-web/blob/b4de401eb665ec63474f39319a4ba8f2145974cc/docs/support.md", "note": "上游声明支持 Chrome/Edge 120+、Firefox 119+、Safari 16.4+。", "evidence": "source"}
   ],
   "demos": [
     {

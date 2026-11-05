@@ -79,7 +79,7 @@ function localPath(url) {
   if (url.origin !== libraryURL.origin || !url.pathname.startsWith(libraryURL.pathname)) return null;
   return decodeURIComponent(url.pathname.slice(libraryURL.pathname.length));
 }
-function upstreamLink(sourceURL, reference) {
+function upstreamLink(sourceURL, reference, raw = false) {
   const sourcePath = localPath(sourceURL);
   const source = documentSources.find(item => sourcePath.startsWith(item.path));
   if (!source) return null;
@@ -91,6 +91,7 @@ function upstreamLink(sourceURL, reference) {
   const directory = pinned[2] === 'tree' ? (pinned[4] || '').replace(/\/$/, '') : (pinned[4] || '').split('/').slice(0,-1).join('/');
   const upstreamSource = new URL((directory ? directory + '/' : '') + sourcePath.slice(source.path.length), 'https://github.com/');
   const target = new URL(reference, upstreamSource);
+  if (raw) return `https://raw.githubusercontent.com/${repository}/${commit}${target.pathname}${target.search}${target.hash}`;
   const type = target.pathname.endsWith('/') || !target.pathname.split('/').pop().includes('.') ? 'tree' : 'blob';
   return `https://github.com/${repository}/${type}/${commit}${target.pathname}${target.search}${target.hash}`;
 }
@@ -127,11 +128,16 @@ async function prepareLinks(fragment, sourceURL, signal) {
     }
     link.href = path !== null ? (localPath(url) || './') + url.search + url.hash : url.href;
   }));
-  for (const image of fragment.querySelectorAll('img[src]')) {
-    image.src = new URL(image.getAttribute('src'), sourceURL).href;
+  await Promise.all([...fragment.querySelectorAll('img[src]')].map(async image => {
+    const reference = image.getAttribute('src');
+    const url = new URL(reference, sourceURL);
+    const asset = AtlasAssets.resolve(url.href);
+    const upstream = asset === url.href && localPath(url) !== null && !(await fetch(url, {method:'HEAD', signal})).ok
+      ? upstreamLink(sourceURL, reference, true) : null;
+    image.src = upstream || asset;
     image.loading = 'lazy';
     image.decoding = 'async';
-  }
+  }));
 }
 function renderOutline(headings) {
   const outline = document.querySelector('#document-outline');

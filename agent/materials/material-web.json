@@ -9,7 +9,7 @@
     "category": "组件与效果",
     "summary": "Google Material Design 的官方 Web Components 实现；本地 Demo 用色彩角色、圆角、浮动标签和状态层演示操作层级、表单验证、偏好设置与确认对话框。",
     "install": "npm install @material/web@2.5.0；本地 Demo 已捆绑运行依赖，直接以 HTTP/HTTPS 打开。",
-    "demoNote": "四套原创业务组合使用真实官方组件，可调配色、明暗与按钮圆角。库处于维护模式；输入和状态仅留在当前页面。",
+    "demoNote": "四种组合演示官方组件的按钮层级、表单验证、偏好设置与对话框，可调配色、明暗和按钮圆角。库处于维护模式。",
     "tags": [
       "Google",
       "Google Material Design",
@@ -38,13 +38,12 @@
       "需要旧浏览器而不准备原生 DOM 后备的关键流程"
     ],
     "constraints": [
-      "固定 @material/web 2.5.0；官方 README 在核验时仍标注维护模式、等待新维护者。",
-      "官方组件采用 Web Components/Lit，不等同于 Angular Material 或 MUI；本条目不覆盖整个 Material Design 规范。",
+      "固定 @material/web 2.5.0；官方库处于维护模式，等待新维护者。",
+      "提供 Material 3 Web Components，采用 Lit 运行时。",
       "本地 vendor 合并了所选官方组件、CSS-in-JS 及 Lit/tslib 依赖，保留许可和锁文件；更换版本须重新核验 API 与 Shadow DOM 适配。",
-      "以 HTTP/HTTPS 提供 ES module；模块失败时仅显示明确标注的静态说明，不声称真实组件已运行。",
-      "配色、4–28px 圆角范围、中文内容与四种业务组合为本地原创演示，未接入服务端、持久化或真实账户。",
-      "启用系统的减少动态设置或手动选择减少动态时，关闭局部过渡和 ripple，dialog 使用 quick；滑块值标签取消缩放过渡以保持文字至少12px；无持续动画或后台计时器。",
-      "浏览器实测仅覆盖 Chromium 桌面及390px窄屏；Safari、Firefox、真实触屏与屏幕阅读器仍需在目标项目中验证。"
+      "以 HTTP/HTTPS 提供 ES module；模块加载失败时显示静态说明。",
+      "按钮圆角调节范围为 4–28px。",
+      "启用系统的减少动态设置或手动选择减少动态时，关闭局部过渡和 ripple，dialog 使用 quick；滑块值标签取消缩放过渡以保持文字至少12px；无持续动画或后台计时器。"
     ],
     "upstream": {
       "repository": "material-components/material-web",
@@ -69,7 +68,7 @@
       {
         "title": "@material/web 2.5.0 npm 元数据",
         "url": "https://registry.npmjs.org/@material/web/2.5.0",
-        "note": "版本、gitHead、依赖范围、官方 tarball 与 integrity。核验时 latest 为2.5.0。",
+        "note": "版本、gitHead、依赖范围与官方发布包的依据。",
         "evidence": "source"
       },
       {
@@ -81,13 +80,13 @@
       {
         "title": "按钮文档与实际交互样例",
         "url": "https://material-web.dev/components/button/",
-        "note": "读取五种按钮层级、SVG icon slot、disabled及形状token；浏览器打开官方stories并点击真实按钮。本地计划卡不是官网样例复刻。",
+        "note": "五种按钮层级、SVG icon slot、disabled 与形状 token 的依据。",
         "evidence": "observed"
       },
       {
         "title": "文本框与验证接口",
         "url": "https://material-web.dev/components/text-field/",
-        "note": "required、type=email、maxlength、checkValidity、error和errorText；本地校验流程与中文错误文案为原创组合。",
+        "note": "required、type=email、maxlength、checkValidity、error 与 errorText 的用法。",
         "evidence": "source"
       },
       {
@@ -117,7 +116,7 @@
       {
         "title": "固定版本浏览器支持声明",
         "url": "https://github.com/material-components/material-web/blob/b4de401eb665ec63474f39319a4ba8f2145974cc/docs/support.md",
-        "note": "上游支持目标为Chrome/Edge120+、Firefox119+、Safari16.4+；这是官方声明，不等于本次跨浏览器实测。",
+        "note": "上游声明支持 Chrome/Edge 120+、Firefox 119+、Safari 16.4+。",
         "evidence": "source"
       }
     ],
@@ -234,7 +233,7 @@
     {
       "path": "prompts/materials/material-web.md",
       "role": "prompt",
-      "content": "# Google Material Web · Material 3 官方组件 · 复用 Prompt\n\n[结构化条目](../../entries/materials/material-web.json)\n\n在已有HTML/CSS/JavaScript页面中使用Google官方@material/web 2.5.0，先读取Material Web素材包的来源、维护模式边界、许可、四种样例与依赖锁定记录。依据页面任务选择操作层级、带验证的文本框、switch/slider偏好面板或确认对话框，不复制示例业务文案。沿用当前页面导航与布局，用官方CSS系统颜色角色和组件形状token统一主题。提供真实标签、SVG功能图标、错误纠正、取消/Escape与关闭后焦点返回；所有文本包括Shadow DOM浮动标签及slider值标签在实际渲染中至少12px，取消会缩小文字的过渡。模块失败显示标注的静态后备；系统减少动态或手动减少时关闭局部过渡/ripple，dialog使用quick，页面隐藏时停止当前短动画。保持输入本地或明确接入当前项目的真实提交逻辑，不宣称示例已联网保存。保留Apache-2.0、Lit BSD-3-Clause、tslib 0BSD及转换说明；通过HTTP运行并检查桌面、窄屏、键盘、触摸和资源加载。\n\n## 制作约束\n\n- 固定 @material/web 2.5.0；官方 README 在核验时仍标注维护模式、等待新维护者。\n- 官方组件采用 Web Components/Lit，不等同于 Angular Material 或 MUI；本条目不覆盖整个 Material Design 规范。\n- 本地 vendor 合并了所选官方组件、CSS-in-JS 及 Lit/tslib 依赖，保留许可和锁文件；更换版本须重新核验 API 与 Shadow DOM 适配。\n- 以 HTTP/HTTPS 提供 ES module；模块失败时仅显示明确标注的静态说明，不声称真实组件已运行。\n- 配色、4–28px 圆角范围、中文内容与四种业务组合为本地原创演示，未接入服务端、持久化或真实账户。\n- 启用系统的减少动态设置或手动选择减少动态时，关闭局部过渡和 ripple，dialog 使用 quick；滑块值标签取消缩放过渡以保持文字至少12px；无持续动画或后台计时器。\n- 浏览器实测仅覆盖 Chromium 桌面及390px窄屏；Safari、Firefox、真实触屏与屏幕阅读器仍需在目标项目中验证。\n"
+      "content": "# Google Material Web · Material 3 官方组件 · 复用 Prompt\n\n[结构化条目](../../entries/materials/material-web.json)\n\n在已有HTML/CSS/JavaScript页面中使用Google官方@material/web 2.5.0，先读取Material Web素材包的来源、维护模式边界、许可、四种样例与依赖锁定记录。依据页面任务选择操作层级、带验证的文本框、switch/slider偏好面板或确认对话框，不复制示例业务文案。沿用当前页面导航与布局，用官方CSS系统颜色角色和组件形状token统一主题。提供真实标签、SVG功能图标、错误纠正、取消/Escape与关闭后焦点返回；所有文本包括Shadow DOM浮动标签及slider值标签在实际渲染中至少12px，取消会缩小文字的过渡。模块失败显示标注的静态后备；系统减少动态或手动减少时关闭局部过渡/ripple，dialog使用quick，页面隐藏时停止当前短动画。保持输入本地或明确接入当前项目的真实提交逻辑，不宣称示例已联网保存。保留Apache-2.0、Lit BSD-3-Clause、tslib 0BSD及转换说明；通过HTTP运行并检查桌面、窄屏、键盘、触摸和资源加载。\n\n## 制作约束\n\n- 固定 @material/web 2.5.0；官方库处于维护模式，等待新维护者。\n- 提供 Material 3 Web Components，采用 Lit 运行时。\n- 本地 vendor 合并了所选官方组件、CSS-in-JS 及 Lit/tslib 依赖，保留许可和锁文件；更换版本须重新核验 API 与 Shadow DOM 适配。\n- 以 HTTP/HTTPS 提供 ES module；模块加载失败时显示静态说明。\n- 按钮圆角调节范围为 4–28px。\n- 启用系统的减少动态设置或手动选择减少动态时，关闭局部过渡和 ripple，dialog 使用 quick；滑块值标签取消缩放过渡以保持文字至少12px；无持续动画或后台计时器。\n"
     },
     {
       "path": "demos/materials/material-web/LICENSES.md",

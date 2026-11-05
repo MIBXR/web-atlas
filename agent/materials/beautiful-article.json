@@ -109,6 +109,8 @@
     "gallery": [
       {
         "path": "previews/materials/beautiful-article/tools.webp",
+        "width": 1248,
+        "height": 1670,
         "caption": "Agent Tools 设计的最佳实践：Anthropic 工程团队关于 Tools 的五条原则，与一套评测驱动的方法；主题 Freddie · 长文 · 21 分钟",
         "kind": "work",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/tools.webp",
@@ -116,6 +118,8 @@
       },
       {
         "path": "previews/materials/beautiful-article/skill.webp",
+        "width": 1174,
+        "height": 1556,
         "caption": "Agent Skill 是如何进化的？：把 Skill 文档当成被训练的对象，而不是被复制粘贴的 prompt；主题 Freddie · 解释文 · 8 分钟",
         "kind": "work",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/skill.webp",
@@ -123,6 +127,8 @@
       },
       {
         "path": "previews/materials/beautiful-article/harness.webp",
+        "width": 1160,
+        "height": 1548,
         "caption": "Agent Harness 的解剖图：智能在模型里；让智能变得有用的，是它周围的那套系统；主题 Vignelli · 长文 · 12 分钟",
         "kind": "work",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/harness.webp",
@@ -130,6 +136,8 @@
       },
       {
         "path": "previews/materials/beautiful-article/prompt-cache.webp",
+        "width": 1206,
+        "height": 1606,
         "caption": "提示词缓存对 Agent 有多重要？：缓存命中率是 Agent 的 SLO，Claude Code 团队的反直觉经验；主题 Bayer · 长文 · 15 分钟",
         "kind": "work",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/prompt-cache.webp",
@@ -137,6 +145,8 @@
       },
       {
         "path": "previews/materials/beautiful-article/context.webp",
+        "width": 1158,
+        "height": 1546,
         "caption": "面向 Agent 的高效上下文工程：本文探讨如何高效地筛选与管理驱动 AI Agent 运转的上下文；主题 Tufte · 长文 · 16 分钟",
         "kind": "work",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/context.webp",
@@ -144,6 +154,8 @@
       },
       {
         "path": "previews/materials/beautiful-article/transformer.webp",
+        "width": 1162,
+        "height": 1550,
         "caption": "Attention Is All You Need：一篇重塑现代 AI 的论文，逐层拆给你看；主题 Tufte · 长文 · 30 分钟",
         "kind": "work",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/transformer.webp",
@@ -151,6 +163,8 @@
       },
       {
         "path": "previews/materials/beautiful-article/agent-eval.webp",
+        "width": 1162,
+        "height": 1550,
         "caption": "把 AI Agent 的评测讲清楚：让 Agent 有用的那些能力，恰恰让它难以评测 —— 来自 Anthropic 的指南；主题 Tufte · 长文 · 25 分钟",
         "kind": "work",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/agent-eval.webp",
@@ -158,6 +172,8 @@
       },
       {
         "path": "previews/materials/beautiful-article/agent-loop-codex.webp",
+        "width": 1208,
+        "height": 1612,
         "caption": "Codex 的 Agent Loop 是怎么做的？：OpenAI 官方分享：在 Responses API 之上，一条对话是如何被反复\"展开\"的；主题 Sottsass · 长文 · 18 分钟",
         "kind": "work",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/agent-loop-codex.webp",
@@ -165,6 +181,8 @@
       },
       {
         "path": "previews/materials/beautiful-article/theam-tufte.webp",
+        "width": 1246,
+        "height": 1660,
         "caption": "Tufte · Data-Ink：Edward Tufte 数据墨水，证据优先，发丝级图表与最朴素的版式。",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/theam-tufte.webp",
@@ -173,6 +191,8 @@
       },
       {
         "path": "previews/materials/beautiful-article/theam-press.webp",
+        "width": 1246,
+        "height": 1662,
         "caption": "Press · 书卷：Stripe Press 式书卷长读物：会落定的标题、氧化血红首字母、纯正文之美。",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/theam-press.webp",
@@ -181,6 +201,8 @@
       },
       {
         "path": "previews/materials/beautiful-article/theam-shannon.webp",
+        "width": 1246,
+        "height": 1662,
         "caption": "Shannon · 工程暗色：贝尔实验室技术论文血统，暗底黄金信号、回压依赖、夜间作战气质。",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/theam-shannon.webp",
@@ -189,6 +211,8 @@
       },
       {
         "path": "previews/materials/beautiful-article/theam-vignelli.webp",
+        "width": 1246,
+        "height": 1660,
         "caption": "Vignelli · 瑞士：Massimo Vignelli 网格至上、grotesque 字族、瑞士红只承载结构。",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/theam-vignelli.webp",
@@ -197,6 +221,8 @@
       },
       {
         "path": "previews/materials/beautiful-article/knuth.png",
+        "width": 1246,
+        "height": 1662,
         "caption": "Knuth · 学术：Donald Knuth / Computer Modern，编号小节、命题与证明、arXiv 草稿气质。",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/knuth.png",
@@ -205,6 +231,8 @@
       },
       {
         "path": "previews/materials/beautiful-article/theam-freddie.webp",
+        "width": 1246,
+        "height": 1660,
         "caption": "Freddie · 暖黄：Mailchimp Freddie 黑字荧光，亲和插画 + 不端着的产品上手语气。",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/theam-freddie.webp",
@@ -213,6 +241,8 @@
       },
       {
         "path": "previews/materials/beautiful-article/theam-andy.webp",
+        "width": 1248,
+        "height": 1660,
         "caption": "Andy · 静谧：柔软圆润、呼吸-神经跷跷板，让人慢下来的练习气质。",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/theam-andy.webp",
@@ -221,6 +251,8 @@
       },
       {
         "path": "previews/materials/beautiful-article/theam-bodoni.webp",
+        "width": 1246,
+        "height": 1662,
         "caption": "Bodoni · 报刊：高对比 Didone 报刊气质，黑白大报、对折线之上的分量。",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/theam-bodoni.webp",
@@ -229,6 +261,8 @@
       },
       {
         "path": "previews/materials/beautiful-article/theam-bayer.webp",
+        "width": 1244,
+        "height": 1660,
         "caption": "Bayer · 包豪斯：Herbert Bayer 包豪斯三原色几何，形有性格、色有重量。",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/theam-bayer.webp",
@@ -237,6 +271,8 @@
       },
       {
         "path": "previews/materials/beautiful-article/theam-fuller.webp",
+        "width": 1246,
+        "height": 1662,
         "caption": "Fuller · 蓝图：Buckminster Fuller 工程蓝图，方格纸拓扑、令牌桶模拟，可照着实现。",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/theam-fuller.webp",
@@ -245,6 +281,8 @@
       },
       {
         "path": "previews/materials/beautiful-article/theam-sottsass.webp",
+        "width": 1248,
+        "height": 1662,
         "caption": "Sottsass · 孟菲斯：Memphis 80s 撞色，黑描边、硬投影、轻微旋转的不正经语法。",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/theam-sottsass.webp",

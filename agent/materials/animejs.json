@@ -24,7 +24,6 @@
     "preview": "previews/materials/animejs.png",
     "research": "docs/materials/animejs.md",
     "demoNote": "Anime.js 4.5.0",
-    "carrierNote": "面向网页的动画引擎，示例含滚动、拖拽与响应式，归入本库。",
     "install": "import { animate, stagger, createTimeline, onScroll, createDraggable, svg } from './vendor/animejs@4.5.0/dist/modules/index.js';",
     "upstream": {
       "repository": "juliangarnier/anime",

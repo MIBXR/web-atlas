@@ -245,7 +245,7 @@ Prompt 写明结构、尺度、素材、关键状态及交接、音乐和主题�
 
 ### 素材
 
-`id`、`title`、`type`、`category`、`summary`、`tags` 描述素材；`upstream` 保存 `url`、`verifiedAt` 以及存在时的 `repository`、`version`、完整 `commit`；`license` 保存 `name`、`url`、`scope`、`notes`；`sources` 保存出处与依据。`useCases`、`avoid`、`constraints`、`prompt` 说明使用边界。`research` 指向同 id 的中文说明，`preview` 指向素材预览，`sourceFiles` 列主要取材文件。
+`id`、`title`、`type`、`category`、`summary`、`tags` 描述素材；`upstream` 保存 `url`、`verifiedAt` 以及存在时的 `repository`、`version`、完整 `commit`；`version` 使用上游实际版本号，提交号只记在 `commit`。`license` 保存 `name`、`url`、`scope`、`notes`；`sources` 保存出处与依据。`useCases`、`avoid`、`constraints`、`prompt` 说明使用边界。`research` 指向同 id 的中文说明，`preview` 指向素材预览，`sourceFiles` 列主要取材文件。
 
 | `type` | 显示名 |
 | --- | --- |
@@ -261,7 +261,7 @@ Prompt 写明结构、尺度、素材、关键状态及交接、音乐和主题�
 
 可运行素材使用 `demo`、`demoNote` 和非空 `demos`；每个样例包含 `id`、`title`、`summary`、`entrypoint`，可有 `component` 与 `{name,value,note}` 参数数组。字体、声音提供试排或播放样例；图像可使用站内画廊。
 
-资料目录使用 `snapshotPath: demos/materials/<id>/` 与 `snapshotEntry`；`snapshotEntry` 指向主文档，Agent Skill 为 `SKILL.md`。Agent Skill 的 `workflow` 是非空中文步骤数组，`relatedEntries` 是 `{kind: case|material|pattern,id,note}` 数组且关联 id 存在。可选 `gallery` 是 `{path,caption,kind,sourceUrl,license,replicaPage}` 数组，`kind` 为 `work`、`style` 或 `theme`；图片比例不一致时用 `galleryRatio`（如 `16/9`）统一展示框，图片按比例裁切，点开查看原图；有本库复刻页时用 `replicaPage` 指向该页，显示入口链接。`galleryFit` 取 `cover` 或 `contain`，需要完整显示作品时用 `contain`。`gallery[].compare` 保存 `{piece,original,sound}`，用于点击作品打开复刻与原作弹窗对比，`sound` 仅在原作有音轨时设为 `true`。文字详情提供工作流、关联条目、原文主文档与 README；资料目录按目录递归纳入资料包，文件按第三方资源规则保存；图像类型不显示原文快照入口。
+资料目录使用 `snapshotPath: demos/materials/<id>/` 与 `snapshotEntry`；`snapshotEntry` 指向主文档，Agent Skill 为 `SKILL.md`。Agent Skill 的 `workflow` 是非空中文步骤数组，`relatedEntries` 是 `{kind: case|material|pattern,id,note}` 数组且关联 id 存在；可运行素材也可记录关联条目，有值时在详情显示。可选 `gallery` 是 `{path,caption,kind,sourceUrl,license,replicaPage,width,height}` 数组，`kind` 为 `work`、`style` 或 `theme`；`width`、`height` 保存图片像素尺寸，为自然比例的图片预留空间。图片比例不一致时用 `galleryRatio`（如 `16/9`）统一展示框，图片按比例裁切，点开查看原图；有本库复刻页时用 `replicaPage` 指向该页，显示入口链接。`galleryFit` 取 `cover` 或 `contain`，需要完整显示作品时用 `contain`。`gallery[].compare` 保存 `{piece,original,sound}`，用于点击作品打开复刻与原作弹窗对比，`sound` 仅在原作有音轨时设为 `true`。文字详情提供工作流、关联条目、原文主文档与 README；资料目录按目录递归纳入资料包，文件按第三方资源规则保存；图像类型不显示原文快照入口。
 
 
 ## 新增流程
