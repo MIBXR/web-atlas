@@ -186,16 +186,76 @@
       "role": "context"
     },
     {
+      "path": "site/app/domain/case-notes.mjs",
+      "role": "context"
+    },
+    {
+      "path": "site/app/theme-boot.js",
+      "role": "context"
+    },
+    {
+      "path": "site/client/AgentPage-EAS5PVE3.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/CatalogPage-SGVWTZ3D.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/DocsPage-UQJTEUEK.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/DocsPage-UQJTEUEK.js.LEGAL.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/client/HomePage-U2APYKG6.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/LICENSES.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/client/LabPage-6GKARTD3.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-4PVWGCRJ.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-SSO6R7NX.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-XZHNFY5X.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-YOWC6UHQ.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-YOWC6UHQ.js.LEGAL.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/client/main.css",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/main.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/main.js.LEGAL.txt",
+      "role": "license"
+    },
+    {
       "path": "site/icons/favicon.svg",
       "role": "asset"
-    },
-    {
-      "path": "site/pages/docs/docs.css",
-      "role": "source"
-    },
-    {
-      "path": "site/pages/docs/docs.js",
-      "role": "source"
     },
     {
       "path": "site/runtime/asset-cache.js",
@@ -218,30 +278,6 @@
       "role": "source"
     },
     {
-      "path": "site/shared/site-footer.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/site-nav.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/site-shell.js",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/site-typography.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/theme-control.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/theme.js",
-      "role": "source"
-    },
-    {
       "path": "site/vendor/LICENSES.txt",
       "role": "license"
     },
@@ -256,7 +292,7 @@
   ],
   "webNotes": {
     "format": "text/html",
-    "renderer": "site/pages/cases/atlas.js",
-    "content": "<section><h2>从要素看风格</h2><a class=\"element-lab-link\" href=\"lab.html?style=line-art\">调配这个风格的设计要素</a><dl class=\"element-map\"><div class=\"\"><dt>配色角色</dt><dd>接近白纸的底色和灰蓝线条保持克制，强调色只用于进度。</dd></div><div class=\"\"><dt>字体排版</dt><dd>Arial 55–84px 标题与 Georgia 斜体强调；正文 12–15px；工程标签 8–9px</dd></div><div class=\"\"><dt>布局留白</dt><dd>固定窄侧栏 + 宽标题 + 通栏建筑线稿 + 横向绘制工具栏 + 双栏方法说明</dd></div><div class=\"\"><dt>图像图标</dt><dd>建筑线稿随绘制顺序解释基础、结构与细节。</dd></div><div class=\"\"><dt>线条形状</dt><dd>统一细线和留白制造精度，不以粗阴影替代结构。</dd></div><div class=\"\"><dt>信息层级</dt><dd>空间主张 → 建筑描绘 → 工作方法 → 项目类型。</dd></div><div class=\"\"><dt>动效反馈</dt><dd>3200ms 用户触发顺序描绘；滑块可中断；reduced motion 显示完成状态</dd></div><div class=\"coherence\"><dt>协调逻辑</dt><dd>线宽、清淡色彩、大留白和简短标题共同表达“减少噪声”；描绘动效与建筑构成顺序相呼应。</dd></div></dl></section><section><h2>设计机制</h2><ul><li>把轮廓与结构作为视觉主体，填色保持克制</li><li>线宽、空白和标签共同建立工程式清晰度</li><li>绘制顺序体现组成逻辑，不让内容等待动画</li><li>正文与装饰线分开，主信息始终可读</li></ul><h3>设计重点</h3><p>用一幅完整建筑线稿直接表达工作室对比例、构造和精简的重视；方法说明解释这种态度如何转化为服务。</p><h3>主题与情绪</h3><p>近白纸面、石墨线、单一蓝灰强调；理性、精确、安静的建筑草图语言。</p></section><section><h2>页面交互</h2><ul><li>重播按钮由基础到细节绘制线稿</li><li>进度滑块允许主动描绘或回看</li><li>绘制过程中可拖动滑块中止动画</li><li>项目类型按钮更新对应的咨询说明</li></ul><div class=\"behavior-block\"><span class=\"behavior-label\">显示主题</span><h3>固定主题</h3><p>此构成练习保留指定风格配色；实验室可另行比较系统／手动深浅主题。</p><p>风格不是一组可直接反转的颜色；改变主题时需重新配对文字、表面、强调与边框，保留图像原色。</p></div><div class=\"behavior-block\"><span class=\"behavior-label\">声音与交互</span><h3>无网站配乐</h3><p>本练习无背景音乐。</p></div></section><section><h2>约束与适用场景</h2><ul><li>主轮廓和辅助线以有限线宽建立层级</li><li>绘制路径必须是 stroke，填色块不应装作线条被描出</li><li>默认状态显示完整内容，动画由用户主动启动</li><li>用 pathLength 归一化长度，进度不能依赖偶然像素尺寸</li><li>reduced motion 显示终态，避免内容缺失</li><li>小屏保留比例和可触达控制，不能让细线承担全部信息</li></ul><h3>适合</h3><p>建筑与工业设计 / 结构化产品介绍 / 工艺品牌 / 开发者交互演示</p><h3>谨慎使用</h3><p>复杂线稿缩小成无法辨识的图标 / 强制等待绘制结束才能看文字 / 线宽层级超过必要范围 / 用过度细线作为唯一可用性线索</p></section><section><h2>设计参数</h2><div class=\"swatches\"><span class=\"swatch\"><i style=\"background:#f7f7f2\"></i>#f7f7f2</span><span class=\"swatch\"><i style=\"background:#252a35\"></i>#252a35</span><span class=\"swatch\"><i style=\"background:#607ca4\"></i>#607ca4</span><span class=\"swatch\"><i style=\"background:#edf0ef\"></i>#edf0ef</span></div><p><b>字体</b> · Arial 55–84px 标题与 Georgia 斜体强调；正文 12–15px；工程标签 8–9px<br><b>布局</b> · 固定窄侧栏 + 宽标题 + 通栏建筑线稿 + 横向绘制工具栏 + 双栏方法说明<br><b>动效</b> · 3200ms 用户触发顺序描绘；滑块可中断；reduced motion 显示完成状态</p></section><section><div class=\"prompt-head\"><h2>可复用 Prompt</h2><button class=\"copy-button\" id=\"copy-prompt\">复制 Prompt</button></div><textarea class=\"prompt-box\" aria-label=\"可复用 Prompt\" readonly>可替换内容：产品/品牌【名称】；受众【用户】；核心价值【卖点与证据】；主行动【希望用户完成的动作】。以下为风格示范任务，可替换具体品牌与内容，保留设计约束。\n\n为虚构建筑工作室 Monoline 制作英文静态网站。依据 Vivus 官方线描示范、Codrops SVG Drawing Animation 原作者实验和 SVG stroke-dasharray/stroke-dashoffset 机制。素材为原创院落住宅、树、玻璃幕墙和水池线稿，不复制案例的设备插图。信息顺序：精简空间的观点→通栏建筑概念线稿→三步设计方法→可选择项目类型的咨询说明。近白背景、石墨线条、蓝灰强调，有限线宽和细工程标签；标题使用无衬线和单一衬线斜体强调，设窄侧边栏。默认展示完整线稿，重播按钮才开始从基础到细节绘制；用 pathLength 归一化每条路径，进度滑块可中断并控制图形；文本不等待动画。至少三节内容，移动端缩放和重排，键盘焦点、可读状态及 reduced motion 终态齐全；全部本地，无CDN。\n\n要素协调要求：线宽、清淡色彩、大留白和简短标题共同表达“减少噪声”；描绘动效与建筑构成顺序相呼应。</textarea><details><summary>负面约束 / Negative Prompt</summary><p>不要把细线作为唯一信息；不要启动时隐藏全页等待动画；不要把填色块错误称为线描；不要复制原示范插图；不要依赖过时库限制或让动画阻塞键盘。</p></details><h3>改造练习</h3><p>将建筑线稿改为原创机械产品分解图，让绘制顺序对应支架、外壳、接口，并保持全文始终可读。</p></section><section class=\"case-patterns\" aria-labelledby=\"case-patterns-heading\"><div class=\"prompt-head\"><h2 id=\"case-patterns-heading\">关联巧思</h2><a href=\"patterns.html#patterns?source=line-art\">按来源浏览全部 2 项</a></div><p>这些机制可独立借用，触发条件、约束与组合建议见各项详情。</p><ul><li><a href=\"patterns.html#pattern/scrubbable-animation-progress?source=line-art\">可拖动回看的动画进度</a><span>内容与组织</span></li><li><a href=\"patterns.html#pattern/sequential-stroke-reveal?source=line-art\">按构造顺序描绘线稿</a><span>页面动效</span></li></ul></section><section><h2>来源与证据</h2><div class=\"source-item\"><span class=\"source-badge\">实例</span><a href=\"https://maxwellito.github.io/vivus/\" target=\"_blank\" rel=\"noopener noreferrer\">Vivus 官方示范站 </a><small>2026-10-07 核验：示范 delayed、sync、oneByOne 三种绘制类型，以及 replay/rewind 与参数；是开发者示范而非大厂营销页。</small></div><div class=\"source-item\"><span class=\"source-badge\">实例</span><a href=\"https://tympanus.net/codrops/2013/12/30/svg-drawing-animation/\" target=\"_blank\" rel=\"noopener noreferrer\">Codrops — SVG Drawing Animation </a><small>原作者实验比较轮廓绘制后图像出现、页面框架出现等手法；demo 只迁移绘制机制。</small></div><div class=\"source-item\"><span class=\"source-badge\">理论</span><a href=\"https://jakearchibald.com/2013/animated-line-drawing-svg/\" target=\"_blank\" rel=\"noopener noreferrer\">Jake Archibald — Animated line drawing in SVG </a><small>作者说明 dasharray/dashoffset 与路径长度驱动绘制的机制。</small></div><div class=\"source-item\"><span class=\"source-badge\">规范</span><a href=\"https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/stroke-dashoffset\" target=\"_blank\" rel=\"noopener noreferrer\">MDN — stroke-dashoffset </a><small>stroke-dashoffset 支持偏移动画，pathLength 用于归一化路径长度；旧版 Vivus README 中的限制属于该库实现。</small></div><div class=\"source-item\"><span class=\"source-badge\">创作来源</span><a href=\"https://maxwellito.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Vivus 作者 · 公开作品集 </a><small>主要实例 Vivus 的作者 Maxwellito 在个人作品集中说明自己工作于伦敦；地区按该创作者公开所在地标注。</small></div><p>理论来源核验：2026-10-07。</p></section><section><h2>相关文档</h2><ul><li><a href=\"docs.html?file=docs%2Fcases%2Fline-art.md\" target=\"_blank\">调研记录</a></li></ul></section>"
+    "renderer": "site/app/domain/case-notes.mjs",
+    "content": "<section><h2>从要素看风格</h2><a href=\"lab.html?style=line-art\">调配这个风格的设计要素</a><dl><div><dt>配色角色</dt><dd>接近白纸的底色和灰蓝线条保持克制，强调色只用于进度。</dd></div><div><dt>字体排版</dt><dd>Arial 55–84px 标题与 Georgia 斜体强调；正文 12–15px；工程标签 8–9px</dd></div><div><dt>布局留白</dt><dd>固定窄侧栏 + 宽标题 + 通栏建筑线稿 + 横向绘制工具栏 + 双栏方法说明</dd></div><div><dt>图像图标</dt><dd>建筑线稿随绘制顺序解释基础、结构与细节。</dd></div><div><dt>线条形状</dt><dd>统一细线和留白制造精度，不以粗阴影替代结构。</dd></div><div><dt>信息层级</dt><dd>空间主张 → 建筑描绘 → 工作方法 → 项目类型。</dd></div><div><dt>动效反馈</dt><dd>3200ms 用户触发顺序描绘；滑块可中断；reduced motion 显示完成状态</dd></div><div><dt>协调逻辑</dt><dd>线宽、清淡色彩、大留白和简短标题共同表达“减少噪声”；描绘动效与建筑构成顺序相呼应。</dd></div></dl></section><section><h2>设计机制</h2><ul><li>把轮廓与结构作为视觉主体，填色保持克制</li><li>线宽、空白和标签共同建立工程式清晰度</li><li>绘制顺序体现组成逻辑，不让内容等待动画</li><li>正文与装饰线分开，主信息始终可读</li></ul><h3>设计重点</h3><p>用一幅完整建筑线稿直接表达工作室对比例、构造和精简的重视；方法说明解释这种态度如何转化为服务。</p><h3>主题与情绪</h3><p>近白纸面、石墨线、单一蓝灰强调；理性、精确、安静的建筑草图语言。</p></section><section><h2>页面交互</h2><ul><li>重播按钮由基础到细节绘制线稿</li><li>进度滑块允许主动描绘或回看</li><li>绘制过程中可拖动滑块中止动画</li><li>项目类型按钮更新对应的咨询说明</li></ul><h3>显示主题</h3><p>固定主题</p><p>此构成练习保留指定风格配色；实验室可另行比较系统／手动深浅主题。</p><p>风格不是一组可直接反转的颜色；改变主题时需重新配对文字、表面、强调与边框，保留图像原色。</p><h3>声音与交互</h3><p>无网站配乐</p><p>本练习无背景音乐。</p></section><section><h2>约束与适用场景</h2><ul><li>主轮廓和辅助线以有限线宽建立层级</li><li>绘制路径必须是 stroke，填色块不应装作线条被描出</li><li>默认状态显示完整内容，动画由用户主动启动</li><li>用 pathLength 归一化长度，进度不能依赖偶然像素尺寸</li><li>reduced motion 显示终态，避免内容缺失</li><li>小屏保留比例和可触达控制，不能让细线承担全部信息</li></ul><h3>适合</h3><ul><li>建筑与工业设计</li><li>结构化产品介绍</li><li>工艺品牌</li><li>开发者交互演示</li></ul><h3>谨慎使用</h3><ul><li>复杂线稿缩小成无法辨识的图标</li><li>强制等待绘制结束才能看文字</li><li>线宽层级超过必要范围</li><li>用过度细线作为唯一可用性线索</li></ul></section><section><h2>设计参数</h2><div class=\"swatches\"><span><i style=\"background:#f7f7f2\"></i>#f7f7f2</span><span><i style=\"background:#252a35\"></i>#252a35</span><span><i style=\"background:#607ca4\"></i>#607ca4</span><span><i style=\"background:#edf0ef\"></i>#edf0ef</span></div><p>字体 · Arial 55–84px 标题与 Georgia 斜体强调；正文 12–15px；工程标签 8–9px</p><p>布局 · 固定窄侧栏 + 宽标题 + 通栏建筑线稿 + 横向绘制工具栏 + 双栏方法说明</p><p>动效 · 3200ms 用户触发顺序描绘；滑块可中断；reduced motion 显示完成状态</p></section><section><h2>可复用 Prompt</h2><textarea aria-label=\"可复用 Prompt\" readonly>可替换内容：产品/品牌【名称】；受众【用户】；核心价值【卖点与证据】；主行动【希望用户完成的动作】。以下为风格示范任务，可替换具体品牌与内容，保留设计约束。\n\n为虚构建筑工作室 Monoline 制作英文静态网站。依据 Vivus 官方线描示范、Codrops SVG Drawing Animation 原作者实验和 SVG stroke-dasharray/stroke-dashoffset 机制。素材为原创院落住宅、树、玻璃幕墙和水池线稿，不复制案例的设备插图。信息顺序：精简空间的观点→通栏建筑概念线稿→三步设计方法→可选择项目类型的咨询说明。近白背景、石墨线条、蓝灰强调，有限线宽和细工程标签；标题使用无衬线和单一衬线斜体强调，设窄侧边栏。默认展示完整线稿，重播按钮才开始从基础到细节绘制；用 pathLength 归一化每条路径，进度滑块可中断并控制图形；文本不等待动画。至少三节内容，移动端缩放和重排，键盘焦点、可读状态及 reduced motion 终态齐全；全部本地，无CDN。\n\n要素协调要求：线宽、清淡色彩、大留白和简短标题共同表达“减少噪声”；描绘动效与建筑构成顺序相呼应。</textarea><details><summary>负面约束 / Negative Prompt</summary><p>不要把细线作为唯一信息；不要启动时隐藏全页等待动画；不要把填色块错误称为线描；不要复制原示范插图；不要依赖过时库限制或让动画阻塞键盘。</p></details><h3>改造练习</h3><p>将建筑线稿改为原创机械产品分解图，让绘制顺序对应支架、外壳、接口，并保持全文始终可读。</p></section><section><h2>关联巧思</h2><a href=\"patterns.html#patterns?source=line-art\">按来源浏览全部 2 项</a><ul><li><a href=\"patterns.html#pattern/scrubbable-animation-progress?source=line-art\">可拖动回看的动画进度</a></li><li><a href=\"patterns.html#pattern/sequential-stroke-reveal?source=line-art\">按构造顺序描绘线稿</a></li></ul></section><section><h2>来源与证据</h2><div class=\"source-item\"><span>实例</span><a href=\"https://maxwellito.github.io/vivus/\">Vivus 官方示范站</a><p>2026-10-07 核验：示范 delayed、sync、oneByOne 三种绘制类型，以及 replay/rewind 与参数；是开发者示范而非大厂营销页。</p></div><div class=\"source-item\"><span>实例</span><a href=\"https://tympanus.net/codrops/2013/12/30/svg-drawing-animation/\">Codrops — SVG Drawing Animation</a><p>原作者实验比较轮廓绘制后图像出现、页面框架出现等手法；demo 只迁移绘制机制。</p></div><div class=\"source-item\"><span>理论</span><a href=\"https://jakearchibald.com/2013/animated-line-drawing-svg/\">Jake Archibald — Animated line drawing in SVG</a><p>作者说明 dasharray/dashoffset 与路径长度驱动绘制的机制。</p></div><div class=\"source-item\"><span>规范</span><a href=\"https://developer.mozilla.org/en-US/docs/Web/SVG/Reference/Attribute/stroke-dashoffset\">MDN — stroke-dashoffset</a><p>stroke-dashoffset 支持偏移动画，pathLength 用于归一化路径长度；旧版 Vivus README 中的限制属于该库实现。</p></div><div class=\"source-item\"><span>创作来源</span><a href=\"https://maxwellito.com/\">Vivus 作者 · 公开作品集</a><p>主要实例 Vivus 的作者 Maxwellito 在个人作品集中说明自己工作于伦敦；地区按该创作者公开所在地标注。</p></div><p>理论来源核验：2026-10-07。</p></section><section><h2>相关文档</h2><ul><li><a href=\"docs.html?file=docs%2Fcases%2Fline-art.md\">调研记录</a></li></ul></section>"
   }
 }

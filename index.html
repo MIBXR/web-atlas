@@ -1,104 +1,22 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark">
-<script src="site/shared/theme.js"></script><script src="site/shared/icons.js"></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<script src="site/app/theme-boot.js"></script>
 <title>Web Atlas — 从案例到实践</title>
 <meta name="description" content="浏览真实网页案例，拆解视觉、微动效、页面动效与声音巧思，亲手试验，再让 Agent 带着完整参考去实现。">
-<link rel="icon" href="site/icons/favicon.svg?v=atlas-cross-2" type="image/svg+xml"><link rel="stylesheet" href="site/pages/home/landing.css"><link rel="stylesheet" href="site/shared/site-nav.css">
-<script src="site/shared/site-shell.js" defer></script><link rel="stylesheet" href="site/pages/home/home-features.css"><link rel="stylesheet" href="site/playground/pattern-playground.css"><script src="site/playground/pattern-playground.js" defer></script><link rel="stylesheet" href="site/shared/theme-control.css"><link rel="stylesheet" href="site/shared/site-typography.css"><link rel="stylesheet" href="site/shared/site-footer.css">
+<link rel="icon" href="site/icons/favicon.svg?v=atlas-cross-2" type="image/svg+xml">
+<link rel="stylesheet" href="site/client/main.css">
+<link rel="stylesheet" href="site/playground/pattern-playground.css">
+<script src="data/asset-sources.js"></script>
+<script src="site/runtime/asset-runtime.js"></script>
+<script src="site/runtime/asset-cache.js"></script>
+<script type="module" src="site/client/main.js"></script>
 </head>
-<body class="landing-page">
-<a class="landing-skip" href="#main">跳到内容</a>
-<header class="atlas-site-header"><div class="atlas-site-header-inner">
-<a class="atlas-site-brand" href="index.html" aria-label="Web Atlas 首页"><svg class="atlas-site-mark" viewBox="0 0 96 96" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" d="M24 8 88 72 72 88 8 24Z M8 72 72 8 88 24 24 88Z"/></svg><span class="atlas-site-wordmark"><strong>WEB ATLAS</strong><small>从案例到实践</small></span></a>
-<nav id="atlas-main-nav" class="atlas-site-nav" aria-label="主导航"><a href="index.html" aria-current="page">首页</a><a href="cases.html">案例库</a><a href="patterns.html">巧思库</a><a href="materials.html">素材库</a><a href="lab.html">设计实验室</a><a href="docs.html">文档中心</a><a href="agent.html">Agent 工作流</a></nav>
-<button class="atlas-site-nav-toggle" type="button" data-nav-toggle aria-controls="atlas-main-nav" aria-expanded="false" aria-label="打开菜单"><span data-atlas-icon="menu" aria-hidden="true"></span><span>菜单</span></button>
-<div class="atlas-site-theme"><button id="theme-control" class="atlas-theme-toggle" type="button" data-theme-toggle aria-label="显示主题：跟随系统；点击切换为深色" title="显示主题：跟随系统；点击切换为深色"><span class="atlas-theme-icon" data-theme-icon="system" data-atlas-icon="system" aria-hidden="true"></span><span class="atlas-theme-icon" data-theme-icon="dark" data-atlas-icon="moon" aria-hidden="true"></span><span class="atlas-theme-icon" data-theme-icon="light" data-atlas-icon="sun" aria-hidden="true"></span></button></div>
-</div></header>
-<main class="landing-main" id="main" tabindex="-1">
-<section class="landing-hero" aria-labelledby="hero-title">
-<p class="landing-kicker">OBSERVE. UNDERSTAND. MAKE.</p>
-<h1 id="hero-title">看见设计。理解设计。<br>做出<span>你的设计。</span></h1>
-<p class="landing-lead">从完整案例理解风格，从独立巧思学习视觉、动效与声音。<br class="landing-desktop">在素材库试用组件与资源，找到可直接取用的实现。<br class="landing-desktop">亲手操作，再让 Agent 取得来源与源码，把参考用于你的项目。</p>
-<div class="landing-actions" aria-label="选择你的使用方式"><a class="landing-button landing-button--primary" href="cases.html">浏览案例</a><a class="landing-button" href="lab.html">进入实验室</a><a class="landing-button" href="agent.html">探索工作流</a></div>
-<p class="landing-hero-note"><span data-home-count="all">—</span> 个案例 <span aria-hidden="true">·</span> <span data-home-count="patterns">—</span> 个设计巧思 <span aria-hidden="true">·</span> 可运行 Demo <span aria-hidden="true">·</span> 完整取材</p>
-</section>
-<section class="landing-features" id="features" aria-labelledby="features-title">
-<div class="landing-section-heading"><p class="landing-kicker">THREE WAYS TO START</p><h2 id="features-title">灵感，有了下一步。</h2><p>浏览案例、亲手调配，再带着设计依据开始构建。</p></div>
-<div class="home-story" id="home-story" data-phase="intro">
-  <div class="home-story-sticky">
-    <div class="home-story-intro-actions" role="group" aria-label="选择想探索的方式" hidden><button type="button" data-home-intro="cases" aria-pressed="true">浏览案例</button><button type="button" data-home-intro="lab" aria-pressed="false">调配元素</button><button type="button" data-home-intro="agent" aria-pressed="false">参考构建</button></div>
-    <nav class="home-story-rail" aria-label="探索三种使用方式">
-      <article class="home-story-step is-active"><button type="button" id="home-mode-cases" data-home-mode="cases" aria-expanded="true" aria-controls="home-description-cases home-panel-cases"><span>01</span>案例库</button><div class="home-story-description" id="home-description-cases"><h3>先看见，再看懂。</h3><p>在完整 Demo 中理解风格，再到巧思库拆解可独立借用的视觉规则与交互机制。</p><a class="landing-module-link" href="cases.html">浏览案例</a><a class="landing-module-link" href="patterns.html">拆解设计巧思</a></div><div class="home-story-progress" aria-hidden="true"><span></span></div></article>
-      <article class="home-story-step"><button type="button" id="home-mode-lab" data-home-mode="lab" aria-expanded="false" aria-controls="home-description-lab home-panel-lab"><span>02</span>设计实验室</button><div class="home-story-description" id="home-description-lab"><h3>同样内容，不同表达。</h3><p>亲手切换方案，调配颜色、字体与留白，观察这些元素怎样配合。</p><a class="landing-module-link" href="lab.html#lab">打开完整实验室</a></div><div class="home-story-progress" aria-hidden="true"><span></span></div></article>
-      <article class="home-story-step"><button type="button" id="home-mode-agent" data-home-mode="agent" aria-expanded="false" aria-controls="home-description-agent home-panel-agent"><span>03</span>Agent 工作流</button><div class="home-story-description" id="home-description-agent"><h3>把参考带进你的项目。</h3><p>围绕需求比较设计方向，再取得完整说明、Prompt、研究与源码，作为构建依据。</p><a class="landing-module-link" href="agent.html">查看取材工作流</a></div><div class="home-story-progress" aria-hidden="true"><span></span></div></article>
-    </nav>
-    <div class="home-story-window">
-      <div class="home-story-window-bar"><p><span>WEB ATLAS</span><strong id="home-story-window-title">案例库</strong></p><span id="home-story-position">01 / 03</span></div>
-      <div class="home-story-panes">
-        <article class="home-story-pane home-story-pane--cases" id="home-panel-cases" aria-labelledby="home-cases-title">
-          <div class="home-story-pane-heading"><p class="landing-module-tag">01 / 案例库</p><h3 id="home-cases-title">先看见。再看懂。</h3><p class="landing-description">从真实品牌页面到经典设计语言，理解画面背后的设计选择。</p><a class="landing-module-link" href="cases.html">寻找你的设计方向</a></div>
-          <div class="landing-case-grid" aria-label="案例库中的真实 Demo 预览">
-            <a class="landing-case" href="cases.html#style/notion-editorial"><img src="previews/cases/notion-editorial.jpg" width="1425" height="990" loading="lazy" alt="Notion 案例 Demo，展示清晰文字层级与协作产品界面"><span>Notion <small>清晰与协作</small></span></a>
-            <a class="landing-case" href="cases.html#style/swiss-grid"><img src="previews/cases/swiss-grid.jpg" width="1425" height="990" loading="lazy" alt="瑞士设计练习，展示非对称标题与信息网格"><span>瑞士设计 <small>网格与秩序</small></span></a>
-            <a class="landing-case" href="cases.html#style/design-sight"><img src="previews/cases/design-sight.jpg" width="1425" height="990" loading="lazy" alt="21_21 DESIGN SIGHT 案例 Demo，展示真实展览海报与四列档案"><span>21_21 DESIGN SIGHT <small>艺术与档案</small></span></a>
-            <a class="landing-case" href="cases.html#style/google-material"><img src="previews/cases/google-material.jpg" width="1425" height="990" loading="lazy" alt="Google Material Design 案例 Demo，展示组件配色与圆角容器"><span>Google Material <small>组件与表现力</small></span></a>
-          </div><p class="landing-caption">在完整案例中看设计元素如何配合；在<a href="patterns.html">巧思库</a>与<a href="materials.html">素材库</a>中看单个机制的触发、结果与适用边界。</p>
-        </article>
-        <article class="home-story-pane home-story-pane--lab" id="home-panel-lab" aria-labelledby="home-lab-title">
-          <div class="home-story-pane-heading"><p class="landing-module-tag">02 / 设计实验室</p><h3 id="home-lab-title">同样的内容，不同的表达。</h3><p class="landing-description">切换方案，直接调配颜色、字体与留白。</p><a class="landing-module-link" href="lab.html#lab">打开完整实验室</a></div>
-          <div class="landing-lab-preview"><iframe class="landing-lab-frame" src="lab.html?embed=home" title="设计实验室交互预览" loading="lazy" height="650"></iframe></div><p class="landing-caption">试着写下一条发现。打开完整实验室，还可以调配布局、形状与更多元素。</p>
-        </article>
-        <article class="home-story-pane home-story-pane--agent" id="home-panel-agent" aria-labelledby="home-agent-title">
-          <div class="home-story-pane-heading"><p class="landing-module-tag">03 / Agent 工作流</p><h3 id="home-agent-title">把参考变成构建的上下文。</h3><p class="landing-description">和 Agent 比较设计方向，确认方向后读取完整参考资料，适配自己的内容与功能。</p><a class="landing-module-link" href="agent.html">进入 Agent 工作流</a></div>
-          <div class="landing-agent-preview">
-            <div class="landing-command"><div class="landing-command-heading"><label for="home-agent-prompt">安装 skill 后，用这段话开始</label><button type="button" id="home-copy-prompt">复制示例</button></div>
-              <textarea id="home-agent-prompt" readonly aria-label="Agent skill 调用示例" spellcheck="false">$web-atlas 先为我的产品比较设计方向。
-确认候选，再取完整说明、Prompt 与源码。
-把设计机制适配到我的内容和功能。</textarea>
-              <p id="home-copy-status" role="status">先讨论设计方向，再从同一版本取用资料。</p>
-            </div>
-            <div class="landing-materials"><p>完整案例提供以下参考资料</p><dl><div><dt>设计机制与 Prompt</dt><dd>entry</dd></div><div><dt>网页中的实际说明</dt><dd>webNotes</dd></div><div><dt>研究与复现边界</dt><dd>documents</dd></div><div><dt>源码、媒体与校验清单</dt><dd>files</dd></div></dl></div>
-          </div>
-        </article>
-      </div>
-      <div class="home-story-controls" hidden><p id="home-story-status" role="status">向下滚动，依次探索三种方式。</p><button class="landing-button" type="button" id="home-story-next">继续了解实验室</button></div>
-    </div>
-  </div>
-</div>
-</section>
-<section class="home-patterns" id="pattern-practice" aria-labelledby="home-patterns-title">
-  <div class="landing-section-heading"><p class="landing-kicker">ONE MECHANISM AT A TIME</p><h2 id="home-patterns-title">拆开一个巧思，亲手看它怎样工作。</h2><p>先看它解决什么问题，再判断是否适合你的页面。一个巧思可以跨多个类型，案例也不必包含所有类型。</p></div>
-  <div class="home-pattern-switch" role="group" aria-label="选择巧思体验类型"><button type="button" data-home-pattern="visual" aria-pressed="true" aria-controls="home-pattern-visual">视觉构成</button><button type="button" data-home-pattern="micro-motion" aria-pressed="false" aria-controls="home-pattern-micro-motion">微动效</button><button type="button" data-home-pattern="page-motion" aria-pressed="false" aria-controls="home-pattern-page-motion">页面动效</button><button type="button" data-home-pattern="sound" aria-pressed="false" aria-controls="home-pattern-sound">声音</button></div>
-  <div class="home-pattern-panels">
-    <article class="home-pattern-panel" id="home-pattern-visual"><div class="home-pattern-copy"><span>01 / 视觉构成</span><h3>第一眼，视线停在哪里？</h3><p>文字强调、颜色角色、容器与几何装饰，用一条构成规则建立重点。改变参数，观察同一内容的层级。</p><a class="landing-module-link" href="patterns.html#patterns?type=visual">探索视觉巧思</a></div><div data-pattern-playground data-type="visual"></div></article>
-    <article class="home-pattern-panel" id="home-pattern-micro-motion" hidden inert><div class="home-pattern-copy"><span>02 / 微动效</span><h3>让局部反馈，跟得上操作。</h3><p>悬停、聚焦、按下与复位，帮助确认当前目标和操作结果。移入、点击后再移出，观察反馈如何复位。</p><a class="landing-module-link" href="patterns.html#patterns?type=micro-motion">探索微动效</a></div><div data-pattern-playground data-type="micro-motion"></div></article>
-    <article class="home-pattern-panel" id="home-pattern-page-motion" hidden inert><div class="home-pattern-copy"><span>03 / 页面动效</span><h3>让内容的交接，也有顺序。</h3><p>加载、滚动叙事与章节转场作用于内容主体。操作遮罩切换，再反向返回，观察旧内容退出与新内容进入。</p><a class="landing-module-link" href="patterns.html#patterns?type=page-motion">探索页面动效</a></div><div data-pattern-playground data-type="page-motion"></div></article>
-    <article class="home-pattern-panel" id="home-pattern-sound" hidden inert><div class="home-pattern-copy"><span>04 / 声音</span><h3>声音，给动作另一条线索。</h3><p>环境音乐建立氛围，操作短音确认动作。这里由你启用合成操作音，体验触发与静音；声音始终是辅助反馈。</p><a class="landing-module-link" href="patterns.html#patterns?type=sound">探索声音巧思</a></div><div data-pattern-playground data-type="sound"></div></article>
-  </div>
-  <div class="home-pattern-footnote"><p>这里的本地机制示意用于理解构成与状态；实际表现和来源证据见巧思及完整案例。</p><a href="patterns.html#patterns?type=structure">也看看结构与状态巧思</a><a href="lab.html#pattern-lab">进入机制实验</a></div>
-</section>
-<section class="home-materials" aria-labelledby="home-materials-title"><div class="landing-section-heading"><p class="landing-kicker">MATERIALS YOU CAN TRY</p><h2 id="home-materials-title">把一个效果，放进你的设计。</h2><p>素材库从组件与内容资源中选取可亲手试用的样例，保留来源、使用方法和授权边界。</p></div><a class="home-material-preview" href="materials.html#material/shaders"><img src="previews/materials/shaders.png" alt="Shaders 网格渐变、条纹玻璃、指针波纹和噪声溶解四种样例" loading="lazy"><div><p class="landing-module-tag">组件与效果 / Shaders</p><h3>四种效果，四个可以操作的起点。</h3><p>调整渐变、折射和转场参数，移动指针观察反馈，再取得固定版本源码与适配说明。</p><span class="landing-module-link">进入素材库</span></div></a></section>
-<section class="landing-paths" aria-labelledby="paths-title">
-<div class="landing-section-heading"><p class="landing-kicker">DESIGN WITH CONTEXT</p><h2 id="paths-title">看过之后，继续往前。</h2><p>三种入口可以独立使用，也可以接成你的设计过程。</p></div>
-<ol><li><span>01</span><h3>观察一个案例</h3><p>看画面与 Demo，找出对你的场景有用的机制。</p><a href="cases.html">从案例开始</a></li><li><span>02</span><h3>试一组搭配</h3><p>在相同内容上调整元素，观察气质与阅读关系。</p><a href="patterns.html">浏览巧思</a><a href="lab.html">去实验室观察</a></li><li><span>03</span><h3>带着依据实现</h3><p>让 Agent 取得完整参考，适配你自己的内容和功能。</p><a href="agent.html">查看取材工作流</a></li></ol>
-</section>
-<section class="landing-ending" aria-labelledby="ending-title"><p class="landing-kicker">YOUR NEXT DESIGN</p><h2 id="ending-title">下一次灵感，<br>从这里开始。</h2><div class="landing-actions"><a class="landing-button landing-button--primary" href="cases.html">浏览案例</a><a class="landing-button" href="lab.html">进入实验室</a><a class="landing-button" href="agent.html">探索工作流</a></div><p><span data-home-count="studies">—</span> 个品牌／文化研究 · <span data-home-count="classics">—</span> 种经典设计语言 · <span data-home-count="showcases">—</span> 个示范作品</p></section>
-</main>
-<footer class="atlas-site-footer">
-  <div class="atlas-site-footer-inner">
-    <div class="atlas-site-footer-about">
-      <a class="atlas-site-footer-brand" href="index.html" aria-label="Web Atlas 首页"><svg class="atlas-site-footer-mark" viewBox="0 0 96 96" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" d="M24 8 88 72 72 88 8 24Z M8 72 72 8 88 24 24 88Z"/></svg><span>WEB ATLAS</span></a>
-      <p>从案例到实践，让设计依据进入你的作品。</p>
-      <small>MIBXR · Web Atlas</small>
-    </div>
-    <nav class="atlas-site-footer-nav" aria-label="页脚导航">
-      <div class="atlas-site-footer-links atlas-site-footer-links--explore"><p>探索 Atlas</p><a href="index.html">首页</a><a href="cases.html">案例库</a><a href="patterns.html">巧思库</a><a href="materials.html">素材库</a><a href="lab.html">设计实验室</a><a href="docs.html">文档中心</a><a href="agent.html">Agent 工作流</a></div>
-      <div class="atlas-site-footer-links"><p>项目资料</p><a href="docs.html?file=docs%2Fguide.md">使用与维护</a><a href="docs.html?file=docs%2Foverview.md">调研方法</a><a href="https://github.com/MIBXR/web-atlas" target="_blank" rel="noopener noreferrer"><span data-atlas-icon="external" aria-hidden="true"></span><span>项目 GitHub </span></a></div>
-    </nav>
-  </div>
-</footer>
-<script src="data/cases.js"></script><script src="data/patterns.js"></script><script src="site/pages/home/home.js"></script>
+<body>
+<div id="app"></div>
+<noscript>请启用 JavaScript 以浏览 Web Atlas。</noscript>
 </body>
 </html>

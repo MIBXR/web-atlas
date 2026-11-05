@@ -286,16 +286,76 @@
       "role": "context"
     },
     {
+      "path": "site/app/domain/case-notes.mjs",
+      "role": "context"
+    },
+    {
+      "path": "site/app/theme-boot.js",
+      "role": "context"
+    },
+    {
+      "path": "site/client/AgentPage-EAS5PVE3.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/CatalogPage-SGVWTZ3D.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/DocsPage-UQJTEUEK.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/DocsPage-UQJTEUEK.js.LEGAL.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/client/HomePage-U2APYKG6.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/LICENSES.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/client/LabPage-6GKARTD3.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-4PVWGCRJ.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-SSO6R7NX.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-XZHNFY5X.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-YOWC6UHQ.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-YOWC6UHQ.js.LEGAL.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/client/main.css",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/main.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/main.js.LEGAL.txt",
+      "role": "license"
+    },
+    {
       "path": "site/icons/favicon.svg",
       "role": "asset"
-    },
-    {
-      "path": "site/pages/docs/docs.css",
-      "role": "source"
-    },
-    {
-      "path": "site/pages/docs/docs.js",
-      "role": "source"
     },
     {
       "path": "site/runtime/asset-cache.js",
@@ -318,30 +378,6 @@
       "role": "source"
     },
     {
-      "path": "site/shared/site-footer.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/site-nav.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/site-shell.js",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/site-typography.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/theme-control.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/theme.js",
-      "role": "source"
-    },
-    {
       "path": "site/vendor/LICENSES.txt",
       "role": "license"
     },
@@ -356,7 +392,7 @@
   ],
   "webNotes": {
     "format": "text/html",
-    "renderer": "site/pages/cases/atlas.js",
-    "content": "<section><h2>从要素看风格</h2><a class=\"element-lab-link\" href=\"lab.html?style=atlas-sister-sites\">调配这个风格的设计要素</a><dl class=\"element-map\"><div class=\"\"><dt>配色角色</dt><dd>浅色偏绿底与白卡片、深色中性底与微绿卡片；五个主题色角色区分链接、强调字、主操作、高亮条和柔和状态。Motion 替换相同角色的品牌数值。</dd></div><div class=\"\"><dt>字体排版</dt><dd>正文使用系统无衬线，元数据使用等宽字体，均沿用两站字体栈；两行大标题、20px 卡片标题、16px 正文与 12px 标签形成稳定层级。</dd></div><div class=\"\"><dt>布局留白</dt><dd>列表为 228px 侧栏与自填充网格，详情为 2:1 吸附双栏，文档为 228px 目录、最大 860px 正文与右侧章节列表。</dd></div><div class=\"\"><dt>图像图标</dt><dd>12 张虚构作品图版采用 CSS 渐变、圆、三角、斜矩形与细线；舞台使用同一图版规则并提供手机画面宽度。</dd></div><div class=\"\"><dt>线条形状</dt><dd>Web 交叉长条与小圆角，Motion 双圆与较大圆角及胶囊当前项；卡片内层边框与次级面区分内容深度。</dd></div><div class=\"\"><dt>信息层级</dt><dd>品牌和页面位置 → 标题与设计决策 → 当前筛选或舞台 → 内容说明与取材动作；文档把查找和章节定位放在正文两侧。</dd></div><div class=\"\"><dt>动效反馈</dt><dd>主体短暂淡化，保持浏览连续；顶栏独立快照保留位置感；卡片轻微位移与画面缩放提示可进入详情，舞台播放由用户控制。</dd></div><div class=\"coherence\"><dt>协调逻辑</dt><dd>三种页面沿用相同字体、控件高度、间距、图标与配色职责；品牌切换保留布局、导航和当前阅读任务。</dd></div></dl></section><section><h2>设计机制</h2><ul><li>共享顶栏、侧栏、网格、控件与阅读顺序；品牌通过主题色、标志、圆角与底色色相表达。</li><li>深色强调、强调文字、实心底、高亮条、柔和底分别承担配色职责，实心底文字使用独立墨色。</li><li>顶栏当前页使用实心底，侧栏当前项使用柔和底；非当前导航悬停使用中性次级面与正文色。</li><li>详情保持一个页面滚动条，舞台始终贴住操作栏下方；舞台更长时说明栏也吸附。</li><li>文档查找、正文阅读与章节定位各占一栏，正文保留行宽上限；页面交接中顶栏保持原位。</li></ul><h3>设计重点</h3><p>把 MIBXR 两个参考库在固定提交中的界面机制制作成可操作的示范骨架，供观察与迁移；12 个条目名称、摘要和 CSS 图版为本案例虚构内容。</p><h3>主题与情绪</h3><p>Web 浅色为偏绿页面底、白内容面，深色为中性近黑底与微绿内容面；Motion 使用暖浅底与微暖深色表面。品牌图形和装饰色独立于五个内容配色角色。</p></section><section><h2>页面交互</h2><ul><li>品牌切换在同一 DOM 上更新 data-brand；主题按跟随系统、深色、浅色循环，四组变量分别控制页面底、表面、文字、五层主题色、标志与圆角，页面不刷新。</li><li>顶栏当前页与手机全站导航当前页使用 --accent-3 底和 --accent-3-ink 字；侧栏和本文目录使用 --accent-4 底、--accent-2 字与 650 字重，非当前导航悬停使用次级面与正文色。</li><li>列表可搜索标题、摘要和标签，按编号或名称双向排序，分类与收藏筛选同步更新结果；标题和预览进入详情，收藏在列表与详情共享并可导入、导出。</li><li>详情以 ResizeObserver 读取顶栏、操作栏、舞台列与说明栏：1160px 起舞台列始终 sticky，说明比舞台短时同时 sticky；top 为顶栏 68px 加操作栏实高加 24px，两栏在容器末尾按自然 sticky 边界结束；1159px 及以下单列。</li><li>hash 驱动列表、详情与文档的 DOM 更新；支持 startViewTransition 且不减少动态时开启 140ms ease-out 根过渡，atlas-header 快照无动画、旧快照隐藏；不支持或减少动态时直接更新。</li><li>舞台工具条可切换桌面与手机画面，控制播放与暂停，并以右栏较长／较短按钮切换 8 节或 2 节说明；“上一个”和“下一个”更换虚构作品，“复制 Prompt”复制完整的实现提示词。</li><li>文档左侧按标题搜索并折叠分组，长标题单行省略；右侧本文目录随滚动同步高亮，点击回到对应 h2／h3；仓库 Markdown 链接在文档阅读器打开。</li><li>800px 及以下顶栏用单个菜单打开本页目录或全站导航，前者单列、后者两列；品牌与主题控制位于面板底部，选择、外部点击或 Escape 关闭；文档本文目录通过右下角按钮打开。</li><li>卡片悬停上移 3px、增加阴影、内层画面放大 1.025，卡片底色保持原样；按钮悬停使用 --accent-4 底、--accent-1 字与边框，焦点轮廓使用 --accent-1。</li></ul><div class=\"behavior-block\"><span class=\"behavior-label\">显示主题</span><h3>系统 + 手动</h3><p>主题按钮按跟随系统、深色、浅色循环，品牌分段控件独立切换 Web 与 Motion；两种偏好保存在本地。</p><p>布局和配色职责保持一致，通过品牌数值、标志与圆角展示两站差异；作品图版保留原色。</p></div><div class=\"behavior-block\"><span class=\"behavior-label\">声音与交互</span><h3>无网站配乐</h3><p>无声音；舞台播放只控制 CSS 形状动画。</p><p>通过布局、状态颜色和页面交接表达反馈。</p></div></section><section><h2>约束与适用场景</h2><ul><li>数值取自 Web Atlas 2541e56a21d5321717b9397c14ae09462d562ee4 与 Motion Atlas 80aac18cd2fcef4a97e53b1ef9227a223136ff60 的 site/ 源码。</li><li>独立 Demo 由 index.html、style.css、app.js 组成，不引用 site/ 文件；字体使用两站共用的系统字体栈。</li><li>卡片与舞台画面使用 CSS 渐变与几何形状；研究原件保存在 source/，保持原始字节。</li><li>列表、详情与文档使用相同品牌层；800px 及以下使用手机菜单，1159px 及以下详情回到单列。</li><li>研究中记录被否决方案与数值；源码保持当前实现，复现范围与线上对照见 fidelity.md。</li></ul><h3>适合</h3><p>参考库与素材库 / 品牌主题系统 / 双栏作品详情 / 项目文档中心 / 设计机制教学</p><h3>谨慎使用</h3><p>把全部强调角色合并为一个色值 / 用导航悬停模拟持续当前状态 / 把两栏各自设为滚动容器 / 把虚构案例文案写成真实机构资料</p></section><section><h2>设计参数</h2><div class=\"swatches\"><span class=\"swatch\"><i style=\"background:#f4f5ee\"></i>#f4f5ee</span><span class=\"swatch\"><i style=\"background:#ffffff\"></i>#ffffff</span><span class=\"swatch\"><i style=\"background:#dcded4\"></i>#dcded4</span><span class=\"swatch\"><i style=\"background:#252822\"></i>#252822</span><span class=\"swatch\"><i style=\"background:#62695b\"></i>#62695b</span><span class=\"swatch\"><i style=\"background:#4b6118\"></i>#4b6118</span><span class=\"swatch\"><i style=\"background:#5f7a1f\"></i>#5f7a1f</span><span class=\"swatch\"><i style=\"background:#d4ef76\"></i>#d4ef76</span><span class=\"swatch\"><i style=\"background:#eef6d2\"></i>#eef6d2</span></div><p><b>字体</b> · Inter, Segoe UI Variable, Segoe UI, PingFang SC, Microsoft YaHei, sans-serif；等宽 JetBrains Mono, Cascadia Mono, Consolas, monospace；界面 12／14／16／20／28px，列表标题最大 52px。<br><b>布局</b> · Web 圆角 4／7／10px；顶栏 68px、水平 32／24／16px；侧栏 228px；卡片最小 300px、间距 18px、内边距 16px；详情 2:1、间距 32px；文档正文最大 860px。<br><b>动效</b> · 根 View Transition 140ms ease-out、顶栏无动画；卡片上移 3px、预览放大 1.025；减少动态直接更新页面并停止舞台形状动画。</p></section><section><div class=\"prompt-head\"><h2>可复用 Prompt</h2><button class=\"copy-button\" id=\"copy-prompt\">复制 Prompt</button></div><textarea class=\"prompt-box\" aria-label=\"可复用 Prompt\" readonly>为一个参考库制作可运行的列表、详情、文档三页，hash 路由为 #list、#detail、#docs。共用 68px 通栏顶栏和 Inter 系统字体栈，左右内边距 32px、801–1159px 为 24px、800px 及以下为 16px。Web 品牌用固定源码中的交叉长条、小圆角 4／7／10px；Motion 用双圆、8／12／16px 和 999px 胶囊当前项。四组品牌与深浅主题变量直接沿用本案例源码。把主题色分成深色强调、强调文字、实心底与独立墨色、高亮条、柔和底五个角色；顶栏当前项实心、侧栏当前项柔和，非当前导航悬停用中性次级面。列表左栏 228px，主区两行大标题、设计决策折叠、搜索、双向排序及 12 张虚构案例卡；卡片最小 300px、间距 18px、内边距 16px，CSS 几何图版保持独立配色。详情采用 2:1 双栏与 32px 间距，操作栏吸附，舞台列在 1160px 起始终吸附于顶栏加操作栏实高加 24px 处，说明较短时也吸附，只有页面一个滚动条；提供桌面／手机、播放／暂停及 8／2 节说明切换。文档为三栏，左侧分组标题搜索、正文最大 860px、右侧滚动同步目录，示例文含表格和代码块。800px 及以下通过一个菜单切换单列本页目录与两列全站导航，品牌和主题在底部。页面 DOM 更新用 startViewTransition，根 140ms ease-out、顶栏 atlas-header 不动；不支持或减少动态时直接切换。卡片悬停只上移 3px、加阴影与图版放大 1.025，按钮悬停用柔和主题底，键盘焦点用深色强调。主题按系统、深色、浅色循环，舞台默认暂停，无声音。</textarea><details><summary>负面约束 / Negative Prompt</summary><p>不使用外部图片，不从 site/ 加载运行文件，不改变固定提交配色与标志路径，不给顶栏过渡加淡化，不让导航悬停与当前项共用主题色底，不为两栏增加内部滚动，不把虚构条目当成真实机构。</p></details><h3>改造练习</h3><p>在 1440×900 与 390×844 下切换 Web／Motion 和浅／深主题，依次浏览三页，操作搜索、排序、收藏、菜单、文档目录与舞台；切换右栏长度并滚动到底部，观察吸附和底部对齐；对照固定源码及 fidelity 中的尺寸。</p></section><section class=\"case-patterns\" aria-labelledby=\"case-patterns-heading\"><div class=\"prompt-head\"><h2 id=\"case-patterns-heading\">关联巧思</h2><a href=\"patterns.html#patterns?source=atlas-sister-sites\">按来源浏览全部 4 项</a></div><p>这些机制可独立借用，触发条件、约束与组合建议见各项详情。</p><ul><li><a href=\"patterns.html#pattern/accent-role-tiers?source=atlas-sister-sites\">主题色分层：五个配色角色</a><span>视觉巧思</span></li><li><a href=\"patterns.html#pattern/current-item-emphasis-tiers?source=atlas-sister-sites\">当前项分级强调与中性悬停</a><span>视觉巧思 · 内容与组织</span></li><li><a href=\"patterns.html#pattern/persistent-header-page-transition?source=atlas-sister-sites\">顶栏不动的页面切换</a><span>页面动效</span></li><li><a href=\"patterns.html#pattern/shorter-column-sticky?source=atlas-sister-sites\">较短一栏吸附的两栏详情</a><span>内容与组织</span></li></ul></section><section><h2>来源与证据</h2><div class=\"source-item\"><span class=\"source-badge\">实例</span><a href=\"https://github.com/MIBXR/web-atlas/tree/2541e56a21d5321717b9397c14ae09462d562ee4/site\" target=\"_blank\" rel=\"noopener noreferrer\">Web Atlas · 固定提交源码 </a><small>Web 配色、字体、顶栏、侧栏、卡片、文档与详情吸附、过渡的数值来源。</small></div><div class=\"source-item\"><span class=\"source-badge\">实例</span><a href=\"https://github.com/MIBXR/motion-atlas/tree/80aac18cd2fcef4a97e53b1ef9227a223136ff60/site\" target=\"_blank\" rel=\"noopener noreferrer\">Motion Atlas · 固定提交源码 </a><small>Motion 品牌路径、暖色主题、圆角和胶囊当前项及共享骨架来源。</small></div><div class=\"source-item\"><span class=\"source-badge\">实例</span><a href=\"https://web-atlas.mibxranime.chatgpt.site/\" target=\"_blank\" rel=\"noopener noreferrer\">Web Atlas · 线上界面 </a><small>1440×900 下顶栏、列表、详情与文档的对照对象。</small></div><div class=\"source-item\"><span class=\"source-badge\">实例</span><a href=\"https://motion-atlas.mibxranime.chatgpt.site/\" target=\"_blank\" rel=\"noopener noreferrer\">Motion Atlas · 线上界面 </a><small>同视口下品牌差异与骨架数值的对照对象。</small></div><p>来源归档：2026-10-31。</p></section><section><h2>相关文档</h2><ul><li><a href=\"docs.html?file=docs%2Fcases%2Fatlas-sister-sites.md\" target=\"_blank\">调研记录</a></li><li><a href=\"docs.html?file=demos%2Fcases%2Fatlas-sister-sites%2Ffidelity.md\" target=\"_blank\">复现范围与差异</a></li><li><a href=\"demos/cases/atlas-sister-sites/assets-manifest.json\" target=\"_blank\">素材来源清单</a></li><li><a href=\"docs.html?file=demos%2Fcases%2Fatlas-sister-sites%2FLICENSES.md\" target=\"_blank\">许可原文索引</a></li></ul></section>"
+    "renderer": "site/app/domain/case-notes.mjs",
+    "content": "<section><h2>从要素看风格</h2><a href=\"lab.html?style=atlas-sister-sites\">调配这个风格的设计要素</a><dl><div><dt>配色角色</dt><dd>浅色偏绿底与白卡片、深色中性底与微绿卡片；五个主题色角色区分链接、强调字、主操作、高亮条和柔和状态。Motion 替换相同角色的品牌数值。</dd></div><div><dt>字体排版</dt><dd>正文使用系统无衬线，元数据使用等宽字体，均沿用两站字体栈；两行大标题、20px 卡片标题、16px 正文与 12px 标签形成稳定层级。</dd></div><div><dt>布局留白</dt><dd>列表为 228px 侧栏与自填充网格，详情为 2:1 吸附双栏，文档为 228px 目录、最大 860px 正文与右侧章节列表。</dd></div><div><dt>图像图标</dt><dd>12 张虚构作品图版采用 CSS 渐变、圆、三角、斜矩形与细线；舞台使用同一图版规则并提供手机画面宽度。</dd></div><div><dt>线条形状</dt><dd>Web 交叉长条与小圆角，Motion 双圆与较大圆角及胶囊当前项；卡片内层边框与次级面区分内容深度。</dd></div><div><dt>信息层级</dt><dd>品牌和页面位置 → 标题与设计决策 → 当前筛选或舞台 → 内容说明与取材动作；文档把查找和章节定位放在正文两侧。</dd></div><div><dt>动效反馈</dt><dd>主体短暂淡化，保持浏览连续；顶栏独立快照保留位置感；卡片轻微位移与画面缩放提示可进入详情，舞台播放由用户控制。</dd></div><div><dt>协调逻辑</dt><dd>三种页面沿用相同字体、控件高度、间距、图标与配色职责；品牌切换保留布局、导航和当前阅读任务。</dd></div></dl></section><section><h2>设计机制</h2><ul><li>共享顶栏、侧栏、网格、控件与阅读顺序；品牌通过主题色、标志、圆角与底色色相表达。</li><li>深色强调、强调文字、实心底、高亮条、柔和底分别承担配色职责，实心底文字使用独立墨色。</li><li>顶栏当前页使用实心底，侧栏当前项使用柔和底；非当前导航悬停使用中性次级面与正文色。</li><li>详情保持一个页面滚动条，舞台始终贴住操作栏下方；舞台更长时说明栏也吸附。</li><li>文档查找、正文阅读与章节定位各占一栏，正文保留行宽上限；页面交接中顶栏保持原位。</li></ul><h3>设计重点</h3><p>把 MIBXR 两个参考库在固定提交中的界面机制制作成可操作的示范骨架，供观察与迁移；12 个条目名称、摘要和 CSS 图版为本案例虚构内容。</p><h3>主题与情绪</h3><p>Web 浅色为偏绿页面底、白内容面，深色为中性近黑底与微绿内容面；Motion 使用暖浅底与微暖深色表面。品牌图形和装饰色独立于五个内容配色角色。</p></section><section><h2>页面交互</h2><ul><li>品牌切换在同一 DOM 上更新 data-brand；主题按跟随系统、深色、浅色循环，四组变量分别控制页面底、表面、文字、五层主题色、标志与圆角，页面不刷新。</li><li>顶栏当前页与手机全站导航当前页使用 --accent-3 底和 --accent-3-ink 字；侧栏和本文目录使用 --accent-4 底、--accent-2 字与 650 字重，非当前导航悬停使用次级面与正文色。</li><li>列表可搜索标题、摘要和标签，按编号或名称双向排序，分类与收藏筛选同步更新结果；标题和预览进入详情，收藏在列表与详情共享并可导入、导出。</li><li>详情以 ResizeObserver 读取顶栏、操作栏、舞台列与说明栏：1160px 起舞台列始终 sticky，说明比舞台短时同时 sticky；top 为顶栏 68px 加操作栏实高加 24px，两栏在容器末尾按自然 sticky 边界结束；1159px 及以下单列。</li><li>hash 驱动列表、详情与文档的 DOM 更新；支持 startViewTransition 且不减少动态时开启 140ms ease-out 根过渡，atlas-header 快照无动画、旧快照隐藏；不支持或减少动态时直接更新。</li><li>舞台工具条可切换桌面与手机画面，控制播放与暂停，并以右栏较长／较短按钮切换 8 节或 2 节说明；“上一个”和“下一个”更换虚构作品，“复制 Prompt”复制完整的实现提示词。</li><li>文档左侧按标题搜索并折叠分组，长标题单行省略；右侧本文目录随滚动同步高亮，点击回到对应 h2／h3；仓库 Markdown 链接在文档阅读器打开。</li><li>800px 及以下顶栏用单个菜单打开本页目录或全站导航，前者单列、后者两列；品牌与主题控制位于面板底部，选择、外部点击或 Escape 关闭；文档本文目录通过右下角按钮打开。</li><li>卡片悬停上移 3px、增加阴影、内层画面放大 1.025，卡片底色保持原样；按钮悬停使用 --accent-4 底、--accent-1 字与边框，焦点轮廓使用 --accent-1。</li></ul><h3>显示主题</h3><p>系统 + 手动</p><p>主题按钮按跟随系统、深色、浅色循环，品牌分段控件独立切换 Web 与 Motion；两种偏好保存在本地。</p><p>布局和配色职责保持一致，通过品牌数值、标志与圆角展示两站差异；作品图版保留原色。</p><h3>声音与交互</h3><p>无网站配乐</p><p>无声音；舞台播放只控制 CSS 形状动画。</p><p>通过布局、状态颜色和页面交接表达反馈。</p></section><section><h2>约束与适用场景</h2><ul><li>数值取自 Web Atlas 2541e56a21d5321717b9397c14ae09462d562ee4 与 Motion Atlas 80aac18cd2fcef4a97e53b1ef9227a223136ff60 的 site/ 源码。</li><li>独立 Demo 由 index.html、style.css、app.js 组成，不引用 site/ 文件；字体使用两站共用的系统字体栈。</li><li>卡片与舞台画面使用 CSS 渐变与几何形状；研究原件保存在 source/，保持原始字节。</li><li>列表、详情与文档使用相同品牌层；800px 及以下使用手机菜单，1159px 及以下详情回到单列。</li><li>研究中记录被否决方案与数值；源码保持当前实现，复现范围与线上对照见 fidelity.md。</li></ul><h3>适合</h3><ul><li>参考库与素材库</li><li>品牌主题系统</li><li>双栏作品详情</li><li>项目文档中心</li><li>设计机制教学</li></ul><h3>谨慎使用</h3><ul><li>把全部强调角色合并为一个色值</li><li>用导航悬停模拟持续当前状态</li><li>把两栏各自设为滚动容器</li><li>把虚构案例文案写成真实机构资料</li></ul></section><section><h2>设计参数</h2><div class=\"swatches\"><span><i style=\"background:#f4f5ee\"></i>#f4f5ee</span><span><i style=\"background:#ffffff\"></i>#ffffff</span><span><i style=\"background:#dcded4\"></i>#dcded4</span><span><i style=\"background:#252822\"></i>#252822</span><span><i style=\"background:#62695b\"></i>#62695b</span><span><i style=\"background:#4b6118\"></i>#4b6118</span><span><i style=\"background:#5f7a1f\"></i>#5f7a1f</span><span><i style=\"background:#d4ef76\"></i>#d4ef76</span><span><i style=\"background:#eef6d2\"></i>#eef6d2</span></div><p>字体 · Inter, Segoe UI Variable, Segoe UI, PingFang SC, Microsoft YaHei, sans-serif；等宽 JetBrains Mono, Cascadia Mono, Consolas, monospace；界面 12／14／16／20／28px，列表标题最大 52px。</p><p>布局 · Web 圆角 4／7／10px；顶栏 68px、水平 32／24／16px；侧栏 228px；卡片最小 300px、间距 18px、内边距 16px；详情 2:1、间距 32px；文档正文最大 860px。</p><p>动效 · 根 View Transition 140ms ease-out、顶栏无动画；卡片上移 3px、预览放大 1.025；减少动态直接更新页面并停止舞台形状动画。</p></section><section><h2>可复用 Prompt</h2><textarea aria-label=\"可复用 Prompt\" readonly>为一个参考库制作可运行的列表、详情、文档三页，hash 路由为 #list、#detail、#docs。共用 68px 通栏顶栏和 Inter 系统字体栈，左右内边距 32px、801–1159px 为 24px、800px 及以下为 16px。Web 品牌用固定源码中的交叉长条、小圆角 4／7／10px；Motion 用双圆、8／12／16px 和 999px 胶囊当前项。四组品牌与深浅主题变量直接沿用本案例源码。把主题色分成深色强调、强调文字、实心底与独立墨色、高亮条、柔和底五个角色；顶栏当前项实心、侧栏当前项柔和，非当前导航悬停用中性次级面。列表左栏 228px，主区两行大标题、设计决策折叠、搜索、双向排序及 12 张虚构案例卡；卡片最小 300px、间距 18px、内边距 16px，CSS 几何图版保持独立配色。详情采用 2:1 双栏与 32px 间距，操作栏吸附，舞台列在 1160px 起始终吸附于顶栏加操作栏实高加 24px 处，说明较短时也吸附，只有页面一个滚动条；提供桌面／手机、播放／暂停及 8／2 节说明切换。文档为三栏，左侧分组标题搜索、正文最大 860px、右侧滚动同步目录，示例文含表格和代码块。800px 及以下通过一个菜单切换单列本页目录与两列全站导航，品牌和主题在底部。页面 DOM 更新用 startViewTransition，根 140ms ease-out、顶栏 atlas-header 不动；不支持或减少动态时直接切换。卡片悬停只上移 3px、加阴影与图版放大 1.025，按钮悬停用柔和主题底，键盘焦点用深色强调。主题按系统、深色、浅色循环，舞台默认暂停，无声音。</textarea><details><summary>负面约束 / Negative Prompt</summary><p>不使用外部图片，不从 site/ 加载运行文件，不改变固定提交配色与标志路径，不给顶栏过渡加淡化，不让导航悬停与当前项共用主题色底，不为两栏增加内部滚动，不把虚构条目当成真实机构。</p></details><h3>改造练习</h3><p>在 1440×900 与 390×844 下切换 Web／Motion 和浅／深主题，依次浏览三页，操作搜索、排序、收藏、菜单、文档目录与舞台；切换右栏长度并滚动到底部，观察吸附和底部对齐；对照固定源码及 fidelity 中的尺寸。</p></section><section><h2>关联巧思</h2><a href=\"patterns.html#patterns?source=atlas-sister-sites\">按来源浏览全部 4 项</a><ul><li><a href=\"patterns.html#pattern/accent-role-tiers?source=atlas-sister-sites\">主题色分层：五个配色角色</a></li><li><a href=\"patterns.html#pattern/current-item-emphasis-tiers?source=atlas-sister-sites\">当前项分级强调与中性悬停</a></li><li><a href=\"patterns.html#pattern/persistent-header-page-transition?source=atlas-sister-sites\">顶栏不动的页面切换</a></li><li><a href=\"patterns.html#pattern/shorter-column-sticky?source=atlas-sister-sites\">较短一栏吸附的两栏详情</a></li></ul></section><section><h2>来源与证据</h2><div class=\"source-item\"><span>实例</span><a href=\"https://github.com/MIBXR/web-atlas/tree/2541e56a21d5321717b9397c14ae09462d562ee4/site\">Web Atlas · 固定提交源码</a><p>Web 配色、字体、顶栏、侧栏、卡片、文档与详情吸附、过渡的数值来源。</p></div><div class=\"source-item\"><span>实例</span><a href=\"https://github.com/MIBXR/motion-atlas/tree/80aac18cd2fcef4a97e53b1ef9227a223136ff60/site\">Motion Atlas · 固定提交源码</a><p>Motion 品牌路径、暖色主题、圆角和胶囊当前项及共享骨架来源。</p></div><div class=\"source-item\"><span>实例</span><a href=\"https://web-atlas.mibxranime.chatgpt.site/\">Web Atlas · 线上界面</a><p>1440×900 下顶栏、列表、详情与文档的对照对象。</p></div><div class=\"source-item\"><span>实例</span><a href=\"https://motion-atlas.mibxranime.chatgpt.site/\">Motion Atlas · 线上界面</a><p>同视口下品牌差异与骨架数值的对照对象。</p></div><p>来源归档：2026-10-31。</p></section><section><h2>相关文档</h2><ul><li><a href=\"docs.html?file=docs%2Fcases%2Fatlas-sister-sites.md\">调研记录</a></li><li><a href=\"docs.html?file=demos%2Fcases%2Fatlas-sister-sites%2Ffidelity.md\">复现范围与差异</a></li><li><a href=\"demos/cases/atlas-sister-sites/assets-manifest.json\">素材来源清单</a></li><li><a href=\"docs.html?file=demos%2Fcases%2Fatlas-sister-sites%2FLICENSES.md\">许可原文索引</a></li></ul></section>"
   }
 }

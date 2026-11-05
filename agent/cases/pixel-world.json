@@ -189,16 +189,76 @@
       "role": "context"
     },
     {
+      "path": "site/app/domain/case-notes.mjs",
+      "role": "context"
+    },
+    {
+      "path": "site/app/theme-boot.js",
+      "role": "context"
+    },
+    {
+      "path": "site/client/AgentPage-EAS5PVE3.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/CatalogPage-SGVWTZ3D.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/DocsPage-UQJTEUEK.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/DocsPage-UQJTEUEK.js.LEGAL.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/client/HomePage-U2APYKG6.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/LICENSES.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/client/LabPage-6GKARTD3.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-4PVWGCRJ.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-SSO6R7NX.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-XZHNFY5X.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-YOWC6UHQ.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-YOWC6UHQ.js.LEGAL.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/client/main.css",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/main.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/main.js.LEGAL.txt",
+      "role": "license"
+    },
+    {
       "path": "site/icons/favicon.svg",
       "role": "asset"
-    },
-    {
-      "path": "site/pages/docs/docs.css",
-      "role": "source"
-    },
-    {
-      "path": "site/pages/docs/docs.js",
-      "role": "source"
     },
     {
       "path": "site/runtime/asset-cache.js",
@@ -221,30 +281,6 @@
       "role": "source"
     },
     {
-      "path": "site/shared/site-footer.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/site-nav.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/site-shell.js",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/site-typography.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/theme-control.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/theme.js",
-      "role": "source"
-    },
-    {
       "path": "site/vendor/LICENSES.txt",
       "role": "license"
     },
@@ -259,7 +295,7 @@
   ],
   "webNotes": {
     "format": "text/html",
-    "renderer": "site/pages/cases/atlas.js",
-    "content": "<section><h2>从要素看风格</h2><a class=\"element-lab-link\" href=\"lab.html?style=pixel-world\">调配这个风格的设计要素</a><dl class=\"element-map\"><div class=\"\"><dt>配色角色</dt><dd>有限16色调色板，以土色、草绿和水蓝区分离散地图区域。</dd></div><div class=\"\"><dt>字体排版</dt><dd>Courier New用于英文界面；中文Microsoft YaHei，正文15–17px</dd></div><div class=\"\"><dt>布局留白</dt><dd>地图主区域 + 旅行记录侧栏；手机地图上、记录下；后续地点索引与玩法说明</dd></div><div class=\"\"><dt>图像图标</dt><dd>128×128原生Canvas与原创像素地点构成可探索世界。</dd></div><div class=\"\"><dt>线条形状</dt><dd>离散方格、阶梯边缘与像素按钮保持同一尺度体系。</dd></div><div class=\"\"><dt>信息层级</dt><dd>世界地图 → 地点索引 → 步进操作 → 探索手账。</dd></div><div class=\"\"><dt>动效反馈</dt><dd>角色以tile步进移动，地图保持静态；reduced-motion保留即时状态更新</dd></div><div class=\"coherence\"><dt>协调逻辑</dt><dd>低分辨率地景、有限调色与清楚状态共同形成游戏感；中文说明保留正常可读字体，不强行像素化。</dd></div></dl></section><section><h2>设计机制</h2><ul><li>先定义像素尺度与色板，再绘制地形、物件和角色。</li><li>轮廓、明暗与空间关系在小画布内必须可辨认。</li><li>世界场景承担导航，常规文字承担说明，控制复杂度。</li><li>探索操作、角色位置和地点信息保持一致，避免只有装饰的地图。</li></ul><h3>设计重点</h3><p>虚构 Tiny Tides 岛屿用原创128×128地图介绍四个地点；点击地点或移动角色时更新场景信息，发现进度和旅行手账可保存。</p><h3>主题与情绪</h3><p>深蓝海面、温暖沙滩、块状树林、小灯塔；像素图形与清晰中文旅行记录结合的轻探索体验。</p></section><section><h2>页面交互</h2><ul><li>地点按钮移动角色并更新当前地点介绍。</li><li>地图聚焦后用方向键/WASD移动；手机可用方向按钮。</li><li>靠近地点会记录发现进度，按钮状态不只通过颜色表达。</li><li>手账仅保存当前浏览器，支持清除并重新探索。</li></ul><div class=\"behavior-block\"><span class=\"behavior-label\">显示主题</span><h3>固定主题</h3><p>此构成练习保留指定风格配色；实验室可另行比较系统／手动深浅主题。</p><p>风格不是一组可直接反转的颜色；改变主题时需重新配对文字、表面、强调与边框，保留图像原色。</p></div><div class=\"behavior-block\"><span class=\"behavior-label\">声音与交互</span><h3>无网站配乐</h3><p>本练习无背景音乐。</p></div></section><section><h2>约束与适用场景</h2><ul><li>PICO-8的128×128/16色是这个实例的明确创作约束，不是所有像素艺术的定义。</li><li>本地图使用16色原生PICO-8色板和整数像素绘制；桌面用整数倍率，窄屏优先完整显示。</li><li>Canvas放大使用image-rendering:pixelated；禁止图片模糊插值。</li><li>关键地点有可聚焦DOM按钮与文本说明，不只隐藏在Canvas里。</li><li>长文使用可读系统字体，不能把业务信息全部压成像素小字。</li><li>无角色原作素材、复杂游戏引擎或音频自动播放；降低动态偏好时取消非必要动画。</li></ul><h3>适合</h3><p>独立游戏宣传 / 互动作品集 / 小型IP世界介绍 / 趣味导航 / 探索式知识页面</p><h3>谨慎使用</h3><p>模糊或混合不一致像素尺度 / 只有Canvas且无键盘/文本入口 / 把PICO-8限制推广为所有像素艺术的规则</p></section><section><h2>设计参数</h2><div class=\"swatches\"><span class=\"swatch\"><i style=\"background:#1d2b53\"></i>#1d2b53</span><span class=\"swatch\"><i style=\"background:#29adff\"></i>#29adff</span><span class=\"swatch\"><i style=\"background:#008751\"></i>#008751</span><span class=\"swatch\"><i style=\"background:#00e436\"></i>#00e436</span><span class=\"swatch\"><i style=\"background:#ffccaa\"></i>#ffccaa</span><span class=\"swatch\"><i style=\"background:#fff1e8\"></i>#fff1e8</span><span class=\"swatch\"><i style=\"background:#ffa300\"></i>#ffa300</span><span class=\"swatch\"><i style=\"background:#5f574f\"></i>#5f574f</span></div><p><b>字体</b> · Courier New用于英文界面；中文Microsoft YaHei，正文15–17px<br><b>布局</b> · 地图主区域 + 旅行记录侧栏；手机地图上、记录下；后续地点索引与玩法说明<br><b>动效</b> · 移动以tile步进、静态地图；reduced-motion保留即时状态更新</p></section><section><div class=\"prompt-head\"><h2>可复用 Prompt</h2><button class=\"copy-button\" id=\"copy-prompt\">复制 Prompt</button></div><textarea class=\"prompt-box\" aria-label=\"可复用 Prompt\" readonly>可替换内容：产品/品牌【名称】；受众【用户】；核心价值【卖点与证据】；主行动【希望用户完成的动作】。以下为风格示范任务，可替换具体品牌与内容，保留设计约束。\n\n为虚构小型IP [品牌] 制作地图驱动的像素风介绍页。参考PICO-8的128×128、16色、8×8tile创作约束，自绘一个可辨认轮廓的岛屿世界；禁止复制Celeste或其他游戏角色/背景。使用Canvas整数像素绘制并用image-rendering:pixelated放大，桌面尽量整数倍率，手机完整显示地图。首屏地图为主，旅行手账为辅：四个可聚焦DOM地点按钮、实时地点说明、角色位置与发现计数，方向键/WASD仅在地图聚焦时生效，手机提供四向按钮。探索记录可存当前浏览器并可清除。后续至少两節为地点索引与玩法说明；中文正文使用正常可读系统字体，英文元数据可用等宽字。没有自动音频、闪烁扫描线或滚动劫持，尊重reduced-motion。注明这是PICO-8约束的局部迁移，而不是所有像素艺术的定义。\n\n要素协调要求：低分辨率地景、有限调色与清楚状态共同形成游戏感；中文说明保留正常可读字体，不强行像素化。</textarea><details><summary>负面约束 / Negative Prompt</summary><p>不要平滑缩放像素图、随机混合像素尺度、把照片马赛克当作像素美术、隐藏于Canvas的唯一导航、不可读中文小字或自动播放音效。</p></details><h3>改造练习</h3><p>为岛屿添加一个夜间色板，在不增加第17种颜色的前提下保持地标与路径可辨认。</p></section><section class=\"case-patterns\" aria-labelledby=\"case-patterns-heading\"><div class=\"prompt-head\"><h2 id=\"case-patterns-heading\">关联巧思</h2><a href=\"patterns.html#patterns?source=pixel-world\">按来源浏览全部 3 项</a></div><p>这些机制可独立借用，触发条件、约束与组合建议见各项详情。</p><ul><li><a href=\"patterns.html#pattern/discovery-progress-journal?source=pixel-world\">探索进度与可重置手账</a><span>内容与组织</span></li><li><a href=\"patterns.html#pattern/integer-pixel-canvas?source=pixel-world\">整数像素与有限色板</a><span>视觉巧思</span></li><li><a href=\"patterns.html#pattern/spatial-navigation-map?source=pixel-world\">场景地标作为导航</a><span>内容与组织</span></li></ul></section><section><h2>来源与证据</h2><div class=\"source-item\"><span class=\"source-badge\">实例</span><a href=\"https://www.celestegame.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Celeste 官方网站 </a><small>2026-10-07阅读：围绕登山旅程、游戏预告和平台入口建立明确世界与产品行动；不复制其角色或场景。</small></div><div class=\"source-item\"><span class=\"source-badge\">实例</span><a href=\"https://www.lexaloffle.com/pico-8.php\" target=\"_blank\" rel=\"noopener noreferrer\">PICO-8 Fantasy Console — Lexaloffle </a><small>官网规定128×128显示、16色、8×8精灵等约束，并说明有限设计的表达价值。</small></div><div class=\"source-item\"><span class=\"source-badge\">规范</span><a href=\"https://www.lexaloffle.com/dl/docs/pico-8_manual.html\" target=\"_blank\" rel=\"noopener noreferrer\">PICO-8 官方手册 </a><small>使用其明确的整数像素/16色色板/8×8 tile模型作为本demo局部创作约束。</small></div><div class=\"source-item\"><span class=\"source-badge\">理论</span><a href=\"https://saint11.art/blog/pixel-art-tutorials/\" target=\"_blank\" rel=\"noopener noreferrer\">Saint11 — Pixel Art Tutorials </a><small>Celeste官网列出的像素美术师Pedro Medeiros的公开教程，为轮廓、有限色彩和逐像素思考提供实践参考。</small></div><div class=\"source-item\"><span class=\"source-badge\">规范</span><a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/image-rendering\" target=\"_blank\" rel=\"noopener noreferrer\">MDN — image-rendering </a><small>说明pixelated/crisp-edges的缩放行为；本例Canvas使用pixelated保留边缘。</small></div><div class=\"source-item\"><span class=\"source-badge\">创作来源</span><a href=\"https://exok.com/team.html\" target=\"_blank\" rel=\"noopener noreferrer\">Celeste 团队 · 工作室介绍 </a><small>主要实例 Celeste 的创作团队在官方介绍中说明工作室位于加拿大温哥华。</small></div><p>理论来源核验：2026-10-07。</p></section><section><h2>相关文档</h2><ul><li><a href=\"docs.html?file=docs%2Fcases%2Fpixel-world.md\" target=\"_blank\">调研记录</a></li></ul></section>"
+    "renderer": "site/app/domain/case-notes.mjs",
+    "content": "<section><h2>从要素看风格</h2><a href=\"lab.html?style=pixel-world\">调配这个风格的设计要素</a><dl><div><dt>配色角色</dt><dd>有限16色调色板，以土色、草绿和水蓝区分离散地图区域。</dd></div><div><dt>字体排版</dt><dd>Courier New用于英文界面；中文Microsoft YaHei，正文15–17px</dd></div><div><dt>布局留白</dt><dd>地图主区域 + 旅行记录侧栏；手机地图上、记录下；后续地点索引与玩法说明</dd></div><div><dt>图像图标</dt><dd>128×128原生Canvas与原创像素地点构成可探索世界。</dd></div><div><dt>线条形状</dt><dd>离散方格、阶梯边缘与像素按钮保持同一尺度体系。</dd></div><div><dt>信息层级</dt><dd>世界地图 → 地点索引 → 步进操作 → 探索手账。</dd></div><div><dt>动效反馈</dt><dd>角色以tile步进移动，地图保持静态；reduced-motion保留即时状态更新</dd></div><div><dt>协调逻辑</dt><dd>低分辨率地景、有限调色与清楚状态共同形成游戏感；中文说明保留正常可读字体，不强行像素化。</dd></div></dl></section><section><h2>设计机制</h2><ul><li>先定义像素尺度与色板，再绘制地形、物件和角色。</li><li>轮廓、明暗与空间关系在小画布内必须可辨认。</li><li>世界场景承担导航，常规文字承担说明，控制复杂度。</li><li>探索操作、角色位置和地点信息保持一致，避免只有装饰的地图。</li></ul><h3>设计重点</h3><p>虚构 Tiny Tides 岛屿用原创128×128地图介绍四个地点；点击地点或移动角色时更新场景信息，发现进度和旅行手账可保存。</p><h3>主题与情绪</h3><p>深蓝海面、温暖沙滩、块状树林、小灯塔；像素图形与清晰中文旅行记录结合的轻探索体验。</p></section><section><h2>页面交互</h2><ul><li>地点按钮移动角色并更新当前地点介绍。</li><li>地图聚焦后用方向键/WASD移动；手机可用方向按钮。</li><li>靠近地点会记录发现进度，按钮状态不只通过颜色表达。</li><li>手账仅保存当前浏览器，支持清除并重新探索。</li></ul><h3>显示主题</h3><p>固定主题</p><p>此构成练习保留指定风格配色；实验室可另行比较系统／手动深浅主题。</p><p>风格不是一组可直接反转的颜色；改变主题时需重新配对文字、表面、强调与边框，保留图像原色。</p><h3>声音与交互</h3><p>无网站配乐</p><p>本练习无背景音乐。</p></section><section><h2>约束与适用场景</h2><ul><li>PICO-8的128×128/16色是这个实例的明确创作约束，不是所有像素艺术的定义。</li><li>本地图使用16色原生PICO-8色板和整数像素绘制；桌面用整数倍率，窄屏优先完整显示。</li><li>Canvas放大使用image-rendering:pixelated；禁止图片模糊插值。</li><li>关键地点有可聚焦DOM按钮与文本说明，不只隐藏在Canvas里。</li><li>长文使用可读系统字体，不能把业务信息全部压成像素小字。</li><li>无角色原作素材、复杂游戏引擎或音频自动播放；降低动态偏好时取消非必要动画。</li></ul><h3>适合</h3><ul><li>独立游戏宣传</li><li>互动作品集</li><li>小型IP世界介绍</li><li>趣味导航</li><li>探索式知识页面</li></ul><h3>谨慎使用</h3><ul><li>模糊或混合不一致像素尺度</li><li>只有Canvas且无键盘/文本入口</li><li>把PICO-8限制推广为所有像素艺术的规则</li></ul></section><section><h2>设计参数</h2><div class=\"swatches\"><span><i style=\"background:#1d2b53\"></i>#1d2b53</span><span><i style=\"background:#29adff\"></i>#29adff</span><span><i style=\"background:#008751\"></i>#008751</span><span><i style=\"background:#00e436\"></i>#00e436</span><span><i style=\"background:#ffccaa\"></i>#ffccaa</span><span><i style=\"background:#fff1e8\"></i>#fff1e8</span><span><i style=\"background:#ffa300\"></i>#ffa300</span><span><i style=\"background:#5f574f\"></i>#5f574f</span></div><p>字体 · Courier New用于英文界面；中文Microsoft YaHei，正文15–17px</p><p>布局 · 地图主区域 + 旅行记录侧栏；手机地图上、记录下；后续地点索引与玩法说明</p><p>动效 · 移动以tile步进、静态地图；reduced-motion保留即时状态更新</p></section><section><h2>可复用 Prompt</h2><textarea aria-label=\"可复用 Prompt\" readonly>可替换内容：产品/品牌【名称】；受众【用户】；核心价值【卖点与证据】；主行动【希望用户完成的动作】。以下为风格示范任务，可替换具体品牌与内容，保留设计约束。\n\n为虚构小型IP [品牌] 制作地图驱动的像素风介绍页。参考PICO-8的128×128、16色、8×8tile创作约束，自绘一个可辨认轮廓的岛屿世界；禁止复制Celeste或其他游戏角色/背景。使用Canvas整数像素绘制并用image-rendering:pixelated放大，桌面尽量整数倍率，手机完整显示地图。首屏地图为主，旅行手账为辅：四个可聚焦DOM地点按钮、实时地点说明、角色位置与发现计数，方向键/WASD仅在地图聚焦时生效，手机提供四向按钮。探索记录可存当前浏览器并可清除。后续至少两節为地点索引与玩法说明；中文正文使用正常可读系统字体，英文元数据可用等宽字。没有自动音频、闪烁扫描线或滚动劫持，尊重reduced-motion。注明这是PICO-8约束的局部迁移，而不是所有像素艺术的定义。\n\n要素协调要求：低分辨率地景、有限调色与清楚状态共同形成游戏感；中文说明保留正常可读字体，不强行像素化。</textarea><details><summary>负面约束 / Negative Prompt</summary><p>不要平滑缩放像素图、随机混合像素尺度、把照片马赛克当作像素美术、隐藏于Canvas的唯一导航、不可读中文小字或自动播放音效。</p></details><h3>改造练习</h3><p>为岛屿添加一个夜间色板，在不增加第17种颜色的前提下保持地标与路径可辨认。</p></section><section><h2>关联巧思</h2><a href=\"patterns.html#patterns?source=pixel-world\">按来源浏览全部 3 项</a><ul><li><a href=\"patterns.html#pattern/discovery-progress-journal?source=pixel-world\">探索进度与可重置手账</a></li><li><a href=\"patterns.html#pattern/integer-pixel-canvas?source=pixel-world\">整数像素与有限色板</a></li><li><a href=\"patterns.html#pattern/spatial-navigation-map?source=pixel-world\">场景地标作为导航</a></li></ul></section><section><h2>来源与证据</h2><div class=\"source-item\"><span>实例</span><a href=\"https://www.celestegame.com/\">Celeste 官方网站</a><p>2026-10-07阅读：围绕登山旅程、游戏预告和平台入口建立明确世界与产品行动；不复制其角色或场景。</p></div><div class=\"source-item\"><span>实例</span><a href=\"https://www.lexaloffle.com/pico-8.php\">PICO-8 Fantasy Console — Lexaloffle</a><p>官网规定128×128显示、16色、8×8精灵等约束，并说明有限设计的表达价值。</p></div><div class=\"source-item\"><span>规范</span><a href=\"https://www.lexaloffle.com/dl/docs/pico-8_manual.html\">PICO-8 官方手册</a><p>使用其明确的整数像素/16色色板/8×8 tile模型作为本demo局部创作约束。</p></div><div class=\"source-item\"><span>理论</span><a href=\"https://saint11.art/blog/pixel-art-tutorials/\">Saint11 — Pixel Art Tutorials</a><p>Celeste官网列出的像素美术师Pedro Medeiros的公开教程，为轮廓、有限色彩和逐像素思考提供实践参考。</p></div><div class=\"source-item\"><span>规范</span><a href=\"https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/image-rendering\">MDN — image-rendering</a><p>说明pixelated/crisp-edges的缩放行为；本例Canvas使用pixelated保留边缘。</p></div><div class=\"source-item\"><span>创作来源</span><a href=\"https://exok.com/team.html\">Celeste 团队 · 工作室介绍</a><p>主要实例 Celeste 的创作团队在官方介绍中说明工作室位于加拿大温哥华。</p></div><p>理论来源核验：2026-10-07。</p></section><section><h2>相关文档</h2><ul><li><a href=\"docs.html?file=docs%2Fcases%2Fpixel-world.md\">调研记录</a></li></ul></section>"
   }
 }

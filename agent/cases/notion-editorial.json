@@ -295,16 +295,76 @@
       "role": "context"
     },
     {
+      "path": "site/app/domain/case-notes.mjs",
+      "role": "context"
+    },
+    {
+      "path": "site/app/theme-boot.js",
+      "role": "context"
+    },
+    {
+      "path": "site/client/AgentPage-EAS5PVE3.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/CatalogPage-SGVWTZ3D.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/DocsPage-UQJTEUEK.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/DocsPage-UQJTEUEK.js.LEGAL.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/client/HomePage-U2APYKG6.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/LICENSES.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/client/LabPage-6GKARTD3.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-4PVWGCRJ.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-SSO6R7NX.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-XZHNFY5X.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-YOWC6UHQ.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-YOWC6UHQ.js.LEGAL.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/client/main.css",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/main.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/main.js.LEGAL.txt",
+      "role": "license"
+    },
+    {
       "path": "site/icons/favicon.svg",
       "role": "asset"
-    },
-    {
-      "path": "site/pages/docs/docs.css",
-      "role": "source"
-    },
-    {
-      "path": "site/pages/docs/docs.js",
-      "role": "source"
     },
     {
       "path": "site/runtime/asset-cache.js",
@@ -327,30 +387,6 @@
       "role": "source"
     },
     {
-      "path": "site/shared/site-footer.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/site-nav.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/site-shell.js",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/site-typography.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/theme-control.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/theme.js",
-      "role": "source"
-    },
-    {
       "path": "site/vendor/LICENSES.txt",
       "role": "license"
     },
@@ -365,7 +401,7 @@
   ],
   "webNotes": {
     "format": "text/html",
-    "renderer": "site/pages/cases/atlas.js",
-    "content": "<section><h2>从要素看风格</h2><a class=\"element-lab-link\" href=\"lab.html?style=notion-editorial\">调配这个风格的设计要素</a><dl class=\"element-map\"><div class=\"\"><dt>配色角色</dt><dd>营销首页固定白底、浅色 Bento 和蓝色 CTA；没有全局主题切换。产品编辑器内的主题不等于这个首页主题。</dd></div><div class=\"\"><dt>字体排版</dt><dd>本地 NotionInter regular/bold；首屏94px、动词72px、正文20px；手机45px。</dd></div><div class=\"\"><dt>布局留白</dt><dd>语言提示/导航 → 动作胶囊/头像/桌面产品视频 → 标识条带 → 两列+通栏 Bento → 五用途 → 团队故事 → 结束行动 → 页尾。</dd></div><div class=\"\"><dt>图像图标</dt><dd>白底居中标题用变宽动作胶囊、人格化官方头像和按能力分组的 Bento 建立友好的工具定位。</dd></div><div class=\"\"><dt>线条形状</dt><dd>大圆胶囊动词、8px按钮、20px功能区；插画自然外轮廓。</dd></div><div class=\"\"><dt>信息层级</dt><dd>白底居中标题用变宽动作胶囊、人格化官方头像和按能力分组的 Bento 建立友好的工具定位。</dd></div><div class=\"\"><dt>动效反馈</dt><dd>2500ms 自动 Think/Ship/Create/Build/Jam/Scale → 词直接替换，测量 scrollWidth 后宽度以 300ms cubic-bezier(.86,0,.07,1) 变化，底色/圆点对应变化；这是源机制，没有给文字加不存在的飞入飞出；桌面官方产品视频静音循环，可暂停；手机保留上方七个头像 pile，当前页面隐藏 hero 媒体区而不是塞入桌面视频；客户标识原生连续横移，指针停留暂停；手机保持条带，不把标识排成多行墙；桌面 Product/Resources 指针进入与点击 → 首次 opacity/translateY(-16px) 250ms ease-out，退出 150ms ease-in、延迟 50ms；已打开分类按源 instantSwitch 直接切换，快速反转取消旧退出，减少动态直接完成；手机打开全屏菜单 → Product/AI/Resources 原地单开，切换收起前组，再点同组收起；其他分类变灰，底部 Download app/Log in 固定。源 CSS 子展开 300ms、入口 350ms，内容/底部延迟 200/250ms；关闭/Escape 恢复滚动和焦点，维持层级与行动位置。</dd></div><div class=\"coherence\"><dt>协调逻辑</dt><dd>七头像为官方原素材，组合间距、标识 24s 周期和菜单指针离开等待 150ms 是拟合；Bento 使用官方完整静帧而非全部独立浮层，三故事数量与正文缩短。详情对话框内的勾选/问答/agent 反馈是本地示范，并不声称是原站首页机制或真实模型执行。</dd></div><div class=\"\"><dt>滚动结构</dt><dd>语言提示/导航 → 动作胶囊/头像/桌面产品视频 → 标识条带 → 两列+通栏 Bento → 五用途 → 团队故事 → 结束行动 → 页尾。</dd></div></dl></section><section><h2>设计机制</h2><ul><li>白底居中标题用变宽动作胶囊、人格化官方头像和按能力分组的 Bento 建立友好的工具定位。</li><li>配色、文字密度、边框与选中状态共同表达本页面的产品语气。</li><li>动作有明确的触发条件与状态关系，以同一源 URL 的当前页面为依据；近似和未验证状态分别说明。</li><li>第一方素材保持比例；手机保留原站实际变体。</li></ul><h3>设计重点</h3><p>Ramp HQ产品视频具体展示团队与agents；Capture/Find并列呈现上下文与答案，整行Automate强调任务执行。</p><h3>主题与情绪</h3><p>营销首页固定白底、浅色 Bento 和蓝色 CTA；没有全局主题切换。产品编辑器内的主题不等于这个首页主题。</p></section><section><h2>页面交互</h2><ul><li>2500ms 自动 Think/Ship/Create/Build/Jam/Scale → 词直接替换，测量 scrollWidth 后宽度以 300ms cubic-bezier(.86,0,.07,1) 变化，底色/圆点对应变化；这是源机制，没有给文字加不存在的飞入飞出。</li><li>桌面官方产品视频静音循环，可暂停；手机保留上方七个头像 pile，当前页面隐藏 hero 媒体区而不是塞入桌面视频。</li><li>客户标识原生连续横移，指针停留暂停；手机保持条带，不把标识排成多行墙。</li><li>桌面 Product/Resources 指针进入与点击 → 首次 opacity/translateY(-16px) 250ms ease-out，退出 150ms ease-in、延迟 50ms；已打开分类按源 instantSwitch 直接切换，快速反转取消旧退出，减少动态直接完成；手机打开全屏菜单 → Product/AI/Resources 原地单开，切换收起前组，再点同组收起；其他分类变灰，底部 Download app/Log in 固定。源 CSS 子展开 300ms、入口 350ms，内容/底部延迟 200/250ms；关闭/Escape 恢复滚动和焦点，维持层级与行动位置。</li><li>Capture/Find 两列和 Automate 通栏保持不同层次；下方五用途横向入口、团队故事、结束行动、页尾按源顺序。页面演示账户按钮先本地说明，手机菜单链接使用已观察的原站公开入口。</li></ul><div class=\"behavior-block\"><span class=\"behavior-label\">显示主题</span><h3>固定主题</h3><p>营销首页固定白底、浅色 Bento 和蓝色 CTA；没有全局主题切换。产品编辑器内的主题不等于这个首页主题。</p><p>白底居中标题用变宽动作胶囊、人格化官方头像和按能力分组的 Bento 建立友好的工具定位。</p></div><div class=\"behavior-block\"><span class=\"behavior-label\">声音与交互</span><h3>媒体声音</h3><p>桌面官方 hero 产品演示默认静音循环，有本地暂停/播放；手机当前源页隐藏这一媒体区域。没有背景音乐。</p><p>演示内部 UI 展示团队和 agent 的工作，静音使阅读仍以主标题与插画为主。</p></div></section><section><h2>约束与适用场景</h2><ul><li>保留当前来源的触发→响应→目的，不用通用淡入代替定义性交互。</li><li>七头像为官方原素材，组合间距、标识 24s 周期和菜单指针离开等待 150ms 是拟合；Bento 使用官方完整静帧，三故事数量与正文缩短。详情对话框内的勾选、问答和 Agent 反馈为本地交互示范。</li><li>品牌与官方素材仅用于此个人参考库；归档来源与权利。</li><li>减少动态保留可读内容、键盘焦点和手动选择。</li></ul><h3>适合</h3><p>知识协作产品 / 模块化文档工具 / 人文感AI产品</p><h3>谨慎使用</h3><p>仿旧泛黄纸张代表所有Notion版本 / 只有插画没有产品内容 / 所有功能复用相同卡片模板</p></section><section><h2>设计参数</h2><div class=\"swatches\"><span class=\"swatch\"><i style=\"background:#101010\"></i>#101010</span><span class=\"swatch\"><i style=\"background:#ffffff\"></i>#ffffff</span><span class=\"swatch\"><i style=\"background:#0075e6\"></i>#0075e6</span><span class=\"swatch\"><i style=\"background:#e6f3ff\"></i>#e6f3ff</span><span class=\"swatch\"><i style=\"background:#fff5e5\"></i>#fff5e5</span></div><p><b>字体</b> · 本地 NotionInter regular/bold；首屏94px、动词72px、正文20px；手机45px。<br><b>布局</b> · 居中94px标题、1120px工作空间视频；Capture/Find双列bento、整行Automate；手机单列与官方移动图。<br><b>动效</b> · Think/Ship/Create/Build/Jam/Scale每2500ms轮换；内容测宽与300ms cubic-bezier(.86,0,.07,1)；10.967秒官方视频静音循环，滚出视口继续播放。 桌面dropdown首入250ms ease-out/-16px、退出150ms ease-in+50ms delay、分类instantSwitch来自源CSS/JS。</p></section><section><div class=\"prompt-head\"><h2>可复用 Prompt</h2><button class=\"copy-button\" id=\"copy-prompt\">复制 Prompt</button></div><textarea class=\"prompt-box\" aria-label=\"可复用 Prompt\" readonly>以 https://www.notion.com/ 在【采集日期】的 英文首页与简体中文语言提示 为单一依据，先观察初始入场、所有章节至页尾再返回、真实指针与手机操作。保留官方 Notion 字体、字标与七头像、白底居中巨字、蓝色小圆角 CTA，动作胶囊按源 2500ms 直接替词，仅 300ms 测量宽度缓动与对应颜色，不添加飞字。桌面产品视频静音循环；手机头像居标题上方、hero 媒体隐藏，客户条带持续横移。Capture/Find 并列、Automate 通栏，再接五用途、故事、行动和页尾；正常滚动，不增加整屏遮罩。桌面菜单保留指针/键盘路径、250ms首入/-16px、150ms退出加50ms延迟和分类instantSwitch，手机 Product/AI/Resources 原地单开，300ms 展开、其他分类变灰，底部 Download app/Log in 固定，关闭恢复阅读。页面固定浅色，无背景音乐，减少动态保留静态字与手动视频。用于【目标产品】时重新观察其真实操作与资产，不把本案例的拟合数值当作其他产品通用公式。</textarea><details><summary>负面约束 / Negative Prompt</summary><p>不要凭空重画品牌摄影；不要给全部页面套同一种淡入、圆角或整屏切幕；不要捏造原站音乐、全局主题、账户和远程执行；不要把未验证状态写成通过。</p></details><h3>改造练习</h3><p>以同一来源截图为基准，改变一个局部信息层级并记录对比：标题/图片比例、主按钮或状态反馈。保持品牌素材比例和移动端可读性。</p></section><section class=\"case-patterns\" aria-labelledby=\"case-patterns-heading\"><div class=\"prompt-head\"><h2 id=\"case-patterns-heading\">关联巧思</h2><a href=\"patterns.html#patterns?source=notion-editorial\">按来源浏览全部 7 项</a></div><p>这些机制可独立借用，触发条件、约束与组合建议见各项详情。</p><ul><li><a href=\"patterns.html#pattern/capability-bento-hierarchy?source=notion-editorial\">以跨列比例表达能力层次</a><span>视觉巧思</span></li><li><a href=\"patterns.html#pattern/client-logo-marquee?source=notion-editorial\">可停的连续客户标识条带</a><span>微动效</span></li><li><a href=\"patterns.html#pattern/mobile-media-prioritization?source=notion-editorial\">按手机信息任务裁减复杂演示</a><span>内容与组织</span></li><li><a href=\"patterns.html#pattern/avatar-pile-personality?source=notion-editorial\">组合头像表达团队人格</a><span>视觉巧思</span></li><li><a href=\"patterns.html#pattern/instant-open-menu-category-switch?source=notion-editorial\">已打开菜单分类即时切换</a><span>内容与组织</span></li><li><a href=\"patterns.html#pattern/measured-width-action-pill?source=notion-editorial\">测量文字宽度的动作胶囊</a><span>微动效</span></li><li><a href=\"patterns.html#pattern/mobile-single-open-navigation?source=notion-editorial\">手机菜单原位单开分类</a><span>内容与组织</span></li></ul></section><section><h2>来源与证据</h2><div class=\"source-item\"><span class=\"source-badge\">实例</span><a href=\"https://www.notion.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Notion 当前公开页面 </a><small>采集日期 2026-10-07；英文首页与简体中文语言提示</small></div><div class=\"source-item\"><span class=\"source-badge\">理论</span><a href=\"https://www.notion.com/blog/the-thinking-behind-our-latest-brand-campaign\" target=\"_blank\" rel=\"noopener noreferrer\">Notion brand campaign </a><small>2024品牌活动文章解释插画的手势和叙事情境。</small></div><div class=\"source-item\"><span class=\"source-badge\">理论</span><a href=\"https://www.notion.com/blog/updating-the-design-of-notion-pages\" target=\"_blank\" rel=\"noopener noreferrer\">Notion page design update </a><small>2026-03-18应用页面的阅读间距与列表分组；用于本地文档示例。</small></div><p>参考站采集：2026-10-07。</p></section><section><h2>相关文档</h2><ul><li><a href=\"docs.html?file=docs%2Fcases%2Fnotion-editorial.md\" target=\"_blank\">调研记录</a></li><li><a href=\"docs.html?file=demos%2Fcases%2Fnotion-editorial%2Ffidelity.md\" target=\"_blank\">复现范围与差异</a></li><li><a href=\"demos/cases/notion-editorial/assets-manifest.json\" target=\"_blank\">素材来源清单</a></li><li><a href=\"docs.html?file=demos%2Fcases%2Fnotion-editorial%2FLICENSES.md\" target=\"_blank\">许可原文索引</a></li></ul></section>"
+    "renderer": "site/app/domain/case-notes.mjs",
+    "content": "<section><h2>从要素看风格</h2><a href=\"lab.html?style=notion-editorial\">调配这个风格的设计要素</a><dl><div><dt>配色角色</dt><dd>营销首页固定白底、浅色 Bento 和蓝色 CTA；没有全局主题切换。产品编辑器内的主题不等于这个首页主题。</dd></div><div><dt>字体排版</dt><dd>本地 NotionInter regular/bold；首屏94px、动词72px、正文20px；手机45px。</dd></div><div><dt>布局留白</dt><dd>语言提示/导航 → 动作胶囊/头像/桌面产品视频 → 标识条带 → 两列+通栏 Bento → 五用途 → 团队故事 → 结束行动 → 页尾。</dd></div><div><dt>图像图标</dt><dd>白底居中标题用变宽动作胶囊、人格化官方头像和按能力分组的 Bento 建立友好的工具定位。</dd></div><div><dt>线条形状</dt><dd>大圆胶囊动词、8px按钮、20px功能区；插画自然外轮廓。</dd></div><div><dt>信息层级</dt><dd>白底居中标题用变宽动作胶囊、人格化官方头像和按能力分组的 Bento 建立友好的工具定位。</dd></div><div><dt>动效反馈</dt><dd>2500ms 自动 Think/Ship/Create/Build/Jam/Scale → 词直接替换，测量 scrollWidth 后宽度以 300ms cubic-bezier(.86,0,.07,1) 变化，底色/圆点对应变化；这是源机制，没有给文字加不存在的飞入飞出；桌面官方产品视频静音循环，可暂停；手机保留上方七个头像 pile，当前页面隐藏 hero 媒体区而不是塞入桌面视频；客户标识原生连续横移，指针停留暂停；手机保持条带，不把标识排成多行墙；桌面 Product/Resources 指针进入与点击 → 首次 opacity/translateY(-16px) 250ms ease-out，退出 150ms ease-in、延迟 50ms；已打开分类按源 instantSwitch 直接切换，快速反转取消旧退出，减少动态直接完成；手机打开全屏菜单 → Product/AI/Resources 原地单开，切换收起前组，再点同组收起；其他分类变灰，底部 Download app/Log in 固定。源 CSS 子展开 300ms、入口 350ms，内容/底部延迟 200/250ms；关闭/Escape 恢复滚动和焦点，维持层级与行动位置。</dd></div><div><dt>协调逻辑</dt><dd>七头像为官方原素材，组合间距、标识 24s 周期和菜单指针离开等待 150ms 是拟合；Bento 使用官方完整静帧而非全部独立浮层，三故事数量与正文缩短。详情对话框内的勾选/问答/agent 反馈是本地示范，并不声称是原站首页机制或真实模型执行。</dd></div><div><dt>滚动结构</dt><dd>语言提示/导航 → 动作胶囊/头像/桌面产品视频 → 标识条带 → 两列+通栏 Bento → 五用途 → 团队故事 → 结束行动 → 页尾。</dd></div></dl></section><section><h2>设计机制</h2><ul><li>白底居中标题用变宽动作胶囊、人格化官方头像和按能力分组的 Bento 建立友好的工具定位。</li><li>配色、文字密度、边框与选中状态共同表达本页面的产品语气。</li><li>动作有明确的触发条件与状态关系，以同一源 URL 的当前页面为依据；近似和未验证状态分别说明。</li><li>第一方素材保持比例；手机保留原站实际变体。</li></ul><h3>设计重点</h3><p>Ramp HQ产品视频具体展示团队与agents；Capture/Find并列呈现上下文与答案，整行Automate强调任务执行。</p><h3>主题与情绪</h3><p>营销首页固定白底、浅色 Bento 和蓝色 CTA；没有全局主题切换。产品编辑器内的主题不等于这个首页主题。</p></section><section><h2>页面交互</h2><ul><li>2500ms 自动 Think/Ship/Create/Build/Jam/Scale → 词直接替换，测量 scrollWidth 后宽度以 300ms cubic-bezier(.86,0,.07,1) 变化，底色/圆点对应变化；这是源机制，没有给文字加不存在的飞入飞出。</li><li>桌面官方产品视频静音循环，可暂停；手机保留上方七个头像 pile，当前页面隐藏 hero 媒体区而不是塞入桌面视频。</li><li>客户标识原生连续横移，指针停留暂停；手机保持条带，不把标识排成多行墙。</li><li>桌面 Product/Resources 指针进入与点击 → 首次 opacity/translateY(-16px) 250ms ease-out，退出 150ms ease-in、延迟 50ms；已打开分类按源 instantSwitch 直接切换，快速反转取消旧退出，减少动态直接完成；手机打开全屏菜单 → Product/AI/Resources 原地单开，切换收起前组，再点同组收起；其他分类变灰，底部 Download app/Log in 固定。源 CSS 子展开 300ms、入口 350ms，内容/底部延迟 200/250ms；关闭/Escape 恢复滚动和焦点，维持层级与行动位置。</li><li>Capture/Find 两列和 Automate 通栏保持不同层次；下方五用途横向入口、团队故事、结束行动、页尾按源顺序。页面演示账户按钮先本地说明，手机菜单链接使用已观察的原站公开入口。</li></ul><h3>显示主题</h3><p>固定主题</p><p>营销首页固定白底、浅色 Bento 和蓝色 CTA；没有全局主题切换。产品编辑器内的主题不等于这个首页主题。</p><p>白底居中标题用变宽动作胶囊、人格化官方头像和按能力分组的 Bento 建立友好的工具定位。</p><h3>声音与交互</h3><p>媒体声音</p><p>桌面官方 hero 产品演示默认静音循环，有本地暂停/播放；手机当前源页隐藏这一媒体区域。没有背景音乐。</p><p>演示内部 UI 展示团队和 agent 的工作，静音使阅读仍以主标题与插画为主。</p></section><section><h2>约束与适用场景</h2><ul><li>保留当前来源的触发→响应→目的，不用通用淡入代替定义性交互。</li><li>七头像为官方原素材，组合间距、标识 24s 周期和菜单指针离开等待 150ms 是拟合；Bento 使用官方完整静帧，三故事数量与正文缩短。详情对话框内的勾选、问答和 Agent 反馈为本地交互示范。</li><li>品牌与官方素材仅用于此个人参考库；归档来源与权利。</li><li>减少动态保留可读内容、键盘焦点和手动选择。</li></ul><h3>适合</h3><ul><li>知识协作产品</li><li>模块化文档工具</li><li>人文感AI产品</li></ul><h3>谨慎使用</h3><ul><li>仿旧泛黄纸张代表所有Notion版本</li><li>只有插画没有产品内容</li><li>所有功能复用相同卡片模板</li></ul></section><section><h2>设计参数</h2><div class=\"swatches\"><span><i style=\"background:#101010\"></i>#101010</span><span><i style=\"background:#ffffff\"></i>#ffffff</span><span><i style=\"background:#0075e6\"></i>#0075e6</span><span><i style=\"background:#e6f3ff\"></i>#e6f3ff</span><span><i style=\"background:#fff5e5\"></i>#fff5e5</span></div><p>字体 · 本地 NotionInter regular/bold；首屏94px、动词72px、正文20px；手机45px。</p><p>布局 · 居中94px标题、1120px工作空间视频；Capture/Find双列bento、整行Automate；手机单列与官方移动图。</p><p>动效 · Think/Ship/Create/Build/Jam/Scale每2500ms轮换；内容测宽与300ms cubic-bezier(.86,0,.07,1)；10.967秒官方视频静音循环，滚出视口继续播放。 桌面dropdown首入250ms ease-out/-16px、退出150ms ease-in+50ms delay、分类instantSwitch来自源CSS/JS。</p></section><section><h2>可复用 Prompt</h2><textarea aria-label=\"可复用 Prompt\" readonly>以 https://www.notion.com/ 在【采集日期】的 英文首页与简体中文语言提示 为单一依据，先观察初始入场、所有章节至页尾再返回、真实指针与手机操作。保留官方 Notion 字体、字标与七头像、白底居中巨字、蓝色小圆角 CTA，动作胶囊按源 2500ms 直接替词，仅 300ms 测量宽度缓动与对应颜色，不添加飞字。桌面产品视频静音循环；手机头像居标题上方、hero 媒体隐藏，客户条带持续横移。Capture/Find 并列、Automate 通栏，再接五用途、故事、行动和页尾；正常滚动，不增加整屏遮罩。桌面菜单保留指针/键盘路径、250ms首入/-16px、150ms退出加50ms延迟和分类instantSwitch，手机 Product/AI/Resources 原地单开，300ms 展开、其他分类变灰，底部 Download app/Log in 固定，关闭恢复阅读。页面固定浅色，无背景音乐，减少动态保留静态字与手动视频。用于【目标产品】时重新观察其真实操作与资产，不把本案例的拟合数值当作其他产品通用公式。</textarea><details><summary>负面约束 / Negative Prompt</summary><p>不要凭空重画品牌摄影；不要给全部页面套同一种淡入、圆角或整屏切幕；不要捏造原站音乐、全局主题、账户和远程执行；不要把未验证状态写成通过。</p></details><h3>改造练习</h3><p>以同一来源截图为基准，改变一个局部信息层级并记录对比：标题/图片比例、主按钮或状态反馈。保持品牌素材比例和移动端可读性。</p></section><section><h2>关联巧思</h2><a href=\"patterns.html#patterns?source=notion-editorial\">按来源浏览全部 7 项</a><ul><li><a href=\"patterns.html#pattern/capability-bento-hierarchy?source=notion-editorial\">以跨列比例表达能力层次</a></li><li><a href=\"patterns.html#pattern/client-logo-marquee?source=notion-editorial\">可停的连续客户标识条带</a></li><li><a href=\"patterns.html#pattern/mobile-media-prioritization?source=notion-editorial\">按手机信息任务裁减复杂演示</a></li><li><a href=\"patterns.html#pattern/avatar-pile-personality?source=notion-editorial\">组合头像表达团队人格</a></li><li><a href=\"patterns.html#pattern/instant-open-menu-category-switch?source=notion-editorial\">已打开菜单分类即时切换</a></li><li><a href=\"patterns.html#pattern/measured-width-action-pill?source=notion-editorial\">测量文字宽度的动作胶囊</a></li><li><a href=\"patterns.html#pattern/mobile-single-open-navigation?source=notion-editorial\">手机菜单原位单开分类</a></li></ul></section><section><h2>来源与证据</h2><div class=\"source-item\"><span>实例</span><a href=\"https://www.notion.com/\">Notion 当前公开页面</a><p>采集日期 2026-10-07；英文首页与简体中文语言提示</p></div><div class=\"source-item\"><span>理论</span><a href=\"https://www.notion.com/blog/the-thinking-behind-our-latest-brand-campaign\">Notion brand campaign</a><p>2024品牌活动文章解释插画的手势和叙事情境。</p></div><div class=\"source-item\"><span>理论</span><a href=\"https://www.notion.com/blog/updating-the-design-of-notion-pages\">Notion page design update</a><p>2026-03-18应用页面的阅读间距与列表分组；用于本地文档示例。</p></div><p>参考站采集：2026-10-07。</p></section><section><h2>相关文档</h2><ul><li><a href=\"docs.html?file=docs%2Fcases%2Fnotion-editorial.md\">调研记录</a></li><li><a href=\"docs.html?file=demos%2Fcases%2Fnotion-editorial%2Ffidelity.md\">复现范围与差异</a></li><li><a href=\"demos/cases/notion-editorial/assets-manifest.json\">素材来源清单</a></li><li><a href=\"docs.html?file=demos%2Fcases%2Fnotion-editorial%2FLICENSES.md\">许可原文索引</a></li></ul></section>"
   }
 }

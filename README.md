@@ -27,3 +27,5 @@
 使用方式见[使用指南](docs/guide.md)，案例画廊与研究见[总览](docs/overview.md)，取用素材见[素材使用说明](docs/materials/README.md)。Agent 从[取材说明](docs/agent.md)和[结构化目录](agent/catalog.json)进入；也可使用[配套 skill](https://github.com/MIBXR/mibxr-skills/tree/main/skills/web-atlas)。
 
 本地启动、收录规则与新增流程见[贡献指南](CONTRIBUTING.md)，修改仓库见[维护约束](AGENTS.md)。
+
+站点本体使用 React 与 [Arc UI](https://uiarc.dev/)，本地开发和主题调整见[贡献指南](CONTRIBUTING.md#站点实现)。

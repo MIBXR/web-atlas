@@ -83,3 +83,5 @@ Web Atlas 也在使用自己的案例库。首页借鉴收录的 [ChatGPT 案例
 
 以上为网站本体的实际浏览器截图；各案例的独立 Demo 预览见[案例画廊](overview.md#案例画廊)。
 
+
+本地开发站点需要先执行 `npm ci`，再执行 `npm start`；站点界面与主题配置见[站点实现](../CONTRIBUTING.md#站点实现)。取材 CLI 与导出的独立 Demo 不需要安装站点依赖。

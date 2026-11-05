@@ -1,44 +1,22 @@
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><script src="site/shared/theme.js"></script><script src="site/shared/icons.js"></script><meta name="description" content="直接检索 Web Atlas，取得完整设计上下文与源码，让 Agent 根据真实需求构建网站。"><title>Agent 工作流 · Web Atlas</title><link rel="icon" href="site/icons/favicon.svg?v=atlas-cross-2"><link rel="stylesheet" href="site/shared/atlas.css"><link rel="stylesheet" href="site/pages/agent/agent.css"><link rel="stylesheet" href="site/shared/site-nav.css"><script src="site/shared/site-shell.js" defer></script><link rel="stylesheet" href="site/shared/theme-control.css"><link rel="stylesheet" href="site/shared/site-typography.css"><link rel="stylesheet" href="site/shared/site-footer.css">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<script src="site/app/theme-boot.js"></script>
+<title>Agent 工作流 · Web Atlas</title>
+<meta name="description" content="直接检索 Web Atlas，取得完整设计上下文与源码，让 Agent 根据真实需求构建网站。">
+<link rel="icon" href="site/icons/favicon.svg?v=atlas-cross-2">
+<link rel="stylesheet" href="site/client/main.css">
+<link rel="stylesheet" href="site/playground/pattern-playground.css">
+<script src="data/asset-sources.js"></script>
+<script src="site/runtime/asset-runtime.js"></script>
+<script src="site/runtime/asset-cache.js"></script>
+<script type="module" src="site/client/main.js"></script>
 </head>
-<body class="agent-page">
-<a class="skip" href="#main">跳到内容</a>
-<header class="atlas-site-header"><div class="atlas-site-header-inner">
-<a class="atlas-site-brand" href="index.html" aria-label="Web Atlas 首页"><svg class="atlas-site-mark" viewBox="0 0 96 96" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" d="M24 8 88 72 72 88 8 24Z M8 72 72 8 88 24 24 88Z"/></svg><span class="atlas-site-wordmark"><strong>WEB ATLAS</strong><small>从案例到实践</small></span></a>
-<nav id="atlas-main-nav" class="atlas-site-nav" aria-label="主导航"><a href="index.html">首页</a><a href="cases.html">案例库</a><a href="patterns.html">巧思库</a><a href="materials.html">素材库</a><a href="lab.html">设计实验室</a><a href="docs.html">文档中心</a><a href="agent.html" aria-current="page">Agent 工作流</a></nav>
-<button class="atlas-site-nav-toggle" type="button" data-nav-toggle aria-controls="atlas-main-nav" aria-expanded="false" aria-label="打开菜单"><span data-atlas-icon="menu" aria-hidden="true"></span><span>菜单</span></button>
-<div class="atlas-site-theme"><button id="theme-control" class="atlas-theme-toggle" type="button" data-theme-toggle aria-label="显示主题：跟随系统；点击切换为深色" title="显示主题：跟随系统；点击切换为深色"><span class="atlas-theme-icon" data-theme-icon="system" data-atlas-icon="system" aria-hidden="true"></span><span class="atlas-theme-icon" data-theme-icon="dark" data-atlas-icon="moon" aria-hidden="true"></span><span class="atlas-theme-icon" data-theme-icon="light" data-atlas-icon="sun" aria-hidden="true"></span></button></div>
-</div></header>
-<main id="main" class="agent-main" tabindex="-1">
-  <section class="agent-hero"><p class="eyebrow">OBSERVE. RETRIEVE. ADAPT.</p><h1>把设计依据，<br>直接交给 Agent<span>.</span></h1><p class="agent-lead">按真实需求找完整案例，也能单独检索设计巧思，组合适合项目的机制。<br>取得 Prompt、研究、复现边界和源码，据此完成实现。</p><div class="agent-stats"><span><b id="agent-count">—</b> 个案例</span><span><b id="agent-pattern-count">—</b> 条设计巧思</span><span>固定 Git 版本</span></div></section>
-  <section class="agent-start" aria-labelledby="start-heading"><div class="agent-section-intro"><p class="eyebrow">01 / SKILL</p><h2 id="start-heading">先探索，再围绕需求选方向</h2></div><div class="agent-section-copy"><p>skill 提供选型工作流与获取脚本，完整案例保存在 Web Atlas。新任务读取最新目录，讨论和取材使用同一版本。可以先问“有哪些案例”。</p><a class="copy-button" href="https://github.com/MIBXR/mibxr-skills/tree/main/skills/web-atlas" target="_blank" rel="noopener noreferrer">查看 skill 与获取脚本 <span data-atlas-icon="external" aria-hidden="true"></span></a></div><div class="agent-command"><p>安装 skill 后，可以这样开始</p><pre><code id="skill-example">$web-atlas 我还没决定网站的设计方向，先介绍有哪些案例。
-接下来根据我的产品、用户和页面任务，和我一起筛选几个候选。
-确定方向后，自动读取完整说明、文档和源码，再完成实现。
-也可以单独探索设计巧思：给我一个清晰的页面基础，
-再选择来自不同案例的悬停反馈和滚动叙事，说明各自职责与组合约束。</code></pre><button class="copy-button" data-copy="skill-example">复制调用示例</button></div></section>
-  <section class="agent-start" aria-labelledby="patterns-heading"><div class="agent-section-intro"><p class="eyebrow">DESIGN PATTERNS</p><h2 id="patterns-heading">按机制取材，跨案例组合</h2></div><div class="agent-section-copy"><p>按视觉、微动效、页面动效、声音、内容与组织筛选可独立迁移的机制；还可结合功能用途和来源案例继续筛选。每条巧思保留触发、效果、约束和来源。skill 的 <code>pattern-search</code>、<code>pattern-show</code> 与 <code>pattern-export</code> 使用同一会话版本，<code>pattern-search --type page-motion</code> 可筛选页面动效，自动取得来源案例与源码。先分配基础、辅助和强调的职责，再检查动效与输入冲突。</p><p><a class="copy-button" href="patterns.html">浏览设计巧思</a> <a class="copy-button" href="agent/patterns/index.json">查看巧思索引 JSON</a></p></div></section>
-  <section class="agent-search-section" aria-labelledby="cases-heading"><div class="agent-section-head"><div><p class="eyebrow">02 / RETRIEVE</p><h2 id="cases-heading">探索案例，也可以直接取材</h2></div><a href="agent/catalog.json" class="copy-button">查看结构化索引 JSON</a></div><p>搜索品牌、布局、场景或交互关键词。“案例包”是 JSON 文件，包含完整设计资料、网页右侧说明、文档原文，以及源码和媒体的文件路径。已经选好案例时，可以直接复制入口。</p><label class="search agent-search"><span aria-hidden="true"><svg class="atlas-icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="m16 16 4.5 4.5M17 10.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0"/></svg></span><input id="agent-query" type="search" placeholder="试试 Linear、网格、产品、手绘…" aria-label="搜索 Agent 案例"></label><p id="agent-status" role="status">正在读取案例索引…</p><div id="agent-cases" class="agent-cases"></div></section>
-  <section class="agent-local" aria-labelledby="local-heading"><div class="agent-section-intro"><p class="eyebrow">03 / LOCAL WORKFLOW</p><h2 id="local-heading">仓库里也能直接运行</h2></div><div class="agent-section-copy"><p>使用 Node.js 即可运行，无需安装依赖。完整导出保留 Demo、共用模块、字体和媒体的相对路径；大型品牌案例可能包含影片。</p><a class="copy-button" href="docs.html?file=docs%2Fagent.md">读取完整工作流与数据契约</a></div><div class="agent-command"><pre><code id="cli-example">node scripts/atlas.mjs search "深色 产品" --limit 3
-node scripts/atlas.mjs show linear-workflow
-node scripts/atlas.mjs show linear-workflow --source
-node scripts/atlas.mjs export linear-workflow --out ../linear-reference</code></pre><button class="copy-button" data-copy="cli-example">复制命令</button></div></section>
-  <section class="agent-context"><p class="eyebrow">DESIGN WITH CONTEXT</p><h2>带着依据适配你的场景</h2><div><p><b>保留设计机制</b><br>读取布局、视觉层级、状态和触发关系，选择能说明当前产品的表达方式。</p><p><b>替换真实内容</b><br>用自己的品牌、文案和有使用权的素材，依据真实功能调整交互。</p><p><b>验证当前成果</b><br>检查桌面与手机、键盘、减少动态和资源加载，保留来源中近似与未验证的标记。</p></div></section>
-  <p class="atlas-footer-context" id="agent-version">SOURCE-BACKED / SCHEMA 1</p>
-<section class="agent-local" id="material-workflow"><h2>取得组件与内容素材</h2><p>在<a href="materials.html">素材库</a>操作代表性样例，再让 Skill 读取使用说明、版本、许可证与完整 Demo。案例、巧思和素材共用同一取材会话。</p><pre><code>python ATLAS_SCRIPT --session SESSION_FILE material-search "渐变"
-python ATLAS_SCRIPT --session SESSION_FILE material-show shaders --source
-python ATLAS_SCRIPT --session SESSION_FILE material-export shaders --out NEW_DIRECTORY</code></pre><p>直接读取 <a href="agent/materials/index.json">素材目录</a>，或<a href="agent/materials/shaders.json">下载 Shaders 资料包</a>。更多组件与作者预设请到来源查看；浏览器不支持 WebGPU 时，Demo 显示明确标注的静态参考。</p></section></main>
-<footer class="atlas-site-footer">
-  <div class="atlas-site-footer-inner">
-    <div class="atlas-site-footer-about">
-      <a class="atlas-site-footer-brand" href="index.html" aria-label="Web Atlas 首页"><svg class="atlas-site-footer-mark" viewBox="0 0 96 96" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" d="M24 8 88 72 72 88 8 24Z M8 72 72 8 88 24 24 88Z"/></svg><span>WEB ATLAS</span></a>
-      <p>从案例到实践，让设计依据进入你的作品。</p>
-      <small>MIBXR · Web Atlas</small>
-    </div>
-    <nav class="atlas-site-footer-nav" aria-label="页脚导航">
-      <div class="atlas-site-footer-links atlas-site-footer-links--explore"><p>探索 Atlas</p><a href="index.html">首页</a><a href="cases.html">案例库</a><a href="patterns.html">巧思库</a><a href="materials.html">素材库</a><a href="lab.html">设计实验室</a><a href="docs.html">文档中心</a><a href="agent.html">Agent 工作流</a></div>
-      <div class="atlas-site-footer-links"><p>项目资料</p><a href="docs.html?file=docs%2Fguide.md">使用与维护</a><a href="docs.html?file=docs%2Foverview.md">调研方法</a><a href="https://github.com/MIBXR/web-atlas" target="_blank" rel="noopener noreferrer"><span data-atlas-icon="external" aria-hidden="true"></span><span>项目 GitHub </span></a></div>
-    </nav>
-  </div>
-</footer><div class="toast" id="toast" role="status"></div><script src="site/pages/agent/agent.js"></script>
-</body></html>
+<body>
+<div id="app"></div>
+<noscript>请启用 JavaScript 以浏览 Web Atlas。</noscript>
+</body>
+</html>

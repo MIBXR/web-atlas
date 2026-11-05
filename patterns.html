@@ -1,38 +1,22 @@
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><script src="site/shared/theme.js"></script><script src="site/shared/icons.js"></script><script src="site/shared/detail-layout.js"></script><title>巧思库 · Web Atlas</title><meta name="description" content="浏览完整案例与可组合的设计巧思，按触发方式、效果和来源检索，取得可复用的 Prompt、源码与证据。"><link rel="stylesheet" href="site/shared/atlas.css"><link rel="stylesheet" href="site/shared/cases-layout.css"><link rel="stylesheet" href="site/shared/patterns-ui.css"><link rel="stylesheet" href="site/playground/pattern-playground.css"><link rel="stylesheet" href="site/shared/site-nav.css"><link rel="icon" href="site/icons/favicon.svg?v=atlas-cross-2" type="image/svg+xml"><script src="site/shared/site-shell.js" defer></script><script src="site/shared/collection-filters.js" defer></script><link rel="stylesheet" href="site/shared/theme-control.css"><link rel="stylesheet" href="site/shared/site-typography.css"><link rel="stylesheet" href="site/shared/site-footer.css">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<script src="site/app/theme-boot.js"></script>
+<title>巧思库 · Web Atlas</title>
+<meta name="description" content="浏览完整案例与可组合的设计巧思，按触发方式、效果和来源检索，取得可复用的 Prompt、源码与证据。">
+<link rel="icon" href="site/icons/favicon.svg?v=atlas-cross-2" type="image/svg+xml">
+<link rel="stylesheet" href="site/client/main.css">
+<link rel="stylesheet" href="site/playground/pattern-playground.css">
+<script src="data/asset-sources.js"></script>
+<script src="site/runtime/asset-runtime.js"></script>
+<script src="site/runtime/asset-cache.js"></script>
+<script type="module" src="site/client/main.js"></script>
 </head>
-<body class="cases-page patterns-page">
-<a class="skip" href="#main">跳到内容</a>
-<header class="atlas-site-header"><div class="atlas-site-header-inner">
-<a class="atlas-site-brand" href="index.html" aria-label="Web Atlas 首页"><svg class="atlas-site-mark" viewBox="0 0 96 96" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" d="M24 8 88 72 72 88 8 24Z M8 72 72 8 88 24 24 88Z"/></svg><span class="atlas-site-wordmark"><strong>WEB ATLAS</strong><small>从案例到实践</small></span></a>
-<nav id="atlas-main-nav" class="atlas-site-nav" aria-label="主导航"><a href="index.html">首页</a><a href="cases.html">案例库</a><a href="patterns.html" aria-current="page">巧思库</a><a href="materials.html">素材库</a><a href="lab.html">设计实验室</a><a href="docs.html">文档中心</a><a href="agent.html">Agent 工作流</a></nav>
-<button class="atlas-site-nav-toggle" type="button" data-nav-toggle aria-controls="atlas-main-nav" aria-expanded="false" aria-label="打开菜单"><span data-atlas-icon="menu" aria-hidden="true"></span><span>菜单</span></button>
-<div class="atlas-site-theme"><button id="theme-control" class="atlas-theme-toggle" type="button" data-theme-toggle aria-label="显示主题：跟随系统；点击切换为深色" title="显示主题：跟随系统；点击切换为深色"><span class="atlas-theme-icon" data-theme-icon="system" data-atlas-icon="system" aria-hidden="true"></span><span class="atlas-theme-icon" data-theme-icon="dark" data-atlas-icon="moon" aria-hidden="true"></span><span class="atlas-theme-icon" data-theme-icon="light" data-atlas-icon="sun" aria-hidden="true"></span></button></div>
-</div></header>
-<div class="case-layout">
-<aside class="rail atlas-page-directory" id="page-directory" data-page-directory tabindex="-1" aria-label="巧思目录"><details class="atlas-page-menu case-menu"><summary>巧思分类</summary><div class="case-menu-content"><nav id="pattern-navigation" aria-label="设计巧思体验类型"></nav></div></details><details class="atlas-page-menu favorite-menu" open><summary>收藏</summary><nav class="favorite-navigation" aria-label="收藏"><a class="nav-item" data-pattern-favorites="true" href="#patterns?favorites=1"><span>我的收藏</span><b id="pattern-fav-count">—</b></a><button class="nav-item" id="favorite-export"><span>导出收藏</span><span data-atlas-icon="download" aria-hidden="true"></span></button><button class="nav-item" id="favorite-import"><span>导入收藏</span><span data-atlas-icon="upload" aria-hidden="true"></span></button></nav></details></aside>
-<main id="main" tabindex="-1"><section id="patterns-library" aria-label="巧思库">
-    <div class="hero"><div><p class="eyebrow">OBSERVE. COMPOSE. MAKE.</p><h1>从一个巧思，<br>到自己的设计<span class="period">.</span></h1><p class="hero-desc" title="了解可组合的设计机制，查看触发方式、实现约束与可复用的 Prompt，也可回到来源案例看整体效果。">了解可组合的设计机制，查看触发方式、实现约束与可复用的 Prompt，也可回到来源案例看整体效果。</p></div><div class="hero-art" aria-hidden="true"><span class="a-grid"></span><svg class="pattern-hero-geometry" viewBox="0 0 270 195" focusable="false"><circle cx="180" cy="79" r="68" fill="var(--atlas-muted)"/><path d="M31 53h118v118H31z" fill="var(--atlas-ink)" transform="rotate(-13 90 112)"/><circle cx="148" cy="111" r="68" fill="none" stroke="var(--atlas-ink)" stroke-width="1"/><path d="M93 32h114v114H93z" fill="none" stroke="var(--atlas-ink)" stroke-width="1"/></svg><small>A STUDY OF MECHANISMS<br>AND COMPOSITION / 2026</small></div></div>
-    <div class="collection-tools pattern-tools"><label class="search"><span data-atlas-icon="search" aria-hidden="true"></span><input id="pattern-search" type="search" placeholder="搜索巧思、触发或场景…" aria-label="搜索设计巧思"><kbd>/</kbd></label><select id="pattern-type" data-filter-label="类型" aria-label="按巧思体验类型筛选"><option value="all">全部类型</option><option value="visual">视觉巧思</option><option value="micro-motion">微动效</option><option value="page-motion">页面动效</option><option value="sound">声音巧思</option><option value="structure">内容与组织</option></select><select id="pattern-category" data-filter-label="用途" aria-label="按设计巧思类别筛选"><option value="all">全部用途</option></select><select id="pattern-source" data-filter-label="案例" aria-label="按来源案例筛选"><option value="all">全部案例</option></select><span class="toolbar-divider" aria-hidden="true"></span><div class="sort-control"><select id="pattern-sort" aria-label="排序方式"><option value="curated">按编号</option><option value="title">按名称</option></select><button id="pattern-sort-dir" class="sort-dir" type="button" aria-label="正序" aria-pressed="false"><span data-atlas-icon="sortAsc" aria-hidden="true"></span></button></div><button id="pattern-showcase-open" class="text-button" aria-haspopup="dialog" aria-controls="pattern-showcase-panel"><span data-atlas-icon="play" aria-hidden="true"></span><span>体验视觉构成</span></button></div>
-    <div class="list-caption"><span id="pattern-results-label" role="status"></span><a class="pattern-catalog-link" href="agent/patterns/index.json" download="design-atlas-patterns.json">下载巧思目录</a></div>
-    <div id="pattern-cards" class="cards"></div><div id="patterns-empty" class="empty" hidden><h2>没有找到对应的设计巧思</h2><p>试试“悬停”“加载”“导航”，或放宽来源与类别的筛选条件。</p><button id="pattern-reset">清除巧思筛选</button></div>
-    
-  </section>
-  <section id="pattern-detail" hidden></section></main>
-</div>
-<footer class="atlas-site-footer">
-  <div class="atlas-site-footer-inner">
-    <div class="atlas-site-footer-about">
-      <a class="atlas-site-footer-brand" href="index.html" aria-label="Web Atlas 首页"><svg class="atlas-site-footer-mark" viewBox="0 0 96 96" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" d="M24 8 88 72 72 88 8 24Z M8 72 72 8 88 24 24 88Z"/></svg><span>WEB ATLAS</span></a>
-      <p>从案例到实践，让设计依据进入你的作品。</p>
-      <small>MIBXR · Web Atlas</small>
-    </div>
-    <nav class="atlas-site-footer-nav" aria-label="页脚导航">
-      <div class="atlas-site-footer-links atlas-site-footer-links--explore"><p>探索 Atlas</p><a href="index.html">首页</a><a href="cases.html">案例库</a><a href="patterns.html" aria-current="page">巧思库</a><a href="materials.html">素材库</a><a href="lab.html">设计实验室</a><a href="docs.html">文档中心</a><a href="agent.html">Agent 工作流</a></div>
-      <div class="atlas-site-footer-links"><p>项目资料</p><a href="docs.html?file=docs%2Fguide.md">使用与维护</a><a href="docs.html?file=docs%2Foverview.md">调研方法</a><a href="https://github.com/MIBXR/web-atlas" target="_blank" rel="noopener noreferrer"><span data-atlas-icon="external" aria-hidden="true"></span><span>项目 GitHub </span></a></div>
-    </nav>
-  </div>
-</footer>
-<dialog class="pattern-showcase-dialog" id="pattern-showcase-panel" aria-labelledby="pattern-showcase-label"><form method="dialog"><button class="dialog-close" aria-label="关闭体验示意"><span data-atlas-icon="close" aria-hidden="true"></span></button></form><h2 id="pattern-showcase-label">体验示意 · 视觉构成</h2><p id="pattern-showcase-description">示意随体验类型切换，使用通用内容；请在来源案例中核对原始样式与组合。</p><div id="pattern-showcase"></div></dialog><div id="toast" role="status" class="toast"></div><script src="data/asset-sources.js"></script><script src="site/runtime/asset-runtime.js"></script><script src="site/runtime/asset-cache.js"></script><script src="data/cases.js"></script><script src="data/patterns.js"></script><script src="data/materials.js"></script><script src="site/shared/favorites.js"></script><script src="site/shared/favorite-controls.js"></script><script src="site/shared/demo-preview.js"></script><script src="site/shared/pattern-focus.js"></script><script src="site/shared/patterns-ui.js"></script><script src="site/playground/pattern-playground.js"></script><script src="site/pages/patterns/patterns-page.js"></script>
-</body></html>
+<body>
+<div id="app"></div>
+<noscript>请启用 JavaScript 以浏览 Web Atlas。</noscript>
+</body>
+</html>

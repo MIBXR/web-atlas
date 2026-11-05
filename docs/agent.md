@@ -21,7 +21,7 @@
 
 ## 本地检索与取材
 
-在已有仓库中使用 Node.js，无需安装依赖：
+取材 CLI 在已有仓库中使用 Node.js，无需安装站点依赖：
 
 ```sh
 node scripts/atlas.mjs search --limit 100

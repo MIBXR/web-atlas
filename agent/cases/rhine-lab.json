@@ -300,16 +300,76 @@
       "role": "context"
     },
     {
+      "path": "site/app/domain/case-notes.mjs",
+      "role": "context"
+    },
+    {
+      "path": "site/app/theme-boot.js",
+      "role": "context"
+    },
+    {
+      "path": "site/client/AgentPage-EAS5PVE3.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/CatalogPage-SGVWTZ3D.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/DocsPage-UQJTEUEK.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/DocsPage-UQJTEUEK.js.LEGAL.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/client/HomePage-U2APYKG6.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/LICENSES.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/client/LabPage-6GKARTD3.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-4PVWGCRJ.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-SSO6R7NX.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-XZHNFY5X.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-YOWC6UHQ.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-YOWC6UHQ.js.LEGAL.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/client/main.css",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/main.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/main.js.LEGAL.txt",
+      "role": "license"
+    },
+    {
       "path": "site/icons/favicon.svg",
       "role": "asset"
-    },
-    {
-      "path": "site/pages/docs/docs.css",
-      "role": "source"
-    },
-    {
-      "path": "site/pages/docs/docs.js",
-      "role": "source"
     },
     {
       "path": "site/runtime/asset-cache.js",
@@ -332,30 +392,6 @@
       "role": "source"
     },
     {
-      "path": "site/shared/site-footer.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/site-nav.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/site-shell.js",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/site-typography.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/theme-control.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/theme.js",
-      "role": "source"
-    },
-    {
       "path": "site/vendor/LICENSES.txt",
       "role": "license"
     },
@@ -370,7 +406,7 @@
   ],
   "webNotes": {
     "format": "text/html",
-    "renderer": "site/pages/cases/atlas.js",
-    "content": "<section><h2>从要素看风格</h2><a class=\"element-lab-link\" href=\"lab.html?style=rhine-lab\">调配这个风格的设计要素</a><dl class=\"element-map\"><div class=\"\"><dt>配色角色</dt><dd>源片米白透明档案与黑白机构字标保持原色，双环内缘及业务科焦点使用橙色；本地外围用米白、黑色和同源橙色节点，素材没有深绿/黄绿重着色。</dd></div><div class=\"\"><dt>字体排版</dt><dd>官方68秒原帧保留CMPT CTRL中心，以及DEF、HRI、BSN、ENG、STRU、SCIEN、ORIG、NRG、ECO九外围的环形连字、英文全称、黑白表面、透视倾斜及尺度差；网页控件使用系统字体，不替代原作字标。</dd></div><div class=\"\"><dt>布局留白</dt><dd>源片大量平行立体档案覆盖视野并抽出单件，机构采用一中心加九外围的非等宽矩阵与细射线；本地以16:9全幅场景保留构图，用户可在原画面外围自然浏览四章控件和说明。</dd></div><div class=\"\"><dt>图像图标</dt><dd>四个官方无声H264片段与22/35/48/68秒原尺寸解码帧保存透明阵列、双环材质及真实字标；橙色节点裁自68秒帧。本地没有重写原片3D渲染器；封面和孤星背景仅作来源卡。</dd></div><div class=\"\"><dt>线条形状</dt><dd>源片黑白弧环/橙色节点、档案四角标定/细射线、大小双环的灰色透明厚度与橙色内缘、中心矩阵及特殊环形字标；本地档案显隐遮罩按35秒抬出板的四角轮廓定位。</dd></div><div class=\"\"><dt>信息层级</dt><dd>原比例档案抽出画面 → 四个原作场景与媒体状态 → 本地观察目录/展开阅读 → 十模块语义科室入口与解释 → 官方影片及辅助网页来源。</dd></div><div class=\"\"><dt>动效反馈</dt><dd>许可环线、立体阵列抽出/镜头靠近、双环旋转和机构模块入场沿官方片段25fps/1倍速度；本地章选即时换原帧，点击板/节点位移及四段连续编排为adapted。</dd></div><div class=\"coherence\"><dt>协调逻辑</dt><dd>原作米白材质、环形连字、橙色内缘/节点、射线和编号在四个场景中连贯；语义按钮、同步时间码与阅读状态环绕原画面，媒体与网页改编各自可审阅。</dd></div></dl></section><section><h2>设计机制</h2><ul><li>官方影片27–39.2秒：大量平行立体档案覆盖视野，一件X-001被抬出，镜头靠近透明板，随后出现细射线、标定点和机密文字；不是少量平面卡片行。</li><li>官方影片59.6–73.4秒：CMPT CTRL为中心，DEF、HRI、BSN、ENG、STRU、SCIEN、ORIG、NRG、ECO九个外围科室形成非等宽矩阵；环形连字、黑白表面、倾斜、射线和橙色空心节点共同编码机构。</li><li>官方影片19.2–23.4秒的黑白细弧环和橙色节点形成许可处理过程；39.2–51.52秒双环的厚度、灰色透明渐变、橙色内缘与镜头旋转属于光学材质，不能用一个CSS圆框替代。</li><li>本地使用四个1920×1080、25fps、1倍速度的官方无声片段与原尺寸解码帧保留光学和字标；章选、暂停重播、进度、档案选择/显隐和科室节点为可独立学习的网页状态代码。</li></ul><h3>设计重点</h3><p>官方影像的网页转译／教学改编：以2026-10-09采集的2022《莱茵生命：访问》为固定来源，选取许可环线、档案阵列、双环光学和机构矩阵四个场景。保留原作媒体构成与片内时序，本地五份观察目录及十模块点选属于adapted；不是官方品牌网站或原作3D源码移植。</p><h3>主题与情绪</h3><p>原作米白透明档案、黑白机构字标、橙色光学内缘与小面积状态节点形成研究终端；本地保持原色与16:9比例，外围控制使用相同中性色，不额外添加深绿卡片或整页主题切换。</p></section><section><h2>页面交互</h2><ul><li>本地教学改编：在原作多排立体档案的35秒原帧上提供五个观察热点及前后选择，同一状态同步观察编号、标题、正文并收起旧展开；阵列显隐仅隐藏背景阵列，保留按源端四角轮廓裁切的抬出板。五个热点不是原片中的五个可点击档案。</li><li>本地教学改编：原生展开按钮同步aria-expanded和正文；档案热点支持左右方向键，当前项与焦点同步。五份观察是本库的构成解释，不虚构机密档案内容或认证。</li><li>本地教学改编：四个章选即时呈现各自原帧；播放、暂停、从头重播和0.04秒步长的范围条控制对应官方无声片段，源时间码与位置同步，最新请求取消旧解码回调。可选择连续播放四段，片内时序保留，段间连接为网页编排。</li><li>本地教学改编：机构原帧上的十个DOM热点与可读目录按钮同步选择、全称、解释及同源橙色空心节点位置；原片只提供完整字标和矩阵运动，没有网页点击证据。手机保留16:9全幅画面，不裁成竖构图；用下方正常字号按钮提供等价科室入口。</li><li>本地教学改编：默认呈现静态原帧且无自动声音；减少动态模式下保留章选、原帧、档案/矩阵与阅读功能，关闭本地220/180ms位移并停用连续自动推进，仍允许用户主动逐段播放和暂停。片段加载失败可重试或回到静态原帧。</li><li>官方四周年专题的孤星活动背景只保留在比较来源卡；本地不把它当作莱茵档案矩阵的网页版本，完整原片、声音及专题在第一方入口打开。</li></ul><div class=\"behavior-block\"><span class=\"behavior-label\">显示主题</span><h3>固定主题</h3><p>固定米白主题，原片中的黑色字标/材质不等于网页深浅色切换。</p><p>保持源片材料、光学渐变和字标的原色，外围控件沿用同一组研究终端中性色。</p></div><div class=\"behavior-block\"><span class=\"behavior-label\">声音与交互</span><h3>外部音乐入口</h3><p>本地四个片段均无音轨；完整原片声音由官方Bilibili播放器控制，页面不自动出声。</p><p>媒体保留源端视觉时序，网页状态靠按钮、节点、文字与时间码反馈；不臆造原片独立BGM或操作音。</p></div></section><section><h2>约束与适用场景</h2><ul><li>以官方影像为视觉来源，将媒体呈现与本地网页状态代码分开实现。</li><li>2026-10-09实际观看官方Bilibili账号UID161775300发布的PV，通过video解码原尺寸帧与实际媒体轨道核验。原轨道HEVC、1920×1080、25fps、318.8秒，原文件hash/来源在清单，完整原轨道归档于仓库外。</li><li>仓库保存四个无声 H264 片段：19.20–23.40、27.00–39.20、39.20–51.52、59.60–73.40 秒；保持 1 倍速度、原尺寸与 25fps，使用 CRF18 转码。双环片段为 308 帧、12.32 秒。</li><li>22、35、48、68秒原尺寸解码帧未缩放/改色；机构字标和透明材质由原作媒体保留，没有重写影片的3D渲染器或臆造字体名称。点选、档案遮罩、节点移动、范围条与连续章编排均为本地代码。</li><li>原片检索并抬出 X-001；本地五个观察热点、选中板位移与阵列显隐为网页交互改编。科室目录保留一中心加九外围。</li><li>官方字体/标志细节在原帧中保留；外围网页文字用系统字体，未单独复制字体包。官方封面与孤星背景仅作来源卡。片段无音轨，完整声音留在官方播放器。</li><li>原画面等比例全幅展示，手机保留完整的 16:9 构图；下方语义目录提供可读操作。</li></ul><h3>适合</h3><p>机构影像转译为可操作资料 / 光学/工业素材的场景式展示 / 保留特殊字标的机构矩阵目录</p><h3>谨慎使用</h3><p>用泛化卡片替代立体阵列 / 用普通字体抹平环形连字 / 把媒体编排包装成3D源码复刻</p></section><section><h2>设计参数</h2><div class=\"swatches\"><span class=\"swatch\"><i style=\"background:#edeae5\"></i>#edeae5</span><span class=\"swatch\"><i style=\"background:#111310\"></i>#111310</span><span class=\"swatch\"><i style=\"background:#eb7900\"></i>#eb7900</span><span class=\"swatch\"><i style=\"background:#c3c1ba\"></i>#c3c1ba</span></div><p><b>字体</b> · 原帧保留RHINE LAB/ANALYSIS OS及十组特殊环形连字的真实像素；外围语义控件用系统中文/Arial及等宽时间码，不臆造官方字体。<br><b>布局</b> · 16:9原比例场景，保留大量立体阵列、完整中心/九外围矩阵及源端射线；外围四章控制、时间范围条与自然阅读。手机保留全幅场景，正常字号的目录/说明另行重排。<br><b>动效</b> · 原作片段分别4.2/12.2/12.32/13.8秒，25fps、1倍速度；原片内部镜头不重定时。本地板220ms微移、节点180ms移动为adapted，减少动态关闭并保留原帧/选择；播放由用户主动启用。</p></section><section><div class=\"prompt-head\"><h2>可复用 Prompt</h2><button class=\"copy-button\" id=\"copy-prompt\">复制 Prompt</button></div><textarea class=\"prompt-box\" aria-label=\"可复用 Prompt\" readonly>制作一个明确标注“官方影像的网页转译／教学改编”的莱茵研究终端，使用已授权来源的原尺寸媒体保持真实构成，不以泛化五卡片或普通字体替代原作。四个场景分别为19.20–23.40许可弧环、27.00–39.20多排立体档案与单件X-001抬出/射线、39.20–51.52透明双环光学、59.60–73.40完整机构矩阵。必要官方片段保留1920×1080、25fps、1倍速度且无音轨，默认呈现35秒原帧；22/35/48/68秒原帧不缩放改色，记录原轨道hash、时间范围、转码参数与权利。影片负责难以精确重绘的光学材质与特殊字标，本地代码实现四章选中、播放/暂停/从头重播、0.04秒步长进度及源时间码，最新请求取消旧解码回调，失败能重试或保留原帧。档案区在真实多排阵列上提供五个本地观察热点、前后选择与可展开正文，同一个状态同步编号/标题/解释并收起旧正文；阵列显隐隐藏背景，选中板保留按官方四角轮廓裁切的同源像素。明确五热点是教学目录，原片只检索X-001。矩阵保留CMPT CTRL中心及DEF/HRI/BSN/ENG/STRU/SCIEN/ORIG/NRG/ECO九外围，环形连字、黑白表面、倾斜与射线仍可见；DOM热点与下方可读按钮同步同源橙色节点及解释，不能扩写组织权限。手机全幅16:9不裁切，正文和等价科室目录保持正常字号；固定米白主题，完整声音在官方外部播放器。减少动态保持静态原帧与全部状态，关闭板/节点位移和连续自动推进，仍可由用户逐段主动播放并暂停。源端影像时序、媒体保留、本地适配与未复现的完整影片/3D源码分别记录。</textarea><details><summary>负面约束 / Negative Prompt</summary><p>不要把官方影像叫官方莱茵品牌网站；不要把大量立体档案改成五张通用平面卡；不要用CSS圆框替代厚度/灰色渐变/橙色内缘，不用Arial重排原作特殊连字；不要把影片抽出说成网页点击，不伪造权限/机密正文；不要声称H264转码字节等同原轨道，不自动出声、裁掉手机画面或复制整片3D源码的虚假边界。</p></details><h3>改造练习</h3><p>将拥有使用权的机构影片拆为四个有明确时间范围的场景，保留原尺寸与片内时序；用语义按钮与数据状态实现章选和目录，分别审阅媒体准确度与交互可复用性。</p></section><section class=\"case-patterns\" aria-labelledby=\"case-patterns-heading\"><div class=\"prompt-head\"><h2 id=\"case-patterns-heading\">关联巧思</h2><a href=\"patterns.html#patterns?source=rhine-lab\">按来源浏览全部 3 项</a></div><p>这些机制可独立借用，触发条件、约束与组合建议见各项详情。</p><ul><li><a href=\"patterns.html#pattern/restrained-signal-color?source=rhine-lab\">单一信号色集中强调</a><span>视觉巧思</span></li><li><a href=\"patterns.html#pattern/department-code-matrix?source=rhine-lab\">机构缩写的中心矩阵</a><span>视觉巧思</span></li><li><a href=\"patterns.html#pattern/specimen-pullout-selection?source=rhine-lab\">样本阵列的抽出选择</a><span>视觉巧思 · 内容与组织</span></li></ul></section><section><h2>来源与证据</h2><div class=\"source-item\"><span class=\"source-badge\">实例</span><a href=\"https://www.bilibili.com/video/BV1rr4y1b7sz/\" target=\"_blank\" rel=\"noopener noreferrer\">明日方舟官方 · 特别映像「莱茵生命：访问」 </a><small>官方 UID161775300 于 2022-04-26 发布。采集的原尺寸关键帧与媒体轨道为 1920×1080、25fps，覆盖许可、档案、光学与矩阵四段时序；网页点选为本地改编。</small></div><div class=\"source-item\"><span class=\"source-badge\">实例</span><a href=\"https://ak.hypergryph.com/special/4th-anniversary/index.html\" target=\"_blank\" rel=\"noopener noreferrer\">Hypergryph · 明日方舟四周年官方专题 </a><small>官方2023专题，只作为孤星机械空间主图及真实宣传网页的比较来源；不支持莱茵档案点击或矩阵网页交互。</small></div><div class=\"source-item\"><span class=\"source-badge\">实例</span><a href=\"https://github.com/MIBXR/RhineLabUI\" target=\"_blank\" rel=\"noopener noreferrer\">RhineLabUI · LBEILC 的第三方代码复刻（用户 fork） </a><small>固定提交 12cc5e4013acb9408f753ff71de6b8492299b7c8 的第三方代码参考，以 TypeScript、Three.js、Vite 实现 DOM/SVG 开场、档案阵列、解密与模型交互；搜索和收藏为开发者扩展。</small></div><div class=\"source-item\"><span class=\"source-badge\">实例</span><a href=\"https://github.com/LBEILC/RhineLabUI\" target=\"_blank\" rel=\"noopener noreferrer\">LBEILC/RhineLabUI · 作者原仓库与许可边界 </a><small>MIT 适用于作者原创代码。</small></div><div class=\"source-item\"><span class=\"source-badge\">规范</span><a href=\"https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/\" target=\"_blank\" rel=\"noopener noreferrer\">W3C · Disclosure Pattern </a><small>支持本地原生展开按钮、aria-expanded与正文关联，属于网页转译的实现依据。</small></div><div class=\"source-item\"><span class=\"source-badge\">规范</span><a href=\"https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html\" target=\"_blank\" rel=\"noopener noreferrer\">W3C · Use of Color </a><small>支持选中项同时以边界、编号、文字和aria状态区分；橙色不能独自承担状态含义。</small></div><div class=\"source-item\"><span class=\"source-badge\">规范</span><a href=\"https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions.html\" target=\"_blank\" rel=\"noopener noreferrer\">W3C · Animation from Interactions </a><small>WCAG 2.3.3 为 AAA，指导本地取消非必要的档案位移与平滑滚动。</small></div><div class=\"source-item\"><span class=\"source-badge\">规范</span><a href=\"https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html\" target=\"_blank\" rel=\"noopener noreferrer\">W3C · Pause, Stop, Hide </a><small>本地连续片段播放提供明确暂停，后台暂停；减少动态默认静态，用户可主动逐段观看。</small></div><p>官方资料采集：2026-10-09。</p></section><section><h2>相关文档</h2><ul><li><a href=\"docs.html?file=docs%2Fcases%2Frhine-lab.md\" target=\"_blank\">调研记录</a></li><li><a href=\"docs.html?file=demos%2Fcases%2Frhine-lab%2Ffidelity.md\" target=\"_blank\">复现范围与差异</a></li><li><a href=\"demos/cases/rhine-lab/assets-manifest.json\" target=\"_blank\">素材来源清单</a></li><li><a href=\"docs.html?file=demos%2Fcases%2Frhine-lab%2FLICENSES.md\" target=\"_blank\">许可原文索引</a></li></ul></section>"
+    "renderer": "site/app/domain/case-notes.mjs",
+    "content": "<section><h2>从要素看风格</h2><a href=\"lab.html?style=rhine-lab\">调配这个风格的设计要素</a><dl><div><dt>配色角色</dt><dd>源片米白透明档案与黑白机构字标保持原色，双环内缘及业务科焦点使用橙色；本地外围用米白、黑色和同源橙色节点，素材没有深绿/黄绿重着色。</dd></div><div><dt>字体排版</dt><dd>官方68秒原帧保留CMPT CTRL中心，以及DEF、HRI、BSN、ENG、STRU、SCIEN、ORIG、NRG、ECO九外围的环形连字、英文全称、黑白表面、透视倾斜及尺度差；网页控件使用系统字体，不替代原作字标。</dd></div><div><dt>布局留白</dt><dd>源片大量平行立体档案覆盖视野并抽出单件，机构采用一中心加九外围的非等宽矩阵与细射线；本地以16:9全幅场景保留构图，用户可在原画面外围自然浏览四章控件和说明。</dd></div><div><dt>图像图标</dt><dd>四个官方无声H264片段与22/35/48/68秒原尺寸解码帧保存透明阵列、双环材质及真实字标；橙色节点裁自68秒帧。本地没有重写原片3D渲染器；封面和孤星背景仅作来源卡。</dd></div><div><dt>线条形状</dt><dd>源片黑白弧环/橙色节点、档案四角标定/细射线、大小双环的灰色透明厚度与橙色内缘、中心矩阵及特殊环形字标；本地档案显隐遮罩按35秒抬出板的四角轮廓定位。</dd></div><div><dt>信息层级</dt><dd>原比例档案抽出画面 → 四个原作场景与媒体状态 → 本地观察目录/展开阅读 → 十模块语义科室入口与解释 → 官方影片及辅助网页来源。</dd></div><div><dt>动效反馈</dt><dd>许可环线、立体阵列抽出/镜头靠近、双环旋转和机构模块入场沿官方片段25fps/1倍速度；本地章选即时换原帧，点击板/节点位移及四段连续编排为adapted。</dd></div><div><dt>协调逻辑</dt><dd>原作米白材质、环形连字、橙色内缘/节点、射线和编号在四个场景中连贯；语义按钮、同步时间码与阅读状态环绕原画面，媒体与网页改编各自可审阅。</dd></div></dl></section><section><h2>设计机制</h2><ul><li>官方影片27–39.2秒：大量平行立体档案覆盖视野，一件X-001被抬出，镜头靠近透明板，随后出现细射线、标定点和机密文字；不是少量平面卡片行。</li><li>官方影片59.6–73.4秒：CMPT CTRL为中心，DEF、HRI、BSN、ENG、STRU、SCIEN、ORIG、NRG、ECO九个外围科室形成非等宽矩阵；环形连字、黑白表面、倾斜、射线和橙色空心节点共同编码机构。</li><li>官方影片19.2–23.4秒的黑白细弧环和橙色节点形成许可处理过程；39.2–51.52秒双环的厚度、灰色透明渐变、橙色内缘与镜头旋转属于光学材质，不能用一个CSS圆框替代。</li><li>本地使用四个1920×1080、25fps、1倍速度的官方无声片段与原尺寸解码帧保留光学和字标；章选、暂停重播、进度、档案选择/显隐和科室节点为可独立学习的网页状态代码。</li></ul><h3>设计重点</h3><p>官方影像的网页转译／教学改编：以2026-10-09采集的2022《莱茵生命：访问》为固定来源，选取许可环线、档案阵列、双环光学和机构矩阵四个场景。保留原作媒体构成与片内时序，本地五份观察目录及十模块点选属于adapted；不是官方品牌网站或原作3D源码移植。</p><h3>主题与情绪</h3><p>原作米白透明档案、黑白机构字标、橙色光学内缘与小面积状态节点形成研究终端；本地保持原色与16:9比例，外围控制使用相同中性色，不额外添加深绿卡片或整页主题切换。</p></section><section><h2>页面交互</h2><ul><li>本地教学改编：在原作多排立体档案的35秒原帧上提供五个观察热点及前后选择，同一状态同步观察编号、标题、正文并收起旧展开；阵列显隐仅隐藏背景阵列，保留按源端四角轮廓裁切的抬出板。五个热点不是原片中的五个可点击档案。</li><li>本地教学改编：原生展开按钮同步aria-expanded和正文；档案热点支持左右方向键，当前项与焦点同步。五份观察是本库的构成解释，不虚构机密档案内容或认证。</li><li>本地教学改编：四个章选即时呈现各自原帧；播放、暂停、从头重播和0.04秒步长的范围条控制对应官方无声片段，源时间码与位置同步，最新请求取消旧解码回调。可选择连续播放四段，片内时序保留，段间连接为网页编排。</li><li>本地教学改编：机构原帧上的十个DOM热点与可读目录按钮同步选择、全称、解释及同源橙色空心节点位置；原片只提供完整字标和矩阵运动，没有网页点击证据。手机保留16:9全幅画面，不裁成竖构图；用下方正常字号按钮提供等价科室入口。</li><li>本地教学改编：默认呈现静态原帧且无自动声音；减少动态模式下保留章选、原帧、档案/矩阵与阅读功能，关闭本地220/180ms位移并停用连续自动推进，仍允许用户主动逐段播放和暂停。片段加载失败可重试或回到静态原帧。</li><li>官方四周年专题的孤星活动背景只保留在比较来源卡；本地不把它当作莱茵档案矩阵的网页版本，完整原片、声音及专题在第一方入口打开。</li></ul><h3>显示主题</h3><p>固定主题</p><p>固定米白主题，原片中的黑色字标/材质不等于网页深浅色切换。</p><p>保持源片材料、光学渐变和字标的原色，外围控件沿用同一组研究终端中性色。</p><h3>声音与交互</h3><p>外部音乐入口</p><p>本地四个片段均无音轨；完整原片声音由官方Bilibili播放器控制，页面不自动出声。</p><p>媒体保留源端视觉时序，网页状态靠按钮、节点、文字与时间码反馈；不臆造原片独立BGM或操作音。</p></section><section><h2>约束与适用场景</h2><ul><li>以官方影像为视觉来源，将媒体呈现与本地网页状态代码分开实现。</li><li>2026-10-09实际观看官方Bilibili账号UID161775300发布的PV，通过video解码原尺寸帧与实际媒体轨道核验。原轨道HEVC、1920×1080、25fps、318.8秒，原文件hash/来源在清单，完整原轨道归档于仓库外。</li><li>仓库保存四个无声 H264 片段：19.20–23.40、27.00–39.20、39.20–51.52、59.60–73.40 秒；保持 1 倍速度、原尺寸与 25fps，使用 CRF18 转码。双环片段为 308 帧、12.32 秒。</li><li>22、35、48、68秒原尺寸解码帧未缩放/改色；机构字标和透明材质由原作媒体保留，没有重写影片的3D渲染器或臆造字体名称。点选、档案遮罩、节点移动、范围条与连续章编排均为本地代码。</li><li>原片检索并抬出 X-001；本地五个观察热点、选中板位移与阵列显隐为网页交互改编。科室目录保留一中心加九外围。</li><li>官方字体/标志细节在原帧中保留；外围网页文字用系统字体，未单独复制字体包。官方封面与孤星背景仅作来源卡。片段无音轨，完整声音留在官方播放器。</li><li>原画面等比例全幅展示，手机保留完整的 16:9 构图；下方语义目录提供可读操作。</li></ul><h3>适合</h3><ul><li>机构影像转译为可操作资料</li><li>光学/工业素材的场景式展示</li><li>保留特殊字标的机构矩阵目录</li></ul><h3>谨慎使用</h3><ul><li>用泛化卡片替代立体阵列</li><li>用普通字体抹平环形连字</li><li>把媒体编排包装成3D源码复刻</li></ul></section><section><h2>设计参数</h2><div class=\"swatches\"><span><i style=\"background:#edeae5\"></i>#edeae5</span><span><i style=\"background:#111310\"></i>#111310</span><span><i style=\"background:#eb7900\"></i>#eb7900</span><span><i style=\"background:#c3c1ba\"></i>#c3c1ba</span></div><p>字体 · 原帧保留RHINE LAB/ANALYSIS OS及十组特殊环形连字的真实像素；外围语义控件用系统中文/Arial及等宽时间码，不臆造官方字体。</p><p>布局 · 16:9原比例场景，保留大量立体阵列、完整中心/九外围矩阵及源端射线；外围四章控制、时间范围条与自然阅读。手机保留全幅场景，正常字号的目录/说明另行重排。</p><p>动效 · 原作片段分别4.2/12.2/12.32/13.8秒，25fps、1倍速度；原片内部镜头不重定时。本地板220ms微移、节点180ms移动为adapted，减少动态关闭并保留原帧/选择；播放由用户主动启用。</p></section><section><h2>可复用 Prompt</h2><textarea aria-label=\"可复用 Prompt\" readonly>制作一个明确标注“官方影像的网页转译／教学改编”的莱茵研究终端，使用已授权来源的原尺寸媒体保持真实构成，不以泛化五卡片或普通字体替代原作。四个场景分别为19.20–23.40许可弧环、27.00–39.20多排立体档案与单件X-001抬出/射线、39.20–51.52透明双环光学、59.60–73.40完整机构矩阵。必要官方片段保留1920×1080、25fps、1倍速度且无音轨，默认呈现35秒原帧；22/35/48/68秒原帧不缩放改色，记录原轨道hash、时间范围、转码参数与权利。影片负责难以精确重绘的光学材质与特殊字标，本地代码实现四章选中、播放/暂停/从头重播、0.04秒步长进度及源时间码，最新请求取消旧解码回调，失败能重试或保留原帧。档案区在真实多排阵列上提供五个本地观察热点、前后选择与可展开正文，同一个状态同步编号/标题/解释并收起旧正文；阵列显隐隐藏背景，选中板保留按官方四角轮廓裁切的同源像素。明确五热点是教学目录，原片只检索X-001。矩阵保留CMPT CTRL中心及DEF/HRI/BSN/ENG/STRU/SCIEN/ORIG/NRG/ECO九外围，环形连字、黑白表面、倾斜与射线仍可见；DOM热点与下方可读按钮同步同源橙色节点及解释，不能扩写组织权限。手机全幅16:9不裁切，正文和等价科室目录保持正常字号；固定米白主题，完整声音在官方外部播放器。减少动态保持静态原帧与全部状态，关闭板/节点位移和连续自动推进，仍可由用户逐段主动播放并暂停。源端影像时序、媒体保留、本地适配与未复现的完整影片/3D源码分别记录。</textarea><details><summary>负面约束 / Negative Prompt</summary><p>不要把官方影像叫官方莱茵品牌网站；不要把大量立体档案改成五张通用平面卡；不要用CSS圆框替代厚度/灰色渐变/橙色内缘，不用Arial重排原作特殊连字；不要把影片抽出说成网页点击，不伪造权限/机密正文；不要声称H264转码字节等同原轨道，不自动出声、裁掉手机画面或复制整片3D源码的虚假边界。</p></details><h3>改造练习</h3><p>将拥有使用权的机构影片拆为四个有明确时间范围的场景，保留原尺寸与片内时序；用语义按钮与数据状态实现章选和目录，分别审阅媒体准确度与交互可复用性。</p></section><section><h2>关联巧思</h2><a href=\"patterns.html#patterns?source=rhine-lab\">按来源浏览全部 3 项</a><ul><li><a href=\"patterns.html#pattern/restrained-signal-color?source=rhine-lab\">单一信号色集中强调</a></li><li><a href=\"patterns.html#pattern/department-code-matrix?source=rhine-lab\">机构缩写的中心矩阵</a></li><li><a href=\"patterns.html#pattern/specimen-pullout-selection?source=rhine-lab\">样本阵列的抽出选择</a></li></ul></section><section><h2>来源与证据</h2><div class=\"source-item\"><span>实例</span><a href=\"https://www.bilibili.com/video/BV1rr4y1b7sz/\">明日方舟官方 · 特别映像「莱茵生命：访问」</a><p>官方 UID161775300 于 2022-04-26 发布。采集的原尺寸关键帧与媒体轨道为 1920×1080、25fps，覆盖许可、档案、光学与矩阵四段时序；网页点选为本地改编。</p></div><div class=\"source-item\"><span>实例</span><a href=\"https://ak.hypergryph.com/special/4th-anniversary/index.html\">Hypergryph · 明日方舟四周年官方专题</a><p>官方2023专题，只作为孤星机械空间主图及真实宣传网页的比较来源；不支持莱茵档案点击或矩阵网页交互。</p></div><div class=\"source-item\"><span>实例</span><a href=\"https://github.com/MIBXR/RhineLabUI\">RhineLabUI · LBEILC 的第三方代码复刻（用户 fork）</a><p>固定提交 12cc5e4013acb9408f753ff71de6b8492299b7c8 的第三方代码参考，以 TypeScript、Three.js、Vite 实现 DOM/SVG 开场、档案阵列、解密与模型交互；搜索和收藏为开发者扩展。</p></div><div class=\"source-item\"><span>实例</span><a href=\"https://github.com/LBEILC/RhineLabUI\">LBEILC/RhineLabUI · 作者原仓库与许可边界</a><p>MIT 适用于作者原创代码。</p></div><div class=\"source-item\"><span>规范</span><a href=\"https://www.w3.org/WAI/ARIA/apg/patterns/disclosure/\">W3C · Disclosure Pattern</a><p>支持本地原生展开按钮、aria-expanded与正文关联，属于网页转译的实现依据。</p></div><div class=\"source-item\"><span>规范</span><a href=\"https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html\">W3C · Use of Color</a><p>支持选中项同时以边界、编号、文字和aria状态区分；橙色不能独自承担状态含义。</p></div><div class=\"source-item\"><span>规范</span><a href=\"https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions.html\">W3C · Animation from Interactions</a><p>WCAG 2.3.3 为 AAA，指导本地取消非必要的档案位移与平滑滚动。</p></div><div class=\"source-item\"><span>规范</span><a href=\"https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html\">W3C · Pause, Stop, Hide</a><p>本地连续片段播放提供明确暂停，后台暂停；减少动态默认静态，用户可主动逐段观看。</p></div><p>官方资料采集：2026-10-09。</p></section><section><h2>相关文档</h2><ul><li><a href=\"docs.html?file=docs%2Fcases%2Frhine-lab.md\">调研记录</a></li><li><a href=\"docs.html?file=demos%2Fcases%2Frhine-lab%2Ffidelity.md\">复现范围与差异</a></li><li><a href=\"demos/cases/rhine-lab/assets-manifest.json\">素材来源清单</a></li><li><a href=\"docs.html?file=demos%2Fcases%2Frhine-lab%2FLICENSES.md\">许可原文索引</a></li></ul></section>"
   }
 }

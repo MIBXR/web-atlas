@@ -71,7 +71,7 @@
 | `agent/` | 生成的读取接口 | 根目录为 `catalog.json`；`{cases,patterns,materials}/index.json` 为单类索引，`<id>.json` 为资料包 |
 | `previews/` | 截图与生成预览 | `{cases,patterns,materials}/<id>.<ext>`；变体用 `-portrait`、`-mobile`、`-reference`；作者效果图放 `materials/<id>/` |
 | `data/` | 生成的站点数据 | 按用途平铺 `cases.js`、`patterns.js`、`materials.js`、`docs.js`、`asset-sources.js` |
-| `site/` | 站点代码 | `shared/`、`pages/<页>/`、`runtime/`、`playground/`、`vendor/`、`icons/` |
+| `site/` | 站点代码 | `app/`、`client/`、`runtime/`、`playground/`、`vendor/`、`icons/`；`shared/theme.js` 供已收录素材使用 |
 | `scripts/` | 构建、服务、取材和维护工具 | 按工具命名 |
 | 根目录 | 页面与项目入口 | `index.html`、`cases.html`、`patterns.html`、`materials.html`、`lab.html`、`agent.html`、`docs.html`，三份根文档、`package.json`、Git 配置和 `.openai/` |
 
@@ -143,7 +143,7 @@ Web Atlas 与 Motion Atlas 是姊妹站，内容互不交叉。基础导航、�
 
 ## 站点设计与交互约束
 
-本节列出 Web Atlas 的功能与交互要求。修改前查看现有页面、`site/shared/` 共享 CSS 和实际生效样式。
+本节列出 Web Atlas 的功能与交互要求。修改前查看现有页面、`site/app/styles/` 与 Arc UI 的 CSS Modules 和实际生效样式。
 
 本节约束站点自有界面与条目说明；原作内容和第三方原文按[收录原则](#收录原则)处理。
 
@@ -271,16 +271,28 @@ Prompt 写明结构、尺度、素材、关键状态及交接、音乐和主题�
 资料目录使用 `snapshotPath: demos/materials/<id>/` 与 `snapshotEntry`；`snapshotEntry` 指向主文档，Agent Skill 为 `SKILL.md`。Agent Skill 的 `workflow` 是非空中文步骤数组，`relatedEntries` 是 `{kind: case|material|pattern,id,note}` 数组且关联 id 存在；可运行素材也可记录关联条目，有值时在详情显示。可选 `gallery` 是 `{path,caption,kind,sourceUrl,license,replicaPage,width,height}` 数组，`kind` 为 `work`、`style` 或 `theme`；采用自然比例的画廊必须提供正整数 `width`、`height`，保存图片实际像素尺寸；显式设置 `galleryRatio` 时由展示框预留空间。图片比例不一致时用 `galleryRatio`（如 `16/9`）统一展示框，图片按比例裁切，点开查看原图；有本库复刻页时用 `replicaPage` 指向该页，显示入口链接。`galleryFit` 取 `cover` 或 `contain`，需要完整显示作品时用 `contain`。`gallery[].compare` 保存 `{piece,original,sound}`，用于在点击作品时打开复刻与原作的对比弹窗，`sound` 仅在原作有音轨时设为 `true`。文字详情提供工作流、关联条目、原文主文档与 README；资料目录按目录递归纳入资料包，文件按第三方资源规则保存；图像类型不显示原文快照入口。
 
 
+## 站点实现
+
+站点页面由 React 管理，基础控件来自 Arc UI 免费源码的固定提交 `df3a600fd9ffca85ec8607438b599a4408ab8562`。源码与许可在 `site/app/arc/`，仅保留实际使用的组件及其依赖。
+
+- `site/app/pages/`：七个站点页面；`components/`：页面共享组件。
+- `site/app/state/`：URL、主题与收藏状态；`domain/`：文档、预览和实验室的专属计算与运行时。
+- `site/app/styles/theme.css`：站点颜色、字号、圆角、控件尺寸与 Arc UI Token 的对应；页面布局位于同目录的独立样式表。
+- `scripts/build-app.mjs`：使用 esbuild 编译 JSX、TSX 与 CSS Modules；`scripts/dev.mjs`：编译监听与本地服务。
+
+首次开发执行 `npm ci`，再执行 `npm start`。完整生成数据与页面执行 `npm run build`。`site/client/` 是随仓库保存的生成运行文件，供静态托管与 Agent 导出的文档阅读器使用；修改站点源码后由构建更新。 取材 CLI 和独立 Demo 不需要安装站点依赖。
+
 ## 新增流程
 
 ### 构建与检查
 
 ```sh
+npm ci
 npm run build
 npm run check
 ```
 
-构建同步三类 Prompt、单类索引、资料包、站点数据、文档目录、案例索引及 README 计数块。取材接口见 [Agent 工作流](docs/agent.md)。
+构建编译 React 运行文件，并同步三类 Prompt、单类索引、资料包、站点数据、文档目录、案例索引及 README 计数块。取材接口见 [Agent 工作流](docs/agent.md)。
 
 `npm run check` 检查换行、已跟踪的忽略类型文件、条目引用、三库 `order` 和单文件大小。单个文件超过 50 MiB 时报错；原文件确实超过且不能改动的，经仓库所有者同意后把路径和原因写进 `scripts/check.mjs` 的 `oversizeAllowed`，此后只列提示。
 

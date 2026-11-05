@@ -394,16 +394,76 @@
       "role": "context"
     },
     {
+      "path": "site/app/domain/case-notes.mjs",
+      "role": "context"
+    },
+    {
+      "path": "site/app/theme-boot.js",
+      "role": "context"
+    },
+    {
+      "path": "site/client/AgentPage-EAS5PVE3.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/CatalogPage-SGVWTZ3D.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/DocsPage-UQJTEUEK.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/DocsPage-UQJTEUEK.js.LEGAL.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/client/HomePage-U2APYKG6.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/LICENSES.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/client/LabPage-6GKARTD3.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-4PVWGCRJ.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-SSO6R7NX.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-XZHNFY5X.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-YOWC6UHQ.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-YOWC6UHQ.js.LEGAL.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/client/main.css",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/main.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/main.js.LEGAL.txt",
+      "role": "license"
+    },
+    {
       "path": "site/icons/favicon.svg",
       "role": "asset"
-    },
-    {
-      "path": "site/pages/docs/docs.css",
-      "role": "source"
-    },
-    {
-      "path": "site/pages/docs/docs.js",
-      "role": "source"
     },
     {
       "path": "site/runtime/asset-cache.js",
@@ -426,30 +486,6 @@
       "role": "source"
     },
     {
-      "path": "site/shared/site-footer.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/site-nav.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/site-shell.js",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/site-typography.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/theme-control.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/theme.js",
-      "role": "source"
-    },
-    {
       "path": "site/vendor/LICENSES.txt",
       "role": "license"
     },
@@ -464,7 +500,7 @@
   ],
   "webNotes": {
     "format": "text/html",
-    "renderer": "site/pages/cases/atlas.js",
-    "content": "<section><h2>从要素看风格</h2><a class=\"element-lab-link\" href=\"lab.html?style=chatgpt-platform\">调配这个风格的设计要素</a><dl class=\"element-map\"><div class=\"\"><dt>配色角色</dt><dd>跟随 prefers-color-scheme；页面没有全局手动主题按钮，桌面产品界面随系统换深浅，手机保持原站的浅色界面图。</dd></div><div class=\"\"><dt>字体排版</dt><dd>官方 OpenAI Sans SC 4个Unicode分片及英文字体；中文主标题89px、5行、紧行距。</dd></div><div class=\"\"><dt>布局留白</dt><dd>首屏标题和拼贴 → 约 2000px+视口的居中/交接/说明长段 → 用途横向架子 → 价格 → 安全 → 结束行动 → 页尾；上下方向可逆。手机改为原生三模式横向卡片，再顺序浏览相同后续内容。</dd></div><div class=\"\"><dt>图像图标</dt><dd>可操作的中文标题、分模式周边拼贴与产品窗口联动；同一窗口从居中舞台移向右侧，让出左侧说明区域。</dd></div><div class=\"\"><dt>线条形状</dt><dd>圆胶囊按钮、黑色环与直线渐变下划线、圆角界面图。</dd></div><div class=\"\"><dt>信息层级</dt><dd>可操作的中文标题、分模式周边拼贴与产品窗口联动；同一窗口从居中舞台移向右侧，让出左侧说明区域。</dd></div><div class=\"\"><dt>动效反馈</dt><dd>在首屏标题悬停/聚焦/点击“聊天、工作、编程”，当前中文逐字换强调色，中央图垂直退出/进入，20 个官方周边素材按模式替换，用动作表达三种用途。选择工作时，工作的独立素材从四周进入，原模式素材离开；快速切换会清理旧离场层，保持一套可读场景，可移到“工作”再快速移到“编程”观察。向下/向上滚动时，周边素材随滚动带入/收束，随后淡出；同一窗口保持 sticky，越过交接阈值再向右下移动，从吸引注意过渡到解释产品，可在首屏下面往返滚动观察。桌面左侧 rail 出现后，滚动三段哨兵或通过点击/方向键操作，说明高度、标题缩放、窗口模式及进度对应更新；顶部标题模式和下段模式彼此独立。</dd></div><div class=\"coherence\"><dt>协调逻辑</dt><dd>720ms 主窗口过渡、340px 交接阈值、周边层的轨迹/交错及 6500ms 自动周期为本地拟合；中央产品图是官方截图，不是可登录、对话、编辑的完整产品。没有复制账户、付费和下载服务，原站三个静态故事卡未移植。暂停控制停止自动轮换和周边运动，正常滚动仍可阅读。</dd></div><div class=\"\"><dt>滚动结构</dt><dd>首屏标题和拼贴 → 约 2000px+视口的居中/交接/说明长段 → 用途横向架子 → 价格 → 安全 → 结束行动 → 页尾；上下方向可逆。手机改为原生三模式横向卡片，再顺序浏览相同后续内容。</dd></div></dl></section><section><h2>设计机制</h2><ul><li>可操作的中文标题、分模式周边拼贴与产品窗口联动；同一窗口从居中舞台移向右侧，让出左侧说明区域。</li><li>配色、文字密度、边框与选中状态共同表达本页面的产品语气。</li><li>交互动作有明确的触发与状态关系，以同一源 URL 的当前页面为依据；近似和未验证状态分别说明。</li><li>第一方素材保持比例；手机保留原站实际变体。</li></ul><h3>设计重点</h3><p>围绕Chat、Work、Codex三合一展开：日常对话、可交付工作成果、代码改动评审。</p><h3>主题与情绪</h3><p>跟随 prefers-color-scheme；页面没有全局手动主题按钮，桌面产品界面随系统换深浅，手机保持原站的浅色界面图。</p></section><section><h2>页面交互</h2><ul><li>首屏悬停/聚焦/点击“聊天、工作、编程” → 当前中文逐字换强调色，中央图垂直退出/进入，20 个官方周边素材按模式替换 → 用动作表达三种用途；在首屏标题体验。</li><li>选择工作 → 工作的独立素材从四周进入，原模式素材离开；快速切换清理旧离场层 → 保持一套可读场景；移到“工作”再快速移到“编程”。</li><li>向下/向上滚动 → 周边素材随滚动带入/收束，随后淡出；同一窗口保持 sticky，越过交接阈值再向右下移动 → 从吸引注意过渡到解释产品；在首屏下面往返滚动。</li><li>桌面左侧 rail 出现后，滚动三段哨兵或点击/方向键 → 说明高度、标题缩放、窗口模式及进度对应更新；顶部标题模式和下段模式彼此独立。</li><li>手机使用三卡原生横向滚动，标题选择定位相应卡片；桌面 sticky rail 不出现在手机。导航保持桌面即时开关和手机全屏分层列表。</li><li>用途架子保留原生横滑及左右按钮；后续价格、安全、结束行动与页尾为普通滚动。</li></ul><div class=\"behavior-block\"><span class=\"behavior-label\">显示主题</span><h3>跟随系统</h3><p>跟随 prefers-color-scheme；页面没有全局手动主题按钮，桌面产品界面随系统换深浅，手机保持原站的浅色界面图。</p><p>可操作的中文标题、分模式周边拼贴与产品窗口联动；同一窗口从居中舞台移向右侧，让出左侧说明区域。</p></div><div class=\"behavior-block\"><span class=\"behavior-label\">声音与交互</span><h3>无网站配乐</h3><p>此介绍页没有背景音乐、音频或影片。</p><p>利用运动和空间关系串联能力，声音不是此页叙事的一部分。</p></div></section><section><h2>约束与适用场景</h2><ul><li>保留当前来源的触发→响应→目的，不用通用淡入代替定义性交互。</li><li>720ms 主窗口过渡、340px 交接阈值、周边层的轨迹/交错及 6500ms 自动周期为本地拟合；中央产品图是官方截图，不是可登录、对话、编辑的完整产品。没有复制账户、付费和下载服务，原站三个静态故事卡未移植。暂停控制停止自动轮换和周边运动，正常滚动仍可阅读。</li><li>品牌与官方素材仅用于此个人参考库；归档来源与权利。</li><li>减少动态保留可读内容、键盘焦点和手动选择。</li></ul><h3>适合</h3><p>多能力AI产品介绍 / 功能转向的品牌叙事 / 中文字体与超大排版研究</p><h3>谨慎使用</h3><p>把ChatGPT首页想象为一张聊天输入框 / 随意改造OpenAI结标 / 所有功能只用渐变blob表现 / 只点按钮换图而忽略周围元素飞入飞出 / 给所有网站套同一种滚动淡入动画</p></section><section><h2>设计参数</h2><div class=\"swatches\"><span class=\"swatch\"><i style=\"background:#070707\"></i>#070707</span><span class=\"swatch\"><i style=\"background:#ffffff\"></i>#ffffff</span><span class=\"swatch\"><i style=\"background:#f5f5f5\"></i>#f5f5f5</span><span class=\"swatch\"><i style=\"background:#c4a4f2\"></i>#c4a4f2</span><span class=\"swatch\"><i style=\"background:#00a6d3\"></i>#00a6d3</span></div><p><b>字体</b> · 官方 OpenAI Sans SC 4个Unicode分片及英文字体；中文主标题89px、5行、紧行距。<br><b>布局</b> · 64px导航；居中5行巨字；全宽多层拼贴；2000px+100svh滚动段内中央窗口交接至左说明/右界面；七用途横向卡片架。<br><b>动效</b> · 公开图层720ms cubic-bezier(.22,1,.36,1)，36/42/48px视差与500/1000/1500分段参考。本地退出500ms、交叉淡化500ms及连续滚动插值；不劫持滚轮。</p></section><section><div class=\"prompt-head\"><h2>可复用 Prompt</h2><button class=\"copy-button\" id=\"copy-prompt\">复制 Prompt</button></div><textarea class=\"prompt-box\" aria-label=\"可复用 Prompt\" readonly>以 https://chatgpt.com/zh-Hans-CN/overview/ 在【采集日期】的 简体中文公开介绍页 为单一依据，先观察初始入场、所有章节至页尾再返回、真实指针与手机操作。保留 64px 导航、五行中文标题、每个中文字符各自的当前模式强调色与原始字标/字体。20 个官方独立素材按模式使用不同坐标、比例、层级和手机几何；进场与离场分开，快速选择不堆积离场层。主窗口以垂直卡片切换；悬停选择释放后保留模式。长段必须连续保留首屏拼贴、滚动带入、拼贴收束、同一 sticky 窗口阈值触发向右下移动、左侧 rail 出现，以及三段说明/图像/进度同步；顶层模式与 rail 状态独立。手机使用原生横向三卡，不强塞桌面长段。按系统主题切换桌面真实界面图片；原站没有配乐。减少动态时停止自动运动并保留所有内容。用于【目标产品】时重新观察其真实操作与资产，不把本案例的拟合数值当作其他产品通用公式。</textarea><details><summary>负面约束 / Negative Prompt</summary><p>不要凭空重画品牌摄影；不要给全部页面套同一种淡入、圆角或整屏切幕；不要捏造原站音乐、全局主题、账户和远程执行；不要把未验证状态写成通过。</p></details><h3>改造练习</h3><p>以同一来源截图为基准，改变一个局部信息层级并记录对比：标题/图片比例、主按钮或状态反馈。保持品牌素材比例和移动端可读性。</p></section><section class=\"case-patterns\" aria-labelledby=\"case-patterns-heading\"><div class=\"prompt-head\"><h2 id=\"case-patterns-heading\">关联巧思</h2><a href=\"patterns.html#patterns?source=chatgpt-platform\">按来源浏览全部 10 项</a></div><p>这些机制可独立借用，触发条件、约束与组合建议见各项详情。</p><ul><li><a href=\"patterns.html#pattern/native-horizontal-shelf?source=chatgpt-platform\">原生横向内容架子</a><span>内容与组织</span></li><li><a href=\"patterns.html#pattern/sticky-stage-handoff?source=chatgpt-platform\">同一媒体从主舞台交给说明</a><span>页面动效</span></li><li><a href=\"patterns.html#pattern/last-request-transition?source=chatgpt-platform\">快速切换保留最后目标</a><span>内容与组织</span></li><li><a href=\"patterns.html#pattern/hover-focus-mode-selection?source=chatgpt-platform\">标题悬停与聚焦选择模式</a><span>内容与组织</span></li><li><a href=\"patterns.html#pattern/mobile-native-mode-cards?source=chatgpt-platform\">手机以原生模式卡替代桌面长舞台</a><span>内容与组织</span></li><li><a href=\"patterns.html#pattern/mode-character-accent?source=chatgpt-platform\">当前能力词逐字强调色</a><span>视觉巧思</span></li><li><a href=\"patterns.html#pattern/mode-specific-collage?source=chatgpt-platform\">按模式组织独立拼贴层</a><span>页面动效</span></li><li><a href=\"patterns.html#pattern/scroll-synchronized-rail?source=chatgpt-platform\">说明索引与窗口进度同步</a><span>页面动效</span></li><li><a href=\"patterns.html#pattern/system-theme-without-toggle?source=chatgpt-platform\">跟随系统的媒体与文字主题</a><span>视觉巧思</span></li><li><a href=\"patterns.html#pattern/vertical-card-swap?source=chatgpt-platform\">中央窗口垂直退出与进入</a><span>页面动效</span></li></ul></section><section><h2>来源与证据</h2><div class=\"source-item\"><span class=\"source-badge\">实例</span><a href=\"https://chatgpt.com/zh-Hans-CN/overview/\" target=\"_blank\" rel=\"noopener noreferrer\">ChatGPT 当前公开页面 </a><small>采集日期 2026-10-07；简体中文公开介绍页</small></div><div class=\"source-item\"><span class=\"source-badge\">规范</span><a href=\"https://openai.com/brand/\" target=\"_blank\" rel=\"noopener noreferrer\">OpenAI Design Guidelines </a><small>字标比例、留白和OpenAI Sans的几何与人文品牌语气。</small></div><div class=\"source-item\"><span class=\"source-badge\">规范</span><a href=\"https://www.w3.org/WAI/ARIA/apg/patterns/accordion/\" target=\"_blank\" rel=\"noopener noreferrer\">WAI Accordion Pattern </a><small>左侧说明的展开状态和原生button语义；方向键及Home/End为本地增强。</small></div><p>参考站采集：2026-10-07。</p></section><section><h2>相关文档</h2><ul><li><a href=\"docs.html?file=docs%2Fcases%2Fchatgpt-platform.md\" target=\"_blank\">调研记录</a></li><li><a href=\"docs.html?file=demos%2Fcases%2Fchatgpt-platform%2Ffidelity.md\" target=\"_blank\">复现范围与差异</a></li><li><a href=\"demos/cases/chatgpt-platform/assets-manifest.json\" target=\"_blank\">素材来源清单</a></li><li><a href=\"docs.html?file=demos%2Fcases%2Fchatgpt-platform%2FLICENSES.md\" target=\"_blank\">许可原文索引</a></li></ul></section>"
+    "renderer": "site/app/domain/case-notes.mjs",
+    "content": "<section><h2>从要素看风格</h2><a href=\"lab.html?style=chatgpt-platform\">调配这个风格的设计要素</a><dl><div><dt>配色角色</dt><dd>跟随 prefers-color-scheme；页面没有全局手动主题按钮，桌面产品界面随系统换深浅，手机保持原站的浅色界面图。</dd></div><div><dt>字体排版</dt><dd>官方 OpenAI Sans SC 4个Unicode分片及英文字体；中文主标题89px、5行、紧行距。</dd></div><div><dt>布局留白</dt><dd>首屏标题和拼贴 → 约 2000px+视口的居中/交接/说明长段 → 用途横向架子 → 价格 → 安全 → 结束行动 → 页尾；上下方向可逆。手机改为原生三模式横向卡片，再顺序浏览相同后续内容。</dd></div><div><dt>图像图标</dt><dd>可操作的中文标题、分模式周边拼贴与产品窗口联动；同一窗口从居中舞台移向右侧，让出左侧说明区域。</dd></div><div><dt>线条形状</dt><dd>圆胶囊按钮、黑色环与直线渐变下划线、圆角界面图。</dd></div><div><dt>信息层级</dt><dd>可操作的中文标题、分模式周边拼贴与产品窗口联动；同一窗口从居中舞台移向右侧，让出左侧说明区域。</dd></div><div><dt>动效反馈</dt><dd>在首屏标题悬停/聚焦/点击“聊天、工作、编程”，当前中文逐字换强调色，中央图垂直退出/进入，20 个官方周边素材按模式替换，用动作表达三种用途。选择工作时，工作的独立素材从四周进入，原模式素材离开；快速切换会清理旧离场层，保持一套可读场景，可移到“工作”再快速移到“编程”观察。向下/向上滚动时，周边素材随滚动带入/收束，随后淡出；同一窗口保持 sticky，越过交接阈值再向右下移动，从吸引注意过渡到解释产品，可在首屏下面往返滚动观察。桌面左侧 rail 出现后，滚动三段哨兵或通过点击/方向键操作，说明高度、标题缩放、窗口模式及进度对应更新；顶部标题模式和下段模式彼此独立。</dd></div><div><dt>协调逻辑</dt><dd>720ms 主窗口过渡、340px 交接阈值、周边层的轨迹/交错及 6500ms 自动周期为本地拟合；中央产品图是官方截图，不是可登录、对话、编辑的完整产品。没有复制账户、付费和下载服务，原站三个静态故事卡未移植。暂停控制停止自动轮换和周边运动，正常滚动仍可阅读。</dd></div><div><dt>滚动结构</dt><dd>首屏标题和拼贴 → 约 2000px+视口的居中/交接/说明长段 → 用途横向架子 → 价格 → 安全 → 结束行动 → 页尾；上下方向可逆。手机改为原生三模式横向卡片，再顺序浏览相同后续内容。</dd></div></dl></section><section><h2>设计机制</h2><ul><li>可操作的中文标题、分模式周边拼贴与产品窗口联动；同一窗口从居中舞台移向右侧，让出左侧说明区域。</li><li>配色、文字密度、边框与选中状态共同表达本页面的产品语气。</li><li>交互动作有明确的触发与状态关系，以同一源 URL 的当前页面为依据；近似和未验证状态分别说明。</li><li>第一方素材保持比例；手机保留原站实际变体。</li></ul><h3>设计重点</h3><p>围绕Chat、Work、Codex三合一展开：日常对话、可交付工作成果、代码改动评审。</p><h3>主题与情绪</h3><p>跟随 prefers-color-scheme；页面没有全局手动主题按钮，桌面产品界面随系统换深浅，手机保持原站的浅色界面图。</p></section><section><h2>页面交互</h2><ul><li>首屏悬停/聚焦/点击“聊天、工作、编程” → 当前中文逐字换强调色，中央图垂直退出/进入，20 个官方周边素材按模式替换 → 用动作表达三种用途；在首屏标题体验。</li><li>选择工作 → 工作的独立素材从四周进入，原模式素材离开；快速切换清理旧离场层 → 保持一套可读场景；移到“工作”再快速移到“编程”。</li><li>向下/向上滚动 → 周边素材随滚动带入/收束，随后淡出；同一窗口保持 sticky，越过交接阈值再向右下移动 → 从吸引注意过渡到解释产品；在首屏下面往返滚动。</li><li>桌面左侧 rail 出现后，滚动三段哨兵或点击/方向键 → 说明高度、标题缩放、窗口模式及进度对应更新；顶部标题模式和下段模式彼此独立。</li><li>手机使用三卡原生横向滚动，标题选择定位相应卡片；桌面 sticky rail 不出现在手机。导航保持桌面即时开关和手机全屏分层列表。</li><li>用途架子保留原生横滑及左右按钮；后续价格、安全、结束行动与页尾为普通滚动。</li></ul><h3>显示主题</h3><p>跟随系统</p><p>跟随 prefers-color-scheme；页面没有全局手动主题按钮，桌面产品界面随系统换深浅，手机保持原站的浅色界面图。</p><p>可操作的中文标题、分模式周边拼贴与产品窗口联动；同一窗口从居中舞台移向右侧，让出左侧说明区域。</p><h3>声音与交互</h3><p>无网站配乐</p><p>此介绍页没有背景音乐、音频或影片。</p><p>利用运动和空间关系串联能力，声音不是此页叙事的一部分。</p></section><section><h2>约束与适用场景</h2><ul><li>保留当前来源的触发→响应→目的，不用通用淡入代替定义性交互。</li><li>720ms 主窗口过渡、340px 交接阈值、周边层的轨迹/交错及 6500ms 自动周期为本地拟合；中央产品图是官方截图，不是可登录、对话、编辑的完整产品。没有复制账户、付费和下载服务，原站三个静态故事卡未移植。暂停控制停止自动轮换和周边运动，正常滚动仍可阅读。</li><li>品牌与官方素材仅用于此个人参考库；归档来源与权利。</li><li>减少动态保留可读内容、键盘焦点和手动选择。</li></ul><h3>适合</h3><ul><li>多能力AI产品介绍</li><li>功能转向的品牌叙事</li><li>中文字体与超大排版研究</li></ul><h3>谨慎使用</h3><ul><li>把ChatGPT首页想象为一张聊天输入框</li><li>随意改造OpenAI结标</li><li>所有功能只用渐变blob表现</li><li>只点按钮换图而忽略周围元素飞入飞出</li><li>给所有网站套同一种滚动淡入动画</li></ul></section><section><h2>设计参数</h2><div class=\"swatches\"><span><i style=\"background:#070707\"></i>#070707</span><span><i style=\"background:#ffffff\"></i>#ffffff</span><span><i style=\"background:#f5f5f5\"></i>#f5f5f5</span><span><i style=\"background:#c4a4f2\"></i>#c4a4f2</span><span><i style=\"background:#00a6d3\"></i>#00a6d3</span></div><p>字体 · 官方 OpenAI Sans SC 4个Unicode分片及英文字体；中文主标题89px、5行、紧行距。</p><p>布局 · 64px导航；居中5行巨字；全宽多层拼贴；2000px+100svh滚动段内中央窗口交接至左说明/右界面；七用途横向卡片架。</p><p>动效 · 公开图层720ms cubic-bezier(.22,1,.36,1)，36/42/48px视差与500/1000/1500分段参考。本地退出500ms、交叉淡化500ms及连续滚动插值；不劫持滚轮。</p></section><section><h2>可复用 Prompt</h2><textarea aria-label=\"可复用 Prompt\" readonly>以 https://chatgpt.com/zh-Hans-CN/overview/ 在【采集日期】的 简体中文公开介绍页 为单一依据，先观察初始入场、所有章节至页尾再返回、真实指针与手机操作。保留 64px 导航、五行中文标题、每个中文字符各自的当前模式强调色与原始字标/字体。20 个官方独立素材按模式使用不同坐标、比例、层级和手机几何；进场与离场分开，快速选择不堆积离场层。主窗口以垂直卡片切换；悬停选择释放后保留模式。长段必须连续保留首屏拼贴、滚动带入、拼贴收束、同一 sticky 窗口阈值触发向右下移动、左侧 rail 出现，以及三段说明/图像/进度同步；顶层模式与 rail 状态独立。手机使用原生横向三卡，不强塞桌面长段。按系统主题切换桌面真实界面图片；原站没有配乐。减少动态时停止自动运动并保留所有内容。用于【目标产品】时重新观察其真实操作与资产，不把本案例的拟合数值当作其他产品通用公式。</textarea><details><summary>负面约束 / Negative Prompt</summary><p>不要凭空重画品牌摄影；不要给全部页面套同一种淡入、圆角或整屏切幕；不要捏造原站音乐、全局主题、账户和远程执行；不要把未验证状态写成通过。</p></details><h3>改造练习</h3><p>以同一来源截图为基准，改变一个局部信息层级并记录对比：标题/图片比例、主按钮或状态反馈。保持品牌素材比例和移动端可读性。</p></section><section><h2>关联巧思</h2><a href=\"patterns.html#patterns?source=chatgpt-platform\">按来源浏览全部 10 项</a><ul><li><a href=\"patterns.html#pattern/native-horizontal-shelf?source=chatgpt-platform\">原生横向内容架子</a></li><li><a href=\"patterns.html#pattern/sticky-stage-handoff?source=chatgpt-platform\">同一媒体从主舞台交给说明</a></li><li><a href=\"patterns.html#pattern/last-request-transition?source=chatgpt-platform\">快速切换保留最后目标</a></li><li><a href=\"patterns.html#pattern/hover-focus-mode-selection?source=chatgpt-platform\">标题悬停与聚焦选择模式</a></li><li><a href=\"patterns.html#pattern/mobile-native-mode-cards?source=chatgpt-platform\">手机以原生模式卡替代桌面长舞台</a></li><li><a href=\"patterns.html#pattern/mode-character-accent?source=chatgpt-platform\">当前能力词逐字强调色</a></li><li><a href=\"patterns.html#pattern/mode-specific-collage?source=chatgpt-platform\">按模式组织独立拼贴层</a></li><li><a href=\"patterns.html#pattern/scroll-synchronized-rail?source=chatgpt-platform\">说明索引与窗口进度同步</a></li><li><a href=\"patterns.html#pattern/system-theme-without-toggle?source=chatgpt-platform\">跟随系统的媒体与文字主题</a></li><li><a href=\"patterns.html#pattern/vertical-card-swap?source=chatgpt-platform\">中央窗口垂直退出与进入</a></li></ul></section><section><h2>来源与证据</h2><div class=\"source-item\"><span>实例</span><a href=\"https://chatgpt.com/zh-Hans-CN/overview/\">ChatGPT 当前公开页面</a><p>采集日期 2026-10-07；简体中文公开介绍页</p></div><div class=\"source-item\"><span>规范</span><a href=\"https://openai.com/brand/\">OpenAI Design Guidelines</a><p>字标比例、留白和OpenAI Sans的几何与人文品牌语气。</p></div><div class=\"source-item\"><span>规范</span><a href=\"https://www.w3.org/WAI/ARIA/apg/patterns/accordion/\">WAI Accordion Pattern</a><p>左侧说明的展开状态和原生button语义；方向键及Home/End为本地增强。</p></div><p>参考站采集：2026-10-07。</p></section><section><h2>相关文档</h2><ul><li><a href=\"docs.html?file=docs%2Fcases%2Fchatgpt-platform.md\">调研记录</a></li><li><a href=\"docs.html?file=demos%2Fcases%2Fchatgpt-platform%2Ffidelity.md\">复现范围与差异</a></li><li><a href=\"demos/cases/chatgpt-platform/assets-manifest.json\">素材来源清单</a></li><li><a href=\"docs.html?file=demos%2Fcases%2Fchatgpt-platform%2FLICENSES.md\">许可原文索引</a></li></ul></section>"
   }
 }

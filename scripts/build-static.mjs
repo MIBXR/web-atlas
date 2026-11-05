@@ -101,7 +101,7 @@ function injectAssets(text, documentPath, assetsMode) {
   if (!/<head\b[^>]*>/i.test(text)) throw new Error('Asset runtime requires a head element: ' + documentPath);
   // Resolve the library theme before asset loading can delay the first paint.
   const head = /<head\b[^>]*>[\s\S]*?<\/head\s*>/i.exec(text)?.[0] || '';
-  const themeBoot = /<script src="[^"]*\/theme\.js"><\/script>/i.exec(head)?.[0];
+  const themeBoot = /<script src="[^"]*\/(?:theme|theme-boot)\.js"><\/script>/i.exec(head)?.[0];
   if (themeBoot) return text.replace(themeBoot, themeBoot + setup);
   return text.replace(/<head\b[^>]*>/i, head => head + setup);
 }

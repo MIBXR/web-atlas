@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
-import {documentContent} from '../site/pages/docs/document-title.mjs';
+import {documentContent} from '../site/app/domain/document-title.mjs';
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const groups = ['项目指南', '研究方法与索引', '案例研究', '巧思研究', '素材使用', '复用 Prompt', '项目说明'];

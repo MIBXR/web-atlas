@@ -1,48 +1,22 @@
 <!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="color-scheme" content="light dark">
-  <script src="site/shared/theme.js"></script><script src="site/shared/icons.js"></script>
-  <title>文档中心 · Web Atlas</title>
-  <link rel="icon" href="site/icons/favicon.svg?v=atlas-cross-2" type="image/svg+xml">
-  <link rel="stylesheet" href="site/pages/docs/docs.css"><link rel="stylesheet" href="site/shared/site-nav.css">
-  <script src="site/shared/site-shell.js" defer></script>
-  <script src="data/asset-sources.js" defer></script>
-  <script src="site/runtime/asset-runtime.js" defer></script>
-  <script src="site/runtime/asset-cache.js" defer></script>
-  <script src="site/vendor/marked.umd.js" defer></script>
-  <script src="site/vendor/purify.min.js" defer></script>
-  <script src="data/docs.js" defer></script>
-  <script src="site/pages/docs/docs.js" defer></script>
-<link rel="stylesheet" href="site/shared/theme-control.css"><link rel="stylesheet" href="site/shared/site-typography.css"><link rel="stylesheet" href="site/shared/site-footer.css">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<script src="site/app/theme-boot.js"></script>
+<title>文档中心 · Web Atlas</title>
+
+<link rel="icon" href="site/icons/favicon.svg?v=atlas-cross-2" type="image/svg+xml">
+<link rel="stylesheet" href="site/client/main.css">
+<link rel="stylesheet" href="site/playground/pattern-playground.css">
+<script src="data/asset-sources.js"></script>
+<script src="site/runtime/asset-runtime.js"></script>
+<script src="site/runtime/asset-cache.js"></script>
+<script type="module" src="site/client/main.js"></script>
 </head>
-<body class="document-page">
-<a class="atlas-skip" href="#main">跳到内容</a>
-  <header class="atlas-site-header"><div class="atlas-site-header-inner">
-<a class="atlas-site-brand" href="index.html" aria-label="Web Atlas 首页"><svg class="atlas-site-mark" viewBox="0 0 96 96" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" d="M24 8 88 72 72 88 8 24Z M8 72 72 8 88 24 24 88Z"/></svg><span class="atlas-site-wordmark"><strong>WEB ATLAS</strong><small>从案例到实践</small></span></a>
-<nav id="atlas-main-nav" class="atlas-site-nav" aria-label="主导航"><a href="index.html">首页</a><a href="cases.html">案例库</a><a href="patterns.html">巧思库</a><a href="materials.html">素材库</a><a href="lab.html">设计实验室</a><a href="docs.html" aria-current="page">文档中心</a><a href="agent.html">Agent 工作流</a></nav>
-<button class="atlas-site-nav-toggle" type="button" data-nav-toggle aria-controls="atlas-main-nav" aria-expanded="false" aria-label="打开菜单"><span data-atlas-icon="menu" aria-hidden="true"></span><span>菜单</span></button>
-<div class="atlas-site-theme"><button id="theme-control" class="atlas-theme-toggle" type="button" data-theme-toggle aria-label="显示主题：跟随系统；点击切换为深色" title="显示主题：跟随系统；点击切换为深色"><span class="atlas-theme-icon" data-theme-icon="system" data-atlas-icon="system" aria-hidden="true"></span><span class="atlas-theme-icon" data-theme-icon="dark" data-atlas-icon="moon" aria-hidden="true"></span><span class="atlas-theme-icon" data-theme-icon="light" data-atlas-icon="sun" aria-hidden="true"></span></button></div>
-</div></header>
-  <div class="document-layout">
-  <aside class="document-rail atlas-page-directory" id="page-directory" data-page-directory tabindex="-1" aria-label="文档目录"><div class="document-menu"><div class="document-search-container"><label class="search document-search"><span data-atlas-icon="search" aria-hidden="true"></span><input id="document-search" type="search" placeholder="搜索文档标题" aria-label="搜索文档标题"><kbd aria-hidden="true">/</kbd></label></div><nav id="document-navigation" aria-label="公开文档列表"></nav><p id="document-empty" hidden>没有匹配的文档</p><noscript><p>启用 JavaScript 可查看文档目录与正文。</p></noscript></div></aside>
-  <main class="document-main" id="main" tabindex="-1"><div class="document-toolbar"><p id="path"></p><a id="download" class="atlas-ui-button" aria-label="下载原始 Markdown" hidden>下载原文</a></div><h1 id="title" tabindex="-1">项目指南</h1><div class="document-reading"><article id="content" class="markdown-body" aria-live="polite" aria-busy="true">正在读取文档…</article></div></main>
-  <aside id="document-outline" class="document-outline" aria-label="当前文档目录" hidden><button id="document-outline-toggle" class="atlas-ui-button document-outline-toggle" type="button" aria-controls="document-outline-menu" aria-expanded="false" aria-label="打开本文目录" hidden>本文目录</button><details id="document-outline-menu" class="atlas-page-menu"><summary>本文目录</summary><p class="document-outline-label">本文目录</p><div class="document-outline-controls"><strong>本文目录</strong><button id="document-outline-close" class="atlas-ui-button" type="button" hidden>关闭</button></div><nav id="document-outline-navigation" aria-label="本文一级与二级标题"></nav></details></aside>
-  </div>
-<footer class="atlas-site-footer">
-  <div class="atlas-site-footer-inner">
-    <div class="atlas-site-footer-about">
-      <a class="atlas-site-footer-brand" href="index.html" aria-label="Web Atlas 首页"><svg class="atlas-site-footer-mark" viewBox="0 0 96 96" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" d="M24 8 88 72 72 88 8 24Z M8 72 72 8 88 24 24 88Z"/></svg><span>WEB ATLAS</span></a>
-      <p>从案例到实践，让设计依据进入你的作品。</p>
-      <small>MIBXR · Web Atlas</small>
-    </div>
-    <nav class="atlas-site-footer-nav" aria-label="页脚导航">
-      <div class="atlas-site-footer-links atlas-site-footer-links--explore"><p>探索 Atlas</p><a href="index.html">首页</a><a href="cases.html">案例库</a><a href="patterns.html">巧思库</a><a href="materials.html">素材库</a><a href="lab.html">设计实验室</a><a href="docs.html" aria-current="page">文档中心</a><a href="agent.html">Agent 工作流</a></div>
-      <div class="atlas-site-footer-links"><p>项目资料</p><a href="docs.html?file=docs%2Fguide.md">使用与维护</a><a href="docs.html?file=docs%2Foverview.md">调研方法</a><a href="https://github.com/MIBXR/web-atlas" target="_blank" rel="noopener noreferrer"><span data-atlas-icon="external" aria-hidden="true"></span><span>项目 GitHub </span></a></div>
-    </nav>
-  </div>
-</footer>
+<body>
+<div id="app"></div>
+<noscript>请启用 JavaScript 以浏览 Web Atlas。</noscript>
 </body>
 </html>

@@ -1,32 +1,22 @@
 <!doctype html>
 <html lang="zh-CN">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light dark"><script src="site/shared/theme.js"></script><script src="site/shared/icons.js"></script><script src="site/shared/detail-layout.js"></script><title>素材库 · Web Atlas</title><meta name="description" content="试用有来源的组件与内容素材，查看可运行样例、使用限制与授权，再用于自己的项目。"><link rel="icon" href="site/icons/favicon.svg?v=atlas-cross-2" type="image/svg+xml"><link rel="stylesheet" href="site/shared/atlas.css"><link rel="stylesheet" href="site/shared/cases-layout.css"><link rel="stylesheet" href="site/shared/patterns-ui.css"><link rel="stylesheet" href="site/shared/site-nav.css"><link rel="stylesheet" href="site/shared/theme-control.css"><link rel="stylesheet" href="site/shared/site-typography.css"><link rel="stylesheet" href="site/shared/site-footer.css"><link rel="stylesheet" href="site/pages/materials/materials-ui.css"><script src="site/shared/site-shell.js" defer></script><script src="site/shared/collection-filters.js" defer></script></head>
-<body class="cases-page materials-page"><a class="skip" href="#main">跳到内容</a>
-<header class="atlas-site-header"><div class="atlas-site-header-inner">
-<a class="atlas-site-brand" href="index.html" aria-label="Web Atlas 首页"><svg class="atlas-site-mark" viewBox="0 0 96 96" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" d="M24 8 88 72 72 88 8 24Z M8 72 72 8 88 24 24 88Z"/></svg><span class="atlas-site-wordmark"><strong>WEB ATLAS</strong><small>从案例到实践</small></span></a>
-<nav id="atlas-main-nav" class="atlas-site-nav" aria-label="主导航"><a href="index.html">首页</a><a href="cases.html">案例库</a><a href="patterns.html">巧思库</a><a href="materials.html" aria-current="page">素材库</a><a href="lab.html">设计实验室</a><a href="docs.html">文档中心</a><a href="agent.html">Agent 工作流</a></nav>
-<button class="atlas-site-nav-toggle" type="button" data-nav-toggle aria-controls="atlas-main-nav" aria-expanded="false" aria-label="打开菜单"><span data-atlas-icon="menu" aria-hidden="true"></span><span>菜单</span></button>
-<div class="atlas-site-theme"><button id="theme-control" class="atlas-theme-toggle" type="button" data-theme-toggle aria-label="显示主题：跟随系统；点击切换为深色" title="显示主题：跟随系统；点击切换为深色"><span class="atlas-theme-icon" data-theme-icon="system" data-atlas-icon="system" aria-hidden="true"></span><span class="atlas-theme-icon" data-theme-icon="dark" data-atlas-icon="moon" aria-hidden="true"></span><span class="atlas-theme-icon" data-theme-icon="light" data-atlas-icon="sun" aria-hidden="true"></span></button></div>
-</div></header>
-<div class="case-layout">
-<aside class="rail atlas-page-directory" id="page-directory" data-page-directory tabindex="-1" aria-label="素材目录"><details class="atlas-page-menu case-menu"><summary>素材分类</summary><div class="case-menu-content"><nav id="material-navigation" aria-label="内容素材分类"></nav></div></details><details class="atlas-page-menu favorite-menu" open><summary>收藏</summary><nav class="favorite-navigation" aria-label="收藏"><a class="nav-item" id="material-favorites" href="#materials?favorites=1"><span>我的收藏</span><b id="material-fav-count">—</b></a><button class="nav-item" id="favorite-export"><span>导出收藏</span><span data-atlas-icon="download" aria-hidden="true"></span></button><button class="nav-item" id="favorite-import"><span>导入收藏</span><span data-atlas-icon="upload" aria-hidden="true"></span></button></nav></details></aside>
-<main id="main" tabindex="-1">
-<section id="materials-library" aria-label="素材库">
-<div class="hero"><div><p class="eyebrow">DISCOVER. TRY. ADAPT.</p><h1>好用的素材，<br>先亲手试一试<span class="period">.</span></h1><p class="hero-desc" title="有来源的素材：可操作的样例、适用场景与使用边界。">有来源的素材：可操作的样例、适用场景与使用边界。</p></div><div class="hero-art" aria-hidden="true"><span class="a-grid"></span><svg class="pattern-hero-geometry" viewBox="0 0 270 195" focusable="false"><rect x="23" y="24" width="147" height="111" rx="9" fill="var(--atlas-ink)"/><rect x="88" y="58" width="147" height="111" rx="9" fill="var(--atlas-muted)"/><path d="M70 38h147v111H70z" fill="none" stroke="var(--atlas-ink)"/><circle cx="173" cy="112" r="34" fill="none" stroke="var(--atlas-ink)"/></svg><small>A LIBRARY OF MATERIALS<br>AND WORKING EXAMPLES</small></div></div>
-<div class="collection-tools pattern-tools"><label class="search"><span data-atlas-icon="search" aria-hidden="true"></span><input id="material-search" type="search" placeholder="搜索素材、效果或场景…" aria-label="搜索内容素材"><kbd>/</kbd></label><select id="material-type" data-filter-label="类型" aria-label="按素材类型筛选"><option value="all">全部类型</option></select><select id="material-category" data-filter-label="用途" aria-label="按素材用途筛选"><option value="all">全部用途</option></select><span class="toolbar-divider" aria-hidden="true"></span><div class="sort-control"><select id="material-sort" aria-label="排序方式"><option value="curated">按编号</option><option value="title">按名称</option></select><button id="material-sort-dir" class="sort-dir" type="button" aria-label="正序" aria-pressed="false"><span data-atlas-icon="sortAsc" aria-hidden="true"></span></button></div></div>
-<div class="list-caption"><span id="material-results-label" role="status"></span><a class="pattern-catalog-link" href="agent/materials/index.json" download="design-atlas-materials.json">下载素材目录</a></div><div id="material-cards" class="cards"></div><div id="materials-empty" class="empty" hidden><h2>没有找到对应的内容素材</h2><p>试试“手绘”“复古”“字体”“渐变”，或放宽筛选条件。</p><button id="material-reset">清除素材筛选</button></div>
-</section><section id="material-detail" hidden></section></main></div>
-<footer class="atlas-site-footer">
-  <div class="atlas-site-footer-inner">
-    <div class="atlas-site-footer-about">
-      <a class="atlas-site-footer-brand" href="index.html" aria-label="Web Atlas 首页"><svg class="atlas-site-footer-mark" viewBox="0 0 96 96" aria-hidden="true" focusable="false"><path fill="currentColor" fill-rule="evenodd" d="M24 8 88 72 72 88 8 24Z M8 72 72 8 88 24 24 88Z"/></svg><span>WEB ATLAS</span></a>
-      <p>从案例到实践，让设计依据进入你的作品。</p>
-      <small>MIBXR · Web Atlas</small>
-    </div>
-    <nav class="atlas-site-footer-nav" aria-label="页脚导航">
-      <div class="atlas-site-footer-links atlas-site-footer-links--explore"><p>探索 Atlas</p><a href="index.html">首页</a><a href="cases.html">案例库</a><a href="patterns.html">巧思库</a><a href="materials.html" aria-current="page">素材库</a><a href="lab.html">设计实验室</a><a href="docs.html">文档中心</a><a href="agent.html">Agent 工作流</a></div>
-      <div class="atlas-site-footer-links"><p>项目资料</p><a href="docs.html?file=docs%2Fguide.md">使用与维护</a><a href="docs.html?file=docs%2Foverview.md">调研方法</a><a href="https://github.com/MIBXR/web-atlas" target="_blank" rel="noopener noreferrer"><span data-atlas-icon="external" aria-hidden="true"></span><span>项目 GitHub </span></a></div>
-    </nav>
-  </div>
-</footer>
-<div id="toast" role="status" class="toast"></div><script src="data/cases.js"></script><script src="data/patterns.js"></script><script src="data/materials.js"></script><script src="site/shared/favorites.js"></script><script src="site/shared/favorite-controls.js"></script><script src="site/shared/demo-preview.js"></script><script src="site/pages/materials/materials-ui.js"></script></body></html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<script src="site/app/theme-boot.js"></script>
+<title>素材库 · Web Atlas</title>
+<meta name="description" content="试用有来源的组件与内容素材，查看可运行样例、使用限制与授权，再用于自己的项目。">
+<link rel="icon" href="site/icons/favicon.svg?v=atlas-cross-2" type="image/svg+xml">
+<link rel="stylesheet" href="site/client/main.css">
+<link rel="stylesheet" href="site/playground/pattern-playground.css">
+<script src="data/asset-sources.js"></script>
+<script src="site/runtime/asset-runtime.js"></script>
+<script src="site/runtime/asset-cache.js"></script>
+<script type="module" src="site/client/main.js"></script>
+</head>
+<body>
+<div id="app"></div>
+<noscript>请启用 JavaScript 以浏览 Web Atlas。</noscript>
+</body>
+</html>

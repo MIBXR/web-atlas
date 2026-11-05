@@ -10,7 +10,7 @@ export const repository = 'https://github.com/MIBXR/web-atlas';
 export const defaultRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const encode = value => Buffer.from(JSON.stringify(value, null, 2) + '\n', 'utf8');
 const catalogFields = ['id', 'title', 'category', 'tags', 'summary', 'useCases', 'avoid', 'country', 'implementation', 'studyScope', 'capturedAt', 'theoryVerifiedAt', 'tokens', 'composition', 'interaction', 'themeBehavior', 'soundBehavior'];
-const sharedFiles = ['data/asset-sources.js', 'site/runtime/asset-runtime.js', 'site/runtime/asset-cache.js', 'site/runtime/demo-scrollbars.css', 'asset-cache-worker.js', 'site/runtime/case-loading.css', 'site/runtime/case-loading.js', 'site/shared/theme.js', 'site/icons/favicon.svg', 'docs.html', 'site/pages/docs/docs.js', 'site/pages/docs/docs.css', 'site/shared/site-nav.css', 'site/shared/theme-control.css', 'site/shared/site-typography.css', 'site/shared/site-footer.css', 'site/shared/site-shell.js'];
+const sharedFiles = ['data/asset-sources.js', 'site/runtime/asset-runtime.js', 'site/runtime/asset-cache.js', 'site/runtime/demo-scrollbars.css', 'asset-cache-worker.js', 'site/runtime/case-loading.css', 'site/runtime/case-loading.js', 'site/icons/favicon.svg', 'docs.html', 'site/app/theme-boot.js', 'site/app/domain/case-notes.mjs'];
 
 // Public paths always use the repository's portable, relative path syntax.
 // Check every existing component rather than trusting a lexical prefix alone.
@@ -66,6 +66,8 @@ function walkFiles(root, relative) {
 function fileRole(relative, entry, documentPaths) {
   if (relative.includes('/source/')) return 'process';
   if (/(?:^|\/)(?:LICENSE[^/]*|THIRD-PARTY-NOTICES[^/]*|[^/]*-LICENSE\.txt|[^/]*-OFL\.txt)$/.test(relative)) return 'license';
+  if (relative.startsWith('site/client/')) return relative.endsWith('.LEGAL.txt') ? 'license' : 'vendor';
+  if (relative.startsWith('site/app/')) return 'context';
   if (relative.includes('/fonts/')) return 'font';
   if (relative.includes('/vendor/')) return 'vendor';
   if (documentPaths.has(relative) || relative === `entries/cases/${entry.id}.json` || /\.(?:md|txt|json)$/i.test(relative)) return 'context';
@@ -96,6 +98,7 @@ function makeBundle(root, entry, entryPath, patternIds = []) {
     ...walkFiles(root, `demos/cases/${entry.id}`),
     entryPath, ...documentPaths, entry.preview,
     ...sharedFiles,
+    ...walkFiles(root, 'site/client'),
     // Small shared renderer dependencies and their original license notices.
     ...walkFiles(root, 'site/vendor'),
   ]);
@@ -118,14 +121,13 @@ export function buildAgent({ root = defaultRoot, write = true } = {}) {
   if (new Set(entries.map(({ entry }) => entry.id)).size !== entries.length) throw new Error('Duplicate case ids');
   const bundles = [];
   const outputs = new Map();
-  const rendererSource = readText(root, 'site/pages/cases/atlas.js');
   const originalEntries = entries.map(({ entry }) => entry);
   const patterns = loadPatterns({ root, entries: originalEntries });
   const records = entries.map(({ entry, entryPath }) => {
     const patternIds = patterns.filter(pattern => pattern.sources.some(source => source.caseId === entry.id)).map(pattern => pattern.id);
     const bundle = makeBundle(root, entry, entryPath, patternIds);
-    const { notes } = renderDetailNotes({ entries: originalEntries, patterns, id: entry.id, rendererSource });
-    bundle.webNotes = { format: 'text/html', renderer: 'site/pages/cases/atlas.js', content: notes };
+    const { notes } = renderDetailNotes({ entries: originalEntries, patterns, id: entry.id });
+    bundle.webNotes = { format: 'text/html', renderer: 'site/app/domain/case-notes.mjs', content: notes };
     const bundlePath = `agent/cases/${entry.id}.json`;
     const data = encode(bundle);
     outputs.set(bundlePath, data);

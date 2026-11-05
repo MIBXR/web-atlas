@@ -184,16 +184,76 @@
       "role": "context"
     },
     {
+      "path": "site/app/domain/case-notes.mjs",
+      "role": "context"
+    },
+    {
+      "path": "site/app/theme-boot.js",
+      "role": "context"
+    },
+    {
+      "path": "site/client/AgentPage-EAS5PVE3.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/CatalogPage-SGVWTZ3D.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/DocsPage-UQJTEUEK.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/DocsPage-UQJTEUEK.js.LEGAL.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/client/HomePage-U2APYKG6.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/LICENSES.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/client/LabPage-6GKARTD3.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-4PVWGCRJ.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-SSO6R7NX.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-XZHNFY5X.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-YOWC6UHQ.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-YOWC6UHQ.js.LEGAL.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/client/main.css",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/main.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/main.js.LEGAL.txt",
+      "role": "license"
+    },
+    {
       "path": "site/icons/favicon.svg",
       "role": "asset"
-    },
-    {
-      "path": "site/pages/docs/docs.css",
-      "role": "source"
-    },
-    {
-      "path": "site/pages/docs/docs.js",
-      "role": "source"
     },
     {
       "path": "site/runtime/asset-cache.js",
@@ -216,30 +276,6 @@
       "role": "source"
     },
     {
-      "path": "site/shared/site-footer.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/site-nav.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/site-shell.js",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/site-typography.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/theme-control.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/theme.js",
-      "role": "source"
-    },
-    {
       "path": "site/vendor/LICENSES.txt",
       "role": "license"
     },
@@ -254,7 +290,7 @@
   ],
   "webNotes": {
     "format": "text/html",
-    "renderer": "site/pages/cases/atlas.js",
-    "content": "<section><h2>从要素看风格</h2><a class=\"element-lab-link\" href=\"lab.html?style=isometric-3d\">调配这个风格的设计要素</a><dl class=\"element-map\"><div class=\"\"><dt>配色角色</dt><dd>柔和绿和暖土色构成同一空间，每个立方体以三面明度表达体积。</dd></div><div class=\"\"><dt>字体排版</dt><dd>Georgia 49–73px 叙事标题；Arial 12–15px 正文与 8–10px 空间标签</dd></div><div class=\"\"><dt>布局留白</dt><dd>窄叙事栏 + 大场景图；横向图层控制；章节编号列表；独立居中结尾</dd></div><div class=\"\"><dt>图像图标</dt><dd>统一投影的原创浮岛、建筑和植被是叙事主角。</dd></div><div class=\"\"><dt>线条形状</dt><dd>平行边、统一30°方向和几何积木建立一致空间规则。</dd></div><div class=\"\"><dt>信息层级</dt><dd>平衡主张 → 场景 → 图层聚焦 → 漫游理念。</dd></div><div class=\"\"><dt>动效反馈</dt><dd>点击后 650ms 图层偏移/透明度变化；无滚轮劫持；reduced motion 即时完成</dd></div><div class=\"coherence\"><dt>协调逻辑</dt><dd>柔和配色、衬线标题和稳定投影共同营造安静的氛围；展开结构用来解释层次，不能随意更换投影角度。</dd></div></dl></section><section><h2>设计机制</h2><ul><li>统一平行投影，让每个物体属于同一个空间</li><li>三面明度建立体积，克制材质细节</li><li>路径、水面和植物提供比例与浏览方向</li><li>画面先传达世界气质，再由章节解释体验</li><li>拆分图层把复杂系统变成可理解的组成关系</li></ul><h3>设计重点</h3><p>让访客先感受安静、探索与建造，再通过图层切换理解花园、建筑和基础平台的关系。</p><h3>主题与情绪</h3><p>鼠尾草背景、陶土平台、奶油塔楼与薄荷温室；极简、宁静、微缩世界的空间感。</p></section><section><h2>页面交互</h2><ul><li>整岛、花园、建筑三种焦点切换</li><li>展开按钮将基础、建筑、植物分层</li><li>焦点状态伴随文字说明与 aria-pressed</li><li>章节锚点保留正常浏览节奏</li></ul><div class=\"behavior-block\"><span class=\"behavior-label\">显示主题</span><h3>固定主题</h3><p>此构成练习保留指定风格配色；实验室可另行比较系统／手动深浅主题。</p><p>风格不是一组可直接反转的颜色；改变主题时需重新配对文字、表面、强调与边框，保留图像原色。</p></div><div class=\"behavior-block\"><span class=\"behavior-label\">声音与交互</span><h3>无网站配乐</h3><p>本练习无背景音乐。</p></div></section><section><h2>约束与适用场景</h2><ul><li>真正等轴投影使用平行轴和统一比例，不随意混入透视消失点</li><li>左右平面约 30°，同一组坐标生成全部物体</li><li>光源与三面明度方向一致</li><li>场景图层必须有文字控件，不能只依赖小物体热点</li><li>移动端先呈现价值主张，再呈现场景和控件</li><li>reduced motion 时立即切换图层位置</li></ul><h3>适合</h3><p>游戏世界宣传 / 复杂系统介绍 / 园区与空间项目 / 供应链或基础设施产品</p><h3>谨慎使用</h3><p>需要真实透视的建筑验收图 / 用大量重材质遮蔽系统关系 / 场景上堆叠无法触达的小热点 / 把固定二维 SVG 称为可旋转 3D 引擎</p></section><section><h2>设计参数</h2><div class=\"swatches\"><span class=\"swatch\"><i style=\"background:#e8eee8\"></i>#e8eee8</span><span class=\"swatch\"><i style=\"background:#234647\"></i>#234647</span><span class=\"swatch\"><i style=\"background:#a26958\"></i>#a26958</span><span class=\"swatch\"><i style=\"background:#d9b7a6\"></i>#d9b7a6</span><span class=\"swatch\"><i style=\"background:#9cb29a\"></i>#9cb29a</span><span class=\"swatch\"><i style=\"background:#f3ead6\"></i>#f3ead6</span></div><p><b>字体</b> · Georgia 49–73px 叙事标题；Arial 12–15px 正文与 8–10px 空间标签<br><b>布局</b> · 窄叙事栏 + 大场景图；横向图层控制；章节编号列表；独立居中结尾<br><b>动效</b> · 点击后 650ms 图层偏移/透明度变化；无滚轮劫持；reduced motion 即时完成</p></section><section><div class=\"prompt-head\"><h2>可复用 Prompt</h2><button class=\"copy-button\" id=\"copy-prompt\">复制 Prompt</button></div><textarea class=\"prompt-box\" aria-label=\"可复用 Prompt\" readonly>可替换内容：产品/品牌【名称】；受众【用户】；核心价值【卖点与证据】；主行动【希望用户完成的动作】。以下为风格示范任务，可替换具体品牌与内容，保留设计约束。\n\n为虚构宁静世界 Little Terraces 制作本地网页，借鉴 Monument Valley 的极简建筑世界呈现，并依据 Adobe 等轴制图说明使用严格 30° 平行投影。不要复制其关卡、角色和标志。信息顺序：宁静探索的价值主张→一个原创浮岛的完整世界→三个旅程章节→回到场景的邀请。画面包含陶土基础台、奶油塔楼、薄荷温室、水池、树木和连续路径；全部用同一 x/y/z 投影函数与统一三面明度生成 SVG。左侧窄文案右侧大场景，避免通用卡片首屏。提供整岛/花园/建筑焦点按钮，和将平台、建筑、植物分层的展开按钮；状态说明和 aria-pressed 同步。至少三节内容，小屏重排，SVG 适配视口，键盘可操作，reduced motion 即时切换；无CDN、外部素材或WebGL依赖。\n\n要素协调要求：柔和调色、衬线标题和稳定投影共享安静情绪；结构展开解释层次，不能随意更换投影角度。</textarea><details><summary>负面约束 / Negative Prompt</summary><p>不要混合透视消失点与等轴投影；不要复制原游戏地图；不要自动旋转、强制视差或密集热点；不要声称 SVG 是真正可旋转的实时 3D。</p></details><h3>改造练习</h3><p>把浮岛替换成数据平台的等轴系统图，让三种焦点分别对应计算、存储、网络，保留统一坐标与分层解释。</p></section><section class=\"case-patterns\" aria-labelledby=\"case-patterns-heading\"><div class=\"prompt-head\"><h2 id=\"case-patterns-heading\">关联巧思</h2><a href=\"patterns.html#patterns?source=isometric-3d\">按来源浏览全部 3 项</a></div><p>这些机制可独立借用，触发条件、约束与组合建议见各项详情。</p><ul><li><a href=\"patterns.html#pattern/exploded-layer-view?source=isometric-3d\">展开图层解释组成</a><span>页面动效</span></li><li><a href=\"patterns.html#pattern/layer-focus-dimming?source=isometric-3d\">聚焦一层并减弱其余层</a><span>微动效</span></li><li><a href=\"patterns.html#pattern/parallel-isometric-projection?source=isometric-3d\">统一等轴投影与三面明度</a><span>视觉巧思</span></li></ul></section><section><h2>来源与证据</h2><div class=\"source-item\"><span class=\"source-badge\">实例</span><a href=\"https://www.monumentvalleygame.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Monument Valley 系列官方网站 </a><small>2026-10-07 核验：官网系列入口存在；网页文本提取有限。参考是游戏世界的建筑视觉，不宣称官网提供本 demo 的图层交互。</small></div><div class=\"source-item\"><span class=\"source-badge\">实例</span><a href=\"https://ustwogames.co.uk/our-games/monument-valley-3/\" target=\"_blank\" rel=\"noopener noreferrer\">ustwo games — Monument Valley 3 </a><small>开发商说明世界设计来自建筑和实验艺术，并强调极简、不可能几何和旋转建筑探索；用于核验视觉及体验意图。</small></div><div class=\"source-item\"><span class=\"source-badge\">理论</span><a href=\"https://www.adobe.com/products/photoshop/isometric-art.html\" target=\"_blank\" rel=\"noopener noreferrer\">Adobe — Isometric art </a><small>解释二维表现三维、30° 侧向轴与侧面明暗。demo 使用严格平行坐标生成 SVG，是风格迁移而非原游戏复刻。</small></div><div class=\"source-item\"><span class=\"source-badge\">创作来源</span><a href=\"https://ustwogames.co.uk/contact-us/\" target=\"_blank\" rel=\"noopener noreferrer\">ustwo games · 工作室所在地 </a><small>本练习主要取材于 Monument Valley；开发商官方联系页列出工作室位于英国伦敦。</small></div><p>理论来源核验：2026-10-07。</p></section><section><h2>相关文档</h2><ul><li><a href=\"docs.html?file=docs%2Fcases%2Fisometric-3d.md\" target=\"_blank\">调研记录</a></li></ul></section>"
+    "renderer": "site/app/domain/case-notes.mjs",
+    "content": "<section><h2>从要素看风格</h2><a href=\"lab.html?style=isometric-3d\">调配这个风格的设计要素</a><dl><div><dt>配色角色</dt><dd>柔和绿和暖土色构成同一空间，每个立方体以三面明度表达体积。</dd></div><div><dt>字体排版</dt><dd>Georgia 49–73px 叙事标题；Arial 12–15px 正文与 8–10px 空间标签</dd></div><div><dt>布局留白</dt><dd>窄叙事栏 + 大场景图；横向图层控制；章节编号列表；独立居中结尾</dd></div><div><dt>图像图标</dt><dd>统一投影的原创浮岛、建筑和植被是叙事主角。</dd></div><div><dt>线条形状</dt><dd>平行边、统一30°方向和几何积木建立一致空间规则。</dd></div><div><dt>信息层级</dt><dd>平衡主张 → 场景 → 图层聚焦 → 漫游理念。</dd></div><div><dt>动效反馈</dt><dd>点击后 650ms 图层偏移/透明度变化；无滚轮劫持；reduced motion 即时完成</dd></div><div><dt>协调逻辑</dt><dd>柔和配色、衬线标题和稳定投影共同营造安静的氛围；展开结构用来解释层次，不能随意更换投影角度。</dd></div></dl></section><section><h2>设计机制</h2><ul><li>统一平行投影，让每个物体属于同一个空间</li><li>三面明度建立体积，克制材质细节</li><li>路径、水面和植物提供比例与浏览方向</li><li>画面先传达世界气质，再由章节解释体验</li><li>拆分图层把复杂系统变成可理解的组成关系</li></ul><h3>设计重点</h3><p>让访客先感受安静、探索与建造，再通过图层切换理解花园、建筑和基础平台的关系。</p><h3>主题与情绪</h3><p>鼠尾草背景、陶土平台、奶油塔楼与薄荷温室；极简、宁静、微缩世界的空间感。</p></section><section><h2>页面交互</h2><ul><li>整岛、花园、建筑三种焦点切换</li><li>展开按钮将基础、建筑、植物分层</li><li>焦点状态伴随文字说明与 aria-pressed</li><li>章节锚点保留正常浏览节奏</li></ul><h3>显示主题</h3><p>固定主题</p><p>此构成练习保留指定风格配色；实验室可另行比较系统／手动深浅主题。</p><p>风格不是一组可直接反转的颜色；改变主题时需重新配对文字、表面、强调与边框，保留图像原色。</p><h3>声音与交互</h3><p>无网站配乐</p><p>本练习无背景音乐。</p></section><section><h2>约束与适用场景</h2><ul><li>真正等轴投影使用平行轴和统一比例，不随意混入透视消失点</li><li>左右平面约 30°，同一组坐标生成全部物体</li><li>光源与三面明度方向一致</li><li>场景图层必须有文字控件，不能只依赖小物体热点</li><li>移动端先呈现价值主张，再呈现场景和控件</li><li>reduced motion 时立即切换图层位置</li></ul><h3>适合</h3><ul><li>游戏世界宣传</li><li>复杂系统介绍</li><li>园区与空间项目</li><li>供应链或基础设施产品</li></ul><h3>谨慎使用</h3><ul><li>需要真实透视的建筑验收图</li><li>用大量重材质遮蔽系统关系</li><li>场景上堆叠无法触达的小热点</li><li>把固定二维 SVG 称为可旋转 3D 引擎</li></ul></section><section><h2>设计参数</h2><div class=\"swatches\"><span><i style=\"background:#e8eee8\"></i>#e8eee8</span><span><i style=\"background:#234647\"></i>#234647</span><span><i style=\"background:#a26958\"></i>#a26958</span><span><i style=\"background:#d9b7a6\"></i>#d9b7a6</span><span><i style=\"background:#9cb29a\"></i>#9cb29a</span><span><i style=\"background:#f3ead6\"></i>#f3ead6</span></div><p>字体 · Georgia 49–73px 叙事标题；Arial 12–15px 正文与 8–10px 空间标签</p><p>布局 · 窄叙事栏 + 大场景图；横向图层控制；章节编号列表；独立居中结尾</p><p>动效 · 点击后 650ms 图层偏移/透明度变化；无滚轮劫持；reduced motion 即时完成</p></section><section><h2>可复用 Prompt</h2><textarea aria-label=\"可复用 Prompt\" readonly>可替换内容：产品/品牌【名称】；受众【用户】；核心价值【卖点与证据】；主行动【希望用户完成的动作】。以下为风格示范任务，可替换具体品牌与内容，保留设计约束。\n\n为虚构宁静世界 Little Terraces 制作本地网页，借鉴 Monument Valley 的极简建筑世界呈现，并依据 Adobe 等轴制图说明使用严格 30° 平行投影。不要复制其关卡、角色和标志。信息顺序：宁静探索的价值主张→一个原创浮岛的完整世界→三个旅程章节→回到场景的邀请。画面包含陶土基础台、奶油塔楼、薄荷温室、水池、树木和连续路径；全部用同一 x/y/z 投影函数与统一三面明度生成 SVG。左侧窄文案右侧大场景，避免通用卡片首屏。提供整岛/花园/建筑焦点按钮，和将平台、建筑、植物分层的展开按钮；状态说明和 aria-pressed 同步。至少三节内容，小屏重排，SVG 适配视口，键盘可操作，reduced motion 即时切换；无CDN、外部素材或WebGL依赖。\n\n要素协调要求：柔和调色、衬线标题和稳定投影共享安静情绪；结构展开解释层次，不能随意更换投影角度。</textarea><details><summary>负面约束 / Negative Prompt</summary><p>不要混合透视消失点与等轴投影；不要复制原游戏地图；不要自动旋转、强制视差或密集热点；不要声称 SVG 是真正可旋转的实时 3D。</p></details><h3>改造练习</h3><p>把浮岛替换成数据平台的等轴系统图，让三种焦点分别对应计算、存储、网络，保留统一坐标与分层解释。</p></section><section><h2>关联巧思</h2><a href=\"patterns.html#patterns?source=isometric-3d\">按来源浏览全部 3 项</a><ul><li><a href=\"patterns.html#pattern/exploded-layer-view?source=isometric-3d\">展开图层解释组成</a></li><li><a href=\"patterns.html#pattern/layer-focus-dimming?source=isometric-3d\">聚焦一层并减弱其余层</a></li><li><a href=\"patterns.html#pattern/parallel-isometric-projection?source=isometric-3d\">统一等轴投影与三面明度</a></li></ul></section><section><h2>来源与证据</h2><div class=\"source-item\"><span>实例</span><a href=\"https://www.monumentvalleygame.com/\">Monument Valley 系列官方网站</a><p>2026-10-07 核验：官网系列入口存在；网页文本提取有限。参考是游戏世界的建筑视觉，不宣称官网提供本 demo 的图层交互。</p></div><div class=\"source-item\"><span>实例</span><a href=\"https://ustwogames.co.uk/our-games/monument-valley-3/\">ustwo games — Monument Valley 3</a><p>开发商说明世界设计来自建筑和实验艺术，并强调极简、不可能几何和旋转建筑探索；用于核验视觉及体验意图。</p></div><div class=\"source-item\"><span>理论</span><a href=\"https://www.adobe.com/products/photoshop/isometric-art.html\">Adobe — Isometric art</a><p>解释二维表现三维、30° 侧向轴与侧面明暗。demo 使用严格平行坐标生成 SVG，是风格迁移而非原游戏复刻。</p></div><div class=\"source-item\"><span>创作来源</span><a href=\"https://ustwogames.co.uk/contact-us/\">ustwo games · 工作室所在地</a><p>本练习主要取材于 Monument Valley；开发商官方联系页列出工作室位于英国伦敦。</p></div><p>理论来源核验：2026-10-07。</p></section><section><h2>相关文档</h2><ul><li><a href=\"docs.html?file=docs%2Fcases%2Fisometric-3d.md\">调研记录</a></li></ul></section>"
   }
 }

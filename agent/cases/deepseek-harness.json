@@ -403,16 +403,76 @@
       "role": "context"
     },
     {
+      "path": "site/app/domain/case-notes.mjs",
+      "role": "context"
+    },
+    {
+      "path": "site/app/theme-boot.js",
+      "role": "context"
+    },
+    {
+      "path": "site/client/AgentPage-EAS5PVE3.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/CatalogPage-SGVWTZ3D.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/DocsPage-UQJTEUEK.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/DocsPage-UQJTEUEK.js.LEGAL.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/client/HomePage-U2APYKG6.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/LICENSES.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/client/LabPage-6GKARTD3.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-4PVWGCRJ.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-SSO6R7NX.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-XZHNFY5X.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-YOWC6UHQ.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-YOWC6UHQ.js.LEGAL.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/client/main.css",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/main.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/main.js.LEGAL.txt",
+      "role": "license"
+    },
+    {
       "path": "site/icons/favicon.svg",
       "role": "asset"
-    },
-    {
-      "path": "site/pages/docs/docs.css",
-      "role": "source"
-    },
-    {
-      "path": "site/pages/docs/docs.js",
-      "role": "source"
     },
     {
       "path": "site/runtime/asset-cache.js",
@@ -435,30 +495,6 @@
       "role": "source"
     },
     {
-      "path": "site/shared/site-footer.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/site-nav.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/site-shell.js",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/site-typography.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/theme-control.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/theme.js",
-      "role": "source"
-    },
-    {
       "path": "site/vendor/LICENSES.txt",
       "role": "license"
     },
@@ -473,7 +509,7 @@
   ],
   "webNotes": {
     "format": "text/html",
-    "renderer": "site/pages/cases/atlas.js",
-    "content": "<section><h2>从要素看风格</h2><a class=\"element-lab-link\" href=\"lab.html?style=deepseek-harness\">调配这个风格的设计要素</a><dl class=\"element-map\"><div class=\"\"><dt>配色角色</dt><dd>黑底与透明白表面形成深度，蓝灰流体和页尾蓝光让视觉重心集中在产品舞台。</dd></div><div class=\"\"><dt>字体排版</dt><dd>自然语言标题与等宽代码形成职责对比；两种语言保留相同内容层级和原生换行。</dd></div><div class=\"\"><dt>布局留白</dt><dd>Hero主张和工作台→四卡能力→两种开发入口→生态和版权；1024px下改为单列。</dd></div><div class=\"\"><dt>图像图标</dt><dd>绝大部分产品画面为可检查的DOM，不是视频；WebP仅用于指定回退，SVG图标与字体保持原资产。</dd></div><div class=\"\"><dt>线条形状</dt><dd>磨砂胶囊导航、低对比细边框卡片、真实工具窗口、输入框与微小控件。</dd></div><div class=\"\"><dt>信息层级</dt><dd>主张先说明用途，演示解释怎么做，命令和生态链接提供实际操作入口。</dd></div><div class=\"\"><dt>动效反馈</dt><dd>流体承担氛围，四张卡各自解释一个过程，页尾散点聚合完成品牌收束，暂停状态独立。</dd></div><div class=\"coherence\"><dt>协调逻辑</dt><dd>同一产品UI语言贯穿预览、插件、文件、任务和轨迹；低装饰表面让过程本身成为视觉焦点。</dd></div></dl></section><section><h2>设计机制</h2><ul><li>先展示完整对话工作台，再以插件、成果、工作流和轨迹四张动态卡说明能力；开发者命令和生态入口引导后续操作。</li><li>产品预览与四组演示使用真实DOM/CSS，Hero是WebGL2流体，页尾是网格和196个立方体；没有用视频覆盖整个产品界面。</li><li>黑色背景、低透明白边框、少量蓝色光晕与白色主按钮形成克制的视觉层级；动画通过结构、代码和结果传递信息。</li><li>四卡保留独立暂停状态，离开视口停止推进；移动端从双列转单列，演示内部按容器宽度改变构图，而不是只将整张截图缩小。</li></ul><h3>设计重点</h3><p>通过插件创建、文件成果、定时工作和执行轨迹说明可组合的Agent产品，再提供下载、命令启动、源码、文档和社区入口。</p><h3>主题与情绪</h3><p>固定深色主题，底色#0a0a0a、白色文字与不同透明度的边框/表面；产品演示内部保留原配色。</p></section><section><h2>页面交互</h2><ul><li>Hero使用官方WebGL2流体着色器，蓝灰五色场、暖色光核与低强度光晕持续演化；30fps、DPR上限1.5、离屏暂停。输入流场是1×1中性纹理，没有指针搅动逻辑。</li><li>插件演示22秒：对话输入、10条工具步骤、过程折叠、番茄钟放大，再缩至右上角；插件管理器滚过7个官方插件并高亮已安装项，挂件贯穿场景交接。</li><li>成果演示17.5秒：Word、Excel、HTML、TypeScript、Python、PDF、Markdown七类文件向上轮换；每格保持1.3秒、移动1.2秒，固定代码差异层显示+2−1。</li><li>工作流演示每11秒切换周报、销售汇总和项目测试三种故事；输入JSON先出现，替换为计划结果，再收起执行过程并留下任务卡。使用固定2026-09-01演示时间，不创建真实任务。</li><li>轨迹演示15秒：工具栏、三条泳道和37段时序先后进入，两轮日志上移，最后展开bash调用详情，在结果与计时之间交接，显示NAVIGATION_OK和34毫秒。</li><li>四组演示分别在进入视口后播放，手动暂停优先于重入；离屏或后台暂停。减少动态使用原版插件/轨迹静态回退和文件/工作流的可读状态。</li><li>页尾196个Three.js立方体随滚动从球面散布聚合为像素标志；独立2D网格以90px间隔绘制断开线段和3.6px方点，手机隐藏三维层。</li><li>滚动超过80px，顶栏收缩为磨砂胶囊；中英切换、桌面下载菜单、手机全屏导航、命令复制反馈及公众号二维码均保留原组件。</li></ul><div class=\"behavior-block\"><span class=\"behavior-label\">显示主题</span><h3>固定主题</h3><p>固定深色，没有额外系统主题按钮。</p><p>维持官网流体、透明窗口与代码演示的层次。</p></div><div class=\"behavior-block\"><span class=\"behavior-label\">声音与交互</span><h3>无网站配乐</h3><p>原页面无audio/video和声音开关；本地不添加配乐。</p><p>动效和状态文本承担反馈，演示静音。</p></div></section><section><h2>约束与适用场景</h2><ul><li>本地挂载官方公开营销页面模块，保留必要React、Framer、Three/R3F依赖，限定在独立Demo的vendor目录；Web Atlas主站架构仍为原生HTML/CSS/JS。</li><li>本地加载器只注册模块，不执行Next全站启动回调；替换路由、静态语言/区域、素材前缀及统计边界。国内快照不请求IP地区识别服务，也不自动导入账户或遥测。</li><li>动画中的工具调用、JSON、文件和定时任务属于官网预设演示，不运行模型、脚本、插件安装或任务调度。下载/政策/产品功能仍通向正式网站。</li><li>保留官方字体与 CSS；中文采用系统字体回退，未打包 Google Noto Sans SC 外部 CSS 与字体子集。</li><li>产品仓库MIT许可不自动覆盖营销页、品牌和字体；原始vendor及素材保存SHA256和来源，迁移前需确认各自许可。</li></ul><h3>适合</h3><p>开发者工具落地页 / 需要解释多阶段能力的智能体产品 / 以过程和成果说明功能的产品演示</p><h3>谨慎使用</h3><p>以一张截图代替演示全部状态 / 把产品预设动画称作模型真实执行 / 把页面依赖引入整个参考库主站</p></section><section><h2>设计参数</h2><div class=\"swatches\"><span class=\"swatch\"><i style=\"background:#0a0a0a\"></i>#0a0a0a</span><span class=\"swatch\"><i style=\"background:#ffffff\"></i>#ffffff</span><span class=\"swatch\"><i style=\"background:#204a7e\"></i>#204a7e</span><span class=\"swatch\"><i style=\"background:#cec8bb\"></i>#cec8bb</span><span class=\"swatch\"><i style=\"background:#82b7fc\"></i>#82b7fc</span></div><p><b>字体</b> · DM Sans正文、Montserrat拉丁标题、Fragment Mono代码；中文系统回退。H2手机28/42px、桌面36/54px，H3 20/30px；拟真UI内部7–9px保留来源尺度。<br><b>布局</b> · 内容最大1140px，超宽1280px；Hero工作台612px高，手机504px并隐藏侧栏。能力区1024px以上两列，下方单列，卡片40px内边距、32px间距。<br><b>动效</b> · Hero标题900ms，说明延迟150ms、预览400ms；四卡22/17.5/11/15秒，循环与暂停独立；顶栏spring180/28；页尾三维层30fps、DPR上限1.5。</p></section><section><div class=\"prompt-head\"><h2>可复用 Prompt</h2><button class=\"copy-button\" id=\"copy-prompt\">复制 Prompt</button></div><textarea class=\"prompt-box\" aria-label=\"可复用 Prompt\" readonly>以DeepSeek Harness在2026-10-11的官方中英文落地页为依据，实现【目标产品】的完整产品介绍。先读取index.html、app.js、runtime.js、reference.css、messages.js、vendor原始模块、研究和fidelity；Prompt不能代替源码。保留Hero实时WebGL2流体、完整DOM对话工作台、四张能力卡、两张开发者命令卡、生态CTA和页尾。四卡必须覆盖插件创建到挂件跨场景保留、七类文件与固定diff、三种工作流的输入→结果→过程折叠、三泳道日志到调用详情；独立暂停、离屏停止和减少动态结果同时存在。保留196立方体随滚动聚合的页尾，不以静态背景或随机星点替代。响应式既改变网格也改变卡内构图，保留中英文、下载菜单、复制与二维码交互。复用时只接入目标产品真实可用的流程，标明固定演示，不执行动画中的命令或伪造结果；素材与第三方代码分别核实许可，不把产品MIT套用到所有营销资源。</textarea><details><summary>负面约束 / Negative Prompt</summary><p>不要用录屏替代DOM动态；不要漏掉工作流三场景、插件挂件保留或轨迹详情；不要为流体添加无来源的鼠标交互；不要把插图当作真实AI执行；不要擅自搬入统计或账户服务。</p></details><h3>改造练习</h3><p>选用一项真实能力，将输入、执行过程、可交付结果拆成三个阶段；让一个成果物在下一场景继续存在，并保留独立暂停和静态可读状态。</p></section><section class=\"case-patterns\" aria-labelledby=\"case-patterns-heading\"><div class=\"prompt-head\"><h2 id=\"case-patterns-heading\">关联巧思</h2><a href=\"patterns.html#patterns?source=deepseek-harness\">按来源浏览全部 6 项</a></div><p>这些机制可独立借用，触发条件、约束与组合建议见各项详情。</p><ul><li><a href=\"patterns.html#pattern/viewport-animation-lifecycle?source=deepseek-harness\">视口与前台驱动的动态生命周期</a><span>内容与组织</span></li><li><a href=\"patterns.html#pattern/execution-trace-drilldown?source=deepseek-harness\">时间线泳道定位调用详情</a><span>内容与组织 · 页面动效</span></li><li><a href=\"patterns.html#pattern/persistent-created-widget?source=deepseek-harness\">已创建挂件跨场景保留</a><span>页面动效 · 内容与组织</span></li><li><a href=\"patterns.html#pattern/procedural-fluid-spotlight?source=deepseek-harness\">流体色场中的固定光核</a><span>视觉巧思 · 页面动效</span></li><li><a href=\"patterns.html#pattern/process-to-result-collapse?source=deepseek-harness\">执行过程折叠后保留结果</a><span>微动效 · 内容与组织</span></li><li><a href=\"patterns.html#pattern/scroll-gathered-pixel-mark?source=deepseek-harness\">散布立方体随滚动聚合标记</a><span>视觉巧思 · 页面动效</span></li></ul></section><section><h2>来源与证据</h2><div class=\"source-item\"><span class=\"source-badge\">实例</span><a href=\"https://www.deepseek.com/harness/\" target=\"_blank\" rel=\"noopener noreferrer\">DeepSeek Harness 官方中文产品页 </a><small>2026-10-11 实际观察全部章节、四组播放/暂停和页尾GPU层；官网公开页面模块与素材为复现来源。</small></div><div class=\"source-item\"><span class=\"source-badge\">实例</span><a href=\"https://www.deepseek.com/en/harness/\" target=\"_blank\" rel=\"noopener noreferrer\">DeepSeek Harness 官方英文产品页 </a><small>保留完整英文文案与两张英文回退图，本地lang=en切换。</small></div><div class=\"source-item\"><span class=\"source-badge\">实例</span><a href=\"https://github.com/deepseek-ai/deepseek-harness\" target=\"_blank\" rel=\"noopener noreferrer\">DeepSeek Harness 官方产品仓库 </a><small>产品代码与文档入口；仓库 website 目录为文档站。</small></div><div class=\"source-item\"><span class=\"source-badge\">实例</span><a href=\"https://github.com/deepseek-ai/deepseek-harness/blob/master/BRAND_GUIDELINES.zh.md\" target=\"_blank\" rel=\"noopener noreferrer\">DeepSeek Harness 品牌规范 </a><small>品牌来源、准确描述和避免官方背书误认；产品MIT与营销资源权利分别记录。</small></div><div class=\"source-item\"><span class=\"source-badge\">规范</span><a href=\"https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html\" target=\"_blank\" rel=\"noopener noreferrer\">W3C Pause, Stop, Hide </a><small>独立暂停控制和减少动态分支的无障碍依据。</small></div><p>参考站采集：2026-10-11。</p></section><section><h2>相关文档</h2><ul><li><a href=\"docs.html?file=docs%2Fcases%2Fdeepseek-harness.md\" target=\"_blank\">调研记录</a></li><li><a href=\"docs.html?file=demos%2Fcases%2Fdeepseek-harness%2Ffidelity.md\" target=\"_blank\">复现范围与差异</a></li><li><a href=\"demos/cases/deepseek-harness/assets-manifest.json\" target=\"_blank\">素材来源清单</a></li><li><a href=\"docs.html?file=demos%2Fcases%2Fdeepseek-harness%2FLICENSES.md\" target=\"_blank\">许可原文索引</a></li></ul></section>"
+    "renderer": "site/app/domain/case-notes.mjs",
+    "content": "<section><h2>从要素看风格</h2><a href=\"lab.html?style=deepseek-harness\">调配这个风格的设计要素</a><dl><div><dt>配色角色</dt><dd>黑底与透明白表面形成深度，蓝灰流体和页尾蓝光让视觉重心集中在产品舞台。</dd></div><div><dt>字体排版</dt><dd>自然语言标题与等宽代码形成职责对比；两种语言保留相同内容层级和原生换行。</dd></div><div><dt>布局留白</dt><dd>Hero主张和工作台→四卡能力→两种开发入口→生态和版权；1024px下改为单列。</dd></div><div><dt>图像图标</dt><dd>绝大部分产品画面为可检查的DOM，不是视频；WebP仅用于指定回退，SVG图标与字体保持原资产。</dd></div><div><dt>线条形状</dt><dd>磨砂胶囊导航、低对比细边框卡片、真实工具窗口、输入框与微小控件。</dd></div><div><dt>信息层级</dt><dd>主张先说明用途，演示解释怎么做，命令和生态链接提供实际操作入口。</dd></div><div><dt>动效反馈</dt><dd>流体承担氛围，四张卡各自解释一个过程，页尾散点聚合完成品牌收束，暂停状态独立。</dd></div><div><dt>协调逻辑</dt><dd>同一产品UI语言贯穿预览、插件、文件、任务和轨迹；低装饰表面让过程本身成为视觉焦点。</dd></div></dl></section><section><h2>设计机制</h2><ul><li>先展示完整对话工作台，再以插件、成果、工作流和轨迹四张动态卡说明能力；开发者命令和生态入口引导后续操作。</li><li>产品预览与四组演示使用真实DOM/CSS，Hero是WebGL2流体，页尾是网格和196个立方体；没有用视频覆盖整个产品界面。</li><li>黑色背景、低透明白边框、少量蓝色光晕与白色主按钮形成克制的视觉层级；动画通过结构、代码和结果传递信息。</li><li>四卡保留独立暂停状态，离开视口停止推进；移动端从双列转单列，演示内部按容器宽度改变构图，而不是只将整张截图缩小。</li></ul><h3>设计重点</h3><p>通过插件创建、文件成果、定时工作和执行轨迹说明可组合的Agent产品，再提供下载、命令启动、源码、文档和社区入口。</p><h3>主题与情绪</h3><p>固定深色主题，底色#0a0a0a、白色文字与不同透明度的边框/表面；产品演示内部保留原配色。</p></section><section><h2>页面交互</h2><ul><li>Hero使用官方WebGL2流体着色器，蓝灰五色场、暖色光核与低强度光晕持续演化；30fps、DPR上限1.5、离屏暂停。输入流场是1×1中性纹理，没有指针搅动逻辑。</li><li>插件演示22秒：对话输入、10条工具步骤、过程折叠、番茄钟放大，再缩至右上角；插件管理器滚过7个官方插件并高亮已安装项，挂件贯穿场景交接。</li><li>成果演示17.5秒：Word、Excel、HTML、TypeScript、Python、PDF、Markdown七类文件向上轮换；每格保持1.3秒、移动1.2秒，固定代码差异层显示+2−1。</li><li>工作流演示每11秒切换周报、销售汇总和项目测试三种故事；输入JSON先出现，替换为计划结果，再收起执行过程并留下任务卡。使用固定2026-09-01演示时间，不创建真实任务。</li><li>轨迹演示15秒：工具栏、三条泳道和37段时序先后进入，两轮日志上移，最后展开bash调用详情，在结果与计时之间交接，显示NAVIGATION_OK和34毫秒。</li><li>四组演示分别在进入视口后播放，手动暂停优先于重入；离屏或后台暂停。减少动态使用原版插件/轨迹静态回退和文件/工作流的可读状态。</li><li>页尾196个Three.js立方体随滚动从球面散布聚合为像素标志；独立2D网格以90px间隔绘制断开线段和3.6px方点，手机隐藏三维层。</li><li>滚动超过80px，顶栏收缩为磨砂胶囊；中英切换、桌面下载菜单、手机全屏导航、命令复制反馈及公众号二维码均保留原组件。</li></ul><h3>显示主题</h3><p>固定主题</p><p>固定深色，没有额外系统主题按钮。</p><p>维持官网流体、透明窗口与代码演示的层次。</p><h3>声音与交互</h3><p>无网站配乐</p><p>原页面无audio/video和声音开关；本地不添加配乐。</p><p>动效和状态文本承担反馈，演示静音。</p></section><section><h2>约束与适用场景</h2><ul><li>本地挂载官方公开营销页面模块，保留必要React、Framer、Three/R3F依赖，限定在独立Demo的vendor目录；Web Atlas主站架构仍为原生HTML/CSS/JS。</li><li>本地加载器只注册模块，不执行Next全站启动回调；替换路由、静态语言/区域、素材前缀及统计边界。国内快照不请求IP地区识别服务，也不自动导入账户或遥测。</li><li>动画中的工具调用、JSON、文件和定时任务属于官网预设演示，不运行模型、脚本、插件安装或任务调度。下载/政策/产品功能仍通向正式网站。</li><li>保留官方字体与 CSS；中文采用系统字体回退，未打包 Google Noto Sans SC 外部 CSS 与字体子集。</li><li>产品仓库MIT许可不自动覆盖营销页、品牌和字体；原始vendor及素材保存SHA256和来源，迁移前需确认各自许可。</li></ul><h3>适合</h3><ul><li>开发者工具落地页</li><li>需要解释多阶段能力的智能体产品</li><li>以过程和成果说明功能的产品演示</li></ul><h3>谨慎使用</h3><ul><li>以一张截图代替演示全部状态</li><li>把产品预设动画称作模型真实执行</li><li>把页面依赖引入整个参考库主站</li></ul></section><section><h2>设计参数</h2><div class=\"swatches\"><span><i style=\"background:#0a0a0a\"></i>#0a0a0a</span><span><i style=\"background:#ffffff\"></i>#ffffff</span><span><i style=\"background:#204a7e\"></i>#204a7e</span><span><i style=\"background:#cec8bb\"></i>#cec8bb</span><span><i style=\"background:#82b7fc\"></i>#82b7fc</span></div><p>字体 · DM Sans正文、Montserrat拉丁标题、Fragment Mono代码；中文系统回退。H2手机28/42px、桌面36/54px，H3 20/30px；拟真UI内部7–9px保留来源尺度。</p><p>布局 · 内容最大1140px，超宽1280px；Hero工作台612px高，手机504px并隐藏侧栏。能力区1024px以上两列，下方单列，卡片40px内边距、32px间距。</p><p>动效 · Hero标题900ms，说明延迟150ms、预览400ms；四卡22/17.5/11/15秒，循环与暂停独立；顶栏spring180/28；页尾三维层30fps、DPR上限1.5。</p></section><section><h2>可复用 Prompt</h2><textarea aria-label=\"可复用 Prompt\" readonly>以DeepSeek Harness在2026-10-11的官方中英文落地页为依据，实现【目标产品】的完整产品介绍。先读取index.html、app.js、runtime.js、reference.css、messages.js、vendor原始模块、研究和fidelity；Prompt不能代替源码。保留Hero实时WebGL2流体、完整DOM对话工作台、四张能力卡、两张开发者命令卡、生态CTA和页尾。四卡必须覆盖插件创建到挂件跨场景保留、七类文件与固定diff、三种工作流的输入→结果→过程折叠、三泳道日志到调用详情；独立暂停、离屏停止和减少动态结果同时存在。保留196立方体随滚动聚合的页尾，不以静态背景或随机星点替代。响应式既改变网格也改变卡内构图，保留中英文、下载菜单、复制与二维码交互。复用时只接入目标产品真实可用的流程，标明固定演示，不执行动画中的命令或伪造结果；素材与第三方代码分别核实许可，不把产品MIT套用到所有营销资源。</textarea><details><summary>负面约束 / Negative Prompt</summary><p>不要用录屏替代DOM动态；不要漏掉工作流三场景、插件挂件保留或轨迹详情；不要为流体添加无来源的鼠标交互；不要把插图当作真实AI执行；不要擅自搬入统计或账户服务。</p></details><h3>改造练习</h3><p>选用一项真实能力，将输入、执行过程、可交付结果拆成三个阶段；让一个成果物在下一场景继续存在，并保留独立暂停和静态可读状态。</p></section><section><h2>关联巧思</h2><a href=\"patterns.html#patterns?source=deepseek-harness\">按来源浏览全部 6 项</a><ul><li><a href=\"patterns.html#pattern/viewport-animation-lifecycle?source=deepseek-harness\">视口与前台驱动的动态生命周期</a></li><li><a href=\"patterns.html#pattern/execution-trace-drilldown?source=deepseek-harness\">时间线泳道定位调用详情</a></li><li><a href=\"patterns.html#pattern/persistent-created-widget?source=deepseek-harness\">已创建挂件跨场景保留</a></li><li><a href=\"patterns.html#pattern/procedural-fluid-spotlight?source=deepseek-harness\">流体色场中的固定光核</a></li><li><a href=\"patterns.html#pattern/process-to-result-collapse?source=deepseek-harness\">执行过程折叠后保留结果</a></li><li><a href=\"patterns.html#pattern/scroll-gathered-pixel-mark?source=deepseek-harness\">散布立方体随滚动聚合标记</a></li></ul></section><section><h2>来源与证据</h2><div class=\"source-item\"><span>实例</span><a href=\"https://www.deepseek.com/harness/\">DeepSeek Harness 官方中文产品页</a><p>2026-10-11 实际观察全部章节、四组播放/暂停和页尾GPU层；官网公开页面模块与素材为复现来源。</p></div><div class=\"source-item\"><span>实例</span><a href=\"https://www.deepseek.com/en/harness/\">DeepSeek Harness 官方英文产品页</a><p>保留完整英文文案与两张英文回退图，本地lang=en切换。</p></div><div class=\"source-item\"><span>实例</span><a href=\"https://github.com/deepseek-ai/deepseek-harness\">DeepSeek Harness 官方产品仓库</a><p>产品代码与文档入口；仓库 website 目录为文档站。</p></div><div class=\"source-item\"><span>实例</span><a href=\"https://github.com/deepseek-ai/deepseek-harness/blob/master/BRAND_GUIDELINES.zh.md\">DeepSeek Harness 品牌规范</a><p>品牌来源、准确描述和避免官方背书误认；产品MIT与营销资源权利分别记录。</p></div><div class=\"source-item\"><span>规范</span><a href=\"https://www.w3.org/WAI/WCAG22/Understanding/pause-stop-hide.html\">W3C Pause, Stop, Hide</a><p>独立暂停控制和减少动态分支的无障碍依据。</p></div><p>参考站采集：2026-10-11。</p></section><section><h2>相关文档</h2><ul><li><a href=\"docs.html?file=docs%2Fcases%2Fdeepseek-harness.md\">调研记录</a></li><li><a href=\"docs.html?file=demos%2Fcases%2Fdeepseek-harness%2Ffidelity.md\">复现范围与差异</a></li><li><a href=\"demos/cases/deepseek-harness/assets-manifest.json\">素材来源清单</a></li><li><a href=\"docs.html?file=demos%2Fcases%2Fdeepseek-harness%2FLICENSES.md\">许可原文索引</a></li></ul></section>"
   }
 }

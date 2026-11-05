@@ -334,16 +334,76 @@
       "role": "context"
     },
     {
+      "path": "site/app/domain/case-notes.mjs",
+      "role": "context"
+    },
+    {
+      "path": "site/app/theme-boot.js",
+      "role": "context"
+    },
+    {
+      "path": "site/client/AgentPage-EAS5PVE3.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/CatalogPage-SGVWTZ3D.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/DocsPage-UQJTEUEK.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/DocsPage-UQJTEUEK.js.LEGAL.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/client/HomePage-U2APYKG6.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/LICENSES.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/client/LabPage-6GKARTD3.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-4PVWGCRJ.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-SSO6R7NX.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-XZHNFY5X.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-YOWC6UHQ.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-YOWC6UHQ.js.LEGAL.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/client/main.css",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/main.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/main.js.LEGAL.txt",
+      "role": "license"
+    },
+    {
       "path": "site/icons/favicon.svg",
       "role": "asset"
-    },
-    {
-      "path": "site/pages/docs/docs.css",
-      "role": "source"
-    },
-    {
-      "path": "site/pages/docs/docs.js",
-      "role": "source"
     },
     {
       "path": "site/runtime/asset-cache.js",
@@ -366,30 +426,6 @@
       "role": "source"
     },
     {
-      "path": "site/shared/site-footer.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/site-nav.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/site-shell.js",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/site-typography.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/theme-control.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/theme.js",
-      "role": "source"
-    },
-    {
       "path": "site/vendor/LICENSES.txt",
       "role": "license"
     },
@@ -404,7 +440,7 @@
   ],
   "webNotes": {
     "format": "text/html",
-    "renderer": "site/pages/cases/atlas.js",
-    "content": "<section><h2>从要素看风格</h2><a class=\"element-lab-link\" href=\"lab.html?style=uma-musume\">调配这个风格的设计要素</a><dl class=\"element-map\"><div class=\"\"><dt>配色角色</dt><dd>草地绿来自官方赛道KV；#c0e640斜切标题带与绿色操作入口反复出现，白底新闻区在复杂图像之后放缓阅读节奏。</dd></div><div class=\"\"><dt>字体排版</dt><dd>官方图内标识保留；本地段落使用粗重斜体无衬线标题、普通正文和小号日期，避免所有内容同等抢眼。</dd></div><div class=\"\"><dt>布局留白</dt><dd>满宽赛道群像 → 斜切新闻 → 居中倾斜预告 → 立绘与竖屏画面轮播</dd></div><div class=\"\"><dt>图像图标</dt><dd>本地保存原站公开KV、三名角色立绘、六张游戏截图与预告缩略图；每项来源均记录在manifest中。</dd></div><div class=\"\"><dt>线条形状</dt><dd>向前倾斜的标题带、说明板与箭头复用斜切语言，平台下载徽章保持自己的标准轮廓。</dd></div><div class=\"\"><dt>信息层级</dt><dd>赛道群像先建立游戏辨识；下载次之；新闻较安静；Gameplay每态只突出一个玩法及相关人物。</dd></div><div class=\"\"><dt>动效反馈</dt><dd>三组完整玩法面板以400ms cubic-bezier(.25,1,.5,1)水平移动，保留原站时序与边界；首尾停止、无自动推进，减少动态时即时切换。</dd></div><div class=\"coherence\"><dt>协调逻辑</dt><dd>斜切条带延续赛道纵深与角色奔跑方向；游戏截图提供玩法证据，群像负责情绪，二者各有职责。</dd></div></dl></section><section><h2>设计机制</h2><ul><li>角色群像的纵深和奔跑方向构成主视觉，首屏不额外叠加营销卡片。</li><li>草地绿与荧绿斜切条带重复出现，静态信息也带有向前的运动感。</li><li>玩法画面与对应角色共同切换，产品能力由真实游戏截图证明。</li><li>下载徽章保持平台的熟悉形状，在复杂插画上形成容易识别的操作区域。</li></ul><h3>设计重点</h3><p>真实游戏 Umamusume: Pretty Derby 的跑马养成、学园交流与比赛；本地页复现国际官网主视觉、新闻条目、预告入口、三态玩法轮播。</p><h3>主题与情绪</h3><p>明亮赛道、彩色二次元群像、奔跑纵深和反复出现的斜切几何共同构成青春竞技主题。</p></section><section><h2>页面交互</h2><ul><li>正常纵向浏览连接群像、新闻、About、Gameplay 和 footer，斜切条带延续赛道方向。</li><li>滚过画布宽度 7% 后 Logo 从 2.8 倍缩回导航，反向回首恢复；300ms cubic-bezier(.19,1,.22,1)。手机 1.72 倍与菜单切换，Play Now 打开下载层。</li><li>三组 Gameplay 完整面板以 400ms cubic-bezier(.25,1,.5,1) 横移；按钮、编号、左右键与手势同步，首尾禁用而不循环。</li><li>点击 About 原缩略图，站内 dialog 播放原始 top_about.mp4；该文件只有视频轨道，没有音轨，关闭/后台暂停。</li><li>本地手机菜单、键盘控制、减少动态与学习说明为补充，未添加独立 BGM。</li></ul><div class=\"behavior-block\"><span class=\"behavior-label\">显示主题</span><h3>固定主题</h3><p>本次页面未见深浅模式开关，保持白底、草地绿与荧绿。</p><p>明亮赛道、青春群像和斜切运动条带构成统一主题，改成通用暗色会改变比赛氛围。</p></div><div class=\"behavior-block\"><span class=\"behavior-label\">声音与交互</span><h3>无网站配乐</h3><p>About 原始 top_about.mp4 只有视频轨道，没有音轨；支持播放/暂停和进度控制，关闭时暂停。官网其他 PV 外链声音未在本地核实，未发现独立 BGM。</p><p>奔跑与比赛画面的剪辑建立观看节奏，无声影片保持阅读时的安静。</p></div></section><section><h2>约束与适用场景</h2><ul><li>只归档 https://umamusume.com/ 在 2026-10-07 的国际英文页，不混入日本门户布局或追随后续改版。</li><li>群像、新闻、About 和 Gameplay 使用官方本地素材；新闻数量和后半部角色/媒体内容有缩减。</li><li>About 的 top_about.mp4 无音轨；本地未添加独立 BGM，其他 PV 通过原站入口播放。</li><li>Gameplay 不自动推进、不循环；400ms cubic-bezier(.25,1,.5,1) 与首尾边界有源样式依据。</li><li>手机使用原站竖版 KV；菜单、触摸阈值与字体排布有本地适配，减少动态取消非必要过渡。</li><li>官方品牌、群像、美术和 PV 权利归相应权利方，manifest 留存 URL/尺寸/哈希；不复制运营服务。</li></ul><h3>适合</h3><p>角色阵容丰富的竞技游戏 / 二次元养成手游宣传 / 已有高质量群像插画的产品页</p><h3>谨慎使用</h3><p>用通用双栏产品卡片替代官方群像构图 / 让下载按钮遮挡角色表情 / 声称未获取的音频是官网 BGM</p></section><section><h2>设计参数</h2><div class=\"swatches\"><span class=\"swatch\"><i style=\"background:#a7ce36\"></i>#a7ce36</span><span class=\"swatch\"><i style=\"background:#c0e640\"></i>#c0e640</span><span class=\"swatch\"><i style=\"background:#6fb52a\"></i>#6fb52a</span><span class=\"swatch\"><i style=\"background:#ffffff\"></i>#ffffff</span><span class=\"swatch\"><i style=\"background:#253336\"></i>#253336</span></div><p><b>字体</b> · 粗重斜体无衬线标题；小号日期与普通正文分工；官方图像内文字保留原素材<br><b>布局</b> · 满宽赛道群像 → 斜切新闻 → 居中倾斜预告 → 立绘与竖屏画面轮播<br><b>动效</b> · 三组完整玩法面板400ms cubic-bezier(.25,1,.5,1)水平移动，原站时序与边界被保留；首尾停止、无自动推进，减少动态即时切换。</p></section><section><div class=\"prompt-head\"><h2>可复用 Prompt</h2><button class=\"copy-button\" id=\"copy-prompt\">复制 Prompt</button></div><textarea class=\"prompt-box\" aria-label=\"可复用 Prompt\" readonly>以一个明确 URL 和采集日期归档【竞技/养成游戏】。参考 Umamusume 国际页：官方赛道群像满宽铺开，独立竖版 KV 用于手机；下载徽章避开人物脸部。正常长页依次接入新闻条目、居中轻微倾斜的 About 缩略图和 Gameplay，不改成通用整屏 Swiper。草地绿、荧绿斜切标题带、粗重斜体标题与白底新闻形成运动方向和阅读节奏。点击 About 在站内原生 dialog 播放官方 top_about.mp4，文件无音轨，保留播放/暂停/进度与关闭或后台暂停；用比赛画面和剪辑建立节奏，不把未静音属性称为原声。官网 PV 外链的声音未在本地核实，不额外添加未核验 BGM。三组 Gameplay 必须将人物立绘、两张竖屏游戏图与文案板整块移动，400ms cubic-bezier(.25,1,.5,1)，首尾箭头禁用，不自动、不循环；按钮、编号、左右键与手势更新同一状态。保留来源证实的造型，不把所有图加统一圆角或玻璃卡片。明确内容缩减、手机适配与本地键盘/菜单补充，提供减少动态、可见焦点、原图 manifest 和真实桌面/390px 预览。 导航须保留真实 Logo 与蓝色纹理，滚过 min(viewportWidth,2000) 的7%阈值时2.8倍Logo缩回基准，300ms cubic-bezier(.19,1,.22,1)，反向恢复；手机1.72倍、马蹄图标菜单，Play Now打开原图下载层。</textarea><details><summary>负面约束 / Negative Prompt</summary><p>不要生成泛用SaaS双栏hero、玻璃卡片墙或虚构官网音乐；不要复制运营接口、跟踪脚本、登录与付费流程；不要将新闻快照伪装成实时数据。</p></details><h3>改造练习</h3><p>保留群像不动，把玩法轮播改成四种玩法：检查每次切换的标题、截图、立绘与状态是否一致，并记录增加信息密度后斜切背景是否影响阅读。</p></section><section class=\"case-patterns\" aria-labelledby=\"case-patterns-heading\"><div class=\"prompt-head\"><h2 id=\"case-patterns-heading\">关联巧思</h2><a href=\"patterns.html#patterns?source=uma-musume\">按来源浏览全部 6 项</a></div><p>这些机制可独立借用，触发条件、约束与组合建议见各项详情。</p><ul><li><a href=\"patterns.html#pattern/film-overlay?source=uma-musume\">主动观看的独立影片层</a><span>声音巧思 · 内容与组织</span></li><li><a href=\"patterns.html#pattern/bounded-panel-track?source=uma-musume\">有界的完整面板横向轨道</a><span>页面动效</span></li><li><a href=\"patterns.html#pattern/inclined-motion-bands?source=uma-musume\">斜切条带延续运动方向</a><span>视觉巧思</span></li><li><a href=\"patterns.html#pattern/native-document-reading?source=uma-musume\">原生长页与正常回程</a><span>内容与组织</span></li><li><a href=\"patterns.html#pattern/responsive-art-direction?source=uma-musume\">桌面与手机使用专门主图</a><span>视觉巧思</span></li><li><a href=\"patterns.html#pattern/scroll-logo-contraction?source=uma-musume\">滚动后品牌标识收回导航</a><span>微动效</span></li></ul></section><section><h2>来源与证据</h2><div class=\"source-item\"><span class=\"source-badge\">实例</span><a href=\"https://umamusume.com/\" target=\"_blank\" rel=\"noopener noreferrer\">Umamusume: Pretty Derby 国际官方网站 </a><small>2026-10-07：国际英文版赛道群像、手机竖版KV、新闻、About和Gameplay；素材来自公开官方资源。</small></div><div class=\"source-item\"><span class=\"source-badge\">实例</span><a href=\"https://apps.apple.com/us/app/umamusume-pretty-derby/id6480433538\" target=\"_blank\" rel=\"noopener noreferrer\">官方国际版 App Store 页面 </a><small>官方国际版商店页确认产品与官网入口，区分国际宣传页和日本门户。</small></div><div class=\"source-item\"><span class=\"source-badge\">规范</span><a href=\"https://www.w3.org/WAI/tutorials/carousels/\" target=\"_blank\" rel=\"noopener noreferrer\">W3C WAI：Carousels Tutorial </a><small>轮播应有用户控制、键盘、当前状态和变更反馈；本地Gameplay手动且非循环。</small></div><div class=\"source-item\"><span class=\"source-badge\">规范</span><a href=\"https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions.html\" target=\"_blank\" rel=\"noopener noreferrer\">W3C：Animation from Interactions </a><small>交互动效的减少动态规范，条款为 Level AAA。</small></div><div class=\"source-item\"><span class=\"source-badge\">实例</span><a href=\"https://parts.umamusume.com/assets/js/inject-components.js\" target=\"_blank\" rel=\"noopener noreferrer\">官方公共导航组件样式/脚本 </a><small>本次同页注入的公共导航：7% 宽度阈值、2.8/1.72 Logo 缩放，.3s(.19,1,.22,1)，Play Now 站内下载层。</small></div><p>参考站采集：2026-10-07。</p></section><section><h2>相关文档</h2><ul><li><a href=\"docs.html?file=docs%2Fcases%2Fuma-musume.md\" target=\"_blank\">调研记录</a></li><li><a href=\"docs.html?file=demos%2Fcases%2Fuma-musume%2Ffidelity.md\" target=\"_blank\">复现范围与差异</a></li><li><a href=\"demos/cases/uma-musume/assets-manifest.json\" target=\"_blank\">素材来源清单</a></li><li><a href=\"docs.html?file=demos%2Fcases%2Fuma-musume%2FLICENSES.md\" target=\"_blank\">许可原文索引</a></li></ul></section>"
+    "renderer": "site/app/domain/case-notes.mjs",
+    "content": "<section><h2>从要素看风格</h2><a href=\"lab.html?style=uma-musume\">调配这个风格的设计要素</a><dl><div><dt>配色角色</dt><dd>草地绿来自官方赛道KV；#c0e640斜切标题带与绿色操作入口反复出现，白底新闻区在复杂图像之后放缓阅读节奏。</dd></div><div><dt>字体排版</dt><dd>官方图内标识保留；本地段落使用粗重斜体无衬线标题、普通正文和小号日期，避免所有内容同等抢眼。</dd></div><div><dt>布局留白</dt><dd>满宽赛道群像 → 斜切新闻 → 居中倾斜预告 → 立绘与竖屏画面轮播</dd></div><div><dt>图像图标</dt><dd>本地保存原站公开KV、三名角色立绘、六张游戏截图与预告缩略图；每项来源均记录在manifest中。</dd></div><div><dt>线条形状</dt><dd>向前倾斜的标题带、说明板与箭头复用斜切语言，平台下载徽章保持自己的标准轮廓。</dd></div><div><dt>信息层级</dt><dd>赛道群像先建立游戏辨识；下载次之；新闻较安静；Gameplay每态只突出一个玩法及相关人物。</dd></div><div><dt>动效反馈</dt><dd>三组完整玩法面板以400ms cubic-bezier(.25,1,.5,1)水平移动，保留原站时序与边界；首尾停止、无自动推进，减少动态时即时切换。</dd></div><div><dt>协调逻辑</dt><dd>斜切条带延续赛道纵深与角色奔跑方向；游戏截图提供玩法证据，群像负责情绪，二者各有职责。</dd></div></dl></section><section><h2>设计机制</h2><ul><li>角色群像的纵深和奔跑方向构成主视觉，首屏不额外叠加营销卡片。</li><li>草地绿与荧绿斜切条带重复出现，静态信息也带有向前的运动感。</li><li>玩法画面与对应角色共同切换，产品能力由真实游戏截图证明。</li><li>下载徽章保持平台的熟悉形状，在复杂插画上形成容易识别的操作区域。</li></ul><h3>设计重点</h3><p>真实游戏 Umamusume: Pretty Derby 的跑马养成、学园交流与比赛；本地页复现国际官网主视觉、新闻条目、预告入口、三态玩法轮播。</p><h3>主题与情绪</h3><p>明亮赛道、彩色二次元群像、奔跑纵深和反复出现的斜切几何共同构成青春竞技主题。</p></section><section><h2>页面交互</h2><ul><li>正常纵向浏览连接群像、新闻、About、Gameplay 和 footer，斜切条带延续赛道方向。</li><li>滚过画布宽度 7% 后 Logo 从 2.8 倍缩回导航，反向回首恢复；300ms cubic-bezier(.19,1,.22,1)。手机 1.72 倍与菜单切换，Play Now 打开下载层。</li><li>三组 Gameplay 完整面板以 400ms cubic-bezier(.25,1,.5,1) 横移；按钮、编号、左右键与手势同步，首尾禁用而不循环。</li><li>点击 About 原缩略图，站内 dialog 播放原始 top_about.mp4；该文件只有视频轨道，没有音轨，关闭/后台暂停。</li><li>本地手机菜单、键盘控制、减少动态与学习说明为补充，未添加独立 BGM。</li></ul><h3>显示主题</h3><p>固定主题</p><p>本次页面未见深浅模式开关，保持白底、草地绿与荧绿。</p><p>明亮赛道、青春群像和斜切运动条带构成统一主题，改成通用暗色会改变比赛氛围。</p><h3>声音与交互</h3><p>无网站配乐</p><p>About 原始 top_about.mp4 只有视频轨道，没有音轨；支持播放/暂停和进度控制，关闭时暂停。官网其他 PV 外链声音未在本地核实，未发现独立 BGM。</p><p>奔跑与比赛画面的剪辑建立观看节奏，无声影片保持阅读时的安静。</p></section><section><h2>约束与适用场景</h2><ul><li>只归档 https://umamusume.com/ 在 2026-10-07 的国际英文页，不混入日本门户布局或追随后续改版。</li><li>群像、新闻、About 和 Gameplay 使用官方本地素材；新闻数量和后半部角色/媒体内容有缩减。</li><li>About 的 top_about.mp4 无音轨；本地未添加独立 BGM，其他 PV 通过原站入口播放。</li><li>Gameplay 不自动推进、不循环；400ms cubic-bezier(.25,1,.5,1) 与首尾边界有源样式依据。</li><li>手机使用原站竖版 KV；菜单、触摸阈值与字体排布有本地适配，减少动态取消非必要过渡。</li><li>官方品牌、群像、美术和 PV 权利归相应权利方，manifest 留存 URL/尺寸/哈希；不复制运营服务。</li></ul><h3>适合</h3><ul><li>角色阵容丰富的竞技游戏</li><li>二次元养成手游宣传</li><li>已有高质量群像插画的产品页</li></ul><h3>谨慎使用</h3><ul><li>用通用双栏产品卡片替代官方群像构图</li><li>让下载按钮遮挡角色表情</li><li>声称未获取的音频是官网 BGM</li></ul></section><section><h2>设计参数</h2><div class=\"swatches\"><span><i style=\"background:#a7ce36\"></i>#a7ce36</span><span><i style=\"background:#c0e640\"></i>#c0e640</span><span><i style=\"background:#6fb52a\"></i>#6fb52a</span><span><i style=\"background:#ffffff\"></i>#ffffff</span><span><i style=\"background:#253336\"></i>#253336</span></div><p>字体 · 粗重斜体无衬线标题；小号日期与普通正文分工；官方图像内文字保留原素材</p><p>布局 · 满宽赛道群像 → 斜切新闻 → 居中倾斜预告 → 立绘与竖屏画面轮播</p><p>动效 · 三组完整玩法面板400ms cubic-bezier(.25,1,.5,1)水平移动，原站时序与边界被保留；首尾停止、无自动推进，减少动态即时切换。</p></section><section><h2>可复用 Prompt</h2><textarea aria-label=\"可复用 Prompt\" readonly>以一个明确 URL 和采集日期归档【竞技/养成游戏】。参考 Umamusume 国际页：官方赛道群像满宽铺开，独立竖版 KV 用于手机；下载徽章避开人物脸部。正常长页依次接入新闻条目、居中轻微倾斜的 About 缩略图和 Gameplay，不改成通用整屏 Swiper。草地绿、荧绿斜切标题带、粗重斜体标题与白底新闻形成运动方向和阅读节奏。点击 About 在站内原生 dialog 播放官方 top_about.mp4，文件无音轨，保留播放/暂停/进度与关闭或后台暂停；用比赛画面和剪辑建立节奏，不把未静音属性称为原声。官网 PV 外链的声音未在本地核实，不额外添加未核验 BGM。三组 Gameplay 必须将人物立绘、两张竖屏游戏图与文案板整块移动，400ms cubic-bezier(.25,1,.5,1)，首尾箭头禁用，不自动、不循环；按钮、编号、左右键与手势更新同一状态。保留来源证实的造型，不把所有图加统一圆角或玻璃卡片。明确内容缩减、手机适配与本地键盘/菜单补充，提供减少动态、可见焦点、原图 manifest 和真实桌面/390px 预览。 导航须保留真实 Logo 与蓝色纹理，滚过 min(viewportWidth,2000) 的7%阈值时2.8倍Logo缩回基准，300ms cubic-bezier(.19,1,.22,1)，反向恢复；手机1.72倍、马蹄图标菜单，Play Now打开原图下载层。</textarea><details><summary>负面约束 / Negative Prompt</summary><p>不要生成泛用SaaS双栏hero、玻璃卡片墙或虚构官网音乐；不要复制运营接口、跟踪脚本、登录与付费流程；不要将新闻快照伪装成实时数据。</p></details><h3>改造练习</h3><p>保留群像不动，把玩法轮播改成四种玩法：检查每次切换的标题、截图、立绘与状态是否一致，并记录增加信息密度后斜切背景是否影响阅读。</p></section><section><h2>关联巧思</h2><a href=\"patterns.html#patterns?source=uma-musume\">按来源浏览全部 6 项</a><ul><li><a href=\"patterns.html#pattern/film-overlay?source=uma-musume\">主动观看的独立影片层</a></li><li><a href=\"patterns.html#pattern/bounded-panel-track?source=uma-musume\">有界的完整面板横向轨道</a></li><li><a href=\"patterns.html#pattern/inclined-motion-bands?source=uma-musume\">斜切条带延续运动方向</a></li><li><a href=\"patterns.html#pattern/native-document-reading?source=uma-musume\">原生长页与正常回程</a></li><li><a href=\"patterns.html#pattern/responsive-art-direction?source=uma-musume\">桌面与手机使用专门主图</a></li><li><a href=\"patterns.html#pattern/scroll-logo-contraction?source=uma-musume\">滚动后品牌标识收回导航</a></li></ul></section><section><h2>来源与证据</h2><div class=\"source-item\"><span>实例</span><a href=\"https://umamusume.com/\">Umamusume: Pretty Derby 国际官方网站</a><p>2026-10-07：国际英文版赛道群像、手机竖版KV、新闻、About和Gameplay；素材来自公开官方资源。</p></div><div class=\"source-item\"><span>实例</span><a href=\"https://apps.apple.com/us/app/umamusume-pretty-derby/id6480433538\">官方国际版 App Store 页面</a><p>官方国际版商店页确认产品与官网入口，区分国际宣传页和日本门户。</p></div><div class=\"source-item\"><span>规范</span><a href=\"https://www.w3.org/WAI/tutorials/carousels/\">W3C WAI：Carousels Tutorial</a><p>轮播应有用户控制、键盘、当前状态和变更反馈；本地Gameplay手动且非循环。</p></div><div class=\"source-item\"><span>规范</span><a href=\"https://www.w3.org/WAI/WCAG22/Understanding/animation-from-interactions.html\">W3C：Animation from Interactions</a><p>交互动效的减少动态规范，条款为 Level AAA。</p></div><div class=\"source-item\"><span>实例</span><a href=\"https://parts.umamusume.com/assets/js/inject-components.js\">官方公共导航组件样式/脚本</a><p>本次同页注入的公共导航：7% 宽度阈值、2.8/1.72 Logo 缩放，.3s(.19,1,.22,1)，Play Now 站内下载层。</p></div><p>参考站采集：2026-10-07。</p></section><section><h2>相关文档</h2><ul><li><a href=\"docs.html?file=docs%2Fcases%2Fuma-musume.md\">调研记录</a></li><li><a href=\"docs.html?file=demos%2Fcases%2Fuma-musume%2Ffidelity.md\">复现范围与差异</a></li><li><a href=\"demos/cases/uma-musume/assets-manifest.json\">素材来源清单</a></li><li><a href=\"docs.html?file=demos%2Fcases%2Fuma-musume%2FLICENSES.md\">许可原文索引</a></li></ul></section>"
   }
 }

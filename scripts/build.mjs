@@ -5,6 +5,9 @@ import {buildAgent} from './build-agent.mjs';
 import {assertRepositoryLineEndings} from './check-line-endings.mjs';
 import {documentCatalog} from './build-documents.mjs';
 import {loadAssetSources, serializeAssetSources} from './build-asset-sources.mjs';
+import {buildApp} from './build-app.mjs';
+import {loadPatterns} from './build-patterns.mjs';
+import {loadMaterials} from './build-materials.mjs';
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 assertRepositoryLineEndings(root);
 const entries = fs.readdirSync(path.join(root,'entries/cases')).filter(x=>x.endsWith('.json')).map(x=>JSON.parse(fs.readFileSync(path.join(root,'entries/cases',x),'utf8'))).sort((a,b)=>a.order-b.order);
@@ -23,17 +26,6 @@ const assetSources = loadAssetSources(root);
 assetSources.assets = Object.fromEntries(Object.entries(assetSources.assets).filter(([relative]) => fs.existsSync(path.join(root, relative))));
 fs.writeFileSync(path.join(root,'data/asset-sources.js'), serializeAssetSources(assetSources), 'utf8');
 fs.writeFileSync(path.join(root,'data/cases.js'), 'window.ATLAS_CASES = ' + JSON.stringify(entries,null,2) + ';\n');
-for (const file of ['index.html', 'cases.html']) {
-  const filePath = path.join(root, file);
-  const html = fs.readFileSync(filePath, 'utf8')
-    .replace(/(data-home-count="all">)\d+/g, `$1${entries.length}`)
-    .replace(/(data-home-count="studies">)\d+/g, `$1${referenceCount}`)
-    .replace(/(data-home-count="classics">)\d+/g, `$1${classicCount}`)
-    .replace(/(data-home-count="showcases">)\d+/g, `$1${showcaseCount}`)
-    .replace(/(id="(?:all-count|hero-count)">)\d+/g, `$1${entries.length}`)
-    .replace(/(id="results-label" role="status">全部风格 \/ )\d+( 个条目)/g, `$1${entries.length}$2`);
-  fs.writeFileSync(filePath, html, 'utf8');
-}
 fs.rmSync(path.join(root, 'prompts'), {recursive:true, force:true});
 fs.mkdirSync(path.join(root, 'prompts/cases'), {recursive:true});
 for (const entry of entries) {
@@ -59,10 +51,10 @@ const rows = entries.map(entry => {
 });
 fs.writeFileSync(path.join(root,'docs/cases','README.md'), `# 案例与代码索引\n\n由 entries/cases/ 自动生成，共 ${entries.length} 项。真实网站案例按原始网址与采集日期固定归档。国家/地区按具体机构与创作来源收录。详细比较见 [国别案例比较](../country-comparison.md)。\n\n| 顺序 | 案例 | 分类 | 国家/地区 | 类型 | 采集日期 | 可查询资料 |\n| --- | --- | --- | --- | --- | --- | --- |\n${rows.join('\n')}\n`, 'utf8');
 console.log(`Built ${entries.length} entries. Open index.html or run npm start.`);
-const {catalog} = buildAgent();
-console.log(`Built ${catalog.entryCount} Agent case bundles.`);
-console.log(`Built ${catalog.patterns?.patternCount || 0} curated design patterns with linked, verifiable sources.`);
-console.log(`Built ${catalog.materials?.materialCount || 0} source-backed materials.`);
+const patterns = loadPatterns({root, entries});
+const materials = loadMaterials({root});
+fs.writeFileSync(path.join(root,'data/patterns.js'), 'window.ATLAS_PATTERNS = ' + JSON.stringify(patterns,null,2) + ';\n', 'utf8');
+fs.writeFileSync(path.join(root,'data/materials.js'), 'window.ATLAS_MATERIALS = ' + JSON.stringify(materials,null,2) + ';\n', 'utf8');
 const documents = documentCatalog();
 const documentSources = [];
 for (const kind of ['cases', 'patterns', 'materials']) {
@@ -75,3 +67,8 @@ for (const kind of ['cases', 'patterns', 'materials']) {
 }
 fs.writeFileSync(path.join(root,'data/docs.js'), 'window.ATLAS_DOCUMENTS = ' + JSON.stringify(documents,null,2) + ';\nwindow.ATLAS_DOCUMENT_SOURCES = ' + JSON.stringify(documentSources,null,2) + ';\n', 'utf8');
 console.log(`Built ${documents.length} public Markdown documents.`);
+await buildApp();
+const {catalog} = buildAgent();
+console.log(`Built ${catalog.entryCount} Agent case bundles.`);
+console.log(`Built ${catalog.patterns?.patternCount || 0} curated design patterns with linked, verifiable sources.`);
+console.log(`Built ${catalog.materials?.materialCount || 0} source-backed materials.`);

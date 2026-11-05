@@ -327,16 +327,76 @@
       "role": "context"
     },
     {
+      "path": "site/app/domain/case-notes.mjs",
+      "role": "context"
+    },
+    {
+      "path": "site/app/theme-boot.js",
+      "role": "context"
+    },
+    {
+      "path": "site/client/AgentPage-EAS5PVE3.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/CatalogPage-SGVWTZ3D.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/DocsPage-UQJTEUEK.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/DocsPage-UQJTEUEK.js.LEGAL.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/client/HomePage-U2APYKG6.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/LICENSES.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/client/LabPage-6GKARTD3.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-4PVWGCRJ.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-SSO6R7NX.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-XZHNFY5X.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-YOWC6UHQ.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/chunk-YOWC6UHQ.js.LEGAL.txt",
+      "role": "license"
+    },
+    {
+      "path": "site/client/main.css",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/main.js",
+      "role": "vendor"
+    },
+    {
+      "path": "site/client/main.js.LEGAL.txt",
+      "role": "license"
+    },
+    {
       "path": "site/icons/favicon.svg",
       "role": "asset"
-    },
-    {
-      "path": "site/pages/docs/docs.css",
-      "role": "source"
-    },
-    {
-      "path": "site/pages/docs/docs.js",
-      "role": "source"
     },
     {
       "path": "site/runtime/asset-cache.js",
@@ -359,30 +419,6 @@
       "role": "source"
     },
     {
-      "path": "site/shared/site-footer.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/site-nav.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/site-shell.js",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/site-typography.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/theme-control.css",
-      "role": "source"
-    },
-    {
-      "path": "site/shared/theme.js",
-      "role": "source"
-    },
-    {
       "path": "site/vendor/LICENSES.txt",
       "role": "license"
     },
@@ -397,7 +433,7 @@
   ],
   "webNotes": {
     "format": "text/html",
-    "renderer": "site/pages/cases/atlas.js",
-    "content": "<section><h2>从要素看风格</h2><a class=\"element-lab-link\" href=\"lab.html?style=apple-product\">调配这个风格的设计要素</a><dl class=\"element-map\"><div class=\"\"><dt>配色角色</dt><dd>黑底展示材质，深灰划分章节；蓝色只用于行动入口。</dd></div><div class=\"\"><dt>字体排版</dt><dd>系统无衬线；亮点标题56px，设计章节最大96px；紧凑字距。</dd></div><div class=\"\"><dt>布局留白</dt><dd>44px全局导航、52px信息带、780px全宽登场；约1100px亮点摄影、满幅细节舞台。</dd></div><div class=\"\"><dt>图像图标</dt><dd>官方真实产品摄影、Apple标识和登场MP4，逐项来源可查。</dd></div><div class=\"\"><dt>线条形状</dt><dd>摄影大圆角38px、导航玻璃圆角20px、功能胶囊与蓝色购买胶囊。</dd></div><div class=\"\"><dt>信息层级</dt><dd>产品登场 → 核心亮点 → 可探索细节 → 镜头叙事。</dd></div><div class=\"\"><dt>动效反馈</dt><dd>官方登场MP4；五项亮点进度、暂停与末尾重播；4.984秒镜头WebM按220vh舞台滚动进度换帧，标题同步淡出。</dd></div><div class=\"coherence\"><dt>协调逻辑</dt><dd>同一硬件在不同尺度和状态中持续出现，黑底、巨字、胶囊和蓝色入口共同建立精确的产品叙事。</dd></div><div class=\"\"><dt>滚动结构</dt><dd>首屏 → Highlights → Design viewer → 相机滚动段 → 景深比较 → 摄影横向架子 → 性能 → 续航 → 机型比较 → 浅色共享功能/购物/材料架子 → 说明与页尾。较原页缩短内容量，保留主要交互类型和后段明暗交接。</dd></div></dl></section><section><h2>设计机制</h2><ul><li>全宽产品影像建立硬件辨识度，超大章节标题组织浏览节奏。</li><li>深黑舞台与深灰亮点章节交替，蓝色仅用于行动入口。</li><li>真实摄影承担产品证据，轮廓、镜头和材质不自行重绘。</li><li>悬浮局部导航保持章节与行动入口可达。</li></ul><h3>设计重点</h3><p>登场动画先呈现产品轮廓，亮点摄影突出产品收益，细节选择器在同一舞台展示机身、镜头、尺寸与控件。</p><h3>主题与情绪</h3><p>产品摄影章节固定黑/深灰；比较、购物和环境等后段切成浅色。没有全局深浅切换。</p></section><section><h2>页面交互</h2><ul><li>进入 → 官方产品 MP4 在黑色全宽舞台登场；重播只重放这段，不代替影片。</li><li>Highlights 进入视口 → 圆角摄影和进度控件带入，五项图库自动推进；手动选择/暂停/最后重播 → 按相机、续航、颜色、性能、Siri 依次建立产品重点。</li><li>Design 点击七项胶囊 → 同一舞台内展开左侧说明卡，当前胶囊被卡替换、其他胶囊下移、右侧摄影变化；卡内前后与关闭可逆；Colors 的四个色点联动真实摄影。</li><li>镜头长段向下/向上滚动 → 暂停的官方相机 WebM 按进度 seek，标题让出画面；后续性能和续航用官方静帧保持 sticky 媒体和前后文交接。</li><li>景深四选项 → 官方 f/1.48、1.8、2.8、4.0 摄影交叉变化；旧机型 select 更新比较对象；横向摄影架子保留原生滑动。</li><li>Watch the film → 黑色全屏影片层与原片有声控件；Explore 导航、亮点暂停与手机重排支持正常滚动/键盘。</li></ul><div class=\"behavior-block\"><span class=\"behavior-label\">显示主题</span><h3>固定主题</h3><p>产品摄影章节固定黑/深灰；比较、购物和环境等后段切成浅色。没有全局深浅切换。</p><p>以官方摄影和影片突出硬件主体，保留细节卡的展开/收起、图库进度、景深比较，以及滚动时媒体与文字的交接。</p></div><div class=\"behavior-block\"><span class=\"behavior-label\">声音与交互</span><h3>媒体声音</h3><p>首屏和滚动视频静音；Watch the film 点击打开官方 HLS 影片，172.38 秒，用户触发播放后有声音，可静音、调音量和全屏；关闭即暂停。</p><p>静音摄影先突出材质与镜头，点击影片后才加入音乐和讲解，避免读页时自动发声。</p></div></section><section><h2>约束与适用场景</h2><ul><li>保留当前来源的触发→响应→目的，不用通用淡入代替定义性交互。源浏览器显示 no-enhanced 布局，增强滚动分支未完成源站实机验证；本地镜头滚动依据公开 VideoScrub 数据实现并实测。</li><li>七项摄影以官方静帧替代实时 3D 旋转；说明卡 500/600ms、图库每项 5s、相机 seek/标题阈值、性能与续航静帧的缩放和交接为本地拟合。比较只显示所选对象并链接真实参数。原影片依赖 Apple 播放列表网络；出错提示原站入口。未复制交易、所有参数/图库或全部共享功能。</li><li>品牌与官方素材仅用于此个人参考库，并归档其来源与权利信息。</li><li>减少动态时保留可读内容、键盘焦点和手动选择。</li></ul><h3>适合</h3><p>消费电子 / 高端硬件 / 单一旗舰产品 / 家具与工业设计</p><h3>谨慎使用</h3><p>大量无关卡片 / 营销数据代替产品证明 / 自动轮播占用阅读时间</p></section><section><h2>设计参数</h2><div class=\"swatches\"><span class=\"swatch\"><i style=\"background:#000000\"></i>#000000</span><span class=\"swatch\"><i style=\"background:#1d1d1f\"></i>#1d1d1f</span><span class=\"swatch\"><i style=\"background:#f5f5f7\"></i>#f5f5f7</span><span class=\"swatch\"><i style=\"background:#0071e3\"></i>#0071e3</span></div><p><b>字体</b> · 系统无衬线；亮点标题56px，设计章节最大96px；紧凑字距。<br><b>布局</b> · 44px全局导航、52px信息带、780px全宽登场；约1100px亮点摄影、满幅细节舞台。<br><b>动效</b> · 官方登场MP4；五项亮点进度、暂停与末尾重播；4.984秒镜头WebM按220vh舞台滚动进度换帧，标题同步淡出。</p></section><section><div class=\"prompt-head\"><h2>可复用 Prompt</h2><button class=\"copy-button\" id=\"copy-prompt\">复制 Prompt</button></div><textarea class=\"prompt-box\" aria-label=\"可复用 Prompt\" readonly>以 https://www.apple.com/iphone-18-pro/ 在【采集日期】的 美国英文产品页 为单一依据，先观察初始入场、所有章节至页尾再返回、真实指针与手机操作。官方图片、字标与视频不重画，保持黑色产品舞台和后段浅色购物章节。首屏原始 MP4、Highlights 进度轮播、7 项 viewer inline 说明展开/胶囊折叠下移/图像变化/关闭/前后/配色、景深比较和机型选择均保留。用双向 sticky 段串联媒体先出现、标题淡出、说明接入；静帧替代视频也不能删除这种交接机制。横向摄影架子用原生滚动。Watch the film 必须是独立全屏官方影片，不用首屏重播冒充；声音只在用户触发后出现，关闭暂停。减少动态时给静态摄影和完整文案。用于【目标产品】时重新观察其真实操作与资产，不把本案例的拟合数值当作其他产品通用公式。</textarea><details><summary>负面约束 / Negative Prompt</summary><p>不要凭空重画品牌摄影；不要给全部页面套同一种淡入、圆角或整屏切幕；不要捏造原站音乐、全局主题、账户和远程执行；不要把未验证状态写成通过。</p></details><h3>改造练习</h3><p>保持黑色产品舞台，使用另一款真实产品摄影练习镜头与文案的滚动交接；先记录原站进度再调整曲线。</p></section><section class=\"case-patterns\" aria-labelledby=\"case-patterns-heading\"><div class=\"prompt-head\"><h2 id=\"case-patterns-heading\">关联巧思</h2><a href=\"patterns.html#patterns?source=apple-product\">按来源浏览全部 9 项</a></div><p>这些机制可独立借用，触发条件、约束与组合建议见各项详情。</p><ul><li><a href=\"patterns.html#pattern/film-overlay?source=apple-product\">主动观看的独立影片层</a><span>声音巧思 · 内容与组织</span></li><li><a href=\"patterns.html#pattern/highlight-progress-gallery?source=apple-product\">逐项亮点与可暂停进度</a><span>页面动效</span></li><li><a href=\"patterns.html#pattern/inline-product-detail-viewer?source=apple-product\">胶囊原位展开产品说明</a><span>内容与组织</span></li><li><a href=\"patterns.html#pattern/native-horizontal-shelf?source=apple-product\">原生横向内容架子</a><span>内容与组织</span></li><li><a href=\"patterns.html#pattern/photography-option-selector?source=apple-product\">选项与真实摄影对应</a><span>内容与组织</span></li><li><a href=\"patterns.html#pattern/product-entrance-film?source=apple-product\">真实产品影片建立首屏主角</a><span>页面动效</span></li><li><a href=\"patterns.html#pattern/scroll-video-scrub?source=apple-product\">滚动进度驱动视频帧</a><span>页面动效</span></li><li><a href=\"patterns.html#pattern/section-color-rhythm?source=apple-product\">整节配色形成阅读节奏</a><span>视觉巧思</span></li><li><a href=\"patterns.html#pattern/sticky-stage-handoff?source=apple-product\">同一媒体从主舞台交给说明</a><span>页面动效</span></li></ul></section><section><h2>来源与证据</h2><div class=\"source-item\"><span class=\"source-badge\">实例</span><a href=\"https://www.apple.com/iphone-18-pro/\" target=\"_blank\" rel=\"noopener noreferrer\">Apple iPhone 18 Pro 当前公开页面 </a><small>采集日期 2026-10-07；美国英文产品页</small></div><div class=\"source-item\"><span class=\"source-badge\">规范</span><a href=\"https://developer.apple.com/design/human-interface-guidelines/motion\" target=\"_blank\" rel=\"noopener noreferrer\">Apple HIG — Motion </a><small>动效目的和减少动态支持；应用规范向网页的迁移。</small></div><p>参考站采集：2026-10-07。</p></section><section><h2>相关文档</h2><ul><li><a href=\"docs.html?file=docs%2Fcases%2Fapple-product.md\" target=\"_blank\">调研记录</a></li><li><a href=\"docs.html?file=demos%2Fcases%2Fapple-product%2Ffidelity.md\" target=\"_blank\">复现范围与差异</a></li><li><a href=\"demos/cases/apple-product/assets-manifest.json\" target=\"_blank\">素材来源清单</a></li><li><a href=\"docs.html?file=demos%2Fcases%2Fapple-product%2FLICENSES.md\" target=\"_blank\">许可原文索引</a></li></ul></section>"
+    "renderer": "site/app/domain/case-notes.mjs",
+    "content": "<section><h2>从要素看风格</h2><a href=\"lab.html?style=apple-product\">调配这个风格的设计要素</a><dl><div><dt>配色角色</dt><dd>黑底展示材质，深灰划分章节；蓝色只用于行动入口。</dd></div><div><dt>字体排版</dt><dd>系统无衬线；亮点标题56px，设计章节最大96px；紧凑字距。</dd></div><div><dt>布局留白</dt><dd>44px全局导航、52px信息带、780px全宽登场；约1100px亮点摄影、满幅细节舞台。</dd></div><div><dt>图像图标</dt><dd>官方真实产品摄影、Apple标识和登场MP4，逐项来源可查。</dd></div><div><dt>线条形状</dt><dd>摄影大圆角38px、导航玻璃圆角20px、功能胶囊与蓝色购买胶囊。</dd></div><div><dt>信息层级</dt><dd>产品登场 → 核心亮点 → 可探索细节 → 镜头叙事。</dd></div><div><dt>动效反馈</dt><dd>官方登场MP4；五项亮点进度、暂停与末尾重播；4.984秒镜头WebM按220vh舞台滚动进度换帧，标题同步淡出。</dd></div><div><dt>协调逻辑</dt><dd>同一硬件在不同尺度和状态中持续出现，黑底、巨字、胶囊和蓝色入口共同建立精确的产品叙事。</dd></div><div><dt>滚动结构</dt><dd>首屏 → Highlights → Design viewer → 相机滚动段 → 景深比较 → 摄影横向架子 → 性能 → 续航 → 机型比较 → 浅色共享功能/购物/材料架子 → 说明与页尾。较原页缩短内容量，保留主要交互类型和后段明暗交接。</dd></div></dl></section><section><h2>设计机制</h2><ul><li>全宽产品影像建立硬件辨识度，超大章节标题组织浏览节奏。</li><li>深黑舞台与深灰亮点章节交替，蓝色仅用于行动入口。</li><li>真实摄影承担产品证据，轮廓、镜头和材质不自行重绘。</li><li>悬浮局部导航保持章节与行动入口可达。</li></ul><h3>设计重点</h3><p>登场动画先呈现产品轮廓，亮点摄影突出产品收益，细节选择器在同一舞台展示机身、镜头、尺寸与控件。</p><h3>主题与情绪</h3><p>产品摄影章节固定黑/深灰；比较、购物和环境等后段切成浅色。没有全局深浅切换。</p></section><section><h2>页面交互</h2><ul><li>进入 → 官方产品 MP4 在黑色全宽舞台登场；重播只重放这段，不代替影片。</li><li>Highlights 进入视口 → 圆角摄影和进度控件带入，五项图库自动推进；手动选择/暂停/最后重播 → 按相机、续航、颜色、性能、Siri 依次建立产品重点。</li><li>Design 点击七项胶囊 → 同一舞台内展开左侧说明卡，当前胶囊被卡替换、其他胶囊下移、右侧摄影变化；卡内前后与关闭可逆；Colors 的四个色点联动真实摄影。</li><li>镜头长段向下/向上滚动 → 暂停的官方相机 WebM 按进度 seek，标题让出画面；后续性能和续航用官方静帧保持 sticky 媒体和前后文交接。</li><li>景深四选项 → 官方 f/1.48、1.8、2.8、4.0 摄影交叉变化；旧机型 select 更新比较对象；横向摄影架子保留原生滑动。</li><li>Watch the film → 黑色全屏影片层与原片有声控件；Explore 导航、亮点暂停与手机重排支持正常滚动/键盘。</li></ul><h3>显示主题</h3><p>固定主题</p><p>产品摄影章节固定黑/深灰；比较、购物和环境等后段切成浅色。没有全局深浅切换。</p><p>以官方摄影和影片突出硬件主体，保留细节卡的展开/收起、图库进度、景深比较，以及滚动时媒体与文字的交接。</p><h3>声音与交互</h3><p>媒体声音</p><p>首屏和滚动视频静音；Watch the film 点击打开官方 HLS 影片，172.38 秒，用户触发播放后有声音，可静音、调音量和全屏；关闭即暂停。</p><p>静音摄影先突出材质与镜头，点击影片后才加入音乐和讲解，避免读页时自动发声。</p></section><section><h2>约束与适用场景</h2><ul><li>保留当前来源的触发→响应→目的，不用通用淡入代替定义性交互。源浏览器显示 no-enhanced 布局，增强滚动分支未完成源站实机验证；本地镜头滚动依据公开 VideoScrub 数据实现并实测。</li><li>七项摄影以官方静帧替代实时 3D 旋转；说明卡 500/600ms、图库每项 5s、相机 seek/标题阈值、性能与续航静帧的缩放和交接为本地拟合。比较只显示所选对象并链接真实参数。原影片依赖 Apple 播放列表网络；出错提示原站入口。未复制交易、所有参数/图库或全部共享功能。</li><li>品牌与官方素材仅用于此个人参考库，并归档其来源与权利信息。</li><li>减少动态时保留可读内容、键盘焦点和手动选择。</li></ul><h3>适合</h3><ul><li>消费电子</li><li>高端硬件</li><li>单一旗舰产品</li><li>家具与工业设计</li></ul><h3>谨慎使用</h3><ul><li>大量无关卡片</li><li>营销数据代替产品证明</li><li>自动轮播占用阅读时间</li></ul></section><section><h2>设计参数</h2><div class=\"swatches\"><span><i style=\"background:#000000\"></i>#000000</span><span><i style=\"background:#1d1d1f\"></i>#1d1d1f</span><span><i style=\"background:#f5f5f7\"></i>#f5f5f7</span><span><i style=\"background:#0071e3\"></i>#0071e3</span></div><p>字体 · 系统无衬线；亮点标题56px，设计章节最大96px；紧凑字距。</p><p>布局 · 44px全局导航、52px信息带、780px全宽登场；约1100px亮点摄影、满幅细节舞台。</p><p>动效 · 官方登场MP4；五项亮点进度、暂停与末尾重播；4.984秒镜头WebM按220vh舞台滚动进度换帧，标题同步淡出。</p></section><section><h2>可复用 Prompt</h2><textarea aria-label=\"可复用 Prompt\" readonly>以 https://www.apple.com/iphone-18-pro/ 在【采集日期】的 美国英文产品页 为单一依据，先观察初始入场、所有章节至页尾再返回、真实指针与手机操作。官方图片、字标与视频不重画，保持黑色产品舞台和后段浅色购物章节。首屏原始 MP4、Highlights 进度轮播、7 项 viewer inline 说明展开/胶囊折叠下移/图像变化/关闭/前后/配色、景深比较和机型选择均保留。用双向 sticky 段串联媒体先出现、标题淡出、说明接入；静帧替代视频也不能删除这种交接机制。横向摄影架子用原生滚动。Watch the film 必须是独立全屏官方影片，不用首屏重播冒充；声音只在用户触发后出现，关闭暂停。减少动态时给静态摄影和完整文案。用于【目标产品】时重新观察其真实操作与资产，不把本案例的拟合数值当作其他产品通用公式。</textarea><details><summary>负面约束 / Negative Prompt</summary><p>不要凭空重画品牌摄影；不要给全部页面套同一种淡入、圆角或整屏切幕；不要捏造原站音乐、全局主题、账户和远程执行；不要把未验证状态写成通过。</p></details><h3>改造练习</h3><p>保持黑色产品舞台，使用另一款真实产品摄影练习镜头与文案的滚动交接；先记录原站进度再调整曲线。</p></section><section><h2>关联巧思</h2><a href=\"patterns.html#patterns?source=apple-product\">按来源浏览全部 9 项</a><ul><li><a href=\"patterns.html#pattern/film-overlay?source=apple-product\">主动观看的独立影片层</a></li><li><a href=\"patterns.html#pattern/highlight-progress-gallery?source=apple-product\">逐项亮点与可暂停进度</a></li><li><a href=\"patterns.html#pattern/inline-product-detail-viewer?source=apple-product\">胶囊原位展开产品说明</a></li><li><a href=\"patterns.html#pattern/native-horizontal-shelf?source=apple-product\">原生横向内容架子</a></li><li><a href=\"patterns.html#pattern/photography-option-selector?source=apple-product\">选项与真实摄影对应</a></li><li><a href=\"patterns.html#pattern/product-entrance-film?source=apple-product\">真实产品影片建立首屏主角</a></li><li><a href=\"patterns.html#pattern/scroll-video-scrub?source=apple-product\">滚动进度驱动视频帧</a></li><li><a href=\"patterns.html#pattern/section-color-rhythm?source=apple-product\">整节配色形成阅读节奏</a></li><li><a href=\"patterns.html#pattern/sticky-stage-handoff?source=apple-product\">同一媒体从主舞台交给说明</a></li></ul></section><section><h2>来源与证据</h2><div class=\"source-item\"><span>实例</span><a href=\"https://www.apple.com/iphone-18-pro/\">Apple iPhone 18 Pro 当前公开页面</a><p>采集日期 2026-10-07；美国英文产品页</p></div><div class=\"source-item\"><span>规范</span><a href=\"https://developer.apple.com/design/human-interface-guidelines/motion\">Apple HIG — Motion</a><p>动效目的和减少动态支持；应用规范向网页的迁移。</p></div><p>参考站采集：2026-10-07。</p></section><section><h2>相关文档</h2><ul><li><a href=\"docs.html?file=docs%2Fcases%2Fapple-product.md\">调研记录</a></li><li><a href=\"docs.html?file=demos%2Fcases%2Fapple-product%2Ffidelity.md\">复现范围与差异</a></li><li><a href=\"demos/cases/apple-product/assets-manifest.json\">素材来源清单</a></li><li><a href=\"docs.html?file=demos%2Fcases%2Fapple-product%2FLICENSES.md\">许可原文索引</a></li></ul></section>"
   }
 }
