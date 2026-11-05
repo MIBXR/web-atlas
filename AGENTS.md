@@ -6,7 +6,7 @@
 
 内容更新后运行 `npm run build`，再运行 `npm run check`。
 
-新增测试代码、自动检查脚本或额外哈希机制，须先获仓库所有者明确授权。
+向仓库新增测试代码、测试数据、测试框架、自动检查脚本或额外完整性校验，须先获仓库所有者明确授权。
 
 `prompts/`、`agent/`、`data/`、`docs/cases/README.md` 和 README 计数块由构建生成，不手改；预览和原文素材按 CONTRIBUTING 管理。
 
