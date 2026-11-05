@@ -79,9 +79,9 @@
       graphic:{choice:state.graphic,meaning:graphicNames[state.graphic],asset:'本地原创SVG，无外部素材'},
       hierarchy:state.hierarchy,
       texture:state.texture,
-      motion:{type:'micro-motion',enabled:state.motion,reducedMotionPreferred:matchMedia('(prefers-reduced-motion:reduce)').matches,note:'仅协调实验的局部反馈；减少动态偏好优先，文字反馈始终存在'},
+      motion:{type:'micro-motion',enabled:state.motion,reducedMotionPreferred:matchMedia('(prefers-reduced-motion:reduce)').matches,note:'仅协调实验的局部反馈；文字反馈始终存在'},
       elementOrigins:clone(groupOrigins),
-      constraints:['内容先于装饰','颜色角色一致，状态不只依靠颜色','自然滚动，手机重排，键盘焦点可见','尊重prefers-reduced-motion','产品文案保持相同，图形呈现方式可单独切换']
+      constraints:['内容先于装饰','颜色角色一致','自然滚动，手机重排，键盘焦点可见','产品文案保持相同，图形呈现方式可单独切换']
     };
   }
   function syncInputs(){
