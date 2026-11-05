@@ -9,7 +9,7 @@
     "category": "字体与排版",
     "summary": "在同一原始字体中切换比例与等宽字形，调节笔触、字重、倾斜和草写；用界面标题、代码及海报三种试排理解用途。",
     "install": "本地 @font-face 加载 Recursive_VF_1.085.woff2；随字体保留 OFL 1.1 许可。",
-    "demoNote": "使用原始字体，提供五轴调节；三种原创排版均支持编辑、重置和复制 CSS。中文使用系统后备，字体不可用时明确显示后备状态。",
+    "demoNote": "五轴可变字体试排，支持编辑、重置和复制 CSS。中文使用系统后备，字体不可用时显示后备状态。",
     "tags": [
       "字体",
       "可变字体",
@@ -40,7 +40,7 @@
       "自定义轴需要可变字体支持；加载失败时采用明确标注的系统字体后备。",
       "主要支持拉丁文字及相关符号；中文由系统字体回退，不响应 Recursive 的 MONO、CASL、CRSV 等轴。",
       "MONO 会改变字宽；MONO 固定时，其他轴保持字体设计的横向度量，混排与实际换行仍需验证。",
-      "三套参数、文案和版式为本地原创组合；字号范围 16–88px 也是本地选择，不表示原作者推荐所有组合。",
+      "字号调节范围为 16–88px。",
       "本示例无自动动画和声音，不产生持续后台绘制；所有试排修改由用户输入触发。",
       "再分发保留版权和 OFL 1.1 完整文本，不单独出售字体；更换版本或生成字体子集时重新核对许可与字形范围。"
     ],
@@ -67,25 +67,25 @@
       {
         "title": "官方 v1.085 发布",
         "url": "https://github.com/arrowtype/recursive/releases/tag/v1.085",
-        "note": "2022-06-30 发布，固定版本源头；核验时 GitHub latest release 返回这一版本。",
+        "note": "v1.085 发布于 2022-06-30。",
         "evidence": "source"
       },
       {
         "title": "Recursive 官方交互样张",
         "url": "https://www.recursive.design/",
-        "note": "真实浏览器选择 Mono Casual ExtraBlack Italic 后，页面显示 MONO 1、CASL 1、wght 1000、slnt -15、CRSV 1；此观察仅涵盖该预设与页面状态。",
+        "note": "Mono Casual ExtraBlack Italic 预设显示 MONO 1、CASL 1、wght 1000、slnt -15、CRSV 1。",
         "evidence": "observed"
       },
       {
         "title": "完整 WOFF2 原始文件",
         "url": "https://github.com/arrowtype/recursive/blob/5f4be025122d72d4710267e959128e8986ebe435/fonts/ArrowType-Recursive-1.085/Recursive_Web/woff2_variable/Recursive_VF_1.085.woff2",
-        "note": "本地字体保持原字节，718,680 字节，SHA256 与来源说明一同保存。",
+        "note": "完整五轴可变 WOFF2 字体文件。",
         "evidence": "source"
       },
       {
         "title": "v1.084 数学希腊字母范围",
         "url": "https://github.com/arrowtype/recursive/releases/tag/v1.084",
-        "note": "上游明确增加部分数学用希腊字母，不能据此声称完整希腊文字覆盖。",
+        "note": "v1.084 增加部分数学用希腊字母。",
         "evidence": "source"
       }
     ],
@@ -187,7 +187,7 @@
     {
       "path": "prompts/materials/recursive.md",
       "role": "prompt",
-      "content": "# Recursive · 五轴可变字体 · 复用 Prompt\n\n[结构化条目](../../entries/materials/recursive.json)\n\n为现有页面选择 Recursive v1.085 的一种具体排版用途：拉丁界面标题、等宽代码或个性海报。先读取字体试排源码与原始 OFL，保留完整 WOFF2 并通过本地 @font-face 声明 300–1000 字重范围。根据内容设置 MONO、CASL、wght、slnt 和 CRSV；CRSV 使用 0、0.5、1，展示标题优先 CASL/slnt 端点。以真实 DOM 文字排版，保留中文系统后备并检查混排行高、字重和换行，不将系统字体伪装成 Recursive。字体下载失败时继续阅读，固定字符宽度只在 MONO 1 的覆盖字形上判断。所有界面文字至少 12px，不通过缩放压小。尊重用户减少动态偏好，无需为静态试排制造自动动画。标明原创版式与上游字体的边界，完整导出时携带字体、许可和来源信息。\n\n## 制作约束\n\n- 固定使用 v1.085 的完整 WOFF2，718,680 字节；未修改、子集化或转码。\n- 自定义轴需要可变字体支持；加载失败时采用明确标注的系统字体后备。\n- 主要支持拉丁文字及相关符号；中文由系统字体回退，不响应 Recursive 的 MONO、CASL、CRSV 等轴。\n- MONO 会改变字宽；MONO 固定时，其他轴保持字体设计的横向度量，混排与实际换行仍需验证。\n- 三套参数、文案和版式为本地原创组合；字号范围 16–88px 也是本地选择，不表示原作者推荐所有组合。\n- 本示例无自动动画和声音，不产生持续后台绘制；所有试排修改由用户输入触发。\n- 再分发保留版权和 OFL 1.1 完整文本，不单独出售字体；更换版本或生成字体子集时重新核对许可与字形范围。\n"
+      "content": "# Recursive · 五轴可变字体 · 复用 Prompt\n\n[结构化条目](../../entries/materials/recursive.json)\n\n为现有页面选择 Recursive v1.085 的一种具体排版用途：拉丁界面标题、等宽代码或个性海报。先读取字体试排源码与原始 OFL，保留完整 WOFF2 并通过本地 @font-face 声明 300–1000 字重范围。根据内容设置 MONO、CASL、wght、slnt 和 CRSV；CRSV 使用 0、0.5、1，展示标题优先 CASL/slnt 端点。以真实 DOM 文字排版，保留中文系统后备并检查混排行高、字重和换行，不将系统字体伪装成 Recursive。字体下载失败时继续阅读，固定字符宽度只在 MONO 1 的覆盖字形上判断。所有界面文字至少 12px，不通过缩放压小。尊重用户减少动态偏好，无需为静态试排制造自动动画。标明原创版式与上游字体的边界，完整导出时携带字体、许可和来源信息。\n\n## 制作约束\n\n- 固定使用 v1.085 的完整 WOFF2，718,680 字节；未修改、子集化或转码。\n- 自定义轴需要可变字体支持；加载失败时采用明确标注的系统字体后备。\n- 主要支持拉丁文字及相关符号；中文由系统字体回退，不响应 Recursive 的 MONO、CASL、CRSV 等轴。\n- MONO 会改变字宽；MONO 固定时，其他轴保持字体设计的横向度量，混排与实际换行仍需验证。\n- 字号调节范围为 16–88px。\n- 本示例无自动动画和声音，不产生持续后台绘制；所有试排修改由用户输入触发。\n- 再分发保留版权和 OFL 1.1 完整文本，不单独出售字体；更换版本或生成字体子集时重新核对许可与字形范围。\n"
     },
     {
       "path": "demos/materials/recursive/LICENSES.md",

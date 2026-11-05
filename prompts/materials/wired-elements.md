@@ -8,6 +8,5 @@
 
 - 锁定最新非预发布版本 2.1.2。
 - 需要 JavaScript、Custom Elements 和 Shadow DOM；自托管官方完整 ESM，运行时不依赖 CDN。
-- 随机手绘线条来自原库；页面场景、文案、配色与联动为本地原创组合。
 - 标签、复选框、滑块和开关可通过键盘操作；为内部开关和滑块补充可访问名称。
 - 保留 Wired / RoughJS MIT 与 bundle 内 Lit / lit-html BSD 3-Clause 许可。

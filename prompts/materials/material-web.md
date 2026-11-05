@@ -6,10 +6,9 @@
 
 ## 制作约束
 
-- 固定 @material/web 2.5.0；官方 README 在核验时仍标注维护模式、等待新维护者。
-- 官方组件采用 Web Components/Lit，不等同于 Angular Material 或 MUI；本条目不覆盖整个 Material Design 规范。
+- 固定 @material/web 2.5.0；官方库处于维护模式，等待新维护者。
+- 提供 Material 3 Web Components，采用 Lit 运行时。
 - 本地 vendor 合并了所选官方组件、CSS-in-JS 及 Lit/tslib 依赖，保留许可和锁文件；更换版本须重新核验 API 与 Shadow DOM 适配。
-- 以 HTTP/HTTPS 提供 ES module；模块失败时仅显示明确标注的静态说明，不声称真实组件已运行。
-- 配色、4–28px 圆角范围、中文内容与四种业务组合为本地原创演示，未接入服务端、持久化或真实账户。
+- 以 HTTP/HTTPS 提供 ES module；模块加载失败时显示静态说明。
+- 按钮圆角调节范围为 4–28px。
 - 启用系统的减少动态设置或手动选择减少动态时，关闭局部过渡和 ripple，dialog 使用 quick；滑块值标签取消缩放过渡以保持文字至少12px；无持续动画或后台计时器。
-- 浏览器实测仅覆盖 Chromium 桌面及390px窄屏；Safari、Firefox、真实触屏与屏幕阅读器仍需在目标项目中验证。

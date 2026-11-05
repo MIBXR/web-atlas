@@ -14,7 +14,7 @@
   ],
   "summary": "用真实的 Windows 98 风格 CSS 组合设置窗口、可筛选素材目录与可暂停的进度演示；保留复古边框，同时提高文字与触控可用性。",
   "install": "npm install 98.css@0.1.21",
-  "demoNote": "原库提供 CSS，本地代码提供标签切换、筛选与模拟进度；不会修改系统或执行下载。",
+  "demoNote": "原库提供 CSS，示例代码负责标签切换、筛选与进度演示。",
   "tags": [
     "98.css",
     "Windows 98",
@@ -138,7 +138,7 @@
       "id": "progress",
       "title": "传输进度",
       "component": "progress-indicator / segmented",
-      "summary": "切换实心或分段进度，开始、暂停、单步、重置；不执行真实下载。",
+      "summary": "切换实心或分段进度，开始、暂停、单步和重置。",
       "entrypoint": "demos/materials/98-css/index.html?demo=progress",
       "parameters": [
         {

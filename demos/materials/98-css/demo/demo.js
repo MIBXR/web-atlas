@@ -89,5 +89,6 @@ if (query.get('fallback') === '1') {
   reducedMotion.addEventListener('change', () => { if (reducedMotion.matches) pause(); });
   window.addEventListener('pagehide',pause);
   selectDemo(query.get('demo'));
-  $('runtime-status').textContent = styleReady ? '真实 98.css 0.1.21 · 本地交互 · 窗口与控件字号已适配' : '样式未加载 · 使用原生控件与本地布局；98.css 复古外观不可用。';
+  $('runtime-status').hidden = styleReady;
+  if (!styleReady) $('runtime-status').textContent = '98.css 样式未加载，当前使用原生控件。';
 }

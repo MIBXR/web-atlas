@@ -236,7 +236,7 @@ window.ATLAS_MATERIALS = [
     ],
     "summary": "用真实的 Windows 98 风格 CSS 组合设置窗口、可筛选素材目录与可暂停的进度演示；保留复古边框，同时提高文字与触控可用性。",
     "install": "npm install 98.css@0.1.21",
-    "demoNote": "原库提供 CSS，本地代码提供标签切换、筛选与模拟进度；不会修改系统或执行下载。",
+    "demoNote": "原库提供 CSS，示例代码负责标签切换、筛选与进度演示。",
     "tags": [
       "98.css",
       "Windows 98",
@@ -360,7 +360,7 @@ window.ATLAS_MATERIALS = [
         "id": "progress",
         "title": "传输进度",
         "component": "progress-indicator / segmented",
-        "summary": "切换实心或分段进度，开始、暂停、单步、重置；不执行真实下载。",
+        "summary": "切换实心或分段进度，开始、暂停、单步和重置。",
         "entrypoint": "demos/materials/98-css/index.html?demo=progress",
         "parameters": [
           {
@@ -391,7 +391,7 @@ window.ATLAS_MATERIALS = [
     "category": "组件与效果",
     "summary": "Google Material Design 的官方 Web Components 实现；本地 Demo 用色彩角色、圆角、浮动标签和状态层演示操作层级、表单验证、偏好设置与确认对话框。",
     "install": "npm install @material/web@2.5.0；本地 Demo 已捆绑运行依赖，直接以 HTTP/HTTPS 打开。",
-    "demoNote": "四套原创业务组合使用真实官方组件，可调配色、明暗与按钮圆角。库处于维护模式；输入和状态仅留在当前页面。",
+    "demoNote": "四种组合演示官方组件的按钮层级、表单验证、偏好设置与对话框，可调配色、明暗和按钮圆角。库处于维护模式。",
     "tags": [
       "Google",
       "Google Material Design",
@@ -420,13 +420,12 @@ window.ATLAS_MATERIALS = [
       "需要旧浏览器而不准备原生 DOM 后备的关键流程"
     ],
     "constraints": [
-      "固定 @material/web 2.5.0；官方 README 在核验时仍标注维护模式、等待新维护者。",
-      "官方组件采用 Web Components/Lit，不等同于 Angular Material 或 MUI；本条目不覆盖整个 Material Design 规范。",
+      "固定 @material/web 2.5.0；官方库处于维护模式，等待新维护者。",
+      "提供 Material 3 Web Components，采用 Lit 运行时。",
       "本地 vendor 合并了所选官方组件、CSS-in-JS 及 Lit/tslib 依赖，保留许可和锁文件；更换版本须重新核验 API 与 Shadow DOM 适配。",
-      "以 HTTP/HTTPS 提供 ES module；模块失败时仅显示明确标注的静态说明，不声称真实组件已运行。",
-      "配色、4–28px 圆角范围、中文内容与四种业务组合为本地原创演示，未接入服务端、持久化或真实账户。",
-      "启用系统的减少动态设置或手动选择减少动态时，关闭局部过渡和 ripple，dialog 使用 quick；滑块值标签取消缩放过渡以保持文字至少12px；无持续动画或后台计时器。",
-      "浏览器实测仅覆盖 Chromium 桌面及390px窄屏；Safari、Firefox、真实触屏与屏幕阅读器仍需在目标项目中验证。"
+      "以 HTTP/HTTPS 提供 ES module；模块加载失败时显示静态说明。",
+      "按钮圆角调节范围为 4–28px。",
+      "启用系统的减少动态设置或手动选择减少动态时，关闭局部过渡和 ripple，dialog 使用 quick；滑块值标签取消缩放过渡以保持文字至少12px；无持续动画或后台计时器。"
     ],
     "upstream": {
       "repository": "material-components/material-web",
@@ -451,7 +450,7 @@ window.ATLAS_MATERIALS = [
       {
         "title": "@material/web 2.5.0 npm 元数据",
         "url": "https://registry.npmjs.org/@material/web/2.5.0",
-        "note": "版本、gitHead、依赖范围、官方 tarball 与 integrity。核验时 latest 为2.5.0。",
+        "note": "版本、gitHead、依赖范围与官方发布包的依据。",
         "evidence": "source"
       },
       {
@@ -463,13 +462,13 @@ window.ATLAS_MATERIALS = [
       {
         "title": "按钮文档与实际交互样例",
         "url": "https://material-web.dev/components/button/",
-        "note": "读取五种按钮层级、SVG icon slot、disabled及形状token；浏览器打开官方stories并点击真实按钮。本地计划卡不是官网样例复刻。",
+        "note": "五种按钮层级、SVG icon slot、disabled 与形状 token 的依据。",
         "evidence": "observed"
       },
       {
         "title": "文本框与验证接口",
         "url": "https://material-web.dev/components/text-field/",
-        "note": "required、type=email、maxlength、checkValidity、error和errorText；本地校验流程与中文错误文案为原创组合。",
+        "note": "required、type=email、maxlength、checkValidity、error 与 errorText 的用法。",
         "evidence": "source"
       },
       {
@@ -499,7 +498,7 @@ window.ATLAS_MATERIALS = [
       {
         "title": "固定版本浏览器支持声明",
         "url": "https://github.com/material-components/material-web/blob/b4de401eb665ec63474f39319a4ba8f2145974cc/docs/support.md",
-        "note": "上游支持目标为Chrome/Edge120+、Firefox119+、Safari16.4+；这是官方声明，不等于本次跨浏览器实测。",
+        "note": "上游声明支持 Chrome/Edge 120+、Firefox 119+、Safari 16.4+。",
         "evidence": "source"
       }
     ],
@@ -615,7 +614,7 @@ window.ATLAS_MATERIALS = [
     "category": "字体与排版",
     "summary": "在同一原始字体中切换比例与等宽字形，调节笔触、字重、倾斜和草写；用界面标题、代码及海报三种试排理解用途。",
     "install": "本地 @font-face 加载 Recursive_VF_1.085.woff2；随字体保留 OFL 1.1 许可。",
-    "demoNote": "使用原始字体，提供五轴调节；三种原创排版均支持编辑、重置和复制 CSS。中文使用系统后备，字体不可用时明确显示后备状态。",
+    "demoNote": "五轴可变字体试排，支持编辑、重置和复制 CSS。中文使用系统后备，字体不可用时显示后备状态。",
     "tags": [
       "字体",
       "可变字体",
@@ -646,7 +645,7 @@ window.ATLAS_MATERIALS = [
       "自定义轴需要可变字体支持；加载失败时采用明确标注的系统字体后备。",
       "主要支持拉丁文字及相关符号；中文由系统字体回退，不响应 Recursive 的 MONO、CASL、CRSV 等轴。",
       "MONO 会改变字宽；MONO 固定时，其他轴保持字体设计的横向度量，混排与实际换行仍需验证。",
-      "三套参数、文案和版式为本地原创组合；字号范围 16–88px 也是本地选择，不表示原作者推荐所有组合。",
+      "字号调节范围为 16–88px。",
       "本示例无自动动画和声音，不产生持续后台绘制；所有试排修改由用户输入触发。",
       "再分发保留版权和 OFL 1.1 完整文本，不单独出售字体；更换版本或生成字体子集时重新核对许可与字形范围。"
     ],
@@ -673,25 +672,25 @@ window.ATLAS_MATERIALS = [
       {
         "title": "官方 v1.085 发布",
         "url": "https://github.com/arrowtype/recursive/releases/tag/v1.085",
-        "note": "2022-06-30 发布，固定版本源头；核验时 GitHub latest release 返回这一版本。",
+        "note": "v1.085 发布于 2022-06-30。",
         "evidence": "source"
       },
       {
         "title": "Recursive 官方交互样张",
         "url": "https://www.recursive.design/",
-        "note": "真实浏览器选择 Mono Casual ExtraBlack Italic 后，页面显示 MONO 1、CASL 1、wght 1000、slnt -15、CRSV 1；此观察仅涵盖该预设与页面状态。",
+        "note": "Mono Casual ExtraBlack Italic 预设显示 MONO 1、CASL 1、wght 1000、slnt -15、CRSV 1。",
         "evidence": "observed"
       },
       {
         "title": "完整 WOFF2 原始文件",
         "url": "https://github.com/arrowtype/recursive/blob/5f4be025122d72d4710267e959128e8986ebe435/fonts/ArrowType-Recursive-1.085/Recursive_Web/woff2_variable/Recursive_VF_1.085.woff2",
-        "note": "本地字体保持原字节，718,680 字节，SHA256 与来源说明一同保存。",
+        "note": "完整五轴可变 WOFF2 字体文件。",
         "evidence": "source"
       },
       {
         "title": "v1.084 数学希腊字母范围",
         "url": "https://github.com/arrowtype/recursive/releases/tag/v1.084",
-        "note": "上游明确增加部分数学用希腊字母，不能据此声称完整希腊文字覆盖。",
+        "note": "v1.084 增加部分数学用希腊字母。",
         "evidence": "source"
       }
     ],
@@ -798,9 +797,9 @@ window.ATLAS_MATERIALS = [
       "demos/materials/wired-elements/demo/demo.css",
       "demos/materials/wired-elements/demo/demo.js"
     ],
-    "summary": "用真实手绘 Web Components 组合任务清单、偏好面板与概念卡片；让草图在保留讨论感的同时具备可验证的状态。",
+    "summary": "用手绘 Web Components 组合任务清单、偏好面板与概念卡片，让草图的勾选、切换和层级都能实际操作。",
     "install": "npm install wired-elements@2.1.2",
-    "demoNote": "三个本地原创场景直接运行官方组件。无自动动画。",
+    "demoNote": "三个场景演示任务勾选、偏好设置和概念卡片。",
     "tags": [
       "Wired Elements",
       "Web Components",
@@ -826,7 +825,6 @@ window.ATLAS_MATERIALS = [
     "constraints": [
       "锁定最新非预发布版本 2.1.2。",
       "需要 JavaScript、Custom Elements 和 Shadow DOM；自托管官方完整 ESM，运行时不依赖 CDN。",
-      "随机手绘线条来自原库；页面场景、文案、配色与联动为本地原创组合。",
       "标签、复选框、滑块和开关可通过键盘操作；为内部开关和滑块补充可访问名称。",
       "保留 Wired / RoughJS MIT 与 bundle 内 Lit / lit-html BSD 3-Clause 许可。"
     ],
@@ -859,7 +857,7 @@ window.ATLAS_MATERIALS = [
       {
         "title": "Wired Elements 官方组件演示",
         "url": "https://wiredjs.com/showcase",
-        "note": "浏览器实际操作 wired-checkbox，从未选中到选中；不能据此宣称整套组件均已验证。",
+        "note": "wired-checkbox 的未选中与选中状态。",
         "evidence": "observed"
       },
       {
@@ -898,7 +896,7 @@ window.ATLAS_MATERIALS = [
         "id": "checklist",
         "title": "任务清单",
         "component": "wired-checkbox / wired-progress / wired-button",
-        "summary": "勾选真实手绘复选框时，任务计数与进度条同步更新；可恢复默认状态。",
+        "summary": "勾选手绘复选框时，任务计数与进度条同步更新；可恢复默认状态。",
         "entrypoint": "demos/materials/wired-elements/index.html?demo=checklist",
         "parameters": [
           {
@@ -917,7 +915,7 @@ window.ATLAS_MATERIALS = [
         "id": "preferences",
         "title": "偏好面板",
         "component": "wired-toggle / wired-checkbox",
-        "summary": "设置专注模式与摘要，再应用到当前示例；不修改系统或保存偏好。",
+        "summary": "设置专注模式与摘要，再应用到当前预览。",
         "entrypoint": "demos/materials/wired-elements/index.html?demo=preferences",
         "parameters": [
           {
@@ -931,7 +929,7 @@ window.ATLAS_MATERIALS = [
         "id": "card",
         "title": "概念卡片",
         "component": "wired-card / wired-slider",
-        "summary": "调整真实手绘卡片的层级与填色，比较概念信息的主次。",
+        "summary": "调整手绘卡片的层级与填色，比较概念信息的主次。",
         "entrypoint": "demos/materials/wired-elements/index.html?demo=card",
         "parameters": [
           {
@@ -1045,7 +1043,7 @@ window.ATLAS_MATERIALS = [
       {
         "title": "MORS² 标志固定来源",
         "url": "https://github.com/jinruozai/HTML-Light-Demo/blob/0a0bd3ba53194fff68db78654fc6857ab3faee29/public/mors-logo.svg",
-        "note": "本地 mors-logo.svg 保持该文件原始字节；品牌、文案、标志与美术方向署名 @kaolti。",
+        "note": "MORS² 标志；品牌、文案与美术方向署名 @kaolti。",
         "evidence": "source"
       },
       {
@@ -1224,6 +1222,8 @@ window.ATLAS_MATERIALS = [
     "gallery": [
       {
         "path": "previews/materials/beautiful-article/tools.webp",
+        "width": 1248,
+        "height": 1670,
         "caption": "Agent Tools 设计的最佳实践：Anthropic 工程团队关于 Tools 的五条原则，与一套评测驱动的方法；主题 Freddie · 长文 · 21 分钟",
         "kind": "work",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/tools.webp",
@@ -1231,6 +1231,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/beautiful-article/skill.webp",
+        "width": 1174,
+        "height": 1556,
         "caption": "Agent Skill 是如何进化的？：把 Skill 文档当成被训练的对象，而不是被复制粘贴的 prompt；主题 Freddie · 解释文 · 8 分钟",
         "kind": "work",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/skill.webp",
@@ -1238,6 +1240,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/beautiful-article/harness.webp",
+        "width": 1160,
+        "height": 1548,
         "caption": "Agent Harness 的解剖图：智能在模型里；让智能变得有用的，是它周围的那套系统；主题 Vignelli · 长文 · 12 分钟",
         "kind": "work",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/harness.webp",
@@ -1245,6 +1249,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/beautiful-article/prompt-cache.webp",
+        "width": 1206,
+        "height": 1606,
         "caption": "提示词缓存对 Agent 有多重要？：缓存命中率是 Agent 的 SLO，Claude Code 团队的反直觉经验；主题 Bayer · 长文 · 15 分钟",
         "kind": "work",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/prompt-cache.webp",
@@ -1252,6 +1258,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/beautiful-article/context.webp",
+        "width": 1158,
+        "height": 1546,
         "caption": "面向 Agent 的高效上下文工程：本文探讨如何高效地筛选与管理驱动 AI Agent 运转的上下文；主题 Tufte · 长文 · 16 分钟",
         "kind": "work",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/context.webp",
@@ -1259,6 +1267,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/beautiful-article/transformer.webp",
+        "width": 1162,
+        "height": 1550,
         "caption": "Attention Is All You Need：一篇重塑现代 AI 的论文，逐层拆给你看；主题 Tufte · 长文 · 30 分钟",
         "kind": "work",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/transformer.webp",
@@ -1266,6 +1276,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/beautiful-article/agent-eval.webp",
+        "width": 1162,
+        "height": 1550,
         "caption": "把 AI Agent 的评测讲清楚：让 Agent 有用的那些能力，恰恰让它难以评测 —— 来自 Anthropic 的指南；主题 Tufte · 长文 · 25 分钟",
         "kind": "work",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/agent-eval.webp",
@@ -1273,6 +1285,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/beautiful-article/agent-loop-codex.webp",
+        "width": 1208,
+        "height": 1612,
         "caption": "Codex 的 Agent Loop 是怎么做的？：OpenAI 官方分享：在 Responses API 之上，一条对话是如何被反复\"展开\"的；主题 Sottsass · 长文 · 18 分钟",
         "kind": "work",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/agent-loop-codex.webp",
@@ -1280,6 +1294,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/beautiful-article/theam-tufte.webp",
+        "width": 1246,
+        "height": 1660,
         "caption": "Tufte · Data-Ink：Edward Tufte 数据墨水，证据优先，发丝级图表与最朴素的版式。",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/theam-tufte.webp",
@@ -1288,6 +1304,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/beautiful-article/theam-press.webp",
+        "width": 1246,
+        "height": 1662,
         "caption": "Press · 书卷：Stripe Press 式书卷长读物：会落定的标题、氧化血红首字母、纯正文之美。",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/theam-press.webp",
@@ -1296,6 +1314,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/beautiful-article/theam-shannon.webp",
+        "width": 1246,
+        "height": 1662,
         "caption": "Shannon · 工程暗色：贝尔实验室技术论文血统，暗底黄金信号、回压依赖、夜间作战气质。",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/theam-shannon.webp",
@@ -1304,6 +1324,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/beautiful-article/theam-vignelli.webp",
+        "width": 1246,
+        "height": 1660,
         "caption": "Vignelli · 瑞士：Massimo Vignelli 网格至上、grotesque 字族、瑞士红只承载结构。",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/theam-vignelli.webp",
@@ -1312,6 +1334,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/beautiful-article/knuth.png",
+        "width": 1246,
+        "height": 1662,
         "caption": "Knuth · 学术：Donald Knuth / Computer Modern，编号小节、命题与证明、arXiv 草稿气质。",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/knuth.png",
@@ -1320,6 +1344,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/beautiful-article/theam-freddie.webp",
+        "width": 1246,
+        "height": 1660,
         "caption": "Freddie · 暖黄：Mailchimp Freddie 黑字荧光，亲和插画 + 不端着的产品上手语气。",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/theam-freddie.webp",
@@ -1328,6 +1354,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/beautiful-article/theam-andy.webp",
+        "width": 1248,
+        "height": 1660,
         "caption": "Andy · 静谧：柔软圆润、呼吸-神经跷跷板，让人慢下来的练习气质。",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/theam-andy.webp",
@@ -1336,6 +1364,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/beautiful-article/theam-bodoni.webp",
+        "width": 1246,
+        "height": 1662,
         "caption": "Bodoni · 报刊：高对比 Didone 报刊气质，黑白大报、对折线之上的分量。",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/theam-bodoni.webp",
@@ -1344,6 +1374,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/beautiful-article/theam-bayer.webp",
+        "width": 1244,
+        "height": 1660,
         "caption": "Bayer · 包豪斯：Herbert Bayer 包豪斯三原色几何，形有性格、色有重量。",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/theam-bayer.webp",
@@ -1352,6 +1384,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/beautiful-article/theam-fuller.webp",
+        "width": 1246,
+        "height": 1662,
         "caption": "Fuller · 蓝图：Buckminster Fuller 工程蓝图，方格纸拓扑、令牌桶模拟，可照着实现。",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/theam-fuller.webp",
@@ -1360,6 +1394,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/beautiful-article/theam-sottsass.webp",
+        "width": 1248,
+        "height": 1662,
         "caption": "Sottsass · 孟菲斯：Memphis 80s 撞色，黑描边、硬投影、轻微旋转的不正经语法。",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/article/theam-sottsass.webp",
@@ -1764,6 +1800,8 @@ window.ATLAS_MATERIALS = [
     "gallery": [
       {
         "path": "previews/materials/web-design-engineer/apple-hig.webp",
+        "width": 3840,
+        "height": 1918,
         "caption": "apple-hig：SF Pro Display、慷慨留白、柔和阴影 —— Apple Store 的语气；适合 硬件产品页、设备发布、高端消费电子",
         "kind": "style",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/apple-hig.webp",
@@ -1771,6 +1809,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/web-design-engineer/muji-kenya-hara.webp",
+        "width": 3840,
+        "height": 1916,
         "caption": "muji-kenya-hara：空作为画布、灰与纸、器物悬浮在空气中拍摄；适合 器物目录、家居品牌、慢生活店铺",
         "kind": "style",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/muji-kenya-hara.webp",
@@ -1778,6 +1818,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/web-design-engineer/aesop.webp",
+        "width": 3840,
+        "height": 1918,
         "caption": "aesop：暖驼黄、鼠尾草 & 琥珀，衬线正文像文学杂志；适合 药剂师产品页、美妆 & 健康、独立零售",
         "kind": "style",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/aesop.webp",
@@ -1785,6 +1827,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/web-design-engineer/dieter-rams-braun.webp",
+        "width": 3840,
+        "height": 1918,
         "caption": "dieter-rams-braun：十大设计原则、灰阶网格、技术正投影 —— 功能即形式；适合 工业设计档案、硬件 spec、品牌原则页",
         "kind": "style",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/dieter-rams-braun.webp",
@@ -1792,6 +1836,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/web-design-engineer/monocle-magazine.webp",
+        "width": 3840,
+        "height": 1918,
         "caption": "monocle-magazine：世界主义简报、深海蓝与珊瑚色、脚注式好奇心；适合 杂志目录、城市 / 旅行简报、生活方式期刊",
         "kind": "style",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/monocle-magazine.webp",
@@ -1799,6 +1845,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/web-design-engineer/pentagram.webp",
+        "width": 3840,
+        "height": 1918,
         "caption": "pentagram：一种大字体即艺术品、网格作骨架、仅墨色与底色；适合 标识样本、字体主导的作品集、画廊公告",
         "kind": "style",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/pentagram.webp",
@@ -1806,6 +1854,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/web-design-engineer/vignelli-swiss-helvetica.webp",
+        "width": 3840,
+        "height": 1918,
         "caption": "vignelli-swiss-helvetica：全字号 Helvetica、六种主色、纽约地铁信号图；适合 公共指示 & 交通、公共信息海报、品牌系统样本",
         "kind": "style",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/vignelli-swiss-helvetica.webp",
@@ -1813,6 +1863,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/web-design-engineer/bloomberg-terminal.webp",
+        "width": 3840,
+        "height": 1918,
         "caption": "bloomberg-terminal：深海军蓝底上的琥珀色、全等宽、密度高于舒适；适合 交易仪表盘、运维控制台、高密度专业工具",
         "kind": "style",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/bloomberg-terminal.webp",
@@ -1820,6 +1872,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/web-design-engineer/tufte-dataink.webp",
+        "width": 3840,
+        "height": 1918,
         "caption": "tufte-dataink：段落内嵌微图、小型多重图、零图表杂质；适合 数据叙事、研究报告、学术长文",
         "kind": "style",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/tufte-dataink.webp",
@@ -1827,6 +1881,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/web-design-engineer/nyt-the-daily.webp",
+        "width": 3840,
+        "height": 1918,
         "caption": "nyt-the-daily：Cheltenham 衬线压在 Imperial 之上、日期线居首、宽幅报纸的重量；适合 新闻特稿、播客中枢、长篇深度报道",
         "kind": "style",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/nyt-the-daily.webp",
@@ -1834,6 +1890,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/web-design-engineer/linear.webp",
+        "width": 3840,
+        "height": 1918,
         "caption": "linear：暖色调暗夜、发丝边、紫色点缀、键盘快捷键芯片；适合 开发者工具落地页、Issue / 项目 SaaS、API & 基础设施产品",
         "kind": "style",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/linear.webp",
@@ -1841,6 +1899,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/web-design-engineer/vercel-mesh.webp",
+        "width": 3840,
+        "height": 1918,
         "caption": "vercel-mesh：纯黑、几何网格渐变、Geist Sans、命令行式清晰；适合 部署 / 运行时工具、框架发布、技术 hero 页",
         "kind": "style",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/vercel-mesh.webp",
@@ -1848,6 +1908,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/web-design-engineer/raycast.webp",
+        "width": 3840,
+        "height": 1918,
         "caption": "raycast：红光雾里的玻璃卡片、键盘优先、紧凑列表行；适合 命令面板、launcher 应用、键盘驱动型工具",
         "kind": "style",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/raycast.webp",
@@ -1855,6 +1917,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/web-design-engineer/notion-pre-ai.webp",
+        "width": 3840,
+        "height": 1918,
         "caption": "notion-pre-ai：米白页面、拖拽点、随性 emoji 标题、随处可见的提示条；适合 工作区文档、内部 Wiki、友好的生产力应用",
         "kind": "style",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/notion-pre-ai.webp",
@@ -1862,6 +1926,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/web-design-engineer/field-io.webp",
+        "width": 3840,
+        "height": 1918,
         "caption": "field-io：粒子系统衬着编辑式字体、代码艺术美学、暗色工作室；适合 创意科技工作室、生成艺术案例、WebGL 作品集",
         "kind": "style",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/field-io.webp",
@@ -1869,6 +1935,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/web-design-engineer/active-theory.webp",
+        "width": 3840,
+        "height": 1918,
         "caption": "active-theory：WebGL 野心、全屏字、深黑底上的糖果色；适合 电影感产品发布、战役站、冲奖型微型站点",
         "kind": "style",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/active-theory.webp",
@@ -1876,6 +1944,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/web-design-engineer/resn-storytelling.webp",
+        "width": 3840,
+        "height": 1918,
         "caption": "resn-storytelling：超现实、浓郁、每帧都是布景、标题压在噪点纹理上；适合 叙事滚动、娱乐 / IP 站、工作室作品集",
         "kind": "style",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/resn-storytelling.webp",
@@ -1883,6 +1953,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/web-design-engineer/are-na.webp",
+        "width": 3840,
+        "height": 1918,
         "caption": "are-na：刻意的系统字体、浏览器默认蓝色链接、诚实的网页；适合 研究型频道、独立社区、反设计内容工具",
         "kind": "style",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/are-na.webp",
@@ -1890,6 +1962,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/web-design-engineer/bloomberg-businessweek-turley.webp",
+        "width": 3840,
+        "height": 1918,
         "caption": "bloomberg-businessweek-turley：警示黄 + 黑墨、字体作拼贴、手工剪切式标题；适合 编辑封面、评论文章、战役式海报",
         "kind": "style",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/bloomberg-businessweek-turley.webp",
@@ -1897,6 +1971,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/web-design-engineer/balenciaga-post-2017.webp",
+        "width": 3840,
+        "height": 1918,
         "caption": "balenciaga-post-2017：全大写、破碎网格、白底冷面产品、反奢侈的奢侈；适合 时装系列、drop 公告、逆向思考的奢侈品牌",
         "kind": "style",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/balenciaga-post-2017.webp",
@@ -1904,6 +1980,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/web-design-engineer/mailchimp-freddie.webp",
+        "width": 3840,
+        "height": 1918,
         "caption": "mailchimp-freddie：Cavendish 黄、手绘涂鸦、对话式文案 —— 小生意的拉拉队长；适合 引导流程、中小企业营销工具、友好的消费类应用",
         "kind": "style",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/mailchimp-freddie.webp",
@@ -1911,6 +1989,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/web-design-engineer/stripe-press.webp",
+        "width": 3840,
+        "height": 1918,
         "caption": "stripe-press：奶白纸、GT Super、手工装帧式奢华、思想作器物；适合 书籍详情页、长篇散文、出版社 / 出版品牌站",
         "kind": "style",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/stripe-press.webp",
@@ -1918,6 +1998,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/web-design-engineer/headspace-meditation.webp",
+        "width": 3840,
+        "height": 1918,
         "caption": "headspace-meditation：橙色太阳、圆润色团、手绘平静感、每日重置；适合 冥想 & 健康、习惯 / 情绪应用、温馨的消费类卡片",
         "kind": "style",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/headspace-meditation.webp",
@@ -1925,6 +2007,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/web-design-engineer/y2k-retrofuturism.webp",
+        "width": 3840,
+        "height": 1918,
         "caption": "y2k-retrofuturism：铬合金倒角、磨砂玻璃、熔岩色块、随处可见的 MSN 蓝；适合 Y2K 怀旧、早期网络门户、Z 世代品牌大型整活",
         "kind": "style",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/y2k-retrofuturism.webp",
@@ -1932,6 +2016,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "previews/materials/web-design-engineer/mid-century-modern.webp",
+        "width": 3840,
+        "height": 1918,
         "caption": "mid-century-modern：芥末黄、砖红、青蓝；剪纸式几何；1957 年的乐观主义；适合 海报致敬、文化活动、复古印刷品牌语调",
         "kind": "style",
         "sourceUrl": "https://raw.githubusercontent.com/ConardLi/assets/0b7a79a3d41bfe1281572e33ae25dad34e846114/imgs/web-design/mid-century-modern.webp",
@@ -1974,7 +2060,6 @@ window.ATLAS_MATERIALS = [
       "repository": "kuratlielia/arc-library",
       "url": "https://github.com/kuratlielia/arc-library",
       "commit": "df3a600fd9ffca85ec8607438b599a4408ab8562",
-      "version": "提交 df3a600（package.json 为 0.0.0）",
       "verifiedAt": "2026-11-01"
     },
     "license": {
@@ -3179,6 +3264,8 @@ window.ATLAS_MATERIALS = [
     "gallery": [
       {
         "path": "demos/cases/hallmark/assets/desk/refract.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Refract：阳光照在白色灰泥上，水光在表面流动；示范品牌 Bellwater Lido",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/refract.webp",
@@ -3187,6 +3274,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/cobalt.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Cobalt：干净的开发者工具，以一抹电光蓝点睛；示范品牌 Relay",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/cobalt.webp",
@@ -3195,6 +3284,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/dusk.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Dusk：暮色薄雾与石板底色，产品置于烟色玻璃中；示范品牌 Closewise",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/dusk.webp",
@@ -3203,6 +3294,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/vantage.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Vantage：夜间扫描，每个点都经过测量与扫掠；示范品牌 Swath",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/vantage.webp",
@@ -3211,6 +3304,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/furrow.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Furrow：暖纸上的实用农场办公室，以一抹橘色点睛；示范品牌 Fieldbook",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/furrow.webp",
@@ -3219,6 +3314,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/studio.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Studio：设计工作室的白墙，作品保留真实色彩；示范品牌 Field Office",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/studio.webp",
@@ -3227,6 +3324,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/atelier.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Atelier：温暖日光中的安静工作室，石灰墙与赭褐色；示范品牌 Maison Orla",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/atelier.webp",
@@ -3235,6 +3334,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/ribbon.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Ribbon：安静夜色、机加工推子与一颗亮着的胶囊按钮；示范品牌 Lull",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/ribbon.webp",
@@ -3243,6 +3344,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/dose.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Dose：诊室般洁净的应用，带淡绿色调；示范品牌 Tandem",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/dose.webp",
@@ -3251,6 +3354,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/coral.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Coral：暖灰色的平静应用，以一抹珊瑚色传递信号；示范品牌 Tilly",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/coral.webp",
@@ -3259,6 +3364,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/almanac.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Almanac：石板色纸上的参考书，精确到小数位；示范品牌 Tidetable 2027",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/almanac.webp",
@@ -3267,6 +3374,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/arcade.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Arcade：夜间街机机柜，喧闹而明亮；示范品牌 Pixel Picnic",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/arcade.webp",
@@ -3275,6 +3384,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/bloom.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Bloom：两团陶土色微光温暖柔软纸面；示范品牌 Driftsong",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/bloom.webp",
@@ -3283,6 +3394,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/blueprint.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Blueprint：普鲁士蓝绘图纸与白色线条；示范品牌 Halden and Roe",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/blueprint.webp",
@@ -3291,6 +3404,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/broadside.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Broadside：在浅黄纸上压印的木活字海报；示范品牌 Wickford Autumn Machinery Sale",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/broadside.webp",
@@ -3299,6 +3414,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/brutal.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Brutal：黑色线框、硬边色块与一抹酸黄；示范品牌 Unit Nine",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/brutal.webp",
@@ -3307,6 +3424,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/carnival.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Carnival：两种颜色争夺版面的游乐场招贴；示范品牌 Cold Comfort",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/carnival.webp",
@@ -3315,6 +3434,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/console.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Console：供全天运行软件使用的石墨色面板；示范品牌 Benchmark",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/console.webp",
@@ -3323,6 +3444,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/darkroom.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Darkroom：近黑色墙面上的黑白照片；示范品牌 Low Water",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/darkroom.webp",
@@ -3331,6 +3454,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/editorial.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Editorial：非涂布纸上的黑墨杂志跨页；示范品牌 Margin Notes",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/editorial.webp",
@@ -3339,6 +3464,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/formwork.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Formwork：浇筑混凝土、硬阴影与黑白摄影；示范品牌 Ashgrove Concrete",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/formwork.webp",
@@ -3347,6 +3474,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/garden.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Garden：燕麦色纸、深绿墨与日光；示范品牌 Hollins Orchard",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/garden.webp",
@@ -3355,6 +3484,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/grid.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Grid：瑞士式栏网、群青色块与一处红色标记；示范品牌 Kessler Archive",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/grid.webp",
@@ -3363,6 +3494,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/halftone.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Halftone：奶油黄纸上经过网点印刷的漫画；示范品牌 Pop Fizz",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/halftone.webp",
@@ -3371,6 +3504,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/hedgerow.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Hedgerow：深篱绿、奶油色文字与一抹亮绿新芽；示范品牌 Five Mile Gin",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/hedgerow.webp",
@@ -3379,6 +3514,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/hum.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Hum：欢快而有触感，按钮像键盘按键般按下；示范品牌 Sprout",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/hum.webp",
@@ -3387,6 +3524,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/ink.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Ink：白纸、纯黑与一抹蓝绿；示范品牌 Barton Road Library of Things",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/ink.webp",
@@ -3395,6 +3534,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/kiln.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Kiln：暗色工坊里只有炽热物体发光；示范品牌 Cone Six",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/kiln.webp",
@@ -3403,6 +3544,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/loom.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Loom：窗光下近看的本色织物；示范品牌 Wren Weaving",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/loom.webp",
@@ -3411,6 +3554,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/lumen.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Lumen：紫罗兰夜色与熔融黄铜细节；示范品牌 quarry",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/lumen.webp",
@@ -3419,6 +3564,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/manifesto.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Manifesto：暖黑底上的紧排大写字与一抹战斗红；示范品牌 Right to Repair Coalition",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/manifesto.webp",
@@ -3427,6 +3574,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/midnight.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Midnight：铺满边缘的午夜蓝，冷静而有电影感；示范品牌 Afterimage",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/midnight.webp",
@@ -3435,6 +3584,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/newsprint.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Newsprint：地方报纸头版、粗衬线标题与分栏线；示范品牌 The Lantern",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/newsprint.webp",
@@ -3443,6 +3594,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/overprint.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Overprint：新闻纸上的两色油墨，交叠处印出苔绿色；示范品牌 The Boiler Room",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/overprint.webp",
@@ -3451,6 +3604,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/pasteup.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Paste-up：牛皮纸板上拼贴的小志；示范品牌 Small Hours Zine Fair",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/pasteup.webp",
@@ -3459,6 +3614,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/piste.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Piste：雪白、冷色油墨与一抹钴蓝；示范品牌 Col Blanc",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/piste.webp",
@@ -3467,6 +3624,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/rim.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Rim：暖黑底与测量标记，俯瞰地球；示范品牌 Northstar",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/rim.webp",
@@ -3475,6 +3634,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/riso.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Riso：蓝色与荧光粉双色滚筒孔版印刷；示范品牌 Off Register",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/riso.webp",
@@ -3483,6 +3644,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/solstice.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Solstice：低垂晚光中的奶油色与金色；示范品牌 Long Meadow",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/solstice.webp",
@@ -3491,6 +3654,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/specimen.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Specimen：采用纤细 Bodoni 字体的字样册；示范品牌 Halyard",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/specimen.webp",
@@ -3499,6 +3664,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/spore.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Spore：灯光与烛光照亮咖啡黑底色；示范品牌 Night Cellar",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/spore.webp",
@@ -3507,6 +3674,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/sport.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Sport：混凝土底上的赛事大写字与一抹电光黄；示范品牌 Calder Valley Half Marathon",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/sport.webp",
@@ -3515,6 +3684,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/squeeze.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Squeeze：森林绿与明亮近摄的水果；示范品牌 Peachy",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/squeeze.webp",
@@ -3523,6 +3694,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/sticker.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Sticker：亮粉与青柠色模切贴纸；示范品牌 Pip and Pocket",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/sticker.webp",
@@ -3531,6 +3704,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/terminal.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Terminal：页面就是终端，图像由字符印出；示范品牌 burrow",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/terminal.webp",
@@ -3539,6 +3714,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/terrazzo.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Terrazzo：米白底上的白卡片、宽标题与铁锈色；示范品牌 Sample Room",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/terrazzo.webp",
@@ -3547,6 +3724,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/ultraviolet.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Ultraviolet：淡紫纸面汇聚成一抹饱和紫罗兰色；示范品牌 stemcell",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/ultraviolet.webp",
@@ -3555,6 +3734,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/vellum.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Vellum：老印刷所里的羊皮纸、哥特体与群青；示范品牌 Fenwick and Daughters",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/vellum.webp",
@@ -3563,6 +3744,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/wayfind.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Wayfind：等宽字导视，以钴蓝标明实时状态；示范品牌 Platform",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/wayfind.webp",
@@ -3571,6 +3754,8 @@ window.ATLAS_MATERIALS = [
       },
       {
         "path": "demos/cases/hallmark/assets/desk/werkstatt.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Werkstatt：由三原色构成的工作坊；示范品牌 Summer School of Making",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/werkstatt.webp",
@@ -3602,7 +3787,6 @@ window.ATLAS_MATERIALS = [
     "preview": "previews/materials/animejs.png",
     "research": "docs/materials/animejs.md",
     "demoNote": "Anime.js 4.5.0",
-    "carrierNote": "面向网页的动画引擎，示例含滚动、拖拽与响应式，归入本库。",
     "install": "import { animate, stagger, createTimeline, onScroll, createDraggable, svg } from './vendor/animejs@4.5.0/dist/modules/index.js';",
     "upstream": {
       "repository": "juliangarnier/anime",
@@ -4006,7 +4190,6 @@ window.ATLAS_MATERIALS = [
       "repository": "op7418/guizang-ppt-skill",
       "url": "https://github.com/op7418/guizang-ppt-skill/tree/93d21bf4a73a851907a6eb00acbf30618236667a",
       "commit": "93d21bf4a73a851907a6eb00acbf30618236667a",
-      "version": "93d21bf",
       "verifiedAt": "2026-11-04"
     },
     "capturedAt": "2026-11-04",

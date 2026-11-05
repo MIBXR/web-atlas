@@ -104,6 +104,8 @@
     "gallery": [
       {
         "path": "demos/cases/hallmark/assets/desk/refract.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Refract：阳光照在白色灰泥上，水光在表面流动；示范品牌 Bellwater Lido",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/refract.webp",
@@ -112,6 +114,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/cobalt.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Cobalt：干净的开发者工具，以一抹电光蓝点睛；示范品牌 Relay",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/cobalt.webp",
@@ -120,6 +124,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/dusk.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Dusk：暮色薄雾与石板底色，产品置于烟色玻璃中；示范品牌 Closewise",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/dusk.webp",
@@ -128,6 +134,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/vantage.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Vantage：夜间扫描，每个点都经过测量与扫掠；示范品牌 Swath",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/vantage.webp",
@@ -136,6 +144,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/furrow.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Furrow：暖纸上的实用农场办公室，以一抹橘色点睛；示范品牌 Fieldbook",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/furrow.webp",
@@ -144,6 +154,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/studio.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Studio：设计工作室的白墙，作品保留真实色彩；示范品牌 Field Office",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/studio.webp",
@@ -152,6 +164,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/atelier.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Atelier：温暖日光中的安静工作室，石灰墙与赭褐色；示范品牌 Maison Orla",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/atelier.webp",
@@ -160,6 +174,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/ribbon.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Ribbon：安静夜色、机加工推子与一颗亮着的胶囊按钮；示范品牌 Lull",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/ribbon.webp",
@@ -168,6 +184,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/dose.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Dose：诊室般洁净的应用，带淡绿色调；示范品牌 Tandem",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/dose.webp",
@@ -176,6 +194,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/coral.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Coral：暖灰色的平静应用，以一抹珊瑚色传递信号；示范品牌 Tilly",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/coral.webp",
@@ -184,6 +204,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/almanac.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Almanac：石板色纸上的参考书，精确到小数位；示范品牌 Tidetable 2027",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/almanac.webp",
@@ -192,6 +214,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/arcade.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Arcade：夜间街机机柜，喧闹而明亮；示范品牌 Pixel Picnic",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/arcade.webp",
@@ -200,6 +224,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/bloom.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Bloom：两团陶土色微光温暖柔软纸面；示范品牌 Driftsong",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/bloom.webp",
@@ -208,6 +234,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/blueprint.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Blueprint：普鲁士蓝绘图纸与白色线条；示范品牌 Halden and Roe",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/blueprint.webp",
@@ -216,6 +244,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/broadside.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Broadside：在浅黄纸上压印的木活字海报；示范品牌 Wickford Autumn Machinery Sale",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/broadside.webp",
@@ -224,6 +254,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/brutal.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Brutal：黑色线框、硬边色块与一抹酸黄；示范品牌 Unit Nine",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/brutal.webp",
@@ -232,6 +264,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/carnival.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Carnival：两种颜色争夺版面的游乐场招贴；示范品牌 Cold Comfort",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/carnival.webp",
@@ -240,6 +274,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/console.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Console：供全天运行软件使用的石墨色面板；示范品牌 Benchmark",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/console.webp",
@@ -248,6 +284,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/darkroom.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Darkroom：近黑色墙面上的黑白照片；示范品牌 Low Water",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/darkroom.webp",
@@ -256,6 +294,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/editorial.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Editorial：非涂布纸上的黑墨杂志跨页；示范品牌 Margin Notes",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/editorial.webp",
@@ -264,6 +304,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/formwork.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Formwork：浇筑混凝土、硬阴影与黑白摄影；示范品牌 Ashgrove Concrete",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/formwork.webp",
@@ -272,6 +314,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/garden.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Garden：燕麦色纸、深绿墨与日光；示范品牌 Hollins Orchard",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/garden.webp",
@@ -280,6 +324,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/grid.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Grid：瑞士式栏网、群青色块与一处红色标记；示范品牌 Kessler Archive",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/grid.webp",
@@ -288,6 +334,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/halftone.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Halftone：奶油黄纸上经过网点印刷的漫画；示范品牌 Pop Fizz",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/halftone.webp",
@@ -296,6 +344,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/hedgerow.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Hedgerow：深篱绿、奶油色文字与一抹亮绿新芽；示范品牌 Five Mile Gin",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/hedgerow.webp",
@@ -304,6 +354,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/hum.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Hum：欢快而有触感，按钮像键盘按键般按下；示范品牌 Sprout",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/hum.webp",
@@ -312,6 +364,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/ink.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Ink：白纸、纯黑与一抹蓝绿；示范品牌 Barton Road Library of Things",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/ink.webp",
@@ -320,6 +374,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/kiln.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Kiln：暗色工坊里只有炽热物体发光；示范品牌 Cone Six",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/kiln.webp",
@@ -328,6 +384,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/loom.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Loom：窗光下近看的本色织物；示范品牌 Wren Weaving",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/loom.webp",
@@ -336,6 +394,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/lumen.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Lumen：紫罗兰夜色与熔融黄铜细节；示范品牌 quarry",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/lumen.webp",
@@ -344,6 +404,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/manifesto.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Manifesto：暖黑底上的紧排大写字与一抹战斗红；示范品牌 Right to Repair Coalition",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/manifesto.webp",
@@ -352,6 +414,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/midnight.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Midnight：铺满边缘的午夜蓝，冷静而有电影感；示范品牌 Afterimage",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/midnight.webp",
@@ -360,6 +424,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/newsprint.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Newsprint：地方报纸头版、粗衬线标题与分栏线；示范品牌 The Lantern",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/newsprint.webp",
@@ -368,6 +434,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/overprint.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Overprint：新闻纸上的两色油墨，交叠处印出苔绿色；示范品牌 The Boiler Room",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/overprint.webp",
@@ -376,6 +444,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/pasteup.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Paste-up：牛皮纸板上拼贴的小志；示范品牌 Small Hours Zine Fair",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/pasteup.webp",
@@ -384,6 +454,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/piste.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Piste：雪白、冷色油墨与一抹钴蓝；示范品牌 Col Blanc",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/piste.webp",
@@ -392,6 +464,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/rim.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Rim：暖黑底与测量标记，俯瞰地球；示范品牌 Northstar",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/rim.webp",
@@ -400,6 +474,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/riso.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Riso：蓝色与荧光粉双色滚筒孔版印刷；示范品牌 Off Register",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/riso.webp",
@@ -408,6 +484,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/solstice.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Solstice：低垂晚光中的奶油色与金色；示范品牌 Long Meadow",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/solstice.webp",
@@ -416,6 +494,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/specimen.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Specimen：采用纤细 Bodoni 字体的字样册；示范品牌 Halyard",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/specimen.webp",
@@ -424,6 +504,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/spore.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Spore：灯光与烛光照亮咖啡黑底色；示范品牌 Night Cellar",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/spore.webp",
@@ -432,6 +514,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/sport.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Sport：混凝土底上的赛事大写字与一抹电光黄；示范品牌 Calder Valley Half Marathon",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/sport.webp",
@@ -440,6 +524,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/squeeze.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Squeeze：森林绿与明亮近摄的水果；示范品牌 Peachy",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/squeeze.webp",
@@ -448,6 +534,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/sticker.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Sticker：亮粉与青柠色模切贴纸；示范品牌 Pip and Pocket",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/sticker.webp",
@@ -456,6 +544,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/terminal.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Terminal：页面就是终端，图像由字符印出；示范品牌 burrow",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/terminal.webp",
@@ -464,6 +554,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/terrazzo.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Terrazzo：米白底上的白卡片、宽标题与铁锈色；示范品牌 Sample Room",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/terrazzo.webp",
@@ -472,6 +564,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/ultraviolet.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Ultraviolet：淡紫纸面汇聚成一抹饱和紫罗兰色；示范品牌 stemcell",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/ultraviolet.webp",
@@ -480,6 +574,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/vellum.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Vellum：老印刷所里的羊皮纸、哥特体与群青；示范品牌 Fenwick and Daughters",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/vellum.webp",
@@ -488,6 +584,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/wayfind.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Wayfind：等宽字导视，以钴蓝标明实时状态；示范品牌 Platform",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/wayfind.webp",
@@ -496,6 +594,8 @@
       },
       {
         "path": "demos/cases/hallmark/assets/desk/werkstatt.webp",
+        "width": 960,
+        "height": 600,
         "caption": "Werkstatt：由三原色构成的工作坊；示范品牌 Summer School of Making",
         "kind": "theme",
         "sourceUrl": "https://raw.githubusercontent.com/Nutlope/hallmark/4f6a46c6dc325d40ab268c93e25c7b96676ebccd/site/assets/desk/werkstatt.webp",

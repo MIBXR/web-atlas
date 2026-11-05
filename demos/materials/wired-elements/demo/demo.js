@@ -66,11 +66,11 @@ async function start() {
     $('fill-color').addEventListener('input', () => $('concept-card').fill = $('fill-color').value);
     const resize = new ResizeObserver(entries => entries.forEach(entry => entry.target.requestUpdate()));
     document.querySelectorAll('wired-card,wired-progress,wired-slider').forEach(element => resize.observe(element));
-    $('runtime-status').textContent = '真实 Wired Elements 2.1.2 · 本地运行 · 无自动动画';
+    $('runtime-status').hidden = true;
   } catch {
     $('examples').hidden = true;
     $('fallback').hidden = false;
-    $('runtime-status').textContent = query.get('fallback') === '1' ? '静态后备演示 · 已主动跳过组件加载；此处不代表组件已运行。' : '静态后备 · 组件未能载入，当前保留用法说明与官方入口。';
+    $('runtime-status').textContent = query.get('fallback') === '1' ? '静态后备 · 已跳过组件加载。' : '组件未能载入，当前显示静态说明。';
   }
 }
 start();
