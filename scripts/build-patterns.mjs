@@ -43,7 +43,8 @@ export function loadPatterns({ root = defaultRoot, entries } = {}) {
   const patterns = fs.readdirSync(directory).filter(n => n.endsWith('.json')).sort().map(name => {
     const p = JSON.parse(textFile(root, `entries/patterns/${name}`));
     if (typeof p.id !== 'string' || !idPattern.test(p.id) || name !== p.id + '.json') throw new Error(`Pattern filename/id mismatch: ${name}`);
-    for (const key of ['title', 'category', 'summary', 'mechanism', 'effect', 'prompt']) requireText(p[key], `${p.id}.${key}`);
+    for (const key of ['title', 'category', 'summary', 'mechanism', 'effect', 'prompt', 'preview']) requireText(p[key], `${p.id}.${key}`);
+    repositoryFile(root, p.preview);
     if (p.trigger !== undefined) requireText(p.trigger, `${p.id}.trigger`);
     if (!categories.includes(p.category)) throw new Error(`Unknown pattern category: ${p.id}`);
     if (p.experienceTypes !== undefined) {
@@ -64,6 +65,9 @@ export function loadPatterns({ root = defaultRoot, entries } = {}) {
       const entry = cases.get(source.caseId);
       if (!entry) throw new Error(`Unknown pattern source case: ${p.id}/${source.caseId}`);
       for (const key of ['locator', 'observation']) requireText(source[key], `${p.id}.sources.${key}`);
+      for (const key of ['target', 'label', 'instruction']) requireText(source.focus?.[key], `${p.id}.sources.focus.${key}`);
+      if (source.focus.viewport !== undefined && !['wide', 'mobile'].includes(source.focus.viewport)) throw new Error(`Unknown pattern viewport: ${p.id}`);
+      if (source.focus.entrypoint !== undefined) repositoryFile(root, source.focus.entrypoint.split(/[?#]/)[0]);
       if (!['observed', 'adapted', 'inferred'].includes(source.evidence)) throw new Error(`Unknown evidence kind: ${p.id}`);
       const [relative, pointer] = source.locator.split('#');
       const original = textFile(root, relative);
@@ -126,10 +130,7 @@ export function buildPatterns({ root = defaultRoot, patterns, caseRecords, caseB
     const documents = documentPaths.map(relative => ({path:relative, role:relative === prompt ? 'prompt' : 'research', content:textFile(root, relative)}));
     const files = new Map(sourceCases.flatMap(source => bundlesById.get(source.id).files).map(file => [file.path, file]));
     for (const relative of [`entries/patterns/${pattern.id}.json`, ...documentPaths]) files.set(relative, {path:relative, role:'context'});
-    if (pattern.preview) {
-      repositoryFile(root, pattern.preview);
-      files.set(pattern.preview, {path:pattern.preview, role:'preview'});
-    }
+    files.set(pattern.preview, {path:pattern.preview, role:'preview'});
     const bundle = { schemaVersion: 1, id: pattern.id, pattern, sourceCases, documents, files:[...files.values()].sort((a,b) => a.path.localeCompare(b.path)) };
     const relative = `agent/patterns/${pattern.id}.json`;
     const bytes = encode(bundle);

@@ -15,6 +15,11 @@ window.ATLAS_DOCUMENTS = [
     "group": "研究方法与索引"
   },
   {
+    "path": "docs/review.md",
+    "title": "内容与页面审查清单",
+    "group": "研究方法与索引"
+  },
+  {
     "path": "docs/pattern-experiences.md",
     "title": "巧思的体验类型与可操作示意",
     "group": "研究方法与索引"

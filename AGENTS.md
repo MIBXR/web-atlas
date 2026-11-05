@@ -4,7 +4,11 @@
 
 新增内容、目录或内容类型前，先阅读 [CONTRIBUTING.md 的收录边界与三类组织规范](CONTRIBUTING.md#三类组织规范)，确定其类别与文件归属。字段和新增流程以该文档为准。
 
+执行内容或界面审查时，先读[审查清单](docs/review.md)，确定基准版本与增量或全库范围。
+
 内容更新后运行 `npm run build`，再运行 `npm run check`。
+
+向仓库新增测试代码、测试数据、测试框架、自动检查脚本或额外完整性校验，须先获仓库所有者明确授权。
 
 `prompts/`、`agent/`、`data/`、`docs/cases/README.md` 和 README 计数块由构建生成，不手改；预览和原文素材按 CONTRIBUTING 管理。
 
