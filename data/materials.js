@@ -797,7 +797,7 @@ window.ATLAS_MATERIALS = [
       "demos/materials/wired-elements/demo/demo.css",
       "demos/materials/wired-elements/demo/demo.js"
     ],
-    "summary": "用手绘 Web Components 组合任务清单、偏好面板与概念卡片，让草图的勾选、切换和层级都能实际操作。",
+    "summary": "用手绘 Web Components 组合任务清单、偏好面板与概念卡片，支持任务勾选、偏好切换和卡片层级调整。",
     "install": "npm install wired-elements@2.1.2",
     "demoNote": "三个场景演示任务勾选、偏好设置和概念卡片。",
     "tags": [
@@ -981,7 +981,7 @@ window.ATLAS_MATERIALS = [
       "HTML-in-Canvas 是 WICG 的浏览器标准提案，原生支持处于实验阶段。HTMLTexture 与 InteractionManager 从 three r185 起由 Three.js 提供，本库补齐浏览器 API。",
       "浏览器有原生 texElementImage2D 时使用原生路径；缺少原生支持时退回 SVG foreignObject 光栅化。",
       "通过 HTTP/HTTPS 访问；WebGL 不可用或初始化失败时保留同一 MORS² HTML 页面与 CSS 静态光照。",
-      "桌面 CSS 视口不小于 768px 时保留原作 1440×810 页面与参考 fit；小于 768px 时采用原 mobile 上下排列，页面宽度跟随视口。HTMLTexture 尺寸与相机随 resize 更新。"
+      "桌面 CSS 视口不小于 768px 时保留原作 1440×810 页面与参考 fit；小于 768px 时采用原作的移动端上下布局，页面宽度跟随视口。HTMLTexture 尺寸与相机随 resize 更新。"
     ],
     "upstream": {
       "repository": "repalash/three-html-render",
@@ -1146,7 +1146,7 @@ window.ATLAS_MATERIALS = [
       "本条目保存 garden-skills 固定提交中的技能原文、主题写作资料和脚手架，不直接运行技能或提供在线文章生成。",
       "技能默认保留完整信息；文章类型、信息保留比例、主题、宽度、配图与封面按原文的确认节点决定。",
       "11 份主题资料是给 Agent 阅读的写作指导；对应运行时、组件和 11 篇样文见 Reacticle 素材。",
-      "执行原文脚手架时，会安装当时最新的 reacticle 发布版；本库 Reacticle 样例固定提交。",
+      "执行原文脚手架时，会安装当时最新的 reacticle 发布版；本库 Reacticle 样例使用固定提交。",
       "脚手架的默认标题、正文和封面是占位内容，需要按文章材料完成；单文件 HTML 的构建形式不自动保证外链字体已离线化。",
       "原文快照保留原语言与相对链接。"
     ],
@@ -4161,7 +4161,7 @@ window.ATLAS_MATERIALS = [
     "title": "歸藏 PPT Skill · 杂志风与瑞士风网页演示",
     "type": "agent-skill",
     "category": "Agent 工作流",
-    "summary": "歸藏的网页 PPT 工作流：选择电子杂志或瑞士国际主义风格，澄清需求、复制模板、填入版式与演讲备注，交付可横向翻页的单文件 HTML；模板内置背景、索引、低功耗和演讲者运行时。",
+    "summary": "歸藏的网页 PPT 工作流：选择电子杂志或瑞士国际主义风格，澄清需求、复制模板，按版式填入文案并添加演讲备注，交付可横向翻页的单文件 HTML；模板内置背景、索引、低功耗和演讲者运行时。",
     "install": "运行 npx skills add https://github.com/op7418/guizang-ppt-skill --skill guizang-ppt-skill；或把 demos/materials/guizang-ppt-skill/ 完整复制到 .claude/skills/guizang-ppt-skill/。",
     "tags": [
       "Agent Skill",
@@ -4184,7 +4184,7 @@ window.ATLAS_MATERIALS = [
     ],
     "constraints": [
       "配图流程依赖 GPT-Image 2.0 / GPT-M 2.0 的宿主能力。",
-      "两套风格使用各自的模板、主题与版式类；同一份 deck 采用一套风格。"
+      "两套风格使用各自的模板、主题与版式类；同一份演示文稿采用一套风格。"
     ],
     "upstream": {
       "repository": "op7418/guizang-ppt-skill",
@@ -4348,8 +4348,8 @@ window.ATLAS_MATERIALS = [
     "title": "Vigil · 24 件点彩生成作品",
     "type": "image",
     "category": "组件与效果",
-    "summary": "作者生成艺术长线系列 Vigil 的 24 件近期 demo：同心带、波层、折带、阶地、鳞带和漩涡，加星球与日食；站内画廊提供原作与按原件分辨率绘制的 WebGL 复刻对照。",
-    "install": "取 demos/materials/0010-vigil/demo/renderer.js 与 demo/pieces.js，导入 renderPiece、releaseRenderer 和 pieces。选定 piece 后设置 canvas.width = piece.originalWidth、canvas.height = piece.originalHeight，调用 renderPiece(canvas, piece, t)，CSS 控制显示尺寸。t 为秒，单件周期 10 秒，四件与六件家族分别为 12.8 秒与 14.4 秒，静帧使用 t=0；结束时调用 releaseRenderer(canvas)。原作在 demos/materials/0010-vigil/demo/media/<id>.mp4 或 .jpg。",
+    "summary": "作者长期创作的生成艺术系列 Vigil 中的 24 件近期 demo：同心带、波层、折带、阶地、鳞带和漩涡，以及星球与日食；站内画廊提供原作与按原件分辨率绘制的 WebGL 复刻对照。",
+    "install": "取 demos/materials/0010-vigil/demo/renderer.js 与 demo/pieces.js，导入 renderPiece、releaseRenderer 和 pieces。选定 piece 后设置 canvas.width = piece.originalWidth、canvas.height = piece.originalHeight，调用 renderPiece(canvas, piece, t)，CSS 控制显示尺寸。t 以秒为单位，单件周期 10 秒，四件与六件家族分别为 12.8 秒与 14.4 秒，静帧使用 t=0；结束时调用 releaseRenderer(canvas)。原作在 demos/materials/0010-vigil/demo/media/<id>.mp4 或 .jpg。",
     "tags": [
       "生成艺术",
       "平面设计",
@@ -4374,7 +4374,7 @@ window.ATLAS_MATERIALS = [
     ],
     "constraints": [
       "Vigil 源码未公开，渲染器由本库按视频与静帧实现。",
-      "作者未声明开放许可，本库为个人学习参考保存。"
+      "作者未声明开放许可，本库保存这些作品供个人学习参考。"
     ],
     "upstream": {
       "url": "https://x.com/0010_888/status/2117473772710015352",

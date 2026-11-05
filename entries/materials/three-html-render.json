@@ -14,7 +14,7 @@
     "HTML-in-Canvas 是 WICG 的浏览器标准提案，原生支持处于实验阶段。HTMLTexture 与 InteractionManager 从 three r185 起由 Three.js 提供，本库补齐浏览器 API。",
     "浏览器有原生 texElementImage2D 时使用原生路径；缺少原生支持时退回 SVG foreignObject 光栅化。",
     "通过 HTTP/HTTPS 访问；WebGL 不可用或初始化失败时保留同一 MORS² HTML 页面与 CSS 静态光照。",
-    "桌面 CSS 视口不小于 768px 时保留原作 1440×810 页面与参考 fit；小于 768px 时采用原 mobile 上下排列，页面宽度跟随视口。HTMLTexture 尺寸与相机随 resize 更新。"
+    "桌面 CSS 视口不小于 768px 时保留原作 1440×810 页面与参考 fit；小于 768px 时采用原作的移动端上下布局，页面宽度跟随视口。HTMLTexture 尺寸与相机随 resize 更新。"
   ],
   "upstream": {
     "repository": "repalash/three-html-render",

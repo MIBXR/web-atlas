@@ -4,8 +4,8 @@
   "title": "Vigil · 24 件点彩生成作品",
   "type": "image",
   "category": "组件与效果",
-  "summary": "作者生成艺术长线系列 Vigil 的 24 件近期 demo：同心带、波层、折带、阶地、鳞带和漩涡，加星球与日食；站内画廊提供原作与按原件分辨率绘制的 WebGL 复刻对照。",
-  "install": "取 demos/materials/0010-vigil/demo/renderer.js 与 demo/pieces.js，导入 renderPiece、releaseRenderer 和 pieces。选定 piece 后设置 canvas.width = piece.originalWidth、canvas.height = piece.originalHeight，调用 renderPiece(canvas, piece, t)，CSS 控制显示尺寸。t 为秒，单件周期 10 秒，四件与六件家族分别为 12.8 秒与 14.4 秒，静帧使用 t=0；结束时调用 releaseRenderer(canvas)。原作在 demos/materials/0010-vigil/demo/media/<id>.mp4 或 .jpg。",
+  "summary": "作者长期创作的生成艺术系列 Vigil 中的 24 件近期 demo：同心带、波层、折带、阶地、鳞带和漩涡，以及星球与日食；站内画廊提供原作与按原件分辨率绘制的 WebGL 复刻对照。",
+  "install": "取 demos/materials/0010-vigil/demo/renderer.js 与 demo/pieces.js，导入 renderPiece、releaseRenderer 和 pieces。选定 piece 后设置 canvas.width = piece.originalWidth、canvas.height = piece.originalHeight，调用 renderPiece(canvas, piece, t)，CSS 控制显示尺寸。t 以秒为单位，单件周期 10 秒，四件与六件家族分别为 12.8 秒与 14.4 秒，静帧使用 t=0；结束时调用 releaseRenderer(canvas)。原作在 demos/materials/0010-vigil/demo/media/<id>.mp4 或 .jpg。",
   "tags": [
     "生成艺术",
     "平面设计",
@@ -30,7 +30,7 @@
   ],
   "constraints": [
     "Vigil 源码未公开，渲染器由本库按视频与静帧实现。",
-    "作者未声明开放许可，本库为个人学习参考保存。"
+    "作者未声明开放许可，本库保存这些作品供个人学习参考。"
   ],
   "upstream": {
     "url": "https://x.com/0010_888/status/2117473772710015352",
