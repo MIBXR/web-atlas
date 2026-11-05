@@ -19,9 +19,12 @@
 .materials-page .material-preview .card-preview{border-radius:var(--r);border:1px solid var(--atlas-surface-line);background:var(--atlas-surface-2)}
 .materials-page .material-preview:hover .card-preview img{transform:scale(1.035)}
 .materials-page .material-gallery .card-preview{aspect-ratio:auto;height:auto}
-.materials-page .material-gallery .card-preview img{position:static;display:block;width:100%;height:auto}
+.materials-page .material-gallery .card-preview img{position:static;display:block;width:100%;height:auto;opacity:0;transition:opacity .2s,transform .2s}
+.materials-page .material-gallery .card-preview img.is-loaded{opacity:1}
 .materials-page .material-gallery[style] .card-preview{aspect-ratio:var(--gallery-ratio)}
-.materials-page .material-gallery[style] .card-preview img{height:100%;object-fit:cover;object-position:top}
+.materials-page .material-gallery[style] .card-preview img{height:100%;object-fit:var(--gallery-fit,cover);object-position:top}
+.materials-page .material-gallery[data-gallery-fit=contain] .card-preview img{object-position:center}
+.materials-page .material-gallery[data-gallery-fit=contain] .material-preview:hover .card-preview img{transform:none}
 .materials-page .material-gallery .card-body{padding:0}
 .materials-page .material-gallery .tag{align-self:flex-start}
 .materials-page .material-gallery .card-summary{display:block;min-height:0;order:0}
@@ -29,3 +32,25 @@
 @media(max-width:650px){.material-examples{grid-template-columns:1fr}.materials-page .demo-toolbar>div{justify-content:flex-start}.materials-page .detail-top{gap:12px;flex-wrap:wrap}}
 .material-examples a:hover{background:var(--accent-4);color:var(--accent-1);border-color:var(--accent-1)}
 .material-examples a[aria-current=true]{background:var(--accent-4)}
+.material-compare{width:min(94vw,1500px);height:92svh;max-width:none;max-height:none;padding:0;border:1px solid var(--atlas-surface-line);border-radius:var(--r);background:var(--atlas-surface);color:var(--atlas-ink);overflow:hidden}
+.material-compare[open]{display:grid;grid-template-rows:auto minmax(0,1fr) auto}
+.material-compare::backdrop{background:rgb(0 0 0 / .72)}
+.material-compare-header{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 20px;border-bottom:1px solid var(--atlas-surface-line)}
+.material-compare .material-compare-header h2{margin:0;min-width:0;font-size:18px;line-height:1.4}
+.material-compare-actions{display:flex;align-items:center;gap:8px;flex-shrink:0}
+.material-compare .copy-button{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:40px;font-size:14px}
+.material-compare .copy-button .atlas-icon{width:18px;height:18px;flex:none}
+.material-compare-sound[aria-pressed=true]{background:var(--accent-4);color:var(--accent-1)}
+.material-compare-body{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px;min-height:0;padding:16px 20px;overflow:auto}
+.material-compare-panel{display:grid;grid-template-rows:auto minmax(0,1fr);gap:8px;min-width:0;min-height:0;margin:0}
+.material-compare-panel figcaption{font-size:12px;color:var(--atlas-muted)}
+.material-compare-art{position:relative;display:grid;place-items:center;min-height:0;min-width:0;overflow:hidden;background:var(--atlas-surface-2)}
+.material-compare-art>canvas,.material-compare-art>video,.material-compare-art>img{display:block;max-width:100%;max-height:100%;opacity:0}
+.material-compare-art>video,.material-compare-art>img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.material-compare-art.is-ready>canvas,.material-compare-art.is-ready>video,.material-compare-art.is-ready>img{opacity:1}
+.material-compare-spinner{position:absolute;top:50%;left:50%;width:24px;height:24px;margin:-12px 0 0 -12px;border:2px solid var(--atlas-surface-line);border-top-color:var(--accent-1);border-radius:50%;animation:material-compare-spin .8s linear infinite}
+.material-compare-art.is-ready>.material-compare-spinner,.material-compare-art.is-failed>.material-compare-spinner{display:none}
+.material-compare-navigation{display:flex;justify-content:space-between;gap:16px;padding:10px 20px;border-top:1px solid var(--atlas-surface-line)}
+@keyframes material-compare-spin{to{transform:rotate(360deg)}}
+@media(max-width:720px){.material-compare-header{padding:12px;gap:10px;flex-wrap:wrap}.material-compare .material-compare-header h2{font-size:16px}.material-compare-actions{gap:6px}.material-compare-body{grid-template-columns:minmax(0,1fr);grid-auto-rows:60svh;gap:20px;padding:12px}.material-compare-navigation{padding:10px 12px}}
+@media(prefers-reduced-motion:reduce){.material-compare-spinner{animation:none}}

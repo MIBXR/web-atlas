@@ -315,6 +315,11 @@ window.ATLAS_DOCUMENTS = [
     "group": "素材使用"
   },
   {
+    "path": "docs/materials/0010-vigil.md",
+    "title": "Vigil：24 件点彩生成作品",
+    "group": "素材使用"
+  },
+  {
     "path": "docs/materials/web-design-engineer.md",
     "title": "Web Design Engineer：阅读与使用资料",
     "group": "素材使用"
@@ -1535,6 +1540,11 @@ window.ATLAS_DOCUMENTS = [
     "group": "复用 Prompt"
   },
   {
+    "path": "prompts/materials/0010-vigil.md",
+    "title": "Vigil · 24 件点彩生成作品 · 复用 Prompt",
+    "group": "复用 Prompt"
+  },
+  {
     "path": "prompts/materials/web-design-engineer.md",
     "title": "Web Design Engineer · 网页设计工作流 · 复用 Prompt",
     "group": "复用 Prompt"
@@ -1704,6 +1714,32 @@ window.ATLAS_DOCUMENT_SOURCES = [
       "https://github.com/ConardLi/garden-skills/blob/2b9a89340b70f632d31c0f1c69fce94a7912423e/demo/web-design-demo/demo1-with-skill.html",
       "https://uiarc.dev/",
       "https://www.usehallmark.com/"
+    ]
+  },
+  {
+    "path": "demos/materials/0010-vigil/",
+    "upstream": {
+      "url": "https://x.com/0010_888/status/2117473772710015352",
+      "verifiedAt": "2026-11-04"
+    },
+    "sources": [
+      "https://x.com/0010_888/status/2117822031890932068",
+      "https://x.com/0010_888/status/2117473772710015352",
+      "https://x.com/0010_888/status/2116920914122100944",
+      "https://x.com/0010_888/status/2116748686206419050",
+      "https://x.com/0010_888/status/2116710716820328682",
+      "https://x.com/0010_888/status/2110387973661540392",
+      "https://x.com/0010_888/status/2110011467798036667",
+      "https://x.com/0010_888/status/2109780990310990231",
+      "https://x.com/0010_888/status/2109647202222055908",
+      "https://x.com/0010_888/status/2108918762996937076",
+      "https://x.com/0010_888/status/2108568658687705210",
+      "https://x.com/0010_888/status/2108365500560679371",
+      "https://x.com/0010_888/status/2108291042994983004",
+      "https://x.com/0010_888/status/2108261200387854759",
+      "https://x.com/0010_888/status/2104341457301844418",
+      "https://x.com/0010_888",
+      "https://0010.art/"
     ]
   },
   {

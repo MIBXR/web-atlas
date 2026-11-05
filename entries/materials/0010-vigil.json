@@ -1,0 +1,439 @@
+{
+  "id": "0010-vigil",
+  "order": 14,
+  "title": "Vigil · 24 件点彩生成作品",
+  "type": "image",
+  "category": "组件与效果",
+  "summary": "作者生成艺术长线系列 Vigil 的 24 件近期 demo：同心带、波层、折带、阶地、鳞带和漩涡，加星球与日食；站内画廊提供原作与按原件分辨率绘制的 WebGL 复刻对照。",
+  "install": "取 demos/materials/0010-vigil/demo/renderer.js 与 demo/pieces.js，导入 renderPiece、releaseRenderer 和 pieces。选定 piece 后设置 canvas.width = piece.originalWidth、canvas.height = piece.originalHeight，调用 renderPiece(canvas, piece, t)，CSS 控制显示尺寸。t 为秒，单件周期 10 秒，四件与六件家族分别为 12.8 秒与 14.4 秒，静帧使用 t=0；结束时调用 releaseRenderer(canvas)。原作在 demos/materials/0010-vigil/demo/media/<id>.mp4 或 .jpg。",
+  "tags": [
+    "生成艺术",
+    "平面设计",
+    "点彩",
+    "同心带",
+    "星球",
+    "抽象几何",
+    "竖幅视频",
+    "0010",
+    "日食",
+    "行星",
+    "WebGL"
+  ],
+  "useCases": [
+    "作为海报或作品集封面的视觉参考",
+    "网页主视觉或章节背景的整体构图参考",
+    "讨论点彩质感、低饱和配色和单点落点时的样张"
+  ],
+  "avoid": [
+    "把视频当作本库作品或开放授权素材对外发布",
+    "拆成单独的颗粒或圆环效果使用，这组画面的价值在整体构成"
+  ],
+  "constraints": [
+    "Vigil 源码未公开，渲染器由本库按视频与静帧实现。",
+    "作者未声明开放许可，本库为个人学习参考保存。"
+  ],
+  "upstream": {
+    "url": "https://x.com/0010_888/status/2117473772710015352",
+    "verifiedAt": "2026-11-04"
+  },
+  "license": {
+    "name": "未声明开放许可",
+    "url": "https://0010.art/",
+    "scope": "24 件原作媒体及其画面设计和音轨版权归 0010；复刻渲染器与参数由本库实现。",
+    "notes": "本库为个人学习参考保存。"
+  },
+  "sources": [
+    {
+      "title": "Vigil · 2026-11-04",
+      "url": "https://x.com/0010_888/status/2117822031890932068",
+      "note": "2026-11-04；eclipse-slate、dunes-crimson、black-sun-teal、dunes-ember",
+      "evidence": "source"
+    },
+    {
+      "title": "Vigil · 2026-11-03",
+      "url": "https://x.com/0010_888/status/2117473772710015352",
+      "note": "2026-11-03；rings-pale、arcs-rust、arcs-sand、arcs-night",
+      "evidence": "source"
+    },
+    {
+      "title": "Vigil · 2026-11-01",
+      "url": "https://x.com/0010_888/status/2116920914122100944",
+      "note": "2026-11-01；family-six",
+      "evidence": "source"
+    },
+    {
+      "title": "Vigil · 2026-11-01",
+      "url": "https://x.com/0010_888/status/2116748686206419050",
+      "note": "2026-11-01；family-four",
+      "evidence": "source"
+    },
+    {
+      "title": "Vigil · 2026-11-01",
+      "url": "https://x.com/0010_888/status/2116710716820328682",
+      "note": "2026-11-01；dunes-sand",
+      "evidence": "source"
+    },
+    {
+      "title": "Vigil · 2026-10-14",
+      "url": "https://x.com/0010_888/status/2110387973661540392",
+      "note": "2026-10-14；steps-blush",
+      "evidence": "source"
+    },
+    {
+      "title": "Vigil · 2026-10-13",
+      "url": "https://x.com/0010_888/status/2110011467798036667",
+      "note": "2026-10-13；rings-green-eclipse",
+      "evidence": "source"
+    },
+    {
+      "title": "Vigil · 2026-10-12",
+      "url": "https://x.com/0010_888/status/2109780990310990231",
+      "note": "2026-10-12；scallops-teal",
+      "evidence": "source"
+    },
+    {
+      "title": "Vigil · 2026-10-12",
+      "url": "https://x.com/0010_888/status/2109647202222055908",
+      "note": "2026-10-12；terrace-ice",
+      "evidence": "source"
+    },
+    {
+      "title": "Vigil · 2026-10-10",
+      "url": "https://x.com/0010_888/status/2108918762996937076",
+      "note": "2026-10-10；rings-olive-void",
+      "evidence": "source"
+    },
+    {
+      "title": "Vigil · 2026-10-09",
+      "url": "https://x.com/0010_888/status/2108568658687705210",
+      "note": "2026-10-09；steps-rose",
+      "evidence": "source"
+    },
+    {
+      "title": "Vigil · 2026-10-09",
+      "url": "https://x.com/0010_888/status/2108365500560679371",
+      "note": "2026-10-09；swirl-night",
+      "evidence": "source"
+    },
+    {
+      "title": "Vigil · 2026-10-08",
+      "url": "https://x.com/0010_888/status/2108291042994983004",
+      "note": "2026-10-08；steps-rust-teal",
+      "evidence": "source"
+    },
+    {
+      "title": "Vigil · 2026-10-08",
+      "url": "https://x.com/0010_888/status/2108261200387854759",
+      "note": "2026-10-08；dunes-navy-sun",
+      "evidence": "source"
+    },
+    {
+      "title": "Vigil · 2026-09-27",
+      "url": "https://x.com/0010_888/status/2104341457301844418",
+      "note": "2026-09-27；terrace-brown、arcs-grey-planets、dunes-violet-planets、terrace-indigo",
+      "evidence": "source"
+    },
+    {
+      "title": "0010 的 X 主页",
+      "url": "https://x.com/0010_888",
+      "note": "作者主页。",
+      "evidence": "source"
+    },
+    {
+      "title": "艺术家网站",
+      "url": "https://0010.art/",
+      "note": "作者身份与作品集入口。",
+      "evidence": "source"
+    }
+  ],
+  "prompt": "以 Vigil 的完整构成为参考：在有细纹的外框内放圆角画纸，以 rings 同心带、dunes 波层、steps 折带、terraces 阶地、scallops 鳞带或 swirl 漩涡的二维 field 映射出标量 u；按 u 的 bands 分段配置底色、点密度、点半径、点色占比和细线。保留每件的大形位置、低饱和底色与局部红色强调；在 spheres 中放平涂、球面明暗或暗色半透明球，日食用黑圆和径向光晕。细线按距离解析抗锯齿，颗粒沿带场切向微移；单件周期 10 秒，四件与六件家族分别为 12.8 秒与 14.4 秒，静帧固定 t=0。家族在横向画纸上缩小排列作品，用细线连接，messenger 沿完整路径移动。漩涡以连续位移形成贯穿全幅的 S 形卷绕，波状阶地与重复阶梯按片内相位连续改变点密度、颜色和细线。站内画廊展示原作首帧，弹窗复刻固定按原件分辨率绘制，由 CSS 缩放后与原作并排显示。24 件具体参数见 demos/materials/0010-vigil/demo/pieces.js。",
+  "preview": "previews/materials/0010-vigil.jpg",
+  "research": "docs/materials/0010-vigil.md",
+  "sourceFiles": [
+    "demos/materials/0010-vigil/demo/renderer.js",
+    "demos/materials/0010-vigil/demo/pieces.js",
+    "demos/materials/0010-vigil/fidelity.md",
+    "demos/materials/0010-vigil/LICENSES.md",
+    "demos/materials/0010-vigil/source/README.md"
+  ],
+  "fidelity": "demos/materials/0010-vigil/fidelity.md",
+  "snapshotPath": "demos/materials/0010-vigil/",
+  "snapshotEntry": "source/README.md",
+  "galleryRatio": "4/5",
+  "galleryFit": "contain",
+  "gallery": [
+    {
+      "path": "previews/materials/0010-vigil/eclipse-slate.jpg",
+      "caption": "石板日食",
+      "kind": "work",
+      "sourceUrl": "https://x.com/0010_888/status/2117822031890932068",
+      "license": "原作媒体及音轨版权归 0010；作者未声明开放许可。",
+      "compare": {
+        "piece": "eclipse-slate",
+        "original": "demos/materials/0010-vigil/demo/media/eclipse-slate.mp4"
+      }
+    },
+    {
+      "path": "previews/materials/0010-vigil/dunes-crimson.jpg",
+      "caption": "红霞波层",
+      "kind": "work",
+      "sourceUrl": "https://x.com/0010_888/status/2117822031890932068",
+      "license": "原作媒体及音轨版权归 0010；作者未声明开放许可。",
+      "compare": {
+        "piece": "dunes-crimson",
+        "original": "demos/materials/0010-vigil/demo/media/dunes-crimson.mp4"
+      }
+    },
+    {
+      "path": "previews/materials/0010-vigil/black-sun-teal.jpg",
+      "caption": "青带黑日",
+      "kind": "work",
+      "sourceUrl": "https://x.com/0010_888/status/2117822031890932068",
+      "license": "原作媒体及音轨版权归 0010；作者未声明开放许可。",
+      "compare": {
+        "piece": "black-sun-teal",
+        "original": "demos/materials/0010-vigil/demo/media/black-sun-teal.mp4"
+      }
+    },
+    {
+      "path": "previews/materials/0010-vigil/dunes-ember.jpg",
+      "caption": "余烬波层",
+      "kind": "work",
+      "sourceUrl": "https://x.com/0010_888/status/2117822031890932068",
+      "license": "原作媒体及音轨版权归 0010；作者未声明开放许可。",
+      "compare": {
+        "piece": "dunes-ember",
+        "original": "demos/materials/0010-vigil/demo/media/dunes-ember.mp4"
+      }
+    },
+    {
+      "path": "previews/materials/0010-vigil/rings-pale.jpg",
+      "caption": "灰蓝同心",
+      "kind": "work",
+      "sourceUrl": "https://x.com/0010_888/status/2117473772710015352",
+      "license": "原作媒体及音轨版权归 0010；作者未声明开放许可。",
+      "compare": {
+        "piece": "rings-pale",
+        "original": "demos/materials/0010-vigil/demo/media/rings-pale.mp4"
+      }
+    },
+    {
+      "path": "previews/materials/0010-vigil/arcs-rust.jpg",
+      "caption": "红棕弧带",
+      "kind": "work",
+      "sourceUrl": "https://x.com/0010_888/status/2117473772710015352",
+      "license": "原作媒体及音轨版权归 0010；作者未声明开放许可。",
+      "compare": {
+        "piece": "arcs-rust",
+        "original": "demos/materials/0010-vigil/demo/media/arcs-rust.mp4"
+      }
+    },
+    {
+      "path": "previews/materials/0010-vigil/arcs-sand.jpg",
+      "caption": "米红弧带",
+      "kind": "work",
+      "sourceUrl": "https://x.com/0010_888/status/2117473772710015352",
+      "license": "原作媒体及音轨版权归 0010；作者未声明开放许可。",
+      "compare": {
+        "piece": "arcs-sand",
+        "original": "demos/materials/0010-vigil/demo/media/arcs-sand.mp4"
+      }
+    },
+    {
+      "path": "previews/materials/0010-vigil/arcs-night.jpg",
+      "caption": "夜色弧带",
+      "kind": "work",
+      "sourceUrl": "https://x.com/0010_888/status/2117473772710015352",
+      "license": "原作媒体及音轨版权归 0010；作者未声明开放许可。",
+      "compare": {
+        "piece": "arcs-night",
+        "original": "demos/materials/0010-vigil/demo/media/arcs-night.mp4"
+      }
+    },
+    {
+      "path": "previews/materials/0010-vigil/dunes-sand.jpg",
+      "caption": "沙丘黑日",
+      "kind": "work",
+      "sourceUrl": "https://x.com/0010_888/status/2116710716820328682",
+      "license": "原作媒体及音轨版权归 0010；作者未声明开放许可。",
+      "compare": {
+        "piece": "dunes-sand",
+        "original": "demos/materials/0010-vigil/demo/media/dunes-sand.mp4"
+      }
+    },
+    {
+      "path": "previews/materials/0010-vigil/steps-blush.jpg",
+      "caption": "粉岩折带",
+      "kind": "work",
+      "sourceUrl": "https://x.com/0010_888/status/2110387973661540392",
+      "license": "原作媒体及音轨版权归 0010；作者未声明开放许可。",
+      "compare": {
+        "piece": "steps-blush",
+        "original": "demos/materials/0010-vigil/demo/media/steps-blush.mp4",
+        "sound": true
+      }
+    },
+    {
+      "path": "previews/materials/0010-vigil/rings-green-eclipse.jpg",
+      "caption": "青绿日食",
+      "kind": "work",
+      "sourceUrl": "https://x.com/0010_888/status/2110011467798036667",
+      "license": "原作媒体及音轨版权归 0010；作者未声明开放许可。",
+      "compare": {
+        "piece": "rings-green-eclipse",
+        "original": "demos/materials/0010-vigil/demo/media/rings-green-eclipse.mp4",
+        "sound": true
+      }
+    },
+    {
+      "path": "previews/materials/0010-vigil/scallops-teal.jpg",
+      "caption": "青色鳞带",
+      "kind": "work",
+      "sourceUrl": "https://x.com/0010_888/status/2109780990310990231",
+      "license": "原作媒体及音轨版权归 0010；作者未声明开放许可。",
+      "compare": {
+        "piece": "scallops-teal",
+        "original": "demos/materials/0010-vigil/demo/media/scallops-teal.mp4",
+        "sound": true
+      }
+    },
+    {
+      "path": "previews/materials/0010-vigil/terrace-ice.jpg",
+      "caption": "冰面阶地",
+      "kind": "work",
+      "sourceUrl": "https://x.com/0010_888/status/2109647202222055908",
+      "license": "原作媒体及音轨版权归 0010；作者未声明开放许可。",
+      "compare": {
+        "piece": "terrace-ice",
+        "original": "demos/materials/0010-vigil/demo/media/terrace-ice.mp4",
+        "sound": true
+      }
+    },
+    {
+      "path": "previews/materials/0010-vigil/rings-olive-void.jpg",
+      "caption": "橄榄深井",
+      "kind": "work",
+      "sourceUrl": "https://x.com/0010_888/status/2108918762996937076",
+      "license": "原作媒体及音轨版权归 0010；作者未声明开放许可。",
+      "compare": {
+        "piece": "rings-olive-void",
+        "original": "demos/materials/0010-vigil/demo/media/rings-olive-void.mp4",
+        "sound": true
+      }
+    },
+    {
+      "path": "previews/materials/0010-vigil/steps-rose.jpg",
+      "caption": "玫瑰折带",
+      "kind": "work",
+      "sourceUrl": "https://x.com/0010_888/status/2108568658687705210",
+      "license": "原作媒体及音轨版权归 0010；作者未声明开放许可。",
+      "compare": {
+        "piece": "steps-rose",
+        "original": "demos/materials/0010-vigil/demo/media/steps-rose.mp4",
+        "sound": true
+      }
+    },
+    {
+      "path": "previews/materials/0010-vigil/swirl-night.jpg",
+      "caption": "夜色漩涡",
+      "kind": "work",
+      "sourceUrl": "https://x.com/0010_888/status/2108365500560679371",
+      "license": "原作媒体及音轨版权归 0010；作者未声明开放许可。",
+      "compare": {
+        "piece": "swirl-night",
+        "original": "demos/materials/0010-vigil/demo/media/swirl-night.mp4",
+        "sound": true
+      }
+    },
+    {
+      "path": "previews/materials/0010-vigil/steps-rust-teal.jpg",
+      "caption": "锈青折带",
+      "kind": "work",
+      "sourceUrl": "https://x.com/0010_888/status/2108291042994983004",
+      "license": "原作媒体及音轨版权归 0010；作者未声明开放许可。",
+      "compare": {
+        "piece": "steps-rust-teal",
+        "original": "demos/materials/0010-vigil/demo/media/steps-rust-teal.mp4",
+        "sound": true
+      }
+    },
+    {
+      "path": "previews/materials/0010-vigil/dunes-navy-sun.jpg",
+      "caption": "藏青红日",
+      "kind": "work",
+      "sourceUrl": "https://x.com/0010_888/status/2108261200387854759",
+      "license": "原作媒体及音轨版权归 0010；作者未声明开放许可。",
+      "compare": {
+        "piece": "dunes-navy-sun",
+        "original": "demos/materials/0010-vigil/demo/media/dunes-navy-sun.mp4",
+        "sound": true
+      }
+    },
+    {
+      "path": "previews/materials/0010-vigil/terrace-brown.jpg",
+      "caption": "棕色阶地（静帧）",
+      "kind": "work",
+      "sourceUrl": "https://x.com/0010_888/status/2104341457301844418",
+      "license": "原作媒体及音轨版权归 0010；作者未声明开放许可。",
+      "compare": {
+        "piece": "terrace-brown",
+        "original": "demos/materials/0010-vigil/demo/media/terrace-brown.jpg"
+      }
+    },
+    {
+      "path": "previews/materials/0010-vigil/arcs-grey-planets.jpg",
+      "caption": "灰带行星（静帧）",
+      "kind": "work",
+      "sourceUrl": "https://x.com/0010_888/status/2104341457301844418",
+      "license": "原作媒体及音轨版权归 0010；作者未声明开放许可。",
+      "compare": {
+        "piece": "arcs-grey-planets",
+        "original": "demos/materials/0010-vigil/demo/media/arcs-grey-planets.jpg"
+      }
+    },
+    {
+      "path": "previews/materials/0010-vigil/dunes-violet-planets.jpg",
+      "caption": "紫夜行星（静帧）",
+      "kind": "work",
+      "sourceUrl": "https://x.com/0010_888/status/2104341457301844418",
+      "license": "原作媒体及音轨版权归 0010；作者未声明开放许可。",
+      "compare": {
+        "piece": "dunes-violet-planets",
+        "original": "demos/materials/0010-vigil/demo/media/dunes-violet-planets.jpg"
+      }
+    },
+    {
+      "path": "previews/materials/0010-vigil/terrace-indigo.jpg",
+      "caption": "靛蓝阶地（静帧）",
+      "kind": "work",
+      "sourceUrl": "https://x.com/0010_888/status/2104341457301844418",
+      "license": "原作媒体及音轨版权归 0010；作者未声明开放许可。",
+      "compare": {
+        "piece": "terrace-indigo",
+        "original": "demos/materials/0010-vigil/demo/media/terrace-indigo.jpg"
+      }
+    },
+    {
+      "path": "previews/materials/0010-vigil/family-four.jpg",
+      "caption": "四件家族",
+      "kind": "work",
+      "sourceUrl": "https://x.com/0010_888/status/2116748686206419050",
+      "license": "原作媒体及音轨版权归 0010；作者未声明开放许可。",
+      "compare": {
+        "piece": "family-four",
+        "original": "demos/materials/0010-vigil/demo/media/family-four.mp4"
+      }
+    },
+    {
+      "path": "previews/materials/0010-vigil/family-six.jpg",
+      "caption": "六件家族",
+      "kind": "work",
+      "sourceUrl": "https://x.com/0010_888/status/2116920914122100944",
+      "license": "原作媒体及音轨版权归 0010；作者未声明开放许可。",
+      "compare": {
+        "piece": "family-six",
+        "original": "demos/materials/0010-vigil/demo/media/family-six.mp4"
+      }
+    }
+  ]
+}
