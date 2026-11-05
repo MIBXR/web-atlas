@@ -12,7 +12,7 @@
     "demos/materials/wired-elements/demo/demo.css",
     "demos/materials/wired-elements/demo/demo.js"
   ],
-  "summary": "用手绘 Web Components 组合任务清单、偏好面板与概念卡片，让草图的勾选、切换和层级都能实际操作。",
+  "summary": "用手绘 Web Components 组合任务清单、偏好面板与概念卡片，支持任务勾选、偏好切换和卡片层级调整。",
   "install": "npm install wired-elements@2.1.2",
   "demoNote": "三个场景演示任务勾选、偏好设置和概念卡片。",
   "tags": [

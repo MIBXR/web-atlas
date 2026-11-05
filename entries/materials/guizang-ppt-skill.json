@@ -4,7 +4,7 @@
   "title": "歸藏 PPT Skill · 杂志风与瑞士风网页演示",
   "type": "agent-skill",
   "category": "Agent 工作流",
-  "summary": "歸藏的网页 PPT 工作流：选择电子杂志或瑞士国际主义风格，澄清需求、复制模板、填入版式与演讲备注，交付可横向翻页的单文件 HTML；模板内置背景、索引、低功耗和演讲者运行时。",
+  "summary": "歸藏的网页 PPT 工作流：选择电子杂志或瑞士国际主义风格，澄清需求、复制模板，按版式填入文案并添加演讲备注，交付可横向翻页的单文件 HTML；模板内置背景、索引、低功耗和演讲者运行时。",
   "install": "运行 npx skills add https://github.com/op7418/guizang-ppt-skill --skill guizang-ppt-skill；或把 demos/materials/guizang-ppt-skill/ 完整复制到 .claude/skills/guizang-ppt-skill/。",
   "tags": [
     "Agent Skill",
@@ -27,7 +27,7 @@
   ],
   "constraints": [
     "配图流程依赖 GPT-Image 2.0 / GPT-M 2.0 的宿主能力。",
-    "两套风格使用各自的模板、主题与版式类；同一份 deck 采用一套风格。"
+    "两套风格使用各自的模板、主题与版式类；同一份演示文稿采用一套风格。"
   ],
   "upstream": {
     "repository": "op7418/guizang-ppt-skill",
