@@ -28,6 +28,12 @@ body .document-search{background:var(--atlas-surface-2)}
 body .search input{height:100%;padding:0;min-width:0;font-size:14px;background:transparent}
 body .search input::placeholder{color:var(--atlas-muted)}
 body .search:focus-within{border-color:var(--accent-1);outline:2px solid var(--accent-1);outline-offset:0}
+body .search input::-webkit-search-cancel-button{-webkit-appearance:none;appearance:none}
+body .search .search-clear{display:inline-flex;align-items:center;justify-content:center;flex:none;width:28px;height:28px;margin:0 -6px 0 0;padding:0;border:0;border-radius:var(--r-sm);background:transparent;color:var(--atlas-muted);cursor:pointer}
+body .search .search-clear:hover{color:var(--accent-1)}
+body .search .search-clear:focus-visible{outline:2px solid var(--accent-1);outline-offset:0}
+body .search input:placeholder-shown~.search-clear{display:none}
+body .search input:not(:placeholder-shown)~kbd{display:none}
 body .search kbd{box-sizing:border-box;display:inline-grid;place-items:center;min-width:22px;height:22px;padding:0 6px;border:1px solid var(--atlas-surface-line);border-radius:var(--r-sm);font:400 12px/1 var(--atlas-font-mono);color:var(--atlas-muted)}
 body .select-wrap>select{padding:0 36px 0 14px;background-image:none}
 body :is(.collection-tools,.collection-filter-dialog) select{appearance:none;box-sizing:border-box;height:44px;min-height:44px;padding:0 36px 0 14px;border:1px solid var(--atlas-surface-line);border-radius:var(--r);background-color:var(--atlas-surface);color:var(--atlas-ink);font-size:14px;line-height:1.5;cursor:pointer}

@@ -360,4 +360,17 @@
   addEventListener('popstate', () => close());
   addEventListener('hashchange', () => close());
   window.visualViewport?.addEventListener('resize', position);
+  document.querySelectorAll('.search input[type=search]').forEach(input => {
+    const clear = document.createElement('button');
+    clear.type = 'button';
+    clear.className = 'search-clear';
+    clear.setAttribute('aria-label', '清除搜索');
+    clear.innerHTML = AtlasIcons.svg('close');
+    input.after(clear);
+    clear.addEventListener('click', () => {
+      input.value = '';
+      input.dispatchEvent(new Event('input', {bubbles: true}));
+      input.focus();
+    });
+  });
 })();
