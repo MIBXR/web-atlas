@@ -284,7 +284,7 @@ a.atlas-ui-button,button.atlas-ui-button{
 }
 a.atlas-ui-button:hover,button.atlas-ui-button:hover{border-color:var(--accent-1);background:var(--accent-4);color:var(--accent-1)}
 html body :is(.sort-dir,.text-button,.dialog-close):hover:not(:disabled),body.cases-page .case-layout main .sort-dir:hover:not(:disabled){background:var(--accent-4);border-color:var(--accent-1);color:var(--accent-1)}
-body :is(.empty button,#compare-go):hover:not(:disabled){box-shadow:0 0 0 2px var(--accent-1)}
+body :is(.empty button,#compare-go):hover:not(:disabled){box-shadow:inset 0 0 0 2px var(--accent-1)}
 .atlas-back-to-top{position:fixed;right:calc(16px + env(safe-area-inset-right));bottom:calc(16px + env(safe-area-inset-bottom));z-index:65;box-shadow:0 4px 16px color-mix(in srgb,var(--atlas-shadow-ink) 13%,transparent)}
 body button.atlas-ui-button.atlas-back-to-top{min-height:44px}
 .atlas-back-to-top[hidden]{display:none!important}
