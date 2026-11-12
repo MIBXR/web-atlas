@@ -128,7 +128,7 @@
       const stageHeight=stage.getBoundingClientRect().height;
       const notesHeight=notes.getBoundingClientRect().height;
       const availableHeight=window.innerHeight-header.getBoundingClientRect().height-actionsHeight-24;
-      root.style.setProperty('--atlas-detail-sticky-top',`calc(var(--atlas-visible-header-height) + ${actionsHeight}px + 24px)`);
+      root.style.setProperty('--atlas-detail-sticky-top',`calc(var(--atlas-header-height) + ${actionsHeight}px + 24px)`);
       stage.classList.toggle('detail-sticky',window.innerWidth>=1160&&stageHeight<=availableHeight);
       notes.classList.toggle('detail-sticky',window.innerWidth>=1160&&stageHeight>notesHeight&&notesHeight<=availableHeight);
       scheduleToc();
