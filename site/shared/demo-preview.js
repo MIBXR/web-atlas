@@ -10,7 +10,8 @@
       if (!wrap.clientWidth) return;
       const controlsHeight = wrap.getBoundingClientRect().top - panel.getBoundingClientRect().top;
       const panelTop = header.getBoundingClientRect().height + actions.getBoundingClientRect().height + 24;
-      const height = Math.max(1, window.innerHeight - panelTop - controlsHeight - 24);
+      const viewportHeight = parseFloat(getComputedStyle(document.body).minHeight) || window.innerHeight;
+      const height = Math.max(1, viewportHeight - panelTop - controlsHeight - 24);
       const style = getComputedStyle(wrap);
       const inset = ['borderTopWidth', 'borderBottomWidth', 'paddingTop', 'paddingBottom'].reduce((total, property) => total + parseFloat(style[property]), 0);
       const contentHeight = Math.max(1, height - inset);
